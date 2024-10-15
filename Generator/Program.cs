@@ -1,7 +1,7 @@
 ﻿using Generator;
 using HexaGen;
+using HexaGen.Core.CSharp;
 using HexaGen.Metadata;
-using HexaGen.Patching;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -146,8 +146,45 @@ if (Directory.Exists(functionsOutputPath))
 }
 Directory.CreateDirectory(functionsOutputPath);
 
+string ParseType(IGlType type)
+{
+    type.Prefix = type.Prefix?.Replace("const", string.Empty)?.Trim()!;
+    type.PType = type.PType?.Replace("const", string.Empty)?.Trim()!;
+    type.Postfix = type.Postfix?.Replace("const", string.Empty)?.Trim()!;
+
+    string? result = type.PType;
+
+    {
+        if (result != null)
+        {
+            if (config.TypeMappings.TryGetValue(result, out var newType))
+            {
+                result = newType;
+            }
+        }
+
+        if (type.Prefix == "void")
+        {
+            result = "void";
+        }
+        else
+        {
+            if (type.Prefix == null || type.Prefix == "const" || type.Prefix == "struct")
+            {
+                result = $"{result}{type.Postfix}";
+            }
+            else
+            {
+                result = $"{type.Prefix}{result}{type.Postfix}";
+            }
+        }
+    }
+
+    return result.Replace(" ", string.Empty);
+}
+
 FunctionTableBuilder functionTableBuilder = new();
-CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], null);
+CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
 writer.BeginBlock("public static unsafe partial class GL");
 foreach (var command in registry.Commands)
 {
@@ -163,83 +200,49 @@ foreach (var command in registry.Commands)
         name = name[2..];
     }
 
-    string? returnType = command.Proto.PType?.Trim();
-
-    {
-        if (returnType != null)
-        {
-            if (config.TypeMappings.TryGetValue(returnType, out var newType))
-            {
-                returnType = newType;
-            }
-        }
-
-        if (command.Proto.Prefix == "void")
-        {
-            returnType = "void";
-        }
-        else
-        {
-            if (command.Proto.Prefix == null || command.Proto.Prefix == "const" || command.Proto.Prefix == "struct")
-            {
-                returnType = $"{returnType}{command.Proto.Postfix}";
-            }
-            else
-            {
-                returnType = $"{command.Proto.Prefix} {returnType}{command.Proto.Postfix}";
-            }
-        }
-    }
+    string returnType = ParseType(command.Proto);
 
     StringBuilder sb = new();
     StringBuilder sbNameless = new();
     StringBuilder sbParam = new();
 
+    List<(string type, string name)> parameters = [];
+
     bool first = true;
-    bool faulty = false;
     for (int i = 0; i < command.Params.Count; i++)
     {
         Param param = command.Params[i];
-        var type = param.Type;
-
-        if (type == null)
-        {
-            faulty = true;
-            break;
-        }
-
+        var paramType = ParseType(param);
         var paramName = config.GetParameterName(i, param.Name);
 
         if (param.Group != null)
         {
-            type = groupToEnumName[param.Group];
+            paramType = groupToEnumName[param.Group];
         }
 
+        if (config.TypeMappings.TryGetValue(paramType, out var newType))
         {
-            if (config.TypeMappings.TryGetValue(type, out var newType))
-            {
-                type = newType;
-            }
+            paramType = newType;
         }
+
+        parameters.Add((paramType, paramName));
 
         if (first)
         {
-            sb.Append($"{type} {paramName}");
-            sbNameless.Append(type);
+            sb.Append($"{paramType} {paramName}");
+            sbNameless.Append(paramType);
             sbParam.Append(paramName);
             first = false;
         }
         else
         {
-            sb.Append($", {type} {paramName}");
-            sbNameless.Append($", {type}");
+            sb.Append($", {paramType} {paramName}");
+            sbNameless.Append($", {paramType}");
             sbParam.Append($", {paramName}");
         }
     }
-    if (faulty)
-    {
-        continue;
-    }
+
+    bool isBool = returnType == "byte";
 
     int idx = functionTableBuilder.Add(command.Proto.Name);
 
@@ -254,18 +257,23 @@ foreach (var command in registry.Commands)
 
     string paramSignatureNameless = sbNameless.ToString();
     string delegateSig;
+    string delegateSigApi;
     if (returnType != "void")
     {
         delegateSig = $"{returnType} ret = ((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbParam});";
+        delegateSigApi = $"{returnType} ret = {name}Native({sbParam});";
     }
     else
     {
         delegateSig = $"((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbParam});";
+        delegateSigApi = $"{name}Native({sbParam});";
     }
 
     string paramSignature = sb.ToString();
-    string csSig = $"public static {returnType} {name}({paramSignature})";
+    string csSig = $"internal static {returnType} {name}Native({paramSignature})";
+    string csSigApi = $"public static {(isBool ? "bool" : returnType)} {name}({paramSignature})";
 
+    writer.WriteLine("[MethodImpl(MethodImplOptions.AggressiveInlining)]");
     writer.BeginBlock(csSig);
     writer.WriteLine(delegateSig);
     if (returnType != "void")
@@ -274,7 +282,77 @@ foreach (var command in registry.Commands)
     }
     writer.EndBlock();
     writer.WriteLine();
+
+    writer.BeginBlock(csSigApi);
+    writer.WriteLine(delegateSigApi);
+    if (returnType != "void")
+    {
+        if (isBool)
+        {
+            writer.WriteLine("return ret != 0;");
+        }
+        else
+        {
+            writer.WriteLine("return ret;");
+        }
+    }
+    writer.EndBlock();
+    writer.WriteLine();
+
+    var arrayParams = parameters.ToArray();
+
+    WriteStringOverload(returnType, name, arrayParams);
 }
+
+void WriteStringOverload(string returnType, string name, (string type, string name)[] parameters)
+{
+    long maxVariations = (long)Math.Pow(2L, parameters.Length);
+    List<(string type, string name)[]> defs = [parameters];
+    for (long ix = 0; ix < maxVariations; ix++)
+    {
+        (string type, string name)[] stringVariation = new (string type, string name)[parameters.Length];
+        (string type, string name)[] spanVariation = new (string type, string name)[parameters.Length];
+        (string type, string name)[] refVariation = new (string type, string name)[parameters.Length];
+        for (int j = 0; j < parameters.Length; j++)
+        {
+            var bit = (ix & 1 << j - 64) != 0;
+            (string type, string name) parameter = parameters[j];
+
+            if (bit)
+            {
+                if (parameter.type == "byte*")
+                {
+                    stringVariation[j] = ("string", parameter.name);
+                    spanVariation[j] = ("ReadOnlySpan<byte>", parameter.name);
+                }
+                else
+                {
+                    spanVariation[j] = stringVariation[j] = parameter;
+                }
+
+                var pointerDepth = parameter.type.AsSpan().Count('*');
+                if (pointerDepth == 1 && parameter.type != "void*")
+                {
+                    var cleanName = parameter.type.Replace("*", string.Empty);
+                    refVariation[j] = ($"ref {cleanName}", parameter.name);
+                }
+                else
+                {
+                    refVariation[j] = parameter;
+                }
+            }
+            else
+            {
+                refVariation[j] = spanVariation[j] = stringVariation[j] = parameter;
+            }
+        }
+
+        Write(returnType, name, parameters, writer, defs, stringVariation);
+        Write(returnType, name, parameters, writer, defs, spanVariation);
+        Write(returnType, name, parameters, writer, defs, refVariation);
+    }
+}
+
 writer.EndBlock();
 writer.Dispose();
 
@@ -317,3 +395,153 @@ using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"
 CsCodeGenerator generator = new(config);
 generator.LogToConsole();
 generator.Generate(headerFile, outputPath);
+
+static void Write(string returnType, string name, (string type, string name)[] rootParameters, CsSplitCodeWriter writer, List<(string type, string name)[]> defs, (string type, string name)[] variation)
+{
+    bool found = false;
+
+    foreach (var def in defs)
+    {
+        bool matches = true;
+        for (int i = 0; i < def.Length; i++)
+        {
+            var p0 = def[i];
+            var p1 = variation[i];
+            if (p0.type != p1.type)
+            {
+                matches = false;
+                break;
+            }
+        }
+
+        if (matches)
+        {
+            found = true;
+            break;
+        }
+    }
+
+    if (found)
+    {
+        return;
+    }
+
+    defs.Add(variation);
+
+    StringBuilder sb = new();
+    StringBuilder sbNameless = new();
+    StringBuilder sbParam = new();
+    bool first = true;
+
+    int blocks = 0;
+    int stringIdx = 0;
+    List<(string name, string fixedName, string type, int index)> fixedStack = [];
+    List<(string name, int index)> stringStack = [];
+    for (int i = 0; i < variation.Length; i++)
+    {
+        (string paramType, string paramName) = variation[i];
+
+        string paramListName = paramName;
+
+        if (paramType == "string")
+        {
+            stringStack.Add((paramName, stringIdx));
+            paramListName = $"pStr{stringIdx}";
+            stringIdx++;
+        }
+
+        if (paramType == "ReadOnlySpan<byte>" || paramType.StartsWith("ref"))
+        {
+            paramListName = $"p{paramName.Replace("@", string.Empty)}";
+            fixedStack.Add((paramName, paramListName, rootParameters[i].type, i));
+        }
+
+        if (first)
+        {
+            sb.Append($"{paramType} {paramName}");
+            sbNameless.Append(paramType);
+            sbParam.Append(paramListName);
+            first = false;
+        }
+        else
+        {
+            sb.Append($", {paramType} {paramName}");
+            sbNameless.Append($", {paramType}");
+            sbParam.Append($", {paramListName}");
+        }
+    }
+
+    string paramSignatureNameless = sbNameless.ToString();
+
+    if (first)
+    {
+        sbNameless.Append(returnType);
+    }
+    else
+    {
+        sbNameless.Append($", {returnType}");
+    }
+
+    string delegateSig;
+    if (returnType != "void")
+    {
+        delegateSig = $"{returnType} ret = {name}Native({sbParam});";
+    }
+    else
+    {
+        delegateSig = $"{name}Native({sbParam});";
+    }
+
+    bool isBool = returnType == "byte";
+
+    string paramSignature = sb.ToString();
+    string csSig = $"public static {(isBool ? "bool" : returnType)} {name}({paramSignature})";
+
+    writer.BeginBlock(csSig);
+
+    foreach (var str in stringStack)
+    {
+        MarshalHelper.WriteStringConvertToUnmanaged(writer, new CsType("byte*", CsPrimitiveType.Byte) { StringType = CsStringType.StringUTF8 }, str.name, str.index);
+    }
+
+    foreach (var fx in fixedStack)
+    {
+        if (variation[fx.index].type.Contains("ref"))
+        {
+            writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = &{fx.name})");
+        }
+        else
+        {
+            writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = {fx.name})");
+        }
+
+        blocks++;
+    }
+
+    writer.WriteLine(delegateSig);
+
+    foreach (var str in stringStack)
+    {
+        MarshalHelper.WriteFreeString(writer, str.index);
+    }
+
+    if (returnType != "void")
+    {
+        if (isBool)
+        {
+            writer.WriteLine("return ret != 0;");
+        }
+        else
+        {
+            writer.WriteLine("return ret;");
+        }
+    }
+
+    for (int i = 0; i < blocks; i++)
+    {
+        writer.EndBlock();
+    }
+
+    writer.EndBlock();
+    writer.WriteLine();
+}

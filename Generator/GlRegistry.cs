@@ -5,6 +5,7 @@
     using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
+    using System.Runtime.CompilerServices;
     using System.Xml;
     using System.Xml.Schema;
     using System.Xml.Serialization;
@@ -51,7 +52,7 @@
     }
 
     [XmlRoot(ElementName = "proto")]
-    public class Proto : IXmlSerializable
+    public class Proto : IXmlSerializable, IGlType
     {
         public string Kind { get; set; }
         public string Prefix { get; set; }
@@ -68,15 +69,13 @@
         {
             Kind = reader.GetAttribute("kind");
 
-            bool first = true;
             while (reader.Read())
             {
                 if (reader.NodeType == XmlNodeType.Text)
                 {
-                    if (first)
+                    if (PType == null)
                     {
                         Prefix = reader.Value.Trim();
-                        first = false;
                     }
                     else
                     {
@@ -113,25 +112,73 @@
     }
 
     [XmlRoot(ElementName = "param")]
-    public class Param
+    public class Param : IXmlSerializable, IGlType
     {
-        [XmlElement(ElementName = "ptype")]
-        public string Type { get; set; }
-
-        [XmlElement(ElementName = "name")]
-        public string Name { get; set; }
-
-        [XmlAttribute(AttributeName = "group")]
         public string Group { get; set; }
 
-        [XmlAttribute(AttributeName = "kind")]
         public string Kind { get; set; }
 
-        [XmlAttribute(AttributeName = "len")]
         public string Len { get; set; }
 
-        [XmlText]
-        public string Text { get; set; }
+        public string PType { get; set; }
+
+        public string Name { get; set; }
+
+        public string Prefix { get; set; }
+
+        public string Postfix { get; set; }
+
+        public XmlSchema? GetSchema()
+        {
+            return null;
+        }
+
+        public void ReadXml(XmlReader reader)
+        {
+            Group = reader.GetAttribute("group")!;
+            Kind = reader.GetAttribute("kind")!;
+            Len = reader.GetAttribute("len")!;
+
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Text)
+                {
+                    if (PType == null)
+                    {
+                        Prefix = reader.Value.Trim();
+                    }
+                    else
+                    {
+                        Postfix = reader.Value.Trim();
+                    }
+                }
+
+                if (reader.NodeType == XmlNodeType.Element && reader.Name == "ptype")
+                {
+                    reader.ReadStartElement();
+                    PType = reader.ReadContentAsString();
+                }
+
+                if (reader.NodeType == XmlNodeType.Element && reader.Name == "name")
+                {
+                    reader.ReadStartElement();
+                    Name = reader.ReadContentAsString();
+                }
+
+                if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "param")
+                {
+                    break;
+                }
+            }
+
+            reader.ReadEndElement();
+        }
+
+        public void WriteXml(XmlWriter writer)
+        {
+            // not important for us.
+            throw new NotSupportedException("");
+        }
     }
 
     [XmlRoot(ElementName = "type")]
