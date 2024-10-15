@@ -72,7 +72,7 @@ while (GLFW.WindowShouldClose(window) == 0)
 
     GLFW.MakeContextCurrent(window);
     GL.ClearColor(1, 0.8f, 0.75f, 1);
-    GL.Clear(GL.GL_COLOR_BUFFER_BIT);
+    GL.Clear(GLClearBufferMask.ColorBufferBit);
 
     ImGuiImplOpenGL3.NewFrame();
     ImGuiImplGLFW.NewFrame();

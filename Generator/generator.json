@@ -6,11 +6,12 @@
   "EnableExperimentalOptions": true,
   "GenerateConstructorsForStructs": true,
   "GeneratePlaceholderComments": false,
-  "GenerateMetadata": true,
+  "GenerateFunctions": false,
+  "GenerateMetadata": false,
   "ImportType": "FunctionTable",
   "ConstantNamingConvention": "Unknown",
   "TypeMappings": {
-    "GLenum": "uint",
+    "GLenum": "GLEnum",
     "GLboolean": "byte",
     "GLbitfield": "uint",
     "GLbyte": "sbyte",
@@ -33,7 +34,17 @@
     "GLint64EXT": "long",
     "GLuint64EXT": "ulong",
     "GLintptr": "nint",
-    "GLsizeiptr": "nint"
+    "GLsizeiptr": "nint",
+    "GLfixed": "int",
+    "GLchar": "byte",
+    "struct _cl_context": "ClContext",
+    "struct _cl_event": "ClEvent",
+    "GLhandleARB": "uint",
+    "GLcharARB": "byte",
+    "GLintptrARB": "nint",
+    "GLhalfNV": "Half",
+    "GLclampx": "int",
+    "GLsync": "GLSync"
   },
   "IgnoredTypes": [],
   "Usings": [ "System.Numerics" ]
