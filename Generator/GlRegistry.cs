@@ -287,6 +287,9 @@
         [XmlAttribute(AttributeName = "name")]
         public string Name { get; set; }
 
+        [XmlAttribute(AttributeName = "api")]
+        public string Api { get; set; }
+
         [XmlAttribute(AttributeName = "group")]
         public string Group
         {
@@ -383,17 +386,31 @@
     [XmlRoot(ElementName = "extension")]
     public class Extension
     {
+        private string? supported;
+
         [XmlElement(ElementName = "require")]
         public List<Require> Require { get; set; }
-
-        [XmlElement(ElementName = "remove")]
-        public List<Remove> Remove { get; set; }
 
         [XmlAttribute(AttributeName = "name")]
         public string Name { get; set; }
 
         [XmlAttribute(AttributeName = "supported")]
-        public string Supported { get; set; }
+        public string? Supported
+        {
+            get => supported;
+            set
+            {
+                supported = value;
+                SupportedList.Clear();
+                if (value != null)
+                {
+                    SupportedList.AddRange(value.Split('|'));
+                }
+            }
+        }
+
+        [XmlIgnore]
+        public List<string> SupportedList { get; set; } = [];
 
         public override string ToString()
         {

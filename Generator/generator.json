@@ -44,7 +44,8 @@
     "GLintptrARB": "nint",
     "GLhalfNV": "Half",
     "GLclampx": "int",
-    "GLsync": "GLSync"
+    "GLsync": "GLSync",
+    "GLDEBUGPROC": "GLDebugProc"
   },
   "IgnoredTypes": [],
   "Usings": [ "System.Numerics" ]

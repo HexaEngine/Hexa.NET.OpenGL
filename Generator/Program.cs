@@ -1,547 +1,759 @@
 ﻿using Generator;
 using HexaGen;
+using HexaGen.Core;
 using HexaGen.Core.CSharp;
 using HexaGen.Metadata;
 using System.Text;
 using System.Xml.Serialization;
 
-CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load("generator.json");
-string headerFile = "include/main.h";
-
-string outputPath = "../../../../Hexa.NET.OpenGL/Generated";
-
-XmlSerializer serializer = new(typeof(GlRegistry));
-
-using var fs = File.OpenRead("gl.xml");
-GlRegistry registry = (GlRegistry)serializer.Deserialize(fs)!;
-
-bool generateAll = false; // only for generation testing.
-
-string featureTarget = "GL_VERSION_3_3";
-bool compatibility = false;
-
-HashSet<string> usedEnums = [];
-HashSet<string> usedCommands = [];
-
-foreach (var feature in registry.Features)
+internal class Program
 {
-    foreach (var require in feature.Require)
+    private static readonly LoggerBase logger = new();
+
+    private static void Main(string[] args)
     {
-        if (require.Profile == "core" && compatibility)
+        XmlSerializer serializer = new(typeof(GlRegistry));
+        using var fs = File.OpenRead("gl.xml");
+        GlRegistry registry = (GlRegistry)serializer.Deserialize(fs)!;
+
+        CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load("generator.base.json");
+
+        var groupToEnumName = GenerateEnums(config, registry, "gl");
         {
-            continue;
+            CsCodeGenerator generator = new(config);
+            generator.LogToConsole();
+            generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGL.Base/Generated");
         }
 
-        if (require.Profile == "compatibility" && !compatibility)
-        {
-            continue;
-        }
+        logger.LogToConsole();
 
-        foreach (var @enum in require.Enums)
-        {
-            usedEnums.Add(@enum.Name);
-        }
+        Generate(registry, "generator.json", "GL_VERSION_2_1", compatibility: false, false, "../../../../Hexa.NET.OpenGL2/Generated", groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: false, false, "../../../../Hexa.NET.OpenGL3/Generated", groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: false, false, "../../../../Hexa.NET.OpenGL4/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.ext.json", "GL_EXT", "gl", "../../../../Hexa.NET.OpenGL.EXT/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.arb.json", "GL_ARB", "gl", "../../../../Hexa.NET.OpenGL.ARB/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.nv.json", "GL_NV", "gl", "../../../../Hexa.NET.OpenGL.NV/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.amd.json", "GL_AMD", "gl", "../../../../Hexa.NET.OpenGL.AMD/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.apple.json", "GL_APPLE", "gl", "../../../../Hexa.NET.OpenGL.APPLE/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.intel.json", "GL_INTEL", "gl", "../../../../Hexa.NET.OpenGL.INTEL/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.khr.json", "GL_KHR", "gl", "../../../../Hexa.NET.OpenGL.KHR/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.mesa.json", "GL_MESA", "gl", "../../../../Hexa.NET.OpenGL.MESA/Generated", groupToEnumName);
+    }
 
-        foreach (var command in require.Commands)
+    private static void Generate(GlRegistry registry, string configPath, string featureTarget, bool compatibility, bool generateAll, string outputPath, Dictionary<string, string> groupToEnumName)
+    {
+        logger.LogInfo($"Generating {featureTarget} ...");
+        CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
+
+        GatherUsedTargets(registry, featureTarget, compatibility, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
+
+        WriteFunctions(config, outputPath, registry, generateAll, usedCommands, groupToEnumName, out FunctionTableBuilder functionTableBuilder);
+        WriteFunctionTable(config, outputPath, functionTableBuilder);
+        logger.LogInfo($"Done Generating {featureTarget} ...");
+    }
+
+    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, string apiTarget, string outputPath, Dictionary<string, string> groupToEnumName)
+    {
+        logger.LogInfo($"Generating {extensionTarget} ...");
+        CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
+
+        GatherUsedTargetsForExtension(registry, extensionTarget, apiTarget, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
+
+        WriteFunctions(config, outputPath, registry, false, usedCommands, groupToEnumName, out FunctionTableBuilder functionTableBuilder);
+        WriteFunctionTable(config, outputPath, functionTableBuilder);
+        logger.LogInfo($"Done Generating {extensionTarget} ...");
+    }
+
+    private struct ParamRange
+    {
+        public int Start;
+        public int End;
+
+        public ParamRange(int start, int end)
         {
-            usedCommands.Add(command.Name);
+            Start = start;
+            End = end;
         }
     }
 
-    foreach (var remove in feature.Remove)
+    private static void WriteVariations(ICodeWriter writer, string returnType, string name, (string type, string name)[] parameters)
     {
-        if (remove.Profile == "core" && compatibility)
+        List<ParamRange> ranges = new();
+        int varStart = -1;
+
+        int spanVariationCount = 0;
+        int stringVariationCount = 0;
+        int refVariationCount = 0;
+
+        int totalStart = int.MaxValue;
+        int totalEnd = -1;
+        for (int i = 0; i < parameters.Length; i++)
         {
-            continue;
-        }
+            bool hasVariation = false;
+            (string type, string name) parameter = parameters[i];
 
-        if (remove.Profile == "compatibility" && !compatibility)
-        {
-            continue;
-        }
-
-        foreach (var @enum in remove.Enums)
-        {
-            usedEnums.Remove(@enum.Name);
-        }
-
-        foreach (var command in remove.Commands)
-        {
-            usedCommands.Remove(command.Name);
-        }
-    }
-
-    if (feature.Name == featureTarget)
-    {
-        break;
-    }
-}
-
-Dictionary<string, List<Generator.Enum>> groups = [];
-Dictionary<string, string> groupToEnumName = [];
-
-CsEnumMetadata glEnum = new("GLEnum", "GLEnum", [], null);
-EnumPrefix prefixGl = config.GetEnumNamePrefixEx("GL_");
-foreach (var enumGroup in registry.EnumGroups)
-{
-    foreach (var @enum in enumGroup.Items)
-    {
-        if (!usedEnums.Contains(@enum.Name) && !generateAll)
-        {
-            continue;
-        }
-
-        if (enumGroup.StartString != null && enumGroup.EndString != null)
-        {
-            string csEnumItemName = config.GetEnumName(@enum.Name, prefixGl);
-            CsEnumItemMetadata csEnumItem = new(@enum.Name, @enum.Value, csEnumItemName, @enum.Value, [], null);
-            glEnum.Items.Add(csEnumItem);
-        }
-
-        foreach (var group in @enum.GroupList)
-        {
-            if (!groups.TryGetValue(group, out var enums))
+            if (parameter.type == "byte*")
             {
-                enums = []; // valid before you ask C#12/net8.0.
-                groups.Add(group, enums);
+                spanVariationCount++;
+                stringVariationCount++;
+                hasVariation = true;
             }
 
-            enums.Add(@enum);
-        }
-    }
-}
-config.CustomEnums.Add(glEnum);
-
-foreach (var pair in groups)
-{
-    string enumName = "GL" + config.GetCsCleanName(pair.Key);
-    EnumPrefix prefix = config.GetEnumNamePrefixEx(pair.Key);
-    Array.Resize(ref prefix.Parts, prefix.Parts.Length + 1);
-    prefix.Parts[^1] = "Gl";
-
-    groupToEnumName.Add(pair.Key, enumName);
-
-    CsEnumMetadata metadata = new(pair.Key, enumName, [], null);
-    metadata.BaseType = "uint";
-
-    if (enumName == "GLSpecialNumbers")
-    {
-        metadata.BaseType = "ulong";
-    }
-
-    foreach (var item in pair.Value)
-    {
-        string csEnumItemName = config.GetEnumName(item.Name, prefix);
-        CsEnumItemMetadata csEnumItem = new(item.Name, item.Value, csEnumItemName, $"unchecked(({metadata.BaseType}){item.Value})", [], null);
-        metadata.Items.Add(csEnumItem);
-    }
-    config.CustomEnums.Add(metadata);
-}
-
-string functionsOutputPath = Path.Combine(outputPath, "Functions");
-
-if (Directory.Exists(functionsOutputPath))
-{
-    Directory.Delete(functionsOutputPath, true);
-}
-Directory.CreateDirectory(functionsOutputPath);
-
-string ParseType(IGlType type)
-{
-    type.Prefix = type.Prefix?.Replace("const", string.Empty)?.Trim()!;
-    type.PType = type.PType?.Replace("const", string.Empty)?.Trim()!;
-    type.Postfix = type.Postfix?.Replace("const", string.Empty)?.Trim()!;
-
-    string? result = type.PType;
-
-    {
-        if (result != null)
-        {
-            if (config.TypeMappings.TryGetValue(result, out var newType))
+            var pointerDepth = parameter.type.AsSpan().Count('*');
+            if (pointerDepth == 1 && parameter.type != "void*")
             {
-                result = newType;
+                refVariationCount++;
+                hasVariation = true;
             }
-        }
 
-        if (type.Prefix == "void")
-        {
-            result = "void";
-        }
-        else
-        {
-            if (type.Prefix == null || type.Prefix == "const" || type.Prefix == "struct")
+            if (hasVariation)
             {
-                result = $"{result}{type.Postfix}";
-            }
-            else
-            {
-                result = $"{type.Prefix}{result}{type.Postfix}";
-            }
-        }
-    }
-
-    return result.Replace(" ", string.Empty);
-}
-
-FunctionTableBuilder functionTableBuilder = new();
-CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
-writer.BeginBlock("public static unsafe partial class GL");
-foreach (var command in registry.Commands)
-{
-    string name = command.Proto.Name;
-
-    if (!usedCommands.Contains(name) && !generateAll)
-    {
-        continue;
-    }
-
-    if (name.StartsWith("gl"))
-    {
-        name = name[2..];
-    }
-
-    string returnType = ParseType(command.Proto);
-
-    StringBuilder sb = new();
-    StringBuilder sbNameless = new();
-    StringBuilder sbParam = new();
-
-    List<(string type, string name)> parameters = [];
-
-    bool first = true;
-    for (int i = 0; i < command.Params.Count; i++)
-    {
-        Param param = command.Params[i];
-        var paramType = ParseType(param);
-        var paramName = config.GetParameterName(i, param.Name);
-
-        if (param.Group != null)
-        {
-            paramType = groupToEnumName[param.Group];
-        }
-
-        if (config.TypeMappings.TryGetValue(paramType, out var newType))
-        {
-            paramType = newType;
-        }
-
-        parameters.Add((paramType, paramName));
-
-        if (first)
-        {
-            sb.Append($"{paramType} {paramName}");
-            sbNameless.Append(paramType);
-            sbParam.Append(paramName);
-            first = false;
-        }
-        else
-        {
-            sb.Append($", {paramType} {paramName}");
-            sbNameless.Append($", {paramType}");
-            sbParam.Append($", {paramName}");
-        }
-    }
-
-    bool isBool = returnType == "byte";
-
-    int idx = functionTableBuilder.Add(command.Proto.Name);
-
-    if (first)
-    {
-        sbNameless.Append(returnType);
-    }
-    else
-    {
-        sbNameless.Append($", {returnType}");
-    }
-
-    string paramSignatureNameless = sbNameless.ToString();
-    string delegateSig;
-    string delegateSigApi;
-    if (returnType != "void")
-    {
-        delegateSig = $"{returnType} ret = ((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbParam});";
-        delegateSigApi = $"{returnType} ret = {name}Native({sbParam});";
-    }
-    else
-    {
-        delegateSig = $"((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbParam});";
-        delegateSigApi = $"{name}Native({sbParam});";
-    }
-
-    string paramSignature = sb.ToString();
-    string csSig = $"internal static {returnType} {name}Native({paramSignature})";
-    string csSigApi = $"public static {(isBool ? "bool" : returnType)} {name}({paramSignature})";
-
-    writer.WriteLine("[MethodImpl(MethodImplOptions.AggressiveInlining)]");
-    writer.BeginBlock(csSig);
-    writer.WriteLine(delegateSig);
-    if (returnType != "void")
-    {
-        writer.WriteLine("return ret;");
-    }
-    writer.EndBlock();
-    writer.WriteLine();
-
-    writer.BeginBlock(csSigApi);
-    writer.WriteLine(delegateSigApi);
-    if (returnType != "void")
-    {
-        if (isBool)
-        {
-            writer.WriteLine("return ret != 0;");
-        }
-        else
-        {
-            writer.WriteLine("return ret;");
-        }
-    }
-    writer.EndBlock();
-    writer.WriteLine();
-
-    var arrayParams = parameters.ToArray();
-
-    WriteStringOverload(returnType, name, arrayParams);
-}
-
-void WriteStringOverload(string returnType, string name, (string type, string name)[] parameters)
-{
-    long maxVariations = (long)Math.Pow(2L, parameters.Length);
-    List<(string type, string name)[]> defs = [parameters];
-    for (long ix = 0; ix < maxVariations; ix++)
-    {
-        (string type, string name)[] stringVariation = new (string type, string name)[parameters.Length];
-        (string type, string name)[] spanVariation = new (string type, string name)[parameters.Length];
-        (string type, string name)[] refVariation = new (string type, string name)[parameters.Length];
-        for (int j = 0; j < parameters.Length; j++)
-        {
-            var bit = (ix & 1 << j - 64) != 0;
-            (string type, string name) parameter = parameters[j];
-
-            if (bit)
-            {
-                if (parameter.type == "byte*")
+                if (varStart == -1)
                 {
-                    stringVariation[j] = ("string", parameter.name);
-                    spanVariation[j] = ("ReadOnlySpan<byte>", parameter.name);
+                    varStart = i;
+                    totalStart = Math.Min(totalStart, i);
+                }
+            }
+            else if (varStart != -1)
+            {
+                int varEnd = i - 1;
+                ParamRange range = new(varStart, varEnd);
+                ranges.Add(range);
+                varStart = -1;
+                totalEnd = Math.Max(totalEnd, i);
+            }
+        }
+
+        if (varStart != -1)
+        {
+            ranges.Add(new ParamRange(varStart, parameters.Length - 1));
+        }
+
+        int maxVariations = spanVariationCount * stringVariationCount * refVariationCount;
+
+        int parameterRange = totalEnd - totalStart;
+        // long maxVariations = Math.Pow(2L, parameters.Length);
+        List<(string type, string name)[]> defs = [parameters];
+        for (long ix = 0; ix < maxVariations; ix++)
+        {
+            (string type, string name)[] stringVariation = new (string type, string name)[parameters.Length];
+            (string type, string name)[] spanVariation = new (string type, string name)[parameters.Length];
+            (string type, string name)[] refVariation = new (string type, string name)[parameters.Length];
+            for (int j = 0; j < parameters.Length; j++)
+            {
+                bool bit = false;
+                foreach (var range in ranges)
+                {
+                    if (range.Start >= j && range.End <= j)
+                    {
+                        var adjustedParamIndex = j - range.Start;
+                        bit = (ix & 1 << adjustedParamIndex - parameterRange) != 0;
+                        break;
+                    }
+                }
+                // var bit = (ix & 1 << j - 64) != 0;
+
+                (string type, string name) parameter = parameters[j];
+
+                if (bit)
+                {
+                    if (parameter.type == "byte*")
+                    {
+                        stringVariation[j] = ("string", parameter.name);
+                        spanVariation[j] = ("ReadOnlySpan<byte>", parameter.name);
+                    }
+                    else
+                    {
+                        spanVariation[j] = stringVariation[j] = parameter;
+                    }
+
+                    var pointerDepth = parameter.type.AsSpan().Count('*');
+                    if (pointerDepth == 1 && parameter.type != "void*")
+                    {
+                        var cleanName = parameter.type.Replace("*", string.Empty);
+                        refVariation[j] = ($"ref {cleanName}", parameter.name);
+                    }
+                    else
+                    {
+                        refVariation[j] = parameter;
+                    }
                 }
                 else
                 {
-                    spanVariation[j] = stringVariation[j] = parameter;
-                }
-
-                var pointerDepth = parameter.type.AsSpan().Count('*');
-                if (pointerDepth == 1 && parameter.type != "void*")
-                {
-                    var cleanName = parameter.type.Replace("*", string.Empty);
-                    refVariation[j] = ($"ref {cleanName}", parameter.name);
-                }
-                else
-                {
-                    refVariation[j] = parameter;
+                    refVariation[j] = spanVariation[j] = stringVariation[j] = parameter;
                 }
             }
-            else
+
+            WriteFunction(returnType, name, parameters, writer, defs, stringVariation);
+            WriteFunction(returnType, name, parameters, writer, defs, spanVariation);
+            WriteFunction(returnType, name, parameters, writer, defs, refVariation);
+        }
+    }
+
+    private static void WriteFunction(string returnType, string name, (string type, string name)[] rootParameters, ICodeWriter writer, List<(string type, string name)[]> defs, (string type, string name)[] variation)
+    {
+        bool found = false;
+
+        foreach (var def in defs)
+        {
+            bool matches = true;
+            for (int i = 0; i < def.Length; i++)
             {
-                refVariation[j] = spanVariation[j] = stringVariation[j] = parameter;
+                var p0 = def[i];
+                var p1 = variation[i];
+                if (p0.type != p1.type)
+                {
+                    matches = false;
+                    break;
+                }
             }
-        }
 
-        Write(returnType, name, parameters, writer, defs, stringVariation);
-        Write(returnType, name, parameters, writer, defs, spanVariation);
-        Write(returnType, name, parameters, writer, defs, refVariation);
-    }
-}
-
-writer.EndBlock();
-writer.Dispose();
-
-var tableWriter = new CsCodeWriter("FunctionTable.cs", config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], null);
-
-var initString = functionTableBuilder.Finish(out var count);
-string filePathfuncTable = Path.Combine(outputPath, "FunctionTable.cs");
-using var writerfuncTable = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
-using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
-{
-    writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
-    writerfuncTable.WriteLine();
-    writerfuncTable.WriteLine("/// <summary>");
-    writerfuncTable.WriteLine("/// Initializes the function table, automatically called. Do not call manually, only after <see cref=\"FreeApi\"/>.");
-    writerfuncTable.WriteLine("/// </summary>");
-
-    if (config.UseCustomContext)
-    {
-        using (writerfuncTable.PushBlock("public static void InitApi(INativeContext context)"))
-        {
-            writerfuncTable.WriteLine($"funcTable = new FunctionTable(context, {count});");
-            writerfuncTable.WriteLines(initString);
-        }
-    }
-    else
-    {
-        using (writerfuncTable.PushBlock("public static void InitApi()"))
-        {
-            writerfuncTable.WriteLine($"funcTable = new FunctionTable(LibraryLoader.LoadLibrary({config.GetLibraryNameFunctionName}, {config.GetLibraryExtensionFunctionName ?? "null"}), {count});");
-            writerfuncTable.WriteLines(initString);
-        }
-    }
-    writerfuncTable.WriteLine();
-    using (writerfuncTable.PushBlock("public static void FreeApi()"))
-    {
-        writerfuncTable.WriteLine("funcTable.Free();");
-    }
-}
-
-CsCodeGenerator generator = new(config);
-generator.LogToConsole();
-generator.Generate(headerFile, outputPath);
-
-static void Write(string returnType, string name, (string type, string name)[] rootParameters, CsSplitCodeWriter writer, List<(string type, string name)[]> defs, (string type, string name)[] variation)
-{
-    bool found = false;
-
-    foreach (var def in defs)
-    {
-        bool matches = true;
-        for (int i = 0; i < def.Length; i++)
-        {
-            var p0 = def[i];
-            var p1 = variation[i];
-            if (p0.type != p1.type)
+            if (matches)
             {
-                matches = false;
+                found = true;
                 break;
             }
         }
 
-        if (matches)
+        if (found)
         {
-            found = true;
-            break;
-        }
-    }
-
-    if (found)
-    {
-        return;
-    }
-
-    defs.Add(variation);
-
-    StringBuilder sb = new();
-    StringBuilder sbNameless = new();
-    StringBuilder sbParam = new();
-    bool first = true;
-
-    int blocks = 0;
-    int stringIdx = 0;
-    List<(string name, string fixedName, string type, int index)> fixedStack = [];
-    List<(string name, int index)> stringStack = [];
-    for (int i = 0; i < variation.Length; i++)
-    {
-        (string paramType, string paramName) = variation[i];
-
-        string paramListName = paramName;
-
-        if (paramType == "string")
-        {
-            stringStack.Add((paramName, stringIdx));
-            paramListName = $"pStr{stringIdx}";
-            stringIdx++;
+            return;
         }
 
-        if (paramType == "ReadOnlySpan<byte>" || paramType.StartsWith("ref"))
+        defs.Add(variation);
+
+        StringBuilder sb = new();
+        StringBuilder sbNameless = new();
+        StringBuilder sbParam = new();
+        bool first = true;
+
+        int blocks = 0;
+        int stringIdx = 0;
+        List<(string name, string fixedName, string type, int index)> fixedStack = [];
+        List<(string name, int index)> stringStack = [];
+        for (int i = 0; i < variation.Length; i++)
         {
-            paramListName = $"p{paramName.Replace("@", string.Empty)}";
-            fixedStack.Add((paramName, paramListName, rootParameters[i].type, i));
+            (string paramType, string paramName) = variation[i];
+
+            string paramListName = paramName;
+
+            if (paramType == "string")
+            {
+                stringStack.Add((paramName, stringIdx));
+                paramListName = $"pStr{stringIdx}";
+                stringIdx++;
+            }
+
+            if (paramType == "ReadOnlySpan<byte>" || paramType.StartsWith("ref"))
+            {
+                paramListName = $"p{paramName.Replace("@", string.Empty)}{fixedStack.Count}";
+                fixedStack.Add((paramName, paramListName, rootParameters[i].type, i));
+            }
+
+            if (first)
+            {
+                sb.Append($"{paramType} {paramName}");
+                sbNameless.Append(paramType);
+                sbParam.Append(paramListName);
+                first = false;
+            }
+            else
+            {
+                sb.Append($", {paramType} {paramName}");
+                sbNameless.Append($", {paramType}");
+                sbParam.Append($", {paramListName}");
+            }
         }
+
+        string paramSignatureNameless = sbNameless.ToString();
 
         if (first)
         {
-            sb.Append($"{paramType} {paramName}");
-            sbNameless.Append(paramType);
-            sbParam.Append(paramListName);
-            first = false;
+            sbNameless.Append(returnType);
         }
         else
         {
-            sb.Append($", {paramType} {paramName}");
-            sbNameless.Append($", {paramType}");
-            sbParam.Append($", {paramListName}");
+            sbNameless.Append($", {returnType}");
         }
-    }
 
-    string paramSignatureNameless = sbNameless.ToString();
-
-    if (first)
-    {
-        sbNameless.Append(returnType);
-    }
-    else
-    {
-        sbNameless.Append($", {returnType}");
-    }
-
-    string delegateSig;
-    if (returnType != "void")
-    {
-        delegateSig = $"{returnType} ret = {name}Native({sbParam});";
-    }
-    else
-    {
-        delegateSig = $"{name}Native({sbParam});";
-    }
-
-    bool isBool = returnType == "byte";
-
-    string paramSignature = sb.ToString();
-    string csSig = $"public static {(isBool ? "bool" : returnType)} {name}({paramSignature})";
-
-    writer.BeginBlock(csSig);
-
-    foreach (var str in stringStack)
-    {
-        MarshalHelper.WriteStringConvertToUnmanaged(writer, new CsType("byte*", CsPrimitiveType.Byte) { StringType = CsStringType.StringUTF8 }, str.name, str.index);
-    }
-
-    foreach (var fx in fixedStack)
-    {
-        if (variation[fx.index].type.Contains("ref"))
+        string delegateSig;
+        if (returnType != "void")
         {
-            writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = &{fx.name})");
+            delegateSig = $"{returnType} ret = {name}Native({sbParam});";
         }
         else
         {
-            writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = {fx.name})");
+            delegateSig = $"{name}Native({sbParam});";
         }
 
-        blocks++;
-    }
+        bool isBool = returnType == "byte";
 
-    writer.WriteLine(delegateSig);
+        string functionSignatureApi = $"{(isBool ? "bool" : returnType)} {name}({sb})";
+        logger.LogInfo($"defined {functionSignatureApi}");
 
-    foreach (var str in stringStack)
-    {
-        MarshalHelper.WriteFreeString(writer, str.index);
-    }
+        string functionHeader = $"public static {functionSignatureApi}";
 
-    if (returnType != "void")
-    {
-        if (isBool)
+        writer.BeginBlock(functionHeader);
+
+        foreach (var str in stringStack)
         {
-            writer.WriteLine("return ret != 0;");
+            MarshalHelper.WriteStringConvertToUnmanaged(writer, new CsType("byte*", CsPrimitiveType.Byte) { StringType = CsStringType.StringUTF8 }, str.name, str.index);
         }
-        else
-        {
-            writer.WriteLine("return ret;");
-        }
-    }
 
-    for (int i = 0; i < blocks; i++)
-    {
+        foreach (var fx in fixedStack)
+        {
+            if (variation[fx.index].type.Contains("ref"))
+            {
+                writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = &{fx.name})");
+            }
+            else
+            {
+                writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = {fx.name})");
+            }
+
+            blocks++;
+        }
+
+        writer.WriteLine(delegateSig);
+
+        foreach (var str in stringStack)
+        {
+            MarshalHelper.WriteFreeString(writer, str.index);
+        }
+
+        if (returnType != "void")
+        {
+            if (isBool)
+            {
+                writer.WriteLine("return ret != 0;");
+            }
+            else
+            {
+                writer.WriteLine("return ret;");
+            }
+        }
+
+        for (int i = 0; i < blocks; i++)
+        {
+            writer.EndBlock();
+        }
+
         writer.EndBlock();
+        writer.WriteLine();
     }
 
-    writer.EndBlock();
-    writer.WriteLine();
+    private static string ParseType(CsCodeGeneratorConfig config, IGlType type)
+    {
+        type.Prefix = type.Prefix?.Replace("const", string.Empty)?.Trim()!;
+        type.PType = type.PType?.Replace("const", string.Empty)?.Trim()!;
+        type.Postfix = type.Postfix?.Replace("const", string.Empty)?.Trim()!;
+
+        string? result = type.PType;
+
+        {
+            if (result != null)
+            {
+                if (config.TypeMappings.TryGetValue(result, out var newType))
+                {
+                    result = newType;
+                }
+            }
+
+            if (type.Prefix == "void")
+            {
+                result = "void";
+            }
+            else
+            {
+                if (type.Prefix == null || type.Prefix == "const" || type.Prefix == "struct")
+                {
+                    result = $"{result}{type.Postfix}";
+                }
+                else
+                {
+                    result = $"{type.Prefix}{result}{type.Postfix}";
+                }
+            }
+        }
+
+        return result.Replace(" ", string.Empty);
+    }
+
+    private static void GatherUsedTargets(GlRegistry registry, string featureTarget, bool compatibility, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
+    {
+        usedEnums = [];
+        usedCommands = [];
+        foreach (var feature in registry.Features)
+        {
+            foreach (var require in feature.Require)
+            {
+                if (require.Profile == "core" && compatibility)
+                {
+                    continue;
+                }
+
+                if (require.Profile == "compatibility" && !compatibility)
+                {
+                    continue;
+                }
+
+                foreach (var @enum in require.Enums)
+                {
+                    usedEnums.Add(@enum.Name);
+                }
+
+                foreach (var command in require.Commands)
+                {
+                    usedCommands.Add(command.Name);
+                }
+            }
+
+            foreach (var remove in feature.Remove)
+            {
+                if (remove.Profile == "core" && compatibility)
+                {
+                    continue;
+                }
+
+                if (remove.Profile == "compatibility" && !compatibility)
+                {
+                    continue;
+                }
+
+                foreach (var @enum in remove.Enums)
+                {
+                    usedEnums.Remove(@enum.Name);
+                }
+
+                foreach (var command in remove.Commands)
+                {
+                    usedCommands.Remove(command.Name);
+                }
+            }
+
+            if (feature.Name == featureTarget)
+            {
+                break;
+            }
+        }
+    }
+
+    private static void GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, string apiTarget, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
+    {
+        usedEnums = [];
+        usedCommands = [];
+        foreach (var extension in registry.Extensions.Extension)
+        {
+            if (!extension.Name.StartsWith(featureTarget))
+            {
+                continue;
+            }
+
+            if (!extension.SupportedList.Contains(apiTarget))
+            {
+                continue;
+            }
+
+            foreach (var require in extension.Require)
+            {
+                foreach (var @enum in require.Enums)
+                {
+                    usedEnums.Add(@enum.Name);
+                }
+
+                foreach (var command in require.Commands)
+                {
+                    usedCommands.Add(command.Name);
+                }
+            }
+        }
+    }
+
+    private static Dictionary<string, string> GenerateEnums(CsCodeGeneratorConfig config, GlRegistry registry, string apiTarget)
+    {
+        Dictionary<string, List<Generator.Enum>> groups = [];
+        Dictionary<string, string> groupToEnumName = [];
+
+        CsEnumMetadata glEnum = new("GLEnum", "GLEnum", [], null);
+        EnumPrefix prefixGl = config.GetEnumNamePrefixEx("GL_");
+        foreach (var enumGroup in registry.EnumGroups)
+        {
+            foreach (var @enum in enumGroup.Items)
+            {
+                if (@enum.Api != null && @enum.Api != apiTarget)
+                {
+                    continue;
+                }
+
+                if (enumGroup.StartString != null && enumGroup.EndString != null)
+                {
+                    string csEnumItemName = config.GetEnumName(@enum.Name, prefixGl);
+                    CsEnumItemMetadata csEnumItem = new(@enum.Name, @enum.Value, csEnumItemName, @enum.Value, [], null);
+                    glEnum.Items.Add(csEnumItem);
+                }
+
+                foreach (var group in @enum.GroupList)
+                {
+                    if (!groups.TryGetValue(group, out var enums))
+                    {
+                        enums = []; // valid before you ask C#12/net8.0.
+                        groups.Add(group, enums);
+                    }
+
+                    enums.Add(@enum);
+                }
+            }
+        }
+        config.CustomEnums.Add(glEnum);
+
+        foreach (var pair in groups)
+        {
+            string enumName = "GL" + config.GetCsCleanName(pair.Key);
+            EnumPrefix prefix = config.GetEnumNamePrefixEx(pair.Key);
+            Array.Resize(ref prefix.Parts, prefix.Parts.Length + 1);
+            prefix.Parts[^1] = "Gl";
+
+            groupToEnumName.Add(pair.Key, enumName);
+
+            CsEnumMetadata metadata = new(pair.Key, enumName, [], null);
+            metadata.BaseType = "uint";
+
+            if (enumName == "GLSpecialNumbers")
+            {
+                metadata.BaseType = "ulong";
+            }
+
+            foreach (var item in pair.Value)
+            {
+                string csEnumItemName = config.GetEnumName(item.Name, prefix);
+                CsEnumItemMetadata csEnumItem = new(item.Name, item.Value, csEnumItemName, $"unchecked(({metadata.BaseType}){item.Value})", [], null);
+                metadata.Items.Add(csEnumItem);
+            }
+            config.CustomEnums.Add(metadata);
+        }
+
+        return groupToEnumName;
+    }
+
+    private static void WriteFunctions(CsCodeGeneratorConfig config, string outputPath, GlRegistry registry, bool generateAll, HashSet<string> usedCommands, Dictionary<string, string> groupToEnumName, out FunctionTableBuilder functionTableBuilder)
+    {
+        string functionsOutputPath = Path.Combine(outputPath, "Functions");
+
+        if (Directory.Exists(functionsOutputPath))
+        {
+            Directory.Delete(functionsOutputPath, true);
+        }
+        Directory.CreateDirectory(functionsOutputPath);
+
+        functionTableBuilder = new();
+        CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
+        writer.BeginBlock($"public static unsafe partial class {config.ApiName}");
+        foreach (var command in registry.Commands)
+        {
+            string name = command.Proto.Name;
+
+            if (!usedCommands.Contains(name) && !generateAll)
+            {
+                continue;
+            }
+
+            if (name.StartsWith("gl"))
+            {
+                name = name[2..];
+            }
+
+            string returnType = ParseType(config, command.Proto);
+
+            StringBuilder sbDefault = new();
+            StringBuilder sbNameless = new();
+            StringBuilder sbTypeless = new();
+            StringBuilder sbTypelessApi = new();
+            StringBuilder sbCompatibilityNameless = new();
+            StringBuilder sbCompatibilityTypeless = new();
+
+            List<(string type, string name)> parameters = [];
+
+            HashSet<string> delegateTypes = ["GLDebugProc", "GLDebugProcARB", "GLVulkanProcNV", "GLDebugProcAMD", "GLDebugProcKHR"];
+
+            bool first = true;
+            for (int i = 0; i < command.Params.Count; i++)
+            {
+                Param param = command.Params[i];
+                var paramType = ParseType(config, param);
+                var paramName = config.GetParameterName(i, param.Name);
+
+                if (param.Group != null)
+                {
+                    paramType = groupToEnumName[param.Group];
+                }
+
+                if (config.TypeMappings.TryGetValue(paramType, out var newType))
+                {
+                    paramType = newType;
+                }
+
+                parameters.Add((paramType, paramName));
+
+                if (!first)
+                {
+                    sbDefault.Append(", ");
+                    sbNameless.Append(", ");
+                    sbTypeless.Append(", ");
+                    sbTypelessApi.Append(", ");
+                    sbCompatibilityNameless.Append(", ");
+                    sbCompatibilityTypeless.Append(", ");
+                }
+                else
+                {
+                    first = false;
+                }
+
+                if (delegateTypes.Contains(paramType))
+                {
+                    sbCompatibilityNameless.Append("nint");
+                    sbCompatibilityTypeless.Append($"Utils.GetFunctionPointerForDelegate({paramName})");
+                    sbDefault.Append($"{paramType} {paramName}");
+                    sbNameless.Append("void*");
+                    sbTypeless.Append($"(void*)Utils.GetFunctionPointerForDelegate({paramName})");
+                    sbTypelessApi.Append(paramName);
+                    continue;
+                }
+
+                if (paramType.Contains('*'))
+                {
+                    sbCompatibilityNameless.Append("nint");
+                    sbCompatibilityTypeless.Append($"(nint){paramName}");
+                }
+                else
+                {
+                    sbCompatibilityNameless.Append(paramType);
+                    sbCompatibilityTypeless.Append(paramName);
+                }
+
+                sbDefault.Append($"{paramType} {paramName}");
+                sbNameless.Append(paramType);
+                sbTypeless.Append(paramName);
+                sbTypelessApi.Append(paramName);
+            }
+
+            bool isBool = returnType == "byte";
+
+            int idx = functionTableBuilder.Add(command.Proto.Name);
+
+            string returnTypeOld = returnType;
+            if (returnTypeOld == "bool")
+            {
+                returnTypeOld = config.GetBoolType();
+            }
+            if (returnTypeOld.Contains('*'))
+            {
+                returnTypeOld = "nint";
+            }
+
+            if (first)
+            {
+                sbCompatibilityNameless.Append(returnTypeOld);
+                sbNameless.Append(returnType);
+            }
+            else
+            {
+                sbCompatibilityNameless.Append($", {returnTypeOld}");
+                sbNameless.Append($", {returnType}");
+            }
+
+            string paramSignatureNameless = sbNameless.ToString();
+            string delegateSig;
+            string delegateSigCompat;
+            string delegateSigApi;
+            if (returnType != "void")
+            {
+                delegateSig = $"return ((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbTypeless});";
+                delegateSigCompat = $"return ({returnType})((delegate* unmanaged[Cdecl]<{sbCompatibilityNameless}>)funcTable[{idx}])({sbCompatibilityTypeless});";
+                delegateSigApi = $"{returnType} ret = {name}Native({sbTypelessApi});";
+            }
+            else
+            {
+                delegateSig = $"((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbTypeless});";
+                delegateSigCompat = $"((delegate* unmanaged[Cdecl]<{sbCompatibilityNameless}>)funcTable[{idx}])({sbCompatibilityTypeless});";
+                delegateSigApi = $"{name}Native({sbTypelessApi});";
+            }
+
+            string paramSignature = sbDefault.ToString();
+            string csSig = $"internal static {returnType} {name}Native({paramSignature})";
+            string csSigApi = $"{(isBool ? "bool" : returnType)} {name}({paramSignature})";
+
+            writer.WriteLine("[MethodImpl(MethodImplOptions.AggressiveInlining)]");
+            writer.BeginBlock(csSig);
+            writer.WriteLine("#if NET5_0_OR_GREATER");
+            writer.WriteLine(delegateSig);
+            writer.WriteLine("#else");
+            writer.WriteLine(delegateSigCompat);
+            writer.WriteLine("#endif");
+
+            writer.EndBlock();
+            writer.WriteLine();
+
+            writer.BeginBlock($"public static {csSigApi}");
+            writer.WriteLine(delegateSigApi);
+            if (returnType != "void")
+            {
+                if (isBool)
+                {
+                    writer.WriteLine("return ret != 0;");
+                }
+                else
+                {
+                    writer.WriteLine("return ret;");
+                }
+            }
+            writer.EndBlock();
+            writer.WriteLine();
+
+            var arrayParams = parameters.ToArray();
+
+            logger.LogInfo($"defined {csSigApi}");
+
+            WriteVariations(writer, returnType, name, arrayParams);
+        }
+
+        writer.EndBlock();
+        writer.Dispose();
+    }
+
+    private static void WriteFunctionTable(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder)
+    {
+        var initString = functionTableBuilder.Finish(out var count);
+        string filePathfuncTable = Path.Combine(outputPath, "FunctionTable.cs");
+        using var writerfuncTable = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
+        using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
+        {
+            writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
+            writerfuncTable.WriteLine();
+            writerfuncTable.WriteLine("/// <summary>");
+            writerfuncTable.WriteLine("/// Initializes the function table, call before you access any function.");
+            writerfuncTable.WriteLine("/// </summary>");
+
+            if (config.UseCustomContext)
+            {
+                using (writerfuncTable.PushBlock("public static void InitApi(INativeContext context)"))
+                {
+                    writerfuncTable.WriteLine($"funcTable = new FunctionTable(context, {count});");
+                    writerfuncTable.WriteLines(initString);
+                }
+            }
+            else
+            {
+                using (writerfuncTable.PushBlock("public static void InitApi()"))
+                {
+                    writerfuncTable.WriteLine($"funcTable = new FunctionTable(LibraryLoader.LoadLibrary({config.GetLibraryNameFunctionName}, {config.GetLibraryExtensionFunctionName ?? "null"}), {count});");
+                    writerfuncTable.WriteLines(initString);
+                }
+            }
+            writerfuncTable.WriteLine();
+            using (writerfuncTable.PushBlock("public static void FreeApi()"))
+            {
+                writerfuncTable.WriteLine("funcTable.Free();");
+            }
+        }
+    }
 }

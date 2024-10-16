@@ -16,7 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Hexa.NET.OpenGL\Hexa.NET.OpenGL.csproj" />
+		<ProjectReference Include="..\Hexa.NET.OpenGL3\Hexa.NET.OpenGL3.csproj" />
 	</ItemGroup>
 
 </Project>
