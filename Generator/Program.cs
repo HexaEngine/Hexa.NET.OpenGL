@@ -16,6 +16,30 @@ internal class Program
         using var fs = File.OpenRead("gl.xml");
         GlRegistry registry = (GlRegistry)serializer.Deserialize(fs)!;
 
+        Dictionary<string, HashSet<string>> extensions = new();
+
+        foreach (var ex in registry.Extensions.Extension)
+        {
+            var span = ex.Name.AsSpan();
+
+            if (span.StartsWith("GL_"))
+            {
+                span = span[3..];
+            }
+
+            int idx = span.IndexOf('_');
+            if (idx != -1)
+            {
+                var name = span[..idx].ToString();
+                if (!extensions.TryGetValue(name, out var extension))
+                {
+                    extension = new();
+                    extensions.Add(name, extension);
+                }
+                extension.AddRange(ex.SupportedList);
+            }
+        }
+
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load("generator.base.json");
 
         var groupToEnumName = GenerateEnums(config, registry, "gl");
@@ -30,14 +54,18 @@ internal class Program
         Generate(registry, "generator.json", "GL_VERSION_2_1", compatibility: false, false, "../../../../Hexa.NET.OpenGL2/Generated", groupToEnumName);
         Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: false, false, "../../../../Hexa.NET.OpenGL3/Generated", groupToEnumName);
         Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: false, false, "../../../../Hexa.NET.OpenGL4/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.ext.json", "GL_EXT", "gl", "../../../../Hexa.NET.OpenGL.EXT/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.arb.json", "GL_ARB", "gl", "../../../../Hexa.NET.OpenGL.ARB/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.nv.json", "GL_NV", "gl", "../../../../Hexa.NET.OpenGL.NV/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.amd.json", "GL_AMD", "gl", "../../../../Hexa.NET.OpenGL.AMD/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.apple.json", "GL_APPLE", "gl", "../../../../Hexa.NET.OpenGL.APPLE/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.intel.json", "GL_INTEL", "gl", "../../../../Hexa.NET.OpenGL.INTEL/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.khr.json", "GL_KHR", "gl", "../../../../Hexa.NET.OpenGL.KHR/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.mesa.json", "GL_MESA", "gl", "../../../../Hexa.NET.OpenGL.MESA/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.ext.json", "GL_EXT", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.EXT/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.arb.json", "GL_ARB", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.ARB/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.nv.json", "GL_NV", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.NV/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.amd.json", "GL_AMD", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.AMD/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.apple.json", "GL_APPLE", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.APPLE/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.intel.json", "GL_INTEL", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.INTEL/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.khr.json", "GL_KHR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.KHR/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.mesa.json", "GL_MESA", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.MESA/Generated", groupToEnumName);
+
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("All Done!");
+        Console.ForegroundColor = ConsoleColor.White;
     }
 
     private static void Generate(GlRegistry registry, string configPath, string featureTarget, bool compatibility, bool generateAll, string outputPath, Dictionary<string, string> groupToEnumName)
@@ -52,106 +80,31 @@ internal class Program
         logger.LogInfo($"Done Generating {featureTarget} ...");
     }
 
-    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, string apiTarget, string outputPath, Dictionary<string, string> groupToEnumName)
+    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, HashSet<string> apiTargets, string outputPath, Dictionary<string, string> groupToEnumName)
     {
         logger.LogInfo($"Generating {extensionTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
 
-        GatherUsedTargetsForExtension(registry, extensionTarget, apiTarget, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
+        GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
 
         WriteFunctions(config, outputPath, registry, false, usedCommands, groupToEnumName, out FunctionTableBuilder functionTableBuilder);
         WriteFunctionTable(config, outputPath, functionTableBuilder);
         logger.LogInfo($"Done Generating {extensionTarget} ...");
     }
 
-    private struct ParamRange
-    {
-        public int Start;
-        public int End;
-
-        public ParamRange(int start, int end)
-        {
-            Start = start;
-            End = end;
-        }
-    }
-
     private static void WriteVariations(ICodeWriter writer, string returnType, string name, (string type, string name)[] parameters)
     {
-        List<ParamRange> ranges = new();
-        int varStart = -1;
-
-        int spanVariationCount = 0;
-        int stringVariationCount = 0;
-        int refVariationCount = 0;
-
-        int totalStart = int.MaxValue;
-        int totalEnd = -1;
-        for (int i = 0; i < parameters.Length; i++)
-        {
-            bool hasVariation = false;
-            (string type, string name) parameter = parameters[i];
-
-            if (parameter.type == "byte*")
-            {
-                spanVariationCount++;
-                stringVariationCount++;
-                hasVariation = true;
-            }
-
-            var pointerDepth = parameter.type.AsSpan().Count('*');
-            if (pointerDepth == 1 && parameter.type != "void*")
-            {
-                refVariationCount++;
-                hasVariation = true;
-            }
-
-            if (hasVariation)
-            {
-                if (varStart == -1)
-                {
-                    varStart = i;
-                    totalStart = Math.Min(totalStart, i);
-                }
-            }
-            else if (varStart != -1)
-            {
-                int varEnd = i - 1;
-                ParamRange range = new(varStart, varEnd);
-                ranges.Add(range);
-                varStart = -1;
-                totalEnd = Math.Max(totalEnd, i);
-            }
-        }
-
-        if (varStart != -1)
-        {
-            ranges.Add(new ParamRange(varStart, parameters.Length - 1));
-        }
-
-        int maxVariations = spanVariationCount * stringVariationCount * refVariationCount;
-
-        int parameterRange = totalEnd - totalStart;
-        // long maxVariations = Math.Pow(2L, parameters.Length);
+        long maxVariations = (long)Math.Pow(2L, parameters.Length);
         List<(string type, string name)[]> defs = [parameters];
-        for (long ix = 0; ix < maxVariations; ix++)
+        for (long ix = 1; ix < maxVariations; ix++)
         {
             (string type, string name)[] stringVariation = new (string type, string name)[parameters.Length];
             (string type, string name)[] spanVariation = new (string type, string name)[parameters.Length];
             (string type, string name)[] refVariation = new (string type, string name)[parameters.Length];
+
             for (int j = 0; j < parameters.Length; j++)
             {
-                bool bit = false;
-                foreach (var range in ranges)
-                {
-                    if (range.Start >= j && range.End <= j)
-                    {
-                        var adjustedParamIndex = j - range.Start;
-                        bit = (ix & 1 << adjustedParamIndex - parameterRange) != 0;
-                        break;
-                    }
-                }
-                // var bit = (ix & 1 << j - 64) != 0;
+                var bit = (ix & 1 << j - 64) != 0;
 
                 (string type, string name) parameter = parameters[j];
 
@@ -438,7 +391,7 @@ internal class Program
         }
     }
 
-    private static void GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, string apiTarget, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
+    private static void GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, HashSet<string> apiTargets, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
     {
         usedEnums = [];
         usedCommands = [];
@@ -449,7 +402,7 @@ internal class Program
                 continue;
             }
 
-            if (!extension.SupportedList.Contains(apiTarget))
+            if (!extension.SupportedList.Any(apiTargets.Contains))
             {
                 continue;
             }
