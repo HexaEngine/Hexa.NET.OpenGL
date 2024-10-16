@@ -16,12 +16,17 @@ namespace Hexa.NET.OpenGLES
 	public unsafe partial class GL
 	{
 		internal static FunctionTable funcTable;
+		public static INativeContext NativeContext { get; internal set; }
+
+		public static bool Initialized => funcTable != null;
 
 		/// <summary>
 		/// Initializes the function table, call before you access any function.
 		/// </summary>
 		public static void InitApi(INativeContext context)
 		{
+			if (funcTable != null) return;
+			GLBase.NativeContext = context;
 			funcTable = new FunctionTable(context, 738);
 			funcTable.Load(0, "glActiveShaderProgram");
 			funcTable.Load(1, "glActiveTexture");
@@ -765,7 +770,10 @@ namespace Hexa.NET.OpenGLES
 
 		public static void FreeApi()
 		{
+			if (funcTable == null) return;
 			funcTable.Free();
+			funcTable = null;
+			GLBase.NativeContext = null;
 		}
 	}
 }

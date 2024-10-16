@@ -3,6 +3,7 @@ using HexaGen;
 using HexaGen.Core;
 using HexaGen.Core.CSharp;
 using HexaGen.Metadata;
+using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -78,16 +79,16 @@ internal class Program
         GenerateExtension(registry, "generator.mesa.json", "GL_MESA", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.MESA/Generated", groupToEnumName);
         GenerateExtension(registry, "generator.ovr.json", "GL_OVR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.OVR/Generated", groupToEnumName);
 
-        GenerateExtension(registry, "es/generator.android.json", "GL_ANDROID", ["gles2"], "../../../../Hexa.NET.OpenGLES.ANDROID/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.ext.json", "GL_EXT", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.EXT/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.amd.json", "GL_AMD", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.AMD/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.angle.json", "GL_ANGLE", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ANGLE/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.arm.json", "GL_ARM", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ARM/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.intel.json", "GL_INTEL", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.INTEL/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.khr.json", "GL_KHR", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.KHR/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.mesa.json", "GL_MESA", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.MESA/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.nv.json", "GL_NV", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.NV/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "es/generator.oes.json", "GL_OES", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.OES/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.android.json", "GL_ANDROID", ["gles2"], "../../../../Hexa.NET.OpenGLES.ANDROID/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.ext.json", "GL_EXT", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.EXT/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.amd.json", "GL_AMD", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.AMD/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.angle.json", "GL_ANGLE", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ANGLE/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.arm.json", "GL_ARM", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ARM/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.intel.json", "GL_INTEL", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.INTEL/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.khr.json", "GL_KHR", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.KHR/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.mesa.json", "GL_MESA", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.MESA/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.nv.json", "GL_NV", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.NV/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.oes.json", "GL_OES", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.OES/Generated", groupToEnumNameEs, true);
 
         Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine("All Done!");
@@ -96,30 +97,68 @@ internal class Program
 
     private static void Generate(GlRegistry registry, string configPath, string featureTarget, bool compatibility, bool generateAll, string outputPath, Dictionary<string, string> groupToEnumName)
     {
+        string functionsOutputPath = Path.Combine(outputPath, "Functions");
+
+        if (Directory.Exists(functionsOutputPath))
+        {
+            Directory.Delete(functionsOutputPath, true);
+        }
+        Directory.CreateDirectory(functionsOutputPath);
+
         logger.LogInfo($"Generating {featureTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
 
         composer.Compose(config);
 
-        GatherUsedTargets(registry, featureTarget, compatibility, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
+        GatherUsedTargets(registry, featureTarget, compatibility, out _, out HashSet<string> usedCommands);
+        FunctionTableBuilder functionTableBuilder = new();
+        using CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
 
-        WriteFunctions(config, outputPath, registry, generateAll, usedCommands, groupToEnumName, out FunctionTableBuilder functionTableBuilder);
-        WriteFunctionTable(config, outputPath, functionTableBuilder);
+        writer.BeginBlock($"public static unsafe partial class {config.ApiName}");
+        WriteFunctions(writer, config, outputPath, registry, generateAll, usedCommands, groupToEnumName, functionTableBuilder);
+        writer.EndBlock();
+
+        WriteFunctionTable(config, Path.Combine(outputPath, "FunctionTable.cs"), functionTableBuilder);
         logger.LogInfo($"Done Generating {featureTarget} ...");
     }
 
-    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, HashSet<string> apiTargets, string outputPath, Dictionary<string, string> groupToEnumName)
+    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, HashSet<string> apiTargets, string outputPath, Dictionary<string, string> groupToEnumName, bool es = false)
     {
+        string functionsOutputPath = Path.Combine(outputPath, "Functions");
+
+        if (Directory.Exists(functionsOutputPath))
+        {
+            Directory.Delete(functionsOutputPath, true);
+        }
+        Directory.CreateDirectory(functionsOutputPath);
+
         logger.LogInfo($"Generating {extensionTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
 
         composer.Compose(config);
 
-        GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
+        foreach (var (extensionName, _, usedCommands) in GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets))
+        {
+            WriteExtension(registry, outputPath, groupToEnumName, es, functionsOutputPath, config, extensionName, usedCommands);
+        }
 
-        WriteFunctions(config, outputPath, registry, false, usedCommands, groupToEnumName, out FunctionTableBuilder functionTableBuilder);
-        WriteFunctionTable(config, outputPath, functionTableBuilder);
         logger.LogInfo($"Done Generating {extensionTarget} ...");
+    }
+
+    private static void WriteExtension(GlRegistry registry, string outputPath, Dictionary<string, string> groupToEnumName, bool es, string functionsOutputPath, CsCodeGeneratorConfig config, string extensionName, HashSet<string> usedCommands)
+    {
+        if (usedCommands.Count == 0) return;
+        logger.LogInfo($"Generating {extensionName} ...");
+        config.ApiName = extensionName;
+        FunctionTableBuilder functionTableBuilder = new();
+        using CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, $"{extensionName}.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
+
+        writer.BeginBlock($"public static unsafe partial class {config.ApiName}");
+        WriteFunctions(writer, config, outputPath, registry, false, usedCommands, groupToEnumName, functionTableBuilder);
+        writer.EndBlock();
+
+        WriteFunctionTableForExtension(config, Path.Combine(functionsOutputPath, $"{extensionName}.FN.cs"), functionTableBuilder, es ? "Hexa.NET.OpenGLES" : "Hexa.NET.OpenGL", "GLBase");
+        logger.LogInfo($"Done Generating {extensionName} ...");
     }
 
     private static void WriteVariations(ICodeWriter writer, string returnType, string name, (string type, string name)[] parameters)
@@ -437,13 +476,45 @@ internal class Program
         }
     }
 
-    private static void GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, HashSet<string> apiTargets, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
+    private static IEnumerable<(string extensionName, HashSet<string> usedEnums, HashSet<string> usedCommands)> GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, HashSet<string> apiTargets)
     {
-        usedEnums = [];
-        usedCommands = [];
+        HashSet<string> androidTarget = [
+            "KHR_debug",
+            "KHR_texture_compression_astc_ldr",
+            "KHR_blend_equation_advanced",
+            "OES_sample_shading",
+            "OES_sample_variables",
+            "OES_shader_image_atomic",
+            "OES_shader_multisample_interpolation",
+            "OES_texture_stencil8",
+            "OES_texture_storage_multisample_2d_array",
+            "EXT_copy_image",
+            "EXT_draw_buffers_indexed",
+            "EXT_geometry_shader",
+            "EXT_gpu_shader5",
+            "EXT_primitive_bounding_box",
+            "EXT_shader_io_blocks",
+            "EXT_tessellation_shader",
+            "EXT_texture_border_clamp",
+            "EXT_texture_buffer",
+            "EXT_texture_cube_map_array",
+            "EXT_texture_srgb_decode",
+            ];
+        HashSet<string> usedEnums = [];
+        HashSet<string> usedCommands = [];
         foreach (var extension in registry.Extensions.Extension)
         {
-            if (!extension.Name.StartsWith(featureTarget))
+            usedEnums.Clear();
+            usedCommands.Clear();
+
+            if (featureTarget == "GL_ANDROID")
+            {
+                if (!androidTarget.Contains(extension.Name[3..]))
+                {
+                    continue;
+                }
+            }
+            else if (!extension.Name.StartsWith(featureTarget))
             {
                 continue;
             }
@@ -452,6 +523,8 @@ internal class Program
             {
                 continue;
             }
+
+            string nameFormatted = string.Join(string.Empty, extension.Name.Split('_', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Select(Capitalize));
 
             foreach (var require in extension.Require)
             {
@@ -465,7 +538,21 @@ internal class Program
                     usedCommands.Add(command.Name);
                 }
             }
+
+            yield return (nameFormatted, usedEnums, usedCommands);
         }
+    }
+
+    private static unsafe string Capitalize(string x)
+    {
+        if (x.Length == 0) return x;
+
+        fixed (char* px = x)
+        {
+            px[0] = char.ToUpper(px[0]);
+        }
+
+        return x;
     }
 
     private static Dictionary<string, string> GenerateEnums(CsCodeGeneratorConfig config, GlRegistry registry, string apiTarget)
@@ -534,19 +621,8 @@ internal class Program
         return groupToEnumName;
     }
 
-    private static void WriteFunctions(CsCodeGeneratorConfig config, string outputPath, GlRegistry registry, bool generateAll, HashSet<string> usedCommands, Dictionary<string, string> groupToEnumName, out FunctionTableBuilder functionTableBuilder)
+    private static void WriteFunctions(ICodeWriter writer, CsCodeGeneratorConfig config, string outputPath, GlRegistry registry, bool generateAll, HashSet<string> usedCommands, Dictionary<string, string> groupToEnumName, FunctionTableBuilder functionTableBuilder)
     {
-        string functionsOutputPath = Path.Combine(outputPath, "Functions");
-
-        if (Directory.Exists(functionsOutputPath))
-        {
-            Directory.Delete(functionsOutputPath, true);
-        }
-        Directory.CreateDirectory(functionsOutputPath);
-
-        functionTableBuilder = new();
-        CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
-        writer.BeginBlock($"public static unsafe partial class {config.ApiName}");
         foreach (var command in registry.Commands)
         {
             string name = command.Proto.Name;
@@ -714,44 +790,71 @@ internal class Program
 
             WriteVariations(writer, returnType, name, arrayParams);
         }
-
-        writer.EndBlock();
-        writer.Dispose();
     }
 
     private static void WriteFunctionTable(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder)
     {
         var initString = functionTableBuilder.Finish(out var count);
-        string filePathfuncTable = Path.Combine(outputPath, "FunctionTable.cs");
-        using var writerfuncTable = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
+        using var writerfuncTable = new CsCodeWriter(outputPath, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
         using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
         {
             writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
+            writerfuncTable.WriteLine("public static INativeContext NativeContext { get; internal set; }");
+            writerfuncTable.WriteLine();
+            writerfuncTable.WriteLine($"public static bool Initialized => funcTable != null;");
             writerfuncTable.WriteLine();
             writerfuncTable.WriteLine("/// <summary>");
             writerfuncTable.WriteLine("/// Initializes the function table, call before you access any function.");
             writerfuncTable.WriteLine("/// </summary>");
 
-            if (config.UseCustomContext)
+            using (writerfuncTable.PushBlock("public static void InitApi(INativeContext context)"))
             {
-                using (writerfuncTable.PushBlock("public static void InitApi(INativeContext context)"))
-                {
-                    writerfuncTable.WriteLine($"funcTable = new FunctionTable(context, {count});");
-                    writerfuncTable.WriteLines(initString);
-                }
+                writerfuncTable.WriteLine("if (funcTable != null) return;");
+                writerfuncTable.WriteLine("GLBase.NativeContext = context;");
+                writerfuncTable.WriteLine($"funcTable = new FunctionTable(context, {count});");
+                writerfuncTable.WriteLines(initString);
             }
-            else
-            {
-                using (writerfuncTable.PushBlock("public static void InitApi()"))
-                {
-                    writerfuncTable.WriteLine($"funcTable = new FunctionTable(LibraryLoader.LoadLibrary({config.GetLibraryNameFunctionName}, {config.GetLibraryExtensionFunctionName ?? "null"}), {count});");
-                    writerfuncTable.WriteLines(initString);
-                }
-            }
+
             writerfuncTable.WriteLine();
             using (writerfuncTable.PushBlock("public static void FreeApi()"))
             {
+                writerfuncTable.WriteLine("if (funcTable == null) return;");
                 writerfuncTable.WriteLine("funcTable.Free();");
+                writerfuncTable.WriteLine("funcTable = null;");
+                writerfuncTable.WriteLine("GLBase.NativeContext = null;");
+            }
+        }
+    }
+
+    private static void WriteFunctionTableForExtension(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder, string baseNamespace, string baseApi)
+    {
+        var initString = functionTableBuilder.Finish(out var count);
+        string filePathfuncTable = outputPath;
+        using var writerfuncTable = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics", baseNamespace], config.HeaderInjector);
+        using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
+        {
+            writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
+            writerfuncTable.WriteLine();
+            writerfuncTable.WriteLine($"public static bool Initialized => funcTable != null;");
+            writerfuncTable.WriteLine();
+            writerfuncTable.WriteLine("/// <summary>");
+            writerfuncTable.WriteLine("/// Initializes the function table of the extension, call before you access any function.");
+            writerfuncTable.WriteLine("/// </summary>");
+
+            using (writerfuncTable.PushBlock("public static void InitExtension()"))
+            {
+                writerfuncTable.WriteLine("if (funcTable != null) return;");
+                writerfuncTable.WriteLine($"if ({baseApi}.NativeContext == null) throw new InvalidOperationException(\"OpenGL is not initialized, call GL.InitApi.\");");
+                writerfuncTable.WriteLine($"funcTable = new FunctionTable({baseApi}.NativeContext, {count});");
+                writerfuncTable.WriteLines(initString);
+            }
+
+            writerfuncTable.WriteLine();
+            using (writerfuncTable.PushBlock("public static void FreeExtension()"))
+            {
+                writerfuncTable.WriteLine("if (funcTable == null) return;");
+                writerfuncTable.WriteLine("funcTable.Free();");
+                writerfuncTable.WriteLine("funcTable = null;");
             }
         }
     }

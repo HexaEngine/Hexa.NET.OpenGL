@@ -3,7 +3,7 @@
     "Url": "file://generator.json"
   },
   "Namespace": "Hexa.NET.OpenGL.EXT",
-  "ApiName": "GLExt",
+  "ApiName": "ExtensionEXT",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.ANGLE",
-  "ApiName": "GLANGLE",
+  "ApiName": "ExtensionANGLE",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

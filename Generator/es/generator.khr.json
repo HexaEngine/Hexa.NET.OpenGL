@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.KHR",
-  "ApiName": "GLKHR",
+  "ApiName": "ExtensionKHR",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

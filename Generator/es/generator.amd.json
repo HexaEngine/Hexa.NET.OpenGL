@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.AMD",
-  "ApiName": "GLAMD",
+  "ApiName": "ExtensionAMD",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.MESA",
-  "ApiName": "GLMESA",
+  "ApiName": "ExtensionMESA",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

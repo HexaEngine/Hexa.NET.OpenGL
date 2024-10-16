@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.ANDROID",
-  "ApiName": "GLANDROID",
+  "ApiName": "ExtensionANDROID",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

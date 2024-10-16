@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.ARM",
-  "ApiName": "GLARM",
+  "ApiName": "ExtensionARM",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.OES",
-  "ApiName": "GLOES",
+  "ApiName": "ExtensionOES",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

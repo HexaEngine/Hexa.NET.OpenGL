@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.NV",
-  "ApiName": "GLNv",
+  "ApiName": "ExtensionNV",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

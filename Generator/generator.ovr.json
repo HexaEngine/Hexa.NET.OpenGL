@@ -3,7 +3,7 @@
     "Url": "file://generator.json"
   },
   "Namespace": "Hexa.NET.OpenGL.OVR",
-  "ApiName": "GLOVR",
+  "ApiName": "ExtensionOVR",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

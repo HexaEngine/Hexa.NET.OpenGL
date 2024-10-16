@@ -3,7 +3,7 @@
     "Url": "file://es/generator.json"
   },
   "Namespace": "Hexa.NET.OpenGLES.ARB",
-  "ApiName": "GLArb",
+  "ApiName": "ExtensionARB",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }

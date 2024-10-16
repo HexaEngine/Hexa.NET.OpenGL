@@ -3,7 +3,7 @@
     "Url": "file://generator.json"
   },
   "Namespace": "Hexa.NET.OpenGL.APPLE",
-  "ApiName": "GLAPPLE",
+  "ApiName": "ExtensionAPPLE",
   "LibName": "OpenGL32",
   "UseCustomContext": true
 }
