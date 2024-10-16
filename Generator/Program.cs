@@ -9,6 +9,7 @@ using System.Xml.Serialization;
 internal class Program
 {
     private static readonly LoggerBase logger = new();
+    private static readonly ConfigComposer composer = new();
 
     private static void Main(string[] args)
     {
@@ -49,11 +50,24 @@ internal class Program
             generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGL.Base/Generated");
         }
 
+        config = CsCodeGeneratorConfig.Load("es/generator.base.json");
+
+        var groupToEnumNameEs = GenerateEnums(config, registry, "gles");
+        {
+            CsCodeGenerator generator = new(config);
+            generator.LogToConsole();
+            generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGLES.Base/Generated");
+        }
+
         logger.LogToConsole();
 
         Generate(registry, "generator.json", "GL_VERSION_2_1", compatibility: false, false, "../../../../Hexa.NET.OpenGL2/Generated", groupToEnumName);
         Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: false, false, "../../../../Hexa.NET.OpenGL3/Generated", groupToEnumName);
         Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: false, false, "../../../../Hexa.NET.OpenGL4/Generated", groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: true, false, "../../../../Hexa.NET.OpenGL3.Compat/Generated", groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: true, false, "../../../../Hexa.NET.OpenGL4.Compat/Generated", groupToEnumName);
+        Generate(registry, "es/generator.json", "GL_ES_VERSION_2_0", compatibility: false, false, "../../../../Hexa.NET.OpenGLES2/Generated", groupToEnumNameEs);
+        Generate(registry, "es/generator.json", "GL_ES_VERSION_3_2", compatibility: false, false, "../../../../Hexa.NET.OpenGLES3/Generated", groupToEnumNameEs);
         GenerateExtension(registry, "generator.ext.json", "GL_EXT", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.EXT/Generated", groupToEnumName);
         GenerateExtension(registry, "generator.arb.json", "GL_ARB", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.ARB/Generated", groupToEnumName);
         GenerateExtension(registry, "generator.nv.json", "GL_NV", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.NV/Generated", groupToEnumName);
@@ -62,6 +76,18 @@ internal class Program
         GenerateExtension(registry, "generator.intel.json", "GL_INTEL", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.INTEL/Generated", groupToEnumName);
         GenerateExtension(registry, "generator.khr.json", "GL_KHR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.KHR/Generated", groupToEnumName);
         GenerateExtension(registry, "generator.mesa.json", "GL_MESA", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.MESA/Generated", groupToEnumName);
+        GenerateExtension(registry, "generator.ovr.json", "GL_OVR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.OVR/Generated", groupToEnumName);
+
+        GenerateExtension(registry, "es/generator.android.json", "GL_ANDROID", ["gles2"], "../../../../Hexa.NET.OpenGLES.ANDROID/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.ext.json", "GL_EXT", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.EXT/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.amd.json", "GL_AMD", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.AMD/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.angle.json", "GL_ANGLE", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ANGLE/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.arm.json", "GL_ARM", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ARM/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.intel.json", "GL_INTEL", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.INTEL/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.khr.json", "GL_KHR", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.KHR/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.mesa.json", "GL_MESA", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.MESA/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.nv.json", "GL_NV", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.NV/Generated", groupToEnumNameEs);
+        GenerateExtension(registry, "es/generator.oes.json", "GL_OES", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.OES/Generated", groupToEnumNameEs);
 
         Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine("All Done!");
@@ -72,6 +98,8 @@ internal class Program
     {
         logger.LogInfo($"Generating {featureTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
+
+        composer.Compose(config);
 
         GatherUsedTargets(registry, featureTarget, compatibility, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
 
@@ -84,6 +112,8 @@ internal class Program
     {
         logger.LogInfo($"Generating {extensionTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
+
+        composer.Compose(config);
 
         GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets, out HashSet<string> usedEnums, out HashSet<string> usedCommands);
 
@@ -334,20 +364,33 @@ internal class Program
 
     private static void GatherUsedTargets(GlRegistry registry, string featureTarget, bool compatibility, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
     {
+        bool es = false;
+        if (featureTarget.Contains("GL_VERSION_ES"))
+        {
+            es = true;
+        }
         usedEnums = [];
         usedCommands = [];
         foreach (var feature in registry.Features)
         {
+            if (es && !feature.Name.Contains("GL_VERSION_ES"))
+            {
+                continue;
+            }
+
             foreach (var require in feature.Require)
             {
-                if (require.Profile == "core" && compatibility)
+                if (require.Profile != null)
                 {
-                    continue;
-                }
+                    if (require.Profile == "core" && compatibility)
+                    {
+                        continue;
+                    }
 
-                if (require.Profile == "compatibility" && !compatibility)
-                {
-                    continue;
+                    if (require.Profile == "compatibility" && !compatibility)
+                    {
+                        continue;
+                    }
                 }
 
                 foreach (var @enum in require.Enums)
@@ -363,14 +406,17 @@ internal class Program
 
             foreach (var remove in feature.Remove)
             {
-                if (remove.Profile == "core" && compatibility)
+                if (remove.Profile != null)
                 {
-                    continue;
-                }
+                    if (remove.Profile == "core" && compatibility)
+                    {
+                        continue;
+                    }
 
-                if (remove.Profile == "compatibility" && !compatibility)
-                {
-                    continue;
+                    if (remove.Profile == "compatibility" && !compatibility)
+                    {
+                        continue;
+                    }
                 }
 
                 foreach (var @enum in remove.Enums)

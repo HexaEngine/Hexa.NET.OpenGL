@@ -1,0 +1,9 @@
+{
+  "BaseConfig": {
+    "Url": "file://es/generator.json"
+  },
+  "Namespace": "Hexa.NET.OpenGLES.ANGLE",
+  "ApiName": "GLANGLE",
+  "LibName": "OpenGL32",
+  "UseCustomContext": true
+}

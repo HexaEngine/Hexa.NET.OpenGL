@@ -1,0 +1,9 @@
+{
+  "BaseConfig": {
+    "Url": "file://es/generator.json"
+  },
+  "Namespace": "Hexa.NET.OpenGLES.OES",
+  "ApiName": "GLOES",
+  "LibName": "OpenGL32",
+  "UseCustomContext": true
+}

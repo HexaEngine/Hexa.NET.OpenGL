@@ -45,7 +45,12 @@
     "GLhalfNV": "Half",
     "GLclampx": "int",
     "GLsync": "GLSync",
-    "GLDEBUGPROC": "GLDebugProc"
+    "GLDEBUGPROC": "GLDebugProc",
+    "GLDEBUGPROCARB": "GLDebugProcARB",
+    "GLVULKANPROCNV": "GLVulkanProcNV",
+    "GLDEBUGPROCAMD": "GLDebugProcAMD",
+    "GLDEBUGPROCKHR": "GLDebugProcKHR",
+    "GLsizeiptrARB": "nint"
   },
   "IgnoredTypes": [],
   "Usings": [ "System.Numerics" ]

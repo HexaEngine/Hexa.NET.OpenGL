@@ -1,0 +1,9 @@
+{
+  "BaseConfig": {
+    "Url": "file://es/generator.json"
+  },
+  "Namespace": "Hexa.NET.OpenGLES.NV",
+  "ApiName": "GLNv",
+  "LibName": "OpenGL32",
+  "UseCustomContext": true
+}

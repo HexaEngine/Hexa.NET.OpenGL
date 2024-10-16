@@ -1,0 +1,9 @@
+{
+  "BaseConfig": {
+    "Url": "file://generator.json"
+  },
+  "Namespace": "Hexa.NET.OpenGL.OVR",
+  "ApiName": "GLOVR",
+  "LibName": "OpenGL32",
+  "UseCustomContext": true
+}

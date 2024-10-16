@@ -1,0 +1,9 @@
+{
+  "BaseConfig": {
+    "Url": "file://es/generator.json"
+  },
+  "Namespace": "Hexa.NET.OpenGLES.EXT",
+  "ApiName": "GLExt",
+  "LibName": "OpenGL32",
+  "UseCustomContext": true
+}
