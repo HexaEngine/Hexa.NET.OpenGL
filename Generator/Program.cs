@@ -137,15 +137,15 @@ internal class Program
 
         composer.Compose(config);
 
-        foreach (var (extensionName, _, usedCommands) in GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets))
+        foreach (var (extensionName, originalName, _, usedCommands) in GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets))
         {
-            WriteExtension(registry, outputPath, groupToEnumName, es, functionsOutputPath, config, extensionName, usedCommands);
+            WriteExtension(registry, outputPath, groupToEnumName, es, functionsOutputPath, config, originalName, extensionName, usedCommands);
         }
 
         logger.LogInfo($"Done Generating {extensionTarget} ...");
     }
 
-    private static void WriteExtension(GlRegistry registry, string outputPath, Dictionary<string, string> groupToEnumName, bool es, string functionsOutputPath, CsCodeGeneratorConfig config, string extensionName, HashSet<string> usedCommands)
+    private static void WriteExtension(GlRegistry registry, string outputPath, Dictionary<string, string> groupToEnumName, bool es, string functionsOutputPath, CsCodeGeneratorConfig config, string originalExtensionName, string extensionName, HashSet<string> usedCommands)
     {
         if (usedCommands.Count == 0) return;
         logger.LogInfo($"Generating {extensionName} ...");
@@ -157,7 +157,7 @@ internal class Program
         WriteFunctions(writer, config, outputPath, registry, false, usedCommands, groupToEnumName, functionTableBuilder);
         writer.EndBlock();
 
-        WriteFunctionTableForExtension(config, Path.Combine(functionsOutputPath, $"{extensionName}.FN.cs"), functionTableBuilder, es ? "Hexa.NET.OpenGLES" : "Hexa.NET.OpenGL", "GLBase");
+        WriteFunctionTableForExtension(config, Path.Combine(functionsOutputPath, $"{extensionName}.FN.cs"), functionTableBuilder, originalExtensionName, es ? "Hexa.NET.OpenGLES" : "Hexa.NET.OpenGL", "GLBase");
         logger.LogInfo($"Done Generating {extensionName} ...");
     }
 
@@ -476,29 +476,29 @@ internal class Program
         }
     }
 
-    private static IEnumerable<(string extensionName, HashSet<string> usedEnums, HashSet<string> usedCommands)> GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, HashSet<string> apiTargets)
+    private static IEnumerable<(string extensionName, string originalName, HashSet<string> usedEnums, HashSet<string> usedCommands)> GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, HashSet<string> apiTargets)
     {
         HashSet<string> androidTarget = [
-            "KHR_debug",
-            "KHR_texture_compression_astc_ldr",
-            "KHR_blend_equation_advanced",
-            "OES_sample_shading",
-            "OES_sample_variables",
-            "OES_shader_image_atomic",
-            "OES_shader_multisample_interpolation",
-            "OES_texture_stencil8",
-            "OES_texture_storage_multisample_2d_array",
-            "EXT_copy_image",
-            "EXT_draw_buffers_indexed",
-            "EXT_geometry_shader",
-            "EXT_gpu_shader5",
-            "EXT_primitive_bounding_box",
-            "EXT_shader_io_blocks",
-            "EXT_tessellation_shader",
-            "EXT_texture_border_clamp",
-            "EXT_texture_buffer",
-            "EXT_texture_cube_map_array",
-            "EXT_texture_srgb_decode",
+            "GL_KHR_debug",
+            "GL_KHR_texture_compression_astc_ldr",
+            "GL_KHR_blend_equation_advanced",
+            "GL_OES_sample_shading",
+            "GL_OES_sample_variables",
+            "GL_OES_shader_image_atomic",
+            "GL_OES_shader_multisample_interpolation",
+            "GL_OES_texture_stencil8",
+            "GL_OES_texture_storage_multisample_2d_array",
+            "GL_EXT_copy_image",
+            "GL_EXT_draw_buffers_indexed",
+            "GL_EXT_geometry_shader",
+            "GL_EXT_gpu_shader5",
+            "GL_EXT_primitive_bounding_box",
+            "GL_EXT_shader_io_blocks",
+            "GL_EXT_tessellation_shader",
+            "GL_EXT_texture_border_clamp",
+            "GL_EXT_texture_buffer",
+            "GL_EXT_texture_cube_map_array",
+            "GL_EXT_texture_srgb_decode",
             ];
         HashSet<string> usedEnums = [];
         HashSet<string> usedCommands = [];
@@ -509,7 +509,7 @@ internal class Program
 
             if (featureTarget == "GL_ANDROID")
             {
-                if (!androidTarget.Contains(extension.Name[3..]))
+                if (!androidTarget.Contains(extension.Name))
                 {
                     continue;
                 }
@@ -539,7 +539,7 @@ internal class Program
                 }
             }
 
-            yield return (nameFormatted, usedEnums, usedCommands);
+            yield return (nameFormatted, extension.Name, usedEnums, usedCommands);
         }
     }
 
@@ -826,35 +826,51 @@ internal class Program
         }
     }
 
-    private static void WriteFunctionTableForExtension(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder, string baseNamespace, string baseApi)
+    private static void WriteFunctionTableForExtension(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder, string extensionName, string baseNamespace, string baseApi)
     {
         var initString = functionTableBuilder.Finish(out var count);
         string filePathfuncTable = outputPath;
-        using var writerfuncTable = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics", baseNamespace], config.HeaderInjector);
-        using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
+        using var writer = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics", baseNamespace], config.HeaderInjector);
+        using (writer.PushBlock($"public unsafe partial class {config.ApiName}"))
         {
-            writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
-            writerfuncTable.WriteLine();
-            writerfuncTable.WriteLine($"public static bool Initialized => funcTable != null;");
-            writerfuncTable.WriteLine();
-            writerfuncTable.WriteLine("/// <summary>");
-            writerfuncTable.WriteLine("/// Initializes the function table of the extension, call before you access any function.");
-            writerfuncTable.WriteLine("/// </summary>");
+            writer.WriteLine("internal static FunctionTable funcTable;");
+            writer.WriteLine();
+            writer.WriteLine($"public static bool Initialized => funcTable != null;");
+            writer.WriteLine();
+            writer.WriteLine($"public static bool IsSupported => {baseApi}.NativeContext.IsExtensionSupported(ExtensionName);");
+            writer.WriteLine();
+            writer.WriteLine($"public const string ExtensionName = \"{extensionName}\";");
+            writer.WriteLine();
 
-            using (writerfuncTable.PushBlock("public static void InitExtension()"))
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine("/// Tries to initialize the function table of the extension, call before you access any function.");
+            writer.WriteLine("/// </summary>");
+            writer.WriteLine("/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>");
+            using (writer.PushBlock("public static bool TryInitExtension()"))
             {
-                writerfuncTable.WriteLine("if (funcTable != null) return;");
-                writerfuncTable.WriteLine($"if ({baseApi}.NativeContext == null) throw new InvalidOperationException(\"OpenGL is not initialized, call GL.InitApi.\");");
-                writerfuncTable.WriteLine($"funcTable = new FunctionTable({baseApi}.NativeContext, {count});");
-                writerfuncTable.WriteLines(initString);
+                writer.WriteLine("if (!IsSupported) return false;");
+                writer.WriteLine("InitExtension();");
+                writer.WriteLine("return true;");
+            }
+            writer.WriteLine();
+
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine("/// Initializes the function table of the extension, call before you access any function.");
+            writer.WriteLine("/// </summary>");
+            using (writer.PushBlock("public static void InitExtension()"))
+            {
+                writer.WriteLine("if (funcTable != null) return;");
+                writer.WriteLine($"if ({baseApi}.NativeContext == null) throw new InvalidOperationException(\"OpenGL is not initialized, call GL.InitApi.\");");
+                writer.WriteLine($"funcTable = new FunctionTable({baseApi}.NativeContext, {count});");
+                writer.WriteLines(initString);
             }
 
-            writerfuncTable.WriteLine();
-            using (writerfuncTable.PushBlock("public static void FreeExtension()"))
+            writer.WriteLine();
+            using (writer.PushBlock("public static void FreeExtension()"))
             {
-                writerfuncTable.WriteLine("if (funcTable == null) return;");
-                writerfuncTable.WriteLine("funcTable.Free();");
-                writerfuncTable.WriteLine("funcTable = null;");
+                writer.WriteLine("if (funcTable == null) return;");
+                writer.WriteLine("funcTable.Free();");
+                writer.WriteLine("funcTable = null;");
             }
         }
     }

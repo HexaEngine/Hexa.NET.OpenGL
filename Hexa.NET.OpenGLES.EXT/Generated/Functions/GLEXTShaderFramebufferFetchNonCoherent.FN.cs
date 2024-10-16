@@ -20,6 +20,21 @@ namespace Hexa.NET.OpenGLES.EXT
 
 		public static bool Initialized => funcTable != null;
 
+		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
+
+		public const string ExtensionName = "GL_EXT_shader_framebuffer_fetch_non_coherent";
+
+		/// <summary>
+		/// Tries to initialize the function table of the extension, call before you access any function.
+		/// </summary>
+		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
+		public static bool TryInitExtension()
+		{
+			if (!IsSupported) return false;
+			InitExtension();
+			return true;
+		}
+
 		/// <summary>
 		/// Initializes the function table of the extension, call before you access any function.
 		/// </summary>

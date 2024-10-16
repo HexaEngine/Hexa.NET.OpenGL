@@ -113,6 +113,11 @@ internal unsafe class BindingsContext : INativeContext
         return (nint)GLFW.GetProcAddress(procName);
     }
 
+    public bool IsExtensionSupported(string extensionName)
+    {
+        return GLFW.ExtensionSupported(extensionName) != 0;
+    }
+
     public bool TryGetProcAddress(string procName, out nint procAddress)
     {
         procAddress = GetProcAddress(procName);
