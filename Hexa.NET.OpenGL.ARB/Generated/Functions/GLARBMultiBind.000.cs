@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			BindBuffersBaseNative(target, first, count, buffers);
 		}
 
+		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, Span<uint> buffers)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				BindBuffersBaseNative(target, first, count, pbuffers0);
+			}
+		}
+
 		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -54,6 +62,14 @@ namespace Hexa.NET.OpenGL.ARB
 			BindBuffersRangeNative(target, first, count, buffers, offsets, sizes);
 		}
 
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, nint* sizes)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				BindBuffersRangeNative(target, first, count, pbuffers0, offsets, sizes);
+			}
+		}
+
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -62,11 +78,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, nint* sizes)
+		{
+			fixed (nint* poffsets0 = offsets)
+			{
+				BindBuffersRangeNative(target, first, count, buffers, poffsets0, sizes);
+			}
+		}
+
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, nint* sizes)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
 				BindBuffersRangeNative(target, first, count, buffers, poffsets0, sizes);
+			}
+		}
+
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, nint* sizes)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* poffsets1 = offsets)
+				{
+					BindBuffersRangeNative(target, first, count, pbuffers0, poffsets1, sizes);
+				}
 			}
 		}
 
@@ -81,11 +116,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, Span<nint> sizes)
+		{
+			fixed (nint* psizes0 = sizes)
+			{
+				BindBuffersRangeNative(target, first, count, buffers, offsets, psizes0);
+			}
+		}
+
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, ref nint sizes)
 		{
 			fixed (nint* psizes0 = &sizes)
 			{
 				BindBuffersRangeNative(target, first, count, buffers, offsets, psizes0);
+			}
+		}
+
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, Span<nint> sizes)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* psizes1 = sizes)
+				{
+					BindBuffersRangeNative(target, first, count, pbuffers0, offsets, psizes1);
+				}
 			}
 		}
 
@@ -100,6 +154,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, Span<nint> sizes)
+		{
+			fixed (nint* poffsets0 = offsets)
+			{
+				fixed (nint* psizes1 = sizes)
+				{
+					BindBuffersRangeNative(target, first, count, buffers, poffsets0, psizes1);
+				}
+			}
+		}
+
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, ref nint sizes)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -107,6 +172,20 @@ namespace Hexa.NET.OpenGL.ARB
 				fixed (nint* psizes1 = &sizes)
 				{
 					BindBuffersRangeNative(target, first, count, buffers, poffsets0, psizes1);
+				}
+			}
+		}
+
+		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<nint> sizes)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* poffsets1 = offsets)
+				{
+					fixed (nint* psizes2 = sizes)
+					{
+						BindBuffersRangeNative(target, first, count, pbuffers0, poffsets1, psizes2);
+					}
 				}
 			}
 		}
@@ -140,6 +219,14 @@ namespace Hexa.NET.OpenGL.ARB
 			BindImageTexturesNative(first, count, textures);
 		}
 
+		public static void BindImageTextures(uint first, int count, Span<uint> textures)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				BindImageTexturesNative(first, count, ptextures0);
+			}
+		}
+
 		public static void BindImageTextures(uint first, int count, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -161,6 +248,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void BindSamplers(uint first, int count, uint* samplers)
 		{
 			BindSamplersNative(first, count, samplers);
+		}
+
+		public static void BindSamplers(uint first, int count, Span<uint> samplers)
+		{
+			fixed (uint* psamplers0 = samplers)
+			{
+				BindSamplersNative(first, count, psamplers0);
+			}
 		}
 
 		public static void BindSamplers(uint first, int count, ref uint samplers)
@@ -186,6 +281,14 @@ namespace Hexa.NET.OpenGL.ARB
 			BindTexturesNative(first, count, textures);
 		}
 
+		public static void BindTextures(uint first, int count, Span<uint> textures)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				BindTexturesNative(first, count, ptextures0);
+			}
+		}
+
 		public static void BindTextures(uint first, int count, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -209,6 +312,14 @@ namespace Hexa.NET.OpenGL.ARB
 			BindVertexBuffersNative(first, count, buffers, offsets, strides);
 		}
 
+		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				BindVertexBuffersNative(first, count, pbuffers0, offsets, strides);
+			}
+		}
+
 		public static void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -217,11 +328,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
+		{
+			fixed (nint* poffsets0 = offsets)
+			{
+				BindVertexBuffersNative(first, count, buffers, poffsets0, strides);
+			}
+		}
+
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
 				BindVertexBuffersNative(first, count, buffers, poffsets0, strides);
+			}
+		}
+
+		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* poffsets1 = offsets)
+				{
+					BindVertexBuffersNative(first, count, pbuffers0, poffsets1, strides);
+				}
 			}
 		}
 
@@ -236,11 +366,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
+		{
+			fixed (int* pstrides0 = strides)
+			{
+				BindVertexBuffersNative(first, count, buffers, offsets, pstrides0);
+			}
+		}
+
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, ref int strides)
 		{
 			fixed (int* pstrides0 = &strides)
 			{
 				BindVertexBuffersNative(first, count, buffers, offsets, pstrides0);
+			}
+		}
+
+		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (int* pstrides1 = strides)
+				{
+					BindVertexBuffersNative(first, count, pbuffers0, offsets, pstrides1);
+				}
 			}
 		}
 
@@ -255,6 +404,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
+		{
+			fixed (nint* poffsets0 = offsets)
+			{
+				fixed (int* pstrides1 = strides)
+				{
+					BindVertexBuffersNative(first, count, buffers, poffsets0, pstrides1);
+				}
+			}
+		}
+
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, ref int strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -262,6 +422,20 @@ namespace Hexa.NET.OpenGL.ARB
 				fixed (int* pstrides1 = &strides)
 				{
 					BindVertexBuffersNative(first, count, buffers, poffsets0, pstrides1);
+				}
+			}
+		}
+
+		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* poffsets1 = offsets)
+				{
+					fixed (int* pstrides2 = strides)
+					{
+						BindVertexBuffersNative(first, count, pbuffers0, poffsets1, pstrides2);
+					}
 				}
 			}
 		}

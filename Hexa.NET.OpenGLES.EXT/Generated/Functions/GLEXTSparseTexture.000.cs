@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGLES.EXT
 	public static unsafe partial class GLEXTSparseTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexPageCommitmentEXTNative(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, byte commit)
+		internal static void TexPageCommitmentEXTNative(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLEnum, int, int, int, int, int, int, int, byte, void>)funcTable[0])(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
+			((delegate* unmanaged[Cdecl]<GLEnum, int, int, int, int, int, int, int, byte, void>)funcTable[0])(target, level, xoffset, yoffset, zoffset, width, height, depth, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLEnum, int, int, int, int, int, int, int, byte, void>)funcTable[0])(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
+			((delegate* unmanaged[Cdecl]<GLEnum, int, int, int, int, int, int, int, byte, void>)funcTable[0])(target, level, xoffset, yoffset, zoffset, width, height, depth, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void TexPageCommitmentEXT(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, byte commit)
+		public static void TexPageCommitmentEXT(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			TexPageCommitmentEXTNative(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
 		}

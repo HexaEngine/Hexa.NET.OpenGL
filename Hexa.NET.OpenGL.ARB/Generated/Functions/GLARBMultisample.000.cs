@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGL.ARB
 	public static unsafe partial class GLARBMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleCoverageARBNative(float value, byte invert)
+		internal static void SampleCoverageARBNative(float value, bool invert)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, invert);
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, *((byte*)(&invert)));
 			#else
-			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, invert);
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, *((byte*)(&invert)));
 			#endif
 		}
 
-		public static void SampleCoverageARB(float value, byte invert)
+		public static void SampleCoverageARB(float value, bool invert)
 		{
 			SampleCoverageARBNative(value, invert);
 		}

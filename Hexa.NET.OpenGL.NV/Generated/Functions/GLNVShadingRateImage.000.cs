@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetShadingRateImagePaletteNVNative(viewport, entry, rate);
 		}
 
+		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, Span<GLEnum> rate)
+		{
+			fixed (GLEnum* prate0 = rate)
+			{
+				GetShadingRateImagePaletteNVNative(viewport, entry, prate0);
+			}
+		}
+
 		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, ref GLEnum rate)
 		{
 			fixed (GLEnum* prate0 = &rate)
@@ -69,6 +77,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetShadingRateSampleLocationivNVNative(rate, samples, index, location);
 		}
 
+		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, Span<int> location)
+		{
+			fixed (int* plocation0 = location)
+			{
+				GetShadingRateSampleLocationivNVNative(rate, samples, index, plocation0);
+			}
+		}
+
 		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, ref int location)
 		{
 			fixed (int* plocation0 = &location)
@@ -78,16 +94,16 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateImageBarrierNVNative(byte synchronize)
+		internal static void ShadingRateImageBarrierNVNative(bool synchronize)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[3])(synchronize);
+			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[3])(*((byte*)(&synchronize)));
 			#else
-			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[3])(synchronize);
+			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[3])(*((byte*)(&synchronize)));
 			#endif
 		}
 
-		public static void ShadingRateImageBarrierNV(byte synchronize)
+		public static void ShadingRateImageBarrierNV(bool synchronize)
 		{
 			ShadingRateImageBarrierNVNative(synchronize);
 		}
@@ -105,6 +121,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, GLEnum* rates)
 		{
 			ShadingRateImagePaletteNVNative(viewport, first, count, rates);
+		}
+
+		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, Span<GLEnum> rates)
+		{
+			fixed (GLEnum* prates0 = rates)
+			{
+				ShadingRateImagePaletteNVNative(viewport, first, count, prates0);
+			}
 		}
 
 		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, ref GLEnum rates)
@@ -143,6 +167,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, int* locations)
 		{
 			ShadingRateSampleOrderCustomNVNative(rate, samples, locations);
+		}
+
+		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, Span<int> locations)
+		{
+			fixed (int* plocations0 = locations)
+			{
+				ShadingRateSampleOrderCustomNVNative(rate, samples, plocations0);
+			}
 		}
 
 		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, ref int locations)

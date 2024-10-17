@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			ConvolutionFilter1DEXTNative(target, internalformat, width, format, type, image);
 		}
 
+		public static void ConvolutionFilter1DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint image)
+		{
+			ConvolutionFilter1DEXTNative(target, internalformat, width, format, type, (void*)image);
+		}
+
+		public static void ConvolutionFilter1DEXT<TImage>(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		{
+			fixed (TImage* pimage0 = image)
+			{
+				ConvolutionFilter1DEXTNative(target, internalformat, width, format, type, pimage0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ConvolutionFilter2DEXTNative(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ConvolutionFilter2DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter2DEXTNative(target, internalformat, width, height, format, type, image);
+		}
+
+		public static void ConvolutionFilter2DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint image)
+		{
+			ConvolutionFilter2DEXTNative(target, internalformat, width, height, format, type, (void*)image);
+		}
+
+		public static void ConvolutionFilter2DEXT<TImage>(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		{
+			fixed (TImage* pimage0 = image)
+			{
+				ConvolutionFilter2DEXTNative(target, internalformat, width, height, format, type, pimage0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -181,6 +207,19 @@ namespace Hexa.NET.OpenGL.EXT
 			GetConvolutionFilterEXTNative(target, format, type, image);
 		}
 
+		public static void GetConvolutionFilterEXT(GLConvolutionTargetEXT target, GLPixelFormat format, GLPixelType type, nint image)
+		{
+			GetConvolutionFilterEXTNative(target, format, type, (void*)image);
+		}
+
+		public static void GetConvolutionFilterEXT<TImage>(GLConvolutionTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		{
+			fixed (TImage* pimage0 = image)
+			{
+				GetConvolutionFilterEXTNative(target, format, type, pimage0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetConvolutionParameterfvEXTNative(GLConvolutionTargetEXT target, GLConvolutionParameter pname, float* @params)
 		{
@@ -256,6 +295,112 @@ namespace Hexa.NET.OpenGL.EXT
 			GetSeparableFilterEXTNative(target, format, type, row, column, span);
 		}
 
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, void* span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, (void*)row, column, span);
+		}
+
+		public static void GetSeparableFilterEXT<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, void* span) where TRow : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				GetSeparableFilterEXTNative(target, format, type, prow0, column, span);
+			}
+		}
+
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, void* span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, row, (void*)column, span);
+		}
+
+		public static void GetSeparableFilterEXT<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, void* span) where TColumn : unmanaged
+		{
+			fixed (TColumn* pcolumn0 = column)
+			{
+				GetSeparableFilterEXTNative(target, format, type, row, pcolumn0, span);
+			}
+		}
+
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, void* span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, (void*)row, (void*)column, span);
+		}
+
+		public static void GetSeparableFilterEXT<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TColumn* pcolumn1 = column)
+				{
+					GetSeparableFilterEXTNative(target, format, type, prow0, pcolumn1, span);
+				}
+			}
+		}
+
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, nint span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, row, column, (void*)span);
+		}
+
+		public static void GetSeparableFilterEXT<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, Span<TSpan> span) where TSpan : unmanaged
+		{
+			fixed (TSpan* pspan0 = span)
+			{
+				GetSeparableFilterEXTNative(target, format, type, row, column, pspan0);
+			}
+		}
+
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, nint span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, (void*)row, column, (void*)span);
+		}
+
+		public static void GetSeparableFilterEXT<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TSpan* pspan1 = span)
+				{
+					GetSeparableFilterEXTNative(target, format, type, prow0, column, pspan1);
+				}
+			}
+		}
+
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, nint span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, row, (void*)column, (void*)span);
+		}
+
+		public static void GetSeparableFilterEXT<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
+		{
+			fixed (TColumn* pcolumn0 = column)
+			{
+				fixed (TSpan* pspan1 = span)
+				{
+					GetSeparableFilterEXTNative(target, format, type, row, pcolumn0, pspan1);
+				}
+			}
+		}
+
+		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, nint span)
+		{
+			GetSeparableFilterEXTNative(target, format, type, (void*)row, (void*)column, (void*)span);
+		}
+
+		public static void GetSeparableFilterEXT<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TColumn* pcolumn1 = column)
+				{
+					fixed (TSpan* pspan2 = span)
+					{
+						GetSeparableFilterEXTNative(target, format, type, prow0, pcolumn1, pspan2);
+					}
+				}
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void SeparableFilter2DEXTNative(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
@@ -269,6 +414,48 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
 			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, row, column);
+		}
+
+		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, void* column)
+		{
+			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, (void*)row, column);
+		}
+
+		public static void SeparableFilter2DEXT<TRow>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column) where TRow : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, prow0, column);
+			}
+		}
+
+		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, nint column)
+		{
+			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, row, (void*)column);
+		}
+
+		public static void SeparableFilter2DEXT<TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column) where TColumn : unmanaged
+		{
+			fixed (TColumn* pcolumn0 = column)
+			{
+				SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, row, pcolumn0);
+			}
+		}
+
+		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, nint column)
+		{
+			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, (void*)row, (void*)column);
+		}
+
+		public static void SeparableFilter2DEXT<TRow, TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column) where TRow : unmanaged where TColumn : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TColumn* pcolumn1 = column)
+				{
+					SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, prow0, pcolumn1);
+				}
+			}
 		}
 
 	}

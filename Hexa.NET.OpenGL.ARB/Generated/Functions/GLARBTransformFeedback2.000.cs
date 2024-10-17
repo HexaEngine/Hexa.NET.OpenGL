@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteTransformFeedbacksNative(1, &id);
 		}
 
+		public static void DeleteTransformFeedbacks(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				DeleteTransformFeedbacksNative(n, pids0);
+			}
+		}
+
 		public static void DeleteTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -94,6 +102,14 @@ namespace Hexa.NET.OpenGL.ARB
 			uint result;
 			GenTransformFeedbacksNative(1, &result);
 			return result;
+		}
+
+		public static void GenTransformFeedbacks(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				GenTransformFeedbacksNative(n, pids0);
+			}
 		}
 
 		public static void GenTransformFeedbacks(int n, ref uint ids)

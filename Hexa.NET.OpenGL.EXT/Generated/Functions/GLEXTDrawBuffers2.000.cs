@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGL.EXT
 	public static unsafe partial class GLEXTDrawBuffers2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskIndexedEXTNative(uint index, byte r, byte g, byte b, byte a)
+		internal static void ColorMaskIndexedEXTNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[0])(index, r, g, b, a);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[0])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[0])(index, r, g, b, a);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[0])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
 			#endif
 		}
 
-		public static void ColorMaskIndexedEXT(uint index, byte r, byte g, byte b, byte a)
+		public static void ColorMaskIndexedEXT(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskIndexedEXTNative(index, r, g, b, a);
 		}
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ReadOnlySpan<byte> data)
+		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -131,6 +131,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegerIndexedvEXTNative(target, index, data);
+		}
+
+		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetIntegerIndexedvEXTNative(target, index, pdata0);
+			}
 		}
 
 		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)

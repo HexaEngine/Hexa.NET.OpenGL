@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			FogCoordPointerEXTNative(type, stride, pointer);
 		}
 
+		public static void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, nint pointer)
+		{
+			FogCoordPointerEXTNative(type, stride, (void*)pointer);
+		}
+
+		public static void FogCoordPointerEXT<TPointer>(GLFogPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				FogCoordPointerEXTNative(type, stride, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void FogCoorddEXTNative(double coord)
 		{
@@ -59,6 +72,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void FogCoorddvEXT(double* coord)
 		{
 			FogCoorddvEXTNative(coord);
+		}
+
+		public static void FogCoorddvEXT(Span<double> coord)
+		{
+			fixed (double* pcoord0 = coord)
+			{
+				FogCoorddvEXTNative(pcoord0);
+			}
 		}
 
 		public static void FogCoorddvEXT(ref double coord)
@@ -97,6 +118,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void FogCoordfvEXT(float* coord)
 		{
 			FogCoordfvEXTNative(coord);
+		}
+
+		public static void FogCoordfvEXT(Span<float> coord)
+		{
+			fixed (float* pcoord0 = coord)
+			{
+				FogCoordfvEXTNative(pcoord0);
+			}
 		}
 
 		public static void FogCoordfvEXT(ref float coord)

@@ -97,6 +97,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteFramebuffersNative(1, &framebuffer);
 		}
 
+		public static void DeleteFramebuffers(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				DeleteFramebuffersNative(n, pframebuffers0);
+			}
+		}
+
 		public static void DeleteFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -123,6 +131,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void DeleteRenderbuffer(uint renderbuffer)
 		{
 			DeleteRenderbuffersNative(1, &renderbuffer);
+		}
+
+		public static void DeleteRenderbuffers(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				DeleteRenderbuffersNative(n, prenderbuffers0);
+			}
 		}
 
 		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
@@ -230,6 +246,14 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		public static void GenFramebuffers(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				GenFramebuffersNative(n, pframebuffers0);
+			}
+		}
+
 		public static void GenFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -258,6 +282,14 @@ namespace Hexa.NET.OpenGL.ARB
 			uint result;
 			GenRenderbuffersNative(1, &result);
 			return result;
+		}
+
+		public static void GenRenderbuffers(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				GenRenderbuffersNative(n, prenderbuffers0);
+			}
 		}
 
 		public static void GenRenderbuffers(int n, ref uint renderbuffers)

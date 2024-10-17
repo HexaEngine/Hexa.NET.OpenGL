@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGLES.OES
 			MultiTexCoord1bvOESNative(texture, coords);
 		}
 
+		public static void MultiTexCoord1bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				MultiTexCoord1bvOESNative(texture, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoord1bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -82,6 +90,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void MultiTexCoord2bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord2bvOESNative(texture, coords);
+		}
+
+		public static void MultiTexCoord2bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				MultiTexCoord2bvOESNative(texture, pcoords0);
+			}
 		}
 
 		public static void MultiTexCoord2bvOES(GLTextureUnit texture, ref sbyte coords)
@@ -122,6 +138,14 @@ namespace Hexa.NET.OpenGLES.OES
 			MultiTexCoord3bvOESNative(texture, coords);
 		}
 
+		public static void MultiTexCoord3bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				MultiTexCoord3bvOESNative(texture, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoord3bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -158,6 +182,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void MultiTexCoord4bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord4bvOESNative(texture, coords);
+		}
+
+		public static void MultiTexCoord4bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				MultiTexCoord4bvOESNative(texture, pcoords0);
+			}
 		}
 
 		public static void MultiTexCoord4bvOES(GLTextureUnit texture, ref sbyte coords)
@@ -198,6 +230,14 @@ namespace Hexa.NET.OpenGLES.OES
 			TexCoord1bvOESNative(coords);
 		}
 
+		public static void TexCoord1bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				TexCoord1bvOESNative(pcoords0);
+			}
+		}
+
 		public static void TexCoord1bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -234,6 +274,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void TexCoord2bvOES(sbyte* coords)
 		{
 			TexCoord2bvOESNative(coords);
+		}
+
+		public static void TexCoord2bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				TexCoord2bvOESNative(pcoords0);
+			}
 		}
 
 		public static void TexCoord2bvOES(ref sbyte coords)
@@ -274,6 +322,14 @@ namespace Hexa.NET.OpenGLES.OES
 			TexCoord3bvOESNative(coords);
 		}
 
+		public static void TexCoord3bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				TexCoord3bvOESNative(pcoords0);
+			}
+		}
+
 		public static void TexCoord3bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -310,6 +366,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void TexCoord4bvOES(sbyte* coords)
 		{
 			TexCoord4bvOESNative(coords);
+		}
+
+		public static void TexCoord4bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				TexCoord4bvOESNative(pcoords0);
+			}
 		}
 
 		public static void TexCoord4bvOES(ref sbyte coords)
@@ -350,6 +414,14 @@ namespace Hexa.NET.OpenGLES.OES
 			Vertex2bvOESNative(coords);
 		}
 
+		public static void Vertex2bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				Vertex2bvOESNative(pcoords0);
+			}
+		}
+
 		public static void Vertex2bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -388,6 +460,14 @@ namespace Hexa.NET.OpenGLES.OES
 			Vertex3bvOESNative(coords);
 		}
 
+		public static void Vertex3bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				Vertex3bvOESNative(pcoords0);
+			}
+		}
+
 		public static void Vertex3bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -424,6 +504,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void Vertex4bvOES(sbyte* coords)
 		{
 			Vertex4bvOESNative(coords);
+		}
+
+		public static void Vertex4bvOES(Span<sbyte> coords)
+		{
+			fixed (sbyte* pcoords0 = coords)
+			{
+				Vertex4bvOESNative(pcoords0);
+			}
 		}
 
 		public static void Vertex4bvOES(ref sbyte coords)

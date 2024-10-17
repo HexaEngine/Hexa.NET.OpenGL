@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGL.NV
 			DeleteTransformFeedbacksNVNative(1, &id);
 		}
 
+		public static void DeleteTransformFeedbacksNV(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				DeleteTransformFeedbacksNVNative(n, pids0);
+			}
+		}
+
 		public static void DeleteTransformFeedbacksNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -94,6 +102,14 @@ namespace Hexa.NET.OpenGL.NV
 			uint result;
 			GenTransformFeedbacksNVNative(1, &result);
 			return result;
+		}
+
+		public static void GenTransformFeedbacksNV(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				GenTransformFeedbacksNVNative(n, pids0);
+			}
 		}
 
 		public static void GenTransformFeedbacksNV(int n, ref uint ids)

@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			ColorSubTableEXTNative(target, start, count, format, type, data);
 		}
 
+		public static void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ColorSubTableEXTNative(target, start, count, format, type, (void*)data);
+		}
+
+		public static void ColorSubTableEXT<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ColorSubTableEXTNative(target, start, count, format, type, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CopyColorSubTableEXTNative(GLColorTableTarget target, int start, int x, int y, int width)
 		{

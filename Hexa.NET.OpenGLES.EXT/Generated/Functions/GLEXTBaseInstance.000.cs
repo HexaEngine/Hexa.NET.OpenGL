@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			DrawElementsInstancedBaseInstanceEXTNative(mode, count, type, indices, instancecount, baseinstance);
 		}
 
+		public static void DrawElementsInstancedBaseInstanceEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, uint baseinstance)
+		{
+			DrawElementsInstancedBaseInstanceEXTNative(mode, count, type, (void*)indices, instancecount, baseinstance);
+		}
+
+		public static void DrawElementsInstancedBaseInstanceEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, uint baseinstance) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedBaseInstanceEXTNative(mode, count, type, pindices0, instancecount, baseinstance);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void DrawElementsInstancedBaseVertexBaseInstanceEXTNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
 		{
@@ -59,6 +72,19 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void DrawElementsInstancedBaseVertexBaseInstanceEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
 		{
 			DrawElementsInstancedBaseVertexBaseInstanceEXTNative(mode, count, type, indices, instancecount, basevertex, baseinstance);
+		}
+
+		public static void DrawElementsInstancedBaseVertexBaseInstanceEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex, uint baseinstance)
+		{
+			DrawElementsInstancedBaseVertexBaseInstanceEXTNative(mode, count, type, (void*)indices, instancecount, basevertex, baseinstance);
+		}
+
+		public static void DrawElementsInstancedBaseVertexBaseInstanceEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex, uint baseinstance) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedBaseVertexBaseInstanceEXTNative(mode, count, type, pindices0, instancecount, basevertex, baseinstance);
+			}
 		}
 
 	}

@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			ColorTableEXTNative(target, internalFormat, width, format, type, table);
 		}
 
+		public static void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, nint table)
+		{
+			ColorTableEXTNative(target, internalFormat, width, format, type, (void*)table);
+		}
+
+		public static void ColorTableEXT<TTable>(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
+		{
+			fixed (TTable* ptable0 = table)
+			{
+				ColorTableEXTNative(target, internalFormat, width, format, type, ptable0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetColorTableEXTNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			GetColorTableEXTNative(target, format, type, data);
+		}
+
+		public static void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			GetColorTableEXTNative(target, format, type, (void*)data);
+		}
+
+		public static void GetColorTableEXT<TData>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				GetColorTableEXTNative(target, format, type, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

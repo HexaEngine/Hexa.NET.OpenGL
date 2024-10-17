@@ -61,6 +61,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetIntegerui64vNVNative(value, result);
 		}
 
+		public static void GetIntegerui64vNV(GLEnum value, Span<ulong> result)
+		{
+			fixed (ulong* presult0 = result)
+			{
+				GetIntegerui64vNVNative(value, presult0);
+			}
+		}
+
 		public static void GetIntegerui64vNV(GLEnum value, ref ulong result)
 		{
 			fixed (ulong* presult0 = &result)
@@ -251,6 +259,14 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramUniformui64vNVNative(program, location, count, value);
 		}
 
+		public static void ProgramUniformui64vNV(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniformui64vNVNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniformui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -287,6 +303,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void Uniformui64vNV(int location, int count, ulong* value)
 		{
 			Uniformui64vNVNative(location, count, value);
+		}
+
+		public static void Uniformui64vNV(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniformui64vNVNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniformui64vNV(int location, int count, ref ulong value)

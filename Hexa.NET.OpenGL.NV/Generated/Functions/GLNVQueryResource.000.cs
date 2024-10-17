@@ -32,6 +32,15 @@ namespace Hexa.NET.OpenGL.NV
 			return ret;
 		}
 
+		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, Span<int> buffer)
+		{
+			fixed (int* pbuffer0 = buffer)
+			{
+				int ret = QueryResourceNVNative(queryType, tagId, count, pbuffer0);
+				return ret;
+			}
+		}
+
 		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, ref int buffer)
 		{
 			fixed (int* pbuffer0 = &buffer)

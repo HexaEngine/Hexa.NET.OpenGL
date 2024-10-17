@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGLES.MESA
 			DeleteSamplersNative(1, &sampler);
 		}
 
+		public static void DeleteSamplers(int count, Span<uint> samplers)
+		{
+			fixed (uint* psamplers0 = samplers)
+			{
+				DeleteSamplersNative(count, psamplers0);
+			}
+		}
+
 		public static void DeleteSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -79,6 +87,14 @@ namespace Hexa.NET.OpenGLES.MESA
 			uint result;
 			GenSamplersNative(1, &result);
 			return result;
+		}
+
+		public static void GenSamplers(int count, Span<uint> samplers)
+		{
+			fixed (uint* psamplers0 = samplers)
+			{
+				GenSamplersNative(count, psamplers0);
+			}
 		}
 
 		public static void GenSamplers(int count, ref uint samplers)

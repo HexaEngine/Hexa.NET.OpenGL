@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.NV
 			MultiDrawArraysIndirectBindlessCountNVNative(mode, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
 
+		public static void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		{
+			MultiDrawArraysIndirectBindlessCountNVNative(mode, (void*)indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
+		}
+
+		public static void MultiDrawArraysIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawArraysIndirectBindlessCountNVNative(mode, pindirect0, drawCount, maxDrawCount, stride, vertexBufferCount);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsIndirectBindlessCountNVNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.NV
 		public static void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawElementsIndirectBindlessCountNVNative(mode, type, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
+		}
+
+		public static void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		{
+			MultiDrawElementsIndirectBindlessCountNVNative(mode, type, (void*)indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
+		}
+
+		public static void MultiDrawElementsIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawElementsIndirectBindlessCountNVNative(mode, type, pindirect0, drawCount, maxDrawCount, stride, vertexBufferCount);
+			}
 		}
 
 	}

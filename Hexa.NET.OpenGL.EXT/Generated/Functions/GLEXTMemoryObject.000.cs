@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.EXT
 			CreateMemoryObjectsEXTNative(n, memoryObjects);
 		}
 
+		public static void CreateMemoryObjectsEXT(int n, Span<uint> memoryObjects)
+		{
+			fixed (uint* pmemoryObjects0 = memoryObjects)
+			{
+				CreateMemoryObjectsEXTNative(n, pmemoryObjects0);
+			}
+		}
+
 		public static void CreateMemoryObjectsEXT(int n, ref uint memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = &memoryObjects)
@@ -72,6 +80,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void DeleteMemoryObjectsEX(uint memoryObject)
 		{
 			DeleteMemoryObjectsEXTNative(1, &memoryObject);
+		}
+
+		public static void DeleteMemoryObjectsEXT(int n, Span<uint> memoryObjects)
+		{
+			fixed (uint* pmemoryObjects0 = memoryObjects)
+			{
+				DeleteMemoryObjectsEXTNative(n, pmemoryObjects0);
+			}
 		}
 
 		public static void DeleteMemoryObjectsEXT(int n, ref uint memoryObjects)
@@ -153,7 +169,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetUnsignedBytevEXT(GLGetPName pname, ReadOnlySpan<byte> data)
+		public static void GetUnsignedBytevEXT(GLGetPName pname, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -210,7 +226,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, ReadOnlySpan<byte> data)
+		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -318,16 +334,16 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem2DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, byte fixedSampleLocations, uint memory, ulong offset)
+		internal static void TexStorageMem2DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[11])(target, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[11])(target, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[11])(target, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[11])(target, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#endif
 		}
 
-		public static void TexStorageMem2DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, byte fixedSampleLocations, uint memory, ulong offset)
+		public static void TexStorageMem2DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TexStorageMem2DMultisampleEXTNative(target, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
 		}
@@ -348,16 +364,16 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem3DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations, uint memory, ulong offset)
+		internal static void TexStorageMem3DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[13])(target, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[13])(target, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[13])(target, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[13])(target, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#endif
 		}
 
-		public static void TexStorageMem3DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations, uint memory, ulong offset)
+		public static void TexStorageMem3DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TexStorageMem3DMultisampleEXTNative(target, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
 		}
@@ -393,16 +409,16 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem2DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, byte fixedSampleLocations, uint memory, ulong offset)
+		internal static void TextureStorageMem2DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[16])(texture, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[16])(texture, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[16])(texture, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[16])(texture, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#endif
 		}
 
-		public static void TextureStorageMem2DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, byte fixedSampleLocations, uint memory, ulong offset)
+		public static void TextureStorageMem2DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TextureStorageMem2DMultisampleEXTNative(texture, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
 		}
@@ -423,16 +439,16 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem3DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations, uint memory, ulong offset)
+		internal static void TextureStorageMem3DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[18])(texture, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[18])(texture, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[18])(texture, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[18])(texture, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)), memory, offset);
 			#endif
 		}
 
-		public static void TextureStorageMem3DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations, uint memory, ulong offset)
+		public static void TextureStorageMem3DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TextureStorageMem3DMultisampleEXTNative(texture, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
 		}

@@ -78,6 +78,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetInteger64vNative(pname, data);
 		}
 
+		public static void GetInteger64v(GLGetPName pname, Span<long> data)
+		{
+			fixed (long* pdata0 = data)
+			{
+				GetInteger64vNative(pname, pdata0);
+			}
+		}
+
 		public static void GetInteger64v(GLGetPName pname, ref long data)
 		{
 			fixed (long* pdata0 = &data)
@@ -101,6 +109,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetSyncivNative(sync, pname, count, length, values);
 		}
 
+		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, int* values)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetSyncivNative(sync, pname, count, plength0, values);
+			}
+		}
+
 		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, ref int length, int* values)
 		{
 			fixed (int* plength0 = &length)
@@ -109,11 +125,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, Span<int> values)
+		{
+			fixed (int* pvalues0 = values)
+			{
+				GetSyncivNative(sync, pname, count, length, pvalues0);
+			}
+		}
+
 		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, ref int values)
 		{
 			fixed (int* pvalues0 = &values)
 			{
 				GetSyncivNative(sync, pname, count, length, pvalues0);
+			}
+		}
+
+		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, Span<int> values)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* pvalues1 = values)
+				{
+					GetSyncivNative(sync, pname, count, plength0, pvalues1);
+				}
 			}
 		}
 

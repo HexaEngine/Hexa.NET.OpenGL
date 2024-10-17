@@ -61,6 +61,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetActiveUniformBlockNameNative(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 		}
 
+		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, Span<int> length, byte* uniformBlockName)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetActiveUniformBlockNameNative(program, uniformBlockIndex, bufSize, plength0, uniformBlockName);
+			}
+		}
+
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, ref int length, byte* uniformBlockName)
 		{
 			fixed (int* plength0 = &length)
@@ -95,7 +103,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, ReadOnlySpan<byte> uniformBlockName)
+		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, Span<byte> uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = uniformBlockName)
 			{
@@ -108,6 +116,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* puniformBlockName0 = &uniformBlockName)
 			{
 				GetActiveUniformBlockNameNative(program, uniformBlockIndex, bufSize, length, puniformBlockName0);
+			}
+		}
+
+		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, Span<int> length, Span<byte> uniformBlockName)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* puniformBlockName1 = uniformBlockName)
+				{
+					GetActiveUniformBlockNameNative(program, uniformBlockIndex, bufSize, plength0, puniformBlockName1);
+				}
 			}
 		}
 
@@ -167,6 +186,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetActiveUniformNameNative(program, uniformIndex, bufSize, length, uniformName);
 		}
 
+		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, Span<int> length, byte* uniformName)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetActiveUniformNameNative(program, uniformIndex, bufSize, plength0, uniformName);
+			}
+		}
+
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, ref int length, byte* uniformName)
 		{
 			fixed (int* plength0 = &length)
@@ -201,7 +228,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, ReadOnlySpan<byte> uniformName)
+		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, Span<byte> uniformName)
 		{
 			fixed (byte* puniformName0 = uniformName)
 			{
@@ -214,6 +241,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* puniformName0 = &uniformName)
 			{
 				GetActiveUniformNameNative(program, uniformIndex, bufSize, length, puniformName0);
+			}
+		}
+
+		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, Span<int> length, Span<byte> uniformName)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* puniformName1 = uniformName)
+				{
+					GetActiveUniformNameNative(program, uniformIndex, bufSize, plength0, puniformName1);
+				}
 			}
 		}
 
@@ -258,6 +296,14 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetActiveUniformsiv(uint program, int uniformCount, Span<uint> uniformIndices, GLUniformPName pname, int* @params)
+		{
+			fixed (uint* puniformIndices0 = uniformIndices)
+			{
+				GetActiveUniformsivNative(program, uniformCount, puniformIndices0, pname, @params);
+			}
+		}
+
 		public static void GetActiveUniformsiv(uint program, int uniformCount, ref uint uniformIndices, GLUniformPName pname, int* @params)
 		{
 			fixed (uint* puniformIndices0 = &uniformIndices)
@@ -279,6 +325,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetIntegeri_v(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vNative(target, index, data);
+		}
+
+		public static void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetIntegeri_vNative(target, index, pdata0);
+			}
 		}
 
 		public static void GetIntegeri_v(GLGetPName target, uint index, ref int data)
@@ -332,7 +386,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static uint GetUniformBlockIndex(uint program, ReadOnlySpan<byte> uniformBlockName)
+		public static uint GetUniformBlockIndex(uint program, Span<byte> uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = uniformBlockName)
 			{
@@ -363,6 +417,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, uint* uniformIndices)
 		{
 			GetUniformIndicesNative(program, uniformCount, uniformNames, uniformIndices);
+		}
+
+		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, Span<uint> uniformIndices)
+		{
+			fixed (uint* puniformIndices0 = uniformIndices)
+			{
+				GetUniformIndicesNative(program, uniformCount, uniformNames, puniformIndices0);
+			}
 		}
 
 		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, ref uint uniformIndices)

@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.ARB
 			ClearTexImageNative(texture, level, format, type, data);
 		}
 
+		public static void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearTexImageNative(texture, level, format, type, (void*)data);
+		}
+
+		public static void ClearTexImage<TData>(uint texture, int level, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearTexImageNative(texture, level, format, type, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ClearTexSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
+		}
+
+		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)data);
+		}
+
+		public static void ClearTexSubImage<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pdata0);
+			}
 		}
 
 	}

@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			DrawElementsBaseVertexEXTNative(mode, count, type, indices, basevertex);
 		}
 
+		public static void DrawElementsBaseVertexEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
+		{
+			DrawElementsBaseVertexEXTNative(mode, count, type, (void*)indices, basevertex);
+		}
+
+		public static void DrawElementsBaseVertexEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsBaseVertexEXTNative(mode, count, type, pindices0, basevertex);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void DrawElementsInstancedBaseVertexEXTNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void DrawElementsInstancedBaseVertexEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexEXTNative(mode, count, type, indices, instancecount, basevertex);
+		}
+
+		public static void DrawElementsInstancedBaseVertexEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
+		{
+			DrawElementsInstancedBaseVertexEXTNative(mode, count, type, (void*)indices, instancecount, basevertex);
+		}
+
+		public static void DrawElementsInstancedBaseVertexEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedBaseVertexEXTNative(mode, count, type, pindices0, instancecount, basevertex);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,6 +87,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			DrawRangeElementsBaseVertexEXTNative(mode, start, end, count, type, indices, basevertex);
 		}
 
+		public static void DrawRangeElementsBaseVertexEXT(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
+		{
+			DrawRangeElementsBaseVertexEXTNative(mode, start, end, count, type, (void*)indices, basevertex);
+		}
+
+		public static void DrawRangeElementsBaseVertexEXT<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawRangeElementsBaseVertexEXTNative(mode, start, end, count, type, pindices0, basevertex);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsBaseVertexEXTNative(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
@@ -76,6 +115,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			MultiDrawElementsBaseVertexEXTNative(mode, count, type, indices, drawcount, basevertex);
 		}
 
+		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
+		{
+			fixed (int* pcount0 = count)
+			{
+				MultiDrawElementsBaseVertexEXTNative(mode, pcount0, type, indices, drawcount, basevertex);
+			}
+		}
+
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			fixed (int* pcount0 = &count)
@@ -84,11 +131,30 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
+		{
+			fixed (int* pbasevertex0 = basevertex)
+			{
+				MultiDrawElementsBaseVertexEXTNative(mode, count, type, indices, drawcount, pbasevertex0);
+			}
+		}
+
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
 		{
 			fixed (int* pbasevertex0 = &basevertex)
 			{
 				MultiDrawElementsBaseVertexEXTNative(mode, count, type, indices, drawcount, pbasevertex0);
+			}
+		}
+
+		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
+		{
+			fixed (int* pcount0 = count)
+			{
+				fixed (int* pbasevertex1 = basevertex)
+				{
+					MultiDrawElementsBaseVertexEXTNative(mode, pcount0, type, indices, drawcount, pbasevertex1);
+				}
 			}
 		}
 

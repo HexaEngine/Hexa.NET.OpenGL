@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGLES.INTEL
 			CreatePerfQueryINTELNative(queryId, queryHandle);
 		}
 
+		public static void CreatePerfQueryINTEL(uint queryId, Span<uint> queryHandle)
+		{
+			fixed (uint* pqueryHandle0 = queryHandle)
+			{
+				CreatePerfQueryINTELNative(queryId, pqueryHandle0);
+			}
+		}
+
 		public static void CreatePerfQueryINTEL(uint queryId, ref uint queryHandle)
 		{
 			fixed (uint* pqueryHandle0 = &queryHandle)
@@ -99,6 +107,14 @@ namespace Hexa.NET.OpenGLES.INTEL
 			GetFirstPerfQueryIdINTELNative(queryId);
 		}
 
+		public static void GetFirstPerfQueryIdINTEL(Span<uint> queryId)
+		{
+			fixed (uint* pqueryId0 = queryId)
+			{
+				GetFirstPerfQueryIdINTELNative(pqueryId0);
+			}
+		}
+
 		public static void GetFirstPerfQueryIdINTEL(ref uint queryId)
 		{
 			fixed (uint* pqueryId0 = &queryId)
@@ -120,6 +136,14 @@ namespace Hexa.NET.OpenGLES.INTEL
 		public static void GetNextPerfQueryIdINTEL(uint queryId, uint* nextQueryId)
 		{
 			GetNextPerfQueryIdINTELNative(queryId, nextQueryId);
+		}
+
+		public static void GetNextPerfQueryIdINTEL(uint queryId, Span<uint> nextQueryId)
+		{
+			fixed (uint* pnextQueryId0 = nextQueryId)
+			{
+				GetNextPerfQueryIdINTELNative(queryId, pnextQueryId0);
+			}
 		}
 
 		public static void GetNextPerfQueryIdINTEL(uint queryId, ref uint nextQueryId)
@@ -171,7 +195,7 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ReadOnlySpan<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -213,7 +237,7 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ReadOnlySpan<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -276,7 +300,7 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ReadOnlySpan<byte> counterName, uint counterDescLength, ReadOnlySpan<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -298,11 +322,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
 				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
 			}
 		}
 
@@ -317,6 +360,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -324,6 +378,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterOffset1 = &counterOffset)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -342,11 +410,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
 				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
 			}
 		}
 
@@ -361,6 +448,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -368,6 +466,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterDataSize1 = &counterDataSize)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -386,6 +498,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -393,6 +516,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterDataSize1 = &counterDataSize)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -411,6 +548,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -420,6 +571,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataSize2 = &counterDataSize)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -442,11 +610,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
+			{
+				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, counterDataTypeEnum, rawCounterMaxValue);
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
 			{
 				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, counterDataTypeEnum, rawCounterMaxValue);
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
 			}
 		}
 
@@ -461,6 +648,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -468,6 +666,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterTypeEnum1 = &counterTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -486,6 +698,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -493,6 +716,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterTypeEnum1 = &counterTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -511,6 +748,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -520,6 +771,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterTypeEnum2 = &counterTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, pcounterTypeEnum3, counterDataTypeEnum, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -542,6 +810,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -549,6 +828,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterTypeEnum1 = &counterTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, counterDataTypeEnum, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -567,6 +860,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -576,6 +883,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterTypeEnum2 = &counterTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -598,6 +922,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -607,6 +945,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterTypeEnum2 = &counterTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -629,6 +984,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -640,6 +1012,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (uint* pcounterTypeEnum3 = &counterTypeEnum)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (uint* pcounterTypeEnum4 = counterTypeEnum)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, pcounterTypeEnum4, counterDataTypeEnum, rawCounterMaxValue);
+							}
 						}
 					}
 				}
@@ -666,11 +1058,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataTypeEnum0 = counterDataTypeEnum)
+			{
+				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum0, rawCounterMaxValue);
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataTypeEnum0 = &counterDataTypeEnum)
 			{
 				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum0, rawCounterMaxValue);
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
 			}
 		}
 
@@ -685,6 +1096,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -692,6 +1114,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterDataTypeEnum1 = &counterDataTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -710,6 +1146,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -717,6 +1164,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterDataTypeEnum1 = &counterDataTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -735,6 +1196,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -744,6 +1219,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataTypeEnum2 = &counterDataTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, counterTypeEnum, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -766,6 +1258,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -773,6 +1276,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterDataTypeEnum1 = &counterDataTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -791,6 +1308,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -800,6 +1331,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataTypeEnum2 = &counterDataTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -822,6 +1370,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -831,6 +1393,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataTypeEnum2 = &counterDataTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -853,6 +1432,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -864,6 +1460,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (uint* pcounterDataTypeEnum3 = &counterDataTypeEnum)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, counterTypeEnum, pcounterDataTypeEnum4, rawCounterMaxValue);
+							}
 						}
 					}
 				}
@@ -890,6 +1506,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
@@ -897,6 +1524,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pcounterDataTypeEnum1 = &counterDataTypeEnum)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, pcounterDataTypeEnum1, rawCounterMaxValue);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
 				}
 			}
 		}
@@ -915,6 +1556,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -924,6 +1579,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataTypeEnum2 = &counterDataTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -946,6 +1618,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -955,6 +1641,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataTypeEnum2 = &counterDataTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -977,6 +1680,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -988,6 +1708,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (uint* pcounterDataTypeEnum3 = &counterDataTypeEnum)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, pcounterTypeEnum3, pcounterDataTypeEnum4, rawCounterMaxValue);
+							}
 						}
 					}
 				}
@@ -1014,6 +1754,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -1023,6 +1777,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pcounterDataTypeEnum2 = &counterDataTypeEnum)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, pcounterDataTypeEnum2, rawCounterMaxValue);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
 					}
 				}
 			}
@@ -1045,6 +1816,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1056,6 +1844,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (uint* pcounterDataTypeEnum3 = &counterDataTypeEnum)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, rawCounterMaxValue);
+							}
 						}
 					}
 				}
@@ -1082,6 +1890,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1093,6 +1918,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (uint* pcounterDataTypeEnum3 = &counterDataTypeEnum)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, rawCounterMaxValue);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, rawCounterMaxValue);
+							}
 						}
 					}
 				}
@@ -1119,6 +1964,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, rawCounterMaxValue);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1132,6 +1997,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 							fixed (uint* pcounterDataTypeEnum4 = &counterDataTypeEnum)
 							{
 								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, rawCounterMaxValue);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (uint* pcounterTypeEnum4 = counterTypeEnum)
+							{
+								fixed (uint* pcounterDataTypeEnum5 = counterDataTypeEnum)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, pcounterTypeEnum4, pcounterDataTypeEnum5, rawCounterMaxValue);
+								}
 							}
 						}
 					}
@@ -1162,11 +2050,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (ulong* prawCounterMaxValue0 = rawCounterMaxValue)
+			{
+				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue0);
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (ulong* prawCounterMaxValue0 = &rawCounterMaxValue)
 			{
 				GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue0);
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (ulong* prawCounterMaxValue1 = rawCounterMaxValue)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
 			}
 		}
 
@@ -1181,6 +2088,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (ulong* prawCounterMaxValue1 = rawCounterMaxValue)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1188,6 +2106,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (ulong* prawCounterMaxValue1 = &rawCounterMaxValue)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
 				}
 			}
 		}
@@ -1206,6 +2138,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (ulong* prawCounterMaxValue1 = rawCounterMaxValue)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1213,6 +2156,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (ulong* prawCounterMaxValue1 = &rawCounterMaxValue)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
 				}
 			}
 		}
@@ -1231,6 +2188,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1240,6 +2211,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1262,6 +2250,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (ulong* prawCounterMaxValue1 = rawCounterMaxValue)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -1269,6 +2268,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (ulong* prawCounterMaxValue1 = &rawCounterMaxValue)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
 				}
 			}
 		}
@@ -1287,6 +2300,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1296,6 +2323,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1318,6 +2362,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1327,6 +2385,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1349,6 +2424,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1360,6 +2452,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, counterTypeEnum, counterDataTypeEnum, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1386,6 +2498,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
+			{
+				fixed (ulong* prawCounterMaxValue1 = rawCounterMaxValue)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
@@ -1393,6 +2516,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (ulong* prawCounterMaxValue1 = &rawCounterMaxValue)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, counterDataTypeEnum, prawCounterMaxValue1);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
 				}
 			}
 		}
@@ -1411,6 +2548,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1420,6 +2571,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1442,6 +2610,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1451,6 +2633,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1473,6 +2672,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1484,6 +2700,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, pcounterTypeEnum3, counterDataTypeEnum, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1510,6 +2746,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -1519,6 +2769,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, counterDataTypeEnum, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1541,6 +2808,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1552,6 +2836,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1578,6 +2882,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1589,6 +2910,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, counterDataTypeEnum, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1615,6 +2956,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1628,6 +2989,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 							fixed (ulong* prawCounterMaxValue4 = &rawCounterMaxValue)
 							{
 								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, counterDataTypeEnum, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (uint* pcounterTypeEnum4 = counterTypeEnum)
+							{
+								fixed (ulong* prawCounterMaxValue5 = rawCounterMaxValue)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, pcounterTypeEnum4, counterDataTypeEnum, prawCounterMaxValue5);
+								}
 							}
 						}
 					}
@@ -1658,6 +3042,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataTypeEnum0 = counterDataTypeEnum)
+			{
+				fixed (ulong* prawCounterMaxValue1 = rawCounterMaxValue)
+				{
+					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum0, prawCounterMaxValue1);
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataTypeEnum0 = &counterDataTypeEnum)
@@ -1665,6 +3060,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (ulong* prawCounterMaxValue1 = &rawCounterMaxValue)
 				{
 					GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum0, prawCounterMaxValue1);
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
 				}
 			}
 		}
@@ -1683,6 +3092,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1692,6 +3115,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1714,6 +3154,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1723,6 +3177,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1745,6 +3216,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1756,6 +3244,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, counterTypeEnum, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1782,6 +3290,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -1791,6 +3313,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, counterTypeEnum, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1813,6 +3352,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1824,6 +3380,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1850,6 +3426,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -1861,6 +3454,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, counterTypeEnum, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1887,6 +3500,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1900,6 +3533,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 							fixed (ulong* prawCounterMaxValue4 = &rawCounterMaxValue)
 							{
 								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, counterTypeEnum, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								fixed (ulong* prawCounterMaxValue5 = rawCounterMaxValue)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, counterTypeEnum, pcounterDataTypeEnum4, prawCounterMaxValue5);
+								}
 							}
 						}
 					}
@@ -1930,6 +3586,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
+			{
+				fixed (uint* pcounterDataTypeEnum1 = counterDataTypeEnum)
+				{
+					fixed (ulong* prawCounterMaxValue2 = rawCounterMaxValue)
+					{
+						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
@@ -1939,6 +3609,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (ulong* prawCounterMaxValue2 = &rawCounterMaxValue)
 					{
 						GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum0, pcounterDataTypeEnum1, prawCounterMaxValue2);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
 					}
 				}
 			}
@@ -1961,6 +3648,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -1972,6 +3676,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -1998,6 +3722,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -2009,6 +3750,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, counterDataSize, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -2035,6 +3796,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -2048,6 +3829,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 							fixed (ulong* prawCounterMaxValue4 = &rawCounterMaxValue)
 							{
 								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, counterDataSize, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								fixed (ulong* prawCounterMaxValue5 = rawCounterMaxValue)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, counterDataSize, pcounterTypeEnum3, pcounterDataTypeEnum4, prawCounterMaxValue5);
+								}
 							}
 						}
 					}
@@ -2078,6 +3882,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterDataSize0 = counterDataSize)
+			{
+				fixed (uint* pcounterTypeEnum1 = counterTypeEnum)
+				{
+					fixed (uint* pcounterDataTypeEnum2 = counterDataTypeEnum)
+					{
+						fixed (ulong* prawCounterMaxValue3 = rawCounterMaxValue)
+						{
+							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
@@ -2089,6 +3910,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 						fixed (ulong* prawCounterMaxValue3 = &rawCounterMaxValue)
 						{
 							GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, pcounterDataSize0, pcounterTypeEnum1, pcounterDataTypeEnum2, prawCounterMaxValue3);
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, counterOffset, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
 						}
 					}
 				}
@@ -2115,6 +3956,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -2128,6 +3989,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 							fixed (ulong* prawCounterMaxValue4 = &rawCounterMaxValue)
 							{
 								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, counterOffset, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								fixed (ulong* prawCounterMaxValue5 = rawCounterMaxValue)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, counterOffset, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, prawCounterMaxValue5);
+								}
 							}
 						}
 					}
@@ -2158,6 +4042,26 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (uint* pcounterOffset0 = counterOffset)
+			{
+				fixed (uint* pcounterDataSize1 = counterDataSize)
+				{
+					fixed (uint* pcounterTypeEnum2 = counterTypeEnum)
+					{
+						fixed (uint* pcounterDataTypeEnum3 = counterDataTypeEnum)
+						{
+							fixed (ulong* prawCounterMaxValue4 = rawCounterMaxValue)
+							{
+								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
@@ -2171,6 +4075,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 							fixed (ulong* prawCounterMaxValue4 = &rawCounterMaxValue)
 							{
 								GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, pcounterOffset0, pcounterDataSize1, pcounterTypeEnum2, pcounterDataTypeEnum3, prawCounterMaxValue4);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								fixed (ulong* prawCounterMaxValue5 = rawCounterMaxValue)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, counterDesc, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, prawCounterMaxValue5);
+								}
 							}
 						}
 					}
@@ -2201,6 +4128,29 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterDesc0 = counterDesc)
+			{
+				fixed (uint* pcounterOffset1 = counterOffset)
+				{
+					fixed (uint* pcounterDataSize2 = counterDataSize)
+					{
+						fixed (uint* pcounterTypeEnum3 = counterTypeEnum)
+						{
+							fixed (uint* pcounterDataTypeEnum4 = counterDataTypeEnum)
+							{
+								fixed (ulong* prawCounterMaxValue5 = rawCounterMaxValue)
+								{
+									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, prawCounterMaxValue5);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
 		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
@@ -2216,6 +4166,32 @@ namespace Hexa.NET.OpenGLES.INTEL
 								fixed (ulong* prawCounterMaxValue5 = &rawCounterMaxValue)
 								{
 									GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, pcounterDesc0, pcounterOffset1, pcounterDataSize2, pcounterTypeEnum3, pcounterDataTypeEnum4, prawCounterMaxValue5);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		{
+			fixed (byte* pcounterName0 = counterName)
+			{
+				fixed (byte* pcounterDesc1 = counterDesc)
+				{
+					fixed (uint* pcounterOffset2 = counterOffset)
+					{
+						fixed (uint* pcounterDataSize3 = counterDataSize)
+						{
+							fixed (uint* pcounterTypeEnum4 = counterTypeEnum)
+							{
+								fixed (uint* pcounterDataTypeEnum5 = counterDataTypeEnum)
+								{
+									fixed (ulong* prawCounterMaxValue6 = rawCounterMaxValue)
+									{
+										GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, pcounterName0, counterDescLength, pcounterDesc1, pcounterOffset2, pcounterDataSize3, pcounterTypeEnum4, pcounterDataTypeEnum5, prawCounterMaxValue6);
+									}
 								}
 							}
 						}
@@ -2263,6 +4239,27 @@ namespace Hexa.NET.OpenGLES.INTEL
 		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, uint* bytesWritten)
 		{
 			GetPerfQueryDataINTELNative(queryHandle, flags, dataSize, data, bytesWritten);
+		}
+
+		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, nint data, uint* bytesWritten)
+		{
+			GetPerfQueryDataINTELNative(queryHandle, flags, dataSize, (void*)data, bytesWritten);
+		}
+
+		public static void GetPerfQueryDataINTEL<TData>(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, Span<TData> data, uint* bytesWritten) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				GetPerfQueryDataINTELNative(queryHandle, flags, dataSize, pdata0, bytesWritten);
+			}
+		}
+
+		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, Span<uint> bytesWritten)
+		{
+			fixed (uint* pbytesWritten0 = bytesWritten)
+			{
+				GetPerfQueryDataINTELNative(queryHandle, flags, dataSize, data, pbytesWritten0);
+			}
 		}
 
 		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, ref uint bytesWritten)
@@ -2314,7 +4311,7 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
-		public static void GetPerfQueryIdByNameINTEL(ReadOnlySpan<byte> queryName, uint* queryId)
+		public static void GetPerfQueryIdByNameINTEL(Span<byte> queryName, uint* queryId)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -2330,11 +4327,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryIdByNameINTEL(byte* queryName, Span<uint> queryId)
+		{
+			fixed (uint* pqueryId0 = queryId)
+			{
+				GetPerfQueryIdByNameINTELNative(queryName, pqueryId0);
+			}
+		}
+
 		public static void GetPerfQueryIdByNameINTEL(byte* queryName, ref uint queryId)
 		{
 			fixed (uint* pqueryId0 = &queryId)
 			{
 				GetPerfQueryIdByNameINTELNative(queryName, pqueryId0);
+			}
+		}
+
+		public static void GetPerfQueryIdByNameINTEL(Span<byte> queryName, Span<uint> queryId)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pqueryId1 = queryId)
+				{
+					GetPerfQueryIdByNameINTELNative(pqueryName0, pqueryId1);
+				}
 			}
 		}
 
@@ -2390,7 +4406,7 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ReadOnlySpan<byte> queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -2406,11 +4422,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pdataSize0 = dataSize)
+			{
+				GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, noCounters, noInstances, capsMask);
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
 			{
 				GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, noCounters, noInstances, capsMask);
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pdataSize1 = dataSize)
+				{
+					GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, pdataSize1, noCounters, noInstances, capsMask);
+				}
 			}
 		}
 
@@ -2425,11 +4460,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pnoCounters0 = noCounters)
+			{
+				GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, pnoCounters0, noInstances, capsMask);
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoCounters0 = &noCounters)
 			{
 				GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, pnoCounters0, noInstances, capsMask);
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pnoCounters1 = noCounters)
+				{
+					GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, dataSize, pnoCounters1, noInstances, capsMask);
+				}
 			}
 		}
 
@@ -2444,6 +4498,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pdataSize0 = dataSize)
+			{
+				fixed (uint* pnoCounters1 = noCounters)
+				{
+					GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, pnoCounters1, noInstances, capsMask);
+				}
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
@@ -2451,6 +4516,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pnoCounters1 = &noCounters)
 				{
 					GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, pnoCounters1, noInstances, capsMask);
+				}
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pdataSize1 = dataSize)
+				{
+					fixed (uint* pnoCounters2 = noCounters)
+					{
+						GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, pdataSize1, pnoCounters2, noInstances, capsMask);
+					}
 				}
 			}
 		}
@@ -2469,11 +4548,30 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pnoInstances0 = noInstances)
+			{
+				GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, noCounters, pnoInstances0, capsMask);
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoInstances0 = &noInstances)
 			{
 				GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, noCounters, pnoInstances0, capsMask);
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pnoInstances1 = noInstances)
+				{
+					GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, dataSize, noCounters, pnoInstances1, capsMask);
+				}
 			}
 		}
 
@@ -2488,6 +4586,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pdataSize0 = dataSize)
+			{
+				fixed (uint* pnoInstances1 = noInstances)
+				{
+					GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, noCounters, pnoInstances1, capsMask);
+				}
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
@@ -2495,6 +4604,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pnoInstances1 = &noInstances)
 				{
 					GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, noCounters, pnoInstances1, capsMask);
+				}
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pdataSize1 = dataSize)
+				{
+					fixed (uint* pnoInstances2 = noInstances)
+					{
+						GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, pdataSize1, noCounters, pnoInstances2, capsMask);
+					}
 				}
 			}
 		}
@@ -2513,6 +4636,17 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pnoCounters0 = noCounters)
+			{
+				fixed (uint* pnoInstances1 = noInstances)
+				{
+					GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, pnoCounters0, pnoInstances1, capsMask);
+				}
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoCounters0 = &noCounters)
@@ -2520,6 +4654,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 				fixed (uint* pnoInstances1 = &noInstances)
 				{
 					GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, pnoCounters0, pnoInstances1, capsMask);
+				}
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pnoCounters1 = noCounters)
+				{
+					fixed (uint* pnoInstances2 = noInstances)
+					{
+						GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, dataSize, pnoCounters1, pnoInstances2, capsMask);
+					}
 				}
 			}
 		}
@@ -2538,6 +4686,20 @@ namespace Hexa.NET.OpenGLES.INTEL
 			}
 		}
 
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (uint* pdataSize0 = dataSize)
+			{
+				fixed (uint* pnoCounters1 = noCounters)
+				{
+					fixed (uint* pnoInstances2 = noInstances)
+					{
+						GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, pnoCounters1, pnoInstances2, capsMask);
+					}
+				}
+			}
+		}
+
 		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
@@ -2547,6 +4709,23 @@ namespace Hexa.NET.OpenGLES.INTEL
 					fixed (uint* pnoInstances2 = &noInstances)
 					{
 						GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, pdataSize0, pnoCounters1, pnoInstances2, capsMask);
+					}
+				}
+			}
+		}
+
+		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		{
+			fixed (byte* pqueryName0 = queryName)
+			{
+				fixed (uint* pdataSize1 = dataSize)
+				{
+					fixed (uint* pnoCounters2 = noCounters)
+					{
+						fixed (uint* pnoInstances3 = noInstances)
+						{
+							GetPerfQueryInfoINTELNative(queryId, queryNameLength, pqueryName0, pdataSize1, pnoCounters2, pnoInstances3, capsMask);
+						}
 					}
 				}
 			}

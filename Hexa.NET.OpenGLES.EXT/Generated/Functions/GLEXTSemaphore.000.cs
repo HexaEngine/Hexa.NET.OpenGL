@@ -36,6 +36,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			DeleteSemaphoresEXTNative(1, &semaphore);
 		}
 
+		public static void DeleteSemaphoresEXT(int n, Span<uint> semaphores)
+		{
+			fixed (uint* psemaphores0 = semaphores)
+			{
+				DeleteSemaphoresEXTNative(n, psemaphores0);
+			}
+		}
+
 		public static void DeleteSemaphoresEXT(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)
@@ -64,6 +72,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			uint result;
 			GenSemaphoresEXTNative(1, &result);
 			return result;
+		}
+
+		public static void GenSemaphoresEXT(int n, Span<uint> semaphores)
+		{
+			fixed (uint* psemaphores0 = semaphores)
+			{
+				GenSemaphoresEXTNative(n, psemaphores0);
+			}
 		}
 
 		public static void GenSemaphoresEXT(int n, ref uint semaphores)
@@ -145,7 +161,7 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
-		public static void GetUnsignedBytevEXT(GLGetPName pname, ReadOnlySpan<byte> data)
+		public static void GetUnsignedBytevEXT(GLGetPName pname, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -202,7 +218,7 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
-		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, ReadOnlySpan<byte> data)
+		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -279,6 +295,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			SignalSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, dstLayouts);
 		}
 
+		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, uint* textures, GLTextureLayout dstLayouts)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				SignalSemaphoreEXTNative(semaphore, numBufferBarriers, pbuffers0, numTextureBarriers, textures, dstLayouts);
+			}
+		}
+
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, ref uint buffers, uint numTextureBarriers, uint* textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -287,11 +311,30 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout dstLayouts)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				SignalSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, ptextures0, dstLayouts);
+			}
+		}
+
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, ref uint textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
 				SignalSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, ptextures0, dstLayouts);
+			}
+		}
+
+		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout dstLayouts)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (uint* ptextures1 = textures)
+				{
+					SignalSemaphoreEXTNative(semaphore, numBufferBarriers, pbuffers0, numTextureBarriers, ptextures1, dstLayouts);
+				}
 			}
 		}
 
@@ -321,6 +364,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			WaitSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, srcLayouts);
 		}
 
+		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, uint* textures, GLTextureLayout srcLayouts)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				WaitSemaphoreEXTNative(semaphore, numBufferBarriers, pbuffers0, numTextureBarriers, textures, srcLayouts);
+			}
+		}
+
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, ref uint buffers, uint numTextureBarriers, uint* textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -329,11 +380,30 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout srcLayouts)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				WaitSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, ptextures0, srcLayouts);
+			}
+		}
+
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, ref uint textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
 				WaitSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, ptextures0, srcLayouts);
+			}
+		}
+
+		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout srcLayouts)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (uint* ptextures1 = textures)
+				{
+					WaitSemaphoreEXTNative(semaphore, numBufferBarriers, pbuffers0, numTextureBarriers, ptextures1, srcLayouts);
+				}
 			}
 		}
 

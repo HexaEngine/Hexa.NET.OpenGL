@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGL.ARB
 			BufferDataARBNative(target, size, data, usage);
 		}
 
+		public static void BufferDataARB(GLBufferTargetARB target, nint size, nint data, GLBufferUsageARB usage)
+		{
+			BufferDataARBNative(target, size, (void*)data, usage);
+		}
+
+		public static void BufferDataARB<TData>(GLBufferTargetARB target, nint size, Span<TData> data, GLBufferUsageARB usage) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				BufferDataARBNative(target, size, pdata0, usage);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void BufferSubDataARBNative(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
@@ -59,6 +72,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void BufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			BufferSubDataARBNative(target, offset, size, data);
+		}
+
+		public static void BufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, nint data)
+		{
+			BufferSubDataARBNative(target, offset, size, (void*)data);
+		}
+
+		public static void BufferSubDataARB<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				BufferSubDataARBNative(target, offset, size, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +105,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void DeleteBuffersAR(uint buffer)
 		{
 			DeleteBuffersARBNative(1, &buffer);
+		}
+
+		public static void DeleteBuffersARB(int n, Span<uint> buffers)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				DeleteBuffersARBNative(n, pbuffers0);
+			}
 		}
 
 		public static void DeleteBuffersARB(int n, ref uint buffers)
@@ -109,6 +143,14 @@ namespace Hexa.NET.OpenGL.ARB
 			uint result;
 			GenBuffersARBNative(1, &result);
 			return result;
+		}
+
+		public static void GenBuffersARB(int n, Span<uint> buffers)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				GenBuffersARBNative(n, pbuffers0);
+			}
 		}
 
 		public static void GenBuffersARB(int n, ref uint buffers)
@@ -177,6 +219,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetBufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			GetBufferSubDataARBNative(target, offset, size, data);
+		}
+
+		public static void GetBufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, nint data)
+		{
+			GetBufferSubDataARBNative(target, offset, size, (void*)data);
+		}
+
+		public static void GetBufferSubDataARB<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				GetBufferSubDataARBNative(target, offset, size, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

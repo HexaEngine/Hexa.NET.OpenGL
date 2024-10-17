@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DepthRangeArraydvNVNative(first, count, v);
 		}
 
+		public static void DepthRangeArraydvNV(uint first, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				DepthRangeArraydvNVNative(first, count, pv0);
+			}
+		}
+
 		public static void DepthRangeArraydvNV(uint first, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void DepthRangeArrayv(uint first, int count, double* v)
 		{
 			DepthRangeArrayvNative(first, count, v);
+		}
+
+		public static void DepthRangeArrayv(uint first, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				DepthRangeArrayvNative(first, count, pv0);
+			}
 		}
 
 		public static void DepthRangeArrayv(uint first, int count, ref double v)
@@ -107,6 +123,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetDoublei_vNative(target, index, data);
 		}
 
+		public static void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
+		{
+			fixed (double* pdata0 = data)
+			{
+				GetDoublei_vNative(target, index, pdata0);
+			}
+		}
+
 		public static void GetDoublei_v(GLGetPName target, uint index, ref double data)
 		{
 			fixed (double* pdata0 = &data)
@@ -130,6 +154,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetFloati_vNative(target, index, data);
 		}
 
+		public static void GetFloati_v(GLGetPName target, uint index, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetFloati_vNative(target, index, pdata0);
+			}
+		}
+
 		public static void GetFloati_v(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -151,6 +183,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ScissorArrayv(uint first, int count, int* v)
 		{
 			ScissorArrayvNative(first, count, v);
+		}
+
+		public static void ScissorArrayv(uint first, int count, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorArrayvNative(first, count, pv0);
+			}
 		}
 
 		public static void ScissorArrayv(uint first, int count, ref int v)
@@ -191,6 +231,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ScissorIndexedvNative(index, v);
 		}
 
+		public static void ScissorIndexedv(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorIndexedvNative(index, pv0);
+			}
+		}
+
 		public static void ScissorIndexedv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -212,6 +260,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ViewportArrayv(uint first, int count, float* v)
 		{
 			ViewportArrayvNative(first, count, v);
+		}
+
+		public static void ViewportArrayv(uint first, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ViewportArrayvNative(first, count, pv0);
+			}
 		}
 
 		public static void ViewportArrayv(uint first, int count, ref float v)
@@ -250,6 +306,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ViewportIndexedfv(uint index, float* v)
 		{
 			ViewportIndexedfvNative(index, v);
+		}
+
+		public static void ViewportIndexedfv(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ViewportIndexedfvNative(index, pv0);
+			}
 		}
 
 		public static void ViewportIndexedfv(uint index, ref float v)

@@ -61,6 +61,19 @@ namespace Hexa.NET.OpenGL.NV
 			MulticastBufferSubDataNVNative(gpuMask, buffer, offset, size, data);
 		}
 
+		public static void MulticastBufferSubDataNV(uint gpuMask, uint buffer, nint offset, nint size, nint data)
+		{
+			MulticastBufferSubDataNVNative(gpuMask, buffer, offset, size, (void*)data);
+		}
+
+		public static void MulticastBufferSubDataNV<TData>(uint gpuMask, uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				MulticastBufferSubDataNVNative(gpuMask, buffer, offset, size, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MulticastCopyBufferSubDataNVNative(uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
 		{
@@ -104,6 +117,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void MulticastFramebufferSampleLocationsfvNV(uint gpu, uint framebuffer, uint start, int count, float* v)
 		{
 			MulticastFramebufferSampleLocationsfvNVNative(gpu, framebuffer, start, count, v);
+		}
+
+		public static void MulticastFramebufferSampleLocationsfvNV(uint gpu, uint framebuffer, uint start, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				MulticastFramebufferSampleLocationsfvNVNative(gpu, framebuffer, start, count, pv0);
+			}
 		}
 
 		public static void MulticastFramebufferSampleLocationsfvNV(uint gpu, uint framebuffer, uint start, int count, ref float v)

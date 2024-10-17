@@ -106,6 +106,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribL1i64vNVNative(index, v);
 		}
 
+		public static void VertexAttribL1i64vNV(uint index, Span<long> v)
+		{
+			fixed (long* pv0 = v)
+			{
+				VertexAttribL1i64vNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL1i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -142,6 +150,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribL1ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL1ui64vNVNative(index, v);
+		}
+
+		public static void VertexAttribL1ui64vNV(uint index, Span<ulong> v)
+		{
+			fixed (ulong* pv0 = v)
+			{
+				VertexAttribL1ui64vNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL1ui64vNV(uint index, ref ulong v)
@@ -182,6 +198,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribL2i64vNVNative(index, v);
 		}
 
+		public static void VertexAttribL2i64vNV(uint index, Span<long> v)
+		{
+			fixed (long* pv0 = v)
+			{
+				VertexAttribL2i64vNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL2i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -218,6 +242,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribL2ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL2ui64vNVNative(index, v);
+		}
+
+		public static void VertexAttribL2ui64vNV(uint index, Span<ulong> v)
+		{
+			fixed (ulong* pv0 = v)
+			{
+				VertexAttribL2ui64vNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL2ui64vNV(uint index, ref ulong v)
@@ -258,6 +290,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribL3i64vNVNative(index, v);
 		}
 
+		public static void VertexAttribL3i64vNV(uint index, Span<long> v)
+		{
+			fixed (long* pv0 = v)
+			{
+				VertexAttribL3i64vNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL3i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -294,6 +334,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribL3ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL3ui64vNVNative(index, v);
+		}
+
+		public static void VertexAttribL3ui64vNV(uint index, Span<ulong> v)
+		{
+			fixed (ulong* pv0 = v)
+			{
+				VertexAttribL3ui64vNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL3ui64vNV(uint index, ref ulong v)
@@ -334,6 +382,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribL4i64vNVNative(index, v);
 		}
 
+		public static void VertexAttribL4i64vNV(uint index, Span<long> v)
+		{
+			fixed (long* pv0 = v)
+			{
+				VertexAttribL4i64vNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL4i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -370,6 +426,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribL4ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL4ui64vNVNative(index, v);
+		}
+
+		public static void VertexAttribL4ui64vNV(uint index, Span<ulong> v)
+		{
+			fixed (ulong* pv0 = v)
+			{
+				VertexAttribL4ui64vNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL4ui64vNV(uint index, ref ulong v)

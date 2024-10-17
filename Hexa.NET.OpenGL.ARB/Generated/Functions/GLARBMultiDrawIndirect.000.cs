@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiDrawArraysIndirectNative(mode, indirect, drawcount, stride);
 		}
 
+		public static void MultiDrawArraysIndirect(GLPrimitiveType mode, nint indirect, int drawcount, int stride)
+		{
+			MultiDrawArraysIndirectNative(mode, (void*)indirect, drawcount, stride);
+		}
+
+		public static void MultiDrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawArraysIndirectNative(mode, pindirect0, drawcount, stride);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiDrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
 			MultiDrawElementsIndirectNative(mode, type, indirect, drawcount, stride);
+		}
+
+		public static void MultiDrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawcount, int stride)
+		{
+			MultiDrawElementsIndirectNative(mode, type, (void*)indirect, drawcount, stride);
+		}
+
+		public static void MultiDrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawElementsIndirectNative(mode, type, pindirect0, drawcount, stride);
+			}
 		}
 
 	}

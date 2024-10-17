@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void SpecializeShaderARB(uint shader, ReadOnlySpan<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
@@ -73,11 +73,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		{
+			fixed (uint* ppConstantIndex0 = pConstantIndex)
+			{
+				SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
+			}
+		}
+
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = &pConstantIndex)
 			{
 				SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
+			}
+		}
+
+		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				fixed (uint* ppConstantIndex1 = pConstantIndex)
+				{
+					SpecializeShaderARBNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
+				}
 			}
 		}
 
@@ -92,11 +111,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
+		{
+			fixed (uint* ppConstantValue0 = pConstantValue)
+			{
+				SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
+			}
+		}
+
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (uint* ppConstantValue0 = &pConstantValue)
 			{
 				SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
+			}
+		}
+
+		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				fixed (uint* ppConstantValue1 = pConstantValue)
+				{
+					SpecializeShaderARBNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, ppConstantValue1);
+				}
 			}
 		}
 
@@ -111,6 +149,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
+		{
+			fixed (uint* ppConstantIndex0 = pConstantIndex)
+			{
+				fixed (uint* ppConstantValue1 = pConstantValue)
+				{
+					SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, ppConstantValue1);
+				}
+			}
+		}
+
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = &pConstantIndex)
@@ -118,6 +167,20 @@ namespace Hexa.NET.OpenGL.ARB
 				fixed (uint* ppConstantValue1 = &pConstantValue)
 				{
 					SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, ppConstantValue1);
+				}
+			}
+		}
+
+		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				fixed (uint* ppConstantIndex1 = pConstantIndex)
+				{
+					fixed (uint* ppConstantValue2 = pConstantValue)
+					{
+						SpecializeShaderARBNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, ppConstantValue2);
+					}
 				}
 			}
 		}

@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			FlushVertexArrayRangeAPPLENative(length, pointer);
 		}
 
+		public static void FlushVertexArrayRangeAPPLE(int length, nint pointer)
+		{
+			FlushVertexArrayRangeAPPLENative(length, (void*)pointer);
+		}
+
+		public static void FlushVertexArrayRangeAPPLE<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				FlushVertexArrayRangeAPPLENative(length, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VertexArrayParameteriAPPLENative(GLVertexArrayPNameAPPLE pname, int param)
 		{
@@ -59,6 +72,19 @@ namespace Hexa.NET.OpenGL.APPLE
 		public static void VertexArrayRangeAPPLE(int length, void* pointer)
 		{
 			VertexArrayRangeAPPLENative(length, pointer);
+		}
+
+		public static void VertexArrayRangeAPPLE(int length, nint pointer)
+		{
+			VertexArrayRangeAPPLENative(length, (void*)pointer);
+		}
+
+		public static void VertexArrayRangeAPPLE<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexArrayRangeAPPLENative(length, ppointer0);
+			}
 		}
 
 	}

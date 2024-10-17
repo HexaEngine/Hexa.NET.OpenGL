@@ -32,6 +32,15 @@ namespace Hexa.NET.OpenGL.EXT
 			return ret != 0;
 		}
 
+		public static bool AreTexturesResidentEXT(int n, Span<uint> textures, byte* residences)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				byte ret = AreTexturesResidentEXTNative(n, ptextures0, residences);
+				return ret != 0;
+			}
+		}
+
 		public static bool AreTexturesResidentEXT(int n, ref uint textures, byte* residences)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -68,7 +77,7 @@ namespace Hexa.NET.OpenGL.EXT
 			return ret != 0;
 		}
 
-		public static bool AreTexturesResidentEXT(int n, uint* textures, ReadOnlySpan<byte> residences)
+		public static bool AreTexturesResidentEXT(int n, uint* textures, Span<byte> residences)
 		{
 			fixed (byte* presidences0 = residences)
 			{
@@ -83,6 +92,18 @@ namespace Hexa.NET.OpenGL.EXT
 			{
 				byte ret = AreTexturesResidentEXTNative(n, textures, presidences0);
 				return ret != 0;
+			}
+		}
+
+		public static bool AreTexturesResidentEXT(int n, Span<uint> textures, Span<byte> residences)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				fixed (byte* presidences1 = residences)
+				{
+					byte ret = AreTexturesResidentEXTNative(n, ptextures0, presidences1);
+					return ret != 0;
+				}
 			}
 		}
 
@@ -133,6 +154,14 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteTexturesEXTNative(1, &texture);
 		}
 
+		public static void DeleteTexturesEXT(int n, Span<uint> textures)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				DeleteTexturesEXTNative(n, ptextures0);
+			}
+		}
+
 		public static void DeleteTexturesEXT(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -161,6 +190,14 @@ namespace Hexa.NET.OpenGL.EXT
 			uint result;
 			GenTexturesEXTNative(1, &result);
 			return result;
+		}
+
+		public static void GenTexturesEXT(int n, Span<uint> textures)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				GenTexturesEXTNative(n, ptextures0);
+			}
 		}
 
 		public static void GenTexturesEXT(int n, ref uint textures)
@@ -202,6 +239,14 @@ namespace Hexa.NET.OpenGL.EXT
 			PrioritizeTexturesEXTNative(n, textures, priorities);
 		}
 
+		public static void PrioritizeTexturesEXT(int n, Span<uint> textures, float* priorities)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				PrioritizeTexturesEXTNative(n, ptextures0, priorities);
+			}
+		}
+
 		public static void PrioritizeTexturesEXT(int n, ref uint textures, float* priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -210,11 +255,30 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		public static void PrioritizeTexturesEXT(int n, uint* textures, Span<float> priorities)
+		{
+			fixed (float* ppriorities0 = priorities)
+			{
+				PrioritizeTexturesEXTNative(n, textures, ppriorities0);
+			}
+		}
+
 		public static void PrioritizeTexturesEXT(int n, uint* textures, ref float priorities)
 		{
 			fixed (float* ppriorities0 = &priorities)
 			{
 				PrioritizeTexturesEXTNative(n, textures, ppriorities0);
+			}
+		}
+
+		public static void PrioritizeTexturesEXT(int n, Span<uint> textures, Span<float> priorities)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				fixed (float* ppriorities1 = priorities)
+				{
+					PrioritizeTexturesEXTNative(n, ptextures0, ppriorities1);
+				}
 			}
 		}
 

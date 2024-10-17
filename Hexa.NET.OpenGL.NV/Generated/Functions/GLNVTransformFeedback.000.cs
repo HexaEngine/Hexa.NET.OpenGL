@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void ActiveVaryingNV(uint program, ReadOnlySpan<byte> name)
+		public static void ActiveVaryingNV(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -163,6 +163,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetActiveVaryingNVNative(program, index, bufSize, length, size, type, name);
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, GLEnum* type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetActiveVaryingNVNative(program, index, bufSize, plength0, size, type, name);
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, GLEnum* type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -171,11 +179,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, GLEnum* type, byte* name)
+		{
+			fixed (int* psize0 = size)
+			{
+				GetActiveVaryingNVNative(program, index, bufSize, length, psize0, type, name);
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, GLEnum* type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
 				GetActiveVaryingNVNative(program, index, bufSize, length, psize0, type, name);
+			}
+		}
+
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLEnum* type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					GetActiveVaryingNVNative(program, index, bufSize, plength0, psize1, type, name);
+				}
 			}
 		}
 
@@ -190,11 +217,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, Span<GLEnum> type, byte* name)
+		{
+			fixed (GLEnum* ptype0 = type)
+			{
+				GetActiveVaryingNVNative(program, index, bufSize, length, size, ptype0, name);
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, ref GLEnum type, byte* name)
 		{
 			fixed (GLEnum* ptype0 = &type)
 			{
 				GetActiveVaryingNVNative(program, index, bufSize, length, size, ptype0, name);
+			}
+		}
+
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, Span<GLEnum> type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (GLEnum* ptype1 = type)
+				{
+					GetActiveVaryingNVNative(program, index, bufSize, plength0, size, ptype1, name);
+				}
 			}
 		}
 
@@ -209,6 +255,17 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, Span<GLEnum> type, byte* name)
+		{
+			fixed (int* psize0 = size)
+			{
+				fixed (GLEnum* ptype1 = type)
+				{
+					GetActiveVaryingNVNative(program, index, bufSize, length, psize0, ptype1, name);
+				}
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, ref GLEnum type, byte* name)
 		{
 			fixed (int* psize0 = &size)
@@ -216,6 +273,20 @@ namespace Hexa.NET.OpenGL.NV
 				fixed (GLEnum* ptype1 = &type)
 				{
 					GetActiveVaryingNVNative(program, index, bufSize, length, psize0, ptype1, name);
+				}
+			}
+		}
+
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, Span<GLEnum> type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					fixed (GLEnum* ptype2 = type)
+					{
+						GetActiveVaryingNVNative(program, index, bufSize, plength0, psize1, ptype2, name);
+					}
 				}
 			}
 		}
@@ -260,7 +331,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, ReadOnlySpan<byte> name)
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -276,6 +347,17 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, GLEnum* type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveVaryingNVNative(program, index, bufSize, plength0, size, type, pname1);
+				}
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, GLEnum* type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -287,6 +369,17 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, GLEnum* type, Span<byte> name)
+		{
+			fixed (int* psize0 = size)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveVaryingNVNative(program, index, bufSize, length, psize0, type, pname1);
+				}
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, GLEnum* type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -294,6 +387,20 @@ namespace Hexa.NET.OpenGL.NV
 				fixed (byte* pname1 = &name)
 				{
 					GetActiveVaryingNVNative(program, index, bufSize, length, psize0, type, pname1);
+				}
+			}
+		}
+
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLEnum* type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					fixed (byte* pname2 = name)
+					{
+						GetActiveVaryingNVNative(program, index, bufSize, plength0, psize1, type, pname2);
+					}
 				}
 			}
 		}
@@ -312,6 +419,17 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, Span<GLEnum> type, Span<byte> name)
+		{
+			fixed (GLEnum* ptype0 = type)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveVaryingNVNative(program, index, bufSize, length, size, ptype0, pname1);
+				}
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, ref GLEnum type, ref byte name)
 		{
 			fixed (GLEnum* ptype0 = &type)
@@ -319,6 +437,20 @@ namespace Hexa.NET.OpenGL.NV
 				fixed (byte* pname1 = &name)
 				{
 					GetActiveVaryingNVNative(program, index, bufSize, length, size, ptype0, pname1);
+				}
+			}
+		}
+
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, Span<GLEnum> type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (GLEnum* ptype1 = type)
+				{
+					fixed (byte* pname2 = name)
+					{
+						GetActiveVaryingNVNative(program, index, bufSize, plength0, size, ptype1, pname2);
+					}
 				}
 			}
 		}
@@ -337,6 +469,20 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, Span<GLEnum> type, Span<byte> name)
+		{
+			fixed (int* psize0 = size)
+			{
+				fixed (GLEnum* ptype1 = type)
+				{
+					fixed (byte* pname2 = name)
+					{
+						GetActiveVaryingNVNative(program, index, bufSize, length, psize0, ptype1, pname2);
+					}
+				}
+			}
+		}
+
 		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, ref GLEnum type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -346,6 +492,23 @@ namespace Hexa.NET.OpenGL.NV
 					fixed (byte* pname2 = &name)
 					{
 						GetActiveVaryingNVNative(program, index, bufSize, length, psize0, ptype1, pname2);
+					}
+				}
+			}
+		}
+
+		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, Span<GLEnum> type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					fixed (GLEnum* ptype2 = type)
+					{
+						fixed (byte* pname3 = name)
+						{
+							GetActiveVaryingNVNative(program, index, bufSize, plength0, psize1, ptype2, pname3);
+						}
 					}
 				}
 			}
@@ -381,6 +544,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void GetTransformFeedbackVaryingNV(uint program, uint index, int* location)
 		{
 			GetTransformFeedbackVaryingNVNative(program, index, location);
+		}
+
+		public static void GetTransformFeedbackVaryingNV(uint program, uint index, Span<int> location)
+		{
+			fixed (int* plocation0 = location)
+			{
+				GetTransformFeedbackVaryingNVNative(program, index, plocation0);
+			}
 		}
 
 		public static void GetTransformFeedbackVaryingNV(uint program, uint index, ref int location)
@@ -434,7 +605,7 @@ namespace Hexa.NET.OpenGL.NV
 			return ret;
 		}
 
-		public static int GetVaryingLocationNV(uint program, ReadOnlySpan<byte> name)
+		public static int GetVaryingLocationNV(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -467,6 +638,14 @@ namespace Hexa.NET.OpenGL.NV
 			TransformFeedbackAttribsNVNative(count, attribs, bufferMode);
 		}
 
+		public static void TransformFeedbackAttribsNV(int count, Span<int> attribs, GLEnum bufferMode)
+		{
+			fixed (int* pattribs0 = attribs)
+			{
+				TransformFeedbackAttribsNVNative(count, pattribs0, bufferMode);
+			}
+		}
+
 		public static void TransformFeedbackAttribsNV(int count, ref int attribs, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = &attribs)
@@ -490,6 +669,14 @@ namespace Hexa.NET.OpenGL.NV
 			TransformFeedbackStreamAttribsNVNative(count, attribs, nbuffers, bufstreams, bufferMode);
 		}
 
+		public static void TransformFeedbackStreamAttribsNV(int count, Span<int> attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
+		{
+			fixed (int* pattribs0 = attribs)
+			{
+				TransformFeedbackStreamAttribsNVNative(count, pattribs0, nbuffers, bufstreams, bufferMode);
+			}
+		}
+
 		public static void TransformFeedbackStreamAttribsNV(int count, ref int attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = &attribs)
@@ -498,11 +685,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, Span<int> bufstreams, GLEnum bufferMode)
+		{
+			fixed (int* pbufstreams0 = bufstreams)
+			{
+				TransformFeedbackStreamAttribsNVNative(count, attribs, nbuffers, pbufstreams0, bufferMode);
+			}
+		}
+
 		public static void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, ref int bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pbufstreams0 = &bufstreams)
 			{
 				TransformFeedbackStreamAttribsNVNative(count, attribs, nbuffers, pbufstreams0, bufferMode);
+			}
+		}
+
+		public static void TransformFeedbackStreamAttribsNV(int count, Span<int> attribs, int nbuffers, Span<int> bufstreams, GLEnum bufferMode)
+		{
+			fixed (int* pattribs0 = attribs)
+			{
+				fixed (int* pbufstreams1 = bufstreams)
+				{
+					TransformFeedbackStreamAttribsNVNative(count, pattribs0, nbuffers, pbufstreams1, bufferMode);
+				}
 			}
 		}
 

@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
-		public static void BindFragDataLocationEXT(uint program, uint color, ReadOnlySpan<byte> name)
+		public static void BindFragDataLocationEXT(uint program, uint color, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -114,7 +114,7 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
-		public static void BindFragDataLocationIndexedEXT(uint program, uint colorNumber, uint index, ReadOnlySpan<byte> name)
+		public static void BindFragDataLocationIndexedEXT(uint program, uint colorNumber, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGLES.EXT
 			return ret;
 		}
 
-		public static int GetFragDataIndexEXT(uint program, ReadOnlySpan<byte> name)
+		public static int GetFragDataIndexEXT(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -234,7 +234,7 @@ namespace Hexa.NET.OpenGLES.EXT
 			return ret;
 		}
 
-		public static int GetProgramResourceLocationIndexEXT(uint program, GLProgramInterface programInterface, ReadOnlySpan<byte> name)
+		public static int GetProgramResourceLocationIndexEXT(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{

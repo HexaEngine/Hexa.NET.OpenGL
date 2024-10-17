@@ -76,6 +76,14 @@ namespace Hexa.NET.OpenGLES.NV
 			ProgramUniform1i64vNVNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1i64vNV(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform1i64vNVNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -112,6 +120,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ProgramUniform1ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform1ui64vNVNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1ui64vNV(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform1ui64vNVNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1ui64vNV(uint program, int location, int count, ref ulong value)
@@ -152,6 +168,14 @@ namespace Hexa.NET.OpenGLES.NV
 			ProgramUniform2i64vNVNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2i64vNV(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform2i64vNVNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -188,6 +212,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ProgramUniform2ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform2ui64vNVNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2ui64vNV(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform2ui64vNVNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2ui64vNV(uint program, int location, int count, ref ulong value)
@@ -228,6 +260,14 @@ namespace Hexa.NET.OpenGLES.NV
 			ProgramUniform3i64vNVNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3i64vNV(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform3i64vNVNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -264,6 +304,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ProgramUniform3ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform3ui64vNVNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3ui64vNV(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform3ui64vNVNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3ui64vNV(uint program, int location, int count, ref ulong value)
@@ -304,6 +352,14 @@ namespace Hexa.NET.OpenGLES.NV
 			ProgramUniform4i64vNVNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4i64vNV(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform4i64vNVNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -340,6 +396,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ProgramUniform4ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform4ui64vNVNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform4ui64vNV(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform4ui64vNVNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform4ui64vNV(uint program, int location, int count, ref ulong value)
@@ -380,6 +444,14 @@ namespace Hexa.NET.OpenGLES.NV
 			Uniform1i64vNVNative(location, count, value);
 		}
 
+		public static void Uniform1i64vNV(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform1i64vNVNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform1i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -416,6 +488,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void Uniform1ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform1ui64vNVNative(location, count, value);
+		}
+
+		public static void Uniform1ui64vNV(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform1ui64vNVNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform1ui64vNV(int location, int count, ref ulong value)
@@ -456,6 +536,14 @@ namespace Hexa.NET.OpenGLES.NV
 			Uniform2i64vNVNative(location, count, value);
 		}
 
+		public static void Uniform2i64vNV(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform2i64vNVNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform2i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -492,6 +580,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void Uniform2ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform2ui64vNVNative(location, count, value);
+		}
+
+		public static void Uniform2ui64vNV(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform2ui64vNVNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform2ui64vNV(int location, int count, ref ulong value)
@@ -532,6 +628,14 @@ namespace Hexa.NET.OpenGLES.NV
 			Uniform3i64vNVNative(location, count, value);
 		}
 
+		public static void Uniform3i64vNV(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform3i64vNVNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform3i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -568,6 +672,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void Uniform3ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform3ui64vNVNative(location, count, value);
+		}
+
+		public static void Uniform3ui64vNV(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform3ui64vNVNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform3ui64vNV(int location, int count, ref ulong value)
@@ -608,6 +720,14 @@ namespace Hexa.NET.OpenGLES.NV
 			Uniform4i64vNVNative(location, count, value);
 		}
 
+		public static void Uniform4i64vNV(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform4i64vNVNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform4i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -644,6 +764,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void Uniform4ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform4ui64vNVNative(location, count, value);
+		}
+
+		public static void Uniform4ui64vNV(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform4ui64vNVNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform4ui64vNV(int location, int count, ref ulong value)

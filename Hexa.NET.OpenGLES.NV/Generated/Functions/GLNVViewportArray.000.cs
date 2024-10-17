@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.NV
 			DepthRangeArrayfvNVNative(first, count, v);
 		}
 
+		public static void DepthRangeArrayfvNV(uint first, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				DepthRangeArrayfvNVNative(first, count, pv0);
+			}
+		}
+
 		public static void DepthRangeArrayfvNV(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -99,6 +107,14 @@ namespace Hexa.NET.OpenGLES.NV
 			GetFloati_vNVNative(target, index, data);
 		}
 
+		public static void GetFloati_vNV(GLGetPName target, uint index, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetFloati_vNVNative(target, index, pdata0);
+			}
+		}
+
 		public static void GetFloati_vNV(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -136,6 +152,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ScissorArrayvNV(uint first, int count, int* v)
 		{
 			ScissorArrayvNVNative(first, count, v);
+		}
+
+		public static void ScissorArrayvNV(uint first, int count, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorArrayvNVNative(first, count, pv0);
+			}
 		}
 
 		public static void ScissorArrayvNV(uint first, int count, ref int v)
@@ -176,6 +200,14 @@ namespace Hexa.NET.OpenGLES.NV
 			ScissorIndexedvNVNative(index, v);
 		}
 
+		public static void ScissorIndexedvNV(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorIndexedvNVNative(index, pv0);
+			}
+		}
+
 		public static void ScissorIndexedvNV(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -197,6 +229,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ViewportArrayvNV(uint first, int count, float* v)
 		{
 			ViewportArrayvNVNative(first, count, v);
+		}
+
+		public static void ViewportArrayvNV(uint first, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ViewportArrayvNVNative(first, count, pv0);
+			}
 		}
 
 		public static void ViewportArrayvNV(uint first, int count, ref float v)
@@ -235,6 +275,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void ViewportIndexedfvNV(uint index, float* v)
 		{
 			ViewportIndexedfvNVNative(index, v);
+		}
+
+		public static void ViewportIndexedfvNV(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ViewportIndexedfvNVNative(index, pv0);
+			}
 		}
 
 		public static void ViewportIndexedfvNV(uint index, ref float v)

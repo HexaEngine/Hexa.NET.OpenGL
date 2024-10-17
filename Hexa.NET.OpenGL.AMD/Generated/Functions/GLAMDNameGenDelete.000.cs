@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.AMD
 			DeleteNamesAMDNative(identifier, num, names);
 		}
 
+		public static void DeleteNamesAMD(GLEnum identifier, uint num, Span<uint> names)
+		{
+			fixed (uint* pnames0 = names)
+			{
+				DeleteNamesAMDNative(identifier, num, pnames0);
+			}
+		}
+
 		public static void DeleteNamesAMD(GLEnum identifier, uint num, ref uint names)
 		{
 			fixed (uint* pnames0 = &names)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.AMD
 		public static void GenNamesAMD(GLEnum identifier, uint num, uint* names)
 		{
 			GenNamesAMDNative(identifier, num, names);
+		}
+
+		public static void GenNamesAMD(GLEnum identifier, uint num, Span<uint> names)
+		{
+			fixed (uint* pnames0 = names)
+			{
+				GenNamesAMDNative(identifier, num, pnames0);
+			}
 		}
 
 		public static void GenNamesAMD(GLEnum identifier, uint num, ref uint names)

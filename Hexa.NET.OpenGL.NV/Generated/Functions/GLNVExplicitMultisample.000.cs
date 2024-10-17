@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetMultisamplefvNVNative(pname, index, val);
 		}
 
+		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
+		{
+			fixed (float* pval0 = val)
+			{
+				GetMultisamplefvNVNative(pname, index, pval0);
+			}
+		}
+
 		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)

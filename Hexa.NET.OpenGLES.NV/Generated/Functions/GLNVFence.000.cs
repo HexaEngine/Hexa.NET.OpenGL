@@ -36,6 +36,14 @@ namespace Hexa.NET.OpenGLES.NV
 			DeleteFencesNVNative(1, &fence);
 		}
 
+		public static void DeleteFencesNV(int n, Span<uint> fences)
+		{
+			fixed (uint* pfences0 = fences)
+			{
+				DeleteFencesNVNative(n, pfences0);
+			}
+		}
+
 		public static void DeleteFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -79,6 +87,14 @@ namespace Hexa.NET.OpenGLES.NV
 			uint result;
 			GenFencesNVNative(1, &result);
 			return result;
+		}
+
+		public static void GenFencesNV(int n, Span<uint> fences)
+		{
+			fixed (uint* pfences0 = fences)
+			{
+				GenFencesNVNative(n, pfences0);
+			}
 		}
 
 		public static void GenFencesNV(int n, ref uint fences)

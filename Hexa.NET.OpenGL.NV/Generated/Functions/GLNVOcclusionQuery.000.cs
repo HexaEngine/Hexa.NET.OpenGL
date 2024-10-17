@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGL.NV
 			DeleteOcclusionQueriesNVNative(1, &id);
 		}
 
+		public static void DeleteOcclusionQueriesNV(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				DeleteOcclusionQueriesNVNative(n, pids0);
+			}
+		}
+
 		public static void DeleteOcclusionQueriesNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -94,6 +102,14 @@ namespace Hexa.NET.OpenGL.NV
 			uint result;
 			GenOcclusionQueriesNVNative(1, &result);
 			return result;
+		}
+
+		public static void GenOcclusionQueriesNV(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				GenOcclusionQueriesNVNative(n, pids0);
+			}
 		}
 
 		public static void GenOcclusionQueriesNV(int n, ref uint ids)

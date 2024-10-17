@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, ReadOnlySpan<byte> name)
+		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static int GetFragDataIndex(uint program, ReadOnlySpan<byte> name)
+		public static int GetFragDataIndex(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{

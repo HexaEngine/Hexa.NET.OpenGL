@@ -107,5 +107,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, data);
 		}
 
+		public static void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		{
+			ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, (void*)data);
+		}
+
+		public static void ReadnPixelsEXT<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, pdata0);
+			}
+		}
+
 	}
 }

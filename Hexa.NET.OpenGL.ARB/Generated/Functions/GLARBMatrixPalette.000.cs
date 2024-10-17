@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGL.ARB
 			MatrixIndexPointerARBNative(size, type, stride, pointer);
 		}
 
+		public static void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
+		{
+			MatrixIndexPointerARBNative(size, type, stride, (void*)pointer);
+		}
+
+		public static void MatrixIndexPointerARB<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				MatrixIndexPointerARBNative(size, type, stride, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MatrixIndexubvARBNative(int size, byte* indices)
 		{
@@ -87,7 +100,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void MatrixIndexubvARB(int size, ReadOnlySpan<byte> indices)
+		public static void MatrixIndexubvARB(int size, Span<byte> indices)
 		{
 			fixed (byte* pindices0 = indices)
 			{
@@ -118,6 +131,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MatrixIndexuivARBNative(size, indices);
 		}
 
+		public static void MatrixIndexuivARB(int size, Span<uint> indices)
+		{
+			fixed (uint* pindices0 = indices)
+			{
+				MatrixIndexuivARBNative(size, pindices0);
+			}
+		}
+
 		public static void MatrixIndexuivARB(int size, ref uint indices)
 		{
 			fixed (uint* pindices0 = &indices)
@@ -139,6 +160,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MatrixIndexusvARB(int size, ushort* indices)
 		{
 			MatrixIndexusvARBNative(size, indices);
+		}
+
+		public static void MatrixIndexusvARB(int size, Span<ushort> indices)
+		{
+			fixed (ushort* pindices0 = indices)
+			{
+				MatrixIndexusvARBNative(size, pindices0);
+			}
 		}
 
 		public static void MatrixIndexusvARB(int size, ref ushort indices)

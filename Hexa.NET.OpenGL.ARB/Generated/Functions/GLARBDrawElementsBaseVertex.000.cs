@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.ARB
 			DrawElementsBaseVertexNative(mode, count, type, indices, basevertex);
 		}
 
+		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
+		{
+			DrawElementsBaseVertexNative(mode, count, type, (void*)indices, basevertex);
+		}
+
+		public static void DrawElementsBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsBaseVertexNative(mode, count, type, pindices0, basevertex);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void DrawElementsInstancedBaseVertexNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, indices, instancecount, basevertex);
+		}
+
+		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
+		{
+			DrawElementsInstancedBaseVertexNative(mode, count, type, (void*)indices, instancecount, basevertex);
+		}
+
+		public static void DrawElementsInstancedBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedBaseVertexNative(mode, count, type, pindices0, instancecount, basevertex);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -61,6 +87,19 @@ namespace Hexa.NET.OpenGL.ARB
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, indices, basevertex);
 		}
 
+		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
+		{
+			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, (void*)indices, basevertex);
+		}
+
+		public static void DrawRangeElementsBaseVertex<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawRangeElementsBaseVertexNative(mode, start, end, count, type, pindices0, basevertex);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsBaseVertexNative(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
@@ -76,6 +115,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiDrawElementsBaseVertexNative(mode, count, type, indices, drawcount, basevertex);
 		}
 
+		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
+		{
+			fixed (int* pcount0 = count)
+			{
+				MultiDrawElementsBaseVertexNative(mode, pcount0, type, indices, drawcount, basevertex);
+			}
+		}
+
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			fixed (int* pcount0 = &count)
@@ -84,11 +131,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
+		{
+			fixed (int* pbasevertex0 = basevertex)
+			{
+				MultiDrawElementsBaseVertexNative(mode, count, type, indices, drawcount, pbasevertex0);
+			}
+		}
+
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
 		{
 			fixed (int* pbasevertex0 = &basevertex)
 			{
 				MultiDrawElementsBaseVertexNative(mode, count, type, indices, drawcount, pbasevertex0);
+			}
+		}
+
+		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
+		{
+			fixed (int* pcount0 = count)
+			{
+				fixed (int* pbasevertex1 = basevertex)
+				{
+					MultiDrawElementsBaseVertexNative(mode, pcount0, type, indices, drawcount, pbasevertex1);
+				}
 			}
 		}
 

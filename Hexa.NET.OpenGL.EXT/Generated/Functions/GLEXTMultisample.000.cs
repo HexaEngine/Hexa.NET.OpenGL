@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGL.EXT
 	public static unsafe partial class GLEXTMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleMaskEXTNative(float value, byte invert)
+		internal static void SampleMaskEXTNative(float value, bool invert)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, invert);
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, *((byte*)(&invert)));
 			#else
-			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, invert);
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, *((byte*)(&invert)));
 			#endif
 		}
 
-		public static void SampleMaskEXT(float value, byte invert)
+		public static void SampleMaskEXT(float value, bool invert)
 		{
 			SampleMaskEXTNative(value, invert);
 		}

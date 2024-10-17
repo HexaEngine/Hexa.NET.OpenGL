@@ -31,5 +31,18 @@ namespace Hexa.NET.OpenGLES.OES
 			PointSizePointerOESNative(type, stride, pointer);
 		}
 
+		public static void PointSizePointerOES(GLEnum type, int stride, nint pointer)
+		{
+			PointSizePointerOESNative(type, stride, (void*)pointer);
+		}
+
+		public static void PointSizePointerOES<TPointer>(GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				PointSizePointerOESNative(type, stride, ppointer0);
+			}
+		}
+
 	}
 }

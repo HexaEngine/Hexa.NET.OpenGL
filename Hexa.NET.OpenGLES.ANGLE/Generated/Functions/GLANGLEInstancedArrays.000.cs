@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			DrawElementsInstancedANGLENative(mode, count, type, indices, primcount);
 		}
 
+		public static void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		{
+			DrawElementsInstancedANGLENative(mode, count, type, (void*)indices, primcount);
+		}
+
+		public static void DrawElementsInstancedANGLE<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedANGLENative(mode, count, type, pindices0, primcount);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VertexAttribDivisorANGLENative(uint index, uint divisor)
 		{

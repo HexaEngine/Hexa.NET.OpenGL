@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGL.EXT
 	public static unsafe partial class GLEXTShaderImageLoadStore
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindImageTextureEXTNative(uint index, uint texture, int level, byte layered, int layer, GLBufferAccessARB access, int format)
+		internal static void BindImageTextureEXTNative(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, int, void>)funcTable[0])(index, texture, level, layered, layer, access, format);
+			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, int, void>)funcTable[0])(index, texture, level, *((byte*)(&layered)), layer, access, format);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, int, void>)funcTable[0])(index, texture, level, layered, layer, access, format);
+			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, int, void>)funcTable[0])(index, texture, level, *((byte*)(&layered)), layer, access, format);
 			#endif
 		}
 
-		public static void BindImageTextureEXT(uint index, uint texture, int level, byte layered, int layer, GLBufferAccessARB access, int format)
+		public static void BindImageTextureEXT(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
 		{
 			BindImageTextureEXTNative(index, texture, level, layered, layer, access, format);
 		}

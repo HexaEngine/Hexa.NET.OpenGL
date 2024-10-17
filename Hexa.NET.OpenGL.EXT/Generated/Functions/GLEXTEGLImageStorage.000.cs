@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.EXT
 			EGLImageTargetTexStorageEXTNative(target, image, attribList);
 		}
 
+		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, Span<int> attribList)
+		{
+			fixed (int* pattribList0 = attribList)
+			{
+				EGLImageTargetTexStorageEXTNative(target, image, pattribList0);
+			}
+		}
+
 		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, ref int attribList)
 		{
 			fixed (int* pattribList0 = &attribList)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, int* attribList)
 		{
 			EGLImageTargetTextureStorageEXTNative(texture, image, attribList);
+		}
+
+		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, Span<int> attribList)
+		{
+			fixed (int* pattribList0 = attribList)
+			{
+				EGLImageTargetTextureStorageEXTNative(texture, image, pattribList0);
+			}
 		}
 
 		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, ref int attribList)

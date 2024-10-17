@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			ImportMemoryWin32HandleEXTNative(memory, size, handleType, handle);
 		}
 
+		public static void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, nint handle)
+		{
+			ImportMemoryWin32HandleEXTNative(memory, size, handleType, (void*)handle);
+		}
+
+		public static void ImportMemoryWin32HandleEXT<THandle>(uint memory, ulong size, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
+		{
+			fixed (THandle* phandle0 = handle)
+			{
+				ImportMemoryWin32HandleEXTNative(memory, size, handleType, phandle0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ImportMemoryWin32NameEXTNative(uint memory, ulong size, GLExternalHandleType handleType, void* name)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, void* name)
 		{
 			ImportMemoryWin32NameEXTNative(memory, size, handleType, name);
+		}
+
+		public static void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, nint name)
+		{
+			ImportMemoryWin32NameEXTNative(memory, size, handleType, (void*)name);
+		}
+
+		public static void ImportMemoryWin32NameEXT<TName>(uint memory, ulong size, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
+		{
+			fixed (TName* pname0 = name)
+			{
+				ImportMemoryWin32NameEXTNative(memory, size, handleType, pname0);
+			}
 		}
 
 	}

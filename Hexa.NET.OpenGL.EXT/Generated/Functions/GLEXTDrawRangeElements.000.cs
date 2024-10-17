@@ -31,5 +31,18 @@ namespace Hexa.NET.OpenGL.EXT
 			DrawRangeElementsEXTNative(mode, start, end, count, type, indices);
 		}
 
+		public static void DrawRangeElementsEXT(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices)
+		{
+			DrawRangeElementsEXTNative(mode, start, end, count, type, (void*)indices);
+		}
+
+		public static void DrawRangeElementsEXT<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawRangeElementsEXTNative(mode, start, end, count, type, pindices0);
+			}
+		}
+
 	}
 }

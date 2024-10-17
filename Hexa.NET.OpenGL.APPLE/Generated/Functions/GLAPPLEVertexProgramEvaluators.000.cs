@@ -77,6 +77,14 @@ namespace Hexa.NET.OpenGL.APPLE
 			MapVertexAttrib1dAPPLENative(index, size, u1, u2, stride, order, points);
 		}
 
+		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, Span<double> points)
+		{
+			fixed (double* ppoints0 = points)
+			{
+				MapVertexAttrib1dAPPLENative(index, size, u1, u2, stride, order, ppoints0);
+			}
+		}
+
 		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, ref double points)
 		{
 			fixed (double* ppoints0 = &points)
@@ -98,6 +106,14 @@ namespace Hexa.NET.OpenGL.APPLE
 		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, float* points)
 		{
 			MapVertexAttrib1fAPPLENative(index, size, u1, u2, stride, order, points);
+		}
+
+		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, Span<float> points)
+		{
+			fixed (float* ppoints0 = points)
+			{
+				MapVertexAttrib1fAPPLENative(index, size, u1, u2, stride, order, ppoints0);
+			}
 		}
 
 		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, ref float points)
@@ -123,6 +139,14 @@ namespace Hexa.NET.OpenGL.APPLE
 			MapVertexAttrib2dAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
 		}
 
+		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, Span<double> points)
+		{
+			fixed (double* ppoints0 = points)
+			{
+				MapVertexAttrib2dAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, ppoints0);
+			}
+		}
+
 		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, ref double points)
 		{
 			fixed (double* ppoints0 = &points)
@@ -144,6 +168,14 @@ namespace Hexa.NET.OpenGL.APPLE
 		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points)
 		{
 			MapVertexAttrib2fAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
+		}
+
+		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, Span<float> points)
+		{
+			fixed (float* ppoints0 = points)
+			{
+				MapVertexAttrib2fAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, ppoints0);
+			}
 		}
 
 		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, ref float points)

@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.NV
 			FramebufferSampleLocationsfvNVNative(target, start, count, v);
 		}
 
+		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				FramebufferSampleLocationsfvNVNative(target, start, count, pv0);
+			}
+		}
+
 		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, float* v)
 		{
 			NamedFramebufferSampleLocationsfvNVNative(framebuffer, start, count, v);
+		}
+
+		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				NamedFramebufferSampleLocationsfvNVNative(framebuffer, start, count, pv0);
+			}
 		}
 
 		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, ref float v)

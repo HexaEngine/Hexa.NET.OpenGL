@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.AMD
 			FramebufferSamplePositionsfvAMDNative(target, numsamples, pixelindex, values);
 		}
 
+		public static void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, Span<float> values)
+		{
+			fixed (float* pvalues0 = values)
+			{
+				FramebufferSamplePositionsfvAMDNative(target, numsamples, pixelindex, pvalues0);
+			}
+		}
+
 		public static void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.AMD
 		public static void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, float* values)
 		{
 			GetFramebufferParameterfvAMDNative(target, pname, numsamples, pixelindex, size, values);
+		}
+
+		public static void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, Span<float> values)
+		{
+			fixed (float* pvalues0 = values)
+			{
+				GetFramebufferParameterfvAMDNative(target, pname, numsamples, pixelindex, size, pvalues0);
+			}
 		}
 
 		public static void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, ref float values)
@@ -77,6 +93,14 @@ namespace Hexa.NET.OpenGL.AMD
 			GetNamedFramebufferParameterfvAMDNative(framebuffer, pname, numsamples, pixelindex, size, values);
 		}
 
+		public static void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, Span<float> values)
+		{
+			fixed (float* pvalues0 = values)
+			{
+				GetNamedFramebufferParameterfvAMDNative(framebuffer, pname, numsamples, pixelindex, size, pvalues0);
+			}
+		}
+
 		public static void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
@@ -98,6 +122,14 @@ namespace Hexa.NET.OpenGL.AMD
 		public static void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, float* values)
 		{
 			NamedFramebufferSamplePositionsfvAMDNative(framebuffer, numsamples, pixelindex, values);
+		}
+
+		public static void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, Span<float> values)
+		{
+			fixed (float* pvalues0 = values)
+			{
+				NamedFramebufferSamplePositionsfvAMDNative(framebuffer, numsamples, pixelindex, pvalues0);
+			}
 		}
 
 		public static void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, ref float values)

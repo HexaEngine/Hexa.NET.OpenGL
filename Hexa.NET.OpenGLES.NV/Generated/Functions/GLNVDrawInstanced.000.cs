@@ -46,5 +46,18 @@ namespace Hexa.NET.OpenGLES.NV
 			DrawElementsInstancedNVNative(mode, count, type, indices, primcount);
 		}
 
+		public static void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		{
+			DrawElementsInstancedNVNative(mode, count, type, (void*)indices, primcount);
+		}
+
+		public static void DrawElementsInstancedNV<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedNVNative(mode, count, type, pindices0, primcount);
+			}
+		}
+
 	}
 }

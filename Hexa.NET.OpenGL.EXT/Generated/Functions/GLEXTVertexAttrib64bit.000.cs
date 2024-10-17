@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetVertexAttribLdvEXTNative(index, pname, @params);
 		}
 
+		public static void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetVertexAttribLdvEXTNative(index, pname, pparams0);
+			}
+		}
+
 		public static void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -67,6 +75,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribL1dvEXT(uint index, double* v)
 		{
 			VertexAttribL1dvEXTNative(index, v);
+		}
+
+		public static void VertexAttribL1dvEXT(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL1dvEXTNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL1dvEXT(uint index, ref double v)
@@ -107,6 +123,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribL2dvEXTNative(index, v);
 		}
 
+		public static void VertexAttribL2dvEXT(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL2dvEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL2dvEXT(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -143,6 +167,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribL3dvEXT(uint index, double* v)
 		{
 			VertexAttribL3dvEXTNative(index, v);
+		}
+
+		public static void VertexAttribL3dvEXT(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL3dvEXTNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL3dvEXT(uint index, ref double v)
@@ -183,6 +215,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribL4dvEXTNative(index, v);
 		}
 
+		public static void VertexAttribL4dvEXT(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL4dvEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL4dvEXT(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -204,6 +244,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribLPointerEXT(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			VertexAttribLPointerEXTNative(index, size, type, stride, pointer);
+		}
+
+		public static void VertexAttribLPointerEXT(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
+		{
+			VertexAttribLPointerEXTNative(index, size, type, stride, (void*)pointer);
+		}
+
+		public static void VertexAttribLPointerEXT<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexAttribLPointerEXTNative(index, size, type, stride, ppointer0);
+			}
 		}
 
 	}

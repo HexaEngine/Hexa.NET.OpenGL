@@ -46,5 +46,18 @@ namespace Hexa.NET.OpenGL.NV
 			VertexArrayRangeNVNative(length, pointer);
 		}
 
+		public static void VertexArrayRangeNV(int length, nint pointer)
+		{
+			VertexArrayRangeNVNative(length, (void*)pointer);
+		}
+
+		public static void VertexArrayRangeNV<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexArrayRangeNVNative(length, ppointer0);
+			}
+		}
+
 	}
 }

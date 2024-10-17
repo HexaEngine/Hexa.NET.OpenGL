@@ -61,6 +61,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetShaderPrecisionFormatNative(shadertype, precisiontype, range, precision);
 		}
 
+		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, int* precision)
+		{
+			fixed (int* prange0 = range)
+			{
+				GetShaderPrecisionFormatNative(shadertype, precisiontype, prange0, precision);
+			}
+		}
+
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, int* precision)
 		{
 			fixed (int* prange0 = &range)
@@ -69,11 +77,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, Span<int> precision)
+		{
+			fixed (int* pprecision0 = precision)
+			{
+				GetShaderPrecisionFormatNative(shadertype, precisiontype, range, pprecision0);
+			}
+		}
+
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, ref int precision)
 		{
 			fixed (int* pprecision0 = &precision)
 			{
 				GetShaderPrecisionFormatNative(shadertype, precisiontype, range, pprecision0);
+			}
+		}
+
+		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, Span<int> precision)
+		{
+			fixed (int* prange0 = range)
+			{
+				fixed (int* pprecision1 = precision)
+				{
+					GetShaderPrecisionFormatNative(shadertype, precisiontype, prange0, pprecision1);
+				}
 			}
 		}
 
@@ -118,11 +145,32 @@ namespace Hexa.NET.OpenGL.ARB
 			ShaderBinaryNative(count, shaders, binaryFormat, binary, length);
 		}
 
+		public static void ShaderBinary(int count, Span<uint> shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
+		{
+			fixed (uint* pshaders0 = shaders)
+			{
+				ShaderBinaryNative(count, pshaders0, binaryFormat, binary, length);
+			}
+		}
+
 		public static void ShaderBinary(int count, ref uint shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
 		{
 			fixed (uint* pshaders0 = &shaders)
 			{
 				ShaderBinaryNative(count, pshaders0, binaryFormat, binary, length);
+			}
+		}
+
+		public static void ShaderBinary(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, nint binary, int length)
+		{
+			ShaderBinaryNative(count, shaders, binaryFormat, (void*)binary, length);
+		}
+
+		public static void ShaderBinary<TBinary>(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
+		{
+			fixed (TBinary* pbinary0 = binary)
+			{
+				ShaderBinaryNative(count, shaders, binaryFormat, pbinary0, length);
 			}
 		}
 

@@ -32,11 +32,29 @@ namespace Hexa.NET.OpenGL.INTEL
 			return ret;
 		}
 
+		public static void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, GLEnum* layout)
+		{
+			fixed (int* pstride0 = stride)
+			{
+				void* ret = MapTexture2DINTELNative(texture, level, access, pstride0, layout);
+				return ret;
+			}
+		}
+
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, GLEnum* layout)
 		{
 			fixed (int* pstride0 = &stride)
 			{
 				void* ret = MapTexture2DINTELNative(texture, level, access, pstride0, layout);
+				return ret;
+			}
+		}
+
+		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, Span<GLEnum> layout)
+		{
+			fixed (GLEnum* playout0 = layout)
+			{
+				void* ret = MapTexture2DINTELNative(texture, level, access, stride, playout0);
 				return ret;
 			}
 		}
@@ -47,6 +65,18 @@ namespace Hexa.NET.OpenGL.INTEL
 			{
 				void* ret = MapTexture2DINTELNative(texture, level, access, stride, playout0);
 				return ret;
+			}
+		}
+
+		public static void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, Span<GLEnum> layout)
+		{
+			fixed (int* pstride0 = stride)
+			{
+				fixed (GLEnum* playout1 = layout)
+				{
+					void* ret = MapTexture2DINTELNative(texture, level, access, pstride0, playout1);
+					return ret;
+				}
 			}
 		}
 

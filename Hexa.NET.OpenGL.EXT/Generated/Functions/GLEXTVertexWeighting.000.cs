@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexWeightPointerEXTNative(size, type, stride, pointer);
 		}
 
+		public static void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, nint pointer)
+		{
+			VertexWeightPointerEXTNative(size, type, stride, (void*)pointer);
+		}
+
+		public static void VertexWeightPointerEXT<TPointer>(int size, GLVertexWeightPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexWeightPointerEXTNative(size, type, stride, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VertexWeightfEXTNative(float weight)
 		{
@@ -59,6 +72,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexWeightfvEXT(float* weight)
 		{
 			VertexWeightfvEXTNative(weight);
+		}
+
+		public static void VertexWeightfvEXT(Span<float> weight)
+		{
+			fixed (float* pweight0 = weight)
+			{
+				VertexWeightfvEXTNative(pweight0);
+			}
 		}
 
 		public static void VertexWeightfvEXT(ref float weight)

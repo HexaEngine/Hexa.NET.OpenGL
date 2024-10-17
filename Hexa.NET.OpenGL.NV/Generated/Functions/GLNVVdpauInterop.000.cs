@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.NV
 			VDPAUGetSurfaceivNVNative(surface, pname, count, length, values);
 		}
 
+		public static void VDPAUGetSurfaceivNV(GLvdpauSurfaceNV surface, GLEnum pname, int count, Span<int> length, int* values)
+		{
+			fixed (int* plength0 = length)
+			{
+				VDPAUGetSurfaceivNVNative(surface, pname, count, plength0, values);
+			}
+		}
+
 		public static void VDPAUGetSurfaceivNV(GLvdpauSurfaceNV surface, GLEnum pname, int count, ref int length, int* values)
 		{
 			fixed (int* plength0 = &length)
@@ -54,11 +62,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void VDPAUGetSurfaceivNV(GLvdpauSurfaceNV surface, GLEnum pname, int count, int* length, Span<int> values)
+		{
+			fixed (int* pvalues0 = values)
+			{
+				VDPAUGetSurfaceivNVNative(surface, pname, count, length, pvalues0);
+			}
+		}
+
 		public static void VDPAUGetSurfaceivNV(GLvdpauSurfaceNV surface, GLEnum pname, int count, int* length, ref int values)
 		{
 			fixed (int* pvalues0 = &values)
 			{
 				VDPAUGetSurfaceivNVNative(surface, pname, count, length, pvalues0);
+			}
+		}
+
+		public static void VDPAUGetSurfaceivNV(GLvdpauSurfaceNV surface, GLEnum pname, int count, Span<int> length, Span<int> values)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* pvalues1 = values)
+				{
+					VDPAUGetSurfaceivNVNative(surface, pname, count, plength0, pvalues1);
+				}
 			}
 		}
 
@@ -86,6 +113,48 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VDPAUInitNV(void* vdpDevice, void* getProcAddress)
 		{
 			VDPAUInitNVNative(vdpDevice, getProcAddress);
+		}
+
+		public static void VDPAUInitNV(nint vdpDevice, void* getProcAddress)
+		{
+			VDPAUInitNVNative((void*)vdpDevice, getProcAddress);
+		}
+
+		public static void VDPAUInitNV<TVdpDevice>(Span<TVdpDevice> vdpDevice, void* getProcAddress) where TVdpDevice : unmanaged
+		{
+			fixed (TVdpDevice* pvdpDevice0 = vdpDevice)
+			{
+				VDPAUInitNVNative(pvdpDevice0, getProcAddress);
+			}
+		}
+
+		public static void VDPAUInitNV(void* vdpDevice, nint getProcAddress)
+		{
+			VDPAUInitNVNative(vdpDevice, (void*)getProcAddress);
+		}
+
+		public static void VDPAUInitNV<TGetProcAddress>(void* vdpDevice, Span<TGetProcAddress> getProcAddress) where TGetProcAddress : unmanaged
+		{
+			fixed (TGetProcAddress* pgetProcAddress0 = getProcAddress)
+			{
+				VDPAUInitNVNative(vdpDevice, pgetProcAddress0);
+			}
+		}
+
+		public static void VDPAUInitNV(nint vdpDevice, nint getProcAddress)
+		{
+			VDPAUInitNVNative((void*)vdpDevice, (void*)getProcAddress);
+		}
+
+		public static void VDPAUInitNV<TVdpDevice, TGetProcAddress>(Span<TVdpDevice> vdpDevice, Span<TGetProcAddress> getProcAddress) where TVdpDevice : unmanaged where TGetProcAddress : unmanaged
+		{
+			fixed (TVdpDevice* pvdpDevice0 = vdpDevice)
+			{
+				fixed (TGetProcAddress* pgetProcAddress1 = getProcAddress)
+				{
+					VDPAUInitNVNative(pvdpDevice0, pgetProcAddress1);
+				}
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,6 +188,14 @@ namespace Hexa.NET.OpenGL.NV
 			VDPAUMapSurfacesNVNative(numSurfaces, surfaces);
 		}
 
+		public static void VDPAUMapSurfacesNV(int numSurfaces, Span<GLvdpauSurfaceNV> surfaces)
+		{
+			fixed (GLvdpauSurfaceNV* psurfaces0 = surfaces)
+			{
+				VDPAUMapSurfacesNVNative(numSurfaces, psurfaces0);
+			}
+		}
+
 		public static void VDPAUMapSurfacesNV(int numSurfaces, ref GLvdpauSurfaceNV surfaces)
 		{
 			fixed (GLvdpauSurfaceNV* psurfaces0 = &surfaces)
@@ -141,6 +218,30 @@ namespace Hexa.NET.OpenGL.NV
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterOutputSurfaceNVNative(vdpSurface, target, numTextureNames, textureNames);
 			return ret;
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterOutputSurfaceNV(nint vdpSurface, GLEnum target, int numTextureNames, uint* textureNames)
+		{
+			GLvdpauSurfaceNV ret = VDPAURegisterOutputSurfaceNVNative((void*)vdpSurface, target, numTextureNames, textureNames);
+			return ret;
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterOutputSurfaceNV<TVdpSurface>(Span<TVdpSurface> vdpSurface, GLEnum target, int numTextureNames, uint* textureNames) where TVdpSurface : unmanaged
+		{
+			fixed (TVdpSurface* pvdpSurface0 = vdpSurface)
+			{
+				GLvdpauSurfaceNV ret = VDPAURegisterOutputSurfaceNVNative(pvdpSurface0, target, numTextureNames, textureNames);
+				return ret;
+			}
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterOutputSurfaceNV(void* vdpSurface, GLEnum target, int numTextureNames, Span<uint> textureNames)
+		{
+			fixed (uint* ptextureNames0 = textureNames)
+			{
+				GLvdpauSurfaceNV ret = VDPAURegisterOutputSurfaceNVNative(vdpSurface, target, numTextureNames, ptextureNames0);
+				return ret;
+			}
 		}
 
 		public static GLvdpauSurfaceNV VDPAURegisterOutputSurfaceNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames)
@@ -166,6 +267,30 @@ namespace Hexa.NET.OpenGL.NV
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceNVNative(vdpSurface, target, numTextureNames, textureNames);
 			return ret;
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceNV(nint vdpSurface, GLEnum target, int numTextureNames, uint* textureNames)
+		{
+			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceNVNative((void*)vdpSurface, target, numTextureNames, textureNames);
+			return ret;
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceNV<TVdpSurface>(Span<TVdpSurface> vdpSurface, GLEnum target, int numTextureNames, uint* textureNames) where TVdpSurface : unmanaged
+		{
+			fixed (TVdpSurface* pvdpSurface0 = vdpSurface)
+			{
+				GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceNVNative(pvdpSurface0, target, numTextureNames, textureNames);
+				return ret;
+			}
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceNV(void* vdpSurface, GLEnum target, int numTextureNames, Span<uint> textureNames)
+		{
+			fixed (uint* ptextureNames0 = textureNames)
+			{
+				GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceNVNative(vdpSurface, target, numTextureNames, ptextureNames0);
+				return ret;
+			}
 		}
 
 		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames)
@@ -205,6 +330,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VDPAUUnmapSurfacesNV(int numSurface, GLvdpauSurfaceNV* surfaces)
 		{
 			VDPAUUnmapSurfacesNVNative(numSurface, surfaces);
+		}
+
+		public static void VDPAUUnmapSurfacesNV(int numSurface, Span<GLvdpauSurfaceNV> surfaces)
+		{
+			fixed (GLvdpauSurfaceNV* psurfaces0 = surfaces)
+			{
+				VDPAUUnmapSurfacesNVNative(numSurface, psurfaces0);
+			}
 		}
 
 		public static void VDPAUUnmapSurfacesNV(int numSurface, ref GLvdpauSurfaceNV surfaces)

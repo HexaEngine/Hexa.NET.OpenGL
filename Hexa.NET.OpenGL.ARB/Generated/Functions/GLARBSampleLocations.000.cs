@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.ARB
 			FramebufferSampleLocationsfvARBNative(target, start, count, v);
 		}
 
+		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				FramebufferSampleLocationsfvARBNative(target, start, count, pv0);
+			}
+		}
+
 		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -67,6 +75,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, float* v)
 		{
 			NamedFramebufferSampleLocationsfvARBNative(framebuffer, start, count, v);
+		}
+
+		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				NamedFramebufferSampleLocationsfvARBNative(framebuffer, start, count, pv0);
+			}
 		}
 
 		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, ref float v)

@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using Hexa.NET.GLFW;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImGui.Backends.GLFW;
@@ -10,15 +11,15 @@ using GLFWwindowPtr = Hexa.NET.GLFW.GLFWwindowPtr;
 
 GLFW.Init();
 
-string glslVersion = "#version 150";
+string glslVersion = "#version 330 core";
 GLFW.WindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 3);
-GLFW.WindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 2);
+GLFW.WindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 3);
 GLFW.WindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
 
 GLFW.WindowHint(GLFW.GLFW_FOCUSED, 1);    // Make window focused on start
 GLFW.WindowHint(GLFW.GLFW_RESIZABLE, 1);  // Make window resizable
 
-GLFWwindowPtr window = GLFW.CreateWindow(800, 600, "GLFW Example", null, null);
+GLFWwindowPtr window = GLFW.CreateWindow(800, 600, "GL ImGui Example", null, null);
 if (window.IsNull)
 {
     Console.WriteLine("Failed to create GLFW window.");

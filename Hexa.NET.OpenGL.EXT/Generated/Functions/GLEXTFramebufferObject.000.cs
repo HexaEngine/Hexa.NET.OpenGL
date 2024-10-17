@@ -82,6 +82,14 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteFramebuffersEXTNative(1, &framebuffer);
 		}
 
+		public static void DeleteFramebuffersEXT(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				DeleteFramebuffersEXTNative(n, pframebuffers0);
+			}
+		}
+
 		public static void DeleteFramebuffersEXT(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -108,6 +116,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void DeleteRenderbuffersEX(uint renderbuffer)
 		{
 			DeleteRenderbuffersEXTNative(1, &renderbuffer);
+		}
+
+		public static void DeleteRenderbuffersEXT(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				DeleteRenderbuffersEXTNative(n, prenderbuffers0);
+			}
 		}
 
 		public static void DeleteRenderbuffersEXT(int n, ref uint renderbuffers)
@@ -200,6 +216,14 @@ namespace Hexa.NET.OpenGL.EXT
 			return result;
 		}
 
+		public static void GenFramebuffersEXT(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				GenFramebuffersEXTNative(n, pframebuffers0);
+			}
+		}
+
 		public static void GenFramebuffersEXT(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -228,6 +252,14 @@ namespace Hexa.NET.OpenGL.EXT
 			uint result;
 			GenRenderbuffersEXTNative(1, &result);
 			return result;
+		}
+
+		public static void GenRenderbuffersEXT(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				GenRenderbuffersEXTNative(n, prenderbuffers0);
+			}
 		}
 
 		public static void GenRenderbuffersEXT(int n, ref uint renderbuffers)

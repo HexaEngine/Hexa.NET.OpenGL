@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGLES.OES
 			ClipPlanefOESNative(plane, equation);
 		}
 
+		public static void ClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
+		{
+			fixed (float* pequation0 = equation)
+			{
+				ClipPlanefOESNative(plane, pequation0);
+			}
+		}
+
 		public static void ClipPlanefOES(GLClipPlaneName plane, ref float equation)
 		{
 			fixed (float* pequation0 = &equation)
@@ -97,6 +105,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void GetClipPlanefOES(GLClipPlaneName plane, float* equation)
 		{
 			GetClipPlanefOESNative(plane, equation);
+		}
+
+		public static void GetClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
+		{
+			fixed (float* pequation0 = equation)
+			{
+				GetClipPlanefOESNative(plane, pequation0);
+			}
 		}
 
 		public static void GetClipPlanefOES(GLClipPlaneName plane, ref float equation)

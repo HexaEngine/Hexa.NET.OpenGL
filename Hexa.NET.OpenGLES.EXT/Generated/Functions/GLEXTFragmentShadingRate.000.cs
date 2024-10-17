@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetFragmentShadingRatesEXTNative(samples, maxCount, count, shadingRates);
 		}
 
+		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, Span<int> count, GLShadingRate shadingRates)
+		{
+			fixed (int* pcount0 = count)
+			{
+				GetFragmentShadingRatesEXTNative(samples, maxCount, pcount0, shadingRates);
+			}
+		}
+
 		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, ref int count, GLShadingRate shadingRates)
 		{
 			fixed (int* pcount0 = &count)

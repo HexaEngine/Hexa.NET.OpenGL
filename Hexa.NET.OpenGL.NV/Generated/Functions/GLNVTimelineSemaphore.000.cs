@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.NV
 			CreateSemaphoresNVNative(n, semaphores);
 		}
 
+		public static void CreateSemaphoresNV(int n, Span<uint> semaphores)
+		{
+			fixed (uint* psemaphores0 = semaphores)
+			{
+				CreateSemaphoresNVNative(n, psemaphores0);
+			}
+		}
+
 		public static void CreateSemaphoresNV(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)

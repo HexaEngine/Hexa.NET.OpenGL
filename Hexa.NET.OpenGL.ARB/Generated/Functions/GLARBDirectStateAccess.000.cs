@@ -77,6 +77,19 @@ namespace Hexa.NET.OpenGL.ARB
 			ClearNamedBufferDataNative(buffer, internalformat, format, type, data);
 		}
 
+		public static void ClearNamedBufferData(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearNamedBufferDataNative(buffer, internalformat, format, type, (void*)data);
+		}
+
+		public static void ClearNamedBufferData<TData>(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearNamedBufferDataNative(buffer, internalformat, format, type, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ClearNamedBufferSubDataNative(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
@@ -90,6 +103,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ClearNamedBufferSubData(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearNamedBufferSubDataNative(buffer, internalformat, offset, size, format, type, data);
+		}
+
+		public static void ClearNamedBufferSubData(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearNamedBufferSubDataNative(buffer, internalformat, offset, size, format, type, (void*)data);
+		}
+
+		public static void ClearNamedBufferSubData<TData>(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearNamedBufferSubDataNative(buffer, internalformat, offset, size, format, type, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -122,6 +148,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ClearNamedFramebufferfvNative(framebuffer, buffer, drawbuffer, value);
 		}
 
+		public static void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ClearNamedFramebufferfvNative(framebuffer, buffer, drawbuffer, pvalue0);
+			}
+		}
+
 		public static void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -143,6 +177,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, int* value)
 		{
 			ClearNamedFramebufferivNative(framebuffer, buffer, drawbuffer, value);
+		}
+
+		public static void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ClearNamedFramebufferivNative(framebuffer, buffer, drawbuffer, pvalue0);
+			}
 		}
 
 		public static void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref int value)
@@ -168,6 +210,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ClearNamedFramebufferuivNative(framebuffer, buffer, drawbuffer, value);
 		}
 
+		public static void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ClearNamedFramebufferuivNative(framebuffer, buffer, drawbuffer, pvalue0);
+			}
+		}
+
 		public static void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -191,6 +241,19 @@ namespace Hexa.NET.OpenGL.ARB
 			CompressedTextureSubImage1DNative(texture, level, xoffset, width, format, imageSize, data);
 		}
 
+		public static void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
+		{
+			CompressedTextureSubImage1DNative(texture, level, xoffset, width, format, imageSize, (void*)data);
+		}
+
+		public static void CompressedTextureSubImage1D<TData>(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				CompressedTextureSubImage1DNative(texture, level, xoffset, width, format, imageSize, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedTextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
@@ -206,6 +269,19 @@ namespace Hexa.NET.OpenGL.ARB
 			CompressedTextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
 
+		public static void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
+		{
+			CompressedTextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, imageSize, (void*)data);
+		}
+
+		public static void CompressedTextureSubImage2D<TData>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				CompressedTextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, imageSize, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedTextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
@@ -219,6 +295,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
+		}
+
+		public static void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
+		{
+			CompressedTextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
+		}
+
+		public static void CompressedTextureSubImage3D<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				CompressedTextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -296,6 +385,14 @@ namespace Hexa.NET.OpenGL.ARB
 			CreateBuffersNative(n, buffers);
 		}
 
+		public static void CreateBuffers(int n, Span<uint> buffers)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				CreateBuffersNative(n, pbuffers0);
+			}
+		}
+
 		public static void CreateBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -317,6 +414,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void CreateFramebuffers(int n, uint* framebuffers)
 		{
 			CreateFramebuffersNative(n, framebuffers);
+		}
+
+		public static void CreateFramebuffers(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				CreateFramebuffersNative(n, pframebuffers0);
+			}
 		}
 
 		public static void CreateFramebuffers(int n, ref uint framebuffers)
@@ -342,6 +447,14 @@ namespace Hexa.NET.OpenGL.ARB
 			CreateProgramPipelinesNative(n, pipelines);
 		}
 
+		public static void CreateProgramPipelines(int n, Span<uint> pipelines)
+		{
+			fixed (uint* ppipelines0 = pipelines)
+			{
+				CreateProgramPipelinesNative(n, ppipelines0);
+			}
+		}
+
 		public static void CreateProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -363,6 +476,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void CreateQueries(GLQueryTarget target, int n, uint* ids)
 		{
 			CreateQueriesNative(target, n, ids);
+		}
+
+		public static void CreateQueries(GLQueryTarget target, int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				CreateQueriesNative(target, n, pids0);
+			}
 		}
 
 		public static void CreateQueries(GLQueryTarget target, int n, ref uint ids)
@@ -388,6 +509,14 @@ namespace Hexa.NET.OpenGL.ARB
 			CreateRenderbuffersNative(n, renderbuffers);
 		}
 
+		public static void CreateRenderbuffers(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				CreateRenderbuffersNative(n, prenderbuffers0);
+			}
+		}
+
 		public static void CreateRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -409,6 +538,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void CreateSamplers(int n, uint* samplers)
 		{
 			CreateSamplersNative(n, samplers);
+		}
+
+		public static void CreateSamplers(int n, Span<uint> samplers)
+		{
+			fixed (uint* psamplers0 = samplers)
+			{
+				CreateSamplersNative(n, psamplers0);
+			}
 		}
 
 		public static void CreateSamplers(int n, ref uint samplers)
@@ -434,6 +571,14 @@ namespace Hexa.NET.OpenGL.ARB
 			CreateTexturesNative(target, n, textures);
 		}
 
+		public static void CreateTextures(GLTextureTarget target, int n, Span<uint> textures)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				CreateTexturesNative(target, n, ptextures0);
+			}
+		}
+
 		public static void CreateTextures(GLTextureTarget target, int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -457,6 +602,14 @@ namespace Hexa.NET.OpenGL.ARB
 			CreateTransformFeedbacksNative(n, ids);
 		}
 
+		public static void CreateTransformFeedbacks(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				CreateTransformFeedbacksNative(n, pids0);
+			}
+		}
+
 		public static void CreateTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -478,6 +631,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void CreateVertexArrays(int n, uint* arrays)
 		{
 			CreateVertexArraysNative(n, arrays);
+		}
+
+		public static void CreateVertexArrays(int n, Span<uint> arrays)
+		{
+			fixed (uint* parrays0 = arrays)
+			{
+				CreateVertexArraysNative(n, parrays0);
+			}
 		}
 
 		public static void CreateVertexArrays(int n, ref uint arrays)
@@ -561,6 +722,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetCompressedTextureImage(uint texture, int level, int bufSize, void* pixels)
 		{
 			GetCompressedTextureImageNative(texture, level, bufSize, pixels);
+		}
+
+		public static void GetCompressedTextureImage(uint texture, int level, int bufSize, nint pixels)
+		{
+			GetCompressedTextureImageNative(texture, level, bufSize, (void*)pixels);
+		}
+
+		public static void GetCompressedTextureImage<TPixels>(uint texture, int level, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				GetCompressedTextureImageNative(texture, level, bufSize, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -651,6 +825,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetNamedBufferSubData(uint buffer, nint offset, nint size, void* data)
 		{
 			GetNamedBufferSubDataNative(buffer, offset, size, data);
+		}
+
+		public static void GetNamedBufferSubData(uint buffer, nint offset, nint size, nint data)
+		{
+			GetNamedBufferSubDataNative(buffer, offset, size, (void*)data);
+		}
+
+		public static void GetNamedBufferSubData<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				GetNamedBufferSubDataNative(buffer, offset, size, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -808,6 +995,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetTextureImage(uint texture, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* pixels)
 		{
 			GetTextureImageNative(texture, level, format, type, bufSize, pixels);
+		}
+
+		public static void GetTextureImage(uint texture, int level, GLPixelFormat format, GLPixelType type, int bufSize, nint pixels)
+		{
+			GetTextureImageNative(texture, level, format, type, bufSize, (void*)pixels);
+		}
+
+		public static void GetTextureImage<TPixels>(uint texture, int level, GLPixelFormat format, GLPixelType type, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				GetTextureImageNative(texture, level, format, type, bufSize, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1199,6 +1399,19 @@ namespace Hexa.NET.OpenGL.ARB
 			NamedBufferDataNative(buffer, size, data, usage);
 		}
 
+		public static void NamedBufferData(uint buffer, nint size, nint data, GLVertexBufferObjectUsage usage)
+		{
+			NamedBufferDataNative(buffer, size, (void*)data, usage);
+		}
+
+		public static void NamedBufferData<TData>(uint buffer, nint size, Span<TData> data, GLVertexBufferObjectUsage usage) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				NamedBufferDataNative(buffer, size, pdata0, usage);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NamedBufferStorageNative(uint buffer, nint size, void* data, GLBufferStorageMask flags)
 		{
@@ -1214,6 +1427,19 @@ namespace Hexa.NET.OpenGL.ARB
 			NamedBufferStorageNative(buffer, size, data, flags);
 		}
 
+		public static void NamedBufferStorage(uint buffer, nint size, nint data, GLBufferStorageMask flags)
+		{
+			NamedBufferStorageNative(buffer, size, (void*)data, flags);
+		}
+
+		public static void NamedBufferStorage<TData>(uint buffer, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				NamedBufferStorageNative(buffer, size, pdata0, flags);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NamedBufferSubDataNative(uint buffer, nint offset, nint size, void* data)
 		{
@@ -1227,6 +1453,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void NamedBufferSubData(uint buffer, nint offset, nint size, void* data)
 		{
 			NamedBufferSubDataNative(buffer, offset, size, data);
+		}
+
+		public static void NamedBufferSubData(uint buffer, nint offset, nint size, nint data)
+		{
+			NamedBufferSubDataNative(buffer, offset, size, (void*)data);
+		}
+
+		public static void NamedBufferSubData<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				NamedBufferSubDataNative(buffer, offset, size, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1559,16 +1798,16 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage2DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, byte fixedsamplelocations)
+		internal static void TextureStorage2DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[80])(texture, samples, internalformat, width, height, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[80])(texture, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[80])(texture, samples, internalformat, width, height, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[80])(texture, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void TextureStorage2DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, byte fixedsamplelocations)
+		public static void TextureStorage2DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TextureStorage2DMultisampleNative(texture, samples, internalformat, width, height, fixedsamplelocations);
 		}
@@ -1589,16 +1828,16 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage3DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
+		internal static void TextureStorage3DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[82])(texture, samples, internalformat, width, height, depth, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[82])(texture, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[82])(texture, samples, internalformat, width, height, depth, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[82])(texture, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void TextureStorage3DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
+		public static void TextureStorage3DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TextureStorage3DMultisampleNative(texture, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
@@ -1618,6 +1857,19 @@ namespace Hexa.NET.OpenGL.ARB
 			TextureSubImage1DNative(texture, level, xoffset, width, format, type, pixels);
 		}
 
+		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TextureSubImage1DNative(texture, level, xoffset, width, format, type, (void*)pixels);
+		}
+
+		public static void TextureSubImage1D<TPixels>(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TextureSubImage1DNative(texture, level, xoffset, width, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void TextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -1633,6 +1885,19 @@ namespace Hexa.NET.OpenGL.ARB
 			TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
 
+		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
+		}
+
+		public static void TextureSubImage2D<TPixels>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void TextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -1646,6 +1911,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+		}
+
+		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
+		}
+
+		public static void TextureSubImage3D<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1710,16 +1988,16 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribType type, byte normalized, uint relativeoffset)
+		internal static void VertexArrayAttribFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[90])(vaobj, attribindex, size, type, normalized, relativeoffset);
+			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[90])(vaobj, attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[90])(vaobj, attribindex, size, type, normalized, relativeoffset);
+			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[90])(vaobj, attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
 			#endif
 		}
 
-		public static void VertexArrayAttribFormat(uint vaobj, uint attribindex, int size, GLVertexAttribType type, byte normalized, uint relativeoffset)
+		public static void VertexArrayAttribFormat(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexArrayAttribFormatNative(vaobj, attribindex, size, type, normalized, relativeoffset);
 		}
@@ -1814,6 +2092,14 @@ namespace Hexa.NET.OpenGL.ARB
 			VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, strides);
 		}
 
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, offsets, strides);
+			}
+		}
+
 		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -1822,11 +2108,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
+		{
+			fixed (nint* poffsets0 = offsets)
+			{
+				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, strides);
+			}
+		}
+
 		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
 				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, strides);
+			}
+		}
+
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* poffsets1 = offsets)
+				{
+					VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, poffsets1, strides);
+				}
 			}
 		}
 
@@ -1841,11 +2146,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
+		{
+			fixed (int* pstrides0 = strides)
+			{
+				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, pstrides0);
+			}
+		}
+
 		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, ref int strides)
 		{
 			fixed (int* pstrides0 = &strides)
 			{
 				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, pstrides0);
+			}
+		}
+
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (int* pstrides1 = strides)
+				{
+					VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, offsets, pstrides1);
+				}
 			}
 		}
 
@@ -1860,6 +2184,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
+		{
+			fixed (nint* poffsets0 = offsets)
+			{
+				fixed (int* pstrides1 = strides)
+				{
+					VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, pstrides1);
+				}
+			}
+		}
+
 		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, ref int strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -1867,6 +2202,20 @@ namespace Hexa.NET.OpenGL.ARB
 				fixed (int* pstrides1 = &strides)
 				{
 					VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, pstrides1);
+				}
+			}
+		}
+
+		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
+		{
+			fixed (uint* pbuffers0 = buffers)
+			{
+				fixed (nint* poffsets1 = offsets)
+				{
+					fixed (int* pstrides2 = strides)
+					{
+						VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, poffsets1, pstrides2);
+					}
 				}
 			}
 		}

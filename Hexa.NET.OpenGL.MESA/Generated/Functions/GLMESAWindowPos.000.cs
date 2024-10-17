@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.MESA
 			WindowPos2dvMESANative(v);
 		}
 
+		public static void WindowPos2dvMESA(Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				WindowPos2dvMESANative(pv0);
+			}
+		}
+
 		public static void WindowPos2dvMESA(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -82,6 +90,14 @@ namespace Hexa.NET.OpenGL.MESA
 		public static void WindowPos2fvMESA(float* v)
 		{
 			WindowPos2fvMESANative(v);
+		}
+
+		public static void WindowPos2fvMESA(Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				WindowPos2fvMESANative(pv0);
+			}
 		}
 
 		public static void WindowPos2fvMESA(ref float v)
@@ -122,6 +138,14 @@ namespace Hexa.NET.OpenGL.MESA
 			WindowPos2ivMESANative(v);
 		}
 
+		public static void WindowPos2ivMESA(Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				WindowPos2ivMESANative(pv0);
+			}
+		}
+
 		public static void WindowPos2ivMESA(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -158,6 +182,14 @@ namespace Hexa.NET.OpenGL.MESA
 		public static void WindowPos2svMESA(short* v)
 		{
 			WindowPos2svMESANative(v);
+		}
+
+		public static void WindowPos2svMESA(Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				WindowPos2svMESANative(pv0);
+			}
 		}
 
 		public static void WindowPos2svMESA(ref short v)
@@ -198,6 +230,14 @@ namespace Hexa.NET.OpenGL.MESA
 			WindowPos3dvMESANative(v);
 		}
 
+		public static void WindowPos3dvMESA(Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				WindowPos3dvMESANative(pv0);
+			}
+		}
+
 		public static void WindowPos3dvMESA(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -234,6 +274,14 @@ namespace Hexa.NET.OpenGL.MESA
 		public static void WindowPos3fvMESA(float* v)
 		{
 			WindowPos3fvMESANative(v);
+		}
+
+		public static void WindowPos3fvMESA(Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				WindowPos3fvMESANative(pv0);
+			}
 		}
 
 		public static void WindowPos3fvMESA(ref float v)
@@ -274,6 +322,14 @@ namespace Hexa.NET.OpenGL.MESA
 			WindowPos3ivMESANative(v);
 		}
 
+		public static void WindowPos3ivMESA(Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				WindowPos3ivMESANative(pv0);
+			}
+		}
+
 		public static void WindowPos3ivMESA(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -310,6 +366,14 @@ namespace Hexa.NET.OpenGL.MESA
 		public static void WindowPos3svMESA(short* v)
 		{
 			WindowPos3svMESANative(v);
+		}
+
+		public static void WindowPos3svMESA(Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				WindowPos3svMESANative(pv0);
+			}
 		}
 
 		public static void WindowPos3svMESA(ref short v)
@@ -350,6 +414,14 @@ namespace Hexa.NET.OpenGL.MESA
 			WindowPos4dvMESANative(v);
 		}
 
+		public static void WindowPos4dvMESA(Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				WindowPos4dvMESANative(pv0);
+			}
+		}
+
 		public static void WindowPos4dvMESA(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -386,6 +458,14 @@ namespace Hexa.NET.OpenGL.MESA
 		public static void WindowPos4fvMESA(float* v)
 		{
 			WindowPos4fvMESANative(v);
+		}
+
+		public static void WindowPos4fvMESA(Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				WindowPos4fvMESANative(pv0);
+			}
 		}
 
 		public static void WindowPos4fvMESA(ref float v)
@@ -426,6 +506,14 @@ namespace Hexa.NET.OpenGL.MESA
 			WindowPos4ivMESANative(v);
 		}
 
+		public static void WindowPos4ivMESA(Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				WindowPos4ivMESANative(pv0);
+			}
+		}
+
 		public static void WindowPos4ivMESA(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -462,6 +550,14 @@ namespace Hexa.NET.OpenGL.MESA
 		public static void WindowPos4svMESA(short* v)
 		{
 			WindowPos4svMESANative(v);
+		}
+
+		public static void WindowPos4svMESA(Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				WindowPos4svMESANative(pv0);
+			}
 		}
 
 		public static void WindowPos4svMESA(ref short v)

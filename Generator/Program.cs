@@ -3,10 +3,7 @@ using HexaGen;
 using HexaGen.Core;
 using HexaGen.Core.CSharp;
 using HexaGen.Metadata;
-using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
-using System.Xml.Linq;
 using System.Xml.Serialization;
 
 internal class Program
@@ -18,35 +15,12 @@ internal class Program
 
     private static void Main(string[] args)
     {
+        var start = DateTime.Now;
         XmlSerializer serializer = new(typeof(GlRegistry));
         using var fs = File.OpenRead("gl.xml");
         GlRegistry registry = (GlRegistry)serializer.Deserialize(fs)!;
         // GlRefPages pages = new();
         // pages.Parse("gl4");
-
-        Dictionary<string, HashSet<string>> extensions = new();
-
-        foreach (var ex in registry.Extensions.Extension)
-        {
-            var span = ex.Name.AsSpan();
-
-            if (span.StartsWith("GL_"))
-            {
-                span = span[3..];
-            }
-
-            int idx = span.IndexOf('_');
-            if (idx != -1)
-            {
-                var name = span[..idx].ToString();
-                if (!extensions.TryGetValue(name, out var extension))
-                {
-                    extension = new();
-                    extensions.Add(name, extension);
-                }
-                extension.AddRange(ex.SupportedList);
-            }
-        }
 
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load("generator.base.json");
 
@@ -95,8 +69,11 @@ internal class Program
         GenerateExtension(registry, "es/generator.nv.json", "GL_NV", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.NV/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
         GenerateExtension(registry, "es/generator.oes.json", "GL_OES", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.OES/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
 
+        var end = DateTime.Now;
+        var elapsed = end - start;
+
         Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine("All Done!");
+        Console.WriteLine($"All Done! Generation took {elapsed.TotalSeconds:n2}s");
         Console.ForegroundColor = ConsoleColor.White;
     }
 
@@ -173,12 +150,20 @@ internal class Program
     private static void WriteVariations(ICodeWriter writer, string returnType, string name, Parameter[] parameters)
     {
         long maxVariations = (long)Math.Pow(2L, parameters.Length);
-        List<Parameter[]> defs = [parameters];
+        HashSet<Overload> defs = [new(name, parameters)];
         for (long ix = 1; ix < maxVariations; ix++)
         {
             Parameter[] stringVariation = new Parameter[parameters.Length];
             Parameter[] spanVariation = new Parameter[parameters.Length];
             Parameter[] refVariation = new Parameter[parameters.Length];
+            Parameter[] voidVariation = new Parameter[parameters.Length];
+            Parameter[] voidSpanVariation = new Parameter[parameters.Length];
+
+            Overload stringOverload = new(name, stringVariation);
+            Overload spanOverload = new(name, spanVariation);
+            Overload refOverload = new(name, refVariation);
+            Overload voidOverload = new(name, voidVariation);
+            Overload voidSpanOverload = new(name, voidSpanVariation);
 
             for (int j = 0; j < parameters.Length; j++)
             {
@@ -188,10 +173,22 @@ internal class Program
 
                 if (bit)
                 {
+                    if (parameter.Type == "void*")
+                    {
+                        voidVariation[j] = new(parameter.Name, "nint") { IsVoid = true };
+                        string genericType = $"T{parameter.Name.CapitalizeCopy()}"; // parameter names have to be unique so it's fine to use them as generic too with T prefix.
+                        voidSpanOverload.Generics.Add(new(genericType, $"where {genericType} : unmanaged"));
+                        voidSpanVariation[j] = new(parameter.Name, $"Span<{genericType}>") { IsGeneric = true, IsSpan = true, GenericType = genericType };
+                    }
+                    else
+                    {
+                        voidSpanVariation[j] = voidVariation[j] = parameter;
+                    }
+
                     if (parameter.Type == "byte*")
                     {
-                        stringVariation[j] = new(parameter.Name, "string");
-                        spanVariation[j] = new(parameter.Name, "ReadOnlySpan<byte>");
+                        stringVariation[j] = new(parameter.Name, "string") { IsString = true };
+                        spanVariation[j] = new(parameter.Name, "ReadOnlySpan<byte>") { IsSpan = true };
                     }
                     else
                     {
@@ -202,7 +199,8 @@ internal class Program
                     if (pointerDepth == 1 && parameter.Type != "void*" && !parameter.IsOut)
                     {
                         var cleanName = parameter.Type.Replace("*", string.Empty);
-                        refVariation[j] = new(parameter.Name, $"ref {cleanName}");
+                        refVariation[j] = new(parameter.Name, $"ref {cleanName}") { IsRef = true };
+                        spanVariation[j] = new(parameter.Name, $"Span<{cleanName}>") { IsSpan = true };
                     }
                     else
                     {
@@ -211,44 +209,26 @@ internal class Program
                 }
                 else
                 {
-                    refVariation[j] = spanVariation[j] = stringVariation[j] = parameter;
+                    voidSpanVariation[j] = voidVariation[j] = refVariation[j] = spanVariation[j] = stringVariation[j] = parameter;
                 }
             }
 
-            WriteFunction(returnType, name, parameters, writer, defs, stringVariation);
-            WriteFunction(returnType, name, parameters, writer, defs, spanVariation);
-            WriteFunction(returnType, name, parameters, writer, defs, refVariation);
+            WriteFunction(returnType, name, parameters, writer, defs, stringOverload);
+            WriteFunction(returnType, name, parameters, writer, defs, spanOverload);
+            WriteFunction(returnType, name, parameters, writer, defs, refOverload);
+            WriteFunction(returnType, name, parameters, writer, defs, voidOverload);
+            WriteFunction(returnType, name, parameters, writer, defs, voidSpanOverload);
         }
     }
 
-    private static void WriteFunction(string returnType, string name, Parameter[] rootParameters, ICodeWriter writer, List<Parameter[]> defs, Parameter[] variation)
+    private static void WriteFunction(string returnType, string name, Parameter[] rootParameters, ICodeWriter writer, HashSet<Overload> defs, Overload variation)
     {
-        bool found = false;
-
         foreach (var def in defs)
         {
-            bool matches = true;
-            for (int i = 0; i < def.Length; i++)
+            if (def.IsSame(variation))
             {
-                var p0 = def[i];
-                var p1 = variation[i];
-                if (p0.Type != p1.Type)
-                {
-                    matches = false;
-                    break;
-                }
+                return;
             }
-
-            if (matches)
-            {
-                found = true;
-                break;
-            }
-        }
-
-        if (found)
-        {
-            return;
         }
 
         defs.Add(variation);
@@ -262,7 +242,7 @@ internal class Program
         int stringIdx = 0;
         List<(string name, string fixedName, string type, int index)> fixedStack = [];
         List<(string name, int index)> stringStack = [];
-        for (int i = 0; i < variation.Length; i++)
+        for (int i = 0; i < variation.Parameters.Length; i++)
         {
             var parameter = variation[i];
             var paramName = parameter.Name;
@@ -270,32 +250,46 @@ internal class Program
 
             string paramListName = paramName;
 
-            if (paramType == "string")
+            if (parameter.IsString)
             {
                 stringStack.Add((paramName, stringIdx));
                 paramListName = $"pStr{stringIdx}";
                 stringIdx++;
             }
 
-            if (paramType == "ReadOnlySpan<byte>" || paramType.StartsWith("ref"))
+            if (parameter.IsSpan || parameter.IsRef)
             {
-                paramListName = $"p{paramName.Replace("@", string.Empty)}{fixedStack.Count}";
-                fixedStack.Add((paramName, paramListName, rootParameters[i].Type, i));
+                if (parameter.IsGeneric)
+                {
+                    paramListName = $"p{paramName.Replace("@", string.Empty)}{fixedStack.Count}";
+                    fixedStack.Add((paramName, paramListName, $"{parameter.GenericType!}*", i));
+                }
+                else
+                {
+                    paramListName = $"p{paramName.Replace("@", string.Empty)}{fixedStack.Count}";
+                    fixedStack.Add((paramName, paramListName, rootParameters[i].Type, i));
+                }
             }
 
-            if (first)
+            if (!first)
             {
-                sb.Append($"{paramType} {paramName}");
-                sbNameless.Append(paramType);
-                sbParam.Append(paramListName);
-                first = false;
+                sb.Append(", ");
+                sbParam.Append(", ");
+                sbNameless.Append(", ");
+            }
+            first = false;
+
+            if (paramType == "nint" && parameter.IsVoid)
+            {
+                sbParam.Append($"(void*){paramListName}");
             }
             else
             {
-                sb.Append($", {paramType} {paramName}");
-                sbNameless.Append($", {paramType}");
-                sbParam.Append($", {paramListName}");
+                sbParam.Append(paramListName);
             }
+
+            sb.Append($"{paramType} {paramName}");
+            sbNameless.Append(paramType);
         }
 
         string paramSignatureNameless = sbNameless.ToString();
@@ -321,7 +315,10 @@ internal class Program
 
         bool isBool = returnType == "byte";
 
-        string functionSignatureApi = $"{(isBool ? "bool" : returnType)} {name}({sb})";
+        string genericsString = variation.Generics.Count == 0 ? string.Empty : $"<{string.Join(", ", variation.Generics.Select(x => x.Name))}>";
+        string genericsConstrain = variation.Generics.Count == 0 ? string.Empty : $" {string.Join(" ", variation.Generics.Select(x => x.Constrain))}";
+
+        string functionSignatureApi = $"{(isBool ? "bool" : returnType)} {name}{genericsString}({sb}){genericsConstrain}";
         logger.LogInfo($"defined {functionSignatureApi}");
 
         string functionHeader = $"public static {functionSignatureApi}";
@@ -641,16 +638,131 @@ internal class Program
         return groupToEnumName;
     }
 
-    private struct Parameter
+    public struct Parameter : IEquatable<Parameter>
     {
         public string Name;
         public string Type;
         public bool IsOut;
+        public bool IsVoid;
+        public bool IsGeneric;
+        public bool IsSpan;
+        public bool IsRef;
+        public bool IsString;
+        public string? GenericType;
 
         public Parameter(string name, string type)
         {
             Name = name;
             Type = type;
+        }
+
+        public override readonly bool Equals(object? obj)
+        {
+            return obj is Parameter parameter && Equals(parameter);
+        }
+
+        public readonly bool Equals(Parameter other)
+        {
+            return Name == other.Name &&
+                   Type == other.Type;
+        }
+
+        public override readonly int GetHashCode()
+        {
+            return HashCode.Combine(Name, Type);
+        }
+
+        public static bool operator ==(Parameter left, Parameter right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Parameter left, Parameter right)
+        {
+            return !(left == right);
+        }
+    }
+
+    public class Overload : IEquatable<Overload?>
+    {
+        public string Name;
+        public Parameter[] Parameters;
+        public List<GenericParameter> Generics = [];
+        public bool CallApi;
+
+        public Overload(string name, Parameter[] parameters)
+        {
+            Name = name;
+            Parameters = parameters;
+        }
+
+        public Parameter this[int index]
+        {
+            get => Parameters[index];
+            set => Parameters[index] = value;
+        }
+
+        public bool IsSame(Overload other)
+        {
+            if (Name != other.Name) return false;
+            bool matches = true;
+            for (int i = 0; i < Parameters.Length; i++)
+            {
+                var p0 = Parameters[i];
+                var p1 = other[i];
+                if (p0.Type != p1.Type)
+                {
+                    matches = false;
+                    break;
+                }
+            }
+
+            return matches;
+        }
+
+        public override int GetHashCode()
+        {
+            HashCode hc = new();
+            hc.Add(Name);
+            for (int i = 0; i < Parameters.Length; i++)
+            {
+                hc.Add(Parameters[i].GetHashCode());
+            }
+            return hc.ToHashCode();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Overload);
+        }
+
+        public bool Equals(Overload? other)
+        {
+            return other is not null &&
+                   Name == other.Name &&
+                   EqualityComparer<Parameter[]>.Default.Equals(Parameters, other.Parameters);
+        }
+
+        public static bool operator ==(Overload? left, Overload? right)
+        {
+            return EqualityComparer<Overload>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Overload? left, Overload? right)
+        {
+            return !(left == right);
+        }
+    }
+
+    public class GenericParameter
+    {
+        public string Name;
+        public string Constrain;
+
+        public GenericParameter(string name, string constrain)
+        {
+            Name = name;
+            Constrain = constrain;
         }
     }
 
@@ -689,6 +801,7 @@ internal class Program
                 Param param = command.Params[i];
                 var paramType = ParseType(config, param);
                 var paramName = config.GetParameterName(i, param.Name);
+                var paramIsBool = paramType == "byte";
 
                 if (param.Group != null)
                 {
@@ -698,6 +811,11 @@ internal class Program
                 if (config.TypeMappings.TryGetValue(paramType, out var newType))
                 {
                     paramType = newType;
+                }
+
+                if (paramIsBool)
+                {
+                    paramType = "bool";
                 }
 
                 parameters.Add(new(paramName, paramType));
@@ -723,6 +841,17 @@ internal class Program
                     sbDefault.Append($"{paramType} {paramName}");
                     sbNameless.Append("void*");
                     sbTypeless.Append($"(void*)Utils.GetFunctionPointerForDelegate({paramName})");
+                    sbTypelessApi.Append(paramName);
+                    continue;
+                }
+
+                if (paramIsBool)
+                {
+                    sbCompatibilityNameless.Append("byte");
+                    sbCompatibilityTypeless.Append($"*((byte*)(&{paramName}))");
+                    sbDefault.Append($"{paramType} {paramName}");
+                    sbNameless.Append("byte");
+                    sbTypeless.Append($"*((byte*)(&{paramName}))");
                     sbTypelessApi.Append(paramName);
                     continue;
                 }
@@ -955,6 +1084,10 @@ internal class Program
                 WriteFreeUnmanagedStringArrayWithSizeArray(writer, "sources", 0);
                 writer.EndBlock();
                 writer.WriteLine();
+            }
+
+            if (name.EndsWith("Matrix4fv"))
+            {
             }
 
             WriteVariations(writer, returnType, name, arrayParams);

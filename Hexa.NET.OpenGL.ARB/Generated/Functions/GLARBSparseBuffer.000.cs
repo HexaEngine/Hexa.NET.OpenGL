@@ -17,46 +17,46 @@ namespace Hexa.NET.OpenGL.ARB
 	public static unsafe partial class GLARBSparseBuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferPageCommitmentARBNative(GLEnum target, nint offset, nint size, byte commit)
+		internal static void BufferPageCommitmentARBNative(GLEnum target, nint offset, nint size, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLEnum, nint, nint, byte, void>)funcTable[0])(target, offset, size, commit);
+			((delegate* unmanaged[Cdecl]<GLEnum, nint, nint, byte, void>)funcTable[0])(target, offset, size, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLEnum, nint, nint, byte, void>)funcTable[0])(target, offset, size, commit);
+			((delegate* unmanaged[Cdecl]<GLEnum, nint, nint, byte, void>)funcTable[0])(target, offset, size, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void BufferPageCommitmentARB(GLEnum target, nint offset, nint size, byte commit)
+		public static void BufferPageCommitmentARB(GLEnum target, nint offset, nint size, bool commit)
 		{
 			BufferPageCommitmentARBNative(target, offset, size, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferPageCommitmentARBNative(uint buffer, nint offset, nint size, byte commit)
+		internal static void NamedBufferPageCommitmentARBNative(uint buffer, nint offset, nint size, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[1])(buffer, offset, size, commit);
+			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[1])(buffer, offset, size, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[1])(buffer, offset, size, commit);
+			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[1])(buffer, offset, size, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void NamedBufferPageCommitmentARB(uint buffer, nint offset, nint size, byte commit)
+		public static void NamedBufferPageCommitmentARB(uint buffer, nint offset, nint size, bool commit)
 		{
 			NamedBufferPageCommitmentARBNative(buffer, offset, size, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferPageCommitmentEXTNative(uint buffer, nint offset, nint size, byte commit)
+		internal static void NamedBufferPageCommitmentEXTNative(uint buffer, nint offset, nint size, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[2])(buffer, offset, size, commit);
+			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[2])(buffer, offset, size, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[2])(buffer, offset, size, commit);
+			((delegate* unmanaged[Cdecl]<uint, nint, nint, byte, void>)funcTable[2])(buffer, offset, size, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void NamedBufferPageCommitmentEXT(uint buffer, nint offset, nint size, byte commit)
+		public static void NamedBufferPageCommitmentEXT(uint buffer, nint offset, nint size, bool commit)
 		{
 			NamedBufferPageCommitmentEXTNative(buffer, offset, size, commit);
 		}

@@ -91,6 +91,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetIntegerui64i_vNVNative(value, index, result);
 		}
 
+		public static void GetIntegerui64i_vNV(GLEnum value, uint index, Span<ulong> result)
+		{
+			fixed (ulong* presult0 = result)
+			{
+				GetIntegerui64i_vNVNative(value, index, presult0);
+			}
+		}
+
 		public static void GetIntegerui64i_vNV(GLEnum value, uint index, ref ulong result)
 		{
 			fixed (ulong* presult0 = &result)
@@ -160,16 +168,16 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribFormatNVNative(uint index, int size, GLVertexAttribType type, byte normalized, int stride)
+		internal static void VertexAttribFormatNVNative(uint index, int size, GLVertexAttribType type, bool normalized, int stride)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, int, void>)funcTable[9])(index, size, type, normalized, stride);
+			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, int, void>)funcTable[9])(index, size, type, *((byte*)(&normalized)), stride);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, int, void>)funcTable[9])(index, size, type, normalized, stride);
+			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, int, void>)funcTable[9])(index, size, type, *((byte*)(&normalized)), stride);
 			#endif
 		}
 
-		public static void VertexAttribFormatNV(uint index, int size, GLVertexAttribType type, byte normalized, int stride)
+		public static void VertexAttribFormatNV(uint index, int size, GLVertexAttribType type, bool normalized, int stride)
 		{
 			VertexAttribFormatNVNative(index, size, type, normalized, stride);
 		}

@@ -91,6 +91,14 @@ namespace Hexa.NET.OpenGL.NV
 			GetVideoCaptureStreamdvNVNative(videoCaptureSlot, stream, pname, @params);
 		}
 
+		public static void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetVideoCaptureStreamdvNVNative(videoCaptureSlot, stream, pname, pparams0);
+			}
+		}
+
 		public static void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -205,11 +213,29 @@ namespace Hexa.NET.OpenGL.NV
 			return ret;
 		}
 
+		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, Span<uint> sequenceNum, ulong* captureTime)
+		{
+			fixed (uint* psequenceNum0 = sequenceNum)
+			{
+				GLEnum ret = VideoCaptureNVNative(videoCaptureSlot, psequenceNum0, captureTime);
+				return ret;
+			}
+		}
+
 		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, ref uint sequenceNum, ulong* captureTime)
 		{
 			fixed (uint* psequenceNum0 = &sequenceNum)
 			{
 				GLEnum ret = VideoCaptureNVNative(videoCaptureSlot, psequenceNum0, captureTime);
+				return ret;
+			}
+		}
+
+		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, Span<ulong> captureTime)
+		{
+			fixed (ulong* pcaptureTime0 = captureTime)
+			{
+				GLEnum ret = VideoCaptureNVNative(videoCaptureSlot, sequenceNum, pcaptureTime0);
 				return ret;
 			}
 		}
@@ -220,6 +246,18 @@ namespace Hexa.NET.OpenGL.NV
 			{
 				GLEnum ret = VideoCaptureNVNative(videoCaptureSlot, sequenceNum, pcaptureTime0);
 				return ret;
+			}
+		}
+
+		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, Span<uint> sequenceNum, Span<ulong> captureTime)
+		{
+			fixed (uint* psequenceNum0 = sequenceNum)
+			{
+				fixed (ulong* pcaptureTime1 = captureTime)
+				{
+					GLEnum ret = VideoCaptureNVNative(videoCaptureSlot, psequenceNum0, pcaptureTime1);
+					return ret;
+				}
 			}
 		}
 
@@ -248,6 +286,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
 		{
 			VideoCaptureStreamParameterdvNVNative(videoCaptureSlot, stream, pname, @params);
+		}
+
+		public static void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				VideoCaptureStreamParameterdvNVNative(videoCaptureSlot, stream, pname, pparams0);
+			}
 		}
 
 		public static void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref double @params)

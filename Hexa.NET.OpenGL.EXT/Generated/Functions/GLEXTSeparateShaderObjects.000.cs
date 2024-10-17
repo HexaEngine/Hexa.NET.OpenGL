@@ -104,7 +104,7 @@ namespace Hexa.NET.OpenGL.EXT
 			return ret;
 		}
 
-		public static uint CreateShaderProgramEXT(GLShaderType type, ReadOnlySpan<byte> str)
+		public static uint CreateShaderProgramEXT(GLShaderType type, Span<byte> str)
 		{
 			fixed (byte* pstr0 = str)
 			{
@@ -158,6 +158,14 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteProgramPipelinesEXTNative(1, &pipeline);
 		}
 
+		public static void DeleteProgramPipelinesEXT(int n, Span<uint> pipelines)
+		{
+			fixed (uint* ppipelines0 = pipelines)
+			{
+				DeleteProgramPipelinesEXTNative(n, ppipelines0);
+			}
+		}
+
 		public static void DeleteProgramPipelinesEXT(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -188,6 +196,14 @@ namespace Hexa.NET.OpenGL.EXT
 			return result;
 		}
 
+		public static void GenProgramPipelinesEXT(int n, Span<uint> pipelines)
+		{
+			fixed (uint* ppipelines0 = pipelines)
+			{
+				GenProgramPipelinesEXTNative(n, ppipelines0);
+			}
+		}
+
 		public static void GenProgramPipelinesEXT(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -209,6 +225,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetProgramPipelineInfoLogEXT(uint pipeline, int bufSize, int* length, byte* infoLog)
 		{
 			GetProgramPipelineInfoLogEXTNative(pipeline, bufSize, length, infoLog);
+		}
+
+		public static void GetProgramPipelineInfoLogEXT(uint pipeline, int bufSize, Span<int> length, byte* infoLog)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetProgramPipelineInfoLogEXTNative(pipeline, bufSize, plength0, infoLog);
+			}
 		}
 
 		public static void GetProgramPipelineInfoLogEXT(uint pipeline, int bufSize, ref int length, byte* infoLog)
@@ -245,7 +269,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetProgramPipelineInfoLogEXT(uint pipeline, int bufSize, int* length, ReadOnlySpan<byte> infoLog)
+		public static void GetProgramPipelineInfoLogEXT(uint pipeline, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -258,6 +282,17 @@ namespace Hexa.NET.OpenGL.EXT
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
 				GetProgramPipelineInfoLogEXTNative(pipeline, bufSize, length, pinfoLog0);
+			}
+		}
+
+		public static void GetProgramPipelineInfoLogEXT(uint pipeline, int bufSize, Span<int> length, Span<byte> infoLog)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pinfoLog1 = infoLog)
+				{
+					GetProgramPipelineInfoLogEXTNative(pipeline, bufSize, plength0, pinfoLog1);
+				}
 			}
 		}
 
@@ -363,6 +398,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform1fvEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform1fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1fvEXT(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -399,6 +442,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform1ivEXT(uint program, int location, int count, int* value)
 		{
 			ProgramUniform1ivEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform1ivEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1ivEXT(uint program, int location, int count, ref int value)
@@ -439,6 +490,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform1uivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform1uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1uivEXT(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -475,6 +534,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform2fvEXT(uint program, int location, int count, float* value)
 		{
 			ProgramUniform2fvEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform2fvEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2fvEXT(uint program, int location, int count, ref float value)
@@ -515,6 +582,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform2ivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform2ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2ivEXT(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -551,6 +626,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform2uivEXT(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform2uivEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform2uivEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2uivEXT(uint program, int location, int count, ref uint value)
@@ -591,6 +674,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform3fvEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform3fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3fvEXT(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -627,6 +718,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform3ivEXT(uint program, int location, int count, int* value)
 		{
 			ProgramUniform3ivEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform3ivEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3ivEXT(uint program, int location, int count, ref int value)
@@ -667,6 +766,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform3uivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform3uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3uivEXT(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -703,6 +810,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform4fvEXT(uint program, int location, int count, float* value)
 		{
 			ProgramUniform4fvEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform4fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform4fvEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform4fvEXT(uint program, int location, int count, ref float value)
@@ -743,6 +858,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform4ivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform4ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4ivEXT(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -781,6 +904,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform4uivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform4uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4uivEXT(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -790,21 +921,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[35])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[35])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[35])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[35])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -813,21 +952,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x3fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2x3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[36])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[36])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[36])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[36])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -836,21 +983,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x4fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2x4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[37])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[37])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[37])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[37])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -859,21 +1014,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[38])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[38])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[38])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[38])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -882,21 +1045,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3x2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[39])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[39])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[39])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[39])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -905,21 +1076,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3x4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[40])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[40])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[40])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[40])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -928,21 +1107,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[41])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[41])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[41])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[41])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -951,21 +1138,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4x2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[42])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[42])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[42])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[42])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -974,21 +1169,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4x3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[43])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[43])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[43])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[43])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x3fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{

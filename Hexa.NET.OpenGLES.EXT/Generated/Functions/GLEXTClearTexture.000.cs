@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			ClearTexImageEXTNative(texture, level, format, type, data);
 		}
 
+		public static void ClearTexImageEXT(uint texture, int level, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearTexImageEXTNative(texture, level, format, type, (void*)data);
+		}
+
+		public static void ClearTexImageEXT<TData>(uint texture, int level, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearTexImageEXTNative(texture, level, format, type, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ClearTexSubImageEXTNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void ClearTexSubImageEXT(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexSubImageEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
+		}
+
+		public static void ClearTexSubImageEXT(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearTexSubImageEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)data);
+		}
+
+		public static void ClearTexSubImageEXT<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearTexSubImageEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pdata0);
+			}
 		}
 
 	}

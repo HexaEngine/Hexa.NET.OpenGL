@@ -61,6 +61,19 @@ namespace Hexa.NET.OpenGL.ARB
 			ColorSubTableNative(target, start, count, format, type, data);
 		}
 
+		public static void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ColorSubTableNative(target, start, count, format, type, (void*)data);
+		}
+
+		public static void ColorSubTable<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ColorSubTableNative(target, start, count, format, type, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ColorTableNative(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
@@ -74,6 +87,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			ColorTableNative(target, internalformat, width, format, type, table);
+		}
+
+		public static void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint table)
+		{
+			ColorTableNative(target, internalformat, width, format, type, (void*)table);
+		}
+
+		public static void ColorTable<TTable>(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
+		{
+			fixed (TTable* ptable0 = table)
+			{
+				ColorTableNative(target, internalformat, width, format, type, ptable0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -151,6 +177,19 @@ namespace Hexa.NET.OpenGL.ARB
 			ConvolutionFilter1DNative(target, internalformat, width, format, type, image);
 		}
 
+		public static void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint image)
+		{
+			ConvolutionFilter1DNative(target, internalformat, width, format, type, (void*)image);
+		}
+
+		public static void ConvolutionFilter1D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		{
+			fixed (TImage* pimage0 = image)
+			{
+				ConvolutionFilter1DNative(target, internalformat, width, format, type, pimage0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ConvolutionFilter2DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
@@ -164,6 +203,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter2DNative(target, internalformat, width, height, format, type, image);
+		}
+
+		public static void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint image)
+		{
+			ConvolutionFilter2DNative(target, internalformat, width, height, format, type, (void*)image);
+		}
+
+		public static void ConvolutionFilter2D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		{
+			fixed (TImage* pimage0 = image)
+			{
+				ConvolutionFilter2DNative(target, internalformat, width, height, format, type, pimage0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -331,6 +383,19 @@ namespace Hexa.NET.OpenGL.ARB
 			GetColorTableNative(target, format, type, table);
 		}
 
+		public static void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint table)
+		{
+			GetColorTableNative(target, format, type, (void*)table);
+		}
+
+		public static void GetColorTable<TTable>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
+		{
+			fixed (TTable* ptable0 = table)
+			{
+				GetColorTableNative(target, format, type, ptable0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetColorTableParameterfvNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
@@ -406,6 +471,19 @@ namespace Hexa.NET.OpenGL.ARB
 			GetConvolutionFilterNative(target, format, type, image);
 		}
 
+		public static void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, nint image)
+		{
+			GetConvolutionFilterNative(target, format, type, (void*)image);
+		}
+
+		public static void GetConvolutionFilter<TImage>(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		{
+			fixed (TImage* pimage0 = image)
+			{
+				GetConvolutionFilterNative(target, format, type, pimage0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetConvolutionParameterfvNative(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
@@ -467,18 +545,31 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramNative(GLHistogramTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal static void GetHistogramNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[22])(target, reset, format, type, values);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[22])(target, *((byte*)(&reset)), format, type, values);
 			#else
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[22])(target, reset, format, type, (nint)values);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[22])(target, *((byte*)(&reset)), format, type, (nint)values);
 			#endif
 		}
 
-		public static void GetHistogram(GLHistogramTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		public static void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetHistogramNative(target, reset, format, type, values);
+		}
+
+		public static void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		{
+			GetHistogramNative(target, reset, format, type, (void*)values);
+		}
+
+		public static void GetHistogram<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		{
+			fixed (TValues* pvalues0 = values)
+			{
+				GetHistogramNative(target, reset, format, type, pvalues0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -542,18 +633,31 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxNative(GLMinmaxTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal static void GetMinmaxNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[25])(target, reset, format, type, values);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[25])(target, *((byte*)(&reset)), format, type, values);
 			#else
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[25])(target, reset, format, type, (nint)values);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[25])(target, *((byte*)(&reset)), format, type, (nint)values);
 			#endif
 		}
 
-		public static void GetMinmax(GLMinmaxTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		public static void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetMinmaxNative(target, reset, format, type, values);
+		}
+
+		public static void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		{
+			GetMinmaxNative(target, reset, format, type, (void*)values);
+		}
+
+		public static void GetMinmax<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		{
+			fixed (TValues* pvalues0 = values)
+			{
+				GetMinmaxNative(target, reset, format, type, pvalues0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -631,32 +735,138 @@ namespace Hexa.NET.OpenGL.ARB
 			GetSeparableFilterNative(target, format, type, row, column, span);
 		}
 
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, void* span)
+		{
+			GetSeparableFilterNative(target, format, type, (void*)row, column, span);
+		}
+
+		public static void GetSeparableFilter<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, void* span) where TRow : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				GetSeparableFilterNative(target, format, type, prow0, column, span);
+			}
+		}
+
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, void* span)
+		{
+			GetSeparableFilterNative(target, format, type, row, (void*)column, span);
+		}
+
+		public static void GetSeparableFilter<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, void* span) where TColumn : unmanaged
+		{
+			fixed (TColumn* pcolumn0 = column)
+			{
+				GetSeparableFilterNative(target, format, type, row, pcolumn0, span);
+			}
+		}
+
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, void* span)
+		{
+			GetSeparableFilterNative(target, format, type, (void*)row, (void*)column, span);
+		}
+
+		public static void GetSeparableFilter<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TColumn* pcolumn1 = column)
+				{
+					GetSeparableFilterNative(target, format, type, prow0, pcolumn1, span);
+				}
+			}
+		}
+
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, nint span)
+		{
+			GetSeparableFilterNative(target, format, type, row, column, (void*)span);
+		}
+
+		public static void GetSeparableFilter<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, Span<TSpan> span) where TSpan : unmanaged
+		{
+			fixed (TSpan* pspan0 = span)
+			{
+				GetSeparableFilterNative(target, format, type, row, column, pspan0);
+			}
+		}
+
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, nint span)
+		{
+			GetSeparableFilterNative(target, format, type, (void*)row, column, (void*)span);
+		}
+
+		public static void GetSeparableFilter<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TSpan* pspan1 = span)
+				{
+					GetSeparableFilterNative(target, format, type, prow0, column, pspan1);
+				}
+			}
+		}
+
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, nint span)
+		{
+			GetSeparableFilterNative(target, format, type, row, (void*)column, (void*)span);
+		}
+
+		public static void GetSeparableFilter<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
+		{
+			fixed (TColumn* pcolumn0 = column)
+			{
+				fixed (TSpan* pspan1 = span)
+				{
+					GetSeparableFilterNative(target, format, type, row, pcolumn0, pspan1);
+				}
+			}
+		}
+
+		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, nint span)
+		{
+			GetSeparableFilterNative(target, format, type, (void*)row, (void*)column, (void*)span);
+		}
+
+		public static void GetSeparableFilter<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TColumn* pcolumn1 = column)
+				{
+					fixed (TSpan* pspan2 = span)
+					{
+						GetSeparableFilterNative(target, format, type, prow0, pcolumn1, pspan2);
+					}
+				}
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void HistogramNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, byte sink)
+		internal static void HistogramNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[29])(target, width, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[29])(target, width, internalformat, *((byte*)(&sink)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[29])(target, width, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[29])(target, width, internalformat, *((byte*)(&sink)));
 			#endif
 		}
 
-		public static void Histogram(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, byte sink)
+		public static void Histogram(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			HistogramNative(target, width, internalformat, sink);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MinmaxNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, byte sink)
+		internal static void MinmaxNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[30])(target, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[30])(target, internalformat, *((byte*)(&sink)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[30])(target, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[30])(target, internalformat, *((byte*)(&sink)));
 			#endif
 		}
 
-		public static void Minmax(GLMinmaxTargetEXT target, GLInternalFormat internalformat, byte sink)
+		public static void Minmax(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			MinmaxNative(target, internalformat, sink);
 		}
@@ -704,6 +914,48 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, row, column);
+		}
+
+		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, void* column)
+		{
+			SeparableFilter2DNative(target, internalformat, width, height, format, type, (void*)row, column);
+		}
+
+		public static void SeparableFilter2D<TRow>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column) where TRow : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				SeparableFilter2DNative(target, internalformat, width, height, format, type, prow0, column);
+			}
+		}
+
+		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, nint column)
+		{
+			SeparableFilter2DNative(target, internalformat, width, height, format, type, row, (void*)column);
+		}
+
+		public static void SeparableFilter2D<TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column) where TColumn : unmanaged
+		{
+			fixed (TColumn* pcolumn0 = column)
+			{
+				SeparableFilter2DNative(target, internalformat, width, height, format, type, row, pcolumn0);
+			}
+		}
+
+		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, nint column)
+		{
+			SeparableFilter2DNative(target, internalformat, width, height, format, type, (void*)row, (void*)column);
+		}
+
+		public static void SeparableFilter2D<TRow, TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column) where TRow : unmanaged where TColumn : unmanaged
+		{
+			fixed (TRow* prow0 = row)
+			{
+				fixed (TColumn* pcolumn1 = column)
+				{
+					SeparableFilter2DNative(target, internalformat, width, height, format, type, prow0, pcolumn1);
+				}
+			}
 		}
 
 	}

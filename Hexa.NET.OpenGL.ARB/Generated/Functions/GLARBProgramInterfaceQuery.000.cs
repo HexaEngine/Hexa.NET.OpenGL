@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, ReadOnlySpan<byte> name)
+		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -150,7 +150,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, ReadOnlySpan<byte> name)
+		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -211,7 +211,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, ReadOnlySpan<byte> name)
+		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -242,6 +242,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
 		{
 			GetProgramResourceNameNative(program, programInterface, index, bufSize, length, name);
+		}
+
+		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetProgramResourceNameNative(program, programInterface, index, bufSize, plength0, name);
+			}
 		}
 
 		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, byte* name)
@@ -278,7 +286,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, ReadOnlySpan<byte> name)
+		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -291,6 +299,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* pname0 = &name)
 			{
 				GetProgramResourceNameNative(program, programInterface, index, bufSize, length, pname0);
+			}
+		}
+
+		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetProgramResourceNameNative(program, programInterface, index, bufSize, plength0, pname1);
+				}
 			}
 		}
 
@@ -332,6 +351,14 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (int* pparams = @params)
 			{
 				GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, pparams);
+			}
+		}
+
+		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, Span<int> length, int* @params)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetProgramResourceivNative(program, programInterface, index, propCount, props, count, plength0, @params);
 			}
 		}
 

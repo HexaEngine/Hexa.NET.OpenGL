@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ColorP3uivNative(type, color);
 		}
 
+		public static void ColorP3uiv(GLColorPointerType type, Span<uint> color)
+		{
+			fixed (uint* pcolor0 = color)
+			{
+				ColorP3uivNative(type, pcolor0);
+			}
+		}
+
 		public static void ColorP3uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
@@ -82,6 +90,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ColorP4uiv(GLColorPointerType type, uint* color)
 		{
 			ColorP4uivNative(type, color);
+		}
+
+		public static void ColorP4uiv(GLColorPointerType type, Span<uint> color)
+		{
+			fixed (uint* pcolor0 = color)
+			{
+				ColorP4uivNative(type, pcolor0);
+			}
 		}
 
 		public static void ColorP4uiv(GLColorPointerType type, ref uint color)
@@ -122,6 +138,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoordP1uivNative(texture, type, coords);
 		}
 
+		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				MultiTexCoordP1uivNative(texture, type, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -158,6 +182,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP2uivNative(texture, type, coords);
+		}
+
+		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				MultiTexCoordP2uivNative(texture, type, pcoords0);
+			}
 		}
 
 		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
@@ -198,6 +230,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoordP3uivNative(texture, type, coords);
 		}
 
+		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				MultiTexCoordP3uivNative(texture, type, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -234,6 +274,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP4uivNative(texture, type, coords);
+		}
+
+		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				MultiTexCoordP4uivNative(texture, type, pcoords0);
+			}
 		}
 
 		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
@@ -274,6 +322,14 @@ namespace Hexa.NET.OpenGL.ARB
 			NormalP3uivNative(type, coords);
 		}
 
+		public static void NormalP3uiv(GLNormalPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				NormalP3uivNative(type, pcoords0);
+			}
+		}
+
 		public static void NormalP3uiv(GLNormalPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -310,6 +366,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void SecondaryColorP3uiv(GLColorPointerType type, uint* color)
 		{
 			SecondaryColorP3uivNative(type, color);
+		}
+
+		public static void SecondaryColorP3uiv(GLColorPointerType type, Span<uint> color)
+		{
+			fixed (uint* pcolor0 = color)
+			{
+				SecondaryColorP3uivNative(type, pcolor0);
+			}
 		}
 
 		public static void SecondaryColorP3uiv(GLColorPointerType type, ref uint color)
@@ -350,6 +414,14 @@ namespace Hexa.NET.OpenGL.ARB
 			TexCoordP1uivNative(type, coords);
 		}
 
+		public static void TexCoordP1uiv(GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				TexCoordP1uivNative(type, pcoords0);
+			}
+		}
+
 		public static void TexCoordP1uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -386,6 +458,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void TexCoordP2uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP2uivNative(type, coords);
+		}
+
+		public static void TexCoordP2uiv(GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				TexCoordP2uivNative(type, pcoords0);
+			}
 		}
 
 		public static void TexCoordP2uiv(GLTexCoordPointerType type, ref uint coords)
@@ -426,6 +506,14 @@ namespace Hexa.NET.OpenGL.ARB
 			TexCoordP3uivNative(type, coords);
 		}
 
+		public static void TexCoordP3uiv(GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				TexCoordP3uivNative(type, pcoords0);
+			}
+		}
+
 		public static void TexCoordP3uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -464,6 +552,14 @@ namespace Hexa.NET.OpenGL.ARB
 			TexCoordP4uivNative(type, coords);
 		}
 
+		public static void TexCoordP4uiv(GLTexCoordPointerType type, Span<uint> coords)
+		{
+			fixed (uint* pcoords0 = coords)
+			{
+				TexCoordP4uivNative(type, pcoords0);
+			}
+		}
+
 		public static void TexCoordP4uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -473,36 +569,44 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		internal static void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[24])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[24])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[24])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[24])(index, type, *((byte*)(&normalized)), value);
 			#endif
 		}
 
-		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP1uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		internal static void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[25])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[25])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[25])(index, type, normalized, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[25])(index, type, *((byte*)(&normalized)), (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP1uivNative(index, type, normalized, value);
 		}
 
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, byte normalized, ref uint value)
+		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexAttribP1uivNative(index, type, normalized, pvalue0);
+			}
+		}
+
+		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -511,36 +615,44 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		internal static void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[26])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[26])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[26])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[26])(index, type, *((byte*)(&normalized)), value);
 			#endif
 		}
 
-		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP2uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		internal static void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[27])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[27])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[27])(index, type, normalized, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[27])(index, type, *((byte*)(&normalized)), (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP2uivNative(index, type, normalized, value);
 		}
 
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, byte normalized, ref uint value)
+		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexAttribP2uivNative(index, type, normalized, pvalue0);
+			}
+		}
+
+		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -549,36 +661,44 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		internal static void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[28])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[28])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[28])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[28])(index, type, *((byte*)(&normalized)), value);
 			#endif
 		}
 
-		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP3uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		internal static void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[29])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[29])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[29])(index, type, normalized, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[29])(index, type, *((byte*)(&normalized)), (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP3uivNative(index, type, normalized, value);
 		}
 
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, byte normalized, ref uint value)
+		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexAttribP3uivNative(index, type, normalized, pvalue0);
+			}
+		}
+
+		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -587,36 +707,44 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		internal static void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[30])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[30])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[30])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[30])(index, type, *((byte*)(&normalized)), value);
 			#endif
 		}
 
-		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, byte normalized, uint value)
+		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP4uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		internal static void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[31])(index, type, normalized, value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[31])(index, type, *((byte*)(&normalized)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[31])(index, type, normalized, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[31])(index, type, *((byte*)(&normalized)), (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, byte normalized, uint* value)
+		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP4uivNative(index, type, normalized, value);
 		}
 
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, byte normalized, ref uint value)
+		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexAttribP4uivNative(index, type, normalized, pvalue0);
+			}
+		}
+
+		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -652,6 +780,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void VertexP2uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP2uivNative(type, value);
+		}
+
+		public static void VertexP2uiv(GLVertexPointerType type, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexP2uivNative(type, pvalue0);
+			}
 		}
 
 		public static void VertexP2uiv(GLVertexPointerType type, ref uint value)
@@ -692,6 +828,14 @@ namespace Hexa.NET.OpenGL.ARB
 			VertexP3uivNative(type, value);
 		}
 
+		public static void VertexP3uiv(GLVertexPointerType type, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexP3uivNative(type, pvalue0);
+			}
+		}
+
 		public static void VertexP3uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -728,6 +872,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void VertexP4uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP4uivNative(type, value);
+		}
+
+		public static void VertexP4uiv(GLVertexPointerType type, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				VertexP4uivNative(type, pvalue0);
+			}
 		}
 
 		public static void VertexP4uiv(GLVertexPointerType type, ref uint value)

@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			TexImage3DEXTNative(target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
 
+		public static void TexImage3DEXT(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexImage3DEXTNative(target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
+		}
+
+		public static void TexImage3DEXT<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexImage3DEXTNative(target, level, internalformat, width, height, depth, border, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void TexSubImage3DEXTNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void TexSubImage3DEXT(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage3DEXTNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+		}
+
+		public static void TexSubImage3DEXT(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexSubImage3DEXTNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
+		}
+
+		public static void TexSubImage3DEXT<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexSubImage3DEXTNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, ppixels0);
+			}
 		}
 
 	}

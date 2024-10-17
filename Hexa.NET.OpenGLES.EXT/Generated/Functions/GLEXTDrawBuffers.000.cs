@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			DrawBuffersEXTNative(n, bufs);
 		}
 
+		public static void DrawBuffersEXT(int n, Span<GLEnum> bufs)
+		{
+			fixed (GLEnum* pbufs0 = bufs)
+			{
+				DrawBuffersEXTNative(n, pbufs0);
+			}
+		}
+
 		public static void DrawBuffersEXT(int n, ref GLEnum bufs)
 		{
 			fixed (GLEnum* pbufs0 = &bufs)

@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.NV
 			ClientWaitSemaphoreui64NVXNative(fenceObjectCount, semaphoreArray, fenceValueArray);
 		}
 
+		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, Span<uint> semaphoreArray, ulong* fenceValueArray)
+		{
+			fixed (uint* psemaphoreArray0 = semaphoreArray)
+			{
+				ClientWaitSemaphoreui64NVXNative(fenceObjectCount, psemaphoreArray0, fenceValueArray);
+			}
+		}
+
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, ref uint semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -39,11 +47,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, uint* semaphoreArray, Span<ulong> fenceValueArray)
+		{
+			fixed (ulong* pfenceValueArray0 = fenceValueArray)
+			{
+				ClientWaitSemaphoreui64NVXNative(fenceObjectCount, semaphoreArray, pfenceValueArray0);
+			}
+		}
+
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, uint* semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
 				ClientWaitSemaphoreui64NVXNative(fenceObjectCount, semaphoreArray, pfenceValueArray0);
+			}
+		}
+
+		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, Span<uint> semaphoreArray, Span<ulong> fenceValueArray)
+		{
+			fixed (uint* psemaphoreArray0 = semaphoreArray)
+			{
+				fixed (ulong* pfenceValueArray1 = fenceValueArray)
+				{
+					ClientWaitSemaphoreui64NVXNative(fenceObjectCount, psemaphoreArray0, pfenceValueArray1);
+				}
 			}
 		}
 
@@ -89,6 +116,14 @@ namespace Hexa.NET.OpenGL.NV
 			SignalSemaphoreui64NVXNative(signalGpu, fenceObjectCount, semaphoreArray, fenceValueArray);
 		}
 
+		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, Span<uint> semaphoreArray, ulong* fenceValueArray)
+		{
+			fixed (uint* psemaphoreArray0 = semaphoreArray)
+			{
+				SignalSemaphoreui64NVXNative(signalGpu, fenceObjectCount, psemaphoreArray0, fenceValueArray);
+			}
+		}
+
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, ref uint semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -97,11 +132,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, uint* semaphoreArray, Span<ulong> fenceValueArray)
+		{
+			fixed (ulong* pfenceValueArray0 = fenceValueArray)
+			{
+				SignalSemaphoreui64NVXNative(signalGpu, fenceObjectCount, semaphoreArray, pfenceValueArray0);
+			}
+		}
+
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, uint* semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
 				SignalSemaphoreui64NVXNative(signalGpu, fenceObjectCount, semaphoreArray, pfenceValueArray0);
+			}
+		}
+
+		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, Span<uint> semaphoreArray, Span<ulong> fenceValueArray)
+		{
+			fixed (uint* psemaphoreArray0 = semaphoreArray)
+			{
+				fixed (ulong* pfenceValueArray1 = fenceValueArray)
+				{
+					SignalSemaphoreui64NVXNative(signalGpu, fenceObjectCount, psemaphoreArray0, pfenceValueArray1);
+				}
 			}
 		}
 
@@ -131,6 +185,14 @@ namespace Hexa.NET.OpenGL.NV
 			WaitSemaphoreui64NVXNative(waitGpu, fenceObjectCount, semaphoreArray, fenceValueArray);
 		}
 
+		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, Span<uint> semaphoreArray, ulong* fenceValueArray)
+		{
+			fixed (uint* psemaphoreArray0 = semaphoreArray)
+			{
+				WaitSemaphoreui64NVXNative(waitGpu, fenceObjectCount, psemaphoreArray0, fenceValueArray);
+			}
+		}
+
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, ref uint semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -139,11 +201,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, uint* semaphoreArray, Span<ulong> fenceValueArray)
+		{
+			fixed (ulong* pfenceValueArray0 = fenceValueArray)
+			{
+				WaitSemaphoreui64NVXNative(waitGpu, fenceObjectCount, semaphoreArray, pfenceValueArray0);
+			}
+		}
+
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, uint* semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
 				WaitSemaphoreui64NVXNative(waitGpu, fenceObjectCount, semaphoreArray, pfenceValueArray0);
+			}
+		}
+
+		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, Span<uint> semaphoreArray, Span<ulong> fenceValueArray)
+		{
+			fixed (uint* psemaphoreArray0 = semaphoreArray)
+			{
+				fixed (ulong* pfenceValueArray1 = fenceValueArray)
+				{
+					WaitSemaphoreui64NVXNative(waitGpu, fenceObjectCount, psemaphoreArray0, pfenceValueArray1);
+				}
 			}
 		}
 

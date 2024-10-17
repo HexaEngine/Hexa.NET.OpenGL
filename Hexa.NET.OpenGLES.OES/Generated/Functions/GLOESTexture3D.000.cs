@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGLES.OES
 			CompressedTexImage3DOESNative(target, level, internalformat, width, height, depth, border, imageSize, data);
 		}
 
+		public static void CompressedTexImage3DOES(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
+		{
+			CompressedTexImage3DOESNative(target, level, internalformat, width, height, depth, border, imageSize, (void*)data);
+		}
+
+		public static void CompressedTexImage3DOES<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				CompressedTexImage3DOESNative(target, level, internalformat, width, height, depth, border, imageSize, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedTexSubImage3DOESNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void CompressedTexSubImage3DOES(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage3DOESNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
+		}
+
+		public static void CompressedTexSubImage3DOES(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
+		{
+			CompressedTexSubImage3DOESNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
+		}
+
+		public static void CompressedTexSubImage3DOES<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				CompressedTexSubImage3DOESNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,6 +117,19 @@ namespace Hexa.NET.OpenGLES.OES
 			TexImage3DOESNative(target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
 
+		public static void TexImage3DOES(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexImage3DOESNative(target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
+		}
+
+		public static void TexImage3DOES<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexImage3DOESNative(target, level, internalformat, width, height, depth, border, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void TexSubImage3DOESNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -104,6 +143,19 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void TexSubImage3DOES(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage3DOESNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+		}
+
+		public static void TexSubImage3DOES(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexSubImage3DOESNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
+		}
+
+		public static void TexSubImage3DOES<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexSubImage3DOESNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, ppixels0);
+			}
 		}
 
 	}

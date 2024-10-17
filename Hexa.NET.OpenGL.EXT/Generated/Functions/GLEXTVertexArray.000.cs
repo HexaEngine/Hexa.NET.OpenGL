@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGL.EXT
 			ColorPointerEXTNative(size, type, stride, count, pointer);
 		}
 
+		public static void ColorPointerEXT(int size, GLColorPointerType type, int stride, int count, nint pointer)
+		{
+			ColorPointerEXTNative(size, type, stride, count, (void*)pointer);
+		}
+
+		public static void ColorPointerEXT<TPointer>(int size, GLColorPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				ColorPointerEXTNative(size, type, stride, count, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void DrawArraysEXTNative(GLPrimitiveType mode, int first, int count)
 		{
@@ -102,7 +115,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void EdgeFlagPointerEXT(int stride, int count, ReadOnlySpan<byte> pointer)
+		public static void EdgeFlagPointerEXT(int stride, int count, Span<byte> pointer)
 		{
 			fixed (byte* ppointer0 = pointer)
 			{
@@ -148,6 +161,19 @@ namespace Hexa.NET.OpenGL.EXT
 			IndexPointerEXTNative(type, stride, count, pointer);
 		}
 
+		public static void IndexPointerEXT(GLIndexPointerType type, int stride, int count, nint pointer)
+		{
+			IndexPointerEXTNative(type, stride, count, (void*)pointer);
+		}
+
+		public static void IndexPointerEXT<TPointer>(GLIndexPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				IndexPointerEXTNative(type, stride, count, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NormalPointerEXTNative(GLNormalPointerType type, int stride, int count, void* pointer)
 		{
@@ -161,6 +187,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void NormalPointerEXT(GLNormalPointerType type, int stride, int count, void* pointer)
 		{
 			NormalPointerEXTNative(type, stride, count, pointer);
+		}
+
+		public static void NormalPointerEXT(GLNormalPointerType type, int stride, int count, nint pointer)
+		{
+			NormalPointerEXTNative(type, stride, count, (void*)pointer);
+		}
+
+		public static void NormalPointerEXT<TPointer>(GLNormalPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				NormalPointerEXTNative(type, stride, count, ppointer0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -178,6 +217,19 @@ namespace Hexa.NET.OpenGL.EXT
 			TexCoordPointerEXTNative(size, type, stride, count, pointer);
 		}
 
+		public static void TexCoordPointerEXT(int size, GLTexCoordPointerType type, int stride, int count, nint pointer)
+		{
+			TexCoordPointerEXTNative(size, type, stride, count, (void*)pointer);
+		}
+
+		public static void TexCoordPointerEXT<TPointer>(int size, GLTexCoordPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				TexCoordPointerEXTNative(size, type, stride, count, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VertexPointerEXTNative(int size, GLVertexPointerType type, int stride, int count, void* pointer)
 		{
@@ -191,6 +243,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexPointerEXT(int size, GLVertexPointerType type, int stride, int count, void* pointer)
 		{
 			VertexPointerEXTNative(size, type, stride, count, pointer);
+		}
+
+		public static void VertexPointerEXT(int size, GLVertexPointerType type, int stride, int count, nint pointer)
+		{
+			VertexPointerEXTNative(size, type, stride, count, (void*)pointer);
+		}
+
+		public static void VertexPointerEXT<TPointer>(int size, GLVertexPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexPointerEXTNative(size, type, stride, count, ppointer0);
+			}
 		}
 
 	}

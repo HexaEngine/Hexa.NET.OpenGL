@@ -32,6 +32,15 @@ namespace Hexa.NET.OpenGL.NV
 			return ret != 0;
 		}
 
+		public static bool AreProgramsResidentNV(int n, Span<uint> programs, byte* residences)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				byte ret = AreProgramsResidentNVNative(n, pprograms0, residences);
+				return ret != 0;
+			}
+		}
+
 		public static bool AreProgramsResidentNV(int n, ref uint programs, byte* residences)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -68,7 +77,7 @@ namespace Hexa.NET.OpenGL.NV
 			return ret != 0;
 		}
 
-		public static bool AreProgramsResidentNV(int n, uint* programs, ReadOnlySpan<byte> residences)
+		public static bool AreProgramsResidentNV(int n, uint* programs, Span<byte> residences)
 		{
 			fixed (byte* presidences0 = residences)
 			{
@@ -83,6 +92,18 @@ namespace Hexa.NET.OpenGL.NV
 			{
 				byte ret = AreProgramsResidentNVNative(n, programs, presidences0);
 				return ret != 0;
+			}
+		}
+
+		public static bool AreProgramsResidentNV(int n, Span<uint> programs, Span<byte> residences)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				fixed (byte* presidences1 = residences)
+				{
+					byte ret = AreProgramsResidentNVNative(n, pprograms0, presidences1);
+					return ret != 0;
+				}
 			}
 		}
 
@@ -131,6 +152,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void DeleteProgramsN(uint program)
 		{
 			DeleteProgramsNVNative(1, &program);
+		}
+
+		public static void DeleteProgramsNV(int n, Span<uint> programs)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				DeleteProgramsNVNative(n, pprograms0);
+			}
 		}
 
 		public static void DeleteProgramsNV(int n, ref uint programs)
@@ -193,6 +222,14 @@ namespace Hexa.NET.OpenGL.NV
 			return result;
 		}
 
+		public static void GenProgramsNV(int n, Span<uint> programs)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				GenProgramsNVNative(n, pprograms0);
+			}
+		}
+
 		public static void GenProgramsNV(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -214,6 +251,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, double* @params)
 		{
 			GetProgramParameterdvNVNative(target, index, pname, @params);
+		}
+
+		public static void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetProgramParameterdvNVNative(target, index, pname, pparams0);
+			}
 		}
 
 		public static void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, ref double @params)
@@ -295,7 +340,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, ReadOnlySpan<byte> program)
+		public static void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, Span<byte> program)
 		{
 			fixed (byte* pprogram0 = program)
 			{
@@ -399,6 +444,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, double* @params)
 		{
 			GetVertexAttribdvNVNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetVertexAttribdvNVNative(index, pname, pparams0);
+			}
 		}
 
 		public static void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, ref double @params)
@@ -526,7 +579,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, ReadOnlySpan<byte> program)
+		public static void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, Span<byte> program)
 		{
 			fixed (byte* pprogram0 = program)
 			{
@@ -572,6 +625,14 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramParameter4dvNVNative(target, index, v);
 		}
 
+		public static void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				ProgramParameter4dvNVNative(target, index, pv0);
+			}
+		}
+
 		public static void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -610,6 +671,14 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramParameter4fvNVNative(target, index, v);
 		}
 
+		public static void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ProgramParameter4fvNVNative(target, index, pv0);
+			}
+		}
+
 		public static void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -631,6 +700,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, double* v)
 		{
 			ProgramParameters4dvNVNative(target, index, count, v);
+		}
+
+		public static void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				ProgramParameters4dvNVNative(target, index, count, pv0);
+			}
 		}
 
 		public static void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, ref double v)
@@ -656,6 +733,14 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramParameters4fvNVNative(target, index, count, v);
 		}
 
+		public static void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ProgramParameters4fvNVNative(target, index, count, pv0);
+			}
+		}
+
 		public static void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -677,6 +762,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void RequestResidentProgramsNV(int n, uint* programs)
 		{
 			RequestResidentProgramsNVNative(n, programs);
+		}
+
+		public static void RequestResidentProgramsNV(int n, Span<uint> programs)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				RequestResidentProgramsNVNative(n, pprograms0);
+			}
 		}
 
 		public static void RequestResidentProgramsNV(int n, ref uint programs)
@@ -732,6 +825,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib1dvNVNative(index, v);
 		}
 
+		public static void VertexAttrib1dvNV(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttrib1dvNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib1dvNV(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -768,6 +869,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttrib1fvNV(uint index, float* v)
 		{
 			VertexAttrib1fvNVNative(index, v);
+		}
+
+		public static void VertexAttrib1fvNV(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttrib1fvNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttrib1fvNV(uint index, ref float v)
@@ -808,6 +917,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib1svNVNative(index, v);
 		}
 
+		public static void VertexAttrib1svNV(uint index, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttrib1svNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib1svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -844,6 +961,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttrib2dvNV(uint index, double* v)
 		{
 			VertexAttrib2dvNVNative(index, v);
+		}
+
+		public static void VertexAttrib2dvNV(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttrib2dvNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttrib2dvNV(uint index, ref double v)
@@ -884,6 +1009,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib2fvNVNative(index, v);
 		}
 
+		public static void VertexAttrib2fvNV(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttrib2fvNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib2fvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -920,6 +1053,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttrib2svNV(uint index, short* v)
 		{
 			VertexAttrib2svNVNative(index, v);
+		}
+
+		public static void VertexAttrib2svNV(uint index, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttrib2svNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttrib2svNV(uint index, ref short v)
@@ -960,6 +1101,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib3dvNVNative(index, v);
 		}
 
+		public static void VertexAttrib3dvNV(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttrib3dvNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib3dvNV(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -996,6 +1145,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttrib3fvNV(uint index, float* v)
 		{
 			VertexAttrib3fvNVNative(index, v);
+		}
+
+		public static void VertexAttrib3fvNV(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttrib3fvNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttrib3fvNV(uint index, ref float v)
@@ -1036,6 +1193,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib3svNVNative(index, v);
 		}
 
+		public static void VertexAttrib3svNV(uint index, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttrib3svNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib3svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -1072,6 +1237,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttrib4dvNV(uint index, double* v)
 		{
 			VertexAttrib4dvNVNative(index, v);
+		}
+
+		public static void VertexAttrib4dvNV(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttrib4dvNVNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttrib4dvNV(uint index, ref double v)
@@ -1112,6 +1285,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib4fvNVNative(index, v);
 		}
 
+		public static void VertexAttrib4fvNV(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttrib4fvNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib4fvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -1150,6 +1331,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttrib4svNVNative(index, v);
 		}
 
+		public static void VertexAttrib4svNV(uint index, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttrib4svNVNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttrib4svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -1159,16 +1348,16 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ubNVNative(uint index, byte x, byte y, byte z, byte w)
+		internal static void VertexAttrib4ubNVNative(uint index, bool x, bool y, bool z, bool w)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[48])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[48])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[48])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[48])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
 			#endif
 		}
 
-		public static void VertexAttrib4ubNV(uint index, byte x, byte y, byte z, byte w)
+		public static void VertexAttrib4ubNV(uint index, bool x, bool y, bool z, bool w)
 		{
 			VertexAttrib4ubNVNative(index, x, y, z, w);
 		}
@@ -1214,7 +1403,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void VertexAttrib4ubvNV(uint index, ReadOnlySpan<byte> v)
+		public static void VertexAttrib4ubvNV(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -1245,6 +1434,19 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribPointerNVNative(index, fsize, type, stride, pointer);
 		}
 
+		public static void VertexAttribPointerNV(uint index, int fsize, GLVertexAttribEnumNV type, int stride, nint pointer)
+		{
+			VertexAttribPointerNVNative(index, fsize, type, stride, (void*)pointer);
+		}
+
+		public static void VertexAttribPointerNV<TPointer>(uint index, int fsize, GLVertexAttribEnumNV type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexAttribPointerNVNative(index, fsize, type, stride, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VertexAttribs1dvNVNative(uint index, int count, double* v)
 		{
@@ -1258,6 +1460,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribs1dvNV(uint index, int count, double* v)
 		{
 			VertexAttribs1dvNVNative(index, count, v);
+		}
+
+		public static void VertexAttribs1dvNV(uint index, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribs1dvNVNative(index, count, pv0);
+			}
 		}
 
 		public static void VertexAttribs1dvNV(uint index, int count, ref double v)
@@ -1283,6 +1493,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribs1fvNVNative(index, count, v);
 		}
 
+		public static void VertexAttribs1fvNV(uint index, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttribs1fvNVNative(index, count, pv0);
+			}
+		}
+
 		public static void VertexAttribs1fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -1304,6 +1522,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribs1svNV(uint index, int count, short* v)
 		{
 			VertexAttribs1svNVNative(index, count, v);
+		}
+
+		public static void VertexAttribs1svNV(uint index, int count, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttribs1svNVNative(index, count, pv0);
+			}
 		}
 
 		public static void VertexAttribs1svNV(uint index, int count, ref short v)
@@ -1329,6 +1555,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribs2dvNVNative(index, count, v);
 		}
 
+		public static void VertexAttribs2dvNV(uint index, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribs2dvNVNative(index, count, pv0);
+			}
+		}
+
 		public static void VertexAttribs2dvNV(uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -1350,6 +1584,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribs2fvNV(uint index, int count, float* v)
 		{
 			VertexAttribs2fvNVNative(index, count, v);
+		}
+
+		public static void VertexAttribs2fvNV(uint index, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttribs2fvNVNative(index, count, pv0);
+			}
 		}
 
 		public static void VertexAttribs2fvNV(uint index, int count, ref float v)
@@ -1375,6 +1617,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribs2svNVNative(index, count, v);
 		}
 
+		public static void VertexAttribs2svNV(uint index, int count, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttribs2svNVNative(index, count, pv0);
+			}
+		}
+
 		public static void VertexAttribs2svNV(uint index, int count, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -1396,6 +1646,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribs3dvNV(uint index, int count, double* v)
 		{
 			VertexAttribs3dvNVNative(index, count, v);
+		}
+
+		public static void VertexAttribs3dvNV(uint index, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribs3dvNVNative(index, count, pv0);
+			}
 		}
 
 		public static void VertexAttribs3dvNV(uint index, int count, ref double v)
@@ -1421,6 +1679,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribs3fvNVNative(index, count, v);
 		}
 
+		public static void VertexAttribs3fvNV(uint index, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttribs3fvNVNative(index, count, pv0);
+			}
+		}
+
 		public static void VertexAttribs3fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -1442,6 +1708,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribs3svNV(uint index, int count, short* v)
 		{
 			VertexAttribs3svNVNative(index, count, v);
+		}
+
+		public static void VertexAttribs3svNV(uint index, int count, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttribs3svNVNative(index, count, pv0);
+			}
 		}
 
 		public static void VertexAttribs3svNV(uint index, int count, ref short v)
@@ -1467,6 +1741,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribs4dvNVNative(index, count, v);
 		}
 
+		public static void VertexAttribs4dvNV(uint index, int count, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribs4dvNVNative(index, count, pv0);
+			}
+		}
+
 		public static void VertexAttribs4dvNV(uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -1490,6 +1772,14 @@ namespace Hexa.NET.OpenGL.NV
 			VertexAttribs4fvNVNative(index, count, v);
 		}
 
+		public static void VertexAttribs4fvNV(uint index, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttribs4fvNVNative(index, count, pv0);
+			}
+		}
+
 		public static void VertexAttribs4fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -1511,6 +1801,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void VertexAttribs4svNV(uint index, int count, short* v)
 		{
 			VertexAttribs4svNVNative(index, count, v);
+		}
+
+		public static void VertexAttribs4svNV(uint index, int count, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttribs4svNVNative(index, count, pv0);
+			}
 		}
 
 		public static void VertexAttribs4svNV(uint index, int count, ref short v)
@@ -1562,7 +1860,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void VertexAttribs4ubvNV(uint index, int count, ReadOnlySpan<byte> v)
+		public static void VertexAttribs4ubvNV(uint index, int count, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{

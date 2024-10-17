@@ -243,6 +243,19 @@ namespace Hexa.NET.OpenGL.KHR
 			ReadnPixelsNative(x, y, width, height, format, type, bufSize, data);
 		}
 
+		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		{
+			ReadnPixelsNative(x, y, width, height, format, type, bufSize, (void*)data);
+		}
+
+		public static void ReadnPixels<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ReadnPixelsNative(x, y, width, height, format, type, bufSize, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ReadnPixelsKHRNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
@@ -256,6 +269,19 @@ namespace Hexa.NET.OpenGL.KHR
 		public static void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, data);
+		}
+
+		public static void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		{
+			ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, (void*)data);
+		}
+
+		public static void ReadnPixelsKHR<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, pdata0);
+			}
 		}
 
 	}

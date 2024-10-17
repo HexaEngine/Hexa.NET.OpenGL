@@ -77,16 +77,16 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskiOESNative(uint index, byte r, byte g, byte b, byte a)
+		internal static void ColorMaskiOESNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, r, g, b, a);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, r, g, b, a);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
 			#endif
 		}
 
-		public static void ColorMaskiOES(uint index, byte r, byte g, byte b, byte a)
+		public static void ColorMaskiOES(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiOESNative(index, r, g, b, a);
 		}

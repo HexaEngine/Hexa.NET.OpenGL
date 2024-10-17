@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGL.ARB
 	public static unsafe partial class GLARBBindlessTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ulong GetImageHandleARBNative(uint texture, int level, byte layered, int layer, GLPixelFormat format)
+		internal static ulong GetImageHandleARBNative(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, layered, layer, format);
+			return ((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, *((byte*)(&layered)), layer, format);
 			#else
-			return (ulong)((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, layered, layer, format);
+			return (ulong)((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, *((byte*)(&layered)), layer, format);
 			#endif
 		}
 
-		public static ulong GetImageHandleARB(uint texture, int level, byte layered, int layer, GLPixelFormat format)
+		public static ulong GetImageHandleARB(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			ulong ret = GetImageHandleARBNative(texture, level, layered, layer, format);
 			return ret;
@@ -216,6 +216,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniformHandleui64vARBNative(program, location, count, values);
 		}
 
+		public static void ProgramUniformHandleui64vARB(uint program, int location, int count, Span<ulong> values)
+		{
+			fixed (ulong* pvalues0 = values)
+			{
+				ProgramUniformHandleui64vARBNative(program, location, count, pvalues0);
+			}
+		}
+
 		public static void ProgramUniformHandleui64vARB(uint program, int location, int count, ref ulong values)
 		{
 			fixed (ulong* pvalues0 = &values)
@@ -254,6 +262,14 @@ namespace Hexa.NET.OpenGL.ARB
 			UniformHandleui64vARBNative(location, count, value);
 		}
 
+		public static void UniformHandleui64vARB(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				UniformHandleui64vARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void UniformHandleui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -290,6 +306,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void VertexAttribL1ui64vARB(uint index, ulong* v)
 		{
 			VertexAttribL1ui64vARBNative(index, v);
+		}
+
+		public static void VertexAttribL1ui64vARB(uint index, Span<ulong> v)
+		{
+			fixed (ulong* pv0 = v)
+			{
+				VertexAttribL1ui64vARBNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL1ui64vARB(uint index, ref ulong v)

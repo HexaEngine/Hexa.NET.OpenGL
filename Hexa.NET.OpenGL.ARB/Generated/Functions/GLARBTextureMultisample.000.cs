@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetMultisamplefvNative(pname, index, val);
 		}
 
+		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
+		{
+			fixed (float* pval0 = val)
+			{
+				GetMultisamplefvNative(pname, index, pval0);
+			}
+		}
+
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)
@@ -55,31 +63,31 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage2DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, byte fixedsamplelocations)
+		internal static void TexImage2DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(target, samples, internalformat, width, height, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(target, samples, internalformat, width, height, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void TexImage2DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, byte fixedsamplelocations)
+		public static void TexImage2DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TexImage2DMultisampleNative(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage3DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
+		internal static void TexImage3DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[3])(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[3])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[3])(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[3])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void TexImage3DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
+		public static void TexImage3DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexImage3DMultisampleNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}

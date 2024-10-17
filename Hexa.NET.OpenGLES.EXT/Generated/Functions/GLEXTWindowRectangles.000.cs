@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			WindowRectanglesEXTNative(mode, count, box);
 		}
 
+		public static void WindowRectanglesEXT(GLEnum mode, int count, Span<int> box)
+		{
+			fixed (int* pbox0 = box)
+			{
+				WindowRectanglesEXTNative(mode, count, pbox0);
+			}
+		}
+
 		public static void WindowRectanglesEXT(GLEnum mode, int count, ref int box)
 		{
 			fixed (int* pbox0 = &box)

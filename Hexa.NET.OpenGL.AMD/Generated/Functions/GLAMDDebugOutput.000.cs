@@ -31,22 +31,43 @@ namespace Hexa.NET.OpenGL.AMD
 			DebugMessageCallbackAMDNative(callback, userParam);
 		}
 
+		public static void DebugMessageCallbackAMD(GLDebugProcAMD callback, nint userParam)
+		{
+			DebugMessageCallbackAMDNative(callback, (void*)userParam);
+		}
+
+		public static void DebugMessageCallbackAMD<TUserParam>(GLDebugProcAMD callback, Span<TUserParam> userParam) where TUserParam : unmanaged
+		{
+			fixed (TUserParam* puserParam0 = userParam)
+			{
+				DebugMessageCallbackAMDNative(callback, puserParam0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageEnableAMDNative(GLEnum category, GLDebugSeverity severity, int count, uint* ids, byte enabled)
+		internal static void DebugMessageEnableAMDNative(GLEnum category, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLEnum, GLDebugSeverity, int, uint*, byte, void>)funcTable[1])(category, severity, count, ids, enabled);
+			((delegate* unmanaged[Cdecl]<GLEnum, GLDebugSeverity, int, uint*, byte, void>)funcTable[1])(category, severity, count, ids, *((byte*)(&enabled)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLEnum, GLDebugSeverity, int, nint, byte, void>)funcTable[1])(category, severity, count, (nint)ids, enabled);
+			((delegate* unmanaged[Cdecl]<GLEnum, GLDebugSeverity, int, nint, byte, void>)funcTable[1])(category, severity, count, (nint)ids, *((byte*)(&enabled)));
 			#endif
 		}
 
-		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, uint* ids, byte enabled)
+		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			DebugMessageEnableAMDNative(category, severity, count, ids, enabled);
 		}
 
-		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, ref uint ids, byte enabled)
+		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				DebugMessageEnableAMDNative(category, severity, count, pids0, enabled);
+			}
+		}
+
+		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -95,7 +116,7 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
-		public static void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, ReadOnlySpan<byte> buf)
+		public static void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, Span<byte> buf)
 		{
 			fixed (byte* pbuf0 = buf)
 			{
@@ -127,11 +148,29 @@ namespace Hexa.NET.OpenGL.AMD
 			return ret;
 		}
 
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, ids, lengths, message);
+				return ret;
+			}
+		}
+
 		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
 				uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, ids, lengths, message);
+				return ret;
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, byte* message)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, lengths, message);
 				return ret;
 			}
 		}
@@ -142,6 +181,18 @@ namespace Hexa.NET.OpenGL.AMD
 			{
 				uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, lengths, message);
 				return ret;
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, byte* message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (uint* pids1 = ids)
+				{
+					uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, pids1, lengths, message);
+					return ret;
+				}
 			}
 		}
 
@@ -157,12 +208,33 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, byte* message)
+		{
+			fixed (int* plengths0 = lengths)
+			{
+				uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, ids, plengths0, message);
+				return ret;
+			}
+		}
+
 		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, ref int lengths, byte* message)
 		{
 			fixed (int* plengths0 = &lengths)
 			{
 				uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, ids, plengths0, message);
 				return ret;
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, byte* message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (int* plengths1 = lengths)
+				{
+					uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, ids, plengths1, message);
+					return ret;
+				}
 			}
 		}
 
@@ -178,6 +250,18 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, byte* message)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				fixed (int* plengths1 = lengths)
+				{
+					uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, plengths1, message);
+					return ret;
+				}
+			}
+		}
+
 		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, ref int lengths, byte* message)
 		{
 			fixed (uint* pids0 = &ids)
@@ -186,6 +270,21 @@ namespace Hexa.NET.OpenGL.AMD
 				{
 					uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, plengths1, message);
 					return ret;
+				}
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, byte* message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (uint* pids1 = ids)
+				{
+					fixed (int* plengths2 = lengths)
+					{
+						uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, pids1, plengths2, message);
+						return ret;
+					}
 				}
 			}
 		}
@@ -232,7 +331,7 @@ namespace Hexa.NET.OpenGL.AMD
 			return ret;
 		}
 
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, ReadOnlySpan<byte> message)
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, Span<byte> message)
 		{
 			fixed (byte* pmessage0 = message)
 			{
@@ -250,6 +349,18 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, int* lengths, Span<byte> message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (byte* pmessage1 = message)
+				{
+					uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, ids, lengths, pmessage1);
+					return ret;
+				}
+			}
+		}
+
 		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, int* lengths, ref byte message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
@@ -257,6 +368,18 @@ namespace Hexa.NET.OpenGL.AMD
 				fixed (byte* pmessage1 = &message)
 				{
 					uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, ids, lengths, pmessage1);
+					return ret;
+				}
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, Span<byte> message)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				fixed (byte* pmessage1 = message)
+				{
+					uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, lengths, pmessage1);
 					return ret;
 				}
 			}
@@ -270,6 +393,21 @@ namespace Hexa.NET.OpenGL.AMD
 				{
 					uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, lengths, pmessage1);
 					return ret;
+				}
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, Span<byte> message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (uint* pids1 = ids)
+				{
+					fixed (byte* pmessage2 = message)
+					{
+						uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, pids1, lengths, pmessage2);
+						return ret;
+					}
 				}
 			}
 		}
@@ -289,6 +427,18 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, Span<byte> message)
+		{
+			fixed (int* plengths0 = lengths)
+			{
+				fixed (byte* pmessage1 = message)
+				{
+					uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, ids, plengths0, pmessage1);
+					return ret;
+				}
+			}
+		}
+
 		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, ref int lengths, ref byte message)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -297,6 +447,21 @@ namespace Hexa.NET.OpenGL.AMD
 				{
 					uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, ids, plengths0, pmessage1);
 					return ret;
+				}
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, Span<byte> message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (int* plengths1 = lengths)
+				{
+					fixed (byte* pmessage2 = message)
+					{
+						uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, ids, plengths1, pmessage2);
+						return ret;
+					}
 				}
 			}
 		}
@@ -316,6 +481,21 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, Span<byte> message)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				fixed (int* plengths1 = lengths)
+				{
+					fixed (byte* pmessage2 = message)
+					{
+						uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, plengths1, pmessage2);
+						return ret;
+					}
+				}
+			}
+		}
+
 		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, ref int lengths, ref byte message)
 		{
 			fixed (uint* pids0 = &ids)
@@ -326,6 +506,24 @@ namespace Hexa.NET.OpenGL.AMD
 					{
 						uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, pids0, plengths1, pmessage2);
 						return ret;
+					}
+				}
+			}
+		}
+
+		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, Span<byte> message)
+		{
+			fixed (GLEnum* pcategories0 = categories)
+			{
+				fixed (uint* pids1 = ids)
+				{
+					fixed (int* plengths2 = lengths)
+					{
+						fixed (byte* pmessage3 = message)
+						{
+							uint ret = GetDebugMessageLogAMDNative(count, bufSize, pcategories0, severities, pids1, plengths2, pmessage3);
+							return ret;
+						}
 					}
 				}
 			}

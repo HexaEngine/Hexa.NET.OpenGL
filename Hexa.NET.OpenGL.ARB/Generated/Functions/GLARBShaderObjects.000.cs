@@ -123,6 +123,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetActiveUniformARBNative(programObj, index, maxLength, length, size, type, name);
 		}
 
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetActiveUniformARBNative(programObj, index, maxLength, plength0, size, type, name);
+			}
+		}
+
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -131,11 +139,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, byte* name)
+		{
+			fixed (int* psize0 = size)
+			{
+				GetActiveUniformARBNative(programObj, index, maxLength, length, psize0, type, name);
+			}
+		}
+
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
 				GetActiveUniformARBNative(programObj, index, maxLength, length, psize0, type, name);
+			}
+		}
+
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					GetActiveUniformARBNative(programObj, index, maxLength, plength0, psize1, type, name);
+				}
 			}
 		}
 
@@ -176,7 +203,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, ReadOnlySpan<byte> name)
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -192,6 +219,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveUniformARBNative(programObj, index, maxLength, plength0, size, type, pname1);
+				}
+			}
+		}
+
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -203,6 +241,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, Span<byte> name)
+		{
+			fixed (int* psize0 = size)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveUniformARBNative(programObj, index, maxLength, length, psize0, type, pname1);
+				}
+			}
+		}
+
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -210,6 +259,20 @@ namespace Hexa.NET.OpenGL.ARB
 				fixed (byte* pname1 = &name)
 				{
 					GetActiveUniformARBNative(programObj, index, maxLength, length, psize0, type, pname1);
+				}
+			}
+		}
+
+		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					fixed (byte* pname2 = name)
+					{
+						GetActiveUniformARBNative(programObj, index, maxLength, plength0, psize1, type, pname2);
+					}
 				}
 			}
 		}
@@ -243,6 +306,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetAttachedObjectsARBNative(containerObj, maxCount, count, obj);
 		}
 
+		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, uint* obj)
+		{
+			fixed (int* pcount0 = count)
+			{
+				GetAttachedObjectsARBNative(containerObj, maxCount, pcount0, obj);
+			}
+		}
+
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, uint* obj)
 		{
 			fixed (int* pcount0 = &count)
@@ -251,11 +322,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, Span<uint> obj)
+		{
+			fixed (uint* pobj0 = obj)
+			{
+				GetAttachedObjectsARBNative(containerObj, maxCount, count, pobj0);
+			}
+		}
+
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, ref uint obj)
 		{
 			fixed (uint* pobj0 = &obj)
 			{
 				GetAttachedObjectsARBNative(containerObj, maxCount, count, pobj0);
+			}
+		}
+
+		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, Span<uint> obj)
+		{
+			fixed (int* pcount0 = count)
+			{
+				fixed (uint* pobj1 = obj)
+				{
+					GetAttachedObjectsARBNative(containerObj, maxCount, pcount0, pobj1);
+				}
 			}
 		}
 
@@ -301,6 +391,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetInfoLogARBNative(obj, maxLength, length, infoLog);
 		}
 
+		public static void GetInfoLogARB(uint obj, int maxLength, Span<int> length, byte* infoLog)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetInfoLogARBNative(obj, maxLength, plength0, infoLog);
+			}
+		}
+
 		public static void GetInfoLogARB(uint obj, int maxLength, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -335,7 +433,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetInfoLogARB(uint obj, int maxLength, int* length, ReadOnlySpan<byte> infoLog)
+		public static void GetInfoLogARB(uint obj, int maxLength, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -348,6 +446,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
 				GetInfoLogARBNative(obj, maxLength, length, pinfoLog0);
+			}
+		}
+
+		public static void GetInfoLogARB(uint obj, int maxLength, Span<int> length, Span<byte> infoLog)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pinfoLog1 = infoLog)
+				{
+					GetInfoLogARBNative(obj, maxLength, plength0, pinfoLog1);
+				}
 			}
 		}
 
@@ -437,6 +546,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetShaderSourceARBNative(obj, maxLength, length, source);
 		}
 
+		public static void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, byte* source)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetShaderSourceARBNative(obj, maxLength, plength0, source);
+			}
+		}
+
 		public static void GetShaderSourceARB(uint obj, int maxLength, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
@@ -471,7 +588,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, ReadOnlySpan<byte> source)
+		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, Span<byte> source)
 		{
 			fixed (byte* psource0 = source)
 			{
@@ -484,6 +601,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* psource0 = &source)
 			{
 				GetShaderSourceARBNative(obj, maxLength, length, psource0);
+			}
+		}
+
+		public static void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, Span<byte> source)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* psource1 = source)
+				{
+					GetShaderSourceARBNative(obj, maxLength, plength0, psource1);
+				}
 			}
 		}
 
@@ -541,7 +669,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static int GetUniformLocationARB(uint programObj, ReadOnlySpan<byte> name)
+		public static int GetUniformLocationARB(uint programObj, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -712,6 +840,14 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, Span<int> length)
+		{
+			fixed (int* plength0 = length)
+			{
+				ShaderSourceARBNative(shaderObj, count, str, plength0);
+			}
+		}
+
 		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, ref int length)
 		{
 			fixed (int* plength0 = &length)
@@ -748,6 +884,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform1fvARB(int location, int count, float* value)
 		{
 			Uniform1fvARBNative(location, count, value);
+		}
+
+		public static void Uniform1fvARB(int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				Uniform1fvARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform1fvARB(int location, int count, ref float value)
@@ -788,6 +932,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform1ivARBNative(location, count, value);
 		}
 
+		public static void Uniform1ivARB(int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				Uniform1ivARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform1ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -824,6 +976,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform2fvARB(int location, int count, float* value)
 		{
 			Uniform2fvARBNative(location, count, value);
+		}
+
+		public static void Uniform2fvARB(int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				Uniform2fvARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform2fvARB(int location, int count, ref float value)
@@ -864,6 +1024,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform2ivARBNative(location, count, value);
 		}
 
+		public static void Uniform2ivARB(int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				Uniform2ivARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform2ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -900,6 +1068,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform3fvARB(int location, int count, float* value)
 		{
 			Uniform3fvARBNative(location, count, value);
+		}
+
+		public static void Uniform3fvARB(int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				Uniform3fvARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform3fvARB(int location, int count, ref float value)
@@ -940,6 +1116,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform3ivARBNative(location, count, value);
 		}
 
+		public static void Uniform3ivARB(int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				Uniform3ivARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform3ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -976,6 +1160,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform4fvARB(int location, int count, float* value)
 		{
 			Uniform4fvARBNative(location, count, value);
+		}
+
+		public static void Uniform4fvARB(int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				Uniform4fvARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform4fvARB(int location, int count, ref float value)
@@ -1016,6 +1208,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform4ivARBNative(location, count, value);
 		}
 
+		public static void Uniform4ivARB(int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				Uniform4ivARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform4ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -1025,21 +1225,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2fvARBNative(int location, int count, byte transpose, float* value)
+		internal static void UniformMatrix2fvARBNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[34])(location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[34])(location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[34])(location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[34])(location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix2fvARB(int location, int count, byte transpose, float* value)
+		public static void UniformMatrix2fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2fvARBNative(location, count, transpose, value);
 		}
 
-		public static void UniformMatrix2fvARB(int location, int count, byte transpose, ref float value)
+		public static void UniformMatrix2fvARB(int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				UniformMatrix2fvARBNative(location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void UniformMatrix2fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1048,21 +1256,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3fvARBNative(int location, int count, byte transpose, float* value)
+		internal static void UniformMatrix3fvARBNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[35])(location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[35])(location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[35])(location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[35])(location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix3fvARB(int location, int count, byte transpose, float* value)
+		public static void UniformMatrix3fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3fvARBNative(location, count, transpose, value);
 		}
 
-		public static void UniformMatrix3fvARB(int location, int count, byte transpose, ref float value)
+		public static void UniformMatrix3fvARB(int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				UniformMatrix3fvARBNative(location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void UniformMatrix3fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1071,21 +1287,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4fvARBNative(int location, int count, byte transpose, float* value)
+		internal static void UniformMatrix4fvARBNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[36])(location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[36])(location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[36])(location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[36])(location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4fvARB(int location, int count, byte transpose, float* value)
+		public static void UniformMatrix4fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4fvARBNative(location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4fvARB(int location, int count, byte transpose, ref float value)
+		public static void UniformMatrix4fvARB(int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				UniformMatrix4fvARBNative(location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void UniformMatrix4fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{

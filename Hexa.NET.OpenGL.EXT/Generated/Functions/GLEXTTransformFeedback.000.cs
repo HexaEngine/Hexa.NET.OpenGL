@@ -106,6 +106,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTransformFeedbackVaryingEXTNative(program, index, bufSize, length, size, type, name);
 		}
 
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetTransformFeedbackVaryingEXTNative(program, index, bufSize, plength0, size, type, name);
+			}
+		}
+
 		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -114,11 +122,30 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, byte* name)
+		{
+			fixed (int* psize0 = size)
+			{
+				GetTransformFeedbackVaryingEXTNative(program, index, bufSize, length, psize0, type, name);
+			}
+		}
+
 		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
 				GetTransformFeedbackVaryingEXTNative(program, index, bufSize, length, psize0, type, name);
+			}
+		}
+
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					GetTransformFeedbackVaryingEXTNative(program, index, bufSize, plength0, psize1, type, name);
+				}
 			}
 		}
 
@@ -159,7 +186,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, ReadOnlySpan<byte> name)
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -175,6 +202,17 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetTransformFeedbackVaryingEXTNative(program, index, bufSize, plength0, size, type, pname1);
+				}
+			}
+		}
+
 		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -186,6 +224,17 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, Span<byte> name)
+		{
+			fixed (int* psize0 = size)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetTransformFeedbackVaryingEXTNative(program, index, bufSize, length, psize0, type, pname1);
+				}
+			}
+		}
+
 		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -193,6 +242,20 @@ namespace Hexa.NET.OpenGL.EXT
 				fixed (byte* pname1 = &name)
 				{
 					GetTransformFeedbackVaryingEXTNative(program, index, bufSize, length, psize0, type, pname1);
+				}
+			}
+		}
+
+		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (int* psize1 = size)
+				{
+					fixed (byte* pname2 = name)
+					{
+						GetTransformFeedbackVaryingEXTNative(program, index, bufSize, plength0, psize1, type, pname2);
+					}
 				}
 			}
 		}

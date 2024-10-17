@@ -17,22 +17,46 @@ namespace Hexa.NET.OpenGL.NV
 	public static unsafe partial class GLNVVdpauInterop2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNVNative(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, byte isFrameStructure)
+		internal static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNVNative(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<void*, GLEnum, int, uint*, byte, GLvdpauSurfaceNV>)funcTable[0])(vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
+			return ((delegate* unmanaged[Cdecl]<void*, GLEnum, int, uint*, byte, GLvdpauSurfaceNV>)funcTable[0])(vdpSurface, target, numTextureNames, textureNames, *((byte*)(&isFrameStructure)));
 			#else
-			return (GLvdpauSurfaceNV)((delegate* unmanaged[Cdecl]<nint, GLEnum, int, nint, byte, GLvdpauSurfaceNV>)funcTable[0])((nint)vdpSurface, target, numTextureNames, (nint)textureNames, isFrameStructure);
+			return (GLvdpauSurfaceNV)((delegate* unmanaged[Cdecl]<nint, GLEnum, int, nint, byte, GLvdpauSurfaceNV>)funcTable[0])((nint)vdpSurface, target, numTextureNames, (nint)textureNames, *((byte*)(&isFrameStructure)));
 			#endif
 		}
 
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, byte isFrameStructure)
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative(vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
 			return ret;
 		}
 
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames, byte isFrameStructure)
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(nint vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
+		{
+			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative((void*)vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
+			return ret;
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV<TVdpSurface>(Span<TVdpSurface> vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure) where TVdpSurface : unmanaged
+		{
+			fixed (TVdpSurface* pvdpSurface0 = vdpSurface)
+			{
+				GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative(pvdpSurface0, target, numTextureNames, textureNames, isFrameStructure);
+				return ret;
+			}
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, Span<uint> textureNames, bool isFrameStructure)
+		{
+			fixed (uint* ptextureNames0 = textureNames)
+			{
+				GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative(vdpSurface, target, numTextureNames, ptextureNames0, isFrameStructure);
+				return ret;
+			}
+		}
+
+		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames, bool isFrameStructure)
 		{
 			fixed (uint* ptextureNames0 = &textureNames)
 			{

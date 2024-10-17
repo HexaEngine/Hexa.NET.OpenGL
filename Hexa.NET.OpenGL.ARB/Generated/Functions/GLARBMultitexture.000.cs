@@ -76,6 +76,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord1dvARBNative(target, v);
 		}
 
+		public static void MultiTexCoord1dvARB(GLTextureUnit target, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				MultiTexCoord1dvARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord1dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -112,6 +120,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord1fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord1fvARBNative(target, v);
+		}
+
+		public static void MultiTexCoord1fvARB(GLTextureUnit target, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				MultiTexCoord1fvARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord1fvARB(GLTextureUnit target, ref float v)
@@ -152,6 +168,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord1ivARBNative(target, v);
 		}
 
+		public static void MultiTexCoord1ivARB(GLTextureUnit target, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				MultiTexCoord1ivARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord1ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -188,6 +212,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord1svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord1svARBNative(target, v);
+		}
+
+		public static void MultiTexCoord1svARB(GLTextureUnit target, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				MultiTexCoord1svARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord1svARB(GLTextureUnit target, ref short v)
@@ -228,6 +260,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord2dvARBNative(target, v);
 		}
 
+		public static void MultiTexCoord2dvARB(GLTextureUnit target, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				MultiTexCoord2dvARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord2dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -264,6 +304,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord2fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord2fvARBNative(target, v);
+		}
+
+		public static void MultiTexCoord2fvARB(GLTextureUnit target, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				MultiTexCoord2fvARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord2fvARB(GLTextureUnit target, ref float v)
@@ -304,6 +352,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord2ivARBNative(target, v);
 		}
 
+		public static void MultiTexCoord2ivARB(GLTextureUnit target, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				MultiTexCoord2ivARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord2ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -340,6 +396,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord2svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord2svARBNative(target, v);
+		}
+
+		public static void MultiTexCoord2svARB(GLTextureUnit target, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				MultiTexCoord2svARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord2svARB(GLTextureUnit target, ref short v)
@@ -380,6 +444,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord3dvARBNative(target, v);
 		}
 
+		public static void MultiTexCoord3dvARB(GLTextureUnit target, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				MultiTexCoord3dvARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord3dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -416,6 +488,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord3fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord3fvARBNative(target, v);
+		}
+
+		public static void MultiTexCoord3fvARB(GLTextureUnit target, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				MultiTexCoord3fvARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord3fvARB(GLTextureUnit target, ref float v)
@@ -456,6 +536,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord3ivARBNative(target, v);
 		}
 
+		public static void MultiTexCoord3ivARB(GLTextureUnit target, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				MultiTexCoord3ivARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord3ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -492,6 +580,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord3svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord3svARBNative(target, v);
+		}
+
+		public static void MultiTexCoord3svARB(GLTextureUnit target, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				MultiTexCoord3svARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord3svARB(GLTextureUnit target, ref short v)
@@ -532,6 +628,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord4dvARBNative(target, v);
 		}
 
+		public static void MultiTexCoord4dvARB(GLTextureUnit target, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				MultiTexCoord4dvARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord4dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -568,6 +672,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord4fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord4fvARBNative(target, v);
+		}
+
+		public static void MultiTexCoord4fvARB(GLTextureUnit target, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				MultiTexCoord4fvARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord4fvARB(GLTextureUnit target, ref float v)
@@ -608,6 +720,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiTexCoord4ivARBNative(target, v);
 		}
 
+		public static void MultiTexCoord4ivARB(GLTextureUnit target, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				MultiTexCoord4ivARBNative(target, pv0);
+			}
+		}
+
 		public static void MultiTexCoord4ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -644,6 +764,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiTexCoord4svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord4svARBNative(target, v);
+		}
+
+		public static void MultiTexCoord4svARB(GLTextureUnit target, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				MultiTexCoord4svARBNative(target, pv0);
+			}
 		}
 
 		public static void MultiTexCoord4svARB(GLTextureUnit target, ref short v)

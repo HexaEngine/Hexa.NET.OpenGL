@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGLES.ANDROID
 	public static unsafe partial class GLOESTextureStorageMultisample2dArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage3DMultisampleOESNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
+		internal static void TexStorage3DMultisampleOESNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[0])(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[0])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[0])(target, samples, internalformat, width, height, depth, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[0])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void TexStorage3DMultisampleOES(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
+		public static void TexStorage3DMultisampleOES(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexStorage3DMultisampleOESNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}

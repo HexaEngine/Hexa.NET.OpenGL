@@ -17,18 +17,31 @@ namespace Hexa.NET.OpenGL.EXT
 	public static unsafe partial class GLEXTHistogram
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramEXTNative(GLHistogramTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal static void GetHistogramEXTNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[0])(target, reset, format, type, values);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[0])(target, *((byte*)(&reset)), format, type, values);
 			#else
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[0])(target, reset, format, type, (nint)values);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[0])(target, *((byte*)(&reset)), format, type, (nint)values);
 			#endif
 		}
 
-		public static void GetHistogramEXT(GLHistogramTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		public static void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetHistogramEXTNative(target, reset, format, type, values);
+		}
+
+		public static void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		{
+			GetHistogramEXTNative(target, reset, format, type, (void*)values);
+		}
+
+		public static void GetHistogramEXT<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		{
+			fixed (TValues* pvalues0 = values)
+			{
+				GetHistogramEXTNative(target, reset, format, type, pvalues0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,18 +105,31 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxEXTNative(GLMinmaxTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal static void GetMinmaxEXTNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[3])(target, reset, format, type, values);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[3])(target, *((byte*)(&reset)), format, type, values);
 			#else
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[3])(target, reset, format, type, (nint)values);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, nint, void>)funcTable[3])(target, *((byte*)(&reset)), format, type, (nint)values);
 			#endif
 		}
 
-		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, byte reset, GLPixelFormat format, GLPixelType type, void* values)
+		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetMinmaxEXTNative(target, reset, format, type, values);
+		}
+
+		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		{
+			GetMinmaxEXTNative(target, reset, format, type, (void*)values);
+		}
+
+		public static void GetMinmaxEXT<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		{
+			fixed (TValues* pvalues0 = values)
+			{
+				GetMinmaxEXTNative(target, reset, format, type, pvalues0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,31 +193,31 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void HistogramEXTNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, byte sink)
+		internal static void HistogramEXTNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[6])(target, width, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[6])(target, width, internalformat, *((byte*)(&sink)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[6])(target, width, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[6])(target, width, internalformat, *((byte*)(&sink)));
 			#endif
 		}
 
-		public static void HistogramEXT(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, byte sink)
+		public static void HistogramEXT(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			HistogramEXTNative(target, width, internalformat, sink);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MinmaxEXTNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, byte sink)
+		internal static void MinmaxEXTNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[7])(target, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[7])(target, internalformat, *((byte*)(&sink)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[7])(target, internalformat, sink);
+			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[7])(target, internalformat, *((byte*)(&sink)));
 			#endif
 		}
 
-		public static void MinmaxEXT(GLMinmaxTargetEXT target, GLInternalFormat internalformat, byte sink)
+		public static void MinmaxEXT(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			MinmaxEXTNative(target, internalformat, sink);
 		}

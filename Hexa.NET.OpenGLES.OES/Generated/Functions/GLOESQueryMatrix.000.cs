@@ -32,11 +32,29 @@ namespace Hexa.NET.OpenGLES.OES
 			return ret;
 		}
 
+		public static uint QueryMatrixxOES(Span<int> mantissa, int* exponent)
+		{
+			fixed (int* pmantissa0 = mantissa)
+			{
+				uint ret = QueryMatrixxOESNative(pmantissa0, exponent);
+				return ret;
+			}
+		}
+
 		public static uint QueryMatrixxOES(ref int mantissa, int* exponent)
 		{
 			fixed (int* pmantissa0 = &mantissa)
 			{
 				uint ret = QueryMatrixxOESNative(pmantissa0, exponent);
+				return ret;
+			}
+		}
+
+		public static uint QueryMatrixxOES(int* mantissa, Span<int> exponent)
+		{
+			fixed (int* pexponent0 = exponent)
+			{
+				uint ret = QueryMatrixxOESNative(mantissa, pexponent0);
 				return ret;
 			}
 		}
@@ -47,6 +65,18 @@ namespace Hexa.NET.OpenGLES.OES
 			{
 				uint ret = QueryMatrixxOESNative(mantissa, pexponent0);
 				return ret;
+			}
+		}
+
+		public static uint QueryMatrixxOES(Span<int> mantissa, Span<int> exponent)
+		{
+			fixed (int* pmantissa0 = mantissa)
+			{
+				fixed (int* pexponent1 = exponent)
+				{
+					uint ret = QueryMatrixxOESNative(pmantissa0, pexponent1);
+					return ret;
+				}
 			}
 		}
 

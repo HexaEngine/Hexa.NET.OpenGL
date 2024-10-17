@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteQueriesARBNative(1, &id);
 		}
 
+		public static void DeleteQueriesARB(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				DeleteQueriesARBNative(n, pids0);
+			}
+		}
+
 		public static void DeleteQueriesARB(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -94,6 +102,14 @@ namespace Hexa.NET.OpenGL.ARB
 			uint result;
 			GenQueriesARBNative(1, &result);
 			return result;
+		}
+
+		public static void GenQueriesARB(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				GenQueriesARBNative(n, pids0);
+			}
 		}
 
 		public static void GenQueriesARB(int n, ref uint ids)

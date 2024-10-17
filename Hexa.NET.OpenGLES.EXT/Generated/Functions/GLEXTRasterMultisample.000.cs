@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGLES.EXT
 	public static unsafe partial class GLEXTRasterMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterSamplesEXTNative(uint samples, byte fixedsamplelocations)
+		internal static void RasterSamplesEXTNative(uint samples, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[0])(samples, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[0])(samples, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[0])(samples, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[0])(samples, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void RasterSamplesEXT(uint samples, byte fixedsamplelocations)
+		public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
 		{
 			RasterSamplesEXTNative(samples, fixedsamplelocations);
 		}

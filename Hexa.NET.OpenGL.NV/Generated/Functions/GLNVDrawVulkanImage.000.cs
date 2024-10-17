@@ -74,7 +74,7 @@ namespace Hexa.NET.OpenGL.NV
 			return ret;
 		}
 
-		public static GLVulkanProcNV GetVkProcAddrNV(ReadOnlySpan<byte> name)
+		public static GLVulkanProcNV GetVkProcAddrNV(Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{

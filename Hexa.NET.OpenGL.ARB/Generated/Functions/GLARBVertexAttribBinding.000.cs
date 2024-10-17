@@ -47,16 +47,16 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, byte normalized, uint relativeoffset)
+		internal static void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[2])(attribindex, size, type, normalized, relativeoffset);
+			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[2])(attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[2])(attribindex, size, type, normalized, relativeoffset);
+			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[2])(attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
 			#endif
 		}
 
-		public static void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, byte normalized, uint relativeoffset)
+		public static void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexAttribFormatNative(attribindex, size, type, normalized, relativeoffset);
 		}

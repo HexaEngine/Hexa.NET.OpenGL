@@ -166,6 +166,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform1i64vARBNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1i64vARB(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform1i64vARBNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -202,6 +210,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform1ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform1ui64vARBNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1ui64vARB(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform1ui64vARBNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1ui64vARB(uint program, int location, int count, ref ulong value)
@@ -242,6 +258,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform2i64vARBNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2i64vARB(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform2i64vARBNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -278,6 +302,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform2ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform2ui64vARBNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2ui64vARB(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform2ui64vARBNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2ui64vARB(uint program, int location, int count, ref ulong value)
@@ -318,6 +350,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform3i64vARBNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3i64vARB(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform3i64vARBNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -354,6 +394,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform3ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform3ui64vARBNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3ui64vARB(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform3ui64vARBNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3ui64vARB(uint program, int location, int count, ref ulong value)
@@ -394,6 +442,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform4i64vARBNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4i64vARB(uint program, int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				ProgramUniform4i64vARBNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -430,6 +486,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform4ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform4ui64vARBNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform4ui64vARB(uint program, int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				ProgramUniform4ui64vARBNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform4ui64vARB(uint program, int location, int count, ref ulong value)
@@ -470,6 +534,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform1i64vARBNative(location, count, value);
 		}
 
+		public static void Uniform1i64vARB(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform1i64vARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform1i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -506,6 +578,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform1ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform1ui64vARBNative(location, count, value);
+		}
+
+		public static void Uniform1ui64vARB(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform1ui64vARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform1ui64vARB(int location, int count, ref ulong value)
@@ -546,6 +626,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform2i64vARBNative(location, count, value);
 		}
 
+		public static void Uniform2i64vARB(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform2i64vARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform2i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -582,6 +670,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform2ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform2ui64vARBNative(location, count, value);
+		}
+
+		public static void Uniform2ui64vARB(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform2ui64vARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform2ui64vARB(int location, int count, ref ulong value)
@@ -622,6 +718,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform3i64vARBNative(location, count, value);
 		}
 
+		public static void Uniform3i64vARB(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform3i64vARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform3i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -658,6 +762,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform3ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform3ui64vARBNative(location, count, value);
+		}
+
+		public static void Uniform3ui64vARB(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform3ui64vARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform3ui64vARB(int location, int count, ref ulong value)
@@ -698,6 +810,14 @@ namespace Hexa.NET.OpenGL.ARB
 			Uniform4i64vARBNative(location, count, value);
 		}
 
+		public static void Uniform4i64vARB(int location, int count, Span<long> value)
+		{
+			fixed (long* pvalue0 = value)
+			{
+				Uniform4i64vARBNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform4i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -734,6 +854,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void Uniform4ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform4ui64vARBNative(location, count, value);
+		}
+
+		public static void Uniform4ui64vARB(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				Uniform4ui64vARBNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform4ui64vARB(int location, int count, ref ulong value)

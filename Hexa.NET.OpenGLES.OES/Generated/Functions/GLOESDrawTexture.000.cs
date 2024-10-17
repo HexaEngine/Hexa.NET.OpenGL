@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGLES.OES
 			DrawTexfvOESNative(coords);
 		}
 
+		public static void DrawTexfvOES(Span<float> coords)
+		{
+			fixed (float* pcoords0 = coords)
+			{
+				DrawTexfvOESNative(pcoords0);
+			}
+		}
+
 		public static void DrawTexfvOES(ref float coords)
 		{
 			fixed (float* pcoords0 = &coords)
@@ -82,6 +90,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void DrawTexivOES(int* coords)
 		{
 			DrawTexivOESNative(coords);
+		}
+
+		public static void DrawTexivOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				DrawTexivOESNative(pcoords0);
+			}
 		}
 
 		public static void DrawTexivOES(ref int coords)
@@ -122,6 +138,14 @@ namespace Hexa.NET.OpenGLES.OES
 			DrawTexsvOESNative(coords);
 		}
 
+		public static void DrawTexsvOES(Span<short> coords)
+		{
+			fixed (short* pcoords0 = coords)
+			{
+				DrawTexsvOESNative(pcoords0);
+			}
+		}
+
 		public static void DrawTexsvOES(ref short coords)
 		{
 			fixed (short* pcoords0 = &coords)
@@ -158,6 +182,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void DrawTexxvOES(int* coords)
 		{
 			DrawTexxvOESNative(coords);
+		}
+
+		public static void DrawTexxvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				DrawTexxvOESNative(pcoords0);
+			}
 		}
 
 		public static void DrawTexxvOES(ref int coords)

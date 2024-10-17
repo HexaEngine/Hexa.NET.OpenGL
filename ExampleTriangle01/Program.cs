@@ -6,10 +6,10 @@ using HexaGen.Runtime;
 
 GLFW.Init();
 GLFW.WindowHint(GLFW.GLFW_CONTEXT_VERSION_MAJOR, 3);
-GLFW.WindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 2);
+GLFW.WindowHint(GLFW.GLFW_CONTEXT_VERSION_MINOR, 3);
 GLFW.WindowHint(GLFW.GLFW_OPENGL_PROFILE, GLFW.GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
 
-GLFWwindowPtr window = GLFW.CreateWindow(800, 600, "GLFW Example", null, null);
+GLFWwindowPtr window = GLFW.CreateWindow(800, 600, "GL Triangle Example", null, null);
 if (window.IsNull)
 {
     Console.WriteLine("Failed to create GLFW window.");
@@ -21,9 +21,9 @@ GLFW.MakeContextCurrent(window);
 
 GL.InitApi(new BindingsContext());
 
-uint _vertexArrayObject = 0;
+uint _vertexArrayObject;
 uint _vertexBufferObject;
-uint _shaderProgram = 0;
+uint _shaderProgram;
 
 Vertex[] _vertices =
 [
@@ -42,19 +42,13 @@ GL.BindVertexArray(_vertexArrayObject);
 _vertexBufferObject = GL.GenBuffer();
 GL.BindBuffer(GLBufferTargetARB.ArrayBuffer, _vertexBufferObject);
 
-unsafe
-{
-    fixed (Vertex* ptr = _vertices)
-    {
-        GL.BufferData(GLBufferTargetARB.ArrayBuffer, _vertices.Length * sizeof(Vertex), ptr, GLBufferUsageARB.StaticDraw);
-    }
+GL.BufferData<Vertex>(GLBufferTargetARB.ArrayBuffer, _vertices.Length * Vertex.Size, _vertices, GLBufferUsageARB.StaticDraw);
 
-    // Link the vertex data with the shader attributes
-    GL.VertexAttribPointer(0, 3, GLVertexAttribPointerType.Float, 0, sizeof(Vertex), null);
-    GL.EnableVertexAttribArray(0);
-    GL.VertexAttribPointer(1, 4, GLVertexAttribPointerType.Float, 0, sizeof(Vertex), (void*)(3 * sizeof(float)));
-    GL.EnableVertexAttribArray(1);
-}
+// Link the vertex data with the shader attributes
+GL.VertexAttribPointer(0, 3, GLVertexAttribPointerType.Float, false, Vertex.Size, 0);
+GL.EnableVertexAttribArray(0);
+GL.VertexAttribPointer(1, 4, GLVertexAttribPointerType.Float, false, Vertex.Size, 3 * sizeof(float));
+GL.EnableVertexAttribArray(1);
 
 // Compile shaders and link them into a program
 _shaderProgram = CompileShaders();

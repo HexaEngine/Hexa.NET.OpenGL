@@ -92,18 +92,31 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, byte packed, void* points)
+		internal static void GetMapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, byte, void*, void>)funcTable[3])(target, index, type, ustride, vstride, packed, points);
+			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, byte, void*, void>)funcTable[3])(target, index, type, ustride, vstride, *((byte*)(&packed)), points);
 			#else
-			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, byte, nint, void>)funcTable[3])(target, index, type, ustride, vstride, packed, (nint)points);
+			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, byte, nint, void>)funcTable[3])(target, index, type, ustride, vstride, *((byte*)(&packed)), (nint)points);
 			#endif
 		}
 
-		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, byte packed, void* points)
+		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
 		{
 			GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, points);
+		}
+
+		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, nint points)
+		{
+			GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, (void*)points);
+		}
+
+		public static void GetMapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, Span<TPoints> points) where TPoints : unmanaged
+		{
+			fixed (TPoints* ppoints0 = points)
+			{
+				GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, ppoints0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,18 +180,31 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, byte packed, void* points)
+		internal static void MapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, int, int, byte, void*, void>)funcTable[6])(target, index, type, ustride, vstride, uorder, vorder, packed, points);
+			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, int, int, byte, void*, void>)funcTable[6])(target, index, type, ustride, vstride, uorder, vorder, *((byte*)(&packed)), points);
 			#else
-			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, int, int, byte, nint, void>)funcTable[6])(target, index, type, ustride, vstride, uorder, vorder, packed, (nint)points);
+			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, int, int, byte, nint, void>)funcTable[6])(target, index, type, ustride, vstride, uorder, vorder, *((byte*)(&packed)), (nint)points);
 			#endif
 		}
 
-		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, byte packed, void* points)
+		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
 		{
 			MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, points);
+		}
+
+		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, nint points)
+		{
+			MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, (void*)points);
+		}
+
+		public static void MapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, Span<TPoints> points) where TPoints : unmanaged
+		{
+			fixed (TPoints* ppoints0 = points)
+			{
+				MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, ppoints0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

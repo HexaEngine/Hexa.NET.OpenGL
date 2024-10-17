@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			DrawElementsInstancedEXTNative(mode, count, type, indices, primcount);
 		}
 
+		public static void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		{
+			DrawElementsInstancedEXTNative(mode, count, type, (void*)indices, primcount);
+		}
+
+		public static void DrawElementsInstancedEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		{
+			fixed (TIndices* pindices0 = indices)
+			{
+				DrawElementsInstancedEXTNative(mode, count, type, pindices0, primcount);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VertexAttribDivisorEXTNative(uint index, uint divisor)
 		{

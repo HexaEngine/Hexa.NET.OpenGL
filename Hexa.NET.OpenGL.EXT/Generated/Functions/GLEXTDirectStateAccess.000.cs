@@ -62,6 +62,19 @@ namespace Hexa.NET.OpenGL.EXT
 			ClearNamedBufferDataEXTNative(buffer, internalformat, format, type, data);
 		}
 
+		public static void ClearNamedBufferDataEXT(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearNamedBufferDataEXTNative(buffer, internalformat, format, type, (void*)data);
+		}
+
+		public static void ClearNamedBufferDataEXT<TData>(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearNamedBufferDataEXTNative(buffer, internalformat, format, type, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void ClearNamedBufferSubDataEXTNative(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
@@ -75,6 +88,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ClearNamedBufferSubDataEXT(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearNamedBufferSubDataEXTNative(buffer, internalformat, offset, size, format, type, data);
+		}
+
+		public static void ClearNamedBufferSubDataEXT(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
+		{
+			ClearNamedBufferSubDataEXTNative(buffer, internalformat, offset, size, format, type, (void*)data);
+		}
+
+		public static void ClearNamedBufferSubDataEXT<TData>(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ClearNamedBufferSubDataEXTNative(buffer, internalformat, offset, size, format, type, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -107,6 +133,19 @@ namespace Hexa.NET.OpenGL.EXT
 			CompressedMultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, imageSize, bits);
 		}
 
+		public static void CompressedMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint bits)
+		{
+			CompressedMultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, imageSize, (void*)bits);
+		}
+
+		public static void CompressedMultiTexImage1DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedMultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, imageSize, pbits0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedMultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
@@ -120,6 +159,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void CompressedMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
 			CompressedMultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, imageSize, bits);
+		}
+
+		public static void CompressedMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint bits)
+		{
+			CompressedMultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, imageSize, (void*)bits);
+		}
+
+		public static void CompressedMultiTexImage2DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedMultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, imageSize, pbits0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -137,6 +189,19 @@ namespace Hexa.NET.OpenGL.EXT
 			CompressedMultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, imageSize, bits);
 		}
 
+		public static void CompressedMultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint bits)
+		{
+			CompressedMultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, imageSize, (void*)bits);
+		}
+
+		public static void CompressedMultiTexImage3DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedMultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, imageSize, pbits0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedMultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
@@ -150,6 +215,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void CompressedMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedMultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, imageSize, bits);
+		}
+
+		public static void CompressedMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint bits)
+		{
+			CompressedMultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, imageSize, (void*)bits);
+		}
+
+		public static void CompressedMultiTexSubImage1DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedMultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, imageSize, pbits0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -167,6 +245,19 @@ namespace Hexa.NET.OpenGL.EXT
 			CompressedMultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bits);
 		}
 
+		public static void CompressedMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint bits)
+		{
+			CompressedMultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, (void*)bits);
+		}
+
+		public static void CompressedMultiTexSubImage2DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedMultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, pbits0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedMultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
@@ -180,6 +271,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void CompressedMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedMultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bits);
+		}
+
+		public static void CompressedMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint bits)
+		{
+			CompressedMultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)bits);
+		}
+
+		public static void CompressedMultiTexSubImage3DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedMultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, pbits0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -197,6 +301,19 @@ namespace Hexa.NET.OpenGL.EXT
 			CompressedTextureImage1DEXTNative(texture, target, level, internalformat, width, border, imageSize, bits);
 		}
 
+		public static void CompressedTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint bits)
+		{
+			CompressedTextureImage1DEXTNative(texture, target, level, internalformat, width, border, imageSize, (void*)bits);
+		}
+
+		public static void CompressedTextureImage1DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedTextureImage1DEXTNative(texture, target, level, internalformat, width, border, imageSize, pbits0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedTextureImage2DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
@@ -210,6 +327,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void CompressedTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
 			CompressedTextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, imageSize, bits);
+		}
+
+		public static void CompressedTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint bits)
+		{
+			CompressedTextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, imageSize, (void*)bits);
+		}
+
+		public static void CompressedTextureImage2DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedTextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, imageSize, pbits0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,6 +357,19 @@ namespace Hexa.NET.OpenGL.EXT
 			CompressedTextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, imageSize, bits);
 		}
 
+		public static void CompressedTextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint bits)
+		{
+			CompressedTextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, imageSize, (void*)bits);
+		}
+
+		public static void CompressedTextureImage3DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedTextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, imageSize, pbits0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedTextureSubImage1DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
@@ -240,6 +383,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void CompressedTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedTextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, imageSize, bits);
+		}
+
+		public static void CompressedTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint bits)
+		{
+			CompressedTextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, imageSize, (void*)bits);
+		}
+
+		public static void CompressedTextureSubImage1DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedTextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, imageSize, pbits0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -257,6 +413,19 @@ namespace Hexa.NET.OpenGL.EXT
 			CompressedTextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, imageSize, bits);
 		}
 
+		public static void CompressedTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint bits)
+		{
+			CompressedTextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, imageSize, (void*)bits);
+		}
+
+		public static void CompressedTextureSubImage2DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedTextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, imageSize, pbits0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void CompressedTextureSubImage3DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
@@ -270,6 +439,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void CompressedTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedTextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bits);
+		}
+
+		public static void CompressedTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint bits)
+		{
+			CompressedTextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)bits);
+		}
+
+		public static void CompressedTextureSubImage3DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		{
+			fixed (TBits* pbits0 = bits)
+			{
+				CompressedTextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, pbits0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -703,7 +885,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ReadOnlySpan<byte> data)
+		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -734,6 +916,19 @@ namespace Hexa.NET.OpenGL.EXT
 			GetCompressedMultiTexImageEXTNative(texunit, target, lod, img);
 		}
 
+		public static void GetCompressedMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int lod, nint img)
+		{
+			GetCompressedMultiTexImageEXTNative(texunit, target, lod, (void*)img);
+		}
+
+		public static void GetCompressedMultiTexImageEXT<TImg>(GLTextureUnit texunit, GLTextureTarget target, int lod, Span<TImg> img) where TImg : unmanaged
+		{
+			fixed (TImg* pimg0 = img)
+			{
+				GetCompressedMultiTexImageEXTNative(texunit, target, lod, pimg0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetCompressedTextureImageEXTNative(uint texture, GLTextureTarget target, int lod, void* img)
 		{
@@ -749,6 +944,19 @@ namespace Hexa.NET.OpenGL.EXT
 			GetCompressedTextureImageEXTNative(texture, target, lod, img);
 		}
 
+		public static void GetCompressedTextureImageEXT(uint texture, GLTextureTarget target, int lod, nint img)
+		{
+			GetCompressedTextureImageEXTNative(texture, target, lod, (void*)img);
+		}
+
+		public static void GetCompressedTextureImageEXT<TImg>(uint texture, GLTextureTarget target, int lod, Span<TImg> img) where TImg : unmanaged
+		{
+			fixed (TImg* pimg0 = img)
+			{
+				GetCompressedTextureImageEXTNative(texture, target, lod, pimg0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetDoubleIndexedvEXTNative(GLGetPName target, uint index, double* data)
 		{
@@ -762,6 +970,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetDoubleIndexedvEXT(GLGetPName target, uint index, double* data)
 		{
 			GetDoubleIndexedvEXTNative(target, index, data);
+		}
+
+		public static void GetDoubleIndexedvEXT(GLGetPName target, uint index, Span<double> data)
+		{
+			fixed (double* pdata0 = data)
+			{
+				GetDoubleIndexedvEXTNative(target, index, pdata0);
+			}
 		}
 
 		public static void GetDoubleIndexedvEXT(GLGetPName target, uint index, ref double data)
@@ -787,6 +1003,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetDoublei_vEXTNative(pname, index, @params);
 		}
 
+		public static void GetDoublei_vEXT(GLGetPName pname, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetDoublei_vEXTNative(pname, index, pparams0);
+			}
+		}
+
 		public static void GetDoublei_vEXT(GLGetPName pname, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -808,6 +1032,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetFloatIndexedvEXT(GLGetPName target, uint index, float* data)
 		{
 			GetFloatIndexedvEXTNative(target, index, data);
+		}
+
+		public static void GetFloatIndexedvEXT(GLGetPName target, uint index, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetFloatIndexedvEXTNative(target, index, pdata0);
+			}
 		}
 
 		public static void GetFloatIndexedvEXT(GLGetPName target, uint index, ref float data)
@@ -893,6 +1125,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetIntegerIndexedvEXTNative(target, index, data);
 		}
 
+		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetIntegerIndexedvEXTNative(target, index, pdata0);
+			}
+		}
+
 		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -976,6 +1216,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexGendvEXTNative(texunit, coord, pname, @params);
 		}
 
+		public static void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetMultiTexGendvEXTNative(texunit, coord, pname, pparams0);
+			}
+		}
+
 		public static void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -1057,6 +1305,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			GetMultiTexImageEXTNative(texunit, target, level, format, type, pixels);
+		}
+
+		public static void GetMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			GetMultiTexImageEXTNative(texunit, target, level, format, type, (void*)pixels);
+		}
+
+		public static void GetMultiTexImageEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				GetMultiTexImageEXTNative(texunit, target, level, format, type, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1299,6 +1560,19 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedBufferSubDataEXTNative(buffer, offset, size, data);
 		}
 
+		public static void GetNamedBufferSubDataEXT(uint buffer, nint offset, nint size, nint data)
+		{
+			GetNamedBufferSubDataEXTNative(buffer, offset, size, (void*)data);
+		}
+
+		public static void GetNamedBufferSubDataEXT<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				GetNamedBufferSubDataEXTNative(buffer, offset, size, pdata0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetNamedFramebufferAttachmentParameterivEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
@@ -1434,6 +1708,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedProgramLocalParameterdvEXTNative(program, target, index, @params);
 		}
 
+		public static void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetNamedProgramLocalParameterdvEXTNative(program, target, index, pparams0);
+			}
+		}
+
 		public static void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -1485,6 +1767,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetNamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramStringProperty pname, void* str)
 		{
 			GetNamedProgramStringEXTNative(program, target, pname, str);
+		}
+
+		public static void GetNamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramStringProperty pname, nint str)
+		{
+			GetNamedProgramStringEXTNative(program, target, pname, (void*)str);
+		}
+
+		public static void GetNamedProgramStringEXT<TStr>(uint program, GLProgramTarget target, GLProgramStringProperty pname, Span<TStr> str) where TStr : unmanaged
+		{
+			fixed (TStr* pstr0 = str)
+			{
+				GetNamedProgramStringEXTNative(program, target, pname, pstr0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1590,6 +1885,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetTextureImageEXT(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			GetTextureImageEXTNative(texture, target, level, format, type, pixels);
+		}
+
+		public static void GetTextureImageEXT(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			GetTextureImageEXTNative(texture, target, level, format, type, (void*)pixels);
+		}
+
+		public static void GetTextureImageEXT<TPixels>(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				GetTextureImageEXTNative(texture, target, level, format, type, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1939,6 +2247,14 @@ namespace Hexa.NET.OpenGL.EXT
 			MatrixLoadTransposedEXTNative(mode, m);
 		}
 
+		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, Span<double> m)
+		{
+			fixed (double* pm0 = m)
+			{
+				MatrixLoadTransposedEXTNative(mode, pm0);
+			}
+		}
+
 		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -1960,6 +2276,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadTransposefEXTNative(mode, m);
+		}
+
+		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, Span<float> m)
+		{
+			fixed (float* pm0 = m)
+			{
+				MatrixLoadTransposefEXTNative(mode, pm0);
+			}
 		}
 
 		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, ref float m)
@@ -1985,6 +2309,14 @@ namespace Hexa.NET.OpenGL.EXT
 			MatrixLoaddEXTNative(mode, m);
 		}
 
+		public static void MatrixLoaddEXT(GLMatrixMode mode, Span<double> m)
+		{
+			fixed (double* pm0 = m)
+			{
+				MatrixLoaddEXTNative(mode, pm0);
+			}
+		}
+
 		public static void MatrixLoaddEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -2006,6 +2338,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void MatrixLoadfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadfEXTNative(mode, m);
+		}
+
+		public static void MatrixLoadfEXT(GLMatrixMode mode, Span<float> m)
+		{
+			fixed (float* pm0 = m)
+			{
+				MatrixLoadfEXTNative(mode, pm0);
+			}
 		}
 
 		public static void MatrixLoadfEXT(GLMatrixMode mode, ref float m)
@@ -2031,6 +2371,14 @@ namespace Hexa.NET.OpenGL.EXT
 			MatrixMultTransposedEXTNative(mode, m);
 		}
 
+		public static void MatrixMultTransposedEXT(GLMatrixMode mode, Span<double> m)
+		{
+			fixed (double* pm0 = m)
+			{
+				MatrixMultTransposedEXTNative(mode, pm0);
+			}
+		}
+
 		public static void MatrixMultTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -2052,6 +2400,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void MatrixMultTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultTransposefEXTNative(mode, m);
+		}
+
+		public static void MatrixMultTransposefEXT(GLMatrixMode mode, Span<float> m)
+		{
+			fixed (float* pm0 = m)
+			{
+				MatrixMultTransposefEXTNative(mode, pm0);
+			}
 		}
 
 		public static void MatrixMultTransposefEXT(GLMatrixMode mode, ref float m)
@@ -2077,6 +2433,14 @@ namespace Hexa.NET.OpenGL.EXT
 			MatrixMultdEXTNative(mode, m);
 		}
 
+		public static void MatrixMultdEXT(GLMatrixMode mode, Span<double> m)
+		{
+			fixed (double* pm0 = m)
+			{
+				MatrixMultdEXTNative(mode, pm0);
+			}
+		}
+
 		public static void MatrixMultdEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -2098,6 +2462,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void MatrixMultfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultfEXTNative(mode, m);
+		}
+
+		public static void MatrixMultfEXT(GLMatrixMode mode, Span<float> m)
+		{
+			fixed (float* pm0 = m)
+			{
+				MatrixMultfEXTNative(mode, pm0);
+			}
 		}
 
 		public static void MatrixMultfEXT(GLMatrixMode mode, ref float m)
@@ -2273,6 +2645,19 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexCoordPointerEXTNative(texunit, size, type, stride, pointer);
 		}
 
+		public static void MultiTexCoordPointerEXT(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, nint pointer)
+		{
+			MultiTexCoordPointerEXTNative(texunit, size, type, stride, (void*)pointer);
+		}
+
+		public static void MultiTexCoordPointerEXT<TPointer>(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				MultiTexCoordPointerEXTNative(texunit, size, type, stride, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiTexEnvfEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
 		{
@@ -2393,6 +2778,14 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexGendvEXTNative(texunit, coord, pname, @params);
 		}
 
+		public static void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				MultiTexGendvEXTNative(texunit, coord, pname, pparams0);
+			}
+		}
+
 		public static void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -2506,6 +2899,19 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, format, type, pixels);
 		}
 
+		public static void MultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			MultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, format, type, (void*)pixels);
+		}
+
+		public static void MultiTexImage1DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				MultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -2521,6 +2927,19 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, format, type, pixels);
 		}
 
+		public static void MultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			MultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, format, type, (void*)pixels);
+		}
+
+		public static void MultiTexImage2DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				MultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiTexImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -2534,6 +2953,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void MultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels);
+		}
+
+		public static void MultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			MultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
+		}
+
+		public static void MultiTexImage3DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				MultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, format, type, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2716,6 +3148,19 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, type, pixels);
 		}
 
+		public static void MultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			MultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, type, (void*)pixels);
+		}
+
+		public static void MultiTexSubImage1DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				MultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -2729,6 +3174,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void MultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels);
+		}
+
+		public static void MultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			MultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
+		}
+
+		public static void MultiTexSubImage2DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				MultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, type, ppixels0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2746,6 +3204,19 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
 
+		public static void MultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			MultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
+		}
+
+		public static void MultiTexSubImage3DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				MultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NamedBufferDataEXTNative(uint buffer, nint size, void* data, GLVertexBufferObjectUsage usage)
 		{
@@ -2759,6 +3230,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void NamedBufferDataEXT(uint buffer, nint size, void* data, GLVertexBufferObjectUsage usage)
 		{
 			NamedBufferDataEXTNative(buffer, size, data, usage);
+		}
+
+		public static void NamedBufferDataEXT(uint buffer, nint size, nint data, GLVertexBufferObjectUsage usage)
+		{
+			NamedBufferDataEXTNative(buffer, size, (void*)data, usage);
+		}
+
+		public static void NamedBufferDataEXT<TData>(uint buffer, nint size, Span<TData> data, GLVertexBufferObjectUsage usage) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				NamedBufferDataEXTNative(buffer, size, pdata0, usage);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2776,6 +3260,19 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedBufferStorageEXTNative(buffer, size, data, flags);
 		}
 
+		public static void NamedBufferStorageEXT(uint buffer, nint size, nint data, GLBufferStorageMask flags)
+		{
+			NamedBufferStorageEXTNative(buffer, size, (void*)data, flags);
+		}
+
+		public static void NamedBufferStorageEXT<TData>(uint buffer, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				NamedBufferStorageEXTNative(buffer, size, pdata0, flags);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NamedBufferSubDataEXTNative(uint buffer, nint offset, nint size, void* data)
 		{
@@ -2789,6 +3286,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void NamedBufferSubDataEXT(uint buffer, nint offset, nint size, void* data)
 		{
 			NamedBufferSubDataEXTNative(buffer, offset, size, data);
+		}
+
+		public static void NamedBufferSubDataEXT(uint buffer, nint offset, nint size, nint data)
+		{
+			NamedBufferSubDataEXTNative(buffer, offset, size, (void*)data);
+		}
+
+		public static void NamedBufferSubDataEXT<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				NamedBufferSubDataEXTNative(buffer, offset, size, pdata0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2954,6 +3464,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, double* @params)
 		{
 			NamedProgramLocalParameter4dvEXTNative(program, target, index, @params);
+		}
+
+		public static void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				NamedProgramLocalParameter4dvEXTNative(program, target, index, pparams0);
+			}
 		}
 
 		public static void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, ref double @params)
@@ -3204,6 +3722,19 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramStringEXTNative(program, target, format, len, str);
 		}
 
+		public static void NamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramFormat format, int len, nint str)
+		{
+			NamedProgramStringEXTNative(program, target, format, len, (void*)str);
+		}
+
+		public static void NamedProgramStringEXT<TStr>(uint program, GLProgramTarget target, GLProgramFormat format, int len, Span<TStr> str) where TStr : unmanaged
+		{
+			fixed (TStr* pstr0 = str)
+			{
+				NamedProgramStringEXTNative(program, target, format, len, pstr0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NamedRenderbufferStorageEXTNative(uint renderbuffer, GLInternalFormat internalformat, int width, int height)
 		{
@@ -3279,6 +3810,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform1dvEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform1dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1dvEXT(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -3315,6 +3854,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform1fvEXT(uint program, int location, int count, float* value)
 		{
 			ProgramUniform1fvEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform1fvEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1fvEXT(uint program, int location, int count, ref float value)
@@ -3355,6 +3902,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform1ivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform1ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1ivEXT(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -3391,6 +3946,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform1uivEXT(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform1uivEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform1uivEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1uivEXT(uint program, int location, int count, ref uint value)
@@ -3431,6 +3994,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform2dvEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform2dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2dvEXT(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -3467,6 +4038,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform2fvEXT(uint program, int location, int count, float* value)
 		{
 			ProgramUniform2fvEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform2fvEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2fvEXT(uint program, int location, int count, ref float value)
@@ -3507,6 +4086,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform2ivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform2ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2ivEXT(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -3543,6 +4130,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform2uivEXT(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform2uivEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform2uivEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2uivEXT(uint program, int location, int count, ref uint value)
@@ -3583,6 +4178,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform3dvEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform3dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3dvEXT(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -3619,6 +4222,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform3fvEXT(uint program, int location, int count, float* value)
 		{
 			ProgramUniform3fvEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform3fvEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3fvEXT(uint program, int location, int count, ref float value)
@@ -3659,6 +4270,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform3ivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform3ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3ivEXT(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -3695,6 +4314,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform3uivEXT(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform3uivEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform3uivEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3uivEXT(uint program, int location, int count, ref uint value)
@@ -3735,6 +4362,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform4dvEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform4dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4dvEXT(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -3771,6 +4406,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void ProgramUniform4fvEXT(uint program, int location, int count, float* value)
 		{
 			ProgramUniform4fvEXTNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform4fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform4fvEXTNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform4fvEXT(uint program, int location, int count, ref float value)
@@ -3811,6 +4454,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform4ivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform4ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4ivEXT(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -3849,6 +4500,14 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramUniform4uivEXTNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform4uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4uivEXT(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -3858,21 +4517,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix2dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[195])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[195])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[195])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[195])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3881,21 +4548,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[196])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[196])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[196])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[196])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3904,21 +4579,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x3dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix2x3dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[197])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[197])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[197])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[197])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2x3dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3927,21 +4610,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x3fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2x3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[198])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[198])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[198])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[198])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3950,21 +4641,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x4dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix2x4dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[199])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[199])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[199])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[199])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2x4dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3973,21 +4672,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x4fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2x4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[200])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[200])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[200])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[200])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3996,21 +4703,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix3dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[201])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[201])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[201])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[201])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -4019,21 +4734,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[202])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[202])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[202])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[202])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -4042,21 +4765,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix3x2dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[203])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[203])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[203])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[203])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3x2dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -4065,21 +4796,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3x2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[204])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[204])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[204])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[204])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -4088,21 +4827,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix3x4dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[205])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[205])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[205])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[205])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3x4dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -4111,21 +4858,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3x4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[206])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[206])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[206])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[206])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -4134,21 +4889,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix4dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[207])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[207])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[207])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[207])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -4157,21 +4920,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[208])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[208])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[208])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[208])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -4180,21 +4951,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix4x2dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[209])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[209])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[209])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[209])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4x2dvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -4203,21 +4982,29 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2fvEXTNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4x2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[210])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[210])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[210])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[210])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -4226,741 +5013,13 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3dvEXTNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix4x3dvEXTNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[211])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[211])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[211])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[211])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
-
-		public static void ProgramUniformMatrix4x3dvEXT(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix4x3dvEXTNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4x3dvEXT(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4x3dvEXTNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3fvEXTNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[212])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[212])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix4x3fvEXTNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4x3fvEXTNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushClientAttribDefaultEXTNative(GLClientAttribMask mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLClientAttribMask, void>)funcTable[213])(mask);
-			#else
-			((delegate* unmanaged[Cdecl]<GLClientAttribMask, void>)funcTable[213])(mask);
-			#endif
-		}
-
-		public static void PushClientAttribDefaultEXT(GLClientAttribMask mask)
-		{
-			PushClientAttribDefaultEXTNative(mask);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBufferEXTNative(uint texture, GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[214])(texture, target, internalformat, buffer);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[214])(texture, target, internalformat, buffer);
-			#endif
-		}
-
-		public static void TextureBufferEXT(uint texture, GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
-		{
-			TextureBufferEXTNative(texture, target, internalformat, buffer);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBufferRangeEXTNative(uint texture, GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[215])(texture, target, internalformat, buffer, offset, size);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[215])(texture, target, internalformat, buffer, offset, size);
-			#endif
-		}
-
-		public static void TextureBufferRangeEXT(uint texture, GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
-		{
-			TextureBufferRangeEXTNative(texture, target, internalformat, buffer, offset, size);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage1DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[216])(texture, target, level, internalformat, width, border, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[216])(texture, target, level, internalformat, width, border, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void TextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			TextureImage1DEXTNative(texture, target, level, internalformat, width, border, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage2DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[217])(texture, target, level, internalformat, width, height, border, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[217])(texture, target, level, internalformat, width, height, border, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void TextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			TextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage3DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[218])(texture, target, level, internalformat, width, height, depth, border, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[218])(texture, target, level, internalformat, width, height, depth, border, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void TextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			TextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexturePageCommitmentEXTNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, byte commit)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, byte, void>)funcTable[219])(texture, level, xoffset, yoffset, zoffset, width, height, depth, commit);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, byte, void>)funcTable[219])(texture, level, xoffset, yoffset, zoffset, width, height, depth, commit);
-			#endif
-		}
-
-		public static void TexturePageCommitmentEXT(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, byte commit)
-		{
-			TexturePageCommitmentEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, commit);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterIivEXTNative(uint texture, GLTextureTarget target, GLTextureParameterName pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[220])(texture, target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[220])(texture, target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, int* @params)
-		{
-			TextureParameterIivEXTNative(texture, target, pname, @params);
-		}
-
-		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
-		{
-			int pparams;
-			TextureParameterIivEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				TextureParameterIivEXTNative(texture, target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterIuivEXTNative(uint texture, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, uint*, void>)funcTable[221])(texture, target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[221])(texture, target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
-		{
-			TextureParameterIuivEXTNative(texture, target, pname, @params);
-		}
-
-		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out uint @params)
-		{
-			uint pparams;
-			TextureParameterIuivEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
-		{
-			fixed (uint* pparams = @params)
-			{
-				TextureParameterIuivEXTNative(texture, target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterfEXTNative(uint texture, GLTextureTarget target, GLTextureParameterName pname, float param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, float, void>)funcTable[222])(texture, target, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, float, void>)funcTable[222])(texture, target, pname, param);
-			#endif
-		}
-
-		public static void TextureParameterfEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, float param)
-		{
-			TextureParameterfEXTNative(texture, target, pname, param);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterfvEXTNative(uint texture, GLTextureTarget target, GLTextureParameterName pname, float* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, float*, void>)funcTable[223])(texture, target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[223])(texture, target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, float* @params)
-		{
-			TextureParameterfvEXTNative(texture, target, pname, @params);
-		}
-
-		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out float @params)
-		{
-			float pparams;
-			TextureParameterfvEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
-		{
-			fixed (float* pparams = @params)
-			{
-				TextureParameterfvEXTNative(texture, target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameteriEXTNative(uint texture, GLTextureTarget target, GLTextureParameterName pname, int param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, int, void>)funcTable[224])(texture, target, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, int, void>)funcTable[224])(texture, target, pname, param);
-			#endif
-		}
-
-		public static void TextureParameteriEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, int param)
-		{
-			TextureParameteriEXTNative(texture, target, pname, param);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterivEXTNative(uint texture, GLTextureTarget target, GLTextureParameterName pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[225])(texture, target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[225])(texture, target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, int* @params)
-		{
-			TextureParameterivEXTNative(texture, target, pname, @params);
-		}
-
-		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
-		{
-			int pparams;
-			TextureParameterivEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				TextureParameterivEXTNative(texture, target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureRenderbufferEXTNative(uint texture, GLTextureTarget target, uint renderbuffer)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, uint, void>)funcTable[226])(texture, target, renderbuffer);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, uint, void>)funcTable[226])(texture, target, renderbuffer);
-			#endif
-		}
-
-		public static void TextureRenderbufferEXT(uint texture, GLTextureTarget target, uint renderbuffer)
-		{
-			TextureRenderbufferEXTNative(texture, target, renderbuffer);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage1DEXTNative(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, void>)funcTable[227])(texture, target, levels, internalformat, width);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, void>)funcTable[227])(texture, target, levels, internalformat, width);
-			#endif
-		}
-
-		public static void TextureStorage1DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width)
-		{
-			TextureStorage1DEXTNative(texture, target, levels, internalformat, width);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage2DEXTNative(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, int, void>)funcTable[228])(texture, target, levels, internalformat, width, height);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, int, void>)funcTable[228])(texture, target, levels, internalformat, width, height);
-			#endif
-		}
-
-		public static void TextureStorage2DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height)
-		{
-			TextureStorage2DEXTNative(texture, target, levels, internalformat, width, height);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage2DMultisampleEXTNative(uint texture, GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, byte fixedsamplelocations)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[229])(texture, target, samples, internalformat, width, height, fixedsamplelocations);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[229])(texture, target, samples, internalformat, width, height, fixedsamplelocations);
-			#endif
-		}
-
-		public static void TextureStorage2DMultisampleEXT(uint texture, GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, byte fixedsamplelocations)
-		{
-			TextureStorage2DMultisampleEXTNative(texture, target, samples, internalformat, width, height, fixedsamplelocations);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage3DEXTNative(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, int, int, void>)funcTable[230])(texture, target, levels, internalformat, width, height, depth);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, int, int, void>)funcTable[230])(texture, target, levels, internalformat, width, height, depth);
-			#endif
-		}
-
-		public static void TextureStorage3DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
-		{
-			TextureStorage3DEXTNative(texture, target, levels, internalformat, width, height, depth);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage3DMultisampleEXTNative(uint texture, GLEnum target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[231])(texture, target, samples, internalformat, width, height, depth, fixedsamplelocations);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[231])(texture, target, samples, internalformat, width, height, depth, fixedsamplelocations);
-			#endif
-		}
-
-		public static void TextureStorage3DMultisampleEXT(uint texture, GLEnum target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, byte fixedsamplelocations)
-		{
-			TextureStorage3DMultisampleEXTNative(texture, target, samples, internalformat, width, height, depth, fixedsamplelocations);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureSubImage1DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[232])(texture, target, level, xoffset, width, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[232])(texture, target, level, xoffset, width, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void TextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			TextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureSubImage2DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[233])(texture, target, level, xoffset, yoffset, width, height, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[233])(texture, target, level, xoffset, yoffset, width, height, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void TextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			TextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureSubImage3DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[234])(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[234])(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void TextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			TextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapNamedBufferEXTNative(uint buffer)
-		{
-			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[235])(buffer);
-			#else
-			return (byte)((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[235])(buffer);
-			#endif
-		}
-
-		public static bool UnmapNamedBufferEXT(uint buffer)
-		{
-			byte ret = UnmapNamedBufferEXTNative(buffer);
-			return ret != 0;
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayBindVertexBufferEXTNative(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, int, void>)funcTable[236])(vaobj, bindingindex, buffer, offset, stride);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, int, void>)funcTable[236])(vaobj, bindingindex, buffer, offset, stride);
-			#endif
-		}
-
-		public static void VertexArrayBindVertexBufferEXT(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
-		{
-			VertexArrayBindVertexBufferEXTNative(vaobj, bindingindex, buffer, offset, stride);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayColorOffsetEXTNative(uint vaobj, uint buffer, int size, GLColorPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLColorPointerType, int, nint, void>)funcTable[237])(vaobj, buffer, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLColorPointerType, int, nint, void>)funcTable[237])(vaobj, buffer, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayColorOffsetEXT(uint vaobj, uint buffer, int size, GLColorPointerType type, int stride, nint offset)
-		{
-			VertexArrayColorOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayEdgeFlagOffsetEXTNative(uint vaobj, uint buffer, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, nint, void>)funcTable[238])(vaobj, buffer, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, nint, void>)funcTable[238])(vaobj, buffer, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayEdgeFlagOffsetEXT(uint vaobj, uint buffer, int stride, nint offset)
-		{
-			VertexArrayEdgeFlagOffsetEXTNative(vaobj, buffer, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayFogCoordOffsetEXTNative(uint vaobj, uint buffer, GLFogCoordinatePointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, GLFogCoordinatePointerType, int, nint, void>)funcTable[239])(vaobj, buffer, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, GLFogCoordinatePointerType, int, nint, void>)funcTable[239])(vaobj, buffer, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayFogCoordOffsetEXT(uint vaobj, uint buffer, GLFogCoordinatePointerType type, int stride, nint offset)
-		{
-			VertexArrayFogCoordOffsetEXTNative(vaobj, buffer, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayIndexOffsetEXTNative(uint vaobj, uint buffer, GLIndexPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, GLIndexPointerType, int, nint, void>)funcTable[240])(vaobj, buffer, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, GLIndexPointerType, int, nint, void>)funcTable[240])(vaobj, buffer, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayIndexOffsetEXT(uint vaobj, uint buffer, GLIndexPointerType type, int stride, nint offset)
-		{
-			VertexArrayIndexOffsetEXTNative(vaobj, buffer, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayMultiTexCoordOffsetEXTNative(uint vaobj, uint buffer, GLEnum texunit, int size, GLTexCoordPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, int, GLTexCoordPointerType, int, nint, void>)funcTable[241])(vaobj, buffer, texunit, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, int, GLTexCoordPointerType, int, nint, void>)funcTable[241])(vaobj, buffer, texunit, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayMultiTexCoordOffsetEXT(uint vaobj, uint buffer, GLEnum texunit, int size, GLTexCoordPointerType type, int stride, nint offset)
-		{
-			VertexArrayMultiTexCoordOffsetEXTNative(vaobj, buffer, texunit, size, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayNormalOffsetEXTNative(uint vaobj, uint buffer, GLNormalPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, GLNormalPointerType, int, nint, void>)funcTable[242])(vaobj, buffer, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, GLNormalPointerType, int, nint, void>)funcTable[242])(vaobj, buffer, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayNormalOffsetEXT(uint vaobj, uint buffer, GLNormalPointerType type, int stride, nint offset)
-		{
-			VertexArrayNormalOffsetEXTNative(vaobj, buffer, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArraySecondaryColorOffsetEXTNative(uint vaobj, uint buffer, int size, GLColorPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLColorPointerType, int, nint, void>)funcTable[243])(vaobj, buffer, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLColorPointerType, int, nint, void>)funcTable[243])(vaobj, buffer, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArraySecondaryColorOffsetEXT(uint vaobj, uint buffer, int size, GLColorPointerType type, int stride, nint offset)
-		{
-			VertexArraySecondaryColorOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayTexCoordOffsetEXTNative(uint vaobj, uint buffer, int size, GLTexCoordPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLTexCoordPointerType, int, nint, void>)funcTable[244])(vaobj, buffer, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLTexCoordPointerType, int, nint, void>)funcTable[244])(vaobj, buffer, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayTexCoordOffsetEXT(uint vaobj, uint buffer, int size, GLTexCoordPointerType type, int stride, nint offset)
-		{
-			VertexArrayTexCoordOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribBindingEXTNative(uint vaobj, uint attribindex, uint bindingindex)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[245])(vaobj, attribindex, bindingindex);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[245])(vaobj, attribindex, bindingindex);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribBindingEXT(uint vaobj, uint attribindex, uint bindingindex)
-		{
-			VertexArrayVertexAttribBindingEXTNative(vaobj, attribindex, bindingindex);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribDivisorEXTNative(uint vaobj, uint index, uint divisor)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[246])(vaobj, index, divisor);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[246])(vaobj, index, divisor);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor)
-		{
-			VertexArrayVertexAttribDivisorEXTNative(vaobj, index, divisor);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribFormatEXTNative(uint vaobj, uint attribindex, int size, GLVertexAttribType type, byte normalized, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[247])(vaobj, attribindex, size, type, normalized, relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[247])(vaobj, attribindex, size, type, normalized, relativeoffset);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribFormatEXT(uint vaobj, uint attribindex, int size, GLVertexAttribType type, byte normalized, uint relativeoffset)
-		{
-			VertexArrayVertexAttribFormatEXTNative(vaobj, attribindex, size, type, normalized, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribIFormatEXTNative(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribIType, uint, void>)funcTable[248])(vaobj, attribindex, size, type, relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribIType, uint, void>)funcTable[248])(vaobj, attribindex, size, type, relativeoffset);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribIFormatEXT(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
-		{
-			VertexArrayVertexAttribIFormatEXTNative(vaobj, attribindex, size, type, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribIOffsetEXTNative(uint vaobj, uint buffer, uint index, int size, GLVertexAttribType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, int, GLVertexAttribType, int, nint, void>)funcTable[249])(vaobj, buffer, index, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, int, GLVertexAttribType, int, nint, void>)funcTable[249])(vaobj, buffer, index, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribIOffsetEXT(uint vaobj, uint buffer, uint index, int size, GLVertexAttribType type, int stride, nint offset)
-		{
-			VertexArrayVertexAttribIOffsetEXTNative(vaobj, buffer, index, size, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribLFormatEXTNative(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribLType, uint, void>)funcTable[250])(vaobj, attribindex, size, type, relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribLType, uint, void>)funcTable[250])(vaobj, attribindex, size, type, relativeoffset);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribLFormatEXT(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
-		{
-			VertexArrayVertexAttribLFormatEXTNative(vaobj, attribindex, size, type, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribLOffsetEXTNative(uint vaobj, uint buffer, uint index, int size, GLVertexAttribLType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, int, GLVertexAttribLType, int, nint, void>)funcTable[251])(vaobj, buffer, index, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, int, GLVertexAttribLType, int, nint, void>)funcTable[251])(vaobj, buffer, index, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, GLVertexAttribLType type, int stride, nint offset)
-		{
-			VertexArrayVertexAttribLOffsetEXTNative(vaobj, buffer, index, size, type, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexAttribOffsetEXTNative(uint vaobj, uint buffer, uint index, int size, GLVertexAttribPointerType type, byte normalized, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, int, GLVertexAttribPointerType, byte, int, nint, void>)funcTable[252])(vaobj, buffer, index, size, type, normalized, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, int, GLVertexAttribPointerType, byte, int, nint, void>)funcTable[252])(vaobj, buffer, index, size, type, normalized, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayVertexAttribOffsetEXT(uint vaobj, uint buffer, uint index, int size, GLVertexAttribPointerType type, byte normalized, int stride, nint offset)
-		{
-			VertexArrayVertexAttribOffsetEXTNative(vaobj, buffer, index, size, type, normalized, stride, offset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexBindingDivisorEXTNative(uint vaobj, uint bindingindex, uint divisor)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[253])(vaobj, bindingindex, divisor);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[253])(vaobj, bindingindex, divisor);
-			#endif
-		}
-
-		public static void VertexArrayVertexBindingDivisorEXT(uint vaobj, uint bindingindex, uint divisor)
-		{
-			VertexArrayVertexBindingDivisorEXTNative(vaobj, bindingindex, divisor);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexOffsetEXTNative(uint vaobj, uint buffer, int size, GLVertexPointerType type, int stride, nint offset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexPointerType, int, nint, void>)funcTable[254])(vaobj, buffer, size, type, stride, offset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexPointerType, int, nint, void>)funcTable[254])(vaobj, buffer, size, type, stride, offset);
-			#endif
-		}
-
-		public static void VertexArrayVertexOffsetEXT(uint vaobj, uint buffer, int size, GLVertexPointerType type, int stride, nint offset)
-		{
-			VertexArrayVertexOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
-		}
-
 	}
 }

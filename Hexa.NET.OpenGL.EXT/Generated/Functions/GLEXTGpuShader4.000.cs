@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void BindFragDataLocationEXT(uint program, uint color, ReadOnlySpan<byte> name)
+		public static void BindFragDataLocationEXT(uint program, uint color, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.EXT
 			return ret;
 		}
 
-		public static int GetFragDataLocationEXT(uint program, ReadOnlySpan<byte> name)
+		public static int GetFragDataLocationEXT(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -254,6 +254,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Uniform1uivEXTNative(location, count, value);
 		}
 
+		public static void Uniform1uivEXT(int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				Uniform1uivEXTNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform1uivEXT(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -290,6 +298,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void Uniform2uivEXT(int location, int count, uint* value)
 		{
 			Uniform2uivEXTNative(location, count, value);
+		}
+
+		public static void Uniform2uivEXT(int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				Uniform2uivEXTNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform2uivEXT(int location, int count, ref uint value)
@@ -330,6 +346,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Uniform3uivEXTNative(location, count, value);
 		}
 
+		public static void Uniform3uivEXT(int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				Uniform3uivEXTNative(location, count, pvalue0);
+			}
+		}
+
 		public static void Uniform3uivEXT(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -366,6 +390,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void Uniform4uivEXT(int location, int count, uint* value)
 		{
 			Uniform4uivEXTNative(location, count, value);
+		}
+
+		public static void Uniform4uivEXT(int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				Uniform4uivEXTNative(location, count, pvalue0);
+			}
 		}
 
 		public static void Uniform4uivEXT(int location, int count, ref uint value)
@@ -406,6 +438,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI1ivEXTNative(index, v);
 		}
 
+		public static void VertexAttribI1ivEXT(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				VertexAttribI1ivEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI1ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -442,6 +482,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribI1uivEXT(uint index, uint* v)
 		{
 			VertexAttribI1uivEXTNative(index, v);
+		}
+
+		public static void VertexAttribI1uivEXT(uint index, Span<uint> v)
+		{
+			fixed (uint* pv0 = v)
+			{
+				VertexAttribI1uivEXTNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribI1uivEXT(uint index, ref uint v)
@@ -482,6 +530,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI2ivEXTNative(index, v);
 		}
 
+		public static void VertexAttribI2ivEXT(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				VertexAttribI2ivEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI2ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -518,6 +574,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribI2uivEXT(uint index, uint* v)
 		{
 			VertexAttribI2uivEXTNative(index, v);
+		}
+
+		public static void VertexAttribI2uivEXT(uint index, Span<uint> v)
+		{
+			fixed (uint* pv0 = v)
+			{
+				VertexAttribI2uivEXTNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribI2uivEXT(uint index, ref uint v)
@@ -558,6 +622,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI3ivEXTNative(index, v);
 		}
 
+		public static void VertexAttribI3ivEXT(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				VertexAttribI3ivEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI3ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -596,6 +668,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI3uivEXTNative(index, v);
 		}
 
+		public static void VertexAttribI3uivEXT(uint index, Span<uint> v)
+		{
+			fixed (uint* pv0 = v)
+			{
+				VertexAttribI3uivEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI3uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -617,6 +697,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribI4bvEXT(uint index, sbyte* v)
 		{
 			VertexAttribI4bvEXTNative(index, v);
+		}
+
+		public static void VertexAttribI4bvEXT(uint index, Span<sbyte> v)
+		{
+			fixed (sbyte* pv0 = v)
+			{
+				VertexAttribI4bvEXTNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribI4bvEXT(uint index, ref sbyte v)
@@ -657,6 +745,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI4ivEXTNative(index, v);
 		}
 
+		public static void VertexAttribI4ivEXT(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				VertexAttribI4ivEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI4ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -678,6 +774,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribI4svEXT(uint index, short* v)
 		{
 			VertexAttribI4svEXTNative(index, v);
+		}
+
+		public static void VertexAttribI4svEXT(uint index, Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				VertexAttribI4svEXTNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribI4svEXT(uint index, ref short v)
@@ -729,7 +833,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void VertexAttribI4ubvEXT(uint index, ReadOnlySpan<byte> v)
+		public static void VertexAttribI4ubvEXT(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -775,6 +879,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI4uivEXTNative(index, v);
 		}
 
+		public static void VertexAttribI4uivEXT(uint index, Span<uint> v)
+		{
+			fixed (uint* pv0 = v)
+			{
+				VertexAttribI4uivEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI4uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -798,6 +910,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VertexAttribI4usvEXTNative(index, v);
 		}
 
+		public static void VertexAttribI4usvEXT(uint index, Span<ushort> v)
+		{
+			fixed (ushort* pv0 = v)
+			{
+				VertexAttribI4usvEXTNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribI4usvEXT(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
@@ -819,6 +939,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			VertexAttribIPointerEXTNative(index, size, type, stride, pointer);
+		}
+
+		public static void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
+		{
+			VertexAttribIPointerEXTNative(index, size, type, stride, (void*)pointer);
+		}
+
+		public static void VertexAttribIPointerEXT<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexAttribIPointerEXTNative(index, size, type, stride, ppointer0);
+			}
 		}
 
 	}

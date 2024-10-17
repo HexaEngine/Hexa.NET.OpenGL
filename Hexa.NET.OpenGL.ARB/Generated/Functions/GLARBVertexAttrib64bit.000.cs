@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexAttribLdvNative(index, pname, @params);
 		}
 
+		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetVertexAttribLdvNative(index, pname, pparams0);
+			}
+		}
+
 		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -67,6 +75,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void VertexAttribL1dv(uint index, double* v)
 		{
 			VertexAttribL1dvNative(index, v);
+		}
+
+		public static void VertexAttribL1dv(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL1dvNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL1dv(uint index, ref double v)
@@ -107,6 +123,14 @@ namespace Hexa.NET.OpenGL.ARB
 			VertexAttribL2dvNative(index, v);
 		}
 
+		public static void VertexAttribL2dv(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL2dvNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL2dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -143,6 +167,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void VertexAttribL3dv(uint index, double* v)
 		{
 			VertexAttribL3dvNative(index, v);
+		}
+
+		public static void VertexAttribL3dv(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL3dvNative(index, pv0);
+			}
 		}
 
 		public static void VertexAttribL3dv(uint index, ref double v)
@@ -183,6 +215,14 @@ namespace Hexa.NET.OpenGL.ARB
 			VertexAttribL4dvNative(index, v);
 		}
 
+		public static void VertexAttribL4dv(uint index, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				VertexAttribL4dvNative(index, pv0);
+			}
+		}
+
 		public static void VertexAttribL4dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -204,6 +244,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			VertexAttribLPointerNative(index, size, type, stride, pointer);
+		}
+
+		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
+		{
+			VertexAttribLPointerNative(index, size, type, stride, (void*)pointer);
+		}
+
+		public static void VertexAttribLPointer<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				VertexAttribLPointerNative(index, size, type, stride, ppointer0);
+			}
 		}
 
 	}

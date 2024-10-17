@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteProgramsARBNative(1, &program);
 		}
 
+		public static void DeleteProgramsARB(int n, Span<uint> programs)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				DeleteProgramsARBNative(n, pprograms0);
+			}
+		}
+
 		public static void DeleteProgramsARB(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -81,6 +89,14 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		public static void GenProgramsARB(int n, Span<uint> programs)
+		{
+			fixed (uint* pprograms0 = programs)
+			{
+				GenProgramsARBNative(n, pprograms0);
+			}
+		}
+
 		public static void GenProgramsARB(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -102,6 +118,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetProgramEnvParameterdvARB(GLProgramTarget target, uint index, double* @params)
 		{
 			GetProgramEnvParameterdvARBNative(target, index, @params);
+		}
+
+		public static void GetProgramEnvParameterdvARB(GLProgramTarget target, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetProgramEnvParameterdvARBNative(target, index, pparams0);
+			}
 		}
 
 		public static void GetProgramEnvParameterdvARB(GLProgramTarget target, uint index, ref double @params)
@@ -157,6 +181,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramLocalParameterdvARBNative(target, index, @params);
 		}
 
+		public static void GetProgramLocalParameterdvARB(GLProgramTarget target, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetProgramLocalParameterdvARBNative(target, index, pparams0);
+			}
+		}
+
 		public static void GetProgramLocalParameterdvARB(GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -208,6 +240,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetProgramStringARB(GLProgramTarget target, GLProgramStringProperty pname, void* str)
 		{
 			GetProgramStringARBNative(target, pname, str);
+		}
+
+		public static void GetProgramStringARB(GLProgramTarget target, GLProgramStringProperty pname, nint str)
+		{
+			GetProgramStringARBNative(target, pname, (void*)str);
+		}
+
+		public static void GetProgramStringARB<TStr>(GLProgramTarget target, GLProgramStringProperty pname, Span<TStr> str) where TStr : unmanaged
+		{
+			fixed (TStr* pstr0 = str)
+			{
+				GetProgramStringARBNative(target, pname, pstr0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -284,6 +329,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramEnvParameter4dvARB(GLProgramTarget target, uint index, double* @params)
 		{
 			ProgramEnvParameter4dvARBNative(target, index, @params);
+		}
+
+		public static void ProgramEnvParameter4dvARB(GLProgramTarget target, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				ProgramEnvParameter4dvARBNative(target, index, pparams0);
+			}
 		}
 
 		public static void ProgramEnvParameter4dvARB(GLProgramTarget target, uint index, ref double @params)
@@ -369,6 +422,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramLocalParameter4dvARBNative(target, index, @params);
 		}
 
+		public static void ProgramLocalParameter4dvARB(GLProgramTarget target, uint index, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				ProgramLocalParameter4dvARBNative(target, index, pparams0);
+			}
+		}
+
 		public static void ProgramLocalParameter4dvARB(GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -435,6 +496,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramStringARB(GLProgramTarget target, GLProgramFormat format, int len, void* str)
 		{
 			ProgramStringARBNative(target, format, len, str);
+		}
+
+		public static void ProgramStringARB(GLProgramTarget target, GLProgramFormat format, int len, nint str)
+		{
+			ProgramStringARBNative(target, format, len, (void*)str);
+		}
+
+		public static void ProgramStringARB<TStr>(GLProgramTarget target, GLProgramFormat format, int len, Span<TStr> str) where TStr : unmanaged
+		{
+			fixed (TStr* pstr0 = str)
+			{
+				ProgramStringARBNative(target, format, len, pstr0);
+			}
 		}
 
 	}

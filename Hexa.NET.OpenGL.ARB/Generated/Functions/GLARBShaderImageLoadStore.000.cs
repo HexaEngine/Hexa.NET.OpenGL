@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGL.ARB
 	public static unsafe partial class GLARBShaderImageLoadStore
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindImageTextureNative(uint unit, uint texture, int level, byte layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
+		internal static void BindImageTextureNative(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, GLInternalFormat, void>)funcTable[0])(unit, texture, level, layered, layer, access, format);
+			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, GLInternalFormat, void>)funcTable[0])(unit, texture, level, *((byte*)(&layered)), layer, access, format);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, GLInternalFormat, void>)funcTable[0])(unit, texture, level, layered, layer, access, format);
+			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, GLInternalFormat, void>)funcTable[0])(unit, texture, level, *((byte*)(&layered)), layer, access, format);
 			#endif
 		}
 
-		public static void BindImageTexture(uint unit, uint texture, int level, byte layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
+		public static void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			BindImageTextureNative(unit, texture, level, layered, layer, access, format);
 		}

@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.EXT
 			SecondaryColor3bvEXTNative(v);
 		}
 
+		public static void SecondaryColor3bvEXT(Span<sbyte> v)
+		{
+			fixed (sbyte* pv0 = v)
+			{
+				SecondaryColor3bvEXTNative(pv0);
+			}
+		}
+
 		public static void SecondaryColor3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -82,6 +90,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void SecondaryColor3dvEXT(double* v)
 		{
 			SecondaryColor3dvEXTNative(v);
+		}
+
+		public static void SecondaryColor3dvEXT(Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				SecondaryColor3dvEXTNative(pv0);
+			}
 		}
 
 		public static void SecondaryColor3dvEXT(ref double v)
@@ -122,6 +138,14 @@ namespace Hexa.NET.OpenGL.EXT
 			SecondaryColor3fvEXTNative(v);
 		}
 
+		public static void SecondaryColor3fvEXT(Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				SecondaryColor3fvEXTNative(pv0);
+			}
+		}
+
 		public static void SecondaryColor3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -158,6 +182,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void SecondaryColor3ivEXT(int* v)
 		{
 			SecondaryColor3ivEXTNative(v);
+		}
+
+		public static void SecondaryColor3ivEXT(Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				SecondaryColor3ivEXTNative(pv0);
+			}
 		}
 
 		public static void SecondaryColor3ivEXT(ref int v)
@@ -198,6 +230,14 @@ namespace Hexa.NET.OpenGL.EXT
 			SecondaryColor3svEXTNative(v);
 		}
 
+		public static void SecondaryColor3svEXT(Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				SecondaryColor3svEXTNative(pv0);
+			}
+		}
+
 		public static void SecondaryColor3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -207,16 +247,16 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3ubEXTNative(byte red, byte green, byte blue)
+		internal static void SecondaryColor3ubEXTNative(bool red, bool green, bool blue)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<byte, byte, byte, void>)funcTable[10])(red, green, blue);
+			((delegate* unmanaged[Cdecl]<byte, byte, byte, void>)funcTable[10])(*((byte*)(&red)), *((byte*)(&green)), *((byte*)(&blue)));
 			#else
-			((delegate* unmanaged[Cdecl]<byte, byte, byte, void>)funcTable[10])(red, green, blue);
+			((delegate* unmanaged[Cdecl]<byte, byte, byte, void>)funcTable[10])(*((byte*)(&red)), *((byte*)(&green)), *((byte*)(&blue)));
 			#endif
 		}
 
-		public static void SecondaryColor3ubEXT(byte red, byte green, byte blue)
+		public static void SecondaryColor3ubEXT(bool red, bool green, bool blue)
 		{
 			SecondaryColor3ubEXTNative(red, green, blue);
 		}
@@ -262,7 +302,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void SecondaryColor3ubvEXT(ReadOnlySpan<byte> v)
+		public static void SecondaryColor3ubvEXT(Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -308,6 +348,14 @@ namespace Hexa.NET.OpenGL.EXT
 			SecondaryColor3uivEXTNative(v);
 		}
 
+		public static void SecondaryColor3uivEXT(Span<uint> v)
+		{
+			fixed (uint* pv0 = v)
+			{
+				SecondaryColor3uivEXTNative(pv0);
+			}
+		}
+
 		public static void SecondaryColor3uivEXT(ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -346,6 +394,14 @@ namespace Hexa.NET.OpenGL.EXT
 			SecondaryColor3usvEXTNative(v);
 		}
 
+		public static void SecondaryColor3usvEXT(Span<ushort> v)
+		{
+			fixed (ushort* pv0 = v)
+			{
+				SecondaryColor3usvEXTNative(pv0);
+			}
+		}
+
 		public static void SecondaryColor3usvEXT(ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
@@ -367,6 +423,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, void* pointer)
 		{
 			SecondaryColorPointerEXTNative(size, type, stride, pointer);
+		}
+
+		public static void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, nint pointer)
+		{
+			SecondaryColorPointerEXTNative(size, type, stride, (void*)pointer);
+		}
+
+		public static void SecondaryColorPointerEXT<TPointer>(int size, GLColorPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				SecondaryColorPointerEXTNative(size, type, stride, ppointer0);
+			}
 		}
 
 	}

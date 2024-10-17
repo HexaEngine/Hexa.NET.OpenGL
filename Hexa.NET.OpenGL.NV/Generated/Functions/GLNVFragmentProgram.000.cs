@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void GetProgramNamedParameterdvNV(uint id, int len, ReadOnlySpan<byte> name, double* @params)
+		public static void GetProgramNamedParameterdvNV(uint id, int len, Span<byte> name, double* @params)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -73,11 +73,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void GetProgramNamedParameterdvNV(uint id, int len, byte* name, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				GetProgramNamedParameterdvNVNative(id, len, name, pparams0);
+			}
+		}
+
 		public static void GetProgramNamedParameterdvNV(uint id, int len, byte* name, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
 				GetProgramNamedParameterdvNVNative(id, len, name, pparams0);
+			}
+		}
+
+		public static void GetProgramNamedParameterdvNV(uint id, int len, Span<byte> name, Span<double> @params)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (double* pparams1 = @params)
+				{
+					GetProgramNamedParameterdvNVNative(id, len, pname0, pparams1);
+				}
 			}
 		}
 
@@ -148,7 +167,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void GetProgramNamedParameterfvNV(uint id, int len, ReadOnlySpan<byte> name, float* @params)
+		public static void GetProgramNamedParameterfvNV(uint id, int len, Span<byte> name, float* @params)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -205,7 +224,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void ProgramNamedParameter4dNV(uint id, int len, ReadOnlySpan<byte> name, double x, double y, double z, double w)
+		public static void ProgramNamedParameter4dNV(uint id, int len, Span<byte> name, double x, double y, double z, double w)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -262,7 +281,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void ProgramNamedParameter4dvNV(uint id, int len, ReadOnlySpan<byte> name, double* v)
+		public static void ProgramNamedParameter4dvNV(uint id, int len, Span<byte> name, double* v)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -278,11 +297,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void ProgramNamedParameter4dvNV(uint id, int len, byte* name, Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				ProgramNamedParameter4dvNVNative(id, len, name, pv0);
+			}
+		}
+
 		public static void ProgramNamedParameter4dvNV(uint id, int len, byte* name, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
 				ProgramNamedParameter4dvNVNative(id, len, name, pv0);
+			}
+		}
+
+		public static void ProgramNamedParameter4dvNV(uint id, int len, Span<byte> name, Span<double> v)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (double* pv1 = v)
+				{
+					ProgramNamedParameter4dvNVNative(id, len, pname0, pv1);
+				}
 			}
 		}
 
@@ -338,7 +376,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void ProgramNamedParameter4fNV(uint id, int len, ReadOnlySpan<byte> name, float x, float y, float z, float w)
+		public static void ProgramNamedParameter4fNV(uint id, int len, Span<byte> name, float x, float y, float z, float w)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -395,7 +433,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void ProgramNamedParameter4fvNV(uint id, int len, ReadOnlySpan<byte> name, float* v)
+		public static void ProgramNamedParameter4fvNV(uint id, int len, Span<byte> name, float* v)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -411,11 +449,30 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		public static void ProgramNamedParameter4fvNV(uint id, int len, byte* name, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ProgramNamedParameter4fvNVNative(id, len, name, pv0);
+			}
+		}
+
 		public static void ProgramNamedParameter4fvNV(uint id, int len, byte* name, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
 				ProgramNamedParameter4fvNVNative(id, len, name, pv0);
+			}
+		}
+
+		public static void ProgramNamedParameter4fvNV(uint id, int len, Span<byte> name, Span<float> v)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (float* pv1 = v)
+				{
+					ProgramNamedParameter4fvNVNative(id, len, pname0, pv1);
+				}
 			}
 		}
 

@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.EXT
 			CullParameterdvEXTNative(pname, @params);
 		}
 
+		public static void CullParameterdvEXT(GLCullParameterEXT pname, Span<double> @params)
+		{
+			fixed (double* pparams0 = @params)
+			{
+				CullParameterdvEXTNative(pname, pparams0);
+			}
+		}
+
 		public static void CullParameterdvEXT(GLCullParameterEXT pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)

@@ -77,16 +77,16 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskiEXTNative(uint index, byte r, byte g, byte b, byte a)
+		internal static void ColorMaskiEXTNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, r, g, b, a);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, r, g, b, a);
+			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
 			#endif
 		}
 
-		public static void ColorMaskiEXT(uint index, byte r, byte g, byte b, byte a)
+		public static void ColorMaskiEXT(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiEXTNative(index, r, g, b, a);
 		}

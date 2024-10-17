@@ -17,61 +17,61 @@ namespace Hexa.NET.OpenGL.NV
 	public static unsafe partial class GLNVMemoryObjectSparse
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferPageCommitmentMemNVNative(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, byte commit)
+		internal static void BufferPageCommitmentMemNVNative(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, nint, uint, ulong, byte, void>)funcTable[0])(target, offset, size, memory, memOffset, commit);
+			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, nint, uint, ulong, byte, void>)funcTable[0])(target, offset, size, memory, memOffset, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, nint, uint, ulong, byte, void>)funcTable[0])(target, offset, size, memory, memOffset, commit);
+			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, nint, uint, ulong, byte, void>)funcTable[0])(target, offset, size, memory, memOffset, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void BufferPageCommitmentMemNV(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, byte commit)
+		public static void BufferPageCommitmentMemNV(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			BufferPageCommitmentMemNVNative(target, offset, size, memory, memOffset, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferPageCommitmentMemNVNative(uint buffer, nint offset, nint size, uint memory, ulong memOffset, byte commit)
+		internal static void NamedBufferPageCommitmentMemNVNative(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, nint, nint, uint, ulong, byte, void>)funcTable[1])(buffer, offset, size, memory, memOffset, commit);
+			((delegate* unmanaged[Cdecl]<uint, nint, nint, uint, ulong, byte, void>)funcTable[1])(buffer, offset, size, memory, memOffset, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, nint, uint, ulong, byte, void>)funcTable[1])(buffer, offset, size, memory, memOffset, commit);
+			((delegate* unmanaged[Cdecl]<uint, nint, nint, uint, ulong, byte, void>)funcTable[1])(buffer, offset, size, memory, memOffset, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void NamedBufferPageCommitmentMemNV(uint buffer, nint offset, nint size, uint memory, ulong memOffset, byte commit)
+		public static void NamedBufferPageCommitmentMemNV(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			NamedBufferPageCommitmentMemNVNative(buffer, offset, size, memory, memOffset, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexPageCommitmentMemNVNative(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, byte commit)
+		internal static void TexPageCommitmentMemNVNative(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[2])(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[2])(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[2])(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[2])(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void TexPageCommitmentMemNV(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, byte commit)
+		public static void TexPageCommitmentMemNV(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			TexPageCommitmentMemNVNative(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexturePageCommitmentMemNVNative(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, byte commit)
+		internal static void TexturePageCommitmentMemNVNative(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[3])(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[3])(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, *((byte*)(&commit)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[3])(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[3])(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, *((byte*)(&commit)));
 			#endif
 		}
 
-		public static void TexturePageCommitmentMemNV(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, byte commit)
+		public static void TexturePageCommitmentMemNV(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			TexturePageCommitmentMemNVNative(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
 		}

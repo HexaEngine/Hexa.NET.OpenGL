@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			CompileShaderIncludeARBNative(shader, count, path, length);
 		}
 
+		public static void CompileShaderIncludeARB(uint shader, int count, byte** path, Span<int> length)
+		{
+			fixed (int* plength0 = length)
+			{
+				CompileShaderIncludeARBNative(shader, count, path, plength0);
+			}
+		}
+
 		public static void CompileShaderIncludeARB(uint shader, int count, byte** path, ref int length)
 		{
 			fixed (int* plength0 = &length)
@@ -80,7 +88,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void DeleteNamedStringARB(int namelen, ReadOnlySpan<byte> name)
+		public static void DeleteNamedStringARB(int namelen, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -137,7 +145,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetNamedStringARB(int namelen, ReadOnlySpan<byte> name, int bufSize, int* stringlen, byte* str)
+		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, int* stringlen, byte* str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -153,11 +161,30 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, Span<int> stringlen, byte* str)
+		{
+			fixed (int* pstringlen0 = stringlen)
+			{
+				GetNamedStringARBNative(namelen, name, bufSize, pstringlen0, str);
+			}
+		}
+
 		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, ref int stringlen, byte* str)
 		{
 			fixed (int* pstringlen0 = &stringlen)
 			{
 				GetNamedStringARBNative(namelen, name, bufSize, pstringlen0, str);
+			}
+		}
+
+		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, Span<int> stringlen, byte* str)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (int* pstringlen1 = stringlen)
+				{
+					GetNamedStringARBNative(namelen, pname0, bufSize, pstringlen1, str);
+				}
 			}
 		}
 
@@ -198,7 +225,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, ReadOnlySpan<byte> str)
+		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, Span<byte> str)
 		{
 			fixed (byte* pstr0 = str)
 			{
@@ -261,7 +288,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetNamedStringARB(int namelen, ReadOnlySpan<byte> name, int bufSize, int* stringlen, ReadOnlySpan<byte> str)
+		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, int* stringlen, Span<byte> str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -283,6 +310,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, Span<int> stringlen, Span<byte> str)
+		{
+			fixed (int* pstringlen0 = stringlen)
+			{
+				fixed (byte* pstr1 = str)
+				{
+					GetNamedStringARBNative(namelen, name, bufSize, pstringlen0, pstr1);
+				}
+			}
+		}
+
 		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, ref int stringlen, ref byte str)
 		{
 			fixed (int* pstringlen0 = &stringlen)
@@ -290,6 +328,20 @@ namespace Hexa.NET.OpenGL.ARB
 				fixed (byte* pstr1 = &str)
 				{
 					GetNamedStringARBNative(namelen, name, bufSize, pstringlen0, pstr1);
+				}
+			}
+		}
+
+		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, Span<int> stringlen, Span<byte> str)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (int* pstringlen1 = stringlen)
+				{
+					fixed (byte* pstr2 = str)
+					{
+						GetNamedStringARBNative(namelen, pname0, bufSize, pstringlen1, pstr2);
+					}
 				}
 			}
 		}
@@ -364,7 +416,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetNamedStringivARB(int namelen, ReadOnlySpan<byte> name, GLEnum pname, int* @params)
+		public static void GetNamedStringivARB(int namelen, Span<byte> name, GLEnum pname, int* @params)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -423,7 +475,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret != 0;
 		}
 
-		public static bool IsNamedStringARB(int namelen, ReadOnlySpan<byte> name)
+		public static bool IsNamedStringARB(int namelen, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -482,7 +534,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void NamedStringARB(GLEnum type, int namelen, ReadOnlySpan<byte> name, int stringlen, byte* str)
+		public static void NamedStringARB(GLEnum type, int namelen, Span<byte> name, int stringlen, byte* str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -524,7 +576,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, ReadOnlySpan<byte> str)
+		public static void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, Span<byte> str)
 		{
 			fixed (byte* pstr0 = str)
 			{
@@ -587,7 +639,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void NamedStringARB(GLEnum type, int namelen, ReadOnlySpan<byte> name, int stringlen, ReadOnlySpan<byte> str)
+		public static void NamedStringARB(GLEnum type, int namelen, Span<byte> name, int stringlen, Span<byte> str)
 		{
 			fixed (byte* pname0 = name)
 			{

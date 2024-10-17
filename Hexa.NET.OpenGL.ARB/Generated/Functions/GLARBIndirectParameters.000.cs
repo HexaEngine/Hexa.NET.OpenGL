@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.ARB
 			MultiDrawArraysIndirectCountARBNative(mode, indirect, drawcount, maxdrawcount, stride);
 		}
 
+		public static void MultiDrawArraysIndirectCountARB(GLPrimitiveType mode, nint indirect, nint drawcount, int maxdrawcount, int stride)
+		{
+			MultiDrawArraysIndirectCountARBNative(mode, (void*)indirect, drawcount, maxdrawcount, stride);
+		}
+
+		public static void MultiDrawArraysIndirectCountARB<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, nint drawcount, int maxdrawcount, int stride) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawArraysIndirectCountARBNative(mode, pindirect0, drawcount, maxdrawcount, stride);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsIndirectCountARBNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, nint drawcount, int maxdrawcount, int stride)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultiDrawElementsIndirectCountARB(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, nint drawcount, int maxdrawcount, int stride)
 		{
 			MultiDrawElementsIndirectCountARBNative(mode, type, indirect, drawcount, maxdrawcount, stride);
+		}
+
+		public static void MultiDrawElementsIndirectCountARB(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, nint drawcount, int maxdrawcount, int stride)
+		{
+			MultiDrawElementsIndirectCountARBNative(mode, type, (void*)indirect, drawcount, maxdrawcount, stride);
+		}
+
+		public static void MultiDrawElementsIndirectCountARB<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, nint drawcount, int maxdrawcount, int stride) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawElementsIndirectCountARBNative(mode, type, pindirect0, drawcount, maxdrawcount, stride);
+			}
 		}
 
 	}

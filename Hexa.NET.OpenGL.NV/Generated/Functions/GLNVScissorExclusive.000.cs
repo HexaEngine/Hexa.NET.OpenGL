@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.NV
 			ScissorExclusiveArrayvNVNative(first, count, v);
 		}
 
+		public static void ScissorExclusiveArrayvNV(uint first, int count, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorExclusiveArrayvNVNative(first, count, pv0);
+			}
+		}
+
 		public static void ScissorExclusiveArrayvNV(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)

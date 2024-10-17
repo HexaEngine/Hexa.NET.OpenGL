@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.ARB
 			DrawArraysIndirectNative(mode, indirect);
 		}
 
+		public static void DrawArraysIndirect(GLPrimitiveType mode, nint indirect)
+		{
+			DrawArraysIndirectNative(mode, (void*)indirect);
+		}
+
+		public static void DrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				DrawArraysIndirectNative(mode, pindirect0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void DrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
 			DrawElementsIndirectNative(mode, type, indirect);
+		}
+
+		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect)
+		{
+			DrawElementsIndirectNative(mode, type, (void*)indirect);
+		}
+
+		public static void DrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				DrawElementsIndirectNative(mode, type, pindirect0);
+			}
 		}
 
 	}

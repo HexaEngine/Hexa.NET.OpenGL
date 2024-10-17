@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.NV
 			MultiDrawArraysIndirectBindlessNVNative(mode, indirect, drawCount, stride, vertexBufferCount);
 		}
 
+		public static void MultiDrawArraysIndirectBindlessNV(GLPrimitiveType mode, nint indirect, int drawCount, int stride, int vertexBufferCount)
+		{
+			MultiDrawArraysIndirectBindlessNVNative(mode, (void*)indirect, drawCount, stride, vertexBufferCount);
+		}
+
+		public static void MultiDrawArraysIndirectBindlessNV<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawArraysIndirectBindlessNVNative(mode, pindirect0, drawCount, stride, vertexBufferCount);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsIndirectBindlessNVNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int stride, int vertexBufferCount)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.NV
 		public static void MultiDrawElementsIndirectBindlessNV(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawElementsIndirectBindlessNVNative(mode, type, indirect, drawCount, stride, vertexBufferCount);
+		}
+
+		public static void MultiDrawElementsIndirectBindlessNV(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawCount, int stride, int vertexBufferCount)
+		{
+			MultiDrawElementsIndirectBindlessNVNative(mode, type, (void*)indirect, drawCount, stride, vertexBufferCount);
+		}
+
+		public static void MultiDrawElementsIndirectBindlessNV<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawElementsIndirectBindlessNVNative(mode, type, pindirect0, drawCount, stride, vertexBufferCount);
+			}
 		}
 
 	}

@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGLES.NV
 	public static unsafe partial class GLNVCoverageSample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverageMaskNVNative(byte mask)
+		internal static void CoverageMaskNVNative(bool mask)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[0])(mask);
+			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[0])(*((byte*)(&mask)));
 			#else
-			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[0])(mask);
+			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[0])(*((byte*)(&mask)));
 			#endif
 		}
 
-		public static void CoverageMaskNV(byte mask)
+		public static void CoverageMaskNV(bool mask)
 		{
 			CoverageMaskNVNative(mask);
 		}

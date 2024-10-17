@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			MultiDrawArraysIndirectEXTNative(mode, indirect, drawcount, stride);
 		}
 
+		public static void MultiDrawArraysIndirectEXT(GLPrimitiveType mode, nint indirect, int drawcount, int stride)
+		{
+			MultiDrawArraysIndirectEXTNative(mode, (void*)indirect, drawcount, stride);
+		}
+
+		public static void MultiDrawArraysIndirectEXT<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawArraysIndirectEXTNative(mode, pindirect0, drawcount, stride);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsIndirectEXTNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void MultiDrawElementsIndirectEXT(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
 			MultiDrawElementsIndirectEXTNative(mode, type, indirect, drawcount, stride);
+		}
+
+		public static void MultiDrawElementsIndirectEXT(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawcount, int stride)
+		{
+			MultiDrawElementsIndirectEXTNative(mode, type, (void*)indirect, drawcount, stride);
+		}
+
+		public static void MultiDrawElementsIndirectEXT<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
+		{
+			fixed (TIndirect* pindirect0 = indirect)
+			{
+				MultiDrawElementsIndirectEXTNative(mode, type, pindirect0, drawcount, stride);
+			}
 		}
 
 	}

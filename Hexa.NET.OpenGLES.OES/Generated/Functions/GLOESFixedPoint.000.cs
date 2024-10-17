@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
-		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, ReadOnlySpan<byte> bitmap)
+		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, Span<byte> bitmap)
 		{
 			fixed (byte* pbitmap0 = bitmap)
 			{
@@ -178,6 +178,14 @@ namespace Hexa.NET.OpenGLES.OES
 			ClipPlanexOESNative(plane, equation);
 		}
 
+		public static void ClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
+		{
+			fixed (int* pequation0 = equation)
+			{
+				ClipPlanexOESNative(plane, pequation0);
+			}
+		}
+
 		public static void ClipPlanexOES(GLClipPlaneName plane, ref int equation)
 		{
 			fixed (int* pequation0 = &equation)
@@ -216,6 +224,14 @@ namespace Hexa.NET.OpenGLES.OES
 			Color3xvOESNative(components);
 		}
 
+		public static void Color3xvOES(Span<int> components)
+		{
+			fixed (int* pcomponents0 = components)
+			{
+				Color3xvOESNative(pcomponents0);
+			}
+		}
+
 		public static void Color3xvOES(ref int components)
 		{
 			fixed (int* pcomponents0 = &components)
@@ -252,6 +268,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void Color4xvOES(int* components)
 		{
 			Color4xvOESNative(components);
+		}
+
+		public static void Color4xvOES(Span<int> components)
+		{
+			fixed (int* pcomponents0 = components)
+			{
+				Color4xvOESNative(pcomponents0);
+			}
 		}
 
 		public static void Color4xvOES(ref int components)
@@ -352,6 +376,14 @@ namespace Hexa.NET.OpenGLES.OES
 			EvalCoord1xvOESNative(coords);
 		}
 
+		public static void EvalCoord1xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				EvalCoord1xvOESNative(pcoords0);
+			}
+		}
+
 		public static void EvalCoord1xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -390,6 +422,14 @@ namespace Hexa.NET.OpenGLES.OES
 			EvalCoord2xvOESNative(coords);
 		}
 
+		public static void EvalCoord2xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				EvalCoord2xvOESNative(pcoords0);
+			}
+		}
+
 		public static void EvalCoord2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -411,6 +451,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void FeedbackBufferxOES(int n, GLEnum type, int* buffer)
 		{
 			FeedbackBufferxOESNative(n, type, buffer);
+		}
+
+		public static void FeedbackBufferxOES(int n, GLEnum type, Span<int> buffer)
+		{
+			fixed (int* pbuffer0 = buffer)
+			{
+				FeedbackBufferxOESNative(n, type, pbuffer0);
+			}
 		}
 
 		public static void FeedbackBufferxOES(int n, GLEnum type, ref int buffer)
@@ -486,6 +534,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void GetClipPlanexOES(GLClipPlaneName plane, int* equation)
 		{
 			GetClipPlanexOESNative(plane, equation);
+		}
+
+		public static void GetClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
+		{
+			fixed (int* pequation0 = equation)
+			{
+				GetClipPlanexOESNative(plane, pequation0);
+			}
 		}
 
 		public static void GetClipPlanexOES(GLClipPlaneName plane, ref int equation)
@@ -661,6 +717,14 @@ namespace Hexa.NET.OpenGLES.OES
 			GetMapxvOESNative(target, query, v);
 		}
 
+		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				GetMapxvOESNative(target, query, pv0);
+			}
+		}
+
 		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -727,6 +791,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void GetPixelMapxv(GLPixelMap map, int size, int* values)
 		{
 			GetPixelMapxvNative(map, size, values);
+		}
+
+		public static void GetPixelMapxv(GLPixelMap map, int size, Span<int> values)
+		{
+			fixed (int* pvalues0 = values)
+			{
+				GetPixelMapxvNative(map, size, pvalues0);
+			}
 		}
 
 		public static void GetPixelMapxv(GLPixelMap map, int size, ref int values)
@@ -887,6 +959,14 @@ namespace Hexa.NET.OpenGLES.OES
 			IndexxvOESNative(component);
 		}
 
+		public static void IndexxvOES(Span<int> component)
+		{
+			fixed (int* pcomponent0 = component)
+			{
+				IndexxvOESNative(pcomponent0);
+			}
+		}
+
 		public static void IndexxvOES(ref int component)
 		{
 			fixed (int* pcomponent0 = &component)
@@ -1007,6 +1087,14 @@ namespace Hexa.NET.OpenGLES.OES
 			LoadMatrixxOESNative(m);
 		}
 
+		public static void LoadMatrixxOES(Span<int> m)
+		{
+			fixed (int* pm0 = m)
+			{
+				LoadMatrixxOESNative(pm0);
+			}
+		}
+
 		public static void LoadMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
@@ -1028,6 +1116,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void LoadTransposeMatrixxOES(int* m)
 		{
 			LoadTransposeMatrixxOESNative(m);
+		}
+
+		public static void LoadTransposeMatrixxOES(Span<int> m)
+		{
+			fixed (int* pm0 = m)
+			{
+				LoadTransposeMatrixxOESNative(pm0);
+			}
 		}
 
 		public static void LoadTransposeMatrixxOES(ref int m)
@@ -1150,6 +1246,14 @@ namespace Hexa.NET.OpenGLES.OES
 			MultMatrixxOESNative(m);
 		}
 
+		public static void MultMatrixxOES(Span<int> m)
+		{
+			fixed (int* pm0 = m)
+			{
+				MultMatrixxOESNative(pm0);
+			}
+		}
+
 		public static void MultMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
@@ -1171,6 +1275,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void MultTransposeMatrixxOES(int* m)
 		{
 			MultTransposeMatrixxOESNative(m);
+		}
+
+		public static void MultTransposeMatrixxOES(Span<int> m)
+		{
+			fixed (int* pm0 = m)
+			{
+				MultTransposeMatrixxOESNative(pm0);
+			}
 		}
 
 		public static void MultTransposeMatrixxOES(ref int m)
@@ -1211,6 +1323,14 @@ namespace Hexa.NET.OpenGLES.OES
 			MultiTexCoord1xvOESNative(texture, coords);
 		}
 
+		public static void MultiTexCoord1xvOES(GLTextureUnit texture, Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				MultiTexCoord1xvOESNative(texture, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoord1xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1247,6 +1367,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void MultiTexCoord2xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord2xvOESNative(texture, coords);
+		}
+
+		public static void MultiTexCoord2xvOES(GLTextureUnit texture, Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				MultiTexCoord2xvOESNative(texture, pcoords0);
+			}
 		}
 
 		public static void MultiTexCoord2xvOES(GLTextureUnit texture, ref int coords)
@@ -1287,6 +1415,14 @@ namespace Hexa.NET.OpenGLES.OES
 			MultiTexCoord3xvOESNative(texture, coords);
 		}
 
+		public static void MultiTexCoord3xvOES(GLTextureUnit texture, Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				MultiTexCoord3xvOESNative(texture, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoord3xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1325,6 +1461,14 @@ namespace Hexa.NET.OpenGLES.OES
 			MultiTexCoord4xvOESNative(texture, coords);
 		}
 
+		public static void MultiTexCoord4xvOES(GLTextureUnit texture, Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				MultiTexCoord4xvOESNative(texture, pcoords0);
+			}
+		}
+
 		public static void MultiTexCoord4xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1361,6 +1505,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void Normal3xvOES(int* coords)
 		{
 			Normal3xvOESNative(coords);
+		}
+
+		public static void Normal3xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				Normal3xvOESNative(pcoords0);
+			}
 		}
 
 		public static void Normal3xvOES(ref int coords)
@@ -1414,6 +1566,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void PixelMapx(GLPixelMap map, int size, int* values)
 		{
 			PixelMapxNative(map, size, values);
+		}
+
+		public static void PixelMapx(GLPixelMap map, int size, Span<int> values)
+		{
+			fixed (int* pvalues0 = values)
+			{
+				PixelMapxNative(map, size, pvalues0);
+			}
 		}
 
 		public static void PixelMapx(GLPixelMap map, int size, ref int values)
@@ -1559,6 +1719,14 @@ namespace Hexa.NET.OpenGLES.OES
 			PrioritizeTexturesxOESNative(n, textures, priorities);
 		}
 
+		public static void PrioritizeTexturesxOES(int n, Span<uint> textures, int* priorities)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				PrioritizeTexturesxOESNative(n, ptextures0, priorities);
+			}
+		}
+
 		public static void PrioritizeTexturesxOES(int n, ref uint textures, int* priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -1567,11 +1735,30 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		public static void PrioritizeTexturesxOES(int n, uint* textures, Span<int> priorities)
+		{
+			fixed (int* ppriorities0 = priorities)
+			{
+				PrioritizeTexturesxOESNative(n, textures, ppriorities0);
+			}
+		}
+
 		public static void PrioritizeTexturesxOES(int n, uint* textures, ref int priorities)
 		{
 			fixed (int* ppriorities0 = &priorities)
 			{
 				PrioritizeTexturesxOESNative(n, textures, ppriorities0);
+			}
+		}
+
+		public static void PrioritizeTexturesxOES(int n, Span<uint> textures, Span<int> priorities)
+		{
+			fixed (uint* ptextures0 = textures)
+			{
+				fixed (int* ppriorities1 = priorities)
+				{
+					PrioritizeTexturesxOESNative(n, ptextures0, ppriorities1);
+				}
 			}
 		}
 
@@ -1616,6 +1803,14 @@ namespace Hexa.NET.OpenGLES.OES
 			RasterPos2xvOESNative(coords);
 		}
 
+		public static void RasterPos2xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				RasterPos2xvOESNative(pcoords0);
+			}
+		}
+
 		public static void RasterPos2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1652,6 +1847,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void RasterPos3xvOES(int* coords)
 		{
 			RasterPos3xvOESNative(coords);
+		}
+
+		public static void RasterPos3xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				RasterPos3xvOESNative(pcoords0);
+			}
 		}
 
 		public static void RasterPos3xvOES(ref int coords)
@@ -1692,6 +1895,14 @@ namespace Hexa.NET.OpenGLES.OES
 			RasterPos4xvOESNative(coords);
 		}
 
+		public static void RasterPos4xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				RasterPos4xvOESNative(pcoords0);
+			}
+		}
+
 		public static void RasterPos4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1730,6 +1941,14 @@ namespace Hexa.NET.OpenGLES.OES
 			RectxvOESNative(v1, v2);
 		}
 
+		public static void RectxvOES(Span<int> v1, int* v2)
+		{
+			fixed (int* pv10 = v1)
+			{
+				RectxvOESNative(pv10, v2);
+			}
+		}
+
 		public static void RectxvOES(ref int v1, int* v2)
 		{
 			fixed (int* pv10 = &v1)
@@ -1738,11 +1957,30 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		public static void RectxvOES(int* v1, Span<int> v2)
+		{
+			fixed (int* pv20 = v2)
+			{
+				RectxvOESNative(v1, pv20);
+			}
+		}
+
 		public static void RectxvOES(int* v1, ref int v2)
 		{
 			fixed (int* pv20 = &v2)
 			{
 				RectxvOESNative(v1, pv20);
+			}
+		}
+
+		public static void RectxvOES(Span<int> v1, Span<int> v2)
+		{
+			fixed (int* pv10 = v1)
+			{
+				fixed (int* pv21 = v2)
+				{
+					RectxvOESNative(pv10, pv21);
+				}
 			}
 		}
 
@@ -1773,16 +2011,16 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleCoveragexOESNative(int value, byte invert)
+		internal static void SampleCoveragexOESNative(int value, bool invert)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, byte, void>)funcTable[84])(value, invert);
+			((delegate* unmanaged[Cdecl]<int, byte, void>)funcTable[84])(value, *((byte*)(&invert)));
 			#else
-			((delegate* unmanaged[Cdecl]<int, byte, void>)funcTable[84])(value, invert);
+			((delegate* unmanaged[Cdecl]<int, byte, void>)funcTable[84])(value, *((byte*)(&invert)));
 			#endif
 		}
 
-		public static void SampleCoveragexOES(int value, byte invert)
+		public static void SampleCoveragexOES(int value, bool invert)
 		{
 			SampleCoveragexOESNative(value, invert);
 		}
@@ -1832,6 +2070,14 @@ namespace Hexa.NET.OpenGLES.OES
 			TexCoord1xvOESNative(coords);
 		}
 
+		public static void TexCoord1xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				TexCoord1xvOESNative(pcoords0);
+			}
+		}
+
 		public static void TexCoord1xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1868,6 +2114,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void TexCoord2xvOES(int* coords)
 		{
 			TexCoord2xvOESNative(coords);
+		}
+
+		public static void TexCoord2xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				TexCoord2xvOESNative(pcoords0);
+			}
 		}
 
 		public static void TexCoord2xvOES(ref int coords)
@@ -1908,6 +2162,14 @@ namespace Hexa.NET.OpenGLES.OES
 			TexCoord3xvOESNative(coords);
 		}
 
+		public static void TexCoord3xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				TexCoord3xvOESNative(pcoords0);
+			}
+		}
+
 		public static void TexCoord3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1944,6 +2206,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void TexCoord4xvOES(int* coords)
 		{
 			TexCoord4xvOESNative(coords);
+		}
+
+		public static void TexCoord4xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				TexCoord4xvOESNative(pcoords0);
+			}
 		}
 
 		public static void TexCoord4xvOES(ref int coords)
@@ -2134,6 +2404,14 @@ namespace Hexa.NET.OpenGLES.OES
 			Vertex2xvOESNative(coords);
 		}
 
+		public static void Vertex2xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				Vertex2xvOESNative(pcoords0);
+			}
+		}
+
 		public static void Vertex2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2172,6 +2450,14 @@ namespace Hexa.NET.OpenGLES.OES
 			Vertex3xvOESNative(coords);
 		}
 
+		public static void Vertex3xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				Vertex3xvOESNative(pcoords0);
+			}
+		}
+
 		public static void Vertex3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2208,6 +2494,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void Vertex4xvOES(int* coords)
 		{
 			Vertex4xvOESNative(coords);
+		}
+
+		public static void Vertex4xvOES(Span<int> coords)
+		{
+			fixed (int* pcoords0 = coords)
+			{
+				Vertex4xvOESNative(pcoords0);
+			}
 		}
 
 		public static void Vertex4xvOES(ref int coords)

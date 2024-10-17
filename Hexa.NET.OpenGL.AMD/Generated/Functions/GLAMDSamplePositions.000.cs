@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.AMD
 			SetMultisamplefvAMDNative(pname, index, val);
 		}
 
+		public static void SetMultisamplefvAMD(GLEnum pname, uint index, Span<float> val)
+		{
+			fixed (float* pval0 = val)
+			{
+				SetMultisamplefvAMDNative(pname, index, pval0);
+			}
+		}
+
 		public static void SetMultisamplefvAMD(GLEnum pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)

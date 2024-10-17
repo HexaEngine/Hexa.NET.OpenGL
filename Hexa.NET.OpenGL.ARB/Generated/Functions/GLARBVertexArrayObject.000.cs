@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteVertexArraysNative(1, &array);
 		}
 
+		public static void DeleteVertexArrays(int n, Span<uint> arrays)
+		{
+			fixed (uint* parrays0 = arrays)
+			{
+				DeleteVertexArraysNative(n, parrays0);
+			}
+		}
+
 		public static void DeleteVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -79,6 +87,14 @@ namespace Hexa.NET.OpenGL.ARB
 			uint result;
 			GenVertexArraysNative(1, &result);
 			return result;
+		}
+
+		public static void GenVertexArrays(int n, Span<uint> arrays)
+		{
+			fixed (uint* parrays0 = arrays)
+			{
+				GenVertexArraysNative(n, parrays0);
+			}
 		}
 
 		public static void GenVertexArrays(int n, ref uint arrays)

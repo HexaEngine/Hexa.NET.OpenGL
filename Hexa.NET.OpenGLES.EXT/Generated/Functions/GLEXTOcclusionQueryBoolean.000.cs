@@ -51,6 +51,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			DeleteQueriesEXTNative(1, &id);
 		}
 
+		public static void DeleteQueriesEXT(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				DeleteQueriesEXTNative(n, pids0);
+			}
+		}
+
 		public static void DeleteQueriesEXT(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -94,6 +102,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			uint result;
 			GenQueriesEXTNative(1, &result);
 			return result;
+		}
+
+		public static void GenQueriesEXT(int n, Span<uint> ids)
+		{
+			fixed (uint* pids0 = ids)
+			{
+				GenQueriesEXTNative(n, pids0);
+			}
 		}
 
 		public static void GenQueriesEXT(int n, ref uint ids)

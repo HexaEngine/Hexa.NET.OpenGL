@@ -61,5 +61,18 @@ namespace Hexa.NET.OpenGL.NV
 			LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, data);
 		}
 
+		public static void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, nint data)
+		{
+			LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, (void*)data);
+		}
+
+		public static void LGPUNamedBufferSubDataNVX<TData>(uint gpuMask, uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, pdata0);
+			}
+		}
+
 	}
 }

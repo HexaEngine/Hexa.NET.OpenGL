@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGLES.NV
 			CoverageModulationTableNVNative(n, v);
 		}
 
+		public static void CoverageModulationTableNV(int n, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				CoverageModulationTableNVNative(n, pv0);
+			}
+		}
+
 		public static void CoverageModulationTableNV(int n, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -69,6 +77,14 @@ namespace Hexa.NET.OpenGLES.NV
 			GetCoverageModulationTableNVNative(bufSize, v);
 		}
 
+		public static void GetCoverageModulationTableNV(int bufSize, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				GetCoverageModulationTableNVNative(bufSize, pv0);
+			}
+		}
+
 		public static void GetCoverageModulationTableNV(int bufSize, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -78,16 +94,16 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterSamplesEXTNative(uint samples, byte fixedsamplelocations)
+		internal static void RasterSamplesEXTNative(uint samples, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[3])(samples, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[3])(samples, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[3])(samples, fixedsamplelocations);
+			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[3])(samples, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void RasterSamplesEXT(uint samples, byte fixedsamplelocations)
+		public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
 		{
 			RasterSamplesEXTNative(samples, fixedsamplelocations);
 		}

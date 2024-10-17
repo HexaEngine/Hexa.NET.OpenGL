@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			PatchParameterfvNative(pname, values);
 		}
 
+		public static void PatchParameterfv(GLPatchParameterName pname, Span<float> values)
+		{
+			fixed (float* pvalues0 = values)
+			{
+				PatchParameterfvNative(pname, pvalues0);
+			}
+		}
+
 		public static void PatchParameterfv(GLPatchParameterName pname, ref float values)
 		{
 			fixed (float* pvalues0 = &values)

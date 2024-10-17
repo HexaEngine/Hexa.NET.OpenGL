@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.NV
 			DrawBuffersNVNative(n, bufs);
 		}
 
+		public static void DrawBuffersNV(int n, Span<GLEnum> bufs)
+		{
+			fixed (GLEnum* pbufs0 = bufs)
+			{
+				DrawBuffersNVNative(n, pbufs0);
+			}
+		}
+
 		public static void DrawBuffersNV(int n, ref GLEnum bufs)
 		{
 			fixed (GLEnum* pbufs0 = &bufs)

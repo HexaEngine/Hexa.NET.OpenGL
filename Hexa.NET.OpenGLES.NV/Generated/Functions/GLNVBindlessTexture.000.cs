@@ -17,16 +17,16 @@ namespace Hexa.NET.OpenGLES.NV
 	public static unsafe partial class GLNVBindlessTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ulong GetImageHandleNVNative(uint texture, int level, byte layered, int layer, GLPixelFormat format)
+		internal static ulong GetImageHandleNVNative(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, layered, layer, format);
+			return ((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, *((byte*)(&layered)), layer, format);
 			#else
-			return (ulong)((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, layered, layer, format);
+			return (ulong)((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, *((byte*)(&layered)), layer, format);
 			#endif
 		}
 
-		public static ulong GetImageHandleNV(uint texture, int level, byte layered, int layer, GLPixelFormat format)
+		public static ulong GetImageHandleNV(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			ulong ret = GetImageHandleNVNative(texture, level, layered, layer, format);
 			return ret;
@@ -186,6 +186,14 @@ namespace Hexa.NET.OpenGLES.NV
 			ProgramUniformHandleui64vNVNative(program, location, count, values);
 		}
 
+		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, Span<ulong> values)
+		{
+			fixed (ulong* pvalues0 = values)
+			{
+				ProgramUniformHandleui64vNVNative(program, location, count, pvalues0);
+			}
+		}
+
 		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, ref ulong values)
 		{
 			fixed (ulong* pvalues0 = &values)
@@ -222,6 +230,14 @@ namespace Hexa.NET.OpenGLES.NV
 		public static void UniformHandleui64vNV(int location, int count, ulong* value)
 		{
 			UniformHandleui64vNVNative(location, count, value);
+		}
+
+		public static void UniformHandleui64vNV(int location, int count, Span<ulong> value)
+		{
+			fixed (ulong* pvalue0 = value)
+			{
+				UniformHandleui64vNVNative(location, count, pvalue0);
+			}
 		}
 
 		public static void UniformHandleui64vNV(int location, int count, ref ulong value)

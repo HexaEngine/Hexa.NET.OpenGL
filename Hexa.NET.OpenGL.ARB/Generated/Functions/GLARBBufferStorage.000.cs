@@ -31,5 +31,18 @@ namespace Hexa.NET.OpenGL.ARB
 			BufferStorageNative(target, size, data, flags);
 		}
 
+		public static void BufferStorage(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
+		{
+			BufferStorageNative(target, size, (void*)data, flags);
+		}
+
+		public static void BufferStorage<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				BufferStorageNative(target, size, pdata0, flags);
+			}
+		}
+
 	}
 }

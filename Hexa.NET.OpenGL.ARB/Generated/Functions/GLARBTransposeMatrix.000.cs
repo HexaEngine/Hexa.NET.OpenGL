@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			LoadTransposeMatrixdARBNative(m);
 		}
 
+		public static void LoadTransposeMatrixdARB(Span<double> m)
+		{
+			fixed (double* pm0 = m)
+			{
+				LoadTransposeMatrixdARBNative(pm0);
+			}
+		}
+
 		public static void LoadTransposeMatrixdARB(ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void LoadTransposeMatrixfARB(float* m)
 		{
 			LoadTransposeMatrixfARBNative(m);
+		}
+
+		public static void LoadTransposeMatrixfARB(Span<float> m)
+		{
+			fixed (float* pm0 = m)
+			{
+				LoadTransposeMatrixfARBNative(pm0);
+			}
 		}
 
 		public static void LoadTransposeMatrixfARB(ref float m)
@@ -77,6 +93,14 @@ namespace Hexa.NET.OpenGL.ARB
 			MultTransposeMatrixdARBNative(m);
 		}
 
+		public static void MultTransposeMatrixdARB(Span<double> m)
+		{
+			fixed (double* pm0 = m)
+			{
+				MultTransposeMatrixdARBNative(pm0);
+			}
+		}
+
 		public static void MultTransposeMatrixdARB(ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -98,6 +122,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void MultTransposeMatrixfARB(float* m)
 		{
 			MultTransposeMatrixfARBNative(m);
+		}
+
+		public static void MultTransposeMatrixfARB(Span<float> m)
+		{
+			fixed (float* pm0 = m)
+			{
+				MultTransposeMatrixfARBNative(pm0);
+			}
 		}
 
 		public static void MultTransposeMatrixfARB(ref float m)

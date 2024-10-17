@@ -46,6 +46,19 @@ namespace Hexa.NET.OpenGL.ARB
 			WeightPointerARBNative(size, type, stride, pointer);
 		}
 
+		public static void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, nint pointer)
+		{
+			WeightPointerARBNative(size, type, stride, (void*)pointer);
+		}
+
+		public static void WeightPointerARB<TPointer>(int size, GLWeightPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				WeightPointerARBNative(size, type, stride, ppointer0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void WeightbvARBNative(int size, sbyte* weights)
 		{
@@ -59,6 +72,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void WeightbvARB(int size, sbyte* weights)
 		{
 			WeightbvARBNative(size, weights);
+		}
+
+		public static void WeightbvARB(int size, Span<sbyte> weights)
+		{
+			fixed (sbyte* pweights0 = weights)
+			{
+				WeightbvARBNative(size, pweights0);
+			}
 		}
 
 		public static void WeightbvARB(int size, ref sbyte weights)
@@ -84,6 +105,14 @@ namespace Hexa.NET.OpenGL.ARB
 			WeightdvARBNative(size, weights);
 		}
 
+		public static void WeightdvARB(int size, Span<double> weights)
+		{
+			fixed (double* pweights0 = weights)
+			{
+				WeightdvARBNative(size, pweights0);
+			}
+		}
+
 		public static void WeightdvARB(int size, ref double weights)
 		{
 			fixed (double* pweights0 = &weights)
@@ -105,6 +134,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void WeightfvARB(int size, float* weights)
 		{
 			WeightfvARBNative(size, weights);
+		}
+
+		public static void WeightfvARB(int size, Span<float> weights)
+		{
+			fixed (float* pweights0 = weights)
+			{
+				WeightfvARBNative(size, pweights0);
+			}
 		}
 
 		public static void WeightfvARB(int size, ref float weights)
@@ -130,6 +167,14 @@ namespace Hexa.NET.OpenGL.ARB
 			WeightivARBNative(size, weights);
 		}
 
+		public static void WeightivARB(int size, Span<int> weights)
+		{
+			fixed (int* pweights0 = weights)
+			{
+				WeightivARBNative(size, pweights0);
+			}
+		}
+
 		public static void WeightivARB(int size, ref int weights)
 		{
 			fixed (int* pweights0 = &weights)
@@ -151,6 +196,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void WeightsvARB(int size, short* weights)
 		{
 			WeightsvARBNative(size, weights);
+		}
+
+		public static void WeightsvARB(int size, Span<short> weights)
+		{
+			fixed (short* pweights0 = weights)
+			{
+				WeightsvARBNative(size, pweights0);
+			}
 		}
 
 		public static void WeightsvARB(int size, ref short weights)
@@ -202,7 +255,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void WeightubvARB(int size, ReadOnlySpan<byte> weights)
+		public static void WeightubvARB(int size, Span<byte> weights)
 		{
 			fixed (byte* pweights0 = weights)
 			{
@@ -233,6 +286,14 @@ namespace Hexa.NET.OpenGL.ARB
 			WeightuivARBNative(size, weights);
 		}
 
+		public static void WeightuivARB(int size, Span<uint> weights)
+		{
+			fixed (uint* pweights0 = weights)
+			{
+				WeightuivARBNative(size, pweights0);
+			}
+		}
+
 		public static void WeightuivARB(int size, ref uint weights)
 		{
 			fixed (uint* pweights0 = &weights)
@@ -254,6 +315,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void WeightusvARB(int size, ushort* weights)
 		{
 			WeightusvARBNative(size, weights);
+		}
+
+		public static void WeightusvARB(int size, Span<ushort> weights)
+		{
+			fixed (ushort* pweights0 = weights)
+			{
+				WeightusvARBNative(size, pweights0);
+			}
 		}
 
 		public static void WeightusvARB(int size, ref ushort weights)

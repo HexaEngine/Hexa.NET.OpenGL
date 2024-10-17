@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			MultiDrawArraysEXTNative(mode, first, count, primcount);
 		}
 
+		public static void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, int* count, int primcount)
+		{
+			fixed (int* pfirst0 = first)
+			{
+				MultiDrawArraysEXTNative(mode, pfirst0, count, primcount);
+			}
+		}
+
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
@@ -39,11 +47,30 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, Span<int> count, int primcount)
+		{
+			fixed (int* pcount0 = count)
+			{
+				MultiDrawArraysEXTNative(mode, first, pcount0, primcount);
+			}
+		}
+
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, ref int count, int primcount)
 		{
 			fixed (int* pcount0 = &count)
 			{
 				MultiDrawArraysEXTNative(mode, first, pcount0, primcount);
+			}
+		}
+
+		public static void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, Span<int> count, int primcount)
+		{
+			fixed (int* pfirst0 = first)
+			{
+				fixed (int* pcount1 = count)
+				{
+					MultiDrawArraysEXTNative(mode, pfirst0, pcount1, primcount);
+				}
 			}
 		}
 
@@ -71,6 +98,14 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void MultiDrawElementsEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			MultiDrawElementsEXTNative(mode, count, type, indices, primcount);
+		}
+
+		public static void MultiDrawElementsEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int primcount)
+		{
+			fixed (int* pcount0 = count)
+			{
+				MultiDrawElementsEXTNative(mode, pcount0, type, indices, primcount);
+			}
 		}
 
 		public static void MultiDrawElementsEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int primcount)

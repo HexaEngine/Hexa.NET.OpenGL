@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void InsertEventMarkerEXT(int length, ReadOnlySpan<byte> marker)
+		public static void InsertEventMarkerEXT(int length, Span<byte> marker)
 		{
 			fixed (byte* pmarker0 = marker)
 			{
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void PushGroupMarkerEXT(int length, ReadOnlySpan<byte> marker)
+		public static void PushGroupMarkerEXT(int length, Span<byte> marker)
 		{
 			fixed (byte* pmarker0 = marker)
 			{

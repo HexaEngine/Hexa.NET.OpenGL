@@ -82,6 +82,14 @@ namespace Hexa.NET.OpenGLES.OES
 			DeleteFramebuffersOESNative(1, &framebuffer);
 		}
 
+		public static void DeleteFramebuffersOES(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				DeleteFramebuffersOESNative(n, pframebuffers0);
+			}
+		}
+
 		public static void DeleteFramebuffersOES(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -108,6 +116,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void DeleteRenderbuffersOE(uint renderbuffer)
 		{
 			DeleteRenderbuffersOESNative(1, &renderbuffer);
+		}
+
+		public static void DeleteRenderbuffersOES(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				DeleteRenderbuffersOESNative(n, prenderbuffers0);
+			}
 		}
 
 		public static void DeleteRenderbuffersOES(int n, ref uint renderbuffers)
@@ -170,6 +186,14 @@ namespace Hexa.NET.OpenGLES.OES
 			return result;
 		}
 
+		public static void GenFramebuffersOES(int n, Span<uint> framebuffers)
+		{
+			fixed (uint* pframebuffers0 = framebuffers)
+			{
+				GenFramebuffersOESNative(n, pframebuffers0);
+			}
+		}
+
 		public static void GenFramebuffersOES(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -198,6 +222,14 @@ namespace Hexa.NET.OpenGLES.OES
 			uint result;
 			GenRenderbuffersOESNative(1, &result);
 			return result;
+		}
+
+		public static void GenRenderbuffersOES(int n, Span<uint> renderbuffers)
+		{
+			fixed (uint* prenderbuffers0 = renderbuffers)
+			{
+				GenRenderbuffersOESNative(n, prenderbuffers0);
+			}
 		}
 
 		public static void GenRenderbuffersOES(int n, ref uint renderbuffers)

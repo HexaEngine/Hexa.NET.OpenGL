@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			DrawBuffersIndexedEXTNative(n, location, indices);
 		}
 
+		public static void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, int* indices)
+		{
+			fixed (GLEnum* plocation0 = location)
+			{
+				DrawBuffersIndexedEXTNative(n, plocation0, indices);
+			}
+		}
+
 		public static void DrawBuffersIndexedEXT(int n, ref GLEnum location, int* indices)
 		{
 			fixed (GLEnum* plocation0 = &location)
@@ -39,11 +47,30 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, Span<int> indices)
+		{
+			fixed (int* pindices0 = indices)
+			{
+				DrawBuffersIndexedEXTNative(n, location, pindices0);
+			}
+		}
+
 		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, ref int indices)
 		{
 			fixed (int* pindices0 = &indices)
 			{
 				DrawBuffersIndexedEXTNative(n, location, pindices0);
+			}
+		}
+
+		public static void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, Span<int> indices)
+		{
+			fixed (GLEnum* plocation0 = location)
+			{
+				fixed (int* pindices1 = indices)
+				{
+					DrawBuffersIndexedEXTNative(n, plocation0, pindices1);
+				}
 			}
 		}
 
@@ -71,6 +98,14 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void GetIntegeri_vEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vEXTNative(target, index, data);
+		}
+
+		public static void GetIntegeri_vEXT(GLGetPName target, uint index, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetIntegeri_vEXTNative(target, index, pdata0);
+			}
 		}
 
 		public static void GetIntegeri_vEXT(GLGetPName target, uint index, ref int data)

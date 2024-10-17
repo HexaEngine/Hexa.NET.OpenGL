@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.NV
 			DeleteQueryResourceTagNVNative(n, tagIds);
 		}
 
+		public static void DeleteQueryResourceTagNV(int n, Span<int> tagIds)
+		{
+			fixed (int* ptagIds0 = tagIds)
+			{
+				DeleteQueryResourceTagNVNative(n, ptagIds0);
+			}
+		}
+
 		public static void DeleteQueryResourceTagNV(int n, ref int tagIds)
 		{
 			fixed (int* ptagIds0 = &tagIds)
@@ -52,6 +60,14 @@ namespace Hexa.NET.OpenGL.NV
 		public static void GenQueryResourceTagNV(int n, int* tagIds)
 		{
 			GenQueryResourceTagNVNative(n, tagIds);
+		}
+
+		public static void GenQueryResourceTagNV(int n, Span<int> tagIds)
+		{
+			fixed (int* ptagIds0 = tagIds)
+			{
+				GenQueryResourceTagNVNative(n, ptagIds0);
+			}
 		}
 
 		public static void GenQueryResourceTagNV(int n, ref int tagIds)
@@ -103,7 +119,7 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
-		public static void QueryResourceTagNV(int tagId, ReadOnlySpan<byte> tagString)
+		public static void QueryResourceTagNV(int tagId, Span<byte> tagString)
 		{
 			fixed (byte* ptagString0 = tagString)
 			{

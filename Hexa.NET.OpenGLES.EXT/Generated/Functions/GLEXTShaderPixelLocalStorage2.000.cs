@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.EXT
 			ClearPixelLocalStorageuiEXTNative(offset, n, values);
 		}
 
+		public static void ClearPixelLocalStorageuiEXT(int offset, int n, Span<uint> values)
+		{
+			fixed (uint* pvalues0 = values)
+			{
+				ClearPixelLocalStorageuiEXTNative(offset, n, pvalues0);
+			}
+		}
+
 		public static void ClearPixelLocalStorageuiEXT(int offset, int n, ref uint values)
 		{
 			fixed (uint* pvalues0 = &values)

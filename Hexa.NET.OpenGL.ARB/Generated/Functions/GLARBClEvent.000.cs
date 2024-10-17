@@ -32,11 +32,29 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		public static GLSync CreateSyncFromCLeventARB(Span<ClContext> context, ClEvent* evnt, uint flags)
+		{
+			fixed (ClContext* pcontext0 = context)
+			{
+				GLSync ret = CreateSyncFromCLeventARBNative(pcontext0, evnt, flags);
+				return ret;
+			}
+		}
+
 		public static GLSync CreateSyncFromCLeventARB(ref ClContext context, ClEvent* evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = &context)
 			{
 				GLSync ret = CreateSyncFromCLeventARBNative(pcontext0, evnt, flags);
+				return ret;
+			}
+		}
+
+		public static GLSync CreateSyncFromCLeventARB(ClContext* context, Span<ClEvent> evnt, uint flags)
+		{
+			fixed (ClEvent* pevnt0 = evnt)
+			{
+				GLSync ret = CreateSyncFromCLeventARBNative(context, pevnt0, flags);
 				return ret;
 			}
 		}
@@ -47,6 +65,18 @@ namespace Hexa.NET.OpenGL.ARB
 			{
 				GLSync ret = CreateSyncFromCLeventARBNative(context, pevnt0, flags);
 				return ret;
+			}
+		}
+
+		public static GLSync CreateSyncFromCLeventARB(Span<ClContext> context, Span<ClEvent> evnt, uint flags)
+		{
+			fixed (ClContext* pcontext0 = context)
+			{
+				fixed (ClEvent* pevnt1 = evnt)
+				{
+					GLSync ret = CreateSyncFromCLeventARBNative(pcontext0, pevnt1, flags);
+					return ret;
+				}
 			}
 		}
 

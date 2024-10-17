@@ -17,91 +17,91 @@ namespace Hexa.NET.OpenGL.NV
 	public static unsafe partial class GLNVTextureMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage2DMultisampleCoverageNVNative(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, byte fixedSampleLocations)
+		internal static void TexImage2DMultisampleCoverageNVNative(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[0])(target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[0])(target, coverageSamples, colorSamples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[0])(target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[0])(target, coverageSamples, colorSamples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)));
 			#endif
 		}
 
-		public static void TexImage2DMultisampleCoverageNV(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, byte fixedSampleLocations)
+		public static void TexImage2DMultisampleCoverageNV(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			TexImage2DMultisampleCoverageNVNative(target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage3DMultisampleCoverageNVNative(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations)
+		internal static void TexImage3DMultisampleCoverageNVNative(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[1])(target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[1])(target, coverageSamples, colorSamples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[1])(target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[1])(target, coverageSamples, colorSamples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)));
 			#endif
 		}
 
-		public static void TexImage3DMultisampleCoverageNV(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations)
+		public static void TexImage3DMultisampleCoverageNV(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			TexImage3DMultisampleCoverageNVNative(target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage2DMultisampleCoverageNVNative(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, byte fixedSampleLocations)
+		internal static void TextureImage2DMultisampleCoverageNVNative(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, byte, void>)funcTable[2])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)));
 			#endif
 		}
 
-		public static void TextureImage2DMultisampleCoverageNV(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, byte fixedSampleLocations)
+		public static void TextureImage2DMultisampleCoverageNV(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			TextureImage2DMultisampleCoverageNVNative(texture, target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage2DMultisampleNVNative(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, byte fixedSampleLocations)
+		internal static void TextureImage2DMultisampleNVNative(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[3])(texture, target, samples, internalFormat, width, height, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[3])(texture, target, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[3])(texture, target, samples, internalFormat, width, height, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[3])(texture, target, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)));
 			#endif
 		}
 
-		public static void TextureImage2DMultisampleNV(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, byte fixedSampleLocations)
+		public static void TextureImage2DMultisampleNV(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			TextureImage2DMultisampleNVNative(texture, target, samples, internalFormat, width, height, fixedSampleLocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage3DMultisampleCoverageNVNative(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations)
+		internal static void TextureImage3DMultisampleCoverageNVNative(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[4])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[4])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[4])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, GLInternalFormat, int, int, int, byte, void>)funcTable[4])(texture, target, coverageSamples, colorSamples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)));
 			#endif
 		}
 
-		public static void TextureImage3DMultisampleCoverageNV(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations)
+		public static void TextureImage3DMultisampleCoverageNV(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			TextureImage3DMultisampleCoverageNVNative(texture, target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureImage3DMultisampleNVNative(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations)
+		internal static void TextureImage3DMultisampleNVNative(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[5])(texture, target, samples, internalFormat, width, height, depth, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[5])(texture, target, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[5])(texture, target, samples, internalFormat, width, height, depth, fixedSampleLocations);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[5])(texture, target, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)));
 			#endif
 		}
 
-		public static void TextureImage3DMultisampleNV(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, int depth, byte fixedSampleLocations)
+		public static void TextureImage3DMultisampleNV(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			TextureImage3DMultisampleNVNative(texture, target, samples, internalFormat, width, height, depth, fixedSampleLocations);
 		}

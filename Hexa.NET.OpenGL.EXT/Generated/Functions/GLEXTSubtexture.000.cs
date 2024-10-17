@@ -31,6 +31,19 @@ namespace Hexa.NET.OpenGL.EXT
 			TexSubImage1DEXTNative(target, level, xoffset, width, format, type, pixels);
 		}
 
+		public static void TexSubImage1DEXT(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexSubImage1DEXTNative(target, level, xoffset, width, format, type, (void*)pixels);
+		}
+
+		public static void TexSubImage1DEXT<TPixels>(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexSubImage1DEXTNative(target, level, xoffset, width, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void TexSubImage2DEXTNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
@@ -44,6 +57,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void TexSubImage2DEXT(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage2DEXTNative(target, level, xoffset, yoffset, width, height, format, type, pixels);
+		}
+
+		public static void TexSubImage2DEXT(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexSubImage2DEXTNative(target, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
+		}
+
+		public static void TexSubImage2DEXT<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexSubImage2DEXTNative(target, level, xoffset, yoffset, width, height, format, type, ppixels0);
+			}
 		}
 
 	}

@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGLES.OES
 			DepthRangeArrayfvOESNative(first, count, v);
 		}
 
+		public static void DepthRangeArrayfvOES(uint first, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				DepthRangeArrayfvOESNative(first, count, pv0);
+			}
+		}
+
 		public static void DepthRangeArrayfvOES(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -99,6 +107,14 @@ namespace Hexa.NET.OpenGLES.OES
 			GetFloati_vOESNative(target, index, data);
 		}
 
+		public static void GetFloati_vOES(GLGetPName target, uint index, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetFloati_vOESNative(target, index, pdata0);
+			}
+		}
+
 		public static void GetFloati_vOES(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -136,6 +152,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void ScissorArrayvOES(uint first, int count, int* v)
 		{
 			ScissorArrayvOESNative(first, count, v);
+		}
+
+		public static void ScissorArrayvOES(uint first, int count, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorArrayvOESNative(first, count, pv0);
+			}
 		}
 
 		public static void ScissorArrayvOES(uint first, int count, ref int v)
@@ -176,6 +200,14 @@ namespace Hexa.NET.OpenGLES.OES
 			ScissorIndexedvOESNative(index, v);
 		}
 
+		public static void ScissorIndexedvOES(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorIndexedvOESNative(index, pv0);
+			}
+		}
+
 		public static void ScissorIndexedvOES(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -197,6 +229,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void ViewportArrayvOES(uint first, int count, float* v)
 		{
 			ViewportArrayvOESNative(first, count, v);
+		}
+
+		public static void ViewportArrayvOES(uint first, int count, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ViewportArrayvOESNative(first, count, pv0);
+			}
 		}
 
 		public static void ViewportArrayvOES(uint first, int count, ref float v)
@@ -235,6 +275,14 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void ViewportIndexedfvOES(uint index, float* v)
 		{
 			ViewportIndexedfvOESNative(index, v);
+		}
+
+		public static void ViewportIndexedfvOES(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				ViewportIndexedfvOESNative(index, pv0);
+			}
 		}
 
 		public static void ViewportIndexedfvOES(uint index, ref float v)

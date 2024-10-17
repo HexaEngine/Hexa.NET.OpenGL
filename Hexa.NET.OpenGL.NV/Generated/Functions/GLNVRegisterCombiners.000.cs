@@ -32,16 +32,16 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerOutputNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, byte abDotProduct, byte cdDotProduct, byte muxSum)
+		internal static void CombinerOutputNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, bool abDotProduct, bool cdDotProduct, bool muxSum)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerScaleNV, GLCombinerBiasNV, byte, byte, byte, void>)funcTable[1])(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, abDotProduct, cdDotProduct, muxSum);
+			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerScaleNV, GLCombinerBiasNV, byte, byte, byte, void>)funcTable[1])(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, *((byte*)(&abDotProduct)), *((byte*)(&cdDotProduct)), *((byte*)(&muxSum)));
 			#else
-			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerScaleNV, GLCombinerBiasNV, byte, byte, byte, void>)funcTable[1])(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, abDotProduct, cdDotProduct, muxSum);
+			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerScaleNV, GLCombinerBiasNV, byte, byte, byte, void>)funcTable[1])(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, *((byte*)(&abDotProduct)), *((byte*)(&cdDotProduct)), *((byte*)(&muxSum)));
 			#endif
 		}
 
-		public static void CombinerOutputNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, byte abDotProduct, byte cdDotProduct, byte muxSum)
+		public static void CombinerOutputNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, bool abDotProduct, bool cdDotProduct, bool muxSum)
 		{
 			CombinerOutputNVNative(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, abDotProduct, cdDotProduct, muxSum);
 		}

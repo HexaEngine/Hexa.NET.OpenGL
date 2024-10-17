@@ -274,7 +274,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ReadOnlySpan<byte> data)
+		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -305,6 +305,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetInvariantFloatvEXTNative(id, value, data);
 		}
 
+		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetInvariantFloatvEXTNative(id, value, pdata0);
+			}
+		}
+
 		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -326,6 +334,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetInvariantIntegervEXTNative(id, value, data);
+		}
+
+		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetInvariantIntegervEXTNative(id, value, pdata0);
+			}
 		}
 
 		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
@@ -377,7 +393,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, ReadOnlySpan<byte> data)
+		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -408,6 +424,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetLocalConstantFloatvEXTNative(id, value, data);
 		}
 
+		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetLocalConstantFloatvEXTNative(id, value, pdata0);
+			}
+		}
+
 		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -429,6 +453,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetLocalConstantIntegervEXTNative(id, value, data);
+		}
+
+		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetLocalConstantIntegervEXTNative(id, value, pdata0);
+			}
 		}
 
 		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
@@ -480,7 +512,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ReadOnlySpan<byte> data)
+		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -511,6 +543,14 @@ namespace Hexa.NET.OpenGL.EXT
 			GetVariantFloatvEXTNative(id, value, data);
 		}
 
+		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
+		{
+			fixed (float* pdata0 = data)
+			{
+				GetVariantFloatvEXTNative(id, value, pdata0);
+			}
+		}
+
 		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -532,6 +572,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetVariantIntegervEXTNative(id, value, data);
+		}
+
+		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
+		{
+			fixed (int* pdata0 = data)
+			{
+				GetVariantIntegervEXTNative(id, value, pdata0);
+			}
 		}
 
 		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
@@ -603,6 +651,19 @@ namespace Hexa.NET.OpenGL.EXT
 			SetInvariantEXTNative(id, type, addr);
 		}
 
+		public static void SetInvariantEXT(uint id, GLScalarType type, nint addr)
+		{
+			SetInvariantEXTNative(id, type, (void*)addr);
+		}
+
+		public static void SetInvariantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
+		{
+			fixed (TAddr* paddr0 = addr)
+			{
+				SetInvariantEXTNative(id, type, paddr0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void SetLocalConstantEXTNative(uint id, GLScalarType type, void* addr)
 		{
@@ -616,6 +677,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void SetLocalConstantEXT(uint id, GLScalarType type, void* addr)
 		{
 			SetLocalConstantEXTNative(id, type, addr);
+		}
+
+		public static void SetLocalConstantEXT(uint id, GLScalarType type, nint addr)
+		{
+			SetLocalConstantEXTNative(id, type, (void*)addr);
+		}
+
+		public static void SetLocalConstantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
+		{
+			fixed (TAddr* paddr0 = addr)
+			{
+				SetLocalConstantEXTNative(id, type, paddr0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -693,6 +767,19 @@ namespace Hexa.NET.OpenGL.EXT
 			VariantPointerEXTNative(id, type, stride, addr);
 		}
 
+		public static void VariantPointerEXT(uint id, GLScalarType type, uint stride, nint addr)
+		{
+			VariantPointerEXTNative(id, type, stride, (void*)addr);
+		}
+
+		public static void VariantPointerEXT<TAddr>(uint id, GLScalarType type, uint stride, Span<TAddr> addr) where TAddr : unmanaged
+		{
+			fixed (TAddr* paddr0 = addr)
+			{
+				VariantPointerEXTNative(id, type, stride, paddr0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void VariantbvEXTNative(uint id, sbyte* addr)
 		{
@@ -706,6 +793,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VariantbvEXT(uint id, sbyte* addr)
 		{
 			VariantbvEXTNative(id, addr);
+		}
+
+		public static void VariantbvEXT(uint id, Span<sbyte> addr)
+		{
+			fixed (sbyte* paddr0 = addr)
+			{
+				VariantbvEXTNative(id, paddr0);
+			}
 		}
 
 		public static void VariantbvEXT(uint id, ref sbyte addr)
@@ -731,6 +826,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VariantdvEXTNative(id, addr);
 		}
 
+		public static void VariantdvEXT(uint id, Span<double> addr)
+		{
+			fixed (double* paddr0 = addr)
+			{
+				VariantdvEXTNative(id, paddr0);
+			}
+		}
+
 		public static void VariantdvEXT(uint id, ref double addr)
 		{
 			fixed (double* paddr0 = &addr)
@@ -752,6 +855,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VariantfvEXT(uint id, float* addr)
 		{
 			VariantfvEXTNative(id, addr);
+		}
+
+		public static void VariantfvEXT(uint id, Span<float> addr)
+		{
+			fixed (float* paddr0 = addr)
+			{
+				VariantfvEXTNative(id, paddr0);
+			}
 		}
 
 		public static void VariantfvEXT(uint id, ref float addr)
@@ -777,6 +888,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VariantivEXTNative(id, addr);
 		}
 
+		public static void VariantivEXT(uint id, Span<int> addr)
+		{
+			fixed (int* paddr0 = addr)
+			{
+				VariantivEXTNative(id, paddr0);
+			}
+		}
+
 		public static void VariantivEXT(uint id, ref int addr)
 		{
 			fixed (int* paddr0 = &addr)
@@ -798,6 +917,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VariantsvEXT(uint id, short* addr)
 		{
 			VariantsvEXTNative(id, addr);
+		}
+
+		public static void VariantsvEXT(uint id, Span<short> addr)
+		{
+			fixed (short* paddr0 = addr)
+			{
+				VariantsvEXTNative(id, paddr0);
+			}
 		}
 
 		public static void VariantsvEXT(uint id, ref short addr)
@@ -849,7 +976,7 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
-		public static void VariantubvEXT(uint id, ReadOnlySpan<byte> addr)
+		public static void VariantubvEXT(uint id, Span<byte> addr)
 		{
 			fixed (byte* paddr0 = addr)
 			{
@@ -880,6 +1007,14 @@ namespace Hexa.NET.OpenGL.EXT
 			VariantuivEXTNative(id, addr);
 		}
 
+		public static void VariantuivEXT(uint id, Span<uint> addr)
+		{
+			fixed (uint* paddr0 = addr)
+			{
+				VariantuivEXTNative(id, paddr0);
+			}
+		}
+
 		public static void VariantuivEXT(uint id, ref uint addr)
 		{
 			fixed (uint* paddr0 = &addr)
@@ -901,6 +1036,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void VariantusvEXT(uint id, ushort* addr)
 		{
 			VariantusvEXTNative(id, addr);
+		}
+
+		public static void VariantusvEXT(uint id, Span<ushort> addr)
+		{
+			fixed (ushort* paddr0 = addr)
+			{
+				VariantusvEXTNative(id, paddr0);
+			}
 		}
 
 		public static void VariantusvEXT(uint id, ref ushort addr)

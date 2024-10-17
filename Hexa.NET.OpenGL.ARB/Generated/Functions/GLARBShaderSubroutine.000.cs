@@ -31,6 +31,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetActiveSubroutineNameNative(program, shadertype, index, bufSize, length, name);
 		}
 
+		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetActiveSubroutineNameNative(program, shadertype, index, bufSize, plength0, name);
+			}
+		}
+
 		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -65,7 +73,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, ReadOnlySpan<byte> name)
+		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -78,6 +86,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* pname0 = &name)
 			{
 				GetActiveSubroutineNameNative(program, shadertype, index, bufSize, length, pname0);
+			}
+		}
+
+		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveSubroutineNameNative(program, shadertype, index, bufSize, plength0, pname1);
+				}
 			}
 		}
 
@@ -105,6 +124,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
 		{
 			GetActiveSubroutineUniformNameNative(program, shadertype, index, bufSize, length, name);
+		}
+
+		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, byte* name)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetActiveSubroutineUniformNameNative(program, shadertype, index, bufSize, plength0, name);
+			}
 		}
 
 		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, byte* name)
@@ -141,7 +168,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, ReadOnlySpan<byte> name)
+		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -154,6 +181,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* pname0 = &name)
 			{
 				GetActiveSubroutineUniformNameNative(program, shadertype, index, bufSize, length, pname0);
+			}
+		}
+
+		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, Span<byte> name)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pname1 = name)
+				{
+					GetActiveSubroutineUniformNameNative(program, shadertype, index, bufSize, plength0, pname1);
+				}
 			}
 		}
 
@@ -183,6 +221,14 @@ namespace Hexa.NET.OpenGL.ARB
 			GetActiveSubroutineUniformivNative(program, shadertype, index, pname, values);
 		}
 
+		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
+		{
+			fixed (int* pvalues0 = values)
+			{
+				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pvalues0);
+			}
+		}
+
 		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, ref int values)
 		{
 			fixed (int* pvalues0 = &values)
@@ -204,6 +250,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
 		{
 			GetProgramStageivNative(program, shadertype, pname, values);
+		}
+
+		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
+		{
+			fixed (int* pvalues0 = values)
+			{
+				GetProgramStageivNative(program, shadertype, pname, pvalues0);
+			}
 		}
 
 		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, ref int values)
@@ -257,7 +311,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, ReadOnlySpan<byte> name)
+		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -318,7 +372,7 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, ReadOnlySpan<byte> name)
+		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -379,6 +433,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, uint* indices)
 		{
 			UniformSubroutinesuivNative(shadertype, count, indices);
+		}
+
+		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, Span<uint> indices)
+		{
+			fixed (uint* pindices0 = indices)
+			{
+				UniformSubroutinesuivNative(shadertype, count, pindices0);
+			}
 		}
 
 		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, ref uint indices)

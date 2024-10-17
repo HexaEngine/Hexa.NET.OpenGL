@@ -4,6 +4,8 @@ using System.Numerics;
 
 public struct Vertex
 {
+    public const int Size = 4 * 3 + 4 * 4;
+
     public Vector3 Pos;
     public Vector4 Color;
 

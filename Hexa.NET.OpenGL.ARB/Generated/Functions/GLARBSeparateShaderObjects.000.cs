@@ -82,6 +82,14 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteProgramPipelinesNative(1, &pipeline);
 		}
 
+		public static void DeleteProgramPipelines(int n, Span<uint> pipelines)
+		{
+			fixed (uint* ppipelines0 = pipelines)
+			{
+				DeleteProgramPipelinesNative(n, ppipelines0);
+			}
+		}
+
 		public static void DeleteProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -110,6 +118,14 @@ namespace Hexa.NET.OpenGL.ARB
 			uint result;
 			GenProgramPipelinesNative(1, &result);
 			return result;
+		}
+
+		public static void GenProgramPipelines(int n, Span<uint> pipelines)
+		{
+			fixed (uint* ppipelines0 = pipelines)
+			{
+				GenProgramPipelinesNative(n, ppipelines0);
+			}
 		}
 
 		public static void GenProgramPipelines(int n, ref uint pipelines)
@@ -159,6 +175,14 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, byte* infoLog)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetProgramPipelineInfoLogNative(pipeline, bufSize, plength0, infoLog);
+			}
+		}
+
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -193,7 +217,7 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, ReadOnlySpan<byte> infoLog)
+		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -206,6 +230,17 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
 				GetProgramPipelineInfoLogNative(pipeline, bufSize, length, pinfoLog0);
+			}
+		}
+
+		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, Span<byte> infoLog)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (byte* pinfoLog1 = infoLog)
+				{
+					GetProgramPipelineInfoLogNative(pipeline, bufSize, plength0, pinfoLog1);
+				}
 			}
 		}
 
@@ -311,6 +346,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform1dvNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1dv(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform1dvNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -347,6 +390,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform1fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform1fvNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1fv(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform1fvNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1fv(uint program, int location, int count, ref float value)
@@ -387,6 +438,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform1ivNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform1iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform1ivNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform1iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -423,6 +482,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform1uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform1uivNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform1uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform1uivNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform1uiv(uint program, int location, int count, ref uint value)
@@ -463,6 +530,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform2dvNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2dv(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform2dvNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -499,6 +574,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform2fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform2fvNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2fv(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform2fvNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2fv(uint program, int location, int count, ref float value)
@@ -539,6 +622,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform2ivNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform2iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform2ivNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform2iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -575,6 +666,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform2uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform2uivNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform2uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform2uivNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform2uiv(uint program, int location, int count, ref uint value)
@@ -615,6 +714,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform3dvNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3dv(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform3dvNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -651,6 +758,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform3fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform3fvNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3fv(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform3fvNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3fv(uint program, int location, int count, ref float value)
@@ -691,6 +806,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform3ivNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform3iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform3ivNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform3iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -727,6 +850,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform3uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform3uivNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform3uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform3uivNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform3uiv(uint program, int location, int count, ref uint value)
@@ -767,6 +898,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform4dvNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4dv(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform4dvNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -803,6 +942,14 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramUniform4fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform4fvNative(program, location, count, value);
+		}
+
+		public static void ProgramUniform4fv(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform4fvNative(program, location, count, pvalue0);
+			}
 		}
 
 		public static void ProgramUniform4fv(uint program, int location, int count, ref float value)
@@ -843,6 +990,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform4ivNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform4ivNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -881,6 +1036,14 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramUniform4uivNative(program, location, count, value);
 		}
 
+		public static void ProgramUniform4uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform4uivNative(program, location, count, pvalue0);
+			}
+		}
+
 		public static void ProgramUniform4uiv(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -890,21 +1053,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix2dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[41])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[41])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[41])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[41])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -913,21 +1084,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[42])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[42])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[42])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[42])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -936,21 +1115,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x3dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix2x3dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[43])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[43])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[43])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[43])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2x3dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -959,21 +1146,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x3fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2x3fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[44])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[44])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[44])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[44])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x3fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -982,21 +1177,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x4dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix2x4dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[45])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[45])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[45])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[45])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2x4dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1005,21 +1208,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix2x4fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix2x4fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[46])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[46])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[46])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[46])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x4fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1028,21 +1239,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix3dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[47])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[47])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[47])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[47])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1051,21 +1270,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[48])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[48])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[48])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[48])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1074,21 +1301,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix3x2dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[49])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[49])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[49])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[49])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3x2dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1097,21 +1332,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3x2fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[50])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[50])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[50])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[50])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x2fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1120,21 +1363,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix3x4dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[51])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[51])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[51])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[51])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3x4dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1143,21 +1394,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix3x4fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[52])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[52])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[52])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[52])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x4fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1166,21 +1425,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix4dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[53])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[53])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[53])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[53])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1189,21 +1456,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[54])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[54])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[54])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[54])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1212,21 +1487,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix4x2dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[55])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[55])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[55])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[55])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4x2dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1235,21 +1518,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4x2fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[56])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[56])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[56])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[56])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x2fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1258,21 +1549,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3dvNative(uint program, int location, int count, byte transpose, double* value)
+		internal static void ProgramUniformMatrix4x3dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[57])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[57])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[57])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[57])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, byte transpose, double* value)
+		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4x3dvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, byte transpose, ref double value)
+		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x3dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1281,21 +1580,29 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3fvNative(uint program, int location, int count, byte transpose, float* value)
+		internal static void ProgramUniformMatrix4x3fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[58])(program, location, count, transpose, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[58])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[58])(program, location, count, transpose, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[58])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, byte transpose, float* value)
+		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x3fvNative(program, location, count, transpose, value);
 		}
 
-		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, byte transpose, ref float value)
+		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x3fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{

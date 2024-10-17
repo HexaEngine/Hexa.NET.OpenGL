@@ -46,6 +46,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Binormal3bvEXTNative(v);
 		}
 
+		public static void Binormal3bvEXT(Span<sbyte> v)
+		{
+			fixed (sbyte* pv0 = v)
+			{
+				Binormal3bvEXTNative(pv0);
+			}
+		}
+
 		public static void Binormal3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -82,6 +90,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void Binormal3dvEXT(double* v)
 		{
 			Binormal3dvEXTNative(v);
+		}
+
+		public static void Binormal3dvEXT(Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				Binormal3dvEXTNative(pv0);
+			}
 		}
 
 		public static void Binormal3dvEXT(ref double v)
@@ -122,6 +138,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Binormal3fvEXTNative(v);
 		}
 
+		public static void Binormal3fvEXT(Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				Binormal3fvEXTNative(pv0);
+			}
+		}
+
 		public static void Binormal3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -158,6 +182,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void Binormal3ivEXT(int* v)
 		{
 			Binormal3ivEXTNative(v);
+		}
+
+		public static void Binormal3ivEXT(Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				Binormal3ivEXTNative(pv0);
+			}
 		}
 
 		public static void Binormal3ivEXT(ref int v)
@@ -198,6 +230,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Binormal3svEXTNative(v);
 		}
 
+		public static void Binormal3svEXT(Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				Binormal3svEXTNative(pv0);
+			}
+		}
+
 		public static void Binormal3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -219,6 +259,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, void* pointer)
 		{
 			BinormalPointerEXTNative(type, stride, pointer);
+		}
+
+		public static void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, nint pointer)
+		{
+			BinormalPointerEXTNative(type, stride, (void*)pointer);
+		}
+
+		public static void BinormalPointerEXT<TPointer>(GLBinormalPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				BinormalPointerEXTNative(type, stride, ppointer0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -249,6 +302,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void Tangent3bvEXT(sbyte* v)
 		{
 			Tangent3bvEXTNative(v);
+		}
+
+		public static void Tangent3bvEXT(Span<sbyte> v)
+		{
+			fixed (sbyte* pv0 = v)
+			{
+				Tangent3bvEXTNative(pv0);
+			}
 		}
 
 		public static void Tangent3bvEXT(ref sbyte v)
@@ -289,6 +350,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Tangent3dvEXTNative(v);
 		}
 
+		public static void Tangent3dvEXT(Span<double> v)
+		{
+			fixed (double* pv0 = v)
+			{
+				Tangent3dvEXTNative(pv0);
+			}
+		}
+
 		public static void Tangent3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -325,6 +394,14 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void Tangent3fvEXT(float* v)
 		{
 			Tangent3fvEXTNative(v);
+		}
+
+		public static void Tangent3fvEXT(Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				Tangent3fvEXTNative(pv0);
+			}
 		}
 
 		public static void Tangent3fvEXT(ref float v)
@@ -365,6 +442,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Tangent3ivEXTNative(v);
 		}
 
+		public static void Tangent3ivEXT(Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				Tangent3ivEXTNative(pv0);
+			}
+		}
+
 		public static void Tangent3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -403,6 +488,14 @@ namespace Hexa.NET.OpenGL.EXT
 			Tangent3svEXTNative(v);
 		}
 
+		public static void Tangent3svEXT(Span<short> v)
+		{
+			fixed (short* pv0 = v)
+			{
+				Tangent3svEXTNative(pv0);
+			}
+		}
+
 		public static void Tangent3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -424,6 +517,19 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, void* pointer)
 		{
 			TangentPointerEXTNative(type, stride, pointer);
+		}
+
+		public static void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, nint pointer)
+		{
+			TangentPointerEXTNative(type, stride, (void*)pointer);
+		}
+
+		public static void TangentPointerEXT<TPointer>(GLTangentPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				TangentPointerEXTNative(type, stride, ppointer0);
+			}
 		}
 
 	}

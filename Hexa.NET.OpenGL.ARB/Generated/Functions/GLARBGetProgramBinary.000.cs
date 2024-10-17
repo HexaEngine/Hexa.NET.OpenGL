@@ -31,11 +31,27 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramBinaryNative(program, bufSize, length, binaryFormat, binary);
 		}
 
+		public static void GetProgramBinary(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
+		{
+			fixed (int* plength0 = length)
+			{
+				GetProgramBinaryNative(program, bufSize, plength0, binaryFormat, binary);
+			}
+		}
+
 		public static void GetProgramBinary(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
 				GetProgramBinaryNative(program, bufSize, plength0, binaryFormat, binary);
+			}
+		}
+
+		public static void GetProgramBinary(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
+		{
+			fixed (GLEnum* pbinaryFormat0 = binaryFormat)
+			{
+				GetProgramBinaryNative(program, bufSize, length, pbinaryFormat0, binary);
 			}
 		}
 
@@ -47,6 +63,17 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		public static void GetProgramBinary(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
+		{
+			fixed (int* plength0 = length)
+			{
+				fixed (GLEnum* pbinaryFormat1 = binaryFormat)
+				{
+					GetProgramBinaryNative(program, bufSize, plength0, pbinaryFormat1, binary);
+				}
+			}
+		}
+
 		public static void GetProgramBinary(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
@@ -55,6 +82,19 @@ namespace Hexa.NET.OpenGL.ARB
 				{
 					GetProgramBinaryNative(program, bufSize, plength0, pbinaryFormat1, binary);
 				}
+			}
+		}
+
+		public static void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
+		{
+			GetProgramBinaryNative(program, bufSize, length, binaryFormat, (void*)binary);
+		}
+
+		public static void GetProgramBinary<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
+		{
+			fixed (TBinary* pbinary0 = binary)
+			{
+				GetProgramBinaryNative(program, bufSize, length, binaryFormat, pbinary0);
 			}
 		}
 
@@ -71,6 +111,19 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ProgramBinary(uint program, GLEnum binaryFormat, void* binary, int length)
 		{
 			ProgramBinaryNative(program, binaryFormat, binary, length);
+		}
+
+		public static void ProgramBinary(uint program, GLEnum binaryFormat, nint binary, int length)
+		{
+			ProgramBinaryNative(program, binaryFormat, (void*)binary, length);
+		}
+
+		public static void ProgramBinary<TBinary>(uint program, GLEnum binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
+		{
+			fixed (TBinary* pbinary0 = binary)
+			{
+				ProgramBinaryNative(program, binaryFormat, pbinary0, length);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

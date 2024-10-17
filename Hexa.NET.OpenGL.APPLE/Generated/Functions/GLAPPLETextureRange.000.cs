@@ -46,5 +46,18 @@ namespace Hexa.NET.OpenGL.APPLE
 			TextureRangeAPPLENative(target, length, pointer);
 		}
 
+		public static void TextureRangeAPPLE(GLEnum target, int length, nint pointer)
+		{
+			TextureRangeAPPLENative(target, length, (void*)pointer);
+		}
+
+		public static void TextureRangeAPPLE<TPointer>(GLEnum target, int length, Span<TPointer> pointer) where TPointer : unmanaged
+		{
+			fixed (TPointer* ppointer0 = pointer)
+			{
+				TextureRangeAPPLENative(target, length, ppointer0);
+			}
+		}
+
 	}
 }
