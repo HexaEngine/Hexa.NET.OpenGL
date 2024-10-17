@@ -46,11 +46,18 @@ namespace Hexa.NET.OpenGL.ARB
 			PointParameterfvARBNative(pname, @params);
 		}
 
-		public static void PointParameterfvARB(GLPointParameterNameARB pname, ref float @params)
+		public static void PointParameterfvARB(GLPointParameterNameARB pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			PointParameterfvARBNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void PointParameterfvARB(GLPointParameterNameARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				PointParameterfvARBNative(pname, pparams0);
+				PointParameterfvARBNative(pname, pparams);
 			}
 		}
 

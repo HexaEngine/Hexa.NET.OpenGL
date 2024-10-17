@@ -377,11 +377,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetObjectParameterfvARBNative(obj, pname, @params);
 		}
 
-		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, ref float @params)
+		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetObjectParameterfvARBNative(obj, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetObjectParameterfvARBNative(obj, pname, pparams0);
+				GetObjectParameterfvARBNative(obj, pname, pparams);
 			}
 		}
 
@@ -400,11 +407,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetObjectParameterivARBNative(obj, pname, @params);
 		}
 
-		public static void GetObjectParameterivARB(uint obj, GLEnum pname, ref int @params)
+		public static void GetObjectParameterivARB(uint obj, GLEnum pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetObjectParameterivARBNative(obj, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetObjectParameterivARB(uint obj, GLEnum pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetObjectParameterivARBNative(obj, pname, pparams0);
+				GetObjectParameterivARBNative(obj, pname, pparams);
 			}
 		}
 
@@ -560,11 +574,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetUniformfvARBNative(programObj, location, @params);
 		}
 
-		public static void GetUniformfvARB(uint programObj, int location, ref float @params)
+		public static void GetUniformfvARB(uint programObj, int location, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetUniformfvARBNative(programObj, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformfvARB(uint programObj, int location, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetUniformfvARBNative(programObj, location, pparams0);
+				GetUniformfvARBNative(programObj, location, pparams);
 			}
 		}
 
@@ -583,11 +604,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetUniformivARBNative(programObj, location, @params);
 		}
 
-		public static void GetUniformivARB(uint programObj, int location, ref int @params)
+		public static void GetUniformivARB(uint programObj, int location, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetUniformivARBNative(programObj, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformivARB(uint programObj, int location, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetUniformivARBNative(programObj, location, pparams0);
+				GetUniformivARBNative(programObj, location, pparams);
 			}
 		}
 
@@ -619,6 +647,69 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, int* length)
 		{
 			ShaderSourceARBNative(shaderObj, count, str, length);
+		}
+
+		public static void ShaderSourceARB(uint shaderObj, string source)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (source != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(source);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(source, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			ShaderSourceARBNative(shaderObj, 1, &pStr0, &pStrSize0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		public static void ShaderSourceARB(uint shaderObj, string[] sources)
+		{
+			byte** pStrArray0 = null;
+			int* pStrArraySizes0 = null;
+			int pStrArraySize0 = Utils.GetByteCountArray(sources) + sources.Length * sizeof(int);
+			if (sources != null)
+			{
+				if (pStrArraySize0 > Utils.MaxStackallocSize)
+				{
+					pStrArraySizes0 = (int*)Utils.Alloc<int>(sources.Length);
+					pStrArray0 = (byte**)Utils.Alloc<byte>(pStrArraySize0);
+				}
+				else
+				{
+					byte* pStrArraySizesStack0 = stackalloc byte[sources.Length * sizeof(int)];
+					pStrArraySizes0 = (int*)pStrArraySizesStack0;
+					byte* pStrArrayStack0 = stackalloc byte[pStrArraySize0];
+					pStrArray0 = (byte**)pStrArrayStack0;
+				}
+			}
+			for (int i = 0; i < sources.Length; i++)
+			{
+				pStrArraySizes0[i] = Utils.GetByteCountUTF8(sources[i]);
+				pStrArray0[i] = (byte*)Utils.StringToUTF8Ptr(sources[i]);
+			}
+			ShaderSourceARBNative(shaderObj, sources.Length, pStrArray0, pStrArraySizes0);
+			for (int i = 0; i < sources.Length; i++)
+			{
+				Utils.Free(pStrArray0[i]);
+			}
+			if (pStrArraySize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStrArray0);
+				Utils.Free(pStrArraySizes0);
+			}
 		}
 
 		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, ref int length)

@@ -13,6 +13,9 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL
 {
+	/// <summary>
+	/// For NV_command_list.<br/>
+	/// </summary>
 	public enum GLCommandOpcodesNV : uint
 	{
 		TerminateSequenceCommandNv = unchecked((uint)0x0000),

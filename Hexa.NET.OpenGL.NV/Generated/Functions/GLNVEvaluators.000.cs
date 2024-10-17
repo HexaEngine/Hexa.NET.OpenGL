@@ -46,11 +46,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetMapAttribParameterfvNVNative(target, index, pname, @params);
 		}
 
-		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, ref float @params)
+		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMapAttribParameterfvNVNative(target, index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMapAttribParameterfvNVNative(target, index, pname, pparams0);
+				GetMapAttribParameterfvNVNative(target, index, pname, pparams);
 			}
 		}
 
@@ -69,11 +76,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetMapAttribParameterivNVNative(target, index, pname, @params);
 		}
 
-		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, ref int @params)
+		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMapAttribParameterivNVNative(target, index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMapAttribParameterivNVNative(target, index, pname, pparams0);
+				GetMapAttribParameterivNVNative(target, index, pname, pparams);
 			}
 		}
 
@@ -107,11 +121,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetMapParameterfvNVNative(target, pname, @params);
 		}
 
-		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, ref float @params)
+		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMapParameterfvNVNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMapParameterfvNVNative(target, pname, pparams0);
+				GetMapParameterfvNVNative(target, pname, pparams);
 			}
 		}
 
@@ -130,11 +151,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetMapParameterivNVNative(target, pname, @params);
 		}
 
-		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, ref int @params)
+		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMapParameterivNVNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMapParameterivNVNative(target, pname, pparams0);
+				GetMapParameterivNVNative(target, pname, pparams);
 			}
 		}
 
@@ -168,11 +196,18 @@ namespace Hexa.NET.OpenGL.NV
 			MapParameterfvNVNative(target, pname, @params);
 		}
 
-		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, ref float @params)
+		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			MapParameterfvNVNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				MapParameterfvNVNative(target, pname, pparams0);
+				MapParameterfvNVNative(target, pname, pparams);
 			}
 		}
 
@@ -191,11 +226,18 @@ namespace Hexa.NET.OpenGL.NV
 			MapParameterivNVNative(target, pname, @params);
 		}
 
-		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, ref int @params)
+		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MapParameterivNVNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MapParameterivNVNative(target, pname, pparams0);
+				MapParameterivNVNative(target, pname, pparams);
 			}
 		}
 

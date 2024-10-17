@@ -4,7 +4,9 @@ using HexaGen.Core;
 using HexaGen.Core.CSharp;
 using HexaGen.Metadata;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 internal class Program
@@ -12,11 +14,15 @@ internal class Program
     private static readonly LoggerBase logger = new();
     private static readonly ConfigComposer composer = new();
 
+    public static readonly CsType StringType = new("byte*", CsPrimitiveType.Byte) { StringType = CsStringType.StringUTF8 };
+
     private static void Main(string[] args)
     {
         XmlSerializer serializer = new(typeof(GlRegistry));
         using var fs = File.OpenRead("gl.xml");
         GlRegistry registry = (GlRegistry)serializer.Deserialize(fs)!;
+        // GlRefPages pages = new();
+        // pages.Parse("gl4");
 
         Dictionary<string, HashSet<string>> extensions = new();
 
@@ -48,54 +54,53 @@ internal class Program
         {
             CsCodeGenerator generator = new(config);
             generator.LogToConsole();
-            generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGL.Base/Generated");
+            generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGL.Core/Generated");
         }
 
-        config = CsCodeGeneratorConfig.Load("es/generator.base.json");
+        CsCodeGeneratorConfig configEs = CsCodeGeneratorConfig.Load("es/generator.base.json");
 
-        var groupToEnumNameEs = GenerateEnums(config, registry, "gles");
+        var groupToEnumNameEs = GenerateEnums(configEs, registry, "gles");
         {
-            CsCodeGenerator generator = new(config);
+            CsCodeGenerator generator = new(configEs);
             generator.LogToConsole();
-            generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGLES.Base/Generated");
+            generator.Generate("include/main.h", "../../../../Hexa.NET.OpenGLES.Core/Generated");
         }
-
         logger.LogToConsole();
 
-        Generate(registry, "generator.json", "GL_VERSION_2_1", compatibility: false, false, "../../../../Hexa.NET.OpenGL2/Generated", groupToEnumName);
-        Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: false, false, "../../../../Hexa.NET.OpenGL3/Generated", groupToEnumName);
-        Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: false, false, "../../../../Hexa.NET.OpenGL4/Generated", groupToEnumName);
-        Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: true, false, "../../../../Hexa.NET.OpenGL3.Compat/Generated", groupToEnumName);
-        Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: true, false, "../../../../Hexa.NET.OpenGL4.Compat/Generated", groupToEnumName);
-        Generate(registry, "es/generator.json", "GL_ES_VERSION_2_0", compatibility: false, false, "../../../../Hexa.NET.OpenGLES2/Generated", groupToEnumNameEs);
-        Generate(registry, "es/generator.json", "GL_ES_VERSION_3_2", compatibility: false, false, "../../../../Hexa.NET.OpenGLES3/Generated", groupToEnumNameEs);
-        GenerateExtension(registry, "generator.ext.json", "GL_EXT", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.EXT/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.arb.json", "GL_ARB", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.ARB/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.nv.json", "GL_NV", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.NV/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.amd.json", "GL_AMD", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.AMD/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.apple.json", "GL_APPLE", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.APPLE/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.intel.json", "GL_INTEL", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.INTEL/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.khr.json", "GL_KHR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.KHR/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.mesa.json", "GL_MESA", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.MESA/Generated", groupToEnumName);
-        GenerateExtension(registry, "generator.ovr.json", "GL_OVR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.OVR/Generated", groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_2_1", compatibility: false, false, "../../../../Hexa.NET.OpenGL2/Generated", config.CustomEnums, groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: false, false, "../../../../Hexa.NET.OpenGL3/Generated", config.CustomEnums, groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: false, false, "../../../../Hexa.NET.OpenGL4/Generated", config.CustomEnums, groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_3_3", compatibility: true, false, "../../../../Hexa.NET.OpenGL3.Compat/Generated", config.CustomEnums, groupToEnumName);
+        Generate(registry, "generator.json", "GL_VERSION_4_6", compatibility: true, false, "../../../../Hexa.NET.OpenGL4.Compat/Generated", config.CustomEnums, groupToEnumName);
+        Generate(registry, "es/generator.json", "GL_ES_VERSION_2_0", compatibility: false, false, "../../../../Hexa.NET.OpenGLES2/Generated", configEs.CustomEnums, groupToEnumNameEs);
+        Generate(registry, "es/generator.json", "GL_ES_VERSION_3_2", compatibility: false, false, "../../../../Hexa.NET.OpenGLES3/Generated", configEs.CustomEnums, groupToEnumNameEs);
+        GenerateExtension(registry, "generator.ext.json", "GL_EXT", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.EXT/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.arb.json", "GL_ARB", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.ARB/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.nv.json", "GL_NV", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.NV/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.amd.json", "GL_AMD", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.AMD/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.apple.json", "GL_APPLE", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.APPLE/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.intel.json", "GL_INTEL", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.INTEL/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.khr.json", "GL_KHR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.KHR/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.mesa.json", "GL_MESA", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.MESA/Generated", config.CustomEnums, groupToEnumName);
+        GenerateExtension(registry, "generator.ovr.json", "GL_OVR", ["gl", "glcore"], "../../../../Hexa.NET.OpenGL.OVR/Generated", config.CustomEnums, groupToEnumName);
 
-        GenerateExtension(registry, "es/generator.android.json", "GL_ANDROID", ["gles2"], "../../../../Hexa.NET.OpenGLES.ANDROID/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.ext.json", "GL_EXT", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.EXT/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.amd.json", "GL_AMD", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.AMD/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.angle.json", "GL_ANGLE", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ANGLE/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.arm.json", "GL_ARM", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ARM/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.intel.json", "GL_INTEL", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.INTEL/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.khr.json", "GL_KHR", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.KHR/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.mesa.json", "GL_MESA", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.MESA/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.nv.json", "GL_NV", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.NV/Generated", groupToEnumNameEs, true);
-        GenerateExtension(registry, "es/generator.oes.json", "GL_OES", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.OES/Generated", groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.android.json", "GL_ANDROID", ["gles2"], "../../../../Hexa.NET.OpenGLES.ANDROID/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.ext.json", "GL_EXT", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.EXT/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.amd.json", "GL_AMD", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.AMD/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.angle.json", "GL_ANGLE", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ANGLE/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.arm.json", "GL_ARM", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.ARM/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.intel.json", "GL_INTEL", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.INTEL/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.khr.json", "GL_KHR", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.KHR/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.mesa.json", "GL_MESA", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.MESA/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.nv.json", "GL_NV", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.NV/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
+        GenerateExtension(registry, "es/generator.oes.json", "GL_OES", ["gles1", "gles2"], "../../../../Hexa.NET.OpenGLES.OES/Generated", configEs.CustomEnums, groupToEnumNameEs, true);
 
         Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine("All Done!");
         Console.ForegroundColor = ConsoleColor.White;
     }
 
-    private static void Generate(GlRegistry registry, string configPath, string featureTarget, bool compatibility, bool generateAll, string outputPath, Dictionary<string, string> groupToEnumName)
+    private static void Generate(GlRegistry registry, string configPath, string featureTarget, bool compatibility, bool generateAll, string outputPath, List<CsEnumMetadata> customEnums, Dictionary<string, string> groupToEnumName)
     {
         string functionsOutputPath = Path.Combine(outputPath, "Functions");
 
@@ -107,6 +112,8 @@ internal class Program
 
         logger.LogInfo($"Generating {featureTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
+
+        config.CustomEnums.AddRange(customEnums);
 
         composer.Compose(config);
 
@@ -122,7 +129,7 @@ internal class Program
         logger.LogInfo($"Done Generating {featureTarget} ...");
     }
 
-    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, HashSet<string> apiTargets, string outputPath, Dictionary<string, string> groupToEnumName, bool es = false)
+    private static void GenerateExtension(GlRegistry registry, string configPath, string extensionTarget, HashSet<string> apiTargets, string outputPath, List<CsEnumMetadata> customEnums, Dictionary<string, string> groupToEnumName, bool es = false)
     {
         string functionsOutputPath = Path.Combine(outputPath, "Functions");
 
@@ -134,6 +141,8 @@ internal class Program
 
         logger.LogInfo($"Generating {extensionTarget} ...");
         CsCodeGeneratorConfig config = CsCodeGeneratorConfig.Load(configPath);
+
+        config.CustomEnums.AddRange(customEnums);
 
         composer.Compose(config);
 
@@ -161,39 +170,39 @@ internal class Program
         logger.LogInfo($"Done Generating {extensionName} ...");
     }
 
-    private static void WriteVariations(ICodeWriter writer, string returnType, string name, (string type, string name)[] parameters)
+    private static void WriteVariations(ICodeWriter writer, string returnType, string name, Parameter[] parameters)
     {
         long maxVariations = (long)Math.Pow(2L, parameters.Length);
-        List<(string type, string name)[]> defs = [parameters];
+        List<Parameter[]> defs = [parameters];
         for (long ix = 1; ix < maxVariations; ix++)
         {
-            (string type, string name)[] stringVariation = new (string type, string name)[parameters.Length];
-            (string type, string name)[] spanVariation = new (string type, string name)[parameters.Length];
-            (string type, string name)[] refVariation = new (string type, string name)[parameters.Length];
+            Parameter[] stringVariation = new Parameter[parameters.Length];
+            Parameter[] spanVariation = new Parameter[parameters.Length];
+            Parameter[] refVariation = new Parameter[parameters.Length];
 
             for (int j = 0; j < parameters.Length; j++)
             {
                 var bit = (ix & 1 << j - 64) != 0;
 
-                (string type, string name) parameter = parameters[j];
+                Parameter parameter = parameters[j];
 
                 if (bit)
                 {
-                    if (parameter.type == "byte*")
+                    if (parameter.Type == "byte*")
                     {
-                        stringVariation[j] = ("string", parameter.name);
-                        spanVariation[j] = ("ReadOnlySpan<byte>", parameter.name);
+                        stringVariation[j] = new(parameter.Name, "string");
+                        spanVariation[j] = new(parameter.Name, "ReadOnlySpan<byte>");
                     }
                     else
                     {
                         spanVariation[j] = stringVariation[j] = parameter;
                     }
 
-                    var pointerDepth = parameter.type.AsSpan().Count('*');
-                    if (pointerDepth == 1 && parameter.type != "void*")
+                    var pointerDepth = parameter.Type.AsSpan().Count('*');
+                    if (pointerDepth == 1 && parameter.Type != "void*" && !parameter.IsOut)
                     {
-                        var cleanName = parameter.type.Replace("*", string.Empty);
-                        refVariation[j] = ($"ref {cleanName}", parameter.name);
+                        var cleanName = parameter.Type.Replace("*", string.Empty);
+                        refVariation[j] = new(parameter.Name, $"ref {cleanName}");
                     }
                     else
                     {
@@ -212,7 +221,7 @@ internal class Program
         }
     }
 
-    private static void WriteFunction(string returnType, string name, (string type, string name)[] rootParameters, ICodeWriter writer, List<(string type, string name)[]> defs, (string type, string name)[] variation)
+    private static void WriteFunction(string returnType, string name, Parameter[] rootParameters, ICodeWriter writer, List<Parameter[]> defs, Parameter[] variation)
     {
         bool found = false;
 
@@ -223,7 +232,7 @@ internal class Program
             {
                 var p0 = def[i];
                 var p1 = variation[i];
-                if (p0.type != p1.type)
+                if (p0.Type != p1.Type)
                 {
                     matches = false;
                     break;
@@ -255,7 +264,9 @@ internal class Program
         List<(string name, int index)> stringStack = [];
         for (int i = 0; i < variation.Length; i++)
         {
-            (string paramType, string paramName) = variation[i];
+            var parameter = variation[i];
+            var paramName = parameter.Name;
+            var paramType = parameter.Type;
 
             string paramListName = paramName;
 
@@ -269,7 +280,7 @@ internal class Program
             if (paramType == "ReadOnlySpan<byte>" || paramType.StartsWith("ref"))
             {
                 paramListName = $"p{paramName.Replace("@", string.Empty)}{fixedStack.Count}";
-                fixedStack.Add((paramName, paramListName, rootParameters[i].type, i));
+                fixedStack.Add((paramName, paramListName, rootParameters[i].Type, i));
             }
 
             if (first)
@@ -319,12 +330,12 @@ internal class Program
 
         foreach (var str in stringStack)
         {
-            MarshalHelper.WriteStringConvertToUnmanaged(writer, new CsType("byte*", CsPrimitiveType.Byte) { StringType = CsStringType.StringUTF8 }, str.name, str.index);
+            MarshalHelper.WriteStringConvertToUnmanaged(writer, StringType, str.name, str.index);
         }
 
         foreach (var fx in fixedStack)
         {
-            if (variation[fx.index].type.Contains("ref"))
+            if (variation[fx.index].Type.Contains("ref"))
             {
                 writer.BeginBlock($"fixed ({fx.type} {fx.fixedName} = &{fx.name})");
             }
@@ -574,7 +585,7 @@ internal class Program
                 if (enumGroup.StartString != null && enumGroup.EndString != null)
                 {
                     string csEnumItemName = config.GetEnumName(@enum.Name, prefixGl);
-                    CsEnumItemMetadata csEnumItem = new(@enum.Name, @enum.Value, csEnumItemName, @enum.Value, [], null);
+                    CsEnumItemMetadata csEnumItem = new(@enum.Name, @enum.Value, csEnumItemName, @enum.Value, [], config.WriteCsSummary(@enum.Comment));
                     glEnum.Items.Add(csEnumItem);
                 }
 
@@ -592,6 +603,13 @@ internal class Program
         }
         config.CustomEnums.Add(glEnum);
 
+        Dictionary<string, string?> groupToComment = [];
+        foreach (var group in registry.EnumGroups)
+        {
+            if (group.Group == null) continue;
+            groupToComment.Add(group.Group, config.WriteCsSummary(group.Comment));
+        }
+
         foreach (var pair in groups)
         {
             string enumName = "GL" + config.GetCsCleanName(pair.Key);
@@ -601,7 +619,9 @@ internal class Program
 
             groupToEnumName.Add(pair.Key, enumName);
 
-            CsEnumMetadata metadata = new(pair.Key, enumName, [], null);
+            groupToComment.TryGetValue(pair.Key, out var comment);
+
+            CsEnumMetadata metadata = new(pair.Key, enumName, [], comment);
             metadata.BaseType = "uint";
 
             if (enumName == "GLSpecialNumbers")
@@ -619,6 +639,19 @@ internal class Program
         }
 
         return groupToEnumName;
+    }
+
+    private struct Parameter
+    {
+        public string Name;
+        public string Type;
+        public bool IsOut;
+
+        public Parameter(string name, string type)
+        {
+            Name = name;
+            Type = type;
+        }
     }
 
     private static void WriteFunctions(ICodeWriter writer, CsCodeGeneratorConfig config, string outputPath, GlRegistry registry, bool generateAll, HashSet<string> usedCommands, Dictionary<string, string> groupToEnumName, FunctionTableBuilder functionTableBuilder)
@@ -646,7 +679,7 @@ internal class Program
             StringBuilder sbCompatibilityNameless = new();
             StringBuilder sbCompatibilityTypeless = new();
 
-            List<(string type, string name)> parameters = [];
+            List<Parameter> parameters = [];
 
             HashSet<string> delegateTypes = ["GLDebugProc", "GLDebugProcARB", "GLVulkanProcNV", "GLDebugProcAMD", "GLDebugProcKHR"];
 
@@ -667,7 +700,7 @@ internal class Program
                     paramType = newType;
                 }
 
-                parameters.Add((paramType, paramName));
+                parameters.Add(new(paramName, paramType));
 
                 if (!first)
                 {
@@ -788,8 +821,309 @@ internal class Program
 
             logger.LogInfo($"defined {csSigApi}");
 
+            if (name.StartsWith("Gen") && parameters.Count == 2 && parameters[0].Type == "int" && parameters[1].Type == "uint*")
+            {
+                var newName = name[..^1];
+                var signature = $"uint {newName}()";
+                writer.BeginBlock($"public static {signature}");
+                writer.WriteLine("uint result;");
+                writer.WriteLine($"{name}Native(1, &result);");
+                writer.WriteLine("return result;");
+                writer.EndBlock();
+                writer.WriteLine();
+
+                logger.LogInfo($"defined {signature}");
+            }
+
+            if (name.StartsWith("Delete") && parameters.Count == 2 && parameters[0].Type == "int" && parameters[1].Type == "uint*")
+            {
+                var newName = name[..^1];
+                var newParamName = parameters[1].Name[..^1];
+                var signature = $"void {newName}(uint {newParamName})";
+
+                writer.BeginBlock($"public static {signature}");
+                writer.WriteLine($"{name}Native(1, &{newParamName});");
+                writer.EndBlock();
+                writer.WriteLine();
+
+                logger.LogInfo($"defined {signature}");
+            }
+
+            if (parameters.Count > 0 && parameters[^1].Type == "int*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
+            {
+                VariationFor(writer, delegateSigApi, csSigApi, arrayParams, "int", parameters[^1].Name == "param");
+            }
+            if (parameters.Count > 0 && parameters[^1].Type == "uint*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
+            {
+                VariationFor(writer, delegateSigApi, csSigApi, arrayParams, "uint", parameters[^1].Name == "param");
+            }
+            if (parameters.Count > 0 && parameters[^1].Type == "float*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
+            {
+                VariationFor(writer, delegateSigApi, csSigApi, arrayParams, "float", parameters[^1].Name == "param");
+            }
+            if (parameters.Count > 0 && parameters[^1].Type == "ulong*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
+            {
+                VariationFor(writer, delegateSigApi, csSigApi, arrayParams, "ulong", parameters[^1].Name == "param");
+            }
+            if (parameters.Count > 0 && parameters[^1].Type == "long*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
+            {
+                VariationFor(writer, delegateSigApi, csSigApi, arrayParams, "long", parameters[^1].Name == "param");
+            }
+
+            // void GetShaderInfoLogNative(uint shader, int bufSize, int* length, byte* infoLog) For reference
+            if (name.StartsWith("Get") &&
+                parameters.Count == 4 &&
+                returnType == "void" &&
+                parameters[^1].Type == "byte*" &&
+                parameters[^2].Name == "length" &&
+                parameters[^2].Type == "int*" &&
+                parameters[^3].Name == "bufSize" &&
+                parameters[^3].Type == "int")
+            {
+                List<string> postfixes = ["Source", "InfoLog"];
+
+                string? postfix = null;
+
+                string? newName = null;
+
+                foreach (var post in postfixes)
+                {
+                    if (name.EndsWith(post))
+                    {
+                        var span = name.AsSpan(3);
+                        span = span[..^post.Length];
+                        newName = span.ToString();
+                        postfix = post;
+                    }
+                }
+
+                if (postfix != null && newName != null)
+                {
+                    string commandTarget = $"glGet{newName}iv";
+                    string? enumName = FindEnum(commandTarget, usedCommands, registry, groupToEnumName);
+                    if (enumName != null)
+                    {
+                        string enumItem = $"{enumName}.{postfix}Length";
+                        string sig = csSigApi.Replace("void", "string").Replace($", int bufSize, int* length, byte* {parameters[^1].Name}", "");
+                        writer.BeginBlock($"public static {sig}");
+                        writer.WriteLine("int pStrSize0;");
+                        writer.WriteLine($"Get{newName}iv({parameters[0].Name}, {enumItem}, &pStrSize0);");
+                        writer.WriteLine();
+
+                        writer.WriteLine("byte* pStr0 = null;");
+                        writer.BeginBlock("if (pStrSize0 >= Utils.MaxStackallocSize)");
+                        writer.WriteLine("pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);");
+                        writer.EndBlock();
+                        writer.BeginBlock("else");
+                        writer.WriteLine("byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];");
+                        writer.WriteLine("pStr0 = pStrStack0;");
+                        writer.EndBlock();
+
+                        writer.WriteLine($"{name}Native({parameters[0].Name}, pStrSize0, null, pStr0);");
+                        writer.WriteLine("string ret = Utils.DecodeStringUTF8(pStr0);");
+
+                        MarshalHelper.WriteFreeString(writer, 0);
+                        writer.WriteLine("return ret;");
+
+                        writer.EndBlock();
+                        writer.WriteLine();
+                    }
+                }
+            }
+
+            // void ShaderSourceNative(uint shader, int count, byte** str, int* length) For reference
+            if (parameters.Count == 4 &&
+                returnType == "void" &&
+                parameters[^1].Type == "int*" &&
+                parameters[^1].Name == "length" &&
+                parameters[^2].Type == "byte**" &&
+                parameters[^2].Name == "str" &&
+                parameters[^3].Type == "int" &&
+                parameters[^3].Name == "count")
+            {
+                var firstParam = parameters[0];
+                writer.BeginBlock($"public static void {name}({firstParam.Type} {firstParam.Name}, string source)");
+                MarshalHelper.WriteStringConvertToUnmanaged(writer, StringType, "source", 0);
+                writer.WriteLine($"{name}Native({firstParam.Name}, 1, &pStr0, &pStrSize0);");
+                MarshalHelper.WriteFreeString(writer, 0);
+                writer.EndBlock();
+                writer.WriteLine();
+
+                writer.BeginBlock($"public static void {name}({firstParam.Type} {firstParam.Name}, string[] sources)");
+                WriteStringConvertToUnmanagedWithSizeArray(writer, "sources", 0);
+                writer.WriteLine($"{name}Native({firstParam.Name}, sources.Length, pStrArray0, pStrArraySizes0);");
+                WriteFreeUnmanagedStringArrayWithSizeArray(writer, "sources", 0);
+                writer.EndBlock();
+                writer.WriteLine();
+            }
+
             WriteVariations(writer, returnType, name, arrayParams);
         }
+    }
+
+    public static void WriteStringConvertToUnmanagedWithSizeArray(ICodeWriter writer, string name, int i)
+    {
+        writer.WriteLine($"byte** pStrArray{i} = null;");
+        writer.WriteLine($"int* pStrArraySizes{i} = null;");
+        writer.WriteLine($"int pStrArraySize{i} = Utils.GetByteCountArray({name}) + {name}.Length * sizeof(int);");
+        using (writer.PushBlock($"if ({name} != null)"))
+        {
+            using (writer.PushBlock($"if (pStrArraySize{i} > Utils.MaxStackallocSize)"))
+            {
+                writer.WriteLine($"pStrArraySizes{i} = (int*)Utils.Alloc<int>({name}.Length);");
+                writer.WriteLine($"pStrArray{i} = (byte**)Utils.Alloc<byte>(pStrArraySize{i});");
+            }
+
+            using (writer.PushBlock("else"))
+            {
+                writer.WriteLine($"byte* pStrArraySizesStack{i} = stackalloc byte[{name}.Length * sizeof(int)];");
+                writer.WriteLine($"pStrArraySizes{i} = (int*)pStrArraySizesStack{i};");
+                writer.WriteLine($"byte* pStrArrayStack{i} = stackalloc byte[pStrArraySize{i}];");
+                writer.WriteLine($"pStrArray{i} = (byte**)pStrArrayStack{i};");
+            }
+        }
+
+        using (writer.PushBlock($"for (int i = 0; i < {name}.Length; i++)"))
+        {
+            writer.WriteLine($"pStrArraySizes{i}[i] = Utils.GetByteCountUTF8({name}[i]);");
+            writer.WriteLine($"pStrArray{i}[i] = (byte*)Utils.StringToUTF8Ptr({name}[i]);");
+        }
+    }
+
+    public static void WriteFreeUnmanagedStringArrayWithSizeArray(ICodeWriter writer, string name, int i)
+    {
+        using (writer.PushBlock("for (int i = 0; i < " + name + ".Length; i++)"))
+        {
+            writer.WriteLine($"Utils.Free(pStrArray{i}[i]);");
+        }
+
+        using (writer.PushBlock($"if (pStrArraySize{i} >= Utils.MaxStackallocSize)"))
+        {
+            writer.WriteLine($"Utils.Free(pStrArray{i});");
+            writer.WriteLine($"Utils.Free(pStrArraySizes{i});");
+        }
+    }
+
+    /* For reference
+        public static void ShaderSource(uint shader, string source)
+        {
+            byte* pStr0 = null;
+            int pStrSize0 = 0;
+            if (source != null)
+            {
+                pStrSize0 = Utils.GetByteCountUTF8(source);
+                if (pStrSize0 >= Utils.MaxStackallocSize)
+                {
+                    pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+                }
+                else
+                {
+                    byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+                    pStr0 = pStrStack0;
+                }
+                int pStrOffset0 = Utils.EncodeStringUTF8(source, pStr0, pStrSize0);
+                pStr0[pStrOffset0] = 0;
+            }
+            ShaderSourceNative(shader, 1, &pStr0, &pStrSize0);
+            if (pStrSize0 >= Utils.MaxStackallocSize)
+            {
+                Utils.Free(pStr0);
+            }
+        }
+    */
+    /* For reference
+        public static string GetProgramInfoLog(uint program)
+        {
+            int len;
+            GetProgramivNative(program, GLProgramPropertyARB.InfoLogLength, &len);
+
+            byte* pStr0 = null;
+            if (len >= Utils.MaxStackallocSize)
+            {
+                pStr0 = Utils.Alloc<byte>(len + 1);
+            }
+            else
+            {
+                byte* pStrStack0 = stackalloc byte[len + 1];
+                pStr0 = pStrStack0;
+            }
+
+            GetProgramInfoLogNative(program, len, null, pStr0);
+            string ret = Utils.DecodeStringUTF8(pStr0);
+
+            if (len >= Utils.MaxStackallocSize)
+            {
+                Utils.Free(pStr0);
+            }
+
+            return ret;
+        }
+     */
+
+    private static string? FindEnum(string commandNameTarget, HashSet<string> usedCommands, GlRegistry registry, Dictionary<string, string> groupToEnumName)
+    {
+        if (!usedCommands.Contains(commandNameTarget))
+        {
+            return null;
+        }
+
+        foreach (var command in registry.Commands)
+        {
+            if (command.Proto.Name == commandNameTarget)
+            {
+                if (command.Params.Count >= 2 && command.Params[1].PType == "GLenum")
+                {
+                    return groupToEnumName[command.Params[1].Group];
+                }
+
+                break;
+            }
+        }
+        return null;
+    }
+
+    private static void VariationFor(ICodeWriter writer, string delegateSigApi, string csSigApi, Parameter[] arrayParams, string baseType, bool singular)
+    {
+        var last = arrayParams[^1];
+
+        if (singular)
+        {
+            var signature = csSigApi.Replace($"{baseType}* param", $"out {baseType} param");
+            var caller = delegateSigApi.Replace(last.Name, "&pparam");
+            writer.BeginBlock($"public static {signature}");
+            writer.WriteLine($"{baseType} pparam;");
+            writer.WriteLine($"{caller}");
+            writer.WriteLine("param = pparam;");
+            writer.EndBlock();
+            writer.WriteLine();
+            logger.LogInfo($"defined {signature}");
+        }
+        else
+        {
+            var signature = csSigApi.Replace($"{baseType}* @params", $"out {baseType} @params");
+            var caller = delegateSigApi.Replace(last.Name, "&pparams");
+            writer.BeginBlock($"public static {signature}");
+            writer.WriteLine($"{baseType} pparams;");
+            writer.WriteLine($"{caller}");
+            writer.WriteLine("@params = pparams;");
+            writer.EndBlock();
+            writer.WriteLine();
+            logger.LogInfo($"defined {signature}");
+
+            signature = csSigApi.Replace($"{baseType}* @params", $"Span<{baseType}> @params");
+            caller = delegateSigApi.Replace(last.Name, "pparams");
+            writer.BeginBlock($"public static {signature}");
+            writer.BeginBlock($"fixed ({baseType}* pparams = @params)");
+            writer.WriteLine($"{caller}");
+            writer.EndBlock();
+            writer.EndBlock();
+            writer.WriteLine();
+            logger.LogInfo($"defined {signature}");
+        }
+
+        last.IsOut = true;
+
+        arrayParams[^1] = last;
     }
 
     private static void WriteFunctionTable(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder)

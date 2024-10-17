@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGLES.EXT
 			DeleteQueriesEXTNative(n, ids);
 		}
 
+		public static void DeleteQueriesEX(uint id)
+		{
+			DeleteQueriesEXTNative(1, &id);
+		}
+
 		public static void DeleteQueriesEXT(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -82,6 +87,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		public static void GenQueriesEXT(int n, uint* ids)
 		{
 			GenQueriesEXTNative(n, ids);
+		}
+
+		public static uint GenQueriesEX()
+		{
+			uint result;
+			GenQueriesEXTNative(1, &result);
+			return result;
 		}
 
 		public static void GenQueriesEXT(int n, ref uint ids)
@@ -130,11 +142,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryObjecti64vEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetQueryObjecti64vEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetQueryObjecti64vEXTNative(id, pname, pparams0);
+				GetQueryObjecti64vEXTNative(id, pname, pparams);
 			}
 		}
 
@@ -153,11 +172,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryObjectivEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, ref int @params)
+		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryObjectivEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryObjectivEXTNative(id, pname, pparams0);
+				GetQueryObjectivEXTNative(id, pname, pparams);
 			}
 		}
 
@@ -176,11 +202,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryObjectui64vEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetQueryObjectui64vEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetQueryObjectui64vEXTNative(id, pname, pparams0);
+				GetQueryObjectui64vEXTNative(id, pname, pparams);
 			}
 		}
 
@@ -199,11 +232,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryObjectuivEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, ref uint @params)
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetQueryObjectuivEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetQueryObjectuivEXTNative(id, pname, pparams0);
+				GetQueryObjectuivEXTNative(id, pname, pparams);
 			}
 		}
 
@@ -222,11 +262,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryivEXTNative(target, pname, @params);
 		}
 
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryivEXTNative(target, pname, pparams0);
+				GetQueryivEXTNative(target, pname, pparams);
 			}
 		}
 

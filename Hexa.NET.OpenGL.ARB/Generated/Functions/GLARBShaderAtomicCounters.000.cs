@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, @params);
 		}
 
-		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, ref int @params)
+		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, pparams0);
+				GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, pparams);
 			}
 		}
 

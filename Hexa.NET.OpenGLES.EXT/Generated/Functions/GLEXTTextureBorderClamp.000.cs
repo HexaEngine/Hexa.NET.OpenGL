@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetSamplerParameterIivEXTNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, ref int @params)
+		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetSamplerParameterIivEXTNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetSamplerParameterIivEXTNative(sampler, pname, pparams0);
+				GetSamplerParameterIivEXTNative(sampler, pname, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetSamplerParameterIuivEXTNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, ref uint @params)
+		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetSamplerParameterIuivEXTNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetSamplerParameterIuivEXTNative(sampler, pname, pparams0);
+				GetSamplerParameterIuivEXTNative(sampler, pname, pparams);
 			}
 		}
 
@@ -77,11 +91,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetTexParameterIivEXTNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexParameterIivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexParameterIivEXTNative(target, pname, pparams0);
+				GetTexParameterIivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -100,11 +121,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetTexParameterIuivEXTNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetTexParameterIuivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetTexParameterIuivEXTNative(target, pname, pparams0);
+				GetTexParameterIuivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -123,12 +151,11 @@ namespace Hexa.NET.OpenGLES.EXT
 			SamplerParameterIivEXTNative(sampler, pname, param);
 		}
 
-		public static void SamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, ref int param)
+		public static void SamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				SamplerParameterIivEXTNative(sampler, pname, pparam0);
-			}
+			int pparam;
+			SamplerParameterIivEXTNative(sampler, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -146,12 +173,11 @@ namespace Hexa.NET.OpenGLES.EXT
 			SamplerParameterIuivEXTNative(sampler, pname, param);
 		}
 
-		public static void SamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, ref uint param)
+		public static void SamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, out uint param)
 		{
-			fixed (uint* pparam0 = &param)
-			{
-				SamplerParameterIuivEXTNative(sampler, pname, pparam0);
-			}
+			uint pparam;
+			SamplerParameterIuivEXTNative(sampler, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -169,11 +195,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			TexParameterIivEXTNative(target, pname, @params);
 		}
 
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TexParameterIivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TexParameterIivEXTNative(target, pname, pparams0);
+				TexParameterIivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -192,11 +225,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			TexParameterIuivEXTNative(target, pname, @params);
 		}
 
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			TexParameterIuivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				TexParameterIuivEXTNative(target, pname, pparams0);
+				TexParameterIuivEXTNative(target, pname, pparams);
 			}
 		}
 

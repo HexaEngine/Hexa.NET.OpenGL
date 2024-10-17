@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetInternalformativNative(target, internalformat, pname, count, @params);
 		}
 
-		public static void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, ref int @params)
+		public static void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetInternalformativNative(target, internalformat, pname, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetInternalformativNative(target, internalformat, pname, count, pparams0);
+				GetInternalformativNative(target, internalformat, pname, count, pparams);
 			}
 		}
 

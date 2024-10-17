@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetProgramEnvParameterIivNVNative(target, index, @params);
 		}
 
-		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, ref int @params)
+		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramEnvParameterIivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramEnvParameterIivNVNative(target, index, pparams0);
+				GetProgramEnvParameterIivNVNative(target, index, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetProgramEnvParameterIuivNVNative(target, index, @params);
 		}
 
-		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, ref uint @params)
+		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetProgramEnvParameterIuivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetProgramEnvParameterIuivNVNative(target, index, pparams0);
+				GetProgramEnvParameterIuivNVNative(target, index, pparams);
 			}
 		}
 
@@ -77,11 +91,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetProgramLocalParameterIivNVNative(target, index, @params);
 		}
 
-		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, ref int @params)
+		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramLocalParameterIivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramLocalParameterIivNVNative(target, index, pparams0);
+				GetProgramLocalParameterIivNVNative(target, index, pparams);
 			}
 		}
 
@@ -100,11 +121,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetProgramLocalParameterIuivNVNative(target, index, @params);
 		}
 
-		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, ref uint @params)
+		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetProgramLocalParameterIuivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetProgramLocalParameterIuivNVNative(target, index, pparams0);
+				GetProgramLocalParameterIuivNVNative(target, index, pparams);
 			}
 		}
 
@@ -138,11 +166,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramEnvParameterI4ivNVNative(target, index, @params);
 		}
 
-		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, ref int @params)
+		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			ProgramEnvParameterI4ivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				ProgramEnvParameterI4ivNVNative(target, index, pparams0);
+				ProgramEnvParameterI4ivNVNative(target, index, pparams);
 			}
 		}
 
@@ -176,11 +211,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramEnvParameterI4uivNVNative(target, index, @params);
 		}
 
-		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, ref uint @params)
+		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			ProgramEnvParameterI4uivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				ProgramEnvParameterI4uivNVNative(target, index, pparams0);
+				ProgramEnvParameterI4uivNVNative(target, index, pparams);
 			}
 		}
 
@@ -199,11 +241,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramEnvParametersI4ivNVNative(target, index, count, @params);
 		}
 
-		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, ref int @params)
+		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			ProgramEnvParametersI4ivNVNative(target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				ProgramEnvParametersI4ivNVNative(target, index, count, pparams0);
+				ProgramEnvParametersI4ivNVNative(target, index, count, pparams);
 			}
 		}
 
@@ -222,11 +271,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramEnvParametersI4uivNVNative(target, index, count, @params);
 		}
 
-		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, ref uint @params)
+		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			ProgramEnvParametersI4uivNVNative(target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				ProgramEnvParametersI4uivNVNative(target, index, count, pparams0);
+				ProgramEnvParametersI4uivNVNative(target, index, count, pparams);
 			}
 		}
 
@@ -260,11 +316,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramLocalParameterI4ivNVNative(target, index, @params);
 		}
 
-		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, ref int @params)
+		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			ProgramLocalParameterI4ivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				ProgramLocalParameterI4ivNVNative(target, index, pparams0);
+				ProgramLocalParameterI4ivNVNative(target, index, pparams);
 			}
 		}
 
@@ -298,11 +361,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramLocalParameterI4uivNVNative(target, index, @params);
 		}
 
-		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, ref uint @params)
+		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			ProgramLocalParameterI4uivNVNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				ProgramLocalParameterI4uivNVNative(target, index, pparams0);
+				ProgramLocalParameterI4uivNVNative(target, index, pparams);
 			}
 		}
 
@@ -321,11 +391,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramLocalParametersI4ivNVNative(target, index, count, @params);
 		}
 
-		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, ref int @params)
+		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			ProgramLocalParametersI4ivNVNative(target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				ProgramLocalParametersI4ivNVNative(target, index, count, pparams0);
+				ProgramLocalParametersI4ivNVNative(target, index, count, pparams);
 			}
 		}
 
@@ -344,11 +421,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramLocalParametersI4uivNVNative(target, index, count, @params);
 		}
 
-		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, ref uint @params)
+		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			ProgramLocalParametersI4uivNVNative(target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				ProgramLocalParametersI4uivNVNative(target, index, count, pparams0);
+				ProgramLocalParametersI4uivNVNative(target, index, count, pparams);
 			}
 		}
 

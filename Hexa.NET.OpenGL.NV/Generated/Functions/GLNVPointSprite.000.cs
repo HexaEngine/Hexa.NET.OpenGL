@@ -46,11 +46,18 @@ namespace Hexa.NET.OpenGL.NV
 			PointParameterivNVNative(pname, @params);
 		}
 
-		public static void PointParameterivNV(GLPointParameterNameARB pname, ref int @params)
+		public static void PointParameterivNV(GLPointParameterNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			PointParameterivNVNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void PointParameterivNV(GLPointParameterNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				PointParameterivNVNative(pname, pparams0);
+				PointParameterivNVNative(pname, pparams);
 			}
 		}
 

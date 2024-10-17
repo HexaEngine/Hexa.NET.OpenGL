@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGLES.MESA
 			DeleteSamplersNative(count, samplers);
 		}
 
+		public static void DeleteSampler(uint sampler)
+		{
+			DeleteSamplersNative(1, &sampler);
+		}
+
 		public static void DeleteSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -67,6 +72,13 @@ namespace Hexa.NET.OpenGLES.MESA
 		public static void GenSamplers(int count, uint* samplers)
 		{
 			GenSamplersNative(count, samplers);
+		}
+
+		public static uint GenSampler()
+		{
+			uint result;
+			GenSamplersNative(1, &result);
+			return result;
 		}
 
 		public static void GenSamplers(int count, ref uint samplers)
@@ -92,11 +104,18 @@ namespace Hexa.NET.OpenGLES.MESA
 			GetSamplerParameterfvNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float @params)
+		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetSamplerParameterfvNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetSamplerParameterfvNative(sampler, pname, pparams0);
+				GetSamplerParameterfvNative(sampler, pname, pparams);
 			}
 		}
 
@@ -115,11 +134,18 @@ namespace Hexa.NET.OpenGLES.MESA
 			GetSamplerParameterivNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int @params)
+		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetSamplerParameterivNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetSamplerParameterivNative(sampler, pname, pparams0);
+				GetSamplerParameterivNative(sampler, pname, pparams);
 			}
 		}
 
@@ -169,12 +195,11 @@ namespace Hexa.NET.OpenGLES.MESA
 			SamplerParameterfvNative(sampler, pname, param);
 		}
 
-		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float param)
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
 		{
-			fixed (float* pparam0 = &param)
-			{
-				SamplerParameterfvNative(sampler, pname, pparam0);
-			}
+			float pparam;
+			SamplerParameterfvNative(sampler, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -207,12 +232,11 @@ namespace Hexa.NET.OpenGLES.MESA
 			SamplerParameterivNative(sampler, pname, param);
 		}
 
-		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int param)
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				SamplerParameterivNative(sampler, pname, pparam0);
-			}
+			int pparam;
+			SamplerParameterivNative(sampler, pname, &pparam);
+			param = pparam;
 		}
 
 	}

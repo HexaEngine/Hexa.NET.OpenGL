@@ -46,11 +46,18 @@ namespace Hexa.NET.OpenGL.MESA
 			GetFramebufferParameterivMESANative(target, pname, @params);
 		}
 
-		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferParameterivMESANative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferParameterivMESANative(target, pname, pparams0);
+				GetFramebufferParameterivMESANative(target, pname, pparams);
 			}
 		}
 

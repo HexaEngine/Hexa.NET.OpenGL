@@ -17,6 +17,435 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		public static void PointSize(float size)
+		{
+			PointSizeNative(size);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PolygonModeNative(GLTriangleFace face, GLPolygonMode mode)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[197])(face, mode);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[197])(face, mode);
+			#endif
+		}
+
+		public static void PolygonMode(GLTriangleFace face, GLPolygonMode mode)
+		{
+			PolygonModeNative(face, mode);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PolygonOffsetNative(float factor, float units)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[198])(factor, units);
+			#else
+			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[198])(factor, units);
+			#endif
+		}
+
+		public static void PolygonOffset(float factor, float units)
+		{
+			PolygonOffsetNative(factor, units);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PrimitiveRestartIndexNative(uint index)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[199])(index);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[199])(index);
+			#endif
+		}
+
+		public static void PrimitiveRestartIndex(uint index)
+		{
+			PrimitiveRestartIndexNative(index);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProvokingVertexNative(GLVertexProvokingMode mode)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[200])(mode);
+			#else
+			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[200])(mode);
+			#endif
+		}
+
+		public static void ProvokingVertex(GLVertexProvokingMode mode)
+		{
+			ProvokingVertexNative(mode);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void QueryCounterNative(uint id, GLQueryCounterTarget target)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[201])(id, target);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[201])(id, target);
+			#endif
+		}
+
+		public static void QueryCounter(uint id, GLQueryCounterTarget target)
+		{
+			QueryCounterNative(id, target);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ReadBufferNative(GLReadBufferMode src)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLReadBufferMode, void>)funcTable[202])(src);
+			#else
+			((delegate* unmanaged[Cdecl]<GLReadBufferMode, void>)funcTable[202])(src);
+			#endif
+		}
+
+		public static void ReadBuffer(GLReadBufferMode src)
+		{
+			ReadBufferNative(src);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ReadPixelsNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[203])(x, y, width, height, format, type, pixels);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[203])(x, y, width, height, format, type, (nint)pixels);
+			#endif
+		}
+
+		public static void ReadPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		{
+			ReadPixelsNative(x, y, width, height, format, type, pixels);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void RenderbufferStorageNative(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLInternalFormat, int, int, void>)funcTable[204])(target, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLInternalFormat, int, int, void>)funcTable[204])(target, internalformat, width, height);
+			#endif
+		}
+
+		public static void RenderbufferStorage(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
+		{
+			RenderbufferStorageNative(target, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void RenderbufferStorageMultisampleNative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[205])(target, samples, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[205])(target, samples, internalformat, width, height);
+			#endif
+		}
+
+		public static void RenderbufferStorageMultisample(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		{
+			RenderbufferStorageMultisampleNative(target, samples, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SampleCoverageNative(float value, byte invert)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[206])(value, invert);
+			#else
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[206])(value, invert);
+			#endif
+		}
+
+		public static void SampleCoverage(float value, byte invert)
+		{
+			SampleCoverageNative(value, invert);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SampleMaskiNative(uint maskNumber, uint mask)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[207])(maskNumber, mask);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[207])(maskNumber, mask);
+			#endif
+		}
+
+		public static void SampleMaski(uint maskNumber, uint mask)
+		{
+			SampleMaskiNative(maskNumber, mask);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterIivNative(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[208])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[208])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			SamplerParameterIivNative(sampler, pname, param);
+		}
+
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int param)
+		{
+			int pparam;
+			SamplerParameterIivNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterIuivNative(uint sampler, GLSamplerParameterI pname, uint* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, uint*, void>)funcTable[209])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[209])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, uint* param)
+		{
+			SamplerParameterIuivNative(sampler, pname, param);
+		}
+
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint param)
+		{
+			uint pparam;
+			SamplerParameterIuivNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterfNative(uint sampler, GLSamplerParameterF pname, float param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float, void>)funcTable[210])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float, void>)funcTable[210])(sampler, pname, param);
+			#endif
+		}
+
+		public static void SamplerParameterf(uint sampler, GLSamplerParameterF pname, float param)
+		{
+			SamplerParameterfNative(sampler, pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterfvNative(uint sampler, GLSamplerParameterF pname, float* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float*, void>)funcTable[211])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, nint, void>)funcTable[211])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* param)
+		{
+			SamplerParameterfvNative(sampler, pname, param);
+		}
+
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
+		{
+			float pparam;
+			SamplerParameterfvNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameteriNative(uint sampler, GLSamplerParameterI pname, int param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int, void>)funcTable[212])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int, void>)funcTable[212])(sampler, pname, param);
+			#endif
+		}
+
+		public static void SamplerParameteri(uint sampler, GLSamplerParameterI pname, int param)
+		{
+			SamplerParameteriNative(sampler, pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterivNative(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[213])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[213])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			SamplerParameterivNative(sampler, pname, param);
+		}
+
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
+		{
+			int pparam;
+			SamplerParameterivNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ScissorNative(int x, int y, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[214])(x, y, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[214])(x, y, width, height);
+			#endif
+		}
+
+		public static void Scissor(int x, int y, int width, int height)
+		{
+			ScissorNative(x, y, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ShaderSourceNative(uint shader, int count, byte** str, int* length)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, byte**, int*, void>)funcTable[215])(shader, count, str, length);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, nint, nint, void>)funcTable[215])(shader, count, (nint)str, (nint)length);
+			#endif
+		}
+
+		public static void ShaderSource(uint shader, int count, byte** str, int* length)
+		{
+			ShaderSourceNative(shader, count, str, length);
+		}
+
+		public static void ShaderSource(uint shader, string source)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (source != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(source);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(source, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			ShaderSourceNative(shader, 1, &pStr0, &pStrSize0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		public static void ShaderSource(uint shader, string[] sources)
+		{
+			byte** pStrArray0 = null;
+			int* pStrArraySizes0 = null;
+			int pStrArraySize0 = Utils.GetByteCountArray(sources) + sources.Length * sizeof(int);
+			if (sources != null)
+			{
+				if (pStrArraySize0 > Utils.MaxStackallocSize)
+				{
+					pStrArraySizes0 = (int*)Utils.Alloc<int>(sources.Length);
+					pStrArray0 = (byte**)Utils.Alloc<byte>(pStrArraySize0);
+				}
+				else
+				{
+					byte* pStrArraySizesStack0 = stackalloc byte[sources.Length * sizeof(int)];
+					pStrArraySizes0 = (int*)pStrArraySizesStack0;
+					byte* pStrArrayStack0 = stackalloc byte[pStrArraySize0];
+					pStrArray0 = (byte**)pStrArrayStack0;
+				}
+			}
+			for (int i = 0; i < sources.Length; i++)
+			{
+				pStrArraySizes0[i] = Utils.GetByteCountUTF8(sources[i]);
+				pStrArray0[i] = (byte*)Utils.StringToUTF8Ptr(sources[i]);
+			}
+			ShaderSourceNative(shader, sources.Length, pStrArray0, pStrArraySizes0);
+			for (int i = 0; i < sources.Length; i++)
+			{
+				Utils.Free(pStrArray0[i]);
+			}
+			if (pStrArraySize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStrArray0);
+				Utils.Free(pStrArraySizes0);
+			}
+		}
+
+		public static void ShaderSource(uint shader, int count, byte** str, ref int length)
+		{
+			fixed (int* plength0 = &length)
+			{
+				ShaderSourceNative(shader, count, str, plength0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void StencilFuncNative(GLStencilFunction func, int reference, uint mask)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[216])(func, reference, mask);
+			#else
+			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[216])(func, reference, mask);
+			#endif
+		}
+
+		public static void StencilFunc(GLStencilFunction func, int reference, uint mask)
+		{
+			StencilFuncNative(func, reference, mask);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void StencilFuncSeparateNative(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[217])(face, func, reference, mask);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[217])(face, func, reference, mask);
+			#endif
+		}
+
+		public static void StencilFuncSeparate(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
+		{
+			StencilFuncSeparateNative(face, func, reference, mask);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void StencilMaskNative(uint mask)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[218])(mask);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[218])(mask);
+			#endif
+		}
+
 		public static void StencilMask(uint mask)
 		{
 			StencilMaskNative(mask);
@@ -172,11 +601,18 @@ namespace Hexa.NET.OpenGL
 			TexParameterIivNative(target, pname, @params);
 		}
 
-		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TexParameterIivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TexParameterIivNative(target, pname, pparams0);
+				TexParameterIivNative(target, pname, pparams);
 			}
 		}
 
@@ -195,11 +631,18 @@ namespace Hexa.NET.OpenGL
 			TexParameterIuivNative(target, pname, @params);
 		}
 
-		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			TexParameterIuivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				TexParameterIuivNative(target, pname, pparams0);
+				TexParameterIuivNative(target, pname, pparams);
 			}
 		}
 
@@ -233,11 +676,18 @@ namespace Hexa.NET.OpenGL
 			TexParameterfvNative(target, pname, @params);
 		}
 
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, ref float @params)
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			TexParameterfvNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				TexParameterfvNative(target, pname, pparams0);
+				TexParameterfvNative(target, pname, pparams);
 			}
 		}
 
@@ -271,11 +721,18 @@ namespace Hexa.NET.OpenGL
 			TexParameterivNative(target, pname, @params);
 		}
 
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TexParameterivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TexParameterivNative(target, pname, pparams0);
+				TexParameterivNative(target, pname, pparams);
 			}
 		}
 

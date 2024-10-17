@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGL.NV
 			DeleteOcclusionQueriesNVNative(n, ids);
 		}
 
+		public static void DeleteOcclusionQueriesN(uint id)
+		{
+			DeleteOcclusionQueriesNVNative(1, &id);
+		}
+
 		public static void DeleteOcclusionQueriesNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -84,6 +89,13 @@ namespace Hexa.NET.OpenGL.NV
 			GenOcclusionQueriesNVNative(n, ids);
 		}
 
+		public static uint GenOcclusionQueriesN()
+		{
+			uint result;
+			GenOcclusionQueriesNVNative(1, &result);
+			return result;
+		}
+
 		public static void GenOcclusionQueriesNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -107,11 +119,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetOcclusionQueryivNVNative(id, pname, @params);
 		}
 
-		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, ref int @params)
+		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetOcclusionQueryivNVNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetOcclusionQueryivNVNative(id, pname, pparams0);
+				GetOcclusionQueryivNVNative(id, pname, pparams);
 			}
 		}
 
@@ -130,11 +149,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetOcclusionQueryuivNVNative(id, pname, @params);
 		}
 
-		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, ref uint @params)
+		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetOcclusionQueryuivNVNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetOcclusionQueryuivNVNative(id, pname, pparams0);
+				GetOcclusionQueryuivNVNative(id, pname, pparams);
 			}
 		}
 

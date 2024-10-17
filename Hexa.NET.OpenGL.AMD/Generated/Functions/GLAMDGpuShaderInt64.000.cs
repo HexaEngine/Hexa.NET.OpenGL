@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.AMD
 			GetUniformi64vNVNative(program, location, @params);
 		}
 
-		public static void GetUniformi64vNV(uint program, int location, ref long @params)
+		public static void GetUniformi64vNV(uint program, int location, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetUniformi64vNVNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformi64vNV(uint program, int location, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetUniformi64vNVNative(program, location, pparams0);
+				GetUniformi64vNVNative(program, location, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.AMD
 			GetUniformui64vNVNative(program, location, @params);
 		}
 
-		public static void GetUniformui64vNV(uint program, int location, ref ulong @params)
+		public static void GetUniformui64vNV(uint program, int location, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetUniformui64vNVNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetUniformui64vNVNative(program, location, pparams0);
+				GetUniformui64vNVNative(program, location, pparams);
 			}
 		}
 

@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGL.APPLE
 			DeleteVertexArraysAPPLENative(n, arrays);
 		}
 
+		public static void DeleteVertexArraysAPPL(uint array)
+		{
+			DeleteVertexArraysAPPLENative(1, &array);
+		}
+
 		public static void DeleteVertexArraysAPPLE(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -67,6 +72,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		public static void GenVertexArraysAPPLE(int n, uint* arrays)
 		{
 			GenVertexArraysAPPLENative(n, arrays);
+		}
+
+		public static uint GenVertexArraysAPPL()
+		{
+			uint result;
+			GenVertexArraysAPPLENative(1, &result);
+			return result;
 		}
 
 		public static void GenVertexArraysAPPLE(int n, ref uint arrays)

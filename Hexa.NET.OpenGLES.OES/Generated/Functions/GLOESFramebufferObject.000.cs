@@ -77,6 +77,11 @@ namespace Hexa.NET.OpenGLES.OES
 			DeleteFramebuffersOESNative(n, framebuffers);
 		}
 
+		public static void DeleteFramebuffersOE(uint framebuffer)
+		{
+			DeleteFramebuffersOESNative(1, &framebuffer);
+		}
+
 		public static void DeleteFramebuffersOES(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -98,6 +103,11 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void DeleteRenderbuffersOES(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersOESNative(n, renderbuffers);
+		}
+
+		public static void DeleteRenderbuffersOE(uint renderbuffer)
+		{
+			DeleteRenderbuffersOESNative(1, &renderbuffer);
 		}
 
 		public static void DeleteRenderbuffersOES(int n, ref uint renderbuffers)
@@ -153,6 +163,13 @@ namespace Hexa.NET.OpenGLES.OES
 			GenFramebuffersOESNative(n, framebuffers);
 		}
 
+		public static uint GenFramebuffersOE()
+		{
+			uint result;
+			GenFramebuffersOESNative(1, &result);
+			return result;
+		}
+
 		public static void GenFramebuffersOES(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -174,6 +191,13 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void GenRenderbuffersOES(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersOESNative(n, renderbuffers);
+		}
+
+		public static uint GenRenderbuffersOE()
+		{
+			uint result;
+			GenRenderbuffersOESNative(1, &result);
+			return result;
 		}
 
 		public static void GenRenderbuffersOES(int n, ref uint renderbuffers)
@@ -214,11 +238,18 @@ namespace Hexa.NET.OpenGLES.OES
 			GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, @params);
 		}
 
-		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, pparams0);
+				GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, pparams);
 			}
 		}
 
@@ -237,11 +268,18 @@ namespace Hexa.NET.OpenGLES.OES
 			GetRenderbufferParameterivOESNative(target, pname, @params);
 		}
 
-		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, ref int @params)
+		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetRenderbufferParameterivOESNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetRenderbufferParameterivOESNative(target, pname, pparams0);
+				GetRenderbufferParameterivOESNative(target, pname, pparams);
 			}
 		}
 

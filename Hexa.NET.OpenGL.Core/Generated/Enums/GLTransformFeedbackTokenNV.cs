@@ -11,8 +11,11 @@ using System;
 using HexaGen.Runtime;
 using System.Numerics;
 
-namespace Hexa.NET.OpenGLES
+namespace Hexa.NET.OpenGL
 {
+	/// <summary>
+	/// For NV_transform_feedback. No clue why small negative values are used<br/>
+	/// </summary>
 	public enum GLTransformFeedbackTokenNV : uint
 	{
 		NextBufferNv = unchecked((uint)-2),

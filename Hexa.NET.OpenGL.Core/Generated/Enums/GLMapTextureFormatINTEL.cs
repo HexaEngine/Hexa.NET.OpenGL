@@ -11,14 +11,15 @@ using System;
 using HexaGen.Runtime;
 using System.Numerics;
 
-namespace Hexa.NET.OpenGLES
+namespace Hexa.NET.OpenGL
 {
-	public enum GLClearBufferMask : uint
+	/// <summary>
+	/// Texture memory layouts for INTEL_map_texture<br/>
+	/// </summary>
+	public enum GLMapTextureFormatINTEL : uint
 	{
-		DepthBufferBit = unchecked((uint)0x00000100),
-		AccumBufferBit = unchecked((uint)0x00000200),
-		StencilBufferBit = unchecked((uint)0x00000400),
-		ColorBufferBit = unchecked((uint)0x00004000),
-		CoverageBufferBitNv = unchecked((uint)0x00008000),
+		LayoutDefaultIntel = unchecked((uint)0),
+		LayoutLinearIntel = unchecked((uint)1),
+		LayoutLinearCpuCachedIntel = unchecked((uint)2),
 	}
 }

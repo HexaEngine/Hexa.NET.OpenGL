@@ -578,11 +578,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetNamedBufferParameteri64vNative(buffer, pname, @params);
 		}
 
-		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, ref long @params)
+		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetNamedBufferParameteri64vNative(buffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetNamedBufferParameteri64vNative(buffer, pname, pparams0);
+				GetNamedBufferParameteri64vNative(buffer, pname, pparams);
 			}
 		}
 
@@ -601,11 +608,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetNamedBufferParameterivNative(buffer, pname, @params);
 		}
 
-		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, ref int @params)
+		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedBufferParameterivNative(buffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedBufferParameterivNative(buffer, pname, pparams0);
+				GetNamedBufferParameterivNative(buffer, pname, pparams);
 			}
 		}
 
@@ -654,11 +668,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, @params);
 		}
 
-		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, pparams0);
+				GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, pparams);
 			}
 		}
 
@@ -677,12 +698,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetNamedFramebufferParameterivNative(framebuffer, pname, param);
 		}
 
-		public static void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, ref int param)
+		public static void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetNamedFramebufferParameterivNative(framebuffer, pname, pparam0);
-			}
+			int pparam;
+			GetNamedFramebufferParameterivNative(framebuffer, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -700,11 +720,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetNamedRenderbufferParameterivNative(renderbuffer, pname, @params);
 		}
 
-		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, ref int @params)
+		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedRenderbufferParameterivNative(renderbuffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedRenderbufferParameterivNative(renderbuffer, pname, pparams0);
+				GetNamedRenderbufferParameterivNative(renderbuffer, pname, pparams);
 			}
 		}
 
@@ -798,11 +825,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTextureLevelParameterfvNative(texture, level, pname, @params);
 		}
 
-		public static void GetTextureLevelParameterfv(uint texture, int level, GLGetTextureParameter pname, ref float @params)
+		public static void GetTextureLevelParameterfv(uint texture, int level, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTextureLevelParameterfvNative(texture, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureLevelParameterfv(uint texture, int level, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTextureLevelParameterfvNative(texture, level, pname, pparams0);
+				GetTextureLevelParameterfvNative(texture, level, pname, pparams);
 			}
 		}
 
@@ -821,11 +855,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTextureLevelParameterivNative(texture, level, pname, @params);
 		}
 
-		public static void GetTextureLevelParameteriv(uint texture, int level, GLGetTextureParameter pname, ref int @params)
+		public static void GetTextureLevelParameteriv(uint texture, int level, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTextureLevelParameterivNative(texture, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureLevelParameteriv(uint texture, int level, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTextureLevelParameterivNative(texture, level, pname, pparams0);
+				GetTextureLevelParameterivNative(texture, level, pname, pparams);
 			}
 		}
 
@@ -844,11 +885,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTextureParameterIivNative(texture, pname, @params);
 		}
 
-		public static void GetTextureParameterIiv(uint texture, GLGetTextureParameter pname, ref int @params)
+		public static void GetTextureParameterIiv(uint texture, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTextureParameterIivNative(texture, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterIiv(uint texture, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTextureParameterIivNative(texture, pname, pparams0);
+				GetTextureParameterIivNative(texture, pname, pparams);
 			}
 		}
 
@@ -867,11 +915,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTextureParameterIuivNative(texture, pname, @params);
 		}
 
-		public static void GetTextureParameterIuiv(uint texture, GLGetTextureParameter pname, ref uint @params)
+		public static void GetTextureParameterIuiv(uint texture, GLGetTextureParameter pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetTextureParameterIuivNative(texture, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterIuiv(uint texture, GLGetTextureParameter pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetTextureParameterIuivNative(texture, pname, pparams0);
+				GetTextureParameterIuivNative(texture, pname, pparams);
 			}
 		}
 
@@ -890,11 +945,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTextureParameterfvNative(texture, pname, @params);
 		}
 
-		public static void GetTextureParameterfv(uint texture, GLGetTextureParameter pname, ref float @params)
+		public static void GetTextureParameterfv(uint texture, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTextureParameterfvNative(texture, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterfv(uint texture, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTextureParameterfvNative(texture, pname, pparams0);
+				GetTextureParameterfvNative(texture, pname, pparams);
 			}
 		}
 
@@ -913,11 +975,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTextureParameterivNative(texture, pname, @params);
 		}
 
-		public static void GetTextureParameteriv(uint texture, GLGetTextureParameter pname, ref int @params)
+		public static void GetTextureParameteriv(uint texture, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTextureParameterivNative(texture, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameteriv(uint texture, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTextureParameterivNative(texture, pname, pparams0);
+				GetTextureParameterivNative(texture, pname, pparams);
 			}
 		}
 
@@ -936,12 +1005,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTransformFeedbacki64_vNative(xfb, pname, index, param);
 		}
 
-		public static void GetTransformFeedbacki64_v(uint xfb, GLTransformFeedbackPName pname, uint index, ref long param)
+		public static void GetTransformFeedbacki64_v(uint xfb, GLTransformFeedbackPName pname, uint index, out long param)
 		{
-			fixed (long* pparam0 = &param)
-			{
-				GetTransformFeedbacki64_vNative(xfb, pname, index, pparam0);
-			}
+			long pparam;
+			GetTransformFeedbacki64_vNative(xfb, pname, index, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -959,12 +1027,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTransformFeedbacki_vNative(xfb, pname, index, param);
 		}
 
-		public static void GetTransformFeedbacki_v(uint xfb, GLTransformFeedbackPName pname, uint index, ref int param)
+		public static void GetTransformFeedbacki_v(uint xfb, GLTransformFeedbackPName pname, uint index, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetTransformFeedbacki_vNative(xfb, pname, index, pparam0);
-			}
+			int pparam;
+			GetTransformFeedbacki_vNative(xfb, pname, index, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -982,12 +1049,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetTransformFeedbackivNative(xfb, pname, param);
 		}
 
-		public static void GetTransformFeedbackiv(uint xfb, GLTransformFeedbackPName pname, ref int param)
+		public static void GetTransformFeedbackiv(uint xfb, GLTransformFeedbackPName pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetTransformFeedbackivNative(xfb, pname, pparam0);
-			}
+			int pparam;
+			GetTransformFeedbackivNative(xfb, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1005,12 +1071,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexArrayIndexed64ivNative(vaobj, index, pname, param);
 		}
 
-		public static void GetVertexArrayIndexed64iv(uint vaobj, uint index, GLVertexArrayPName pname, ref long param)
+		public static void GetVertexArrayIndexed64iv(uint vaobj, uint index, GLVertexArrayPName pname, out long param)
 		{
-			fixed (long* pparam0 = &param)
-			{
-				GetVertexArrayIndexed64ivNative(vaobj, index, pname, pparam0);
-			}
+			long pparam;
+			GetVertexArrayIndexed64ivNative(vaobj, index, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1028,12 +1093,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexArrayIndexedivNative(vaobj, index, pname, param);
 		}
 
-		public static void GetVertexArrayIndexediv(uint vaobj, uint index, GLVertexArrayPName pname, ref int param)
+		public static void GetVertexArrayIndexediv(uint vaobj, uint index, GLVertexArrayPName pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetVertexArrayIndexedivNative(vaobj, index, pname, pparam0);
-			}
+			int pparam;
+			GetVertexArrayIndexedivNative(vaobj, index, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1051,12 +1115,11 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexArrayivNative(vaobj, pname, param);
 		}
 
-		public static void GetVertexArrayiv(uint vaobj, GLVertexArrayPName pname, ref int param)
+		public static void GetVertexArrayiv(uint vaobj, GLVertexArrayPName pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetVertexArrayivNative(vaobj, pname, pparam0);
-			}
+			int pparam;
+			GetVertexArrayivNative(vaobj, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1346,11 +1409,18 @@ namespace Hexa.NET.OpenGL.ARB
 			TextureParameterIivNative(texture, pname, @params);
 		}
 
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, ref int @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TextureParameterIivNative(texture, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TextureParameterIivNative(texture, pname, pparams0);
+				TextureParameterIivNative(texture, pname, pparams);
 			}
 		}
 
@@ -1369,11 +1439,18 @@ namespace Hexa.NET.OpenGL.ARB
 			TextureParameterIuivNative(texture, pname, @params);
 		}
 
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, ref uint @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			TextureParameterIuivNative(texture, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				TextureParameterIuivNative(texture, pname, pparams0);
+				TextureParameterIuivNative(texture, pname, pparams);
 			}
 		}
 
@@ -1407,12 +1484,11 @@ namespace Hexa.NET.OpenGL.ARB
 			TextureParameterfvNative(texture, pname, param);
 		}
 
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, ref float param)
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, out float param)
 		{
-			fixed (float* pparam0 = &param)
-			{
-				TextureParameterfvNative(texture, pname, pparam0);
-			}
+			float pparam;
+			TextureParameterfvNative(texture, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1445,12 +1521,11 @@ namespace Hexa.NET.OpenGL.ARB
 			TextureParameterivNative(texture, pname, param);
 		}
 
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, ref int param)
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				TextureParameterivNative(texture, pname, pparam0);
-			}
+			int pparam;
+			TextureParameterivNative(texture, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGLES.OES
 			GetTexGenfvOESNative(coord, pname, @params);
 		}
 
-		public static void GetTexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
+		public static void GetTexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTexGenfvOESNative(coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTexGenfvOESNative(coord, pname, pparams0);
+				GetTexGenfvOESNative(coord, pname, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGLES.OES
 			GetTexGenivOESNative(coord, pname, @params);
 		}
 
-		public static void GetTexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public static void GetTexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexGenivOESNative(coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexGenivOESNative(coord, pname, pparams0);
+				GetTexGenivOESNative(coord, pname, pparams);
 			}
 		}
 
@@ -77,11 +91,18 @@ namespace Hexa.NET.OpenGLES.OES
 			GetTexGenxvOESNative(coord, pname, @params);
 		}
 
-		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexGenxvOESNative(coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexGenxvOESNative(coord, pname, pparams0);
+				GetTexGenxvOESNative(coord, pname, pparams);
 			}
 		}
 
@@ -115,11 +136,18 @@ namespace Hexa.NET.OpenGLES.OES
 			TexGenfvOESNative(coord, pname, @params);
 		}
 
-		public static void TexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
+		public static void TexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			TexGenfvOESNative(coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				TexGenfvOESNative(coord, pname, pparams0);
+				TexGenfvOESNative(coord, pname, pparams);
 			}
 		}
 
@@ -153,11 +181,18 @@ namespace Hexa.NET.OpenGLES.OES
 			TexGenivOESNative(coord, pname, @params);
 		}
 
-		public static void TexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public static void TexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TexGenivOESNative(coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TexGenivOESNative(coord, pname, pparams0);
+				TexGenivOESNative(coord, pname, pparams);
 			}
 		}
 
@@ -191,11 +226,18 @@ namespace Hexa.NET.OpenGLES.OES
 			TexGenxvOESNative(coord, pname, @params);
 		}
 
-		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TexGenxvOESNative(coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TexGenxvOESNative(coord, pname, pparams0);
+				TexGenxvOESNative(coord, pname, pparams);
 			}
 		}
 

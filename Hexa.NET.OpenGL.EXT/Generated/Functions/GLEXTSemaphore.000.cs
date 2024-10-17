@@ -31,6 +31,11 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteSemaphoresEXTNative(n, semaphores);
 		}
 
+		public static void DeleteSemaphoresEX(uint semaphore)
+		{
+			DeleteSemaphoresEXTNative(1, &semaphore);
+		}
+
 		public static void DeleteSemaphoresEXT(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)
@@ -52,6 +57,13 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GenSemaphoresEXT(int n, uint* semaphores)
 		{
 			GenSemaphoresEXTNative(n, semaphores);
+		}
+
+		public static uint GenSemaphoresEX()
+		{
+			uint result;
+			GenSemaphoresEXTNative(1, &result);
+			return result;
 		}
 
 		public static void GenSemaphoresEXT(int n, ref uint semaphores)
@@ -77,11 +89,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetSemaphoreParameterui64vEXTNative(semaphore, pname, @params);
 		}
 
-		public static void GetSemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, ref ulong @params)
+		public static void GetSemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetSemaphoreParameterui64vEXTNative(semaphore, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetSemaphoreParameterui64vEXTNative(semaphore, pname, pparams0);
+				GetSemaphoreParameterui64vEXTNative(semaphore, pname, pparams);
 			}
 		}
 
@@ -230,11 +249,18 @@ namespace Hexa.NET.OpenGL.EXT
 			SemaphoreParameterui64vEXTNative(semaphore, pname, @params);
 		}
 
-		public static void SemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, ref ulong @params)
+		public static void SemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			SemaphoreParameterui64vEXTNative(semaphore, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void SemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				SemaphoreParameterui64vEXTNative(semaphore, pname, pparams0);
+				SemaphoreParameterui64vEXTNative(semaphore, pname, pparams);
 			}
 		}
 

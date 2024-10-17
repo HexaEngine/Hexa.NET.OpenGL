@@ -437,6 +437,21 @@ namespace Hexa.NET.OpenGLES.NV
 			GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, length, @params);
 		}
 
+		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, out float @params)
+		{
+			float pparams;
+			GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, length, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
+			{
+				GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, length, pparams);
+			}
+		}
+
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
@@ -460,50 +475,6 @@ namespace Hexa.NET.OpenGLES.NV
 				fixed (int* plength1 = &length)
 				{
 					GetProgramResourcefvNVNative(program, programInterface, index, propCount, pprops0, count, plength1, @params);
-				}
-			}
-		}
-
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, ref float @params)
-		{
-			fixed (float* pparams0 = &@params)
-			{
-				GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, length, pparams0);
-			}
-		}
-
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, ref float @params)
-		{
-			fixed (GLEnum* pprops0 = &props)
-			{
-				fixed (float* pparams1 = &@params)
-				{
-					GetProgramResourcefvNVNative(program, programInterface, index, propCount, pprops0, count, length, pparams1);
-				}
-			}
-		}
-
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, ref int length, ref float @params)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (float* pparams1 = &@params)
-				{
-					GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, plength0, pparams1);
-				}
-			}
-		}
-
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, ref int length, ref float @params)
-		{
-			fixed (GLEnum* pprops0 = &props)
-			{
-				fixed (int* plength1 = &length)
-				{
-					fixed (float* pparams2 = &@params)
-					{
-						GetProgramResourcefvNVNative(program, programInterface, index, propCount, pprops0, count, plength1, pparams2);
-					}
 				}
 			}
 		}

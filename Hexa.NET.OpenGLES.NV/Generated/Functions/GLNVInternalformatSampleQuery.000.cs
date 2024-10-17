@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGLES.NV
 			GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, @params);
 		}
 
-		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, ref int @params)
+		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, pparams0);
+				GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, pparams);
 			}
 		}
 

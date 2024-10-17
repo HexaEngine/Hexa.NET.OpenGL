@@ -76,11 +76,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetQueryIndexedivNative(target, index, pname, @params);
 		}
 
-		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, ref int @params)
+		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryIndexedivNative(target, index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryIndexedivNative(target, index, pname, pparams0);
+				GetQueryIndexedivNative(target, index, pname, pparams);
 			}
 		}
 

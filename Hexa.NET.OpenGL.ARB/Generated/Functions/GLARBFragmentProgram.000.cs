@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteProgramsARBNative(n, programs);
 		}
 
+		public static void DeleteProgramsAR(uint program)
+		{
+			DeleteProgramsARBNative(1, &program);
+		}
+
 		public static void DeleteProgramsARB(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -67,6 +72,13 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GenProgramsARB(int n, uint* programs)
 		{
 			GenProgramsARBNative(n, programs);
+		}
+
+		public static uint GenProgramsAR()
+		{
+			uint result;
+			GenProgramsARBNative(1, &result);
+			return result;
 		}
 
 		public static void GenProgramsARB(int n, ref uint programs)
@@ -115,11 +127,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramEnvParameterfvARBNative(target, index, @params);
 		}
 
-		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, ref float @params)
+		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetProgramEnvParameterfvARBNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetProgramEnvParameterfvARBNative(target, index, pparams0);
+				GetProgramEnvParameterfvARBNative(target, index, pparams);
 			}
 		}
 
@@ -161,11 +180,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramLocalParameterfvARBNative(target, index, @params);
 		}
 
-		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, ref float @params)
+		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetProgramLocalParameterfvARBNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetProgramLocalParameterfvARBNative(target, index, pparams0);
+				GetProgramLocalParameterfvARBNative(target, index, pparams);
 			}
 		}
 
@@ -199,11 +225,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramivARBNative(target, pname, @params);
 		}
 
-		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, ref int @params)
+		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramivARBNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramivARBNative(target, pname, pparams0);
+				GetProgramivARBNative(target, pname, pparams);
 			}
 		}
 
@@ -291,11 +324,18 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramEnvParameter4fvARBNative(target, index, @params);
 		}
 
-		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, ref float @params)
+		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			ProgramEnvParameter4fvARBNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				ProgramEnvParameter4fvARBNative(target, index, pparams0);
+				ProgramEnvParameter4fvARBNative(target, index, pparams);
 			}
 		}
 
@@ -367,11 +407,18 @@ namespace Hexa.NET.OpenGL.ARB
 			ProgramLocalParameter4fvARBNative(target, index, @params);
 		}
 
-		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, ref float @params)
+		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			ProgramLocalParameter4fvARBNative(target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				ProgramLocalParameter4fvARBNative(target, index, pparams0);
+				ProgramLocalParameter4fvARBNative(target, index, pparams);
 			}
 		}
 

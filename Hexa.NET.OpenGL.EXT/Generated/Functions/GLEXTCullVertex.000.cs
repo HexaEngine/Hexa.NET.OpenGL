@@ -54,11 +54,18 @@ namespace Hexa.NET.OpenGL.EXT
 			CullParameterfvEXTNative(pname, @params);
 		}
 
-		public static void CullParameterfvEXT(GLCullParameterEXT pname, ref float @params)
+		public static void CullParameterfvEXT(GLCullParameterEXT pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			CullParameterfvEXTNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void CullParameterfvEXT(GLCullParameterEXT pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				CullParameterfvEXTNative(pname, pparams0);
+				CullParameterfvEXTNative(pname, pparams);
 			}
 		}
 

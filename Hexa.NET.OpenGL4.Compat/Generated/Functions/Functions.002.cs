@@ -17,6 +17,596 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		public static void GetUniformuiv(uint program, int location, uint* @params)
+		{
+			GetUniformuivNative(program, location, @params);
+		}
+
+		public static void GetUniformuiv(uint program, int location, out uint @params)
+		{
+			uint pparams;
+			GetUniformuivNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformuiv(uint program, int location, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
+			{
+				GetUniformuivNative(program, location, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexArrayIndexed64ivNative(uint vaobj, uint index, GLVertexArrayPName pname, long* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexArrayPName, long*, void>)funcTable[395])(vaobj, index, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexArrayPName, nint, void>)funcTable[395])(vaobj, index, pname, (nint)param);
+			#endif
+		}
+
+		public static void GetVertexArrayIndexed64iv(uint vaobj, uint index, GLVertexArrayPName pname, long* param)
+		{
+			GetVertexArrayIndexed64ivNative(vaobj, index, pname, param);
+		}
+
+		public static void GetVertexArrayIndexed64iv(uint vaobj, uint index, GLVertexArrayPName pname, out long param)
+		{
+			long pparam;
+			GetVertexArrayIndexed64ivNative(vaobj, index, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexArrayIndexedivNative(uint vaobj, uint index, GLVertexArrayPName pname, int* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexArrayPName, int*, void>)funcTable[396])(vaobj, index, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexArrayPName, nint, void>)funcTable[396])(vaobj, index, pname, (nint)param);
+			#endif
+		}
+
+		public static void GetVertexArrayIndexediv(uint vaobj, uint index, GLVertexArrayPName pname, int* param)
+		{
+			GetVertexArrayIndexedivNative(vaobj, index, pname, param);
+		}
+
+		public static void GetVertexArrayIndexediv(uint vaobj, uint index, GLVertexArrayPName pname, out int param)
+		{
+			int pparam;
+			GetVertexArrayIndexedivNative(vaobj, index, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexArrayivNative(uint vaobj, GLVertexArrayPName pname, int* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexArrayPName, int*, void>)funcTable[397])(vaobj, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexArrayPName, nint, void>)funcTable[397])(vaobj, pname, (nint)param);
+			#endif
+		}
+
+		public static void GetVertexArrayiv(uint vaobj, GLVertexArrayPName pname, int* param)
+		{
+			GetVertexArrayivNative(vaobj, pname, param);
+		}
+
+		public static void GetVertexArrayiv(uint vaobj, GLVertexArrayPName pname, out int param)
+		{
+			int pparam;
+			GetVertexArrayivNative(vaobj, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribIivNative(uint index, GLVertexAttribEnum pname, int* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, int*, void>)funcTable[398])(index, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, nint, void>)funcTable[398])(index, pname, (nint)@params);
+			#endif
+		}
+
+		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, int* @params)
+		{
+			GetVertexAttribIivNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, out int @params)
+		{
+			int pparams;
+			GetVertexAttribIivNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
+			{
+				GetVertexAttribIivNative(index, pname, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribIuivNative(uint index, GLVertexAttribEnum pname, uint* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, uint*, void>)funcTable[399])(index, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, nint, void>)funcTable[399])(index, pname, (nint)@params);
+			#endif
+		}
+
+		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, uint* @params)
+		{
+			GetVertexAttribIuivNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, out uint @params)
+		{
+			uint pparams;
+			GetVertexAttribIuivNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
+			{
+				GetVertexAttribIuivNative(index, pname, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribLdvNative(uint index, GLVertexAttribEnum pname, double* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, double*, void>)funcTable[400])(index, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, nint, void>)funcTable[400])(index, pname, (nint)@params);
+			#endif
+		}
+
+		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, double* @params)
+		{
+			GetVertexAttribLdvNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, ref double @params)
+		{
+			fixed (double* pparams0 = &@params)
+			{
+				GetVertexAttribLdvNative(index, pname, pparams0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribPointervNative(uint index, GLVertexAttribPointerPropertyARB pname, void** pointer)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerPropertyARB, void**, void>)funcTable[401])(index, pname, pointer);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerPropertyARB, nint, void>)funcTable[401])(index, pname, (nint)pointer);
+			#endif
+		}
+
+		public static void GetVertexAttribPointerv(uint index, GLVertexAttribPointerPropertyARB pname, void** pointer)
+		{
+			GetVertexAttribPointervNative(index, pname, pointer);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribdvNative(uint index, GLVertexAttribPropertyARB pname, double* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPropertyARB, double*, void>)funcTable[402])(index, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPropertyARB, nint, void>)funcTable[402])(index, pname, (nint)@params);
+			#endif
+		}
+
+		public static void GetVertexAttribdv(uint index, GLVertexAttribPropertyARB pname, double* @params)
+		{
+			GetVertexAttribdvNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribdv(uint index, GLVertexAttribPropertyARB pname, ref double @params)
+		{
+			fixed (double* pparams0 = &@params)
+			{
+				GetVertexAttribdvNative(index, pname, pparams0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribfvNative(uint index, GLVertexAttribPropertyARB pname, float* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPropertyARB, float*, void>)funcTable[403])(index, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPropertyARB, nint, void>)funcTable[403])(index, pname, (nint)@params);
+			#endif
+		}
+
+		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, float* @params)
+		{
+			GetVertexAttribfvNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, out float @params)
+		{
+			float pparams;
+			GetVertexAttribfvNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
+			{
+				GetVertexAttribfvNative(index, pname, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetVertexAttribivNative(uint index, GLVertexAttribPropertyARB pname, int* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPropertyARB, int*, void>)funcTable[404])(index, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPropertyARB, nint, void>)funcTable[404])(index, pname, (nint)@params);
+			#endif
+		}
+
+		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, int* @params)
+		{
+			GetVertexAttribivNative(index, pname, @params);
+		}
+
+		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, out int @params)
+		{
+			int pparams;
+			GetVertexAttribivNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
+			{
+				GetVertexAttribivNative(index, pname, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnColorTableNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* table)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[405])(target, format, type, bufSize, table);
+			#else
+			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLPixelFormat, GLPixelType, int, nint, void>)funcTable[405])(target, format, type, bufSize, (nint)table);
+			#endif
+		}
+
+		public static void GetnColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* table)
+		{
+			GetnColorTableNative(target, format, type, bufSize, table);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnCompressedTexImageNative(GLTextureTarget target, int lod, int bufSize, void* pixels)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, void*, void>)funcTable[406])(target, lod, bufSize, pixels);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, nint, void>)funcTable[406])(target, lod, bufSize, (nint)pixels);
+			#endif
+		}
+
+		public static void GetnCompressedTexImage(GLTextureTarget target, int lod, int bufSize, void* pixels)
+		{
+			GetnCompressedTexImageNative(target, lod, bufSize, pixels);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnConvolutionFilterNative(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* image)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[407])(target, format, type, bufSize, image);
+			#else
+			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLPixelFormat, GLPixelType, int, nint, void>)funcTable[407])(target, format, type, bufSize, (nint)image);
+			#endif
+		}
+
+		public static void GetnConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* image)
+		{
+			GetnConvolutionFilterNative(target, format, type, bufSize, image);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnHistogramNative(GLHistogramTarget target, byte reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLHistogramTarget, byte, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[408])(target, reset, format, type, bufSize, values);
+			#else
+			((delegate* unmanaged[Cdecl]<GLHistogramTarget, byte, GLPixelFormat, GLPixelType, int, nint, void>)funcTable[408])(target, reset, format, type, bufSize, (nint)values);
+			#endif
+		}
+
+		public static void GetnHistogram(GLHistogramTarget target, byte reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		{
+			GetnHistogramNative(target, reset, format, type, bufSize, values);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnMapdvNative(GLMapTarget target, GLMapQuery query, int bufSize, double* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, double*, void>)funcTable[409])(target, query, bufSize, v);
+			#else
+			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, nint, void>)funcTable[409])(target, query, bufSize, (nint)v);
+			#endif
+		}
+
+		public static void GetnMapdv(GLMapTarget target, GLMapQuery query, int bufSize, double* v)
+		{
+			GetnMapdvNative(target, query, bufSize, v);
+		}
+
+		public static void GetnMapdv(GLMapTarget target, GLMapQuery query, int bufSize, ref double v)
+		{
+			fixed (double* pv0 = &v)
+			{
+				GetnMapdvNative(target, query, bufSize, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnMapfvNative(GLMapTarget target, GLMapQuery query, int bufSize, float* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, float*, void>)funcTable[410])(target, query, bufSize, v);
+			#else
+			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, nint, void>)funcTable[410])(target, query, bufSize, (nint)v);
+			#endif
+		}
+
+		public static void GetnMapfv(GLMapTarget target, GLMapQuery query, int bufSize, float* v)
+		{
+			GetnMapfvNative(target, query, bufSize, v);
+		}
+
+		public static void GetnMapfv(GLMapTarget target, GLMapQuery query, int bufSize, ref float v)
+		{
+			fixed (float* pv0 = &v)
+			{
+				GetnMapfvNative(target, query, bufSize, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnMapivNative(GLMapTarget target, GLMapQuery query, int bufSize, int* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, int*, void>)funcTable[411])(target, query, bufSize, v);
+			#else
+			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, nint, void>)funcTable[411])(target, query, bufSize, (nint)v);
+			#endif
+		}
+
+		public static void GetnMapiv(GLMapTarget target, GLMapQuery query, int bufSize, int* v)
+		{
+			GetnMapivNative(target, query, bufSize, v);
+		}
+
+		public static void GetnMapiv(GLMapTarget target, GLMapQuery query, int bufSize, ref int v)
+		{
+			fixed (int* pv0 = &v)
+			{
+				GetnMapivNative(target, query, bufSize, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnMinmaxNative(GLMinmaxTarget target, byte reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLMinmaxTarget, byte, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[412])(target, reset, format, type, bufSize, values);
+			#else
+			((delegate* unmanaged[Cdecl]<GLMinmaxTarget, byte, GLPixelFormat, GLPixelType, int, nint, void>)funcTable[412])(target, reset, format, type, bufSize, (nint)values);
+			#endif
+		}
+
+		public static void GetnMinmax(GLMinmaxTarget target, byte reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		{
+			GetnMinmaxNative(target, reset, format, type, bufSize, values);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnPixelMapfvNative(GLPixelMap map, int bufSize, float* values)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPixelMap, int, float*, void>)funcTable[413])(map, bufSize, values);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPixelMap, int, nint, void>)funcTable[413])(map, bufSize, (nint)values);
+			#endif
+		}
+
+		public static void GetnPixelMapfv(GLPixelMap map, int bufSize, float* values)
+		{
+			GetnPixelMapfvNative(map, bufSize, values);
+		}
+
+		public static void GetnPixelMapfv(GLPixelMap map, int bufSize, ref float values)
+		{
+			fixed (float* pvalues0 = &values)
+			{
+				GetnPixelMapfvNative(map, bufSize, pvalues0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnPixelMapuivNative(GLPixelMap map, int bufSize, uint* values)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPixelMap, int, uint*, void>)funcTable[414])(map, bufSize, values);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPixelMap, int, nint, void>)funcTable[414])(map, bufSize, (nint)values);
+			#endif
+		}
+
+		public static void GetnPixelMapuiv(GLPixelMap map, int bufSize, uint* values)
+		{
+			GetnPixelMapuivNative(map, bufSize, values);
+		}
+
+		public static void GetnPixelMapuiv(GLPixelMap map, int bufSize, ref uint values)
+		{
+			fixed (uint* pvalues0 = &values)
+			{
+				GetnPixelMapuivNative(map, bufSize, pvalues0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnPixelMapusvNative(GLPixelMap map, int bufSize, ushort* values)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPixelMap, int, ushort*, void>)funcTable[415])(map, bufSize, values);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPixelMap, int, nint, void>)funcTable[415])(map, bufSize, (nint)values);
+			#endif
+		}
+
+		public static void GetnPixelMapusv(GLPixelMap map, int bufSize, ushort* values)
+		{
+			GetnPixelMapusvNative(map, bufSize, values);
+		}
+
+		public static void GetnPixelMapusv(GLPixelMap map, int bufSize, ref ushort values)
+		{
+			fixed (ushort* pvalues0 = &values)
+			{
+				GetnPixelMapusvNative(map, bufSize, pvalues0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnPolygonStippleNative(int bufSize, byte* pattern)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[416])(bufSize, pattern);
+			#else
+			((delegate* unmanaged[Cdecl]<int, nint, void>)funcTable[416])(bufSize, (nint)pattern);
+			#endif
+		}
+
+		public static void GetnPolygonStipple(int bufSize, byte* pattern)
+		{
+			GetnPolygonStippleNative(bufSize, pattern);
+		}
+
+		public static void GetnPolygonStipple(int bufSize, string pattern)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (pattern != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(pattern);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(pattern, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			GetnPolygonStippleNative(bufSize, pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		public static void GetnPolygonStipple(int bufSize, ReadOnlySpan<byte> pattern)
+		{
+			fixed (byte* ppattern0 = pattern)
+			{
+				GetnPolygonStippleNative(bufSize, ppattern0);
+			}
+		}
+
+		public static void GetnPolygonStipple(int bufSize, ref byte pattern)
+		{
+			fixed (byte* ppattern0 = &pattern)
+			{
+				GetnPolygonStippleNative(bufSize, ppattern0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnSeparableFilterNative(GLSeparableTarget target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLSeparableTarget, GLPixelFormat, GLPixelType, int, void*, int, void*, void*, void>)funcTable[417])(target, format, type, rowBufSize, row, columnBufSize, column, span);
+			#else
+			((delegate* unmanaged[Cdecl]<GLSeparableTarget, GLPixelFormat, GLPixelType, int, nint, int, nint, nint, void>)funcTable[417])(target, format, type, rowBufSize, (nint)row, columnBufSize, (nint)column, (nint)span);
+			#endif
+		}
+
+		public static void GetnSeparableFilter(GLSeparableTarget target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span)
+		{
+			GetnSeparableFilterNative(target, format, type, rowBufSize, row, columnBufSize, column, span);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnTexImageNative(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* pixels)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[418])(target, level, format, type, bufSize, pixels);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLPixelFormat, GLPixelType, int, nint, void>)funcTable[418])(target, level, format, type, bufSize, (nint)pixels);
+			#endif
+		}
+
+		public static void GetnTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* pixels)
+		{
+			GetnTexImageNative(target, level, format, type, bufSize, pixels);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void GetnUniformdvNative(uint program, int location, int bufSize, double* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[419])(program, location, bufSize, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[419])(program, location, bufSize, (nint)@params);
+			#endif
+		}
+
+		public static void GetnUniformdv(uint program, int location, int bufSize, double* @params)
+		{
+			GetnUniformdvNative(program, location, bufSize, @params);
+		}
+
+		public static void GetnUniformdv(uint program, int location, int bufSize, ref double @params)
+		{
+			fixed (double* pparams0 = &@params)
+			{
+				GetnUniformdvNative(program, location, bufSize, pparams0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetnUniformfvNative(uint program, int location, int bufSize, float* @params)
 		{
@@ -32,11 +622,18 @@ namespace Hexa.NET.OpenGL
 			GetnUniformfvNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformfv(uint program, int location, int bufSize, ref float @params)
+		public static void GetnUniformfv(uint program, int location, int bufSize, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetnUniformfvNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformfv(uint program, int location, int bufSize, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetnUniformfvNative(program, location, bufSize, pparams0);
+				GetnUniformfvNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -55,11 +652,18 @@ namespace Hexa.NET.OpenGL
 			GetnUniformivNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformiv(uint program, int location, int bufSize, ref int @params)
+		public static void GetnUniformiv(uint program, int location, int bufSize, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetnUniformivNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformiv(uint program, int location, int bufSize, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetnUniformivNative(program, location, bufSize, pparams0);
+				GetnUniformivNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -78,11 +682,18 @@ namespace Hexa.NET.OpenGL
 			GetnUniformuivNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformuiv(uint program, int location, int bufSize, ref uint @params)
+		public static void GetnUniformuiv(uint program, int location, int bufSize, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetnUniformuivNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformuiv(uint program, int location, int bufSize, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetnUniformuivNative(program, location, bufSize, pparams0);
+				GetnUniformuivNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -775,11 +1386,18 @@ namespace Hexa.NET.OpenGL
 			LightModelfvNative(pname, @params);
 		}
 
-		public static void LightModelfv(GLLightModelParameter pname, ref float @params)
+		public static void LightModelfv(GLLightModelParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			LightModelfvNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void LightModelfv(GLLightModelParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				LightModelfvNative(pname, pparams0);
+				LightModelfvNative(pname, pparams);
 			}
 		}
 
@@ -813,11 +1431,18 @@ namespace Hexa.NET.OpenGL
 			LightModelivNative(pname, @params);
 		}
 
-		public static void LightModeliv(GLLightModelParameter pname, ref int @params)
+		public static void LightModeliv(GLLightModelParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			LightModelivNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void LightModeliv(GLLightModelParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				LightModelivNative(pname, pparams0);
+				LightModelivNative(pname, pparams);
 			}
 		}
 
@@ -851,11 +1476,18 @@ namespace Hexa.NET.OpenGL
 			LightfvNative(light, pname, @params);
 		}
 
-		public static void Lightfv(GLLightName light, GLLightParameter pname, ref float @params)
+		public static void Lightfv(GLLightName light, GLLightParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			LightfvNative(light, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void Lightfv(GLLightName light, GLLightParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				LightfvNative(light, pname, pparams0);
+				LightfvNative(light, pname, pparams);
 			}
 		}
 
@@ -889,11 +1521,18 @@ namespace Hexa.NET.OpenGL
 			LightivNative(light, pname, @params);
 		}
 
-		public static void Lightiv(GLLightName light, GLLightParameter pname, ref int @params)
+		public static void Lightiv(GLLightName light, GLLightParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			LightivNative(light, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void Lightiv(GLLightName light, GLLightParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				LightivNative(light, pname, pparams0);
+				LightivNative(light, pname, pparams);
 			}
 		}
 
@@ -1340,11 +1979,18 @@ namespace Hexa.NET.OpenGL
 			MaterialfvNative(face, pname, @params);
 		}
 
-		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, ref float @params)
+		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			MaterialfvNative(face, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				MaterialfvNative(face, pname, pparams0);
+				MaterialfvNative(face, pname, pparams);
 			}
 		}
 
@@ -1378,11 +2024,18 @@ namespace Hexa.NET.OpenGL
 			MaterialivNative(face, pname, @params);
 		}
 
-		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, ref int @params)
+		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MaterialivNative(face, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MaterialivNative(face, pname, pparams0);
+				MaterialivNative(face, pname, pparams);
 			}
 		}
 
@@ -3274,11 +3927,18 @@ namespace Hexa.NET.OpenGL
 			PointParameterfvNative(pname, @params);
 		}
 
-		public static void PointParameterfv(GLPointParameterNameARB pname, ref float @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			PointParameterfvNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				PointParameterfvNative(pname, pparams0);
+				PointParameterfvNative(pname, pparams);
 			}
 		}
 
@@ -3312,11 +3972,18 @@ namespace Hexa.NET.OpenGL
 			PointParameterivNative(pname, @params);
 		}
 
-		public static void PointParameteriv(GLPointParameterNameARB pname, ref int @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			PointParameterivNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				PointParameterivNative(pname, pparams0);
+				PointParameterivNative(pname, pparams);
 			}
 		}
 
@@ -4352,672 +5019,6 @@ namespace Hexa.NET.OpenGL
 			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[648])(program, location, count, transpose, value);
 			#else
 			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[648])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix3dv(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix3dvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix3dv(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix3dvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3fvNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[649])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[649])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix3fv(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix3fvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix3fv(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix3fvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2dvNative(uint program, int location, int count, byte transpose, double* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[650])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[650])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix3x2dvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix3x2dvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x2fvNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[651])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[651])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix3x2fvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix3x2fvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4dvNative(uint program, int location, int count, byte transpose, double* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[652])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[652])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix3x4dvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix3x4dvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix3x4fvNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[653])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[653])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix3x4fvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix3x4fvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4dvNative(uint program, int location, int count, byte transpose, double* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[654])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[654])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4dv(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix4dvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4dv(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4dvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4fvNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[655])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[655])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4fv(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix4fvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4fv(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4fvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2dvNative(uint program, int location, int count, byte transpose, double* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[656])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[656])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix4x2dvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4x2dvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x2fvNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[657])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[657])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix4x2fvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4x2fvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3dvNative(uint program, int location, int count, byte transpose, double* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[658])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[658])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, byte transpose, double* value)
-		{
-			ProgramUniformMatrix4x3dvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, byte transpose, ref double value)
-		{
-			fixed (double* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4x3dvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformMatrix4x3fvNative(uint program, int location, int count, byte transpose, float* value)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[659])(program, location, count, transpose, value);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[659])(program, location, count, transpose, (nint)value);
-			#endif
-		}
-
-		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, byte transpose, float* value)
-		{
-			ProgramUniformMatrix4x3fvNative(program, location, count, transpose, value);
-		}
-
-		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, byte transpose, ref float value)
-		{
-			fixed (float* pvalue0 = &value)
-			{
-				ProgramUniformMatrix4x3fvNative(program, location, count, transpose, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProvokingVertexNative(GLVertexProvokingMode mode)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[660])(mode);
-			#else
-			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[660])(mode);
-			#endif
-		}
-
-		public static void ProvokingVertex(GLVertexProvokingMode mode)
-		{
-			ProvokingVertexNative(mode);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushAttribNative(GLAttribMask mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLAttribMask, void>)funcTable[661])(mask);
-			#else
-			((delegate* unmanaged[Cdecl]<GLAttribMask, void>)funcTable[661])(mask);
-			#endif
-		}
-
-		public static void PushAttrib(GLAttribMask mask)
-		{
-			PushAttribNative(mask);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushClientAttribNative(GLClientAttribMask mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLClientAttribMask, void>)funcTable[662])(mask);
-			#else
-			((delegate* unmanaged[Cdecl]<GLClientAttribMask, void>)funcTable[662])(mask);
-			#endif
-		}
-
-		public static void PushClientAttrib(GLClientAttribMask mask)
-		{
-			PushClientAttribNative(mask);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushDebugGroupNative(GLDebugSource source, uint id, int length, byte* message)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLDebugSource, uint, int, byte*, void>)funcTable[663])(source, id, length, message);
-			#else
-			((delegate* unmanaged[Cdecl]<GLDebugSource, uint, int, nint, void>)funcTable[663])(source, id, length, (nint)message);
-			#endif
-		}
-
-		public static void PushDebugGroup(GLDebugSource source, uint id, int length, byte* message)
-		{
-			PushDebugGroupNative(source, id, length, message);
-		}
-
-		public static void PushDebugGroup(GLDebugSource source, uint id, int length, string message)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (message != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(message);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(message, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			PushDebugGroupNative(source, id, length, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-		}
-
-		public static void PushDebugGroup(GLDebugSource source, uint id, int length, ReadOnlySpan<byte> message)
-		{
-			fixed (byte* pmessage0 = message)
-			{
-				PushDebugGroupNative(source, id, length, pmessage0);
-			}
-		}
-
-		public static void PushDebugGroup(GLDebugSource source, uint id, int length, ref byte message)
-		{
-			fixed (byte* pmessage0 = &message)
-			{
-				PushDebugGroupNative(source, id, length, pmessage0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushMatrixNative()
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<void>)funcTable[664])();
-			#else
-			((delegate* unmanaged[Cdecl]<void>)funcTable[664])();
-			#endif
-		}
-
-		public static void PushMatrix()
-		{
-			PushMatrixNative();
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushNameNative(uint name)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[665])(name);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[665])(name);
-			#endif
-		}
-
-		public static void PushName(uint name)
-		{
-			PushNameNative(name);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void QueryCounterNative(uint id, GLQueryCounterTarget target)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[666])(id, target);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[666])(id, target);
-			#endif
-		}
-
-		public static void QueryCounter(uint id, GLQueryCounterTarget target)
-		{
-			QueryCounterNative(id, target);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2dNative(double x, double y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[667])(x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[667])(x, y);
-			#endif
-		}
-
-		public static void RasterPos2d(double x, double y)
-		{
-			RasterPos2dNative(x, y);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2dvNative(double* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[668])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[668])((nint)v);
-			#endif
-		}
-
-		public static void RasterPos2dv(double* v)
-		{
-			RasterPos2dvNative(v);
-		}
-
-		public static void RasterPos2dv(ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				RasterPos2dvNative(pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2fNative(float x, float y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[669])(x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[669])(x, y);
-			#endif
-		}
-
-		public static void RasterPos2f(float x, float y)
-		{
-			RasterPos2fNative(x, y);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2fvNative(float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[670])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[670])((nint)v);
-			#endif
-		}
-
-		public static void RasterPos2fv(float* v)
-		{
-			RasterPos2fvNative(v);
-		}
-
-		public static void RasterPos2fv(ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				RasterPos2fvNative(pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2iNative(int x, int y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[671])(x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[671])(x, y);
-			#endif
-		}
-
-		public static void RasterPos2i(int x, int y)
-		{
-			RasterPos2iNative(x, y);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2ivNative(int* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[672])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[672])((nint)v);
-			#endif
-		}
-
-		public static void RasterPos2iv(int* v)
-		{
-			RasterPos2ivNative(v);
-		}
-
-		public static void RasterPos2iv(ref int v)
-		{
-			fixed (int* pv0 = &v)
-			{
-				RasterPos2ivNative(pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2sNative(short x, short y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<short, short, void>)funcTable[673])(x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<short, short, void>)funcTable[673])(x, y);
-			#endif
-		}
-
-		public static void RasterPos2s(short x, short y)
-		{
-			RasterPos2sNative(x, y);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2svNative(short* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[674])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[674])((nint)v);
-			#endif
-		}
-
-		public static void RasterPos2sv(short* v)
-		{
-			RasterPos2svNative(v);
-		}
-
-		public static void RasterPos2sv(ref short v)
-		{
-			fixed (short* pv0 = &v)
-			{
-				RasterPos2svNative(pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3dNative(double x, double y, double z)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[675])(x, y, z);
-			#else
-			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[675])(x, y, z);
-			#endif
-		}
-
-		public static void RasterPos3d(double x, double y, double z)
-		{
-			RasterPos3dNative(x, y, z);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3dvNative(double* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[676])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[676])((nint)v);
-			#endif
-		}
-
-		public static void RasterPos3dv(double* v)
-		{
-			RasterPos3dvNative(v);
-		}
-
-		public static void RasterPos3dv(ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				RasterPos3dvNative(pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3fNative(float x, float y, float z)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[677])(x, y, z);
-			#else
-			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[677])(x, y, z);
-			#endif
-		}
-
-		public static void RasterPos3f(float x, float y, float z)
-		{
-			RasterPos3fNative(x, y, z);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3fvNative(float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[678])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[678])((nint)v);
-			#endif
-		}
-
-		public static void RasterPos3fv(float* v)
-		{
-			RasterPos3fvNative(v);
-		}
-
-		public static void RasterPos3fv(ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				RasterPos3fvNative(pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3iNative(int x, int y, int z)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[679])(x, y, z);
-			#else
-			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[679])(x, y, z);
-			#endif
-		}
-
-		public static void RasterPos3i(int x, int y, int z)
-		{
-			RasterPos3iNative(x, y, z);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3ivNative(int* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[680])(v);
-			#else
-			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[680])((nint)v);
 			#endif
 		}
 	}

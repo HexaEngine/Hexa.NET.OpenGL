@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetVideoi64vNVNative(videoSlot, pname, @params);
 		}
 
-		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, ref long @params)
+		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetVideoi64vNVNative(videoSlot, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetVideoi64vNVNative(videoSlot, pname, pparams0);
+				GetVideoi64vNVNative(videoSlot, pname, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetVideoivNVNative(videoSlot, pname, @params);
 		}
 
-		public static void GetVideoivNV(uint videoSlot, GLEnum pname, ref int @params)
+		public static void GetVideoivNV(uint videoSlot, GLEnum pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetVideoivNVNative(videoSlot, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVideoivNV(uint videoSlot, GLEnum pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetVideoivNVNative(videoSlot, pname, pparams0);
+				GetVideoivNVNative(videoSlot, pname, pparams);
 			}
 		}
 
@@ -77,11 +91,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetVideoui64vNVNative(videoSlot, pname, @params);
 		}
 
-		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, ref ulong @params)
+		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetVideoui64vNVNative(videoSlot, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetVideoui64vNVNative(videoSlot, pname, pparams0);
+				GetVideoui64vNVNative(videoSlot, pname, pparams);
 			}
 		}
 
@@ -100,11 +121,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetVideouivNVNative(videoSlot, pname, @params);
 		}
 
-		public static void GetVideouivNV(uint videoSlot, GLEnum pname, ref uint @params)
+		public static void GetVideouivNV(uint videoSlot, GLEnum pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetVideouivNVNative(videoSlot, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVideouivNV(uint videoSlot, GLEnum pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetVideouivNVNative(videoSlot, pname, pparams0);
+				GetVideouivNVNative(videoSlot, pname, pparams);
 			}
 		}
 

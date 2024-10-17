@@ -92,6 +92,11 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteFramebuffersNative(n, framebuffers);
 		}
 
+		public static void DeleteFramebuffer(uint framebuffer)
+		{
+			DeleteFramebuffersNative(1, &framebuffer);
+		}
+
 		public static void DeleteFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -113,6 +118,11 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void DeleteRenderbuffers(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersNative(n, renderbuffers);
+		}
+
+		public static void DeleteRenderbuffer(uint renderbuffer)
+		{
+			DeleteRenderbuffersNative(1, &renderbuffer);
 		}
 
 		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
@@ -213,6 +223,13 @@ namespace Hexa.NET.OpenGL.ARB
 			GenFramebuffersNative(n, framebuffers);
 		}
 
+		public static uint GenFramebuffer()
+		{
+			uint result;
+			GenFramebuffersNative(1, &result);
+			return result;
+		}
+
 		public static void GenFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -234,6 +251,13 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GenRenderbuffers(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersNative(n, renderbuffers);
+		}
+
+		public static uint GenRenderbuffer()
+		{
+			uint result;
+			GenRenderbuffersNative(1, &result);
+			return result;
 		}
 
 		public static void GenRenderbuffers(int n, ref uint renderbuffers)
@@ -274,11 +298,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetFramebufferAttachmentParameterivNative(target, attachment, pname, @params);
 		}
 
-		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferAttachmentParameterivNative(target, attachment, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferAttachmentParameterivNative(target, attachment, pname, pparams0);
+				GetFramebufferAttachmentParameterivNative(target, attachment, pname, pparams);
 			}
 		}
 
@@ -297,11 +328,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetRenderbufferParameterivNative(target, pname, @params);
 		}
 
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, ref int @params)
+		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetRenderbufferParameterivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetRenderbufferParameterivNative(target, pname, pparams0);
+				GetRenderbufferParameterivNative(target, pname, pparams);
 			}
 		}
 

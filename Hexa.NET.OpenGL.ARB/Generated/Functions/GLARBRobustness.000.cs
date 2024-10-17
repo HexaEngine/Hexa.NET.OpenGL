@@ -370,11 +370,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetnUniformfvARBNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformfvARB(uint program, int location, int bufSize, ref float @params)
+		public static void GetnUniformfvARB(uint program, int location, int bufSize, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetnUniformfvARBNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformfvARB(uint program, int location, int bufSize, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetnUniformfvARBNative(program, location, bufSize, pparams0);
+				GetnUniformfvARBNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -393,11 +400,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetnUniformivARBNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformivARB(uint program, int location, int bufSize, ref int @params)
+		public static void GetnUniformivARB(uint program, int location, int bufSize, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetnUniformivARBNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformivARB(uint program, int location, int bufSize, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetnUniformivARBNative(program, location, bufSize, pparams0);
+				GetnUniformivARBNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -416,11 +430,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetnUniformuivARBNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformuivARB(uint program, int location, int bufSize, ref uint @params)
+		public static void GetnUniformuivARB(uint program, int location, int bufSize, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetnUniformuivARBNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformuivARB(uint program, int location, int bufSize, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetnUniformuivARBNative(program, location, bufSize, pparams0);
+				GetnUniformuivARBNative(program, location, bufSize, pparams);
 			}
 		}
 

@@ -128,6 +128,11 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteTexturesEXTNative(n, textures);
 		}
 
+		public static void DeleteTexturesEX(uint texture)
+		{
+			DeleteTexturesEXTNative(1, &texture);
+		}
+
 		public static void DeleteTexturesEXT(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -149,6 +154,13 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GenTexturesEXT(int n, uint* textures)
 		{
 			GenTexturesEXTNative(n, textures);
+		}
+
+		public static uint GenTexturesEX()
+		{
+			uint result;
+			GenTexturesEXTNative(1, &result);
+			return result;
 		}
 
 		public static void GenTexturesEXT(int n, ref uint textures)

@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetUniformi64vNVNative(program, location, @params);
 		}
 
-		public static void GetUniformi64vNV(uint program, int location, ref long @params)
+		public static void GetUniformi64vNV(uint program, int location, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetUniformi64vNVNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformi64vNV(uint program, int location, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetUniformi64vNVNative(program, location, pparams0);
+				GetUniformi64vNVNative(program, location, pparams);
 			}
 		}
 

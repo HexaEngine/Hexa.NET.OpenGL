@@ -76,6 +76,11 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteBuffersARBNative(n, buffers);
 		}
 
+		public static void DeleteBuffersAR(uint buffer)
+		{
+			DeleteBuffersARBNative(1, &buffer);
+		}
+
 		public static void DeleteBuffersARB(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -97,6 +102,13 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GenBuffersARB(int n, uint* buffers)
 		{
 			GenBuffersARBNative(n, buffers);
+		}
+
+		public static uint GenBuffersAR()
+		{
+			uint result;
+			GenBuffersARBNative(1, &result);
+			return result;
 		}
 
 		public static void GenBuffersARB(int n, ref uint buffers)
@@ -122,11 +134,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetBufferParameterivARBNative(target, pname, @params);
 		}
 
-		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, ref int @params)
+		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetBufferParameterivARBNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetBufferParameterivARBNative(target, pname, pparams0);
+				GetBufferParameterivARBNative(target, pname, pparams);
 			}
 		}
 

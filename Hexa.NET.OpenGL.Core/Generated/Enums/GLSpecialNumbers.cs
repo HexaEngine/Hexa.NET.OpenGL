@@ -11,8 +11,11 @@ using System;
 using HexaGen.Runtime;
 using System.Numerics;
 
-namespace Hexa.NET.OpenGLES
+namespace Hexa.NET.OpenGL
 {
+	/// <summary>
+	/// Tokens whose numeric value is intrinsically meaningful<br/>
+	/// </summary>
 	public enum GLSpecialNumbers : ulong
 	{
 		False = unchecked((ulong)0),

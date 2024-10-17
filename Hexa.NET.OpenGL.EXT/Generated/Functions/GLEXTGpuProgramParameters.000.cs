@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramEnvParameters4fvEXTNative(target, index, count, @params);
 		}
 
-		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
+		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			ProgramEnvParameters4fvEXTNative(target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				ProgramEnvParameters4fvEXTNative(target, index, count, pparams0);
+				ProgramEnvParameters4fvEXTNative(target, index, count, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.EXT
 			ProgramLocalParameters4fvEXTNative(target, index, count, @params);
 		}
 
-		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
+		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			ProgramLocalParameters4fvEXTNative(target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				ProgramLocalParameters4fvEXTNative(target, index, count, pparams0);
+				ProgramLocalParameters4fvEXTNative(target, index, count, pparams);
 			}
 		}
 

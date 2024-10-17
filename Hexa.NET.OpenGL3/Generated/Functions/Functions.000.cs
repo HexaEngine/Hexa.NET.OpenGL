@@ -980,6 +980,11 @@ namespace Hexa.NET.OpenGL
 			DeleteBuffersNative(n, buffers);
 		}
 
+		public static void DeleteBuffer(uint buffer)
+		{
+			DeleteBuffersNative(1, &buffer);
+		}
+
 		public static void DeleteBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -1001,6 +1006,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteFramebuffers(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersNative(n, framebuffers);
+		}
+
+		public static void DeleteFramebuffer(uint framebuffer)
+		{
+			DeleteFramebuffersNative(1, &framebuffer);
 		}
 
 		public static void DeleteFramebuffers(int n, ref uint framebuffers)
@@ -1041,6 +1051,11 @@ namespace Hexa.NET.OpenGL
 			DeleteQueriesNative(n, ids);
 		}
 
+		public static void DeleteQuerie(uint id)
+		{
+			DeleteQueriesNative(1, &id);
+		}
+
 		public static void DeleteQueries(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -1064,6 +1079,11 @@ namespace Hexa.NET.OpenGL
 			DeleteRenderbuffersNative(n, renderbuffers);
 		}
 
+		public static void DeleteRenderbuffer(uint renderbuffer)
+		{
+			DeleteRenderbuffersNative(1, &renderbuffer);
+		}
+
 		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -1085,6 +1105,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteSamplers(int count, uint* samplers)
 		{
 			DeleteSamplersNative(count, samplers);
+		}
+
+		public static void DeleteSampler(uint sampler)
+		{
+			DeleteSamplersNative(1, &sampler);
 		}
 
 		public static void DeleteSamplers(int count, ref uint samplers)
@@ -1140,6 +1165,11 @@ namespace Hexa.NET.OpenGL
 			DeleteTexturesNative(n, textures);
 		}
 
+		public static void DeleteTexture(uint texture)
+		{
+			DeleteTexturesNative(1, &texture);
+		}
+
 		public static void DeleteTextures(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -1161,6 +1191,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteVertexArrays(int n, uint* arrays)
 		{
 			DeleteVertexArraysNative(n, arrays);
+		}
+
+		public static void DeleteVertexArray(uint array)
+		{
+			DeleteVertexArraysNative(1, &array);
 		}
 
 		public static void DeleteVertexArrays(int n, ref uint arrays)
@@ -1697,6 +1732,13 @@ namespace Hexa.NET.OpenGL
 			GenBuffersNative(n, buffers);
 		}
 
+		public static uint GenBuffer()
+		{
+			uint result;
+			GenBuffersNative(1, &result);
+			return result;
+		}
+
 		public static void GenBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -1718,6 +1760,13 @@ namespace Hexa.NET.OpenGL
 		public static void GenFramebuffers(int n, uint* framebuffers)
 		{
 			GenFramebuffersNative(n, framebuffers);
+		}
+
+		public static uint GenFramebuffer()
+		{
+			uint result;
+			GenFramebuffersNative(1, &result);
+			return result;
 		}
 
 		public static void GenFramebuffers(int n, ref uint framebuffers)
@@ -1743,6 +1792,13 @@ namespace Hexa.NET.OpenGL
 			GenQueriesNative(n, ids);
 		}
 
+		public static uint GenQuerie()
+		{
+			uint result;
+			GenQueriesNative(1, &result);
+			return result;
+		}
+
 		public static void GenQueries(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -1764,6 +1820,13 @@ namespace Hexa.NET.OpenGL
 		public static void GenRenderbuffers(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersNative(n, renderbuffers);
+		}
+
+		public static uint GenRenderbuffer()
+		{
+			uint result;
+			GenRenderbuffersNative(1, &result);
+			return result;
 		}
 
 		public static void GenRenderbuffers(int n, ref uint renderbuffers)
@@ -1789,6 +1852,13 @@ namespace Hexa.NET.OpenGL
 			GenSamplersNative(count, samplers);
 		}
 
+		public static uint GenSampler()
+		{
+			uint result;
+			GenSamplersNative(1, &result);
+			return result;
+		}
+
 		public static void GenSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -1812,6 +1882,13 @@ namespace Hexa.NET.OpenGL
 			GenTexturesNative(n, textures);
 		}
 
+		public static uint GenTexture()
+		{
+			uint result;
+			GenTexturesNative(1, &result);
+			return result;
+		}
+
 		public static void GenTextures(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -1833,6 +1910,13 @@ namespace Hexa.NET.OpenGL
 		public static void GenVertexArrays(int n, uint* arrays)
 		{
 			GenVertexArraysNative(n, arrays);
+		}
+
+		public static uint GenVertexArray()
+		{
+			uint result;
+			GenVertexArraysNative(1, &result);
+			return result;
 		}
 
 		public static void GenVertexArrays(int n, ref uint arrays)
@@ -2189,11 +2273,18 @@ namespace Hexa.NET.OpenGL
 			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, @params);
 		}
 
-		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, ref int @params)
+		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, pparams0);
+				GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, pparams);
 			}
 		}
 
@@ -2288,30 +2379,26 @@ namespace Hexa.NET.OpenGL
 			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, @params);
 		}
 
+		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, out int @params)
+		{
+			int pparams;
+			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
+			{
+				GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, pparams);
+			}
+		}
+
 		public static void GetActiveUniformsiv(uint program, int uniformCount, ref uint uniformIndices, GLUniformPName pname, int* @params)
 		{
 			fixed (uint* puniformIndices0 = &uniformIndices)
 			{
 				GetActiveUniformsivNative(program, uniformCount, puniformIndices0, pname, @params);
-			}
-		}
-
-		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, ref int @params)
-		{
-			fixed (int* pparams0 = &@params)
-			{
-				GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, pparams0);
-			}
-		}
-
-		public static void GetActiveUniformsiv(uint program, int uniformCount, ref uint uniformIndices, GLUniformPName pname, ref int @params)
-		{
-			fixed (uint* puniformIndices0 = &uniformIndices)
-			{
-				fixed (int* pparams1 = &@params)
-				{
-					GetActiveUniformsivNative(program, uniformCount, puniformIndices0, pname, pparams1);
-				}
 			}
 		}
 
@@ -2547,11 +2634,18 @@ namespace Hexa.NET.OpenGL
 			GetBufferParameteri64vNative(target, pname, @params);
 		}
 
-		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, ref long @params)
+		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetBufferParameteri64vNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetBufferParameteri64vNative(target, pname, pparams0);
+				GetBufferParameteri64vNative(target, pname, pparams);
 			}
 		}
 
@@ -2570,11 +2664,18 @@ namespace Hexa.NET.OpenGL
 			GetBufferParameterivNative(target, pname, @params);
 		}
 
-		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, ref int @params)
+		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetBufferParameterivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetBufferParameterivNative(target, pname, pparams0);
+				GetBufferParameterivNative(target, pname, pparams);
 			}
 		}
 
@@ -2822,11 +2923,18 @@ namespace Hexa.NET.OpenGL
 			GetFramebufferAttachmentParameterivNative(target, attachment, pname, @params);
 		}
 
-		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferAttachmentParameterivNative(target, attachment, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferAttachmentParameterivNative(target, attachment, pname, pparams0);
+				GetFramebufferAttachmentParameterivNative(target, attachment, pname, pparams);
 			}
 		}
 
@@ -2960,6 +3068,30 @@ namespace Hexa.NET.OpenGL
 			GetProgramInfoLogNative(program, bufSize, length, infoLog);
 		}
 
+		public static string GetProgramInfoLog(uint program)
+		{
+			int pStrSize0;
+			GetProgramiv(program, GLProgramPropertyARB.InfoLogLength, &pStrSize0);
+
+			byte* pStr0 = null;
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+			}
+			else
+			{
+				byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+				pStr0 = pStrStack0;
+			}
+			GetProgramInfoLogNative(program, pStrSize0, null, pStr0);
+			string ret = Utils.DecodeStringUTF8(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
+		}
+
 		public static void GetProgramInfoLog(uint program, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -3036,11 +3168,18 @@ namespace Hexa.NET.OpenGL
 			GetProgramivNative(program, pname, @params);
 		}
 
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, ref int @params)
+		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramivNative(program, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramivNative(program, pname, pparams0);
+				GetProgramivNative(program, pname, pparams);
 			}
 		}
 
@@ -3059,11 +3198,18 @@ namespace Hexa.NET.OpenGL
 			GetQueryObjecti64vNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, ref long @params)
+		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetQueryObjecti64vNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetQueryObjecti64vNative(id, pname, pparams0);
+				GetQueryObjecti64vNative(id, pname, pparams);
 			}
 		}
 
@@ -3082,11 +3228,18 @@ namespace Hexa.NET.OpenGL
 			GetQueryObjectivNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, ref int @params)
+		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryObjectivNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryObjectivNative(id, pname, pparams0);
+				GetQueryObjectivNative(id, pname, pparams);
 			}
 		}
 
@@ -3105,11 +3258,18 @@ namespace Hexa.NET.OpenGL
 			GetQueryObjectui64vNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, ref ulong @params)
+		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetQueryObjectui64vNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetQueryObjectui64vNative(id, pname, pparams0);
+				GetQueryObjectui64vNative(id, pname, pparams);
 			}
 		}
 
@@ -3128,11 +3288,18 @@ namespace Hexa.NET.OpenGL
 			GetQueryObjectuivNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, ref uint @params)
+		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetQueryObjectuivNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetQueryObjectuivNative(id, pname, pparams0);
+				GetQueryObjectuivNative(id, pname, pparams);
 			}
 		}
 
@@ -3151,11 +3318,18 @@ namespace Hexa.NET.OpenGL
 			GetQueryivNative(target, pname, @params);
 		}
 
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
+		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryivNative(target, pname, pparams0);
+				GetQueryivNative(target, pname, pparams);
 			}
 		}
 
@@ -3174,11 +3348,18 @@ namespace Hexa.NET.OpenGL
 			GetRenderbufferParameterivNative(target, pname, @params);
 		}
 
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, ref int @params)
+		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetRenderbufferParameterivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetRenderbufferParameterivNative(target, pname, pparams0);
+				GetRenderbufferParameterivNative(target, pname, pparams);
 			}
 		}
 
@@ -3197,11 +3378,18 @@ namespace Hexa.NET.OpenGL
 			GetSamplerParameterIivNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, ref int @params)
+		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetSamplerParameterIivNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetSamplerParameterIivNative(sampler, pname, pparams0);
+				GetSamplerParameterIivNative(sampler, pname, pparams);
 			}
 		}
 
@@ -3220,11 +3408,18 @@ namespace Hexa.NET.OpenGL
 			GetSamplerParameterIuivNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, ref uint @params)
+		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetSamplerParameterIuivNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetSamplerParameterIuivNative(sampler, pname, pparams0);
+				GetSamplerParameterIuivNative(sampler, pname, pparams);
 			}
 		}
 
@@ -3243,11 +3438,18 @@ namespace Hexa.NET.OpenGL
 			GetSamplerParameterfvNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float @params)
+		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetSamplerParameterfvNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetSamplerParameterfvNative(sampler, pname, pparams0);
+				GetSamplerParameterfvNative(sampler, pname, pparams);
 			}
 		}
 
@@ -3266,11 +3468,18 @@ namespace Hexa.NET.OpenGL
 			GetSamplerParameterivNative(sampler, pname, @params);
 		}
 
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int @params)
+		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetSamplerParameterivNative(sampler, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetSamplerParameterivNative(sampler, pname, pparams0);
+				GetSamplerParameterivNative(sampler, pname, pparams);
 			}
 		}
 
@@ -3287,6 +3496,30 @@ namespace Hexa.NET.OpenGL
 		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, byte* infoLog)
 		{
 			GetShaderInfoLogNative(shader, bufSize, length, infoLog);
+		}
+
+		public static string GetShaderInfoLog(uint shader)
+		{
+			int pStrSize0;
+			GetShaderiv(shader, GLShaderParameterName.InfoLogLength, &pStrSize0);
+
+			byte* pStr0 = null;
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+			}
+			else
+			{
+				byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+				pStr0 = pStrStack0;
+			}
+			GetShaderInfoLogNative(shader, pStrSize0, null, pStr0);
+			string ret = Utils.DecodeStringUTF8(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		public static void GetShaderInfoLog(uint shader, int bufSize, ref int length, byte* infoLog)
@@ -3365,6 +3598,30 @@ namespace Hexa.NET.OpenGL
 			GetShaderSourceNative(shader, bufSize, length, source);
 		}
 
+		public static string GetShaderSource(uint shader)
+		{
+			int pStrSize0;
+			GetShaderiv(shader, GLShaderParameterName.SourceLength, &pStrSize0);
+
+			byte* pStr0 = null;
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+			}
+			else
+			{
+				byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+				pStr0 = pStrStack0;
+			}
+			GetShaderSourceNative(shader, pStrSize0, null, pStr0);
+			string ret = Utils.DecodeStringUTF8(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
+		}
+
 		public static void GetShaderSource(uint shader, int bufSize, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
@@ -3441,11 +3698,18 @@ namespace Hexa.NET.OpenGL
 			GetShaderivNative(shader, pname, @params);
 		}
 
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, ref int @params)
+		public static void GetShaderiv(uint shader, GLShaderParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetShaderivNative(shader, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetShaderiv(uint shader, GLShaderParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetShaderivNative(shader, pname, pparams0);
+				GetShaderivNative(shader, pname, pparams);
 			}
 		}
 
@@ -3553,11 +3817,18 @@ namespace Hexa.NET.OpenGL
 			GetTexLevelParameterfvNative(target, level, pname, @params);
 		}
 
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
+		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTexLevelParameterfvNative(target, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTexLevelParameterfvNative(target, level, pname, pparams0);
+				GetTexLevelParameterfvNative(target, level, pname, pparams);
 			}
 		}
 
@@ -3576,11 +3847,18 @@ namespace Hexa.NET.OpenGL
 			GetTexLevelParameterivNative(target, level, pname, @params);
 		}
 
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
+		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexLevelParameterivNative(target, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexLevelParameterivNative(target, level, pname, pparams0);
+				GetTexLevelParameterivNative(target, level, pname, pparams);
 			}
 		}
 
@@ -3599,11 +3877,18 @@ namespace Hexa.NET.OpenGL
 			GetTexParameterIivNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexParameterIivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexParameterIivNative(target, pname, pparams0);
+				GetTexParameterIivNative(target, pname, pparams);
 			}
 		}
 
@@ -3622,11 +3907,18 @@ namespace Hexa.NET.OpenGL
 			GetTexParameterIuivNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterIuiv(GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public static void GetTexParameterIuiv(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetTexParameterIuivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterIuiv(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetTexParameterIuivNative(target, pname, pparams0);
+				GetTexParameterIuivNative(target, pname, pparams);
 			}
 		}
 
@@ -3645,11 +3937,18 @@ namespace Hexa.NET.OpenGL
 			GetTexParameterfvNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterfv(GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
+		public static void GetTexParameterfv(GLTextureTarget target, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTexParameterfvNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterfv(GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTexParameterfvNative(target, pname, pparams0);
+				GetTexParameterfvNative(target, pname, pparams);
 			}
 		}
 
@@ -3668,11 +3967,18 @@ namespace Hexa.NET.OpenGL
 			GetTexParameterivNative(target, pname, @params);
 		}
 
-		public static void GetTexParameteriv(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetTexParameteriv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexParameterivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameteriv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexParameterivNative(target, pname, pparams0);
+				GetTexParameterivNative(target, pname, pparams);
 			}
 		}
 
@@ -3956,11 +4262,18 @@ namespace Hexa.NET.OpenGL
 			GetUniformfvNative(program, location, @params);
 		}
 
-		public static void GetUniformfv(uint program, int location, ref float @params)
+		public static void GetUniformfv(uint program, int location, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetUniformfvNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformfv(uint program, int location, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetUniformfvNative(program, location, pparams0);
+				GetUniformfvNative(program, location, pparams);
 			}
 		}
 
@@ -3979,11 +4292,18 @@ namespace Hexa.NET.OpenGL
 			GetUniformivNative(program, location, @params);
 		}
 
-		public static void GetUniformiv(uint program, int location, ref int @params)
+		public static void GetUniformiv(uint program, int location, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetUniformivNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformiv(uint program, int location, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetUniformivNative(program, location, pparams0);
+				GetUniformivNative(program, location, pparams);
 			}
 		}
 
@@ -4002,11 +4322,18 @@ namespace Hexa.NET.OpenGL
 			GetUniformuivNative(program, location, @params);
 		}
 
-		public static void GetUniformuiv(uint program, int location, ref uint @params)
+		public static void GetUniformuiv(uint program, int location, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetUniformuivNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformuiv(uint program, int location, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetUniformuivNative(program, location, pparams0);
+				GetUniformuivNative(program, location, pparams);
 			}
 		}
 
@@ -4025,11 +4352,18 @@ namespace Hexa.NET.OpenGL
 			GetVertexAttribIivNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, ref int @params)
+		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetVertexAttribIivNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetVertexAttribIivNative(index, pname, pparams0);
+				GetVertexAttribIivNative(index, pname, pparams);
 			}
 		}
 
@@ -4048,11 +4382,18 @@ namespace Hexa.NET.OpenGL
 			GetVertexAttribIuivNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, ref uint @params)
+		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetVertexAttribIuivNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetVertexAttribIuivNative(index, pname, pparams0);
+				GetVertexAttribIuivNative(index, pname, pparams);
 			}
 		}
 
@@ -4109,11 +4450,18 @@ namespace Hexa.NET.OpenGL
 			GetVertexAttribfvNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, ref float @params)
+		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetVertexAttribfvNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetVertexAttribfvNative(index, pname, pparams0);
+				GetVertexAttribfvNative(index, pname, pparams);
 			}
 		}
 
@@ -4132,11 +4480,18 @@ namespace Hexa.NET.OpenGL
 			GetVertexAttribivNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, ref int @params)
+		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetVertexAttribivNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetVertexAttribivNative(index, pname, pparams0);
+				GetVertexAttribivNative(index, pname, pparams);
 			}
 		}
 
@@ -4591,11 +4946,18 @@ namespace Hexa.NET.OpenGL
 			PointParameterfvNative(pname, @params);
 		}
 
-		public static void PointParameterfv(GLPointParameterNameARB pname, ref float @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			PointParameterfvNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				PointParameterfvNative(pname, pparams0);
+				PointParameterfvNative(pname, pparams);
 			}
 		}
 
@@ -4629,11 +4991,18 @@ namespace Hexa.NET.OpenGL
 			PointParameterivNative(pname, @params);
 		}
 
-		public static void PointParameteriv(GLPointParameterNameARB pname, ref int @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			PointParameterivNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				PointParameterivNative(pname, pparams0);
+				PointParameterivNative(pname, pparams);
 			}
 		}
 
@@ -4644,376 +5013,6 @@ namespace Hexa.NET.OpenGL
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[196])(size);
 			#else
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[196])(size);
-			#endif
-		}
-
-		public static void PointSize(float size)
-		{
-			PointSizeNative(size);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonModeNative(GLTriangleFace face, GLPolygonMode mode)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[197])(face, mode);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[197])(face, mode);
-			#endif
-		}
-
-		public static void PolygonMode(GLTriangleFace face, GLPolygonMode mode)
-		{
-			PolygonModeNative(face, mode);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonOffsetNative(float factor, float units)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[198])(factor, units);
-			#else
-			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[198])(factor, units);
-			#endif
-		}
-
-		public static void PolygonOffset(float factor, float units)
-		{
-			PolygonOffsetNative(factor, units);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrimitiveRestartIndexNative(uint index)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[199])(index);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[199])(index);
-			#endif
-		}
-
-		public static void PrimitiveRestartIndex(uint index)
-		{
-			PrimitiveRestartIndexNative(index);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProvokingVertexNative(GLVertexProvokingMode mode)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[200])(mode);
-			#else
-			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[200])(mode);
-			#endif
-		}
-
-		public static void ProvokingVertex(GLVertexProvokingMode mode)
-		{
-			ProvokingVertexNative(mode);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void QueryCounterNative(uint id, GLQueryCounterTarget target)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[201])(id, target);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[201])(id, target);
-			#endif
-		}
-
-		public static void QueryCounter(uint id, GLQueryCounterTarget target)
-		{
-			QueryCounterNative(id, target);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadBufferNative(GLReadBufferMode src)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLReadBufferMode, void>)funcTable[202])(src);
-			#else
-			((delegate* unmanaged[Cdecl]<GLReadBufferMode, void>)funcTable[202])(src);
-			#endif
-		}
-
-		public static void ReadBuffer(GLReadBufferMode src)
-		{
-			ReadBufferNative(src);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadPixelsNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[203])(x, y, width, height, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[203])(x, y, width, height, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void ReadPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			ReadPixelsNative(x, y, width, height, format, type, pixels);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RenderbufferStorageNative(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLInternalFormat, int, int, void>)funcTable[204])(target, internalformat, width, height);
-			#else
-			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLInternalFormat, int, int, void>)funcTable[204])(target, internalformat, width, height);
-			#endif
-		}
-
-		public static void RenderbufferStorage(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
-		{
-			RenderbufferStorageNative(target, internalformat, width, height);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RenderbufferStorageMultisampleNative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[205])(target, samples, internalformat, width, height);
-			#else
-			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[205])(target, samples, internalformat, width, height);
-			#endif
-		}
-
-		public static void RenderbufferStorageMultisample(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
-		{
-			RenderbufferStorageMultisampleNative(target, samples, internalformat, width, height);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleCoverageNative(float value, byte invert)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[206])(value, invert);
-			#else
-			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[206])(value, invert);
-			#endif
-		}
-
-		public static void SampleCoverage(float value, byte invert)
-		{
-			SampleCoverageNative(value, invert);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleMaskiNative(uint maskNumber, uint mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[207])(maskNumber, mask);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[207])(maskNumber, mask);
-			#endif
-		}
-
-		public static void SampleMaski(uint maskNumber, uint mask)
-		{
-			SampleMaskiNative(maskNumber, mask);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplerParameterIivNative(uint sampler, GLSamplerParameterI pname, int* param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[208])(sampler, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[208])(sampler, pname, (nint)param);
-			#endif
-		}
-
-		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, int* param)
-		{
-			SamplerParameterIivNative(sampler, pname, param);
-		}
-
-		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, ref int param)
-		{
-			fixed (int* pparam0 = &param)
-			{
-				SamplerParameterIivNative(sampler, pname, pparam0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplerParameterIuivNative(uint sampler, GLSamplerParameterI pname, uint* param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, uint*, void>)funcTable[209])(sampler, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[209])(sampler, pname, (nint)param);
-			#endif
-		}
-
-		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, uint* param)
-		{
-			SamplerParameterIuivNative(sampler, pname, param);
-		}
-
-		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, ref uint param)
-		{
-			fixed (uint* pparam0 = &param)
-			{
-				SamplerParameterIuivNative(sampler, pname, pparam0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplerParameterfNative(uint sampler, GLSamplerParameterF pname, float param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float, void>)funcTable[210])(sampler, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float, void>)funcTable[210])(sampler, pname, param);
-			#endif
-		}
-
-		public static void SamplerParameterf(uint sampler, GLSamplerParameterF pname, float param)
-		{
-			SamplerParameterfNative(sampler, pname, param);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplerParameterfvNative(uint sampler, GLSamplerParameterF pname, float* param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float*, void>)funcTable[211])(sampler, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, nint, void>)funcTable[211])(sampler, pname, (nint)param);
-			#endif
-		}
-
-		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* param)
-		{
-			SamplerParameterfvNative(sampler, pname, param);
-		}
-
-		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float param)
-		{
-			fixed (float* pparam0 = &param)
-			{
-				SamplerParameterfvNative(sampler, pname, pparam0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplerParameteriNative(uint sampler, GLSamplerParameterI pname, int param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int, void>)funcTable[212])(sampler, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int, void>)funcTable[212])(sampler, pname, param);
-			#endif
-		}
-
-		public static void SamplerParameteri(uint sampler, GLSamplerParameterI pname, int param)
-		{
-			SamplerParameteriNative(sampler, pname, param);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplerParameterivNative(uint sampler, GLSamplerParameterI pname, int* param)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[213])(sampler, pname, param);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[213])(sampler, pname, (nint)param);
-			#endif
-		}
-
-		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* param)
-		{
-			SamplerParameterivNative(sampler, pname, param);
-		}
-
-		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int param)
-		{
-			fixed (int* pparam0 = &param)
-			{
-				SamplerParameterivNative(sampler, pname, pparam0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorNative(int x, int y, int width, int height)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[214])(x, y, width, height);
-			#else
-			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[214])(x, y, width, height);
-			#endif
-		}
-
-		public static void Scissor(int x, int y, int width, int height)
-		{
-			ScissorNative(x, y, width, height);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderSourceNative(uint shader, int count, byte** str, int* length)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, byte**, int*, void>)funcTable[215])(shader, count, str, length);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, nint, nint, void>)funcTable[215])(shader, count, (nint)str, (nint)length);
-			#endif
-		}
-
-		public static void ShaderSource(uint shader, int count, byte** str, int* length)
-		{
-			ShaderSourceNative(shader, count, str, length);
-		}
-
-		public static void ShaderSource(uint shader, int count, byte** str, ref int length)
-		{
-			fixed (int* plength0 = &length)
-			{
-				ShaderSourceNative(shader, count, str, plength0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilFuncNative(GLStencilFunction func, int reference, uint mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[216])(func, reference, mask);
-			#else
-			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[216])(func, reference, mask);
-			#endif
-		}
-
-		public static void StencilFunc(GLStencilFunction func, int reference, uint mask)
-		{
-			StencilFuncNative(func, reference, mask);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilFuncSeparateNative(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[217])(face, func, reference, mask);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[217])(face, func, reference, mask);
-			#endif
-		}
-
-		public static void StencilFuncSeparate(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
-		{
-			StencilFuncSeparateNative(face, func, reference, mask);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilMaskNative(uint mask)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[218])(mask);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[218])(mask);
 			#endif
 		}
 	}

@@ -13,15 +13,15 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL
 {
-	public enum GLContextFlagMask : uint
+	/// <summary>
+	/// GL_{DEPTH,ACCUM,STENCIL,COLOR}_BUFFER_BIT also lie in this namespace<br/>
+	/// </summary>
+	public enum GLClearBufferMask : uint
 	{
-		ForwardCompatibleBit = unchecked((uint)0x00000001),
-		DebugBit = unchecked((uint)0x00000002),
-		DebugBitKhr = unchecked((uint)0x00000002),
-		RobustAccessBit = unchecked((uint)0x00000004),
-		RobustAccessBitArb = unchecked((uint)0x00000004),
-		NoErrorBit = unchecked((uint)0x00000008),
-		NoErrorBitKhr = unchecked((uint)0x00000008),
-		ProtectedContentBitExt = unchecked((uint)0x00000010),
+		DepthBufferBit = unchecked((uint)0x00000100),
+		AccumBufferBit = unchecked((uint)0x00000200),
+		StencilBufferBit = unchecked((uint)0x00000400),
+		ColorBufferBit = unchecked((uint)0x00004000),
+		CoverageBufferBitNv = unchecked((uint)0x00008000),
 	}
 }

@@ -11,14 +11,17 @@ using System;
 using HexaGen.Runtime;
 using System.Numerics;
 
-namespace Hexa.NET.OpenGL
+namespace Hexa.NET.OpenGLES
 {
-	public enum GLTransformFeedbackTokenNV : uint
+	/// <summary>
+	/// GL_{DEPTH,ACCUM,STENCIL,COLOR}_BUFFER_BIT also lie in this namespace<br/>
+	/// </summary>
+	public enum GLClearBufferMask : uint
 	{
-		NextBufferNv = unchecked((uint)-2),
-		SkipComponents4Nv = unchecked((uint)-3),
-		SkipComponents3Nv = unchecked((uint)-4),
-		SkipComponents2Nv = unchecked((uint)-5),
-		SkipComponents1Nv = unchecked((uint)-6),
+		DepthBufferBit = unchecked((uint)0x00000100),
+		AccumBufferBit = unchecked((uint)0x00000200),
+		StencilBufferBit = unchecked((uint)0x00000400),
+		ColorBufferBit = unchecked((uint)0x00004000),
+		CoverageBufferBitNv = unchecked((uint)0x00008000),
 	}
 }

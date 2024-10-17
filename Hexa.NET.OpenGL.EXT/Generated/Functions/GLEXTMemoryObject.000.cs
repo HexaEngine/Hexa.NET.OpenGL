@@ -69,6 +69,11 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteMemoryObjectsEXTNative(n, memoryObjects);
 		}
 
+		public static void DeleteMemoryObjectsEX(uint memoryObject)
+		{
+			DeleteMemoryObjectsEXTNative(1, &memoryObject);
+		}
+
 		public static void DeleteMemoryObjectsEXT(int n, ref uint memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = &memoryObjects)
@@ -92,11 +97,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMemoryObjectParameterivEXTNative(memoryObject, pname, @params);
 		}
 
-		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
+		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMemoryObjectParameterivEXTNative(memoryObject, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMemoryObjectParameterivEXTNative(memoryObject, pname, pparams0);
+				GetMemoryObjectParameterivEXTNative(memoryObject, pname, pparams);
 			}
 		}
 
@@ -245,11 +257,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MemoryObjectParameterivEXTNative(memoryObject, pname, @params);
 		}
 
-		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
+		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MemoryObjectParameterivEXTNative(memoryObject, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MemoryObjectParameterivEXTNative(memoryObject, pname, pparams0);
+				MemoryObjectParameterivEXTNative(memoryObject, pname, pparams);
 			}
 		}
 

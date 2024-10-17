@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.NV
 			CombinerStageParameterfvNVNative(stage, pname, @params);
 		}
 
-		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, ref float @params)
+		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			CombinerStageParameterfvNVNative(stage, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				CombinerStageParameterfvNVNative(stage, pname, pparams0);
+				CombinerStageParameterfvNVNative(stage, pname, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetCombinerStageParameterfvNVNative(stage, pname, @params);
 		}
 
-		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, ref float @params)
+		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetCombinerStageParameterfvNVNative(stage, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetCombinerStageParameterfvNVNative(stage, pname, pparams0);
+				GetCombinerStageParameterfvNVNative(stage, pname, pparams);
 			}
 		}
 

@@ -46,11 +46,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetHistogramParameterfvEXTNative(target, pname, @params);
 		}
 
-		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref float @params)
+		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetHistogramParameterfvEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetHistogramParameterfvEXTNative(target, pname, pparams0);
+				GetHistogramParameterfvEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -69,11 +76,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetHistogramParameterivEXTNative(target, pname, @params);
 		}
 
-		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref int @params)
+		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetHistogramParameterivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetHistogramParameterivEXTNative(target, pname, pparams0);
+				GetHistogramParameterivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -107,11 +121,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMinmaxParameterfvEXTNative(target, pname, @params);
 		}
 
-		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref float @params)
+		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMinmaxParameterfvEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMinmaxParameterfvEXTNative(target, pname, pparams0);
+				GetMinmaxParameterfvEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -130,11 +151,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMinmaxParameterivEXTNative(target, pname, @params);
 		}
 
-		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref int @params)
+		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMinmaxParameterivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMinmaxParameterivEXTNative(target, pname, pparams0);
+				GetMinmaxParameterivEXTNative(target, pname, pparams);
 			}
 		}
 

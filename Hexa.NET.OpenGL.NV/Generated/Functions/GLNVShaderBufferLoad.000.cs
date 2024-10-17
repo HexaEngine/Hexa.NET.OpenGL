@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetBufferParameterui64vNVNative(target, pname, @params);
 		}
 
-		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ref ulong @params)
+		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetBufferParameterui64vNVNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetBufferParameterui64vNVNative(target, pname, pparams0);
+				GetBufferParameterui64vNVNative(target, pname, pparams);
 			}
 		}
 
@@ -77,11 +84,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetNamedBufferParameterui64vNVNative(buffer, pname, @params);
 		}
 
-		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ref ulong @params)
+		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetNamedBufferParameterui64vNVNative(buffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetNamedBufferParameterui64vNVNative(buffer, pname, pparams0);
+				GetNamedBufferParameterui64vNVNative(buffer, pname, pparams);
 			}
 		}
 
@@ -100,11 +114,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetUniformui64vNVNative(program, location, @params);
 		}
 
-		public static void GetUniformui64vNV(uint program, int location, ref ulong @params)
+		public static void GetUniformui64vNV(uint program, int location, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetUniformui64vNVNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetUniformui64vNVNative(program, location, pparams0);
+				GetUniformui64vNVNative(program, location, pparams);
 			}
 		}
 

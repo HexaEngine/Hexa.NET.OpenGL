@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	
 	<PropertyGroup>
 		<TargetFrameworks>net7.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -31,7 +32,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Hexa.NET.OpenGL.Base\Hexa.NET.OpenGL.Base.csproj" />
+		<ProjectReference Include="..\Hexa.NET.OpenGL.Core\Hexa.NET.OpenGL.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -43,4 +44,5 @@
 		<Content Include="../LICENSE.txt" Pack="true" PackagePath="\" />
 		<Content Include="../README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
+	
 </Project>

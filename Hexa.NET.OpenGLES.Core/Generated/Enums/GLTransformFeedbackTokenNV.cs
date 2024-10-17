@@ -13,15 +13,15 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES
 {
-	public enum GLContextFlagMask : uint
+	/// <summary>
+	/// For NV_transform_feedback. No clue why small negative values are used<br/>
+	/// </summary>
+	public enum GLTransformFeedbackTokenNV : uint
 	{
-		ForwardCompatibleBit = unchecked((uint)0x00000001),
-		DebugBit = unchecked((uint)0x00000002),
-		DebugBitKhr = unchecked((uint)0x00000002),
-		RobustAccessBit = unchecked((uint)0x00000004),
-		RobustAccessBitArb = unchecked((uint)0x00000004),
-		NoErrorBit = unchecked((uint)0x00000008),
-		NoErrorBitKhr = unchecked((uint)0x00000008),
-		ProtectedContentBitExt = unchecked((uint)0x00000010),
+		NextBufferNv = unchecked((uint)-2),
+		SkipComponents4Nv = unchecked((uint)-3),
+		SkipComponents3Nv = unchecked((uint)-4),
+		SkipComponents2Nv = unchecked((uint)-5),
+		SkipComponents1Nv = unchecked((uint)-6),
 	}
 }

@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetUniformi64vARBNative(program, location, @params);
 		}
 
-		public static void GetUniformi64vARB(uint program, int location, ref long @params)
+		public static void GetUniformi64vARB(uint program, int location, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetUniformi64vARBNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformi64vARB(uint program, int location, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetUniformi64vARBNative(program, location, pparams0);
+				GetUniformi64vARBNative(program, location, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetUniformui64vARBNative(program, location, @params);
 		}
 
-		public static void GetUniformui64vARB(uint program, int location, ref ulong @params)
+		public static void GetUniformui64vARB(uint program, int location, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetUniformui64vARBNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformui64vARB(uint program, int location, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetUniformui64vARBNative(program, location, pparams0);
+				GetUniformui64vARBNative(program, location, pparams);
 			}
 		}
 
@@ -77,11 +91,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetnUniformi64vARBNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformi64vARB(uint program, int location, int bufSize, ref long @params)
+		public static void GetnUniformi64vARB(uint program, int location, int bufSize, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetnUniformi64vARBNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformi64vARB(uint program, int location, int bufSize, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetnUniformi64vARBNative(program, location, bufSize, pparams0);
+				GetnUniformi64vARBNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -100,11 +121,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetnUniformui64vARBNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformui64vARB(uint program, int location, int bufSize, ref ulong @params)
+		public static void GetnUniformui64vARB(uint program, int location, int bufSize, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetnUniformui64vARBNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformui64vARB(uint program, int location, int bufSize, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetnUniformui64vARBNative(program, location, bufSize, pparams0);
+				GetnUniformui64vARBNative(program, location, bufSize, pparams);
 			}
 		}
 

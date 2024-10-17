@@ -351,11 +351,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetUniformSubroutineuivNative(shadertype, location, @params);
 		}
 
-		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, ref uint @params)
+		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetUniformSubroutineuivNative(shadertype, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetUniformSubroutineuivNative(shadertype, location, pparams0);
+				GetUniformSubroutineuivNative(shadertype, location, pparams);
 			}
 		}
 

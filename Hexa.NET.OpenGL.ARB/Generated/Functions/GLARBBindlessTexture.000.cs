@@ -79,11 +79,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexAttribLui64vARBNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, ref ulong @params)
+		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetVertexAttribLui64vARBNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetVertexAttribLui64vARBNative(index, pname, pparams0);
+				GetVertexAttribLui64vARBNative(index, pname, pparams);
 			}
 		}
 

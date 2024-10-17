@@ -153,6 +153,11 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteProgramPipelinesEXTNative(n, pipelines);
 		}
 
+		public static void DeleteProgramPipelinesEX(uint pipeline)
+		{
+			DeleteProgramPipelinesEXTNative(1, &pipeline);
+		}
+
 		public static void DeleteProgramPipelinesEXT(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -174,6 +179,13 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GenProgramPipelinesEXT(int n, uint* pipelines)
 		{
 			GenProgramPipelinesEXTNative(n, pipelines);
+		}
+
+		public static uint GenProgramPipelinesEX()
+		{
+			uint result;
+			GenProgramPipelinesEXTNative(1, &result);
+			return result;
 		}
 
 		public static void GenProgramPipelinesEXT(int n, ref uint pipelines)
@@ -275,11 +287,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetProgramPipelineivEXTNative(pipeline, pname, @params);
 		}
 
-		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, ref int @params)
+		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramPipelineivEXTNative(pipeline, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramPipelineivEXTNative(pipeline, pname, pparams0);
+				GetProgramPipelineivEXTNative(pipeline, pname, pparams);
 			}
 		}
 

@@ -337,11 +337,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexAttribfvARBNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, ref float @params)
+		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetVertexAttribfvARBNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetVertexAttribfvARBNative(index, pname, pparams0);
+				GetVertexAttribfvARBNative(index, pname, pparams);
 			}
 		}
 
@@ -360,11 +367,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetVertexAttribivARBNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, ref int @params)
+		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetVertexAttribivARBNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetVertexAttribivARBNative(index, pname, pparams0);
+				GetVertexAttribivARBNative(index, pname, pparams);
 			}
 		}
 

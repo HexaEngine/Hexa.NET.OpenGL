@@ -833,11 +833,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetFloati_vEXTNative(pname, index, @params);
 		}
 
-		public static void GetFloati_vEXT(GLGetPName pname, uint index, ref float @params)
+		public static void GetFloati_vEXT(GLGetPName pname, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetFloati_vEXTNative(pname, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFloati_vEXT(GLGetPName pname, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetFloati_vEXTNative(pname, index, pparams0);
+				GetFloati_vEXTNative(pname, index, pparams);
 			}
 		}
 
@@ -856,11 +863,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetFramebufferParameterivEXTNative(framebuffer, pname, @params);
 		}
 
-		public static void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, ref int @params)
+		public static void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferParameterivEXTNative(framebuffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferParameterivEXTNative(framebuffer, pname, pparams0);
+				GetFramebufferParameterivEXTNative(framebuffer, pname, pparams);
 			}
 		}
 
@@ -902,11 +916,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexEnvfvEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
+		public static void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMultiTexEnvfvEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMultiTexEnvfvEXTNative(texunit, target, pname, pparams0);
+				GetMultiTexEnvfvEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -925,11 +946,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexEnvivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public static void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMultiTexEnvivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMultiTexEnvivEXTNative(texunit, target, pname, pparams0);
+				GetMultiTexEnvivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -971,11 +999,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexGenfvEXTNative(texunit, coord, pname, @params);
 		}
 
-		public static void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
+		public static void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMultiTexGenfvEXTNative(texunit, coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMultiTexGenfvEXTNative(texunit, coord, pname, pparams0);
+				GetMultiTexGenfvEXTNative(texunit, coord, pname, pparams);
 			}
 		}
 
@@ -994,11 +1029,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexGenivEXTNative(texunit, coord, pname, @params);
 		}
 
-		public static void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public static void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMultiTexGenivEXTNative(texunit, coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMultiTexGenivEXTNative(texunit, coord, pname, pparams0);
+				GetMultiTexGenivEXTNative(texunit, coord, pname, pparams);
 			}
 		}
 
@@ -1032,11 +1074,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexLevelParameterfvEXTNative(texunit, target, level, pname, @params);
 		}
 
-		public static void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
+		public static void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMultiTexLevelParameterfvEXTNative(texunit, target, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMultiTexLevelParameterfvEXTNative(texunit, target, level, pname, pparams0);
+				GetMultiTexLevelParameterfvEXTNative(texunit, target, level, pname, pparams);
 			}
 		}
 
@@ -1055,11 +1104,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexLevelParameterivEXTNative(texunit, target, level, pname, @params);
 		}
 
-		public static void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
+		public static void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMultiTexLevelParameterivEXTNative(texunit, target, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMultiTexLevelParameterivEXTNative(texunit, target, level, pname, pparams0);
+				GetMultiTexLevelParameterivEXTNative(texunit, target, level, pname, pparams);
 			}
 		}
 
@@ -1078,11 +1134,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexParameterIivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMultiTexParameterIivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMultiTexParameterIivEXTNative(texunit, target, pname, pparams0);
+				GetMultiTexParameterIivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -1101,11 +1164,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexParameterIuivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public static void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetMultiTexParameterIuivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetMultiTexParameterIuivEXTNative(texunit, target, pname, pparams0);
+				GetMultiTexParameterIuivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -1124,11 +1194,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexParameterfvEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
+		public static void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetMultiTexParameterfvEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetMultiTexParameterfvEXTNative(texunit, target, pname, pparams0);
+				GetMultiTexParameterfvEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -1147,11 +1224,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetMultiTexParameterivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetMultiTexParameterivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetMultiTexParameterivEXTNative(texunit, target, pname, pparams0);
+				GetMultiTexParameterivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -1170,11 +1254,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedBufferParameterivEXTNative(buffer, pname, @params);
 		}
 
-		public static void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, ref int @params)
+		public static void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedBufferParameterivEXTNative(buffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedBufferParameterivEXTNative(buffer, pname, pparams0);
+				GetNamedBufferParameterivEXTNative(buffer, pname, pparams);
 			}
 		}
 
@@ -1223,11 +1314,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedFramebufferAttachmentParameterivEXTNative(framebuffer, attachment, pname, @params);
 		}
 
-		public static void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedFramebufferAttachmentParameterivEXTNative(framebuffer, attachment, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedFramebufferAttachmentParameterivEXTNative(framebuffer, attachment, pname, pparams0);
+				GetNamedFramebufferAttachmentParameterivEXTNative(framebuffer, attachment, pname, pparams);
 			}
 		}
 
@@ -1246,11 +1344,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedFramebufferParameterivEXTNative(framebuffer, pname, @params);
 		}
 
-		public static void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, ref int @params)
+		public static void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedFramebufferParameterivEXTNative(framebuffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedFramebufferParameterivEXTNative(framebuffer, pname, pparams0);
+				GetNamedFramebufferParameterivEXTNative(framebuffer, pname, pparams);
 			}
 		}
 
@@ -1269,11 +1374,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedProgramLocalParameterIivEXTNative(program, target, index, @params);
 		}
 
-		public static void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, ref int @params)
+		public static void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedProgramLocalParameterIivEXTNative(program, target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedProgramLocalParameterIivEXTNative(program, target, index, pparams0);
+				GetNamedProgramLocalParameterIivEXTNative(program, target, index, pparams);
 			}
 		}
 
@@ -1292,11 +1404,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedProgramLocalParameterIuivEXTNative(program, target, index, @params);
 		}
 
-		public static void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, ref uint @params)
+		public static void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetNamedProgramLocalParameterIuivEXTNative(program, target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetNamedProgramLocalParameterIuivEXTNative(program, target, index, pparams0);
+				GetNamedProgramLocalParameterIuivEXTNative(program, target, index, pparams);
 			}
 		}
 
@@ -1338,11 +1457,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedProgramLocalParameterfvEXTNative(program, target, index, @params);
 		}
 
-		public static void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, ref float @params)
+		public static void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetNamedProgramLocalParameterfvEXTNative(program, target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetNamedProgramLocalParameterfvEXTNative(program, target, index, pparams0);
+				GetNamedProgramLocalParameterfvEXTNative(program, target, index, pparams);
 			}
 		}
 
@@ -1376,11 +1502,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedProgramivEXTNative(program, target, pname, @params);
 		}
 
-		public static void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, ref int @params)
+		public static void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedProgramivEXTNative(program, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedProgramivEXTNative(program, target, pname, pparams0);
+				GetNamedProgramivEXTNative(program, target, pname, pparams);
 			}
 		}
 
@@ -1399,11 +1532,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetNamedRenderbufferParameterivEXTNative(renderbuffer, pname, @params);
 		}
 
-		public static void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, ref int @params)
+		public static void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetNamedRenderbufferParameterivEXTNative(renderbuffer, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetNamedRenderbufferParameterivEXTNative(renderbuffer, pname, pparams0);
+				GetNamedRenderbufferParameterivEXTNative(renderbuffer, pname, pparams);
 			}
 		}
 
@@ -1467,11 +1607,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTextureLevelParameterfvEXTNative(texture, target, level, pname, @params);
 		}
 
-		public static void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
+		public static void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTextureLevelParameterfvEXTNative(texture, target, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTextureLevelParameterfvEXTNative(texture, target, level, pname, pparams0);
+				GetTextureLevelParameterfvEXTNative(texture, target, level, pname, pparams);
 			}
 		}
 
@@ -1490,11 +1637,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTextureLevelParameterivEXTNative(texture, target, level, pname, @params);
 		}
 
-		public static void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
+		public static void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTextureLevelParameterivEXTNative(texture, target, level, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTextureLevelParameterivEXTNative(texture, target, level, pname, pparams0);
+				GetTextureLevelParameterivEXTNative(texture, target, level, pname, pparams);
 			}
 		}
 
@@ -1513,11 +1667,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTextureParameterIivEXTNative(texture, target, pname, @params);
 		}
 
-		public static void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTextureParameterIivEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTextureParameterIivEXTNative(texture, target, pname, pparams0);
+				GetTextureParameterIivEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -1536,11 +1697,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTextureParameterIuivEXTNative(texture, target, pname, @params);
 		}
 
-		public static void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public static void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetTextureParameterIuivEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetTextureParameterIuivEXTNative(texture, target, pname, pparams0);
+				GetTextureParameterIuivEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -1559,11 +1727,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTextureParameterfvEXTNative(texture, target, pname, @params);
 		}
 
-		public static void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
+		public static void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetTextureParameterfvEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetTextureParameterfvEXTNative(texture, target, pname, pparams0);
+				GetTextureParameterfvEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -1582,11 +1757,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTextureParameterivEXTNative(texture, target, pname, @params);
 		}
 
-		public static void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTextureParameterivEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTextureParameterivEXTNative(texture, target, pname, pparams0);
+				GetTextureParameterivEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -1605,12 +1787,11 @@ namespace Hexa.NET.OpenGL.EXT
 			GetVertexArrayIntegeri_vEXTNative(vaobj, index, pname, param);
 		}
 
-		public static void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, ref int param)
+		public static void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetVertexArrayIntegeri_vEXTNative(vaobj, index, pname, pparam0);
-			}
+			int pparam;
+			GetVertexArrayIntegeri_vEXTNative(vaobj, index, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1628,12 +1809,11 @@ namespace Hexa.NET.OpenGL.EXT
 			GetVertexArrayIntegervEXTNative(vaobj, pname, param);
 		}
 
-		public static void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, ref int param)
+		public static void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, out int param)
 		{
-			fixed (int* pparam0 = &param)
-			{
-				GetVertexArrayIntegervEXTNative(vaobj, pname, pparam0);
-			}
+			int pparam;
+			GetVertexArrayIntegervEXTNative(vaobj, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2123,11 +2303,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexEnvfvEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
+		public static void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			MultiTexEnvfvEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				MultiTexEnvfvEXTNative(texunit, target, pname, pparams0);
+				MultiTexEnvfvEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -2161,11 +2348,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexEnvivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public static void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MultiTexEnvivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MultiTexEnvivEXTNative(texunit, target, pname, pparams0);
+				MultiTexEnvivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -2237,11 +2431,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexGenfvEXTNative(texunit, coord, pname, @params);
 		}
 
-		public static void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
+		public static void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			MultiTexGenfvEXTNative(texunit, coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				MultiTexGenfvEXTNative(texunit, coord, pname, pparams0);
+				MultiTexGenfvEXTNative(texunit, coord, pname, pparams);
 			}
 		}
 
@@ -2275,11 +2476,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexGenivEXTNative(texunit, coord, pname, @params);
 		}
 
-		public static void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public static void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MultiTexGenivEXTNative(texunit, coord, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MultiTexGenivEXTNative(texunit, coord, pname, pparams0);
+				MultiTexGenivEXTNative(texunit, coord, pname, pparams);
 			}
 		}
 
@@ -2343,11 +2551,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexParameterIivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MultiTexParameterIivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MultiTexParameterIivEXTNative(texunit, target, pname, pparams0);
+				MultiTexParameterIivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -2366,11 +2581,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexParameterIuivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public static void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			MultiTexParameterIuivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				MultiTexParameterIuivEXTNative(texunit, target, pname, pparams0);
+				MultiTexParameterIuivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -2404,11 +2626,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexParameterfvEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref float @params)
+		public static void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			MultiTexParameterfvEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				MultiTexParameterfvEXTNative(texunit, target, pname, pparams0);
+				MultiTexParameterfvEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -2442,11 +2671,18 @@ namespace Hexa.NET.OpenGL.EXT
 			MultiTexParameterivEXTNative(texunit, target, pname, @params);
 		}
 
-		public static void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			MultiTexParameterivEXTNative(texunit, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				MultiTexParameterivEXTNative(texunit, target, pname, pparams0);
+				MultiTexParameterivEXTNative(texunit, target, pname, pparams);
 			}
 		}
 
@@ -2758,11 +2994,18 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramLocalParameter4fvEXTNative(program, target, index, @params);
 		}
 
-		public static void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, ref float @params)
+		public static void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			NamedProgramLocalParameter4fvEXTNative(program, target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				NamedProgramLocalParameter4fvEXTNative(program, target, index, pparams0);
+				NamedProgramLocalParameter4fvEXTNative(program, target, index, pparams);
 			}
 		}
 
@@ -2796,11 +3039,18 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramLocalParameterI4ivEXTNative(program, target, index, @params);
 		}
 
-		public static void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, ref int @params)
+		public static void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			NamedProgramLocalParameterI4ivEXTNative(program, target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				NamedProgramLocalParameterI4ivEXTNative(program, target, index, pparams0);
+				NamedProgramLocalParameterI4ivEXTNative(program, target, index, pparams);
 			}
 		}
 
@@ -2834,11 +3084,18 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramLocalParameterI4uivEXTNative(program, target, index, @params);
 		}
 
-		public static void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, ref uint @params)
+		public static void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			NamedProgramLocalParameterI4uivEXTNative(program, target, index, &pparams);
+			@params = pparams;
+		}
+
+		public static void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				NamedProgramLocalParameterI4uivEXTNative(program, target, index, pparams0);
+				NamedProgramLocalParameterI4uivEXTNative(program, target, index, pparams);
 			}
 		}
 
@@ -2857,11 +3114,18 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramLocalParameters4fvEXTNative(program, target, index, count, @params);
 		}
 
-		public static void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, ref float @params)
+		public static void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			NamedProgramLocalParameters4fvEXTNative(program, target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				NamedProgramLocalParameters4fvEXTNative(program, target, index, count, pparams0);
+				NamedProgramLocalParameters4fvEXTNative(program, target, index, count, pparams);
 			}
 		}
 
@@ -2880,11 +3144,18 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, @params);
 		}
 
-		public static void NamedProgramLocalParametersI4ivEXT(uint program, GLProgramTarget target, uint index, int count, ref int @params)
+		public static void NamedProgramLocalParametersI4ivEXT(uint program, GLProgramTarget target, uint index, int count, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void NamedProgramLocalParametersI4ivEXT(uint program, GLProgramTarget target, uint index, int count, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, pparams0);
+				NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, pparams);
 			}
 		}
 
@@ -2903,11 +3174,18 @@ namespace Hexa.NET.OpenGL.EXT
 			NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, @params);
 		}
 
-		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, ref uint @params)
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, pparams0);
+				NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, pparams);
 			}
 		}
 
@@ -4113,11 +4391,18 @@ namespace Hexa.NET.OpenGL.EXT
 			TextureParameterIivEXTNative(texture, target, pname, @params);
 		}
 
-		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TextureParameterIivEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TextureParameterIivEXTNative(texture, target, pname, pparams0);
+				TextureParameterIivEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -4136,11 +4421,18 @@ namespace Hexa.NET.OpenGL.EXT
 			TextureParameterIuivEXTNative(texture, target, pname, @params);
 		}
 
-		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			TextureParameterIuivEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				TextureParameterIuivEXTNative(texture, target, pname, pparams0);
+				TextureParameterIuivEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -4174,11 +4466,18 @@ namespace Hexa.NET.OpenGL.EXT
 			TextureParameterfvEXTNative(texture, target, pname, @params);
 		}
 
-		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref float @params)
+		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			TextureParameterfvEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				TextureParameterfvEXTNative(texture, target, pname, pparams0);
+				TextureParameterfvEXTNative(texture, target, pname, pparams);
 			}
 		}
 
@@ -4212,11 +4511,18 @@ namespace Hexa.NET.OpenGL.EXT
 			TextureParameterivEXTNative(texture, target, pname, @params);
 		}
 
-		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TextureParameterivEXTNative(texture, target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TextureParameterivEXTNative(texture, target, pname, pparams0);
+				TextureParameterivEXTNative(texture, target, pname, pparams);
 			}
 		}
 

@@ -3191,6 +3191,11 @@ namespace Hexa.NET.OpenGL
 			DeleteBuffersNative(n, buffers);
 		}
 
+		public static void DeleteBuffer(uint buffer)
+		{
+			DeleteBuffersNative(1, &buffer);
+		}
+
 		public static void DeleteBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -3212,6 +3217,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteFramebuffers(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersNative(n, framebuffers);
+		}
+
+		public static void DeleteFramebuffer(uint framebuffer)
+		{
+			DeleteFramebuffersNative(1, &framebuffer);
 		}
 
 		public static void DeleteFramebuffers(int n, ref uint framebuffers)
@@ -3267,6 +3277,11 @@ namespace Hexa.NET.OpenGL
 			DeleteProgramPipelinesNative(n, pipelines);
 		}
 
+		public static void DeleteProgramPipeline(uint pipeline)
+		{
+			DeleteProgramPipelinesNative(1, &pipeline);
+		}
+
 		public static void DeleteProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -3288,6 +3303,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteQueries(int n, uint* ids)
 		{
 			DeleteQueriesNative(n, ids);
+		}
+
+		public static void DeleteQuerie(uint id)
+		{
+			DeleteQueriesNative(1, &id);
 		}
 
 		public static void DeleteQueries(int n, ref uint ids)
@@ -3313,6 +3333,11 @@ namespace Hexa.NET.OpenGL
 			DeleteRenderbuffersNative(n, renderbuffers);
 		}
 
+		public static void DeleteRenderbuffer(uint renderbuffer)
+		{
+			DeleteRenderbuffersNative(1, &renderbuffer);
+		}
+
 		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -3334,6 +3359,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteSamplers(int count, uint* samplers)
 		{
 			DeleteSamplersNative(count, samplers);
+		}
+
+		public static void DeleteSampler(uint sampler)
+		{
+			DeleteSamplersNative(1, &sampler);
 		}
 
 		public static void DeleteSamplers(int count, ref uint samplers)
@@ -3389,6 +3419,11 @@ namespace Hexa.NET.OpenGL
 			DeleteTexturesNative(n, textures);
 		}
 
+		public static void DeleteTexture(uint texture)
+		{
+			DeleteTexturesNative(1, &texture);
+		}
+
 		public static void DeleteTextures(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -3412,6 +3447,11 @@ namespace Hexa.NET.OpenGL
 			DeleteTransformFeedbacksNative(n, ids);
 		}
 
+		public static void DeleteTransformFeedback(uint id)
+		{
+			DeleteTransformFeedbacksNative(1, &id);
+		}
+
 		public static void DeleteTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -3433,6 +3473,11 @@ namespace Hexa.NET.OpenGL
 		public static void DeleteVertexArrays(int n, uint* arrays)
 		{
 			DeleteVertexArraysNative(n, arrays);
+		}
+
+		public static void DeleteVertexArray(uint array)
+		{
+			DeleteVertexArraysNative(1, &array);
 		}
 
 		public static void DeleteVertexArrays(int n, ref uint arrays)
@@ -4645,11 +4690,18 @@ namespace Hexa.NET.OpenGL
 			FogfvNative(pname, @params);
 		}
 
-		public static void Fogfv(GLFogParameter pname, ref float @params)
+		public static void Fogfv(GLFogParameter pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			FogfvNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void Fogfv(GLFogParameter pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				FogfvNative(pname, pparams0);
+				FogfvNative(pname, pparams);
 			}
 		}
 
@@ -4683,11 +4735,18 @@ namespace Hexa.NET.OpenGL
 			FogivNative(pname, @params);
 		}
 
-		public static void Fogiv(GLFogParameter pname, ref int @params)
+		public static void Fogiv(GLFogParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			FogivNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void Fogiv(GLFogParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				FogivNative(pname, pparams0);
+				FogivNative(pname, pparams);
 			}
 		}
 
@@ -4841,6 +4900,13 @@ namespace Hexa.NET.OpenGL
 			GenBuffersNative(n, buffers);
 		}
 
+		public static uint GenBuffer()
+		{
+			uint result;
+			GenBuffersNative(1, &result);
+			return result;
+		}
+
 		public static void GenBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -4862,6 +4928,13 @@ namespace Hexa.NET.OpenGL
 		public static void GenFramebuffers(int n, uint* framebuffers)
 		{
 			GenFramebuffersNative(n, framebuffers);
+		}
+
+		public static uint GenFramebuffer()
+		{
+			uint result;
+			GenFramebuffersNative(1, &result);
+			return result;
 		}
 
 		public static void GenFramebuffers(int n, ref uint framebuffers)
@@ -4903,6 +4976,13 @@ namespace Hexa.NET.OpenGL
 			GenProgramPipelinesNative(n, pipelines);
 		}
 
+		public static uint GenProgramPipeline()
+		{
+			uint result;
+			GenProgramPipelinesNative(1, &result);
+			return result;
+		}
+
 		public static void GenProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -4926,91 +5006,11 @@ namespace Hexa.NET.OpenGL
 			GenQueriesNative(n, ids);
 		}
 
-		public static void GenQueries(int n, ref uint ids)
+		public static uint GenQuerie()
 		{
-			fixed (uint* pids0 = &ids)
-			{
-				GenQueriesNative(n, pids0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenRenderbuffersNative(int n, uint* renderbuffers)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[259])(n, renderbuffers);
-			#else
-			((delegate* unmanaged[Cdecl]<int, nint, void>)funcTable[259])(n, (nint)renderbuffers);
-			#endif
-		}
-
-		public static void GenRenderbuffers(int n, uint* renderbuffers)
-		{
-			GenRenderbuffersNative(n, renderbuffers);
-		}
-
-		public static void GenRenderbuffers(int n, ref uint renderbuffers)
-		{
-			fixed (uint* prenderbuffers0 = &renderbuffers)
-			{
-				GenRenderbuffersNative(n, prenderbuffers0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenSamplersNative(int count, uint* samplers)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[260])(count, samplers);
-			#else
-			((delegate* unmanaged[Cdecl]<int, nint, void>)funcTable[260])(count, (nint)samplers);
-			#endif
-		}
-
-		public static void GenSamplers(int count, uint* samplers)
-		{
-			GenSamplersNative(count, samplers);
-		}
-
-		public static void GenSamplers(int count, ref uint samplers)
-		{
-			fixed (uint* psamplers0 = &samplers)
-			{
-				GenSamplersNative(count, psamplers0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenTexturesNative(int n, uint* textures)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[261])(n, textures);
-			#else
-			((delegate* unmanaged[Cdecl]<int, nint, void>)funcTable[261])(n, (nint)textures);
-			#endif
-		}
-
-		public static void GenTextures(int n, uint* textures)
-		{
-			GenTexturesNative(n, textures);
-		}
-
-		public static void GenTextures(int n, ref uint textures)
-		{
-			fixed (uint* ptextures0 = &textures)
-			{
-				GenTexturesNative(n, ptextures0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenTransformFeedbacksNative(int n, uint* ids)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[262])(n, ids);
-			#else
-			((delegate* unmanaged[Cdecl]<int, nint, void>)funcTable[262])(n, (nint)ids);
-			#endif
+			uint result;
+			GenQueriesNative(1, &result);
+			return result;
 		}
 	}
 }

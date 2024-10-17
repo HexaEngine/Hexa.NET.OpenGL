@@ -31,6 +31,11 @@ namespace Hexa.NET.OpenGL.APPLE
 			DeleteFencesAPPLENative(n, fences);
 		}
 
+		public static void DeleteFencesAPPL(uint fence)
+		{
+			DeleteFencesAPPLENative(1, &fence);
+		}
+
 		public static void DeleteFencesAPPLE(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -82,6 +87,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		public static void GenFencesAPPLE(int n, uint* fences)
 		{
 			GenFencesAPPLENative(n, fences);
+		}
+
+		public static uint GenFencesAPPL()
+		{
+			uint result;
+			GenFencesAPPLENative(1, &result);
+			return result;
 		}
 
 		public static void GenFencesAPPLE(int n, ref uint fences)

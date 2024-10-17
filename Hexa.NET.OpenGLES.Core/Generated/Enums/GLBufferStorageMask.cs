@@ -13,6 +13,9 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES
 {
+	/// <summary>
+	/// GL_MAP_{COHERENT,PERSISTENT,READ,WRITE}_{BIT,BIT_EXT} also lie in this namespace<br/>
+	/// </summary>
 	public enum GLBufferStorageMask : uint
 	{
 		DynamicStorageBit = unchecked((uint)0x0100),

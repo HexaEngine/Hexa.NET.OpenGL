@@ -122,6 +122,11 @@ namespace Hexa.NET.OpenGL.NV
 			DeleteCommandListsNVNative(n, lists);
 		}
 
+		public static void DeleteCommandListsN(uint list)
+		{
+			DeleteCommandListsNVNative(1, &list);
+		}
+
 		public static void DeleteCommandListsNV(int n, ref uint lists)
 		{
 			fixed (uint* plists0 = &lists)
@@ -143,6 +148,11 @@ namespace Hexa.NET.OpenGL.NV
 		public static void DeleteStatesNV(int n, uint* states)
 		{
 			DeleteStatesNVNative(n, states);
+		}
+
+		public static void DeleteStatesN(uint state)
+		{
+			DeleteStatesNVNative(1, &state);
 		}
 
 		public static void DeleteStatesNV(int n, ref uint states)

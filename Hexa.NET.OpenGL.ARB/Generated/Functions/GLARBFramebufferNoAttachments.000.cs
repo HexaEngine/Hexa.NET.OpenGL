@@ -46,11 +46,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetFramebufferParameterivNative(target, pname, @params);
 		}
 
-		public static void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferParameterivNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferParameterivNative(target, pname, pparams0);
+				GetFramebufferParameterivNative(target, pname, pparams);
 			}
 		}
 

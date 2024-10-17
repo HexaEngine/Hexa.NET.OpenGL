@@ -31,12 +31,11 @@ namespace Hexa.NET.OpenGL.NV
 			GetProgramSubroutineParameteruivNVNative(target, index, param);
 		}
 
-		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, ref uint param)
+		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, out uint param)
 		{
-			fixed (uint* pparam0 = &param)
-			{
-				GetProgramSubroutineParameteruivNVNative(target, index, pparam0);
-			}
+			uint pparam;
+			GetProgramSubroutineParameteruivNVNative(target, index, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,11 +53,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramSubroutineParametersuivNVNative(target, count, @params);
 		}
 
-		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, ref uint @params)
+		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			ProgramSubroutineParametersuivNVNative(target, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				ProgramSubroutineParametersuivNVNative(target, count, pparams0);
+				ProgramSubroutineParametersuivNVNative(target, count, pparams);
 			}
 		}
 

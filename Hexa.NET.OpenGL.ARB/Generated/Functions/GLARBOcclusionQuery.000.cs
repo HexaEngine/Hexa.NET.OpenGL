@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteQueriesARBNative(n, ids);
 		}
 
+		public static void DeleteQueriesAR(uint id)
+		{
+			DeleteQueriesARBNative(1, &id);
+		}
+
 		public static void DeleteQueriesARB(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -84,6 +89,13 @@ namespace Hexa.NET.OpenGL.ARB
 			GenQueriesARBNative(n, ids);
 		}
 
+		public static uint GenQueriesAR()
+		{
+			uint result;
+			GenQueriesARBNative(1, &result);
+			return result;
+		}
+
 		public static void GenQueriesARB(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -107,11 +119,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetQueryObjectivARBNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, ref int @params)
+		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryObjectivARBNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryObjectivARBNative(id, pname, pparams0);
+				GetQueryObjectivARBNative(id, pname, pparams);
 			}
 		}
 
@@ -130,11 +149,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetQueryObjectuivARBNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, ref uint @params)
+		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetQueryObjectuivARBNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetQueryObjectuivARBNative(id, pname, pparams0);
+				GetQueryObjectuivARBNative(id, pname, pparams);
 			}
 		}
 
@@ -153,11 +179,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetQueryivARBNative(target, pname, @params);
 		}
 
-		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
+		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryivARBNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryivARBNative(target, pname, pparams0);
+				GetQueryivARBNative(target, pname, pparams);
 			}
 		}
 

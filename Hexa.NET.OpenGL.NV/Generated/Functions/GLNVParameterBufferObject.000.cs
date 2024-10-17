@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramBufferParametersIivNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
 
-		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref int @params)
+		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			ProgramBufferParametersIivNVNative(target, bindingIndex, wordIndex, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				ProgramBufferParametersIivNVNative(target, bindingIndex, wordIndex, count, pparams0);
+				ProgramBufferParametersIivNVNative(target, bindingIndex, wordIndex, count, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramBufferParametersIuivNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
 
-		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref uint @params)
+		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			ProgramBufferParametersIuivNVNative(target, bindingIndex, wordIndex, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				ProgramBufferParametersIuivNVNative(target, bindingIndex, wordIndex, count, pparams0);
+				ProgramBufferParametersIuivNVNative(target, bindingIndex, wordIndex, count, pparams);
 			}
 		}
 
@@ -77,11 +91,18 @@ namespace Hexa.NET.OpenGL.NV
 			ProgramBufferParametersfvNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
 
-		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref float @params)
+		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			ProgramBufferParametersfvNVNative(target, bindingIndex, wordIndex, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				ProgramBufferParametersfvNVNative(target, bindingIndex, wordIndex, count, pparams0);
+				ProgramBufferParametersfvNVNative(target, bindingIndex, wordIndex, count, pparams);
 			}
 		}
 

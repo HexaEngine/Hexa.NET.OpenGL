@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGLES.EXT
 			DeleteQueriesEXTNative(n, ids);
 		}
 
+		public static void DeleteQueriesEX(uint id)
+		{
+			DeleteQueriesEXTNative(1, &id);
+		}
+
 		public static void DeleteQueriesEXT(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -84,6 +89,13 @@ namespace Hexa.NET.OpenGLES.EXT
 			GenQueriesEXTNative(n, ids);
 		}
 
+		public static uint GenQueriesEX()
+		{
+			uint result;
+			GenQueriesEXTNative(1, &result);
+			return result;
+		}
+
 		public static void GenQueriesEXT(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -107,11 +119,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryObjectuivEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, ref uint @params)
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetQueryObjectuivEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetQueryObjectuivEXTNative(id, pname, pparams0);
+				GetQueryObjectuivEXTNative(id, pname, pparams);
 			}
 		}
 
@@ -130,11 +149,18 @@ namespace Hexa.NET.OpenGLES.EXT
 			GetQueryivEXTNative(target, pname, @params);
 		}
 
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetQueryivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetQueryivEXTNative(target, pname, pparams0);
+				GetQueryivEXTNative(target, pname, pparams);
 			}
 		}
 

@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetQueryObjecti64vEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetQueryObjecti64vEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetQueryObjecti64vEXTNative(id, pname, pparams0);
+				GetQueryObjecti64vEXTNative(id, pname, pparams);
 			}
 		}
 
@@ -54,11 +61,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetQueryObjectui64vEXTNative(id, pname, @params);
 		}
 
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, out ulong @params)
 		{
-			fixed (ulong* pparams0 = &@params)
+			ulong pparams;
+			GetQueryObjectui64vEXTNative(id, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		{
+			fixed (ulong* pparams = @params)
 			{
-				GetQueryObjectui64vEXTNative(id, pname, pparams0);
+				GetQueryObjectui64vEXTNative(id, pname, pparams);
 			}
 		}
 

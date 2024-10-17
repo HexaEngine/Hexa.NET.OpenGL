@@ -15,7 +15,7 @@
 
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<PackageVersion>1.0.0</PackageVersion>
-		<Description>A .NET wrapper for OpenGL 2 (2.1).</Description>
+		<Description>A .NET wrapper for OpenGL ES 3 (3.2).</Description>
 		<PackageTags>OpenGL Hexa HexaGen Source Generator C# .NET DotNet Sharp Windows macOS Android Bindings Wrapper Native</PackageTags>
 		<Authors>Juna Meinhold</Authors>
 		<Copyright>Copyright (c) 2024 Juna Meinhold</Copyright>
@@ -31,6 +31,9 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\Hexa.NET.OpenGLES.Core\Hexa.NET.OpenGLES.Core.csproj" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="HexaGen.Runtime" Version="1.1.13" />
@@ -40,10 +43,6 @@
 	<ItemGroup>
 		<Content Include="../LICENSE.txt" Pack="true" PackagePath="\" />
 		<Content Include="../README.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Hexa.NET.OpenGLES.Base\Hexa.NET.OpenGLES.Base.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -77,6 +77,11 @@ namespace Hexa.NET.OpenGL.EXT
 			DeleteFramebuffersEXTNative(n, framebuffers);
 		}
 
+		public static void DeleteFramebuffersEX(uint framebuffer)
+		{
+			DeleteFramebuffersEXTNative(1, &framebuffer);
+		}
+
 		public static void DeleteFramebuffersEXT(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -98,6 +103,11 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void DeleteRenderbuffersEXT(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersEXTNative(n, renderbuffers);
+		}
+
+		public static void DeleteRenderbuffersEX(uint renderbuffer)
+		{
+			DeleteRenderbuffersEXTNative(1, &renderbuffer);
 		}
 
 		public static void DeleteRenderbuffersEXT(int n, ref uint renderbuffers)
@@ -183,6 +193,13 @@ namespace Hexa.NET.OpenGL.EXT
 			GenFramebuffersEXTNative(n, framebuffers);
 		}
 
+		public static uint GenFramebuffersEX()
+		{
+			uint result;
+			GenFramebuffersEXTNative(1, &result);
+			return result;
+		}
+
 		public static void GenFramebuffersEXT(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -204,6 +221,13 @@ namespace Hexa.NET.OpenGL.EXT
 		public static void GenRenderbuffersEXT(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersEXTNative(n, renderbuffers);
+		}
+
+		public static uint GenRenderbuffersEX()
+		{
+			uint result;
+			GenRenderbuffersEXTNative(1, &result);
+			return result;
 		}
 
 		public static void GenRenderbuffersEXT(int n, ref uint renderbuffers)
@@ -244,11 +268,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, @params);
 		}
 
-		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, pparams0);
+				GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, pparams);
 			}
 		}
 
@@ -267,11 +298,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetRenderbufferParameterivEXTNative(target, pname, @params);
 		}
 
-		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, ref int @params)
+		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetRenderbufferParameterivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetRenderbufferParameterivEXTNative(target, pname, pparams0);
+				GetRenderbufferParameterivEXTNative(target, pname, pparams);
 			}
 		}
 

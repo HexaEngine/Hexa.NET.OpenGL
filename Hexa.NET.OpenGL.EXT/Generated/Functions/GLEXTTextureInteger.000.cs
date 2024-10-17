@@ -61,11 +61,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTexParameterIivEXTNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetTexParameterIivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetTexParameterIivEXTNative(target, pname, pparams0);
+				GetTexParameterIivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -84,11 +91,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetTexParameterIuivEXTNative(target, pname, @params);
 		}
 
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetTexParameterIuivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetTexParameterIuivEXTNative(target, pname, pparams0);
+				GetTexParameterIuivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -107,11 +121,18 @@ namespace Hexa.NET.OpenGL.EXT
 			TexParameterIivEXTNative(target, pname, @params);
 		}
 
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			TexParameterIivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				TexParameterIivEXTNative(target, pname, pparams0);
+				TexParameterIivEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -130,11 +151,18 @@ namespace Hexa.NET.OpenGL.EXT
 			TexParameterIuivEXTNative(target, pname, @params);
 		}
 
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			TexParameterIuivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				TexParameterIuivEXTNative(target, pname, pparams0);
+				TexParameterIuivEXTNative(target, pname, pparams);
 			}
 		}
 

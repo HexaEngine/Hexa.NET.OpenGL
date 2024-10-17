@@ -229,6 +229,9 @@
         [XmlAttribute(AttributeName = "namespace")]
         public string Namespace { get; set; }
 
+        [XmlAttribute(AttributeName = "comment")]
+        public string? Comment { get; set; }
+
         [XmlAttribute(AttributeName = "start")]
         public string? StartString
         {
@@ -289,6 +292,9 @@
 
         [XmlAttribute(AttributeName = "api")]
         public string Api { get; set; }
+
+        [XmlAttribute(AttributeName = "comment")]
+        public string? Comment { get; set; }
 
         [XmlAttribute(AttributeName = "group")]
         public string Group

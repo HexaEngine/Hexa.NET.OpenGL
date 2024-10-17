@@ -61,11 +61,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetColorTableParameterfvEXTNative(target, pname, @params);
 		}
 
-		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
+		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetColorTableParameterfvEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetColorTableParameterfvEXTNative(target, pname, pparams0);
+				GetColorTableParameterfvEXTNative(target, pname, pparams);
 			}
 		}
 
@@ -84,11 +91,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetColorTableParameterivEXTNative(target, pname, @params);
 		}
 
-		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
+		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetColorTableParameterivEXTNative(target, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetColorTableParameterivEXTNative(target, pname, pparams0);
+				GetColorTableParameterivEXTNative(target, pname, pparams);
 			}
 		}
 

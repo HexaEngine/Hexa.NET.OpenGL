@@ -63,11 +63,18 @@ namespace Hexa.NET.OpenGL.KHR
 			GetnUniformfvNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformfv(uint program, int location, int bufSize, ref float @params)
+		public static void GetnUniformfv(uint program, int location, int bufSize, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetnUniformfvNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformfv(uint program, int location, int bufSize, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetnUniformfvNative(program, location, bufSize, pparams0);
+				GetnUniformfvNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -86,11 +93,18 @@ namespace Hexa.NET.OpenGL.KHR
 			GetnUniformfvKHRNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformfvKHR(uint program, int location, int bufSize, ref float @params)
+		public static void GetnUniformfvKHR(uint program, int location, int bufSize, out float @params)
 		{
-			fixed (float* pparams0 = &@params)
+			float pparams;
+			GetnUniformfvKHRNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformfvKHR(uint program, int location, int bufSize, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
 			{
-				GetnUniformfvKHRNative(program, location, bufSize, pparams0);
+				GetnUniformfvKHRNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -109,11 +123,18 @@ namespace Hexa.NET.OpenGL.KHR
 			GetnUniformivNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformiv(uint program, int location, int bufSize, ref int @params)
+		public static void GetnUniformiv(uint program, int location, int bufSize, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetnUniformivNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformiv(uint program, int location, int bufSize, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetnUniformivNative(program, location, bufSize, pparams0);
+				GetnUniformivNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -132,11 +153,18 @@ namespace Hexa.NET.OpenGL.KHR
 			GetnUniformivKHRNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformivKHR(uint program, int location, int bufSize, ref int @params)
+		public static void GetnUniformivKHR(uint program, int location, int bufSize, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetnUniformivKHRNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformivKHR(uint program, int location, int bufSize, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetnUniformivKHRNative(program, location, bufSize, pparams0);
+				GetnUniformivKHRNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -155,11 +183,18 @@ namespace Hexa.NET.OpenGL.KHR
 			GetnUniformuivNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformuiv(uint program, int location, int bufSize, ref uint @params)
+		public static void GetnUniformuiv(uint program, int location, int bufSize, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetnUniformuivNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformuiv(uint program, int location, int bufSize, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetnUniformuivNative(program, location, bufSize, pparams0);
+				GetnUniformuivNative(program, location, bufSize, pparams);
 			}
 		}
 
@@ -178,11 +213,18 @@ namespace Hexa.NET.OpenGL.KHR
 			GetnUniformuivKHRNative(program, location, bufSize, @params);
 		}
 
-		public static void GetnUniformuivKHR(uint program, int location, int bufSize, ref uint @params)
+		public static void GetnUniformuivKHR(uint program, int location, int bufSize, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetnUniformuivKHRNative(program, location, bufSize, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetnUniformuivKHR(uint program, int location, int bufSize, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetnUniformuivKHRNative(program, location, bufSize, pparams0);
+				GetnUniformuivKHRNative(program, location, bufSize, pparams);
 			}
 		}
 

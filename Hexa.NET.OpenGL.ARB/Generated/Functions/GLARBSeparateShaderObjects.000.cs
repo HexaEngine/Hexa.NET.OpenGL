@@ -77,6 +77,11 @@ namespace Hexa.NET.OpenGL.ARB
 			DeleteProgramPipelinesNative(n, pipelines);
 		}
 
+		public static void DeleteProgramPipeline(uint pipeline)
+		{
+			DeleteProgramPipelinesNative(1, &pipeline);
+		}
+
 		public static void DeleteProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -100,6 +105,13 @@ namespace Hexa.NET.OpenGL.ARB
 			GenProgramPipelinesNative(n, pipelines);
 		}
 
+		public static uint GenProgramPipeline()
+		{
+			uint result;
+			GenProgramPipelinesNative(1, &result);
+			return result;
+		}
+
 		public static void GenProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -121,6 +133,30 @@ namespace Hexa.NET.OpenGL.ARB
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, byte* infoLog)
 		{
 			GetProgramPipelineInfoLogNative(pipeline, bufSize, length, infoLog);
+		}
+
+		public static string GetProgramPipelineInfoLog(uint pipeline)
+		{
+			int pStrSize0;
+			GetProgramPipelineiv(pipeline, GLPipelineParameterName.InfoLogLength, &pStrSize0);
+
+			byte* pStr0 = null;
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+			}
+			else
+			{
+				byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+				pStr0 = pStrStack0;
+			}
+			GetProgramPipelineInfoLogNative(pipeline, pStrSize0, null, pStr0);
+			string ret = Utils.DecodeStringUTF8(pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+			return ret;
 		}
 
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, byte* infoLog)
@@ -199,11 +235,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramPipelineivNative(pipeline, pname, @params);
 		}
 
-		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, ref int @params)
+		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramPipelineivNative(pipeline, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramPipelineivNative(pipeline, pname, pparams0);
+				GetProgramPipelineivNative(pipeline, pname, pparams);
 			}
 		}
 

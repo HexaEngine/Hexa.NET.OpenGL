@@ -149,11 +149,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetUniformuivEXTNative(program, location, @params);
 		}
 
-		public static void GetUniformuivEXT(uint program, int location, ref uint @params)
+		public static void GetUniformuivEXT(uint program, int location, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetUniformuivEXTNative(program, location, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetUniformuivEXT(uint program, int location, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetUniformuivEXTNative(program, location, pparams0);
+				GetUniformuivEXTNative(program, location, pparams);
 			}
 		}
 
@@ -172,11 +179,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetVertexAttribIivEXTNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, ref int @params)
+		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetVertexAttribIivEXTNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetVertexAttribIivEXTNative(index, pname, pparams0);
+				GetVertexAttribIivEXTNative(index, pname, pparams);
 			}
 		}
 
@@ -195,11 +209,18 @@ namespace Hexa.NET.OpenGL.EXT
 			GetVertexAttribIuivEXTNative(index, pname, @params);
 		}
 
-		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, ref uint @params)
+		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, out uint @params)
 		{
-			fixed (uint* pparams0 = &@params)
+			uint pparams;
+			GetVertexAttribIuivEXTNative(index, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
 			{
-				GetVertexAttribIuivEXTNative(index, pname, pparams0);
+				GetVertexAttribIuivEXTNative(index, pname, pparams);
 			}
 		}
 

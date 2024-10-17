@@ -15,7 +15,7 @@
 
 		<AssemblyVersion>1.0.0</AssemblyVersion>
 		<PackageVersion>1.0.0</PackageVersion>
-		<Description>A .NET wrapper for OpenGL 2 (2.1).</Description>
+		<Description>A .NET wrapper for OpenGL.</Description>
 		<PackageTags>OpenGL Hexa HexaGen Source Generator C# .NET DotNet Sharp Windows macOS Android Bindings Wrapper Native</PackageTags>
 		<Authors>Juna Meinhold</Authors>
 		<Copyright>Copyright (c) 2024 Juna Meinhold</Copyright>

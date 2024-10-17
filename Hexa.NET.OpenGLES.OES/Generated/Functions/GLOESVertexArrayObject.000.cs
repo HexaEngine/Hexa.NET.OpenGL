@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGLES.OES
 			DeleteVertexArraysOESNative(n, arrays);
 		}
 
+		public static void DeleteVertexArraysOE(uint array)
+		{
+			DeleteVertexArraysOESNative(1, &array);
+		}
+
 		public static void DeleteVertexArraysOES(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -67,6 +72,13 @@ namespace Hexa.NET.OpenGLES.OES
 		public static void GenVertexArraysOES(int n, uint* arrays)
 		{
 			GenVertexArraysOESNative(n, arrays);
+		}
+
+		public static uint GenVertexArraysOE()
+		{
+			uint result;
+			GenVertexArraysOESNative(1, &result);
+			return result;
 		}
 
 		public static void GenVertexArraysOES(int n, ref uint arrays)

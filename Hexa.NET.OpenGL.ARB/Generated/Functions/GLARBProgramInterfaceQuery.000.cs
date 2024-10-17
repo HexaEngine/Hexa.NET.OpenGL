@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramInterfaceivNative(program, programInterface, pname, @params);
 		}
 
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, ref int @params)
+		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetProgramInterfaceivNative(program, programInterface, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetProgramInterfaceivNative(program, programInterface, pname, pparams0);
+				GetProgramInterfaceivNative(program, programInterface, pname, pparams);
 			}
 		}
 
@@ -313,30 +320,26 @@ namespace Hexa.NET.OpenGL.ARB
 			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, @params);
 		}
 
+		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, out int @params)
+		{
+			int pparams;
+			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
+			{
+				GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, pparams);
+			}
+		}
+
 		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, ref int length, int* @params)
 		{
 			fixed (int* plength0 = &length)
 			{
 				GetProgramResourceivNative(program, programInterface, index, propCount, props, count, plength0, @params);
-			}
-		}
-
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, ref int @params)
-		{
-			fixed (int* pparams0 = &@params)
-			{
-				GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, pparams0);
-			}
-		}
-
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, ref int length, ref int @params)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (int* pparams1 = &@params)
-				{
-					GetProgramResourceivNative(program, programInterface, index, propCount, props, count, plength0, pparams1);
-				}
 			}
 		}
 

@@ -31,11 +31,18 @@ namespace Hexa.NET.OpenGL.ARB
 			GetInternalformati64vNative(target, internalformat, pname, count, @params);
 		}
 
-		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, ref long @params)
+		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out long @params)
 		{
-			fixed (long* pparams0 = &@params)
+			long pparams;
+			GetInternalformati64vNative(target, internalformat, pname, count, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, Span<long> @params)
+		{
+			fixed (long* pparams = @params)
 			{
-				GetInternalformati64vNative(target, internalformat, pname, count, pparams0);
+				GetInternalformati64vNative(target, internalformat, pname, count, pparams);
 			}
 		}
 

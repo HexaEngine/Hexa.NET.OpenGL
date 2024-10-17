@@ -11,7 +11,7 @@ using System;
 using HexaGen.Runtime;
 using System.Numerics;
 
-namespace Hexa.NET.OpenGLES
+namespace Hexa.NET.OpenGL
 {
 	public enum GLEnum : int
 	{
@@ -1462,7 +1462,11 @@ namespace Hexa.NET.OpenGLES
 		GetTextureImageType = 0x8292,
 		Mipmap = 0x8293,
 		ManualGenerateMipmap = 0x8294,
+		/// <summary>
+		/// Should be deprecated<br/>
+		/// </summary>
 		AutoGenerateMipmap = 0x8295,
+
 		ColorEncoding = 0x8296,
 		SrgbRead = 0x8297,
 		SrgbWrite = 0x8298,
@@ -1594,7 +1598,11 @@ namespace Hexa.NET.OpenGLES
 		ContextReleaseBehaviorKhr = 0x82FB,
 		ContextReleaseBehaviorFlush = 0x82FC,
 		ContextReleaseBehaviorFlushKhr = 0x82FC,
+		/// <summary>
+		/// Reserved for future<br/>
+		/// </summary>
 		RobustGpuTimeoutMsKhr = 0x82FD,
+
 		DepthPassInstrumentSgix = 0x8310,
 		DepthPassInstrumentCountersSgix = 0x8311,
 		DepthPassInstrumentMaxSgix = 0x8312,
@@ -1713,11 +1721,31 @@ namespace Hexa.NET.OpenGLES
 		FragmentLight5Sgix = 0x8411,
 		FragmentLight6Sgix = 0x8412,
 		FragmentLight7Sgix = 0x8413,
+		/// <summary>
+		/// Formerly 0x842C in SGI specfile<br/>
+		/// </summary>
 		PackResampleSgix = 0x842E,
+
+		/// <summary>
+		/// Formerly 0x842D in SGI specfile<br/>
+		/// </summary>
 		UnpackResampleSgix = 0x842F,
+
+		/// <summary>
+		/// Formerly 0x8430 in SGI specfile<br/>
+		/// </summary>
 		ResampleDecimateSgix = 0x8430,
+
+		/// <summary>
+		/// Formerly 0x842E in SGI specfile<br/>
+		/// </summary>
 		ResampleReplicateSgix = 0x8433,
+
+		/// <summary>
+		/// Formerly 0x842F in SGI specfile<br/>
+		/// </summary>
 		ResampleZeroFillSgix = 0x8434,
+
 		TangentArrayExt = 0x8439,
 		BinormalArrayExt = 0x843A,
 		CurrentTangentExt = 0x843B,
@@ -2285,7 +2313,11 @@ namespace Hexa.NET.OpenGLES
 		Map2VertexAttrib54Nv = 0x8675,
 		Map2VertexAttrib64Nv = 0x8676,
 		Map2VertexAttrib74Nv = 0x8677,
+		/// <summary>
+		/// NOT an alias. Accidental reuse of GL_MAP2_VERTEX_ATTRIB7_4_NV<br/>
+		/// </summary>
 		ProgramBindingArb = 0x8677,
+
 		Map2VertexAttrib84Nv = 0x8678,
 		Map2VertexAttrib94Nv = 0x8679,
 		Map2VertexAttrib104Nv = 0x867A,
@@ -2458,9 +2490,17 @@ namespace Hexa.NET.OpenGLES
 		Modelview30Arb = 0x873E,
 		Modelview31Arb = 0x873F,
 		Dot3RgbExt = 0x8740,
+		/// <summary>
+		/// NOT an alias. Accidental reuse of GL_DOT3_RGB_EXT<br/>
+		/// </summary>
 		Z400BinaryAmd = 0x8740,
+
 		Dot3RgbaExt = 0x8741,
+		/// <summary>
+		/// NOT an alias. Accidental reuse of GL_DOT3_RGBA_EXT<br/>
+		/// </summary>
 		ProgramBinaryLengthOes = 0x8741,
+
 		ProgramBinaryLength = 0x8741,
 		MirrorClampAti = 0x8742,
 		MirrorClampExt = 0x8742,
@@ -2485,11 +2525,23 @@ namespace Hexa.NET.OpenGLES
 		TraceNameMesa = 0x8756,
 		YcbcrMesa = 0x8757,
 		PackInvertMesa = 0x8758,
+		/// <summary>
+		/// NOT an alias. Accidental reuse of GL_TEXTURE_1D_STACK_MESAX<br/>
+		/// </summary>
 		DebugObjectMesa = 0x8759,
+
 		Texture1DStackMesax = 0x8759,
+		/// <summary>
+		/// NOT an alias. Accidental reuse of GL_TEXTURE_2D_STACK_MESAX<br/>
+		/// </summary>
 		DebugPrintMesa = 0x875A,
+
 		Texture2DStackMesax = 0x875A,
+		/// <summary>
+		/// NOT an alias. Accidental reuse of GL_PROXY_TEXTURE_1D_STACK_MESAX<br/>
+		/// </summary>
 		DebugAssertMesa = 0x875B,
+
 		ProxyTexture1DStackMesax = 0x875B,
 		ProxyTexture2DStackMesax = 0x875C,
 		Texture1DStackBindingMesax = 0x875D,
@@ -2817,7 +2869,11 @@ namespace Hexa.NET.OpenGLES
 		DrawBuffer15Ext = 0x8834,
 		DrawBuffer15Nv = 0x8834,
 		ColorClearUnclampedValueAti = 0x8835,
+		/// <summary>
+		/// Defined by Mesa but not ATI<br/>
+		/// </summary>
 		CompressedLuminanceAlpha3DcAti = 0x8837,
+
 		BlendEquationAlpha = 0x883D,
 		BlendEquationAlphaExt = 0x883D,
 		BlendEquationAlphaOes = 0x883D,
@@ -3443,6 +3499,11 @@ namespace Hexa.NET.OpenGLES
 		ShadingLanguageVersion = 0x8B8C,
 		ShadingLanguageVersionArb = 0x8B8C,
 		CurrentProgram = 0x8B8D,
+		/// <summary>
+		/// For the OpenGL version of EXT_separate_shader_objects<br/>
+		/// </summary>
+		ActiveProgramExt = 0x8B8D,
+
 		Palette4Rgb8Oes = 0x8B90,
 		Palette4Rgba8Oes = 0x8B91,
 		Palette4R5G6B5Oes = 0x8B92,
@@ -3551,7 +3612,11 @@ namespace Hexa.NET.OpenGLES
 		TextureBufferArb = 0x8C2A,
 		TextureBufferExt = 0x8C2A,
 		TextureBufferOes = 0x8C2A,
+		/// <summary>
+		/// Equivalent to GL_TEXTURE_BUFFER_ARB query, but named more consistently<br/>
+		/// </summary>
 		TextureBufferBinding = 0x8C2A,
+
 		TextureBufferBindingExt = 0x8C2A,
 		TextureBufferBindingOes = 0x8C2A,
 		MaxTextureBufferSize = 0x8C2B,
@@ -5002,11 +5067,27 @@ namespace Hexa.NET.OpenGLES
 		ContextLostWebgl = 0x9242,
 		UnpackColorspaceConversionWebgl = 0x9243,
 		BrowserDefaultWebgl = 0x9244,
+		/// <summary>
+		/// From the WEBGL_debug_renderer_info extension<br/>
+		/// </summary>
 		UnmaskedVendorWebgl = 0x9245,
+
+		/// <summary>
+		/// From the WEBGL_debug_renderer_info extension<br/>
+		/// </summary>
 		UnmaskedRendererWebgl = 0x9246,
+
 		MaxClientWaitTimeoutWebgl = 0x9247,
+		/// <summary>
+		/// From the WEBGL_video_texture extension<br/>
+		/// </summary>
 		TextureVideoImageWebgl = 0x9248,
+
+		/// <summary>
+		/// From the WEBGL_video_texture extension<br/>
+		/// </summary>
 		SamplerVideoImageWebgl = 0x9249,
+
 		ShaderBinaryDmp = 0x9250,
 		Smaphs30ProgramBinaryDmp = 0x9251,
 		SmaphsProgramBinaryDmp = 0x9252,

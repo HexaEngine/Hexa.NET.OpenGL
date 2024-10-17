@@ -31,6 +31,11 @@ namespace Hexa.NET.OpenGL.NV
 			DeleteFencesNVNative(n, fences);
 		}
 
+		public static void DeleteFencesN(uint fence)
+		{
+			DeleteFencesNVNative(1, &fence);
+		}
+
 		public static void DeleteFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -69,6 +74,13 @@ namespace Hexa.NET.OpenGL.NV
 			GenFencesNVNative(n, fences);
 		}
 
+		public static uint GenFencesN()
+		{
+			uint result;
+			GenFencesNVNative(1, &result);
+			return result;
+		}
+
 		public static void GenFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -92,11 +104,18 @@ namespace Hexa.NET.OpenGL.NV
 			GetFenceivNVNative(fence, pname, @params);
 		}
 
-		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, ref int @params)
+		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetFenceivNVNative(fence, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetFenceivNVNative(fence, pname, pparams0);
+				GetFenceivNVNative(fence, pname, pparams);
 			}
 		}
 

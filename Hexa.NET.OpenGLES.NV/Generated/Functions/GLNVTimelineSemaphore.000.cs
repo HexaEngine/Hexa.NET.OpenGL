@@ -54,11 +54,18 @@ namespace Hexa.NET.OpenGLES.NV
 			GetSemaphoreParameterivNVNative(semaphore, pname, @params);
 		}
 
-		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
+		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			GetSemaphoreParameterivNVNative(semaphore, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				GetSemaphoreParameterivNVNative(semaphore, pname, pparams0);
+				GetSemaphoreParameterivNVNative(semaphore, pname, pparams);
 			}
 		}
 
@@ -77,11 +84,18 @@ namespace Hexa.NET.OpenGLES.NV
 			SemaphoreParameterivNVNative(semaphore, pname, @params);
 		}
 
-		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
+		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, out int @params)
 		{
-			fixed (int* pparams0 = &@params)
+			int pparams;
+			SemaphoreParameterivNVNative(semaphore, pname, &pparams);
+			@params = pparams;
+		}
+
+		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
 			{
-				SemaphoreParameterivNVNative(semaphore, pname, pparams0);
+				SemaphoreParameterivNVNative(semaphore, pname, pparams);
 			}
 		}
 

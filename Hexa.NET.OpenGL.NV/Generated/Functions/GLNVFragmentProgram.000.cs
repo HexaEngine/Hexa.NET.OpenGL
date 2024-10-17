@@ -107,6 +107,21 @@ namespace Hexa.NET.OpenGL.NV
 			GetProgramNamedParameterfvNVNative(id, len, name, @params);
 		}
 
+		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, out float @params)
+		{
+			float pparams;
+			GetProgramNamedParameterfvNVNative(id, len, name, &pparams);
+			@params = pparams;
+		}
+
+		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
+			{
+				GetProgramNamedParameterfvNVNative(id, len, name, pparams);
+			}
+		}
+
 		public static void GetProgramNamedParameterfvNV(uint id, int len, string name, float* @params)
 		{
 			byte* pStr0 = null;
@@ -146,25 +161,6 @@ namespace Hexa.NET.OpenGL.NV
 			fixed (byte* pname0 = &name)
 			{
 				GetProgramNamedParameterfvNVNative(id, len, pname0, @params);
-			}
-		}
-
-		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, ref float @params)
-		{
-			fixed (float* pparams0 = &@params)
-			{
-				GetProgramNamedParameterfvNVNative(id, len, name, pparams0);
-			}
-		}
-
-		public static void GetProgramNamedParameterfvNV(uint id, int len, ref byte name, ref float @params)
-		{
-			fixed (byte* pname0 = &name)
-			{
-				fixed (float* pparams1 = &@params)
-				{
-					GetProgramNamedParameterfvNVNative(id, len, pname0, pparams1);
-				}
 			}
 		}
 

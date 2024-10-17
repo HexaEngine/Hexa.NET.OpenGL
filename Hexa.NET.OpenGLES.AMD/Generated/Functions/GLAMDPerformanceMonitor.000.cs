@@ -46,6 +46,11 @@ namespace Hexa.NET.OpenGLES.AMD
 			DeletePerfMonitorsAMDNative(n, monitors);
 		}
 
+		public static void DeletePerfMonitorsAM(uint monitor)
+		{
+			DeletePerfMonitorsAMDNative(1, &monitor);
+		}
+
 		public static void DeletePerfMonitorsAMD(int n, ref uint monitors)
 		{
 			fixed (uint* pmonitors0 = &monitors)
@@ -82,6 +87,13 @@ namespace Hexa.NET.OpenGLES.AMD
 		public static void GenPerfMonitorsAMD(int n, uint* monitors)
 		{
 			GenPerfMonitorsAMDNative(n, monitors);
+		}
+
+		public static uint GenPerfMonitorsAM()
+		{
+			uint result;
+			GenPerfMonitorsAMDNative(1, &result);
+			return result;
 		}
 
 		public static void GenPerfMonitorsAMD(int n, ref uint monitors)
