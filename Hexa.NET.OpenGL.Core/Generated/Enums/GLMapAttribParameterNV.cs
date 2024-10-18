@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMapAttribParameterNV : uint
 	{
+		/// <summary>
+		/// Specifies the U order for attribute mapping (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		UOrderNv = unchecked((uint)0x86C3),
+
+		/// <summary>
+		/// Specifies the V order for attribute mapping (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		VOrderNv = unchecked((uint)0x86C4),
 	}
 }

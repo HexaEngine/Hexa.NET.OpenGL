@@ -26,12 +26,20 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, GLEnum* layout)
 		{
 			void* ret = MapTexture2DINTELNative(texture, level, access, stride, layout);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, GLEnum* layout)
 		{
 			fixed (int* pstride0 = stride)
@@ -41,6 +49,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, GLEnum* layout)
 		{
 			fixed (int* pstride0 = &stride)
@@ -50,6 +62,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, Span<GLEnum> layout)
 		{
 			fixed (GLEnum* playout0 = layout)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, ref GLEnum layout)
 		{
 			fixed (GLEnum* playout0 = &layout)
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, Span<GLEnum> layout)
 		{
 			fixed (int* pstride0 = stride)
@@ -80,6 +104,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, ref GLEnum layout)
 		{
 			fixed (int* pstride0 = &stride)
@@ -102,6 +130,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void SyncTextureINTEL(uint texture)
 		{
 			SyncTextureINTELNative(texture);
@@ -117,6 +149,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
 		public static void UnmapTexture2DINTEL(uint texture, int level)
 		{
 			UnmapTexture2DINTELNative(texture, level);

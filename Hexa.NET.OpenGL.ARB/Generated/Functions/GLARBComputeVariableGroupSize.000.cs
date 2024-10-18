@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_compute_variable_group_size</remarks>
 		public static void DispatchComputeGroupSizeARB(uint numGroupsX, uint numGroupsY, uint numGroupsZ, uint groupSizeX, uint groupSizeY, uint groupSizeZ)
 		{
 			DispatchComputeGroupSizeARBNative(numGroupsX, numGroupsY, numGroupsZ, groupSizeX, groupSizeY, groupSizeZ);

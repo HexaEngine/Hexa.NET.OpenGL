@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_flush_buffer_range</remarks>
 		public static void BufferParameteriAPPLE(GLEnum target, GLEnum pname, int param)
 		{
 			BufferParameteriAPPLENative(target, pname, param);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_flush_buffer_range</remarks>
 		public static void FlushMappedBufferRangeAPPLE(GLBufferTargetARB target, nint offset, nint size)
 		{
 			FlushMappedBufferRangeAPPLENative(target, offset, size);

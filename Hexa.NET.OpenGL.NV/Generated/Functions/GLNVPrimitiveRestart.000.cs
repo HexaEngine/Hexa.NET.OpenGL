@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_restart</remarks>
 		public static void PrimitiveRestartIndexNV(uint index)
 		{
 			PrimitiveRestartIndexNVNative(index);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_restart</remarks>
 		public static void PrimitiveRestartNV()
 		{
 			PrimitiveRestartNVNative();

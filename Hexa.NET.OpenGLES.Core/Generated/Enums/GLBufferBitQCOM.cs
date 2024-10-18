@@ -15,37 +15,196 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLBufferBitQCOM : uint
 	{
+		/// <summary>
+		/// Color buffer bit 0 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit0Qcom = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Color buffer bit 1 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit1Qcom = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Color buffer bit 2 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit2Qcom = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Color buffer bit 3 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit3Qcom = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Color buffer bit 4 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit4Qcom = unchecked((uint)0x00000010),
+
+		/// <summary>
+		/// Color buffer bit 5 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit5Qcom = unchecked((uint)0x00000020),
+
+		/// <summary>
+		/// Color buffer bit 6 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit6Qcom = unchecked((uint)0x00000040),
+
+		/// <summary>
+		/// Color buffer bit 7 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorBufferBit7Qcom = unchecked((uint)0x00000080),
+
+		/// <summary>
+		/// Depth buffer bit 0 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit0Qcom = unchecked((uint)0x00000100),
+
+		/// <summary>
+		/// Depth buffer bit 1 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit1Qcom = unchecked((uint)0x00000200),
+
+		/// <summary>
+		/// Depth buffer bit 2 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit2Qcom = unchecked((uint)0x00000400),
+
+		/// <summary>
+		/// Depth buffer bit 3 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit3Qcom = unchecked((uint)0x00000800),
+
+		/// <summary>
+		/// Depth buffer bit 4 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit4Qcom = unchecked((uint)0x00001000),
+
+		/// <summary>
+		/// Depth buffer bit 5 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit5Qcom = unchecked((uint)0x00002000),
+
+		/// <summary>
+		/// Depth buffer bit 6 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit6Qcom = unchecked((uint)0x00004000),
+
+		/// <summary>
+		/// Depth buffer bit 7 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthBufferBit7Qcom = unchecked((uint)0x00008000),
+
+		/// <summary>
+		/// Stencil buffer bit 0 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit0Qcom = unchecked((uint)0x00010000),
+
+		/// <summary>
+		/// Stencil buffer bit 1 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit1Qcom = unchecked((uint)0x00020000),
+
+		/// <summary>
+		/// Stencil buffer bit 2 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit2Qcom = unchecked((uint)0x00040000),
+
+		/// <summary>
+		/// Stencil buffer bit 3 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit3Qcom = unchecked((uint)0x00080000),
+
+		/// <summary>
+		/// Stencil buffer bit 4 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit4Qcom = unchecked((uint)0x00100000),
+
+		/// <summary>
+		/// Stencil buffer bit 5 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit5Qcom = unchecked((uint)0x00200000),
+
+		/// <summary>
+		/// Stencil buffer bit 6 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit6Qcom = unchecked((uint)0x00400000),
+
+		/// <summary>
+		/// Stencil buffer bit 7 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilBufferBit7Qcom = unchecked((uint)0x00800000),
+
+		/// <summary>
+		/// Multisample buffer bit 0 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit0Qcom = unchecked((uint)0x01000000),
+
+		/// <summary>
+		/// Multisample buffer bit 1 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit1Qcom = unchecked((uint)0x02000000),
+
+		/// <summary>
+		/// Multisample buffer bit 2 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit2Qcom = unchecked((uint)0x04000000),
+
+		/// <summary>
+		/// Multisample buffer bit 3 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit3Qcom = unchecked((uint)0x08000000),
+
+		/// <summary>
+		/// Multisample buffer bit 4 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit4Qcom = unchecked((uint)0x10000000),
+
+		/// <summary>
+		/// Multisample buffer bit 5 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit5Qcom = unchecked((uint)0x20000000),
+
+		/// <summary>
+		/// Multisample buffer bit 6 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit6Qcom = unchecked((uint)0x40000000),
+
+		/// <summary>
+		/// Multisample buffer bit 7 (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBufferBit7Qcom = unchecked((uint)0x80000000),
 	}
 }

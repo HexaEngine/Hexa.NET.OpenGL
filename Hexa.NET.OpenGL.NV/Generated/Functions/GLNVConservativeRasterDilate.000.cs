@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_conservative_raster_dilate</remarks>
 		public static void ConservativeRasterParameterfNV(GLEnum pname, float value)
 		{
 			ConservativeRasterParameterfNVNative(pname, value);

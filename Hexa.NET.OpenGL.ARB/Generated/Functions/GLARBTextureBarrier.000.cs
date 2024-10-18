@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Controls the ordering of reads and writes to rendered fragments across drawing commands
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_barrier</remarks>
 		public static void TextureBarrier()
 		{
 			TextureBarrierNative();

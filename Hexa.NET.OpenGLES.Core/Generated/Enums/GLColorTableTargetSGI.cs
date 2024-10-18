@@ -15,19 +15,88 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLColorTableTargetSGI : uint
 	{
+		/// <summary>
+		/// Specifies the texture color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureColorTableSgi = unchecked((uint)0x80BC),
+
+		/// <summary>
+		/// Specifies a proxy for the texture color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ProxyTextureColorTableSgi = unchecked((uint)0x80BD),
+
+		/// <summary>
+		/// Specifies a color table for color lookup.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Table = unchecked((uint)0x80D0),
+
+		/// <summary>
+		/// Specifies a color table for color lookup (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Sgi = unchecked((uint)0x80D0),
+
+		/// <summary>
+		/// Specifies a color table for post-convolution processing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionColorTable = unchecked((uint)0x80D1),
+
+		/// <summary>
+		/// Specifies a color table for post-convolution processing (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostConvolutionColorTableSgi = unchecked((uint)0x80D1),
+
+		/// <summary>
+		/// Specifies a color table for post-color matrix processing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixColorTable = unchecked((uint)0x80D2),
+
+		/// <summary>
+		/// Specifies a color table for post-color matrix processing (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixColorTableSgi = unchecked((uint)0x80D2),
+
+		/// <summary>
+		/// Specifies a proxy for color tables.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		ProxyColorTable = unchecked((uint)0x80D3),
+
+		/// <summary>
+		/// Specifies a proxy for color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ProxyColorTableSgi = unchecked((uint)0x80D3),
+
+		/// <summary>
+		/// Specifies a proxy for post-convolution color tables.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		ProxyPostConvolutionColorTable = unchecked((uint)0x80D4),
+
+		/// <summary>
+		/// Specifies a proxy for post-convolution color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ProxyPostConvolutionColorTableSgi = unchecked((uint)0x80D4),
+
+		/// <summary>
+		/// Specifies a proxy for post-color matrix color tables.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5),
+
+		/// <summary>
+		/// Specifies a proxy for post-color matrix color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ProxyPostColorMatrixColorTableSgi = unchecked((uint)0x80D5),
 	}
 }

@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageCallbackARB(GLDebugProcARB callback, void* userParam)
 		{
 			DebugMessageCallbackARBNative(callback, userParam);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageCallbackARB(GLDebugProcARB callback, nint userParam)
 		{
 			DebugMessageCallbackARBNative(callback, (void*)userParam);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageCallbackARB<TUserParam>(GLDebugProcARB callback, Span<TUserParam> userParam) where TUserParam : unmanaged
 		{
 			fixed (TUserParam* puserParam0 = userParam)
@@ -54,11 +66,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageControlARB(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			DebugMessageControlARBNative(source, type, severity, count, ids, enabled);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageControlARB(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
 		{
 			fixed (uint* pids0 = ids)
@@ -67,6 +87,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageControlARB(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
 		{
 			fixed (uint* pids0 = &ids)
@@ -85,11 +109,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageInsertARB(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
 		{
 			DebugMessageInsertARBNative(source, type, id, severity, length, buf);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageInsertARB(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, string buf)
 		{
 			byte* pStr0 = null;
@@ -116,6 +148,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageInsertARB(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, Span<byte> buf)
 		{
 			fixed (byte* pbuf0 = buf)
@@ -124,6 +160,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static void DebugMessageInsertARB(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, ref byte buf)
 		{
 			fixed (byte* pbuf0 = &buf)
@@ -142,12 +182,20 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			uint ret = GetDebugMessageLogARBNative(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -157,6 +205,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -166,6 +218,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = lengths)
@@ -175,6 +231,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -184,6 +244,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -196,6 +260,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -208,6 +276,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, string messageLog)
 		{
 			byte* pStr0 = null;
@@ -235,6 +307,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (byte* pmessageLog0 = messageLog)
@@ -244,6 +320,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (byte* pmessageLog0 = &messageLog)
@@ -253,6 +333,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -265,6 +349,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -277,6 +365,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (int* plengths0 = lengths)
@@ -289,6 +381,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -301,6 +397,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -316,6 +416,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_debug_output</remarks>
 		public static uint GetDebugMessageLogARB(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)

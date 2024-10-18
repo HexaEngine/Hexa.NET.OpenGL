@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_coverage_sample</remarks>
 		public static void CoverageMaskNV(bool mask)
 		{
 			CoverageMaskNVNative(mask);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_coverage_sample</remarks>
 		public static void CoverageOperationNV(GLEnum operation)
 		{
 			CoverageOperationNVNative(operation);

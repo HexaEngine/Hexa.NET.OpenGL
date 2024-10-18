@@ -15,37 +15,196 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentShaderConATI : uint
 	{
+		/// <summary>
+		/// Specifies the first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con0Ati = unchecked((uint)0x8941),
+
+		/// <summary>
+		/// Specifies the second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con1Ati = unchecked((uint)0x8942),
+
+		/// <summary>
+		/// Specifies the third constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con2Ati = unchecked((uint)0x8943),
+
+		/// <summary>
+		/// Specifies the fourth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con3Ati = unchecked((uint)0x8944),
+
+		/// <summary>
+		/// Specifies the fifth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con4Ati = unchecked((uint)0x8945),
+
+		/// <summary>
+		/// Specifies the sixth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con5Ati = unchecked((uint)0x8946),
+
+		/// <summary>
+		/// Specifies the seventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con6Ati = unchecked((uint)0x8947),
+
+		/// <summary>
+		/// Specifies the eighth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con7Ati = unchecked((uint)0x8948),
+
+		/// <summary>
+		/// Specifies the ninth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con8Ati = unchecked((uint)0x8949),
+
+		/// <summary>
+		/// Specifies the tenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con9Ati = unchecked((uint)0x894A),
+
+		/// <summary>
+		/// Specifies the eleventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con10Ati = unchecked((uint)0x894B),
+
+		/// <summary>
+		/// Specifies the twelfth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con11Ati = unchecked((uint)0x894C),
+
+		/// <summary>
+		/// Specifies the thirteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con12Ati = unchecked((uint)0x894D),
+
+		/// <summary>
+		/// Specifies the fourteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con13Ati = unchecked((uint)0x894E),
+
+		/// <summary>
+		/// Specifies the fifteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con14Ati = unchecked((uint)0x894F),
+
+		/// <summary>
+		/// Specifies the sixteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con15Ati = unchecked((uint)0x8950),
+
+		/// <summary>
+		/// Specifies the seventeenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con16Ati = unchecked((uint)0x8951),
+
+		/// <summary>
+		/// Specifies the eighteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con17Ati = unchecked((uint)0x8952),
+
+		/// <summary>
+		/// Specifies the nineteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con18Ati = unchecked((uint)0x8953),
+
+		/// <summary>
+		/// Specifies the twentieth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con19Ati = unchecked((uint)0x8954),
+
+		/// <summary>
+		/// Specifies the twenty-first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con20Ati = unchecked((uint)0x8955),
+
+		/// <summary>
+		/// Specifies the twenty-second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con21Ati = unchecked((uint)0x8956),
+
+		/// <summary>
+		/// Specifies the twenty-third constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con22Ati = unchecked((uint)0x8957),
+
+		/// <summary>
+		/// Specifies the twenty-fourth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con23Ati = unchecked((uint)0x8958),
+
+		/// <summary>
+		/// Specifies the twenty-fifth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con24Ati = unchecked((uint)0x8959),
+
+		/// <summary>
+		/// Specifies the twenty-sixth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con25Ati = unchecked((uint)0x895A),
+
+		/// <summary>
+		/// Specifies the twenty-seventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con26Ati = unchecked((uint)0x895B),
+
+		/// <summary>
+		/// Specifies the twenty-eighth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con27Ati = unchecked((uint)0x895C),
+
+		/// <summary>
+		/// Specifies the twenty-ninth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con28Ati = unchecked((uint)0x895D),
+
+		/// <summary>
+		/// Specifies the thirtieth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con29Ati = unchecked((uint)0x895E),
+
+		/// <summary>
+		/// Specifies the thirty-first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con30Ati = unchecked((uint)0x895F),
+
+		/// <summary>
+		/// Specifies the thirty-second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con31Ati = unchecked((uint)0x8960),
 	}
 }

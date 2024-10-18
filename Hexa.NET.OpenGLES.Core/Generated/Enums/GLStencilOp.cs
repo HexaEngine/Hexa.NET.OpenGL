@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLStencilOp : uint
 	{
+		/// <summary>
+		/// Numeric zero value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_blend_equation_advanced<br/>GL_NV_register_combiners<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Zero = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies a logical inversion operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_blend_equation_advanced</remarks>
 		Invert = unchecked((uint)0x150A),
+
+		/// <summary>
+		/// Specifies keeping the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Keep = unchecked((uint)0x1E00),
+
+		/// <summary>
+		/// Specifies replacing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Replace = unchecked((uint)0x1E01),
+
+		/// <summary>
+		/// Specifies incrementing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Incr = unchecked((uint)0x1E02),
+
+		/// <summary>
+		/// Specifies decrementing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Decr = unchecked((uint)0x1E03),
+
+		/// <summary>
+		/// Specifies wrap mode for incremental blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IncrWrap = unchecked((uint)0x8507),
+
+		/// <summary>
+		/// Specifies wrap mode for decremental blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DecrWrap = unchecked((uint)0x8508),
 	}
 }

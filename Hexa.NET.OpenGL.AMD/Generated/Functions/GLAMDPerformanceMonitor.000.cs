@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void BeginPerfMonitorAMD(uint monitor)
 		{
 			BeginPerfMonitorAMDNative(monitor);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void DeletePerfMonitorsAMD(int n, uint* monitors)
 		{
 			DeletePerfMonitorsAMDNative(n, monitors);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void DeletePerfMonitorsAM(uint monitor)
 		{
 			DeletePerfMonitorsAMDNative(1, &monitor);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void DeletePerfMonitorsAMD(int n, Span<uint> monitors)
 		{
 			fixed (uint* pmonitors0 = monitors)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void DeletePerfMonitorsAMD(int n, ref uint monitors)
 		{
 			fixed (uint* pmonitors0 = &monitors)
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void EndPerfMonitorAMD(uint monitor)
 		{
 			EndPerfMonitorAMDNative(monitor);
@@ -92,11 +116,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GenPerfMonitorsAMD(int n, uint* monitors)
 		{
 			GenPerfMonitorsAMDNative(n, monitors);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static uint GenPerfMonitorsAM()
 		{
 			uint result;
@@ -104,6 +136,10 @@ namespace Hexa.NET.OpenGL.AMD
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GenPerfMonitorsAMD(int n, Span<uint> monitors)
 		{
 			fixed (uint* pmonitors0 = monitors)
@@ -112,6 +148,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GenPerfMonitorsAMD(int n, ref uint monitors)
 		{
 			fixed (uint* pmonitors0 = &monitors)
@@ -130,11 +170,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, int* bytesWritten)
 		{
 			GetPerfMonitorCounterDataAMDNative(monitor, pname, dataSize, data, bytesWritten);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, Span<uint> data, int* bytesWritten)
 		{
 			fixed (uint* pdata0 = data)
@@ -143,6 +191,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, ref uint data, int* bytesWritten)
 		{
 			fixed (uint* pdata0 = &data)
@@ -151,6 +203,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, Span<int> bytesWritten)
 		{
 			fixed (int* pbytesWritten0 = bytesWritten)
@@ -159,6 +215,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, ref int bytesWritten)
 		{
 			fixed (int* pbytesWritten0 = &bytesWritten)
@@ -167,6 +227,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, Span<uint> data, Span<int> bytesWritten)
 		{
 			fixed (uint* pdata0 = data)
@@ -178,6 +242,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, ref uint data, ref int bytesWritten)
 		{
 			fixed (uint* pdata0 = &data)
@@ -199,16 +267,28 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterInfoAMD(uint group, uint counter, GLEnum pname, void* data)
 		{
 			GetPerfMonitorCounterInfoAMDNative(group, counter, pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterInfoAMD(uint group, uint counter, GLEnum pname, nint data)
 		{
 			GetPerfMonitorCounterInfoAMDNative(group, counter, pname, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterInfoAMD<TData>(uint group, uint counter, GLEnum pname, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -227,11 +307,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, byte* counterString)
 		{
 			GetPerfMonitorCounterStringAMDNative(group, counter, bufSize, length, counterString);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, Span<int> length, byte* counterString)
 		{
 			fixed (int* plength0 = length)
@@ -240,6 +328,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, ref int length, byte* counterString)
 		{
 			fixed (int* plength0 = &length)
@@ -248,6 +340,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, string counterString)
 		{
 			byte* pStr0 = null;
@@ -274,6 +370,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, Span<byte> counterString)
 		{
 			fixed (byte* pcounterString0 = counterString)
@@ -282,6 +382,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, ref byte counterString)
 		{
 			fixed (byte* pcounterString0 = &counterString)
@@ -290,6 +394,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, Span<int> length, Span<byte> counterString)
 		{
 			fixed (int* plength0 = length)
@@ -301,6 +409,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, ref int length, ref byte counterString)
 		{
 			fixed (int* plength0 = &length)
@@ -322,11 +434,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			GetPerfMonitorCountersAMDNative(group, numCounters, maxActiveCounters, counterSize, counters);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
@@ -335,6 +455,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
@@ -343,6 +467,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, Span<int> maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pmaxActiveCounters0 = maxActiveCounters)
@@ -351,6 +479,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, ref int maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pmaxActiveCounters0 = &maxActiveCounters)
@@ -359,6 +491,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, Span<int> maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
@@ -370,6 +506,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, ref int maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
@@ -381,6 +521,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (uint* pcounters0 = counters)
@@ -389,6 +533,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (uint* pcounters0 = &counters)
@@ -397,6 +545,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, int* maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
@@ -408,6 +560,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, int* maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
@@ -419,6 +575,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, Span<int> maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (int* pmaxActiveCounters0 = maxActiveCounters)
@@ -430,6 +590,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, ref int maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (int* pmaxActiveCounters0 = &maxActiveCounters)
@@ -441,6 +605,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, Span<int> maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
@@ -455,6 +623,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, ref int maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
@@ -479,11 +651,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, byte* groupString)
 		{
 			GetPerfMonitorGroupStringAMDNative(group, bufSize, length, groupString);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, Span<int> length, byte* groupString)
 		{
 			fixed (int* plength0 = length)
@@ -492,6 +672,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, ref int length, byte* groupString)
 		{
 			fixed (int* plength0 = &length)
@@ -500,6 +684,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, string groupString)
 		{
 			byte* pStr0 = null;
@@ -526,6 +714,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, Span<byte> groupString)
 		{
 			fixed (byte* pgroupString0 = groupString)
@@ -534,6 +726,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, ref byte groupString)
 		{
 			fixed (byte* pgroupString0 = &groupString)
@@ -542,6 +738,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, Span<int> length, Span<byte> groupString)
 		{
 			fixed (int* plength0 = length)
@@ -553,6 +753,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, ref int length, ref byte groupString)
 		{
 			fixed (int* plength0 = &length)
@@ -574,11 +778,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, uint* groups)
 		{
 			GetPerfMonitorGroupsAMDNative(numGroups, groupsSize, groups);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(Span<int> numGroups, int groupsSize, uint* groups)
 		{
 			fixed (int* pnumGroups0 = numGroups)
@@ -587,6 +799,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(ref int numGroups, int groupsSize, uint* groups)
 		{
 			fixed (int* pnumGroups0 = &numGroups)
@@ -595,6 +811,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, Span<uint> groups)
 		{
 			fixed (uint* pgroups0 = groups)
@@ -603,6 +823,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, ref uint groups)
 		{
 			fixed (uint* pgroups0 = &groups)
@@ -611,6 +835,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(Span<int> numGroups, int groupsSize, Span<uint> groups)
 		{
 			fixed (int* pnumGroups0 = numGroups)
@@ -622,6 +850,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void GetPerfMonitorGroupsAMD(ref int numGroups, int groupsSize, ref uint groups)
 		{
 			fixed (int* pnumGroups0 = &numGroups)
@@ -643,11 +875,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, uint* counterList)
 		{
 			SelectPerfMonitorCountersAMDNative(monitor, enable, group, numCounters, counterList);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, Span<uint> counterList)
 		{
 			fixed (uint* pcounterList0 = counterList)
@@ -656,6 +896,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
 		public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, ref uint counterList)
 		{
 			fixed (uint* pcounterList0 = &counterList)

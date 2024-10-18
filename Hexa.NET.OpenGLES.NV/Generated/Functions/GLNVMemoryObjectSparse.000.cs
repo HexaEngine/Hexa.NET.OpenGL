@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
 		public static void BufferPageCommitmentMemNV(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			BufferPageCommitmentMemNVNative(target, offset, size, memory, memOffset, commit);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
 		public static void NamedBufferPageCommitmentMemNV(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			NamedBufferPageCommitmentMemNVNative(buffer, offset, size, memory, memOffset, commit);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
 		public static void TexPageCommitmentMemNV(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			TexPageCommitmentMemNVNative(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
 		public static void TexturePageCommitmentMemNV(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			TexturePageCommitmentMemNVNative(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);

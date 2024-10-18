@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_framebuffer_fetch_non_coherent</remarks>
 		public static void FramebufferFetchBarrierEXT()
 		{
 			FramebufferFetchBarrierEXTNative();

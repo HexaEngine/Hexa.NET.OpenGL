@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_parallel_shader_compile</remarks>
 		public static void MaxShaderCompilerThreadsARB(uint count)
 		{
 			MaxShaderCompilerThreadsARBNative(count);

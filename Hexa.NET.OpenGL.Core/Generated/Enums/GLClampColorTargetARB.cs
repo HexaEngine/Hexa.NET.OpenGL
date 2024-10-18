@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLClampColorTargetARB : uint
 	{
+		/// <summary>
+		/// Specifies clamping for vertex colors (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		VertexColorArb = unchecked((uint)0x891A),
+
+		/// <summary>
+		/// Specifies clamping for fragment colors (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		FragmentColorArb = unchecked((uint)0x891B),
+
+		/// <summary>
+		/// Specifies clamping for read colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ReadColor = unchecked((uint)0x891C),
+
+		/// <summary>
+		/// Specifies clamping for read colors (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		ReadColorArb = unchecked((uint)0x891C),
 	}
 }

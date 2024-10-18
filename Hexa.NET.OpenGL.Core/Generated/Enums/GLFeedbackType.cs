@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFeedbackType : uint
 	{
+		/// <summary>
+		/// Indicates 2D rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl2D = unchecked((uint)0x0600),
+
+		/// <summary>
+		/// Indicates 3D rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl3D = unchecked((uint)0x0601),
+
+		/// <summary>
+		/// Indicates 3D color rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl3DColor = unchecked((uint)0x0602),
+
+		/// <summary>
+		/// Indicates 3D color texture rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl3DColorTexture = unchecked((uint)0x0603),
+
+		/// <summary>
+		/// Indicates 4D color texture rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl4DColorTexture = unchecked((uint)0x0604),
 	}
 }

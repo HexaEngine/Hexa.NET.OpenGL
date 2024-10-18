@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLBufferUsageARB : uint
 	{
+		/// <summary>
+		/// Specifies a hint that data will be set frequently and used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StreamDraw = unchecked((uint)0x88E0),
+
+		/// <summary>
+		/// Specifies a hint that data will be read frequently.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StreamRead = unchecked((uint)0x88E1),
+
+		/// <summary>
+		/// Specifies a hint that data will be copied frequently.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StreamCopy = unchecked((uint)0x88E2),
+
+		/// <summary>
+		/// Specifies a hint that data will be set once and used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StaticDraw = unchecked((uint)0x88E4),
+
+		/// <summary>
+		/// Specifies a hint that data will be read once.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StaticRead = unchecked((uint)0x88E5),
+
+		/// <summary>
+		/// Specifies a hint that data will be copied once.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StaticCopy = unchecked((uint)0x88E6),
+
+		/// <summary>
+		/// Specifies a hint that data will be changed frequently and used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DynamicDraw = unchecked((uint)0x88E8),
+
+		/// <summary>
+		/// Specifies a hint that data will be read frequently.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DynamicRead = unchecked((uint)0x88E9),
+
+		/// <summary>
+		/// Specifies a hint that data will be copied frequently.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DynamicCopy = unchecked((uint)0x88EA),
 	}
 }

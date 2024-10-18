@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLObjectTypeAPPLE : uint
 	{
+		/// <summary>
+		/// Specifies the draw pixels operation (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		DrawPixelsApple = unchecked((uint)0x8A0A),
+
+		/// <summary>
+		/// Specifies a fence object (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		FenceApple = unchecked((uint)0x8A0B),
 	}
 }

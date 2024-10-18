@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationEXT(uint program, uint color, byte* name)
 		{
 			BindFragDataLocationEXTNative(program, color, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationEXT(uint program, uint color, string name)
 		{
 			byte* pStr0 = null;
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationEXT(uint program, uint color, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -65,6 +77,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationEXT(uint program, uint color, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -83,11 +99,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexedEXT(uint program, uint colorNumber, uint index, byte* name)
 		{
 			BindFragDataLocationIndexedEXTNative(program, colorNumber, index, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexedEXT(uint program, uint colorNumber, uint index, string name)
 		{
 			byte* pStr0 = null;
@@ -114,6 +138,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexedEXT(uint program, uint colorNumber, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -122,6 +150,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexedEXT(uint program, uint colorNumber, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -140,12 +172,20 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetFragDataIndexEXT(uint program, byte* name)
 		{
 			int ret = GetFragDataIndexEXTNative(program, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetFragDataIndexEXT(uint program, string name)
 		{
 			byte* pStr0 = null;
@@ -173,6 +213,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetFragDataIndexEXT(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -182,6 +226,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetFragDataIndexEXT(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -201,12 +249,20 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetProgramResourceLocationIndexEXT(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			int ret = GetProgramResourceLocationIndexEXTNative(program, programInterface, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetProgramResourceLocationIndexEXT(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
@@ -234,6 +290,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetProgramResourceLocationIndexEXT(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -243,6 +303,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		public static int GetProgramResourceLocationIndexEXT(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)

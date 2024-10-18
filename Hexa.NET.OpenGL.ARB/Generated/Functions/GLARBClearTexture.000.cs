@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Fills all a texture image with a constant value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		public static void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexImageNative(texture, level, format, type, data);
 		}
 
+		/// <summary>
+		/// Fills all a texture image with a constant value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		public static void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearTexImageNative(texture, level, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// Fills all a texture image with a constant value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		public static void ClearTexImage<TData>(uint texture, int level, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Fills all or part of a texture image with a constant value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
 		}
 
+		/// <summary>
+		/// Fills all or part of a texture image with a constant value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// Fills all or part of a texture image with a constant value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		public static void ClearTexSubImage<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

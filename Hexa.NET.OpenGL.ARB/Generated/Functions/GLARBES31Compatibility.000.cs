@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_1_compatibility</remarks>
 		public static void MemoryBarrierByRegion(GLMemoryBarrierMask barriers)
 		{
 			MemoryBarrierByRegionNative(barriers);

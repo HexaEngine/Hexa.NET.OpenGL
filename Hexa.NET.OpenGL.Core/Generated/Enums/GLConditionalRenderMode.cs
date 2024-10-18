@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLConditionalRenderMode : uint
 	{
+		/// <summary>
+		/// Specifies a query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryWait = unchecked((uint)0x8E13),
+
+		/// <summary>
+		/// Specifies a query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryNoWait = unchecked((uint)0x8E14),
+
+		/// <summary>
+		/// Specifies a region query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryByRegionWait = unchecked((uint)0x8E15),
+
+		/// <summary>
+		/// Specifies a region query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryByRegionNoWait = unchecked((uint)0x8E16),
+
+		/// <summary>
+		/// Specifies an inverted query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryWaitInverted = unchecked((uint)0x8E17),
+
+		/// <summary>
+		/// Specifies an inverted query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryNoWaitInverted = unchecked((uint)0x8E18),
+
+		/// <summary>
+		/// Specifies an inverted region query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryByRegionWaitInverted = unchecked((uint)0x8E19),
+
+		/// <summary>
+		/// Specifies an inverted region query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryByRegionNoWaitInverted = unchecked((uint)0x8E1A),
 	}
 }

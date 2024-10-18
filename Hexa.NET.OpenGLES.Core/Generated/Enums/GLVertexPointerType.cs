@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexPointerType : uint
 	{
+		/// <summary>
+		/// Specifies a signed short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_render_snorm</remarks>
 		Short = unchecked((uint)0x1402),
+
+		/// <summary>
+		/// Specifies a signed integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Int = unchecked((uint)0x1404),
+
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader<br/>GL_OES_texture_float</remarks>
 		Float = unchecked((uint)0x1406),
+
+		/// <summary>
+		/// Specifies a double-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit<br/>GL_ARB_gpu_shader_fp64</remarks>
 		Double = unchecked((uint)0x140A),
 	}
 }

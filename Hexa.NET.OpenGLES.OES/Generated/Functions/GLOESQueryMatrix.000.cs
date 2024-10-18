@@ -26,12 +26,20 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(int* mantissa, int* exponent)
 		{
 			uint ret = QueryMatrixxOESNative(mantissa, exponent);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(Span<int> mantissa, int* exponent)
 		{
 			fixed (int* pmantissa0 = mantissa)
@@ -41,6 +49,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(ref int mantissa, int* exponent)
 		{
 			fixed (int* pmantissa0 = &mantissa)
@@ -50,6 +62,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(int* mantissa, Span<int> exponent)
 		{
 			fixed (int* pexponent0 = exponent)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(int* mantissa, ref int exponent)
 		{
 			fixed (int* pexponent0 = &exponent)
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(Span<int> mantissa, Span<int> exponent)
 		{
 			fixed (int* pmantissa0 = mantissa)
@@ -80,6 +104,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
 		public static uint QueryMatrixxOES(ref int mantissa, ref int exponent)
 		{
 			fixed (int* pmantissa0 = &mantissa)

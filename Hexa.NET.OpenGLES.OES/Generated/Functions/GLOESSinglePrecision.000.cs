@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void ClearDepthfOES(float depth)
 		{
 			ClearDepthfOESNative(depth);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void ClipPlanefOES(GLClipPlaneName plane, float* equation)
 		{
 			ClipPlanefOESNative(plane, equation);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void ClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
 		{
 			fixed (float* pequation0 = equation)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void ClipPlanefOES(GLClipPlaneName plane, ref float equation)
 		{
 			fixed (float* pequation0 = &equation)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void DepthRangefOES(float n, float f)
 		{
 			DepthRangefOESNative(n, f);
@@ -87,6 +107,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void FrustumfOES(float l, float r, float b, float t, float n, float f)
 		{
 			FrustumfOESNative(l, r, b, t, n, f);
@@ -102,11 +126,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void GetClipPlanefOES(GLClipPlaneName plane, float* equation)
 		{
 			GetClipPlanefOESNative(plane, equation);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void GetClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
 		{
 			fixed (float* pequation0 = equation)
@@ -115,6 +147,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void GetClipPlanefOES(GLClipPlaneName plane, ref float equation)
 		{
 			fixed (float* pequation0 = &equation)
@@ -133,6 +169,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
 		public static void OrthofOES(float l, float r, float b, float t, float n, float f)
 		{
 			OrthofOESNative(l, r, b, t, n, f);

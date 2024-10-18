@@ -15,51 +15,280 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPixelTransferParameter : uint
 	{
+		/// <summary>
+		/// Enables or disables color mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapColor = unchecked((uint)0x0D10),
+
+		/// <summary>
+		/// Enables or disables stencil mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapStencil = unchecked((uint)0x0D11),
+
+		/// <summary>
+		/// Specifies a shift value for index values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexShift = unchecked((uint)0x0D12),
+
+		/// <summary>
+		/// Specifies an offset for index values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexOffset = unchecked((uint)0x0D13),
+
+		/// <summary>
+		/// Specifies a scale factor for red component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RedScale = unchecked((uint)0x0D14),
+
+		/// <summary>
+		/// Specifies a bias for red component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RedBias = unchecked((uint)0x0D15),
+
+		/// <summary>
+		/// Specifies a scale factor for green component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GreenScale = unchecked((uint)0x0D18),
+
+		/// <summary>
+		/// Specifies a bias for green component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GreenBias = unchecked((uint)0x0D19),
+
+		/// <summary>
+		/// Specifies a scale factor for blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlueScale = unchecked((uint)0x0D1A),
+
+		/// <summary>
+		/// Specifies a bias for blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlueBias = unchecked((uint)0x0D1B),
+
+		/// <summary>
+		/// Specifies a scale factor for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaScale = unchecked((uint)0x0D1C),
+
+		/// <summary>
+		/// Specifies a bias for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaBias = unchecked((uint)0x0D1D),
+
+		/// <summary>
+		/// Specifies a scale factor for depth values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthScale = unchecked((uint)0x0D1E),
+
+		/// <summary>
+		/// Specifies a bias factor for depth values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthBias = unchecked((uint)0x0D1F),
+
+		/// <summary>
+		/// Specifies the scale factor for the red component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionRedScale = unchecked((uint)0x801C),
+
+		/// <summary>
+		/// Specifies the scale factor for the red component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionRedScaleExt = unchecked((uint)0x801C),
+
+		/// <summary>
+		/// Specifies the scale factor for the green component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionGreenScale = unchecked((uint)0x801D),
+
+		/// <summary>
+		/// Specifies the scale factor for the green component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionGreenScaleExt = unchecked((uint)0x801D),
+
+		/// <summary>
+		/// Specifies the scale factor for the blue component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionBlueScale = unchecked((uint)0x801E),
+
+		/// <summary>
+		/// Specifies the scale factor for the blue component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionBlueScaleExt = unchecked((uint)0x801E),
+
+		/// <summary>
+		/// Specifies the scale factor for the alpha component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionAlphaScale = unchecked((uint)0x801F),
+
+		/// <summary>
+		/// Specifies the scale factor for the alpha component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionAlphaScaleExt = unchecked((uint)0x801F),
+
+		/// <summary>
+		/// Specifies the bias for the red component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionRedBias = unchecked((uint)0x8020),
+
+		/// <summary>
+		/// Specifies the bias for the red component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionRedBiasExt = unchecked((uint)0x8020),
+
+		/// <summary>
+		/// Specifies the bias for the green component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionGreenBias = unchecked((uint)0x8021),
+
+		/// <summary>
+		/// Specifies the bias for the green component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionGreenBiasExt = unchecked((uint)0x8021),
+
+		/// <summary>
+		/// Specifies the bias for the blue component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionBlueBias = unchecked((uint)0x8022),
+
+		/// <summary>
+		/// Specifies the bias for the blue component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionBlueBiasExt = unchecked((uint)0x8022),
+
+		/// <summary>
+		/// Specifies the bias for the alpha component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostConvolutionAlphaBias = unchecked((uint)0x8023),
+
+		/// <summary>
+		/// Specifies the bias for the alpha component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionAlphaBiasExt = unchecked((uint)0x8023),
+
+		/// <summary>
+		/// Specifies the red scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixRedScale = unchecked((uint)0x80B4),
+
+		/// <summary>
+		/// Specifies the red scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixRedScaleSgi = unchecked((uint)0x80B4),
+
+		/// <summary>
+		/// Specifies the green scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixGreenScale = unchecked((uint)0x80B5),
+
+		/// <summary>
+		/// Specifies the green scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixGreenScaleSgi = unchecked((uint)0x80B5),
+
+		/// <summary>
+		/// Specifies the blue scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixBlueScale = unchecked((uint)0x80B6),
+
+		/// <summary>
+		/// Specifies the blue scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixBlueScaleSgi = unchecked((uint)0x80B6),
+
+		/// <summary>
+		/// Specifies the alpha scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixAlphaScale = unchecked((uint)0x80B7),
+
+		/// <summary>
+		/// Specifies the alpha scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixAlphaScaleSgi = unchecked((uint)0x80B7),
+
+		/// <summary>
+		/// Specifies the red bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixRedBias = unchecked((uint)0x80B8),
+
+		/// <summary>
+		/// Specifies the red bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixRedBiasSgi = unchecked((uint)0x80B8),
+
+		/// <summary>
+		/// Specifies the green bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixGreenBias = unchecked((uint)0x80B9),
+
+		/// <summary>
+		/// Specifies the green bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixGreenBiasSgi = unchecked((uint)0x80B9),
+
+		/// <summary>
+		/// Specifies the blue bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixBlueBias = unchecked((uint)0x80BA),
+
+		/// <summary>
+		/// Specifies the blue bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixBlueBiasSgi = unchecked((uint)0x80BA),
+
+		/// <summary>
+		/// Specifies the alpha bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		PostColorMatrixAlphaBias = unchecked((uint)0x80BB),
+
+		/// <summary>
+		/// Specifies the alpha bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixAlphaBiasSgi = unchecked((uint)0x80BB),
 	}
 }

@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFramebufferStatus : uint
 	{
+		/// <summary>
+		/// Specifies an undefined framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Undefined = unchecked((uint)0x8219),
+
+		/// <summary>
+		/// Specifies that the framebuffer is complete.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Complete = unchecked((uint)0x8CD5),
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to attachment issues.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		IncompleteAttachment = unchecked((uint)0x8CD6),
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to missing attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		IncompleteMissingAttachment = unchecked((uint)0x8CD7),
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to draw buffer issues.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		IncompleteDrawBuffer = unchecked((uint)0x8CDB),
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to read buffer issues.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		IncompleteReadBuffer = unchecked((uint)0x8CDC),
+
+		/// <summary>
+		/// Specifies that the framebuffer is unsupported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Unsupported = unchecked((uint)0x8CDD),
+
+		/// <summary>
+		/// Indicates that a framebuffer is incomplete due to multisample attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		IncompleteMultisample = unchecked((uint)0x8D56),
+
+		/// <summary>
+		/// Indicates incomplete framebuffer due to layer targets.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		IncompleteLayerTargets = unchecked((uint)0x8DA8),
 	}
 }

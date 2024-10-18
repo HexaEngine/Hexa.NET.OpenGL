@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformi64vNV(uint program, int location, long* @params)
 		{
 			GetUniformi64vNVNative(program, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformi64vNV(uint program, int location, out long @params)
 		{
 			long pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.AMD
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformi64vNV(uint program, int location, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformui64vNV(uint program, int location, ulong* @params)
 		{
 			GetUniformui64vNVNative(program, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformui64vNV(uint program, int location, out ulong @params)
 		{
 			ulong pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.AMD
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -86,6 +110,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64NV(uint program, int location, long x)
 		{
 			ProgramUniform1i64NVNative(program, location, x);
@@ -101,11 +129,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform1i64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -114,6 +150,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -132,6 +172,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64NV(uint program, int location, ulong x)
 		{
 			ProgramUniform1ui64NVNative(program, location, x);
@@ -147,11 +191,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform1ui64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -160,6 +212,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -178,6 +234,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64NV(uint program, int location, long x, long y)
 		{
 			ProgramUniform2i64NVNative(program, location, x, y);
@@ -193,11 +253,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform2i64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -206,6 +274,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -224,6 +296,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64NV(uint program, int location, ulong x, ulong y)
 		{
 			ProgramUniform2ui64NVNative(program, location, x, y);
@@ -239,11 +315,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform2ui64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -252,6 +336,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -270,6 +358,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64NV(uint program, int location, long x, long y, long z)
 		{
 			ProgramUniform3i64NVNative(program, location, x, y, z);
@@ -285,11 +377,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform3i64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -298,6 +398,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -316,6 +420,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64NV(uint program, int location, ulong x, ulong y, ulong z)
 		{
 			ProgramUniform3ui64NVNative(program, location, x, y, z);
@@ -331,11 +439,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform3ui64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -344,6 +460,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -362,6 +482,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64NV(uint program, int location, long x, long y, long z, long w)
 		{
 			ProgramUniform4i64NVNative(program, location, x, y, z, w);
@@ -377,11 +501,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform4i64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -390,6 +522,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -408,6 +544,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64NV(uint program, int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			ProgramUniform4ui64NVNative(program, location, x, y, z, w);
@@ -423,11 +563,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform4ui64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -436,6 +584,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -454,6 +606,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1i64NV(int location, long x)
 		{
 			Uniform1i64NVNative(location, x);
@@ -469,11 +625,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1i64vNV(int location, int count, long* value)
 		{
 			Uniform1i64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -482,6 +646,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -500,6 +668,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1ui64NV(int location, ulong x)
 		{
 			Uniform1ui64NVNative(location, x);
@@ -515,11 +687,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform1ui64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -528,6 +708,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform1ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -546,6 +730,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2i64NV(int location, long x, long y)
 		{
 			Uniform2i64NVNative(location, x, y);
@@ -561,11 +749,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2i64vNV(int location, int count, long* value)
 		{
 			Uniform2i64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -574,6 +770,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -592,6 +792,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2ui64NV(int location, ulong x, ulong y)
 		{
 			Uniform2ui64NVNative(location, x, y);
@@ -607,11 +811,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform2ui64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -620,6 +832,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform2ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -638,6 +854,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3i64NV(int location, long x, long y, long z)
 		{
 			Uniform3i64NVNative(location, x, y, z);
@@ -653,11 +873,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3i64vNV(int location, int count, long* value)
 		{
 			Uniform3i64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -666,6 +894,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -684,6 +916,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3ui64NV(int location, ulong x, ulong y, ulong z)
 		{
 			Uniform3ui64NVNative(location, x, y, z);
@@ -699,11 +935,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform3ui64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -712,6 +956,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform3ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -730,6 +978,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4i64NV(int location, long x, long y, long z, long w)
 		{
 			Uniform4i64NVNative(location, x, y, z, w);
@@ -745,11 +997,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4i64vNV(int location, int count, long* value)
 		{
 			Uniform4i64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -758,6 +1018,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -776,6 +1040,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4ui64NV(int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			Uniform4ui64NVNative(location, x, y, z, w);
@@ -791,11 +1059,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform4ui64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -804,6 +1080,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void Uniform4ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)

@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSpriteModeSGIX : uint
 	{
+		/// <summary>
+		/// Specifies axial sprite behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AxialSgix = unchecked((uint)0x814C),
+
+		/// <summary>
+		/// Specifies object-aligned sprite behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectAlignedSgix = unchecked((uint)0x814D),
+
+		/// <summary>
+		/// Specifies eye-aligned sprite behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		EyeAlignedSgix = unchecked((uint)0x814E),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample</remarks>
 		public static void RenderbufferStorageMultisampleNV(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleNVNative(target, samples, internalformat, width, height);

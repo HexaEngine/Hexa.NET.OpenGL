@@ -17,3218 +17,5012 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
-		public static void Uniform4f(int location, float v0, float v1, float v2, float v3)
+		/// <summary>
+		/// Pause transform feedback operations
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
+		public static void PauseTransformFeedback()
 		{
-			Uniform4fNative(location, v0, v1, v2, v3);
+			PauseTransformFeedbackNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fvNative(int location, int count, float* value)
+		internal static void PixelStorefNative(GLPixelStoreParameter pname, float param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[532])(location, count, value);
+			((delegate* unmanaged[Cdecl]<GLPixelStoreParameter, float, void>)funcTable[367])(pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[532])(location, count, (nint)value);
+			((delegate* unmanaged[Cdecl]<GLPixelStoreParameter, float, void>)funcTable[367])(pname, param);
 			#endif
 		}
 
-		public static void Uniform4fv(int location, int count, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void PixelStoref(GLPixelStoreParameter pname, float param)
 		{
-			Uniform4fvNative(location, count, value);
+			PixelStorefNative(pname, param);
 		}
 
-		public static void Uniform4fv(int location, int count, Span<float> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PixelStoreiNative(GLPixelStoreParameter pname, int param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPixelStoreParameter, int, void>)funcTable[368])(pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPixelStoreParameter, int, void>)funcTable[368])(pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void PixelStorei(GLPixelStoreParameter pname, int param)
+		{
+			PixelStoreiNative(pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PointParameterfNative(GLPointParameterNameARB pname, float param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, float, void>)funcTable[369])(pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, float, void>)funcTable[369])(pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameterf(GLPointParameterNameARB pname, float param)
+		{
+			PointParameterfNative(pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PointParameterfvNative(GLPointParameterNameARB pname, float* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, float*, void>)funcTable[370])(pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, nint, void>)funcTable[370])(pname, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameterfv(GLPointParameterNameARB pname, float* @params)
+		{
+			PointParameterfvNative(pname, @params);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
+		{
+			float pparams;
+			PointParameterfvNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		{
+			fixed (float* pparams = @params)
+			{
+				PointParameterfvNative(pname, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PointParameteriNative(GLPointParameterNameARB pname, int param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, int, void>)funcTable[371])(pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, int, void>)funcTable[371])(pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameteri(GLPointParameterNameARB pname, int param)
+		{
+			PointParameteriNative(pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PointParameterivNative(GLPointParameterNameARB pname, int* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, int*, void>)funcTable[372])(pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, nint, void>)funcTable[372])(pname, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameteriv(GLPointParameterNameARB pname, int* @params)
+		{
+			PointParameterivNative(pname, @params);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
+		{
+			int pparams;
+			PointParameterivNative(pname, &pparams);
+			@params = pparams;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		{
+			fixed (int* pparams = @params)
+			{
+				PointParameterivNative(pname, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PointSizeNative(float size)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<float, void>)funcTable[373])(size);
+			#else
+			((delegate* unmanaged[Cdecl]<float, void>)funcTable[373])(size);
+			#endif
+		}
+
+		/// <summary>
+		/// Specify the diameter of rasterized points
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void PointSize(float size)
+		{
+			PointSizeNative(size);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PolygonModeNative(GLTriangleFace face, GLPolygonMode mode)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[374])(face, mode);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[374])(face, mode);
+			#endif
+		}
+
+		/// <summary>
+		/// Select a polygon rasterization mode
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void PolygonMode(GLTriangleFace face, GLPolygonMode mode)
+		{
+			PolygonModeNative(face, mode);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PolygonOffsetNative(float factor, float units)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[375])(factor, units);
+			#else
+			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[375])(factor, units);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void PolygonOffset(float factor, float units)
+		{
+			PolygonOffsetNative(factor, units);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PolygonOffsetClampNative(float factor, float units, float clamp)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[376])(factor, units, clamp);
+			#else
+			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[376])(factor, units, clamp);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_polygon_offset_clamp</remarks>
+		public static void PolygonOffsetClamp(float factor, float units, float clamp)
+		{
+			PolygonOffsetClampNative(factor, units, clamp);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PopDebugGroupNative()
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<void>)funcTable[377])();
+			#else
+			((delegate* unmanaged[Cdecl]<void>)funcTable[377])();
+			#endif
+		}
+
+		/// <summary>
+		/// Pop the active debug group
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		public static void PopDebugGroup()
+		{
+			PopDebugGroupNative();
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PrimitiveRestartIndexNative(uint index)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[378])(index);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[378])(index);
+			#endif
+		}
+
+		/// <summary>
+		/// Specify the primitive restart index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
+		public static void PrimitiveRestartIndex(uint index)
+		{
+			PrimitiveRestartIndexNative(index);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramBinaryNative(uint program, GLEnum binaryFormat, void* binary, int length)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLEnum, void*, int, void>)funcTable[379])(program, binaryFormat, binary, length);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLEnum, nint, int, void>)funcTable[379])(program, binaryFormat, (nint)binary, length);
+			#endif
+		}
+
+		/// <summary>
+		/// Load a program object with a program binary
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
+		public static void ProgramBinary(uint program, GLEnum binaryFormat, void* binary, int length)
+		{
+			ProgramBinaryNative(program, binaryFormat, binary, length);
+		}
+
+		/// <summary>
+		/// Load a program object with a program binary
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
+		public static void ProgramBinary(uint program, GLEnum binaryFormat, nint binary, int length)
+		{
+			ProgramBinaryNative(program, binaryFormat, (void*)binary, length);
+		}
+
+		/// <summary>
+		/// Load a program object with a program binary
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
+		public static void ProgramBinary<TBinary>(uint program, GLEnum binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
+		{
+			fixed (TBinary* pbinary0 = binary)
+			{
+				ProgramBinaryNative(program, binaryFormat, pbinary0, length);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramParameteriNative(uint program, GLProgramParameterPName pname, int value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLProgramParameterPName, int, void>)funcTable[380])(program, pname, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLProgramParameterPName, int, void>)funcTable[380])(program, pname, value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramParameteri(uint program, GLProgramParameterPName pname, int value)
+		{
+			ProgramParameteriNative(program, pname, value);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1dNative(uint program, int location, double v0)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, void>)funcTable[381])(program, location, v0);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, void>)funcTable[381])(program, location, v0);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1d(uint program, int location, double v0)
+		{
+			ProgramUniform1dNative(program, location, v0);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1dvNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[382])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[382])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1dv(uint program, int location, int count, double* value)
+		{
+			ProgramUniform1dvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1dv(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform1dvNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1dv(uint program, int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniform1dvNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1fNative(uint program, int location, float v0)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, float, void>)funcTable[383])(program, location, v0);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, float, void>)funcTable[383])(program, location, v0);
+			#endif
+		}
+
+		/// <summary>
+		/// Specify the value of a uniform variable for a specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1f(uint program, int location, float v0)
+		{
+			ProgramUniform1fNative(program, location, v0);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1fvNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[384])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[384])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1fv(uint program, int location, int count, float* value)
+		{
+			ProgramUniform1fvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				Uniform4fvNative(location, count, pvalue0);
+				ProgramUniform1fvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void Uniform4fv(int location, int count, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				Uniform4fvNative(location, count, pvalue0);
+				ProgramUniform1fvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4iNative(int location, int v0, int v1, int v2, int v3)
+		internal static void ProgramUniform1iNative(uint program, int location, int v0)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[533])(location, v0, v1, v2, v3);
+			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[385])(program, location, v0);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[533])(location, v0, v1, v2, v3);
+			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[385])(program, location, v0);
 			#endif
 		}
 
-		public static void Uniform4i(int location, int v0, int v1, int v2, int v3)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1i(uint program, int location, int v0)
 		{
-			Uniform4iNative(location, v0, v1, v2, v3);
+			ProgramUniform1iNative(program, location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ivNative(int location, int count, int* value)
+		internal static void ProgramUniform1ivNative(uint program, int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[534])(location, count, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[386])(program, location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[534])(location, count, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[386])(program, location, count, (nint)value);
 			#endif
 		}
 
-		public static void Uniform4iv(int location, int count, int* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1iv(uint program, int location, int count, int* value)
 		{
-			Uniform4ivNative(location, count, value);
+			ProgramUniform1ivNative(program, location, count, value);
 		}
 
-		public static void Uniform4iv(int location, int count, Span<int> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1iv(uint program, int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
-				Uniform4ivNative(location, count, pvalue0);
+				ProgramUniform1ivNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void Uniform4iv(int location, int count, ref int value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
-				Uniform4ivNative(location, count, pvalue0);
+				ProgramUniform1ivNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4uiNative(int location, uint v0, uint v1, uint v2, uint v3)
+		internal static void ProgramUniform1uiNative(uint program, int location, uint v0)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, uint, uint, uint, uint, void>)funcTable[535])(location, v0, v1, v2, v3);
+			((delegate* unmanaged[Cdecl]<uint, int, uint, void>)funcTable[387])(program, location, v0);
 			#else
-			((delegate* unmanaged[Cdecl]<int, uint, uint, uint, uint, void>)funcTable[535])(location, v0, v1, v2, v3);
+			((delegate* unmanaged[Cdecl]<uint, int, uint, void>)funcTable[387])(program, location, v0);
 			#endif
 		}
 
-		public static void Uniform4ui(int location, uint v0, uint v1, uint v2, uint v3)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1ui(uint program, int location, uint v0)
 		{
-			Uniform4uiNative(location, v0, v1, v2, v3);
+			ProgramUniform1uiNative(program, location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4uivNative(int location, int count, uint* value)
+		internal static void ProgramUniform1uivNative(uint program, int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[536])(location, count, value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[388])(program, location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[536])(location, count, (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[388])(program, location, count, (nint)value);
 			#endif
 		}
 
-		public static void Uniform4uiv(int location, int count, uint* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1uiv(uint program, int location, int count, uint* value)
 		{
-			Uniform4uivNative(location, count, value);
+			ProgramUniform1uivNative(program, location, count, value);
 		}
 
-		public static void Uniform4uiv(int location, int count, Span<uint> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1uiv(uint program, int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
-				Uniform4uivNative(location, count, pvalue0);
+				ProgramUniform1uivNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void Uniform4uiv(int location, int count, ref uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform1uiv(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
-				Uniform4uivNative(location, count, pvalue0);
+				ProgramUniform1uivNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformBlockBindingNative(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
+		internal static void ProgramUniform2dNative(uint program, int location, double v0, double v1)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[537])(program, uniformBlockIndex, uniformBlockBinding);
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, void>)funcTable[389])(program, location, v0, v1);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[537])(program, uniformBlockIndex, uniformBlockBinding);
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, void>)funcTable[389])(program, location, v0, v1);
 			#endif
 		}
 
-		public static void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2d(uint program, int location, double v0, double v1)
 		{
-			UniformBlockBindingNative(program, uniformBlockIndex, uniformBlockBinding);
+			ProgramUniform2dNative(program, location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniform2dvNative(uint program, int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[538])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[390])(program, location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[538])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[390])(program, location, count, (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix2dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2dv(uint program, int location, int count, double* value)
 		{
-			UniformMatrix2dvNative(location, count, transpose, value);
+			ProgramUniform2dvNative(program, location, count, value);
 		}
 
-		public static void UniformMatrix2dv(int location, int count, bool transpose, Span<double> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix2dvNative(location, count, transpose, pvalue0);
+				ProgramUniform2dvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix2dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix2dvNative(location, count, transpose, pvalue0);
+				ProgramUniform2dvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniform2fNative(uint program, int location, float v0, float v1)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[539])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, void>)funcTable[391])(program, location, v0, v1);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[539])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, void>)funcTable[391])(program, location, v0, v1);
 			#endif
 		}
 
-		public static void UniformMatrix2fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2f(uint program, int location, float v0, float v1)
 		{
-			UniformMatrix2fvNative(location, count, transpose, value);
+			ProgramUniform2fNative(program, location, v0, v1);
 		}
 
-		public static void UniformMatrix2fv(int location, int count, bool transpose, Span<float> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2fvNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[392])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[392])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2fv(uint program, int location, int count, float* value)
+		{
+			ProgramUniform2fvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix2fvNative(location, count, transpose, pvalue0);
+				ProgramUniform2fvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix2fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix2fvNative(location, count, transpose, pvalue0);
+				ProgramUniform2fvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x3dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniform2iNative(uint program, int location, int v0, int v1)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[540])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[393])(program, location, v0, v1);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[540])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[393])(program, location, v0, v1);
 			#endif
 		}
 
-		public static void UniformMatrix2x3dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2i(uint program, int location, int v0, int v1)
 		{
-			UniformMatrix2x3dvNative(location, count, transpose, value);
+			ProgramUniform2iNative(program, location, v0, v1);
 		}
 
-		public static void UniformMatrix2x3dv(int location, int count, bool transpose, Span<double> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2ivNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[394])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[394])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2iv(uint program, int location, int count, int* value)
+		{
+			ProgramUniform2ivNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform2ivNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2iv(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform2ivNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2uiNative(uint program, int location, uint v0, uint v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, void>)funcTable[395])(program, location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, void>)funcTable[395])(program, location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2ui(uint program, int location, uint v0, uint v1)
+		{
+			ProgramUniform2uiNative(program, location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2uivNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[396])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[396])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2uiv(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform2uivNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform2uivNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform2uiv(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform2uivNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3dNative(uint program, int location, double v0, double v1, double v2)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, void>)funcTable[397])(program, location, v0, v1, v2);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, void>)funcTable[397])(program, location, v0, v1, v2);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3d(uint program, int location, double v0, double v1, double v2)
+		{
+			ProgramUniform3dNative(program, location, v0, v1, v2);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3dvNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[398])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[398])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3dv(uint program, int location, int count, double* value)
+		{
+			ProgramUniform3dvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix2x3dvNative(location, count, transpose, pvalue0);
+				ProgramUniform3dvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix2x3dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix2x3dvNative(location, count, transpose, pvalue0);
+				ProgramUniform3dvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x3fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniform3fNative(uint program, int location, float v0, float v1, float v2)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[541])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, void>)funcTable[399])(program, location, v0, v1, v2);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[541])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, void>)funcTable[399])(program, location, v0, v1, v2);
 			#endif
 		}
 
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3f(uint program, int location, float v0, float v1, float v2)
 		{
-			UniformMatrix2x3fvNative(location, count, transpose, value);
+			ProgramUniform3fNative(program, location, v0, v1, v2);
 		}
 
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, Span<float> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3fvNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[400])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[400])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3fv(uint program, int location, int count, float* value)
+		{
+			ProgramUniform3fvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix2x3fvNative(location, count, transpose, pvalue0);
+				ProgramUniform3fvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix2x3fvNative(location, count, transpose, pvalue0);
+				ProgramUniform3fvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x4dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniform3iNative(uint program, int location, int v0, int v1, int v2)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[542])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[401])(program, location, v0, v1, v2);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[542])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[401])(program, location, v0, v1, v2);
 			#endif
 		}
 
-		public static void UniformMatrix2x4dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3i(uint program, int location, int v0, int v1, int v2)
 		{
-			UniformMatrix2x4dvNative(location, count, transpose, value);
+			ProgramUniform3iNative(program, location, v0, v1, v2);
 		}
 
-		public static void UniformMatrix2x4dv(int location, int count, bool transpose, Span<double> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3ivNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[402])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[402])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3iv(uint program, int location, int count, int* value)
+		{
+			ProgramUniform3ivNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform3ivNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3iv(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform3ivNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3uiNative(uint program, int location, uint v0, uint v1, uint v2)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, void>)funcTable[403])(program, location, v0, v1, v2);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, void>)funcTable[403])(program, location, v0, v1, v2);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3ui(uint program, int location, uint v0, uint v1, uint v2)
+		{
+			ProgramUniform3uiNative(program, location, v0, v1, v2);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3uivNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[404])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[404])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3uiv(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform3uivNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform3uivNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform3uiv(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform3uivNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4dNative(uint program, int location, double v0, double v1, double v2, double v3)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, double, void>)funcTable[405])(program, location, v0, v1, v2, v3);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, double, void>)funcTable[405])(program, location, v0, v1, v2, v3);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4d(uint program, int location, double v0, double v1, double v2, double v3)
+		{
+			ProgramUniform4dNative(program, location, v0, v1, v2, v3);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4dvNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[406])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[406])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4dv(uint program, int location, int count, double* value)
+		{
+			ProgramUniform4dvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix2x4dvNative(location, count, transpose, pvalue0);
+				ProgramUniform4dvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix2x4dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix2x4dvNative(location, count, transpose, pvalue0);
+				ProgramUniform4dvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x4fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniform4fNative(uint program, int location, float v0, float v1, float v2, float v3)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[543])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, float, void>)funcTable[407])(program, location, v0, v1, v2, v3);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[543])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, float, void>)funcTable[407])(program, location, v0, v1, v2, v3);
 			#endif
 		}
 
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4f(uint program, int location, float v0, float v1, float v2, float v3)
 		{
-			UniformMatrix2x4fvNative(location, count, transpose, value);
+			ProgramUniform4fNative(program, location, v0, v1, v2, v3);
 		}
 
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, Span<float> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4fvNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[408])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[408])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4fv(uint program, int location, int count, float* value)
+		{
+			ProgramUniform4fvNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix2x4fvNative(location, count, transpose, pvalue0);
+				ProgramUniform4fvNative(program, location, count, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix2x4fvNative(location, count, transpose, pvalue0);
+				ProgramUniform4fvNative(program, location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniform4iNative(uint program, int location, int v0, int v1, int v2, int v3)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[544])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, void>)funcTable[409])(program, location, v0, v1, v2, v3);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[544])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, void>)funcTable[409])(program, location, v0, v1, v2, v3);
 			#endif
 		}
 
-		public static void UniformMatrix3dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4i(uint program, int location, int v0, int v1, int v2, int v3)
 		{
-			UniformMatrix3dvNative(location, count, transpose, value);
+			ProgramUniform4iNative(program, location, v0, v1, v2, v3);
 		}
 
-		public static void UniformMatrix3dv(int location, int count, bool transpose, Span<double> value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4ivNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[410])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[410])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4iv(uint program, int location, int count, int* value)
+		{
+			ProgramUniform4ivNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4iv(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform4ivNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4iv(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform4ivNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4uiNative(uint program, int location, uint v0, uint v1, uint v2, uint v3)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, uint, void>)funcTable[411])(program, location, v0, v1, v2, v3);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, uint, void>)funcTable[411])(program, location, v0, v1, v2, v3);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4ui(uint program, int location, uint v0, uint v1, uint v2, uint v3)
+		{
+			ProgramUniform4uiNative(program, location, v0, v1, v2, v3);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4uivNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[412])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[412])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4uiv(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform4uivNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4uiv(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform4uivNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniform4uiv(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform4uivNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2dvNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[413])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[413])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix2dvNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix3dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix3dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix3dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniformMatrix2fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[545])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[414])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[545])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[414])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix3fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			UniformMatrix3fvNative(location, count, transpose, value);
+			ProgramUniformMatrix2fvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix3fv(int location, int count, bool transpose, Span<float> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix3fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix3fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix3fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x2dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniformMatrix2x3dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[546])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[415])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[546])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[415])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix3x2dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, double* value)
 		{
-			UniformMatrix3x2dvNative(location, count, transpose, value);
+			ProgramUniformMatrix2x3dvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix3x2dv(int location, int count, bool transpose, Span<double> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix3x2dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x3dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix3x2dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix3x2dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x3dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x2fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniformMatrix2x3fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[547])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[416])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[547])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[416])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			UniformMatrix3x2fvNative(location, count, transpose, value);
+			ProgramUniformMatrix2x3fvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, Span<float> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix3x2fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x3fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix3x2fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x3fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x4dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniformMatrix2x4dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[548])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[417])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[548])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[417])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix3x4dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, double* value)
 		{
-			UniformMatrix3x4dvNative(location, count, transpose, value);
+			ProgramUniformMatrix2x4dvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix3x4dv(int location, int count, bool transpose, Span<double> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix3x4dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x4dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix3x4dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix3x4dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x4dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x4fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniformMatrix2x4fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[549])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[418])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[549])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[418])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			UniformMatrix3x4fvNative(location, count, transpose, value);
+			ProgramUniformMatrix2x4fvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, Span<float> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix3x4fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x4fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix3x4fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix2x4fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniformMatrix3dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[550])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[419])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[550])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[419])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, double* value)
 		{
-			UniformMatrix4dvNative(location, count, transpose, value);
+			ProgramUniformMatrix3dvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4dv(int location, int count, bool transpose, Span<double> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix4dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix4dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix4dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniformMatrix3fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[551])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[420])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[551])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[420])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			UniformMatrix4fvNative(location, count, transpose, value);
+			ProgramUniformMatrix3fvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4fv(int location, int count, bool transpose, Span<float> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix4fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix4fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix4fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x2dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniformMatrix3x2dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[552])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[421])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[552])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[421])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4x2dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, double* value)
 		{
-			UniformMatrix4x2dvNative(location, count, transpose, value);
+			ProgramUniformMatrix3x2dvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4x2dv(int location, int count, bool transpose, Span<double> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix4x2dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x2dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix4x2dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix4x2dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x2dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x2fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniformMatrix3x2fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[553])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[422])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[553])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[422])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			UniformMatrix4x2fvNative(location, count, transpose, value);
+			ProgramUniformMatrix3x2fvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, Span<float> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix4x2fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x2fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix4x2fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x2fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x3dvNative(int location, int count, bool transpose, double* value)
+		internal static void ProgramUniformMatrix3x4dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[554])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[423])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[554])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[423])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4x3dv(int location, int count, bool transpose, double* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, double* value)
 		{
-			UniformMatrix4x3dvNative(location, count, transpose, value);
+			ProgramUniformMatrix3x4dvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4x3dv(int location, int count, bool transpose, Span<double> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
-				UniformMatrix4x3dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x4dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix4x3dv(int location, int count, bool transpose, ref double value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
-				UniformMatrix4x3dvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x4dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x3fvNative(int location, int count, bool transpose, float* value)
+		internal static void ProgramUniformMatrix3x4fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[555])(location, count, *((byte*)(&transpose)), value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[424])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[555])(location, count, *((byte*)(&transpose)), (nint)value);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[424])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, float* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			UniformMatrix4x3fvNative(location, count, transpose, value);
+			ProgramUniformMatrix3x4fvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, Span<float> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
-				UniformMatrix4x3fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x4fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
-				UniformMatrix4x3fvNative(location, count, transpose, pvalue0);
+				ProgramUniformMatrix3x4fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformSubroutinesuivNative(GLShaderType shadertype, int count, uint* indices)
+		internal static void ProgramUniformMatrix4dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLShaderType, int, uint*, void>)funcTable[556])(shadertype, count, indices);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[425])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			((delegate* unmanaged[Cdecl]<GLShaderType, int, nint, void>)funcTable[556])(shadertype, count, (nint)indices);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[425])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, uint* indices)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, double* value)
 		{
-			UniformSubroutinesuivNative(shadertype, count, indices);
+			ProgramUniformMatrix4dvNative(program, location, count, transpose, value);
 		}
 
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, Span<uint> indices)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
-			fixed (uint* pindices0 = indices)
+			fixed (double* pvalue0 = value)
 			{
-				UniformSubroutinesuivNative(shadertype, count, pindices0);
+				ProgramUniformMatrix4dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, ref uint indices)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
-			fixed (uint* pindices0 = &indices)
+			fixed (double* pvalue0 = &value)
 			{
-				UniformSubroutinesuivNative(shadertype, count, pindices0);
+				ProgramUniformMatrix4dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapBufferNative(GLBufferTargetARB target)
+		internal static void ProgramUniformMatrix4fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, byte>)funcTable[557])(target);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[426])(program, location, count, *((byte*)(&transpose)), value);
 			#else
-			return (byte)((delegate* unmanaged[Cdecl]<GLBufferTargetARB, byte>)funcTable[557])(target);
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[426])(program, location, count, *((byte*)(&transpose)), (nint)value);
 			#endif
 		}
 
-		public static bool UnmapBuffer(GLBufferTargetARB target)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, float* value)
 		{
-			byte ret = UnmapBufferNative(target);
-			return ret != 0;
+			ProgramUniformMatrix4fvNative(program, location, count, transpose, value);
 		}
 
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapNamedBufferNative(uint buffer)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
-			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[558])(buffer);
-			#else
-			return (byte)((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[558])(buffer);
-			#endif
-		}
-
-		public static bool UnmapNamedBuffer(uint buffer)
-		{
-			byte ret = UnmapNamedBufferNative(buffer);
-			return ret != 0;
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UseProgramNative(uint program)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[559])(program);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[559])(program);
-			#endif
-		}
-
-		public static void UseProgram(uint program)
-		{
-			UseProgramNative(program);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UseProgramStagesNative(uint pipeline, GLUseProgramStageMask stages, uint program)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLUseProgramStageMask, uint, void>)funcTable[560])(pipeline, stages, program);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLUseProgramStageMask, uint, void>)funcTable[560])(pipeline, stages, program);
-			#endif
-		}
-
-		public static void UseProgramStages(uint pipeline, GLUseProgramStageMask stages, uint program)
-		{
-			UseProgramStagesNative(pipeline, stages, program);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ValidateProgramNative(uint program)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[561])(program);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[561])(program);
-			#endif
-		}
-
-		public static void ValidateProgram(uint program)
-		{
-			ValidateProgramNative(program);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ValidateProgramPipelineNative(uint pipeline)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[562])(pipeline);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[562])(pipeline);
-			#endif
-		}
-
-		public static void ValidateProgramPipeline(uint pipeline)
-		{
-			ValidateProgramPipelineNative(pipeline);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribBindingNative(uint vaobj, uint attribindex, uint bindingindex)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[563])(vaobj, attribindex, bindingindex);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[563])(vaobj, attribindex, bindingindex);
-			#endif
-		}
-
-		public static void VertexArrayAttribBinding(uint vaobj, uint attribindex, uint bindingindex)
-		{
-			VertexArrayAttribBindingNative(vaobj, attribindex, bindingindex);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[564])(vaobj, attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[564])(vaobj, attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
-			#endif
-		}
-
-		public static void VertexArrayAttribFormat(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
-		{
-			VertexArrayAttribFormatNative(vaobj, attribindex, size, type, normalized, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribIFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribIType, uint, void>)funcTable[565])(vaobj, attribindex, size, type, relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribIType, uint, void>)funcTable[565])(vaobj, attribindex, size, type, relativeoffset);
-			#endif
-		}
-
-		public static void VertexArrayAttribIFormat(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
-		{
-			VertexArrayAttribIFormatNative(vaobj, attribindex, size, type, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribLFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribLType, uint, void>)funcTable[566])(vaobj, attribindex, size, type, relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribLType, uint, void>)funcTable[566])(vaobj, attribindex, size, type, relativeoffset);
-			#endif
-		}
-
-		public static void VertexArrayAttribLFormat(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
-		{
-			VertexArrayAttribLFormatNative(vaobj, attribindex, size, type, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayBindingDivisorNative(uint vaobj, uint bindingindex, uint divisor)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[567])(vaobj, bindingindex, divisor);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[567])(vaobj, bindingindex, divisor);
-			#endif
-		}
-
-		public static void VertexArrayBindingDivisor(uint vaobj, uint bindingindex, uint divisor)
-		{
-			VertexArrayBindingDivisorNative(vaobj, bindingindex, divisor);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayElementBufferNative(uint vaobj, uint buffer)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[568])(vaobj, buffer);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[568])(vaobj, buffer);
-			#endif
-		}
-
-		public static void VertexArrayElementBuffer(uint vaobj, uint buffer)
-		{
-			VertexArrayElementBufferNative(vaobj, buffer);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexBufferNative(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, int, void>)funcTable[569])(vaobj, bindingindex, buffer, offset, stride);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, int, void>)funcTable[569])(vaobj, bindingindex, buffer, offset, stride);
-			#endif
-		}
-
-		public static void VertexArrayVertexBuffer(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
-		{
-			VertexArrayVertexBufferNative(vaobj, bindingindex, buffer, offset, stride);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexBuffersNative(uint vaobj, uint first, int count, uint* buffers, nint* offsets, int* strides)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, uint*, nint*, int*, void>)funcTable[570])(vaobj, first, count, buffers, offsets, strides);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, nint, nint, nint, void>)funcTable[570])(vaobj, first, count, (nint)buffers, (nint)offsets, (nint)strides);
-			#endif
-		}
-
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, int* strides)
-		{
-			VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, strides);
-		}
-
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
-		{
-			fixed (uint* pbuffers0 = buffers)
+			fixed (float* pvalue0 = value)
 			{
-				VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, offsets, strides);
+				ProgramUniformMatrix4fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, int* strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
-			fixed (uint* pbuffers0 = &buffers)
+			fixed (float* pvalue0 = &value)
 			{
-				VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, offsets, strides);
+				ProgramUniformMatrix4fvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x2dvNative(uint program, int location, int count, bool transpose, double* value)
 		{
-			fixed (nint* poffsets0 = offsets)
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[427])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[427])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix4x2dvNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
 			{
-				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, strides);
+				ProgramUniformMatrix4x2dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, int* strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
-			fixed (nint* poffsets0 = &offsets)
+			fixed (double* pvalue0 = &value)
 			{
-				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, strides);
+				ProgramUniformMatrix4x2dvNative(program, location, count, transpose, pvalue0);
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x2fvNative(uint program, int location, int count, bool transpose, float* value)
 		{
-			fixed (uint* pbuffers0 = buffers)
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[428])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[428])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix4x2fvNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
 			{
-				fixed (nint* poffsets1 = offsets)
+				ProgramUniformMatrix4x2fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4x2fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x3dvNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[429])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[429])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix4x3dvNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x3dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4x3dvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x3fvNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[430])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[430])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix4x3fvNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x3fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4x3fvNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProvokingVertexNative(GLVertexProvokingMode mode)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[431])(mode);
+			#else
+			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[431])(mode);
+			#endif
+		}
+
+		/// <summary>
+		/// Specifiy the vertex to be used as the source of data for flat shaded varyings
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex</remarks>
+		public static void ProvokingVertex(GLVertexProvokingMode mode)
+		{
+			ProvokingVertexNative(mode);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void PushDebugGroupNative(GLDebugSource source, uint id, int length, byte* message)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLDebugSource, uint, int, byte*, void>)funcTable[432])(source, id, length, message);
+			#else
+			((delegate* unmanaged[Cdecl]<GLDebugSource, uint, int, nint, void>)funcTable[432])(source, id, length, (nint)message);
+			#endif
+		}
+
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		public static void PushDebugGroup(GLDebugSource source, uint id, int length, byte* message)
+		{
+			PushDebugGroupNative(source, id, length, message);
+		}
+
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		public static void PushDebugGroup(GLDebugSource source, uint id, int length, string message)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (message != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(message);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
 				{
-					VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, poffsets1, strides);
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(message, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			PushDebugGroupNative(source, id, length, pStr0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		public static void PushDebugGroup(GLDebugSource source, uint id, int length, Span<byte> message)
+		{
+			fixed (byte* pmessage0 = message)
+			{
+				PushDebugGroupNative(source, id, length, pmessage0);
+			}
+		}
+
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		public static void PushDebugGroup(GLDebugSource source, uint id, int length, ref byte message)
+		{
+			fixed (byte* pmessage0 = &message)
+			{
+				PushDebugGroupNative(source, id, length, pmessage0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void QueryCounterNative(uint id, GLQueryCounterTarget target)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[433])(id, target);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[433])(id, target);
+			#endif
+		}
+
+		/// <summary>
+		/// Record the GL time into a query object after all previous commands have reached the GL server but have not yet necessarily executed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
+		public static void QueryCounter(uint id, GLQueryCounterTarget target)
+		{
+			QueryCounterNative(id, target);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ReadBufferNative(GLReadBufferMode src)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLReadBufferMode, void>)funcTable[434])(src);
+			#else
+			((delegate* unmanaged[Cdecl]<GLReadBufferMode, void>)funcTable[434])(src);
+			#endif
+		}
+
+		/// <summary>
+		/// Select a color buffer source for pixels
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ReadBuffer(GLReadBufferMode src)
+		{
+			ReadBufferNative(src);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ReadPixelsNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[435])(x, y, width, height, format, type, pixels);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[435])(x, y, width, height, format, type, (nint)pixels);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ReadPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		{
+			ReadPixelsNative(x, y, width, height, format, type, pixels);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ReadPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			ReadPixelsNative(x, y, width, height, format, type, (void*)pixels);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ReadPixels<TPixels>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				ReadPixelsNative(x, y, width, height, format, type, ppixels0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ReadnPixelsNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[436])(x, y, width, height, format, type, bufSize, data);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, int, nint, void>)funcTable[436])(x, y, width, height, format, type, bufSize, (nint)data);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
+		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		{
+			ReadnPixelsNative(x, y, width, height, format, type, bufSize, data);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
+		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		{
+			ReadnPixelsNative(x, y, width, height, format, type, bufSize, (void*)data);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
+		public static void ReadnPixels<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		{
+			fixed (TData* pdata0 = data)
+			{
+				ReadnPixelsNative(x, y, width, height, format, type, bufSize, pdata0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ReleaseShaderCompilerNative()
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<void>)funcTable[437])();
+			#else
+			((delegate* unmanaged[Cdecl]<void>)funcTable[437])();
+			#endif
+		}
+
+		/// <summary>
+		/// Release resources consumed by the implementation's shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		public static void ReleaseShaderCompiler()
+		{
+			ReleaseShaderCompilerNative();
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void RenderbufferStorageNative(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLInternalFormat, int, int, void>)funcTable[438])(target, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLInternalFormat, int, int, void>)funcTable[438])(target, internalformat, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// Establish data storage, format and dimensions of a
+		///     renderbuffer object's image
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		public static void RenderbufferStorage(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
+		{
+			RenderbufferStorageNative(target, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void RenderbufferStorageMultisampleNative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[439])(target, samples, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[439])(target, samples, internalformat, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// Establish data storage, format, dimensions and sample count of
+		///     a renderbuffer object's image
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		public static void RenderbufferStorageMultisample(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		{
+			RenderbufferStorageMultisampleNative(target, samples, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ResumeTransformFeedbackNative()
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<void>)funcTable[440])();
+			#else
+			((delegate* unmanaged[Cdecl]<void>)funcTable[440])();
+			#endif
+		}
+
+		/// <summary>
+		/// Resume transform feedback operations
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
+		public static void ResumeTransformFeedback()
+		{
+			ResumeTransformFeedbackNative();
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SampleCoverageNative(float value, bool invert)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[441])(value, *((byte*)(&invert)));
+			#else
+			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[441])(value, *((byte*)(&invert)));
+			#endif
+		}
+
+		/// <summary>
+		/// Specify multisample coverage parameters
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void SampleCoverage(float value, bool invert)
+		{
+			SampleCoverageNative(value, invert);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SampleMaskiNative(uint maskNumber, uint mask)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[442])(maskNumber, mask);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[442])(maskNumber, mask);
+			#endif
+		}
+
+		/// <summary>
+		/// Set the value of a sub-word of the sample mask
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
+		public static void SampleMaski(uint maskNumber, uint mask)
+		{
+			SampleMaskiNative(maskNumber, mask);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterIivNative(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[443])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[443])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			SamplerParameterIivNative(sampler, pname, param);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int param)
+		{
+			int pparam;
+			SamplerParameterIivNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterIuivNative(uint sampler, GLSamplerParameterI pname, uint* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, uint*, void>)funcTable[444])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[444])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, uint* param)
+		{
+			SamplerParameterIuivNative(sampler, pname, param);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint param)
+		{
+			uint pparam;
+			SamplerParameterIuivNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterfNative(uint sampler, GLSamplerParameterF pname, float param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float, void>)funcTable[445])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float, void>)funcTable[445])(sampler, pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterf(uint sampler, GLSamplerParameterF pname, float param)
+		{
+			SamplerParameterfNative(sampler, pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterfvNative(uint sampler, GLSamplerParameterF pname, float* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float*, void>)funcTable[446])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, nint, void>)funcTable[446])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* param)
+		{
+			SamplerParameterfvNative(sampler, pname, param);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
+		{
+			float pparam;
+			SamplerParameterfvNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameteriNative(uint sampler, GLSamplerParameterI pname, int param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int, void>)funcTable[447])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int, void>)funcTable[447])(sampler, pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameteri(uint sampler, GLSamplerParameterI pname, int param)
+		{
+			SamplerParameteriNative(sampler, pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SamplerParameterivNative(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[448])(sampler, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[448])(sampler, pname, (nint)param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* param)
+		{
+			SamplerParameterivNative(sampler, pname, param);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
+		{
+			int pparam;
+			SamplerParameterivNative(sampler, pname, &pparam);
+			param = pparam;
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ScissorNative(int x, int y, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[449])(x, y, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[449])(x, y, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// Define the scissor box
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Scissor(int x, int y, int width, int height)
+		{
+			ScissorNative(x, y, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ScissorArrayvNative(uint first, int count, int* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[450])(first, count, v);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, nint, void>)funcTable[450])(first, count, (nint)v);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorArrayv(uint first, int count, int* v)
+		{
+			ScissorArrayvNative(first, count, v);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorArrayv(uint first, int count, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorArrayvNative(first, count, pv0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorArrayv(uint first, int count, ref int v)
+		{
+			fixed (int* pv0 = &v)
+			{
+				ScissorArrayvNative(first, count, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ScissorIndexedNative(uint index, int left, int bottom, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[451])(index, left, bottom, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[451])(index, left, bottom, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// Define the scissor box for a specific viewport
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorIndexed(uint index, int left, int bottom, int width, int height)
+		{
+			ScissorIndexedNative(index, left, bottom, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ScissorIndexedvNative(uint index, int* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[452])(index, v);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[452])(index, (nint)v);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorIndexedv(uint index, int* v)
+		{
+			ScissorIndexedvNative(index, v);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorIndexedv(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				ScissorIndexedvNative(index, pv0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		public static void ScissorIndexedv(uint index, ref int v)
+		{
+			fixed (int* pv0 = &v)
+			{
+				ScissorIndexedvNative(index, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ShaderBinaryNative(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, uint*, GLShaderBinaryFormat, void*, int, void>)funcTable[453])(count, shaders, binaryFormat, binary, length);
+			#else
+			((delegate* unmanaged[Cdecl]<int, nint, GLShaderBinaryFormat, nint, int, void>)funcTable[453])(count, (nint)shaders, binaryFormat, (nint)binary, length);
+			#endif
+		}
+
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		public static void ShaderBinary(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
+		{
+			ShaderBinaryNative(count, shaders, binaryFormat, binary, length);
+		}
+
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		public static void ShaderBinary(int count, Span<uint> shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
+		{
+			fixed (uint* pshaders0 = shaders)
+			{
+				ShaderBinaryNative(count, pshaders0, binaryFormat, binary, length);
+			}
+		}
+
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		public static void ShaderBinary(int count, ref uint shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
+		{
+			fixed (uint* pshaders0 = &shaders)
+			{
+				ShaderBinaryNative(count, pshaders0, binaryFormat, binary, length);
+			}
+		}
+
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		public static void ShaderBinary(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, nint binary, int length)
+		{
+			ShaderBinaryNative(count, shaders, binaryFormat, (void*)binary, length);
+		}
+
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		public static void ShaderBinary<TBinary>(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
+		{
+			fixed (TBinary* pbinary0 = binary)
+			{
+				ShaderBinaryNative(count, shaders, binaryFormat, pbinary0, length);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ShaderSourceNative(uint shader, int count, byte** str, int* length)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, byte**, int*, void>)funcTable[454])(shader, count, str, length);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, nint, nint, void>)funcTable[454])(shader, count, (nint)str, (nint)length);
+			#endif
+		}
+
+		/// <summary>
+		/// Replaces the source code in a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ShaderSource(uint shader, int count, byte** str, int* length)
+		{
+			ShaderSourceNative(shader, count, str, length);
+		}
+
+		/// <summary>
+		/// Replaces the source code in a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ShaderSource(uint shader, string source)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (source != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(source);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(source, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			ShaderSourceNative(shader, 1, &pStr0, &pStrSize0);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		/// <summary>
+		/// Replaces the source code in a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ShaderSource(uint shader, string[] sources)
+		{
+			byte** pStrArray0 = null;
+			int* pStrArraySizes0 = null;
+			int pStrArraySize0 = Utils.GetByteCountArray(sources) + sources.Length * sizeof(int);
+			if (sources != null)
+			{
+				if (pStrArraySize0 > Utils.MaxStackallocSize)
+				{
+					pStrArraySizes0 = (int*)Utils.Alloc<int>(sources.Length);
+					pStrArray0 = (byte**)Utils.Alloc<byte>(pStrArraySize0);
+				}
+				else
+				{
+					byte* pStrArraySizesStack0 = stackalloc byte[sources.Length * sizeof(int)];
+					pStrArraySizes0 = (int*)pStrArraySizesStack0;
+					byte* pStrArrayStack0 = stackalloc byte[pStrArraySize0];
+					pStrArray0 = (byte**)pStrArrayStack0;
+				}
+			}
+			for (int i = 0; i < sources.Length; i++)
+			{
+				pStrArraySizes0[i] = Utils.GetByteCountUTF8(sources[i]);
+				pStrArray0[i] = (byte*)Utils.StringToUTF8Ptr(sources[i]);
+			}
+			ShaderSourceNative(shader, sources.Length, pStrArray0, pStrArraySizes0);
+			for (int i = 0; i < sources.Length; i++)
+			{
+				Utils.Free(pStrArray0[i]);
+			}
+			if (pStrArraySize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStrArray0);
+				Utils.Free(pStrArraySizes0);
+			}
+		}
+
+		/// <summary>
+		/// Replaces the source code in a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ShaderSource(uint shader, int count, byte** str, Span<int> length)
+		{
+			fixed (int* plength0 = length)
+			{
+				ShaderSourceNative(shader, count, str, plength0);
+			}
+		}
+
+		/// <summary>
+		/// Replaces the source code in a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void ShaderSource(uint shader, int count, byte** str, ref int length)
+		{
+			fixed (int* plength0 = &length)
+			{
+				ShaderSourceNative(shader, count, str, plength0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ShaderStorageBlockBindingNative(uint program, uint storageBlockIndex, uint storageBlockBinding)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[455])(program, storageBlockIndex, storageBlockBinding);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[455])(program, storageBlockIndex, storageBlockBinding);
+			#endif
+		}
+
+		/// <summary>
+		/// Change an active shader storage block binding
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
+		public static void ShaderStorageBlockBinding(uint program, uint storageBlockIndex, uint storageBlockBinding)
+		{
+			ShaderStorageBlockBindingNative(program, storageBlockIndex, storageBlockBinding);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void SpecializeShaderNative(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, byte*, uint, uint*, uint*, void>)funcTable[456])(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, nint, uint, nint, nint, void>)funcTable[456])(shader, (nint)pEntryPoint, numSpecializationConstants, (nint)pConstantIndex, (nint)pConstantValue);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, string pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (pEntryPoint != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(pEntryPoint);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(pEntryPoint, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			SpecializeShaderNative(shader, pStr0, numSpecializationConstants, pConstantIndex, pConstantValue);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
+			{
+				SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		{
+			fixed (uint* ppConstantIndex0 = pConstantIndex)
+			{
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
+		{
+			fixed (uint* ppConstantIndex0 = &pConstantIndex)
+			{
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				fixed (uint* ppConstantIndex1 = pConstantIndex)
+				{
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, ref nint offsets, int* strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
 		{
-			fixed (uint* pbuffers0 = &buffers)
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
-				fixed (nint* poffsets1 = &offsets)
+				fixed (uint* ppConstantIndex1 = &pConstantIndex)
 				{
-					VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, poffsets1, strides);
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
 		{
-			fixed (int* pstrides0 = strides)
+			fixed (uint* ppConstantValue0 = pConstantValue)
 			{
-				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, pstrides0);
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, ref int strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
-			fixed (int* pstrides0 = &strides)
+			fixed (uint* ppConstantValue0 = &pConstantValue)
 			{
-				VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, pstrides0);
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
 		{
-			fixed (uint* pbuffers0 = buffers)
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
-				fixed (int* pstrides1 = strides)
+				fixed (uint* ppConstantValue1 = pConstantValue)
 				{
-					VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, offsets, pstrides1);
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, ppConstantValue1);
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, ref int strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
-			fixed (uint* pbuffers0 = &buffers)
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
-				fixed (int* pstrides1 = &strides)
+				fixed (uint* ppConstantValue1 = &pConstantValue)
 				{
-					VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, offsets, pstrides1);
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, ppConstantValue1);
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
-			fixed (nint* poffsets0 = offsets)
+			fixed (uint* ppConstantIndex0 = pConstantIndex)
 			{
-				fixed (int* pstrides1 = strides)
+				fixed (uint* ppConstantValue1 = pConstantValue)
 				{
-					VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, pstrides1);
+					SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, ppConstantValue1);
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, ref int strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
-			fixed (nint* poffsets0 = &offsets)
+			fixed (uint* ppConstantIndex0 = &pConstantIndex)
 			{
-				fixed (int* pstrides1 = &strides)
+				fixed (uint* ppConstantValue1 = &pConstantValue)
 				{
-					VertexArrayVertexBuffersNative(vaobj, first, count, buffers, poffsets0, pstrides1);
+					SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, ppConstantValue1);
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
-			fixed (uint* pbuffers0 = buffers)
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
-				fixed (nint* poffsets1 = offsets)
+				fixed (uint* ppConstantIndex1 = pConstantIndex)
 				{
-					fixed (int* pstrides2 = strides)
+					fixed (uint* ppConstantValue2 = pConstantValue)
 					{
-						VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, poffsets1, pstrides2);
+						SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, ppConstantValue2);
 					}
 				}
 			}
 		}
 
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, ref nint offsets, ref int strides)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
-			fixed (uint* pbuffers0 = &buffers)
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
-				fixed (nint* poffsets1 = &offsets)
+				fixed (uint* ppConstantIndex1 = &pConstantIndex)
 				{
-					fixed (int* pstrides2 = &strides)
+					fixed (uint* ppConstantValue2 = &pConstantValue)
 					{
-						VertexArrayVertexBuffersNative(vaobj, first, count, pbuffers0, poffsets1, pstrides2);
+						SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, ppConstantValue2);
 					}
 				}
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dNative(uint index, double x)
+		internal static void StencilFuncNative(GLStencilFunction func, int reference, uint mask)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[571])(index, x);
+			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[457])(func, reference, mask);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[571])(index, x);
+			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[457])(func, reference, mask);
 			#endif
 		}
 
-		public static void VertexAttrib1d(uint index, double x)
+		/// <summary>
+		/// Set front and back function and reference value for stencil testing
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void StencilFunc(GLStencilFunction func, int reference, uint mask)
 		{
-			VertexAttrib1dNative(index, x);
+			StencilFuncNative(func, reference, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dvNative(uint index, double* v)
+		internal static void StencilFuncSeparateNative(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[572])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[458])(face, func, reference, mask);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[572])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[458])(face, func, reference, mask);
 			#endif
 		}
 
-		public static void VertexAttrib1dv(uint index, double* v)
+		/// <summary>
+		/// Set front and/or back function and reference value for stencil testing
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void StencilFuncSeparate(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
 		{
-			VertexAttrib1dvNative(index, v);
+			StencilFuncSeparateNative(face, func, reference, mask);
 		}
 
-		public static void VertexAttrib1dv(uint index, Span<double> v)
-		{
-			fixed (double* pv0 = v)
-			{
-				VertexAttrib1dvNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttrib1dv(uint index, ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				VertexAttrib1dvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fNative(uint index, float x)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float, void>)funcTable[573])(index, x);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, float, void>)funcTable[573])(index, x);
-			#endif
-		}
-
-		public static void VertexAttrib1f(uint index, float x)
-		{
-			VertexAttrib1fNative(index, x);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fvNative(uint index, float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[574])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[574])(index, (nint)v);
-			#endif
-		}
-
-		public static void VertexAttrib1fv(uint index, float* v)
-		{
-			VertexAttrib1fvNative(index, v);
-		}
-
-		public static void VertexAttrib1fv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				VertexAttrib1fvNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttrib1fv(uint index, ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				VertexAttrib1fvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1sNative(uint index, short x)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short, void>)funcTable[575])(index, x);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, short, void>)funcTable[575])(index, x);
-			#endif
-		}
-
-		public static void VertexAttrib1s(uint index, short x)
-		{
-			VertexAttrib1sNative(index, x);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1svNative(uint index, short* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[576])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[576])(index, (nint)v);
-			#endif
-		}
-
-		public static void VertexAttrib1sv(uint index, short* v)
-		{
-			VertexAttrib1svNative(index, v);
-		}
-
-		public static void VertexAttrib1sv(uint index, Span<short> v)
-		{
-			fixed (short* pv0 = v)
-			{
-				VertexAttrib1svNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttrib1sv(uint index, ref short v)
-		{
-			fixed (short* pv0 = &v)
-			{
-				VertexAttrib1svNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dNative(uint index, double x, double y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[577])(index, x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[577])(index, x, y);
-			#endif
-		}
-
-		public static void VertexAttrib2d(uint index, double x, double y)
-		{
-			VertexAttrib2dNative(index, x, y);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dvNative(uint index, double* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[578])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[578])(index, (nint)v);
-			#endif
-		}
-
-		public static void VertexAttrib2dv(uint index, double* v)
-		{
-			VertexAttrib2dvNative(index, v);
-		}
-
-		public static void VertexAttrib2dv(uint index, Span<double> v)
-		{
-			fixed (double* pv0 = v)
-			{
-				VertexAttrib2dvNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttrib2dv(uint index, ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				VertexAttrib2dvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fNative(uint index, float x, float y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[579])(index, x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[579])(index, x, y);
-			#endif
-		}
-
-		public static void VertexAttrib2f(uint index, float x, float y)
-		{
-			VertexAttrib2fNative(index, x, y);
-		}
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fvNative(uint index, float* v)
+		internal static void StencilMaskNative(uint mask)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[580])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[459])(mask);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[580])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[459])(mask);
 			#endif
 		}
 
-		public static void VertexAttrib2fv(uint index, float* v)
+		/// <summary>
+		/// Control the front and back writing of individual bits in the stencil planes
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void StencilMask(uint mask)
 		{
-			VertexAttrib2fvNative(index, v);
+			StencilMaskNative(mask);
 		}
 
-		public static void VertexAttrib2fv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				VertexAttrib2fvNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttrib2fv(uint index, ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				VertexAttrib2fvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2sNative(uint index, short x, short y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short, short, void>)funcTable[581])(index, x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, short, short, void>)funcTable[581])(index, x, y);
-			#endif
-		}
-
-		public static void VertexAttrib2s(uint index, short x, short y)
-		{
-			VertexAttrib2sNative(index, x, y);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2svNative(uint index, short* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[582])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[582])(index, (nint)v);
-			#endif
-		}
-
-		public static void VertexAttrib2sv(uint index, short* v)
-		{
-			VertexAttrib2svNative(index, v);
-		}
-
-		public static void VertexAttrib2sv(uint index, Span<short> v)
-		{
-			fixed (short* pv0 = v)
-			{
-				VertexAttrib2svNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttrib2sv(uint index, ref short v)
-		{
-			fixed (short* pv0 = &v)
-			{
-				VertexAttrib2svNative(index, pv0);
-			}
-		}
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dNative(uint index, double x, double y, double z)
+		internal static void StencilMaskSeparateNative(GLTriangleFace face, uint mask)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[583])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, uint, void>)funcTable[460])(face, mask);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[583])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, uint, void>)funcTable[460])(face, mask);
 			#endif
 		}
 
-		public static void VertexAttrib3d(uint index, double x, double y, double z)
+		/// <summary>
+		/// Control the front and/or back writing of individual bits in the stencil planes
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void StencilMaskSeparate(GLTriangleFace face, uint mask)
 		{
-			VertexAttrib3dNative(index, x, y, z);
+			StencilMaskSeparateNative(face, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dvNative(uint index, double* v)
+		internal static void StencilOpNative(GLStencilOp fail, GLStencilOp zfail, GLStencilOp zpass)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[584])(index, v);
+			((delegate* unmanaged[Cdecl]<GLStencilOp, GLStencilOp, GLStencilOp, void>)funcTable[461])(fail, zfail, zpass);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[584])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLStencilOp, GLStencilOp, GLStencilOp, void>)funcTable[461])(fail, zfail, zpass);
 			#endif
-		}
-
-		public static void VertexAttrib3dv(uint index, double* v)
-		{
-			VertexAttrib3dvNative(index, v);
-		}
-
-		public static void VertexAttrib3dv(uint index, Span<double> v)
-		{
-			fixed (double* pv0 = v)
-			{
-				VertexAttrib3dvNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib3dv(uint index, ref double v)
+		/// <summary>
+		/// Set front and back stencil test actions
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void StencilOp(GLStencilOp fail, GLStencilOp zfail, GLStencilOp zpass)
 		{
-			fixed (double* pv0 = &v)
-			{
-				VertexAttrib3dvNative(index, pv0);
-			}
+			StencilOpNative(fail, zfail, zpass);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fNative(uint index, float x, float y, float z)
+		internal static void StencilOpSeparateNative(GLTriangleFace face, GLStencilOp sfail, GLStencilOp dpfail, GLStencilOp dppass)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, void>)funcTable[585])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilOp, GLStencilOp, GLStencilOp, void>)funcTable[462])(face, sfail, dpfail, dppass);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, void>)funcTable[585])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilOp, GLStencilOp, GLStencilOp, void>)funcTable[462])(face, sfail, dpfail, dppass);
 			#endif
 		}
 
-		public static void VertexAttrib3f(uint index, float x, float y, float z)
+		/// <summary>
+		/// Set front and/or back stencil test actions
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void StencilOpSeparate(GLTriangleFace face, GLStencilOp sfail, GLStencilOp dpfail, GLStencilOp dppass)
 		{
-			VertexAttrib3fNative(index, x, y, z);
+			StencilOpSeparateNative(face, sfail, dpfail, dppass);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fvNative(uint index, float* v)
+		internal static void TexBufferNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[586])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[463])(target, internalformat, buffer);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[586])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[463])(target, internalformat, buffer);
 			#endif
-		}
-
-		public static void VertexAttrib3fv(uint index, float* v)
-		{
-			VertexAttrib3fvNative(index, v);
-		}
-
-		public static void VertexAttrib3fv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				VertexAttrib3fvNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib3fv(uint index, ref float v)
+		/// <summary>
+		/// Attach a buffer object's data store to a buffer texture object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
+		public static void TexBuffer(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
-			fixed (float* pv0 = &v)
-			{
-				VertexAttrib3fvNative(index, pv0);
-			}
+			TexBufferNative(target, internalformat, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3sNative(uint index, short x, short y, short z)
+		internal static void TexBufferRangeNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short, short, short, void>)funcTable[587])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[464])(target, internalformat, buffer, offset, size);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, short, short, short, void>)funcTable[587])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[464])(target, internalformat, buffer, offset, size);
 			#endif
 		}
 
-		public static void VertexAttrib3s(uint index, short x, short y, short z)
+		/// <summary>
+		/// Attach a range of a buffer object's data store to a buffer texture object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_range</remarks>
+		public static void TexBufferRange(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
-			VertexAttrib3sNative(index, x, y, z);
+			TexBufferRangeNative(target, internalformat, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3svNative(uint index, short* v)
+		internal static void TexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[588])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[465])(target, level, internalformat, width, border, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[588])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[465])(target, level, internalformat, width, border, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttrib3sv(uint index, short* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttrib3svNative(index, v);
+			TexImage1DNative(target, level, internalformat, width, border, format, type, pixels);
 		}
 
-		public static void VertexAttrib3sv(uint index, Span<short> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (short* pv0 = v)
-			{
-				VertexAttrib3svNative(index, pv0);
-			}
+			TexImage1DNative(target, level, internalformat, width, border, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttrib3sv(uint index, ref short v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexImage1D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (short* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttrib3svNative(index, pv0);
+				TexImage1DNative(target, level, internalformat, width, border, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NbvNative(uint index, sbyte* v)
+		internal static void TexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[589])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[466])(target, level, internalformat, width, height, border, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[589])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[466])(target, level, internalformat, width, height, border, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttrib4Nbv(uint index, sbyte* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttrib4NbvNative(index, v);
+			TexImage2DNative(target, level, internalformat, width, height, border, format, type, pixels);
 		}
 
-		public static void VertexAttrib4Nbv(uint index, Span<sbyte> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (sbyte* pv0 = v)
-			{
-				VertexAttrib4NbvNative(index, pv0);
-			}
+			TexImage2DNative(target, level, internalformat, width, height, border, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttrib4Nbv(uint index, ref sbyte v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexImage2D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (sbyte* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttrib4NbvNative(index, pv0);
+				TexImage2DNative(target, level, internalformat, width, height, border, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NivNative(uint index, int* v)
+		internal static void TexImage2DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[590])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[467])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[590])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[467])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#endif
-		}
-
-		public static void VertexAttrib4Niv(uint index, int* v)
-		{
-			VertexAttrib4NivNative(index, v);
-		}
-
-		public static void VertexAttrib4Niv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttrib4NivNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib4Niv(uint index, ref int v)
+		/// <summary>
+		/// Establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
+		public static void TexImage2DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
-			fixed (int* pv0 = &v)
-			{
-				VertexAttrib4NivNative(index, pv0);
-			}
+			TexImage2DMultisampleNative(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NsvNative(uint index, short* v)
+		internal static void TexImage3DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[591])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[468])(target, level, internalformat, width, height, depth, border, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[591])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[468])(target, level, internalformat, width, height, depth, border, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttrib4Nsv(uint index, short* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttrib4NsvNative(index, v);
+			TexImage3DNative(target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
 
-		public static void VertexAttrib4Nsv(uint index, Span<short> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (short* pv0 = v)
-			{
-				VertexAttrib4NsvNative(index, pv0);
-			}
+			TexImage3DNative(target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttrib4Nsv(uint index, ref short v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexImage3D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (short* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttrib4NsvNative(index, pv0);
+				TexImage3DNative(target, level, internalformat, width, height, depth, border, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NubNative(uint index, bool x, bool y, bool z, bool w)
+		internal static void TexImage3DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[592])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[469])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[592])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[469])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void VertexAttrib4Nub(uint index, bool x, bool y, bool z, bool w)
+		/// <summary>
+		/// Establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
+		public static void TexImage3DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
-			VertexAttrib4NubNative(index, x, y, z, w);
+			TexImage3DMultisampleNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NubvNative(uint index, byte* v)
+		internal static void TexParameterIivNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[593])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[470])(target, pname, @params);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[593])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[470])(target, pname, (nint)@params);
 			#endif
-		}
-
-		public static void VertexAttrib4Nubv(uint index, byte* v)
-		{
-			VertexAttrib4NubvNative(index, v);
 		}
 
-		public static void VertexAttrib4Nubv(uint index, string v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (v != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(v);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(v, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			VertexAttrib4NubvNative(index, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
+			TexParameterIivNative(target, pname, @params);
 		}
 
-		public static void VertexAttrib4Nubv(uint index, Span<byte> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (byte* pv0 = v)
-			{
-				VertexAttrib4NubvNative(index, pv0);
-			}
+			int pparams;
+			TexParameterIivNative(target, pname, &pparams);
+			@params = pparams;
 		}
 
-		public static void VertexAttrib4Nubv(uint index, ref byte v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			fixed (byte* pv0 = &v)
+			fixed (int* pparams = @params)
 			{
-				VertexAttrib4NubvNative(index, pv0);
+				TexParameterIivNative(target, pname, pparams);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NuivNative(uint index, uint* v)
+		internal static void TexParameterIuivNative(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[594])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, uint*, void>)funcTable[471])(target, pname, @params);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[594])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[471])(target, pname, (nint)@params);
 			#endif
 		}
 
-		public static void VertexAttrib4Nuiv(uint index, uint* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
-			VertexAttrib4NuivNative(index, v);
+			TexParameterIuivNative(target, pname, @params);
 		}
 
-		public static void VertexAttrib4Nuiv(uint index, Span<uint> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (uint* pv0 = v)
-			{
-				VertexAttrib4NuivNative(index, pv0);
-			}
+			uint pparams;
+			TexParameterIuivNative(target, pname, &pparams);
+			@params = pparams;
 		}
 
-		public static void VertexAttrib4Nuiv(uint index, ref uint v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
-			fixed (uint* pv0 = &v)
+			fixed (uint* pparams = @params)
 			{
-				VertexAttrib4NuivNative(index, pv0);
+				TexParameterIuivNative(target, pname, pparams);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NusvNative(uint index, ushort* v)
+		internal static void TexParameterfNative(GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[595])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float, void>)funcTable[472])(target, pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[595])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float, void>)funcTable[472])(target, pname, param);
 			#endif
-		}
-
-		public static void VertexAttrib4Nusv(uint index, ushort* v)
-		{
-			VertexAttrib4NusvNative(index, v);
-		}
-
-		public static void VertexAttrib4Nusv(uint index, Span<ushort> v)
-		{
-			fixed (ushort* pv0 = v)
-			{
-				VertexAttrib4NusvNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib4Nusv(uint index, ref ushort v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterf(GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
-			fixed (ushort* pv0 = &v)
-			{
-				VertexAttrib4NusvNative(index, pv0);
-			}
+			TexParameterfNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4bvNative(uint index, sbyte* v)
+		internal static void TexParameterfvNative(GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[596])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float*, void>)funcTable[473])(target, pname, @params);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[596])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[473])(target, pname, (nint)@params);
 			#endif
 		}
 
-		public static void VertexAttrib4bv(uint index, sbyte* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
-			VertexAttrib4bvNative(index, v);
+			TexParameterfvNative(target, pname, @params);
 		}
 
-		public static void VertexAttrib4bv(uint index, Span<sbyte> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, out float @params)
 		{
-			fixed (sbyte* pv0 = v)
-			{
-				VertexAttrib4bvNative(index, pv0);
-			}
+			float pparams;
+			TexParameterfvNative(target, pname, &pparams);
+			@params = pparams;
 		}
 
-		public static void VertexAttrib4bv(uint index, ref sbyte v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
-			fixed (sbyte* pv0 = &v)
+			fixed (float* pparams = @params)
 			{
-				VertexAttrib4bvNative(index, pv0);
+				TexParameterfvNative(target, pname, pparams);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dNative(uint index, double x, double y, double z, double w)
+		internal static void TexParameteriNative(GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[597])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int, void>)funcTable[474])(target, pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[597])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int, void>)funcTable[474])(target, pname, param);
 			#endif
 		}
 
-		public static void VertexAttrib4d(uint index, double x, double y, double z, double w)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameteri(GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
-			VertexAttrib4dNative(index, x, y, z, w);
+			TexParameteriNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dvNative(uint index, double* v)
+		internal static void TexParameterivNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[598])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[475])(target, pname, @params);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[598])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[475])(target, pname, (nint)@params);
 			#endif
 		}
 
-		public static void VertexAttrib4dv(uint index, double* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
-			VertexAttrib4dvNative(index, v);
+			TexParameterivNative(target, pname, @params);
 		}
 
-		public static void VertexAttrib4dv(uint index, Span<double> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
-			fixed (double* pv0 = v)
-			{
-				VertexAttrib4dvNative(index, pv0);
-			}
+			int pparams;
+			TexParameterivNative(target, pname, &pparams);
+			@params = pparams;
 		}
 
-		public static void VertexAttrib4dv(uint index, ref double v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			fixed (double* pv0 = &v)
+			fixed (int* pparams = @params)
 			{
-				VertexAttrib4dvNative(index, pv0);
+				TexParameterivNative(target, pname, pparams);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fNative(uint index, float x, float y, float z, float w)
+		internal static void TexStorage1DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[599])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, void>)funcTable[476])(target, levels, internalformat, width);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[599])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, void>)funcTable[476])(target, levels, internalformat, width);
 			#endif
 		}
 
-		public static void VertexAttrib4f(uint index, float x, float y, float z, float w)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
+		public static void TexStorage1D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
-			VertexAttrib4fNative(index, x, y, z, w);
+			TexStorage1DNative(target, levels, internalformat, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fvNative(uint index, float* v)
+		internal static void TexStorage2DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[600])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, void>)funcTable[477])(target, levels, internalformat, width, height);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[600])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, void>)funcTable[477])(target, levels, internalformat, width, height);
 			#endif
-		}
-
-		public static void VertexAttrib4fv(uint index, float* v)
-		{
-			VertexAttrib4fvNative(index, v);
-		}
-
-		public static void VertexAttrib4fv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				VertexAttrib4fvNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib4fv(uint index, ref float v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
+		public static void TexStorage2D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
-			fixed (float* pv0 = &v)
-			{
-				VertexAttrib4fvNative(index, pv0);
-			}
+			TexStorage2DNative(target, levels, internalformat, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ivNative(uint index, int* v)
+		internal static void TexStorage2DMultisampleNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[601])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[478])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[601])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[478])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#endif
-		}
-
-		public static void VertexAttrib4iv(uint index, int* v)
-		{
-			VertexAttrib4ivNative(index, v);
-		}
-
-		public static void VertexAttrib4iv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttrib4ivNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib4iv(uint index, ref int v)
+		/// <summary>
+		/// Specify storage for a two-dimensional multisample texture
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage_multisample</remarks>
+		public static void TexStorage2DMultisample(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
-			fixed (int* pv0 = &v)
-			{
-				VertexAttrib4ivNative(index, pv0);
-			}
+			TexStorage2DMultisampleNative(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
+		internal static void TexStorage3DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[602])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, void>)funcTable[479])(target, levels, internalformat, width, height, depth);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[602])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, void>)funcTable[479])(target, levels, internalformat, width, height, depth);
 			#endif
 		}
 
-		public static void VertexAttrib4s(uint index, short x, short y, short z, short w)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
+		public static void TexStorage3D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
-			VertexAttrib4sNative(index, x, y, z, w);
+			TexStorage3DNative(target, levels, internalformat, width, height, depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4svNative(uint index, short* v)
+		internal static void TexStorage3DMultisampleNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[603])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[480])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[603])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[480])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#endif
-		}
-
-		public static void VertexAttrib4sv(uint index, short* v)
-		{
-			VertexAttrib4svNative(index, v);
-		}
-
-		public static void VertexAttrib4sv(uint index, Span<short> v)
-		{
-			fixed (short* pv0 = v)
-			{
-				VertexAttrib4svNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttrib4sv(uint index, ref short v)
+		/// <summary>
+		/// Specify storage for a two-dimensional multisample array texture
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage_multisample</remarks>
+		public static void TexStorage3DMultisample(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
-			fixed (short* pv0 = &v)
-			{
-				VertexAttrib4svNative(index, pv0);
-			}
+			TexStorage3DMultisampleNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ubvNative(uint index, byte* v)
+		internal static void TexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[604])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[481])(target, level, xoffset, width, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[604])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[481])(target, level, xoffset, width, format, type, (nint)pixels);
 			#endif
-		}
-
-		public static void VertexAttrib4ubv(uint index, byte* v)
-		{
-			VertexAttrib4ubvNative(index, v);
 		}
 
-		public static void VertexAttrib4ubv(uint index, string v)
+		/// <summary>
+		/// Specify a one-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (v != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(v);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(v, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			VertexAttrib4ubvNative(index, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
+			TexSubImage1DNative(target, level, xoffset, width, format, type, pixels);
 		}
 
-		public static void VertexAttrib4ubv(uint index, Span<byte> v)
+		/// <summary>
+		/// Specify a one-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (byte* pv0 = v)
-			{
-				VertexAttrib4ubvNative(index, pv0);
-			}
+			TexSubImage1DNative(target, level, xoffset, width, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttrib4ubv(uint index, ref byte v)
+		/// <summary>
+		/// Specify a one-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage1D<TPixels>(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (byte* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttrib4ubvNative(index, pv0);
+				TexSubImage1DNative(target, level, xoffset, width, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4uivNative(uint index, uint* v)
+		internal static void TexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[605])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[482])(target, level, xoffset, yoffset, width, height, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[605])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[482])(target, level, xoffset, yoffset, width, height, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttrib4uiv(uint index, uint* v)
+		/// <summary>
+		/// Specify a two-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttrib4uivNative(index, v);
+			TexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
 
-		public static void VertexAttrib4uiv(uint index, Span<uint> v)
+		/// <summary>
+		/// Specify a two-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (uint* pv0 = v)
-			{
-				VertexAttrib4uivNative(index, pv0);
-			}
+			TexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttrib4uiv(uint index, ref uint v)
+		/// <summary>
+		/// Specify a two-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage2D<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (uint* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttrib4uivNative(index, pv0);
+				TexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4usvNative(uint index, ushort* v)
+		internal static void TexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[606])(index, v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[483])(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[606])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[483])(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttrib4usv(uint index, ushort* v)
+		/// <summary>
+		/// Specify a three-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttrib4usvNative(index, v);
+			TexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
 
-		public static void VertexAttrib4usv(uint index, Span<ushort> v)
+		/// <summary>
+		/// Specify a three-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (ushort* pv0 = v)
-			{
-				VertexAttrib4usvNative(index, pv0);
-			}
+			TexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttrib4usv(uint index, ref ushort v)
+		/// <summary>
+		/// Specify a three-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage3D<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (ushort* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttrib4usvNative(index, pv0);
+				TexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, ppixels0);
 			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribBindingNative(uint attribindex, uint bindingindex)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[607])(attribindex, bindingindex);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[607])(attribindex, bindingindex);
-			#endif
-		}
-
-		public static void VertexAttribBinding(uint attribindex, uint bindingindex)
-		{
-			VertexAttribBindingNative(attribindex, bindingindex);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribDivisorNative(uint index, uint divisor)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[608])(index, divisor);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[608])(index, divisor);
-			#endif
-		}
-
-		public static void VertexAttribDivisor(uint index, uint divisor)
-		{
-			VertexAttribDivisorNative(index, divisor);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[609])(attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[609])(attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
-			#endif
 		}
 
-		public static void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
-		{
-			VertexAttribFormatNative(attribindex, size, type, normalized, relativeoffset);
-		}
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1iNative(uint index, int x)
+		internal static void TextureBarrierNative()
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[610])(index, x);
+			((delegate* unmanaged[Cdecl]<void>)funcTable[484])();
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[610])(index, x);
+			((delegate* unmanaged[Cdecl]<void>)funcTable[484])();
 			#endif
 		}
 
-		public static void VertexAttribI1i(uint index, int x)
+		/// <summary>
+		/// Controls the ordering of reads and writes to rendered fragments across drawing commands
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_barrier</remarks>
+		public static void TextureBarrier()
 		{
-			VertexAttribI1iNative(index, x);
+			TextureBarrierNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1ivNative(uint index, int* v)
+		internal static void TextureBufferNative(uint texture, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[611])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, uint, void>)funcTable[485])(texture, internalformat, buffer);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[611])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, uint, void>)funcTable[485])(texture, internalformat, buffer);
 			#endif
-		}
-
-		public static void VertexAttribI1iv(uint index, int* v)
-		{
-			VertexAttribI1ivNative(index, v);
-		}
-
-		public static void VertexAttribI1iv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttribI1ivNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttribI1iv(uint index, ref int v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureBuffer(uint texture, GLSizedInternalFormat internalformat, uint buffer)
 		{
-			fixed (int* pv0 = &v)
-			{
-				VertexAttribI1ivNative(index, pv0);
-			}
+			TextureBufferNative(texture, internalformat, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uiNative(uint index, uint x)
+		internal static void TextureBufferRangeNative(uint texture, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[612])(index, x);
+			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[486])(texture, internalformat, buffer, offset, size);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[612])(index, x);
+			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[486])(texture, internalformat, buffer, offset, size);
 			#endif
 		}
 
-		public static void VertexAttribI1ui(uint index, uint x)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureBufferRange(uint texture, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
-			VertexAttribI1uiNative(index, x);
+			TextureBufferRangeNative(texture, internalformat, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uivNative(uint index, uint* v)
+		internal static void TextureParameterIivNative(uint texture, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[613])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int*, void>)funcTable[487])(texture, pname, @params);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[613])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, nint, void>)funcTable[487])(texture, pname, (nint)@params);
 			#endif
 		}
 
-		public static void VertexAttribI1uiv(uint index, uint* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, int* @params)
 		{
-			VertexAttribI1uivNative(index, v);
+			TextureParameterIivNative(texture, pname, @params);
 		}
 
-		public static void VertexAttribI1uiv(uint index, Span<uint> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, out int @params)
 		{
-			fixed (uint* pv0 = v)
-			{
-				VertexAttribI1uivNative(index, pv0);
-			}
+			int pparams;
+			TextureParameterIivNative(texture, pname, &pparams);
+			@params = pparams;
 		}
 
-		public static void VertexAttribI1uiv(uint index, ref uint v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
 		{
-			fixed (uint* pv0 = &v)
+			fixed (int* pparams = @params)
 			{
-				VertexAttribI1uivNative(index, pv0);
+				TextureParameterIivNative(texture, pname, pparams);
 			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2iNative(uint index, int x, int y)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[614])(index, x, y);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[614])(index, x, y);
-			#endif
-		}
-
-		public static void VertexAttribI2i(uint index, int x, int y)
-		{
-			VertexAttribI2iNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2ivNative(uint index, int* v)
+		internal static void TextureParameterIuivNative(uint texture, GLTextureParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[615])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, uint*, void>)funcTable[488])(texture, pname, @params);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[615])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, nint, void>)funcTable[488])(texture, pname, (nint)@params);
 			#endif
 		}
 
-		public static void VertexAttribI2iv(uint index, int* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, uint* @params)
 		{
-			VertexAttribI2ivNative(index, v);
+			TextureParameterIuivNative(texture, pname, @params);
 		}
 
-		public static void VertexAttribI2iv(uint index, Span<int> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, out uint @params)
 		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttribI2ivNative(index, pv0);
-			}
+			uint pparams;
+			TextureParameterIuivNative(texture, pname, &pparams);
+			@params = pparams;
 		}
 
-		public static void VertexAttribI2iv(uint index, ref int v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
 		{
-			fixed (int* pv0 = &v)
+			fixed (uint* pparams = @params)
 			{
-				VertexAttribI2ivNative(index, pv0);
+				TextureParameterIuivNative(texture, pname, pparams);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uiNative(uint index, uint x, uint y)
+		internal static void TextureParameterfNative(uint texture, GLTextureParameterName pname, float param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[616])(index, x, y);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, float, void>)funcTable[489])(texture, pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[616])(index, x, y);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, float, void>)funcTable[489])(texture, pname, param);
 			#endif
 		}
 
-		public static void VertexAttribI2ui(uint index, uint x, uint y)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterf(uint texture, GLTextureParameterName pname, float param)
 		{
-			VertexAttribI2uiNative(index, x, y);
+			TextureParameterfNative(texture, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uivNative(uint index, uint* v)
+		internal static void TextureParameterfvNative(uint texture, GLTextureParameterName pname, float* param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[617])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, float*, void>)funcTable[490])(texture, pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[617])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, nint, void>)funcTable[490])(texture, pname, (nint)param);
 			#endif
-		}
-
-		public static void VertexAttribI2uiv(uint index, uint* v)
-		{
-			VertexAttribI2uivNative(index, v);
 		}
 
-		public static void VertexAttribI2uiv(uint index, Span<uint> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, float* param)
 		{
-			fixed (uint* pv0 = v)
-			{
-				VertexAttribI2uivNative(index, pv0);
-			}
+			TextureParameterfvNative(texture, pname, param);
 		}
 
-		public static void VertexAttribI2uiv(uint index, ref uint v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, out float param)
 		{
-			fixed (uint* pv0 = &v)
-			{
-				VertexAttribI2uivNative(index, pv0);
-			}
+			float pparam;
+			TextureParameterfvNative(texture, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3iNative(uint index, int x, int y, int z)
+		internal static void TextureParameteriNative(uint texture, GLTextureParameterName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[618])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int, void>)funcTable[491])(texture, pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[618])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int, void>)funcTable[491])(texture, pname, param);
 			#endif
 		}
 
-		public static void VertexAttribI3i(uint index, int x, int y, int z)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameteri(uint texture, GLTextureParameterName pname, int param)
 		{
-			VertexAttribI3iNative(index, x, y, z);
+			TextureParameteriNative(texture, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3ivNative(uint index, int* v)
+		internal static void TextureParameterivNative(uint texture, GLTextureParameterName pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[619])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int*, void>)funcTable[492])(texture, pname, param);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[619])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, nint, void>)funcTable[492])(texture, pname, (nint)param);
 			#endif
-		}
-
-		public static void VertexAttribI3iv(uint index, int* v)
-		{
-			VertexAttribI3ivNative(index, v);
-		}
-
-		public static void VertexAttribI3iv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttribI3ivNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttribI3iv(uint index, ref int v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, int* param)
 		{
-			fixed (int* pv0 = &v)
-			{
-				VertexAttribI3ivNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uiNative(uint index, uint x, uint y, uint z)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, void>)funcTable[620])(index, x, y, z);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, void>)funcTable[620])(index, x, y, z);
-			#endif
+			TextureParameterivNative(texture, pname, param);
 		}
 
-		public static void VertexAttribI3ui(uint index, uint x, uint y, uint z)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, out int param)
 		{
-			VertexAttribI3uiNative(index, x, y, z);
+			int pparam;
+			TextureParameterivNative(texture, pname, &pparam);
+			param = pparam;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uivNative(uint index, uint* v)
+		internal static void TextureStorage1DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[621])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, void>)funcTable[493])(texture, levels, internalformat, width);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[621])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, void>)funcTable[493])(texture, levels, internalformat, width);
 			#endif
-		}
-
-		public static void VertexAttribI3uiv(uint index, uint* v)
-		{
-			VertexAttribI3uivNative(index, v);
-		}
-
-		public static void VertexAttribI3uiv(uint index, Span<uint> v)
-		{
-			fixed (uint* pv0 = v)
-			{
-				VertexAttribI3uivNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttribI3uiv(uint index, ref uint v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureStorage1D(uint texture, int levels, GLSizedInternalFormat internalformat, int width)
 		{
-			fixed (uint* pv0 = &v)
-			{
-				VertexAttribI3uivNative(index, pv0);
-			}
+			TextureStorage1DNative(texture, levels, internalformat, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4bvNative(uint index, sbyte* v)
+		internal static void TextureStorage2DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[622])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, void>)funcTable[494])(texture, levels, internalformat, width, height);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[622])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, void>)funcTable[494])(texture, levels, internalformat, width, height);
 			#endif
-		}
-
-		public static void VertexAttribI4bv(uint index, sbyte* v)
-		{
-			VertexAttribI4bvNative(index, v);
-		}
-
-		public static void VertexAttribI4bv(uint index, Span<sbyte> v)
-		{
-			fixed (sbyte* pv0 = v)
-			{
-				VertexAttribI4bvNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttribI4bv(uint index, ref sbyte v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureStorage2D(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
-			fixed (sbyte* pv0 = &v)
-			{
-				VertexAttribI4bvNative(index, pv0);
-			}
+			TextureStorage2DNative(texture, levels, internalformat, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4iNative(uint index, int x, int y, int z, int w)
+		internal static void TextureStorage2DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[623])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[495])(texture, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[623])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[495])(texture, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
 			#endif
 		}
 
-		public static void VertexAttribI4i(uint index, int x, int y, int z, int w)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureStorage2DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
-			VertexAttribI4iNative(index, x, y, z, w);
+			TextureStorage2DMultisampleNative(texture, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ivNative(uint index, int* v)
+		internal static void TextureStorage3DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[624])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, void>)funcTable[496])(texture, levels, internalformat, width, height, depth);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[624])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, void>)funcTable[496])(texture, levels, internalformat, width, height, depth);
 			#endif
-		}
-
-		public static void VertexAttribI4iv(uint index, int* v)
-		{
-			VertexAttribI4ivNative(index, v);
-		}
-
-		public static void VertexAttribI4iv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttribI4ivNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttribI4iv(uint index, ref int v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureStorage3D(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
-			fixed (int* pv0 = &v)
-			{
-				VertexAttribI4ivNative(index, pv0);
-			}
+			TextureStorage3DNative(texture, levels, internalformat, width, height, depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4svNative(uint index, short* v)
+		internal static void TextureStorage3DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[625])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[497])(texture, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[625])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[497])(texture, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
 			#endif
-		}
-
-		public static void VertexAttribI4sv(uint index, short* v)
-		{
-			VertexAttribI4svNative(index, v);
-		}
-
-		public static void VertexAttribI4sv(uint index, Span<short> v)
-		{
-			fixed (short* pv0 = v)
-			{
-				VertexAttribI4svNative(index, pv0);
-			}
 		}
 
-		public static void VertexAttribI4sv(uint index, ref short v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureStorage3DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
-			fixed (short* pv0 = &v)
-			{
-				VertexAttribI4svNative(index, pv0);
-			}
+			TextureStorage3DMultisampleNative(texture, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ubvNative(uint index, byte* v)
+		internal static void TextureSubImage1DNative(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[626])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[498])(texture, level, xoffset, width, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[626])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[498])(texture, level, xoffset, width, format, type, (nint)pixels);
 			#endif
-		}
-
-		public static void VertexAttribI4ubv(uint index, byte* v)
-		{
-			VertexAttribI4ubvNative(index, v);
 		}
 
-		public static void VertexAttribI4ubv(uint index, string v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (v != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(v);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(v, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			VertexAttribI4ubvNative(index, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
+			TextureSubImage1DNative(texture, level, xoffset, width, format, type, pixels);
 		}
 
-		public static void VertexAttribI4ubv(uint index, Span<byte> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (byte* pv0 = v)
-			{
-				VertexAttribI4ubvNative(index, pv0);
-			}
+			TextureSubImage1DNative(texture, level, xoffset, width, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttribI4ubv(uint index, ref byte v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage1D<TPixels>(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (byte* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttribI4ubvNative(index, pv0);
+				TextureSubImage1DNative(texture, level, xoffset, width, format, type, ppixels0);
 			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uiNative(uint index, uint x, uint y, uint z, uint w)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, uint, void>)funcTable[627])(index, x, y, z, w);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, uint, void>)funcTable[627])(index, x, y, z, w);
-			#endif
 		}
 
-		public static void VertexAttribI4ui(uint index, uint x, uint y, uint z, uint w)
-		{
-			VertexAttribI4uiNative(index, x, y, z, w);
-		}
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uivNative(uint index, uint* v)
+		internal static void TextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[628])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[499])(texture, level, xoffset, yoffset, width, height, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[628])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[499])(texture, level, xoffset, yoffset, width, height, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttribI4uiv(uint index, uint* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttribI4uivNative(index, v);
+			TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
 
-		public static void VertexAttribI4uiv(uint index, Span<uint> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (uint* pv0 = v)
-			{
-				VertexAttribI4uivNative(index, pv0);
-			}
+			TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttribI4uiv(uint index, ref uint v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage2D<TPixels>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (uint* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttribI4uivNative(index, pv0);
+				TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4usvNative(uint index, ushort* v)
+		internal static void TextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[629])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[500])(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[629])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[500])(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (nint)pixels);
 			#endif
 		}
 
-		public static void VertexAttribI4usv(uint index, ushort* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
-			VertexAttribI4usvNative(index, v);
+			TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
 
-		public static void VertexAttribI4usv(uint index, Span<ushort> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
-			fixed (ushort* pv0 = v)
-			{
-				VertexAttribI4usvNative(index, pv0);
-			}
+			TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
 		}
 
-		public static void VertexAttribI4usv(uint index, ref ushort v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureSubImage3D<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
-			fixed (ushort* pv0 = &v)
+			fixed (TPixels* ppixels0 = pixels)
 			{
-				VertexAttribI4usvNative(index, pv0);
+				TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, ppixels0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIFormatNative(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		internal static void TextureViewNative(uint texture, GLTextureTarget target, uint origtexture, GLSizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, uint, void>)funcTable[630])(attribindex, size, type, relativeoffset);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, uint, GLSizedInternalFormat, uint, uint, uint, uint, void>)funcTable[501])(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, uint, void>)funcTable[630])(attribindex, size, type, relativeoffset);
+			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, uint, GLSizedInternalFormat, uint, uint, uint, uint, void>)funcTable[501])(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
 			#endif
 		}
 
-		public static void VertexAttribIFormat(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		/// <summary>
+		/// Initialize a texture as a data alias of another texture's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_view</remarks>
+		public static void TextureView(uint texture, GLTextureTarget target, uint origtexture, GLSizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
 		{
-			VertexAttribIFormatNative(attribindex, size, type, relativeoffset);
+			TextureViewNative(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIPointerNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		internal static void TransformFeedbackBufferBaseNative(uint xfb, uint index, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, int, void*, void>)funcTable[631])(index, size, type, stride, pointer);
+			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[502])(xfb, index, buffer);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, int, nint, void>)funcTable[631])(index, size, type, stride, (nint)pointer);
+			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[502])(xfb, index, buffer);
 			#endif
-		}
-
-		public static void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
-		{
-			VertexAttribIPointerNative(index, size, type, stride, pointer);
-		}
-
-		public static void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
-		{
-			VertexAttribIPointerNative(index, size, type, stride, (void*)pointer);
 		}
 
-		public static void VertexAttribIPointer<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		/// <summary>
+		/// Bind a buffer object to a transform feedback buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TransformFeedbackBufferBase(uint xfb, uint index, uint buffer)
 		{
-			fixed (TPointer* ppointer0 = pointer)
-			{
-				VertexAttribIPointerNative(index, size, type, stride, ppointer0);
-			}
+			TransformFeedbackBufferBaseNative(xfb, index, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dNative(uint index, double x)
+		internal static void TransformFeedbackBufferRangeNative(uint xfb, uint index, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[632])(index, x);
+			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, nint, void>)funcTable[503])(xfb, index, buffer, offset, size);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[632])(index, x);
+			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, nint, void>)funcTable[503])(xfb, index, buffer, offset, size);
 			#endif
 		}
 
-		public static void VertexAttribL1d(uint index, double x)
+		/// <summary>
+		/// Bind a range within a buffer object to a transform feedback buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TransformFeedbackBufferRange(uint xfb, uint index, uint buffer, nint offset, nint size)
 		{
-			VertexAttribL1dNative(index, x);
+			TransformFeedbackBufferRangeNative(xfb, index, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dvNative(uint index, double* v)
+		internal static void TransformFeedbackVaryingsNative(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[633])(index, v);
+			((delegate* unmanaged[Cdecl]<uint, int, byte**, GLTransformFeedbackBufferMode, void>)funcTable[504])(program, count, varyings, bufferMode);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[633])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<uint, int, nint, GLTransformFeedbackBufferMode, void>)funcTable[504])(program, count, (nint)varyings, bufferMode);
 			#endif
-		}
-
-		public static void VertexAttribL1dv(uint index, double* v)
-		{
-			VertexAttribL1dvNative(index, v);
 		}
 
-		public static void VertexAttribL1dv(uint index, Span<double> v)
+		/// <summary>
+		/// Specify values to record in transform feedback buffers
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TransformFeedbackVaryings(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
 		{
-			fixed (double* pv0 = v)
-			{
-				VertexAttribL1dvNative(index, pv0);
-			}
-		}
-
-		public static void VertexAttribL1dv(uint index, ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				VertexAttribL1dvNative(index, pv0);
-			}
+			TransformFeedbackVaryingsNative(program, count, varyings, bufferMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dNative(uint index, double x, double y)
+		internal static void Uniform1dNative(int location, double x)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[634])(index, x, y);
+			((delegate* unmanaged[Cdecl]<int, double, void>)funcTable[505])(location, x);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[634])(index, x, y);
+			((delegate* unmanaged[Cdecl]<int, double, void>)funcTable[505])(location, x);
 			#endif
 		}
 
-		public static void VertexAttribL2d(uint index, double x, double y)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform1d(int location, double x)
 		{
-			VertexAttribL2dNative(index, x, y);
+			Uniform1dNative(location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dvNative(uint index, double* v)
+		internal static void Uniform1dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[635])(index, v);
+			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[506])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[635])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[506])(location, count, (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribL2dv(uint index, double* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform1dv(int location, int count, double* value)
 		{
-			VertexAttribL2dvNative(index, v);
+			Uniform1dvNative(location, count, value);
 		}
 
-		public static void VertexAttribL2dv(uint index, Span<double> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform1dv(int location, int count, Span<double> value)
 		{
-			fixed (double* pv0 = v)
+			fixed (double* pvalue0 = value)
 			{
-				VertexAttribL2dvNative(index, pv0);
+				Uniform1dvNative(location, count, pvalue0);
 			}
 		}
 
-		public static void VertexAttribL2dv(uint index, ref double v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform1dv(int location, int count, ref double value)
 		{
-			fixed (double* pv0 = &v)
+			fixed (double* pvalue0 = &value)
 			{
-				VertexAttribL2dvNative(index, pv0);
+				Uniform1dvNative(location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dNative(uint index, double x, double y, double z)
+		internal static void Uniform1fNative(int location, float v0)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[636])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<int, float, void>)funcTable[507])(location, v0);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[636])(index, x, y, z);
+			((delegate* unmanaged[Cdecl]<int, float, void>)funcTable[507])(location, v0);
 			#endif
 		}
 
-		public static void VertexAttribL3d(uint index, double x, double y, double z)
+		/// <summary>
+		/// Specify the value of a uniform variable for the current program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1f(int location, float v0)
 		{
-			VertexAttribL3dNative(index, x, y, z);
+			Uniform1fNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dvNative(uint index, double* v)
+		internal static void Uniform1fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[637])(index, v);
+			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[508])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[637])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[508])(location, count, (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribL3dv(uint index, double* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1fv(int location, int count, float* value)
 		{
-			VertexAttribL3dvNative(index, v);
+			Uniform1fvNative(location, count, value);
 		}
 
-		public static void VertexAttribL3dv(uint index, Span<double> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1fv(int location, int count, Span<float> value)
 		{
-			fixed (double* pv0 = v)
+			fixed (float* pvalue0 = value)
 			{
-				VertexAttribL3dvNative(index, pv0);
+				Uniform1fvNative(location, count, pvalue0);
 			}
 		}
 
-		public static void VertexAttribL3dv(uint index, ref double v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1fv(int location, int count, ref float value)
 		{
-			fixed (double* pv0 = &v)
+			fixed (float* pvalue0 = &value)
 			{
-				VertexAttribL3dvNative(index, pv0);
+				Uniform1fvNative(location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dNative(uint index, double x, double y, double z, double w)
+		internal static void Uniform1iNative(int location, int v0)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[638])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[509])(location, v0);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[638])(index, x, y, z, w);
+			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[509])(location, v0);
 			#endif
 		}
 
-		public static void VertexAttribL4d(uint index, double x, double y, double z, double w)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1i(int location, int v0)
 		{
-			VertexAttribL4dNative(index, x, y, z, w);
+			Uniform1iNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dvNative(uint index, double* v)
+		internal static void Uniform1ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[639])(index, v);
+			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[510])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[639])(index, (nint)v);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[510])(location, count, (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribL4dv(uint index, double* v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1iv(int location, int count, int* value)
 		{
-			VertexAttribL4dvNative(index, v);
+			Uniform1ivNative(location, count, value);
 		}
 
-		public static void VertexAttribL4dv(uint index, Span<double> v)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1iv(int location, int count, Span<int> value)
 		{
-			fixed (double* pv0 = v)
+			fixed (int* pvalue0 = value)
 			{
-				VertexAttribL4dvNative(index, pv0);
+				Uniform1ivNative(location, count, pvalue0);
 			}
-		}
-
-		public static void VertexAttribL4dv(uint index, ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				VertexAttribL4dvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLFormatNative(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, uint, void>)funcTable[640])(attribindex, size, type, relativeoffset);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, uint, void>)funcTable[640])(attribindex, size, type, relativeoffset);
-			#endif
-		}
-
-		public static void VertexAttribLFormat(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
-		{
-			VertexAttribLFormatNative(attribindex, size, type, relativeoffset);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLPointerNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, int, void*, void>)funcTable[641])(index, size, type, stride, pointer);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, int, nint, void>)funcTable[641])(index, size, type, stride, (nint)pointer);
-			#endif
-		}
-
-		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
-		{
-			VertexAttribLPointerNative(index, size, type, stride, pointer);
-		}
-
-		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
-		{
-			VertexAttribLPointerNative(index, size, type, stride, (void*)pointer);
 		}
 
-		public static void VertexAttribLPointer<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1iv(int location, int count, ref int value)
 		{
-			fixed (TPointer* ppointer0 = pointer)
+			fixed (int* pvalue0 = &value)
 			{
-				VertexAttribLPointerNative(index, size, type, stride, ppointer0);
+				Uniform1ivNative(location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal static void Uniform1uiNative(int location, uint v0)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[642])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, uint, void>)funcTable[511])(location, v0);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[642])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, uint, void>)funcTable[511])(location, v0);
 			#endif
 		}
 
-		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1ui(int location, uint v0)
 		{
-			VertexAttribP1uiNative(index, type, normalized, value);
+			Uniform1uiNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal static void Uniform1uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[643])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[512])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[643])(index, type, *((byte*)(&normalized)), (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[512])(location, count, (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1uiv(int location, int count, uint* value)
 		{
-			VertexAttribP1uivNative(index, type, normalized, value);
+			Uniform1uivNative(location, count, value);
 		}
 
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
-				VertexAttribP1uivNative(index, type, normalized, pvalue0);
+				Uniform1uivNative(location, count, pvalue0);
 			}
 		}
 
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
-				VertexAttribP1uivNative(index, type, normalized, pvalue0);
+				Uniform1uivNative(location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal static void Uniform2dNative(int location, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[644])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, double, double, void>)funcTable[513])(location, x, y);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[644])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, double, double, void>)funcTable[513])(location, x, y);
 			#endif
 		}
 
-		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform2d(int location, double x, double y)
 		{
-			VertexAttribP2uiNative(index, type, normalized, value);
+			Uniform2dNative(location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal static void Uniform2dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[645])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[514])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[645])(index, type, *((byte*)(&normalized)), (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[514])(location, count, (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform2dv(int location, int count, double* value)
 		{
-			VertexAttribP2uivNative(index, type, normalized, value);
+			Uniform2dvNative(location, count, value);
 		}
 
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform2dv(int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				Uniform2dvNative(location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform2dv(int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				Uniform2dvNative(location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2fNative(int location, float v0, float v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[515])(location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[515])(location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2f(int location, float v0, float v1)
+		{
+			Uniform2fNative(location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2fvNative(int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[516])(location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[516])(location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2fv(int location, int count, float* value)
+		{
+			Uniform2fvNative(location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2fv(int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				Uniform2fvNative(location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2fv(int location, int count, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				Uniform2fvNative(location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2iNative(int location, int v0, int v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[517])(location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[517])(location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2i(int location, int v0, int v1)
+		{
+			Uniform2iNative(location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2ivNative(int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[518])(location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[518])(location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2iv(int location, int count, int* value)
+		{
+			Uniform2ivNative(location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2iv(int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				Uniform2ivNative(location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2iv(int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				Uniform2ivNative(location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2uiNative(int location, uint v0, uint v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, uint, uint, void>)funcTable[519])(location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<int, uint, uint, void>)funcTable[519])(location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2ui(int location, uint v0, uint v1)
+		{
+			Uniform2uiNative(location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2uivNative(int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[520])(location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[520])(location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2uiv(int location, int count, uint* value)
+		{
+			Uniform2uivNative(location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
-				VertexAttribP2uivNative(index, type, normalized, pvalue0);
+				Uniform2uivNative(location, count, pvalue0);
 			}
 		}
 
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
-				VertexAttribP2uivNative(index, type, normalized, pvalue0);
+				Uniform2uivNative(location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal static void Uniform3dNative(int location, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[646])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, double, double, double, void>)funcTable[521])(location, x, y, z);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[646])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, double, double, double, void>)funcTable[521])(location, x, y, z);
 			#endif
 		}
 
-		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3d(int location, double x, double y, double z)
 		{
-			VertexAttribP3uiNative(index, type, normalized, value);
+			Uniform3dNative(location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal static void Uniform3dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[647])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[522])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[647])(index, type, *((byte*)(&normalized)), (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[522])(location, count, (nint)value);
 			#endif
 		}
 
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3dv(int location, int count, double* value)
 		{
-			VertexAttribP3uivNative(index, type, normalized, value);
+			Uniform3dvNative(location, count, value);
 		}
 
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3dv(int location, int count, Span<double> value)
 		{
-			fixed (uint* pvalue0 = value)
+			fixed (double* pvalue0 = value)
 			{
-				VertexAttribP3uivNative(index, type, normalized, pvalue0);
+				Uniform3dvNative(location, count, pvalue0);
 			}
 		}
 
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3dv(int location, int count, ref double value)
 		{
-			fixed (uint* pvalue0 = &value)
+			fixed (double* pvalue0 = &value)
 			{
-				VertexAttribP3uivNative(index, type, normalized, pvalue0);
+				Uniform3dvNative(location, count, pvalue0);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal static void Uniform3fNative(int location, float v0, float v1, float v2)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[648])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[523])(location, v0, v1, v2);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[648])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[523])(location, v0, v1, v2);
 			#endif
 		}
 
-		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform3f(int location, float v0, float v1, float v2)
 		{
-			VertexAttribP4uiNative(index, type, normalized, value);
+			Uniform3fNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal static void Uniform3fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[649])(index, type, *((byte*)(&normalized)), value);
+			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[524])(location, count, value);
 			#else
-			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, nint, void>)funcTable[649])(index, type, *((byte*)(&normalized)), (nint)value);
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[524])(location, count, (nint)value);
 			#endif
 		}
-
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
-		{
-			VertexAttribP4uivNative(index, type, normalized, value);
-		}
-
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
-		{
-			fixed (uint* pvalue0 = value)
-			{
-				VertexAttribP4uivNative(index, type, normalized, pvalue0);
-			}
-		}
-
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
-		{
-			fixed (uint* pvalue0 = &value)
-			{
-				VertexAttribP4uivNative(index, type, normalized, pvalue0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribPointerNative(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribPointerType, byte, int, void*, void>)funcTable[650])(index, size, type, *((byte*)(&normalized)), stride, pointer);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribPointerType, byte, int, nint, void>)funcTable[650])(index, size, type, *((byte*)(&normalized)), stride, (nint)pointer);
-			#endif
-		}
-
-		public static void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
-		{
-			VertexAttribPointerNative(index, size, type, normalized, stride, pointer);
-		}
-
-		public static void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint pointer)
-		{
-			VertexAttribPointerNative(index, size, type, normalized, stride, (void*)pointer);
-		}
-
-		public static void VertexAttribPointer<TPointer>(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, Span<TPointer> pointer) where TPointer : unmanaged
-		{
-			fixed (TPointer* ppointer0 = pointer)
-			{
-				VertexAttribPointerNative(index, size, type, normalized, stride, ppointer0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexBindingDivisorNative(uint bindingindex, uint divisor)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[651])(bindingindex, divisor);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[651])(bindingindex, divisor);
-			#endif
-		}
-
-		public static void VertexBindingDivisor(uint bindingindex, uint divisor)
-		{
-			VertexBindingDivisorNative(bindingindex, divisor);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportNative(int x, int y, int width, int height)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[652])(x, y, width, height);
-			#else
-			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[652])(x, y, width, height);
-			#endif
-		}
-
-		public static void Viewport(int x, int y, int width, int height)
-		{
-			ViewportNative(x, y, width, height);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportArrayvNative(uint first, int count, float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[653])(first, count, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, nint, void>)funcTable[653])(first, count, (nint)v);
-			#endif
-		}
-
-		public static void ViewportArrayv(uint first, int count, float* v)
-		{
-			ViewportArrayvNative(first, count, v);
-		}
-
-		public static void ViewportArrayv(uint first, int count, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				ViewportArrayvNative(first, count, pv0);
-			}
-		}
-
-		public static void ViewportArrayv(uint first, int count, ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				ViewportArrayvNative(first, count, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfNative(uint index, float x, float y, float w, float h)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[654])(index, x, y, w, h);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[654])(index, x, y, w, h);
-			#endif
-		}
-
-		public static void ViewportIndexedf(uint index, float x, float y, float w, float h)
-		{
-			ViewportIndexedfNative(index, x, y, w, h);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfvNative(uint index, float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[655])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[655])(index, (nint)v);
-			#endif
-		}
-
-		public static void ViewportIndexedfv(uint index, float* v)
-		{
-			ViewportIndexedfvNative(index, v);
-		}
-
-		public static void ViewportIndexedfv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				ViewportIndexedfvNative(index, pv0);
-			}
-		}
-
-		public static void ViewportIndexedfv(uint index, ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				ViewportIndexedfvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WaitSyncNative(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLSync, GLSyncBehaviorFlags, ulong, void>)funcTable[656])(sync, flags, timeout);
-			#else
-			((delegate* unmanaged[Cdecl]<GLSync, GLSyncBehaviorFlags, ulong, void>)funcTable[656])(sync, flags, timeout);
-			#endif
-		}
-
-		public static void WaitSync(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
-		{
-			WaitSyncNative(sync, flags, timeout);
-		}
-
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
 		public static void DrawArraysInstancedEXT(GLPrimitiveType mode, int start, int count, int primcount)
 		{
 			DrawArraysInstancedEXTNative(mode, start, count, primcount);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
 		public static void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedEXTNative(mode, count, type, indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
 		public static void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedEXTNative(mode, count, type, (void*)indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
 		public static void DrawElementsInstancedEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)

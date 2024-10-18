@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLDebugSeverity : uint
 	{
+		/// <summary>
+		/// Specifies that the implementation can ignore this parameter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DontCare = unchecked((uint)0x1100),
+
+		/// <summary>
+		/// Specifies a notification severity for debug messages.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Notification = unchecked((uint)0x826B),
+
+		/// <summary>
+		/// Indicates a high-severity debug message.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		High = unchecked((uint)0x9146),
+
+		/// <summary>
+		/// Indicates a medium-severity debug message.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Medium = unchecked((uint)0x9147),
+
+		/// <summary>
+		/// Indicates a low-severity debug message.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Low = unchecked((uint)0x9148),
 	}
 }

@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathCoverMode : uint
 	{
+		/// <summary>
+		/// Specifies the fill cover mode for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FillCoverModeNv = unchecked((uint)0x9082),
+
+		/// <summary>
+		/// Specifies the convex hull calculation mode for path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ConvexHullNv = unchecked((uint)0x908B),
+
+		/// <summary>
+		/// Defines the bounding box for path or object.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		BoundingBoxNv = unchecked((uint)0x908D),
 	}
 }

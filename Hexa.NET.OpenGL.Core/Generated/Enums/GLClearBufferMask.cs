@@ -18,10 +18,34 @@ namespace Hexa.NET.OpenGL
 	/// </summary>
 	public enum GLClearBufferMask : uint
 	{
+		/// <summary>
+		/// Enables depth buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		DepthBufferBit = unchecked((uint)0x00000100),
+
+		/// <summary>
+		/// Enables accumulation buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		AccumBufferBit = unchecked((uint)0x00000200),
+
+		/// <summary>
+		/// Enables stencil buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBufferBit = unchecked((uint)0x00000400),
+
+		/// <summary>
+		/// Indicates color buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorBufferBit = unchecked((uint)0x00004000),
+
+		/// <summary>
+		/// Coverage buffer for NV.
+		/// </summary>
+		/// <remarks></remarks>
 		CoverageBufferBitNv = unchecked((uint)0x00008000),
 	}
 }

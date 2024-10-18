@@ -15,17 +15,76 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureMagFilter : uint
 	{
+		/// <summary>
+		/// Specifies nearest neighbor filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Nearest = unchecked((uint)0x2600),
+
+		/// <summary>
+		/// Specifies linear filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Linear = unchecked((uint)0x2601),
+
+		/// <summary>
+		/// Specifies linear detail texture filtering for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		LinearDetailSgis = unchecked((uint)0x8097),
+
+		/// <summary>
+		/// Specifies linear detail texture filtering with alpha for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		LinearDetailAlphaSgis = unchecked((uint)0x8098),
+
+		/// <summary>
+		/// Specifies linear detail texture filtering with color for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		LinearDetailColorSgis = unchecked((uint)0x8099),
+
+		/// <summary>
+		/// Specifies linear sharpening of textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LinearSharpenSgis = unchecked((uint)0x80AD),
+
+		/// <summary>
+		/// Specifies linear sharpening of textures with alpha (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LinearSharpenAlphaSgis = unchecked((uint)0x80AE),
+
+		/// <summary>
+		/// Specifies linear sharpening of textures with color (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LinearSharpenColorSgis = unchecked((uint)0x80AF),
+
+		/// <summary>
+		/// Specifies a filter with four components (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Filter4Sgis = unchecked((uint)0x8146),
+
+		/// <summary>
+		/// Specifies ceiling behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenQCeilingSgix = unchecked((uint)0x8184),
+
+		/// <summary>
+		/// Specifies rounding behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenQRoundSgix = unchecked((uint)0x8185),
+
+		/// <summary>
+		/// Specifies floor behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenQFloorSgix = unchecked((uint)0x8186),
 	}
 }

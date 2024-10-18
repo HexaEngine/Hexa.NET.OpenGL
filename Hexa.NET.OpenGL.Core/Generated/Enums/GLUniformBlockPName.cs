@@ -15,16 +15,70 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLUniformBlockPName : uint
 	{
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by a tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		ReferencedByTessControlShader = unchecked((uint)0x84F0),
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by a tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		ReferencedByTessEvaluationShader = unchecked((uint)0x84F1),
+
+		/// <summary>
+		/// Specifies the binding point for a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		Binding = unchecked((uint)0x8A3F),
+
+		/// <summary>
+		/// Specifies the data size of a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		DataSize = unchecked((uint)0x8A40),
+
+		/// <summary>
+		/// Specifies the length of a uniform block name.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		Length = unchecked((uint)0x8A41),
+
+		/// <summary>
+		/// Specifies the number of active uniforms in a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ActiveUniforms = unchecked((uint)0x8A42),
+
+		/// <summary>
+		/// Specifies the indices of active uniforms in a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ActiveUniformIndices = unchecked((uint)0x8A43),
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by the vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ReferencedByVertexShader = unchecked((uint)0x8A44),
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by the geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ReferencedByGeometryShader = unchecked((uint)0x8A45),
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by the fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ReferencedByFragmentShader = unchecked((uint)0x8A46),
+
+		/// <summary>
+		/// Specifies uniform blocks referenced by compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		ReferencedByComputeShader = unchecked((uint)0x90EC),
 	}
 }

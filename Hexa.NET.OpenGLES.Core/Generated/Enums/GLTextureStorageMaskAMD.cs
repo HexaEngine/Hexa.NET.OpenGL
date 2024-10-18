@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureStorageMaskAMD : uint
 	{
+		/// <summary>
+		/// Sparse texture storage bit (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_sparse_texture</remarks>
 		SparseBitAmd = unchecked((uint)0x00000001),
 	}
 }

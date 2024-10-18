@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static ulong GetImageHandleNV(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			ulong ret = GetImageHandleNVNative(texture, level, layered, layer, format);
@@ -42,6 +46,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static ulong GetTextureHandleNV(uint texture)
 		{
 			ulong ret = GetTextureHandleNVNative(texture);
@@ -58,6 +66,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static ulong GetTextureSamplerHandleNV(uint texture, uint sampler)
 		{
 			ulong ret = GetTextureSamplerHandleNVNative(texture, sampler);
@@ -74,6 +86,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static bool IsImageHandleResidentNV(ulong handle)
 		{
 			byte ret = IsImageHandleResidentNVNative(handle);
@@ -90,6 +106,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static bool IsTextureHandleResidentNV(ulong handle)
 		{
 			byte ret = IsTextureHandleResidentNVNative(handle);
@@ -106,6 +126,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void MakeImageHandleNonResidentNV(ulong handle)
 		{
 			MakeImageHandleNonResidentNVNative(handle);
@@ -121,6 +145,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void MakeImageHandleResidentNV(ulong handle, GLEnum access)
 		{
 			MakeImageHandleResidentNVNative(handle, access);
@@ -136,6 +164,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void MakeTextureHandleNonResidentNV(ulong handle)
 		{
 			MakeTextureHandleNonResidentNVNative(handle);
@@ -151,6 +183,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void MakeTextureHandleResidentNV(ulong handle)
 		{
 			MakeTextureHandleResidentNVNative(handle);
@@ -166,6 +202,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64NV(uint program, int location, ulong value)
 		{
 			ProgramUniformHandleui64NVNative(program, location, value);
@@ -181,11 +221,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, ulong* values)
 		{
 			ProgramUniformHandleui64vNVNative(program, location, count, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, Span<ulong> values)
 		{
 			fixed (ulong* pvalues0 = values)
@@ -194,6 +242,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, ref ulong values)
 		{
 			fixed (ulong* pvalues0 = &values)
@@ -212,6 +264,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void UniformHandleui64NV(int location, ulong value)
 		{
 			UniformHandleui64NVNative(location, value);
@@ -227,11 +283,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void UniformHandleui64vNV(int location, int count, ulong* value)
 		{
 			UniformHandleui64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void UniformHandleui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -240,6 +304,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
 		public static void UniformHandleui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)

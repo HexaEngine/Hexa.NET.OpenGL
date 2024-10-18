@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CopyPathNV(uint resultPath, uint srcPath)
 		{
 			CopyPathNVNative(resultPath, srcPath);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverFillPathInstancedNVNative(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverFillPathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -67,6 +87,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -85,6 +109,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverFillPathNV(uint path, GLPathCoverMode coverMode)
 		{
 			CoverFillPathNVNative(path, coverMode);
@@ -100,16 +128,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverStrokePathInstancedNVNative(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverStrokePathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -118,6 +158,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -126,6 +170,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -144,6 +192,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void CoverStrokePathNV(uint path, GLPathCoverMode coverMode)
 		{
 			CoverStrokePathNVNative(path, coverMode);
@@ -159,6 +211,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void DeletePathsNV(uint path, int range)
 		{
 			DeletePathsNVNative(path, range);
@@ -174,6 +230,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static uint GenPathsNV(int range)
 		{
 			uint ret = GenPathsNVNative(range);
@@ -190,11 +250,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, float* value)
 		{
 			GetPathColorGenfvNVNative(color, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -203,6 +271,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -221,11 +293,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, int* value)
 		{
 			GetPathColorGenivNVNative(color, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -234,6 +314,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -252,6 +336,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathCommandsNV(uint path, GLPathCoordType commands)
 		{
 			GetPathCommandsNVNative(path, commands);
@@ -267,11 +355,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathCoordsNV(uint path, float* coords)
 		{
 			GetPathCoordsNVNative(path, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathCoordsNV(uint path, Span<float> coords)
 		{
 			fixed (float* pcoords0 = coords)
@@ -280,6 +376,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathCoordsNV(uint path, ref float coords)
 		{
 			fixed (float* pcoords0 = &coords)
@@ -298,11 +398,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathDashArrayNV(uint path, float* dashArray)
 		{
 			GetPathDashArrayNVNative(path, dashArray);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathDashArrayNV(uint path, Span<float> dashArray)
 		{
 			fixed (float* pdashArray0 = dashArray)
@@ -311,6 +419,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathDashArrayNV(uint path, ref float dashArray)
 		{
 			fixed (float* pdashArray0 = &dashArray)
@@ -329,6 +441,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static float GetPathLengthNV(uint path, int startSegment, int numSegments)
 		{
 			float ret = GetPathLengthNVNative(path, startSegment, numSegments);
@@ -345,11 +461,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, float* metrics)
 		{
 			GetPathMetricRangeNVNative(metricQueryMask, firstPathName, numPaths, stride, metrics);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, Span<float> metrics)
 		{
 			fixed (float* pmetrics0 = metrics)
@@ -358,6 +482,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, ref float metrics)
 		{
 			fixed (float* pmetrics0 = &metrics)
@@ -376,16 +504,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, float* metrics)
 		{
 			GetPathMetricsNVNative(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int stride, float* metrics)
 		{
 			GetPathMetricsNVNative(metricQueryMask, numPaths, pathNameType, (void*)paths, pathBase, stride, metrics);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricsNV<TPaths>(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int stride, float* metrics) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -394,6 +534,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, Span<float> metrics)
 		{
 			fixed (float* pmetrics0 = metrics)
@@ -402,6 +546,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, ref float metrics)
 		{
 			fixed (float* pmetrics0 = &metrics)
@@ -420,11 +568,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathParameterfvNV(uint path, GLPathParameter pname, float* value)
 		{
 			GetPathParameterfvNVNative(path, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathParameterfvNV(uint path, GLPathParameter pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -433,6 +589,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathParameterfvNV(uint path, GLPathParameter pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -451,11 +611,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathParameterivNV(uint path, GLPathParameter pname, int* value)
 		{
 			GetPathParameterivNVNative(path, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathParameterivNV(uint path, GLPathParameter pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -464,6 +632,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathParameterivNV(uint path, GLPathParameter pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -482,16 +654,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
 		{
 			GetPathSpacingNVNative(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
 		{
 			GetPathSpacingNVNative(pathListMode, numPaths, pathNameType, (void*)paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathSpacingNV<TPaths>(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -500,6 +684,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, Span<float> returnedSpacing)
 		{
 			fixed (float* preturnedSpacing0 = returnedSpacing)
@@ -508,6 +696,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, ref float returnedSpacing)
 		{
 			fixed (float* preturnedSpacing0 = &returnedSpacing)
@@ -526,11 +718,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, float* value)
 		{
 			GetPathTexGenfvNVNative(texCoordSet, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -539,6 +739,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -557,11 +761,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, int* value)
 		{
 			GetPathTexGenivNVNative(texCoordSet, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -570,6 +782,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -588,11 +804,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, float* @params)
 		{
 			GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, length, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, out float @params)
 		{
 			float pparams;
@@ -600,6 +824,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -608,6 +836,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, int* length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = props)
@@ -616,6 +848,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
@@ -624,6 +860,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, Span<int> length, float* @params)
 		{
 			fixed (int* plength0 = length)
@@ -632,6 +872,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, ref int length, float* @params)
 		{
 			fixed (int* plength0 = &length)
@@ -640,6 +884,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, Span<int> length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = props)
@@ -651,6 +899,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, ref int length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
@@ -672,6 +924,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void InterpolatePathsNV(uint resultPath, uint pathA, uint pathB, float weight)
 		{
 			InterpolatePathsNVNative(resultPath, pathA, pathB, weight);
@@ -687,6 +943,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool IsPathNV(uint path)
 		{
 			byte ret = IsPathNVNative(path);
@@ -703,6 +963,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool IsPointInFillPathNV(uint path, uint mask, float x, float y)
 		{
 			byte ret = IsPointInFillPathNVNative(path, mask, x, y);
@@ -719,6 +983,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool IsPointInStrokePathNV(uint path, float x, float y)
 		{
 			byte ret = IsPointInStrokePathNVNative(path, x, y);
@@ -735,6 +1003,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixFrustumEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			MatrixFrustumEXTNative(mode, left, right, bottom, top, zNear, zFar);
@@ -750,11 +1022,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoad3x2fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixLoad3x2fNVNative(matrixMode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoad3x2fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -763,6 +1043,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoad3x2fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -781,11 +1065,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoad3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixLoad3x3fNVNative(matrixMode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoad3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -794,6 +1086,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoad3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -812,6 +1108,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadIdentityEXT(GLMatrixMode mode)
 		{
 			MatrixLoadIdentityEXTNative(mode);
@@ -827,11 +1127,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixLoadTranspose3x3fNVNative(matrixMode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -840,6 +1148,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -858,11 +1170,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixLoadTransposedEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
@@ -871,6 +1191,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -889,11 +1213,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadTransposefEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -902,6 +1234,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -920,11 +1256,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoaddEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixLoaddEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoaddEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
@@ -933,6 +1277,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoaddEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -951,11 +1299,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadfEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadfEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -964,6 +1320,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixLoadfEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -982,11 +1342,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMult3x2fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixMult3x2fNVNative(matrixMode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMult3x2fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -995,6 +1363,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMult3x2fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -1013,11 +1385,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMult3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixMult3x3fNVNative(matrixMode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMult3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -1026,6 +1406,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMult3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -1044,11 +1428,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTranspose3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixMultTranspose3x3fNVNative(matrixMode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTranspose3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -1057,6 +1449,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTranspose3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -1075,11 +1471,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTransposedEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixMultTransposedEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTransposedEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
@@ -1088,6 +1492,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -1106,11 +1514,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultTransposefEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTransposefEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -1119,6 +1535,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultTransposefEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -1137,11 +1557,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultdEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixMultdEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultdEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
@@ -1150,6 +1578,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultdEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -1168,11 +1600,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultfEXTNative(mode, m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultfEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -1181,6 +1621,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixMultfEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -1199,6 +1643,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixOrthoEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			MatrixOrthoEXTNative(mode, left, right, bottom, top, zNear, zFar);
@@ -1214,6 +1662,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixPopEXT(GLMatrixMode mode)
 		{
 			MatrixPopEXTNative(mode);
@@ -1229,6 +1681,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixPushEXT(GLMatrixMode mode)
 		{
 			MatrixPushEXTNative(mode);
@@ -1244,6 +1700,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixRotatedEXT(GLMatrixMode mode, double angle, double x, double y, double z)
 		{
 			MatrixRotatedEXTNative(mode, angle, x, y, z);
@@ -1259,6 +1719,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixRotatefEXT(GLMatrixMode mode, float angle, float x, float y, float z)
 		{
 			MatrixRotatefEXTNative(mode, angle, x, y, z);
@@ -1274,6 +1738,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixScaledEXT(GLMatrixMode mode, double x, double y, double z)
 		{
 			MatrixScaledEXTNative(mode, x, y, z);
@@ -1289,6 +1757,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixScalefEXT(GLMatrixMode mode, float x, float y, float z)
 		{
 			MatrixScalefEXTNative(mode, x, y, z);
@@ -1304,6 +1776,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixTranslatedEXT(GLMatrixMode mode, double x, double y, double z)
 		{
 			MatrixTranslatedEXTNative(mode, x, y, z);
@@ -1319,6 +1795,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
 		public static void MatrixTranslatefEXT(GLMatrixMode mode, float x, float y, float z)
 		{
 			MatrixTranslatefEXTNative(mode, x, y, z);
@@ -1334,11 +1814,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, float* coeffs)
 		{
 			PathColorGenNVNative(color, genMode, colorFormat, coeffs);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, Span<float> coeffs)
 		{
 			fixed (float* pcoeffs0 = coeffs)
@@ -1347,6 +1835,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, ref float coeffs)
 		{
 			fixed (float* pcoeffs0 = &coeffs)
@@ -1365,16 +1857,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCommandsNV(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathCommandsNVNative(path, numCommands, commands, numCoords, coordType, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCommandsNV(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathCommandsNVNative(path, numCommands, commands, numCoords, coordType, (void*)coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCommandsNV<TCoords>(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
@@ -1393,16 +1897,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCoordsNV(uint path, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathCoordsNVNative(path, numCoords, coordType, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCoordsNV(uint path, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathCoordsNVNative(path, numCoords, coordType, (void*)coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCoordsNV<TCoords>(uint path, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
@@ -1421,6 +1937,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathCoverDepthFuncNV(GLDepthFunction func)
 		{
 			PathCoverDepthFuncNVNative(func);
@@ -1436,11 +1956,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathDashArrayNV(uint path, int dashCount, float* dashArray)
 		{
 			PathDashArrayNVNative(path, dashCount, dashArray);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathDashArrayNV(uint path, int dashCount, Span<float> dashArray)
 		{
 			fixed (float* pdashArray0 = dashArray)
@@ -1449,6 +1977,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathDashArrayNV(uint path, int dashCount, ref float dashArray)
 		{
 			fixed (float* pdashArray0 = &dashArray)
@@ -1467,6 +1999,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathFogGenNV(GLPathGenMode genMode)
 		{
 			PathFogGenNVNative(genMode);
@@ -1482,18 +2018,30 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathGlyphIndexArrayNVNative(firstPathName, fontTarget, fontName, fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathGlyphIndexArrayNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexArrayNV<TFontName>(uint firstPathName, GLEnum fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
@@ -1513,18 +2061,30 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
 		{
 			GLEnum ret = PathGlyphIndexRangeNVNative(fontTarget, fontName, fontStyle, pathParameterTemplate, emScale, baseAndCount);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, nint fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
 		{
 			GLEnum ret = PathGlyphIndexRangeNVNative(fontTarget, (void*)fontName, fontStyle, pathParameterTemplate, emScale, baseAndCount);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexRangeNV<TFontName>(GLEnum fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
@@ -1534,6 +2094,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, Span<uint> baseAndCount)
 		{
 			fixed (uint* pbaseAndCount0 = baseAndCount)
@@ -1543,6 +2107,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, ref uint baseAndCount)
 		{
 			fixed (uint* pbaseAndCount0 = &baseAndCount)
@@ -1562,16 +2130,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphRangeNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphRangeNVNative(firstPathName, fontTarget, fontName, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphRangeNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphRangeNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphRangeNV<TFontName>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
@@ -1590,16 +2170,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV<TFontName>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
@@ -1608,11 +2200,19 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, nint charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, (void*)charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV<TCharcodes>(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, Span<TCharcodes> charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TCharcodes : unmanaged
 		{
 			fixed (TCharcodes* pcharcodes0 = charcodes)
@@ -1621,11 +2221,19 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, nint charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, numGlyphs, type, (void*)charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathGlyphsNV<TFontName, TCharcodes>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, Span<TCharcodes> charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged where TCharcodes : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
@@ -1647,18 +2255,30 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathMemoryGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontSize, void* fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathMemoryGlyphIndexArrayNVNative(firstPathName, fontTarget, fontSize, fontData, faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathMemoryGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontSize, nint fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathMemoryGlyphIndexArrayNVNative(firstPathName, fontTarget, fontSize, (void*)fontData, faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static GLEnum PathMemoryGlyphIndexArrayNV<TFontData>(uint firstPathName, GLEnum fontTarget, nint fontSize, Span<TFontData> fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) where TFontData : unmanaged
 		{
 			fixed (TFontData* pfontData0 = fontData)
@@ -1678,6 +2298,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterfNV(uint path, GLPathParameter pname, float value)
 		{
 			PathParameterfNVNative(path, pname, value);
@@ -1693,11 +2317,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterfvNV(uint path, GLPathParameter pname, float* value)
 		{
 			PathParameterfvNVNative(path, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterfvNV(uint path, GLPathParameter pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1706,6 +2338,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterfvNV(uint path, GLPathParameter pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1724,6 +2360,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameteriNV(uint path, GLPathParameter pname, int value)
 		{
 			PathParameteriNVNative(path, pname, value);
@@ -1739,11 +2379,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterivNV(uint path, GLPathParameter pname, int* value)
 		{
 			PathParameterivNVNative(path, pname, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterivNV(uint path, GLPathParameter pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -1752,6 +2400,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathParameterivNV(uint path, GLPathParameter pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -1770,6 +2422,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathStencilDepthOffsetNV(float factor, float units)
 		{
 			PathStencilDepthOffsetNVNative(factor, units);
@@ -1785,6 +2441,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathStencilFuncNV(GLStencilFunction func, int reference, uint mask)
 		{
 			PathStencilFuncNVNative(func, reference, mask);
@@ -1800,16 +2460,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathStringNV(uint path, GLPathStringFormat format, int length, void* pathString)
 		{
 			PathStringNVNative(path, format, length, pathString);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathStringNV(uint path, GLPathStringFormat format, int length, nint pathString)
 		{
 			PathStringNVNative(path, format, length, (void*)pathString);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathStringNV<TPathString>(uint path, GLPathStringFormat format, int length, Span<TPathString> pathString) where TPathString : unmanaged
 		{
 			fixed (TPathString* ppathString0 = pathString)
@@ -1828,16 +2500,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathSubCommandsNVNative(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathSubCommandsNVNative(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, (void*)coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathSubCommandsNV<TCoords>(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
@@ -1856,16 +2540,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathSubCoordsNVNative(path, coordStart, numCoords, coordType, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathSubCoordsNVNative(path, coordStart, numCoords, coordType, (void*)coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathSubCoordsNV<TCoords>(uint path, int coordStart, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
@@ -1884,11 +2580,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, float* coeffs)
 		{
 			PathTexGenNVNative(texCoordSet, genMode, components, coeffs);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, Span<float> coeffs)
 		{
 			fixed (float* pcoeffs0 = coeffs)
@@ -1897,6 +2601,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, ref float coeffs)
 		{
 			fixed (float* pcoeffs0 = &coeffs)
@@ -1915,12 +2623,20 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, float* tangentY)
 		{
 			byte ret = PointAlongPathNVNative(path, startSegment, numSegments, distance, x, y, tangentX, tangentY);
 			return ret != 0;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
@@ -1930,6 +2646,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -1939,6 +2659,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, float* tangentX, float* tangentY)
 		{
 			fixed (float* py0 = y)
@@ -1948,6 +2672,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, float* tangentX, float* tangentY)
 		{
 			fixed (float* py0 = &y)
@@ -1957,6 +2685,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
@@ -1969,6 +2701,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -1981,6 +2717,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* ptangentX0 = tangentX)
@@ -1990,6 +2730,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* ptangentX0 = &tangentX)
@@ -1999,6 +2743,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
@@ -2011,6 +2759,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -2023,6 +2775,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* py0 = y)
@@ -2035,6 +2791,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* py0 = &y)
@@ -2047,6 +2807,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
@@ -2062,6 +2826,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -2077,6 +2845,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* ptangentY0 = tangentY)
@@ -2086,6 +2858,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* ptangentY0 = &tangentY)
@@ -2095,6 +2871,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
@@ -2107,6 +2887,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -2119,6 +2903,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* py0 = y)
@@ -2131,6 +2919,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* py0 = &y)
@@ -2143,6 +2935,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
@@ -2158,6 +2954,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -2173,6 +2973,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* ptangentX0 = tangentX)
@@ -2185,6 +2989,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* ptangentX0 = &tangentX)
@@ -2197,6 +3005,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
@@ -2212,6 +3024,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -2227,6 +3043,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* py0 = y)
@@ -2242,6 +3062,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* py0 = &y)
@@ -2257,6 +3081,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
@@ -2275,6 +3103,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
@@ -2303,11 +3135,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, float* coeffs)
 		{
 			ProgramPathFragmentInputGenNVNative(program, location, genMode, components, coeffs);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, Span<float> coeffs)
 		{
 			fixed (float* pcoeffs0 = coeffs)
@@ -2316,6 +3156,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, ref float coeffs)
 		{
 			fixed (float* pcoeffs0 = &coeffs)
@@ -2334,16 +3178,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilFillPathInstancedNVNative(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilFillPathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, fillMode, mask, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -2352,6 +3208,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -2360,6 +3220,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -2378,6 +3242,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilFillPathNV(uint path, GLPathFillMode fillMode, uint mask)
 		{
 			StencilFillPathNVNative(path, fillMode, mask);
@@ -2393,16 +3261,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilStrokePathInstancedNVNative(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilStrokePathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, reference, mask, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -2411,6 +3291,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -2419,6 +3303,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -2437,6 +3325,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilStrokePathNV(uint path, int reference, uint mask)
 		{
 			StencilStrokePathNVNative(path, reference, mask);
@@ -2452,16 +3344,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverFillPathInstancedNVNative(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverFillPathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, fillMode, mask, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -2470,6 +3374,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -2478,6 +3386,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -2496,6 +3408,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverFillPathNV(uint path, GLPathFillMode fillMode, uint mask, GLPathCoverMode coverMode)
 		{
 			StencilThenCoverFillPathNVNative(path, fillMode, mask, coverMode);
@@ -2511,16 +3427,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverStrokePathInstancedNVNative(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverStrokePathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, reference, mask, coverMode, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
@@ -2529,6 +3457,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -2537,6 +3469,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -2555,6 +3491,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void StencilThenCoverStrokePathNV(uint path, int reference, uint mask, GLPathCoverMode coverMode)
 		{
 			StencilThenCoverStrokePathNVNative(path, reference, mask, coverMode);
@@ -2570,11 +3510,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, float* transformValues)
 		{
 			TransformPathNVNative(resultPath, srcPath, transformType, transformValues);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
@@ -2583,6 +3531,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
@@ -2601,11 +3553,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, float* weights)
 		{
 			WeightPathsNVNative(resultPath, numPaths, paths, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, Span<uint> paths, float* weights)
 		{
 			fixed (uint* ppaths0 = paths)
@@ -2614,6 +3574,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, ref uint paths, float* weights)
 		{
 			fixed (uint* ppaths0 = &paths)
@@ -2622,6 +3586,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, Span<float> weights)
 		{
 			fixed (float* pweights0 = weights)
@@ -2630,6 +3598,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, ref float weights)
 		{
 			fixed (float* pweights0 = &weights)
@@ -2638,6 +3610,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, Span<uint> paths, Span<float> weights)
 		{
 			fixed (uint* ppaths0 = paths)
@@ -2649,6 +3625,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		public static void WeightPathsNV(uint resultPath, int numPaths, ref uint paths, ref float weights)
 		{
 			fixed (uint* ppaths0 = &paths)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_transform_feedback</remarks>
 		public static void DrawTransformFeedbackEXT(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackEXTNative(mode, id);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_transform_feedback</remarks>
 		public static void DrawTransformFeedbackInstancedEXT(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			DrawTransformFeedbackInstancedEXTNative(mode, id, instancecount);

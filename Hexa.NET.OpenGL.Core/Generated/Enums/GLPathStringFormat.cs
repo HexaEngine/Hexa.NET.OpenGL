@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathStringFormat : uint
 	{
+		/// <summary>
+		/// Specifies the SVG path format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SvgNv = unchecked((uint)0x9070),
+
+		/// <summary>
+		/// Specifies the PostScript path format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PsNv = unchecked((uint)0x9071),
 	}
 }

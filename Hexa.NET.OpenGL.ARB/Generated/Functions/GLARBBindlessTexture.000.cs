@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static ulong GetImageHandleARB(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			ulong ret = GetImageHandleARBNative(texture, level, layered, layer, format);
@@ -42,6 +46,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static ulong GetTextureHandleARB(uint texture)
 		{
 			ulong ret = GetTextureHandleARBNative(texture);
@@ -58,6 +66,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static ulong GetTextureSamplerHandleARB(uint texture, uint sampler)
 		{
 			ulong ret = GetTextureSamplerHandleARBNative(texture, sampler);
@@ -74,11 +86,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, ulong* @params)
 		{
 			GetVertexAttribLui64vARBNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, out ulong @params)
 		{
 			ulong pparams;
@@ -86,6 +106,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -104,6 +128,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static bool IsImageHandleResidentARB(ulong handle)
 		{
 			byte ret = IsImageHandleResidentARBNative(handle);
@@ -120,6 +148,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static bool IsTextureHandleResidentARB(ulong handle)
 		{
 			byte ret = IsTextureHandleResidentARBNative(handle);
@@ -136,6 +168,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void MakeImageHandleNonResidentARB(ulong handle)
 		{
 			MakeImageHandleNonResidentARBNative(handle);
@@ -151,6 +187,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void MakeImageHandleResidentARB(ulong handle, GLEnum access)
 		{
 			MakeImageHandleResidentARBNative(handle, access);
@@ -166,6 +206,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void MakeTextureHandleNonResidentARB(ulong handle)
 		{
 			MakeTextureHandleNonResidentARBNative(handle);
@@ -181,6 +225,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void MakeTextureHandleResidentARB(ulong handle)
 		{
 			MakeTextureHandleResidentARBNative(handle);
@@ -196,6 +244,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64ARB(uint program, int location, ulong value)
 		{
 			ProgramUniformHandleui64ARBNative(program, location, value);
@@ -211,11 +263,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64vARB(uint program, int location, int count, ulong* values)
 		{
 			ProgramUniformHandleui64vARBNative(program, location, count, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64vARB(uint program, int location, int count, Span<ulong> values)
 		{
 			fixed (ulong* pvalues0 = values)
@@ -224,6 +284,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void ProgramUniformHandleui64vARB(uint program, int location, int count, ref ulong values)
 		{
 			fixed (ulong* pvalues0 = &values)
@@ -242,6 +306,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void UniformHandleui64ARB(int location, ulong value)
 		{
 			UniformHandleui64ARBNative(location, value);
@@ -257,11 +325,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void UniformHandleui64vARB(int location, int count, ulong* value)
 		{
 			UniformHandleui64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void UniformHandleui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -270,6 +346,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void UniformHandleui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -288,6 +368,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void VertexAttribL1ui64ARB(uint index, ulong x)
 		{
 			VertexAttribL1ui64ARBNative(index, x);
@@ -303,11 +387,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void VertexAttribL1ui64vARB(uint index, ulong* v)
 		{
 			VertexAttribL1ui64vARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void VertexAttribL1ui64vARB(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
@@ -316,6 +408,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
 		public static void VertexAttribL1ui64vARB(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)

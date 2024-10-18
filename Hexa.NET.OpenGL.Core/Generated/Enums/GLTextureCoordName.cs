@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureCoordName : uint
 	{
+		/// <summary>
+		/// Specifies the S texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		S = unchecked((uint)0x2000),
+
+		/// <summary>
+		/// Specifies the T texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		T = unchecked((uint)0x2001),
+
+		/// <summary>
+		/// Specifies the R texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		R = unchecked((uint)0x2002),
+
+		/// <summary>
+		/// Specifies the Q texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Q = unchecked((uint)0x2003),
+
+		/// <summary>
+		/// Specifies the string for texture generation (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		GenStrOes = unchecked((uint)0x8D60),
 	}
 }

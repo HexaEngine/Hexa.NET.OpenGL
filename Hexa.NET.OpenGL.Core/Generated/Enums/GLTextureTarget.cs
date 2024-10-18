@@ -15,74 +15,418 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureTarget : uint
 	{
+		/// <summary>
+		/// Specifies a one-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture1D = unchecked((uint)0x0DE0),
+
+		/// <summary>
+		/// Specifies a two-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture2D = unchecked((uint)0x0DE1),
+
+		/// <summary>
+		/// Specifies a proxy texture for 1D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ProxyTexture1D = unchecked((uint)0x8063),
+
+		/// <summary>
+		/// Specifies a proxy texture for 1D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		ProxyTexture1DExt = unchecked((uint)0x8063),
+
+		/// <summary>
+		/// Specifies a proxy texture for 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ProxyTexture2D = unchecked((uint)0x8064),
+
+		/// <summary>
+		/// Specifies a proxy texture for 2D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		ProxyTexture2DExt = unchecked((uint)0x8064),
+
+		/// <summary>
+		/// Specifies a 3D texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture3D = unchecked((uint)0x806F),
+
+		/// <summary>
+		/// Specifies a 3D texture for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		Texture3DExt = unchecked((uint)0x806F),
+
+		/// <summary>
+		/// Specifies a 3D texture for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Texture3DOes = unchecked((uint)0x806F),
+
+		/// <summary>
+		/// Specifies a proxy texture for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ProxyTexture3D = unchecked((uint)0x8070),
+
+		/// <summary>
+		/// Specifies a proxy texture for 3D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		ProxyTexture3DExt = unchecked((uint)0x8070),
+
+		/// <summary>
+		/// Specifies detail texture for 2D textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DetailTexture2DSgis = unchecked((uint)0x8095),
+
+		/// <summary>
+		/// Specifies a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Texture4DSgis = unchecked((uint)0x8134),
+
+		/// <summary>
+		/// Specifies a proxy for a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ProxyTexture4DSgis = unchecked((uint)0x8135),
+
+		/// <summary>
+		/// Specifies a rectangle texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Rectangle = unchecked((uint)0x84F5),
+
+		/// <summary>
+		/// Specifies a rectangle texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_rectangle</remarks>
 		RectangleArb = unchecked((uint)0x84F5),
+
+		/// <summary>
+		/// Specifies a rectangle texture (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_rectangle</remarks>
 		RectangleNv = unchecked((uint)0x84F5),
+
+		/// <summary>
+		/// Specifies a proxy for rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		ProxyTextureRectangle = unchecked((uint)0x84F7),
+
+		/// <summary>
+		/// Specifies a proxy for rectangle textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_rectangle</remarks>
 		ProxyTextureRectangleArb = unchecked((uint)0x84F7),
+
+		/// <summary>
+		/// Specifies a proxy for rectangle textures (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_rectangle</remarks>
 		ProxyTextureRectangleNv = unchecked((uint)0x84F7),
+
+		/// <summary>
+		/// Specifies a cube map texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		CubeMap = unchecked((uint)0x8513),
+
+		/// <summary>
+		/// Specifies a cube map texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapArb = unchecked((uint)0x8513),
+
+		/// <summary>
+		/// Specifies a cube map texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapExt = unchecked((uint)0x8513),
+
+		/// <summary>
+		/// Specifies a cube map texture (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapOes = unchecked((uint)0x8513),
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CubeMapPositiveX = unchecked((uint)0x8515),
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapPositiveXArb = unchecked((uint)0x8515),
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapPositiveXExt = unchecked((uint)0x8515),
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapPositiveXOes = unchecked((uint)0x8515),
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CubeMapNegativeX = unchecked((uint)0x8516),
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapNegativeXArb = unchecked((uint)0x8516),
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapNegativeXExt = unchecked((uint)0x8516),
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapNegativeXOes = unchecked((uint)0x8516),
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CubeMapPositiveY = unchecked((uint)0x8517),
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapPositiveYArb = unchecked((uint)0x8517),
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapPositiveYExt = unchecked((uint)0x8517),
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapPositiveYOes = unchecked((uint)0x8517),
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CubeMapNegativeY = unchecked((uint)0x8518),
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapNegativeYArb = unchecked((uint)0x8518),
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapNegativeYExt = unchecked((uint)0x8518),
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapNegativeYOes = unchecked((uint)0x8518),
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CubeMapPositiveZ = unchecked((uint)0x8519),
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapPositiveZArb = unchecked((uint)0x8519),
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapPositiveZExt = unchecked((uint)0x8519),
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapPositiveZOes = unchecked((uint)0x8519),
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CubeMapNegativeZ = unchecked((uint)0x851A),
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		CubeMapNegativeZArb = unchecked((uint)0x851A),
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		CubeMapNegativeZExt = unchecked((uint)0x851A),
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapNegativeZOes = unchecked((uint)0x851A),
+
+		/// <summary>
+		/// Specifies a proxy for cube map textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ProxyTextureCubeMap = unchecked((uint)0x851B),
+
+		/// <summary>
+		/// Specifies a proxy for cube map textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		ProxyTextureCubeMapArb = unchecked((uint)0x851B),
+
+		/// <summary>
+		/// Specifies a proxy for cube map textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		ProxyTextureCubeMapExt = unchecked((uint)0x851B),
+
+		/// <summary>
+		/// Specifies a 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture1DArray = unchecked((uint)0x8C18),
+
+		/// <summary>
+		/// Specifies a proxy for a 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ProxyTexture1DArray = unchecked((uint)0x8C19),
+
+		/// <summary>
+		/// Specifies a proxy for a 1D array texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array</remarks>
 		ProxyTexture1DArrayExt = unchecked((uint)0x8C19),
+
+		/// <summary>
+		/// Specifies a 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture2DArray = unchecked((uint)0x8C1A),
+
+		/// <summary>
+		/// Specifies a proxy for a 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ProxyTexture2DArray = unchecked((uint)0x8C1B),
+
+		/// <summary>
+		/// Specifies a proxy for a 2D array texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array</remarks>
 		ProxyTexture2DArrayExt = unchecked((uint)0x8C1B),
+
+		/// <summary>
+		/// Specifies a texture buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Buffer = unchecked((uint)0x8C2A),
+
+		/// <summary>
+		/// Specifies the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_internalformat_query2<br/>GL_NV_internalformat_sample_query</remarks>
 		Renderbuffer = unchecked((uint)0x8D41),
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		CubeMapArray = unchecked((uint)0x9009),
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map_array</remarks>
 		CubeMapArrayArb = unchecked((uint)0x9009),
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapArrayExt = unchecked((uint)0x9009),
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CubeMapArrayOes = unchecked((uint)0x9009),
+
+		/// <summary>
+		/// Specifies a proxy texture for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ProxyTextureCubeMapArray = unchecked((uint)0x900B),
+
+		/// <summary>
+		/// Specifies a proxy texture for cube map arrays (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map_array</remarks>
 		ProxyTextureCubeMapArrayArb = unchecked((uint)0x900B),
+
+		/// <summary>
+		/// Specifies a 2D multisample texture target.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_texture_multisample<br/>GL_NV_internalformat_sample_query</remarks>
 		Texture2DMultisample = unchecked((uint)0x9100),
+
+		/// <summary>
+		/// Specifies a proxy target for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		ProxyTexture2DMultisample = unchecked((uint)0x9101),
+
+		/// <summary>
+		/// Specifies a 2D multisample array texture target.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_texture_multisample<br/>GL_NV_internalformat_sample_query</remarks>
 		Texture2DMultisampleArray = unchecked((uint)0x9102),
+
+		/// <summary>
+		/// Specifies a proxy target for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		ProxyTexture2DMultisampleArray = unchecked((uint)0x9103),
 	}
 }

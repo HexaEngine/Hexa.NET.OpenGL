@@ -15,47 +15,256 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLColorBuffer : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Front left color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FrontLeft = unchecked((uint)0x0400),
+
+		/// <summary>
+		/// Front right color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FrontRight = unchecked((uint)0x0401),
+
+		/// <summary>
+		/// Back left color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BackLeft = unchecked((uint)0x0402),
+
+		/// <summary>
+		/// Back right color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BackRight = unchecked((uint)0x0403),
+
+		/// <summary>
+		/// Front color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Front = unchecked((uint)0x0404),
+
+		/// <summary>
+		/// Back color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_1_compatibility</remarks>
 		Back = unchecked((uint)0x0405),
+
+		/// <summary>
+		/// Left color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Left = unchecked((uint)0x0406),
+
+		/// <summary>
+		/// Right color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Right = unchecked((uint)0x0407),
+
+		/// <summary>
+		/// Both front and back color buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FrontAndBack = unchecked((uint)0x0408),
+
+		/// <summary>
+		/// Specifies the first color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment0 = unchecked((uint)0x8CE0),
+
+		/// <summary>
+		/// Specifies the second color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment1 = unchecked((uint)0x8CE1),
+
+		/// <summary>
+		/// Specifies the third color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment2 = unchecked((uint)0x8CE2),
+
+		/// <summary>
+		/// Specifies the fourth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment3 = unchecked((uint)0x8CE3),
+
+		/// <summary>
+		/// Specifies the fifth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment4 = unchecked((uint)0x8CE4),
+
+		/// <summary>
+		/// Specifies the sixth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment5 = unchecked((uint)0x8CE5),
+
+		/// <summary>
+		/// Specifies the seventh color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment6 = unchecked((uint)0x8CE6),
+
+		/// <summary>
+		/// Specifies the eighth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment7 = unchecked((uint)0x8CE7),
+
+		/// <summary>
+		/// Specifies the ninth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment8 = unchecked((uint)0x8CE8),
+
+		/// <summary>
+		/// Specifies the tenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment9 = unchecked((uint)0x8CE9),
+
+		/// <summary>
+		/// Specifies the eleventh color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment10 = unchecked((uint)0x8CEA),
+
+		/// <summary>
+		/// Specifies the twelfth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment11 = unchecked((uint)0x8CEB),
+
+		/// <summary>
+		/// Specifies the thirteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment12 = unchecked((uint)0x8CEC),
+
+		/// <summary>
+		/// Specifies the fourteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment13 = unchecked((uint)0x8CED),
+
+		/// <summary>
+		/// Specifies the fifteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment14 = unchecked((uint)0x8CEE),
+
+		/// <summary>
+		/// Specifies the sixteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Attachment15 = unchecked((uint)0x8CEF),
+
+		/// <summary>
+		/// Specifies the seventeenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment16 = unchecked((uint)0x8CF0),
+
+		/// <summary>
+		/// Specifies the eighteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment17 = unchecked((uint)0x8CF1),
+
+		/// <summary>
+		/// Specifies the nineteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment18 = unchecked((uint)0x8CF2),
+
+		/// <summary>
+		/// Specifies the twentieth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment19 = unchecked((uint)0x8CF3),
+
+		/// <summary>
+		/// Specifies the twenty-first color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment20 = unchecked((uint)0x8CF4),
+
+		/// <summary>
+		/// Specifies the twenty-second color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment21 = unchecked((uint)0x8CF5),
+
+		/// <summary>
+		/// Specifies the twenty-third color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment22 = unchecked((uint)0x8CF6),
+
+		/// <summary>
+		/// Specifies the twenty-fourth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment23 = unchecked((uint)0x8CF7),
+
+		/// <summary>
+		/// Specifies the twenty-fifth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment24 = unchecked((uint)0x8CF8),
+
+		/// <summary>
+		/// Specifies the twenty-sixth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment25 = unchecked((uint)0x8CF9),
+
+		/// <summary>
+		/// Specifies the twenty-seventh color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment26 = unchecked((uint)0x8CFA),
+
+		/// <summary>
+		/// Specifies the twenty-eighth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment27 = unchecked((uint)0x8CFB),
+
+		/// <summary>
+		/// Specifies the twenty-ninth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment28 = unchecked((uint)0x8CFC),
+
+		/// <summary>
+		/// Specifies the thirtieth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment29 = unchecked((uint)0x8CFD),
+
+		/// <summary>
+		/// Specifies the thirty-first color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment30 = unchecked((uint)0x8CFE),
+
+		/// <summary>
+		/// Specifies the thirty-second color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Attachment31 = unchecked((uint)0x8CFF),
 	}
 }

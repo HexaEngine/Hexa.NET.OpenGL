@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLLightModelParameter : uint
 	{
+		/// <summary>
+		/// Specifies whether local viewer lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LocalViewer = unchecked((uint)0x0B51),
+
+		/// <summary>
+		/// Specifies if two-sided lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TwoSide = unchecked((uint)0x0B52),
+
+		/// <summary>
+		/// Specifies the ambient light color.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Ambient = unchecked((uint)0x0B53),
+
+		/// <summary>
+		/// Specifies color control for lighting.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorControl = unchecked((uint)0x81F8),
+
+		/// <summary>
+		/// Specifies color control for lighting (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
 		ColorControlExt = unchecked((uint)0x81F8),
 	}
 }

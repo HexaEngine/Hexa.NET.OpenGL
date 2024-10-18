@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFragmentOp2ATI : uint
 	{
+		/// <summary>
+		/// Specifies the addition operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		AddAti = unchecked((uint)0x8963),
+
+		/// <summary>
+		/// Specifies the multiplication operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		MulAti = unchecked((uint)0x8964),
+
+		/// <summary>
+		/// Specifies the subtraction operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SubAti = unchecked((uint)0x8965),
+
+		/// <summary>
+		/// Specifies the dot product of three components in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Dot3Ati = unchecked((uint)0x8966),
+
+		/// <summary>
+		/// Specifies the dot product of four components in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Dot4Ati = unchecked((uint)0x8967),
 	}
 }

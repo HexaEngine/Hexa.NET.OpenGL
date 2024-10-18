@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, void* pointer)
 		{
 			FogCoordPointerEXTNative(type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, nint pointer)
 		{
 			FogCoordPointerEXTNative(type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordPointerEXT<TPointer>(GLFogPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoorddEXT(double coord)
 		{
 			FogCoorddEXTNative(coord);
@@ -69,11 +85,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoorddvEXT(double* coord)
 		{
 			FogCoorddvEXTNative(coord);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoorddvEXT(Span<double> coord)
 		{
 			fixed (double* pcoord0 = coord)
@@ -82,6 +106,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoorddvEXT(ref double coord)
 		{
 			fixed (double* pcoord0 = &coord)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordfEXT(float coord)
 		{
 			FogCoordfEXTNative(coord);
@@ -115,11 +147,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordfvEXT(float* coord)
 		{
 			FogCoordfvEXTNative(coord);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordfvEXT(Span<float> coord)
 		{
 			fixed (float* pcoord0 = coord)
@@ -128,6 +168,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		public static void FogCoordfvEXT(ref float coord)
 		{
 			fixed (float* pcoord0 = &coord)

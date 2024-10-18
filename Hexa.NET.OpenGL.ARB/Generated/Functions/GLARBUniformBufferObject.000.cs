@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a buffer object to an indexed buffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void BindBufferBase(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			BindBufferBaseNative(target, index, buffer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a range within a buffer object to an indexed buffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void BindBufferRange(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			BindBufferRangeNative(target, index, buffer, offset, size);
@@ -56,11 +64,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, byte* uniformBlockName)
 		{
 			GetActiveUniformBlockNameNative(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, Span<int> length, byte* uniformBlockName)
 		{
 			fixed (int* plength0 = length)
@@ -69,6 +85,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, ref int length, byte* uniformBlockName)
 		{
 			fixed (int* plength0 = &length)
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, string uniformBlockName)
 		{
 			byte* pStr0 = null;
@@ -103,6 +127,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, Span<byte> uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = uniformBlockName)
@@ -111,6 +139,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, ref byte uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = &uniformBlockName)
@@ -119,6 +151,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, Span<int> length, Span<byte> uniformBlockName)
 		{
 			fixed (int* plength0 = length)
@@ -130,6 +166,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, ref int length, ref byte uniformBlockName)
 		{
 			fixed (int* plength0 = &length)
@@ -151,11 +191,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, int* @params)
 		{
 			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, out int @params)
 		{
 			int pparams;
@@ -163,6 +211,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -181,11 +233,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, byte* uniformName)
 		{
 			GetActiveUniformNameNative(program, uniformIndex, bufSize, length, uniformName);
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, Span<int> length, byte* uniformName)
 		{
 			fixed (int* plength0 = length)
@@ -194,6 +254,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, ref int length, byte* uniformName)
 		{
 			fixed (int* plength0 = &length)
@@ -202,6 +266,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, string uniformName)
 		{
 			byte* pStr0 = null;
@@ -228,6 +296,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, Span<byte> uniformName)
 		{
 			fixed (byte* puniformName0 = uniformName)
@@ -236,6 +308,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, ref byte uniformName)
 		{
 			fixed (byte* puniformName0 = &uniformName)
@@ -244,6 +320,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, Span<int> length, Span<byte> uniformName)
 		{
 			fixed (int* plength0 = length)
@@ -255,6 +335,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, ref int length, ref byte uniformName)
 		{
 			fixed (int* plength0 = &length)
@@ -276,11 +360,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, int* @params)
 		{
 			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, @params);
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, out int @params)
 		{
 			int pparams;
@@ -288,6 +380,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -296,6 +392,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, Span<uint> uniformIndices, GLUniformPName pname, int* @params)
 		{
 			fixed (uint* puniformIndices0 = uniformIndices)
@@ -304,6 +404,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, ref uint uniformIndices, GLUniformPName pname, int* @params)
 		{
 			fixed (uint* puniformIndices0 = &uniformIndices)
@@ -322,11 +426,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetIntegeri_v(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -335,6 +447,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetIntegeri_v(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -353,12 +469,20 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static uint GetUniformBlockIndex(uint program, byte* uniformBlockName)
 		{
 			uint ret = GetUniformBlockIndexNative(program, uniformBlockName);
 			return ret;
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static uint GetUniformBlockIndex(uint program, string uniformBlockName)
 		{
 			byte* pStr0 = null;
@@ -386,6 +510,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static uint GetUniformBlockIndex(uint program, Span<byte> uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = uniformBlockName)
@@ -395,6 +523,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static uint GetUniformBlockIndex(uint program, ref byte uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = &uniformBlockName)
@@ -414,11 +546,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, uint* uniformIndices)
 		{
 			GetUniformIndicesNative(program, uniformCount, uniformNames, uniformIndices);
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, Span<uint> uniformIndices)
 		{
 			fixed (uint* puniformIndices0 = uniformIndices)
@@ -427,6 +567,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the index of a named uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, ref uint uniformIndices)
 		{
 			fixed (uint* puniformIndices0 = &uniformIndices)
@@ -445,6 +589,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Assign a binding point to an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
 		{
 			UniformBlockBindingNative(program, uniformBlockIndex, uniformBlockBinding);

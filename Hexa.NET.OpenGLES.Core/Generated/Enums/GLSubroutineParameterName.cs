@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSubroutineParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the size of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformSize = unchecked((uint)0x8A38),
+
+		/// <summary>
+		/// Specifies the length of the name of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformNameLength = unchecked((uint)0x8A39),
+
+		/// <summary>
+		/// Specifies the number of compatible subroutines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query<br/>GL_ARB_shader_subroutine</remarks>
 		NumCompatibleSubroutines = unchecked((uint)0x8E4A),
+
+		/// <summary>
+		/// Indicates that subroutines in a shader program are compatible with each other.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query<br/>GL_ARB_shader_subroutine</remarks>
 		CompatibleSubroutines = unchecked((uint)0x8E4B),
 	}
 }

@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLOcclusionQueryEventMaskAMD : uint
 	{
+		/// <summary>
+		/// Event bit for depth pass queries (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
 		DepthPassEventBitAmd = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Event bit for depth fail queries (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
 		DepthFailEventBitAmd = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Event bit for stencil fail queries (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
 		StencilFailEventBitAmd = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Event bit for depth bounds fail queries (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
 		DepthBoundsFailEventBitAmd = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// All event bits for queries (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
 		AllEventBitsAmd = unchecked((uint)0xFFFFFFFF),
 	}
 }

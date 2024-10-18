@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLMemoryObjectParameterName : uint
 	{
+		/// <summary>
+		/// Indicates whether a memory object is dedicated (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		DedicatedMemoryObjectExt = unchecked((uint)0x9581),
+
+		/// <summary>
+		/// Indicates that a memory object is protected (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		ProtectedMemoryObjectExt = unchecked((uint)0x959B),
 	}
 }

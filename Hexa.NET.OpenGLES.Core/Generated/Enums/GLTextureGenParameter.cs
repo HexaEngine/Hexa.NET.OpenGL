@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureGenParameter : uint
 	{
+		/// <summary>
+		/// Specifies the texture generation mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Mode = unchecked((uint)0x2500),
+
+		/// <summary>
+		/// Specifies the texture generation mode for OES extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		ModeOes = unchecked((uint)0x2500),
+
+		/// <summary>
+		/// Specifies the object plane for texture generation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ObjectPlane = unchecked((uint)0x2501),
+
+		/// <summary>
+		/// Specifies the eye plane for texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_fog_distance</remarks>
 		EyePlane = unchecked((uint)0x2502),
+
+		/// <summary>
+		/// Specifies the eye point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		EyePointSgis = unchecked((uint)0x81F4),
+
+		/// <summary>
+		/// Specifies the object point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectPointSgis = unchecked((uint)0x81F5),
+
+		/// <summary>
+		/// Specifies the eye line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		EyeLineSgis = unchecked((uint)0x81F6),
+
+		/// <summary>
+		/// Specifies the object line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectLineSgis = unchecked((uint)0x81F7),
 	}
 }

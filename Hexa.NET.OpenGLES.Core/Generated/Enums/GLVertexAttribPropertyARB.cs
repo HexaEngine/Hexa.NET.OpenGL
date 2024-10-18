@@ -15,18 +15,82 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexAttribPropertyARB : uint
 	{
+		/// <summary>
+		/// Specifies the vertex attribute binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		Binding = unchecked((uint)0x82D4),
+
+		/// <summary>
+		/// Specifies the relative offset for vertex attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		RelativeOffset = unchecked((uint)0x82D5),
+
+		/// <summary>
+		/// Specifies whether the vertex attribute array is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayEnabled = unchecked((uint)0x8622),
+
+		/// <summary>
+		/// Specifies the size of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArraySize = unchecked((uint)0x8623),
+
+		/// <summary>
+		/// Specifies the stride of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayStride = unchecked((uint)0x8624),
+
+		/// <summary>
+		/// Specifies the type of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayType = unchecked((uint)0x8625),
+
+		/// <summary>
+		/// Specifies the current vertex attribute.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentVertexAttrib = unchecked((uint)0x8626),
+
+		/// <summary>
+		/// Specifies long vertex attribute array functionality.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayLong = unchecked((uint)0x874E),
+
+		/// <summary>
+		/// Specifies whether vertex attributes are normalized.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayNormalized = unchecked((uint)0x886A),
+
+		/// <summary>
+		/// Specifies the binding point for the vertex attrib array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayBufferBinding = unchecked((uint)0x889F),
+
+		/// <summary>
+		/// Specifies if the vertex attribute array contains integer data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayInteger = unchecked((uint)0x88FD),
+
+		/// <summary>
+		/// Specifies if the vertex attribute array contains integer data (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4</remarks>
 		ArrayIntegerExt = unchecked((uint)0x88FD),
+
+		/// <summary>
+		/// Specifies the divisor for a vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayDivisor = unchecked((uint)0x88FE),
 	}
 }

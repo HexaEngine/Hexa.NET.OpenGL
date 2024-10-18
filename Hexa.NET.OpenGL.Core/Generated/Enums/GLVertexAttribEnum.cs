@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLVertexAttribEnum : uint
 	{
+		/// <summary>
+		/// Specifies whether the vertex attribute array is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArrayEnabled = unchecked((uint)0x8622),
+
+		/// <summary>
+		/// Specifies the size of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArraySize = unchecked((uint)0x8623),
+
+		/// <summary>
+		/// Specifies the stride of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArrayStride = unchecked((uint)0x8624),
+
+		/// <summary>
+		/// Specifies the type of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArrayType = unchecked((uint)0x8625),
+
+		/// <summary>
+		/// Specifies the current vertex attribute.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CurrentVertexAttrib = unchecked((uint)0x8626),
+
+		/// <summary>
+		/// Specifies whether vertex attributes are normalized.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArrayNormalized = unchecked((uint)0x886A),
+
+		/// <summary>
+		/// Specifies the binding point for the vertex attrib array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ArrayBufferBinding = unchecked((uint)0x889F),
+
+		/// <summary>
+		/// Specifies if the vertex attribute array contains integer data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArrayInteger = unchecked((uint)0x88FD),
+
+		/// <summary>
+		/// Specifies the divisor for a vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X</remarks>
 		ArrayDivisor = unchecked((uint)0x88FE),
 	}
 }

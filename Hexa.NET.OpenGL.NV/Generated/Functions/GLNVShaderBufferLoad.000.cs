@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ulong* @params)
 		{
 			GetBufferParameterui64vNVNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, out ulong @params)
 		{
 			ulong pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetIntegerui64vNV(GLEnum value, ulong* result)
 		{
 			GetIntegerui64vNVNative(value, result);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetIntegerui64vNV(GLEnum value, Span<ulong> result)
 		{
 			fixed (ulong* presult0 = result)
@@ -69,6 +89,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetIntegerui64vNV(GLEnum value, ref ulong result)
 		{
 			fixed (ulong* presult0 = &result)
@@ -87,11 +111,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ulong* @params)
 		{
 			GetNamedBufferParameterui64vNVNative(buffer, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, out ulong @params)
 		{
 			ulong pparams;
@@ -99,6 +131,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -117,11 +153,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformui64vNV(uint program, int location, ulong* @params)
 		{
 			GetUniformui64vNVNative(program, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformui64vNV(uint program, int location, out ulong @params)
 		{
 			ulong pparams;
@@ -129,6 +173,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
 		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -147,6 +195,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static bool IsBufferResidentNV(GLEnum target)
 		{
 			byte ret = IsBufferResidentNVNative(target);
@@ -163,6 +215,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static bool IsNamedBufferResidentNV(uint buffer)
 		{
 			byte ret = IsNamedBufferResidentNVNative(buffer);
@@ -179,6 +235,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void MakeBufferNonResidentNV(GLEnum target)
 		{
 			MakeBufferNonResidentNVNative(target);
@@ -194,6 +254,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void MakeBufferResidentNV(GLEnum target, GLEnum access)
 		{
 			MakeBufferResidentNVNative(target, access);
@@ -209,6 +273,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void MakeNamedBufferNonResidentNV(uint buffer)
 		{
 			MakeNamedBufferNonResidentNVNative(buffer);
@@ -224,6 +292,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void MakeNamedBufferResidentNV(uint buffer, GLEnum access)
 		{
 			MakeNamedBufferResidentNVNative(buffer, access);
@@ -239,6 +311,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void ProgramUniformui64NV(uint program, int location, ulong value)
 		{
 			ProgramUniformui64NVNative(program, location, value);
@@ -254,11 +330,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void ProgramUniformui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniformui64vNVNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void ProgramUniformui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -267,6 +351,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void ProgramUniformui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -285,6 +373,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void Uniformui64NV(int location, ulong value)
 		{
 			Uniformui64NVNative(location, value);
@@ -300,11 +392,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void Uniformui64vNV(int location, int count, ulong* value)
 		{
 			Uniformui64vNVNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void Uniformui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -313,6 +413,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
 		public static void Uniformui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)

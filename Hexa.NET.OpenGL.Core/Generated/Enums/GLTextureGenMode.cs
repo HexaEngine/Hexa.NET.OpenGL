@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureGenMode : uint
 	{
+		/// <summary>
+		/// Specifies eye linear texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		EyeLinear = unchecked((uint)0x2400),
+
+		/// <summary>
+		/// Specifies object linear texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ObjectLinear = unchecked((uint)0x2401),
+
+		/// <summary>
+		/// Specifies spherical mapping for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		SphereMap = unchecked((uint)0x2402),
+
+		/// <summary>
+		/// Specifies the eye distance to a point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		EyeDistanceToPointSgis = unchecked((uint)0x81F0),
+
+		/// <summary>
+		/// Specifies the object distance to a point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectDistanceToPointSgis = unchecked((uint)0x81F1),
+
+		/// <summary>
+		/// Specifies the eye distance to a line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		EyeDistanceToLineSgis = unchecked((uint)0x81F2),
+
+		/// <summary>
+		/// Specifies the object distance to a line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectDistanceToLineSgis = unchecked((uint)0x81F3),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_primitive_bounding_box</remarks>
 		public static void PrimitiveBoundingBoxOES(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			PrimitiveBoundingBoxOESNative(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);

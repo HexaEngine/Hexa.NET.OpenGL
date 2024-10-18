@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLShaderType : uint
 	{
+		/// <summary>
+		/// Specifies a fragment shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FragmentShader = unchecked((uint)0x8B30),
+
+		/// <summary>
+		/// Specifies a fragment shader object (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_shader</remarks>
 		FragmentShaderArb = unchecked((uint)0x8B30),
+
+		/// <summary>
+		/// Specifies a vertex shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VertexShader = unchecked((uint)0x8B31),
+
+		/// <summary>
+		/// Specifies a vertex shader object (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		VertexShaderArb = unchecked((uint)0x8B31),
+
+		/// <summary>
+		/// Specifies the geometry shader type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GeometryShader = unchecked((uint)0x8DD9),
+
+		/// <summary>
+		/// Specifies the tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		TessEvaluationShader = unchecked((uint)0x8E87),
+
+		/// <summary>
+		/// Specifies the tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		TessControlShader = unchecked((uint)0x8E88),
+
+		/// <summary>
+		/// Specifies a compute shader stage.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		ComputeShader = unchecked((uint)0x91B9),
 	}
 }

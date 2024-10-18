@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void BeginQueryIndexed(GLQueryTarget target, uint index, uint id)
 		{
 			BeginQueryIndexedNative(target, index, id);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives using a count derived from a specifed stream of a transform feedback object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void DrawTransformFeedbackStream(GLPrimitiveType mode, uint id, uint stream)
 		{
 			DrawTransformFeedbackStreamNative(mode, id, stream);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void EndQueryIndexed(GLQueryTarget target, uint index)
 		{
 			EndQueryIndexedNative(target, index);
@@ -71,11 +83,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Return parameters of an indexed query object target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, int* @params)
 		{
 			GetQueryIndexedivNative(target, index, pname, @params);
 		}
 
+		/// <summary>
+		/// Return parameters of an indexed query object target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, out int @params)
 		{
 			int pparams;
@@ -83,6 +103,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Return parameters of an indexed query object target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

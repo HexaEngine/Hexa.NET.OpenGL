@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPatchParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the number of vertices per patch.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		Vertices = unchecked((uint)0x8E72),
+
+		/// <summary>
+		/// Specifies the default inner tessellation level.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		DefaultInnerLevel = unchecked((uint)0x8E73),
+
+		/// <summary>
+		/// Specifies the default outer tessellation level.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		DefaultOuterLevel = unchecked((uint)0x8E74),
 	}
 }

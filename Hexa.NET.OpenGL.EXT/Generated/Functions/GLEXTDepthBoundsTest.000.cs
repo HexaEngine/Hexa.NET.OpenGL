@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_depth_bounds_test</remarks>
 		public static void DepthBoundsEXT(double zmin, double zmax)
 		{
 			DepthBoundsEXTNative(zmin, zmax);

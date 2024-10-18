@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void ArrayElementEXT(int i)
 		{
 			ArrayElementEXTNative(i);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void ColorPointerEXT(int size, GLColorPointerType type, int stride, int count, void* pointer)
 		{
 			ColorPointerEXTNative(size, type, stride, count, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void ColorPointerEXT(int size, GLColorPointerType type, int stride, int count, nint pointer)
 		{
 			ColorPointerEXTNative(size, type, stride, count, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void ColorPointerEXT<TPointer>(int size, GLColorPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -69,6 +85,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void DrawArraysEXT(GLPrimitiveType mode, int first, int count)
 		{
 			DrawArraysEXTNative(mode, first, count);
@@ -84,11 +104,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void EdgeFlagPointerEXT(int stride, int count, byte* pointer)
 		{
 			EdgeFlagPointerEXTNative(stride, count, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void EdgeFlagPointerEXT(int stride, int count, string pointer)
 		{
 			byte* pStr0 = null;
@@ -115,6 +143,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void EdgeFlagPointerEXT(int stride, int count, Span<byte> pointer)
 		{
 			fixed (byte* ppointer0 = pointer)
@@ -123,6 +155,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void EdgeFlagPointerEXT(int stride, int count, ref byte pointer)
 		{
 			fixed (byte* ppointer0 = &pointer)
@@ -141,6 +177,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void GetPointervEXT(GLGetPointervPName pname, void** @params)
 		{
 			GetPointervEXTNative(pname, @params);
@@ -156,16 +196,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void IndexPointerEXT(GLIndexPointerType type, int stride, int count, void* pointer)
 		{
 			IndexPointerEXTNative(type, stride, count, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void IndexPointerEXT(GLIndexPointerType type, int stride, int count, nint pointer)
 		{
 			IndexPointerEXTNative(type, stride, count, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void IndexPointerEXT<TPointer>(GLIndexPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -184,16 +236,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void NormalPointerEXT(GLNormalPointerType type, int stride, int count, void* pointer)
 		{
 			NormalPointerEXTNative(type, stride, count, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void NormalPointerEXT(GLNormalPointerType type, int stride, int count, nint pointer)
 		{
 			NormalPointerEXTNative(type, stride, count, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void NormalPointerEXT<TPointer>(GLNormalPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -212,16 +276,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void TexCoordPointerEXT(int size, GLTexCoordPointerType type, int stride, int count, void* pointer)
 		{
 			TexCoordPointerEXTNative(size, type, stride, count, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void TexCoordPointerEXT(int size, GLTexCoordPointerType type, int stride, int count, nint pointer)
 		{
 			TexCoordPointerEXTNative(size, type, stride, count, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void TexCoordPointerEXT<TPointer>(int size, GLTexCoordPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -240,16 +316,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void VertexPointerEXT(int size, GLVertexPointerType type, int stride, int count, void* pointer)
 		{
 			VertexPointerEXTNative(size, type, stride, count, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void VertexPointerEXT(int size, GLVertexPointerType type, int stride, int count, nint pointer)
 		{
 			VertexPointerEXTNative(size, type, stride, count, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		public static void VertexPointerEXT<TPointer>(int size, GLVertexPointerType type, int stride, int count, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

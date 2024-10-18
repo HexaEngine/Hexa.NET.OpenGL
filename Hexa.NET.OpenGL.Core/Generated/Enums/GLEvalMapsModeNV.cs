@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLEvalMapsModeNV : uint
 	{
+		/// <summary>
+		/// Specifies fill mode for polygons for NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		FillNv = unchecked((uint)0x1B02),
 	}
 }

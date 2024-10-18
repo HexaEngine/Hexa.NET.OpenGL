@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexAttribLType : uint
 	{
+		/// <summary>
+		/// Specifies a double-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit<br/>GL_ARB_gpu_shader_fp64</remarks>
 		Double = unchecked((uint)0x140A),
 	}
 }

@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void DeleteFencesNV(int n, uint* fences)
 		{
 			DeleteFencesNVNative(n, fences);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void DeleteFencesN(uint fence)
 		{
 			DeleteFencesNVNative(1, &fence);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void DeleteFencesNV(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
@@ -44,6 +56,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void DeleteFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -62,6 +78,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void FinishFenceNV(uint fence)
 		{
 			FinishFenceNVNative(fence);
@@ -77,11 +97,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void GenFencesNV(int n, uint* fences)
 		{
 			GenFencesNVNative(n, fences);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static uint GenFencesN()
 		{
 			uint result;
@@ -89,6 +117,10 @@ namespace Hexa.NET.OpenGLES.NV
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void GenFencesNV(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
@@ -97,6 +129,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void GenFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -115,11 +151,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, int* @params)
 		{
 			GetFenceivNVNative(fence, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, out int @params)
 		{
 			int pparams;
@@ -127,6 +171,10 @@ namespace Hexa.NET.OpenGLES.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -145,6 +193,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static bool IsFenceNV(uint fence)
 		{
 			byte ret = IsFenceNVNative(fence);
@@ -161,6 +213,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static void SetFenceNV(uint fence, GLFenceConditionNV condition)
 		{
 			SetFenceNVNative(fence, condition);
@@ -176,6 +232,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		public static bool TestFenceNV(uint fence)
 		{
 			byte ret = TestFenceNVNative(fence);

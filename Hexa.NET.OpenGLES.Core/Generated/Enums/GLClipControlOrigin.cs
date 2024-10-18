@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLClipControlOrigin : uint
 	{
+		/// <summary>
+		/// Specifies that the lower-left corner is the origin for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		LowerLeft = unchecked((uint)0x8CA1),
+
+		/// <summary>
+		/// Specifies that the upper-left corner is the origin for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		UpperLeft = unchecked((uint)0x8CA2),
 	}
 }

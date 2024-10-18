@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLProgramTarget : uint
 	{
+		/// <summary>
+		/// Specifies text fragment shader behavior (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextFragmentShaderAti = unchecked((uint)0x8200),
+
+		/// <summary>
+		/// Specifies vertex program functionality (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program</remarks>
 		VertexProgramArb = unchecked((uint)0x8620),
+
+		/// <summary>
+		/// Specifies a fragment program (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program</remarks>
 		FragmentProgramArb = unchecked((uint)0x8804),
+
+		/// <summary>
+		/// Specifies the tessellation control program (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_tessellation_program5</remarks>
 		TessControlProgramNv = unchecked((uint)0x891E),
+
+		/// <summary>
+		/// Specifies the tessellation evaluation program (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_tessellation_program5</remarks>
 		TessEvaluationProgramNv = unchecked((uint)0x891F),
+
+		/// <summary>
+		/// Specifies the geometry program (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4</remarks>
 		GeometryProgramNv = unchecked((uint)0x8C26),
+
+		/// <summary>
+		/// Specifies a compute program object (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_compute_program5</remarks>
 		ComputeProgramNv = unchecked((uint)0x90FB),
 	}
 }

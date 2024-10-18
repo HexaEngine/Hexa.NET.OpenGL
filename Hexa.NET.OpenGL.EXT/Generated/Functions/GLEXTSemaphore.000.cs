@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void DeleteSemaphoresEXT(int n, uint* semaphores)
 		{
 			DeleteSemaphoresEXTNative(n, semaphores);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void DeleteSemaphoresEX(uint semaphore)
 		{
 			DeleteSemaphoresEXTNative(1, &semaphore);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void DeleteSemaphoresEXT(int n, Span<uint> semaphores)
 		{
 			fixed (uint* psemaphores0 = semaphores)
@@ -44,6 +56,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void DeleteSemaphoresEXT(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)
@@ -62,11 +78,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void GenSemaphoresEXT(int n, uint* semaphores)
 		{
 			GenSemaphoresEXTNative(n, semaphores);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static uint GenSemaphoresEX()
 		{
 			uint result;
@@ -74,6 +98,10 @@ namespace Hexa.NET.OpenGL.EXT
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void GenSemaphoresEXT(int n, Span<uint> semaphores)
 		{
 			fixed (uint* psemaphores0 = semaphores)
@@ -82,6 +110,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void GenSemaphoresEXT(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)
@@ -100,11 +132,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void GetSemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, ulong* @params)
 		{
 			GetSemaphoreParameterui64vEXTNative(semaphore, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void GetSemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, out ulong @params)
 		{
 			ulong pparams;
@@ -112,6 +152,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void GetSemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -130,11 +174,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, byte* data)
 		{
 			GetUnsignedBytevEXTNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, string data)
 		{
 			byte* pStr0 = null;
@@ -161,6 +213,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -169,6 +225,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -187,11 +247,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, byte* data)
 		{
 			GetUnsignedBytei_vEXTNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, string data)
 		{
 			byte* pStr0 = null;
@@ -218,6 +286,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -226,6 +298,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -244,6 +320,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static bool IsSemaphoreEXT(uint semaphore)
 		{
 			byte ret = IsSemaphoreEXTNative(semaphore);
@@ -260,11 +340,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, ulong* @params)
 		{
 			SemaphoreParameterui64vEXTNative(semaphore, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, out ulong @params)
 		{
 			ulong pparams;
@@ -272,6 +360,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SemaphoreParameterui64vEXT(uint semaphore, GLSemaphoreParameterName pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -290,11 +382,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, uint* textures, GLTextureLayout dstLayouts)
 		{
 			SignalSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, dstLayouts);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, uint* textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -303,6 +403,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, ref uint buffers, uint numTextureBarriers, uint* textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -311,6 +415,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -319,6 +427,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, ref uint textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -327,6 +439,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -338,6 +454,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, ref uint buffers, uint numTextureBarriers, ref uint textures, GLTextureLayout dstLayouts)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -359,11 +479,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, uint* textures, GLTextureLayout srcLayouts)
 		{
 			WaitSemaphoreEXTNative(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, srcLayouts);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, uint* textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -372,6 +500,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, ref uint buffers, uint numTextureBarriers, uint* textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -380,6 +512,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -388,6 +524,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, uint* buffers, uint numTextureBarriers, ref uint textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -396,6 +536,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, Span<uint> buffers, uint numTextureBarriers, Span<uint> textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -407,6 +551,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, ref uint buffers, uint numTextureBarriers, ref uint textures, GLTextureLayout srcLayouts)
 		{
 			fixed (uint* pbuffers0 = &buffers)

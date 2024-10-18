@@ -15,18 +15,82 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLErrorCode : uint
 	{
+		/// <summary>
+		/// Indicates no error occurred.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_robustness<br/>GL_KHR_robustness<br/>GL_EXT_robustness</remarks>
 		NoError = unchecked((uint)0),
+
+		/// <summary>
+		/// Indicates an invalid enum value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		InvalidEnum = unchecked((uint)0x0500),
+
+		/// <summary>
+		/// Indicates an invalid value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		InvalidValue = unchecked((uint)0x0501),
+
+		/// <summary>
+		/// Indicates an invalid operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		InvalidOperation = unchecked((uint)0x0502),
+
+		/// <summary>
+		/// Indicates a stack overflow error.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		StackOverflow = unchecked((uint)0x0503),
+
+		/// <summary>
+		/// Indicates a stack underflow error.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		StackUnderflow = unchecked((uint)0x0504),
+
+		/// <summary>
+		/// Indicates an out of memory error.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		OutOfMemory = unchecked((uint)0x0505),
+
+		/// <summary>
+		/// Indicates an invalid framebuffer operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		InvalidFramebufferOperation = unchecked((uint)0x0506),
+
+		/// <summary>
+		/// Invalid framebuffer operation, specific to EXT.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		InvalidFramebufferOperationExt = unchecked((uint)0x0506),
+
+		/// <summary>
+		/// Invalid framebuffer operation, specific to OES.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		InvalidFramebufferOperationOes = unchecked((uint)0x0506),
+
+		/// <summary>
+		/// Specifies an error condition when a table is too large for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		TableTooLargeExt = unchecked((uint)0x8031),
+
+		/// <summary>
+		/// Specifies an error condition when a table is too large.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		TableTooLarge = unchecked((uint)0x8031),
+
+		/// <summary>
+		/// Specifies an error condition when a texture is too large for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		TextureTooLargeExt = unchecked((uint)0x8065),
 	}
 }

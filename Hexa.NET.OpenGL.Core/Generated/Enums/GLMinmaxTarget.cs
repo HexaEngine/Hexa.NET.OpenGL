@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMinmaxTarget : uint
 	{
+		/// <summary>
+		/// Specifies min/max operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Minmax = unchecked((uint)0x802E),
 	}
 }

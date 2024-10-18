@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_buffer_object<br/>GL_EXT_texture_buffer</remarks>
 		public static void TexBufferEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferEXTNative(target, internalformat, buffer);

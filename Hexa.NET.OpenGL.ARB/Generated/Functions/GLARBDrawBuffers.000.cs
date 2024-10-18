@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_buffers</remarks>
 		public static void DrawBuffersARB(int n, GLDrawBufferMode bufs)
 		{
 			DrawBuffersARBNative(n, bufs);

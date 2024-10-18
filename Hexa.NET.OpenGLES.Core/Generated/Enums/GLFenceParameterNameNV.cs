@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFenceParameterNameNV : uint
 	{
+		/// <summary>
+		/// Specifies the status of a fence (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		StatusNv = unchecked((uint)0x84F3),
+
+		/// <summary>
+		/// Specifies the condition for a fence (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		ConditionNv = unchecked((uint)0x84F4),
 	}
 }

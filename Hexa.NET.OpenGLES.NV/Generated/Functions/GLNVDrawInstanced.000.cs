@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
 		public static void DrawArraysInstancedNV(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			DrawArraysInstancedNVNative(mode, first, count, primcount);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
 		public static void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedNVNative(mode, count, type, indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
 		public static void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedNVNative(mode, count, type, (void*)indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
 		public static void DrawElementsInstancedNV<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_MESA_resize_buffers</remarks>
 		public static void ResizeBuffersMESA()
 		{
 			ResizeBuffersMESANative();

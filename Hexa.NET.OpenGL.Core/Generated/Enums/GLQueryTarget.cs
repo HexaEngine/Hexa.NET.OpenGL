@@ -15,15 +15,64 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLQueryTarget : uint
 	{
+		/// <summary>
+		/// Specifies overflow in transform feedback operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		TransformFeedbackOverflow = unchecked((uint)0x82EC),
+
+		/// <summary>
+		/// Specifies the number of vertices submitted.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		VerticesSubmitted = unchecked((uint)0x82EE),
+
+		/// <summary>
+		/// Specifies the number of primitives submitted.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		PrimitivesSubmitted = unchecked((uint)0x82EF),
+
+		/// <summary>
+		/// Specifies the number of invocations of the vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		VertexShaderInvocations = unchecked((uint)0x82F0),
+
+		/// <summary>
+		/// Specifies the elapsed time since a specific event.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		TimeElapsed = unchecked((uint)0x88BF),
+
+		/// <summary>
+		/// Specifies the number of samples passed in an occlusion query.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		SamplesPassed = unchecked((uint)0x8914),
+
+		/// <summary>
+		/// Specifies if any samples passed in the current sample.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_occlusion_query2</remarks>
 		AnySamplesPassed = unchecked((uint)0x8C2F),
+
+		/// <summary>
+		/// Specifies the number of primitives generated.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		PrimitivesGenerated = unchecked((uint)0x8C87),
+
+		/// <summary>
+		/// Specifies the number of primitives written during transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackPrimitivesWritten = unchecked((uint)0x8C88),
+
+		/// <summary>
+		/// Indicates a conservative test for any samples passed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		AnySamplesPassedConservative = unchecked((uint)0x8D6A),
 	}
 }

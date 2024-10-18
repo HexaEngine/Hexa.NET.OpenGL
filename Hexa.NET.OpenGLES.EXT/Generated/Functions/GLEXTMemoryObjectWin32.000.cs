@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		public static void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, void* handle)
 		{
 			ImportMemoryWin32HandleEXTNative(memory, size, handleType, handle);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		public static void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, nint handle)
 		{
 			ImportMemoryWin32HandleEXTNative(memory, size, handleType, (void*)handle);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		public static void ImportMemoryWin32HandleEXT<THandle>(uint memory, ulong size, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
 		{
 			fixed (THandle* phandle0 = handle)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		public static void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, void* name)
 		{
 			ImportMemoryWin32NameEXTNative(memory, size, handleType, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		public static void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, nint name)
 		{
 			ImportMemoryWin32NameEXTNative(memory, size, handleType, (void*)name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		public static void ImportMemoryWin32NameEXT<TName>(uint memory, ulong size, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
 		{
 			fixed (TName* pname0 = name)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_EGL_image</remarks>
 		public static void EGLImageTargetRenderbufferStorageOES(GLEnum target, GLeglImageOES image)
 		{
 			EGLImageTargetRenderbufferStorageOESNative(target, image);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_EGL_image</remarks>
 		public static void EGLImageTargetTexture2DOES(GLEnum target, GLeglImageOES image)
 		{
 			EGLImageTargetTexture2DOESNative(target, image);

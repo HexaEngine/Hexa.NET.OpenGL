@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a named sampler to a texturing target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void BindSampler(uint unit, uint sampler)
 		{
 			BindSamplerNative(unit, sampler);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void DeleteSamplers(int count, uint* samplers)
 		{
 			DeleteSamplersNative(count, samplers);
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void DeleteSampler(uint sampler)
 		{
 			DeleteSamplersNative(1, &sampler);
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void DeleteSamplers(int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			}
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void DeleteSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -77,11 +97,19 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GenSamplers(int count, uint* samplers)
 		{
 			GenSamplersNative(count, samplers);
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static uint GenSampler()
 		{
 			uint result;
@@ -89,6 +117,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			return result;
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GenSamplers(int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
@@ -97,6 +129,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			}
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GenSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -115,11 +151,19 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* @params)
 		{
 			GetSamplerParameterfvNative(sampler, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
 		{
 			float pparams;
@@ -127,6 +171,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -145,11 +193,19 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* @params)
 		{
 			GetSamplerParameterivNative(sampler, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
 			int pparams;
@@ -157,6 +213,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -175,6 +235,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// Determine if a name corresponds to a sampler object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static bool IsSampler(uint sampler)
 		{
 			byte ret = IsSamplerNative(sampler);
@@ -191,6 +255,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void SamplerParameterf(uint sampler, GLSamplerParameterF pname, float param)
 		{
 			SamplerParameterfNative(sampler, pname, param);
@@ -206,11 +274,19 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* param)
 		{
 			SamplerParameterfvNative(sampler, pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
 		{
 			float pparam;
@@ -228,6 +304,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void SamplerParameteri(uint sampler, GLSamplerParameterI pname, int param)
 		{
 			SamplerParameteriNative(sampler, pname, param);
@@ -243,11 +323,19 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* param)
 		{
 			SamplerParameterivNative(sampler, pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
 		{
 			int pparam;

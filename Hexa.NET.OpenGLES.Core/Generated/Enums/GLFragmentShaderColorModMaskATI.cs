@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentShaderColorModMaskATI : uint
 	{
+		/// <summary>
+		/// 2X scaling bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		Gl2XBitAti = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Component bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		CompBitAti = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Negate channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		NegateBitAti = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Bias channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		BiasBitAti = unchecked((uint)0x00000008),
 	}
 }

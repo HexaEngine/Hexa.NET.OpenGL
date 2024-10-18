@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLLightEnvParameterSGIX : uint
 	{
+		/// <summary>
+		/// Specifies the mode of the light environment (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ModeSgix = unchecked((uint)0x8407),
 	}
 }

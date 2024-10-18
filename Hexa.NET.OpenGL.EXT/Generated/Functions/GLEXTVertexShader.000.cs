@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void BeginVertexShaderEXT()
 		{
 			BeginVertexShaderEXTNative();
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint BindLightParameterEXT(GLLightName light, GLLightParameter value)
 		{
 			uint ret = BindLightParameterEXTNative(light, value);
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint BindMaterialParameterEXT(GLTriangleFace face, GLMaterialParameter value)
 		{
 			uint ret = BindMaterialParameterEXTNative(face, value);
@@ -73,6 +85,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint BindParameterEXT(GLVertexShaderParameterEXT value)
 		{
 			uint ret = BindParameterEXTNative(value);
@@ -89,6 +105,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint BindTexGenParameterEXT(GLTextureUnit unit, GLTextureCoordName coord, GLTextureGenParameter value)
 		{
 			uint ret = BindTexGenParameterEXTNative(unit, coord, value);
@@ -105,6 +125,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint BindTextureUnitParameterEXT(GLTextureUnit unit, GLVertexShaderTextureUnitParameter value)
 		{
 			uint ret = BindTextureUnitParameterEXTNative(unit, value);
@@ -121,6 +145,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void BindVertexShaderEXT(uint id)
 		{
 			BindVertexShaderEXTNative(id);
@@ -136,6 +164,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void DeleteVertexShaderEXT(uint id)
 		{
 			DeleteVertexShaderEXTNative(id);
@@ -151,6 +183,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void DisableVariantClientStateEXT(uint id)
 		{
 			DisableVariantClientStateEXTNative(id);
@@ -166,6 +202,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void EnableVariantClientStateEXT(uint id)
 		{
 			EnableVariantClientStateEXTNative(id);
@@ -181,6 +221,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void EndVertexShaderEXT()
 		{
 			EndVertexShaderEXTNative();
@@ -196,6 +240,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void ExtractComponentEXT(uint res, uint src, uint num)
 		{
 			ExtractComponentEXTNative(res, src, num);
@@ -211,6 +259,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint GenSymbolsEXT(GLDataTypeEXT datatype, GLVertexShaderStorageTypeEXT storagetype, GLParameterRangeEXT range, uint components)
 		{
 			uint ret = GenSymbolsEXTNative(datatype, storagetype, range, components);
@@ -227,6 +279,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static uint GenVertexShadersEXT(uint range)
 		{
 			uint ret = GenVertexShadersEXTNative(range);
@@ -243,11 +299,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			GetInvariantBooleanvEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
 		{
 			byte* pStr0 = null;
@@ -274,6 +338,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -282,6 +350,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -300,11 +372,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			GetInvariantFloatvEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -313,6 +393,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -331,11 +415,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetInvariantIntegervEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -344,6 +436,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -362,11 +458,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			GetLocalConstantBooleanvEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
 		{
 			byte* pStr0 = null;
@@ -393,6 +497,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -401,6 +509,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -419,11 +531,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			GetLocalConstantFloatvEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -432,6 +552,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -450,11 +574,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetLocalConstantIntegervEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -463,6 +595,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -481,11 +617,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			GetVariantBooleanvEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
 		{
 			byte* pStr0 = null;
@@ -512,6 +656,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -520,6 +668,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -538,11 +690,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			GetVariantFloatvEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -551,6 +711,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -569,11 +733,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetVariantIntegervEXTNative(id, value, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -582,6 +754,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -600,6 +776,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void GetVariantPointervEXT(uint id, GLGetVariantValueEXT value, void** data)
 		{
 			GetVariantPointervEXTNative(id, value, data);
@@ -615,6 +795,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void InsertComponentEXT(uint res, uint src, uint num)
 		{
 			InsertComponentEXTNative(res, src, num);
@@ -630,6 +814,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static bool IsVariantEnabledEXT(uint id, GLVariantCapEXT cap)
 		{
 			byte ret = IsVariantEnabledEXTNative(id, cap);
@@ -646,16 +834,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SetInvariantEXT(uint id, GLScalarType type, void* addr)
 		{
 			SetInvariantEXTNative(id, type, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SetInvariantEXT(uint id, GLScalarType type, nint addr)
 		{
 			SetInvariantEXTNative(id, type, (void*)addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SetInvariantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
 		{
 			fixed (TAddr* paddr0 = addr)
@@ -674,16 +874,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SetLocalConstantEXT(uint id, GLScalarType type, void* addr)
 		{
 			SetLocalConstantEXTNative(id, type, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SetLocalConstantEXT(uint id, GLScalarType type, nint addr)
 		{
 			SetLocalConstantEXTNative(id, type, (void*)addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SetLocalConstantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
 		{
 			fixed (TAddr* paddr0 = addr)
@@ -702,6 +914,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void ShaderOp1EXT(GLVertexShaderOpEXT op, uint res, uint arg1)
 		{
 			ShaderOp1EXTNative(op, res, arg1);
@@ -717,6 +933,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void ShaderOp2EXT(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2)
 		{
 			ShaderOp2EXTNative(op, res, arg1, arg2);
@@ -732,6 +952,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void ShaderOp3EXT(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2, uint arg3)
 		{
 			ShaderOp3EXTNative(op, res, arg1, arg2, arg3);
@@ -747,6 +971,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void SwizzleEXT(uint res, uint input, GLVertexShaderCoordOutEXT outX, GLVertexShaderCoordOutEXT outY, GLVertexShaderCoordOutEXT outZ, GLVertexShaderCoordOutEXT outW)
 		{
 			SwizzleEXTNative(res, input, outX, outY, outZ, outW);
@@ -762,16 +990,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantPointerEXT(uint id, GLScalarType type, uint stride, void* addr)
 		{
 			VariantPointerEXTNative(id, type, stride, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantPointerEXT(uint id, GLScalarType type, uint stride, nint addr)
 		{
 			VariantPointerEXTNative(id, type, stride, (void*)addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantPointerEXT<TAddr>(uint id, GLScalarType type, uint stride, Span<TAddr> addr) where TAddr : unmanaged
 		{
 			fixed (TAddr* paddr0 = addr)
@@ -790,11 +1030,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantbvEXT(uint id, sbyte* addr)
 		{
 			VariantbvEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantbvEXT(uint id, Span<sbyte> addr)
 		{
 			fixed (sbyte* paddr0 = addr)
@@ -803,6 +1051,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantbvEXT(uint id, ref sbyte addr)
 		{
 			fixed (sbyte* paddr0 = &addr)
@@ -821,11 +1073,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantdvEXT(uint id, double* addr)
 		{
 			VariantdvEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantdvEXT(uint id, Span<double> addr)
 		{
 			fixed (double* paddr0 = addr)
@@ -834,6 +1094,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantdvEXT(uint id, ref double addr)
 		{
 			fixed (double* paddr0 = &addr)
@@ -852,11 +1116,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantfvEXT(uint id, float* addr)
 		{
 			VariantfvEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantfvEXT(uint id, Span<float> addr)
 		{
 			fixed (float* paddr0 = addr)
@@ -865,6 +1137,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantfvEXT(uint id, ref float addr)
 		{
 			fixed (float* paddr0 = &addr)
@@ -883,11 +1159,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantivEXT(uint id, int* addr)
 		{
 			VariantivEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantivEXT(uint id, Span<int> addr)
 		{
 			fixed (int* paddr0 = addr)
@@ -896,6 +1180,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantivEXT(uint id, ref int addr)
 		{
 			fixed (int* paddr0 = &addr)
@@ -914,11 +1202,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantsvEXT(uint id, short* addr)
 		{
 			VariantsvEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantsvEXT(uint id, Span<short> addr)
 		{
 			fixed (short* paddr0 = addr)
@@ -927,6 +1223,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantsvEXT(uint id, ref short addr)
 		{
 			fixed (short* paddr0 = &addr)
@@ -945,11 +1245,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantubvEXT(uint id, byte* addr)
 		{
 			VariantubvEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantubvEXT(uint id, string addr)
 		{
 			byte* pStr0 = null;
@@ -976,6 +1284,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantubvEXT(uint id, Span<byte> addr)
 		{
 			fixed (byte* paddr0 = addr)
@@ -984,6 +1296,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantubvEXT(uint id, ref byte addr)
 		{
 			fixed (byte* paddr0 = &addr)
@@ -1002,11 +1318,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantuivEXT(uint id, uint* addr)
 		{
 			VariantuivEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantuivEXT(uint id, Span<uint> addr)
 		{
 			fixed (uint* paddr0 = addr)
@@ -1015,6 +1339,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantuivEXT(uint id, ref uint addr)
 		{
 			fixed (uint* paddr0 = &addr)
@@ -1033,11 +1361,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantusvEXT(uint id, ushort* addr)
 		{
 			VariantusvEXTNative(id, addr);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantusvEXT(uint id, Span<ushort> addr)
 		{
 			fixed (ushort* paddr0 = addr)
@@ -1046,6 +1382,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void VariantusvEXT(uint id, ref ushort addr)
 		{
 			fixed (ushort* paddr0 = &addr)
@@ -1064,6 +1404,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		public static void WriteMaskEXT(uint res, uint input, GLVertexShaderWriteMaskEXT outX, GLVertexShaderWriteMaskEXT outY, GLVertexShaderWriteMaskEXT outZ, GLVertexShaderWriteMaskEXT outW)
 		{
 			WriteMaskEXTNative(res, input, outX, outY, outZ, outW);

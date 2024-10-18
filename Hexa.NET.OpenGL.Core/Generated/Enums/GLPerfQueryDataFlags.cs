@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPerfQueryDataFlags : uint
 	{
+		/// <summary>
+		/// Specifies not to flush performance queries (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
 		DonotFlushIntel = unchecked((uint)0x83F9),
+
+		/// <summary>
+		/// Specifies to flush performance queries (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
 		FlushIntel = unchecked((uint)0x83FA),
+
+		/// <summary>
+		/// Specifies to wait for performance queries (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
 		WaitIntel = unchecked((uint)0x83FB),
 	}
 }

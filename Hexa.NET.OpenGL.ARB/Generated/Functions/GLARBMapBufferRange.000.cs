@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Indicate modifications to a range of a mapped buffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		public static void FlushMappedBufferRange(GLBufferTargetARB target, nint offset, nint length)
 		{
 			FlushMappedBufferRangeNative(target, offset, length);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Map all or part of a buffer object's data store into the client's address space
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		public static void* MapBufferRange(GLBufferTargetARB target, nint offset, nint length, GLMapBufferAccessMask access)
 		{
 			void* ret = MapBufferRangeNative(target, offset, length, access);

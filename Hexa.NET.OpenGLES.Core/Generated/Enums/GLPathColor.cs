@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPathColor : uint
 	{
+		/// <summary>
+		/// Specifies the primary color input in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering<br/>GL_NV_register_combiners</remarks>
 		PrimaryColorNv = unchecked((uint)0x852C),
+
+		/// <summary>
+		/// Specifies the secondary color input in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering<br/>GL_NV_register_combiners</remarks>
 		SecondaryColorNv = unchecked((uint)0x852D),
+
+		/// <summary>
+		/// Specifies the primary color input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PrimaryColor = unchecked((uint)0x8577),
 	}
 }

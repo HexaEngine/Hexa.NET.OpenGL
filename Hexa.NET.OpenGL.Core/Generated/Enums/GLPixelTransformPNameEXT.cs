@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPixelTransformPNameEXT : uint
 	{
+		/// <summary>
+		/// Specifies the magnification filter for pixel operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		MagFilterExt = unchecked((uint)0x8331),
+
+		/// <summary>
+		/// Specifies the minification filter for pixel operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		MinFilterExt = unchecked((uint)0x8332),
+
+		/// <summary>
+		/// Specifies the cubic weight for pixel operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		CubicWeightExt = unchecked((uint)0x8333),
 	}
 }

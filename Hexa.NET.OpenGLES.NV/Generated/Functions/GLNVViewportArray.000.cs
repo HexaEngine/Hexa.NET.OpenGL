@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void DepthRangeArrayfvNV(uint first, int count, float* v)
 		{
 			DepthRangeArrayfvNVNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void DepthRangeArrayfvNV(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void DepthRangeArrayfvNV(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void DepthRangeIndexedfNV(uint index, float n, float f)
 		{
 			DepthRangeIndexedfNVNative(index, n, f);
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void DisableiNV(GLEnableCap target, uint index)
 		{
 			DisableiNVNative(target, index);
@@ -87,6 +107,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void EnableiNV(GLEnableCap target, uint index)
 		{
 			EnableiNVNative(target, index);
@@ -102,11 +126,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void GetFloati_vNV(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vNVNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void GetFloati_vNV(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -115,6 +147,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void GetFloati_vNV(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -133,6 +169,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static bool IsEnablediNV(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediNVNative(target, index);
@@ -149,11 +189,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorArrayvNV(uint first, int count, int* v)
 		{
 			ScissorArrayvNVNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorArrayvNV(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -162,6 +210,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorArrayvNV(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -180,6 +232,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorIndexedNV(uint index, int left, int bottom, int width, int height)
 		{
 			ScissorIndexedNVNative(index, left, bottom, width, height);
@@ -195,11 +251,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorIndexedvNV(uint index, int* v)
 		{
 			ScissorIndexedvNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorIndexedvNV(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -208,6 +272,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ScissorIndexedvNV(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -226,11 +294,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportArrayvNV(uint first, int count, float* v)
 		{
 			ViewportArrayvNVNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportArrayvNV(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -239,6 +315,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportArrayvNV(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -257,6 +337,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportIndexedfNV(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfNVNative(index, x, y, w, h);
@@ -272,11 +356,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportIndexedfvNV(uint index, float* v)
 		{
 			ViewportIndexedfvNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportIndexedfvNV(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -285,6 +377,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
 		public static void ViewportIndexedfvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.ANDROID
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_blend_equation_advanced</remarks>
 		public static void BlendBarrierKHR()
 		{
 			BlendBarrierKHRNative();

@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, void* pointer)
 		{
 			VertexWeightPointerEXTNative(size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, nint pointer)
 		{
 			VertexWeightPointerEXTNative(size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightPointerEXT<TPointer>(int size, GLVertexWeightPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightfEXT(float weight)
 		{
 			VertexWeightfEXTNative(weight);
@@ -69,11 +85,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightfvEXT(float* weight)
 		{
 			VertexWeightfvEXTNative(weight);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightfvEXT(Span<float> weight)
 		{
 			fixed (float* pweight0 = weight)
@@ -82,6 +106,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		public static void VertexWeightfvEXT(ref float weight)
 		{
 			fixed (float* pweight0 = &weight)

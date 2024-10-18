@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLListParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the priority of display lists (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PrioritySgix = unchecked((uint)0x8182),
 	}
 }

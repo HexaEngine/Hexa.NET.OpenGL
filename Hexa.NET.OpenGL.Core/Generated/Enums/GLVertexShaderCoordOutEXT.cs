@@ -15,16 +15,70 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLVertexShaderCoordOutEXT : uint
 	{
+		/// <summary>
+		/// Specifies the X component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		XExt = unchecked((uint)0x87D5),
+
+		/// <summary>
+		/// Specifies the Y component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		YExt = unchecked((uint)0x87D6),
+
+		/// <summary>
+		/// Specifies the Z component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ZExt = unchecked((uint)0x87D7),
+
+		/// <summary>
+		/// Specifies the W component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		WExt = unchecked((uint)0x87D8),
+
+		/// <summary>
+		/// Specifies the negative X component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeXExt = unchecked((uint)0x87D9),
+
+		/// <summary>
+		/// Specifies the negative Y component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeYExt = unchecked((uint)0x87DA),
+
+		/// <summary>
+		/// Specifies the negative Z component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeZExt = unchecked((uint)0x87DB),
+
+		/// <summary>
+		/// Specifies the negative W component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeWExt = unchecked((uint)0x87DC),
+
+		/// <summary>
+		/// Specifies the zero constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ZeroExt = unchecked((uint)0x87DD),
+
+		/// <summary>
+		/// Specifies the one constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OneExt = unchecked((uint)0x87DE),
+
+		/// <summary>
+		/// Specifies the negative one constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeOneExt = unchecked((uint)0x87DF),
 	}
 }

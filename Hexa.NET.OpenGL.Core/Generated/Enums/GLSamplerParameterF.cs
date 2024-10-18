@@ -15,11 +15,40 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLSamplerParameterF : uint
 	{
+		/// <summary>
+		/// Specifies the border color of the texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TextureBorderColor = unchecked((uint)0x1004),
+
+		/// <summary>
+		/// Specifies the minimum level of detail for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureMinLod = unchecked((uint)0x813A),
+
+		/// <summary>
+		/// Specifies the maximum level of detail for texture filtering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureMaxLod = unchecked((uint)0x813B),
+
+		/// <summary>
+		/// Specifies the maximum anisotropic filtering level.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_filter_anisotropic</remarks>
 		TextureMaxAnisotropy = unchecked((uint)0x84FE),
+
+		/// <summary>
+		/// Specifies the LOD bias applied to textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureLodBias = unchecked((uint)0x8501),
+
+		/// <summary>
+		/// Indicates support for unnormalized texture coordinates in ARM architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		TextureUnnormalizedCoordinatesArm = unchecked((uint)0x8F6A),
 	}
 }

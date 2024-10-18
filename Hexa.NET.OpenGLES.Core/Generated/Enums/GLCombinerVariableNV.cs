@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLCombinerVariableNV : uint
 	{
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ANv = unchecked((uint)0x8523),
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		BNv = unchecked((uint)0x8524),
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		CNv = unchecked((uint)0x8525),
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		DNv = unchecked((uint)0x8526),
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ENv = unchecked((uint)0x8527),
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		FNv = unchecked((uint)0x8528),
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		GNv = unchecked((uint)0x8529),
 	}
 }

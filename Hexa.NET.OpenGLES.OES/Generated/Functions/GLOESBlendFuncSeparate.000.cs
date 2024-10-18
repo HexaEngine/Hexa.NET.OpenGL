@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_blend_func_separate</remarks>
 		public static void BlendFuncSeparateOES(GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateOESNative(srcRGB, dstRGB, srcAlpha, dstAlpha);

@@ -15,50 +15,274 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathCoordType : uint
 	{
+		/// <summary>
+		/// Command for closing a path (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ClosePathNv = unchecked((uint)0x00),
+
+		/// <summary>
+		/// Command for moving to a position (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		MoveToNv = unchecked((uint)0x02),
+
+		/// <summary>
+		/// Command for moving to a relative position (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeMoveToNv = unchecked((uint)0x03),
+
+		/// <summary>
+		/// Command for drawing a line to a position (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		LineToNv = unchecked((uint)0x04),
+
+		/// <summary>
+		/// Command for drawing a relative line (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeLineToNv = unchecked((uint)0x05),
+
+		/// <summary>
+		/// Command for drawing a horizontal line (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		HorizontalLineToNv = unchecked((uint)0x06),
+
+		/// <summary>
+		/// Command for drawing a relative horizontal line (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeHorizontalLineToNv = unchecked((uint)0x07),
+
+		/// <summary>
+		/// Command for drawing a vertical line (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		VerticalLineToNv = unchecked((uint)0x08),
+
+		/// <summary>
+		/// Command for drawing a relative vertical line (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeVerticalLineToNv = unchecked((uint)0x09),
+
+		/// <summary>
+		/// Command for drawing a quadratic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		QuadraticCurveToNv = unchecked((uint)0x0A),
+
+		/// <summary>
+		/// Command for drawing a relative quadratic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeQuadraticCurveToNv = unchecked((uint)0x0B),
+
+		/// <summary>
+		/// Command for drawing a cubic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		CubicCurveToNv = unchecked((uint)0x0C),
+
+		/// <summary>
+		/// Command for drawing a relative cubic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeCubicCurveToNv = unchecked((uint)0x0D),
+
+		/// <summary>
+		/// Command for drawing a smooth quadratic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SmoothQuadraticCurveToNv = unchecked((uint)0x0E),
+
+		/// <summary>
+		/// Command for drawing a relative smooth quadratic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeSmoothQuadraticCurveToNv = unchecked((uint)0x0F),
+
+		/// <summary>
+		/// Command for drawing a smooth cubic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SmoothCubicCurveToNv = unchecked((uint)0x10),
+
+		/// <summary>
+		/// Command for drawing a relative smooth cubic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeSmoothCubicCurveToNv = unchecked((uint)0x11),
+
+		/// <summary>
+		/// Command for drawing a small counterclockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SmallCcwArcToNv = unchecked((uint)0x12),
+
+		/// <summary>
+		/// Command for drawing a relative small counterclockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeSmallCcwArcToNv = unchecked((uint)0x13),
+
+		/// <summary>
+		/// Command for drawing a small clockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SmallCwArcToNv = unchecked((uint)0x14),
+
+		/// <summary>
+		/// Command for drawing a relative small clockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeSmallCwArcToNv = unchecked((uint)0x15),
+
+		/// <summary>
+		/// Command for drawing a large counterclockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		LargeCcwArcToNv = unchecked((uint)0x16),
+
+		/// <summary>
+		/// Command for drawing a relative large counterclockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeLargeCcwArcToNv = unchecked((uint)0x17),
+
+		/// <summary>
+		/// Command for drawing a large clockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		LargeCwArcToNv = unchecked((uint)0x18),
+
+		/// <summary>
+		/// Command for drawing a relative large clockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeLargeCwArcToNv = unchecked((uint)0x19),
+
+		/// <summary>
+		/// Command for drawing a conic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ConicCurveToNv = unchecked((uint)0x1A),
+
+		/// <summary>
+		/// Command for drawing a relative conic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeConicCurveToNv = unchecked((uint)0x1B),
+
+		/// <summary>
+		/// Command for drawing a rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RoundedRectNv = unchecked((uint)0xE8),
+
+		/// <summary>
+		/// Command for drawing a relative rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeRoundedRectNv = unchecked((uint)0xE9),
+
+		/// <summary>
+		/// Command for drawing a 2-corner rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RoundedRect2Nv = unchecked((uint)0xEA),
+
+		/// <summary>
+		/// Command for drawing a relative 2-corner rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeRoundedRect2Nv = unchecked((uint)0xEB),
+
+		/// <summary>
+		/// Command for drawing a 4-corner rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RoundedRect4Nv = unchecked((uint)0xEC),
+
+		/// <summary>
+		/// Command for drawing a relative 4-corner rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeRoundedRect4Nv = unchecked((uint)0xED),
+
+		/// <summary>
+		/// Command for drawing an 8-corner rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RoundedRect8Nv = unchecked((uint)0xEE),
+
+		/// <summary>
+		/// Command for drawing a relative 8-corner rounded rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeRoundedRect8Nv = unchecked((uint)0xEF),
+
+		/// <summary>
+		/// Command to restart a path (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RestartPathNv = unchecked((uint)0xF0),
+
+		/// <summary>
+		/// Command for duplicating the first cubic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		DupFirstCubicCurveToNv = unchecked((uint)0xF2),
+
+		/// <summary>
+		/// Command for duplicating the last cubic curve (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		DupLastCubicCurveToNv = unchecked((uint)0xF4),
+
+		/// <summary>
+		/// Command for drawing a rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RectNv = unchecked((uint)0xF6),
+
+		/// <summary>
+		/// Command for drawing a relative rectangle (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeRectNv = unchecked((uint)0xF7),
+
+		/// <summary>
+		/// Command for drawing a circular counterclockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		CircularCcwArcToNv = unchecked((uint)0xF8),
+
+		/// <summary>
+		/// Command for drawing a circular clockwise arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		CircularCwArcToNv = unchecked((uint)0xFA),
+
+		/// <summary>
+		/// Command for drawing a circular tangent arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		CircularTangentArcToNv = unchecked((uint)0xFC),
+
+		/// <summary>
+		/// Command for drawing an arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ArcToNv = unchecked((uint)0xFE),
+
+		/// <summary>
+		/// Command for drawing a relative arc (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		RelativeArcToNv = unchecked((uint)0xFF),
 	}
 }

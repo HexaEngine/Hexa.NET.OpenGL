@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFrontFaceDirection : uint
 	{
+		/// <summary>
+		/// Indicates clockwise winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		Cw = unchecked((uint)0x0900),
+
+		/// <summary>
+		/// Indicates counter-clockwise winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		Ccw = unchecked((uint)0x0901),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Launch one or more compute work groups
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		public static void DispatchCompute(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
 		{
 			DispatchComputeNative(numGroupsX, numGroupsY, numGroupsZ);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Launch one or more compute work groups using parameters stored in a buffer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		public static void DispatchComputeIndirect(nint indirect)
 		{
 			DispatchComputeIndirectNative(indirect);

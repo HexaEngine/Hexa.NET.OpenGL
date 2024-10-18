@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLHintTargetPGI : uint
 	{
+		/// <summary>
+		/// Indicates a hint for vertex data optimization (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexDataHintPgi = unchecked((uint)0x1A22A),
+
+		/// <summary>
+		/// Indicates a hint for vertex consistency (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexConsistentHintPgi = unchecked((uint)0x1A22B),
+
+		/// <summary>
+		/// Indicates a hint for material side rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaterialSideHintPgi = unchecked((uint)0x1A22C),
+
+		/// <summary>
+		/// Indicates a hint for the maximum vertex count (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxVertexHintPgi = unchecked((uint)0x1A22D),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void DisableVertexAttribAPPLE(uint index, GLEnum pname)
 		{
 			DisableVertexAttribAPPLENative(index, pname);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void EnableVertexAttribAPPLE(uint index, GLEnum pname)
 		{
 			EnableVertexAttribAPPLENative(index, pname);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static bool IsVertexAttribEnabledAPPLE(uint index, GLEnum pname)
 		{
 			byte ret = IsVertexAttribEnabledAPPLENative(index, pname);
@@ -72,11 +84,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, double* points)
 		{
 			MapVertexAttrib1dAPPLENative(index, size, u1, u2, stride, order, points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, Span<double> points)
 		{
 			fixed (double* ppoints0 = points)
@@ -85,6 +105,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, ref double points)
 		{
 			fixed (double* ppoints0 = &points)
@@ -103,11 +127,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, float* points)
 		{
 			MapVertexAttrib1fAPPLENative(index, size, u1, u2, stride, order, points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, Span<float> points)
 		{
 			fixed (float* ppoints0 = points)
@@ -116,6 +148,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, ref float points)
 		{
 			fixed (float* ppoints0 = &points)
@@ -134,11 +170,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, double* points)
 		{
 			MapVertexAttrib2dAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, Span<double> points)
 		{
 			fixed (double* ppoints0 = points)
@@ -147,6 +191,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, ref double points)
 		{
 			fixed (double* ppoints0 = &points)
@@ -165,11 +213,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points)
 		{
 			MapVertexAttrib2fAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, Span<float> points)
 		{
 			fixed (float* ppoints0 = points)
@@ -178,6 +234,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
 		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, ref float points)
 		{
 			fixed (float* ppoints0 = &points)

@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFogCoordSrc : uint
 	{
+		/// <summary>
+		/// Specifies fog coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Coordinate = unchecked((uint)0x8451),
+
+		/// <summary>
+		/// Specifies fog coordinate (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		CoordinateExt = unchecked((uint)0x8451),
+
+		/// <summary>
+		/// Specifies fog coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Coord = unchecked((uint)0x8451),
+
+		/// <summary>
+		/// Specifies fragment depth.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FragmentDepth = unchecked((uint)0x8452),
+
+		/// <summary>
+		/// Specifies fragment depth (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord<br/>GL_EXT_light_texture</remarks>
 		FragmentDepthExt = unchecked((uint)0x8452),
 	}
 }

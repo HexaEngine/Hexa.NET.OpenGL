@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentShaderDestModMaskATI : uint
 	{
+		/// <summary>
+		/// 2X scaling bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		Gl2XBitAti = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// 4X scaling bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		Gl4XBitAti = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// 8X scaling bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		Gl8XBitAti = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Half channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		HalfBitAti = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Quarter channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		QuarterBitAti = unchecked((uint)0x00000010),
+
+		/// <summary>
+		/// Eighth channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		EighthBitAti = unchecked((uint)0x00000020),
+
+		/// <summary>
+		/// Saturation channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		SaturateBitAti = unchecked((uint)0x00000040),
+
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
 	}
 }

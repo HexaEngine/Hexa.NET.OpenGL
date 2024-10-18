@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_color</remarks>
 		public static void BlendColorEXT(float red, float green, float blue, float alpha)
 		{
 			BlendColorEXTNative(red, green, blue, alpha);

@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFeedBackToken : uint
 	{
+		/// <summary>
+		/// Token for pass-through operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PassThroughToken = unchecked((uint)0x0700),
+
+		/// <summary>
+		/// Token for point operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PointToken = unchecked((uint)0x0701),
+
+		/// <summary>
+		/// Token for line operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		LineToken = unchecked((uint)0x0702),
+
+		/// <summary>
+		/// Token for polygon operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PolygonToken = unchecked((uint)0x0703),
+
+		/// <summary>
+		/// Token for bitmap operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		BitmapToken = unchecked((uint)0x0704),
+
+		/// <summary>
+		/// Token for drawing pixels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		DrawPixelToken = unchecked((uint)0x0705),
+
+		/// <summary>
+		/// Token for copying pixels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CopyPixelToken = unchecked((uint)0x0706),
+
+		/// <summary>
+		/// Token for resetting line operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		LineResetToken = unchecked((uint)0x0707),
 	}
 }

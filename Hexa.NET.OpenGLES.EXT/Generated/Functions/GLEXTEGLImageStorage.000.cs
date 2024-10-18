@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
 		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, int* attribList)
 		{
 			EGLImageTargetTexStorageEXTNative(target, image, attribList);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
 		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, Span<int> attribList)
 		{
 			fixed (int* pattribList0 = attribList)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
 		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, ref int attribList)
 		{
 			fixed (int* pattribList0 = &attribList)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
 		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, int* attribList)
 		{
 			EGLImageTargetTextureStorageEXTNative(texture, image, attribList);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
 		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, Span<int> attribList)
 		{
 			fixed (int* pattribList0 = attribList)
@@ -70,6 +90,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
 		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, ref int attribList)
 		{
 			fixed (int* pattribList0 = &attribList)

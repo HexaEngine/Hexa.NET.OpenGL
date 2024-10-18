@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLClientAttribMask : uint
 	{
+		/// <summary>
+		/// Client pixel storage bit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelStoreBit = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Client vertex array bit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VertexArrayBit = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Client all attribute bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AllAttribBits = unchecked((uint)0xFFFFFFFF),
 	}
 }

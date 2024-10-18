@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the location of a sample
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			GetMultisamplefvNative(pname, index, val);
 		}
 
+		/// <summary>
+		/// Retrieve the location of a sample
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
 		{
 			fixed (float* pval0 = val)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the location of a sample
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Set the value of a sub-word of the sample mask
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void SampleMaski(uint maskNumber, uint mask)
 		{
 			SampleMaskiNative(maskNumber, mask);
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void TexImage2DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TexImage2DMultisampleNative(target, samples, internalformat, width, height, fixedsamplelocations);
@@ -87,6 +107,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Establish the data storage, format, dimensions, and number of samples of a multisample texture's image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void TexImage3DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexImage3DMultisampleNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);

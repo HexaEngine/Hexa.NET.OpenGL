@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			GetTexGenfvOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
 			float pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			GetTexGenivOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -86,11 +110,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			GetTexGenxvOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparams;
@@ -98,6 +130,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -116,6 +152,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenfOES(GLTextureCoordName coord, GLTextureGenParameter pname, float param)
 		{
 			TexGenfOESNative(coord, pname, param);
@@ -131,11 +171,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			TexGenfvOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
 			float pparams;
@@ -143,6 +191,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenfvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -161,6 +213,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGeniOES(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			TexGeniOESNative(coord, pname, param);
@@ -176,11 +232,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			TexGenivOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparams;
@@ -188,6 +252,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenivOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -206,6 +274,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxOES(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			TexGenxOESNative(coord, pname, param);
@@ -221,11 +293,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			TexGenxvOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparams;
@@ -233,6 +313,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

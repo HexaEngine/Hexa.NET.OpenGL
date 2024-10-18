@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFogMode : uint
 	{
+		/// <summary>
+		/// Exponential function.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Exp = unchecked((uint)0x0800),
+
+		/// <summary>
+		/// Exponential function base 2.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Exp2 = unchecked((uint)0x0801),
+
+		/// <summary>
+		/// Specifies linear filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Linear = unchecked((uint)0x2601),
+
+		/// <summary>
+		/// Specifies the fog function (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FuncSgis = unchecked((uint)0x812A),
 	}
 }

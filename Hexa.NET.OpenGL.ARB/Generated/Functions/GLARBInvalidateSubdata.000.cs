@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Invalidate the content of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
 		public static void InvalidateBufferData(uint buffer)
 		{
 			InvalidateBufferDataNative(buffer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Invalidate a region of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
 		public static void InvalidateBufferSubData(uint buffer, nint offset, nint length)
 		{
 			InvalidateBufferSubDataNative(buffer, offset, length);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Invalidate the content of some or all of a framebuffer's attachments
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
 		public static void InvalidateFramebuffer(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
 		{
 			InvalidateFramebufferNative(target, numAttachments, attachments);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Invalidate the content of a region of some or all of a framebuffer's attachments
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
 		public static void InvalidateSubFramebuffer(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments, int x, int y, int width, int height)
 		{
 			InvalidateSubFramebufferNative(target, numAttachments, attachments, x, y, width, height);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Invalidate the entirety a texture image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
 		public static void InvalidateTexImage(uint texture, int level)
 		{
 			InvalidateTexImageNative(texture, level);
@@ -101,6 +121,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Invalidate a region of a texture image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
 		public static void InvalidateTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth)
 		{
 			InvalidateTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth);

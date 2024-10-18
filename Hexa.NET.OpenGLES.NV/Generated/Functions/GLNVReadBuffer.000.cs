@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_read_buffer</remarks>
 		public static void ReadBufferNV(GLEnum mode)
 		{
 			ReadBufferNVNative(mode);

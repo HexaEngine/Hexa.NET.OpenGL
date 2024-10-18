@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
 		public static void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawArraysIndirectBindlessCountNVNative(mode, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
 		public static void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawArraysIndirectBindlessCountNVNative(mode, (void*)indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
 		public static void MultiDrawArraysIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
 		public static void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawElementsIndirectBindlessCountNVNative(mode, type, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
 		public static void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawElementsIndirectBindlessCountNVNative(mode, type, (void*)indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
 		public static void MultiDrawElementsIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)

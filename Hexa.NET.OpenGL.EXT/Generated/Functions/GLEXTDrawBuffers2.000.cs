@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers2</remarks>
 		public static void ColorMaskIndexedEXT(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskIndexedEXTNative(index, r, g, b, a);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void DisableIndexedEXT(GLEnableCap target, uint index)
 		{
 			DisableIndexedEXTNative(target, index);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void EnableIndexedEXT(GLEnableCap target, uint index)
 		{
 			EnableIndexedEXTNative(target, index);
@@ -71,11 +83,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, byte* data)
 		{
 			GetBooleanIndexedvEXTNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, string data)
 		{
 			byte* pStr0 = null;
@@ -102,6 +122,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -110,6 +134,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -128,11 +156,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegerIndexedvEXTNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -141,6 +177,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -159,6 +199,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
 		public static bool IsEnabledIndexedEXT(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnabledIndexedEXTNative(target, index);

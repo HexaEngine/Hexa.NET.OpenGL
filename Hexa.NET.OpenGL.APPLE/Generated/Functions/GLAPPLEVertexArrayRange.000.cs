@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void FlushVertexArrayRangeAPPLE(int length, void* pointer)
 		{
 			FlushVertexArrayRangeAPPLENative(length, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void FlushVertexArrayRangeAPPLE(int length, nint pointer)
 		{
 			FlushVertexArrayRangeAPPLENative(length, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void FlushVertexArrayRangeAPPLE<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void VertexArrayParameteriAPPLE(GLVertexArrayPNameAPPLE pname, int param)
 		{
 			VertexArrayParameteriAPPLENative(pname, param);
@@ -69,16 +85,28 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void VertexArrayRangeAPPLE(int length, void* pointer)
 		{
 			VertexArrayRangeAPPLENative(length, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void VertexArrayRangeAPPLE(int length, nint pointer)
 		{
 			VertexArrayRangeAPPLENative(length, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		public static void VertexArrayRangeAPPLE<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, float* @params)
 		{
 			GetPixelTransformParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, out float @params)
 		{
 			float pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, int* @params)
 		{
 			GetPixelTransformParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, out int @params)
 		{
 			int pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -86,6 +110,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterfEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float param)
 		{
 			PixelTransformParameterfEXTNative(target, pname, param);
@@ -101,11 +129,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float* @params)
 		{
 			PixelTransformParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, out float @params)
 		{
 			float pparams;
@@ -113,6 +149,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -131,6 +171,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameteriEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int param)
 		{
 			PixelTransformParameteriEXTNative(target, pname, param);
@@ -146,11 +190,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int* @params)
 		{
 			PixelTransformParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, out int @params)
 		{
 			int pparams;
@@ -158,6 +210,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		public static void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

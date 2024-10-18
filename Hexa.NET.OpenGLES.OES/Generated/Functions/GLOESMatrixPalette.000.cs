@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void CurrentPaletteMatrixOES(uint matrixpaletteindex)
 		{
 			CurrentPaletteMatrixOESNative(matrixpaletteindex);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void LoadPaletteFromModelViewMatrixOES()
 		{
 			LoadPaletteFromModelViewMatrixOESNative();
@@ -56,16 +64,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void MatrixIndexPointerOES(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
 		{
 			MatrixIndexPointerOESNative(size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void MatrixIndexPointerOES(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
 		{
 			MatrixIndexPointerOESNative(size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void MatrixIndexPointerOES<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -84,16 +104,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void WeightPointerOES(int size, GLEnum type, int stride, void* pointer)
 		{
 			WeightPointerOESNative(size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void WeightPointerOES(int size, GLEnum type, int stride, nint pointer)
 		{
 			WeightPointerOESNative(size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
 		public static void WeightPointerOES<TPointer>(int size, GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

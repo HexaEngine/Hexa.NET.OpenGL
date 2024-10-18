@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_point_size_array</remarks>
 		public static void PointSizePointerOES(GLEnum type, int stride, void* pointer)
 		{
 			PointSizePointerOESNative(type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_point_size_array</remarks>
 		public static void PointSizePointerOES(GLEnum type, int stride, nint pointer)
 		{
 			PointSizePointerOESNative(type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_point_size_array</remarks>
 		public static void PointSizePointerOES<TPointer>(GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastBarrierNV()
 		{
 			MulticastBarrierNVNative();
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastBlitFramebufferNV(uint srcGpu, uint dstGpu, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLEnum filter)
 		{
 			MulticastBlitFramebufferNVNative(srcGpu, dstGpu, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
@@ -56,16 +64,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastBufferSubDataNV(uint gpuMask, uint buffer, nint offset, nint size, void* data)
 		{
 			MulticastBufferSubDataNVNative(gpuMask, buffer, offset, size, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastBufferSubDataNV(uint gpuMask, uint buffer, nint offset, nint size, nint data)
 		{
 			MulticastBufferSubDataNVNative(gpuMask, buffer, offset, size, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastBufferSubDataNV<TData>(uint gpuMask, uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -84,6 +104,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastCopyBufferSubDataNV(uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
 		{
 			MulticastCopyBufferSubDataNVNative(readGpu, writeGpuMask, readBuffer, writeBuffer, readOffset, writeOffset, size);
@@ -99,6 +123,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastCopyImageSubDataNV(uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth)
 		{
 			MulticastCopyImageSubDataNVNative(srcGpu, dstGpuMask, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
@@ -114,11 +142,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastFramebufferSampleLocationsfvNV(uint gpu, uint framebuffer, uint start, int count, float* v)
 		{
 			MulticastFramebufferSampleLocationsfvNVNative(gpu, framebuffer, start, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastFramebufferSampleLocationsfvNV(uint gpu, uint framebuffer, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -127,6 +163,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastFramebufferSampleLocationsfvNV(uint gpu, uint framebuffer, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -145,11 +185,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, long* @params)
 		{
 			MulticastGetQueryObjecti64vNVNative(gpu, id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, out long @params)
 		{
 			long pparams;
@@ -157,6 +205,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -175,11 +227,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, int* @params)
 		{
 			MulticastGetQueryObjectivNVNative(gpu, id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, out int @params)
 		{
 			int pparams;
@@ -187,6 +247,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -205,11 +269,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, ulong* @params)
 		{
 			MulticastGetQueryObjectui64vNVNative(gpu, id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, out ulong @params)
 		{
 			ulong pparams;
@@ -217,6 +289,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -235,11 +311,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, uint* @params)
 		{
 			MulticastGetQueryObjectuivNVNative(gpu, id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, out uint @params)
 		{
 			uint pparams;
@@ -247,6 +331,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -265,6 +353,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void MulticastWaitSyncNV(uint signalGpu, uint waitGpuMask)
 		{
 			MulticastWaitSyncNVNative(signalGpu, waitGpuMask);
@@ -280,6 +372,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
 		public static void RenderGpuMaskNV(uint mask)
 		{
 			RenderGpuMaskNVNative(mask);

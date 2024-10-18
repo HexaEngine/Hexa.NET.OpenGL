@@ -15,16 +15,70 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLCopyImageSubDataTarget : uint
 	{
+		/// <summary>
+		/// Specifies a one-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture1D = unchecked((uint)0x0DE0),
+
+		/// <summary>
+		/// Specifies a two-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_EXT_sparse_texture</remarks>
 		Texture2D = unchecked((uint)0x0DE1),
+
+		/// <summary>
+		/// Specifies a 3D texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_EXT_sparse_texture</remarks>
 		Texture3D = unchecked((uint)0x806F),
+
+		/// <summary>
+		/// Specifies a rectangle texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureRectangle = unchecked((uint)0x84F5),
+
+		/// <summary>
+		/// Specifies a cube map texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_EXT_sparse_texture</remarks>
 		TextureCubeMap = unchecked((uint)0x8513),
+
+		/// <summary>
+		/// Specifies a 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture1DArray = unchecked((uint)0x8C18),
+
+		/// <summary>
+		/// Specifies a 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_EXT_sparse_texture</remarks>
 		Texture2DArray = unchecked((uint)0x8C1A),
+
+		/// <summary>
+		/// Specifies the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_internalformat_query2<br/>GL_NV_internalformat_sample_query</remarks>
 		Renderbuffer = unchecked((uint)0x8D41),
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureCubeMapArray = unchecked((uint)0x9009),
+
+		/// <summary>
+		/// Specifies a 2D multisample texture target.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_texture_multisample<br/>GL_NV_internalformat_sample_query</remarks>
 		Texture2DMultisample = unchecked((uint)0x9100),
+
+		/// <summary>
+		/// Specifies a 2D multisample array texture target.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_texture_multisample<br/>GL_NV_internalformat_sample_query</remarks>
 		Texture2DMultisampleArray = unchecked((uint)0x9102),
 	}
 }

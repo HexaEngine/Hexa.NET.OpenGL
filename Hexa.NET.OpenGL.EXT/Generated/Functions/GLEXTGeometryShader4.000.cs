@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_EXT_separate_shader_objects</remarks>
 		public static void ProgramParameteriEXT(uint program, GLProgramParameterPName pname, int value)
 		{
 			ProgramParameteriEXTNative(program, pname, value);

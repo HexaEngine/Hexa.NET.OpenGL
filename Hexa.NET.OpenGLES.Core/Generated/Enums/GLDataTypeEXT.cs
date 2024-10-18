@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLDataTypeEXT : uint
 	{
+		/// <summary>
+		/// Specifies scalar output from EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ScalarExt = unchecked((uint)0x87BE),
+
+		/// <summary>
+		/// Specifies a vector in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VectorExt = unchecked((uint)0x87BF),
+
+		/// <summary>
+		/// Specifies a matrix in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		MatrixExt = unchecked((uint)0x87C0),
 	}
 }

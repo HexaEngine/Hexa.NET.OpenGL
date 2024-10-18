@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_swizzle</remarks>
 		public static void ViewportSwizzleNV(uint index, GLEnum swizzlex, GLEnum swizzley, GLEnum swizzlez, GLEnum swizzlew)
 		{
 			ViewportSwizzleNVNative(index, swizzlex, swizzley, swizzlez, swizzlew);

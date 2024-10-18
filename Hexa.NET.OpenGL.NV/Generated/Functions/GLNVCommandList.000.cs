@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CallCommandListNV(uint list)
 		{
 			CallCommandListNVNative(list);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CommandListSegmentsNV(uint list, uint segments)
 		{
 			CommandListSegmentsNVNative(list, segments);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CompileCommandListNV(uint list)
 		{
 			CompileCommandListNVNative(list);
@@ -71,11 +83,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CreateCommandListsNV(int n, uint* lists)
 		{
 			CreateCommandListsNVNative(n, lists);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CreateCommandListsNV(int n, Span<uint> lists)
 		{
 			fixed (uint* plists0 = lists)
@@ -84,6 +104,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CreateCommandListsNV(int n, ref uint lists)
 		{
 			fixed (uint* plists0 = &lists)
@@ -102,11 +126,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CreateStatesNV(int n, uint* states)
 		{
 			CreateStatesNVNative(n, states);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CreateStatesNV(int n, Span<uint> states)
 		{
 			fixed (uint* pstates0 = states)
@@ -115,6 +147,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void CreateStatesNV(int n, ref uint states)
 		{
 			fixed (uint* pstates0 = &states)
@@ -133,16 +169,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteCommandListsNV(int n, uint* lists)
 		{
 			DeleteCommandListsNVNative(n, lists);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteCommandListsN(uint list)
 		{
 			DeleteCommandListsNVNative(1, &list);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteCommandListsNV(int n, Span<uint> lists)
 		{
 			fixed (uint* plists0 = lists)
@@ -151,6 +199,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteCommandListsNV(int n, ref uint lists)
 		{
 			fixed (uint* plists0 = &lists)
@@ -169,16 +221,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteStatesNV(int n, uint* states)
 		{
 			DeleteStatesNVNative(n, states);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteStatesN(uint state)
 		{
 			DeleteStatesNVNative(1, &state);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteStatesNV(int n, Span<uint> states)
 		{
 			fixed (uint* pstates0 = states)
@@ -187,6 +251,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DeleteStatesNV(int n, ref uint states)
 		{
 			fixed (uint* pstates0 = &states)
@@ -205,11 +273,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, ulong* indirects, int* sizes, uint count)
 		{
 			DrawCommandsAddressNVNative(primitiveMode, indirects, sizes, count);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, Span<ulong> indirects, int* sizes, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -218,6 +294,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, ref ulong indirects, int* sizes, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -226,6 +306,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, ulong* indirects, Span<int> sizes, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -234,6 +318,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, ulong* indirects, ref int sizes, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -242,6 +330,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, Span<ulong> indirects, Span<int> sizes, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -253,6 +345,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsAddressNV(GLEnum primitiveMode, ref ulong indirects, ref int sizes, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -274,11 +370,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, nint* indirects, int* sizes, uint count)
 		{
 			DrawCommandsNVNative(primitiveMode, buffer, indirects, sizes, count);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, Span<nint> indirects, int* sizes, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -287,6 +391,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, ref nint indirects, int* sizes, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -295,6 +403,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, nint* indirects, Span<int> sizes, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -303,6 +415,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, nint* indirects, ref int sizes, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -311,6 +427,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, Span<nint> indirects, Span<int> sizes, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -322,6 +442,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsNV(GLEnum primitiveMode, uint buffer, ref nint indirects, ref int sizes, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -343,11 +467,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			DrawCommandsStatesAddressNVNative(indirects, sizes, states, fbos, count);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -356,6 +488,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -364,6 +500,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, Span<int> sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -372,6 +512,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, ref int sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -380,6 +524,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, Span<int> sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -391,6 +539,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, ref int sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -402,6 +554,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (uint* pstates0 = states)
@@ -410,6 +566,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (uint* pstates0 = &states)
@@ -418,6 +578,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, int* sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -429,6 +593,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, int* sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -440,6 +608,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, Span<int> sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -451,6 +623,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, ref int sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -462,6 +638,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, Span<int> sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -476,6 +656,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, ref int sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -490,6 +674,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (uint* pfbos0 = fbos)
@@ -498,6 +686,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (uint* pfbos0 = &fbos)
@@ -506,6 +698,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, int* sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -517,6 +713,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, int* sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -528,6 +728,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, Span<int> sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -539,6 +743,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, ref int sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -550,6 +758,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, Span<int> sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -564,6 +776,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, ref int sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -578,6 +794,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (uint* pstates0 = states)
@@ -589,6 +809,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, int* sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (uint* pstates0 = &states)
@@ -600,6 +824,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, int* sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -614,6 +842,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, int* sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -628,6 +860,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, Span<int> sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -642,6 +878,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ulong* indirects, ref int sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -656,6 +896,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(Span<ulong> indirects, Span<int> sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = indirects)
@@ -673,6 +917,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesAddressNV(ref ulong indirects, ref int sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (ulong* pindirects0 = &indirects)
@@ -700,11 +948,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			DrawCommandsStatesNVNative(buffer, indirects, sizes, states, fbos, count);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -713,6 +969,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -721,6 +981,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, Span<int> sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -729,6 +993,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, ref int sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -737,6 +1005,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, Span<int> sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -748,6 +1020,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, ref int sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -759,6 +1035,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (uint* pstates0 = states)
@@ -767,6 +1047,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (uint* pstates0 = &states)
@@ -775,6 +1059,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, int* sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -786,6 +1074,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, int* sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -797,6 +1089,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, Span<int> sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -808,6 +1104,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, ref int sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -819,6 +1119,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, Span<int> sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -833,6 +1137,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, ref int sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -847,6 +1155,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (uint* pfbos0 = fbos)
@@ -855,6 +1167,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (uint* pfbos0 = &fbos)
@@ -863,6 +1179,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, int* sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -874,6 +1194,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, int* sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -885,6 +1209,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, Span<int> sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -896,6 +1224,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, ref int sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -907,6 +1239,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, Span<int> sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -921,6 +1257,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, ref int sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -935,6 +1275,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (uint* pstates0 = states)
@@ -946,6 +1290,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, int* sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (uint* pstates0 = &states)
@@ -957,6 +1305,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, int* sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -971,6 +1323,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, int* sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -985,6 +1341,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, Span<int> sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -999,6 +1359,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, nint* indirects, ref int sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -1013,6 +1377,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, Span<nint> indirects, Span<int> sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (nint* pindirects0 = indirects)
@@ -1030,6 +1398,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void DrawCommandsStatesNV(uint buffer, ref nint indirects, ref int sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (nint* pindirects0 = &indirects)
@@ -1057,6 +1429,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static uint GetCommandHeaderNV(GLCommandOpcodesNV tokenID, uint size)
 		{
 			uint ret = GetCommandHeaderNVNative(tokenID, size);
@@ -1073,6 +1449,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static ushort GetStageIndexNV(GLShaderType shadertype)
 		{
 			ushort ret = GetStageIndexNVNative(shadertype);
@@ -1089,6 +1469,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static bool IsCommandListNV(uint list)
 		{
 			byte ret = IsCommandListNVNative(list);
@@ -1105,6 +1489,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static bool IsStateNV(uint state)
 		{
 			byte ret = IsStateNVNative(state);
@@ -1121,11 +1509,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, uint* states, uint* fbos, uint count)
 		{
 			ListDrawCommandsStatesClientNVNative(list, segment, indirects, sizes, states, fbos, count);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, Span<int> sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -1134,6 +1530,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, ref int sizes, uint* states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -1142,6 +1542,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (uint* pstates0 = states)
@@ -1150,6 +1554,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (uint* pstates0 = &states)
@@ -1158,6 +1566,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, Span<int> sizes, Span<uint> states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -1169,6 +1581,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, ref int sizes, ref uint states, uint* fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -1180,6 +1596,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (uint* pfbos0 = fbos)
@@ -1188,6 +1608,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (uint* pfbos0 = &fbos)
@@ -1196,6 +1620,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, Span<int> sizes, uint* states, Span<uint> fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -1207,6 +1635,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, ref int sizes, uint* states, ref uint fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -1218,6 +1650,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (uint* pstates0 = states)
@@ -1229,6 +1665,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, int* sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (uint* pstates0 = &states)
@@ -1240,6 +1680,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, Span<int> sizes, Span<uint> states, Span<uint> fbos, uint count)
 		{
 			fixed (int* psizes0 = sizes)
@@ -1254,6 +1698,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void ListDrawCommandsStatesClientNV(uint list, uint segment, void** indirects, ref int sizes, ref uint states, ref uint fbos, uint count)
 		{
 			fixed (int* psizes0 = &sizes)
@@ -1278,6 +1726,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_command_list</remarks>
 		public static void StateCaptureNV(uint state, GLEnum mode)
 		{
 			StateCaptureNVNative(state, mode);

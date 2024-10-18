@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.ANDROID
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_primitive_bounding_box</remarks>
 		public static void PrimitiveBoundingBoxEXT(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			PrimitiveBoundingBoxEXTNative(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);

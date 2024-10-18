@@ -1,6 +1,7 @@
 ﻿namespace Generator
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Globalization;
@@ -32,7 +33,7 @@
     }
 
     [XmlRoot(ElementName = "command")]
-    public class Command
+    public class Command : IVersionedMember
     {
         [XmlElement(ElementName = "proto")]
         public Proto Proto { get; set; }
@@ -42,6 +43,18 @@
 
         [XmlElement(ElementName = "alias")]
         public Alias Alias { get; set; }
+
+        [XmlIgnore]
+        public HashSet<string> SupportedVersions { get; } = [];
+
+        [XmlIgnore]
+        public string? SupportedVersionText { get; set; }
+
+        [XmlIgnore]
+        public HashSet<string> UsedByExtensions { get; } = [];
+
+        [XmlIgnore]
+        public string? UsedByExtensionsText { get; set; }
     }
 
     [XmlRoot(ElementName = "alias")]
@@ -280,7 +293,7 @@
 
     [XmlRoot(ElementName = "enum")]
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
-    public class Enum
+    public class Enum : IVersionedMember
     {
         private string group;
 
@@ -312,7 +325,25 @@
         }
 
         [XmlIgnore]
+        public string? SummaryComment { get; set; }
+
+        [XmlIgnore]
         public List<string> GroupList { get; } = [];
+
+        [XmlIgnore]
+        public HashSet<string> SupportedVersions { get; } = [];
+
+        [XmlIgnore]
+        public string? SupportedVersionText { get; set; }
+
+        [XmlIgnore]
+        public HashSet<string> UsedByExtensions { get; } = [];
+
+        [XmlIgnore]
+        public string? UsedByExtensionsText { get; set; }
+
+        [XmlIgnore]
+        public bool IsInGLEnum { get; set; }
 
         private string GetDebuggerDisplay()
         {

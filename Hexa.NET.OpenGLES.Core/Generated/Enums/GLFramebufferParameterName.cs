@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFramebufferParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the default width of the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultWidth = unchecked((uint)0x9310),
+
+		/// <summary>
+		/// Specifies the default height of the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultHeight = unchecked((uint)0x9311),
+
+		/// <summary>
+		/// Specifies the default number of layers in the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultLayers = unchecked((uint)0x9312),
+
+		/// <summary>
+		/// Specifies the default number of samples in the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultSamples = unchecked((uint)0x9313),
+
+		/// <summary>
+		/// Specifies if fixed sample locations are used in the default framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultFixedSampleLocations = unchecked((uint)0x9314),
 	}
 }

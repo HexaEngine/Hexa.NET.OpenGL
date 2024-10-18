@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			SpecializeShaderARBNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, string pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			byte* pStr0 = null;
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
@@ -65,6 +77,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
@@ -73,6 +89,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = pConstantIndex)
@@ -81,6 +101,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = &pConstantIndex)
@@ -89,6 +113,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
@@ -111,6 +143,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (uint* ppConstantValue0 = pConstantValue)
@@ -119,6 +155,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (uint* ppConstantValue0 = &pConstantValue)
@@ -127,6 +167,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
@@ -138,6 +182,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
@@ -149,6 +197,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = pConstantIndex)
@@ -160,6 +212,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = &pConstantIndex)
@@ -171,6 +227,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
@@ -185,6 +245,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gl_spirv</remarks>
 		public static void SpecializeShaderARB(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)

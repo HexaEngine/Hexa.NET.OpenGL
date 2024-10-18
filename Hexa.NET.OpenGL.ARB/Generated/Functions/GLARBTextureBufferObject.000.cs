@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_buffer_object</remarks>
 		public static void TexBufferARB(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferARBNative(target, internalformat, buffer);

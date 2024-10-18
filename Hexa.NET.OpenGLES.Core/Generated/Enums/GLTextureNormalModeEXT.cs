@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureNormalModeEXT : uint
 	{
+		/// <summary>
+		/// Specifies perturbation for texture coordinates (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_perturb_normal</remarks>
 		PerturbExt = unchecked((uint)0x85AE),
 	}
 }

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, long* @params)
 		{
 			GetVideoi64vNVNative(videoSlot, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, out long @params)
 		{
 			long pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoivNV(uint videoSlot, GLEnum pname, int* @params)
 		{
 			GetVideoivNVNative(videoSlot, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoivNV(uint videoSlot, GLEnum pname, out int @params)
 		{
 			int pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoivNV(uint videoSlot, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -86,11 +110,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, ulong* @params)
 		{
 			GetVideoui64vNVNative(videoSlot, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, out ulong @params)
 		{
 			ulong pparams;
@@ -98,6 +130,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -116,11 +152,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideouivNV(uint videoSlot, GLEnum pname, uint* @params)
 		{
 			GetVideouivNVNative(videoSlot, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideouivNV(uint videoSlot, GLEnum pname, out uint @params)
 		{
 			uint pparams;
@@ -128,6 +172,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void GetVideouivNV(uint videoSlot, GLEnum pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -146,6 +194,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void PresentFrameDualFillNV(uint videoSlot, ulong minPresentTime, uint beginPresentTimeId, uint presentDurationId, GLEnum type, GLEnum target0, uint fill0, GLEnum target1, uint fill1, GLEnum target2, uint fill2, GLEnum target3, uint fill3)
 		{
 			PresentFrameDualFillNVNative(videoSlot, minPresentTime, beginPresentTimeId, presentDurationId, type, target0, fill0, target1, fill1, target2, fill2, target3, fill3);
@@ -161,6 +213,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
 		public static void PresentFrameKeyedNV(uint videoSlot, ulong minPresentTime, uint beginPresentTimeId, uint presentDurationId, GLEnum type, GLEnum target0, uint fill0, uint key0, GLEnum target1, uint fill1, uint key1)
 		{
 			PresentFrameKeyedNVNative(videoSlot, minPresentTime, beginPresentTimeId, presentDurationId, type, target0, fill0, key0, target1, fill1, key1);

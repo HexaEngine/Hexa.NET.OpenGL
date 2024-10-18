@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
 		public static void DrawMeshTasksNV(uint first, uint count)
 		{
 			DrawMeshTasksNVNative(first, count);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
 		public static void DrawMeshTasksIndirectNV(nint indirect)
 		{
 			DrawMeshTasksIndirectNVNative(indirect);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
 		public static void MultiDrawMeshTasksIndirectNV(nint indirect, int drawcount, int stride)
 		{
 			MultiDrawMeshTasksIndirectNVNative(indirect, drawcount, stride);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
 		public static void MultiDrawMeshTasksIndirectCountNV(nint indirect, nint drawcount, int maxdrawcount, int stride)
 		{
 			MultiDrawMeshTasksIndirectCountNVNative(indirect, drawcount, maxdrawcount, stride);

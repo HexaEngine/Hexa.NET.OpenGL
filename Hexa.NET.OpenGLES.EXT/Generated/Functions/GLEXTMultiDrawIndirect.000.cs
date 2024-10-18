@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_indirect</remarks>
 		public static void MultiDrawArraysIndirectEXT(GLPrimitiveType mode, void* indirect, int drawcount, int stride)
 		{
 			MultiDrawArraysIndirectEXTNative(mode, indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_indirect</remarks>
 		public static void MultiDrawArraysIndirectEXT(GLPrimitiveType mode, nint indirect, int drawcount, int stride)
 		{
 			MultiDrawArraysIndirectEXTNative(mode, (void*)indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_indirect</remarks>
 		public static void MultiDrawArraysIndirectEXT<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_indirect</remarks>
 		public static void MultiDrawElementsIndirectEXT(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
 			MultiDrawElementsIndirectEXTNative(mode, type, indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_indirect</remarks>
 		public static void MultiDrawElementsIndirectEXT(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawcount, int stride)
 		{
 			MultiDrawElementsIndirectEXTNative(mode, type, (void*)indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_indirect</remarks>
 		public static void MultiDrawElementsIndirectEXT<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)

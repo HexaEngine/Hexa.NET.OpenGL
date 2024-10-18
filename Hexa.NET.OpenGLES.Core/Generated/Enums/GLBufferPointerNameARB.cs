@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLBufferPointerNameARB : uint
 	{
+		/// <summary>
+		/// Specifies a pointer to a mapped buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapPointer = unchecked((uint)0x88BD),
+
+		/// <summary>
+		/// Specifies a pointer to a mapped buffer (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		MapPointerArb = unchecked((uint)0x88BD),
 	}
 }

@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLRenderingMode : uint
 	{
+		/// <summary>
+		/// Specifies render mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Render = unchecked((uint)0x1C00),
+
+		/// <summary>
+		/// Specifies feedback mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Feedback = unchecked((uint)0x1C01),
+
+		/// <summary>
+		/// Specifies selection mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Select = unchecked((uint)0x1C02),
 	}
 }

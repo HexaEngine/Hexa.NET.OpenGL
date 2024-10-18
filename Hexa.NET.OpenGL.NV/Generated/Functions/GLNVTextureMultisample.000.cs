@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_multisample</remarks>
 		public static void TexImage2DMultisampleCoverageNV(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			TexImage2DMultisampleCoverageNVNative(target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_multisample</remarks>
 		public static void TexImage3DMultisampleCoverageNV(GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			TexImage3DMultisampleCoverageNVNative(target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_multisample</remarks>
 		public static void TextureImage2DMultisampleCoverageNV(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			TextureImage2DMultisampleCoverageNVNative(texture, target, coverageSamples, colorSamples, internalFormat, width, height, fixedSampleLocations);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_multisample</remarks>
 		public static void TextureImage2DMultisampleNV(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, bool fixedSampleLocations)
 		{
 			TextureImage2DMultisampleNVNative(texture, target, samples, internalFormat, width, height, fixedSampleLocations);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_multisample</remarks>
 		public static void TextureImage3DMultisampleCoverageNV(uint texture, GLTextureTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			TextureImage3DMultisampleCoverageNVNative(texture, target, coverageSamples, colorSamples, internalFormat, width, height, depth, fixedSampleLocations);
@@ -101,6 +121,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_multisample</remarks>
 		public static void TextureImage3DMultisampleNV(uint texture, GLTextureTarget target, int samples, GLInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations)
 		{
 			TextureImage3DMultisampleNVNative(texture, target, samples, internalFormat, width, height, depth, fixedSampleLocations);

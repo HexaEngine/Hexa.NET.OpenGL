@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_sample_positions</remarks>
 		public static void SetMultisamplefvAMD(GLEnum pname, uint index, float* val)
 		{
 			SetMultisamplefvAMDNative(pname, index, val);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_sample_positions</remarks>
 		public static void SetMultisamplefvAMD(GLEnum pname, uint index, Span<float> val)
 		{
 			fixed (float* pval0 = val)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_sample_positions</remarks>
 		public static void SetMultisamplefvAMD(GLEnum pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)

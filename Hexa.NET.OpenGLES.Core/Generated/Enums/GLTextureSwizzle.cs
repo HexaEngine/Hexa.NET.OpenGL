@@ -15,11 +15,40 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureSwizzle : uint
 	{
+		/// <summary>
+		/// Numeric zero value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_blend_equation_advanced<br/>GL_NV_register_combiners<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Zero = unchecked((uint)0),
+
+		/// <summary>
+		/// Numeric one value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		One = unchecked((uint)1),
+
+		/// <summary>
+		/// Specifies the red color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Red = unchecked((uint)0x1903),
+
+		/// <summary>
+		/// Specifies the green color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Green = unchecked((uint)0x1904),
+
+		/// <summary>
+		/// Specifies the blue color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Blue = unchecked((uint)0x1905),
+
+		/// <summary>
+		/// Specifies the alpha component for transparency.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Alpha = unchecked((uint)0x1906),
 	}
 }

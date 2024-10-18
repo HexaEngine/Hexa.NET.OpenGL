@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void BindTransformFeedbackNV(GLBufferTargetARB target, uint id)
 		{
 			BindTransformFeedbackNVNative(target, id);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacksNV(int n, uint* ids)
 		{
 			DeleteTransformFeedbacksNVNative(n, ids);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacksN(uint id)
 		{
 			DeleteTransformFeedbacksNVNative(1, &id);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacksNV(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacksNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void DrawTransformFeedbackNV(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackNVNative(mode, id);
@@ -92,11 +116,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void GenTransformFeedbacksNV(int n, uint* ids)
 		{
 			GenTransformFeedbacksNVNative(n, ids);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static uint GenTransformFeedbacksN()
 		{
 			uint result;
@@ -104,6 +136,10 @@ namespace Hexa.NET.OpenGL.NV
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void GenTransformFeedbacksNV(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -112,6 +148,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void GenTransformFeedbacksNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -130,6 +170,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static bool IsTransformFeedbackNV(uint id)
 		{
 			byte ret = IsTransformFeedbackNVNative(id);
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void PauseTransformFeedbackNV()
 		{
 			PauseTransformFeedbackNVNative();
@@ -161,6 +209,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
 		public static void ResumeTransformFeedbackNV()
 		{
 			ResumeTransformFeedbackNVNative();

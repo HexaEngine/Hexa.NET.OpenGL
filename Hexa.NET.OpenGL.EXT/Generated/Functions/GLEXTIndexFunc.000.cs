@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_index_func</remarks>
 		public static void IndexFuncEXT(GLIndexFunctionEXT func, float reference)
 		{
 			IndexFuncEXTNative(func, reference);

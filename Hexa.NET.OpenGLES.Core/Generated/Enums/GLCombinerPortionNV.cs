@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLCombinerPortionNV : uint
 	{
+		/// <summary>
+		/// Specifies the alpha component for transparency.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Alpha = unchecked((uint)0x1906),
+
+		/// <summary>
+		/// Specifies a color in RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Rgb = unchecked((uint)0x1907),
 	}
 }

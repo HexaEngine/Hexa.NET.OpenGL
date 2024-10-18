@@ -15,21 +15,100 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMapBufferAccessMask : uint
 	{
+		/// <summary>
+		/// Allows mapping for read access.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage<br/>GL_ARB_map_buffer_range</remarks>
 		ReadBit = unchecked((uint)0x0001),
+
+		/// <summary>
+		/// Read access mapping for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		ReadBitExt = unchecked((uint)0x0001),
+
+		/// <summary>
+		/// Allows mapping for write access.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage<br/>GL_ARB_map_buffer_range</remarks>
 		WriteBit = unchecked((uint)0x0002),
+
+		/// <summary>
+		/// Write access mapping for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		WriteBitExt = unchecked((uint)0x0002),
+
+		/// <summary>
+		/// Invalidates a mapping range.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		InvalidateRangeBit = unchecked((uint)0x0004),
+
+		/// <summary>
+		/// Invalidates mapping range for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		InvalidateRangeBitExt = unchecked((uint)0x0004),
+
+		/// <summary>
+		/// Invalidates a mapped buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		InvalidateBufferBit = unchecked((uint)0x0008),
+
+		/// <summary>
+		/// Invalidates mapped buffer for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		InvalidateBufferBitExt = unchecked((uint)0x0008),
+
+		/// <summary>
+		/// Allows explicit flush of mapped data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		FlushExplicitBit = unchecked((uint)0x0010),
+
+		/// <summary>
+		/// Explicit flush mapping for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		FlushExplicitBitExt = unchecked((uint)0x0010),
+
+		/// <summary>
+		/// Allows unsynchronized mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		UnsynchronizedBit = unchecked((uint)0x0020),
+
+		/// <summary>
+		/// Unsynchronized mapping for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		UnsynchronizedBitExt = unchecked((uint)0x0020),
+
+		/// <summary>
+		/// Indicates persistent mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		PersistentBit = unchecked((uint)0x0040),
+
+		/// <summary>
+		/// Persistent mapping for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		PersistentBitExt = unchecked((uint)0x0040),
+
+		/// <summary>
+		/// Indicates coherent mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		CoherentBit = unchecked((uint)0x0080),
+
+		/// <summary>
+		/// Coherent mapping for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		CoherentBitExt = unchecked((uint)0x0080),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.ANDROID
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_tessellation_shader</remarks>
 		public static void PatchParameteriEXT(GLPatchParameterName pname, int value)
 		{
 			PatchParameteriEXTNative(pname, value);

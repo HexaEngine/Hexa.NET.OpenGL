@@ -26,12 +26,20 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, uint* textures, byte* residences)
 		{
 			byte ret = AreTexturesResidentEXTNative(n, textures, residences);
 			return ret != 0;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, Span<uint> textures, byte* residences)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -41,6 +49,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, ref uint textures, byte* residences)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -50,6 +62,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, uint* textures, string residences)
 		{
 			byte* pStr0 = null;
@@ -77,6 +93,10 @@ namespace Hexa.NET.OpenGL.EXT
 			return ret != 0;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, uint* textures, Span<byte> residences)
 		{
 			fixed (byte* presidences0 = residences)
@@ -86,6 +106,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, uint* textures, ref byte residences)
 		{
 			fixed (byte* presidences0 = &residences)
@@ -95,6 +119,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, Span<uint> textures, Span<byte> residences)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -107,6 +135,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool AreTexturesResidentEXT(int n, ref uint textures, ref byte residences)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -129,6 +161,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void BindTextureEXT(GLTextureTarget target, uint texture)
 		{
 			BindTextureEXTNative(target, texture);
@@ -144,16 +180,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void DeleteTexturesEXT(int n, uint* textures)
 		{
 			DeleteTexturesEXTNative(n, textures);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void DeleteTexturesEX(uint texture)
 		{
 			DeleteTexturesEXTNative(1, &texture);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void DeleteTexturesEXT(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -162,6 +210,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void DeleteTexturesEXT(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -180,11 +232,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void GenTexturesEXT(int n, uint* textures)
 		{
 			GenTexturesEXTNative(n, textures);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static uint GenTexturesEX()
 		{
 			uint result;
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGL.EXT
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void GenTexturesEXT(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -200,6 +264,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void GenTexturesEXT(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -218,6 +286,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static bool IsTextureEXT(uint texture)
 		{
 			byte ret = IsTextureEXTNative(texture);
@@ -234,11 +306,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, uint* textures, float* priorities)
 		{
 			PrioritizeTexturesEXTNative(n, textures, priorities);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, Span<uint> textures, float* priorities)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -247,6 +327,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, ref uint textures, float* priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -255,6 +339,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, uint* textures, Span<float> priorities)
 		{
 			fixed (float* ppriorities0 = priorities)
@@ -263,6 +351,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, uint* textures, ref float priorities)
 		{
 			fixed (float* ppriorities0 = &priorities)
@@ -271,6 +363,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, Span<uint> textures, Span<float> priorities)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -282,6 +378,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		public static void PrioritizeTexturesEXT(int n, ref uint textures, ref float priorities)
 		{
 			fixed (uint* ptextures0 = &textures)

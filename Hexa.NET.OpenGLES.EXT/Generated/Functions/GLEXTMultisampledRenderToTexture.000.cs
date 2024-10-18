@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisampled_render_to_texture</remarks>
 		public static void FramebufferTexture2DMultisampleEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int samples)
 		{
 			FramebufferTexture2DMultisampleEXTNative(target, attachment, textarget, texture, level, samples);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_multisample<br/>GL_EXT_multisampled_render_to_texture</remarks>
 		public static void RenderbufferStorageMultisampleEXT(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleEXTNative(target, samples, internalformat, width, height);

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void BindVertexArray(uint array)
 		{
 			BindVertexArrayNative(array);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArrays(int n, uint* arrays)
 		{
 			DeleteVertexArraysNative(n, arrays);
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArray(uint array)
 		{
 			DeleteVertexArraysNative(1, &array);
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -77,11 +97,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void GenVertexArrays(int n, uint* arrays)
 		{
 			GenVertexArraysNative(n, arrays);
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static uint GenVertexArray()
 		{
 			uint result;
@@ -89,6 +117,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void GenVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -97,6 +129,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void GenVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -115,6 +151,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Determine if a name corresponds to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static bool IsVertexArray(uint array)
 		{
 			byte ret = IsVertexArrayNative(array);

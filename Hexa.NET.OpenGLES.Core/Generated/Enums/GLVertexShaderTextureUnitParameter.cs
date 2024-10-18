@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexShaderTextureUnitParameter : uint
 	{
+		/// <summary>
+		/// Current texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentTextureCoords = unchecked((uint)0x0B03),
+
+		/// <summary>
+		/// Current texture matrix.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Matrix = unchecked((uint)0x0BA8),
 	}
 }

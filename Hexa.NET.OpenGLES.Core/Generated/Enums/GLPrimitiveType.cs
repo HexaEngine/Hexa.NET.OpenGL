@@ -15,30 +15,154 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPrimitiveType : uint
 	{
+		/// <summary>
+		/// Primitive type for points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Points = unchecked((uint)0x0000),
+
+		/// <summary>
+		/// Primitive type for lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Lines = unchecked((uint)0x0001),
+
+		/// <summary>
+		/// Primitive type for a loop of lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineLoop = unchecked((uint)0x0002),
+
+		/// <summary>
+		/// Primitive type for a strip of lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineStrip = unchecked((uint)0x0003),
+
+		/// <summary>
+		/// Primitive type for triangles.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader<br/>GL_EXT_tessellation_shader<br/>GL_OES_tessellation_shader</remarks>
 		Triangles = unchecked((uint)0x0004),
+
+		/// <summary>
+		/// Primitive type for a strip of triangles.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TriangleStrip = unchecked((uint)0x0005),
+
+		/// <summary>
+		/// Primitive type for a fan of triangles.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TriangleFan = unchecked((uint)0x0006),
+
+		/// <summary>
+		/// Primitive type for quadrilaterals.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		Quads = unchecked((uint)0x0007),
+
+		/// <summary>
+		/// Primitive type for quadrilaterals, specific to EXT.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_tessellation_shader</remarks>
 		QuadsExt = unchecked((uint)0x0007),
+
+		/// <summary>
+		/// Primitive type for a strip of quadrilaterals.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		QuadStrip = unchecked((uint)0x0008),
+
+		/// <summary>
+		/// Primitive type for polygons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Polygon = unchecked((uint)0x0009),
+
+		/// <summary>
+		/// Primitive type for lines with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LinesAdjacency = unchecked((uint)0x000A),
+
+		/// <summary>
+		/// Lines adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		LinesAdjacencyArb = unchecked((uint)0x000A),
+
+		/// <summary>
+		/// Lines adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
 		LinesAdjacencyExt = unchecked((uint)0x000A),
+
+		/// <summary>
+		/// Line strip with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineStripAdjacency = unchecked((uint)0x000B),
+
+		/// <summary>
+		/// Line strip adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		LineStripAdjacencyArb = unchecked((uint)0x000B),
+
+		/// <summary>
+		/// Line strip adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
 		LineStripAdjacencyExt = unchecked((uint)0x000B),
+
+		/// <summary>
+		/// Triangles with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TrianglesAdjacency = unchecked((uint)0x000C),
+
+		/// <summary>
+		/// Triangles adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		TrianglesAdjacencyArb = unchecked((uint)0x000C),
+
+		/// <summary>
+		/// Triangles adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
 		TrianglesAdjacencyExt = unchecked((uint)0x000C),
+
+		/// <summary>
+		/// Triangle strip with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TriangleStripAdjacency = unchecked((uint)0x000D),
+
+		/// <summary>
+		/// Triangle strip adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		TriangleStripAdjacencyArb = unchecked((uint)0x000D),
+
+		/// <summary>
+		/// Triangle strip adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
 		TriangleStripAdjacencyExt = unchecked((uint)0x000D),
+
+		/// <summary>
+		/// Primitive type for patches.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader<br/>GL_NV_gpu_shader5</remarks>
 		Patches = unchecked((uint)0x000E),
+
+		/// <summary>
+		/// Primitive type for patches, specific to EXT.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_tessellation_shader</remarks>
 		PatchesExt = unchecked((uint)0x000E),
 	}
 }

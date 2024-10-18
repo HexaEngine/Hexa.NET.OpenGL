@@ -15,17 +15,76 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLBlendEquationModeEXT : uint
 	{
+		/// <summary>
+		/// Specifies the addition function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		FuncAdd = unchecked((uint)0x8006),
+
+		/// <summary>
+		/// Specifies the addition function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
 		FuncAddExt = unchecked((uint)0x8006),
+
+		/// <summary>
+		/// Specifies the minimum function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Min = unchecked((uint)0x8007),
+
+		/// <summary>
+		/// Specifies the minimum function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
 		MinExt = unchecked((uint)0x8007),
+
+		/// <summary>
+		/// Specifies the maximum function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Max = unchecked((uint)0x8008),
+
+		/// <summary>
+		/// Specifies the maximum function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
 		MaxExt = unchecked((uint)0x8008),
+
+		/// <summary>
+		/// Specifies the subtraction function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		FuncSubtract = unchecked((uint)0x800A),
+
+		/// <summary>
+		/// Specifies the subtraction function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_subtract</remarks>
 		FuncSubtractExt = unchecked((uint)0x800A),
+
+		/// <summary>
+		/// Specifies the reverse subtraction function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		FuncReverseSubtract = unchecked((uint)0x800B),
+
+		/// <summary>
+		/// Specifies the reverse subtraction function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_subtract</remarks>
 		FuncReverseSubtractExt = unchecked((uint)0x800B),
+
+		/// <summary>
+		/// Specifies the minimum alpha value (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaMinSgix = unchecked((uint)0x8320),
+
+		/// <summary>
+		/// Specifies the maximum alpha value (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaMaxSgix = unchecked((uint)0x8321),
 	}
 }

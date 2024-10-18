@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLProgramFormat : uint
 	{
+		/// <summary>
+		/// Specifies the program format in ASCII (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		AsciiArb = unchecked((uint)0x8875),
 	}
 }

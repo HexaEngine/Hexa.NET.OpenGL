@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLLightModelColorControl : uint
 	{
+		/// <summary>
+		/// Specifies single color lighting behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SingleColor = unchecked((uint)0x81F9),
+
+		/// <summary>
+		/// Specifies single color lighting behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
 		SingleColorExt = unchecked((uint)0x81F9),
+
+		/// <summary>
+		/// Specifies separate specular color behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SeparateSpecularColor = unchecked((uint)0x81FA),
+
+		/// <summary>
+		/// Specifies separate specular color behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
 		SeparateSpecularColorExt = unchecked((uint)0x81FA),
 	}
 }

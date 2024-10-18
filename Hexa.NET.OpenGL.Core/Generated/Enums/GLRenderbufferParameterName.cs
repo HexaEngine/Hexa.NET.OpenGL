@@ -15,41 +15,220 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLRenderbufferParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the number of coverage samples for renderbuffers (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample_coverage</remarks>
 		CoverageSamplesNv = unchecked((uint)0x8CAB),
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Samples = unchecked((uint)0x8CAB),
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers in the ANGLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		SamplesAngle = unchecked((uint)0x8CAB),
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		SamplesApple = unchecked((uint)0x8CAB),
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_multisample</remarks>
 		SamplesExt = unchecked((uint)0x8CAB),
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SamplesNv = unchecked((uint)0x8CAB),
+
+		/// <summary>
+		/// Specifies the width of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Width = unchecked((uint)0x8D42),
+
+		/// <summary>
+		/// Specifies the width of the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		WidthExt = unchecked((uint)0x8D42),
+
+		/// <summary>
+		/// Specifies the width of the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		WidthOes = unchecked((uint)0x8D42),
+
+		/// <summary>
+		/// Specifies the height of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Height = unchecked((uint)0x8D43),
+
+		/// <summary>
+		/// Specifies the height of the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		HeightExt = unchecked((uint)0x8D43),
+
+		/// <summary>
+		/// Specifies the height of the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		HeightOes = unchecked((uint)0x8D43),
+
+		/// <summary>
+		/// Specifies the internal format of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		InternalFormat = unchecked((uint)0x8D44),
+
+		/// <summary>
+		/// Specifies the internal format of the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		InternalFormatExt = unchecked((uint)0x8D44),
+
+		/// <summary>
+		/// Specifies the internal format of the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		InternalFormatOes = unchecked((uint)0x8D44),
+
+		/// <summary>
+		/// Specifies the size of the red component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RedSize = unchecked((uint)0x8D50),
+
+		/// <summary>
+		/// Specifies the size of the red component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RedSizeExt = unchecked((uint)0x8D50),
+
+		/// <summary>
+		/// Specifies the size of the red component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RedSizeOes = unchecked((uint)0x8D50),
+
+		/// <summary>
+		/// Specifies the size of the green component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		GreenSize = unchecked((uint)0x8D51),
+
+		/// <summary>
+		/// Specifies the size of the green component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		GreenSizeExt = unchecked((uint)0x8D51),
+
+		/// <summary>
+		/// Specifies the size of the green component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		GreenSizeOes = unchecked((uint)0x8D51),
+
+		/// <summary>
+		/// Specifies the size of the blue component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		BlueSize = unchecked((uint)0x8D52),
+
+		/// <summary>
+		/// Specifies the size of the blue component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		BlueSizeExt = unchecked((uint)0x8D52),
+
+		/// <summary>
+		/// Specifies the size of the blue component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		BlueSizeOes = unchecked((uint)0x8D52),
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		AlphaSize = unchecked((uint)0x8D53),
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		AlphaSizeExt = unchecked((uint)0x8D53),
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaSizeOes = unchecked((uint)0x8D53),
+
+		/// <summary>
+		/// Specifies the depth size of a renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DepthSize = unchecked((uint)0x8D54),
+
+		/// <summary>
+		/// Specifies the depth size of a renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		DepthSizeExt = unchecked((uint)0x8D54),
+
+		/// <summary>
+		/// Specifies the depth size of a renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthSizeOes = unchecked((uint)0x8D54),
+
+		/// <summary>
+		/// Specifies the stencil size of a renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilSize = unchecked((uint)0x8D55),
+
+		/// <summary>
+		/// Specifies the stencil size of a renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilSizeExt = unchecked((uint)0x8D55),
+
+		/// <summary>
+		/// Specifies the stencil size of a renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilSizeOes = unchecked((uint)0x8D55),
+
+		/// <summary>
+		/// Specifies the number of color samples in a renderbuffer for NV extension.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample_coverage</remarks>
 		ColorSamplesNv = unchecked((uint)0x8E10),
+
+		/// <summary>
+		/// Specifies the number of samples for a renderbuffer (IMG extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SamplesImg = unchecked((uint)0x9133),
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffer storage (AMD extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_multisample_advanced</remarks>
 		StorageSamplesAmd = unchecked((uint)0x91B2),
 	}
 }

@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLGetTexBumpParameterATI : uint
 	{
+		/// <summary>
+		/// Specifies the bump rotation matrix (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RotMatrixAti = unchecked((uint)0x8775),
+
+		/// <summary>
+		/// Specifies the size of the bump rotation matrix (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RotMatrixSizeAti = unchecked((uint)0x8776),
+
+		/// <summary>
+		/// Specifies the number of texture units for bump mapping (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NumTexUnitsAti = unchecked((uint)0x8777),
+
+		/// <summary>
+		/// Specifies the bump texture units (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnitsAti = unchecked((uint)0x8778),
 	}
 }

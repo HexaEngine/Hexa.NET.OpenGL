@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_sample_shading</remarks>
 		public static void MinSampleShadingOES(float value)
 		{
 			MinSampleShadingOESNative(value);

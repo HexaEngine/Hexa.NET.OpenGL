@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexfOES(float x, float y, float z, float width, float height)
 		{
 			DrawTexfOESNative(x, y, z, width, height);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexfvOES(float* coords)
 		{
 			DrawTexfvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexfvOES(Span<float> coords)
 		{
 			fixed (float* pcoords0 = coords)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexfvOES(ref float coords)
 		{
 			fixed (float* pcoords0 = &coords)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexiOES(int x, int y, int z, int width, int height)
 		{
 			DrawTexiOESNative(x, y, z, width, height);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexivOES(int* coords)
 		{
 			DrawTexivOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexivOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexivOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexsOES(short x, short y, short z, short width, short height)
 		{
 			DrawTexsOESNative(x, y, z, width, height);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexsvOES(short* coords)
 		{
 			DrawTexsvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexsvOES(Span<short> coords)
 		{
 			fixed (short* pcoords0 = coords)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexsvOES(ref short coords)
 		{
 			fixed (short* pcoords0 = &coords)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexxOES(int x, int y, int z, int width, int height)
 		{
 			DrawTexxOESNative(x, y, z, width, height);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexxvOES(int* coords)
 		{
 			DrawTexxvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexxvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
 		public static void DrawTexxvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)

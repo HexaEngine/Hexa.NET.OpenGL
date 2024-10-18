@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, byte* source)
 		{
 			GetTranslatedShaderSourceANGLENative(shader, bufSize, length, source);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, Span<int> length, byte* source)
 		{
 			fixed (int* plength0 = length)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
@@ -47,6 +59,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, string source)
 		{
 			byte* pStr0 = null;
@@ -73,6 +89,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, Span<byte> source)
 		{
 			fixed (byte* psource0 = source)
@@ -81,6 +101,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, ref byte source)
 		{
 			fixed (byte* psource0 = &source)
@@ -89,6 +113,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, Span<int> length, Span<byte> source)
 		{
 			fixed (int* plength0 = length)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
 		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, ref int length, ref byte source)
 		{
 			fixed (int* plength0 = &length)

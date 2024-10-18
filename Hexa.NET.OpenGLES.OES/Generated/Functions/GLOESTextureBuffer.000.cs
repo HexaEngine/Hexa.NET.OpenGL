@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_buffer</remarks>
 		public static void TexBufferOES(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferOESNative(target, internalformat, buffer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_buffer</remarks>
 		public static void TexBufferRangeOES(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			TexBufferRangeOESNative(target, internalformat, buffer, offset, size);

@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureEnvTarget : uint
 	{
+		/// <summary>
+		/// Specifies the texture environment settings.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Env = unchecked((uint)0x2300),
+
+		/// <summary>
+		/// Specifies the texture filter control mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FilterControl = unchecked((uint)0x8500),
+
+		/// <summary>
+		/// Enables point sprite rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSprite = unchecked((uint)0x8861),
 	}
 }

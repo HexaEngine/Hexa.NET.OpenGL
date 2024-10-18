@@ -26,18 +26,30 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
 		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative(vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
 		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(nint vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative((void*)vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
 		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV<TVdpSurface>(Span<TVdpSurface> vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure) where TVdpSurface : unmanaged
 		{
 			fixed (TVdpSurface* pvdpSurface0 = vdpSurface)
@@ -47,6 +59,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
 		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, Span<uint> textureNames, bool isFrameStructure)
 		{
 			fixed (uint* ptextureNames0 = textureNames)
@@ -56,6 +72,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
 		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames, bool isFrameStructure)
 		{
 			fixed (uint* ptextureNames0 = &textureNames)

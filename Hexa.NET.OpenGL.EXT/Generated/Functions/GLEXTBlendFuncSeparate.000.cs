@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_separate</remarks>
 		public static void BlendFuncSeparateEXT(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
 		{
 			BlendFuncSeparateEXTNative(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);

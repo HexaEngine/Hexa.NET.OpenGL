@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_window_rectangles</remarks>
 		public static void WindowRectanglesEXT(GLEnum mode, int count, int* box)
 		{
 			WindowRectanglesEXTNative(mode, count, box);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_window_rectangles</remarks>
 		public static void WindowRectanglesEXT(GLEnum mode, int count, Span<int> box)
 		{
 			fixed (int* pbox0 = box)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_window_rectangles</remarks>
 		public static void WindowRectanglesEXT(GLEnum mode, int count, ref int box)
 		{
 			fixed (int* pbox0 = &box)

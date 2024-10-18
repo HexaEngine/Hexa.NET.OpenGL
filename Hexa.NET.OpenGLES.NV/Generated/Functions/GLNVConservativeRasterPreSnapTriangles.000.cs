@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_conservative_raster_pre_snap_triangles</remarks>
 		public static void ConservativeRasterParameteriNV(GLEnum pname, int param)
 		{
 			ConservativeRasterParameteriNVNative(pname, param);

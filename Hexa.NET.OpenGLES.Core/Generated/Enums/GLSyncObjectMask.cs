@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSyncObjectMask : uint
 	{
+		/// <summary>
+		/// Flushes commands in sync.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		FlushCommandsBit = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Sync flush commands for Apple.
+		/// </summary>
+		/// <remarks></remarks>
 		FlushCommandsBitApple = unchecked((uint)0x00000001),
 	}
 }

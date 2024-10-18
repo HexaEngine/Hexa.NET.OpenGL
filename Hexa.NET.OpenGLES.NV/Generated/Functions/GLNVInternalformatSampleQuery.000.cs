@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
 		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, int* @params)
 		{
 			GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
 		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, out int @params)
 		{
 			int pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGLES.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
 		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

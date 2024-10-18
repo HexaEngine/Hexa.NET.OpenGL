@@ -26,16 +26,31 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Creates and initializes a buffer object's immutable data
+		///     store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		public static void BufferStorage(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			BufferStorageNative(target, size, data, flags);
 		}
 
+		/// <summary>
+		/// Creates and initializes a buffer object's immutable data
+		///     store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		public static void BufferStorage(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
 		{
 			BufferStorageNative(target, size, (void*)data, flags);
 		}
 
+		/// <summary>
+		/// Creates and initializes a buffer object's immutable data
+		///     store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		public static void BufferStorage<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

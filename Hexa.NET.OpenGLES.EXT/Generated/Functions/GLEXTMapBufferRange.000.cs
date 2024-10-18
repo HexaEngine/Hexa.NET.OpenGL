@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_map_buffer_range</remarks>
 		public static void FlushMappedBufferRangeEXT(GLBufferTargetARB target, nint offset, nint length)
 		{
 			FlushMappedBufferRangeEXTNative(target, offset, length);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_map_buffer_range</remarks>
 		public static void* MapBufferRangeEXT(GLBufferTargetARB target, nint offset, nint length, GLMapBufferAccessMask access)
 		{
 			void* ret = MapBufferRangeEXTNative(target, offset, length, access);

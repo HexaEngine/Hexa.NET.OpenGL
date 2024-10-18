@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		public static void ImportSemaphoreWin32HandleEXT(uint semaphore, GLExternalHandleType handleType, void* handle)
 		{
 			ImportSemaphoreWin32HandleEXTNative(semaphore, handleType, handle);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		public static void ImportSemaphoreWin32HandleEXT(uint semaphore, GLExternalHandleType handleType, nint handle)
 		{
 			ImportSemaphoreWin32HandleEXTNative(semaphore, handleType, (void*)handle);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		public static void ImportSemaphoreWin32HandleEXT<THandle>(uint semaphore, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
 		{
 			fixed (THandle* phandle0 = handle)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		public static void ImportSemaphoreWin32NameEXT(uint semaphore, GLExternalHandleType handleType, void* name)
 		{
 			ImportSemaphoreWin32NameEXTNative(semaphore, handleType, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		public static void ImportSemaphoreWin32NameEXT(uint semaphore, GLExternalHandleType handleType, nint name)
 		{
 			ImportSemaphoreWin32NameEXTNative(semaphore, handleType, (void*)name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		public static void ImportSemaphoreWin32NameEXT<TName>(uint semaphore, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
 		{
 			fixed (TName* pname0 = name)

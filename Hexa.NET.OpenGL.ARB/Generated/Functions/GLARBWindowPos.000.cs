@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2dARB(double x, double y)
 		{
 			WindowPos2dARBNative(x, y);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2dvARB(double* v)
 		{
 			WindowPos2dvARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2dvARB(Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2dvARB(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2fARB(float x, float y)
 		{
 			WindowPos2fARBNative(x, y);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2fvARB(float* v)
 		{
 			WindowPos2fvARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2fvARB(Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2fvARB(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2iARB(int x, int y)
 		{
 			WindowPos2iARBNative(x, y);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2ivARB(int* v)
 		{
 			WindowPos2ivARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2ivARB(Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2ivARB(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2sARB(short x, short y)
 		{
 			WindowPos2sARBNative(x, y);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2svARB(short* v)
 		{
 			WindowPos2svARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2svARB(Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos2svARB(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -210,6 +274,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3dARB(double x, double y, double z)
 		{
 			WindowPos3dARBNative(x, y, z);
@@ -225,11 +293,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3dvARB(double* v)
 		{
 			WindowPos3dvARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3dvARB(Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -238,6 +314,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3dvARB(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -256,6 +336,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3fARB(float x, float y, float z)
 		{
 			WindowPos3fARBNative(x, y, z);
@@ -271,11 +355,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3fvARB(float* v)
 		{
 			WindowPos3fvARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3fvARB(Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -284,6 +376,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3fvARB(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -302,6 +398,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3iARB(int x, int y, int z)
 		{
 			WindowPos3iARBNative(x, y, z);
@@ -317,11 +417,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3ivARB(int* v)
 		{
 			WindowPos3ivARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3ivARB(Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -330,6 +438,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3ivARB(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -348,6 +460,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3sARB(short x, short y, short z)
 		{
 			WindowPos3sARBNative(x, y, z);
@@ -363,11 +479,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3svARB(short* v)
 		{
 			WindowPos3svARBNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3svARB(Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -376,6 +500,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_window_pos</remarks>
 		public static void WindowPos3svARB(ref short v)
 		{
 			fixed (short* pv0 = &v)

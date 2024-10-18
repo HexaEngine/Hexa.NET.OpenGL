@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSyncBehaviorFlags : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
 	}
 }

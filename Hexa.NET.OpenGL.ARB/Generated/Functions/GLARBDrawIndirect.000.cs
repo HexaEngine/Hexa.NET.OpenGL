@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		public static void DrawArraysIndirect(GLPrimitiveType mode, void* indirect)
 		{
 			DrawArraysIndirectNative(mode, indirect);
 		}
 
+		/// <summary>
+		/// Render primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		public static void DrawArraysIndirect(GLPrimitiveType mode, nint indirect)
 		{
 			DrawArraysIndirectNative(mode, (void*)indirect);
 		}
 
+		/// <summary>
+		/// Render primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		public static void DrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render indexed primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
 			DrawElementsIndirectNative(mode, type, indirect);
 		}
 
+		/// <summary>
+		/// Render indexed primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect)
 		{
 			DrawElementsIndirectNative(mode, type, (void*)indirect);
 		}
 
+		/// <summary>
+		/// Render indexed primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		public static void DrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)

@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLClampColorModeARB : uint
 	{
+		/// <summary>
+		/// Boolean false value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		False = unchecked((uint)0),
+
+		/// <summary>
+		/// Boolean true value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		True = unchecked((uint)1),
+
+		/// <summary>
+		/// Specifies that a texture format only supports fixed-point formats.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FixedOnly = unchecked((uint)0x891D),
+
+		/// <summary>
+		/// Specifies that a texture format only supports fixed-point formats (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		FixedOnlyArb = unchecked((uint)0x891D),
 	}
 }

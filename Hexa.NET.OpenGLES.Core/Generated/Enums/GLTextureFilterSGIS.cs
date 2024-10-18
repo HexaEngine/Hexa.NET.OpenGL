@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureFilterSGIS : uint
 	{
+		/// <summary>
+		/// Specifies a filter with four components (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Filter4Sgis = unchecked((uint)0x8146),
 	}
 }

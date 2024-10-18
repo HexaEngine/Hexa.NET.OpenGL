@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			ColorTableEXTNative(target, internalFormat, width, format, type, table);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, nint table)
 		{
 			ColorTableEXTNative(target, internalFormat, width, format, type, (void*)table);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void ColorTableEXT<TTable>(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			GetColorTableEXTNative(target, format, type, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			GetColorTableEXTNative(target, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableEXT<TData>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -82,11 +106,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			GetColorTableParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
 		{
 			float pparams;
@@ -94,6 +126,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -112,11 +148,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			GetColorTableParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
 		{
 			int pparams;
@@ -124,6 +168,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
 		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

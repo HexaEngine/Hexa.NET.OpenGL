@@ -15,16 +15,70 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLGetFramebufferParameter : uint
 	{
+		/// <summary>
+		/// Enables or disables double buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Doublebuffer = unchecked((uint)0x0C32),
+
+		/// <summary>
+		/// Enables or disables stereo buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Stereo = unchecked((uint)0x0C33),
+
+		/// <summary>
+		/// Specifies the number of sample buffers used for multisampling.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		SampleBuffers = unchecked((uint)0x80A8),
+
+		/// <summary>
+		/// Specifies the number of samples in a sample buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Samples = unchecked((uint)0x80A9),
+
+		/// <summary>
+		/// Specifies the type for reading implementation colors.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ImplementationColorReadType = unchecked((uint)0x8B9A),
+
+		/// <summary>
+		/// Specifies the format for reading implementation colors.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ImplementationColorReadFormat = unchecked((uint)0x8B9B),
+
+		/// <summary>
+		/// Specifies the default width of the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultWidth = unchecked((uint)0x9310),
+
+		/// <summary>
+		/// Specifies the default height of the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultHeight = unchecked((uint)0x9311),
+
+		/// <summary>
+		/// Specifies the default number of layers in the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultLayers = unchecked((uint)0x9312),
+
+		/// <summary>
+		/// Specifies the default number of samples in the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultSamples = unchecked((uint)0x9313),
+
+		/// <summary>
+		/// Specifies if fixed sample locations are used in the default framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		DefaultFixedSampleLocations = unchecked((uint)0x9314),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		public static void VertexAttribParameteriAMD(uint index, GLEnum pname, int param)
 		{
 			VertexAttribParameteriAMDNative(index, pname, param);

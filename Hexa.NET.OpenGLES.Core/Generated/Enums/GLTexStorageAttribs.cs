@@ -15,20 +15,94 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTexStorageAttribs : uint
 	{
+		/// <summary>
+		/// Indicates whether surface compression is enabled (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage_compression<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionExt = unchecked((uint)0x96C0),
+
+		/// <summary>
+		/// Specifies no fixed-rate surface compression (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage_compression<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRateNoneExt = unchecked((uint)0x96C1),
+
+		/// <summary>
+		/// Specifies default fixed-rate surface compression (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage_compression<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRateDefaultExt = unchecked((uint)0x96C2),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 1 bit per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate1BpcExt = unchecked((uint)0x96C4),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 2 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate2BpcExt = unchecked((uint)0x96C5),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 3 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate3BpcExt = unchecked((uint)0x96C6),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 4 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate4BpcExt = unchecked((uint)0x96C7),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 5 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate5BpcExt = unchecked((uint)0x96C8),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 6 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate6BpcExt = unchecked((uint)0x96C9),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 7 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate7BpcExt = unchecked((uint)0x96CA),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 8 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate8BpcExt = unchecked((uint)0x96CB),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 9 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate9BpcExt = unchecked((uint)0x96CC),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 10 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate10BpcExt = unchecked((uint)0x96CD),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 11 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate11BpcExt = unchecked((uint)0x96CE),
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 12 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		SurfaceCompressionFixedRate12BpcExt = unchecked((uint)0x96CF),
 	}
 }

@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLListMode : uint
 	{
+		/// <summary>
+		/// Specifies that the display list is to be compiled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Compile = unchecked((uint)0x1300),
+
+		/// <summary>
+		/// Specifies that the display list is to be compiled and executed.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CompileAndExecute = unchecked((uint)0x1301),
 	}
 }

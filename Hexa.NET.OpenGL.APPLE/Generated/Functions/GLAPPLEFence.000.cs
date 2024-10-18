@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void DeleteFencesAPPLE(int n, uint* fences)
 		{
 			DeleteFencesAPPLENative(n, fences);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void DeleteFencesAPPL(uint fence)
 		{
 			DeleteFencesAPPLENative(1, &fence);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void DeleteFencesAPPLE(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
@@ -44,6 +56,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void DeleteFencesAPPLE(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -62,6 +78,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void FinishFenceAPPLE(uint fence)
 		{
 			FinishFenceAPPLENative(fence);
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void FinishObjectAPPLE(GLObjectTypeAPPLE @object, int name)
 		{
 			FinishObjectAPPLENative(@object, name);
@@ -92,11 +116,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void GenFencesAPPLE(int n, uint* fences)
 		{
 			GenFencesAPPLENative(n, fences);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static uint GenFencesAPPL()
 		{
 			uint result;
@@ -104,6 +136,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void GenFencesAPPLE(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
@@ -112,6 +148,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void GenFencesAPPLE(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
@@ -130,6 +170,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static bool IsFenceAPPLE(uint fence)
 		{
 			byte ret = IsFenceAPPLENative(fence);
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static void SetFenceAPPLE(uint fence)
 		{
 			SetFenceAPPLENative(fence);
@@ -161,6 +209,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static bool TestFenceAPPLE(uint fence)
 		{
 			byte ret = TestFenceAPPLENative(fence);
@@ -177,6 +229,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		public static bool TestObjectAPPLE(GLObjectTypeAPPLE @object, uint name)
 		{
 			byte ret = TestObjectAPPLENative(@object, name);

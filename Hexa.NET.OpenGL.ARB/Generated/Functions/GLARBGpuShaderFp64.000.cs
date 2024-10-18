@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void GetUniformdv(uint program, int location, double* @params)
 		{
 			GetUniformdvNative(program, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void GetUniformdv(uint program, int location, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void GetUniformdv(uint program, int location, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform1d(int location, double x)
 		{
 			Uniform1dNative(location, x);
@@ -72,11 +88,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform1dv(int location, int count, double* value)
 		{
 			Uniform1dvNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform1dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -85,6 +109,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform1dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -103,6 +131,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform2d(int location, double x, double y)
 		{
 			Uniform2dNative(location, x, y);
@@ -118,11 +150,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform2dv(int location, int count, double* value)
 		{
 			Uniform2dvNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform2dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -131,6 +171,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform2dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -149,6 +193,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform3d(int location, double x, double y, double z)
 		{
 			Uniform3dNative(location, x, y, z);
@@ -164,11 +212,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform3dv(int location, int count, double* value)
 		{
 			Uniform3dvNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform3dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -177,6 +233,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform3dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -195,6 +255,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform4d(int location, double x, double y, double z, double w)
 		{
 			Uniform4dNative(location, x, y, z, w);
@@ -210,11 +274,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform4dv(int location, int count, double* value)
 		{
 			Uniform4dvNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform4dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -223,6 +295,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void Uniform4dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -241,11 +317,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix2dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -254,6 +338,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -272,11 +360,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2x3dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix2x3dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2x3dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -285,6 +381,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2x3dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -303,11 +403,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2x4dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix2x4dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2x4dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -316,6 +424,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix2x4dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -334,11 +446,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix3dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -347,6 +467,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -365,11 +489,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3x2dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix3x2dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3x2dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -378,6 +510,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3x2dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -396,11 +532,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3x4dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix3x4dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3x4dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -409,6 +553,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix3x4dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -427,11 +575,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix4dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -440,6 +596,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -458,11 +618,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4x2dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix4x2dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4x2dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -471,6 +639,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4x2dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -489,11 +661,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4x3dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix4x3dvNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4x3dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -502,6 +682,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
 		public static void UniformMatrix4x3dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)

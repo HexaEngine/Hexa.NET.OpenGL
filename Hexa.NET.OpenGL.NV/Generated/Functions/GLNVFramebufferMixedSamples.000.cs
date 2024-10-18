@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void CoverageModulationNV(GLEnum components)
 		{
 			CoverageModulationNVNative(components);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void CoverageModulationTableNV(int n, float* v)
 		{
 			CoverageModulationTableNVNative(n, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void CoverageModulationTableNV(int n, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void CoverageModulationTableNV(int n, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -72,11 +88,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void GetCoverageModulationTableNV(int bufSize, float* v)
 		{
 			GetCoverageModulationTableNVNative(bufSize, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void GetCoverageModulationTableNV(int bufSize, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -85,6 +109,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void GetCoverageModulationTableNV(int bufSize, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -103,6 +131,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_raster_multisample<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
 		{
 			RasterSamplesEXTNative(samples, fixedsamplelocations);

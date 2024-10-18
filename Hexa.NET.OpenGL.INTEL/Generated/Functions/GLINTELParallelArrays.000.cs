@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
 		public static void ColorPointervINTEL(int size, GLVertexPointerType type, void** pointer)
 		{
 			ColorPointervINTELNative(size, type, pointer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
 		public static void NormalPointervINTEL(GLNormalPointerType type, void** pointer)
 		{
 			NormalPointervINTELNative(type, pointer);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
 		public static void TexCoordPointervINTEL(int size, GLVertexPointerType type, void** pointer)
 		{
 			TexCoordPointervINTELNative(size, type, pointer);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
 		public static void VertexPointervINTEL(int size, GLVertexPointerType type, void** pointer)
 		{
 			VertexPointervINTELNative(size, type, pointer);

@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertexOES(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawElementsBaseVertexOESNative(mode, count, type, indices, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertexOES(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawElementsBaseVertexOESNative(mode, count, type, (void*)indices, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertexOES<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertexOES(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexOESNative(mode, count, type, indices, instancecount, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertexOES(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexOESNative(mode, count, type, (void*)indices, instancecount, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertexOES<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -82,16 +106,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertexOES(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexOESNative(mode, start, end, count, type, indices, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertexOES(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexOESNative(mode, start, end, count, type, (void*)indices, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertexOES<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -110,11 +146,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			MultiDrawElementsBaseVertexEXTNative(mode, count, type, indices, drawcount, basevertex);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			fixed (int* pcount0 = count)
@@ -123,6 +167,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			fixed (int* pcount0 = &count)
@@ -131,6 +179,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
 		{
 			fixed (int* pbasevertex0 = basevertex)
@@ -139,6 +191,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
 		{
 			fixed (int* pbasevertex0 = &basevertex)
@@ -147,6 +203,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
 		{
 			fixed (int* pcount0 = count)
@@ -158,6 +218,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_elements_base_vertex<br/>GL_OES_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertexEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
 		{
 			fixed (int* pcount0 = &count)

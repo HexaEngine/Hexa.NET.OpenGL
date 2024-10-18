@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPixelStoreSubsampleRate : uint
 	{
+		/// <summary>
+		/// Specifies a pixel subsample rate of 4:4:4:4 (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Subsample4444Sgix = unchecked((uint)0x85A2),
+
+		/// <summary>
+		/// Specifies a pixel subsample rate of 2:4:2:4 (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Subsample2424Sgix = unchecked((uint)0x85A3),
+
+		/// <summary>
+		/// Specifies a pixel subsample rate of 4:2:4:2 (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Subsample4242Sgix = unchecked((uint)0x85A4),
 	}
 }

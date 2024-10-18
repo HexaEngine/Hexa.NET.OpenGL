@@ -15,11 +15,40 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLShaderBinaryFormat : uint
 	{
+		/// <summary>
+		/// Specifies the SGX binary format in the IMG extension.
+		/// </summary>
+		/// <remarks></remarks>
 		SgxBinaryImg = unchecked((uint)0x8C0A),
+
+		/// <summary>
+		/// Specifies a shader binary format for ARM architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		MaliShaderBinaryArm = unchecked((uint)0x8F60),
+
+		/// <summary>
+		/// Specifies a shader binary format for VIV architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		Viv = unchecked((uint)0x8FC4),
+
+		/// <summary>
+		/// Specifies a shader binary format (DMP extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Dmp = unchecked((uint)0x9250),
+
+		/// <summary>
+		/// Specifies a shader binary format (FJ extension).
+		/// </summary>
+		/// <remarks></remarks>
 		GccsoShaderBinaryFj = unchecked((uint)0x9260),
+
+		/// <summary>
+		/// Specifies the SPIR-V shader binary format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		SpirV = unchecked((uint)0x9551),
 	}
 }

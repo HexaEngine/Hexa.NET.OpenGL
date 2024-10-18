@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_polygon_offset_clamp</remarks>
 		public static void PolygonOffsetClampEXT(float factor, float units, float clamp)
 		{
 			PolygonOffsetClampEXTNative(factor, units, clamp);

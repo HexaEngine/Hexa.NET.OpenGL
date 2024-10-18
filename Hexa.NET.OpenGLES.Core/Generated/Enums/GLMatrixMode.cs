@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLMatrixMode : uint
 	{
+		/// <summary>
+		/// Specifies the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Modelview = unchecked((uint)0x1700),
+
+		/// <summary>
+		/// Specifies the first modelview matrix for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		Modelview0Ext = unchecked((uint)0x1700),
+
+		/// <summary>
+		/// Specifies the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Projection = unchecked((uint)0x1701),
+
+		/// <summary>
+		/// Specifies the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Texture = unchecked((uint)0x1702),
 	}
 }

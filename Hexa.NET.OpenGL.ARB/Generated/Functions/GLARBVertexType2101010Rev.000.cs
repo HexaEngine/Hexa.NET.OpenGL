@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP3ui(GLColorPointerType type, uint color)
 		{
 			ColorP3uiNative(type, color);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP3uiv(GLColorPointerType type, uint* color)
 		{
 			ColorP3uivNative(type, color);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP3uiv(GLColorPointerType type, Span<uint> color)
 		{
 			fixed (uint* pcolor0 = color)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP3uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP4ui(GLColorPointerType type, uint color)
 		{
 			ColorP4uiNative(type, color);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP4uiv(GLColorPointerType type, uint* color)
 		{
 			ColorP4uivNative(type, color);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP4uiv(GLColorPointerType type, Span<uint> color)
 		{
 			fixed (uint* pcolor0 = color)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void ColorP4uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP1ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP1uiNative(texture, type, coords);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP1uivNative(texture, type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP2ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP2uiNative(texture, type, coords);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP2uivNative(texture, type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -210,6 +274,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP3ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP3uiNative(texture, type, coords);
@@ -225,11 +293,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP3uivNative(texture, type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -238,6 +314,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -256,6 +336,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP4ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP4uiNative(texture, type, coords);
@@ -271,11 +355,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP4uivNative(texture, type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -284,6 +376,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -302,6 +398,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void NormalP3ui(GLNormalPointerType type, uint coords)
 		{
 			NormalP3uiNative(type, coords);
@@ -317,11 +417,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void NormalP3uiv(GLNormalPointerType type, uint* coords)
 		{
 			NormalP3uivNative(type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void NormalP3uiv(GLNormalPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -330,6 +438,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void NormalP3uiv(GLNormalPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -348,6 +460,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void SecondaryColorP3ui(GLColorPointerType type, uint color)
 		{
 			SecondaryColorP3uiNative(type, color);
@@ -363,11 +479,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void SecondaryColorP3uiv(GLColorPointerType type, uint* color)
 		{
 			SecondaryColorP3uivNative(type, color);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void SecondaryColorP3uiv(GLColorPointerType type, Span<uint> color)
 		{
 			fixed (uint* pcolor0 = color)
@@ -376,6 +500,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void SecondaryColorP3uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
@@ -394,6 +522,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP1ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP1uiNative(type, coords);
@@ -409,11 +541,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP1uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP1uivNative(type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP1uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -422,6 +562,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP1uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -440,6 +584,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP2ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP2uiNative(type, coords);
@@ -455,11 +603,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP2uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP2uivNative(type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP2uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -468,6 +624,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP2uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -486,6 +646,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP3ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP3uiNative(type, coords);
@@ -501,11 +665,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP3uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP3uivNative(type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP3uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -514,6 +686,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP3uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -532,6 +708,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP4ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP4uiNative(type, coords);
@@ -547,11 +727,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP4uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP4uivNative(type, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP4uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
@@ -560,6 +748,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void TexCoordP4uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
@@ -578,6 +770,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP1uiNative(index, type, normalized, value);
@@ -593,11 +789,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP1uivNative(index, type, normalized, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -606,6 +810,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -624,6 +832,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP2uiNative(index, type, normalized, value);
@@ -639,11 +851,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP2uivNative(index, type, normalized, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -652,6 +872,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -670,6 +894,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP3uiNative(index, type, normalized, value);
@@ -685,11 +913,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP3uivNative(index, type, normalized, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -698,6 +934,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -716,6 +956,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP4uiNative(index, type, normalized, value);
@@ -731,11 +975,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP4uivNative(index, type, normalized, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -744,6 +996,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -762,6 +1018,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP2ui(GLVertexPointerType type, uint value)
 		{
 			VertexP2uiNative(type, value);
@@ -777,11 +1037,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP2uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP2uivNative(type, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP2uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -790,6 +1058,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP2uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -808,6 +1080,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP3ui(GLVertexPointerType type, uint value)
 		{
 			VertexP3uiNative(type, value);
@@ -823,11 +1099,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP3uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP3uivNative(type, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP3uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -836,6 +1120,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP3uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -854,6 +1142,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP4ui(GLVertexPointerType type, uint value)
 		{
 			VertexP4uiNative(type, value);
@@ -869,11 +1161,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP4uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP4uivNative(type, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP4uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -882,6 +1182,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		public static void VertexP4uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)

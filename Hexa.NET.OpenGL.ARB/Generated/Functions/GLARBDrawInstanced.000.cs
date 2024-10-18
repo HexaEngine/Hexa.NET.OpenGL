@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
 		public static void DrawArraysInstancedARB(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			DrawArraysInstancedARBNative(mode, first, count, primcount);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
 		public static void DrawElementsInstancedARB(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedARBNative(mode, count, type, indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
 		public static void DrawElementsInstancedARB(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedARBNative(mode, count, type, (void*)indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
 		public static void DrawElementsInstancedARB<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)

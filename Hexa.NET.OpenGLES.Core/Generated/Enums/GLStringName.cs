@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLStringName : uint
 	{
+		/// <summary>
+		/// Specifies the vendor of the OpenGL implementation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Vendor = unchecked((uint)0x1F00),
+
+		/// <summary>
+		/// Specifies the renderer of the OpenGL implementation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Renderer = unchecked((uint)0x1F01),
+
+		/// <summary>
+		/// Specifies the version of the OpenGL implementation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Version = unchecked((uint)0x1F02),
+
+		/// <summary>
+		/// Specifies the supported OpenGL extensions.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Extensions = unchecked((uint)0x1F03),
+
+		/// <summary>
+		/// Specifies the version of the shading language used.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ShadingLanguageVersion = unchecked((uint)0x8B8C),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_stencil_two_side</remarks>
 		public static void ActiveStencilFaceEXT(GLTriangleFace face)
 		{
 			ActiveStencilFaceEXTNative(face);

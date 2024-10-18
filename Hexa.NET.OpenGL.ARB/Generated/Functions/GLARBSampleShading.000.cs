@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_shading</remarks>
 		public static void MinSampleShadingARB(float value)
 		{
 			MinSampleShadingARBNative(value);

@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCombinerMappingNV : uint
 	{
+		/// <summary>
+		/// Specifies an unsigned identity operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		UnsignedIdentityNv = unchecked((uint)0x8536),
+
+		/// <summary>
+		/// Specifies an unsigned invert operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		UnsignedInvertNv = unchecked((uint)0x8537),
+
+		/// <summary>
+		/// Specifies an expansion operation for normal values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ExpandNormalNv = unchecked((uint)0x8538),
+
+		/// <summary>
+		/// Specifies an expansion operation for negated values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ExpandNegateNv = unchecked((uint)0x8539),
+
+		/// <summary>
+		/// Specifies half bias for normal values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		HalfBiasNormalNv = unchecked((uint)0x853A),
+
+		/// <summary>
+		/// Specifies half bias for negated values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		HalfBiasNegateNv = unchecked((uint)0x853B),
+
+		/// <summary>
+		/// Specifies a signed identity operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		SignedIdentityNv = unchecked((uint)0x853C),
+
+		/// <summary>
+		/// Specifies a signed negate operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		SignedNegateNv = unchecked((uint)0x853D),
 	}
 }

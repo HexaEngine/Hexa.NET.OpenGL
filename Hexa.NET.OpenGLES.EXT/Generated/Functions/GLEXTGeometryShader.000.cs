@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
 		public static void FramebufferTextureEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureEXTNative(target, attachment, texture, level);

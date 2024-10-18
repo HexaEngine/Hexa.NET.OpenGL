@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
 		public static void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ColorSubTableEXTNative(target, start, count, format, type, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
 		public static void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ColorSubTableEXTNative(target, start, count, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
 		public static void ColorSubTableEXT<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
 		public static void CopyColorSubTableEXT(GLColorTableTarget target, int start, int x, int y, int width)
 		{
 			CopyColorSubTableEXTNative(target, start, x, y, width);

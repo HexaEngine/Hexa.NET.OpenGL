@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSpriteParameterNameSGIX : uint
 	{
+		/// <summary>
+		/// Specifies the mode of the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ModeSgix = unchecked((uint)0x8149),
 	}
 }

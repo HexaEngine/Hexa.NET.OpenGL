@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLConvolutionBorderModeEXT : uint
 	{
+		/// <summary>
+		/// Specifies reduction operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Reduce = unchecked((uint)0x8016),
+
+		/// <summary>
+		/// Specifies reduction operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		ReduceExt = unchecked((uint)0x8016),
 	}
 }

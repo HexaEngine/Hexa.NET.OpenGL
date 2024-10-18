@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_copy_texture</remarks>
 		public static void CopyTexImage1DEXT(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			CopyTexImage1DEXTNative(target, level, internalformat, x, y, width, border);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_copy_texture</remarks>
 		public static void CopyTexImage2DEXT(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			CopyTexImage2DEXTNative(target, level, internalformat, x, y, width, height, border);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_copy_texture</remarks>
 		public static void CopyTexSubImage1DEXT(GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			CopyTexSubImage1DEXTNative(target, level, xoffset, x, y, width);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_copy_texture</remarks>
 		public static void CopyTexSubImage2DEXT(GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			CopyTexSubImage2DEXTNative(target, level, xoffset, yoffset, x, y, width, height);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_copy_texture</remarks>
 		public static void CopyTexSubImage3DEXT(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			CopyTexSubImage3DEXTNative(target, level, xoffset, yoffset, zoffset, x, y, width, height);

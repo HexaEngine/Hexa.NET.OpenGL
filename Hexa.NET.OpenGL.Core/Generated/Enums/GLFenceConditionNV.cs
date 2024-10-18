@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFenceConditionNV : uint
 	{
+		/// <summary>
+		/// Specifies if all operations are completed (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		AllCompletedNv = unchecked((uint)0x84F2),
 	}
 }

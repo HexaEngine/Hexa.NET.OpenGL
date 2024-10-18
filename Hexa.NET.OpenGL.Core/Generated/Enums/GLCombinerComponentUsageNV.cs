@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCombinerComponentUsageNV : uint
 	{
+		/// <summary>
+		/// Specifies the blue color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Blue = unchecked((uint)0x1905),
+
+		/// <summary>
+		/// Specifies the alpha component for transparency.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Alpha = unchecked((uint)0x1906),
+
+		/// <summary>
+		/// Specifies a color in RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb = unchecked((uint)0x1907),
 	}
 }

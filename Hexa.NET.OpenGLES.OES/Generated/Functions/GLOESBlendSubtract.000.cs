@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_blend_subtract</remarks>
 		public static void BlendEquationOES(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationOESNative(mode);

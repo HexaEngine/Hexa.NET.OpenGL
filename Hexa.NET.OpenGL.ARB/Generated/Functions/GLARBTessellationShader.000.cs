@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		public static void PatchParameterfv(GLPatchParameterName pname, float* values)
 		{
 			PatchParameterfvNative(pname, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		public static void PatchParameterfv(GLPatchParameterName pname, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		public static void PatchParameterfv(GLPatchParameterName pname, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		public static void PatchParameteri(GLPatchParameterName pname, int value)
 		{
 			PatchParameteriNative(pname, value);

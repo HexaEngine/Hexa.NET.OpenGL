@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_ES3_2_compatibility</remarks>
 		public static void PrimitiveBoundingBoxARB(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			PrimitiveBoundingBoxARBNative(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);

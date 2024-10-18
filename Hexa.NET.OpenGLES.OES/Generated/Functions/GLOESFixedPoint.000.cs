@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void AccumxOES(GLEnum op, int value)
 		{
 			AccumxOESNative(op, value);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void AlphaFuncxOES(GLAlphaFunction func, int reference)
 		{
 			AlphaFuncxOESNative(func, reference);
@@ -56,11 +64,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, byte* bitmap)
 		{
 			BitmapxOESNative(width, height, xorig, yorig, xmove, ymove, bitmap);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, string bitmap)
 		{
 			byte* pStr0 = null;
@@ -87,6 +103,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, Span<byte> bitmap)
 		{
 			fixed (byte* pbitmap0 = bitmap)
@@ -95,6 +115,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, ref byte bitmap)
 		{
 			fixed (byte* pbitmap0 = &bitmap)
@@ -113,6 +137,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void BlendColorxOES(int red, int green, int blue, int alpha)
 		{
 			BlendColorxOESNative(red, green, blue, alpha);
@@ -128,6 +156,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ClearAccumxOES(int red, int green, int blue, int alpha)
 		{
 			ClearAccumxOESNative(red, green, blue, alpha);
@@ -143,6 +175,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ClearColorxOES(int red, int green, int blue, int alpha)
 		{
 			ClearColorxOESNative(red, green, blue, alpha);
@@ -158,6 +194,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ClearDepthxOES(int depth)
 		{
 			ClearDepthxOESNative(depth);
@@ -173,11 +213,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ClipPlanexOES(GLClipPlaneName plane, int* equation)
 		{
 			ClipPlanexOESNative(plane, equation);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
 		{
 			fixed (int* pequation0 = equation)
@@ -186,6 +234,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ClipPlanexOES(GLClipPlaneName plane, ref int equation)
 		{
 			fixed (int* pequation0 = &equation)
@@ -204,6 +256,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color3xOES(int red, int green, int blue)
 		{
 			Color3xOESNative(red, green, blue);
@@ -219,11 +275,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color3xvOES(int* components)
 		{
 			Color3xvOESNative(components);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color3xvOES(Span<int> components)
 		{
 			fixed (int* pcomponents0 = components)
@@ -232,6 +296,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color3xvOES(ref int components)
 		{
 			fixed (int* pcomponents0 = &components)
@@ -250,6 +318,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color4xOES(int red, int green, int blue, int alpha)
 		{
 			Color4xOESNative(red, green, blue, alpha);
@@ -265,11 +337,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color4xvOES(int* components)
 		{
 			Color4xvOESNative(components);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color4xvOES(Span<int> components)
 		{
 			fixed (int* pcomponents0 = components)
@@ -278,6 +358,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Color4xvOES(ref int components)
 		{
 			fixed (int* pcomponents0 = &components)
@@ -296,6 +380,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ConvolutionParameterxOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int param)
 		{
 			ConvolutionParameterxOESNative(target, pname, param);
@@ -311,11 +399,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
 		{
 			ConvolutionParameterxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out int @params)
 		{
 			int pparams;
@@ -323,6 +419,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -341,6 +441,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void DepthRangexOES(int n, int f)
 		{
 			DepthRangexOESNative(n, f);
@@ -356,6 +460,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord1xOES(int u)
 		{
 			EvalCoord1xOESNative(u);
@@ -371,11 +479,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord1xvOES(int* coords)
 		{
 			EvalCoord1xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord1xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -384,6 +500,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord1xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -402,6 +522,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord2xOES(int u, int v)
 		{
 			EvalCoord2xOESNative(u, v);
@@ -417,11 +541,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord2xvOES(int* coords)
 		{
 			EvalCoord2xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -430,6 +562,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void EvalCoord2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -448,11 +584,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FeedbackBufferxOES(int n, GLEnum type, int* buffer)
 		{
 			FeedbackBufferxOESNative(n, type, buffer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FeedbackBufferxOES(int n, GLEnum type, Span<int> buffer)
 		{
 			fixed (int* pbuffer0 = buffer)
@@ -461,6 +605,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FeedbackBufferxOES(int n, GLEnum type, ref int buffer)
 		{
 			fixed (int* pbuffer0 = &buffer)
@@ -479,6 +627,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FogxOES(GLFogPName pname, int param)
 		{
 			FogxOESNative(pname, param);
@@ -494,11 +646,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FogxvOES(GLFogPName pname, int* param)
 		{
 			FogxvOESNative(pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FogxvOES(GLFogPName pname, out int param)
 		{
 			int pparam;
@@ -516,6 +676,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void FrustumxOES(int l, int r, int b, int t, int n, int f)
 		{
 			FrustumxOESNative(l, r, b, t, n, f);
@@ -531,11 +695,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetClipPlanexOES(GLClipPlaneName plane, int* equation)
 		{
 			GetClipPlanexOESNative(plane, equation);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
 		{
 			fixed (int* pequation0 = equation)
@@ -544,6 +716,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetClipPlanexOES(GLClipPlaneName plane, ref int equation)
 		{
 			fixed (int* pequation0 = &equation)
@@ -562,11 +738,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, int* @params)
 		{
 			GetConvolutionParameterxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, out int @params)
 		{
 			int pparams;
@@ -574,6 +758,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -592,11 +780,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetFixedvOES(GLGetPName pname, int* @params)
 		{
 			GetFixedvOESNative(pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetFixedvOES(GLGetPName pname, out int @params)
 		{
 			int pparams;
@@ -604,6 +800,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetFixedvOES(GLGetPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -622,11 +822,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			GetHistogramParameterxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
 		{
 			int pparams;
@@ -634,6 +842,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -652,11 +864,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetLightxOES(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			GetLightxOESNative(light, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetLightxOES(GLLightName light, GLLightParameter pname, out int @params)
 		{
 			int pparams;
@@ -664,6 +884,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetLightxOES(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -682,11 +906,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetLightxvOES(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			GetLightxvOESNative(light, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetLightxvOES(GLLightName light, GLLightParameter pname, out int @params)
 		{
 			int pparams;
@@ -694,6 +926,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetLightxvOES(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -712,11 +948,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, int* v)
 		{
 			GetMapxvOESNative(target, query, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -725,6 +969,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -743,6 +991,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMaterialxOES(GLTriangleFace face, GLMaterialParameter pname, int param)
 		{
 			GetMaterialxOESNative(face, pname, param);
@@ -758,11 +1010,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, int* @params)
 		{
 			GetMaterialxvOESNative(face, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, out int @params)
 		{
 			int pparams;
@@ -770,6 +1030,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -788,11 +1052,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetPixelMapxv(GLPixelMap map, int size, int* values)
 		{
 			GetPixelMapxvNative(map, size, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetPixelMapxv(GLPixelMap map, int size, Span<int> values)
 		{
 			fixed (int* pvalues0 = values)
@@ -801,6 +1073,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetPixelMapxv(GLPixelMap map, int size, ref int values)
 		{
 			fixed (int* pvalues0 = &values)
@@ -819,11 +1095,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			GetTexEnvxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
 		{
 			int pparams;
@@ -831,6 +1115,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -849,11 +1137,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			GetTexGenxvOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparams;
@@ -861,6 +1157,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -879,11 +1179,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexLevelParameterxvOESNative(target, level, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
 		{
 			int pparams;
@@ -891,6 +1199,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -909,11 +1221,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexParameterxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
 			int pparams;
@@ -921,6 +1241,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -939,6 +1263,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void IndexxOES(int component)
 		{
 			IndexxOESNative(component);
@@ -954,11 +1282,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void IndexxvOES(int* component)
 		{
 			IndexxvOESNative(component);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void IndexxvOES(Span<int> component)
 		{
 			fixed (int* pcomponent0 = component)
@@ -967,6 +1303,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void IndexxvOES(ref int component)
 		{
 			fixed (int* pcomponent0 = &component)
@@ -985,6 +1325,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightModelxOES(GLLightModelParameter pname, int param)
 		{
 			LightModelxOESNative(pname, param);
@@ -1000,11 +1344,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightModelxvOES(GLLightModelParameter pname, int* param)
 		{
 			LightModelxvOESNative(pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightModelxvOES(GLLightModelParameter pname, out int param)
 		{
 			int pparam;
@@ -1022,6 +1374,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightxOES(GLLightName light, GLLightParameter pname, int param)
 		{
 			LightxOESNative(light, pname, param);
@@ -1037,11 +1393,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightxvOES(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			LightxvOESNative(light, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightxvOES(GLLightName light, GLLightParameter pname, out int @params)
 		{
 			int pparams;
@@ -1049,6 +1413,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LightxvOES(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -1067,6 +1435,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LineWidthxOES(int width)
 		{
 			LineWidthxOESNative(width);
@@ -1082,11 +1454,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LoadMatrixxOES(int* m)
 		{
 			LoadMatrixxOESNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LoadMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
@@ -1095,6 +1475,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LoadMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
@@ -1113,11 +1497,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LoadTransposeMatrixxOES(int* m)
 		{
 			LoadTransposeMatrixxOESNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LoadTransposeMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
@@ -1126,6 +1518,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void LoadTransposeMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
@@ -1144,6 +1540,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Map1xOES(GLMapTarget target, int u1, int u2, int stride, int order, int points)
 		{
 			Map1xOESNative(target, u1, u2, stride, order, points);
@@ -1159,6 +1559,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Map2xOES(GLMapTarget target, int u1, int u2, int ustride, int uorder, int v1, int v2, int vstride, int vorder, int points)
 		{
 			Map2xOESNative(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
@@ -1174,6 +1578,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MapGrid1xOES(int n, int u1, int u2)
 		{
 			MapGrid1xOESNative(n, u1, u2);
@@ -1189,6 +1597,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MapGrid2xOES(int n, int u1, int u2, int v1, int v2)
 		{
 			MapGrid2xOESNative(n, u1, u2, v1, v2);
@@ -1204,6 +1616,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MaterialxOES(GLTriangleFace face, GLMaterialParameter pname, int param)
 		{
 			MaterialxOESNative(face, pname, param);
@@ -1219,11 +1635,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, int* param)
 		{
 			MaterialxvOESNative(face, pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, out int param)
 		{
 			int pparam;
@@ -1241,11 +1665,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultMatrixxOES(int* m)
 		{
 			MultMatrixxOESNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
@@ -1254,6 +1686,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
@@ -1272,11 +1708,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultTransposeMatrixxOES(int* m)
 		{
 			MultTransposeMatrixxOESNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultTransposeMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
@@ -1285,6 +1729,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultTransposeMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
@@ -1303,6 +1751,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord1xOES(GLTextureUnit texture, int s)
 		{
 			MultiTexCoord1xOESNative(texture, s);
@@ -1318,11 +1770,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord1xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord1xvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord1xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1331,6 +1791,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord1xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1349,6 +1813,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord2xOES(GLTextureUnit texture, int s, int t)
 		{
 			MultiTexCoord2xOESNative(texture, s, t);
@@ -1364,11 +1832,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord2xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord2xvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord2xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1377,6 +1853,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord2xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1395,6 +1875,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord3xOES(GLTextureUnit texture, int s, int t, int r)
 		{
 			MultiTexCoord3xOESNative(texture, s, t, r);
@@ -1410,11 +1894,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord3xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord3xvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord3xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1423,6 +1915,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord3xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1441,6 +1937,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord4xOES(GLTextureUnit texture, int s, int t, int r, int q)
 		{
 			MultiTexCoord4xOESNative(texture, s, t, r, q);
@@ -1456,11 +1956,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord4xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord4xvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord4xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1469,6 +1977,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void MultiTexCoord4xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1487,6 +1999,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Normal3xOES(int nx, int ny, int nz)
 		{
 			Normal3xOESNative(nx, ny, nz);
@@ -1502,11 +2018,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Normal3xvOES(int* coords)
 		{
 			Normal3xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Normal3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1515,6 +2039,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Normal3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1533,6 +2061,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void OrthoxOES(int l, int r, int b, int t, int n, int f)
 		{
 			OrthoxOESNative(l, r, b, t, n, f);
@@ -1548,6 +2080,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PassThroughxOES(int token)
 		{
 			PassThroughxOESNative(token);
@@ -1563,11 +2099,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PixelMapx(GLPixelMap map, int size, int* values)
 		{
 			PixelMapxNative(map, size, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PixelMapx(GLPixelMap map, int size, Span<int> values)
 		{
 			fixed (int* pvalues0 = values)
@@ -1576,6 +2120,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PixelMapx(GLPixelMap map, int size, ref int values)
 		{
 			fixed (int* pvalues0 = &values)
@@ -1594,6 +2142,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PixelStorex(GLPixelStoreParameter pname, int param)
 		{
 			PixelStorexNative(pname, param);
@@ -1609,6 +2161,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PixelTransferxOES(GLPixelTransferParameter pname, int param)
 		{
 			PixelTransferxOESNative(pname, param);
@@ -1624,6 +2180,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PixelZoomxOES(int xfactor, int yfactor)
 		{
 			PixelZoomxOESNative(xfactor, yfactor);
@@ -1639,6 +2199,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PointParameterxOES(GLPointParameterNameARB pname, int param)
 		{
 			PointParameterxOESNative(pname, param);
@@ -1654,11 +2218,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PointParameterxvOES(GLPointParameterNameARB pname, int* @params)
 		{
 			PointParameterxvOESNative(pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PointParameterxvOES(GLPointParameterNameARB pname, out int @params)
 		{
 			int pparams;
@@ -1666,6 +2238,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PointParameterxvOES(GLPointParameterNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -1684,6 +2260,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PointSizexOES(int size)
 		{
 			PointSizexOESNative(size);
@@ -1699,6 +2279,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PolygonOffsetxOES(int factor, int units)
 		{
 			PolygonOffsetxOESNative(factor, units);
@@ -1714,11 +2298,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, uint* textures, int* priorities)
 		{
 			PrioritizeTexturesxOESNative(n, textures, priorities);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, Span<uint> textures, int* priorities)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -1727,6 +2319,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, ref uint textures, int* priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -1735,6 +2331,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, uint* textures, Span<int> priorities)
 		{
 			fixed (int* ppriorities0 = priorities)
@@ -1743,6 +2343,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, uint* textures, ref int priorities)
 		{
 			fixed (int* ppriorities0 = &priorities)
@@ -1751,6 +2355,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, Span<uint> textures, Span<int> priorities)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -1762,6 +2370,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void PrioritizeTexturesxOES(int n, ref uint textures, ref int priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -1783,6 +2395,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos2xOES(int x, int y)
 		{
 			RasterPos2xOESNative(x, y);
@@ -1798,11 +2414,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos2xvOES(int* coords)
 		{
 			RasterPos2xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1811,6 +2435,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1829,6 +2457,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos3xOES(int x, int y, int z)
 		{
 			RasterPos3xOESNative(x, y, z);
@@ -1844,11 +2476,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos3xvOES(int* coords)
 		{
 			RasterPos3xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1857,6 +2497,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1875,6 +2519,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos4xOES(int x, int y, int z, int w)
 		{
 			RasterPos4xOESNative(x, y, z, w);
@@ -1890,11 +2538,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos4xvOES(int* coords)
 		{
 			RasterPos4xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos4xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -1903,6 +2559,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RasterPos4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -1921,6 +2581,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxOES(int x1, int y1, int x2, int y2)
 		{
 			RectxOESNative(x1, y1, x2, y2);
@@ -1936,11 +2600,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(int* v1, int* v2)
 		{
 			RectxvOESNative(v1, v2);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(Span<int> v1, int* v2)
 		{
 			fixed (int* pv10 = v1)
@@ -1949,6 +2621,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(ref int v1, int* v2)
 		{
 			fixed (int* pv10 = &v1)
@@ -1957,6 +2633,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(int* v1, Span<int> v2)
 		{
 			fixed (int* pv20 = v2)
@@ -1965,6 +2645,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(int* v1, ref int v2)
 		{
 			fixed (int* pv20 = &v2)
@@ -1973,6 +2657,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(Span<int> v1, Span<int> v2)
 		{
 			fixed (int* pv10 = v1)
@@ -1984,6 +2672,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RectxvOES(ref int v1, ref int v2)
 		{
 			fixed (int* pv10 = &v1)
@@ -2005,6 +2697,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void RotatexOES(int angle, int x, int y, int z)
 		{
 			RotatexOESNative(angle, x, y, z);
@@ -2020,6 +2716,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void SampleCoveragexOES(int value, bool invert)
 		{
 			SampleCoveragexOESNative(value, invert);
@@ -2035,6 +2735,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void ScalexOES(int x, int y, int z)
 		{
 			ScalexOESNative(x, y, z);
@@ -2050,6 +2754,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord1xOES(int s)
 		{
 			TexCoord1xOESNative(s);
@@ -2065,11 +2773,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord1xvOES(int* coords)
 		{
 			TexCoord1xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord1xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2078,6 +2794,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord1xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2096,6 +2816,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord2xOES(int s, int t)
 		{
 			TexCoord2xOESNative(s, t);
@@ -2111,11 +2835,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord2xvOES(int* coords)
 		{
 			TexCoord2xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2124,6 +2856,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2142,6 +2878,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord3xOES(int s, int t, int r)
 		{
 			TexCoord3xOESNative(s, t, r);
@@ -2157,11 +2897,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord3xvOES(int* coords)
 		{
 			TexCoord3xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2170,6 +2918,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2188,6 +2940,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord4xOES(int s, int t, int r, int q)
 		{
 			TexCoord4xOESNative(s, t, r, q);
@@ -2203,11 +2959,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord4xvOES(int* coords)
 		{
 			TexCoord4xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord4xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2216,6 +2980,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexCoord4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2234,6 +3002,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexEnvxOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			TexEnvxOESNative(target, pname, param);
@@ -2249,11 +3021,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			TexEnvxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
 		{
 			int pparams;
@@ -2261,6 +3041,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -2279,6 +3063,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxOES(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			TexGenxOESNative(coord, pname, param);
@@ -2294,11 +3082,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			TexGenxvOESNative(coord, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparams;
@@ -2306,6 +3102,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
 		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -2324,6 +3124,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexParameterxOES(GLTextureTarget target, GLGetTextureParameter pname, int param)
 		{
 			TexParameterxOESNative(target, pname, param);
@@ -2339,11 +3143,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			TexParameterxvOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
 			int pparams;
@@ -2351,6 +3163,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -2369,6 +3185,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void TranslatexOES(int x, int y, int z)
 		{
 			TranslatexOESNative(x, y, z);
@@ -2384,6 +3204,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex2xOES(int x)
 		{
 			Vertex2xOESNative(x);
@@ -2399,11 +3223,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex2xvOES(int* coords)
 		{
 			Vertex2xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2412,6 +3244,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2430,6 +3266,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex3xOES(int x, int y)
 		{
 			Vertex3xOESNative(x, y);
@@ -2445,11 +3285,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex3xvOES(int* coords)
 		{
 			Vertex3xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2458,6 +3306,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
@@ -2476,6 +3328,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex4xOES(int x, int y, int z)
 		{
 			Vertex4xOESNative(x, y, z);
@@ -2491,11 +3347,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex4xvOES(int* coords)
 		{
 			Vertex4xvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex4xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
@@ -2504,6 +3368,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
 		public static void Vertex4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)

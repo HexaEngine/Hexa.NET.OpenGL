@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		public static void CullParameterdvEXT(GLCullParameterEXT pname, double* @params)
 		{
 			CullParameterdvEXTNative(pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		public static void CullParameterdvEXT(GLCullParameterEXT pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		public static void CullParameterdvEXT(GLCullParameterEXT pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		public static void CullParameterfvEXT(GLCullParameterEXT pname, float* @params)
 		{
 			CullParameterfvEXTNative(pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		public static void CullParameterfvEXT(GLCullParameterEXT pname, out float @params)
 		{
 			float pparams;
@@ -69,6 +89,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		public static void CullParameterfvEXT(GLCullParameterEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)

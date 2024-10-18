@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMinmaxTargetEXT : uint
 	{
+		/// <summary>
+		/// Specifies min/max operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Minmax = unchecked((uint)0x802E),
+
+		/// <summary>
+		/// Specifies min/max operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		Ext = unchecked((uint)0x802E),
 	}
 }

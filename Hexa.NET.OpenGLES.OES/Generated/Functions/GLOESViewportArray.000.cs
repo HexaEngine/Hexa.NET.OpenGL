@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void DepthRangeArrayfvOES(uint first, int count, float* v)
 		{
 			DepthRangeArrayfvOESNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void DepthRangeArrayfvOES(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void DepthRangeArrayfvOES(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void DepthRangeIndexedfOES(uint index, float n, float f)
 		{
 			DepthRangeIndexedfOESNative(index, n, f);
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
 		public static void DisableiOES(GLEnableCap target, uint index)
 		{
 			DisableiOESNative(target, index);
@@ -87,6 +107,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
 		public static void EnableiOES(GLEnableCap target, uint index)
 		{
 			EnableiOESNative(target, index);
@@ -102,11 +126,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void GetFloati_vOES(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vOESNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void GetFloati_vOES(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -115,6 +147,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void GetFloati_vOES(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -133,6 +169,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
 		public static bool IsEnablediOES(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediOESNative(target, index);
@@ -149,11 +189,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorArrayvOES(uint first, int count, int* v)
 		{
 			ScissorArrayvOESNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorArrayvOES(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -162,6 +210,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorArrayvOES(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -180,6 +232,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorIndexedOES(uint index, int left, int bottom, int width, int height)
 		{
 			ScissorIndexedOESNative(index, left, bottom, width, height);
@@ -195,11 +251,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorIndexedvOES(uint index, int* v)
 		{
 			ScissorIndexedvOESNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorIndexedvOES(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -208,6 +272,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ScissorIndexedvOES(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -226,11 +294,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportArrayvOES(uint first, int count, float* v)
 		{
 			ViewportArrayvOESNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportArrayvOES(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -239,6 +315,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportArrayvOES(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -257,6 +337,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportIndexedfOES(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfOESNative(index, x, y, w, h);
@@ -272,11 +356,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportIndexedfvOES(uint index, float* v)
 		{
 			ViewportIndexedfvOESNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportIndexedfvOES(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -285,6 +377,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
 		public static void ViewportIndexedfvOES(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)

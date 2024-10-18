@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.ARM
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		public static void MaxActiveShaderCoresARM(uint count)
 		{
 			MaxActiveShaderCoresARMNative(count);

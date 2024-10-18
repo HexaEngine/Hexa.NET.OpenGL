@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		public static void FramebufferShadingRateEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int baseLayer, int numLayers, int texelWidth, int texelHeight)
 		{
 			FramebufferShadingRateEXTNative(target, attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, int* count, GLShadingRate shadingRates)
 		{
 			GetFragmentShadingRatesEXTNative(samples, maxCount, count, shadingRates);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, Span<int> count, GLShadingRate shadingRates)
 		{
 			fixed (int* pcount0 = count)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, ref int count, GLShadingRate shadingRates)
 		{
 			fixed (int* pcount0 = &count)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		public static void ShadingRateEXT(GLShadingRate rate)
 		{
 			ShadingRateEXTNative(rate);
@@ -87,6 +107,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		public static void ShadingRateCombinerOpsEXT(GLShadingRateCombinerOp combinerOp0, GLShadingRateCombinerOp combinerOp1)
 		{
 			ShadingRateCombinerOpsEXTNative(combinerOp0, combinerOp1);

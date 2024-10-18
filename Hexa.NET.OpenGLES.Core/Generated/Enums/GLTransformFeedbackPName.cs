@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTransformFeedbackPName : uint
 	{
+		/// <summary>
+		/// Specifies the start of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BufferStart = unchecked((uint)0x8C84),
+
+		/// <summary>
+		/// Specifies the size of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BufferSize = unchecked((uint)0x8C85),
+
+		/// <summary>
+		/// Specifies the binding of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BufferBinding = unchecked((uint)0x8C8F),
+
+		/// <summary>
+		/// Indicates that transform feedback is paused.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Paused = unchecked((uint)0x8E23),
+
+		/// <summary>
+		/// Indicates that transform feedback is active.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Active = unchecked((uint)0x8E24),
 	}
 }

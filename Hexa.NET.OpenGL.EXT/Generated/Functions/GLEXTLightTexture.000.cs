@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
 		public static void ApplyTextureEXT(GLLightTextureModeEXT mode)
 		{
 			ApplyTextureEXTNative(mode);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
 		public static void TextureLightEXT(GLLightTexturePNameEXT pname)
 		{
 			TextureLightEXTNative(pname);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
 		public static void TextureMaterialEXT(GLTriangleFace face, GLMaterialParameter mode)
 		{
 			TextureMaterialEXTNative(face, mode);

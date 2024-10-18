@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTexBumpParameterATI : uint
 	{
+		/// <summary>
+		/// Specifies the bump rotation matrix (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RotMatrixAti = unchecked((uint)0x8775),
 	}
 }

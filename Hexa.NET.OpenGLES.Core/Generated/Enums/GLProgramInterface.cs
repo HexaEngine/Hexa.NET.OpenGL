@@ -15,25 +15,124 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLProgramInterface : uint
 	{
+		/// <summary>
+		/// Specifies the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_enhanced_layouts</remarks>
 		TransformFeedbackBuffer = unchecked((uint)0x8C8E),
+
+		/// <summary>
+		/// Specifies a uniform variable in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Uniform = unchecked((uint)0x92E1),
+
+		/// <summary>
+		/// Specifies a uniform block in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		UniformBlock = unchecked((uint)0x92E2),
+
+		/// <summary>
+		/// Specifies input to a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Input = unchecked((uint)0x92E3),
+
+		/// <summary>
+		/// Specifies output from a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Output = unchecked((uint)0x92E4),
+
+		/// <summary>
+		/// Specifies a buffer variable in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		BufferVariable = unchecked((uint)0x92E5),
+
+		/// <summary>
+		/// Specifies a shader storage block in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ShaderStorageBlock = unchecked((uint)0x92E6),
+
+		/// <summary>
+		/// Specifies a subroutine in a vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		VertexSubroutine = unchecked((uint)0x92E8),
+
+		/// <summary>
+		/// Specifies a subroutine in a tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessControlSubroutine = unchecked((uint)0x92E9),
+
+		/// <summary>
+		/// Specifies a subroutine in a tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessEvaluationSubroutine = unchecked((uint)0x92EA),
+
+		/// <summary>
+		/// Specifies a subroutine in a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		GeometrySubroutine = unchecked((uint)0x92EB),
+
+		/// <summary>
+		/// Specifies a subroutine in a fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		FragmentSubroutine = unchecked((uint)0x92EC),
+
+		/// <summary>
+		/// Specifies a subroutine in a compute shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ComputeSubroutine = unchecked((uint)0x92ED),
+
+		/// <summary>
+		/// Specifies a uniform for a vertex shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		VertexSubroutineUniform = unchecked((uint)0x92EE),
+
+		/// <summary>
+		/// Specifies a uniform for a tessellation control shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessControlSubroutineUniform = unchecked((uint)0x92EF),
+
+		/// <summary>
+		/// Specifies a uniform for a tessellation evaluation shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessEvaluationSubroutineUniform = unchecked((uint)0x92F0),
+
+		/// <summary>
+		/// Specifies a uniform for a geometry shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		GeometrySubroutineUniform = unchecked((uint)0x92F1),
+
+		/// <summary>
+		/// Specifies a uniform for a fragment shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		FragmentSubroutineUniform = unchecked((uint)0x92F2),
+
+		/// <summary>
+		/// Specifies a uniform for a compute shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ComputeSubroutineUniform = unchecked((uint)0x92F3),
+
+		/// <summary>
+		/// Specifies a varying variable captured during transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TransformFeedbackVarying = unchecked((uint)0x92F4),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sparse_texture</remarks>
 		public static void TexPageCommitmentARB(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			TexPageCommitmentARBNative(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);

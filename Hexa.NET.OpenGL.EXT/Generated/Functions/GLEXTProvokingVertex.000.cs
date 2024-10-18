@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_provoking_vertex</remarks>
 		public static void ProvokingVertexEXT(GLVertexProvokingMode mode)
 		{
 			ProvokingVertexEXTNative(mode);

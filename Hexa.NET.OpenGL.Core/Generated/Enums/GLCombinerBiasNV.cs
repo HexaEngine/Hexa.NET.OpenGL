@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCombinerBiasNV : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies bias by negative one half (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ByNegativeOneHalfNv = unchecked((uint)0x8541),
 	}
 }

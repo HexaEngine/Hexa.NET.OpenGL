@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void CreateSemaphoresNV(int n, uint* semaphores)
 		{
 			CreateSemaphoresNVNative(n, semaphores);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void CreateSemaphoresNV(int n, Span<uint> semaphores)
 		{
 			fixed (uint* psemaphores0 = semaphores)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void CreateSemaphoresNV(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, int* @params)
 		{
 			GetSemaphoreParameterivNVNative(semaphore, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, out int @params)
 		{
 			int pparams;
@@ -69,6 +89,10 @@ namespace Hexa.NET.OpenGLES.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -87,11 +111,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, int* @params)
 		{
 			SemaphoreParameterivNVNative(semaphore, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, out int @params)
 		{
 			int pparams;
@@ -99,6 +131,10 @@ namespace Hexa.NET.OpenGLES.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

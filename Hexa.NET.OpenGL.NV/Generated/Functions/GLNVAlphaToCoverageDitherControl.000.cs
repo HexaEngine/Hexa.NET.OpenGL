@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_alpha_to_coverage_dither_control</remarks>
 		public static void AlphaToCoverageDitherControlNV(GLEnum mode)
 		{
 			AlphaToCoverageDitherControlNVNative(mode);

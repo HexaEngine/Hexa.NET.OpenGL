@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexAttribEnumNV : uint
 	{
+		/// <summary>
+		/// Specifies program parameters (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
 		ProgramParameterNv = unchecked((uint)0x8644),
 	}
 }

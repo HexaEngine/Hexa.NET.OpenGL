@@ -15,20 +15,94 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLBufferTargetARB : uint
 	{
+		/// <summary>
+		/// Specifies a buffer for parameters.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		ParameterBuffer = unchecked((uint)0x80EE),
+
+		/// <summary>
+		/// Specifies an array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ArrayBuffer = unchecked((uint)0x8892),
+
+		/// <summary>
+		/// Specifies an element array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ElementArrayBuffer = unchecked((uint)0x8893),
+
+		/// <summary>
+		/// Specifies a buffer for pixel packing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		PixelPackBuffer = unchecked((uint)0x88EB),
+
+		/// <summary>
+		/// Specifies a buffer for pixel unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		PixelUnpackBuffer = unchecked((uint)0x88EC),
+
+		/// <summary>
+		/// Specifies a uniform buffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBuffer = unchecked((uint)0x8A11),
+
+		/// <summary>
+		/// Specifies a texture buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureBuffer = unchecked((uint)0x8C2A),
+
+		/// <summary>
+		/// Specifies the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_enhanced_layouts</remarks>
 		TransformFeedbackBuffer = unchecked((uint)0x8C8E),
+
+		/// <summary>
+		/// Specifies the buffer used for reading during a copy operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
 		CopyReadBuffer = unchecked((uint)0x8F36),
+
+		/// <summary>
+		/// Specifies the buffer used for writing during a copy operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
 		CopyWriteBuffer = unchecked((uint)0x8F37),
+
+		/// <summary>
+		/// Specifies a buffer used for indirect draw calls.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		DrawIndirectBuffer = unchecked((uint)0x8F3F),
+
+		/// <summary>
+		/// Specifies the target for shader storage buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBuffer = unchecked((uint)0x90D2),
+
+		/// <summary>
+		/// Specifies the buffer for indirect dispatch commands.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		DispatchIndirectBuffer = unchecked((uint)0x90EE),
+
+		/// <summary>
+		/// Specifies a query buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_query_buffer_object</remarks>
 		QueryBuffer = unchecked((uint)0x9192),
+
+		/// <summary>
+		/// Specifies an atomic counter buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBuffer = unchecked((uint)0x92C0),
 	}
 }

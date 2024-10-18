@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLShadingRateCombinerOp : uint
 	{
+		/// <summary>
+		/// Specifies to keep the current shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpKeepExt = unchecked((uint)0x96D2),
+
+		/// <summary>
+		/// Specifies to replace the current shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpReplaceExt = unchecked((uint)0x96D3),
+
+		/// <summary>
+		/// Specifies the minimum shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpMinExt = unchecked((uint)0x96D4),
+
+		/// <summary>
+		/// Specifies the maximum shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpMaxExt = unchecked((uint)0x96D5),
+
+		/// <summary>
+		/// Specifies to multiply the current shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpMulExt = unchecked((uint)0x96D6),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_win32_keyed_mutex</remarks>
 		public static bool AcquireKeyedMutexWin32EXT(uint memory, ulong key, uint timeout)
 		{
 			byte ret = AcquireKeyedMutexWin32EXTNative(memory, key, timeout);
@@ -42,6 +46,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_win32_keyed_mutex</remarks>
 		public static bool ReleaseKeyedMutexWin32EXT(uint memory, ulong key)
 		{
 			byte ret = ReleaseKeyedMutexWin32EXTNative(memory, key);

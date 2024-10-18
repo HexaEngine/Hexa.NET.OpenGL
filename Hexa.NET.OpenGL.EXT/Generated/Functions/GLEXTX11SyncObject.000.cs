@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_x11_sync_object</remarks>
 		public static GLSync ImportSyncEXT(GLEnum externalSyncType, nint externalSync, uint flags)
 		{
 			GLSync ret = ImportSyncEXTNative(externalSyncType, externalSync, flags);

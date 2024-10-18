@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCombinerRegisterNV : uint
 	{
+		/// <summary>
+		/// Specifies texture unit 0 (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture<br/>GL_NV_register_combiners</remarks>
 		Texture0Arb = unchecked((uint)0x84C0),
+
+		/// <summary>
+		/// Specifies texture unit 1 (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture<br/>GL_NV_register_combiners</remarks>
 		Texture1Arb = unchecked((uint)0x84C1),
+
+		/// <summary>
+		/// Specifies the primary color input in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering<br/>GL_NV_register_combiners</remarks>
 		PrimaryColorNv = unchecked((uint)0x852C),
+
+		/// <summary>
+		/// Specifies the secondary color input in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering<br/>GL_NV_register_combiners</remarks>
 		SecondaryColorNv = unchecked((uint)0x852D),
+
+		/// <summary>
+		/// Specifies a spare register in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Spare0Nv = unchecked((uint)0x852E),
+
+		/// <summary>
+		/// Specifies another spare register in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Spare1Nv = unchecked((uint)0x852F),
+
+		/// <summary>
+		/// Specifies a discard operation in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		DiscardNv = unchecked((uint)0x8530),
 	}
 }

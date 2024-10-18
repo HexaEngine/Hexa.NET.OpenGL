@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, int* count, int primcount)
 		{
 			MultiDrawArraysEXTNative(mode, first, count, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
@@ -47,6 +59,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, Span<int> count, int primcount)
 		{
 			fixed (int* pcount0 = count)
@@ -55,6 +71,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, ref int count, int primcount)
 		{
 			fixed (int* pcount0 = &count)
@@ -63,6 +83,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, Span<int> count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
@@ -74,6 +98,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, ref int count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
@@ -95,11 +123,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawElementsEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			MultiDrawElementsEXTNative(mode, count, type, indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawElementsEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			fixed (int* pcount0 = count)
@@ -108,6 +144,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
 		public static void MultiDrawElementsEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			fixed (int* pcount0 = &count)

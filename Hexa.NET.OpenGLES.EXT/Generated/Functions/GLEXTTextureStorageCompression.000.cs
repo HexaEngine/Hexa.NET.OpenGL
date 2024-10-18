@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		public static void TexStorageAttribs2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, GLTexStorageAttribs attribList)
 		{
 			TexStorageAttribs2DEXTNative(target, levels, internalformat, width, height, attribList);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
 		public static void TexStorageAttribs3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth, GLTexStorageAttribs attribList)
 		{
 			TexStorageAttribs3DEXTNative(target, levels, internalformat, width, height, depth, attribList);

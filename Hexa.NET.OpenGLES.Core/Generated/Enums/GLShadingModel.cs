@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLShadingModel : uint
 	{
+		/// <summary>
+		/// Specifies flat shading model.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Flat = unchecked((uint)0x1D00),
+
+		/// <summary>
+		/// Specifies smooth shading model.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Smooth = unchecked((uint)0x1D01),
 	}
 }

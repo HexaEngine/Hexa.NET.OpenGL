@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathListMode : uint
 	{
+		/// <summary>
+		/// Accumulates adjacent path pairs in certain operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		AccumAdjacentPairsNv = unchecked((uint)0x90AD),
+
+		/// <summary>
+		/// Specifies adjacent pairs for path operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		AdjacentPairsNv = unchecked((uint)0x90AE),
+
+		/// <summary>
+		/// Specifies operations from the first element to the rest.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FirstToRestNv = unchecked((uint)0x90AF),
 	}
 }

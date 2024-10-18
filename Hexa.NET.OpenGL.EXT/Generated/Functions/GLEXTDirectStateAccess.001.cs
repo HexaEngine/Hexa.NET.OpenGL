@@ -17,11 +17,1838 @@ namespace Hexa.NET.OpenGL.EXT
 	public static unsafe partial class GLEXTDirectStateAccess
 	{
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, uint* @params)
+		{
+			NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, @params);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, out uint @params)
+		{
+			uint pparams;
+			NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, &pparams);
+			@params = pparams;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, Span<uint> @params)
+		{
+			fixed (uint* pparams = @params)
+			{
+				NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, pparams);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void NamedProgramStringEXTNative(uint program, GLProgramTarget target, GLProgramFormat format, int len, void* str)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, GLProgramFormat, int, void*, void>)funcTable[159])(program, target, format, len, str);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, GLProgramFormat, int, nint, void>)funcTable[159])(program, target, format, len, (nint)str);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramFormat format, int len, void* str)
+		{
+			NamedProgramStringEXTNative(program, target, format, len, str);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramFormat format, int len, nint str)
+		{
+			NamedProgramStringEXTNative(program, target, format, len, (void*)str);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramStringEXT<TStr>(uint program, GLProgramTarget target, GLProgramFormat format, int len, Span<TStr> str) where TStr : unmanaged
+		{
+			fixed (TStr* pstr0 = str)
+			{
+				NamedProgramStringEXTNative(program, target, format, len, pstr0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void NamedRenderbufferStorageEXTNative(uint renderbuffer, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLInternalFormat, int, int, void>)funcTable[160])(renderbuffer, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLInternalFormat, int, int, void>)funcTable[160])(renderbuffer, internalformat, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedRenderbufferStorageEXT(uint renderbuffer, GLInternalFormat internalformat, int width, int height)
+		{
+			NamedRenderbufferStorageEXTNative(renderbuffer, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void NamedRenderbufferStorageMultisampleCoverageEXTNative(uint renderbuffer, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, GLInternalFormat, int, int, void>)funcTable[161])(renderbuffer, coverageSamples, colorSamples, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, GLInternalFormat, int, int, void>)funcTable[161])(renderbuffer, coverageSamples, colorSamples, internalformat, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedRenderbufferStorageMultisampleCoverageEXT(uint renderbuffer, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
+		{
+			NamedRenderbufferStorageMultisampleCoverageEXTNative(renderbuffer, coverageSamples, colorSamples, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void NamedRenderbufferStorageMultisampleEXTNative(uint renderbuffer, int samples, GLInternalFormat internalformat, int width, int height)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, GLInternalFormat, int, int, void>)funcTable[162])(renderbuffer, samples, internalformat, width, height);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, GLInternalFormat, int, int, void>)funcTable[162])(renderbuffer, samples, internalformat, width, height);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedRenderbufferStorageMultisampleEXT(uint renderbuffer, int samples, GLInternalFormat internalformat, int width, int height)
+		{
+			NamedRenderbufferStorageMultisampleEXTNative(renderbuffer, samples, internalformat, width, height);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1dEXTNative(uint program, int location, double x)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, void>)funcTable[163])(program, location, x);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, void>)funcTable[163])(program, location, x);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform1dEXT(uint program, int location, double x)
+		{
+			ProgramUniform1dEXTNative(program, location, x);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1dvEXTNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[164])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[164])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform1dvEXT(uint program, int location, int count, double* value)
+		{
+			ProgramUniform1dvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform1dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform1dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform1dvEXT(uint program, int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniform1dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1fEXTNative(uint program, int location, float v0)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, float, void>)funcTable[165])(program, location, v0);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, float, void>)funcTable[165])(program, location, v0);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1fEXT(uint program, int location, float v0)
+		{
+			ProgramUniform1fEXTNative(program, location, v0);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1fvEXTNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[166])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[166])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1fvEXT(uint program, int location, int count, float* value)
+		{
+			ProgramUniform1fvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform1fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1fvEXT(uint program, int location, int count, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniform1fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1iEXTNative(uint program, int location, int v0)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[167])(program, location, v0);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[167])(program, location, v0);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1iEXT(uint program, int location, int v0)
+		{
+			ProgramUniform1iEXTNative(program, location, v0);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1ivEXTNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[168])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[168])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1ivEXT(uint program, int location, int count, int* value)
+		{
+			ProgramUniform1ivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform1ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1ivEXT(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform1ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1uiEXTNative(uint program, int location, uint v0)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, void>)funcTable[169])(program, location, v0);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, void>)funcTable[169])(program, location, v0);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1uiEXT(uint program, int location, uint v0)
+		{
+			ProgramUniform1uiEXTNative(program, location, v0);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform1uivEXTNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[170])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[170])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1uivEXT(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform1uivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform1uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform1uivEXT(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform1uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2dEXTNative(uint program, int location, double x, double y)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, void>)funcTable[171])(program, location, x, y);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, void>)funcTable[171])(program, location, x, y);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform2dEXT(uint program, int location, double x, double y)
+		{
+			ProgramUniform2dEXTNative(program, location, x, y);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2dvEXTNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[172])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[172])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform2dvEXT(uint program, int location, int count, double* value)
+		{
+			ProgramUniform2dvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform2dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform2dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform2dvEXT(uint program, int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniform2dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2fEXTNative(uint program, int location, float v0, float v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, void>)funcTable[173])(program, location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, void>)funcTable[173])(program, location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2fEXT(uint program, int location, float v0, float v1)
+		{
+			ProgramUniform2fEXTNative(program, location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2fvEXTNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[174])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[174])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2fvEXT(uint program, int location, int count, float* value)
+		{
+			ProgramUniform2fvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform2fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2fvEXT(uint program, int location, int count, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniform2fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2iEXTNative(uint program, int location, int v0, int v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[175])(program, location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[175])(program, location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2iEXT(uint program, int location, int v0, int v1)
+		{
+			ProgramUniform2iEXTNative(program, location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2ivEXTNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[176])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[176])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2ivEXT(uint program, int location, int count, int* value)
+		{
+			ProgramUniform2ivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform2ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2ivEXT(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform2ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2uiEXTNative(uint program, int location, uint v0, uint v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, void>)funcTable[177])(program, location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, void>)funcTable[177])(program, location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2uiEXT(uint program, int location, uint v0, uint v1)
+		{
+			ProgramUniform2uiEXTNative(program, location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform2uivEXTNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[178])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[178])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2uivEXT(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform2uivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform2uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform2uivEXT(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform2uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3dEXTNative(uint program, int location, double x, double y, double z)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, void>)funcTable[179])(program, location, x, y, z);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, void>)funcTable[179])(program, location, x, y, z);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform3dEXT(uint program, int location, double x, double y, double z)
+		{
+			ProgramUniform3dEXTNative(program, location, x, y, z);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3dvEXTNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[180])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[180])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform3dvEXT(uint program, int location, int count, double* value)
+		{
+			ProgramUniform3dvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform3dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform3dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform3dvEXT(uint program, int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniform3dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3fEXTNative(uint program, int location, float v0, float v1, float v2)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, void>)funcTable[181])(program, location, v0, v1, v2);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, void>)funcTable[181])(program, location, v0, v1, v2);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3fEXT(uint program, int location, float v0, float v1, float v2)
+		{
+			ProgramUniform3fEXTNative(program, location, v0, v1, v2);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3fvEXTNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[182])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[182])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3fvEXT(uint program, int location, int count, float* value)
+		{
+			ProgramUniform3fvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform3fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3fvEXT(uint program, int location, int count, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniform3fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3iEXTNative(uint program, int location, int v0, int v1, int v2)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[183])(program, location, v0, v1, v2);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[183])(program, location, v0, v1, v2);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3iEXT(uint program, int location, int v0, int v1, int v2)
+		{
+			ProgramUniform3iEXTNative(program, location, v0, v1, v2);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3ivEXTNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[184])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[184])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3ivEXT(uint program, int location, int count, int* value)
+		{
+			ProgramUniform3ivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform3ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3ivEXT(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform3ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3uiEXTNative(uint program, int location, uint v0, uint v1, uint v2)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, void>)funcTable[185])(program, location, v0, v1, v2);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, void>)funcTable[185])(program, location, v0, v1, v2);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3uiEXT(uint program, int location, uint v0, uint v1, uint v2)
+		{
+			ProgramUniform3uiEXTNative(program, location, v0, v1, v2);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform3uivEXTNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[186])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[186])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3uivEXT(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform3uivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform3uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform3uivEXT(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform3uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4dEXTNative(uint program, int location, double x, double y, double z, double w)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, double, void>)funcTable[187])(program, location, x, y, z, w);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, double, double, double, double, void>)funcTable[187])(program, location, x, y, z, w);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform4dEXT(uint program, int location, double x, double y, double z, double w)
+		{
+			ProgramUniform4dEXTNative(program, location, x, y, z, w);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4dvEXTNative(uint program, int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[188])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[188])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform4dvEXT(uint program, int location, int count, double* value)
+		{
+			ProgramUniform4dvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform4dvEXT(uint program, int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniform4dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniform4dvEXT(uint program, int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniform4dvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4fEXTNative(uint program, int location, float v0, float v1, float v2, float v3)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, float, void>)funcTable[189])(program, location, v0, v1, v2, v3);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, float, float, float, float, void>)funcTable[189])(program, location, v0, v1, v2, v3);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4fEXT(uint program, int location, float v0, float v1, float v2, float v3)
+		{
+			ProgramUniform4fEXTNative(program, location, v0, v1, v2, v3);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4fvEXTNative(uint program, int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[190])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[190])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4fvEXT(uint program, int location, int count, float* value)
+		{
+			ProgramUniform4fvEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4fvEXT(uint program, int location, int count, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniform4fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4fvEXT(uint program, int location, int count, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniform4fvEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4iEXTNative(uint program, int location, int v0, int v1, int v2, int v3)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, void>)funcTable[191])(program, location, v0, v1, v2, v3);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, void>)funcTable[191])(program, location, v0, v1, v2, v3);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4iEXT(uint program, int location, int v0, int v1, int v2, int v3)
+		{
+			ProgramUniform4iEXTNative(program, location, v0, v1, v2, v3);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4ivEXTNative(uint program, int location, int count, int* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[192])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[192])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4ivEXT(uint program, int location, int count, int* value)
+		{
+			ProgramUniform4ivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4ivEXT(uint program, int location, int count, Span<int> value)
+		{
+			fixed (int* pvalue0 = value)
+			{
+				ProgramUniform4ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4ivEXT(uint program, int location, int count, ref int value)
+		{
+			fixed (int* pvalue0 = &value)
+			{
+				ProgramUniform4ivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4uiEXTNative(uint program, int location, uint v0, uint v1, uint v2, uint v3)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, uint, void>)funcTable[193])(program, location, v0, v1, v2, v3);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, uint, uint, uint, uint, void>)funcTable[193])(program, location, v0, v1, v2, v3);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4uiEXT(uint program, int location, uint v0, uint v1, uint v2, uint v3)
+		{
+			ProgramUniform4uiEXTNative(program, location, v0, v1, v2, v3);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniform4uivEXTNative(uint program, int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[194])(program, location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, nint, void>)funcTable[194])(program, location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4uivEXT(uint program, int location, int count, uint* value)
+		{
+			ProgramUniform4uivEXTNative(program, location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4uivEXT(uint program, int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				ProgramUniform4uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniform4uivEXT(uint program, int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				ProgramUniform4uivEXTNative(program, location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[195])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[195])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix2dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[196])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[196])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2x3dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[197])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[197])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix2x3dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2x3dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix2x3dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2x3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[198])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[198])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x3fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix2x3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2x4dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[199])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[199])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix2x4dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix2x4dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix2x4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix2x4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[200])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[200])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix2x4fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix2x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix3dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[201])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[201])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix3dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix3dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix3fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[202])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[202])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix3fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix3x2dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[203])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[203])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix3x2dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3x2dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix3x2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix3x2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[204])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[204])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x2fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix3x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix3x4dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[205])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[205])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix3x4dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix3x4dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix3x4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix3x4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[206])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[206])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix3x4fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix3x4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[207])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[207])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix4dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix4dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[208])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[208])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x2dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[209])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[209])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, bool transpose, double* value)
+		{
+			ProgramUniformMatrix4x2dvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void ProgramUniformMatrix4x2dvEXT(uint program, int location, int count, bool transpose, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4x2dvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x2fvEXTNative(uint program, int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, float*, void>)funcTable[210])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[210])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, float* value)
+		{
+			ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
+		public static void ProgramUniformMatrix4x2fvEXT(uint program, int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				ProgramUniformMatrix4x2fvEXTNative(program, location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProgramUniformMatrix4x3dvEXTNative(uint program, int location, int count, bool transpose, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, double*, void>)funcTable[211])(program, location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, int, int, byte, nint, void>)funcTable[211])(program, location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void ProgramUniformMatrix4x3dvEXT(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4x3dvEXTNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void ProgramUniformMatrix4x3dvEXT(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -30,6 +1857,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void ProgramUniformMatrix4x3dvEXT(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -48,11 +1879,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x3fvEXTNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -61,6 +1900,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3fvEXT(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -79,6 +1922,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void PushClientAttribDefaultEXT(GLClientAttribMask mask)
 		{
 			PushClientAttribDefaultEXTNative(mask);
@@ -94,6 +1941,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureBufferEXT(uint texture, GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TextureBufferEXTNative(texture, target, internalformat, buffer);
@@ -109,6 +1960,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureBufferRangeEXT(uint texture, GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			TextureBufferRangeEXTNative(texture, target, internalformat, buffer, offset, size);
@@ -124,16 +1979,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureImage1DEXTNative(texture, target, level, internalformat, width, border, format, type, pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureImage1DEXTNative(texture, target, level, internalformat, width, border, format, type, (void*)pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage1DEXT<TPixels>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -152,16 +2019,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, format, type, pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, format, type, (void*)pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage2DEXT<TPixels>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -180,16 +2059,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureImage3DEXT<TPixels>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -208,6 +2099,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TexturePageCommitmentEXT(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			TexturePageCommitmentEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, commit);
@@ -223,11 +2118,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TextureParameterIivEXTNative(texture, target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
 			int pparams;
@@ -235,6 +2138,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -253,11 +2160,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			TextureParameterIuivEXTNative(texture, target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
 			uint pparams;
@@ -265,6 +2180,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -283,6 +2202,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterfEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
 			TextureParameterfEXTNative(texture, target, pname, param);
@@ -298,11 +2221,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
 			TextureParameterfvEXTNative(texture, target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out float @params)
 		{
 			float pparams;
@@ -310,6 +2241,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -328,6 +2263,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameteriEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
 			TextureParameteriEXTNative(texture, target, pname, param);
@@ -343,11 +2282,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TextureParameterivEXTNative(texture, target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
 			int pparams;
@@ -355,6 +2302,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -373,6 +2324,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureRenderbufferEXT(uint texture, GLTextureTarget target, uint renderbuffer)
 		{
 			TextureRenderbufferEXTNative(texture, target, renderbuffer);
@@ -388,6 +2343,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_texture_storage</remarks>
 		public static void TextureStorage1DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			TextureStorage1DEXTNative(texture, target, levels, internalformat, width);
@@ -403,6 +2362,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_texture_storage</remarks>
 		public static void TextureStorage2DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			TextureStorage2DEXTNative(texture, target, levels, internalformat, width, height);
@@ -418,6 +2381,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureStorage2DMultisampleEXT(uint texture, GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TextureStorage2DMultisampleEXTNative(texture, target, samples, internalformat, width, height, fixedsamplelocations);
@@ -433,6 +2400,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_texture_storage</remarks>
 		public static void TextureStorage3DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			TextureStorage3DEXTNative(texture, target, levels, internalformat, width, height, depth);
@@ -448,6 +2419,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureStorage3DMultisampleEXT(uint texture, GLEnum target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TextureStorage3DMultisampleEXTNative(texture, target, samples, internalformat, width, height, depth, fixedsamplelocations);
@@ -463,16 +2438,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, type, pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, type, (void*)pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage1DEXT<TPixels>(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -491,16 +2478,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage2DEXT<TPixels>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -519,16 +2518,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void TextureSubImage3DEXT<TPixels>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -547,6 +2558,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static bool UnmapNamedBufferEXT(uint buffer)
 		{
 			byte ret = UnmapNamedBufferEXTNative(buffer);
@@ -563,6 +2578,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayBindVertexBufferEXT(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			VertexArrayBindVertexBufferEXTNative(vaobj, bindingindex, buffer, offset, stride);
@@ -578,6 +2597,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayColorOffsetEXT(uint vaobj, uint buffer, int size, GLColorPointerType type, int stride, nint offset)
 		{
 			VertexArrayColorOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
@@ -593,6 +2616,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayEdgeFlagOffsetEXT(uint vaobj, uint buffer, int stride, nint offset)
 		{
 			VertexArrayEdgeFlagOffsetEXTNative(vaobj, buffer, stride, offset);
@@ -608,6 +2635,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayFogCoordOffsetEXT(uint vaobj, uint buffer, GLFogCoordinatePointerType type, int stride, nint offset)
 		{
 			VertexArrayFogCoordOffsetEXTNative(vaobj, buffer, type, stride, offset);
@@ -623,6 +2654,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayIndexOffsetEXT(uint vaobj, uint buffer, GLIndexPointerType type, int stride, nint offset)
 		{
 			VertexArrayIndexOffsetEXTNative(vaobj, buffer, type, stride, offset);
@@ -638,6 +2673,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayMultiTexCoordOffsetEXT(uint vaobj, uint buffer, GLEnum texunit, int size, GLTexCoordPointerType type, int stride, nint offset)
 		{
 			VertexArrayMultiTexCoordOffsetEXTNative(vaobj, buffer, texunit, size, type, stride, offset);
@@ -653,6 +2692,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayNormalOffsetEXT(uint vaobj, uint buffer, GLNormalPointerType type, int stride, nint offset)
 		{
 			VertexArrayNormalOffsetEXTNative(vaobj, buffer, type, stride, offset);
@@ -668,6 +2711,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArraySecondaryColorOffsetEXT(uint vaobj, uint buffer, int size, GLColorPointerType type, int stride, nint offset)
 		{
 			VertexArraySecondaryColorOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
@@ -683,6 +2730,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayTexCoordOffsetEXT(uint vaobj, uint buffer, int size, GLTexCoordPointerType type, int stride, nint offset)
 		{
 			VertexArrayTexCoordOffsetEXTNative(vaobj, buffer, size, type, stride, offset);
@@ -698,6 +2749,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribBindingEXT(uint vaobj, uint attribindex, uint bindingindex)
 		{
 			VertexArrayVertexAttribBindingEXTNative(vaobj, attribindex, bindingindex);
@@ -713,6 +2768,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor)
 		{
 			VertexArrayVertexAttribDivisorEXTNative(vaobj, index, divisor);
@@ -728,6 +2787,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribFormatEXT(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexArrayVertexAttribFormatEXTNative(vaobj, attribindex, size, type, normalized, relativeoffset);
@@ -743,6 +2806,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribIFormatEXT(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			VertexArrayVertexAttribIFormatEXTNative(vaobj, attribindex, size, type, relativeoffset);
@@ -758,6 +2825,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribIOffsetEXT(uint vaobj, uint buffer, uint index, int size, GLVertexAttribType type, int stride, nint offset)
 		{
 			VertexArrayVertexAttribIOffsetEXTNative(vaobj, buffer, index, size, type, stride, offset);
@@ -773,6 +2844,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribLFormatEXT(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			VertexArrayVertexAttribLFormatEXTNative(vaobj, attribindex, size, type, relativeoffset);
@@ -788,6 +2863,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, GLVertexAttribLType type, int stride, nint offset)
 		{
 			VertexArrayVertexAttribLOffsetEXTNative(vaobj, buffer, index, size, type, stride, offset);
@@ -803,6 +2882,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexAttribOffsetEXT(uint vaobj, uint buffer, uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint offset)
 		{
 			VertexArrayVertexAttribOffsetEXTNative(vaobj, buffer, index, size, type, normalized, stride, offset);
@@ -818,6 +2901,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexBindingDivisorEXT(uint vaobj, uint bindingindex, uint divisor)
 		{
 			VertexArrayVertexBindingDivisorEXTNative(vaobj, bindingindex, divisor);
@@ -833,6 +2920,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void VertexArrayVertexOffsetEXT(uint vaobj, uint buffer, int size, GLVertexPointerType type, int stride, nint offset)
 		{
 			VertexArrayVertexOffsetEXTNative(vaobj, buffer, size, type, stride, offset);

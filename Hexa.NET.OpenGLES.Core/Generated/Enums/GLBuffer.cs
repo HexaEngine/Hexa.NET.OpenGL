@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLBuffer : uint
 	{
+		/// <summary>
+		/// Specifies the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Color = unchecked((uint)0x1800),
+
+		/// <summary>
+		/// Specifies the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Depth = unchecked((uint)0x1801),
+
+		/// <summary>
+		/// Specifies the stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Stencil = unchecked((uint)0x1802),
 	}
 }

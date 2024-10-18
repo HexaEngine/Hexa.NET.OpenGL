@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		public static void ClampColorARB(GLClampColorTargetARB target, GLClampColorModeARB clamp)
 		{
 			ClampColorARBNative(target, clamp);

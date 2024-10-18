@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentShaderDestMaskATI : uint
 	{
+		/// <summary>
+		/// Red color channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		RedBitAti = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Green color channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		GreenBitAti = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Blue color channel bit (ATI).
+		/// </summary>
+		/// <remarks></remarks>
 		BlueBitAti = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
 	}
 }

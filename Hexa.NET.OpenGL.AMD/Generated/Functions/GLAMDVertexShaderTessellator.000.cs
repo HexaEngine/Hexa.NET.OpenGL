@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_vertex_shader_tessellator</remarks>
 		public static void TessellationFactorAMD(float factor)
 		{
 			TessellationFactorAMDNative(factor);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_vertex_shader_tessellator</remarks>
 		public static void TessellationModeAMD(GLEnum mode)
 		{
 			TessellationModeAMDNative(mode);

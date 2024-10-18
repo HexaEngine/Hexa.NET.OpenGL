@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, uint* buffers)
 		{
 			BindBuffersBaseNative(target, first, count, buffers);
 		}
 
+		/// <summary>
+		/// Bind one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, nint* sizes)
 		{
 			BindBuffersRangeNative(target, first, count, buffers, offsets, sizes);
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -70,6 +90,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -78,6 +102,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, nint* sizes)
 		{
 			fixed (nint* poffsets0 = offsets)
@@ -86,6 +114,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, nint* sizes)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -94,6 +126,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -105,6 +141,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, ref nint offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -116,6 +156,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, Span<nint> sizes)
 		{
 			fixed (nint* psizes0 = sizes)
@@ -124,6 +168,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, ref nint sizes)
 		{
 			fixed (nint* psizes0 = &sizes)
@@ -132,6 +180,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, Span<nint> sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -143,6 +195,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, ref nint sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -154,6 +210,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, Span<nint> sizes)
 		{
 			fixed (nint* poffsets0 = offsets)
@@ -165,6 +225,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, ref nint sizes)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -176,6 +240,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<nint> sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -190,6 +258,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, ref nint offsets, ref nint sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -214,11 +286,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind one or more named texture images to a sequence of consecutive image units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindImageTextures(uint first, int count, uint* textures)
 		{
 			BindImageTexturesNative(first, count, textures);
 		}
 
+		/// <summary>
+		/// Bind one or more named texture images to a sequence of consecutive image units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindImageTextures(uint first, int count, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -227,6 +307,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind one or more named texture images to a sequence of consecutive image units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindImageTextures(uint first, int count, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -245,11 +329,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind one or more named sampler objects to a sequence of consecutive sampler units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindSamplers(uint first, int count, uint* samplers)
 		{
 			BindSamplersNative(first, count, samplers);
 		}
 
+		/// <summary>
+		/// Bind one or more named sampler objects to a sequence of consecutive sampler units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindSamplers(uint first, int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
@@ -258,6 +350,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind one or more named sampler objects to a sequence of consecutive sampler units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindSamplers(uint first, int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -276,11 +372,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind one or more named textures to a sequence of consecutive texture units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindTextures(uint first, int count, uint* textures)
 		{
 			BindTexturesNative(first, count, textures);
 		}
 
+		/// <summary>
+		/// Bind one or more named textures to a sequence of consecutive texture units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindTextures(uint first, int count, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -289,6 +393,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Bind one or more named textures to a sequence of consecutive texture units
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindTextures(uint first, int count, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -307,11 +415,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, int* strides)
 		{
 			BindVertexBuffersNative(first, count, buffers, offsets, strides);
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -320,6 +436,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -328,6 +448,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = offsets)
@@ -336,6 +460,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -344,6 +472,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -355,6 +487,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, ref uint buffers, ref nint offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -366,6 +502,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
 		{
 			fixed (int* pstrides0 = strides)
@@ -374,6 +514,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, ref int strides)
 		{
 			fixed (int* pstrides0 = &strides)
@@ -382,6 +526,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -393,6 +541,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, ref int strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -404,6 +556,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
 		{
 			fixed (nint* poffsets0 = offsets)
@@ -415,6 +571,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, ref int strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
@@ -426,6 +586,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -440,6 +604,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Attach multiple buffer objects to a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
 		public static void BindVertexBuffers(uint first, int count, ref uint buffers, ref nint offsets, ref int strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)

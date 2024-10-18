@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPathElementType : uint
 	{
+		/// <summary>
+		/// Specifies UTF-8 encoding for text in path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Utf8Nv = unchecked((uint)0x909A),
+
+		/// <summary>
+		/// Specifies UTF-16 encoding for text in path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Utf16Nv = unchecked((uint)0x909B),
 	}
 }

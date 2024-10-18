@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetHistogramEXTNative(target, reset, format, type, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetHistogramEXTNative(target, reset, format, type, (void*)values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramEXT<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
@@ -54,11 +66,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
 		{
 			GetHistogramParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
 		{
 			float pparams;
@@ -66,6 +86,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -84,11 +108,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			GetHistogramParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
 		{
 			int pparams;
@@ -96,6 +128,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -114,16 +150,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetMinmaxEXTNative(target, reset, format, type, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetMinmaxEXTNative(target, reset, format, type, (void*)values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxEXT<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
@@ -142,11 +190,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
 		{
 			GetMinmaxParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
 		{
 			float pparams;
@@ -154,6 +210,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -172,11 +232,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
 		{
 			GetMinmaxParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
 		{
 			int pparams;
@@ -184,6 +252,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -202,6 +274,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void HistogramEXT(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			HistogramEXTNative(target, width, internalformat, sink);
@@ -217,6 +293,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void MinmaxEXT(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			MinmaxEXTNative(target, internalformat, sink);
@@ -232,6 +312,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void ResetHistogramEXT(GLHistogramTargetEXT target)
 		{
 			ResetHistogramEXTNative(target);
@@ -247,6 +331,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		public static void ResetMinmaxEXT(GLMinmaxTargetEXT target)
 		{
 			ResetMinmaxEXTNative(target);

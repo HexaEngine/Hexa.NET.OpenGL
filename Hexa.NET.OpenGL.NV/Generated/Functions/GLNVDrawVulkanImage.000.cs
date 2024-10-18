@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static void DrawVkImageNV(ulong vkImage, uint sampler, float x0, float y0, float x1, float y1, float z, float s0, float t0, float s1, float t1)
 		{
 			DrawVkImageNVNative(vkImage, sampler, x0, y0, x1, y1, z, s0, t0, s1, t1);
@@ -41,12 +45,20 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static GLVulkanProcNV GetVkProcAddrNV(byte* name)
 		{
 			GLVulkanProcNV ret = GetVkProcAddrNVNative(name);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static GLVulkanProcNV GetVkProcAddrNV(string name)
 		{
 			byte* pStr0 = null;
@@ -74,6 +86,10 @@ namespace Hexa.NET.OpenGL.NV
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static GLVulkanProcNV GetVkProcAddrNV(Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -83,6 +99,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static GLVulkanProcNV GetVkProcAddrNV(ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -102,6 +122,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static void WaitVkSemaphoreNV(ulong vkSemaphore)
 		{
 			WaitVkSemaphoreNVNative(vkSemaphore);
@@ -117,6 +141,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static void SignalVkSemaphoreNV(ulong vkSemaphore)
 		{
 			SignalVkSemaphoreNVNative(vkSemaphore);
@@ -132,6 +160,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
 		public static void SignalVkFenceNV(ulong vkFence)
 		{
 			SignalVkFenceNVNative(vkFence);

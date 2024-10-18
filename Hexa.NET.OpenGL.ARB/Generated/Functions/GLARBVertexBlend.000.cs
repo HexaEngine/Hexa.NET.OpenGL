@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void VertexBlendARB(int count)
 		{
 			VertexBlendARBNative(count);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, void* pointer)
 		{
 			WeightPointerARBNative(size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, nint pointer)
 		{
 			WeightPointerARBNative(size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightPointerARB<TPointer>(int size, GLWeightPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -69,11 +85,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightbvARB(int size, sbyte* weights)
 		{
 			WeightbvARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightbvARB(int size, Span<sbyte> weights)
 		{
 			fixed (sbyte* pweights0 = weights)
@@ -82,6 +106,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightbvARB(int size, ref sbyte weights)
 		{
 			fixed (sbyte* pweights0 = &weights)
@@ -100,11 +128,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightdvARB(int size, double* weights)
 		{
 			WeightdvARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightdvARB(int size, Span<double> weights)
 		{
 			fixed (double* pweights0 = weights)
@@ -113,6 +149,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightdvARB(int size, ref double weights)
 		{
 			fixed (double* pweights0 = &weights)
@@ -131,11 +171,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightfvARB(int size, float* weights)
 		{
 			WeightfvARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightfvARB(int size, Span<float> weights)
 		{
 			fixed (float* pweights0 = weights)
@@ -144,6 +192,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightfvARB(int size, ref float weights)
 		{
 			fixed (float* pweights0 = &weights)
@@ -162,11 +214,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightivARB(int size, int* weights)
 		{
 			WeightivARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightivARB(int size, Span<int> weights)
 		{
 			fixed (int* pweights0 = weights)
@@ -175,6 +235,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightivARB(int size, ref int weights)
 		{
 			fixed (int* pweights0 = &weights)
@@ -193,11 +257,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightsvARB(int size, short* weights)
 		{
 			WeightsvARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightsvARB(int size, Span<short> weights)
 		{
 			fixed (short* pweights0 = weights)
@@ -206,6 +278,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightsvARB(int size, ref short weights)
 		{
 			fixed (short* pweights0 = &weights)
@@ -224,11 +300,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightubvARB(int size, byte* weights)
 		{
 			WeightubvARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightubvARB(int size, string weights)
 		{
 			byte* pStr0 = null;
@@ -255,6 +339,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightubvARB(int size, Span<byte> weights)
 		{
 			fixed (byte* pweights0 = weights)
@@ -263,6 +351,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightubvARB(int size, ref byte weights)
 		{
 			fixed (byte* pweights0 = &weights)
@@ -281,11 +373,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightuivARB(int size, uint* weights)
 		{
 			WeightuivARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightuivARB(int size, Span<uint> weights)
 		{
 			fixed (uint* pweights0 = weights)
@@ -294,6 +394,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightuivARB(int size, ref uint weights)
 		{
 			fixed (uint* pweights0 = &weights)
@@ -312,11 +416,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightusvARB(int size, ushort* weights)
 		{
 			WeightusvARBNative(size, weights);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightusvARB(int size, Span<ushort> weights)
 		{
 			fixed (ushort* pweights0 = weights)
@@ -325,6 +437,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
 		public static void WeightusvARB(int size, ref ushort weights)
 		{
 			fixed (ushort* pweights0 = &weights)

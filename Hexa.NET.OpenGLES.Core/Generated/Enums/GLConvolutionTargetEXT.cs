@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLConvolutionTargetEXT : uint
 	{
+		/// <summary>
+		/// Specifies 1D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Convolution1D = unchecked((uint)0x8010),
+
+		/// <summary>
+		/// Specifies 1D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		Convolution1DExt = unchecked((uint)0x8010),
+
+		/// <summary>
+		/// Specifies 2D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Convolution2D = unchecked((uint)0x8011),
+
+		/// <summary>
+		/// Specifies 2D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		Convolution2DExt = unchecked((uint)0x8011),
 	}
 }

@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCombinerScaleNV : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies a scaling operation by two (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ByTwoNv = unchecked((uint)0x853E),
+
+		/// <summary>
+		/// Specifies a scaling operation by four (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ByFourNv = unchecked((uint)0x853F),
+
+		/// <summary>
+		/// Specifies a scaling operation by one half (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ByOneHalfNv = unchecked((uint)0x8540),
 	}
 }

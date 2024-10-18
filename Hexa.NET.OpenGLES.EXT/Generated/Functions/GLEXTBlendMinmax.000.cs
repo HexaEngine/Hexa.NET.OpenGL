@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
 		public static void BlendEquationEXT(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationEXTNative(mode);

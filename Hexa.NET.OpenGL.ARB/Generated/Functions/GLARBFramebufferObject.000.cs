@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a framebuffer to a framebuffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void BindFramebuffer(GLFramebufferTarget target, uint framebuffer)
 		{
 			BindFramebufferNative(target, framebuffer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a renderbuffer to a renderbuffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void BindRenderbuffer(GLRenderbufferTarget target, uint renderbuffer)
 		{
 			BindRenderbufferNative(target, renderbuffer);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Copy a block of pixels from one framebuffer object to another
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
 		{
 			BlitFramebufferNative(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Check the completeness status of a framebuffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static GLEnum CheckFramebufferStatus(GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckFramebufferStatusNative(target);
@@ -87,16 +103,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffers(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffer(uint framebuffer)
 		{
 			DeleteFramebuffersNative(1, &framebuffer);
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffers(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -105,6 +133,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -123,16 +155,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffers(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffer(uint renderbuffer)
 		{
 			DeleteRenderbuffersNative(1, &renderbuffer);
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffers(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -141,6 +185,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -159,6 +207,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Attach a renderbuffer as a logical buffer of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferRenderbuffer(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
 		{
 			FramebufferRenderbufferNative(target, attachment, renderbuffertarget, renderbuffer);
@@ -174,6 +226,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTexture1D(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture1DNative(target, attachment, textarget, texture, level);
@@ -189,6 +245,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTexture2D(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture2DNative(target, attachment, textarget, texture, level);
@@ -204,6 +264,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTexture3D(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
 		{
 			FramebufferTexture3DNative(target, attachment, textarget, texture, level, zoffset);
@@ -219,6 +283,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Attach a single layer of a texture object as a logical buffer of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTextureLayer(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerNative(target, attachment, texture, level, layer);
@@ -234,11 +302,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenFramebuffers(int n, uint* framebuffers)
 		{
 			GenFramebuffersNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static uint GenFramebuffer()
 		{
 			uint result;
@@ -246,6 +322,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenFramebuffers(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -254,6 +334,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -272,11 +356,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenRenderbuffers(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static uint GenRenderbuffer()
 		{
 			uint result;
@@ -284,6 +376,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenRenderbuffers(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -292,6 +388,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -310,6 +410,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Generate mipmaps for a specified texture object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenerateMipmap(GLTextureTarget target)
 		{
 			GenerateMipmapNative(target);
@@ -325,11 +429,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve information about attachments of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferAttachmentParameterivNative(target, attachment, pname, @params);
 		}
 
+		/// <summary>
+		/// Retrieve information about attachments of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparams;
@@ -337,6 +449,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Retrieve information about attachments of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -355,11 +471,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Query a named parameter of a renderbuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
 		{
 			GetRenderbufferParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// Query a named parameter of a renderbuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
 			int pparams;
@@ -367,6 +491,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Query a named parameter of a renderbuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -385,6 +513,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Determine if a name corresponds to a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static bool IsFramebuffer(uint framebuffer)
 		{
 			byte ret = IsFramebufferNative(framebuffer);
@@ -401,6 +533,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Determine if a name corresponds to a renderbuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static bool IsRenderbuffer(uint renderbuffer)
 		{
 			byte ret = IsRenderbufferNative(renderbuffer);
@@ -417,6 +553,11 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Establish data storage, format and dimensions of a
+		///     renderbuffer object's image
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void RenderbufferStorage(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageNative(target, internalformat, width, height);
@@ -432,6 +573,11 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Establish data storage, format, dimensions and sample count of
+		///     a renderbuffer object's image
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void RenderbufferStorageMultisample(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleNative(target, samples, internalformat, width, height);

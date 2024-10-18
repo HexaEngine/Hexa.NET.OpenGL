@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Control clip coordinate to window coordinate behavior
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		public static void ClipControl(GLClipControlOrigin origin, GLClipControlDepth depth)
 		{
 			ClipControlNative(origin, depth);

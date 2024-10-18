@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Set the blend color
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void BlendColor(float red, float green, float blue, float alpha)
 		{
 			BlendColorNative(red, green, blue, alpha);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void BlendEquation(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationNative(mode);
@@ -56,16 +64,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ColorSubTableNative(target, start, count, format, type, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ColorSubTableNative(target, start, count, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorSubTable<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -84,16 +104,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			ColorTableNative(target, internalformat, width, format, type, table);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint table)
 		{
 			ColorTableNative(target, internalformat, width, format, type, (void*)table);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTable<TTable>(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
@@ -112,11 +144,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			ColorTableParameterfvNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
 		{
 			float pparams;
@@ -124,6 +164,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -142,11 +186,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			ColorTableParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
 		{
 			int pparams;
@@ -154,6 +206,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -172,16 +228,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter1DNative(target, internalformat, width, format, type, image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			ConvolutionFilter1DNative(target, internalformat, width, format, type, (void*)image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionFilter1D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
@@ -200,16 +268,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter2DNative(target, internalformat, width, height, format, type, image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			ConvolutionFilter2DNative(target, internalformat, width, height, format, type, (void*)image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionFilter2D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
@@ -228,6 +308,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameterf(GLConvolutionTarget target, GLConvolutionParameter pname, float @params)
 		{
 			ConvolutionParameterfNative(target, pname, @params);
@@ -243,11 +327,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
 			ConvolutionParameterfvNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, out float @params)
 		{
 			float pparams;
@@ -255,6 +347,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -273,6 +369,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameteri(GLConvolutionTarget target, GLConvolutionParameter pname, int @params)
 		{
 			ConvolutionParameteriNative(target, pname, @params);
@@ -288,11 +388,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
 		{
 			ConvolutionParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, out int @params)
 		{
 			int pparams;
@@ -300,6 +408,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -318,6 +430,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void CopyColorSubTable(GLColorTableTarget target, int start, int x, int y, int width)
 		{
 			CopyColorSubTableNative(target, start, x, y, width);
@@ -333,6 +449,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void CopyColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			CopyColorTableNative(target, internalformat, x, y, width);
@@ -348,6 +468,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void CopyConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			CopyConvolutionFilter1DNative(target, internalformat, x, y, width);
@@ -363,6 +487,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void CopyConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width, int height)
 		{
 			CopyConvolutionFilter2DNative(target, internalformat, x, y, width, height);
@@ -378,16 +506,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			GetColorTableNative(target, format, type, table);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint table)
 		{
 			GetColorTableNative(target, format, type, (void*)table);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTable<TTable>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
@@ -406,11 +546,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			GetColorTableParameterfvNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
 		{
 			float pparams;
@@ -418,6 +566,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -436,11 +588,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			GetColorTableParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
 		{
 			int pparams;
@@ -448,6 +608,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -466,16 +630,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			GetConvolutionFilterNative(target, format, type, image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			GetConvolutionFilterNative(target, format, type, (void*)image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionFilter<TImage>(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
@@ -494,11 +670,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
 			GetConvolutionParameterfvNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, out float @params)
 		{
 			float pparams;
@@ -506,6 +690,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -524,11 +712,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
 		{
 			GetConvolutionParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, out int @params)
 		{
 			int pparams;
@@ -536,6 +732,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -554,16 +754,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetHistogramNative(target, reset, format, type, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetHistogramNative(target, reset, format, type, (void*)values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogram<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
@@ -582,11 +794,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
 		{
 			GetHistogramParameterfvNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
 		{
 			float pparams;
@@ -594,6 +814,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -612,11 +836,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			GetHistogramParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
 		{
 			int pparams;
@@ -624,6 +856,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -642,16 +878,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetMinmaxNative(target, reset, format, type, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetMinmaxNative(target, reset, format, type, (void*)values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmax<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
@@ -670,11 +918,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
 		{
 			GetMinmaxParameterfvNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
 		{
 			float pparams;
@@ -682,6 +938,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -700,11 +960,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
 		{
 			GetMinmaxParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
 		{
 			int pparams;
@@ -712,6 +980,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -730,16 +1002,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, row, column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, void* span) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -748,11 +1032,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, row, (void*)column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, void* span) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
@@ -761,11 +1053,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, (void*)column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -777,11 +1077,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, row, column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, Span<TSpan> span) where TSpan : unmanaged
 		{
 			fixed (TSpan* pspan0 = span)
@@ -790,11 +1098,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -806,11 +1122,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, row, (void*)column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
@@ -822,11 +1146,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, (void*)column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetSeparableFilter<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -851,6 +1183,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void Histogram(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			HistogramNative(target, width, internalformat, sink);
@@ -866,6 +1202,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void Minmax(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			MinmaxNative(target, internalformat, sink);
@@ -881,6 +1221,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ResetHistogram(GLHistogramTargetEXT target)
 		{
 			ResetHistogramNative(target);
@@ -896,6 +1240,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void ResetMinmax(GLMinmaxTargetEXT target)
 		{
 			ResetMinmaxNative(target);
@@ -911,16 +1259,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, row, column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, void* column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, (void*)row, column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D<TRow>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -929,11 +1289,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, nint column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, row, (void*)column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D<TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
@@ -942,11 +1310,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, nint column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, (void*)row, (void*)column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void SeparableFilter2D<TRow, TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)

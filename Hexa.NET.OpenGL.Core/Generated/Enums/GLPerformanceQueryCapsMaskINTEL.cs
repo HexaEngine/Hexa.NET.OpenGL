@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPerformanceQueryCapsMaskINTEL : uint
 	{
+		/// <summary>
+		/// Performance query for single context (Intel).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
 		PerfquerySingleContextIntel = unchecked((uint)0x00000000),
+
+		/// <summary>
+		/// Performance query for global context (Intel).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
 		PerfqueryGlobalContextIntel = unchecked((uint)0x00000001),
 	}
 }

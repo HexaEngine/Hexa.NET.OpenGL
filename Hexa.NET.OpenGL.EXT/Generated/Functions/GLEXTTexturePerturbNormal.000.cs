@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_perturb_normal</remarks>
 		public static void TextureNormalEXT(GLTextureNormalModeEXT mode)
 		{
 			TextureNormalEXTNative(mode);

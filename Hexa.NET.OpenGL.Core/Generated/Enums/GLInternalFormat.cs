@@ -15,398 +15,2362 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLInternalFormat : uint
 	{
+		/// <summary>
+		/// Specifies the stencil index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_stencil8</remarks>
 		StencilIndex = unchecked((uint)0x1901),
+
+		/// <summary>
+		/// Specifies the stencil index buffer for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndexOes = unchecked((uint)0x1901),
+
+		/// <summary>
+		/// Specifies a depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		DepthComponent = unchecked((uint)0x1902),
+
+		/// <summary>
+		/// Specifies the red color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Red = unchecked((uint)0x1903),
+
+		/// <summary>
+		/// Specifies the red color component for EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		RedExt = unchecked((uint)0x1903),
+
+		/// <summary>
+		/// Specifies a color in RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb = unchecked((uint)0x1907),
+
+		/// <summary>
+		/// Specifies a color in RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba = unchecked((uint)0x1908),
+
+		/// <summary>
+		/// Specifies a 2-byte RGB format with 3 bits for each channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		R3G3B2 = unchecked((uint)0x2A10),
+
+		/// <summary>
+		/// Specifies a format with 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Alpha4 = unchecked((uint)0x803B),
+
+		/// <summary>
+		/// Specifies a format with 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Alpha4Ext = unchecked((uint)0x803B),
+
+		/// <summary>
+		/// Specifies a format with 8 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Alpha8 = unchecked((uint)0x803C),
+
+		/// <summary>
+		/// Specifies a format with 8 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
 		Alpha8Ext = unchecked((uint)0x803C),
+
+		/// <summary>
+		/// Specifies an 8-bit alpha format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Alpha8Oes = unchecked((uint)0x803C),
+
+		/// <summary>
+		/// Specifies a 12-bit alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Alpha12 = unchecked((uint)0x803D),
+
+		/// <summary>
+		/// Specifies a 12-bit alpha format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Alpha12Ext = unchecked((uint)0x803D),
+
+		/// <summary>
+		/// Specifies a 16-bit alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Alpha16 = unchecked((uint)0x803E),
+
+		/// <summary>
+		/// Specifies a 16-bit alpha format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Alpha16Ext = unchecked((uint)0x803E),
+
+		/// <summary>
+		/// Specifies a 4-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance4 = unchecked((uint)0x803F),
+
+		/// <summary>
+		/// Specifies a 4-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance4Ext = unchecked((uint)0x803F),
+
+		/// <summary>
+		/// Specifies an 8-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance8 = unchecked((uint)0x8040),
+
+		/// <summary>
+		/// Specifies an 8-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
 		Luminance8Ext = unchecked((uint)0x8040),
+
+		/// <summary>
+		/// Specifies an 8-bit luminance format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Luminance8Oes = unchecked((uint)0x8040),
+
+		/// <summary>
+		/// Specifies a 12-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance12 = unchecked((uint)0x8041),
+
+		/// <summary>
+		/// Specifies a 12-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance12Ext = unchecked((uint)0x8041),
+
+		/// <summary>
+		/// Specifies a 16-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance16 = unchecked((uint)0x8042),
+
+		/// <summary>
+		/// Specifies a 16-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance16Ext = unchecked((uint)0x8042),
+
+		/// <summary>
+		/// Specifies a format with 4 bits for luminance and 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance4Alpha4 = unchecked((uint)0x8043),
+
+		/// <summary>
+		/// Specifies a format with 4 bits for luminance and 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance4Alpha4Ext = unchecked((uint)0x8043),
+
+		/// <summary>
+		/// Specifies a format with 4 bits for luminance and 4 bits for alpha for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Luminance4Alpha4Oes = unchecked((uint)0x8043),
+
+		/// <summary>
+		/// Specifies a format with 6 bits for luminance and 2 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance6Alpha2 = unchecked((uint)0x8044),
+
+		/// <summary>
+		/// Specifies a format with 6 bits for luminance and 2 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance6Alpha2Ext = unchecked((uint)0x8044),
+
+		/// <summary>
+		/// Specifies a format with 8 bits for luminance and 8 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance8Alpha8 = unchecked((uint)0x8045),
+
+		/// <summary>
+		/// Specifies a format with 8 bits for luminance and 8 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
 		Luminance8Alpha8Ext = unchecked((uint)0x8045),
+
+		/// <summary>
+		/// Specifies a format with 8 bits for luminance and 8 bits for alpha for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Luminance8Alpha8Oes = unchecked((uint)0x8045),
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance12Alpha4 = unchecked((uint)0x8046),
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance12Alpha4Ext = unchecked((uint)0x8046),
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 12 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance12Alpha12 = unchecked((uint)0x8047),
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 12 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance12Alpha12Ext = unchecked((uint)0x8047),
+
+		/// <summary>
+		/// Specifies a format with 16 bits for luminance and 16 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Luminance16Alpha16 = unchecked((uint)0x8048),
+
+		/// <summary>
+		/// Specifies a format with 16 bits for luminance and 16 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Luminance16Alpha16Ext = unchecked((uint)0x8048),
+
+		/// <summary>
+		/// Specifies intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Intensity = unchecked((uint)0x8049),
+
+		/// <summary>
+		/// Specifies a 4-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Intensity4 = unchecked((uint)0x804A),
+
+		/// <summary>
+		/// Specifies a 4-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Intensity4Ext = unchecked((uint)0x804A),
+
+		/// <summary>
+		/// Specifies an 8-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Intensity8 = unchecked((uint)0x804B),
+
+		/// <summary>
+		/// Specifies an 8-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Intensity8Ext = unchecked((uint)0x804B),
+
+		/// <summary>
+		/// Specifies a 12-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Intensity12 = unchecked((uint)0x804C),
+
+		/// <summary>
+		/// Specifies a 12-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Intensity12Ext = unchecked((uint)0x804C),
+
+		/// <summary>
+		/// Specifies a 16-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Intensity16 = unchecked((uint)0x804D),
+
+		/// <summary>
+		/// Specifies a 16-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Intensity16Ext = unchecked((uint)0x804D),
+
+		/// <summary>
+		/// Specifies a 2-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb2Ext = unchecked((uint)0x804E),
+
+		/// <summary>
+		/// Specifies a 4-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb4 = unchecked((uint)0x804F),
+
+		/// <summary>
+		/// Specifies a 4-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb4Ext = unchecked((uint)0x804F),
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb5 = unchecked((uint)0x8050),
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb5Ext = unchecked((uint)0x8050),
+
+		/// <summary>
+		/// Specifies an 8-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb8 = unchecked((uint)0x8051),
+
+		/// <summary>
+		/// Specifies an 8-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb8Ext = unchecked((uint)0x8051),
+
+		/// <summary>
+		/// Specifies an 8-bit RGB format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb8Oes = unchecked((uint)0x8051),
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb10 = unchecked((uint)0x8052),
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
 		Rgb10Ext = unchecked((uint)0x8052),
+
+		/// <summary>
+		/// Specifies a 12-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb12 = unchecked((uint)0x8053),
+
+		/// <summary>
+		/// Specifies a 12-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb12Ext = unchecked((uint)0x8053),
+
+		/// <summary>
+		/// Specifies a 16-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb16 = unchecked((uint)0x8054),
+
+		/// <summary>
+		/// Specifies a 16-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb16Ext = unchecked((uint)0x8054),
+
+		/// <summary>
+		/// Specifies a 2-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgba2 = unchecked((uint)0x8055),
+
+		/// <summary>
+		/// Specifies a 2-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgba2Ext = unchecked((uint)0x8055),
+
+		/// <summary>
+		/// Specifies a 4-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgba4 = unchecked((uint)0x8056),
+
+		/// <summary>
+		/// Specifies a 4-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgba4Ext = unchecked((uint)0x8056),
+
+		/// <summary>
+		/// Specifies a 4-bit RGBA format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Rgba4Oes = unchecked((uint)0x8056),
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format with 1-bit alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb5A1 = unchecked((uint)0x8057),
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format with 1-bit alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgb5A1Ext = unchecked((uint)0x8057),
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format with 1-bit alpha for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb5A1Oes = unchecked((uint)0x8057),
+
+		/// <summary>
+		/// Specifies an 8-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgba8 = unchecked((uint)0x8058),
+
+		/// <summary>
+		/// Specifies an 8-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgba8Ext = unchecked((uint)0x8058),
+
+		/// <summary>
+		/// Specifies an 8-bit RGBA format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Rgba8Oes = unchecked((uint)0x8058),
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format with 2 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgb10A2 = unchecked((uint)0x8059),
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format with 2 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
 		Rgb10A2Ext = unchecked((uint)0x8059),
+
+		/// <summary>
+		/// Specifies a 12-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgba12 = unchecked((uint)0x805A),
+
+		/// <summary>
+		/// Specifies a 12-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgba12Ext = unchecked((uint)0x805A),
+
+		/// <summary>
+		/// Specifies a 16-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Rgba16 = unchecked((uint)0x805B),
+
+		/// <summary>
+		/// Specifies a 16-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		Rgba16Ext = unchecked((uint)0x805B),
+
+		/// <summary>
+		/// Specifies dual alpha with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualAlpha4Sgis = unchecked((uint)0x8110),
+
+		/// <summary>
+		/// Specifies dual alpha with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualAlpha8Sgis = unchecked((uint)0x8111),
+
+		/// <summary>
+		/// Specifies dual alpha with 12 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualAlpha12Sgis = unchecked((uint)0x8112),
+
+		/// <summary>
+		/// Specifies dual alpha with 16 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualAlpha16Sgis = unchecked((uint)0x8113),
+
+		/// <summary>
+		/// Specifies dual luminance with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualLuminance4Sgis = unchecked((uint)0x8114),
+
+		/// <summary>
+		/// Specifies dual luminance with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualLuminance8Sgis = unchecked((uint)0x8115),
+
+		/// <summary>
+		/// Specifies dual luminance with 12 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualLuminance12Sgis = unchecked((uint)0x8116),
+
+		/// <summary>
+		/// Specifies dual luminance with 16 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualLuminance16Sgis = unchecked((uint)0x8117),
+
+		/// <summary>
+		/// Specifies dual intensity with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualIntensity4Sgis = unchecked((uint)0x8118),
+
+		/// <summary>
+		/// Specifies dual intensity with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualIntensity8Sgis = unchecked((uint)0x8119),
+
+		/// <summary>
+		/// Specifies dual intensity with 12 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualIntensity12Sgis = unchecked((uint)0x811A),
+
+		/// <summary>
+		/// Specifies dual intensity with 16 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualIntensity16Sgis = unchecked((uint)0x811B),
+
+		/// <summary>
+		/// Specifies dual luminance and alpha with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualLuminanceAlpha4Sgis = unchecked((uint)0x811C),
+
+		/// <summary>
+		/// Specifies dual luminance and alpha with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DualLuminanceAlpha8Sgis = unchecked((uint)0x811D),
+
+		/// <summary>
+		/// Specifies quad alpha with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QuadAlpha4Sgis = unchecked((uint)0x811E),
+
+		/// <summary>
+		/// Specifies quad alpha with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QuadAlpha8Sgis = unchecked((uint)0x811F),
+
+		/// <summary>
+		/// Specifies quad luminance with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QuadLuminance4Sgis = unchecked((uint)0x8120),
+
+		/// <summary>
+		/// Specifies quad luminance with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QuadLuminance8Sgis = unchecked((uint)0x8121),
+
+		/// <summary>
+		/// Specifies quad intensity with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QuadIntensity4Sgis = unchecked((uint)0x8122),
+
+		/// <summary>
+		/// Specifies quad intensity with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QuadIntensity8Sgis = unchecked((uint)0x8123),
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DepthComponent16 = unchecked((uint)0x81A5),
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_depth_texture</remarks>
 		DepthComponent16Arb = unchecked((uint)0x81A5),
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthComponent16Oes = unchecked((uint)0x81A5),
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthComponent16Sgix = unchecked((uint)0x81A5),
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DepthComponent24 = unchecked((uint)0x81A6),
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_depth_texture</remarks>
 		DepthComponent24Arb = unchecked((uint)0x81A6),
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthComponent24Oes = unchecked((uint)0x81A6),
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthComponent24Sgix = unchecked((uint)0x81A6),
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DepthComponent32 = unchecked((uint)0x81A7),
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_depth_texture</remarks>
 		DepthComponent32Arb = unchecked((uint)0x81A7),
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthComponent32Oes = unchecked((uint)0x81A7),
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthComponent32Sgix = unchecked((uint)0x81A7),
+
+		/// <summary>
+		/// Specifies a compressed red texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CompressedRed = unchecked((uint)0x8225),
+
+		/// <summary>
+		/// Specifies a compressed RG texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CompressedRg = unchecked((uint)0x8226),
+
+		/// <summary>
+		/// Specifies RG color format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg = unchecked((uint)0x8227),
+
+		/// <summary>
+		/// Specifies 8-bit red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R8 = unchecked((uint)0x8229),
+
+		/// <summary>
+		/// Specifies 8-bit red component format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		R8Ext = unchecked((uint)0x8229),
+
+		/// <summary>
+		/// Specifies 16-bit red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R16 = unchecked((uint)0x822A),
+
+		/// <summary>
+		/// Specifies 16-bit red component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		R16Ext = unchecked((uint)0x822A),
+
+		/// <summary>
+		/// Specifies 8-bit RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg8 = unchecked((uint)0x822B),
+
+		/// <summary>
+		/// Specifies 8-bit RG format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rg8Ext = unchecked((uint)0x822B),
+
+		/// <summary>
+		/// Specifies 16-bit RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg16 = unchecked((uint)0x822C),
+
+		/// <summary>
+		/// Specifies 16-bit RG format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rg16Ext = unchecked((uint)0x822C),
+
+		/// <summary>
+		/// Specifies 16-bit floating-point red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R16F = unchecked((uint)0x822D),
+
+		/// <summary>
+		/// Specifies 16-bit floating-point red component format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		R16FExt = unchecked((uint)0x822D),
+
+		/// <summary>
+		/// Specifies 32-bit floating-point red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R32F = unchecked((uint)0x822E),
+
+		/// <summary>
+		/// Specifies 32-bit floating-point red component format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		R32FExt = unchecked((uint)0x822E),
+
+		/// <summary>
+		/// Specifies 16-bit floating-point RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg16F = unchecked((uint)0x822F),
+
+		/// <summary>
+		/// Specifies 16-bit floating-point RG format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rg16FExt = unchecked((uint)0x822F),
+
+		/// <summary>
+		/// Specifies 32-bit floating-point RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg32F = unchecked((uint)0x8230),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RG format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rg32FExt = unchecked((uint)0x8230),
+
+		/// <summary>
+		/// Specifies an 8-bit signed integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R8I = unchecked((uint)0x8231),
+
+		/// <summary>
+		/// Specifies an 8-bit unsigned integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R8Ui = unchecked((uint)0x8232),
+
+		/// <summary>
+		/// Specifies a 16-bit signed integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R16I = unchecked((uint)0x8233),
+
+		/// <summary>
+		/// Specifies a 16-bit unsigned integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R16Ui = unchecked((uint)0x8234),
+
+		/// <summary>
+		/// Specifies a 32-bit signed integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R32I = unchecked((uint)0x8235),
+
+		/// <summary>
+		/// Specifies a 32-bit unsigned integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		R32Ui = unchecked((uint)0x8236),
+
+		/// <summary>
+		/// Specifies an 8-bit signed integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg8I = unchecked((uint)0x8237),
+
+		/// <summary>
+		/// Specifies an 8-bit unsigned integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg<br/>GL_AMD_interleaved_elements</remarks>
 		Rg8Ui = unchecked((uint)0x8238),
+
+		/// <summary>
+		/// Specifies a 16-bit signed integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg16I = unchecked((uint)0x8239),
+
+		/// <summary>
+		/// Specifies a 16-bit unsigned integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg<br/>GL_AMD_interleaved_elements</remarks>
 		Rg16Ui = unchecked((uint)0x823A),
+
+		/// <summary>
+		/// Specifies a 32-bit signed integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg32I = unchecked((uint)0x823B),
+
+		/// <summary>
+		/// Specifies a 32-bit unsigned integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg32Ui = unchecked((uint)0x823C),
+
+		/// <summary>
+		/// Specifies S3TC DXT1 compressed RGB texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
 		CompressedRgbS3TcDxt1Ext = unchecked((uint)0x83F0),
+
+		/// <summary>
+		/// Specifies S3TC DXT1 compressed RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
 		CompressedRgbaS3TcDxt1Ext = unchecked((uint)0x83F1),
+
+		/// <summary>
+		/// Specifies S3TC DXT3 compressed RGBA texture format (ANGLE extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaS3TcDxt3Angle = unchecked((uint)0x83F2),
+
+		/// <summary>
+		/// Specifies S3TC DXT3 compressed RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
 		CompressedRgbaS3TcDxt3Ext = unchecked((uint)0x83F2),
+
+		/// <summary>
+		/// Specifies S3TC DXT5 compressed RGBA texture format (ANGLE extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaS3TcDxt5Angle = unchecked((uint)0x83F3),
+
+		/// <summary>
+		/// Specifies S3TC DXT5 compressed RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
 		CompressedRgbaS3TcDxt5Ext = unchecked((uint)0x83F3),
+
+		/// <summary>
+		/// Specifies compressed RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedRgb = unchecked((uint)0x84ED),
+
+		/// <summary>
+		/// Specifies compressed RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedRgba = unchecked((uint)0x84EE),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DepthStencil = unchecked((uint)0x84F9),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_depth_stencil</remarks>
 		DepthStencilExt = unchecked((uint)0x84F9),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_packed_depth_stencil</remarks>
 		DepthStencilNv = unchecked((uint)0x84F9),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthStencilOes = unchecked((uint)0x84F9),
+
+		/// <summary>
+		/// Specifies depth-stencil functionality (MESA extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthStencilMesa = unchecked((uint)0x8750),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGBA texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba32F = unchecked((uint)0x8814),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGBA texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgba32FArb = unchecked((uint)0x8814),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgba32FExt = unchecked((uint)0x8814),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGB texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_object_rgb32</remarks>
 		Rgb32F = unchecked((uint)0x8815),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGB texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgb32FArb = unchecked((uint)0x8815),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGB texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgb32FExt = unchecked((uint)0x8815),
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGBA texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba16F = unchecked((uint)0x881A),
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGBA texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgba16FArb = unchecked((uint)0x881A),
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgba16FExt = unchecked((uint)0x881A),
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGB texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb16F = unchecked((uint)0x881B),
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGB texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgb16FArb = unchecked((uint)0x881B),
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGB texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgb16FExt = unchecked((uint)0x881B),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Depth24Stencil8 = unchecked((uint)0x88F0),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_depth_stencil</remarks>
 		Depth24Stencil8Ext = unchecked((uint)0x88F0),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Depth24Stencil8Oes = unchecked((uint)0x88F0),
+
+		/// <summary>
+		/// Specifies the R11F_G11F_B10F format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		R11FG11FB10F = unchecked((uint)0x8C3A),
+
+		/// <summary>
+		/// Specifies the R11F_G11F_B10F format in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		R11FG11FB10FApple = unchecked((uint)0x8C3A),
+
+		/// <summary>
+		/// Specifies the R11F_G11F_B10F format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_float</remarks>
 		R11FG11FB10FExt = unchecked((uint)0x8C3A),
+
+		/// <summary>
+		/// Specifies the RGB9_E5 format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb9E5 = unchecked((uint)0x8C3D),
+
+		/// <summary>
+		/// Specifies the RGB9_E5 format in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb9E5Apple = unchecked((uint)0x8C3D),
+
+		/// <summary>
+		/// Specifies the RGB9_E5 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_shared_exponent</remarks>
 		Rgb9E5Ext = unchecked((uint)0x8C3D),
+
+		/// <summary>
+		/// Specifies the sRGB color space.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		Srgb = unchecked((uint)0x8C40),
+
+		/// <summary>
+		/// Specifies the sRGB color space (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		SrgbExt = unchecked((uint)0x8C40),
+
+		/// <summary>
+		/// Specifies a sRGB format with 8 bits per channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		Srgb8 = unchecked((uint)0x8C41),
+
+		/// <summary>
+		/// Specifies a sRGB format with 8 bits per channel (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		Srgb8Ext = unchecked((uint)0x8C41),
+
+		/// <summary>
+		/// Specifies a sRGB format with 8 bits per channel (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Srgb8Nv = unchecked((uint)0x8C41),
+
+		/// <summary>
+		/// Specifies the sRGB alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		SrgbAlpha = unchecked((uint)0x8C42),
+
+		/// <summary>
+		/// Specifies the sRGB alpha format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		SrgbAlphaExt = unchecked((uint)0x8C42),
+
+		/// <summary>
+		/// Specifies a sRGB alpha format with 8 bits per channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		Srgb8Alpha8 = unchecked((uint)0x8C43),
+
+		/// <summary>
+		/// Specifies a sRGB alpha format with 8 bits per channel (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		Srgb8Alpha8Ext = unchecked((uint)0x8C43),
+
+		/// <summary>
+		/// Specifies a compressed sRGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedSrgb = unchecked((uint)0x8C48),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedSrgbAlpha = unchecked((uint)0x8C49),
+
+		/// <summary>
+		/// Specifies a compressed sRGB DXT1 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbS3TcDxt1Ext = unchecked((uint)0x8C4C),
+
+		/// <summary>
+		/// Specifies a compressed sRGB DXT1 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbS3TcDxt1Nv = unchecked((uint)0x8C4C),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT1 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbAlphaS3TcDxt1Ext = unchecked((uint)0x8C4D),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT1 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaS3TcDxt1Nv = unchecked((uint)0x8C4D),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT3 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbAlphaS3TcDxt3Ext = unchecked((uint)0x8C4E),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT3 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaS3TcDxt3Nv = unchecked((uint)0x8C4E),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT5 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbAlphaS3TcDxt5Ext = unchecked((uint)0x8C4F),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT5 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaS3TcDxt5Nv = unchecked((uint)0x8C4F),
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point depth component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_depth_buffer_float</remarks>
 		DepthComponent32F = unchecked((uint)0x8CAC),
+
+		/// <summary>
+		/// Specifies a depth-stencil format with 32-bit float depth and 8-bit stencil.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_depth_buffer_float</remarks>
 		Depth32FStencil8 = unchecked((uint)0x8CAD),
+
+		/// <summary>
+		/// Specifies a stencil index format with 1 bit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilIndex1 = unchecked((uint)0x8D46),
+
+		/// <summary>
+		/// Specifies a stencil index format with 1 bit (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex1Ext = unchecked((uint)0x8D46),
+
+		/// <summary>
+		/// Specifies a stencil index format with 1 bit (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndex1Oes = unchecked((uint)0x8D46),
+
+		/// <summary>
+		/// Specifies a stencil index format with 4 bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilIndex4 = unchecked((uint)0x8D47),
+
+		/// <summary>
+		/// Specifies a stencil index format with 4 bits (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex4Ext = unchecked((uint)0x8D47),
+
+		/// <summary>
+		/// Specifies a stencil index format with 4 bits (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndex4Oes = unchecked((uint)0x8D47),
+
+		/// <summary>
+		/// Specifies a stencil index format with 8 bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_texture_stencil8</remarks>
 		StencilIndex8 = unchecked((uint)0x8D48),
+
+		/// <summary>
+		/// Specifies a stencil index format with 8 bits (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex8Ext = unchecked((uint)0x8D48),
+
+		/// <summary>
+		/// Specifies a stencil index format with 8 bits (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndex8Oes = unchecked((uint)0x8D48),
+
+		/// <summary>
+		/// Specifies a stencil index format with 16 bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilIndex16 = unchecked((uint)0x8D49),
+
+		/// <summary>
+		/// Specifies a stencil index format with 16 bits (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex16Ext = unchecked((uint)0x8D49),
+
+		/// <summary>
+		/// Specifies RGB565 format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb565Oes = unchecked((uint)0x8D62),
+
+		/// <summary>
+		/// Specifies RGB565 format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		Rgb565 = unchecked((uint)0x8D62),
+
+		/// <summary>
+		/// Specifies the ETC1 RGB8 format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Etc1Rgb8Oes = unchecked((uint)0x8D64),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba32Ui = unchecked((uint)0x8D70),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba32UiExt = unchecked((uint)0x8D70),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_object_rgb32</remarks>
 		Rgb32Ui = unchecked((uint)0x8D71),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb32UiExt = unchecked((uint)0x8D71),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha32UiExt = unchecked((uint)0x8D72),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity32UiExt = unchecked((uint)0x8D73),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance32UiExt = unchecked((uint)0x8D74),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha32UiExt = unchecked((uint)0x8D75),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba16Ui = unchecked((uint)0x8D76),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba16UiExt = unchecked((uint)0x8D76),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb16Ui = unchecked((uint)0x8D77),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb16UiExt = unchecked((uint)0x8D77),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha16UiExt = unchecked((uint)0x8D78),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity16UiExt = unchecked((uint)0x8D79),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance16UiExt = unchecked((uint)0x8D7A),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha16UiExt = unchecked((uint)0x8D7B),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Rgba8Ui = unchecked((uint)0x8D7C),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba8UiExt = unchecked((uint)0x8D7C),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb8Ui = unchecked((uint)0x8D7D),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb8UiExt = unchecked((uint)0x8D7D),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha8UiExt = unchecked((uint)0x8D7E),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity8UiExt = unchecked((uint)0x8D7F),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance8UiExt = unchecked((uint)0x8D80),
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha8UiExt = unchecked((uint)0x8D81),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba32I = unchecked((uint)0x8D82),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba32IExt = unchecked((uint)0x8D82),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_object_rgb32<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		Rgb32I = unchecked((uint)0x8D83),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb32IExt = unchecked((uint)0x8D83),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha32IExt = unchecked((uint)0x8D84),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity32IExt = unchecked((uint)0x8D85),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance32IExt = unchecked((uint)0x8D86),
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha32IExt = unchecked((uint)0x8D87),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba16I = unchecked((uint)0x8D88),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba16IExt = unchecked((uint)0x8D88),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb16I = unchecked((uint)0x8D89),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb16IExt = unchecked((uint)0x8D89),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha16IExt = unchecked((uint)0x8D8A),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity16IExt = unchecked((uint)0x8D8B),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance16IExt = unchecked((uint)0x8D8C),
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha16IExt = unchecked((uint)0x8D8D),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba8I = unchecked((uint)0x8D8E),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba8IExt = unchecked((uint)0x8D8E),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb8I = unchecked((uint)0x8D8F),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb8IExt = unchecked((uint)0x8D8F),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha8IExt = unchecked((uint)0x8D90),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity8IExt = unchecked((uint)0x8D91),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance8IExt = unchecked((uint)0x8D92),
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha8IExt = unchecked((uint)0x8D93),
+
+		/// <summary>
+		/// Specifies a depth component format with 32-bit floating point (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		DepthComponent32FNv = unchecked((uint)0x8DAB),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		Depth32FStencil8Nv = unchecked((uint)0x8DAC),
+
+		/// <summary>
+		/// Specifies the compressed format for single-channel red textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedRedRgtc1 = unchecked((uint)0x8DBB),
+
+		/// <summary>
+		/// Specifies the compressed format for single-channel red textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedRedRgtc1Ext = unchecked((uint)0x8DBB),
+
+		/// <summary>
+		/// Specifies the signed compressed format for single-channel red textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedSignedRedRgtc1 = unchecked((uint)0x8DBC),
+
+		/// <summary>
+		/// Specifies the signed compressed format for single-channel red textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedSignedRedRgtc1Ext = unchecked((uint)0x8DBC),
+
+		/// <summary>
+		/// Specifies the compressed format for dual-channel red-green textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedRedGreenRgtc2Ext = unchecked((uint)0x8DBD),
+
+		/// <summary>
+		/// Specifies the compressed format for dual-channel red-green textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedRgRgtc2 = unchecked((uint)0x8DBD),
+
+		/// <summary>
+		/// Specifies the signed compressed format for dual-channel red-green textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedSignedRedGreenRgtc2Ext = unchecked((uint)0x8DBE),
+
+		/// <summary>
+		/// Specifies the signed compressed format for dual-channel red-green textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedSignedRgRgtc2 = unchecked((uint)0x8DBE),
+
+		/// <summary>
+		/// Specifies the compressed format for RGBA textures using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedRgbaBptcUnorm = unchecked((uint)0x8E8C),
+
+		/// <summary>
+		/// Specifies the compressed format for RGBA textures using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedRgbaBptcUnormArb = unchecked((uint)0x8E8C),
+
+		/// <summary>
+		/// Specifies the compressed format for RGBA textures using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaBptcUnormExt = unchecked((uint)0x8E8C),
+
+		/// <summary>
+		/// Specifies the compressed format for sRGB textures with alpha using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedSrgbAlphaBptcUnorm = unchecked((uint)0x8E8D),
+
+		/// <summary>
+		/// Specifies the compressed format for sRGB textures with alpha using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedSrgbAlphaBptcUnormArb = unchecked((uint)0x8E8D),
+
+		/// <summary>
+		/// Specifies the compressed format for sRGB textures with alpha using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaBptcUnormExt = unchecked((uint)0x8E8D),
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with signed floating point data using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedRgbBptcSignedFloat = unchecked((uint)0x8E8E),
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with signed floating point data using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedRgbBptcSignedFloatArb = unchecked((uint)0x8E8E),
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with signed floating point data using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbBptcSignedFloatExt = unchecked((uint)0x8E8E),
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with unsigned floating point data using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedRgbBptcUnsignedFloat = unchecked((uint)0x8E8F),
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with unsigned floating point data using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedRgbBptcUnsignedFloatArb = unchecked((uint)0x8E8F),
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with unsigned floating point data using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbBptcUnsignedFloatExt = unchecked((uint)0x8E8F),
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed red component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		R8Snorm = unchecked((uint)0x8F94),
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed red-green component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rg8Snorm = unchecked((uint)0x8F95),
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed RGB component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgb8Snorm = unchecked((uint)0x8F96),
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed RGBA component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgba8Snorm = unchecked((uint)0x8F97),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		R16Snorm = unchecked((uint)0x8F98),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		R16SnormExt = unchecked((uint)0x8F98),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red-green component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rg16Snorm = unchecked((uint)0x8F99),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red-green component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rg16SnormExt = unchecked((uint)0x8F99),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGB component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgb16Snorm = unchecked((uint)0x8F9A),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGB component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb16SnormExt = unchecked((uint)0x8F9A),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGBA component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgba16Snorm = unchecked((uint)0x8F9B),
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGBA component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rgba16SnormExt = unchecked((uint)0x8F9B),
+
+		/// <summary>
+		/// Specifies a texture format for 8-bit signed red (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB_R8</remarks>
 		Sr8Ext = unchecked((uint)0x8FBD),
+
+		/// <summary>
+		/// Specifies a texture format for 8-bit signed red-green (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB_RG8</remarks>
 		Srg8Ext = unchecked((uint)0x8FBE),
+
+		/// <summary>
+		/// Specifies a 10-2-10-2 unsigned integer format for images.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rgb10_a2ui</remarks>
 		Rgb10A2Ui = unchecked((uint)0x906F),
+
+		/// <summary>
+		/// Specifies a compressed single-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedR11Eac = unchecked((uint)0x9270),
+
+		/// <summary>
+		/// Specifies a compressed single-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedR11EacOes = unchecked((uint)0x9270),
+
+		/// <summary>
+		/// Specifies a signed compressed single-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSignedR11Eac = unchecked((uint)0x9271),
+
+		/// <summary>
+		/// Specifies a signed compressed single-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSignedR11EacOes = unchecked((uint)0x9271),
+
+		/// <summary>
+		/// Specifies a compressed dual-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRg11Eac = unchecked((uint)0x9272),
+
+		/// <summary>
+		/// Specifies a compressed dual-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRg11EacOes = unchecked((uint)0x9272),
+
+		/// <summary>
+		/// Specifies a signed compressed dual-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSignedRg11Eac = unchecked((uint)0x9273),
+
+		/// <summary>
+		/// Specifies a signed compressed dual-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSignedRg11EacOes = unchecked((uint)0x9273),
+
+		/// <summary>
+		/// Specifies a compressed RGB texture format using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRgb8Etc2 = unchecked((uint)0x9274),
+
+		/// <summary>
+		/// Specifies a compressed RGB texture format using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgb8Etc2Oes = unchecked((uint)0x9274),
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSrgb8Etc2 = unchecked((uint)0x9275),
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Etc2Oes = unchecked((uint)0x9275),
+
+		/// <summary>
+		/// Specifies a compressed RGB texture with punchthrough alpha using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRgb8PunchthroughAlpha1Etc2 = unchecked((uint)0x9276),
+
+		/// <summary>
+		/// Specifies a compressed RGB texture with punchthrough alpha using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgb8PunchthroughAlpha1Etc2Oes = unchecked((uint)0x9276),
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture with punchthrough alpha using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSrgb8PunchthroughAlpha1Etc2 = unchecked((uint)0x9277),
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture with punchthrough alpha using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8PunchthroughAlpha1Etc2Oes = unchecked((uint)0x9277),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format using ETC2 and EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRgba8Etc2Eac = unchecked((uint)0x9278),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format using ETC2 and EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgba8Etc2EacOes = unchecked((uint)0x9278),
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format with alpha using ETC2 and EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSrgb8Alpha8Etc2Eac = unchecked((uint)0x9279),
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format with alpha using ETC2 and EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Etc2EacOes = unchecked((uint)0x9279),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X4 = unchecked((uint)0x93B0),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc4X4Khr = unchecked((uint)0x93B0),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X4 = unchecked((uint)0x93B1),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc5X4Khr = unchecked((uint)0x93B1),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X5 = unchecked((uint)0x93B2),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc5X5Khr = unchecked((uint)0x93B2),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X5 = unchecked((uint)0x93B3),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc6X5Khr = unchecked((uint)0x93B3),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X6 = unchecked((uint)0x93B4),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc6X6Khr = unchecked((uint)0x93B4),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc8X5 = unchecked((uint)0x93B5),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc8X5Khr = unchecked((uint)0x93B5),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc8X6 = unchecked((uint)0x93B6),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc8X6Khr = unchecked((uint)0x93B6),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc8X8 = unchecked((uint)0x93B7),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc8X8Khr = unchecked((uint)0x93B7),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X5 = unchecked((uint)0x93B8),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X5Khr = unchecked((uint)0x93B8),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X6 = unchecked((uint)0x93B9),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X6Khr = unchecked((uint)0x93B9),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X8 = unchecked((uint)0x93BA),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X8Khr = unchecked((uint)0x93BA),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X10 = unchecked((uint)0x93BB),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X10Khr = unchecked((uint)0x93BB),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc12X10 = unchecked((uint)0x93BC),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc12X10Khr = unchecked((uint)0x93BC),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x12.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc12X12 = unchecked((uint)0x93BD),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x12 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc12X12Khr = unchecked((uint)0x93BD),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 3x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc3X3X3Oes = unchecked((uint)0x93C0),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X3X3Oes = unchecked((uint)0x93C1),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X4X3Oes = unchecked((uint)0x93C2),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X4X4Oes = unchecked((uint)0x93C3),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X4X4Oes = unchecked((uint)0x93C4),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X5X4Oes = unchecked((uint)0x93C5),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X5X5Oes = unchecked((uint)0x93C6),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X5X5Oes = unchecked((uint)0x93C7),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X6X5Oes = unchecked((uint)0x93C8),
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6x6 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X6X6Oes = unchecked((uint)0x93C9),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X4 = unchecked((uint)0x93D0),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc4X4Khr = unchecked((uint)0x93D0),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X4 = unchecked((uint)0x93D1),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc5X4Khr = unchecked((uint)0x93D1),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X5 = unchecked((uint)0x93D2),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc5X5Khr = unchecked((uint)0x93D2),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X5 = unchecked((uint)0x93D3),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc6X5Khr = unchecked((uint)0x93D3),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X6 = unchecked((uint)0x93D4),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc6X6Khr = unchecked((uint)0x93D4),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc8X5 = unchecked((uint)0x93D5),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc8X5Khr = unchecked((uint)0x93D5),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc8X6 = unchecked((uint)0x93D6),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc8X6Khr = unchecked((uint)0x93D6),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc8X8 = unchecked((uint)0x93D7),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc8X8Khr = unchecked((uint)0x93D7),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X5 = unchecked((uint)0x93D8),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X5Khr = unchecked((uint)0x93D8),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X6 = unchecked((uint)0x93D9),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X6Khr = unchecked((uint)0x93D9),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X8 = unchecked((uint)0x93DA),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X8Khr = unchecked((uint)0x93DA),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X10 = unchecked((uint)0x93DB),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X10Khr = unchecked((uint)0x93DB),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc12X10 = unchecked((uint)0x93DC),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc12X10Khr = unchecked((uint)0x93DC),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x12.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc12X12 = unchecked((uint)0x93DD),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x12 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc12X12Khr = unchecked((uint)0x93DD),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 3x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc3X3X3Oes = unchecked((uint)0x93E0),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X3X3Oes = unchecked((uint)0x93E1),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X4X3Oes = unchecked((uint)0x93E2),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X4X4Oes = unchecked((uint)0x93E3),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X4X4Oes = unchecked((uint)0x93E4),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X5X4Oes = unchecked((uint)0x93E5),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X5X5Oes = unchecked((uint)0x93E6),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X5X5Oes = unchecked((uint)0x93E7),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X6X5Oes = unchecked((uint)0x93E8),
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6x6 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X6X6Oes = unchecked((uint)0x93E9),
 	}
 }

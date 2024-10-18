@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMeshMode1 : uint
 	{
+		/// <summary>
+		/// Specifies the point primitive.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Point = unchecked((uint)0x1B00),
+
+		/// <summary>
+		/// Specifies the line primitive.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Line = unchecked((uint)0x1B01),
 	}
 }

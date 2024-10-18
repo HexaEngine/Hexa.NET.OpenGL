@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void AttachObjectARB(uint containerObj, uint obj)
 		{
 			AttachObjectARBNative(containerObj, obj);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void CompileShaderARB(uint shaderObj)
 		{
 			CompileShaderARBNative(shaderObj);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static uint CreateProgramObjectARB()
 		{
 			uint ret = CreateProgramObjectARBNative();
@@ -72,6 +84,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static uint CreateShaderObjectARB(GLShaderType shaderType)
 		{
 			uint ret = CreateShaderObjectARBNative(shaderType);
@@ -88,6 +104,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void DeleteObjectARB(uint obj)
 		{
 			DeleteObjectARBNative(obj);
@@ -103,6 +123,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void DetachObjectARB(uint containerObj, uint attachedObj)
 		{
 			DetachObjectARBNative(containerObj, attachedObj);
@@ -118,11 +142,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, byte* name)
 		{
 			GetActiveUniformARBNative(programObj, index, maxLength, length, size, type, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -131,6 +163,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -139,6 +175,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = size)
@@ -147,6 +187,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
@@ -155,6 +199,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -166,6 +214,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -177,6 +229,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, string name)
 		{
 			byte* pStr0 = null;
@@ -203,6 +259,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -211,6 +271,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -219,6 +283,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -230,6 +298,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -241,6 +313,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
@@ -252,6 +328,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -263,6 +343,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -277,6 +361,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -301,11 +389,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, uint* obj)
 		{
 			GetAttachedObjectsARBNative(containerObj, maxCount, count, obj);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, uint* obj)
 		{
 			fixed (int* pcount0 = count)
@@ -314,6 +410,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, uint* obj)
 		{
 			fixed (int* pcount0 = &count)
@@ -322,6 +422,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, Span<uint> obj)
 		{
 			fixed (uint* pobj0 = obj)
@@ -330,6 +434,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, ref uint obj)
 		{
 			fixed (uint* pobj0 = &obj)
@@ -338,6 +446,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, Span<uint> obj)
 		{
 			fixed (int* pcount0 = count)
@@ -349,6 +461,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, ref uint obj)
 		{
 			fixed (int* pcount0 = &count)
@@ -370,6 +486,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static uint GetHandleARB(GLContainerType pname)
 		{
 			uint ret = GetHandleARBNative(pname);
@@ -386,11 +506,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, int* length, byte* infoLog)
 		{
 			GetInfoLogARBNative(obj, maxLength, length, infoLog);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
@@ -399,6 +527,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -407,6 +539,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
@@ -433,6 +569,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
@@ -441,6 +581,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, int* length, ref byte infoLog)
 		{
 			fixed (byte* pinfoLog0 = &infoLog)
@@ -449,6 +593,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, Span<int> length, Span<byte> infoLog)
 		{
 			fixed (int* plength0 = length)
@@ -460,6 +608,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetInfoLogARB(uint obj, int maxLength, ref int length, ref byte infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -481,11 +633,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, float* @params)
 		{
 			GetObjectParameterfvARBNative(obj, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, out float @params)
 		{
 			float pparams;
@@ -493,6 +653,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -511,11 +675,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetObjectParameterivARB(uint obj, GLEnum pname, int* @params)
 		{
 			GetObjectParameterivARBNative(obj, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetObjectParameterivARB(uint obj, GLEnum pname, out int @params)
 		{
 			int pparams;
@@ -523,6 +695,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetObjectParameterivARB(uint obj, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -541,11 +717,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, byte* source)
 		{
 			GetShaderSourceARBNative(obj, maxLength, length, source);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, byte* source)
 		{
 			fixed (int* plength0 = length)
@@ -554,6 +738,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
@@ -562,6 +750,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, string source)
 		{
 			byte* pStr0 = null;
@@ -588,6 +780,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, Span<byte> source)
 		{
 			fixed (byte* psource0 = source)
@@ -596,6 +792,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, ref byte source)
 		{
 			fixed (byte* psource0 = &source)
@@ -604,6 +804,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, Span<byte> source)
 		{
 			fixed (int* plength0 = length)
@@ -615,6 +819,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetShaderSourceARB(uint obj, int maxLength, ref int length, ref byte source)
 		{
 			fixed (int* plength0 = &length)
@@ -636,12 +844,20 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static int GetUniformLocationARB(uint programObj, byte* name)
 		{
 			int ret = GetUniformLocationARBNative(programObj, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static int GetUniformLocationARB(uint programObj, string name)
 		{
 			byte* pStr0 = null;
@@ -669,6 +885,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static int GetUniformLocationARB(uint programObj, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -678,6 +898,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static int GetUniformLocationARB(uint programObj, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -697,11 +921,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetUniformfvARB(uint programObj, int location, float* @params)
 		{
 			GetUniformfvARBNative(programObj, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetUniformfvARB(uint programObj, int location, out float @params)
 		{
 			float pparams;
@@ -709,6 +941,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetUniformfvARB(uint programObj, int location, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -727,11 +963,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetUniformivARB(uint programObj, int location, int* @params)
 		{
 			GetUniformivARBNative(programObj, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetUniformivARB(uint programObj, int location, out int @params)
 		{
 			int pparams;
@@ -739,6 +983,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void GetUniformivARB(uint programObj, int location, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -757,6 +1005,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void LinkProgramARB(uint programObj)
 		{
 			LinkProgramARBNative(programObj);
@@ -772,11 +1024,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, int* length)
 		{
 			ShaderSourceARBNative(shaderObj, count, str, length);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void ShaderSourceARB(uint shaderObj, string source)
 		{
 			byte* pStr0 = null;
@@ -803,6 +1063,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void ShaderSourceARB(uint shaderObj, string[] sources)
 		{
 			byte** pStrArray0 = null;
@@ -840,6 +1104,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, Span<int> length)
 		{
 			fixed (int* plength0 = length)
@@ -848,6 +1116,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, ref int length)
 		{
 			fixed (int* plength0 = &length)
@@ -866,6 +1138,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1fARB(int location, float v0)
 		{
 			Uniform1fARBNative(location, v0);
@@ -881,11 +1157,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1fvARB(int location, int count, float* value)
 		{
 			Uniform1fvARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -894,6 +1178,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -912,6 +1200,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1iARB(int location, int v0)
 		{
 			Uniform1iARBNative(location, v0);
@@ -927,11 +1219,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1ivARB(int location, int count, int* value)
 		{
 			Uniform1ivARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -940,6 +1240,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform1ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -958,6 +1262,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2fARB(int location, float v0, float v1)
 		{
 			Uniform2fARBNative(location, v0, v1);
@@ -973,11 +1281,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2fvARB(int location, int count, float* value)
 		{
 			Uniform2fvARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -986,6 +1302,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1004,6 +1324,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2iARB(int location, int v0, int v1)
 		{
 			Uniform2iARBNative(location, v0, v1);
@@ -1019,11 +1343,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2ivARB(int location, int count, int* value)
 		{
 			Uniform2ivARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -1032,6 +1364,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform2ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -1050,6 +1386,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3fARB(int location, float v0, float v1, float v2)
 		{
 			Uniform3fARBNative(location, v0, v1, v2);
@@ -1065,11 +1405,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3fvARB(int location, int count, float* value)
 		{
 			Uniform3fvARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1078,6 +1426,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1096,6 +1448,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3iARB(int location, int v0, int v1, int v2)
 		{
 			Uniform3iARBNative(location, v0, v1, v2);
@@ -1111,11 +1467,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3ivARB(int location, int count, int* value)
 		{
 			Uniform3ivARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -1124,6 +1488,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform3ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -1142,6 +1510,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4fARB(int location, float v0, float v1, float v2, float v3)
 		{
 			Uniform4fARBNative(location, v0, v1, v2, v3);
@@ -1157,11 +1529,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4fvARB(int location, int count, float* value)
 		{
 			Uniform4fvARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1170,6 +1550,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1188,6 +1572,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4iARB(int location, int v0, int v1, int v2, int v3)
 		{
 			Uniform4iARBNative(location, v0, v1, v2, v3);
@@ -1203,11 +1591,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4ivARB(int location, int count, int* value)
 		{
 			Uniform4ivARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -1216,6 +1612,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void Uniform4ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -1234,11 +1634,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix2fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2fvARBNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix2fvARB(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1247,6 +1655,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix2fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1265,11 +1677,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix3fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3fvARBNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix3fvARB(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1278,6 +1698,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix3fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1296,11 +1720,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix4fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4fvARBNative(location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix4fvARB(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1309,6 +1741,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UniformMatrix4fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1327,6 +1763,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void UseProgramObjectARB(uint programObj)
 		{
 			UseProgramObjectARBNative(programObj);
@@ -1342,6 +1782,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		public static void ValidateProgramARB(uint programObj)
 		{
 			ValidateProgramARBNative(programObj);

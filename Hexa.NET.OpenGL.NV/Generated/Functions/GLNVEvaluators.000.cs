@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void EvalMapsNV(GLEvalTargetNV target, GLEvalMapsModeNV mode)
 		{
 			EvalMapsNVNative(target, mode);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, float* @params)
 		{
 			GetMapAttribParameterfvNVNative(target, index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, out float @params)
 		{
 			float pparams;
@@ -53,6 +65,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -71,11 +87,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, int* @params)
 		{
 			GetMapAttribParameterivNVNative(target, index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, out int @params)
 		{
 			int pparams;
@@ -83,6 +107,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -101,16 +129,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
 		{
 			GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, nint points)
 		{
 			GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, (void*)points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, Span<TPoints> points) where TPoints : unmanaged
 		{
 			fixed (TPoints* ppoints0 = points)
@@ -129,11 +169,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
 		{
 			GetMapParameterfvNVNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, out float @params)
 		{
 			float pparams;
@@ -141,6 +189,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -159,11 +211,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
 		{
 			GetMapParameterivNVNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, out int @params)
 		{
 			int pparams;
@@ -171,6 +231,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -189,16 +253,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
 		{
 			MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, nint points)
 		{
 			MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, (void*)points);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, Span<TPoints> points) where TPoints : unmanaged
 		{
 			fixed (TPoints* ppoints0 = points)
@@ -217,11 +293,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
 		{
 			MapParameterfvNVNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, out float @params)
 		{
 			float pparams;
@@ -229,6 +313,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -247,11 +335,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
 		{
 			MapParameterivNVNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, out int @params)
 		{
 			int pparams;
@@ -259,6 +355,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

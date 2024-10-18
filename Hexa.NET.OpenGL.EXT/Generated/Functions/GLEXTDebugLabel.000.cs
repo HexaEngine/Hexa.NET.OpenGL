@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, int* length, byte* label)
 		{
 			GetObjectLabelEXTNative(type, @object, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
@@ -47,6 +59,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
@@ -73,6 +89,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -81,6 +101,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -89,6 +113,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void GetObjectLabelEXT(GLEnum type, uint @object, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
@@ -121,11 +153,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void LabelObjectEXT(GLEnum type, uint @object, int length, byte* label)
 		{
 			LabelObjectEXTNative(type, @object, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void LabelObjectEXT(GLEnum type, uint @object, int length, string label)
 		{
 			byte* pStr0 = null;
@@ -152,6 +192,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void LabelObjectEXT(GLEnum type, uint @object, int length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -160,6 +204,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		public static void LabelObjectEXT(GLEnum type, uint @object, int length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)

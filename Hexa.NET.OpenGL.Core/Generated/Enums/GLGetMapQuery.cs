@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLGetMapQuery : uint
 	{
+		/// <summary>
+		/// Coefficient for curve operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Coeff = unchecked((uint)0x0A00),
+
+		/// <summary>
+		/// Order of the curve.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Order = unchecked((uint)0x0A01),
+
+		/// <summary>
+		/// Domain for curve operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Domain = unchecked((uint)0x0A02),
 	}
 }

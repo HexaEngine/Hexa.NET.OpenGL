@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void BindAttribLocationARB(uint programObj, uint index, byte* name)
 		{
 			BindAttribLocationARBNative(programObj, index, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void BindAttribLocationARB(uint programObj, uint index, string name)
 		{
 			byte* pStr0 = null;
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void BindAttribLocationARB(uint programObj, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -65,6 +77,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void BindAttribLocationARB(uint programObj, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -83,6 +99,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void DisableVertexAttribArrayARB(uint index)
 		{
 			DisableVertexAttribArrayARBNative(index);
@@ -98,6 +118,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void EnableVertexAttribArrayARB(uint index)
 		{
 			EnableVertexAttribArrayARBNative(index);
@@ -113,11 +137,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, int* size, GLAttributeType type, byte* name)
 		{
 			GetActiveAttribARBNative(programObj, index, maxLength, length, size, type, name);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -126,6 +158,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -134,6 +170,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = size)
@@ -142,6 +182,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
@@ -150,6 +194,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -161,6 +209,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -172,6 +224,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, int* size, GLAttributeType type, string name)
 		{
 			byte* pStr0 = null;
@@ -198,6 +254,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -206,6 +266,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -214,6 +278,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -225,6 +293,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -236,6 +308,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
@@ -247,6 +323,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -258,6 +338,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -272,6 +356,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetActiveAttribARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -296,12 +384,20 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static int GetAttribLocationARB(uint programObj, byte* name)
 		{
 			int ret = GetAttribLocationARBNative(programObj, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static int GetAttribLocationARB(uint programObj, string name)
 		{
 			byte* pStr0 = null;
@@ -329,6 +425,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static int GetAttribLocationARB(uint programObj, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -338,6 +438,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		public static int GetAttribLocationARB(uint programObj, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -357,6 +461,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribPointervARB(uint index, GLVertexAttribPointerPropertyARB pname, void** pointer)
 		{
 			GetVertexAttribPointervARBNative(index, pname, pointer);
@@ -372,11 +480,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribdvARB(uint index, GLVertexAttribPropertyARB pname, double* @params)
 		{
 			GetVertexAttribdvARBNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribdvARB(uint index, GLVertexAttribPropertyARB pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -385,6 +501,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribdvARB(uint index, GLVertexAttribPropertyARB pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -403,11 +523,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, float* @params)
 		{
 			GetVertexAttribfvARBNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, out float @params)
 		{
 			float pparams;
@@ -415,6 +543,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -433,11 +565,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, int* @params)
 		{
 			GetVertexAttribivARBNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, out int @params)
 		{
 			int pparams;
@@ -445,6 +585,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -463,6 +607,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1dARB(uint index, double x)
 		{
 			VertexAttrib1dARBNative(index, x);
@@ -478,11 +626,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1dvARB(uint index, double* v)
 		{
 			VertexAttrib1dvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1dvARB(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -491,6 +647,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1dvARB(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -509,6 +669,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1fARB(uint index, float x)
 		{
 			VertexAttrib1fARBNative(index, x);
@@ -524,11 +688,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1fvARB(uint index, float* v)
 		{
 			VertexAttrib1fvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1fvARB(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -537,6 +709,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1fvARB(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -555,6 +731,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1sARB(uint index, short x)
 		{
 			VertexAttrib1sARBNative(index, x);
@@ -570,11 +750,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1svARB(uint index, short* v)
 		{
 			VertexAttrib1svARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1svARB(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -583,6 +771,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib1svARB(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -601,6 +793,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2dARB(uint index, double x, double y)
 		{
 			VertexAttrib2dARBNative(index, x, y);
@@ -616,11 +812,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2dvARB(uint index, double* v)
 		{
 			VertexAttrib2dvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2dvARB(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -629,6 +833,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2dvARB(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -647,6 +855,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2fARB(uint index, float x, float y)
 		{
 			VertexAttrib2fARBNative(index, x, y);
@@ -662,11 +874,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2fvARB(uint index, float* v)
 		{
 			VertexAttrib2fvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2fvARB(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -675,6 +895,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2fvARB(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -693,6 +917,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2sARB(uint index, short x, short y)
 		{
 			VertexAttrib2sARBNative(index, x, y);
@@ -708,11 +936,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2svARB(uint index, short* v)
 		{
 			VertexAttrib2svARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2svARB(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -721,6 +957,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib2svARB(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -739,6 +979,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3dARB(uint index, double x, double y, double z)
 		{
 			VertexAttrib3dARBNative(index, x, y, z);
@@ -754,11 +998,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3dvARB(uint index, double* v)
 		{
 			VertexAttrib3dvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3dvARB(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -767,6 +1019,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3dvARB(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -785,6 +1041,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3fARB(uint index, float x, float y, float z)
 		{
 			VertexAttrib3fARBNative(index, x, y, z);
@@ -800,11 +1060,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3fvARB(uint index, float* v)
 		{
 			VertexAttrib3fvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3fvARB(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -813,6 +1081,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3fvARB(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -831,6 +1103,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3sARB(uint index, short x, short y, short z)
 		{
 			VertexAttrib3sARBNative(index, x, y, z);
@@ -846,11 +1122,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3svARB(uint index, short* v)
 		{
 			VertexAttrib3svARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3svARB(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -859,6 +1143,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib3svARB(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -877,11 +1165,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NbvARB(uint index, sbyte* v)
 		{
 			VertexAttrib4NbvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NbvARB(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
@@ -890,6 +1186,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NbvARB(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -908,11 +1208,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NivARB(uint index, int* v)
 		{
 			VertexAttrib4NivARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NivARB(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -921,6 +1229,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NivARB(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -939,11 +1251,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NsvARB(uint index, short* v)
 		{
 			VertexAttrib4NsvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NsvARB(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -952,6 +1272,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NsvARB(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -970,6 +1294,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NubARB(uint index, bool x, bool y, bool z, bool w)
 		{
 			VertexAttrib4NubARBNative(index, x, y, z, w);
@@ -985,11 +1313,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NubvARB(uint index, byte* v)
 		{
 			VertexAttrib4NubvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NubvARB(uint index, string v)
 		{
 			byte* pStr0 = null;
@@ -1016,6 +1352,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NubvARB(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
@@ -1024,6 +1364,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NubvARB(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
@@ -1042,11 +1386,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NuivARB(uint index, uint* v)
 		{
 			VertexAttrib4NuivARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NuivARB(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -1055,6 +1407,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NuivARB(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -1073,11 +1429,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NusvARB(uint index, ushort* v)
 		{
 			VertexAttrib4NusvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NusvARB(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
@@ -1086,6 +1450,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4NusvARB(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
@@ -1104,11 +1472,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4bvARB(uint index, sbyte* v)
 		{
 			VertexAttrib4bvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4bvARB(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
@@ -1117,6 +1493,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4bvARB(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -1135,6 +1515,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4dARB(uint index, double x, double y, double z, double w)
 		{
 			VertexAttrib4dARBNative(index, x, y, z, w);
@@ -1150,11 +1534,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4dvARB(uint index, double* v)
 		{
 			VertexAttrib4dvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4dvARB(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -1163,6 +1555,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4dvARB(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -1181,6 +1577,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4fARB(uint index, float x, float y, float z, float w)
 		{
 			VertexAttrib4fARBNative(index, x, y, z, w);
@@ -1196,11 +1596,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4fvARB(uint index, float* v)
 		{
 			VertexAttrib4fvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4fvARB(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -1209,6 +1617,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4fvARB(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -1227,11 +1639,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ivARB(uint index, int* v)
 		{
 			VertexAttrib4ivARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ivARB(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -1240,6 +1660,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ivARB(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -1258,6 +1682,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4sARB(uint index, short x, short y, short z, short w)
 		{
 			VertexAttrib4sARBNative(index, x, y, z, w);
@@ -1273,11 +1701,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4svARB(uint index, short* v)
 		{
 			VertexAttrib4svARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4svARB(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -1286,6 +1722,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4svARB(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -1304,11 +1744,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ubvARB(uint index, byte* v)
 		{
 			VertexAttrib4ubvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ubvARB(uint index, string v)
 		{
 			byte* pStr0 = null;
@@ -1335,6 +1783,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ubvARB(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
@@ -1343,6 +1795,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4ubvARB(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
@@ -1361,11 +1817,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4uivARB(uint index, uint* v)
 		{
 			VertexAttrib4uivARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4uivARB(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -1374,6 +1838,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4uivARB(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -1392,11 +1860,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4usvARB(uint index, ushort* v)
 		{
 			VertexAttrib4usvARBNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4usvARB(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
@@ -1405,6 +1881,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttrib4usvARB(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
@@ -1423,16 +1903,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttribPointerARB(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
 		{
 			VertexAttribPointerARBNative(index, size, type, normalized, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttribPointerARB(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint pointer)
 		{
 			VertexAttribPointerARBNative(index, size, type, normalized, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		public static void VertexAttribPointerARB<TPointer>(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

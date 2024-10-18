@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Specifiy the vertex to be used as the source of data for flat shaded varyings
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex</remarks>
 		public static void ProvokingVertex(GLVertexProvokingMode mode)
 		{
 			ProvokingVertexNative(mode);

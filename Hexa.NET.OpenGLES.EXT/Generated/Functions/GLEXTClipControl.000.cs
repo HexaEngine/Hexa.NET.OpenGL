@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clip_control</remarks>
 		public static void ClipControlEXT(GLEnum origin, GLEnum depth)
 		{
 			ClipControlEXTNative(origin, depth);

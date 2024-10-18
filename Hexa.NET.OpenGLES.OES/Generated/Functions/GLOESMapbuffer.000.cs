@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_mapbuffer</remarks>
 		public static void GetBufferPointervOES(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetBufferPointervOESNative(target, pname, @params);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_mapbuffer</remarks>
 		public static void* MapBufferOES(GLBufferTargetARB target, GLBufferAccessARB access)
 		{
 			void* ret = MapBufferOESNative(target, access);
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_mapbuffer</remarks>
 		public static bool UnmapBufferOES(GLEnum target)
 		{
 			byte ret = UnmapBufferOESNative(target);

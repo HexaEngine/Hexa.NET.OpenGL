@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_coverage_to_color</remarks>
 		public static void FragmentCoverageColorNV(uint color)
 		{
 			FragmentCoverageColorNVNative(color);

@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPixelTransformTargetEXT : uint
 	{
+		/// <summary>
+		/// Specifies 2D pixel transformation (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
 		Transform2DExt = unchecked((uint)0x8330),
 	}
 }

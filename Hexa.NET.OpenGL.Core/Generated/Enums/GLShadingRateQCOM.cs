@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLShadingRateQCOM : uint
 	{
+		/// <summary>
+		/// Specifies a shading rate of 1x1 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate1X1PixelsQcom = unchecked((uint)0x96A6),
+
+		/// <summary>
+		/// Specifies a shading rate of 1x2 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate1X2PixelsQcom = unchecked((uint)0x96A7),
+
+		/// <summary>
+		/// Specifies a shading rate of 2x1 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate2X1PixelsQcom = unchecked((uint)0x96A8),
+
+		/// <summary>
+		/// Specifies a shading rate of 2x2 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate2X2PixelsQcom = unchecked((uint)0x96A9),
+
+		/// <summary>
+		/// Specifies a shading rate of 1x4 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate1X4PixelsQcom = unchecked((uint)0x96AA),
+
+		/// <summary>
+		/// Specifies a shading rate of 4x1 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate4X1PixelsQcom = unchecked((uint)0x96AB),
+
+		/// <summary>
+		/// Specifies a shading rate of 4x2 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate4X2PixelsQcom = unchecked((uint)0x96AC),
+
+		/// <summary>
+		/// Specifies a shading rate of 2x4 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate2X4PixelsQcom = unchecked((uint)0x96AD),
+
+		/// <summary>
+		/// Specifies a shading rate of 4x4 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rate4X4PixelsQcom = unchecked((uint)0x96AE),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void BindFramebufferEXT(GLFramebufferTarget target, uint framebuffer)
 		{
 			BindFramebufferEXTNative(target, framebuffer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void BindRenderbufferEXT(GLRenderbufferTarget target, uint renderbuffer)
 		{
 			BindRenderbufferEXTNative(target, renderbuffer);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static GLEnum CheckFramebufferStatusEXT(GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckFramebufferStatusEXTNative(target);
@@ -72,16 +84,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteFramebuffersEXT(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersEXTNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteFramebuffersEX(uint framebuffer)
 		{
 			DeleteFramebuffersEXTNative(1, &framebuffer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteFramebuffersEXT(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -90,6 +114,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteFramebuffersEXT(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -108,16 +136,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersEXT(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersEXTNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersEX(uint renderbuffer)
 		{
 			DeleteRenderbuffersEXTNative(1, &renderbuffer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersEXT(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -126,6 +166,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersEXT(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -144,6 +188,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void FramebufferRenderbufferEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
 		{
 			FramebufferRenderbufferEXTNative(target, attachment, renderbuffertarget, renderbuffer);
@@ -159,6 +207,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void FramebufferTexture1DEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture1DEXTNative(target, attachment, textarget, texture, level);
@@ -174,6 +226,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void FramebufferTexture2DEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture2DEXTNative(target, attachment, textarget, texture, level);
@@ -189,6 +245,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void FramebufferTexture3DEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
 		{
 			FramebufferTexture3DEXTNative(target, attachment, textarget, texture, level, zoffset);
@@ -204,11 +264,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenFramebuffersEXT(int n, uint* framebuffers)
 		{
 			GenFramebuffersEXTNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static uint GenFramebuffersEX()
 		{
 			uint result;
@@ -216,6 +284,10 @@ namespace Hexa.NET.OpenGL.EXT
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenFramebuffersEXT(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -224,6 +296,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenFramebuffersEXT(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -242,11 +318,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenRenderbuffersEXT(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersEXTNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static uint GenRenderbuffersEX()
 		{
 			uint result;
@@ -254,6 +338,10 @@ namespace Hexa.NET.OpenGL.EXT
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenRenderbuffersEXT(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -262,6 +350,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenRenderbuffersEXT(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -280,6 +372,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GenerateMipmapEXT(GLTextureTarget target)
 		{
 			GenerateMipmapEXTNative(target);
@@ -295,11 +391,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparams;
@@ -307,6 +411,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -325,11 +433,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
 		{
 			GetRenderbufferParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
 			int pparams;
@@ -337,6 +453,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -355,6 +475,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static bool IsFramebufferEXT(uint framebuffer)
 		{
 			byte ret = IsFramebufferEXTNative(framebuffer);
@@ -371,6 +495,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static bool IsRenderbufferEXT(uint renderbuffer)
 		{
 			byte ret = IsRenderbufferEXTNative(renderbuffer);
@@ -387,6 +515,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		public static void RenderbufferStorageEXT(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageEXTNative(target, internalformat, width, height);

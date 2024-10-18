@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_geometry_shader</remarks>
 		public static void FramebufferTextureOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureOESNative(target, attachment, texture, level);

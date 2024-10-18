@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void BindVertexArrayAPPLE(uint array)
 		{
 			BindVertexArrayAPPLENative(array);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void DeleteVertexArraysAPPLE(int n, uint* arrays)
 		{
 			DeleteVertexArraysAPPLENative(n, arrays);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void DeleteVertexArraysAPPL(uint array)
 		{
 			DeleteVertexArraysAPPLENative(1, &array);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void DeleteVertexArraysAPPLE(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void DeleteVertexArraysAPPLE(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -77,11 +97,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void GenVertexArraysAPPLE(int n, uint* arrays)
 		{
 			GenVertexArraysAPPLENative(n, arrays);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static uint GenVertexArraysAPPL()
 		{
 			uint result;
@@ -89,6 +117,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void GenVertexArraysAPPLE(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -97,6 +129,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static void GenVertexArraysAPPLE(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -115,6 +151,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
 		public static bool IsVertexArrayAPPLE(uint array)
 		{
 			byte ret = IsVertexArrayAPPLENative(array);

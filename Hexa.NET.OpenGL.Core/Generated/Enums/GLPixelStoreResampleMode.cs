@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPixelStoreResampleMode : uint
 	{
+		/// <summary>
+		/// Specifies decimation method for resampling (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DecimateSgix = unchecked((uint)0x8430),
+
+		/// <summary>
+		/// Specifies replication method for resampling (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ReplicateSgix = unchecked((uint)0x8433),
+
+		/// <summary>
+		/// Specifies zero-fill method for resampling (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ZeroFillSgix = unchecked((uint)0x8434),
 	}
 }

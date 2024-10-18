@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPolygonMode : uint
 	{
+		/// <summary>
+		/// Specifies the point primitive.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Point = unchecked((uint)0x1B00),
+
+		/// <summary>
+		/// Specifies the line primitive.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Line = unchecked((uint)0x1B01),
+
+		/// <summary>
+		/// Specifies fill mode for polygons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Fill = unchecked((uint)0x1B02),
 	}
 }

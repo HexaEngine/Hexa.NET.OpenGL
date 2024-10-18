@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_equation_separate</remarks>
 		public static void BlendEquationSeparateEXT(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateEXTNative(modeRGB, modeAlpha);

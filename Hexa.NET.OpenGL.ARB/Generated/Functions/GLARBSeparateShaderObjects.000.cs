@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Set the active program object for a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ActiveShaderProgram(uint pipeline, uint program)
 		{
 			ActiveShaderProgramNative(pipeline, program);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a program pipeline to the current context
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void BindProgramPipeline(uint pipeline)
 		{
 			BindProgramPipelineNative(pipeline);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Create a stand-alone program from an array of null-terminated source code strings
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static uint CreateShaderProgramv(GLShaderType type, int count, byte** strings)
 		{
 			uint ret = CreateShaderProgramvNative(type, count, strings);
@@ -72,16 +84,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Delete program pipeline objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void DeleteProgramPipelines(int n, uint* pipelines)
 		{
 			DeleteProgramPipelinesNative(n, pipelines);
 		}
 
+		/// <summary>
+		/// Delete program pipeline objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void DeleteProgramPipeline(uint pipeline)
 		{
 			DeleteProgramPipelinesNative(1, &pipeline);
 		}
 
+		/// <summary>
+		/// Delete program pipeline objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void DeleteProgramPipelines(int n, Span<uint> pipelines)
 		{
 			fixed (uint* ppipelines0 = pipelines)
@@ -90,6 +114,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Delete program pipeline objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void DeleteProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -108,11 +136,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Reserve program pipeline object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GenProgramPipelines(int n, uint* pipelines)
 		{
 			GenProgramPipelinesNative(n, pipelines);
 		}
 
+		/// <summary>
+		/// Reserve program pipeline object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static uint GenProgramPipeline()
 		{
 			uint result;
@@ -120,6 +156,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		/// <summary>
+		/// Reserve program pipeline object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GenProgramPipelines(int n, Span<uint> pipelines)
 		{
 			fixed (uint* ppipelines0 = pipelines)
@@ -128,6 +168,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Reserve program pipeline object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GenProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
@@ -146,11 +190,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, byte* infoLog)
 		{
 			GetProgramPipelineInfoLogNative(pipeline, bufSize, length, infoLog);
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static string GetProgramPipelineInfoLog(uint pipeline)
 		{
 			int pStrSize0;
@@ -175,6 +227,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return ret;
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
@@ -183,6 +239,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -191,6 +251,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
@@ -217,6 +281,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
@@ -225,6 +293,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, ref byte infoLog)
 		{
 			fixed (byte* pinfoLog0 = &infoLog)
@@ -233,6 +305,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, Span<byte> infoLog)
 		{
 			fixed (int* plength0 = length)
@@ -244,6 +320,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the info log string from a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, ref byte infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -265,11 +345,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, int* @params)
 		{
 			GetProgramPipelineivNative(pipeline, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, out int @params)
 		{
 			int pparams;
@@ -277,6 +365,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -295,6 +387,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Determine if a name corresponds to a program pipeline object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static bool IsProgramPipeline(uint pipeline)
 		{
 			byte ret = IsProgramPipelineNative(pipeline);
@@ -311,6 +407,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramParameteri(uint program, GLProgramParameterPName pname, int value)
 		{
 			ProgramParameteriNative(program, pname, value);
@@ -326,6 +426,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1d(uint program, int location, double v0)
 		{
 			ProgramUniform1dNative(program, location, v0);
@@ -341,11 +445,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1dv(uint program, int location, int count, double* value)
 		{
 			ProgramUniform1dvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -354,6 +466,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -372,6 +488,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Specify the value of a uniform variable for a specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1f(uint program, int location, float v0)
 		{
 			ProgramUniform1fNative(program, location, v0);
@@ -387,11 +507,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform1fvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -400,6 +528,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -418,6 +550,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1i(uint program, int location, int v0)
 		{
 			ProgramUniform1iNative(program, location, v0);
@@ -433,11 +569,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1iv(uint program, int location, int count, int* value)
 		{
 			ProgramUniform1ivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1iv(uint program, int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -446,6 +590,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -464,6 +612,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1ui(uint program, int location, uint v0)
 		{
 			ProgramUniform1uiNative(program, location, v0);
@@ -479,11 +631,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform1uivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1uiv(uint program, int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -492,6 +652,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform1uiv(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -510,6 +674,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2d(uint program, int location, double v0, double v1)
 		{
 			ProgramUniform2dNative(program, location, v0, v1);
@@ -525,11 +693,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2dv(uint program, int location, int count, double* value)
 		{
 			ProgramUniform2dvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -538,6 +714,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -556,6 +736,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2f(uint program, int location, float v0, float v1)
 		{
 			ProgramUniform2fNative(program, location, v0, v1);
@@ -571,11 +755,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform2fvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -584,6 +776,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -602,6 +798,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2i(uint program, int location, int v0, int v1)
 		{
 			ProgramUniform2iNative(program, location, v0, v1);
@@ -617,11 +817,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2iv(uint program, int location, int count, int* value)
 		{
 			ProgramUniform2ivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2iv(uint program, int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -630,6 +838,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -648,6 +860,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2ui(uint program, int location, uint v0, uint v1)
 		{
 			ProgramUniform2uiNative(program, location, v0, v1);
@@ -663,11 +879,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform2uivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2uiv(uint program, int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -676,6 +900,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform2uiv(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -694,6 +922,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3d(uint program, int location, double v0, double v1, double v2)
 		{
 			ProgramUniform3dNative(program, location, v0, v1, v2);
@@ -709,11 +941,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3dv(uint program, int location, int count, double* value)
 		{
 			ProgramUniform3dvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -722,6 +962,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -740,6 +984,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3f(uint program, int location, float v0, float v1, float v2)
 		{
 			ProgramUniform3fNative(program, location, v0, v1, v2);
@@ -755,11 +1003,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform3fvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -768,6 +1024,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -786,6 +1046,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3i(uint program, int location, int v0, int v1, int v2)
 		{
 			ProgramUniform3iNative(program, location, v0, v1, v2);
@@ -801,11 +1065,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3iv(uint program, int location, int count, int* value)
 		{
 			ProgramUniform3ivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3iv(uint program, int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -814,6 +1086,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -832,6 +1108,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3ui(uint program, int location, uint v0, uint v1, uint v2)
 		{
 			ProgramUniform3uiNative(program, location, v0, v1, v2);
@@ -847,11 +1127,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform3uivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3uiv(uint program, int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -860,6 +1148,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform3uiv(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -878,6 +1170,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4d(uint program, int location, double v0, double v1, double v2, double v3)
 		{
 			ProgramUniform4dNative(program, location, v0, v1, v2, v3);
@@ -893,11 +1189,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4dv(uint program, int location, int count, double* value)
 		{
 			ProgramUniform4dvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4dv(uint program, int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -906,6 +1210,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4dv(uint program, int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -924,6 +1232,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4f(uint program, int location, float v0, float v1, float v2, float v3)
 		{
 			ProgramUniform4fNative(program, location, v0, v1, v2, v3);
@@ -939,11 +1251,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4fv(uint program, int location, int count, float* value)
 		{
 			ProgramUniform4fvNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4fv(uint program, int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -952,6 +1272,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4fv(uint program, int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -970,6 +1294,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4i(uint program, int location, int v0, int v1, int v2, int v3)
 		{
 			ProgramUniform4iNative(program, location, v0, v1, v2, v3);
@@ -985,11 +1313,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4iv(uint program, int location, int count, int* value)
 		{
 			ProgramUniform4ivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4iv(uint program, int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -998,6 +1334,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4iv(uint program, int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -1016,6 +1356,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4ui(uint program, int location, uint v0, uint v1, uint v2, uint v3)
 		{
 			ProgramUniform4uiNative(program, location, v0, v1, v2, v3);
@@ -1031,11 +1375,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4uiv(uint program, int location, int count, uint* value)
 		{
 			ProgramUniform4uivNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4uiv(uint program, int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -1044,6 +1396,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniform4uiv(uint program, int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -1062,11 +1418,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1075,6 +1439,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1093,11 +1461,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1106,6 +1482,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1124,11 +1504,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2x3dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1137,6 +1525,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1155,11 +1547,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x3fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1168,6 +1568,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1186,11 +1590,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix2x4dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1199,6 +1611,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1217,11 +1633,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix2x4fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1230,6 +1654,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix2x4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1248,11 +1676,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1261,6 +1697,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1279,11 +1719,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1292,6 +1740,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1310,11 +1762,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3x2dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1323,6 +1783,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1341,11 +1805,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x2fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1354,6 +1826,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1372,11 +1848,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix3x4dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1385,6 +1869,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1403,11 +1891,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix3x4fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1416,6 +1912,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix3x4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1434,11 +1934,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1447,6 +1955,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1465,11 +1977,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1478,6 +1998,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1496,11 +2020,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4x2dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1509,6 +2041,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x2dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1527,11 +2063,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x2fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1540,6 +2084,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x2fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1558,11 +2106,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, double* value)
 		{
 			ProgramUniformMatrix4x3dvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
@@ -1571,6 +2127,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3dv(uint program, int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
@@ -1589,11 +2149,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, float* value)
 		{
 			ProgramUniformMatrix4x3fvNative(program, location, count, transpose, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -1602,6 +2170,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ProgramUniformMatrix4x3fv(uint program, int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -1620,6 +2192,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind stages of a program object to a program pipeline
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void UseProgramStages(uint pipeline, GLUseProgramStageMask stages, uint program)
 		{
 			UseProgramStagesNative(pipeline, stages, program);
@@ -1635,6 +2211,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Validate a program pipeline object against current GL state
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void ValidateProgramPipeline(uint pipeline)
 		{
 			ValidateProgramPipelineNative(pipeline);

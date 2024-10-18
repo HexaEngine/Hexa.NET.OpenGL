@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			GetProgramEnvParameterIivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, out int @params)
 		{
 			int pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			GetProgramEnvParameterIuivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, out uint @params)
 		{
 			uint pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -86,11 +110,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			GetProgramLocalParameterIivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, out int @params)
 		{
 			int pparams;
@@ -98,6 +130,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -116,11 +152,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			GetProgramLocalParameterIuivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, out uint @params)
 		{
 			uint pparams;
@@ -128,6 +172,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -146,6 +194,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4iNV(GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			ProgramEnvParameterI4iNVNative(target, index, x, y, z, w);
@@ -161,11 +213,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			ProgramEnvParameterI4ivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, out int @params)
 		{
 			int pparams;
@@ -173,6 +233,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -191,6 +255,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4uiNV(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			ProgramEnvParameterI4uiNVNative(target, index, x, y, z, w);
@@ -206,11 +274,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			ProgramEnvParameterI4uivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, out uint @params)
 		{
 			uint pparams;
@@ -218,6 +294,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -236,11 +316,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, int* @params)
 		{
 			ProgramEnvParametersI4ivNVNative(target, index, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, out int @params)
 		{
 			int pparams;
@@ -248,6 +336,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -266,11 +358,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			ProgramEnvParametersI4uivNVNative(target, index, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, out uint @params)
 		{
 			uint pparams;
@@ -278,6 +378,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -296,6 +400,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4iNV(GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			ProgramLocalParameterI4iNVNative(target, index, x, y, z, w);
@@ -311,11 +419,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			ProgramLocalParameterI4ivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, out int @params)
 		{
 			int pparams;
@@ -323,6 +439,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -341,6 +461,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4uiNV(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			ProgramLocalParameterI4uiNVNative(target, index, x, y, z, w);
@@ -356,11 +480,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			ProgramLocalParameterI4uivNVNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, out uint @params)
 		{
 			uint pparams;
@@ -368,6 +500,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -386,11 +522,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, int* @params)
 		{
 			ProgramLocalParametersI4ivNVNative(target, index, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, out int @params)
 		{
 			int pparams;
@@ -398,6 +542,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -416,11 +564,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			ProgramLocalParametersI4uivNVNative(target, index, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, out uint @params)
 		{
 			uint pparams;
@@ -428,6 +584,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
 		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)

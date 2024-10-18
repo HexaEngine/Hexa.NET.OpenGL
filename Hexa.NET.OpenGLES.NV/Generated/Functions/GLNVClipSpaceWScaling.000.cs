@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_clip_space_w_scaling</remarks>
 		public static void ViewportPositionWScaleNV(uint index, float xcoeff, float ycoeff)
 		{
 			ViewportPositionWScaleNVNative(index, xcoeff, ycoeff);

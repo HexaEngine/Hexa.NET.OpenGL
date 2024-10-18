@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
 		public static void FlushVertexArrayRangeNV()
 		{
 			FlushVertexArrayRangeNVNative();
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
 		public static void VertexArrayRangeNV(int length, void* pointer)
 		{
 			VertexArrayRangeNVNative(length, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
 		public static void VertexArrayRangeNV(int length, nint pointer)
 		{
 			VertexArrayRangeNVNative(length, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
 		public static void VertexArrayRangeNV<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, long* @params)
 		{
 			GetVertexAttribLi64vNVNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, out long @params)
 		{
 			long pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, ulong* @params)
 		{
 			GetVertexAttribLui64vNVNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, out ulong @params)
 		{
 			ulong pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -86,6 +110,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1i64NV(uint index, long x)
 		{
 			VertexAttribL1i64NVNative(index, x);
@@ -101,11 +129,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1i64vNV(uint index, long* v)
 		{
 			VertexAttribL1i64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
@@ -114,6 +150,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -132,6 +172,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1ui64NV(uint index, ulong x)
 		{
 			VertexAttribL1ui64NVNative(index, x);
@@ -147,11 +191,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL1ui64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
@@ -160,6 +212,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL1ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
@@ -178,6 +234,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2i64NV(uint index, long x, long y)
 		{
 			VertexAttribL2i64NVNative(index, x, y);
@@ -193,11 +253,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2i64vNV(uint index, long* v)
 		{
 			VertexAttribL2i64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
@@ -206,6 +274,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -224,6 +296,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2ui64NV(uint index, ulong x, ulong y)
 		{
 			VertexAttribL2ui64NVNative(index, x, y);
@@ -239,11 +315,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL2ui64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
@@ -252,6 +336,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL2ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
@@ -270,6 +358,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3i64NV(uint index, long x, long y, long z)
 		{
 			VertexAttribL3i64NVNative(index, x, y, z);
@@ -285,11 +377,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3i64vNV(uint index, long* v)
 		{
 			VertexAttribL3i64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
@@ -298,6 +398,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -316,6 +420,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3ui64NV(uint index, ulong x, ulong y, ulong z)
 		{
 			VertexAttribL3ui64NVNative(index, x, y, z);
@@ -331,11 +439,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL3ui64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
@@ -344,6 +460,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL3ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
@@ -362,6 +482,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4i64NV(uint index, long x, long y, long z, long w)
 		{
 			VertexAttribL4i64NVNative(index, x, y, z, w);
@@ -377,11 +501,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4i64vNV(uint index, long* v)
 		{
 			VertexAttribL4i64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
@@ -390,6 +522,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
@@ -408,6 +544,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4ui64NV(uint index, ulong x, ulong y, ulong z, ulong w)
 		{
 			VertexAttribL4ui64NVNative(index, x, y, z, w);
@@ -423,11 +563,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL4ui64vNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
@@ -436,6 +584,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribL4ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
@@ -454,6 +606,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
 		public static void VertexAttribLFormatNV(uint index, int size, GLVertexAttribLType type, int stride)
 		{
 			VertexAttribLFormatNVNative(index, size, type, stride);

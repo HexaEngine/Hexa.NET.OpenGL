@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLHintMode : uint
 	{
+		/// <summary>
+		/// Specifies that the implementation can ignore this parameter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DontCare = unchecked((uint)0x1100),
+
+		/// <summary>
+		/// Specifies that the fastest performance option is desired.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Fastest = unchecked((uint)0x1101),
+
+		/// <summary>
+		/// Specifies that the nicest quality option is desired.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Nicest = unchecked((uint)0x1102),
 	}
 }

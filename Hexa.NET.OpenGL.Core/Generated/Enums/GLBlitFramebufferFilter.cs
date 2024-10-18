@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLBlitFramebufferFilter : uint
 	{
+		/// <summary>
+		/// Specifies nearest neighbor filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Nearest = unchecked((uint)0x2600),
+
+		/// <summary>
+		/// Specifies linear filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Linear = unchecked((uint)0x2601),
 	}
 }

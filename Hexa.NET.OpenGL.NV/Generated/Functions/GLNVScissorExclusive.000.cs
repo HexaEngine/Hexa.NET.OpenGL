@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
 		public static void ScissorExclusiveArrayvNV(uint first, int count, int* v)
 		{
 			ScissorExclusiveArrayvNVNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
 		public static void ScissorExclusiveArrayvNV(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
 		public static void ScissorExclusiveArrayvNV(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
 		public static void ScissorExclusiveNV(int x, int y, int width, int height)
 		{
 			ScissorExclusiveNVNative(x, y, width, height);

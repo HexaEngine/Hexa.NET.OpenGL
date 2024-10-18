@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Copy all or part of the data store of a buffer object to the data store of another buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
 		public static void CopyBufferSubData(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			CopyBufferSubDataNative(readTarget, writeTarget, readOffset, writeOffset, size);

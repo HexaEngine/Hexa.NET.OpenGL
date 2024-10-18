@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawElementsBaseVertexNative(mode, count, type, indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawElementsBaseVertexNative(mode, count, type, (void*)indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render multiple instances of a set of primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, indices, instancecount, basevertex);
 		}
 
+		/// <summary>
+		/// Render multiple instances of a set of primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, (void*)indices, instancecount, basevertex);
 		}
 
+		/// <summary>
+		/// Render multiple instances of a set of primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -82,16 +106,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, (void*)indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertex<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -110,11 +146,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			MultiDrawElementsBaseVertexNative(mode, count, type, indices, drawcount, basevertex);
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			fixed (int* pcount0 = count)
@@ -123,6 +167,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, int* basevertex)
 		{
 			fixed (int* pcount0 = &count)
@@ -131,6 +179,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
 		{
 			fixed (int* pbasevertex0 = basevertex)
@@ -139,6 +191,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
 		{
 			fixed (int* pbasevertex0 = &basevertex)
@@ -147,6 +203,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
 		{
 			fixed (int* pcount0 = count)
@@ -158,6 +218,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
 		{
 			fixed (int* pcount0 = &count)

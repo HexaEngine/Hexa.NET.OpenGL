@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLVariantCapEXT : uint
 	{
+		/// <summary>
+		/// Specifies a variant array in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ArrayExt = unchecked((uint)0x87E8),
 	}
 }

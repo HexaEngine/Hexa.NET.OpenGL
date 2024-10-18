@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_blend_equation_advanced</remarks>
 		public static void BlendBarrierNV()
 		{
 			BlendBarrierNVNative();
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_blend_equation_advanced</remarks>
 		public static void BlendParameteriNV(GLEnum pname, int value)
 		{
 			BlendParameteriNVNative(pname, value);

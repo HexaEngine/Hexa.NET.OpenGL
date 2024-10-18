@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3bEXT(sbyte red, sbyte green, sbyte blue)
 		{
 			SecondaryColor3bEXTNative(red, green, blue);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3bvEXT(sbyte* v)
 		{
 			SecondaryColor3bvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3bvEXT(Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3dEXT(double red, double green, double blue)
 		{
 			SecondaryColor3dEXTNative(red, green, blue);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3dvEXT(double* v)
 		{
 			SecondaryColor3dvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3dvEXT(Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3fEXT(float red, float green, float blue)
 		{
 			SecondaryColor3fEXTNative(red, green, blue);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3fvEXT(float* v)
 		{
 			SecondaryColor3fvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3fvEXT(Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3iEXT(int red, int green, int blue)
 		{
 			SecondaryColor3iEXTNative(red, green, blue);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ivEXT(int* v)
 		{
 			SecondaryColor3ivEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ivEXT(Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -210,6 +274,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3sEXT(short red, short green, short blue)
 		{
 			SecondaryColor3sEXTNative(red, green, blue);
@@ -225,11 +293,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3svEXT(short* v)
 		{
 			SecondaryColor3svEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3svEXT(Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -238,6 +314,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -256,6 +336,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ubEXT(bool red, bool green, bool blue)
 		{
 			SecondaryColor3ubEXTNative(red, green, blue);
@@ -271,11 +355,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ubvEXT(byte* v)
 		{
 			SecondaryColor3ubvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ubvEXT(string v)
 		{
 			byte* pStr0 = null;
@@ -302,6 +394,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ubvEXT(Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
@@ -310,6 +406,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3ubvEXT(ref byte v)
 		{
 			fixed (byte* pv0 = &v)
@@ -328,6 +428,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3uiEXT(uint red, uint green, uint blue)
 		{
 			SecondaryColor3uiEXTNative(red, green, blue);
@@ -343,11 +447,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3uivEXT(uint* v)
 		{
 			SecondaryColor3uivEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3uivEXT(Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -356,6 +468,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3uivEXT(ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -374,6 +490,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3usEXT(ushort red, ushort green, ushort blue)
 		{
 			SecondaryColor3usEXTNative(red, green, blue);
@@ -389,11 +509,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3usvEXT(ushort* v)
 		{
 			SecondaryColor3usvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3usvEXT(Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
@@ -402,6 +530,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColor3usvEXT(ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
@@ -420,16 +552,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, void* pointer)
 		{
 			SecondaryColorPointerEXTNative(size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, nint pointer)
 		{
 			SecondaryColorPointerEXTNative(size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
 		public static void SecondaryColorPointerEXT<TPointer>(int size, GLColorPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

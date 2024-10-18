@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLAlphaFunction : uint
 	{
+		/// <summary>
+		/// Never passes the depth test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Never = unchecked((uint)0x0200),
+
+		/// <summary>
+		/// Passes if the value is less than the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Less = unchecked((uint)0x0201),
+
+		/// <summary>
+		/// Passes if the value is equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader<br/>GL_EXT_tessellation_shader<br/>GL_OES_tessellation_shader</remarks>
 		Equal = unchecked((uint)0x0202),
+
+		/// <summary>
+		/// Passes if the value is less than or equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Lequal = unchecked((uint)0x0203),
+
+		/// <summary>
+		/// Passes if the value is greater than the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Greater = unchecked((uint)0x0204),
+
+		/// <summary>
+		/// Passes if the value is not equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Notequal = unchecked((uint)0x0205),
+
+		/// <summary>
+		/// Passes if the value is greater than or equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Gequal = unchecked((uint)0x0206),
+
+		/// <summary>
+		/// Always passes the depth test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Always = unchecked((uint)0x0207),
 	}
 }

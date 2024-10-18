@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathTransformType : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies the X-axis translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TranslateXNv = unchecked((uint)0x908E),
+
+		/// <summary>
+		/// Specifies the Y-axis translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TranslateYNv = unchecked((uint)0x908F),
+
+		/// <summary>
+		/// Specifies a 2D translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Translate2DNv = unchecked((uint)0x9090),
+
+		/// <summary>
+		/// Specifies a 3D translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Translate3DNv = unchecked((uint)0x9091),
+
+		/// <summary>
+		/// Specifies a 2D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Affine2DNv = unchecked((uint)0x9092),
+
+		/// <summary>
+		/// Specifies a 3D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Affine3DNv = unchecked((uint)0x9094),
+
+		/// <summary>
+		/// Specifies the transpose of a 2D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TransposeAffine2DNv = unchecked((uint)0x9096),
+
+		/// <summary>
+		/// Specifies the transpose of a 3D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TransposeAffine3DNv = unchecked((uint)0x9098),
 	}
 }

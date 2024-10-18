@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureEnvMode : uint
 	{
+		/// <summary>
+		/// Add operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Add = unchecked((uint)0x0104),
+
+		/// <summary>
+		/// Enables or disables blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Blend = unchecked((uint)0x0BE2),
+
+		/// <summary>
+		/// Specifies replacing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Replace = unchecked((uint)0x1E01),
+
+		/// <summary>
+		/// Specifies modulation of texture colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Modulate = unchecked((uint)0x2100),
+
+		/// <summary>
+		/// Specifies decal texture mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Decal = unchecked((uint)0x2101),
+
+		/// <summary>
+		/// Specifies a replacement operation for texture mapping (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
 		ReplaceExt = unchecked((uint)0x8062),
+
+		/// <summary>
+		/// Specifies texture environment bias for SGIX extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		BiasSgix = unchecked((uint)0x80BE),
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Combine = unchecked((uint)0x8570),
 	}
 }

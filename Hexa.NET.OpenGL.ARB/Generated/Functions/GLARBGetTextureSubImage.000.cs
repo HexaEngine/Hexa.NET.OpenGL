@@ -26,16 +26,31 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve a sub-region of a compressed texture image from a
+		///     compressed texture object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
 		public static void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, void* pixels)
 		{
 			GetCompressedTextureSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels);
 		}
 
+		/// <summary>
+		/// Retrieve a sub-region of a compressed texture image from a
+		///     compressed texture object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
 		public static void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, nint pixels)
 		{
 			GetCompressedTextureSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, (void*)pixels);
 		}
 
+		/// <summary>
+		/// Retrieve a sub-region of a compressed texture image from a
+		///     compressed texture object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
 		public static void GetCompressedTextureSubImage<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
@@ -54,16 +69,31 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve a sub-region of a texture image from a texture
+		///     object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, int bufSize, void* pixels)
 		{
 			GetTextureSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, pixels);
 		}
 
+		/// <summary>
+		/// Retrieve a sub-region of a texture image from a texture
+		///     object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, int bufSize, nint pixels)
 		{
 			GetTextureSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, (void*)pixels);
 		}
 
+		/// <summary>
+		/// Retrieve a sub-region of a texture image from a texture
+		///     object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
 		public static void GetTextureSubImage<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)

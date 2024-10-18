@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLVertexAttribPointerPropertyARB : uint
 	{
+		/// <summary>
+		/// Specifies the pointer to vertex attribute arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ArrayPointer = unchecked((uint)0x8645),
+
+		/// <summary>
+		/// Specifies the pointer to vertex attribute arrays (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		ArrayPointerArb = unchecked((uint)0x8645),
 	}
 }

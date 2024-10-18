@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLSeparableTarget : uint
 	{
+		/// <summary>
+		/// Specifies separable 2D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Separable2D = unchecked((uint)0x8012),
 	}
 }

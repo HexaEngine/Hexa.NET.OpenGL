@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
 		public static void FramebufferTextureEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureEXTNative(target, attachment, texture, level);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4</remarks>
 		public static void FramebufferTextureFaceEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			FramebufferTextureFaceEXTNative(target, attachment, texture, level, face);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array<br/>GL_NV_geometry_program4</remarks>
 		public static void FramebufferTextureLayerEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerEXTNative(target, attachment, texture, level, layer);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4</remarks>
 		public static void ProgramVertexLimitNV(GLProgramTarget target, int limit)
 		{
 			ProgramVertexLimitNVNative(target, limit);

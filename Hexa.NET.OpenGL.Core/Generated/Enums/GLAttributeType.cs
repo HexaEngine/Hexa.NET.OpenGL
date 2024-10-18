@@ -15,153 +15,892 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLAttributeType : uint
 	{
+		/// <summary>
+		/// Specifies a signed integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Int = unchecked((uint)0x1404),
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedInt = unchecked((uint)0x1405),
+
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		Float = unchecked((uint)0x1406),
+
+		/// <summary>
+		/// Specifies a double-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit<br/>GL_ARB_gpu_shader_fp64</remarks>
 		Double = unchecked((uint)0x140A),
+
+		/// <summary>
+		/// Specifies a 64-bit signed integer for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Arb = unchecked((uint)0x140E),
+
+		/// <summary>
+		/// Specifies a 64-bit signed integer for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_NV_vertex_attrib_integer_64bit<br/>GL_AMD_gpu_shader_int64</remarks>
 		Int64Nv = unchecked((uint)0x140E),
+
+		/// <summary>
+		/// Specifies a 64-bit unsigned integer for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Arb = unchecked((uint)0x140F),
+
+		/// <summary>
+		/// Specifies a 64-bit unsigned integer for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_NV_vertex_attrib_integer_64bit<br/>GL_AMD_gpu_shader_int64</remarks>
 		UnsignedInt64Nv = unchecked((uint)0x140F),
+
+		/// <summary>
+		/// Specifies a 2-component vector of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatVec2 = unchecked((uint)0x8B50),
+
+		/// <summary>
+		/// Specifies a 2-component vector of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatVec2Arb = unchecked((uint)0x8B50),
+
+		/// <summary>
+		/// Specifies a 3-component vector of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatVec3 = unchecked((uint)0x8B51),
+
+		/// <summary>
+		/// Specifies a 3-component vector of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatVec3Arb = unchecked((uint)0x8B51),
+
+		/// <summary>
+		/// Specifies a 4-component vector of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatVec4 = unchecked((uint)0x8B52),
+
+		/// <summary>
+		/// Specifies a 4-component vector of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatVec4Arb = unchecked((uint)0x8B52),
+
+		/// <summary>
+		/// Specifies a 2-component vector of integers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntVec2 = unchecked((uint)0x8B53),
+
+		/// <summary>
+		/// Specifies a 2-component vector of integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		IntVec2Arb = unchecked((uint)0x8B53),
+
+		/// <summary>
+		/// Specifies a 3-component vector of integers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntVec3 = unchecked((uint)0x8B54),
+
+		/// <summary>
+		/// Specifies a 3-component vector of integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		IntVec3Arb = unchecked((uint)0x8B54),
+
+		/// <summary>
+		/// Specifies a 4-component vector of integers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntVec4 = unchecked((uint)0x8B55),
+
+		/// <summary>
+		/// Specifies a 4-component vector of integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		IntVec4Arb = unchecked((uint)0x8B55),
+
+		/// <summary>
+		/// Specifies a boolean value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Bool = unchecked((uint)0x8B56),
+
+		/// <summary>
+		/// Specifies a boolean value (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolArb = unchecked((uint)0x8B56),
+
+		/// <summary>
+		/// Specifies a 2-component vector of boolean values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BoolVec2 = unchecked((uint)0x8B57),
+
+		/// <summary>
+		/// Specifies a 2-component vector of boolean values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolVec2Arb = unchecked((uint)0x8B57),
+
+		/// <summary>
+		/// Specifies a 3-component vector of boolean values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BoolVec3 = unchecked((uint)0x8B58),
+
+		/// <summary>
+		/// Specifies a 3-component vector of boolean values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolVec3Arb = unchecked((uint)0x8B58),
+
+		/// <summary>
+		/// Specifies a 4-component vector of boolean values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BoolVec4 = unchecked((uint)0x8B59),
+
+		/// <summary>
+		/// Specifies a 4-component vector of boolean values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolVec4Arb = unchecked((uint)0x8B59),
+
+		/// <summary>
+		/// Specifies a 2x2 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatMat2 = unchecked((uint)0x8B5A),
+
+		/// <summary>
+		/// Specifies a 2x2 matrix of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatMat2Arb = unchecked((uint)0x8B5A),
+
+		/// <summary>
+		/// Specifies a 3x3 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatMat3 = unchecked((uint)0x8B5B),
+
+		/// <summary>
+		/// Specifies a 3x3 matrix of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatMat3Arb = unchecked((uint)0x8B5B),
+
+		/// <summary>
+		/// Specifies a 4x4 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatMat4 = unchecked((uint)0x8B5C),
+
+		/// <summary>
+		/// Specifies a 4x4 matrix of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatMat4Arb = unchecked((uint)0x8B5C),
+
+		/// <summary>
+		/// Specifies a 1D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1D = unchecked((uint)0x8B5D),
+
+		/// <summary>
+		/// Specifies a 1D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler1DArb = unchecked((uint)0x8B5D),
+
+		/// <summary>
+		/// Specifies a 2D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2D = unchecked((uint)0x8B5E),
+
+		/// <summary>
+		/// Specifies a 2D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DArb = unchecked((uint)0x8B5E),
+
+		/// <summary>
+		/// Specifies a 3D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler3D = unchecked((uint)0x8B5F),
+
+		/// <summary>
+		/// Specifies a 3D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler3DArb = unchecked((uint)0x8B5F),
+
+		/// <summary>
+		/// Specifies a 3D sampler for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Sampler3DOes = unchecked((uint)0x8B5F),
+
+		/// <summary>
+		/// Specifies a cube map sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCube = unchecked((uint)0x8B60),
+
+		/// <summary>
+		/// Specifies a cube map sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		SamplerCubeArb = unchecked((uint)0x8B60),
+
+		/// <summary>
+		/// Specifies a 1D shadow sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1DShadow = unchecked((uint)0x8B61),
+
+		/// <summary>
+		/// Specifies a 1D shadow sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler1DShadowArb = unchecked((uint)0x8B61),
+
+		/// <summary>
+		/// Specifies a 2D shadow sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2DShadow = unchecked((uint)0x8B62),
+
+		/// <summary>
+		/// Specifies a 2D shadow sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DShadowArb = unchecked((uint)0x8B62),
+
+		/// <summary>
+		/// Specifies a 2D shadow sampler for textures (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Sampler2DShadowExt = unchecked((uint)0x8B62),
+
+		/// <summary>
+		/// Specifies a rectangular 2D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		Sampler2DRect = unchecked((uint)0x8B63),
+
+		/// <summary>
+		/// Specifies a rectangular 2D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DRectArb = unchecked((uint)0x8B63),
+
+		/// <summary>
+		/// Specifies a shadow sampler for rectangular 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		Sampler2DRectShadow = unchecked((uint)0x8B64),
+
+		/// <summary>
+		/// Specifies a shadow sampler for rectangular 2D textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DRectShadowArb = unchecked((uint)0x8B64),
+
+		/// <summary>
+		/// Specifies a 2x3 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat2X3 = unchecked((uint)0x8B65),
+
+		/// <summary>
+		/// Specifies a 2x3 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat2X3Nv = unchecked((uint)0x8B65),
+
+		/// <summary>
+		/// Specifies a 2x4 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat2X4 = unchecked((uint)0x8B66),
+
+		/// <summary>
+		/// Specifies a 2x4 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat2X4Nv = unchecked((uint)0x8B66),
+
+		/// <summary>
+		/// Specifies a 3x2 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat3X2 = unchecked((uint)0x8B67),
+
+		/// <summary>
+		/// Specifies a 3x2 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat3X2Nv = unchecked((uint)0x8B67),
+
+		/// <summary>
+		/// Specifies a 3x4 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat3X4 = unchecked((uint)0x8B68),
+
+		/// <summary>
+		/// Specifies a 3x4 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat3X4Nv = unchecked((uint)0x8B68),
+
+		/// <summary>
+		/// Specifies a 4x2 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat4X2 = unchecked((uint)0x8B69),
+
+		/// <summary>
+		/// Specifies a 4x2 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat4X2Nv = unchecked((uint)0x8B69),
+
+		/// <summary>
+		/// Specifies a 4x3 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat4X3 = unchecked((uint)0x8B6A),
+
+		/// <summary>
+		/// Specifies a 4x3 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat4X3Nv = unchecked((uint)0x8B6A),
+
+		/// <summary>
+		/// Specifies a buffer sampler.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		SamplerBuffer = unchecked((uint)0x8DC2),
+
+		/// <summary>
+		/// Specifies a shadow sampler for 1D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1DArrayShadow = unchecked((uint)0x8DC3),
+
+		/// <summary>
+		/// Specifies a shadow sampler for 2D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2DArrayShadow = unchecked((uint)0x8DC4),
+
+		/// <summary>
+		/// Specifies a shadow sampler for cube maps.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCubeShadow = unchecked((uint)0x8DC5),
+
+		/// <summary>
+		/// Specifies a 2D unsigned integer vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntVec2 = unchecked((uint)0x8DC6),
+
+		/// <summary>
+		/// Specifies a 3D unsigned integer vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntVec3 = unchecked((uint)0x8DC7),
+
+		/// <summary>
+		/// Specifies a 4D unsigned integer vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntVec4 = unchecked((uint)0x8DC8),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 1D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler1D = unchecked((uint)0x8DC9),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler2D = unchecked((uint)0x8DCA),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler3D = unchecked((uint)0x8DCB),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for cube maps.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSamplerCube = unchecked((uint)0x8DCC),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 2D rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		IntSampler2DRect = unchecked((uint)0x8DCD),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 1D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler1DArray = unchecked((uint)0x8DCE),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 2D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler2DArray = unchecked((uint)0x8DCF),
+
+		/// <summary>
+		/// Specifies a signed integer sampler for buffer textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		IntSamplerBuffer = unchecked((uint)0x8DD0),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 1D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler1D = unchecked((uint)0x8DD1),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler2D = unchecked((uint)0x8DD2),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler3D = unchecked((uint)0x8DD3),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for cube maps.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSamplerCube = unchecked((uint)0x8DD4),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		UnsignedIntSampler2DRect = unchecked((uint)0x8DD5),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 1D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler1DArray = unchecked((uint)0x8DD6),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler2DArray = unchecked((uint)0x8DD7),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for buffer textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		UnsignedIntSamplerBuffer = unchecked((uint)0x8DD8),
+
+		/// <summary>
+		/// Specifies a 2x2 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat2 = unchecked((uint)0x8F46),
+
+		/// <summary>
+		/// Specifies a 3x3 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat3 = unchecked((uint)0x8F47),
+
+		/// <summary>
+		/// Specifies a 4x4 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat4 = unchecked((uint)0x8F48),
+
+		/// <summary>
+		/// Specifies a 2x3 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat2X3 = unchecked((uint)0x8F49),
+
+		/// <summary>
+		/// Specifies a 2x4 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat2X4 = unchecked((uint)0x8F4A),
+
+		/// <summary>
+		/// Specifies a 3x2 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat3X2 = unchecked((uint)0x8F4B),
+
+		/// <summary>
+		/// Specifies a 3x4 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat3X4 = unchecked((uint)0x8F4C),
+
+		/// <summary>
+		/// Specifies a 4x2 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat4X2 = unchecked((uint)0x8F4D),
+
+		/// <summary>
+		/// Specifies a 4x3 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat4X3 = unchecked((uint)0x8F4E),
+
+		/// <summary>
+		/// Specifies a 2-component vector of 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Vec2Arb = unchecked((uint)0x8FE9),
+
+		/// <summary>
+		/// Specifies a 3-component vector of 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Vec3Arb = unchecked((uint)0x8FEA),
+
+		/// <summary>
+		/// Specifies a 4-component vector of 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Vec4Arb = unchecked((uint)0x8FEB),
+
+		/// <summary>
+		/// Specifies a 2-component vector of unsigned 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Vec2Arb = unchecked((uint)0x8FF5),
+
+		/// <summary>
+		/// Specifies a 3-component vector of unsigned 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Vec3Arb = unchecked((uint)0x8FF6),
+
+		/// <summary>
+		/// Specifies a 4-component vector of unsigned 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Vec4Arb = unchecked((uint)0x8FF7),
+
+		/// <summary>
+		/// Specifies a 2-component vector of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleVec2 = unchecked((uint)0x8FFC),
+
+		/// <summary>
+		/// Specifies a 3-component vector of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleVec3 = unchecked((uint)0x8FFD),
+
+		/// <summary>
+		/// Specifies a 4-component vector of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleVec4 = unchecked((uint)0x8FFE),
+
+		/// <summary>
+		/// Specifies a sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCubeMapArray = unchecked((uint)0x900C),
+
+		/// <summary>
+		/// Specifies a shadow sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCubeMapArrayShadow = unchecked((uint)0x900D),
+
+		/// <summary>
+		/// Specifies an integer sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSamplerCubeMapArray = unchecked((uint)0x900E),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSamplerCubeMapArray = unchecked((uint)0x900F),
+
+		/// <summary>
+		/// Specifies a 1D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image1D = unchecked((uint)0x904C),
+
+		/// <summary>
+		/// Specifies a 2D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2D = unchecked((uint)0x904D),
+
+		/// <summary>
+		/// Specifies a 3D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image3D = unchecked((uint)0x904E),
+
+		/// <summary>
+		/// Specifies a 2D rectangular image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DRect = unchecked((uint)0x904F),
+
+		/// <summary>
+		/// Specifies a cube map image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageCube = unchecked((uint)0x9050),
+
+		/// <summary>
+		/// Specifies a buffer image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageBuffer = unchecked((uint)0x9051),
+
+		/// <summary>
+		/// Specifies a 1D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image1DArray = unchecked((uint)0x9052),
+
+		/// <summary>
+		/// Specifies a 2D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DArray = unchecked((uint)0x9053),
+
+		/// <summary>
+		/// Specifies a cube map array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageCubeMapArray = unchecked((uint)0x9054),
+
+		/// <summary>
+		/// Specifies a 2D multisample image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DMultisample = unchecked((uint)0x9055),
+
+		/// <summary>
+		/// Specifies a 2D multisample array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DMultisampleArray = unchecked((uint)0x9056),
+
+		/// <summary>
+		/// Specifies an integer 1D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage1D = unchecked((uint)0x9057),
+
+		/// <summary>
+		/// Specifies an integer 2D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2D = unchecked((uint)0x9058),
+
+		/// <summary>
+		/// Specifies an integer 3D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage3D = unchecked((uint)0x9059),
+
+		/// <summary>
+		/// Specifies an integer 2D rectangular image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DRect = unchecked((uint)0x905A),
+
+		/// <summary>
+		/// Specifies an integer cube map image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImageCube = unchecked((uint)0x905B),
+
+		/// <summary>
+		/// Specifies an integer buffer image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImageBuffer = unchecked((uint)0x905C),
+
+		/// <summary>
+		/// Specifies an integer 1D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage1DArray = unchecked((uint)0x905D),
+
+		/// <summary>
+		/// Specifies an integer 2D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DArray = unchecked((uint)0x905E),
+
+		/// <summary>
+		/// Specifies an integer cube map array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImageCubeMapArray = unchecked((uint)0x905F),
+
+		/// <summary>
+		/// Specifies an integer 2D multisample image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DMultisample = unchecked((uint)0x9060),
+
+		/// <summary>
+		/// Specifies an integer 2D multisample array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DMultisampleArray = unchecked((uint)0x9061),
+
+		/// <summary>
+		/// Specifies an unsigned integer 1D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage1D = unchecked((uint)0x9062),
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2D = unchecked((uint)0x9063),
+
+		/// <summary>
+		/// Specifies an unsigned integer 3D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage3D = unchecked((uint)0x9064),
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D rectangular image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DRect = unchecked((uint)0x9065),
+
+		/// <summary>
+		/// Specifies an unsigned integer cube map image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImageCube = unchecked((uint)0x9066),
+
+		/// <summary>
+		/// Specifies an unsigned integer buffer image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImageBuffer = unchecked((uint)0x9067),
+
+		/// <summary>
+		/// Specifies an unsigned integer 1D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage1DArray = unchecked((uint)0x9068),
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DArray = unchecked((uint)0x9069),
+
+		/// <summary>
+		/// Specifies an unsigned integer cube map array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImageCubeMapArray = unchecked((uint)0x906A),
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D multisample image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DMultisample = unchecked((uint)0x906B),
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D multisample array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DMultisampleArray = unchecked((uint)0x906C),
+
+		/// <summary>
+		/// Specifies a sampler for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		Sampler2DMultisample = unchecked((uint)0x9108),
+
+		/// <summary>
+		/// Specifies an integer sampler for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		IntSampler2DMultisample = unchecked((uint)0x9109),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		UnsignedIntSampler2DMultisample = unchecked((uint)0x910A),
+
+		/// <summary>
+		/// Specifies a sampler for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		Sampler2DMultisampleArray = unchecked((uint)0x910B),
+
+		/// <summary>
+		/// Specifies an integer sampler for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		IntSampler2DMultisampleArray = unchecked((uint)0x910C),
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		UnsignedIntSampler2DMultisampleArray = unchecked((uint)0x910D),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_conditional_render</remarks>
 		public static void BeginConditionalRenderNVX(uint id)
 		{
 			BeginConditionalRenderNVXNative(id);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_conditional_render</remarks>
 		public static void EndConditionalRenderNVX()
 		{
 			EndConditionalRenderNVXNative();

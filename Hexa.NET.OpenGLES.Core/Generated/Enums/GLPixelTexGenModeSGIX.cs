@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPixelTexGenModeSGIX : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies the alpha component for transparency.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Alpha = unchecked((uint)0x1906),
+
+		/// <summary>
+		/// Specifies a color in RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Rgb = unchecked((uint)0x1907),
+
+		/// <summary>
+		/// Specifies a color in RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Rgba = unchecked((uint)0x1908),
+
+		/// <summary>
+		/// Specifies ceiling behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QCeilingSgix = unchecked((uint)0x8184),
+
+		/// <summary>
+		/// Specifies rounding behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QRoundSgix = unchecked((uint)0x8185),
+
+		/// <summary>
+		/// Specifies floor behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		QFloorSgix = unchecked((uint)0x8186),
+
+		/// <summary>
+		/// Specifies alpha generation behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaLsSgix = unchecked((uint)0x8189),
+
+		/// <summary>
+		/// Specifies multi-sample alpha generation behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaMsSgix = unchecked((uint)0x818A),
 	}
 }

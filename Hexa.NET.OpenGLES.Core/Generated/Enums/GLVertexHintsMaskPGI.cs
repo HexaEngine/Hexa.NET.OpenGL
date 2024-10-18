@@ -15,23 +15,112 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexHintsMaskPGI : uint
 	{
+		/// <summary>
+		/// Vertex attribute 23 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Vertex23BitPgi = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Vertex attribute 4 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Vertex4BitPgi = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Color attribute 3 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Color3BitPgi = unchecked((uint)0x00010000),
+
+		/// <summary>
+		/// Color attribute 4 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Color4BitPgi = unchecked((uint)0x00020000),
+
+		/// <summary>
+		/// Edge flag bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		EdgeflagBitPgi = unchecked((uint)0x00040000),
+
+		/// <summary>
+		/// Index attribute bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		IndexBitPgi = unchecked((uint)0x00080000),
+
+		/// <summary>
+		/// Ambient material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatAmbientBitPgi = unchecked((uint)0x00100000),
+
+		/// <summary>
+		/// Ambient and diffuse material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatAmbientAndDiffuseBitPgi = unchecked((uint)0x00200000),
+
+		/// <summary>
+		/// Diffuse material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatDiffuseBitPgi = unchecked((uint)0x00400000),
+
+		/// <summary>
+		/// Emission material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatEmissionBitPgi = unchecked((uint)0x00800000),
+
+		/// <summary>
+		/// Color indexes material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatColorIndexesBitPgi = unchecked((uint)0x01000000),
+
+		/// <summary>
+		/// Shininess material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatShininessBitPgi = unchecked((uint)0x02000000),
+
+		/// <summary>
+		/// Specular material bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		MatSpecularBitPgi = unchecked((uint)0x04000000),
+
+		/// <summary>
+		/// Normal attribute bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		NormalBitPgi = unchecked((uint)0x08000000),
+
+		/// <summary>
+		/// Texture coordinate 1 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Texcoord1BitPgi = unchecked((uint)0x10000000),
+
+		/// <summary>
+		/// Texture coordinate 2 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Texcoord2BitPgi = unchecked((uint)0x20000000),
+
+		/// <summary>
+		/// Texture coordinate 3 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Texcoord3BitPgi = unchecked((uint)0x40000000),
+
+		/// <summary>
+		/// Texture coordinate 4 bit (PGI).
+		/// </summary>
+		/// <remarks></remarks>
 		Texcoord4BitPgi = unchecked((uint)0x80000000),
 	}
 }

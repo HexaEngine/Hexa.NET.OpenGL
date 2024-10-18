@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLLightModelColorControl : uint
 	{
+		/// <summary>
+		/// Specifies single color lighting behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		SingleColor = unchecked((uint)0x81F9),
+
+		/// <summary>
+		/// Specifies single color lighting behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
 		SingleColorExt = unchecked((uint)0x81F9),
+
+		/// <summary>
+		/// Specifies separate specular color behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		SeparateSpecularColor = unchecked((uint)0x81FA),
+
+		/// <summary>
+		/// Specifies separate specular color behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
 		SeparateSpecularColorExt = unchecked((uint)0x81FA),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_conditional_render</remarks>
 		public static void BeginConditionalRenderNV(uint id, GLConditionalRenderMode mode)
 		{
 			BeginConditionalRenderNVNative(id, mode);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_conditional_render</remarks>
 		public static void EndConditionalRenderNV()
 		{
 			EndConditionalRenderNVNative();

@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLGetVariantValueEXT : uint
 	{
+		/// <summary>
+		/// Specifies the value of a variant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		Ext = unchecked((uint)0x87E4),
+
+		/// <summary>
+		/// Specifies the data type of a variant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		DatatypeExt = unchecked((uint)0x87E5),
+
+		/// <summary>
+		/// Specifies the stride of a variant array in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ArrayStrideExt = unchecked((uint)0x87E6),
+
+		/// <summary>
+		/// Specifies the type of a variant array in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ArrayTypeExt = unchecked((uint)0x87E7),
 	}
 }

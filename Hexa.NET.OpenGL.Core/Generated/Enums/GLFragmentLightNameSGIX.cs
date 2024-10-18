@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFragmentLightNameSGIX : uint
 	{
+		/// <summary>
+		/// Specifies the first fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light0Sgix = unchecked((uint)0x840C),
+
+		/// <summary>
+		/// Specifies the second fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light1Sgix = unchecked((uint)0x840D),
+
+		/// <summary>
+		/// Specifies the third fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light2Sgix = unchecked((uint)0x840E),
+
+		/// <summary>
+		/// Specifies the fourth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light3Sgix = unchecked((uint)0x840F),
+
+		/// <summary>
+		/// Specifies the fifth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light4Sgix = unchecked((uint)0x8410),
+
+		/// <summary>
+		/// Specifies the sixth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light5Sgix = unchecked((uint)0x8411),
+
+		/// <summary>
+		/// Specifies the seventh fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light6Sgix = unchecked((uint)0x8412),
+
+		/// <summary>
+		/// Specifies the eighth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Light7Sgix = unchecked((uint)0x8413),
 	}
 }

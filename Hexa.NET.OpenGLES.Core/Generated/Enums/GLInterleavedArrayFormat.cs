@@ -15,19 +15,88 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLInterleavedArrayFormat : uint
 	{
+		/// <summary>
+		/// Specifies vertex data in 2D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		V2F = unchecked((uint)0x2A20),
+
+		/// <summary>
+		/// Specifies vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		V3F = unchecked((uint)0x2A21),
+
+		/// <summary>
+		/// Specifies color data with 4 unsigned bytes and vertex data in 2D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		C4UbV2F = unchecked((uint)0x2A22),
+
+		/// <summary>
+		/// Specifies color data with 4 unsigned bytes and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		C4UbV3F = unchecked((uint)0x2A23),
+
+		/// <summary>
+		/// Specifies color data with 3 floating-point components and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		C3FV3F = unchecked((uint)0x2A24),
+
+		/// <summary>
+		/// Specifies normal data with 3 floating-point components and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		N3FV3F = unchecked((uint)0x2A25),
+
+		/// <summary>
+		/// Specifies color data with 4 floating-point components, normal data, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		C4FN3FV3F = unchecked((uint)0x2A26),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T2FV3F = unchecked((uint)0x2A27),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 4 floating-point components and vertex data in 4D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T4FV4F = unchecked((uint)0x2A28),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, color data with 4 unsigned bytes, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T2FC4UbV3F = unchecked((uint)0x2A29),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, color data with 3 floating-point components, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T2FC3FV3F = unchecked((uint)0x2A2A),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, normal data with 3 floating-point components, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T2FN3FV3F = unchecked((uint)0x2A2B),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, color data with 4 floating-point components, normal data, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T2FC4FN3FV3F = unchecked((uint)0x2A2C),
+
+		/// <summary>
+		/// Specifies texture coordinate data with 4 floating-point components, color data with 4 floating-point components, normal data, and vertex data in 4D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		T4FC4FN3FV4F = unchecked((uint)0x2A2D),
 	}
 }

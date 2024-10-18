@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_multisample<br/>GL_EXT_multisampled_render_to_texture</remarks>
 		public static void RenderbufferStorageMultisampleEXT(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleEXTNative(target, samples, internalformat, width, height);

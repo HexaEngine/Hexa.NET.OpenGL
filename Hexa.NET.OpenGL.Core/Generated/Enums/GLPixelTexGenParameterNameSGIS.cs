@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPixelTexGenParameterNameSGIS : uint
 	{
+		/// <summary>
+		/// Specifies the RGB source for pixel fragment (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentRgbSourceSgis = unchecked((uint)0x8354),
+
+		/// <summary>
+		/// Specifies the alpha source for pixel fragment (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentAlphaSourceSgis = unchecked((uint)0x8355),
 	}
 }

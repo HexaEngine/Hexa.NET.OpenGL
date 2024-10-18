@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void BindProgramARB(GLProgramTarget target, uint program)
 		{
 			BindProgramARBNative(target, program);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void DeleteProgramsARB(int n, uint* programs)
 		{
 			DeleteProgramsARBNative(n, programs);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void DeleteProgramsAR(uint program)
 		{
 			DeleteProgramsARBNative(1, &program);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void DeleteProgramsARB(int n, Span<uint> programs)
 		{
 			fixed (uint* pprograms0 = programs)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void DeleteProgramsARB(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -77,11 +97,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GenProgramsARB(int n, uint* programs)
 		{
 			GenProgramsARBNative(n, programs);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static uint GenProgramsAR()
 		{
 			uint result;
@@ -89,6 +117,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GenProgramsARB(int n, Span<uint> programs)
 		{
 			fixed (uint* pprograms0 = programs)
@@ -97,6 +129,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GenProgramsARB(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
@@ -115,11 +151,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramEnvParameterdvARB(GLProgramTarget target, uint index, double* @params)
 		{
 			GetProgramEnvParameterdvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramEnvParameterdvARB(GLProgramTarget target, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -128,6 +172,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramEnvParameterdvARB(GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -146,11 +194,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, float* @params)
 		{
 			GetProgramEnvParameterfvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, out float @params)
 		{
 			float pparams;
@@ -158,6 +214,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -176,11 +236,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramLocalParameterdvARB(GLProgramTarget target, uint index, double* @params)
 		{
 			GetProgramLocalParameterdvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramLocalParameterdvARB(GLProgramTarget target, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -189,6 +257,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramLocalParameterdvARB(GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -207,11 +279,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, float* @params)
 		{
 			GetProgramLocalParameterfvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, out float @params)
 		{
 			float pparams;
@@ -219,6 +299,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -237,16 +321,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramStringARB(GLProgramTarget target, GLProgramStringProperty pname, void* str)
 		{
 			GetProgramStringARBNative(target, pname, str);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramStringARB(GLProgramTarget target, GLProgramStringProperty pname, nint str)
 		{
 			GetProgramStringARBNative(target, pname, (void*)str);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramStringARB<TStr>(GLProgramTarget target, GLProgramStringProperty pname, Span<TStr> str) where TStr : unmanaged
 		{
 			fixed (TStr* pstr0 = str)
@@ -265,11 +361,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, int* @params)
 		{
 			GetProgramivARBNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, out int @params)
 		{
 			int pparams;
@@ -277,6 +381,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -295,6 +403,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static bool IsProgramARB(uint program)
 		{
 			byte ret = IsProgramARBNative(program);
@@ -311,6 +423,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4dARB(GLProgramTarget target, uint index, double x, double y, double z, double w)
 		{
 			ProgramEnvParameter4dARBNative(target, index, x, y, z, w);
@@ -326,11 +442,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4dvARB(GLProgramTarget target, uint index, double* @params)
 		{
 			ProgramEnvParameter4dvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4dvARB(GLProgramTarget target, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -339,6 +463,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4dvARB(GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -357,6 +485,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4fARB(GLProgramTarget target, uint index, float x, float y, float z, float w)
 		{
 			ProgramEnvParameter4fARBNative(target, index, x, y, z, w);
@@ -372,11 +504,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, float* @params)
 		{
 			ProgramEnvParameter4fvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, out float @params)
 		{
 			float pparams;
@@ -384,6 +524,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -402,6 +546,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4dARB(GLProgramTarget target, uint index, double x, double y, double z, double w)
 		{
 			ProgramLocalParameter4dARBNative(target, index, x, y, z, w);
@@ -417,11 +565,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4dvARB(GLProgramTarget target, uint index, double* @params)
 		{
 			ProgramLocalParameter4dvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4dvARB(GLProgramTarget target, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -430,6 +586,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4dvARB(GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -448,6 +608,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4fARB(GLProgramTarget target, uint index, float x, float y, float z, float w)
 		{
 			ProgramLocalParameter4fARBNative(target, index, x, y, z, w);
@@ -463,11 +627,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, float* @params)
 		{
 			ProgramLocalParameter4fvARBNative(target, index, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, out float @params)
 		{
 			float pparams;
@@ -475,6 +647,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -493,16 +669,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramStringARB(GLProgramTarget target, GLProgramFormat format, int len, void* str)
 		{
 			ProgramStringARBNative(target, format, len, str);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramStringARB(GLProgramTarget target, GLProgramFormat format, int len, nint str)
 		{
 			ProgramStringARBNative(target, format, len, (void*)str);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		public static void ProgramStringARB<TStr>(GLProgramTarget target, GLProgramFormat format, int len, Span<TStr> str) where TStr : unmanaged
 		{
 			fixed (TStr* pstr0 = str)

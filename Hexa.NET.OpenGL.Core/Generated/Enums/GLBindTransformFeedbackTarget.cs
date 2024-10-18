@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLBindTransformFeedbackTarget : uint
 	{
+		/// <summary>
+		/// Specifies the transform feedback target.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_EXT_debug_label<br/>GL_ARB_transform_feedback2</remarks>
 		Feedback = unchecked((uint)0x8E22),
 	}
 }

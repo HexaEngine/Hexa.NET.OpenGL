@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void BindVertexArrayOES(uint array)
 		{
 			BindVertexArrayOESNative(array);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void DeleteVertexArraysOES(int n, uint* arrays)
 		{
 			DeleteVertexArraysOESNative(n, arrays);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void DeleteVertexArraysOE(uint array)
 		{
 			DeleteVertexArraysOESNative(1, &array);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void DeleteVertexArraysOES(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void DeleteVertexArraysOES(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -77,11 +97,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void GenVertexArraysOES(int n, uint* arrays)
 		{
 			GenVertexArraysOESNative(n, arrays);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static uint GenVertexArraysOE()
 		{
 			uint result;
@@ -89,6 +117,10 @@ namespace Hexa.NET.OpenGLES.OES
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void GenVertexArraysOES(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -97,6 +129,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static void GenVertexArraysOES(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -115,6 +151,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
 		public static bool IsVertexArrayOES(uint array)
 		{
 			byte ret = IsVertexArrayOESNative(array);

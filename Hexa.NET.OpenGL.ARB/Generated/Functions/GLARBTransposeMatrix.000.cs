@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void LoadTransposeMatrixdARB(double* m)
 		{
 			LoadTransposeMatrixdARBNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void LoadTransposeMatrixdARB(Span<double> m)
 		{
 			fixed (double* pm0 = m)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void LoadTransposeMatrixdARB(ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void LoadTransposeMatrixfARB(float* m)
 		{
 			LoadTransposeMatrixfARBNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void LoadTransposeMatrixfARB(Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -70,6 +90,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void LoadTransposeMatrixfARB(ref float m)
 		{
 			fixed (float* pm0 = &m)
@@ -88,11 +112,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void MultTransposeMatrixdARB(double* m)
 		{
 			MultTransposeMatrixdARBNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void MultTransposeMatrixdARB(Span<double> m)
 		{
 			fixed (double* pm0 = m)
@@ -101,6 +133,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void MultTransposeMatrixdARB(ref double m)
 		{
 			fixed (double* pm0 = &m)
@@ -119,11 +155,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void MultTransposeMatrixfARB(float* m)
 		{
 			MultTransposeMatrixfARBNative(m);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void MultTransposeMatrixfARB(Span<float> m)
 		{
 			fixed (float* pm0 = m)
@@ -132,6 +176,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
 		public static void MultTransposeMatrixfARB(ref float m)
 		{
 			fixed (float* pm0 = &m)

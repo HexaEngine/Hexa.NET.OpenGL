@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a level of a texture to an image unit
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		public static void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			BindImageTextureNative(unit, texture, level, layered, layer, access, format);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Defines a barrier ordering memory transactions
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		public static void MemoryBarrier(GLMemoryBarrierMask barriers)
 		{
 			MemoryBarrierNative(barriers);

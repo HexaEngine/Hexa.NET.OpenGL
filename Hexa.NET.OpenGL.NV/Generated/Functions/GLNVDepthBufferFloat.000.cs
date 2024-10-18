@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		public static void ClearDepthdNV(double depth)
 		{
 			ClearDepthdNVNative(depth);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		public static void DepthBoundsdNV(double zmin, double zmax)
 		{
 			DepthBoundsdNVNative(zmin, zmax);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		public static void DepthRangedNV(double zNear, double zFar)
 		{
 			DepthRangedNVNative(zNear, zFar);

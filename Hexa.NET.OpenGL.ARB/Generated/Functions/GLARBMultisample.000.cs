@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_multisample</remarks>
 		public static void SampleCoverageARB(float value, bool invert)
 		{
 			SampleCoverageARBNative(value, invert);

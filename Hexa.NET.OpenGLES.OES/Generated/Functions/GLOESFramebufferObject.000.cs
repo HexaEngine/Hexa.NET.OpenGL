@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void BindFramebufferOES(GLFramebufferTarget target, uint framebuffer)
 		{
 			BindFramebufferOESNative(target, framebuffer);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void BindRenderbufferOES(GLRenderbufferTarget target, uint renderbuffer)
 		{
 			BindRenderbufferOESNative(target, renderbuffer);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static GLEnum CheckFramebufferStatusOES(GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckFramebufferStatusOESNative(target);
@@ -72,16 +84,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteFramebuffersOES(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersOESNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteFramebuffersOE(uint framebuffer)
 		{
 			DeleteFramebuffersOESNative(1, &framebuffer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteFramebuffersOES(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -90,6 +114,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteFramebuffersOES(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -108,16 +136,28 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersOES(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersOESNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersOE(uint renderbuffer)
 		{
 			DeleteRenderbuffersOESNative(1, &renderbuffer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersOES(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -126,6 +166,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void DeleteRenderbuffersOES(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -144,6 +188,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void FramebufferRenderbufferOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
 		{
 			FramebufferRenderbufferOESNative(target, attachment, renderbuffertarget, renderbuffer);
@@ -159,6 +207,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void FramebufferTexture2DOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture2DOESNative(target, attachment, textarget, texture, level);
@@ -174,11 +226,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenFramebuffersOES(int n, uint* framebuffers)
 		{
 			GenFramebuffersOESNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static uint GenFramebuffersOE()
 		{
 			uint result;
@@ -186,6 +246,10 @@ namespace Hexa.NET.OpenGLES.OES
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenFramebuffersOES(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -194,6 +258,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenFramebuffersOES(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -212,11 +280,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenRenderbuffersOES(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersOESNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static uint GenRenderbuffersOE()
 		{
 			uint result;
@@ -224,6 +300,10 @@ namespace Hexa.NET.OpenGLES.OES
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenRenderbuffersOES(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -232,6 +312,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenRenderbuffersOES(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -250,6 +334,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GenerateMipmapOES(GLTextureTarget target)
 		{
 			GenerateMipmapOESNative(target);
@@ -265,11 +353,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparams;
@@ -277,6 +373,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -295,11 +395,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
 		{
 			GetRenderbufferParameterivOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
 			int pparams;
@@ -307,6 +415,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -325,6 +437,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static bool IsFramebufferOES(uint framebuffer)
 		{
 			byte ret = IsFramebufferOESNative(framebuffer);
@@ -341,6 +457,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static bool IsRenderbufferOES(uint renderbuffer)
 		{
 			byte ret = IsRenderbufferOESNative(renderbuffer);
@@ -357,6 +477,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		public static void RenderbufferStorageOES(GLRenderbufferTarget target, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageOESNative(target, internalformat, width, height);

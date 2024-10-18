@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
 		public static void QueryObjectParameteruiAMD(GLQueryTarget target, uint id, GLEnum pname, GLOcclusionQueryEventMaskAMD param)
 		{
 			QueryObjectParameteruiAMDNative(target, id, pname, param);

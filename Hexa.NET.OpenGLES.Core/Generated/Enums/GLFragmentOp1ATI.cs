@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentOp1ATI : uint
 	{
+		/// <summary>
+		/// Specifies the move operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		MovAti = unchecked((uint)0x8961),
 	}
 }

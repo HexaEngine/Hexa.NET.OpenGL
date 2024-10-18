@@ -15,39 +15,208 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPixelFormat : uint
 	{
+		/// <summary>
+		/// Specifies an unsigned short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ANGLE_depth_texture<br/>GL_OES_depth_texture</remarks>
 		UnsignedShort = unchecked((uint)0x1403),
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ANGLE_depth_texture<br/>GL_OES_depth_texture<br/>GL_OES_element_index_uint</remarks>
 		UnsignedInt = unchecked((uint)0x1405),
+
+		/// <summary>
+		/// Specifies color index mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorIndex = unchecked((uint)0x1900),
+
+		/// <summary>
+		/// Specifies the stencil index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_stencil8</remarks>
 		StencilIndex = unchecked((uint)0x1901),
+
+		/// <summary>
+		/// Specifies a depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ANGLE_depth_texture<br/>GL_OES_depth_texture</remarks>
 		DepthComponent = unchecked((uint)0x1902),
+
+		/// <summary>
+		/// Specifies the red color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Red = unchecked((uint)0x1903),
+
+		/// <summary>
+		/// Specifies the red color component for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_rg</remarks>
 		RedExt = unchecked((uint)0x1903),
+
+		/// <summary>
+		/// Specifies the green color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Green = unchecked((uint)0x1904),
+
+		/// <summary>
+		/// Specifies the blue color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Blue = unchecked((uint)0x1905),
+
+		/// <summary>
+		/// Specifies the alpha component for transparency.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Alpha = unchecked((uint)0x1906),
+
+		/// <summary>
+		/// Specifies a color in RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Rgb = unchecked((uint)0x1907),
+
+		/// <summary>
+		/// Specifies a color in RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Rgba = unchecked((uint)0x1908),
+
+		/// <summary>
+		/// Specifies a grayscale color value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Luminance = unchecked((uint)0x1909),
+
+		/// <summary>
+		/// Specifies a grayscale value with an alpha channel.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LuminanceAlpha = unchecked((uint)0x190A),
+
+		/// <summary>
+		/// Specifies a color format with alpha, blue, green, and red channels for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_abgr</remarks>
 		AbgrExt = unchecked((uint)0x8000),
+
+		/// <summary>
+		/// Specifies a color format with cyan, magenta, yellow, and black channels for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
 		CmykExt = unchecked((uint)0x800C),
+
+		/// <summary>
+		/// Specifies a color format with cyan, magenta, yellow, black, and alpha channels for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
 		CmykaExt = unchecked((uint)0x800D),
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Bgr = unchecked((uint)0x80E0),
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bgra<br/>GL_MESA_bgra</remarks>
 		BgrExt = unchecked((uint)0x80E0),
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red, alpha.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_array_bgra<br/>GL_ARB_vertex_array_bgra</remarks>
 		Bgra = unchecked((uint)0x80E1),
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red, alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bgra<br/>GL_EXT_read_format_bgra<br/>GL_EXT_texture_format_BGRA8888<br/>GL_MESA_bgra</remarks>
 		BgraExt = unchecked((uint)0x80E1),
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red, alpha in image data.
+		/// </summary>
+		/// <remarks></remarks>
 		BgraImg = unchecked((uint)0x80E1),
+
+		/// <summary>
+		/// Specifies YCrCb 4:2:2 format (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Ycrcb422Sgix = unchecked((uint)0x81BB),
+
+		/// <summary>
+		/// Specifies YCrCb 4:4:4 format (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Ycrcb444Sgix = unchecked((uint)0x81BC),
+
+		/// <summary>
+		/// Specifies RG color format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		Rg = unchecked((uint)0x8227),
+
+		/// <summary>
+		/// Specifies RG integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
 		RgInteger = unchecked((uint)0x8228),
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DepthStencil = unchecked((uint)0x84F9),
+
+		/// <summary>
+		/// Specifies the red integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RedInteger = unchecked((uint)0x8D94),
+
+		/// <summary>
+		/// Specifies the green integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GreenInteger = unchecked((uint)0x8D95),
+
+		/// <summary>
+		/// Specifies the blue integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlueInteger = unchecked((uint)0x8D96),
+
+		/// <summary>
+		/// Specifies the RGB integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RgbInteger = unchecked((uint)0x8D98),
+
+		/// <summary>
+		/// Specifies the RGBA integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RgbaInteger = unchecked((uint)0x8D99),
+
+		/// <summary>
+		/// Specifies the BGR integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BgrInteger = unchecked((uint)0x8D9A),
+
+		/// <summary>
+		/// Specifies the BGRA integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BgraInteger = unchecked((uint)0x8D9B),
 	}
 }

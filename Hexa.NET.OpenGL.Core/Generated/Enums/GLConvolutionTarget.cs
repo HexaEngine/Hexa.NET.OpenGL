@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLConvolutionTarget : uint
 	{
+		/// <summary>
+		/// Specifies 1D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Convolution1D = unchecked((uint)0x8010),
+
+		/// <summary>
+		/// Specifies 2D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Convolution2D = unchecked((uint)0x8011),
 	}
 }

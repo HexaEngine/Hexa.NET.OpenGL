@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		public static void TexStorage1DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			TexStorage1DEXTNative(target, levels, internalformat, width);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		public static void TexStorage2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			TexStorage2DEXTNative(target, levels, internalformat, width, height);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		public static void TexStorage3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			TexStorage3DEXTNative(target, levels, internalformat, width, height, depth);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_texture_storage</remarks>
 		public static void TextureStorage1DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			TextureStorage1DEXTNative(texture, target, levels, internalformat, width);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_texture_storage</remarks>
 		public static void TextureStorage2DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			TextureStorage2DEXTNative(texture, target, levels, internalformat, width, height);
@@ -101,6 +121,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_texture_storage</remarks>
 		public static void TextureStorage3DEXT(uint texture, GLEnum target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			TextureStorage3DEXTNative(texture, target, levels, internalformat, width, height, depth);

@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLImageTransformTargetHP : uint
 	{
+		/// <summary>
+		/// Specifies 2D image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Transform2DHp = unchecked((uint)0x8161),
 	}
 }

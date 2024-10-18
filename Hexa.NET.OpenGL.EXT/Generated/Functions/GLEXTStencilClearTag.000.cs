@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_stencil_clear_tag</remarks>
 		public static void StencilClearTagEXT(int stencilTagBits, uint stencilClearTag)
 		{
 			StencilClearTagEXTNative(stencilTagBits, stencilClearTag);

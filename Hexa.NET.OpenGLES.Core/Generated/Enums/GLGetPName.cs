@@ -15,618 +15,3682 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLGetPName : uint
 	{
+		/// <summary>
+		/// Current color used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentColor = unchecked((uint)0x0B00),
+
+		/// <summary>
+		/// Current color index used for indexed colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentIndex = unchecked((uint)0x0B01),
+
+		/// <summary>
+		/// Current normal vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentNormal = unchecked((uint)0x0B02),
+
+		/// <summary>
+		/// Current texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentTextureCoords = unchecked((uint)0x0B03),
+
+		/// <summary>
+		/// Current color for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentRasterColor = unchecked((uint)0x0B04),
+
+		/// <summary>
+		/// Current color index for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentRasterIndex = unchecked((uint)0x0B05),
+
+		/// <summary>
+		/// Current texture coordinates for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentRasterTextureCoords = unchecked((uint)0x0B06),
+
+		/// <summary>
+		/// Current position for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentRasterPosition = unchecked((uint)0x0B07),
+
+		/// <summary>
+		/// Indicates if the current raster position is valid.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentRasterPositionValid = unchecked((uint)0x0B08),
+
+		/// <summary>
+		/// Current distance for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentRasterDistance = unchecked((uint)0x0B09),
+
+		/// <summary>
+		/// Indicates point smoothing is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSmooth = unchecked((uint)0x0B10),
+
+		/// <summary>
+		/// Current size of points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSize = unchecked((uint)0x0B11),
+
+		/// <summary>
+		/// Range of valid point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSizeRange = unchecked((uint)0x0B12),
+
+		/// <summary>
+		/// Range of smooth point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SmoothPointSizeRange = unchecked((uint)0x0B12),
+
+		/// <summary>
+		/// Granularity of point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSizeGranularity = unchecked((uint)0x0B13),
+
+		/// <summary>
+		/// Granularity of smooth point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SmoothPointSizeGranularity = unchecked((uint)0x0B13),
+
+		/// <summary>
+		/// Indicates line smoothing is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineSmooth = unchecked((uint)0x0B20),
+
+		/// <summary>
+		/// Current width of lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineWidth = unchecked((uint)0x0B21),
+
+		/// <summary>
+		/// Range of valid line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineWidthRange = unchecked((uint)0x0B22),
+
+		/// <summary>
+		/// Range of smooth line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SmoothLineWidthRange = unchecked((uint)0x0B22),
+
+		/// <summary>
+		/// Granularity of line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineWidthGranularity = unchecked((uint)0x0B23),
+
+		/// <summary>
+		/// Granularity of smooth line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SmoothLineWidthGranularity = unchecked((uint)0x0B23),
+
+		/// <summary>
+		/// Indicates line stipple pattern is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineStipple = unchecked((uint)0x0B24),
+
+		/// <summary>
+		/// Current line stipple pattern.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineStipplePattern = unchecked((uint)0x0B25),
+
+		/// <summary>
+		/// Repeat factor for line stipple pattern.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineStippleRepeat = unchecked((uint)0x0B26),
+
+		/// <summary>
+		/// Indicates the current display list mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ListMode = unchecked((uint)0x0B30),
+
+		/// <summary>
+		/// Maximum allowed nesting of display lists.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxListNesting = unchecked((uint)0x0B31),
+
+		/// <summary>
+		/// Base index for display lists.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ListBase = unchecked((uint)0x0B32),
+
+		/// <summary>
+		/// Current index for display lists.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ListIndex = unchecked((uint)0x0B33),
+
+		/// <summary>
+		/// Specifies the rendering mode for polygons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonMode = unchecked((uint)0x0B40),
+
+		/// <summary>
+		/// Enables or disables polygon smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonSmooth = unchecked((uint)0x0B41),
+
+		/// <summary>
+		/// Enables or disables polygon stippling.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonStipple = unchecked((uint)0x0B42),
+
+		/// <summary>
+		/// Indicates if edge vertices are to be rendered.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		EdgeFlag = unchecked((uint)0x0B43),
+
+		/// <summary>
+		/// Enables or disables face culling.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CullFace = unchecked((uint)0x0B44),
+
+		/// <summary>
+		/// Specifies the culling mode (front, back, or both).
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CullFaceMode = unchecked((uint)0x0B45),
+
+		/// <summary>
+		/// Specifies the front face winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FrontFace = unchecked((uint)0x0B46),
+
+		/// <summary>
+		/// Enables or disables lighting calculations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Lighting = unchecked((uint)0x0B50),
+
+		/// <summary>
+		/// Specifies whether local viewer lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LightModelLocalViewer = unchecked((uint)0x0B51),
+
+		/// <summary>
+		/// Specifies if two-sided lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LightModelTwoSide = unchecked((uint)0x0B52),
+
+		/// <summary>
+		/// Specifies the ambient light color.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LightModelAmbient = unchecked((uint)0x0B53),
+
+		/// <summary>
+		/// Specifies the shading model (flat or smooth).
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ShadeModel = unchecked((uint)0x0B54),
+
+		/// <summary>
+		/// Specifies which face to apply color material to.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorMaterialFace = unchecked((uint)0x0B55),
+
+		/// <summary>
+		/// Specifies which material property is affected by color material.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorMaterialParameter = unchecked((uint)0x0B56),
+
+		/// <summary>
+		/// Enables or disables color material.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorMaterial = unchecked((uint)0x0B57),
+
+		/// <summary>
+		/// Enables or disables fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Fog = unchecked((uint)0x0B60),
+
+		/// <summary>
+		/// Specifies the fog index value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogIndex = unchecked((uint)0x0B61),
+
+		/// <summary>
+		/// Specifies the density of the fog.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogDensity = unchecked((uint)0x0B62),
+
+		/// <summary>
+		/// Specifies the starting distance for fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogStart = unchecked((uint)0x0B63),
+
+		/// <summary>
+		/// Specifies the ending distance for fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogEnd = unchecked((uint)0x0B64),
+
+		/// <summary>
+		/// Specifies the fog mode (exp, exp2, linear).
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogMode = unchecked((uint)0x0B65),
+
+		/// <summary>
+		/// Specifies the color of the fog.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogColor = unchecked((uint)0x0B66),
+
+		/// <summary>
+		/// Specifies the mapping of depth values to normalized device coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array<br/>GL_NV_viewport_array<br/>GL_OES_viewport_array</remarks>
 		DepthRange = unchecked((uint)0x0B70),
+
+		/// <summary>
+		/// Enables or disables depth testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthTest = unchecked((uint)0x0B71),
+
+		/// <summary>
+		/// Enables or disables writing to the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthWritemask = unchecked((uint)0x0B72),
+
+		/// <summary>
+		/// Specifies the clear value for the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthClearValue = unchecked((uint)0x0B73),
+
+		/// <summary>
+		/// Specifies the function used for depth comparisons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthFunc = unchecked((uint)0x0B74),
+
+		/// <summary>
+		/// Specifies the clear value for the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccumClearValue = unchecked((uint)0x0B80),
+
+		/// <summary>
+		/// Enables or disables stencil testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilTest = unchecked((uint)0x0B90),
+
+		/// <summary>
+		/// Specifies the clear value for the stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilClearValue = unchecked((uint)0x0B91),
+
+		/// <summary>
+		/// Specifies the function used for stencil testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilFunc = unchecked((uint)0x0B92),
+
+		/// <summary>
+		/// Specifies the mask used for stencil values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilValueMask = unchecked((uint)0x0B93),
+
+		/// <summary>
+		/// Specifies the action to take on stencil test failure.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilFail = unchecked((uint)0x0B94),
+
+		/// <summary>
+		/// Specifies action on stencil test success but depth test failure.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilPassDepthFail = unchecked((uint)0x0B95),
+
+		/// <summary>
+		/// Specifies action on stencil test and depth test success.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilPassDepthPass = unchecked((uint)0x0B96),
+
+		/// <summary>
+		/// Specifies the reference value for stencil testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilRef = unchecked((uint)0x0B97),
+
+		/// <summary>
+		/// Specifies the mask for writing stencil values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilWritemask = unchecked((uint)0x0B98),
+
+		/// <summary>
+		/// Specifies the current matrix mode (modelview, projection, etc.).
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MatrixMode = unchecked((uint)0x0BA0),
+
+		/// <summary>
+		/// Enables or disables normalization of normals.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Normalize = unchecked((uint)0x0BA1),
+
+		/// <summary>
+		/// Specifies the viewport dimensions.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array<br/>GL_NV_viewport_array<br/>GL_OES_viewport_array</remarks>
 		Viewport = unchecked((uint)0x0BA2),
+
+		/// <summary>
+		/// Current depth of the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ModelviewStackDepth = unchecked((uint)0x0BA3),
+
+		/// <summary>
+		/// Modelview stack depth for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		Modelview0StackDepthExt = unchecked((uint)0x0BA3),
+
+		/// <summary>
+		/// Current depth of the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ProjectionStackDepth = unchecked((uint)0x0BA4),
+
+		/// <summary>
+		/// Current depth of the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureStackDepth = unchecked((uint)0x0BA5),
+
+		/// <summary>
+		/// Current modelview matrix.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ModelviewMatrix = unchecked((uint)0x0BA6),
+
+		/// <summary>
+		/// Modelview matrix for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		Modelview0MatrixExt = unchecked((uint)0x0BA6),
+
+		/// <summary>
+		/// Current projection matrix.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ProjectionMatrix = unchecked((uint)0x0BA7),
+
+		/// <summary>
+		/// Current texture matrix.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureMatrix = unchecked((uint)0x0BA8),
+
+		/// <summary>
+		/// Current depth of the attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AttribStackDepth = unchecked((uint)0x0BB0),
+
+		/// <summary>
+		/// Current depth of the client attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClientAttribStackDepth = unchecked((uint)0x0BB1),
+
+		/// <summary>
+		/// Enables or disables alpha testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaTest = unchecked((uint)0x0BC0),
+
+		/// <summary>
+		/// Alpha testing, specific to QCOM extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaTestQcom = unchecked((uint)0x0BC0),
+
+		/// <summary>
+		/// Specifies the function for alpha testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaTestFunc = unchecked((uint)0x0BC1),
+
+		/// <summary>
+		/// Alpha test function for QCOM extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaTestFuncQcom = unchecked((uint)0x0BC1),
+
+		/// <summary>
+		/// Specifies the reference value for alpha testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaTestRef = unchecked((uint)0x0BC2),
+
+		/// <summary>
+		/// Reference value for alpha testing, specific to QCOM.
+		/// </summary>
+		/// <remarks></remarks>
 		AlphaTestRefQcom = unchecked((uint)0x0BC2),
+
+		/// <summary>
+		/// Enables or disables dithering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Dither = unchecked((uint)0x0BD0),
+
+		/// <summary>
+		/// Specifies the destination factor for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlendDst = unchecked((uint)0x0BE0),
+
+		/// <summary>
+		/// Specifies the source factor for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlendSrc = unchecked((uint)0x0BE1),
+
+		/// <summary>
+		/// Enables or disables blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Blend = unchecked((uint)0x0BE2),
+
+		/// <summary>
+		/// Specifies the current logical operation mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LogicOpMode = unchecked((uint)0x0BF0),
+
+		/// <summary>
+		/// Enables or disables index logic operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexLogicOp = unchecked((uint)0x0BF1),
+
+		/// <summary>
+		/// Specifies the logical operation to perform.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LogicOp = unchecked((uint)0x0BF1),
+
+		/// <summary>
+		/// Enables or disables color logic operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorLogicOp = unchecked((uint)0x0BF2),
+
+		/// <summary>
+		/// Number of auxiliary color buffers available.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AuxBuffers = unchecked((uint)0x0C00),
+
+		/// <summary>
+		/// Specifies the current draw buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DrawBuffer = unchecked((uint)0x0C01),
+
+		/// <summary>
+		/// Specifies the current draw buffer, specific to EXT.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		DrawBufferExt = unchecked((uint)0x0C01),
+
+		/// <summary>
+		/// Specifies the buffer into which pixel data is read.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ReadBuffer = unchecked((uint)0x0C02),
+
+		/// <summary>
+		/// Specifies the read buffer, specific to EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		ReadBufferExt = unchecked((uint)0x0C02),
+
+		/// <summary>
+		/// Specifies the read buffer, specific to NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_read_buffer</remarks>
 		ReadBufferNv = unchecked((uint)0x0C02),
+
+		/// <summary>
+		/// Specifies the rectangle that bounds the scissor test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array<br/>GL_NV_viewport_array<br/>GL_OES_viewport_array</remarks>
 		ScissorBox = unchecked((uint)0x0C10),
+
+		/// <summary>
+		/// Enables or disables the scissor test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array<br/>GL_NV_viewport_array<br/>GL_OES_viewport_array</remarks>
 		ScissorTest = unchecked((uint)0x0C11),
+
+		/// <summary>
+		/// Specifies the clear value for the index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexClearValue = unchecked((uint)0x0C20),
+
+		/// <summary>
+		/// Specifies the write mask for the index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexWritemask = unchecked((uint)0x0C21),
+
+		/// <summary>
+		/// Specifies the clear value for the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorClearValue = unchecked((uint)0x0C22),
+
+		/// <summary>
+		/// Specifies the write mask for the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		ColorWritemask = unchecked((uint)0x0C23),
+
+		/// <summary>
+		/// Specifies whether to use color index or RGBA mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexMode = unchecked((uint)0x0C30),
+
+		/// <summary>
+		/// Specifies that RGBA mode is used.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RgbaMode = unchecked((uint)0x0C31),
+
+		/// <summary>
+		/// Enables or disables double buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Doublebuffer = unchecked((uint)0x0C32),
+
+		/// <summary>
+		/// Enables or disables stereo buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Stereo = unchecked((uint)0x0C33),
+
+		/// <summary>
+		/// Specifies the rendering mode (e.g., selection or rendering).
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RenderMode = unchecked((uint)0x0C40),
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for perspective correction.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PerspectiveCorrectionHint = unchecked((uint)0x0C50),
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for point smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSmoothHint = unchecked((uint)0x0C51),
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for line smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LineSmoothHint = unchecked((uint)0x0C52),
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for polygon smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonSmoothHint = unchecked((uint)0x0C53),
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for fog calculations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FogHint = unchecked((uint)0x0C54),
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the S coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureGenS = unchecked((uint)0x0C60),
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the T coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureGenT = unchecked((uint)0x0C61),
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the R coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureGenR = unchecked((uint)0x0C62),
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the Q coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureGenQ = unchecked((uint)0x0C63),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to index mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapIToISize = unchecked((uint)0x0CB0),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for color index to color index mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapSToSSize = unchecked((uint)0x0CB1),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to red component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapIToRSize = unchecked((uint)0x0CB2),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to green component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapIToGSize = unchecked((uint)0x0CB3),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to blue component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapIToBSize = unchecked((uint)0x0CB4),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to alpha component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapIToASize = unchecked((uint)0x0CB5),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for red to red mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapRToRSize = unchecked((uint)0x0CB6),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for green to green mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapGToGSize = unchecked((uint)0x0CB7),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for blue to blue mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapBToBSize = unchecked((uint)0x0CB8),
+
+		/// <summary>
+		/// Specifies the size of the pixel map for alpha to alpha mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelMapAToASize = unchecked((uint)0x0CB9),
+
+		/// <summary>
+		/// Enables or disables swapping of bytes when unpacking pixel data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackSwapBytes = unchecked((uint)0x0CF0),
+
+		/// <summary>
+		/// Specifies whether the least significant bit is unpacked first.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackLsbFirst = unchecked((uint)0x0CF1),
+
+		/// <summary>
+		/// Specifies the number of pixels in a row when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackRowLength = unchecked((uint)0x0CF2),
+
+		/// <summary>
+		/// Specifies the number of rows to skip when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackSkipRows = unchecked((uint)0x0CF3),
+
+		/// <summary>
+		/// Specifies the number of pixels to skip when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackSkipPixels = unchecked((uint)0x0CF4),
+
+		/// <summary>
+		/// Specifies the alignment of pixel data in memory when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackAlignment = unchecked((uint)0x0CF5),
+
+		/// <summary>
+		/// Enables or disables swapping of bytes when packing pixel data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackSwapBytes = unchecked((uint)0x0D00),
+
+		/// <summary>
+		/// Specifies whether the least significant bit is packed first.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackLsbFirst = unchecked((uint)0x0D01),
+
+		/// <summary>
+		/// Specifies the number of pixels in a row when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackRowLength = unchecked((uint)0x0D02),
+
+		/// <summary>
+		/// Specifies the row length for packing, specific to NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pack_subimage</remarks>
 		PackRowLengthNv = unchecked((uint)0x0D02),
+
+		/// <summary>
+		/// Specifies the number of rows to skip when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackSkipRows = unchecked((uint)0x0D03),
+
+		/// <summary>
+		/// Specifies the number of rows to skip, specific to NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pack_subimage</remarks>
 		PackSkipRowsNv = unchecked((uint)0x0D03),
+
+		/// <summary>
+		/// Specifies the number of pixels to skip when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackSkipPixels = unchecked((uint)0x0D04),
+
+		/// <summary>
+		/// Specifies the number of pixels to skip, specific to NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pack_subimage</remarks>
 		PackSkipPixelsNv = unchecked((uint)0x0D04),
+
+		/// <summary>
+		/// Specifies the alignment of pixel data in memory when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackAlignment = unchecked((uint)0x0D05),
+
+		/// <summary>
+		/// Enables or disables color mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapColor = unchecked((uint)0x0D10),
+
+		/// <summary>
+		/// Enables or disables stencil mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapStencil = unchecked((uint)0x0D11),
+
+		/// <summary>
+		/// Specifies a shift value for index values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexShift = unchecked((uint)0x0D12),
+
+		/// <summary>
+		/// Specifies an offset for index values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexOffset = unchecked((uint)0x0D13),
+
+		/// <summary>
+		/// Specifies a scale factor for red component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RedScale = unchecked((uint)0x0D14),
+
+		/// <summary>
+		/// Specifies a bias for red component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RedBias = unchecked((uint)0x0D15),
+
+		/// <summary>
+		/// Specifies the zoom factor in the X direction.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ZoomX = unchecked((uint)0x0D16),
+
+		/// <summary>
+		/// Specifies the zoom factor in the Y direction.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ZoomY = unchecked((uint)0x0D17),
+
+		/// <summary>
+		/// Specifies a scale factor for green component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GreenScale = unchecked((uint)0x0D18),
+
+		/// <summary>
+		/// Specifies a bias for green component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GreenBias = unchecked((uint)0x0D19),
+
+		/// <summary>
+		/// Specifies a scale factor for blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlueScale = unchecked((uint)0x0D1A),
+
+		/// <summary>
+		/// Specifies a bias for blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlueBias = unchecked((uint)0x0D1B),
+
+		/// <summary>
+		/// Specifies a scale factor for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaScale = unchecked((uint)0x0D1C),
+
+		/// <summary>
+		/// Specifies a bias for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaBias = unchecked((uint)0x0D1D),
+
+		/// <summary>
+		/// Specifies a scale factor for depth values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthScale = unchecked((uint)0x0D1E),
+
+		/// <summary>
+		/// Specifies a bias factor for depth values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthBias = unchecked((uint)0x0D1F),
+
+		/// <summary>
+		/// Specifies the maximum order of evaluation for the evaluation functions.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxEvalOrder = unchecked((uint)0x0D30),
+
+		/// <summary>
+		/// Specifies the maximum number of light sources supported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxLights = unchecked((uint)0x0D31),
+
+		/// <summary>
+		/// Specifies the maximum number of clipping planes supported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxClipPlanes = unchecked((uint)0x0D32),
+
+		/// <summary>
+		/// Specifies the maximum number of clip distances.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxClipDistances = unchecked((uint)0x0D32),
+
+		/// <summary>
+		/// Specifies the maximum dimensions of a texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxTextureSize = unchecked((uint)0x0D33),
+
+		/// <summary>
+		/// Specifies the maximum size of the pixel map table.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxPixelMapTable = unchecked((uint)0x0D34),
+
+		/// <summary>
+		/// Specifies the maximum depth of the attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxAttribStackDepth = unchecked((uint)0x0D35),
+
+		/// <summary>
+		/// Specifies the maximum depth of the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxModelviewStackDepth = unchecked((uint)0x0D36),
+
+		/// <summary>
+		/// Specifies the maximum depth of the name stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxNameStackDepth = unchecked((uint)0x0D37),
+
+		/// <summary>
+		/// Specifies the maximum depth of the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxProjectionStackDepth = unchecked((uint)0x0D38),
+
+		/// <summary>
+		/// Specifies the maximum depth of the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxTextureStackDepth = unchecked((uint)0x0D39),
+
+		/// <summary>
+		/// Specifies the maximum dimensions of the viewport.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxViewportDims = unchecked((uint)0x0D3A),
+
+		/// <summary>
+		/// Specifies the maximum depth of the client attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxClientAttribStackDepth = unchecked((uint)0x0D3B),
+
+		/// <summary>
+		/// Specifies the number of bits used for subpixel precision.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SubpixelBits = unchecked((uint)0x0D50),
+
+		/// <summary>
+		/// Specifies the number of bits used for index values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexBits = unchecked((uint)0x0D51),
+
+		/// <summary>
+		/// Specifies the number of bits used for the red component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RedBits = unchecked((uint)0x0D52),
+
+		/// <summary>
+		/// Specifies the number of bits used for the green component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		GreenBits = unchecked((uint)0x0D53),
+
+		/// <summary>
+		/// Specifies the number of bits used for the blue component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		BlueBits = unchecked((uint)0x0D54),
+
+		/// <summary>
+		/// Specifies the number of bits used for the alpha component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaBits = unchecked((uint)0x0D55),
+
+		/// <summary>
+		/// Specifies the number of bits used for depth buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthBits = unchecked((uint)0x0D56),
+
+		/// <summary>
+		/// Specifies the number of bits used for stencil buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBits = unchecked((uint)0x0D57),
+
+		/// <summary>
+		/// Specifies the number of bits used for the red component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccumRedBits = unchecked((uint)0x0D58),
+
+		/// <summary>
+		/// Specifies the number of bits used for the green component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccumGreenBits = unchecked((uint)0x0D59),
+
+		/// <summary>
+		/// Specifies the number of bits used for the blue component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccumBlueBits = unchecked((uint)0x0D5A),
+
+		/// <summary>
+		/// Specifies the number of bits used for the alpha component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccumAlphaBits = unchecked((uint)0x0D5B),
+
+		/// <summary>
+		/// Specifies the current depth of the name stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StackDepth = unchecked((uint)0x0D70),
+
+		/// <summary>
+		/// Enables or disables automatic normal generation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AutoNormal = unchecked((uint)0x0D80),
+
+		/// <summary>
+		/// Specifies a one-dimensional color map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1Color4 = unchecked((uint)0x0D90),
+
+		/// <summary>
+		/// Specifies a one-dimensional index map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1Index = unchecked((uint)0x0D91),
+
+		/// <summary>
+		/// Specifies a one-dimensional normal map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1Normal = unchecked((uint)0x0D92),
+
+		/// <summary>
+		/// Specifies the first texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1TextureCoord1 = unchecked((uint)0x0D93),
+
+		/// <summary>
+		/// Specifies the second texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1TextureCoord2 = unchecked((uint)0x0D94),
+
+		/// <summary>
+		/// Specifies the third texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1TextureCoord3 = unchecked((uint)0x0D95),
+
+		/// <summary>
+		/// Specifies the fourth texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1TextureCoord4 = unchecked((uint)0x0D96),
+
+		/// <summary>
+		/// Specifies a three-dimensional vertex map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1Vertex3 = unchecked((uint)0x0D97),
+
+		/// <summary>
+		/// Specifies a four-dimensional vertex map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1Vertex4 = unchecked((uint)0x0D98),
+
+		/// <summary>
+		/// Specifies a two-dimensional color map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2Color4 = unchecked((uint)0x0DB0),
+
+		/// <summary>
+		/// Specifies a two-dimensional index map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2Index = unchecked((uint)0x0DB1),
+
+		/// <summary>
+		/// Specifies a two-dimensional normal map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2Normal = unchecked((uint)0x0DB2),
+
+		/// <summary>
+		/// Specifies the first texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2TextureCoord1 = unchecked((uint)0x0DB3),
+
+		/// <summary>
+		/// Specifies the second texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2TextureCoord2 = unchecked((uint)0x0DB4),
+
+		/// <summary>
+		/// Specifies the third texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2TextureCoord3 = unchecked((uint)0x0DB5),
+
+		/// <summary>
+		/// Specifies the fourth texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2TextureCoord4 = unchecked((uint)0x0DB6),
+
+		/// <summary>
+		/// Specifies a three-dimensional vertex map for two-dimensional evaluation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2Vertex3 = unchecked((uint)0x0DB7),
+
+		/// <summary>
+		/// Specifies a four-dimensional vertex map for two-dimensional evaluation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2Vertex4 = unchecked((uint)0x0DB8),
+
+		/// <summary>
+		/// Specifies the domain of a one-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1GridDomain = unchecked((uint)0x0DD0),
+
+		/// <summary>
+		/// Specifies the number of segments in a one-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map1GridSegments = unchecked((uint)0x0DD1),
+
+		/// <summary>
+		/// Specifies the domain of a two-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2GridDomain = unchecked((uint)0x0DD2),
+
+		/// <summary>
+		/// Specifies the number of segments in a two-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Map2GridSegments = unchecked((uint)0x0DD3),
+
+		/// <summary>
+		/// Specifies a one-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture1D = unchecked((uint)0x0DE0),
+
+		/// <summary>
+		/// Specifies a two-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_EXT_sparse_texture</remarks>
 		Texture2D = unchecked((uint)0x0DE1),
+
+		/// <summary>
+		/// Specifies the size of the feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FeedbackBufferSize = unchecked((uint)0x0DF1),
+
+		/// <summary>
+		/// Specifies the type of the feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FeedbackBufferType = unchecked((uint)0x0DF2),
+
+		/// <summary>
+		/// Specifies the size of the selection buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SelectionBufferSize = unchecked((uint)0x0DF4),
+
+		/// <summary>
+		/// Specifies the factor for polygon offset.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonOffsetUnits = unchecked((uint)0x2A00),
+
+		/// <summary>
+		/// Specifies polygon offset for point primitives.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonOffsetPoint = unchecked((uint)0x2A01),
+
+		/// <summary>
+		/// Specifies polygon offset for line primitives.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonOffsetLine = unchecked((uint)0x2A02),
+
+		/// <summary>
+		/// Specifies the first clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClipPlane0 = unchecked((uint)0x3000),
+
+		/// <summary>
+		/// Specifies the second clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClipPlane1 = unchecked((uint)0x3001),
+
+		/// <summary>
+		/// Specifies the third clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClipPlane2 = unchecked((uint)0x3002),
+
+		/// <summary>
+		/// Specifies the fourth clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClipPlane3 = unchecked((uint)0x3003),
+
+		/// <summary>
+		/// Specifies the fifth clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClipPlane4 = unchecked((uint)0x3004),
+
+		/// <summary>
+		/// Specifies the sixth clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClipPlane5 = unchecked((uint)0x3005),
+
+		/// <summary>
+		/// Specifies the first light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light0 = unchecked((uint)0x4000),
+
+		/// <summary>
+		/// Specifies the second light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light1 = unchecked((uint)0x4001),
+
+		/// <summary>
+		/// Specifies the third light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light2 = unchecked((uint)0x4002),
+
+		/// <summary>
+		/// Specifies the fourth light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light3 = unchecked((uint)0x4003),
+
+		/// <summary>
+		/// Specifies the fifth light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light4 = unchecked((uint)0x4004),
+
+		/// <summary>
+		/// Specifies the sixth light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light5 = unchecked((uint)0x4005),
+
+		/// <summary>
+		/// Specifies the seventh light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light6 = unchecked((uint)0x4006),
+
+		/// <summary>
+		/// Specifies the eighth light source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Light7 = unchecked((uint)0x4007),
+
+		/// <summary>
+		/// Specifies the blend color for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		BlendColor = unchecked((uint)0x8005),
+
+		/// <summary>
+		/// Specifies the blend color for blending operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_color</remarks>
 		BlendColorExt = unchecked((uint)0x8005),
+
+		/// <summary>
+		/// Specifies the blend equation for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		BlendEquation = unchecked((uint)0x8009),
+
+		/// <summary>
+		/// Specifies the blend equation for blending operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
 		BlendEquationExt = unchecked((uint)0x8009),
+
+		/// <summary>
+		/// Specifies the blend equation for blending (OES extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_blend_subtract</remarks>
 		BlendEquationOes = unchecked((uint)0x8009),
+
+		/// <summary>
+		/// Specifies the RGB blend equation for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		BlendEquationRgb = unchecked((uint)0x8009),
+
+		/// <summary>
+		/// Specifies hints for packing CMYK data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
 		PackCmykHintExt = unchecked((uint)0x800E),
+
+		/// <summary>
+		/// Specifies hints for unpacking CMYK data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
 		UnpackCmykHintExt = unchecked((uint)0x800F),
+
+		/// <summary>
+		/// Specifies 1D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		Convolution1DExt = unchecked((uint)0x8010),
+
+		/// <summary>
+		/// Specifies 2D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		Convolution2DExt = unchecked((uint)0x8011),
+
+		/// <summary>
+		/// Specifies separable 2D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		Separable2DExt = unchecked((uint)0x8012),
+
+		/// <summary>
+		/// Specifies the scale factor for the red component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionRedScaleExt = unchecked((uint)0x801C),
+
+		/// <summary>
+		/// Specifies the scale factor for the green component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionGreenScaleExt = unchecked((uint)0x801D),
+
+		/// <summary>
+		/// Specifies the scale factor for the blue component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionBlueScaleExt = unchecked((uint)0x801E),
+
+		/// <summary>
+		/// Specifies the scale factor for the alpha component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionAlphaScaleExt = unchecked((uint)0x801F),
+
+		/// <summary>
+		/// Specifies the bias for the red component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionRedBiasExt = unchecked((uint)0x8020),
+
+		/// <summary>
+		/// Specifies the bias for the green component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionGreenBiasExt = unchecked((uint)0x8021),
+
+		/// <summary>
+		/// Specifies the bias for the blue component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionBlueBiasExt = unchecked((uint)0x8022),
+
+		/// <summary>
+		/// Specifies the bias for the alpha component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		PostConvolutionAlphaBiasExt = unchecked((uint)0x8023),
+
+		/// <summary>
+		/// Specifies histogram operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		HistogramExt = unchecked((uint)0x8024),
+
+		/// <summary>
+		/// Specifies min/max operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		MinmaxExt = unchecked((uint)0x802E),
+
+		/// <summary>
+		/// Specifies the polygon offset for filled polygons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonOffsetFill = unchecked((uint)0x8037),
+
+		/// <summary>
+		/// Specifies the scale factor for polygon offsets.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PolygonOffsetFactor = unchecked((uint)0x8038),
+
+		/// <summary>
+		/// Specifies the bias for polygon offsets for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_polygon_offset</remarks>
 		PolygonOffsetBiasExt = unchecked((uint)0x8039),
+
+		/// <summary>
+		/// Specifies that normals should be rescaled when they are transformed for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_rescale_normal</remarks>
 		RescaleNormalExt = unchecked((uint)0x803A),
+
+		/// <summary>
+		/// Specifies the currently bound 1D texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding1D = unchecked((uint)0x8068),
+
+		/// <summary>
+		/// Specifies the currently bound 2D texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding2D = unchecked((uint)0x8069),
+
+		/// <summary>
+		/// Specifies the currently bound 3D texture for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
 		Texture3DBindingExt = unchecked((uint)0x806A),
+
+		/// <summary>
+		/// Specifies the currently bound 3D texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding3D = unchecked((uint)0x806A),
+
+		/// <summary>
+		/// Specifies the number of images to skip when packing textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackSkipImages = unchecked((uint)0x806B),
+
+		/// <summary>
+		/// Specifies the number of images to skip when packing textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		PackSkipImagesExt = unchecked((uint)0x806B),
+
+		/// <summary>
+		/// Specifies the height of images in the texture packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PackImageHeight = unchecked((uint)0x806C),
+
+		/// <summary>
+		/// Specifies the height of images in the texture packing for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		PackImageHeightExt = unchecked((uint)0x806C),
+
+		/// <summary>
+		/// Specifies the number of images to skip when unpacking textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackSkipImages = unchecked((uint)0x806D),
+
+		/// <summary>
+		/// Specifies the number of images to skip when unpacking textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		UnpackSkipImagesExt = unchecked((uint)0x806D),
+
+		/// <summary>
+		/// Specifies the height of images in the texture unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnpackImageHeight = unchecked((uint)0x806E),
+
+		/// <summary>
+		/// Specifies the height of images in the texture unpacking for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		UnpackImageHeightExt = unchecked((uint)0x806E),
+
+		/// <summary>
+		/// Specifies a 3D texture for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		Texture3DExt = unchecked((uint)0x806F),
+
+		/// <summary>
+		/// Specifies the maximum size for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Max3DTextureSize = unchecked((uint)0x8073),
+
+		/// <summary>
+		/// Specifies the maximum size for 3D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
 		Max3DTextureSizeExt = unchecked((uint)0x8073),
+
+		/// <summary>
+		/// Specifies a vertex array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		VertexArray = unchecked((uint)0x8074),
+
+		/// <summary>
+		/// Specifies a normal array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		NormalArray = unchecked((uint)0x8075),
+
+		/// <summary>
+		/// Specifies a color array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorArray = unchecked((uint)0x8076),
+
+		/// <summary>
+		/// Specifies an index array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexArray = unchecked((uint)0x8077),
+
+		/// <summary>
+		/// Specifies a texture coordinate array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureCoordArray = unchecked((uint)0x8078),
+
+		/// <summary>
+		/// Specifies an edge flag array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		EdgeFlagArray = unchecked((uint)0x8079),
+
+		/// <summary>
+		/// Specifies the size of each vertex in the vertex array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VertexArraySize = unchecked((uint)0x807A),
+
+		/// <summary>
+		/// Specifies the data type of the vertex array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VertexArrayType = unchecked((uint)0x807B),
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between vertex array elements.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VertexArrayStride = unchecked((uint)0x807C),
+
+		/// <summary>
+		/// Specifies the count of vertices in the vertex array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		VertexArrayCountExt = unchecked((uint)0x807D),
+
+		/// <summary>
+		/// Specifies the data type of the normal array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		NormalArrayType = unchecked((uint)0x807E),
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between normal array elements.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		NormalArrayStride = unchecked((uint)0x807F),
+
+		/// <summary>
+		/// Specifies the count of normals in the normal array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		NormalArrayCountExt = unchecked((uint)0x8080),
+
+		/// <summary>
+		/// Specifies the size of each color in the color array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorArraySize = unchecked((uint)0x8081),
+
+		/// <summary>
+		/// Specifies the data type of the color array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorArrayType = unchecked((uint)0x8082),
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between color array elements.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorArrayStride = unchecked((uint)0x8083),
+
+		/// <summary>
+		/// Specifies the count of colors in the color array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		ColorArrayCountExt = unchecked((uint)0x8084),
+
+		/// <summary>
+		/// Specifies the data type of the index array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexArrayType = unchecked((uint)0x8085),
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between index array elements.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		IndexArrayStride = unchecked((uint)0x8086),
+
+		/// <summary>
+		/// Specifies the count of indices in the index array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		IndexArrayCountExt = unchecked((uint)0x8087),
+
+		/// <summary>
+		/// Specifies the size of each texture coordinate in the texture coordinate array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureCoordArraySize = unchecked((uint)0x8088),
+
+		/// <summary>
+		/// Specifies the data type of the texture coordinate array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureCoordArrayType = unchecked((uint)0x8089),
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between texture coordinate array elements.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureCoordArrayStride = unchecked((uint)0x808A),
+
+		/// <summary>
+		/// Specifies the count of texture coordinates in the texture coordinate array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		TextureCoordArrayCountExt = unchecked((uint)0x808B),
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between edge flag array elements.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		EdgeFlagArrayStride = unchecked((uint)0x808C),
+
+		/// <summary>
+		/// Specifies the count of edge flags in the edge flag array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		EdgeFlagArrayCountExt = unchecked((uint)0x808D),
+
+		/// <summary>
+		/// Specifies interlaced rendering mode for SGIX extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		InterlaceSgix = unchecked((uint)0x8094),
+
+		/// <summary>
+		/// Specifies the binding for detail textures in 2D for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		DetailTexture2DBindingSgis = unchecked((uint)0x8096),
+
+		/// <summary>
+		/// Specifies multisampling for anti-aliasing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleSgis = unchecked((uint)0x809D),
+
+		/// <summary>
+		/// Specifies alpha-to-mask sampling for anti-aliasing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SampleAlphaToMaskSgis = unchecked((uint)0x809E),
+
+		/// <summary>
+		/// Specifies sampling to one for anti-aliasing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SampleAlphaToOneSgis = unchecked((uint)0x809F),
+
+		/// <summary>
+		/// Specifies the sample mask for controlling sample coverage (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SampleMaskSgis = unchecked((uint)0x80A0),
+
+		/// <summary>
+		/// Specifies the number of sample buffers used for multisampling.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SampleBuffers = unchecked((uint)0x80A8),
+
+		/// <summary>
+		/// Specifies the number of sample buffers used for multisampling (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SampleBuffersSgis = unchecked((uint)0x80A8),
+
+		/// <summary>
+		/// Specifies the number of samples in a sample buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Samples = unchecked((uint)0x80A9),
+
+		/// <summary>
+		/// Specifies the number of samples in a sample buffer (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SamplesSgis = unchecked((uint)0x80A9),
+
+		/// <summary>
+		/// Specifies the sample coverage value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SampleCoverageValue = unchecked((uint)0x80AA),
+
+		/// <summary>
+		/// Specifies the value of the sample mask (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SampleMaskValueSgis = unchecked((uint)0x80AA),
+
+		/// <summary>
+		/// Specifies whether to invert the sample coverage.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SampleCoverageInvert = unchecked((uint)0x80AB),
+
+		/// <summary>
+		/// Specifies whether to invert the sample mask (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SampleMaskInvertSgis = unchecked((uint)0x80AB),
+
+		/// <summary>
+		/// Specifies the sample pattern for multisampling (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SamplePatternSgis = unchecked((uint)0x80AC),
+
+		/// <summary>
+		/// Specifies the color matrix for color transformation (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorMatrixSgi = unchecked((uint)0x80B1),
+
+		/// <summary>
+		/// Specifies the depth of the color matrix stack (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorMatrixStackDepthSgi = unchecked((uint)0x80B2),
+
+		/// <summary>
+		/// Specifies the maximum depth of the color matrix stack (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxColorMatrixStackDepthSgi = unchecked((uint)0x80B3),
+
+		/// <summary>
+		/// Specifies the red scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixRedScaleSgi = unchecked((uint)0x80B4),
+
+		/// <summary>
+		/// Specifies the green scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixGreenScaleSgi = unchecked((uint)0x80B5),
+
+		/// <summary>
+		/// Specifies the blue scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixBlueScaleSgi = unchecked((uint)0x80B6),
+
+		/// <summary>
+		/// Specifies the alpha scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixAlphaScaleSgi = unchecked((uint)0x80B7),
+
+		/// <summary>
+		/// Specifies the red bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixRedBiasSgi = unchecked((uint)0x80B8),
+
+		/// <summary>
+		/// Specifies the green bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixGreenBiasSgi = unchecked((uint)0x80B9),
+
+		/// <summary>
+		/// Specifies the blue bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixBlueBiasSgi = unchecked((uint)0x80BA),
+
+		/// <summary>
+		/// Specifies the alpha bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixAlphaBiasSgi = unchecked((uint)0x80BB),
+
+		/// <summary>
+		/// Specifies the texture color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureColorTableSgi = unchecked((uint)0x80BC),
+
+		/// <summary>
+		/// Specifies the destination color for RGB blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		BlendDstRgb = unchecked((uint)0x80C8),
+
+		/// <summary>
+		/// Specifies the source color for RGB blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		BlendSrcRgb = unchecked((uint)0x80C9),
+
+		/// <summary>
+		/// Specifies the destination alpha for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		BlendDstAlpha = unchecked((uint)0x80CA),
+
+		/// <summary>
+		/// Specifies the source alpha for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		BlendSrcAlpha = unchecked((uint)0x80CB),
+
+		/// <summary>
+		/// Specifies a color table for color lookup (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorTableSgi = unchecked((uint)0x80D0),
+
+		/// <summary>
+		/// Specifies a color table for post-convolution processing (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostConvolutionColorTableSgi = unchecked((uint)0x80D1),
+
+		/// <summary>
+		/// Specifies a color table for post-color matrix processing (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostColorMatrixColorTableSgi = unchecked((uint)0x80D2),
+
+		/// <summary>
+		/// Specifies the maximum number of vertices in a single draw call.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxElementsVertices = unchecked((uint)0x80E8),
+
+		/// <summary>
+		/// Specifies the maximum number of indices in a single draw call.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxElementsIndices = unchecked((uint)0x80E9),
+
+		/// <summary>
+		/// Specifies the minimum size of points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSizeMin = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the minimum size of points (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		PointSizeMinArb = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the minimum size of points (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		PointSizeMinExt = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the minimum size of points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PointSizeMinSgis = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the maximum size of points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointSizeMax = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the maximum size of points (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		PointSizeMaxArb = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the maximum size of points (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		PointSizeMaxExt = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the maximum size of points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PointSizeMaxSgis = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointFadeThresholdSize = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		PointFadeThresholdSizeArb = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		PointFadeThresholdSizeExt = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PointFadeThresholdSizeSgis = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the distance attenuation factor (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		DistanceAttenuationExt = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies the distance attenuation factor (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DistanceAttenuationSgis = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies point distance attenuation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PointDistanceAttenuation = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies point distance attenuation (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		PointDistanceAttenuationArb = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies points for the fog function (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FogFuncPointsSgis = unchecked((uint)0x812B),
+
+		/// <summary>
+		/// Specifies the maximum number of fog function points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFogFuncPointsSgis = unchecked((uint)0x812C),
+
+		/// <summary>
+		/// Specifies the number of volumes to skip when packing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PackSkipVolumesSgis = unchecked((uint)0x8130),
+
+		/// <summary>
+		/// Specifies the depth of the packed image (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PackImageDepthSgis = unchecked((uint)0x8131),
+
+		/// <summary>
+		/// Specifies the number of volumes to skip when unpacking (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnpackSkipVolumesSgis = unchecked((uint)0x8132),
+
+		/// <summary>
+		/// Specifies the depth of the unpacked image (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnpackImageDepthSgis = unchecked((uint)0x8133),
+
+		/// <summary>
+		/// Specifies a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Texture4DSgis = unchecked((uint)0x8134),
+
+		/// <summary>
+		/// Specifies the maximum size of a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Max4DTextureSizeSgis = unchecked((uint)0x8138),
+
+		/// <summary>
+		/// Specifies pixel texture generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenSgix = unchecked((uint)0x8139),
+
+		/// <summary>
+		/// Specifies the best alignment for pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileBestAlignmentSgix = unchecked((uint)0x813E),
+
+		/// <summary>
+		/// Specifies the cache increment for pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileCacheIncrementSgix = unchecked((uint)0x813F),
+
+		/// <summary>
+		/// Specifies the width of pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileWidthSgix = unchecked((uint)0x8140),
+
+		/// <summary>
+		/// Specifies the height of pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileHeightSgix = unchecked((uint)0x8141),
+
+		/// <summary>
+		/// Specifies the width of the pixel tile grid (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileGridWidthSgix = unchecked((uint)0x8142),
+
+		/// <summary>
+		/// Specifies the height of the pixel tile grid (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileGridHeightSgix = unchecked((uint)0x8143),
+
+		/// <summary>
+		/// Specifies the depth of the pixel tile grid (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileGridDepthSgix = unchecked((uint)0x8144),
+
+		/// <summary>
+		/// Specifies the size of the pixel tile cache (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTileCacheSizeSgix = unchecked((uint)0x8145),
+
+		/// <summary>
+		/// Specifies the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SpriteSgix = unchecked((uint)0x8148),
+
+		/// <summary>
+		/// Specifies the mode of the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SpriteModeSgix = unchecked((uint)0x8149),
+
+		/// <summary>
+		/// Specifies the axis for the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SpriteAxisSgix = unchecked((uint)0x814A),
+
+		/// <summary>
+		/// Specifies the translation for the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SpriteTranslationSgix = unchecked((uint)0x814B),
+
+		/// <summary>
+		/// Specifies the binding of a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Texture4DBindingSgis = unchecked((uint)0x814F),
+
+		/// <summary>
+		/// Specifies the maximum depth of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxClipmapDepthSgix = unchecked((uint)0x8177),
+
+		/// <summary>
+		/// Specifies the maximum virtual depth of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxClipmapVirtualDepthSgix = unchecked((uint)0x8178),
+
+		/// <summary>
+		/// Specifies the bias range for post texture filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostTextureFilterBiasRangeSgix = unchecked((uint)0x817B),
+
+		/// <summary>
+		/// Specifies the scale range for post texture filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PostTextureFilterScaleRangeSgix = unchecked((uint)0x817C),
+
+		/// <summary>
+		/// Specifies the reference plane for operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ReferencePlaneSgix = unchecked((uint)0x817D),
+
+		/// <summary>
+		/// Specifies the equation for the reference plane (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ReferencePlaneEquationSgix = unchecked((uint)0x817E),
+
+		/// <summary>
+		/// Specifies the first instrument for IR measurements (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		IrInstrument1Sgix = unchecked((uint)0x817F),
+
+		/// <summary>
+		/// Specifies the measurements taken by the instrument (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		InstrumentMeasurementsSgix = unchecked((uint)0x8181),
+
+		/// <summary>
+		/// Specifies calligraphic fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CalligraphicFragmentSgix = unchecked((uint)0x8183),
+
+		/// <summary>
+		/// Specifies zoom behavior for frames (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramezoomSgix = unchecked((uint)0x818B),
+
+		/// <summary>
+		/// Specifies the zoom factor for frames (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramezoomFactorSgix = unchecked((uint)0x818C),
+
+		/// <summary>
+		/// Specifies the maximum frame zoom factor (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFramezoomFactorSgix = unchecked((uint)0x818D),
+
+		/// <summary>
+		/// Specifies a hint for generating mipmaps (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		GenerateMipmapHintSgis = unchecked((uint)0x8192),
+
+		/// <summary>
+		/// Specifies a mask for deformations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DeformationsMaskSgix = unchecked((uint)0x8196),
+
+		/// <summary>
+		/// Specifies the fog offset (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FogOffsetSgix = unchecked((uint)0x8198),
+
+		/// <summary>
+		/// Specifies the value for fog offset (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FogOffsetValueSgix = unchecked((uint)0x8199),
+
+		/// <summary>
+		/// Specifies color control for lighting.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LightModelColorControl = unchecked((uint)0x81F8),
+
+		/// <summary>
+		/// Specifies shared texture palette behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shared_texture_palette</remarks>
 		SharedTexturePaletteExt = unchecked((uint)0x81FB),
+
+		/// <summary>
+		/// Specifies the major version of the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MajorVersion = unchecked((uint)0x821B),
+
+		/// <summary>
+		/// Specifies the minor version of the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MinorVersion = unchecked((uint)0x821C),
+
+		/// <summary>
+		/// Specifies the number of extensions available in the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		NumExtensions = unchecked((uint)0x821D),
+
+		/// <summary>
+		/// Specifies the context flags for the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ContextFlags = unchecked((uint)0x821E),
+
+		/// <summary>
+		/// Specifies the program pipeline binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		ProgramPipelineBinding = unchecked((uint)0x825A),
+
+		/// <summary>
+		/// Specifies the maximum number of viewports.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		MaxViewports = unchecked((uint)0x825B),
+
+		/// <summary>
+		/// Specifies the number of bits for subpixel precision in viewports.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		ViewportSubpixelBits = unchecked((uint)0x825C),
+
+		/// <summary>
+		/// Specifies the bounds range for viewports.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		ViewportBoundsRange = unchecked((uint)0x825D),
+
+		/// <summary>
+		/// Specifies the layer provoking vertex behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		LayerProvokingVertex = unchecked((uint)0x825E),
+
+		/// <summary>
+		/// Specifies the viewport index provoking vertex behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		ViewportIndexProvokingVertex = unchecked((uint)0x825F),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform components in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeUniformComponents = unchecked((uint)0x8263),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counter buffers in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeAtomicCounterBuffers = unchecked((uint)0x8264),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeAtomicCounters = unchecked((uint)0x8265),
+
+		/// <summary>
+		/// Specifies the maximum combined uniform components across all compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxCombinedComputeUniformComponents = unchecked((uint)0x8266),
+
+		/// <summary>
+		/// Specifies the maximum depth of debug group stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		MaxDebugGroupStackDepth = unchecked((uint)0x826C),
+
+		/// <summary>
+		/// Specifies the current depth of the debug group stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugGroupStackDepth = unchecked((uint)0x826D),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform locations available.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_explicit_uniform_location</remarks>
 		MaxUniformLocations = unchecked((uint)0x826E),
+
+		/// <summary>
+		/// Specifies the divisor for vertex binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		VertexBindingDivisor = unchecked((uint)0x82D6),
+
+		/// <summary>
+		/// Specifies the offset for vertex binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		VertexBindingOffset = unchecked((uint)0x82D7),
+
+		/// <summary>
+		/// Specifies the stride for vertex binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		VertexBindingStride = unchecked((uint)0x82D8),
+
+		/// <summary>
+		/// Specifies the maximum relative offset for vertex attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		MaxVertexAttribRelativeOffset = unchecked((uint)0x82D9),
+
+		/// <summary>
+		/// Specifies the maximum number of vertex attrib bindings.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		MaxVertexAttribBindings = unchecked((uint)0x82DA),
+
+		/// <summary>
+		/// Specifies the maximum length of labels.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		MaxLabelLength = unchecked((uint)0x82E8),
+
+		/// <summary>
+		/// Specifies hints for convolution operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ConvolutionHintSgix = unchecked((uint)0x8316),
+
+		/// <summary>
+		/// Specifies asynchronous markers (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AsyncMarkerSgix = unchecked((uint)0x8329),
+
+		/// <summary>
+		/// Specifies the pixel texture generation mode (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenModeSgix = unchecked((uint)0x832B),
+
+		/// <summary>
+		/// Specifies asynchronous histogram operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AsyncHistogramSgix = unchecked((uint)0x832C),
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous histogram operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxAsyncHistogramSgix = unchecked((uint)0x832D),
+
+		/// <summary>
+		/// Specifies pixel texture operations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTextureSgis = unchecked((uint)0x8353),
+
+		/// <summary>
+		/// Specifies asynchronous texture image operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AsyncTexImageSgix = unchecked((uint)0x835C),
+
+		/// <summary>
+		/// Specifies asynchronous pixel drawing operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AsyncDrawPixelsSgix = unchecked((uint)0x835D),
+
+		/// <summary>
+		/// Specifies asynchronous pixel reading operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AsyncReadPixelsSgix = unchecked((uint)0x835E),
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous texture images (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxAsyncTexImageSgix = unchecked((uint)0x835F),
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous draw pixels (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxAsyncDrawPixelsSgix = unchecked((uint)0x8360),
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous read pixels (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxAsyncReadPixelsSgix = unchecked((uint)0x8361),
+
+		/// <summary>
+		/// Specifies vertex pre-clipping (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexPreclipSgix = unchecked((uint)0x83EE),
+
+		/// <summary>
+		/// Specifies hints for vertex pre-clipping (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexPreclipHintSgix = unchecked((uint)0x83EF),
+
+		/// <summary>
+		/// Enables fragment lighting (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentLightingSgix = unchecked((uint)0x8400),
+
+		/// <summary>
+		/// Specifies color material properties for fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentColorMaterialSgix = unchecked((uint)0x8401),
+
+		/// <summary>
+		/// Specifies the face for fragment color material properties (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentColorMaterialFaceSgix = unchecked((uint)0x8402),
+
+		/// <summary>
+		/// Specifies material parameters for fragment colors (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentColorMaterialParameterSgix = unchecked((uint)0x8403),
+
+		/// <summary>
+		/// Specifies the maximum number of fragment lights (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFragmentLightsSgix = unchecked((uint)0x8404),
+
+		/// <summary>
+		/// Specifies the maximum number of active lights (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxActiveLightsSgix = unchecked((uint)0x8405),
+
+		/// <summary>
+		/// Specifies the mode of the light environment (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LightEnvModeSgix = unchecked((uint)0x8407),
+
+		/// <summary>
+		/// Specifies the local viewer mode for fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentLightModelLocalViewerSgix = unchecked((uint)0x8408),
+
+		/// <summary>
+		/// Specifies the two-sided lighting mode for fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentLightModelTwoSideSgix = unchecked((uint)0x8409),
+
+		/// <summary>
+		/// Specifies the ambient light model for fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentLightModelAmbientSgix = unchecked((uint)0x840A),
+
+		/// <summary>
+		/// Specifies normal interpolation for the fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentLightModelNormalInterpolationSgix = unchecked((uint)0x840B),
+
+		/// <summary>
+		/// Specifies the first fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentLight0Sgix = unchecked((uint)0x840C),
+
+		/// <summary>
+		/// Specifies packing resample method (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PackResampleSgix = unchecked((uint)0x842E),
+
+		/// <summary>
+		/// Specifies unpacking resample method (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnpackResampleSgix = unchecked((uint)0x842F),
+
+		/// <summary>
+		/// Specifies the range of aliased point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AliasedPointSizeRange = unchecked((uint)0x846D),
+
+		/// <summary>
+		/// Specifies the range of aliased line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AliasedLineWidthRange = unchecked((uint)0x846E),
+
+		/// <summary>
+		/// Specifies the active texture unit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ActiveTexture = unchecked((uint)0x84E0),
+
+		/// <summary>
+		/// Specifies the maximum size of renderbuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		MaxRenderbufferSize = unchecked((uint)0x84E8),
+
+		/// <summary>
+		/// Specifies the hint for texture compression.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TextureCompressionHint = unchecked((uint)0x84EF),
+
+		/// <summary>
+		/// Specifies the texture currently bound to the rectangle target.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBindingRectangle = unchecked((uint)0x84F6),
+
+		/// <summary>
+		/// Specifies the texture currently bound to the rectangle target (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_rectangle</remarks>
 		TextureBindingRectangleArb = unchecked((uint)0x84F6),
+
+		/// <summary>
+		/// Specifies the texture currently bound to the rectangle target (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_rectangle</remarks>
 		TextureBindingRectangleNv = unchecked((uint)0x84F6),
+
+		/// <summary>
+		/// Specifies the maximum size of rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxRectangleTextureSize = unchecked((uint)0x84F8),
+
+		/// <summary>
+		/// Specifies the maximum Level of Detail (LOD) bias.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxTextureLodBias = unchecked((uint)0x84FD),
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBindingCubeMap = unchecked((uint)0x8514),
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureBindingCubeMapArb = unchecked((uint)0x8514),
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureBindingCubeMapExt = unchecked((uint)0x8514),
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture (OES extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		TextureBindingCubeMapOes = unchecked((uint)0x8514),
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxCubeMapTextureSize = unchecked((uint)0x851C),
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		MaxCubeMapTextureSizeArb = unchecked((uint)0x851C),
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		MaxCubeMapTextureSizeExt = unchecked((uint)0x851C),
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures (OES extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		MaxCubeMapTextureSizeOes = unchecked((uint)0x851C),
+
+		/// <summary>
+		/// Specifies the subsample rate for packing (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PackSubsampleRateSgix = unchecked((uint)0x85A0),
+
+		/// <summary>
+		/// Specifies the subsample rate for unpacking (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnpackSubsampleRateSgix = unchecked((uint)0x85A1),
+
+		/// <summary>
+		/// Specifies the current vertex array binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		VertexArrayBinding = unchecked((uint)0x85B5),
+
+		/// <summary>
+		/// Specifies the point size for programs.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ProgramPointSize = unchecked((uint)0x8642),
+
+		/// <summary>
+		/// Specifies the number of compressed texture formats available.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		NumCompressedTextureFormats = unchecked((uint)0x86A2),
+
+		/// <summary>
+		/// Lists the compressed texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CompressedTextureFormats = unchecked((uint)0x86A3),
+
+		/// <summary>
+		/// Specifies the number of program binary formats.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
 		NumProgramBinaryFormats = unchecked((uint)0x87FE),
+
+		/// <summary>
+		/// Specifies available program binary formats.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
 		ProgramBinaryFormats = unchecked((uint)0x87FF),
+
+		/// <summary>
+		/// Specifies the stencil function for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackFunc = unchecked((uint)0x8800),
+
+		/// <summary>
+		/// Specifies the stencil operation on failure for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackFail = unchecked((uint)0x8801),
+
+		/// <summary>
+		/// Specifies the stencil operation on depth fail for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackPassDepthFail = unchecked((uint)0x8802),
+
+		/// <summary>
+		/// Specifies the stencil operation on depth pass for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackPassDepthPass = unchecked((uint)0x8803),
+
+		/// <summary>
+		/// Specifies the maximum number of draw buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxDrawBuffers = unchecked((uint)0x8824),
+
+		/// <summary>
+		/// Specifies the blend equation for alpha blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		BlendEquationAlpha = unchecked((uint)0x883D),
+
+		/// <summary>
+		/// Specifies the maximum number of vertex attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxVertexAttribs = unchecked((uint)0x8869),
+
+		/// <summary>
+		/// Specifies the maximum number of texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxTextureImageUnits = unchecked((uint)0x8872),
+
+		/// <summary>
+		/// Specifies the binding point for the array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ArrayBufferBinding = unchecked((uint)0x8894),
+
+		/// <summary>
+		/// Specifies the binding point for the element array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ElementArrayBufferBinding = unchecked((uint)0x8895),
+
+		/// <summary>
+		/// Specifies the binding point for the pixel pack buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelPackBufferBinding = unchecked((uint)0x88ED),
+
+		/// <summary>
+		/// Specifies the binding point for the pixel unpack buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PixelUnpackBufferBinding = unchecked((uint)0x88EF),
+
+		/// <summary>
+		/// Specifies the maximum number of dual source draw buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		MaxDualSourceDrawBuffers = unchecked((uint)0x88FC),
+
+		/// <summary>
+		/// Specifies the maximum number of texture layers for array textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxArrayTextureLayers = unchecked((uint)0x88FF),
+
+		/// <summary>
+		/// Specifies the minimum texture coordinate offset for programs.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MinProgramTexelOffset = unchecked((uint)0x8904),
+
+		/// <summary>
+		/// Specifies the maximum texture coordinate offset for programs.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxProgramTexelOffset = unchecked((uint)0x8905),
+
+		/// <summary>
+		/// Specifies the binding point for texture samplers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		SamplerBinding = unchecked((uint)0x8919),
+
+		/// <summary>
+		/// Specifies a fragment shader (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShaderAti = unchecked((uint)0x8920),
+
+		/// <summary>
+		/// Specifies the binding point for uniform buffers in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferBinding = unchecked((uint)0x8A28),
+
+		/// <summary>
+		/// Specifies the start of a uniform buffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferStart = unchecked((uint)0x8A29),
+
+		/// <summary>
+		/// Specifies the size of a uniform buffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferSize = unchecked((uint)0x8A2A),
+
+		/// <summary>
+		/// Specifies the maximum number of vertex uniform blocks supported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxVertexUniformBlocks = unchecked((uint)0x8A2B),
+
+		/// <summary>
+		/// Specifies the maximum number of geometry uniform blocks supported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxGeometryUniformBlocks = unchecked((uint)0x8A2C),
+
+		/// <summary>
+		/// Specifies the maximum number of fragment uniform blocks supported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxFragmentUniformBlocks = unchecked((uint)0x8A2D),
+
+		/// <summary>
+		/// Specifies the maximum number of combined uniform blocks across all shader types.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedUniformBlocks = unchecked((uint)0x8A2E),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform buffer bindings.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxUniformBufferBindings = unchecked((uint)0x8A2F),
+
+		/// <summary>
+		/// Specifies the maximum size of a single uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxUniformBlockSize = unchecked((uint)0x8A30),
+
+		/// <summary>
+		/// Specifies the maximum number of combined vertex uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedVertexUniformComponents = unchecked((uint)0x8A31),
+
+		/// <summary>
+		/// Specifies the maximum number of combined geometry uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedGeometryUniformComponents = unchecked((uint)0x8A32),
+
+		/// <summary>
+		/// Specifies the maximum number of combined fragment uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedFragmentUniformComponents = unchecked((uint)0x8A33),
+
+		/// <summary>
+		/// Specifies the alignment requirements for uniform buffer offsets.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferOffsetAlignment = unchecked((uint)0x8A34),
+
+		/// <summary>
+		/// Specifies the maximum number of fragment uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxFragmentUniformComponents = unchecked((uint)0x8B49),
+
+		/// <summary>
+		/// Specifies the maximum number of vertex uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxVertexUniformComponents = unchecked((uint)0x8B4A),
+
+		/// <summary>
+		/// Specifies the maximum number of varying float values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxVaryingFloats = unchecked((uint)0x8B4B),
+
+		/// <summary>
+		/// Specifies the maximum number of varying components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		MaxVaryingComponents = unchecked((uint)0x8B4B),
+
+		/// <summary>
+		/// Specifies the maximum number of vertex texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxVertexTextureImageUnits = unchecked((uint)0x8B4C),
+
+		/// <summary>
+		/// Specifies the maximum number of combined texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxCombinedTextureImageUnits = unchecked((uint)0x8B4D),
+
+		/// <summary>
+		/// Specifies the hint for fragment shader derivative calculations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FragmentShaderDerivativeHint = unchecked((uint)0x8B8B),
+
+		/// <summary>
+		/// Specifies the currently active program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentProgram = unchecked((uint)0x8B8D),
+
+		/// <summary>
+		/// Specifies the type for reading implementation colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ImplementationColorReadType = unchecked((uint)0x8B9A),
+
+		/// <summary>
+		/// Specifies the format for reading implementation colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ImplementationColorReadFormat = unchecked((uint)0x8B9B),
+
+		/// <summary>
+		/// Specifies the currently bound 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding1DArray = unchecked((uint)0x8C1C),
+
+		/// <summary>
+		/// Specifies the currently bound 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding2DArray = unchecked((uint)0x8C1D),
+
+		/// <summary>
+		/// Specifies the maximum number of geometry texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxGeometryTextureImageUnits = unchecked((uint)0x8C29),
+
+		/// <summary>
+		/// Specifies the maximum size of texture buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxTextureBufferSize = unchecked((uint)0x8C2B),
+
+		/// <summary>
+		/// Specifies the binding for texture buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBindingBuffer = unchecked((uint)0x8C2C),
+
+		/// <summary>
+		/// Specifies the start of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TransformFeedbackBufferStart = unchecked((uint)0x8C84),
+
+		/// <summary>
+		/// Specifies the size of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TransformFeedbackBufferSize = unchecked((uint)0x8C85),
+
+		/// <summary>
+		/// Specifies the binding of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		TransformFeedbackBufferBinding = unchecked((uint)0x8C8F),
+
+		/// <summary>
+		/// Specifies the X coordinate of the search block for motion estimation in the QCOM extension.
+		/// </summary>
+		/// <remarks></remarks>
 		MotionEstimationSearchBlockXQcom = unchecked((uint)0x8C90),
+
+		/// <summary>
+		/// Specifies the Y coordinate of the search block for motion estimation in the QCOM extension.
+		/// </summary>
+		/// <remarks></remarks>
 		MotionEstimationSearchBlockYQcom = unchecked((uint)0x8C91),
+
+		/// <summary>
+		/// Specifies the reference value for stencil tests on the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackRef = unchecked((uint)0x8CA3),
+
+		/// <summary>
+		/// Specifies the mask value for the back face stencil tests.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackValueMask = unchecked((uint)0x8CA4),
+
+		/// <summary>
+		/// Specifies the write mask for the back face stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBackWritemask = unchecked((uint)0x8CA5),
+
+		/// <summary>
+		/// Specifies the binding of the draw framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DrawFramebufferBinding = unchecked((uint)0x8CA6),
+
+		/// <summary>
+		/// Specifies the binding of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferBinding = unchecked((uint)0x8CA7),
+
+		/// <summary>
+		/// Specifies the binding of the read framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ReadFramebufferBinding = unchecked((uint)0x8CAA),
+
+		/// <summary>
+		/// Specifies the maximum number of color attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		MaxColorAttachments = unchecked((uint)0x8CDF),
+
+		/// <summary>
+		/// Specifies the maximum number of color attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object<br/>GL_EXT_draw_buffers</remarks>
 		MaxColorAttachmentsExt = unchecked((uint)0x8CDF),
+
+		/// <summary>
+		/// Specifies the maximum number of color attachments (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fbo_color_attachments</remarks>
 		MaxColorAttachmentsNv = unchecked((uint)0x8CDF),
+
+		/// <summary>
+		/// Specifies the string for texture generation (OES extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_cube_map</remarks>
 		TextureGenStrOes = unchecked((uint)0x8D60),
+
+		/// <summary>
+		/// Specifies the maximum element index for indexed drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		MaxElementIndex = unchecked((uint)0x8D6B),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform components for geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxGeometryUniformComponents = unchecked((uint)0x8DDF),
+
+		/// <summary>
+		/// Specifies the formats of binary shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ShaderBinaryFormats = unchecked((uint)0x8DF8),
+
+		/// <summary>
+		/// Specifies the number of supported shader binary formats.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		NumShaderBinaryFormats = unchecked((uint)0x8DF9),
+
+		/// <summary>
+		/// Specifies whether the shader compiler is available.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ShaderCompiler = unchecked((uint)0x8DFA),
+
+		/// <summary>
+		/// Specifies the maximum number of vectors for vertex shader uniforms.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MaxVertexUniformVectors = unchecked((uint)0x8DFB),
+
+		/// <summary>
+		/// Specifies the maximum number of varying vectors between vertex and fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MaxVaryingVectors = unchecked((uint)0x8DFC),
+
+		/// <summary>
+		/// Specifies the maximum number of vectors for fragment shader uniforms.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MaxFragmentUniformVectors = unchecked((uint)0x8DFD),
+
+		/// <summary>
+		/// Specifies the timestamp in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		Timestamp = unchecked((uint)0x8E28),
+
+		/// <summary>
+		/// Specifies the timestamp (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
 		TimestampExt = unchecked((uint)0x8E28),
+
+		/// <summary>
+		/// Specifies which vertex of a primitive is considered the provoking vertex.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex<br/>GL_ARB_viewport_array</remarks>
 		ProvokingVertex = unchecked((uint)0x8E4F),
+
+		/// <summary>
+		/// Specifies the maximum number of words in a sample mask.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxSampleMaskWords = unchecked((uint)0x8E59),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform blocks for tessellation control shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		MaxTessControlUniformBlocks = unchecked((uint)0x8E89),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform blocks for tessellation evaluation shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		MaxTessEvaluationUniformBlocks = unchecked((uint)0x8E8A),
+
+		/// <summary>
+		/// Indicates whether per-sample fetching is supported in ARM shaders.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_framebuffer_fetch</remarks>
 		FetchPerSampleArm = unchecked((uint)0x8F65),
+
+		/// <summary>
+		/// Specifies framebuffer fetch capabilities for multiple render targets in ARM fragment shaders.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_framebuffer_fetch</remarks>
 		FragmentShaderFramebufferFetchMrtArm = unchecked((uint)0x8F66),
+
+		/// <summary>
+		/// Indicates support for non-trivial combiners for fragment shading rates (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		FragmentShadingRateNonTrivialCombinersSupportedExt = unchecked((uint)0x8F6F),
+
+		/// <summary>
+		/// Specifies the index used for primitive restart.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		PrimitiveRestartIndex = unchecked((uint)0x8F9E),
+
+		/// <summary>
+		/// Specifies the minimum alignment for buffer mapping.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_alignment</remarks>
 		MinMapBufferAlignment = unchecked((uint)0x90BC),
+
+		/// <summary>
+		/// Specifies the binding point for shader storage buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferBinding = unchecked((uint)0x90D3),
+
+		/// <summary>
+		/// Specifies the starting offset for shader storage buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferStart = unchecked((uint)0x90D4),
+
+		/// <summary>
+		/// Specifies the size of shader storage buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferSize = unchecked((uint)0x90D5),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in vertex shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxVertexShaderStorageBlocks = unchecked((uint)0x90D6),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxGeometryShaderStorageBlocks = unchecked((uint)0x90D7),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in tessellation control shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxTessControlShaderStorageBlocks = unchecked((uint)0x90D8),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in tessellation evaluation shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxTessEvaluationShaderStorageBlocks = unchecked((uint)0x90D9),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxFragmentShaderStorageBlocks = unchecked((uint)0x90DA),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxComputeShaderStorageBlocks = unchecked((uint)0x90DB),
+
+		/// <summary>
+		/// Specifies the maximum number of combined shader storage blocks across all shader stages.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxCombinedShaderStorageBlocks = unchecked((uint)0x90DC),
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage buffer bindings.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxShaderStorageBufferBindings = unchecked((uint)0x90DD),
+
+		/// <summary>
+		/// Specifies the alignment requirements for shader storage buffer offsets.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferOffsetAlignment = unchecked((uint)0x90DF),
+
+		/// <summary>
+		/// Specifies the maximum number of invocations in a compute work group.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeWorkGroupInvocations = unchecked((uint)0x90EB),
+
+		/// <summary>
+		/// Specifies the binding point for indirect dispatch buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		DispatchIndirectBufferBinding = unchecked((uint)0x90EF),
+
+		/// <summary>
+		/// Specifies the binding point for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access<br/>GL_ARB_texture_multisample</remarks>
 		TextureBinding2DMultisample = unchecked((uint)0x9104),
+
+		/// <summary>
+		/// Specifies the binding point for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access<br/>GL_ARB_texture_multisample</remarks>
 		TextureBinding2DMultisampleArray = unchecked((uint)0x9105),
+
+		/// <summary>
+		/// Specifies the maximum number of color texture samples.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxColorTextureSamples = unchecked((uint)0x910E),
+
+		/// <summary>
+		/// Specifies the maximum number of depth texture samples.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxDepthTextureSamples = unchecked((uint)0x910F),
+
+		/// <summary>
+		/// Specifies the maximum number of integer texture samples.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxIntegerSamples = unchecked((uint)0x9110),
+
+		/// <summary>
+		/// Specifies the maximum timeout for server wait operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		MaxServerWaitTimeout = unchecked((uint)0x9111),
+
+		/// <summary>
+		/// Specifies the maximum number of output components for vertex shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxVertexOutputComponents = unchecked((uint)0x9122),
+
+		/// <summary>
+		/// Specifies the maximum number of input components for geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxGeometryInputComponents = unchecked((uint)0x9123),
+
+		/// <summary>
+		/// Specifies the maximum number of output components for geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxGeometryOutputComponents = unchecked((uint)0x9124),
+
+		/// <summary>
+		/// Specifies the maximum number of input components for fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MaxFragmentInputComponents = unchecked((uint)0x9125),
+
+		/// <summary>
+		/// Specifies the profile mask for an OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ContextProfileMask = unchecked((uint)0x9126),
+
+		/// <summary>
+		/// Specifies the alignment requirement for texture buffer offsets.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_range</remarks>
 		TextureBufferOffsetAlignment = unchecked((uint)0x919F),
+
+		/// <summary>
+		/// Specifies the maximum number of uniform blocks in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeUniformBlocks = unchecked((uint)0x91BB),
+
+		/// <summary>
+		/// Specifies the maximum number of texture image units in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeTextureImageUnits = unchecked((uint)0x91BC),
+
+		/// <summary>
+		/// Specifies the maximum number of work groups for compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeWorkGroupCount = unchecked((uint)0x91BE),
+
+		/// <summary>
+		/// Specifies the maximum size of a work group for compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeWorkGroupSize = unchecked((uint)0x91BF),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in vertex shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxVertexAtomicCounters = unchecked((uint)0x92D2),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in tessellation control shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxTessControlAtomicCounters = unchecked((uint)0x92D3),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in tessellation evaluation shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxTessEvaluationAtomicCounters = unchecked((uint)0x92D4),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxGeometryAtomicCounters = unchecked((uint)0x92D5),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxFragmentAtomicCounters = unchecked((uint)0x92D6),
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters across all shader stages.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxCombinedAtomicCounters = unchecked((uint)0x92D7),
+
+		/// <summary>
+		/// Specifies the maximum width of framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferWidth = unchecked((uint)0x9315),
+
+		/// <summary>
+		/// Specifies the maximum height of framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferHeight = unchecked((uint)0x9316),
+
+		/// <summary>
+		/// Specifies the maximum number of layers in framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferLayers = unchecked((uint)0x9317),
+
+		/// <summary>
+		/// Specifies the maximum number of samples in framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferSamples = unchecked((uint)0x9318),
+
+		/// <summary>
+		/// Specifies the number of available device UUIDs (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		NumDeviceUuidsExt = unchecked((uint)0x9596),
+
+		/// <summary>
+		/// Specifies a device UUID (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		DeviceUuidExt = unchecked((uint)0x9597),
+
+		/// <summary>
+		/// Specifies a driver UUID (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		DriverUuidExt = unchecked((uint)0x9598),
+
+		/// <summary>
+		/// Specifies a device LUID (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		DeviceLuidExt = unchecked((uint)0x9599),
+
+		/// <summary>
+		/// Specifies a device node mask (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		DeviceNodeMaskExt = unchecked((uint)0x959A),
+
+		/// <summary>
+		/// Specifies the shading rate image per primitive (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_shading_rate</remarks>
 		ShadingRateImagePerPrimitiveNv = unchecked((uint)0x95B1),
+
+		/// <summary>
+		/// Specifies the number of entries in the shading rate image palette (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_shading_rate</remarks>
 		ShadingRateImagePaletteCountNv = unchecked((uint)0x95B2),
+
+		/// <summary>
+		/// Specifies the maximum difference between timeline semaphore values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		MaxTimelineSemaphoreValueDifferenceNv = unchecked((uint)0x95B6),
+
+		/// <summary>
+		/// Indicates non-coherent framebuffer fetch (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferFetchNoncoherentQcom = unchecked((uint)0x96A2),
+
+		/// <summary>
+		/// Specifies the shading rate (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRateQcom = unchecked((uint)0x96A4),
+
+		/// <summary>
+		/// Specifies the shading rate (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		ShadingRateExt = unchecked((uint)0x96D0),
+
+		/// <summary>
+		/// Specifies the minimum texel width for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		MinFragmentShadingRateAttachmentTexelWidthExt = unchecked((uint)0x96D7),
+
+		/// <summary>
+		/// Specifies the maximum texel width for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		MaxFragmentShadingRateAttachmentTexelWidthExt = unchecked((uint)0x96D8),
+
+		/// <summary>
+		/// Specifies the minimum texel height for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		MinFragmentShadingRateAttachmentTexelHeightExt = unchecked((uint)0x96D9),
+
+		/// <summary>
+		/// Specifies the maximum texel height for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		MaxFragmentShadingRateAttachmentTexelHeightExt = unchecked((uint)0x96DA),
+
+		/// <summary>
+		/// Specifies the maximum aspect ratio for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		MaxFragmentShadingRateAttachmentTexelAspectRatioExt = unchecked((uint)0x96DB),
+
+		/// <summary>
+		/// Specifies the maximum number of layers for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		MaxFragmentShadingRateAttachmentLayersExt = unchecked((uint)0x96DC),
+
+		/// <summary>
+		/// Indicates support for fragment shading rates with depth and stencil writes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = unchecked((uint)0x96DD),
+
+		/// <summary>
+		/// Indicates support for fragment shading rates with sample mask (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		FragmentShadingRateWithSampleMaskSupportedExt = unchecked((uint)0x96DE),
+
+		/// <summary>
+		/// Indicates support for fragment shading rate attachments with default framebuffers (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
 		FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = unchecked((uint)0x96DF),
+
+		/// <summary>
+		/// Specifies the number of shader cores (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCoreCountArm = unchecked((uint)0x96F0),
+
+		/// <summary>
+		/// Specifies the number of active shader cores (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCoreActiveCountArm = unchecked((uint)0x96F1),
+
+		/// <summary>
+		/// Specifies the present shader core mask (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCorePresentMaskArm = unchecked((uint)0x96F2),
+
+		/// <summary>
+		/// Specifies the maximum warp count for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCoreMaxWarpCountArm = unchecked((uint)0x96F3),
+
+		/// <summary>
+		/// Specifies the pixel rate for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCorePixelRateArm = unchecked((uint)0x96F4),
+
+		/// <summary>
+		/// Specifies the texel rate for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCoreTexelRateArm = unchecked((uint)0x96F5),
+
+		/// <summary>
+		/// Specifies the fused multiply-add rate for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
 		ShaderCoreFmaRateArm = unchecked((uint)0x96F6),
 	}
 }

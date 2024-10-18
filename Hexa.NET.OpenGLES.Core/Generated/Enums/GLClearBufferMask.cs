@@ -18,10 +18,34 @@ namespace Hexa.NET.OpenGLES
 	/// </summary>
 	public enum GLClearBufferMask : uint
 	{
+		/// <summary>
+		/// Enables depth buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DepthBufferBit = unchecked((uint)0x00000100),
+
+		/// <summary>
+		/// Enables accumulation buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccumBufferBit = unchecked((uint)0x00000200),
+
+		/// <summary>
+		/// Enables stencil buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		StencilBufferBit = unchecked((uint)0x00000400),
+
+		/// <summary>
+		/// Indicates color buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ColorBufferBit = unchecked((uint)0x00004000),
+
+		/// <summary>
+		/// Coverage buffer for NV.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_coverage_sample</remarks>
 		CoverageBufferBitNv = unchecked((uint)0x00008000),
 	}
 }

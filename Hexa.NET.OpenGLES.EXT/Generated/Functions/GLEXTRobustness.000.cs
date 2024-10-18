@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static GLEnum GetGraphicsResetStatusEXT()
 		{
 			GLEnum ret = GetGraphicsResetStatusEXTNative();
@@ -42,11 +46,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void GetnUniformfvEXT(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvEXTNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void GetnUniformfvEXT(uint program, int location, int bufSize, out float @params)
 		{
 			float pparams;
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void GetnUniformfvEXT(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -72,11 +88,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void GetnUniformivEXT(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivEXTNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void GetnUniformivEXT(uint program, int location, int bufSize, out int @params)
 		{
 			int pparams;
@@ -84,6 +108,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void GetnUniformivEXT(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -102,16 +130,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
 		public static void ReadnPixelsEXT<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bindable_uniform</remarks>
 		public static int GetUniformBufferSizeEXT(uint program, int location)
 		{
 			int ret = GetUniformBufferSizeEXTNative(program, location);
@@ -42,6 +46,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bindable_uniform</remarks>
 		public static nint GetUniformOffsetEXT(uint program, int location)
 		{
 			nint ret = GetUniformOffsetEXTNative(program, location);
@@ -58,6 +66,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bindable_uniform</remarks>
 		public static void UniformBufferEXT(uint program, int location, uint buffer)
 		{
 			UniformBufferEXTNative(program, location, buffer);

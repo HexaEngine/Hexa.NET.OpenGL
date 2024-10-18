@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
 		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			GetMultisamplefvNVNative(pname, index, val);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
 		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
 		{
 			fixed (float* pval0 = val)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
 		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
 		public static void SampleMaskIndexedNV(uint index, uint mask)
 		{
 			SampleMaskIndexedNVNative(index, mask);
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
 		public static void TexRenderbufferNV(GLTextureTarget target, uint renderbuffer)
 		{
 			TexRenderbufferNVNative(target, renderbuffer);

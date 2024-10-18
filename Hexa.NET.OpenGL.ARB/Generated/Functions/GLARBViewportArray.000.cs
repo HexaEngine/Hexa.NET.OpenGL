@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeArraydvNV(uint first, int count, double* v)
 		{
 			DepthRangeArraydvNVNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeArraydvNV(uint first, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeArraydvNV(uint first, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeArrayv(uint first, int count, double* v)
 		{
 			DepthRangeArrayvNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeArrayv(uint first, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -70,6 +90,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeArrayv(uint first, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -88,6 +112,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Specify mapping of depth values from normalized device coordinates to window coordinates for a specified viewport
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeIndexed(uint index, double n, double f)
 		{
 			DepthRangeIndexedNative(index, n, f);
@@ -103,6 +131,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void DepthRangeIndexeddNV(uint index, double n, double f)
 		{
 			DepthRangeIndexeddNVNative(index, n, f);
@@ -118,11 +150,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void GetDoublei_v(GLGetPName target, uint index, double* data)
 		{
 			GetDoublei_vNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
 		{
 			fixed (double* pdata0 = data)
@@ -131,6 +171,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void GetDoublei_v(GLGetPName target, uint index, ref double data)
 		{
 			fixed (double* pdata0 = &data)
@@ -149,11 +193,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void GetFloati_v(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void GetFloati_v(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -162,6 +214,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void GetFloati_v(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -180,11 +236,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorArrayv(uint first, int count, int* v)
 		{
 			ScissorArrayvNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorArrayv(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -193,6 +257,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorArrayv(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -211,6 +279,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Define the scissor box for a specific viewport
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorIndexed(uint index, int left, int bottom, int width, int height)
 		{
 			ScissorIndexedNative(index, left, bottom, width, height);
@@ -226,11 +298,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorIndexedv(uint index, int* v)
 		{
 			ScissorIndexedvNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorIndexedv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -239,6 +319,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ScissorIndexedv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -257,11 +341,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportArrayv(uint first, int count, float* v)
 		{
 			ViewportArrayvNative(first, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportArrayv(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -270,6 +362,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportArrayv(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -288,6 +384,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportIndexedf(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfNative(index, x, y, w, h);
@@ -303,11 +403,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportIndexedfv(uint index, float* v)
 		{
 			ViewportIndexedfvNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportIndexedfv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -316,6 +424,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
 		public static void ViewportIndexedfv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)

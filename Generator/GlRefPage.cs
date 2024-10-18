@@ -1,5 +1,6 @@
 ﻿namespace Generator
 {
+    using HexaGen;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -8,9 +9,27 @@
     using System.Xml;
     using System.Xml.Linq;
 
+    public class CommandComment
+    {
+        public CommandComment(string name, string? comment, List<ParameterComment> parameters)
+        {
+            Name = name;
+            Comment = comment;
+            Parameters = parameters;
+        }
+
+        public string Name { get; set; }
+
+        public string? Comment { get; set; }
+
+        public List<ParameterComment> Parameters { get; set; } = [];
+    }
+
     public class GlRefPages
     {
         public List<GlFunctionRef> Functions = [];
+
+        public Dictionary<string, CommandComment> NameToComment = [];
 
         public void Parse(string folder)
         {
@@ -47,37 +66,37 @@
 
             var parsedParameters = ReadParameters(parameters);
 
-            StringBuilder summaryBuilder = new();
-            if (x != null)
-            {
-                summaryBuilder.AppendLine("/// <summary>");
-                foreach (var line in x.Trim().Split(Environment.NewLine))
-                {
-                    summaryBuilder.AppendLine($"/// {line}");
-                }
-                foreach (var parameter in parsedParameters)
-                {
-                    summaryBuilder.Append("/// <param name=\"{parameter.Name}\">");
-                    var lines = parameter.Comment.Trim().Split(Environment.NewLine);
-                    if (lines.Length == 1)
-                    {
-                        summaryBuilder.AppendLine($"{lines[0]}</param>");
-                    }
-                    else
-                    {
-                        summaryBuilder.AppendLine();
-                        foreach (var line in lines)
-                        {
-                            summaryBuilder.AppendLine("/// {line}");
-                        }
-                        summaryBuilder.AppendLine("</param>");
-                    }
-                }
-            }
+            /* StringBuilder summaryBuilder = new();
+             if (x != null)
+             {
+                 summaryBuilder.AppendLine("/// <summary>");
+                 foreach (var line in x.Trim().Split(Environment.NewLine))
+                 {
+                     summaryBuilder.AppendLine($"/// {line}");
+                 }
+                 foreach (var parameter in parsedParameters)
+                 {
+                     summaryBuilder.Append($"/// <param name=\"{parameter.Name}\">");
+                     var lines = parameter.Comment.Trim().Split(Environment.NewLine);
+                     if (lines.Length == 1)
+                     {
+                         summaryBuilder.AppendLine($"{lines[0]}</param>");
+                     }
+                     else
+                     {
+                         summaryBuilder.AppendLine();
+                         foreach (var line in lines)
+                         {
+                             summaryBuilder.AppendLine($"/// {line}");
+                         }
+                         summaryBuilder.AppendLine("</param>");
+                     }
+                 }
+             }*/
 
-            Console.WriteLine($"Function Name: {functionName}");
-            Console.WriteLine($"Purpose: {functionPurpose}");
-            Console.WriteLine($"Description: {summaryBuilder}");
+            if (functionName == null) return;
+
+            NameToComment.Add(functionName, new(functionName, functionPurpose?.CapitalizeCopy(), parsedParameters));
         }
 
         /// <summary>
@@ -86,15 +105,15 @@
         /// <param name="functionPurpose"></param>
         /// <param name="description"></param>
         /// <returns></returns>
-        private static List<Parameter> ReadParameters(XElement? parameters)
+        private static List<ParameterComment> ReadParameters(XElement? parameters)
         {
-            List<Parameter> parsedParameters = [];
+            List<ParameterComment> parsedParameters = [];
             if (parameters == null) return parsedParameters;
             var reader = parameters.CreateReader();
 
             while (reader.Read())
             {
-                Parameter parameter = new();
+                ParameterComment parameter = new();
                 if (reader.IsStartElement("varlistentry"))
                 {
                     while (reader.Read())
@@ -214,7 +233,7 @@
     {
     }
 
-    public struct Parameter
+    public struct ParameterComment
     {
         public string Name { get; set; }
 

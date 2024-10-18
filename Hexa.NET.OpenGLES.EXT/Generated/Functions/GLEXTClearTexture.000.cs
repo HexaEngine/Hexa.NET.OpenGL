@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clear_texture</remarks>
 		public static void ClearTexImageEXT(uint texture, int level, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexImageEXTNative(texture, level, format, type, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clear_texture</remarks>
 		public static void ClearTexImageEXT(uint texture, int level, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearTexImageEXTNative(texture, level, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clear_texture</remarks>
 		public static void ClearTexImageEXT<TData>(uint texture, int level, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clear_texture</remarks>
 		public static void ClearTexSubImageEXT(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexSubImageEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clear_texture</remarks>
 		public static void ClearTexSubImageEXT(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearTexSubImageEXTNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clear_texture</remarks>
 		public static void ClearTexSubImageEXT<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

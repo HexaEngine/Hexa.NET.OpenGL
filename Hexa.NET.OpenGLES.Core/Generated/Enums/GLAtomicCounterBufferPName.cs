@@ -15,15 +15,64 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLAtomicCounterBufferPName : uint
 	{
+		/// <summary>
+		/// Specifies atomic counter buffers referenced by compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		ReferencedByComputeShader = unchecked((uint)0x90ED),
+
+		/// <summary>
+		/// Specifies the binding point for atomic counter buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		Binding = unchecked((uint)0x92C1),
+
+		/// <summary>
+		/// Specifies the data size of atomic counter buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		DataSize = unchecked((uint)0x92C4),
+
+		/// <summary>
+		/// Specifies the number of active atomic counters in a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ActiveAtomicCounters = unchecked((uint)0x92C5),
+
+		/// <summary>
+		/// Specifies the indices of active atomic counters in a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ActiveAtomicCounterIndices = unchecked((uint)0x92C6),
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ReferencedByVertexShader = unchecked((uint)0x92C7),
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ReferencedByTessControlShader = unchecked((uint)0x92C8),
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ReferencedByTessEvaluationShader = unchecked((uint)0x92C9),
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ReferencedByGeometryShader = unchecked((uint)0x92CA),
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ReferencedByFragmentShader = unchecked((uint)0x92CB),
 	}
 }

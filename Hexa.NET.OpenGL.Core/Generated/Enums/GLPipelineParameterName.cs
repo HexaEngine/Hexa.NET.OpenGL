@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPipelineParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the currently active program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		ActiveProgram = unchecked((uint)0x8259),
+
+		/// <summary>
+		/// Specifies a fragment shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FragmentShader = unchecked((uint)0x8B30),
+
+		/// <summary>
+		/// Specifies a vertex shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexShader = unchecked((uint)0x8B31),
+
+		/// <summary>
+		/// Specifies the length of the information log for a shader or program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		InfoLogLength = unchecked((uint)0x8B84),
+
+		/// <summary>
+		/// Specifies the geometry shader type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		GeometryShader = unchecked((uint)0x8DD9),
+
+		/// <summary>
+		/// Specifies the tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		TessEvaluationShader = unchecked((uint)0x8E87),
+
+		/// <summary>
+		/// Specifies the tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		TessControlShader = unchecked((uint)0x8E88),
 	}
 }

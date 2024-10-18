@@ -18,10 +18,34 @@ namespace Hexa.NET.OpenGL
 	/// </summary>
 	public enum GLTransformFeedbackTokenNV : uint
 	{
+		/// <summary>
+		/// Next buffer command (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
 		NextBufferNv = unchecked((uint)-2),
+
+		/// <summary>
+		/// Skip 4 components for drawing (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
 		SkipComponents4Nv = unchecked((uint)-3),
+
+		/// <summary>
+		/// Skip 3 components for drawing (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
 		SkipComponents3Nv = unchecked((uint)-4),
+
+		/// <summary>
+		/// Skip 2 components for drawing (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
 		SkipComponents2Nv = unchecked((uint)-5),
+
+		/// <summary>
+		/// Skip 1 component for drawing (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
 		SkipComponents1Nv = unchecked((uint)-6),
 	}
 }

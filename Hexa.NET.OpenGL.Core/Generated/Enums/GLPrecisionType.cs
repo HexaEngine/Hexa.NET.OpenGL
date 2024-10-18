@@ -15,11 +15,40 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPrecisionType : uint
 	{
+		/// <summary>
+		/// Specifies the low precision float type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		LowFloat = unchecked((uint)0x8DF0),
+
+		/// <summary>
+		/// Specifies the medium precision float type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MediumFloat = unchecked((uint)0x8DF1),
+
+		/// <summary>
+		/// Specifies the high precision float type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		HighFloat = unchecked((uint)0x8DF2),
+
+		/// <summary>
+		/// Specifies the low precision integer type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		LowInt = unchecked((uint)0x8DF3),
+
+		/// <summary>
+		/// Specifies the medium precision integer type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MediumInt = unchecked((uint)0x8DF4),
+
+		/// <summary>
+		/// Specifies the high precision integer type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		HighInt = unchecked((uint)0x8DF5),
 	}
 }

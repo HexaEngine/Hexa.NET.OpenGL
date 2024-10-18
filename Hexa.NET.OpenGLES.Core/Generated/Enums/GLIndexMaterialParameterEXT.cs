@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLIndexMaterialParameterEXT : uint
 	{
+		/// <summary>
+		/// Specifies an offset for index values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Offset = unchecked((uint)0x0D13),
 	}
 }

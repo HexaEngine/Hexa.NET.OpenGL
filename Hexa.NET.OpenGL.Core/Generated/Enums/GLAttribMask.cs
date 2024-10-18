@@ -15,30 +15,154 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLAttribMask : uint
 	{
+		/// <summary>
+		/// Indicates the current state.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CurrentBit = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Used for point primitives.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PointBit = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Used for line primitives.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		LineBit = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Used for polygon primitives.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PolygonBit = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Enables polygon stippling.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PolygonStippleBit = unchecked((uint)0x00000010),
+
+		/// <summary>
+		/// Controls pixel manipulation modes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PixelModeBit = unchecked((uint)0x00000020),
+
+		/// <summary>
+		/// Enables lighting calculations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		LightingBit = unchecked((uint)0x00000040),
+
+		/// <summary>
+		/// Enables fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		FogBit = unchecked((uint)0x00000080),
+
+		/// <summary>
+		/// Enables depth buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		DepthBufferBit = unchecked((uint)0x00000100),
+
+		/// <summary>
+		/// Enables accumulation buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		AccumBufferBit = unchecked((uint)0x00000200),
+
+		/// <summary>
+		/// Enables stencil buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBufferBit = unchecked((uint)0x00000400),
+
+		/// <summary>
+		/// Controls viewport settings.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ViewportBit = unchecked((uint)0x00000800),
+
+		/// <summary>
+		/// Enables transformations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		TransformBit = unchecked((uint)0x00001000),
+
+		/// <summary>
+		/// Enables various features.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		EnableBit = unchecked((uint)0x00002000),
+
+		/// <summary>
+		/// Indicates color buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorBufferBit = unchecked((uint)0x00004000),
+
+		/// <summary>
+		/// Controls hint settings.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		HintBit = unchecked((uint)0x00008000),
+
+		/// <summary>
+		/// Enables evaluation functions.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		EvalBit = unchecked((uint)0x00010000),
+
+		/// <summary>
+		/// Enables display list operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ListBit = unchecked((uint)0x00020000),
+
+		/// <summary>
+		/// Enables texture mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		TextureBit = unchecked((uint)0x00040000),
+
+		/// <summary>
+		/// Enables scissor test.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ScissorBit = unchecked((uint)0x00080000),
+
+		/// <summary>
+		/// Enables multisampling.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		MultisampleBit = unchecked((uint)0x20000000),
+
+		/// <summary>
+		/// ARB multisample bit.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_multisample</remarks>
 		MultisampleBitArb = unchecked((uint)0x20000000),
+
+		/// <summary>
+		/// EXT multisample bit.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		MultisampleBitExt = unchecked((uint)0x20000000),
+
+		/// <summary>
+		/// 3DFX multisample bit.
+		/// </summary>
+		/// <remarks></remarks>
 		MultisampleBit3Dfx = unchecked((uint)0x20000000),
+
+		/// <summary>
+		/// Indicates all attribute bits.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		AllAttribBits = unchecked((uint)0xFFFFFFFF),
 	}
 }

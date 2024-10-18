@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSwizzleOpATI : uint
 	{
+		/// <summary>
+		/// Specifies the swizzle operation for STR channels in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		StrAti = unchecked((uint)0x8976),
+
+		/// <summary>
+		/// Specifies the swizzle operation for STQ channels in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		StqAti = unchecked((uint)0x8977),
+
+		/// <summary>
+		/// Specifies the swizzle operation for STR channels with destination register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		StrDrAti = unchecked((uint)0x8978),
+
+		/// <summary>
+		/// Specifies the swizzle operation for STQ channels with destination queue in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		StqDqAti = unchecked((uint)0x8979),
 	}
 }

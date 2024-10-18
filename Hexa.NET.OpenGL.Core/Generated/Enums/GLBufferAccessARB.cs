@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLBufferAccessARB : uint
 	{
+		/// <summary>
+		/// Specifies read-only access to a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ReadOnly = unchecked((uint)0x88B8),
+
+		/// <summary>
+		/// Specifies write-only access to a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_NV_shader_buffer_store</remarks>
 		WriteOnly = unchecked((uint)0x88B9),
+
+		/// <summary>
+		/// Specifies read/write access to a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_NV_shader_buffer_store</remarks>
 		ReadWrite = unchecked((uint)0x88BA),
 	}
 }

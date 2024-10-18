@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPathHandleMissingGlyphs : uint
 	{
+		/// <summary>
+		/// Specifies behavior to skip rendering of missing glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SkipMissingGlyphNv = unchecked((uint)0x90A9),
+
+		/// <summary>
+		/// Specifies behavior to use a default glyph for missing characters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		UseMissingGlyphNv = unchecked((uint)0x90AA),
 	}
 }

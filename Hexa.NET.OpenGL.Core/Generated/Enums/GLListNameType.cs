@@ -15,15 +15,64 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLListNameType : uint
 	{
+		/// <summary>
+		/// Specifies a signed byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Byte = unchecked((uint)0x1400),
+
+		/// <summary>
+		/// Specifies an unsigned byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedByte = unchecked((uint)0x1401),
+
+		/// <summary>
+		/// Specifies a signed short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Short = unchecked((uint)0x1402),
+
+		/// <summary>
+		/// Specifies an unsigned short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedShort = unchecked((uint)0x1403),
+
+		/// <summary>
+		/// Specifies a signed integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Int = unchecked((uint)0x1404),
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedInt = unchecked((uint)0x1405),
+
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		Float = unchecked((uint)0x1406),
+
+		/// <summary>
+		/// Specifies a data type that uses 2 bytes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl2Bytes = unchecked((uint)0x1407),
+
+		/// <summary>
+		/// Specifies a data type that uses 3 bytes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl3Bytes = unchecked((uint)0x1408),
+
+		/// <summary>
+		/// Specifies a data type that uses 4 bytes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Gl4Bytes = unchecked((uint)0x1409),
 	}
 }

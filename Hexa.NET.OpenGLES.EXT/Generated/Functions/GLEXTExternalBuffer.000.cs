@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_external_buffer</remarks>
 		public static void BufferStorageExternalEXT(GLEnum target, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
 		{
 			BufferStorageExternalEXTNative(target, offset, size, clientBuffer, flags);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_external_buffer</remarks>
 		public static void NamedBufferStorageExternalEXT(uint buffer, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
 		{
 			NamedBufferStorageExternalEXTNative(buffer, offset, size, clientBuffer, flags);

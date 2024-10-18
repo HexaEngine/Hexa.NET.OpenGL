@@ -15,18 +15,82 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLBufferPNameARB : uint
 	{
+		/// <summary>
+		/// Specifies immutable storage for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		ImmutableStorage = unchecked((uint)0x821F),
+
+		/// <summary>
+		/// Specifies storage flags for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		StorageFlags = unchecked((uint)0x8220),
+
+		/// <summary>
+		/// Specifies the size of a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Size = unchecked((uint)0x8764),
+
+		/// <summary>
+		/// Specifies the size of a buffer (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		SizeArb = unchecked((uint)0x8764),
+
+		/// <summary>
+		/// Specifies the usage of a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Usage = unchecked((uint)0x8765),
+
+		/// <summary>
+		/// Specifies the usage of a buffer (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		UsageArb = unchecked((uint)0x8765),
+
+		/// <summary>
+		/// Specifies the access type for buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Access = unchecked((uint)0x88BB),
+
+		/// <summary>
+		/// Specifies the access type for buffer objects (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		AccessArb = unchecked((uint)0x88BB),
+
+		/// <summary>
+		/// Specifies if a buffer is mapped.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Mapped = unchecked((uint)0x88BC),
+
+		/// <summary>
+		/// Specifies if a buffer is mapped (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		MappedArb = unchecked((uint)0x88BC),
+
+		/// <summary>
+		/// Specifies the access flags for buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AccessFlags = unchecked((uint)0x911F),
+
+		/// <summary>
+		/// Specifies the length of a mapped buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapLength = unchecked((uint)0x9120),
+
+		/// <summary>
+		/// Specifies the offset for a mapped buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MapOffset = unchecked((uint)0x9121),
 	}
 }

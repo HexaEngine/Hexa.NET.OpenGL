@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLSubgroupSupportedFeatures : uint
 	{
+		/// <summary>
+		/// Basic subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureBasicBitKhr = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Vote subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureVoteBitKhr = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Arithmetic subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureArithmeticBitKhr = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Ballot subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureBallotBitKhr = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Shuffle subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureShuffleBitKhr = unchecked((uint)0x00000010),
+
+		/// <summary>
+		/// Shuffle relative subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureShuffleRelativeBitKhr = unchecked((uint)0x00000020),
+
+		/// <summary>
+		/// Clustered subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureClusteredBitKhr = unchecked((uint)0x00000040),
+
+		/// <summary>
+		/// Quad subgroup feature bit (KHR).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_shader_subgroup</remarks>
 		FeatureQuadBitKhr = unchecked((uint)0x00000080),
+
+		/// <summary>
+		/// Partitioned subgroup feature bit (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_subgroup_partitioned</remarks>
 		FeaturePartitionedBitNv = unchecked((uint)0x00000100),
 	}
 }

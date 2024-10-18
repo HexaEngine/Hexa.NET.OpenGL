@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLLightEnvModeSGIX : uint
 	{
+		/// <summary>
+		/// Add operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Add = unchecked((uint)0x0104),
+
+		/// <summary>
+		/// Specifies replacing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Replace = unchecked((uint)0x1E01),
+
+		/// <summary>
+		/// Specifies modulation of texture colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Modulate = unchecked((uint)0x2100),
 	}
 }

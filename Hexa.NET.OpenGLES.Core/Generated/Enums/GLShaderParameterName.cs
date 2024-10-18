@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLShaderParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the type of a shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Type = unchecked((uint)0x8B4F),
+
+		/// <summary>
+		/// Specifies the delete status of an OpenGL object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DeleteStatus = unchecked((uint)0x8B80),
+
+		/// <summary>
+		/// Specifies the compile status of a shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CompileStatus = unchecked((uint)0x8B81),
+
+		/// <summary>
+		/// Specifies the length of the information log for a shader or program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		InfoLogLength = unchecked((uint)0x8B84),
+
+		/// <summary>
+		/// Specifies the length of the source code for a shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SourceLength = unchecked((uint)0x8B88),
 	}
 }

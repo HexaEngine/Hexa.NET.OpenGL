@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTriangleFace : uint
 	{
+		/// <summary>
+		/// Front color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Front = unchecked((uint)0x0404),
+
+		/// <summary>
+		/// Back color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_1_compatibility</remarks>
 		Back = unchecked((uint)0x0405),
+
+		/// <summary>
+		/// Both front and back color buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FrontAndBack = unchecked((uint)0x0408),
 	}
 }

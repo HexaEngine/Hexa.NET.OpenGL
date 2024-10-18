@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_discard_framebuffer</remarks>
 		public static void DiscardFramebufferEXT(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
 		{
 			DiscardFramebufferEXTNative(target, numAttachments, attachments);

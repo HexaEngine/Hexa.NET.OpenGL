@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_sparse_texture</remarks>
 		public static void TexStorageSparseAMD(GLTextureTarget target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
 		{
 			TexStorageSparseAMDNative(target, internalFormat, width, height, depth, layers, flags);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_sparse_texture</remarks>
 		public static void TextureStorageSparseAMD(uint texture, GLEnum target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
 		{
 			TextureStorageSparseAMDNative(texture, target, internalFormat, width, height, depth, layers, flags);

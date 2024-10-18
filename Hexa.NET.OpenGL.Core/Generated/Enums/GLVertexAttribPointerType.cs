@@ -15,23 +15,112 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLVertexAttribPointerType : uint
 	{
+		/// <summary>
+		/// Specifies a signed byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Byte = unchecked((uint)0x1400),
+
+		/// <summary>
+		/// Specifies an unsigned byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedByte = unchecked((uint)0x1401),
+
+		/// <summary>
+		/// Specifies a signed short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Short = unchecked((uint)0x1402),
+
+		/// <summary>
+		/// Specifies an unsigned short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedShort = unchecked((uint)0x1403),
+
+		/// <summary>
+		/// Specifies a signed integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Int = unchecked((uint)0x1404),
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedInt = unchecked((uint)0x1405),
+
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		Float = unchecked((uint)0x1406),
+
+		/// <summary>
+		/// Specifies a double-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit<br/>GL_ARB_gpu_shader_fp64</remarks>
 		Double = unchecked((uint)0x140A),
+
+		/// <summary>
+		/// Specifies a half-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_half_float_vertex</remarks>
 		HalfFloat = unchecked((uint)0x140B),
+
+		/// <summary>
+		/// Specifies a fixed-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		Fixed = unchecked((uint)0x140C),
+
+		/// <summary>
+		/// Specifies a 64-bit signed integer for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Arb = unchecked((uint)0x140E),
+
+		/// <summary>
+		/// Specifies a 64-bit signed integer for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_NV_vertex_attrib_integer_64bit<br/>GL_AMD_gpu_shader_int64</remarks>
 		Int64Nv = unchecked((uint)0x140E),
+
+		/// <summary>
+		/// Specifies a 64-bit unsigned integer for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Arb = unchecked((uint)0x140F),
+
+		/// <summary>
+		/// Specifies a 64-bit unsigned integer for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_NV_vertex_attrib_integer_64bit<br/>GL_AMD_gpu_shader_int64</remarks>
 		UnsignedInt64Nv = unchecked((uint)0x140F),
+
+		/// <summary>
+		/// Specifies unsigned int format in 2-10-10-10 reversed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		UnsignedInt2101010Rev = unchecked((uint)0x8368),
+
+		/// <summary>
+		/// Specifies unsigned int format in 2-10-10-10 reversed (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnsignedInt2101010RevExt = unchecked((uint)0x8368),
+
+		/// <summary>
+		/// Specifies the unsigned integer format 10F_11F_11F reversed.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_10f_11f_11f_rev</remarks>
 		UnsignedInt10F11F11FRev = unchecked((uint)0x8C3B),
+
+		/// <summary>
+		/// Specifies the integer format with reversed 2-10-10-10 layout.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		Int2101010Rev = unchecked((uint)0x8D9F),
 	}
 }

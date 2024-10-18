@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord1bOES(GLTextureUnit texture, sbyte s)
 		{
 			MultiTexCoord1bOESNative(texture, s);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord1bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord1bvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord1bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord1bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord2bOES(GLTextureUnit texture, sbyte s, sbyte t)
 		{
 			MultiTexCoord2bOESNative(texture, s, t);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord2bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord2bvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord2bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord2bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord3bOES(GLTextureUnit texture, sbyte s, sbyte t, sbyte r)
 		{
 			MultiTexCoord3bOESNative(texture, s, t, r);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord3bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord3bvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord3bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord3bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord4bOES(GLTextureUnit texture, sbyte s, sbyte t, sbyte r, sbyte q)
 		{
 			MultiTexCoord4bOESNative(texture, s, t, r, q);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord4bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord4bvOESNative(texture, coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord4bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void MultiTexCoord4bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -210,6 +274,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord1bOES(sbyte s)
 		{
 			TexCoord1bOESNative(s);
@@ -225,11 +293,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord1bvOES(sbyte* coords)
 		{
 			TexCoord1bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord1bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -238,6 +314,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord1bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -256,6 +336,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord2bOES(sbyte s, sbyte t)
 		{
 			TexCoord2bOESNative(s, t);
@@ -271,11 +355,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord2bvOES(sbyte* coords)
 		{
 			TexCoord2bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord2bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -284,6 +376,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord2bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -302,6 +398,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord3bOES(sbyte s, sbyte t, sbyte r)
 		{
 			TexCoord3bOESNative(s, t, r);
@@ -317,11 +417,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord3bvOES(sbyte* coords)
 		{
 			TexCoord3bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord3bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -330,6 +438,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord3bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -348,6 +460,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord4bOES(sbyte s, sbyte t, sbyte r, sbyte q)
 		{
 			TexCoord4bOESNative(s, t, r, q);
@@ -363,11 +479,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord4bvOES(sbyte* coords)
 		{
 			TexCoord4bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord4bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -376,6 +500,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void TexCoord4bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -394,6 +522,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex2bOES(sbyte x, sbyte y)
 		{
 			Vertex2bOESNative(x, y);
@@ -409,11 +541,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex2bvOES(sbyte* coords)
 		{
 			Vertex2bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex2bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -422,6 +562,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex2bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -440,6 +584,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex3bOES(sbyte x, sbyte y, sbyte z)
 		{
 			Vertex3bOESNative(x, y, z);
@@ -455,11 +603,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex3bvOES(sbyte* coords)
 		{
 			Vertex3bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex3bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -468,6 +624,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex3bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
@@ -486,6 +646,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex4bOES(sbyte x, sbyte y, sbyte z, sbyte w)
 		{
 			Vertex4bOESNative(x, y, z, w);
@@ -501,11 +665,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex4bvOES(sbyte* coords)
 		{
 			Vertex4bvOESNative(coords);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex4bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
@@ -514,6 +686,10 @@ namespace Hexa.NET.OpenGLES.OES
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
 		public static void Vertex4bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)

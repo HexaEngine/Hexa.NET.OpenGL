@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Specify a callback to receive debugging messages from the GL
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageCallback(GLDebugProc callback, void* userParam)
 		{
 			DebugMessageCallbackNative(callback, userParam);
 		}
 
+		/// <summary>
+		/// Specify a callback to receive debugging messages from the GL
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageCallback(GLDebugProc callback, nint userParam)
 		{
 			DebugMessageCallbackNative(callback, (void*)userParam);
 		}
 
+		/// <summary>
+		/// Specify a callback to receive debugging messages from the GL
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageCallback<TUserParam>(GLDebugProc callback, Span<TUserParam> userParam) where TUserParam : unmanaged
 		{
 			fixed (TUserParam* puserParam0 = userParam)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageCallbackKHR(GLDebugProcKHR callback, void* userParam)
 		{
 			DebugMessageCallbackKHRNative(callback, userParam);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageCallbackKHR(GLDebugProcKHR callback, nint userParam)
 		{
 			DebugMessageCallbackKHRNative(callback, (void*)userParam);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageCallbackKHR<TUserParam>(GLDebugProcKHR callback, Span<TUserParam> userParam) where TUserParam : unmanaged
 		{
 			fixed (TUserParam* puserParam0 = userParam)
@@ -82,11 +106,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Control the reporting of debug messages in a debug context
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			DebugMessageControlNative(source, type, severity, count, ids, enabled);
 		}
 
+		/// <summary>
+		/// Control the reporting of debug messages in a debug context
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
 		{
 			fixed (uint* pids0 = ids)
@@ -95,6 +127,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Control the reporting of debug messages in a debug context
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
 		{
 			fixed (uint* pids0 = &ids)
@@ -113,11 +149,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageControlKHR(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			DebugMessageControlKHRNative(source, type, severity, count, ids, enabled);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageControlKHR(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
 		{
 			fixed (uint* pids0 = ids)
@@ -126,6 +170,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageControlKHR(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
 		{
 			fixed (uint* pids0 = &ids)
@@ -144,11 +192,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Inject an application-supplied message into the debug message queue
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
 		{
 			DebugMessageInsertNative(source, type, id, severity, length, buf);
 		}
 
+		/// <summary>
+		/// Inject an application-supplied message into the debug message queue
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, string buf)
 		{
 			byte* pStr0 = null;
@@ -175,6 +231,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Inject an application-supplied message into the debug message queue
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, Span<byte> buf)
 		{
 			fixed (byte* pbuf0 = buf)
@@ -183,6 +243,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Inject an application-supplied message into the debug message queue
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, ref byte buf)
 		{
 			fixed (byte* pbuf0 = &buf)
@@ -201,11 +265,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsertKHR(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
 		{
 			DebugMessageInsertKHRNative(source, type, id, severity, length, buf);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsertKHR(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, string buf)
 		{
 			byte* pStr0 = null;
@@ -232,6 +304,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsertKHR(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, Span<byte> buf)
 		{
 			fixed (byte* pbuf0 = buf)
@@ -240,6 +316,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void DebugMessageInsertKHR(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, ref byte buf)
 		{
 			fixed (byte* pbuf0 = &buf)
@@ -258,12 +338,20 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			uint ret = GetDebugMessageLogNative(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 			return ret;
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -273,6 +361,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -282,6 +374,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = lengths)
@@ -291,6 +387,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -300,6 +400,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -312,6 +416,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -324,6 +432,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, string messageLog)
 		{
 			byte* pStr0 = null;
@@ -351,6 +463,10 @@ namespace Hexa.NET.OpenGL.KHR
 			return ret;
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (byte* pmessageLog0 = messageLog)
@@ -360,6 +476,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (byte* pmessageLog0 = &messageLog)
@@ -369,6 +489,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -381,6 +505,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -393,6 +521,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (int* plengths0 = lengths)
@@ -405,6 +537,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -417,6 +553,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -432,6 +572,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve messages from the debug message log
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -457,12 +601,20 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			uint ret = GetDebugMessageLogKHRNative(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -472,6 +624,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -481,6 +637,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = lengths)
@@ -490,6 +650,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -499,6 +663,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -511,6 +679,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -523,6 +695,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, string messageLog)
 		{
 			byte* pStr0 = null;
@@ -550,6 +726,10 @@ namespace Hexa.NET.OpenGL.KHR
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (byte* pmessageLog0 = messageLog)
@@ -559,6 +739,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (byte* pmessageLog0 = &messageLog)
@@ -568,6 +752,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -580,6 +768,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -592,6 +784,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (int* plengths0 = lengths)
@@ -604,6 +800,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
@@ -616,6 +816,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
@@ -631,6 +835,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static uint GetDebugMessageLogKHR(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
@@ -656,11 +864,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label)
 		{
 			GetObjectLabelNative(identifier, name, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
@@ -669,6 +885,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
@@ -677,6 +897,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
@@ -703,6 +927,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -711,6 +939,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -719,6 +951,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
@@ -730,6 +966,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
@@ -751,11 +991,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, int* length, byte* label)
 		{
 			GetObjectLabelKHRNative(identifier, name, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
@@ -764,6 +1012,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
@@ -772,6 +1024,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
@@ -798,6 +1054,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -806,6 +1066,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -814,6 +1078,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
@@ -825,6 +1093,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectLabelKHR(GLEnum identifier, uint name, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
@@ -846,16 +1118,28 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label)
 		{
 			GetObjectPtrLabelNative(ptr, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(nint ptr, int bufSize, int* length, byte* label)
 		{
 			GetObjectPtrLabelNative((void*)ptr, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel<TPtr>(Span<TPtr> ptr, int bufSize, int* length, byte* label) where TPtr : unmanaged
 		{
 			fixed (TPtr* pptr0 = ptr)
@@ -864,6 +1148,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
@@ -872,6 +1160,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
@@ -880,6 +1172,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
@@ -906,6 +1202,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -914,6 +1214,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -922,6 +1226,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
@@ -933,6 +1241,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the label of a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabel(void* ptr, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
@@ -954,16 +1266,28 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, byte* label)
 		{
 			GetObjectPtrLabelKHRNative(ptr, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(nint ptr, int bufSize, int* length, byte* label)
 		{
 			GetObjectPtrLabelKHRNative((void*)ptr, bufSize, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR<TPtr>(Span<TPtr> ptr, int bufSize, int* length, byte* label) where TPtr : unmanaged
 		{
 			fixed (TPtr* pptr0 = ptr)
@@ -972,6 +1296,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
@@ -980,6 +1308,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
@@ -988,6 +1320,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
@@ -1014,6 +1350,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -1022,6 +1362,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -1030,6 +1374,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
@@ -1041,6 +1389,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
@@ -1062,6 +1414,10 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Return the address of the specified pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.3 - GL 4.6<br/>GL 4.0 Compat - GL 4.2 Compat<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetPointerv(GLGetPointervPName pname, void** @params)
 		{
 			GetPointervNative(pname, @params);
@@ -1077,6 +1433,10 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void GetPointervKHR(GLEnum pname, void** @params)
 		{
 			GetPointervKHRNative(pname, @params);
@@ -1092,11 +1452,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Label a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabel(GLObjectIdentifier identifier, uint name, int length, byte* label)
 		{
 			ObjectLabelNative(identifier, name, length, label);
 		}
 
+		/// <summary>
+		/// Label a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabel(GLObjectIdentifier identifier, uint name, int length, string label)
 		{
 			byte* pStr0 = null;
@@ -1123,6 +1491,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Label a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabel(GLObjectIdentifier identifier, uint name, int length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -1131,6 +1503,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Label a named object identified within a namespace
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabel(GLObjectIdentifier identifier, uint name, int length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -1149,11 +1525,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabelKHR(GLObjectIdentifier identifier, uint name, int length, byte* label)
 		{
 			ObjectLabelKHRNative(identifier, name, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabelKHR(GLObjectIdentifier identifier, uint name, int length, string label)
 		{
 			byte* pStr0 = null;
@@ -1180,6 +1564,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabelKHR(GLObjectIdentifier identifier, uint name, int length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -1188,6 +1576,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectLabelKHR(GLObjectIdentifier identifier, uint name, int length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -1206,16 +1598,28 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Label a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabel(void* ptr, int length, byte* label)
 		{
 			ObjectPtrLabelNative(ptr, length, label);
 		}
 
+		/// <summary>
+		/// Label a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabel(nint ptr, int length, byte* label)
 		{
 			ObjectPtrLabelNative((void*)ptr, length, label);
 		}
 
+		/// <summary>
+		/// Label a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabel<TPtr>(Span<TPtr> ptr, int length, byte* label) where TPtr : unmanaged
 		{
 			fixed (TPtr* pptr0 = ptr)
@@ -1224,6 +1628,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Label a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabel(void* ptr, int length, string label)
 		{
 			byte* pStr0 = null;
@@ -1250,6 +1658,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Label a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabel(void* ptr, int length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -1258,6 +1670,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Label a sync object identified by a pointer
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabel(void* ptr, int length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -1276,16 +1692,28 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabelKHR(void* ptr, int length, byte* label)
 		{
 			ObjectPtrLabelKHRNative(ptr, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabelKHR(nint ptr, int length, byte* label)
 		{
 			ObjectPtrLabelKHRNative((void*)ptr, length, label);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabelKHR<TPtr>(Span<TPtr> ptr, int length, byte* label) where TPtr : unmanaged
 		{
 			fixed (TPtr* pptr0 = ptr)
@@ -1294,6 +1722,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabelKHR(void* ptr, int length, string label)
 		{
 			byte* pStr0 = null;
@@ -1320,6 +1752,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabelKHR(void* ptr, int length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
@@ -1328,6 +1764,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void ObjectPtrLabelKHR(void* ptr, int length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
@@ -1346,6 +1786,10 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Pop the active debug group
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PopDebugGroup()
 		{
 			PopDebugGroupNative();
@@ -1361,6 +1805,10 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PopDebugGroupKHR()
 		{
 			PopDebugGroupKHRNative();
@@ -1376,11 +1824,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroup(GLDebugSource source, uint id, int length, byte* message)
 		{
 			PushDebugGroupNative(source, id, length, message);
 		}
 
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroup(GLDebugSource source, uint id, int length, string message)
 		{
 			byte* pStr0 = null;
@@ -1407,6 +1863,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroup(GLDebugSource source, uint id, int length, Span<byte> message)
 		{
 			fixed (byte* pmessage0 = message)
@@ -1415,6 +1875,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// Push a named debug group into the command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroup(GLDebugSource source, uint id, int length, ref byte message)
 		{
 			fixed (byte* pmessage0 = &message)
@@ -1433,11 +1897,19 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroupKHR(GLDebugSource source, uint id, int length, byte* message)
 		{
 			PushDebugGroupKHRNative(source, id, length, message);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroupKHR(GLDebugSource source, uint id, int length, string message)
 		{
 			byte* pStr0 = null;
@@ -1464,6 +1936,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroupKHR(GLDebugSource source, uint id, int length, Span<byte> message)
 		{
 			fixed (byte* pmessage0 = message)
@@ -1472,6 +1948,10 @@ namespace Hexa.NET.OpenGL.KHR
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		public static void PushDebugGroupKHR(GLDebugSource source, uint id, int length, ref byte message)
 		{
 			fixed (byte* pmessage0 = &message)

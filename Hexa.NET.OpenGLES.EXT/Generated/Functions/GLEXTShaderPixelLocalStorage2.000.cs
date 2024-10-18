@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
 		public static void ClearPixelLocalStorageuiEXT(int offset, int n, uint* values)
 		{
 			ClearPixelLocalStorageuiEXTNative(offset, n, values);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
 		public static void ClearPixelLocalStorageuiEXT(int offset, int n, Span<uint> values)
 		{
 			fixed (uint* pvalues0 = values)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
 		public static void ClearPixelLocalStorageuiEXT(int offset, int n, ref uint values)
 		{
 			fixed (uint* pvalues0 = &values)
@@ -57,6 +69,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
 		public static void FramebufferPixelLocalStorageSizeEXT(uint target, int size)
 		{
 			FramebufferPixelLocalStorageSizeEXTNative(target, size);
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
 		public static int GetFramebufferPixelLocalStorageSizeEXT(GLFramebufferTarget target)
 		{
 			int ret = GetFramebufferPixelLocalStorageSizeEXTNative(target);

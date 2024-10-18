@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_fd</remarks>
 		public static void ImportSemaphoreFdEXT(uint semaphore, GLExternalHandleType handleType, int fd)
 		{
 			ImportSemaphoreFdEXTNative(semaphore, handleType, fd);

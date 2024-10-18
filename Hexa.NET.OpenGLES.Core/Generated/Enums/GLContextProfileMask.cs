@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLContextProfileMask : uint
 	{
+		/// <summary>
+		/// Core profile context bit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CoreProfileBit = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Compatibility profile context bit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CompatibilityProfileBit = unchecked((uint)0x00000002),
 	}
 }

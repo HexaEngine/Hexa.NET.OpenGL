@@ -15,75 +15,424 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentShaderGenericSourceATI : uint
 	{
+		/// <summary>
+		/// Numeric zero value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_blend_equation_advanced<br/>GL_NV_register_combiners<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Zero = unchecked((uint)0),
+
+		/// <summary>
+		/// Numeric one value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		One = unchecked((uint)1),
+
+		/// <summary>
+		/// Specifies the primary color input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PrimaryColor = unchecked((uint)0x8577),
+
+		/// <summary>
+		/// Specifies the primary color input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		PrimaryColorArb = unchecked((uint)0x8577),
+
+		/// <summary>
+		/// Specifies the primary color input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		PrimaryColorExt = unchecked((uint)0x8577),
+
+		/// <summary>
+		/// Specifies the first register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg0Ati = unchecked((uint)0x8921),
+
+		/// <summary>
+		/// Specifies the second register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg1Ati = unchecked((uint)0x8922),
+
+		/// <summary>
+		/// Specifies the third register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg2Ati = unchecked((uint)0x8923),
+
+		/// <summary>
+		/// Specifies the fourth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg3Ati = unchecked((uint)0x8924),
+
+		/// <summary>
+		/// Specifies the fifth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg4Ati = unchecked((uint)0x8925),
+
+		/// <summary>
+		/// Specifies the sixth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg5Ati = unchecked((uint)0x8926),
+
+		/// <summary>
+		/// Specifies the seventh register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg6Ati = unchecked((uint)0x8927),
+
+		/// <summary>
+		/// Specifies the eighth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg7Ati = unchecked((uint)0x8928),
+
+		/// <summary>
+		/// Specifies the ninth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg8Ati = unchecked((uint)0x8929),
+
+		/// <summary>
+		/// Specifies the tenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg9Ati = unchecked((uint)0x892A),
+
+		/// <summary>
+		/// Specifies the eleventh register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg10Ati = unchecked((uint)0x892B),
+
+		/// <summary>
+		/// Specifies the twelfth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg11Ati = unchecked((uint)0x892C),
+
+		/// <summary>
+		/// Specifies the thirteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg12Ati = unchecked((uint)0x892D),
+
+		/// <summary>
+		/// Specifies the fourteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg13Ati = unchecked((uint)0x892E),
+
+		/// <summary>
+		/// Specifies the fifteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg14Ati = unchecked((uint)0x892F),
+
+		/// <summary>
+		/// Specifies the sixteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg15Ati = unchecked((uint)0x8930),
+
+		/// <summary>
+		/// Specifies the seventeenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg16Ati = unchecked((uint)0x8931),
+
+		/// <summary>
+		/// Specifies the eighteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg17Ati = unchecked((uint)0x8932),
+
+		/// <summary>
+		/// Specifies the nineteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg18Ati = unchecked((uint)0x8933),
+
+		/// <summary>
+		/// Specifies the twentieth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg19Ati = unchecked((uint)0x8934),
+
+		/// <summary>
+		/// Specifies the twenty-first register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg20Ati = unchecked((uint)0x8935),
+
+		/// <summary>
+		/// Specifies the twenty-second register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg21Ati = unchecked((uint)0x8936),
+
+		/// <summary>
+		/// Specifies the twenty-third register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg22Ati = unchecked((uint)0x8937),
+
+		/// <summary>
+		/// Specifies the twenty-fourth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg23Ati = unchecked((uint)0x8938),
+
+		/// <summary>
+		/// Specifies the twenty-fifth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg24Ati = unchecked((uint)0x8939),
+
+		/// <summary>
+		/// Specifies the twenty-sixth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg25Ati = unchecked((uint)0x893A),
+
+		/// <summary>
+		/// Specifies the twenty-seventh register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg26Ati = unchecked((uint)0x893B),
+
+		/// <summary>
+		/// Specifies the twenty-eighth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg27Ati = unchecked((uint)0x893C),
+
+		/// <summary>
+		/// Specifies the twenty-ninth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg28Ati = unchecked((uint)0x893D),
+
+		/// <summary>
+		/// Specifies the thirtieth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg29Ati = unchecked((uint)0x893E),
+
+		/// <summary>
+		/// Specifies the thirty-first register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg30Ati = unchecked((uint)0x893F),
+
+		/// <summary>
+		/// Specifies the thirty-second register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg31Ati = unchecked((uint)0x8940),
+
+		/// <summary>
+		/// Specifies the first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con0Ati = unchecked((uint)0x8941),
+
+		/// <summary>
+		/// Specifies the second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con1Ati = unchecked((uint)0x8942),
+
+		/// <summary>
+		/// Specifies the third constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con2Ati = unchecked((uint)0x8943),
+
+		/// <summary>
+		/// Specifies the fourth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con3Ati = unchecked((uint)0x8944),
+
+		/// <summary>
+		/// Specifies the fifth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con4Ati = unchecked((uint)0x8945),
+
+		/// <summary>
+		/// Specifies the sixth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con5Ati = unchecked((uint)0x8946),
+
+		/// <summary>
+		/// Specifies the seventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con6Ati = unchecked((uint)0x8947),
+
+		/// <summary>
+		/// Specifies the eighth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con7Ati = unchecked((uint)0x8948),
+
+		/// <summary>
+		/// Specifies the ninth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con8Ati = unchecked((uint)0x8949),
+
+		/// <summary>
+		/// Specifies the tenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con9Ati = unchecked((uint)0x894A),
+
+		/// <summary>
+		/// Specifies the eleventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con10Ati = unchecked((uint)0x894B),
+
+		/// <summary>
+		/// Specifies the twelfth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con11Ati = unchecked((uint)0x894C),
+
+		/// <summary>
+		/// Specifies the thirteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con12Ati = unchecked((uint)0x894D),
+
+		/// <summary>
+		/// Specifies the fourteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con13Ati = unchecked((uint)0x894E),
+
+		/// <summary>
+		/// Specifies the fifteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con14Ati = unchecked((uint)0x894F),
+
+		/// <summary>
+		/// Specifies the sixteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con15Ati = unchecked((uint)0x8950),
+
+		/// <summary>
+		/// Specifies the seventeenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con16Ati = unchecked((uint)0x8951),
+
+		/// <summary>
+		/// Specifies the eighteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con17Ati = unchecked((uint)0x8952),
+
+		/// <summary>
+		/// Specifies the nineteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con18Ati = unchecked((uint)0x8953),
+
+		/// <summary>
+		/// Specifies the twentieth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con19Ati = unchecked((uint)0x8954),
+
+		/// <summary>
+		/// Specifies the twenty-first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con20Ati = unchecked((uint)0x8955),
+
+		/// <summary>
+		/// Specifies the twenty-second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con21Ati = unchecked((uint)0x8956),
+
+		/// <summary>
+		/// Specifies the twenty-third constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con22Ati = unchecked((uint)0x8957),
+
+		/// <summary>
+		/// Specifies the twenty-fourth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con23Ati = unchecked((uint)0x8958),
+
+		/// <summary>
+		/// Specifies the twenty-fifth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con24Ati = unchecked((uint)0x8959),
+
+		/// <summary>
+		/// Specifies the twenty-sixth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con25Ati = unchecked((uint)0x895A),
+
+		/// <summary>
+		/// Specifies the twenty-seventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con26Ati = unchecked((uint)0x895B),
+
+		/// <summary>
+		/// Specifies the twenty-eighth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con27Ati = unchecked((uint)0x895C),
+
+		/// <summary>
+		/// Specifies the twenty-ninth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con28Ati = unchecked((uint)0x895D),
+
+		/// <summary>
+		/// Specifies the thirtieth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con29Ati = unchecked((uint)0x895E),
+
+		/// <summary>
+		/// Specifies the thirty-first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con30Ati = unchecked((uint)0x895F),
+
+		/// <summary>
+		/// Specifies the thirty-second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con31Ati = unchecked((uint)0x8960),
+
+		/// <summary>
+		/// Specifies a secondary interpolator in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SecondaryInterpolatorAti = unchecked((uint)0x896D),
 	}
 }

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetSamplerParameterIivOES(uint sampler, GLSamplerParameterI pname, int* @params)
 		{
 			GetSamplerParameterIivOESNative(sampler, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetSamplerParameterIivOES(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
 			int pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetSamplerParameterIivOES(uint sampler, GLSamplerParameterI pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetSamplerParameterIuivOES(uint sampler, GLSamplerParameterI pname, uint* @params)
 		{
 			GetSamplerParameterIuivOESNative(sampler, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetSamplerParameterIuivOES(uint sampler, GLSamplerParameterI pname, out uint @params)
 		{
 			uint pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetSamplerParameterIuivOES(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -86,11 +110,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetTexParameterIivOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexParameterIivOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetTexParameterIivOES(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
 			int pparams;
@@ -98,6 +130,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetTexParameterIivOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -116,11 +152,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetTexParameterIuivOES(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			GetTexParameterIuivOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetTexParameterIuivOES(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
 			uint pparams;
@@ -128,6 +172,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void GetTexParameterIuivOES(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -146,11 +194,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void SamplerParameterIivOES(uint sampler, GLSamplerParameterI pname, int* param)
 		{
 			SamplerParameterIivOESNative(sampler, pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void SamplerParameterIivOES(uint sampler, GLSamplerParameterI pname, out int param)
 		{
 			int pparam;
@@ -168,11 +224,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void SamplerParameterIuivOES(uint sampler, GLSamplerParameterI pname, uint* param)
 		{
 			SamplerParameterIuivOESNative(sampler, pname, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void SamplerParameterIuivOES(uint sampler, GLSamplerParameterI pname, out uint param)
 		{
 			uint pparam;
@@ -190,11 +254,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void TexParameterIivOES(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TexParameterIivOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void TexParameterIivOES(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
 			int pparams;
@@ -202,6 +274,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void TexParameterIivOES(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -220,11 +296,19 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void TexParameterIuivOES(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			TexParameterIuivOESNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void TexParameterIuivOES(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
 			uint pparams;
@@ -232,6 +316,10 @@ namespace Hexa.NET.OpenGLES.OES
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		public static void TexParameterIuivOES(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)

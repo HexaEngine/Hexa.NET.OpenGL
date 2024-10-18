@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentLightModelParameterSGIX : uint
 	{
+		/// <summary>
+		/// Specifies the local viewer mode for fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LocalViewerSgix = unchecked((uint)0x8408),
+
+		/// <summary>
+		/// Specifies the two-sided lighting mode for fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TwoSideSgix = unchecked((uint)0x8409),
+
+		/// <summary>
+		/// Specifies the ambient light model for fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AmbientSgix = unchecked((uint)0x840A),
+
+		/// <summary>
+		/// Specifies normal interpolation for the fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NormalInterpolationSgix = unchecked((uint)0x840B),
 	}
 }

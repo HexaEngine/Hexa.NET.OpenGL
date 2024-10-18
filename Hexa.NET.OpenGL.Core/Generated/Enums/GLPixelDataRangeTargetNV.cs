@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPixelDataRangeTargetNV : uint
 	{
+		/// <summary>
+		/// Specifies the range for writing pixel data (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
 		WritePixelDataRangeNv = unchecked((uint)0x8878),
+
+		/// <summary>
+		/// Specifies the range for reading pixel data (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
 		ReadPixelDataRangeNv = unchecked((uint)0x8879),
 	}
 }

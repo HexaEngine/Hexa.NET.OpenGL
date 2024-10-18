@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
 		public static void BlendEquationIndexedAMD(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationIndexedAMDNative(buf, mode);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
 		public static void BlendEquationSeparateIndexedAMD(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateIndexedAMDNative(buf, modeRGB, modeAlpha);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
 		public static void BlendFuncIndexedAMD(uint buf, GLEnum src, GLEnum dst)
 		{
 			BlendFuncIndexedAMDNative(buf, src, dst);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
 		public static void BlendFuncSeparateIndexedAMD(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateIndexedAMDNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);

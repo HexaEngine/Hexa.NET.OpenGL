@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLQueryCounterTarget : uint
 	{
+		/// <summary>
+		/// Specifies the timestamp in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		Timestamp = unchecked((uint)0x8E28),
+
+		/// <summary>
+		/// Specifies the timestamp (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
 		TimestampExt = unchecked((uint)0x8E28),
 	}
 }

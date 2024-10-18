@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_MESA_framebuffer_flip_y</remarks>
 		public static void FramebufferParameteriMESA(GLFramebufferTarget target, GLFramebufferParameterName pname, int param)
 		{
 			FramebufferParameteriMESANative(target, pname, param);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.MESA
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_MESA_framebuffer_flip_y</remarks>
 		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferParameterivMESANative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_MESA_framebuffer_flip_y</remarks>
 		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparams;
@@ -53,6 +65,10 @@ namespace Hexa.NET.OpenGLES.MESA
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_MESA_framebuffer_flip_y</remarks>
 		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)

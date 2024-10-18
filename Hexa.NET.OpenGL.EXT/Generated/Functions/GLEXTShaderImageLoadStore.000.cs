@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		public static void BindImageTextureEXT(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
 		{
 			BindImageTextureEXTNative(index, texture, level, layered, layer, access, format);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		public static void MemoryBarrierEXT(GLMemoryBarrierMask barriers)
 		{
 			MemoryBarrierEXTNative(barriers);

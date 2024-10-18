@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCullParameterEXT : uint
 	{
+		/// <summary>
+		/// Specifies eye position based vertex culling (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		VertexEyePositionExt = unchecked((uint)0x81AB),
+
+		/// <summary>
+		/// Specifies object position based vertex culling (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
 		VertexObjectPositionExt = unchecked((uint)0x81AC),
 	}
 }

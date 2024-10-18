@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color3hNV(Half red, Half green, Half blue)
 		{
 			Color3hNVNative(red, green, blue);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color3hvNV(Half* v)
 		{
 			Color3hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color3hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color3hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color4hNV(Half red, Half green, Half blue, Half alpha)
 		{
 			Color4hNVNative(red, green, blue, alpha);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color4hvNV(Half* v)
 		{
 			Color4hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color4hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Color4hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void FogCoordhNV(Half fog)
 		{
 			FogCoordhNVNative(fog);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void FogCoordhvNV(Half* fog)
 		{
 			FogCoordhvNVNative(fog);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void FogCoordhvNV(Span<Half> fog)
 		{
 			fixed (Half* pfog0 = fog)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void FogCoordhvNV(ref Half fog)
 		{
 			fixed (Half* pfog0 = &fog)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord1hNV(GLTextureUnit target, Half s)
 		{
 			MultiTexCoord1hNVNative(target, s);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord1hvNV(GLTextureUnit target, Half* v)
 		{
 			MultiTexCoord1hvNVNative(target, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord1hvNV(GLTextureUnit target, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord1hvNV(GLTextureUnit target, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -210,6 +274,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord2hNV(GLTextureUnit target, Half s, Half t)
 		{
 			MultiTexCoord2hNVNative(target, s, t);
@@ -225,11 +293,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord2hvNV(GLTextureUnit target, Half* v)
 		{
 			MultiTexCoord2hvNVNative(target, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord2hvNV(GLTextureUnit target, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -238,6 +314,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord2hvNV(GLTextureUnit target, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -256,6 +336,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord3hNV(GLTextureUnit target, Half s, Half t, Half r)
 		{
 			MultiTexCoord3hNVNative(target, s, t, r);
@@ -271,11 +355,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord3hvNV(GLTextureUnit target, Half* v)
 		{
 			MultiTexCoord3hvNVNative(target, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord3hvNV(GLTextureUnit target, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -284,6 +376,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord3hvNV(GLTextureUnit target, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -302,6 +398,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord4hNV(GLTextureUnit target, Half s, Half t, Half r, Half q)
 		{
 			MultiTexCoord4hNVNative(target, s, t, r, q);
@@ -317,11 +417,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord4hvNV(GLTextureUnit target, Half* v)
 		{
 			MultiTexCoord4hvNVNative(target, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord4hvNV(GLTextureUnit target, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -330,6 +438,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void MultiTexCoord4hvNV(GLTextureUnit target, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -348,6 +460,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Normal3hNV(Half nx, Half ny, Half nz)
 		{
 			Normal3hNVNative(nx, ny, nz);
@@ -363,11 +479,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Normal3hvNV(Half* v)
 		{
 			Normal3hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Normal3hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -376,6 +500,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Normal3hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -394,6 +522,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void SecondaryColor3hNV(Half red, Half green, Half blue)
 		{
 			SecondaryColor3hNVNative(red, green, blue);
@@ -409,11 +541,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void SecondaryColor3hvNV(Half* v)
 		{
 			SecondaryColor3hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void SecondaryColor3hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -422,6 +562,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void SecondaryColor3hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -440,6 +584,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord1hNV(Half s)
 		{
 			TexCoord1hNVNative(s);
@@ -455,11 +603,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord1hvNV(Half* v)
 		{
 			TexCoord1hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord1hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -468,6 +624,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord1hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -486,6 +646,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord2hNV(Half s, Half t)
 		{
 			TexCoord2hNVNative(s, t);
@@ -501,11 +665,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord2hvNV(Half* v)
 		{
 			TexCoord2hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord2hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -514,6 +686,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord2hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -532,6 +708,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord3hNV(Half s, Half t, Half r)
 		{
 			TexCoord3hNVNative(s, t, r);
@@ -547,11 +727,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord3hvNV(Half* v)
 		{
 			TexCoord3hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord3hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -560,6 +748,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord3hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -578,6 +770,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord4hNV(Half s, Half t, Half r, Half q)
 		{
 			TexCoord4hNVNative(s, t, r, q);
@@ -593,11 +789,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord4hvNV(Half* v)
 		{
 			TexCoord4hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord4hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -606,6 +810,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void TexCoord4hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -624,6 +832,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex2hNV(Half x, Half y)
 		{
 			Vertex2hNVNative(x, y);
@@ -639,11 +851,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex2hvNV(Half* v)
 		{
 			Vertex2hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex2hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -652,6 +872,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex2hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -670,6 +894,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex3hNV(Half x, Half y, Half z)
 		{
 			Vertex3hNVNative(x, y, z);
@@ -685,11 +913,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex3hvNV(Half* v)
 		{
 			Vertex3hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex3hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -698,6 +934,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex3hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -716,6 +956,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex4hNV(Half x, Half y, Half z, Half w)
 		{
 			Vertex4hNVNative(x, y, z, w);
@@ -731,11 +975,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex4hvNV(Half* v)
 		{
 			Vertex4hvNVNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex4hvNV(Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -744,6 +996,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void Vertex4hvNV(ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -762,6 +1018,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib1hNV(uint index, Half x)
 		{
 			VertexAttrib1hNVNative(index, x);
@@ -777,11 +1037,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib1hvNV(uint index, Half* v)
 		{
 			VertexAttrib1hvNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib1hvNV(uint index, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -790,6 +1058,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib1hvNV(uint index, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -808,6 +1080,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib2hNV(uint index, Half x, Half y)
 		{
 			VertexAttrib2hNVNative(index, x, y);
@@ -823,11 +1099,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib2hvNV(uint index, Half* v)
 		{
 			VertexAttrib2hvNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib2hvNV(uint index, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -836,6 +1120,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib2hvNV(uint index, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -854,6 +1142,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib3hNV(uint index, Half x, Half y, Half z)
 		{
 			VertexAttrib3hNVNative(index, x, y, z);
@@ -869,11 +1161,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib3hvNV(uint index, Half* v)
 		{
 			VertexAttrib3hvNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib3hvNV(uint index, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -882,6 +1182,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib3hvNV(uint index, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -900,6 +1204,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib4hNV(uint index, Half x, Half y, Half z, Half w)
 		{
 			VertexAttrib4hNVNative(index, x, y, z, w);
@@ -915,11 +1223,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib4hvNV(uint index, Half* v)
 		{
 			VertexAttrib4hvNVNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib4hvNV(uint index, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -928,6 +1244,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttrib4hvNV(uint index, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -946,11 +1266,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs1hvNV(uint index, int n, Half* v)
 		{
 			VertexAttribs1hvNVNative(index, n, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs1hvNV(uint index, int n, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -959,6 +1287,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs1hvNV(uint index, int n, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -977,11 +1309,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs2hvNV(uint index, int n, Half* v)
 		{
 			VertexAttribs2hvNVNative(index, n, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs2hvNV(uint index, int n, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -990,6 +1330,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs2hvNV(uint index, int n, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -1008,11 +1352,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs3hvNV(uint index, int n, Half* v)
 		{
 			VertexAttribs3hvNVNative(index, n, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs3hvNV(uint index, int n, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -1021,6 +1373,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs3hvNV(uint index, int n, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -1039,11 +1395,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs4hvNV(uint index, int n, Half* v)
 		{
 			VertexAttribs4hvNVNative(index, n, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs4hvNV(uint index, int n, Span<Half> v)
 		{
 			fixed (Half* pv0 = v)
@@ -1052,6 +1416,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexAttribs4hvNV(uint index, int n, ref Half v)
 		{
 			fixed (Half* pv0 = &v)
@@ -1070,6 +1438,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexWeighthNV(Half weight)
 		{
 			VertexWeighthNVNative(weight);
@@ -1085,11 +1457,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexWeighthvNV(Half* weight)
 		{
 			VertexWeighthvNVNative(weight);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexWeighthvNV(Span<Half> weight)
 		{
 			fixed (Half* pweight0 = weight)
@@ -1098,6 +1478,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
 		public static void VertexWeighthvNV(ref Half weight)
 		{
 			fixed (Half* pweight0 = &weight)

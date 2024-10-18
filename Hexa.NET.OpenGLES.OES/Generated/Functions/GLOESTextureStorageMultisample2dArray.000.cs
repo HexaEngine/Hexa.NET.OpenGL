@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_storage_multisample_2d_array</remarks>
 		public static void TexStorage3DMultisampleOES(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexStorage3DMultisampleOESNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);

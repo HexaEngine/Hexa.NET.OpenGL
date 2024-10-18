@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLContainerType : uint
 	{
+		/// <summary>
+		/// Specifies a program object (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		ProgramObjectArb = unchecked((uint)0x8B40),
+
+		/// <summary>
+		/// Specifies a program object (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		ProgramObjectExt = unchecked((uint)0x8B40),
 	}
 }

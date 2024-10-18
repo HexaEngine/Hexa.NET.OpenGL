@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawArraysInstancedBaseInstance(GLPrimitiveType mode, int first, int count, int instancecount, uint baseinstance)
 		{
 			DrawArraysInstancedBaseInstanceNative(mode, first, count, instancecount, baseinstance);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawElementsInstancedBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, uint baseinstance)
 		{
 			DrawElementsInstancedBaseInstanceNative(mode, count, type, indices, instancecount, baseinstance);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawElementsInstancedBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, uint baseinstance)
 		{
 			DrawElementsInstancedBaseInstanceNative(mode, count, type, (void*)indices, instancecount, baseinstance);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawElementsInstancedBaseInstance<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, uint baseinstance) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -69,16 +85,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawElementsInstancedBaseVertexBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
 		{
 			DrawElementsInstancedBaseVertexBaseInstanceNative(mode, count, type, indices, instancecount, basevertex, baseinstance);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawElementsInstancedBaseVertexBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex, uint baseinstance)
 		{
 			DrawElementsInstancedBaseVertexBaseInstanceNative(mode, count, type, (void*)indices, instancecount, basevertex, baseinstance);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
 		public static void DrawElementsInstancedBaseVertexBaseInstance<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex, uint baseinstance) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)

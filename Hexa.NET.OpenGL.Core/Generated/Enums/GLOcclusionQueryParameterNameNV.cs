@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLOcclusionQueryParameterNameNV : uint
 	{
+		/// <summary>
+		/// Specifies the pixel count (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		PixelCountNv = unchecked((uint)0x8866),
+
+		/// <summary>
+		/// Specifies if pixel counts are available (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		PixelCountAvailableNv = unchecked((uint)0x8867),
 	}
 }

@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Fill a buffer object's data store with a fixed value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
 		public static void ClearBufferData(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearBufferDataNative(target, internalformat, format, type, data);
 		}
 
+		/// <summary>
+		/// Fill a buffer object's data store with a fixed value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
 		public static void ClearBufferData(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearBufferDataNative(target, internalformat, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// Fill a buffer object's data store with a fixed value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
 		public static void ClearBufferData<TData>(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Fill all or part of buffer object's data store with a fixed value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
 		public static void ClearBufferSubData(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearBufferSubDataNative(target, internalformat, offset, size, format, type, data);
 		}
 
+		/// <summary>
+		/// Fill all or part of buffer object's data store with a fixed value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
 		public static void ClearBufferSubData(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearBufferSubDataNative(target, internalformat, offset, size, format, type, (void*)data);
 		}
 
+		/// <summary>
+		/// Fill all or part of buffer object's data store with a fixed value
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
 		public static void ClearBufferSubData<TData>(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLHistogramTargetEXT : uint
 	{
+		/// <summary>
+		/// Specifies histogram operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Histogram = unchecked((uint)0x8024),
+
+		/// <summary>
+		/// Specifies histogram operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		Ext = unchecked((uint)0x8024),
+
+		/// <summary>
+		/// Specifies proxy histogram operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		ProxyHistogram = unchecked((uint)0x8025),
+
+		/// <summary>
+		/// Specifies proxy histogram operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		ProxyHistogramExt = unchecked((uint)0x8025),
 	}
 }

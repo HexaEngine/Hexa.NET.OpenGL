@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFrontFaceDirection : uint
 	{
+		/// <summary>
+		/// Indicates clockwise winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader<br/>GL_EXT_tessellation_shader<br/>GL_OES_tessellation_shader</remarks>
 		Cw = unchecked((uint)0x0900),
+
+		/// <summary>
+		/// Indicates counter-clockwise winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader<br/>GL_EXT_tessellation_shader<br/>GL_OES_tessellation_shader</remarks>
 		Ccw = unchecked((uint)0x0901),
 	}
 }

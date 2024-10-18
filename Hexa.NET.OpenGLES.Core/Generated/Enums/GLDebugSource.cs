@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLDebugSource : uint
 	{
+		/// <summary>
+		/// Specifies that the implementation can ignore this parameter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DontCare = unchecked((uint)0x1100),
+
+		/// <summary>
+		/// Specifies the source of debug messages as API calls.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Api = unchecked((uint)0x8246),
+
+		/// <summary>
+		/// Specifies the source of debug messages as window system related.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		WindowSystem = unchecked((uint)0x8247),
+
+		/// <summary>
+		/// Specifies the source of debug messages as shader compiler related.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		ShaderCompiler = unchecked((uint)0x8248),
+
+		/// <summary>
+		/// Specifies the source of debug messages as third-party applications.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		ThirdParty = unchecked((uint)0x8249),
+
+		/// <summary>
+		/// Specifies the source of debug messages as application related.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Application = unchecked((uint)0x824A),
+
+		/// <summary>
+		/// Specifies the source of debug messages as other.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Other = unchecked((uint)0x824B),
 	}
 }

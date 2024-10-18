@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
 		public static void TexStorage1D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			TexStorage1DNative(target, levels, internalformat, width);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
 		public static void TexStorage2D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			TexStorage2DNative(target, levels, internalformat, width, height);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
 		public static void TexStorage3D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			TexStorage3DNative(target, levels, internalformat, width, height, depth);

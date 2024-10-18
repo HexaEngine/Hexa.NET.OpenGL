@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_buffer_storage</remarks>
 		public static void BufferStorageEXT(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			BufferStorageEXTNative(target, size, data, flags);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_buffer_storage</remarks>
 		public static void BufferStorageEXT(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
 		{
 			BufferStorageEXTNative(target, size, (void*)data, flags);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_buffer_storage</remarks>
 		public static void BufferStorageEXT<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

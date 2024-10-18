@@ -15,22 +15,106 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLGetPointervPName : uint
 	{
+		/// <summary>
+		/// Specifies the pointer to the feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		FeedbackBufferPointer = unchecked((uint)0x0DF0),
+
+		/// <summary>
+		/// Specifies the pointer to the selection buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		SelectionBufferPointer = unchecked((uint)0x0DF3),
+
+		/// <summary>
+		/// Specifies the pointer to the vertex array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		VertexArrayPointer = unchecked((uint)0x808E),
+
+		/// <summary>
+		/// Specifies the pointer to the vertex array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		VertexArrayPointerExt = unchecked((uint)0x808E),
+
+		/// <summary>
+		/// Specifies the pointer to the normal array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		NormalArrayPointer = unchecked((uint)0x808F),
+
+		/// <summary>
+		/// Specifies the pointer to the normal array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		NormalArrayPointerExt = unchecked((uint)0x808F),
+
+		/// <summary>
+		/// Specifies the pointer to the color array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ColorArrayPointer = unchecked((uint)0x8090),
+
+		/// <summary>
+		/// Specifies the pointer to the color array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		ColorArrayPointerExt = unchecked((uint)0x8090),
+
+		/// <summary>
+		/// Specifies the pointer to the index array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		IndexArrayPointer = unchecked((uint)0x8091),
+
+		/// <summary>
+		/// Specifies the pointer to the index array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		IndexArrayPointerExt = unchecked((uint)0x8091),
+
+		/// <summary>
+		/// Specifies the pointer to the texture coordinate array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		TextureCoordArrayPointer = unchecked((uint)0x8092),
+
+		/// <summary>
+		/// Specifies the pointer to the texture coordinate array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		TextureCoordArrayPointerExt = unchecked((uint)0x8092),
+
+		/// <summary>
+		/// Specifies the pointer to the edge flag array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		EdgeFlagArrayPointer = unchecked((uint)0x8093),
+
+		/// <summary>
+		/// Specifies the pointer to the edge flag array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
 		EdgeFlagArrayPointerExt = unchecked((uint)0x8093),
+
+		/// <summary>
+		/// Specifies the pointer to the instrument buffer (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		InstrumentBufferPointerSgix = unchecked((uint)0x8180),
+
+		/// <summary>
+		/// Specifies the function to call for debug messages.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugCallbackFunction = unchecked((uint)0x8244),
+
+		/// <summary>
+		/// Specifies user parameter for the debug callback function.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugCallbackUserParam = unchecked((uint)0x8245),
 	}
 }

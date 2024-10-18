@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		public static void SampleMaskEXT(float value, bool invert)
 		{
 			SampleMaskEXTNative(value, invert);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		public static void SamplePatternEXT(GLSamplePatternEXT pattern)
 		{
 			SamplePatternEXTNative(pattern);

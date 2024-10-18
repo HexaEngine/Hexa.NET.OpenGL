@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPathFontTarget : uint
 	{
+		/// <summary>
+		/// Specifies the standard font name (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		StandardFontNameNv = unchecked((uint)0x9072),
+
+		/// <summary>
+		/// Specifies the system font name (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SystemFontNameNv = unchecked((uint)0x9073),
+
+		/// <summary>
+		/// Specifies the file name (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FileNameNv = unchecked((uint)0x9074),
 	}
 }

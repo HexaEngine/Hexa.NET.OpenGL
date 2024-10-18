@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
 		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, float* @params)
 		{
 			CombinerStageParameterfvNVNative(stage, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
 		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, out float @params)
 		{
 			float pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
 		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
 		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, float* @params)
 		{
 			GetCombinerStageParameterfvNVNative(stage, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
 		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, out float @params)
 		{
 			float pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
 		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)

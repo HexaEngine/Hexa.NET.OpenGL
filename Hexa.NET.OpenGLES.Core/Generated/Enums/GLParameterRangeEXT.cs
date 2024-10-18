@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLParameterRangeEXT : uint
 	{
+		/// <summary>
+		/// Specifies the normalized range in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NormalizedRangeExt = unchecked((uint)0x87E0),
+
+		/// <summary>
+		/// Specifies the full range in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		FullRangeExt = unchecked((uint)0x87E1),
 	}
 }

@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureLayout : uint
 	{
+		/// <summary>
+		/// Specifies a layout where depth is read-only and stencil is an attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		DepthReadOnlyStencilAttachmentExt = unchecked((uint)0x9530),
+
+		/// <summary>
+		/// Specifies a layout where depth is an attachment and stencil is read-only (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		DepthAttachmentStencilReadOnlyExt = unchecked((uint)0x9531),
+
+		/// <summary>
+		/// Specifies a general layout for resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		GeneralExt = unchecked((uint)0x958D),
+
+		/// <summary>
+		/// Specifies a layout for color attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		ColorAttachmentExt = unchecked((uint)0x958E),
+
+		/// <summary>
+		/// Specifies a layout for depth-stencil attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		DepthStencilAttachmentExt = unchecked((uint)0x958F),
+
+		/// <summary>
+		/// Specifies a layout for read-only depth-stencil attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		DepthStencilReadOnlyExt = unchecked((uint)0x9590),
+
+		/// <summary>
+		/// Specifies a layout for shader read-only resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		ShaderReadOnlyExt = unchecked((uint)0x9591),
+
+		/// <summary>
+		/// Specifies a layout for transfer source resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		TransferSrcExt = unchecked((uint)0x9592),
+
+		/// <summary>
+		/// Specifies a layout for transfer destination resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		TransferDstExt = unchecked((uint)0x9593),
 	}
 }

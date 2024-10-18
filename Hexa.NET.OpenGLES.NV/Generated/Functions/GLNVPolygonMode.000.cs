@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_polygon_mode</remarks>
 		public static void PolygonModeNV(GLTriangleFace face, GLPolygonMode mode)
 		{
 			PolygonModeNVNative(face, mode);

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
 		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			GetQueryObjecti64vEXTNative(id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
 		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, out long @params)
 		{
 			long pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
 		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
 		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			GetQueryObjectui64vEXTNative(id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
 		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, out ulong @params)
 		{
 			ulong pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
 		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)

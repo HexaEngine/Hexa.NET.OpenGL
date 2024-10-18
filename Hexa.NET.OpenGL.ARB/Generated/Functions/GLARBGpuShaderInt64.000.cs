@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetUniformi64vARB(uint program, int location, long* @params)
 		{
 			GetUniformi64vARBNative(program, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetUniformi64vARB(uint program, int location, out long @params)
 		{
 			long pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetUniformi64vARB(uint program, int location, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetUniformui64vARB(uint program, int location, ulong* @params)
 		{
 			GetUniformui64vARBNative(program, location, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetUniformui64vARB(uint program, int location, out ulong @params)
 		{
 			ulong pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetUniformui64vARB(uint program, int location, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -86,11 +110,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetnUniformi64vARB(uint program, int location, int bufSize, long* @params)
 		{
 			GetnUniformi64vARBNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetnUniformi64vARB(uint program, int location, int bufSize, out long @params)
 		{
 			long pparams;
@@ -98,6 +130,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetnUniformi64vARB(uint program, int location, int bufSize, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -116,11 +152,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetnUniformui64vARB(uint program, int location, int bufSize, ulong* @params)
 		{
 			GetnUniformui64vARBNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetnUniformui64vARB(uint program, int location, int bufSize, out ulong @params)
 		{
 			ulong pparams;
@@ -128,6 +172,10 @@ namespace Hexa.NET.OpenGL.ARB
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void GetnUniformui64vARB(uint program, int location, int bufSize, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
@@ -146,6 +194,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64ARB(uint program, int location, long x)
 		{
 			ProgramUniform1i64ARBNative(program, location, x);
@@ -161,11 +213,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform1i64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -174,6 +234,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -192,6 +256,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64ARB(uint program, int location, ulong x)
 		{
 			ProgramUniform1ui64ARBNative(program, location, x);
@@ -207,11 +275,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform1ui64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -220,6 +296,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform1ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -238,6 +318,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64ARB(uint program, int location, long x, long y)
 		{
 			ProgramUniform2i64ARBNative(program, location, x, y);
@@ -253,11 +337,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform2i64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -266,6 +358,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -284,6 +380,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64ARB(uint program, int location, ulong x, ulong y)
 		{
 			ProgramUniform2ui64ARBNative(program, location, x, y);
@@ -299,11 +399,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform2ui64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -312,6 +420,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform2ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -330,6 +442,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64ARB(uint program, int location, long x, long y, long z)
 		{
 			ProgramUniform3i64ARBNative(program, location, x, y, z);
@@ -345,11 +461,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform3i64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -358,6 +482,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -376,6 +504,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64ARB(uint program, int location, ulong x, ulong y, ulong z)
 		{
 			ProgramUniform3ui64ARBNative(program, location, x, y, z);
@@ -391,11 +523,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform3ui64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -404,6 +544,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform3ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -422,6 +566,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64ARB(uint program, int location, long x, long y, long z, long w)
 		{
 			ProgramUniform4i64ARBNative(program, location, x, y, z, w);
@@ -437,11 +585,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform4i64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -450,6 +606,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -468,6 +628,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64ARB(uint program, int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			ProgramUniform4ui64ARBNative(program, location, x, y, z, w);
@@ -483,11 +647,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform4ui64vARBNative(program, location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -496,6 +668,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void ProgramUniform4ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -514,6 +690,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1i64ARB(int location, long x)
 		{
 			Uniform1i64ARBNative(location, x);
@@ -529,11 +709,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1i64vARB(int location, int count, long* value)
 		{
 			Uniform1i64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -542,6 +730,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -560,6 +752,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1ui64ARB(int location, ulong x)
 		{
 			Uniform1ui64ARBNative(location, x);
@@ -575,11 +771,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform1ui64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -588,6 +792,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform1ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -606,6 +814,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2i64ARB(int location, long x, long y)
 		{
 			Uniform2i64ARBNative(location, x, y);
@@ -621,11 +833,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2i64vARB(int location, int count, long* value)
 		{
 			Uniform2i64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -634,6 +854,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -652,6 +876,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2ui64ARB(int location, ulong x, ulong y)
 		{
 			Uniform2ui64ARBNative(location, x, y);
@@ -667,11 +895,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform2ui64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -680,6 +916,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform2ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -698,6 +938,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3i64ARB(int location, long x, long y, long z)
 		{
 			Uniform3i64ARBNative(location, x, y, z);
@@ -713,11 +957,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3i64vARB(int location, int count, long* value)
 		{
 			Uniform3i64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -726,6 +978,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -744,6 +1000,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3ui64ARB(int location, ulong x, ulong y, ulong z)
 		{
 			Uniform3ui64ARBNative(location, x, y, z);
@@ -759,11 +1019,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform3ui64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -772,6 +1040,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform3ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
@@ -790,6 +1062,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4i64ARB(int location, long x, long y, long z, long w)
 		{
 			Uniform4i64ARBNative(location, x, y, z, w);
@@ -805,11 +1081,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4i64vARB(int location, int count, long* value)
 		{
 			Uniform4i64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
@@ -818,6 +1102,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
@@ -836,6 +1124,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4ui64ARB(int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			Uniform4ui64ARBNative(location, x, y, z, w);
@@ -851,11 +1143,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform4ui64vARBNative(location, count, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
@@ -864,6 +1164,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		public static void Uniform4ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)

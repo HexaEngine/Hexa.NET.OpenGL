@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLQueryParameterName : uint
 	{
+		/// <summary>
+		/// Specifies the number of bits in query counters.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CounterBits = unchecked((uint)0x8864),
+
+		/// <summary>
+		/// Specifies the current query.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CurrentQuery = unchecked((uint)0x8865),
 	}
 }

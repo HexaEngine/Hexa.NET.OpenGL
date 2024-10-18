@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample_coverage</remarks>
 		public static void RenderbufferStorageMultisampleCoverageNV(GLRenderbufferTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleCoverageNVNative(target, coverageSamples, colorSamples, internalformat, width, height);

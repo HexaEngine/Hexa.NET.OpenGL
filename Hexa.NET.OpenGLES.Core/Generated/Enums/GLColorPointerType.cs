@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLColorPointerType : uint
 	{
+		/// <summary>
+		/// Specifies a signed byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_render_snorm<br/>GL_OES_byte_coordinates</remarks>
 		Byte = unchecked((uint)0x1400),
+
+		/// <summary>
+		/// Specifies an unsigned byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		UnsignedByte = unchecked((uint)0x1401),
+
+		/// <summary>
+		/// Specifies a signed short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_render_snorm</remarks>
 		Short = unchecked((uint)0x1402),
+
+		/// <summary>
+		/// Specifies an unsigned short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ANGLE_depth_texture<br/>GL_OES_depth_texture</remarks>
 		UnsignedShort = unchecked((uint)0x1403),
+
+		/// <summary>
+		/// Specifies a signed integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Int = unchecked((uint)0x1404),
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ANGLE_depth_texture<br/>GL_OES_depth_texture<br/>GL_OES_element_index_uint</remarks>
 		UnsignedInt = unchecked((uint)0x1405),
+
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader<br/>GL_OES_texture_float</remarks>
 		Float = unchecked((uint)0x1406),
+
+		/// <summary>
+		/// Specifies a double-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit<br/>GL_ARB_gpu_shader_fp64</remarks>
 		Double = unchecked((uint)0x140A),
 	}
 }

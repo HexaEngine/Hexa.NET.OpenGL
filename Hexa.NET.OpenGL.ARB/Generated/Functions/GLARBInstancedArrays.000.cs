@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_instanced_arrays</remarks>
 		public static void VertexAttribDivisorARB(uint index, uint divisor)
 		{
 			VertexAttribDivisorARBNative(index, divisor);

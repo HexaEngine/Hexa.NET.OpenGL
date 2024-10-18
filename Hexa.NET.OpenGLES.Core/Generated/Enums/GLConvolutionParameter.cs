@@ -15,22 +15,106 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLConvolutionParameter : uint
 	{
+		/// <summary>
+		/// Specifies the border mode for convolution operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		BorderMode = unchecked((uint)0x8013),
+
+		/// <summary>
+		/// Specifies the border mode for convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		BorderModeExt = unchecked((uint)0x8013),
+
+		/// <summary>
+		/// Specifies the scale factor for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		FilterScale = unchecked((uint)0x8014),
+
+		/// <summary>
+		/// Specifies the scale factor for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		FilterScaleExt = unchecked((uint)0x8014),
+
+		/// <summary>
+		/// Specifies the bias for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		FilterBias = unchecked((uint)0x8015),
+
+		/// <summary>
+		/// Specifies the bias for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		FilterBiasExt = unchecked((uint)0x8015),
+
+		/// <summary>
+		/// Specifies the format for convolution operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Format = unchecked((uint)0x8017),
+
+		/// <summary>
+		/// Specifies the format for convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		FormatExt = unchecked((uint)0x8017),
+
+		/// <summary>
+		/// Specifies the width of the convolution filter.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Width = unchecked((uint)0x8018),
+
+		/// <summary>
+		/// Specifies the width of the convolution filter for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		WidthExt = unchecked((uint)0x8018),
+
+		/// <summary>
+		/// Specifies the height of the convolution filter.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Height = unchecked((uint)0x8019),
+
+		/// <summary>
+		/// Specifies the height of the convolution filter for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		HeightExt = unchecked((uint)0x8019),
+
+		/// <summary>
+		/// Specifies the maximum width for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		MaxConvolutionWidth = unchecked((uint)0x801A),
+
+		/// <summary>
+		/// Specifies the maximum width for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		MaxConvolutionWidthExt = unchecked((uint)0x801A),
+
+		/// <summary>
+		/// Specifies the maximum height for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		MaxConvolutionHeight = unchecked((uint)0x801B),
+
+		/// <summary>
+		/// Specifies the maximum height for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		MaxConvolutionHeightExt = unchecked((uint)0x801B),
+
+		/// <summary>
+		/// Specifies the border color for convolutions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		BorderColor = unchecked((uint)0x8154),
 	}
 }

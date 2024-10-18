@@ -26,12 +26,20 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource</remarks>
 		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, int* buffer)
 		{
 			int ret = QueryResourceNVNative(queryType, tagId, count, buffer);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource</remarks>
 		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, Span<int> buffer)
 		{
 			fixed (int* pbuffer0 = buffer)
@@ -41,6 +49,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource</remarks>
 		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, ref int buffer)
 		{
 			fixed (int* pbuffer0 = &buffer)

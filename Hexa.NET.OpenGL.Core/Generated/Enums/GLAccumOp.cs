@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLAccumOp : uint
 	{
+		/// <summary>
+		/// Accumulation buffer operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Accum = unchecked((uint)0x0100),
+
+		/// <summary>
+		/// Load operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Load = unchecked((uint)0x0101),
+
+		/// <summary>
+		/// Return operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Return = unchecked((uint)0x0102),
+
+		/// <summary>
+		/// Multiply operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Mult = unchecked((uint)0x0103),
+
+		/// <summary>
+		/// Add operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Add = unchecked((uint)0x0104),
 	}
 }

@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexStreamATI : uint
 	{
+		/// <summary>
+		/// Specifies the first vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream0Ati = unchecked((uint)0x876C),
+
+		/// <summary>
+		/// Specifies the second vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream1Ati = unchecked((uint)0x876D),
+
+		/// <summary>
+		/// Specifies the third vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream2Ati = unchecked((uint)0x876E),
+
+		/// <summary>
+		/// Specifies the fourth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream3Ati = unchecked((uint)0x876F),
+
+		/// <summary>
+		/// Specifies the fifth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream4Ati = unchecked((uint)0x8770),
+
+		/// <summary>
+		/// Specifies the sixth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream5Ati = unchecked((uint)0x8771),
+
+		/// <summary>
+		/// Specifies the seventh vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream6Ati = unchecked((uint)0x8772),
+
+		/// <summary>
+		/// Specifies the eighth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Stream7Ati = unchecked((uint)0x8773),
 	}
 }

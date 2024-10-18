@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
 		public static void LGPUCopyImageSubDataNVX(uint sourceGpu, uint destinationGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srxY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int width, int height, int depth)
 		{
 			LGPUCopyImageSubDataNVXNative(sourceGpu, destinationGpuMask, srcName, srcTarget, srcLevel, srcX, srxY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
 		public static void LGPUInterlockNVX()
 		{
 			LGPUInterlockNVXNative();
@@ -56,16 +64,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
 		public static void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, void* data)
 		{
 			LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
 		public static void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, nint data)
 		{
 			LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
 		public static void LGPUNamedBufferSubDataNVX<TData>(uint gpuMask, uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

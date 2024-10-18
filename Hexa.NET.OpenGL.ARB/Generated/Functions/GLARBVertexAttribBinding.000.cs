@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a buffer to a vertex buffer bind point
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		public static void BindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			BindVertexBufferNative(bindingindex, buffer, offset, stride);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Associate a vertex attribute and a vertex buffer binding for a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		public static void VertexAttribBinding(uint attribindex, uint bindingindex)
 		{
 			VertexAttribBindingNative(attribindex, bindingindex);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Specify the organization of vertex arrays
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		public static void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexAttribFormatNative(attribindex, size, type, normalized, relativeoffset);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		public static void VertexAttribIFormat(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			VertexAttribIFormatNative(attribindex, size, type, relativeoffset);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		public static void VertexAttribLFormat(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			VertexAttribLFormatNative(attribindex, size, type, relativeoffset);
@@ -101,6 +121,11 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Modify the rate at which generic vertex attributes
+		///     advance
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
 		public static void VertexBindingDivisor(uint bindingindex, uint divisor)
 		{
 			VertexBindingDivisorNative(bindingindex, divisor);

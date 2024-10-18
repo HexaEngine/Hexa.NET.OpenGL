@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexWeightPointerTypeEXT : uint
 	{
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader<br/>GL_OES_texture_float</remarks>
 		Float = unchecked((uint)0x1406),
 	}
 }

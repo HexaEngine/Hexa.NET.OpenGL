@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLListMode : uint
 	{
+		/// <summary>
+		/// Specifies that the display list is to be compiled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Compile = unchecked((uint)0x1300),
+
+		/// <summary>
+		/// Specifies that the display list is to be compiled and executed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CompileAndExecute = unchecked((uint)0x1301),
 	}
 }

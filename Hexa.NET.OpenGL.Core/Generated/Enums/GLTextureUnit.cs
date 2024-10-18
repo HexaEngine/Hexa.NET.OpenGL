@@ -15,37 +15,196 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureUnit : uint
 	{
+		/// <summary>
+		/// Specifies texture unit 0.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture0 = unchecked((uint)0x84C0),
+
+		/// <summary>
+		/// Specifies texture unit 1.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture1 = unchecked((uint)0x84C1),
+
+		/// <summary>
+		/// Specifies texture unit 2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture2 = unchecked((uint)0x84C2),
+
+		/// <summary>
+		/// Specifies texture unit 3.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture3 = unchecked((uint)0x84C3),
+
+		/// <summary>
+		/// Specifies texture unit 4.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture4 = unchecked((uint)0x84C4),
+
+		/// <summary>
+		/// Specifies texture unit 5.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture5 = unchecked((uint)0x84C5),
+
+		/// <summary>
+		/// Specifies texture unit 6.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture6 = unchecked((uint)0x84C6),
+
+		/// <summary>
+		/// Specifies texture unit 7.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture7 = unchecked((uint)0x84C7),
+
+		/// <summary>
+		/// Specifies texture unit 8.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture8 = unchecked((uint)0x84C8),
+
+		/// <summary>
+		/// Specifies texture unit 9.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture9 = unchecked((uint)0x84C9),
+
+		/// <summary>
+		/// Specifies texture unit 10.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture10 = unchecked((uint)0x84CA),
+
+		/// <summary>
+		/// Specifies texture unit 11.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture11 = unchecked((uint)0x84CB),
+
+		/// <summary>
+		/// Specifies texture unit 12.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture12 = unchecked((uint)0x84CC),
+
+		/// <summary>
+		/// Specifies texture unit 13.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture13 = unchecked((uint)0x84CD),
+
+		/// <summary>
+		/// Specifies texture unit 14.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture14 = unchecked((uint)0x84CE),
+
+		/// <summary>
+		/// Specifies texture unit 15.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture15 = unchecked((uint)0x84CF),
+
+		/// <summary>
+		/// Specifies texture unit 16.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture16 = unchecked((uint)0x84D0),
+
+		/// <summary>
+		/// Specifies texture unit 17.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture17 = unchecked((uint)0x84D1),
+
+		/// <summary>
+		/// Specifies texture unit 18.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture18 = unchecked((uint)0x84D2),
+
+		/// <summary>
+		/// Specifies texture unit 19.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture19 = unchecked((uint)0x84D3),
+
+		/// <summary>
+		/// Specifies texture unit 20.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture20 = unchecked((uint)0x84D4),
+
+		/// <summary>
+		/// Specifies texture unit 21.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture21 = unchecked((uint)0x84D5),
+
+		/// <summary>
+		/// Specifies texture unit 22.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture22 = unchecked((uint)0x84D6),
+
+		/// <summary>
+		/// Specifies texture unit 23.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture23 = unchecked((uint)0x84D7),
+
+		/// <summary>
+		/// Specifies texture unit 24.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture24 = unchecked((uint)0x84D8),
+
+		/// <summary>
+		/// Specifies texture unit 25.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture25 = unchecked((uint)0x84D9),
+
+		/// <summary>
+		/// Specifies texture unit 26.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture26 = unchecked((uint)0x84DA),
+
+		/// <summary>
+		/// Specifies texture unit 27.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture27 = unchecked((uint)0x84DB),
+
+		/// <summary>
+		/// Specifies texture unit 28.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture28 = unchecked((uint)0x84DC),
+
+		/// <summary>
+		/// Specifies texture unit 29.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture29 = unchecked((uint)0x84DD),
+
+		/// <summary>
+		/// Specifies texture unit 30.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture30 = unchecked((uint)0x84DE),
+
+		/// <summary>
+		/// Specifies texture unit 31.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture31 = unchecked((uint)0x84DF),
 	}
 }

@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFragmentOp3ATI : uint
 	{
+		/// <summary>
+		/// Specifies the multiply-add operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		MadAti = unchecked((uint)0x8968),
+
+		/// <summary>
+		/// Specifies the linear interpolation operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		LerpAti = unchecked((uint)0x8969),
+
+		/// <summary>
+		/// Specifies the conditional operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		CndAti = unchecked((uint)0x896A),
+
+		/// <summary>
+		/// Specifies the first conditional operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Cnd0Ati = unchecked((uint)0x896B),
+
+		/// <summary>
+		/// Specifies the addition of a dot product of two components in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Dot2AddAti = unchecked((uint)0x896C),
 	}
 }

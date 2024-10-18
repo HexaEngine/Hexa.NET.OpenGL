@@ -15,5753 +15,17044 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLEnum : int
 	{
-		Points = 0x0000,
-		Lines = 0x0001,
-		LineLoop = 0x0002,
-		LineStrip = 0x0003,
-		Triangles = 0x0004,
-		TriangleStrip = 0x0005,
-		TriangleFan = 0x0006,
-		Quads = 0x0007,
-		QuadsExt = 0x0007,
-		QuadsOes = 0x0007,
-		QuadStrip = 0x0008,
-		Polygon = 0x0009,
-		LinesAdjacency = 0x000A,
-		LinesAdjacencyArb = 0x000A,
-		LinesAdjacencyExt = 0x000A,
-		LinesAdjacencyOes = 0x000A,
-		LineStripAdjacency = 0x000B,
-		LineStripAdjacencyArb = 0x000B,
-		LineStripAdjacencyExt = 0x000B,
-		LineStripAdjacencyOes = 0x000B,
-		TrianglesAdjacency = 0x000C,
-		TrianglesAdjacencyArb = 0x000C,
-		TrianglesAdjacencyExt = 0x000C,
-		TrianglesAdjacencyOes = 0x000C,
-		TriangleStripAdjacency = 0x000D,
-		TriangleStripAdjacencyArb = 0x000D,
-		TriangleStripAdjacencyExt = 0x000D,
-		TriangleStripAdjacencyOes = 0x000D,
-		Patches = 0x000E,
-		PatchesExt = 0x000E,
-		PatchesOes = 0x000E,
-		Accum = 0x0100,
-		Load = 0x0101,
-		Return = 0x0102,
-		Mult = 0x0103,
-		Add = 0x0104,
-		Never = 0x0200,
-		Less = 0x0201,
-		Equal = 0x0202,
-		Lequal = 0x0203,
-		Greater = 0x0204,
-		Notequal = 0x0205,
-		Gequal = 0x0206,
-		Always = 0x0207,
-		SrcColor = 0x0300,
-		OneMinusSrcColor = 0x0301,
-		SrcAlpha = 0x0302,
-		OneMinusSrcAlpha = 0x0303,
-		DstAlpha = 0x0304,
-		OneMinusDstAlpha = 0x0305,
-		DstColor = 0x0306,
-		OneMinusDstColor = 0x0307,
-		SrcAlphaSaturate = 0x0308,
-		SrcAlphaSaturateExt = 0x0308,
-		FrontLeft = 0x0400,
-		FrontRight = 0x0401,
-		BackLeft = 0x0402,
-		BackRight = 0x0403,
-		Front = 0x0404,
-		Back = 0x0405,
-		Left = 0x0406,
-		Right = 0x0407,
-		FrontAndBack = 0x0408,
-		Aux0 = 0x0409,
-		Aux1 = 0x040A,
-		Aux2 = 0x040B,
-		Aux3 = 0x040C,
-		InvalidEnum = 0x0500,
-		InvalidValue = 0x0501,
-		InvalidOperation = 0x0502,
-		StackOverflow = 0x0503,
-		StackOverflowKhr = 0x0503,
-		StackUnderflow = 0x0504,
-		StackUnderflowKhr = 0x0504,
-		OutOfMemory = 0x0505,
-		InvalidFramebufferOperation = 0x0506,
-		InvalidFramebufferOperationExt = 0x0506,
-		InvalidFramebufferOperationOes = 0x0506,
-		ContextLost = 0x0507,
-		ContextLostKhr = 0x0507,
-		Gl2D = 0x0600,
-		Gl3D = 0x0601,
-		Gl3DColor = 0x0602,
-		Gl3DColorTexture = 0x0603,
-		Gl4DColorTexture = 0x0604,
-		PassThroughToken = 0x0700,
-		PointToken = 0x0701,
-		LineToken = 0x0702,
-		PolygonToken = 0x0703,
-		BitmapToken = 0x0704,
-		DrawPixelToken = 0x0705,
-		CopyPixelToken = 0x0706,
-		LineResetToken = 0x0707,
-		Exp = 0x0800,
-		Exp2 = 0x0801,
-		Cw = 0x0900,
-		Ccw = 0x0901,
-		Coeff = 0x0A00,
-		Order = 0x0A01,
-		Domain = 0x0A02,
-		CurrentColor = 0x0B00,
-		CurrentIndex = 0x0B01,
-		CurrentNormal = 0x0B02,
-		CurrentTextureCoords = 0x0B03,
-		CurrentRasterColor = 0x0B04,
-		CurrentRasterIndex = 0x0B05,
-		CurrentRasterTextureCoords = 0x0B06,
-		CurrentRasterPosition = 0x0B07,
-		CurrentRasterPositionValid = 0x0B08,
-		CurrentRasterDistance = 0x0B09,
-		PointSmooth = 0x0B10,
-		PointSize = 0x0B11,
-		PointSizeRange = 0x0B12,
-		SmoothPointSizeRange = 0x0B12,
-		PointSizeGranularity = 0x0B13,
-		SmoothPointSizeGranularity = 0x0B13,
-		LineSmooth = 0x0B20,
-		LineWidth = 0x0B21,
-		LineWidthRange = 0x0B22,
-		SmoothLineWidthRange = 0x0B22,
-		LineWidthGranularity = 0x0B23,
-		SmoothLineWidthGranularity = 0x0B23,
-		LineStipple = 0x0B24,
-		LineStipplePattern = 0x0B25,
-		LineStippleRepeat = 0x0B26,
-		ListMode = 0x0B30,
-		MaxListNesting = 0x0B31,
-		ListBase = 0x0B32,
-		ListIndex = 0x0B33,
-		PolygonMode = 0x0B40,
-		PolygonModeNv = 0x0B40,
-		PolygonSmooth = 0x0B41,
-		PolygonStipple = 0x0B42,
-		EdgeFlag = 0x0B43,
-		CullFace = 0x0B44,
-		CullFaceMode = 0x0B45,
-		FrontFace = 0x0B46,
-		Lighting = 0x0B50,
-		LightModelLocalViewer = 0x0B51,
-		LightModelTwoSide = 0x0B52,
-		LightModelAmbient = 0x0B53,
-		ShadeModel = 0x0B54,
-		ColorMaterialFace = 0x0B55,
-		ColorMaterialParameter = 0x0B56,
-		ColorMaterial = 0x0B57,
-		Fog = 0x0B60,
-		FogIndex = 0x0B61,
-		FogDensity = 0x0B62,
-		FogStart = 0x0B63,
-		FogEnd = 0x0B64,
-		FogMode = 0x0B65,
-		FogColor = 0x0B66,
-		DepthRange = 0x0B70,
-		DepthTest = 0x0B71,
-		DepthWritemask = 0x0B72,
-		DepthClearValue = 0x0B73,
-		DepthFunc = 0x0B74,
-		AccumClearValue = 0x0B80,
-		StencilTest = 0x0B90,
-		StencilClearValue = 0x0B91,
-		StencilFunc = 0x0B92,
-		StencilValueMask = 0x0B93,
-		StencilFail = 0x0B94,
-		StencilPassDepthFail = 0x0B95,
-		StencilPassDepthPass = 0x0B96,
-		StencilRef = 0x0B97,
-		StencilWritemask = 0x0B98,
-		MatrixMode = 0x0BA0,
-		Normalize = 0x0BA1,
-		Viewport = 0x0BA2,
-		ModelviewStackDepth = 0x0BA3,
-		Modelview0StackDepthExt = 0x0BA3,
-		PathModelviewStackDepthNv = 0x0BA3,
-		ProjectionStackDepth = 0x0BA4,
-		PathProjectionStackDepthNv = 0x0BA4,
-		TextureStackDepth = 0x0BA5,
-		ModelviewMatrix = 0x0BA6,
-		Modelview0MatrixExt = 0x0BA6,
-		PathModelviewMatrixNv = 0x0BA6,
-		ProjectionMatrix = 0x0BA7,
-		PathProjectionMatrixNv = 0x0BA7,
-		TextureMatrix = 0x0BA8,
-		AttribStackDepth = 0x0BB0,
-		ClientAttribStackDepth = 0x0BB1,
-		AlphaTest = 0x0BC0,
-		AlphaTestQcom = 0x0BC0,
-		AlphaTestFunc = 0x0BC1,
-		AlphaTestFuncQcom = 0x0BC1,
-		AlphaTestRef = 0x0BC2,
-		AlphaTestRefQcom = 0x0BC2,
-		Dither = 0x0BD0,
-		BlendDst = 0x0BE0,
-		BlendSrc = 0x0BE1,
-		Blend = 0x0BE2,
-		LogicOpMode = 0x0BF0,
-		IndexLogicOp = 0x0BF1,
-		LogicOp = 0x0BF1,
-		ColorLogicOp = 0x0BF2,
-		AuxBuffers = 0x0C00,
-		DrawBuffer = 0x0C01,
-		DrawBufferExt = 0x0C01,
-		ReadBuffer = 0x0C02,
-		ReadBufferExt = 0x0C02,
-		ReadBufferNv = 0x0C02,
-		ScissorBox = 0x0C10,
-		ScissorTest = 0x0C11,
-		IndexClearValue = 0x0C20,
-		IndexWritemask = 0x0C21,
-		ColorClearValue = 0x0C22,
-		ColorWritemask = 0x0C23,
-		IndexMode = 0x0C30,
-		RgbaMode = 0x0C31,
-		Doublebuffer = 0x0C32,
-		Stereo = 0x0C33,
-		RenderMode = 0x0C40,
-		PerspectiveCorrectionHint = 0x0C50,
-		PointSmoothHint = 0x0C51,
-		LineSmoothHint = 0x0C52,
-		PolygonSmoothHint = 0x0C53,
-		FogHint = 0x0C54,
-		TextureGenS = 0x0C60,
-		TextureGenT = 0x0C61,
-		TextureGenR = 0x0C62,
-		TextureGenQ = 0x0C63,
-		PixelMapIToI = 0x0C70,
-		PixelMapSToS = 0x0C71,
-		PixelMapIToR = 0x0C72,
-		PixelMapIToG = 0x0C73,
-		PixelMapIToB = 0x0C74,
-		PixelMapIToA = 0x0C75,
-		PixelMapRToR = 0x0C76,
-		PixelMapGToG = 0x0C77,
-		PixelMapBToB = 0x0C78,
-		PixelMapAToA = 0x0C79,
-		PixelMapIToISize = 0x0CB0,
-		PixelMapSToSSize = 0x0CB1,
-		PixelMapIToRSize = 0x0CB2,
-		PixelMapIToGSize = 0x0CB3,
-		PixelMapIToBSize = 0x0CB4,
-		PixelMapIToASize = 0x0CB5,
-		PixelMapRToRSize = 0x0CB6,
-		PixelMapGToGSize = 0x0CB7,
-		PixelMapBToBSize = 0x0CB8,
-		PixelMapAToASize = 0x0CB9,
-		UnpackSwapBytes = 0x0CF0,
-		UnpackLsbFirst = 0x0CF1,
-		UnpackRowLength = 0x0CF2,
-		UnpackRowLengthExt = 0x0CF2,
-		UnpackSkipRows = 0x0CF3,
-		UnpackSkipRowsExt = 0x0CF3,
-		UnpackSkipPixels = 0x0CF4,
-		UnpackSkipPixelsExt = 0x0CF4,
-		UnpackAlignment = 0x0CF5,
-		PackSwapBytes = 0x0D00,
-		PackLsbFirst = 0x0D01,
-		PackRowLength = 0x0D02,
-		PackRowLengthNv = 0x0D02,
-		PackSkipRows = 0x0D03,
-		PackSkipRowsNv = 0x0D03,
-		PackSkipPixels = 0x0D04,
-		PackSkipPixelsNv = 0x0D04,
-		PackAlignment = 0x0D05,
-		MapColor = 0x0D10,
-		MapStencil = 0x0D11,
-		IndexShift = 0x0D12,
-		IndexOffset = 0x0D13,
-		RedScale = 0x0D14,
-		RedBias = 0x0D15,
-		ZoomX = 0x0D16,
-		ZoomY = 0x0D17,
-		GreenScale = 0x0D18,
-		GreenBias = 0x0D19,
-		BlueScale = 0x0D1A,
-		BlueBias = 0x0D1B,
-		AlphaScale = 0x0D1C,
-		AlphaBias = 0x0D1D,
-		DepthScale = 0x0D1E,
-		DepthBias = 0x0D1F,
-		MaxEvalOrder = 0x0D30,
-		MaxLights = 0x0D31,
-		MaxClipPlanes = 0x0D32,
-		MaxClipPlanesImg = 0x0D32,
-		MaxClipDistances = 0x0D32,
-		MaxClipDistancesExt = 0x0D32,
-		MaxClipDistancesApple = 0x0D32,
-		MaxTextureSize = 0x0D33,
-		MaxPixelMapTable = 0x0D34,
-		MaxAttribStackDepth = 0x0D35,
-		MaxModelviewStackDepth = 0x0D36,
-		PathMaxModelviewStackDepthNv = 0x0D36,
-		MaxNameStackDepth = 0x0D37,
-		MaxProjectionStackDepth = 0x0D38,
-		PathMaxProjectionStackDepthNv = 0x0D38,
-		MaxTextureStackDepth = 0x0D39,
-		MaxViewportDims = 0x0D3A,
-		MaxClientAttribStackDepth = 0x0D3B,
-		SubpixelBits = 0x0D50,
-		IndexBits = 0x0D51,
-		RedBits = 0x0D52,
-		GreenBits = 0x0D53,
-		BlueBits = 0x0D54,
-		AlphaBits = 0x0D55,
-		DepthBits = 0x0D56,
-		StencilBits = 0x0D57,
-		AccumRedBits = 0x0D58,
-		AccumGreenBits = 0x0D59,
-		AccumBlueBits = 0x0D5A,
-		AccumAlphaBits = 0x0D5B,
-		NameStackDepth = 0x0D70,
-		AutoNormal = 0x0D80,
-		Map1Color4 = 0x0D90,
-		Map1Index = 0x0D91,
-		Map1Normal = 0x0D92,
-		Map1TextureCoord1 = 0x0D93,
-		Map1TextureCoord2 = 0x0D94,
-		Map1TextureCoord3 = 0x0D95,
-		Map1TextureCoord4 = 0x0D96,
-		Map1Vertex3 = 0x0D97,
-		Map1Vertex4 = 0x0D98,
-		Map2Color4 = 0x0DB0,
-		Map2Index = 0x0DB1,
-		Map2Normal = 0x0DB2,
-		Map2TextureCoord1 = 0x0DB3,
-		Map2TextureCoord2 = 0x0DB4,
-		Map2TextureCoord3 = 0x0DB5,
-		Map2TextureCoord4 = 0x0DB6,
-		Map2Vertex3 = 0x0DB7,
-		Map2Vertex4 = 0x0DB8,
-		Map1GridDomain = 0x0DD0,
-		Map1GridSegments = 0x0DD1,
-		Map2GridDomain = 0x0DD2,
-		Map2GridSegments = 0x0DD3,
-		Texture1D = 0x0DE0,
-		Texture2D = 0x0DE1,
-		FeedbackBufferPointer = 0x0DF0,
-		FeedbackBufferSize = 0x0DF1,
-		FeedbackBufferType = 0x0DF2,
-		SelectionBufferPointer = 0x0DF3,
-		SelectionBufferSize = 0x0DF4,
-		TextureWidth = 0x1000,
-		TextureHeight = 0x1001,
-		TextureInternalFormat = 0x1003,
-		TextureComponents = 0x1003,
-		TextureBorderColor = 0x1004,
-		TextureBorderColorExt = 0x1004,
-		TextureBorderColorNv = 0x1004,
-		TextureBorderColorOes = 0x1004,
-		TextureBorder = 0x1005,
-		TextureTarget = 0x1006,
-		DontCare = 0x1100,
-		Fastest = 0x1101,
-		Nicest = 0x1102,
-		Ambient = 0x1200,
-		Diffuse = 0x1201,
-		Specular = 0x1202,
-		Position = 0x1203,
-		SpotDirection = 0x1204,
-		SpotExponent = 0x1205,
-		SpotCutoff = 0x1206,
-		ConstantAttenuation = 0x1207,
-		LinearAttenuation = 0x1208,
-		QuadraticAttenuation = 0x1209,
-		Compile = 0x1300,
-		CompileAndExecute = 0x1301,
-		Byte = 0x1400,
-		UnsignedByte = 0x1401,
-		Short = 0x1402,
-		UnsignedShort = 0x1403,
-		Int = 0x1404,
-		UnsignedInt = 0x1405,
-		Float = 0x1406,
-		Gl2Bytes = 0x1407,
-		Gl2BytesNv = 0x1407,
-		Gl3Bytes = 0x1408,
-		Gl3BytesNv = 0x1408,
-		Gl4Bytes = 0x1409,
-		Gl4BytesNv = 0x1409,
-		Double = 0x140A,
-		DoubleExt = 0x140A,
-		HalfFloat = 0x140B,
-		HalfFloatArb = 0x140B,
-		HalfFloatNv = 0x140B,
-		HalfApple = 0x140B,
-		Fixed = 0x140C,
-		FixedOes = 0x140C,
-		Int64Arb = 0x140E,
-		Int64Nv = 0x140E,
-		UnsignedInt64Arb = 0x140F,
-		UnsignedInt64Nv = 0x140F,
-		Clear = 0x1500,
-		And = 0x1501,
-		AndReverse = 0x1502,
-		Copy = 0x1503,
-		AndInverted = 0x1504,
-		Noop = 0x1505,
-		Xor = 0x1506,
-		XorNv = 0x1506,
-		Or = 0x1507,
-		Nor = 0x1508,
-		Equiv = 0x1509,
-		Invert = 0x150A,
-		OrReverse = 0x150B,
-		CopyInverted = 0x150C,
-		OrInverted = 0x150D,
-		Nand = 0x150E,
-		Set = 0x150F,
-		Emission = 0x1600,
-		Shininess = 0x1601,
-		AmbientAndDiffuse = 0x1602,
-		ColorIndexes = 0x1603,
-		Modelview = 0x1700,
-		Modelview0Arb = 0x1700,
-		Modelview0Ext = 0x1700,
-		PathModelviewNv = 0x1700,
-		Projection = 0x1701,
-		PathProjectionNv = 0x1701,
-		Texture = 0x1702,
-		Color = 0x1800,
-		ColorExt = 0x1800,
-		Depth = 0x1801,
-		DepthExt = 0x1801,
-		Stencil = 0x1802,
-		StencilExt = 0x1802,
-		ColorIndex = 0x1900,
-		StencilIndex = 0x1901,
-		StencilIndexOes = 0x1901,
-		DepthComponent = 0x1902,
-		Red = 0x1903,
-		RedExt = 0x1903,
-		RedNv = 0x1903,
-		Green = 0x1904,
-		GreenNv = 0x1904,
-		Blue = 0x1905,
-		BlueNv = 0x1905,
-		Alpha = 0x1906,
-		Rgb = 0x1907,
-		Rgba = 0x1908,
-		Luminance = 0x1909,
-		LuminanceAlpha = 0x190A,
-		Bitmap = 0x1A00,
-		Point = 0x1B00,
-		PointNv = 0x1B00,
-		Line = 0x1B01,
-		LineNv = 0x1B01,
-		Fill = 0x1B02,
-		FillNv = 0x1B02,
-		Render = 0x1C00,
-		Feedback = 0x1C01,
-		Select = 0x1C02,
-		Flat = 0x1D00,
-		Smooth = 0x1D01,
-		Keep = 0x1E00,
-		Replace = 0x1E01,
-		Incr = 0x1E02,
-		Decr = 0x1E03,
-		Vendor = 0x1F00,
-		Renderer = 0x1F01,
-		Version = 0x1F02,
-		Extensions = 0x1F03,
-		S = 0x2000,
-		T = 0x2001,
-		R = 0x2002,
-		Q = 0x2003,
-		Modulate = 0x2100,
-		Decal = 0x2101,
-		TextureEnvMode = 0x2200,
-		TextureEnvColor = 0x2201,
-		TextureEnv = 0x2300,
-		EyeLinear = 0x2400,
-		EyeLinearNv = 0x2400,
-		ObjectLinear = 0x2401,
-		ObjectLinearNv = 0x2401,
-		SphereMap = 0x2402,
-		TextureGenMode = 0x2500,
-		TextureGenModeOes = 0x2500,
-		ObjectPlane = 0x2501,
-		EyePlane = 0x2502,
-		Nearest = 0x2600,
-		Linear = 0x2601,
-		NearestMipmapNearest = 0x2700,
-		LinearMipmapNearest = 0x2701,
-		NearestMipmapLinear = 0x2702,
-		LinearMipmapLinear = 0x2703,
-		TextureMagFilter = 0x2800,
-		TextureMinFilter = 0x2801,
-		TextureWrapS = 0x2802,
-		TextureWrapT = 0x2803,
-		Clamp = 0x2900,
-		Repeat = 0x2901,
-		PolygonOffsetUnits = 0x2A00,
-		PolygonOffsetPoint = 0x2A01,
-		PolygonOffsetPointNv = 0x2A01,
-		PolygonOffsetLine = 0x2A02,
-		PolygonOffsetLineNv = 0x2A02,
-		R3G3B2 = 0x2A10,
-		V2F = 0x2A20,
-		V3F = 0x2A21,
-		C4UbV2F = 0x2A22,
-		C4UbV3F = 0x2A23,
-		C3FV3F = 0x2A24,
-		N3FV3F = 0x2A25,
-		C4FN3FV3F = 0x2A26,
-		T2FV3F = 0x2A27,
-		T4FV4F = 0x2A28,
-		T2FC4UbV3F = 0x2A29,
-		T2FC3FV3F = 0x2A2A,
-		T2FN3FV3F = 0x2A2B,
-		T2FC4FN3FV3F = 0x2A2C,
-		T4FC4FN3FV4F = 0x2A2D,
-		ClipPlane0 = 0x3000,
-		ClipPlane0Img = 0x3000,
-		ClipDistance0 = 0x3000,
-		ClipDistance0Ext = 0x3000,
-		ClipDistance0Apple = 0x3000,
-		ClipPlane1 = 0x3001,
-		ClipPlane1Img = 0x3001,
-		ClipDistance1 = 0x3001,
-		ClipDistance1Ext = 0x3001,
-		ClipDistance1Apple = 0x3001,
-		ClipPlane2 = 0x3002,
-		ClipPlane2Img = 0x3002,
-		ClipDistance2 = 0x3002,
-		ClipDistance2Ext = 0x3002,
-		ClipDistance2Apple = 0x3002,
-		ClipPlane3 = 0x3003,
-		ClipPlane3Img = 0x3003,
-		ClipDistance3 = 0x3003,
-		ClipDistance3Ext = 0x3003,
-		ClipDistance3Apple = 0x3003,
-		ClipPlane4 = 0x3004,
-		ClipPlane4Img = 0x3004,
-		ClipDistance4 = 0x3004,
-		ClipDistance4Ext = 0x3004,
-		ClipDistance4Apple = 0x3004,
-		ClipPlane5 = 0x3005,
-		ClipPlane5Img = 0x3005,
-		ClipDistance5 = 0x3005,
-		ClipDistance5Ext = 0x3005,
-		ClipDistance5Apple = 0x3005,
-		ClipDistance6 = 0x3006,
-		ClipDistance6Ext = 0x3006,
-		ClipDistance6Apple = 0x3006,
-		ClipDistance7 = 0x3007,
-		ClipDistance7Ext = 0x3007,
-		ClipDistance7Apple = 0x3007,
-		Light0 = 0x4000,
-		Light1 = 0x4001,
-		Light2 = 0x4002,
-		Light3 = 0x4003,
-		Light4 = 0x4004,
-		Light5 = 0x4005,
-		Light6 = 0x4006,
-		Light7 = 0x4007,
-		AbgrExt = 0x8000,
-		ConstantColor = 0x8001,
-		ConstantColorExt = 0x8001,
-		OneMinusConstantColor = 0x8002,
-		OneMinusConstantColorExt = 0x8002,
-		ConstantAlpha = 0x8003,
-		ConstantAlphaExt = 0x8003,
-		OneMinusConstantAlpha = 0x8004,
-		OneMinusConstantAlphaExt = 0x8004,
-		BlendColor = 0x8005,
-		BlendColorExt = 0x8005,
-		FuncAdd = 0x8006,
-		FuncAddExt = 0x8006,
-		FuncAddOes = 0x8006,
-		Min = 0x8007,
-		MinExt = 0x8007,
-		Max = 0x8008,
-		MaxExt = 0x8008,
-		BlendEquation = 0x8009,
-		BlendEquationExt = 0x8009,
-		BlendEquationOes = 0x8009,
-		BlendEquationRgb = 0x8009,
-		BlendEquationRgbExt = 0x8009,
-		BlendEquationRgbOes = 0x8009,
-		FuncSubtract = 0x800A,
-		FuncSubtractExt = 0x800A,
-		FuncSubtractOes = 0x800A,
-		FuncReverseSubtract = 0x800B,
-		FuncReverseSubtractExt = 0x800B,
-		FuncReverseSubtractOes = 0x800B,
-		CmykExt = 0x800C,
-		CmykaExt = 0x800D,
-		PackCmykHintExt = 0x800E,
-		UnpackCmykHintExt = 0x800F,
-		Convolution1D = 0x8010,
-		Convolution1DExt = 0x8010,
-		Convolution2D = 0x8011,
-		Convolution2DExt = 0x8011,
-		Separable2D = 0x8012,
-		Separable2DExt = 0x8012,
-		ConvolutionBorderMode = 0x8013,
-		ConvolutionBorderModeExt = 0x8013,
-		ConvolutionFilterScale = 0x8014,
-		ConvolutionFilterScaleExt = 0x8014,
-		ConvolutionFilterBias = 0x8015,
-		ConvolutionFilterBiasExt = 0x8015,
-		Reduce = 0x8016,
-		ReduceExt = 0x8016,
-		ConvolutionFormat = 0x8017,
-		ConvolutionFormatExt = 0x8017,
-		ConvolutionWidth = 0x8018,
-		ConvolutionWidthExt = 0x8018,
-		ConvolutionHeight = 0x8019,
-		ConvolutionHeightExt = 0x8019,
-		MaxConvolutionWidth = 0x801A,
-		MaxConvolutionWidthExt = 0x801A,
-		MaxConvolutionHeight = 0x801B,
-		MaxConvolutionHeightExt = 0x801B,
-		PostConvolutionRedScale = 0x801C,
-		PostConvolutionRedScaleExt = 0x801C,
-		PostConvolutionGreenScale = 0x801D,
-		PostConvolutionGreenScaleExt = 0x801D,
-		PostConvolutionBlueScale = 0x801E,
-		PostConvolutionBlueScaleExt = 0x801E,
-		PostConvolutionAlphaScale = 0x801F,
-		PostConvolutionAlphaScaleExt = 0x801F,
-		PostConvolutionRedBias = 0x8020,
-		PostConvolutionRedBiasExt = 0x8020,
-		PostConvolutionGreenBias = 0x8021,
-		PostConvolutionGreenBiasExt = 0x8021,
-		PostConvolutionBlueBias = 0x8022,
-		PostConvolutionBlueBiasExt = 0x8022,
-		PostConvolutionAlphaBias = 0x8023,
-		PostConvolutionAlphaBiasExt = 0x8023,
-		Histogram = 0x8024,
-		HistogramExt = 0x8024,
-		ProxyHistogram = 0x8025,
-		ProxyHistogramExt = 0x8025,
-		HistogramWidth = 0x8026,
-		HistogramWidthExt = 0x8026,
-		HistogramFormat = 0x8027,
-		HistogramFormatExt = 0x8027,
-		HistogramRedSize = 0x8028,
-		HistogramRedSizeExt = 0x8028,
-		HistogramGreenSize = 0x8029,
-		HistogramGreenSizeExt = 0x8029,
-		HistogramBlueSize = 0x802A,
-		HistogramBlueSizeExt = 0x802A,
-		HistogramAlphaSize = 0x802B,
-		HistogramAlphaSizeExt = 0x802B,
-		HistogramLuminanceSize = 0x802C,
-		HistogramLuminanceSizeExt = 0x802C,
-		HistogramSink = 0x802D,
-		HistogramSinkExt = 0x802D,
-		Minmax = 0x802E,
-		MinmaxExt = 0x802E,
-		MinmaxFormat = 0x802F,
-		MinmaxFormatExt = 0x802F,
-		MinmaxSink = 0x8030,
-		MinmaxSinkExt = 0x8030,
-		TableTooLargeExt = 0x8031,
-		TableTooLarge = 0x8031,
-		UnsignedByte332 = 0x8032,
-		UnsignedByte332Ext = 0x8032,
-		UnsignedShort4444 = 0x8033,
-		UnsignedShort4444Ext = 0x8033,
-		UnsignedShort5551 = 0x8034,
-		UnsignedShort5551Ext = 0x8034,
-		UnsignedInt8888 = 0x8035,
-		UnsignedInt8888Ext = 0x8035,
-		UnsignedInt1010102 = 0x8036,
-		UnsignedInt1010102Ext = 0x8036,
-		PolygonOffsetExt = 0x8037,
-		PolygonOffsetFill = 0x8037,
-		PolygonOffsetFactor = 0x8038,
-		PolygonOffsetFactorExt = 0x8038,
-		PolygonOffsetBiasExt = 0x8039,
-		RescaleNormal = 0x803A,
-		RescaleNormalExt = 0x803A,
-		Alpha4 = 0x803B,
-		Alpha4Ext = 0x803B,
-		Alpha8 = 0x803C,
-		Alpha8Ext = 0x803C,
-		Alpha8Oes = 0x803C,
-		Alpha12 = 0x803D,
-		Alpha12Ext = 0x803D,
-		Alpha16 = 0x803E,
-		Alpha16Ext = 0x803E,
-		Luminance4 = 0x803F,
-		Luminance4Ext = 0x803F,
-		Luminance8 = 0x8040,
-		Luminance8Ext = 0x8040,
-		Luminance8Oes = 0x8040,
-		Luminance12 = 0x8041,
-		Luminance12Ext = 0x8041,
-		Luminance16 = 0x8042,
-		Luminance16Ext = 0x8042,
-		Luminance4Alpha4 = 0x8043,
-		Luminance4Alpha4Ext = 0x8043,
-		Luminance4Alpha4Oes = 0x8043,
-		Luminance6Alpha2 = 0x8044,
-		Luminance6Alpha2Ext = 0x8044,
-		Luminance8Alpha8 = 0x8045,
-		Luminance8Alpha8Ext = 0x8045,
-		Luminance8Alpha8Oes = 0x8045,
-		Luminance12Alpha4 = 0x8046,
-		Luminance12Alpha4Ext = 0x8046,
-		Luminance12Alpha12 = 0x8047,
-		Luminance12Alpha12Ext = 0x8047,
-		Luminance16Alpha16 = 0x8048,
-		Luminance16Alpha16Ext = 0x8048,
-		Intensity = 0x8049,
-		IntensityExt = 0x8049,
-		Intensity4 = 0x804A,
-		Intensity4Ext = 0x804A,
-		Intensity8 = 0x804B,
-		Intensity8Ext = 0x804B,
-		Intensity12 = 0x804C,
-		Intensity12Ext = 0x804C,
-		Intensity16 = 0x804D,
-		Intensity16Ext = 0x804D,
-		Rgb2Ext = 0x804E,
-		Rgb4 = 0x804F,
-		Rgb4Ext = 0x804F,
-		Rgb5 = 0x8050,
-		Rgb5Ext = 0x8050,
-		Rgb8 = 0x8051,
-		Rgb8Ext = 0x8051,
-		Rgb8Oes = 0x8051,
-		Rgb10 = 0x8052,
-		Rgb10Ext = 0x8052,
-		Rgb12 = 0x8053,
-		Rgb12Ext = 0x8053,
-		Rgb16 = 0x8054,
-		Rgb16Ext = 0x8054,
-		Rgba2 = 0x8055,
-		Rgba2Ext = 0x8055,
-		Rgba4 = 0x8056,
-		Rgba4Ext = 0x8056,
-		Rgba4Oes = 0x8056,
-		Rgb5A1 = 0x8057,
-		Rgb5A1Ext = 0x8057,
-		Rgb5A1Oes = 0x8057,
-		Rgba8 = 0x8058,
-		Rgba8Ext = 0x8058,
-		Rgba8Oes = 0x8058,
-		Rgb10A2 = 0x8059,
-		Rgb10A2Ext = 0x8059,
-		Rgba12 = 0x805A,
-		Rgba12Ext = 0x805A,
-		Rgba16 = 0x805B,
-		Rgba16Ext = 0x805B,
-		TextureRedSize = 0x805C,
-		TextureRedSizeExt = 0x805C,
-		TextureGreenSize = 0x805D,
-		TextureGreenSizeExt = 0x805D,
-		TextureBlueSize = 0x805E,
-		TextureBlueSizeExt = 0x805E,
-		TextureAlphaSize = 0x805F,
-		TextureAlphaSizeExt = 0x805F,
-		TextureLuminanceSize = 0x8060,
-		TextureLuminanceSizeExt = 0x8060,
-		TextureIntensitySize = 0x8061,
-		TextureIntensitySizeExt = 0x8061,
-		ReplaceExt = 0x8062,
-		ProxyTexture1D = 0x8063,
-		ProxyTexture1DExt = 0x8063,
-		ProxyTexture2D = 0x8064,
-		ProxyTexture2DExt = 0x8064,
-		TextureTooLargeExt = 0x8065,
-		TexturePriority = 0x8066,
-		TexturePriorityExt = 0x8066,
-		TextureResident = 0x8067,
-		TextureResidentExt = 0x8067,
-		Texture1DBindingExt = 0x8068,
-		TextureBinding1D = 0x8068,
-		Texture2DBindingExt = 0x8069,
-		TextureBinding2D = 0x8069,
-		Texture3DBindingExt = 0x806A,
-		Texture3DBindingOes = 0x806A,
-		TextureBinding3D = 0x806A,
-		TextureBinding3DOes = 0x806A,
-		PackSkipImages = 0x806B,
-		PackSkipImagesExt = 0x806B,
-		PackImageHeight = 0x806C,
-		PackImageHeightExt = 0x806C,
-		UnpackSkipImages = 0x806D,
-		UnpackSkipImagesExt = 0x806D,
-		UnpackImageHeight = 0x806E,
-		UnpackImageHeightExt = 0x806E,
-		Texture3D = 0x806F,
-		Texture3DExt = 0x806F,
-		Texture3DOes = 0x806F,
-		ProxyTexture3D = 0x8070,
-		ProxyTexture3DExt = 0x8070,
-		TextureDepth = 0x8071,
-		TextureDepthExt = 0x8071,
-		TextureWrapR = 0x8072,
-		TextureWrapRExt = 0x8072,
-		TextureWrapROes = 0x8072,
-		Max3DTextureSize = 0x8073,
-		Max3DTextureSizeExt = 0x8073,
-		Max3DTextureSizeOes = 0x8073,
-		VertexArray = 0x8074,
-		VertexArrayExt = 0x8074,
-		VertexArrayKhr = 0x8074,
-		NormalArray = 0x8075,
-		NormalArrayExt = 0x8075,
-		ColorArray = 0x8076,
-		ColorArrayExt = 0x8076,
-		IndexArray = 0x8077,
-		IndexArrayExt = 0x8077,
-		TextureCoordArray = 0x8078,
-		TextureCoordArrayExt = 0x8078,
-		EdgeFlagArray = 0x8079,
-		EdgeFlagArrayExt = 0x8079,
-		VertexArraySize = 0x807A,
-		VertexArraySizeExt = 0x807A,
-		VertexArrayType = 0x807B,
-		VertexArrayTypeExt = 0x807B,
-		VertexArrayStride = 0x807C,
-		VertexArrayStrideExt = 0x807C,
-		VertexArrayCountExt = 0x807D,
-		NormalArrayType = 0x807E,
-		NormalArrayTypeExt = 0x807E,
-		NormalArrayStride = 0x807F,
-		NormalArrayStrideExt = 0x807F,
-		NormalArrayCountExt = 0x8080,
-		ColorArraySize = 0x8081,
-		ColorArraySizeExt = 0x8081,
-		ColorArrayType = 0x8082,
-		ColorArrayTypeExt = 0x8082,
-		ColorArrayStride = 0x8083,
-		ColorArrayStrideExt = 0x8083,
-		ColorArrayCountExt = 0x8084,
-		IndexArrayType = 0x8085,
-		IndexArrayTypeExt = 0x8085,
-		IndexArrayStride = 0x8086,
-		IndexArrayStrideExt = 0x8086,
-		IndexArrayCountExt = 0x8087,
-		TextureCoordArraySize = 0x8088,
-		TextureCoordArraySizeExt = 0x8088,
-		TextureCoordArrayType = 0x8089,
-		TextureCoordArrayTypeExt = 0x8089,
-		TextureCoordArrayStride = 0x808A,
-		TextureCoordArrayStrideExt = 0x808A,
-		TextureCoordArrayCountExt = 0x808B,
-		EdgeFlagArrayStride = 0x808C,
-		EdgeFlagArrayStrideExt = 0x808C,
-		EdgeFlagArrayCountExt = 0x808D,
-		VertexArrayPointer = 0x808E,
-		VertexArrayPointerExt = 0x808E,
-		NormalArrayPointer = 0x808F,
-		NormalArrayPointerExt = 0x808F,
-		ColorArrayPointer = 0x8090,
-		ColorArrayPointerExt = 0x8090,
-		IndexArrayPointer = 0x8091,
-		IndexArrayPointerExt = 0x8091,
-		TextureCoordArrayPointer = 0x8092,
-		TextureCoordArrayPointerExt = 0x8092,
-		EdgeFlagArrayPointer = 0x8093,
-		EdgeFlagArrayPointerExt = 0x8093,
-		InterlaceSgix = 0x8094,
-		DetailTexture2DSgis = 0x8095,
-		DetailTexture2DBindingSgis = 0x8096,
-		LinearDetailSgis = 0x8097,
-		LinearDetailAlphaSgis = 0x8098,
-		LinearDetailColorSgis = 0x8099,
-		DetailTextureLevelSgis = 0x809A,
-		DetailTextureModeSgis = 0x809B,
-		DetailTextureFuncPointsSgis = 0x809C,
-		Multisample = 0x809D,
-		MultisampleArb = 0x809D,
-		MultisampleExt = 0x809D,
-		MultisampleSgis = 0x809D,
-		SampleAlphaToCoverage = 0x809E,
-		SampleAlphaToCoverageArb = 0x809E,
-		SampleAlphaToMaskExt = 0x809E,
-		SampleAlphaToMaskSgis = 0x809E,
-		SampleAlphaToOne = 0x809F,
-		SampleAlphaToOneArb = 0x809F,
-		SampleAlphaToOneExt = 0x809F,
-		SampleAlphaToOneSgis = 0x809F,
-		SampleCoverage = 0x80A0,
-		SampleCoverageArb = 0x80A0,
-		SampleMaskExt = 0x80A0,
-		SampleMaskSgis = 0x80A0,
-		Gl1PassExt = 0x80A1,
-		Gl1PassSgis = 0x80A1,
-		Gl2Pass0Ext = 0x80A2,
-		Gl2Pass0Sgis = 0x80A2,
-		Gl2Pass1Ext = 0x80A3,
-		Gl2Pass1Sgis = 0x80A3,
-		Gl4Pass0Ext = 0x80A4,
-		Gl4Pass0Sgis = 0x80A4,
-		Gl4Pass1Ext = 0x80A5,
-		Gl4Pass1Sgis = 0x80A5,
-		Gl4Pass2Ext = 0x80A6,
-		Gl4Pass2Sgis = 0x80A6,
-		Gl4Pass3Ext = 0x80A7,
-		Gl4Pass3Sgis = 0x80A7,
-		SampleBuffers = 0x80A8,
-		SampleBuffersArb = 0x80A8,
-		SampleBuffersExt = 0x80A8,
-		SampleBuffersSgis = 0x80A8,
-		Samples = 0x80A9,
-		SamplesArb = 0x80A9,
-		SamplesExt = 0x80A9,
-		SamplesSgis = 0x80A9,
-		SampleCoverageValue = 0x80AA,
-		SampleCoverageValueArb = 0x80AA,
-		SampleMaskValueExt = 0x80AA,
-		SampleMaskValueSgis = 0x80AA,
-		SampleCoverageInvert = 0x80AB,
-		SampleCoverageInvertArb = 0x80AB,
-		SampleMaskInvertExt = 0x80AB,
-		SampleMaskInvertSgis = 0x80AB,
-		SamplePatternExt = 0x80AC,
-		SamplePatternSgis = 0x80AC,
-		LinearSharpenSgis = 0x80AD,
-		LinearSharpenAlphaSgis = 0x80AE,
-		LinearSharpenColorSgis = 0x80AF,
-		SharpenTextureFuncPointsSgis = 0x80B0,
-		ColorMatrix = 0x80B1,
-		ColorMatrixSgi = 0x80B1,
-		ColorMatrixStackDepth = 0x80B2,
-		ColorMatrixStackDepthSgi = 0x80B2,
-		MaxColorMatrixStackDepth = 0x80B3,
-		MaxColorMatrixStackDepthSgi = 0x80B3,
-		PostColorMatrixRedScale = 0x80B4,
-		PostColorMatrixRedScaleSgi = 0x80B4,
-		PostColorMatrixGreenScale = 0x80B5,
-		PostColorMatrixGreenScaleSgi = 0x80B5,
-		PostColorMatrixBlueScale = 0x80B6,
-		PostColorMatrixBlueScaleSgi = 0x80B6,
-		PostColorMatrixAlphaScale = 0x80B7,
-		PostColorMatrixAlphaScaleSgi = 0x80B7,
-		PostColorMatrixRedBias = 0x80B8,
-		PostColorMatrixRedBiasSgi = 0x80B8,
-		PostColorMatrixGreenBias = 0x80B9,
-		PostColorMatrixGreenBiasSgi = 0x80B9,
-		PostColorMatrixBlueBias = 0x80BA,
-		PostColorMatrixBlueBiasSgi = 0x80BA,
-		PostColorMatrixAlphaBias = 0x80BB,
-		PostColorMatrixAlphaBiasSgi = 0x80BB,
-		TextureColorTableSgi = 0x80BC,
-		ProxyTextureColorTableSgi = 0x80BD,
-		TextureEnvBiasSgix = 0x80BE,
-		ShadowAmbientSgix = 0x80BF,
-		TextureCompareFailValueArb = 0x80BF,
-		BlendDstRgb = 0x80C8,
-		BlendDstRgbExt = 0x80C8,
-		BlendDstRgbOes = 0x80C8,
-		BlendSrcRgb = 0x80C9,
-		BlendSrcRgbExt = 0x80C9,
-		BlendSrcRgbOes = 0x80C9,
-		BlendDstAlpha = 0x80CA,
-		BlendDstAlphaExt = 0x80CA,
-		BlendDstAlphaOes = 0x80CA,
-		BlendSrcAlpha = 0x80CB,
-		BlendSrcAlphaExt = 0x80CB,
-		BlendSrcAlphaOes = 0x80CB,
-		Gl422Ext = 0x80CC,
-		Gl422RevExt = 0x80CD,
-		Gl422AverageExt = 0x80CE,
-		Gl422RevAverageExt = 0x80CF,
-		ColorTable = 0x80D0,
-		ColorTableSgi = 0x80D0,
-		PostConvolutionColorTable = 0x80D1,
-		PostConvolutionColorTableSgi = 0x80D1,
-		PostColorMatrixColorTable = 0x80D2,
-		PostColorMatrixColorTableSgi = 0x80D2,
-		ProxyColorTable = 0x80D3,
-		ProxyColorTableSgi = 0x80D3,
-		ProxyPostConvolutionColorTable = 0x80D4,
-		ProxyPostConvolutionColorTableSgi = 0x80D4,
-		ProxyPostColorMatrixColorTable = 0x80D5,
-		ProxyPostColorMatrixColorTableSgi = 0x80D5,
-		ColorTableScale = 0x80D6,
-		ColorTableScaleSgi = 0x80D6,
-		ColorTableBias = 0x80D7,
-		ColorTableBiasSgi = 0x80D7,
-		ColorTableFormat = 0x80D8,
-		ColorTableFormatSgi = 0x80D8,
-		ColorTableWidth = 0x80D9,
-		ColorTableWidthSgi = 0x80D9,
-		ColorTableRedSize = 0x80DA,
-		ColorTableRedSizeSgi = 0x80DA,
-		ColorTableGreenSize = 0x80DB,
-		ColorTableGreenSizeSgi = 0x80DB,
-		ColorTableBlueSize = 0x80DC,
-		ColorTableBlueSizeSgi = 0x80DC,
-		ColorTableAlphaSize = 0x80DD,
-		ColorTableAlphaSizeSgi = 0x80DD,
-		ColorTableLuminanceSize = 0x80DE,
-		ColorTableLuminanceSizeSgi = 0x80DE,
-		ColorTableIntensitySize = 0x80DF,
-		ColorTableIntensitySizeSgi = 0x80DF,
-		Bgr = 0x80E0,
-		BgrExt = 0x80E0,
-		Bgra = 0x80E1,
-		BgraExt = 0x80E1,
-		BgraImg = 0x80E1,
-		ColorIndex1Ext = 0x80E2,
-		ColorIndex2Ext = 0x80E3,
-		ColorIndex4Ext = 0x80E4,
-		ColorIndex8Ext = 0x80E5,
-		ColorIndex12Ext = 0x80E6,
-		ColorIndex16Ext = 0x80E7,
-		MaxElementsVertices = 0x80E8,
-		MaxElementsVerticesExt = 0x80E8,
-		MaxElementsIndices = 0x80E9,
-		MaxElementsIndicesExt = 0x80E9,
-		PhongWin = 0x80EA,
-		PhongHintWin = 0x80EB,
-		FogSpecularTextureWin = 0x80EC,
-		TextureIndexSizeExt = 0x80ED,
-		ParameterBuffer = 0x80EE,
-		ParameterBufferArb = 0x80EE,
-		ParameterBufferBinding = 0x80EF,
-		ParameterBufferBindingArb = 0x80EF,
-		ClipVolumeClippingHintExt = 0x80F0,
-		DualAlpha4Sgis = 0x8110,
-		DualAlpha8Sgis = 0x8111,
-		DualAlpha12Sgis = 0x8112,
-		DualAlpha16Sgis = 0x8113,
-		DualLuminance4Sgis = 0x8114,
-		DualLuminance8Sgis = 0x8115,
-		DualLuminance12Sgis = 0x8116,
-		DualLuminance16Sgis = 0x8117,
-		DualIntensity4Sgis = 0x8118,
-		DualIntensity8Sgis = 0x8119,
-		DualIntensity12Sgis = 0x811A,
-		DualIntensity16Sgis = 0x811B,
-		DualLuminanceAlpha4Sgis = 0x811C,
-		DualLuminanceAlpha8Sgis = 0x811D,
-		QuadAlpha4Sgis = 0x811E,
-		QuadAlpha8Sgis = 0x811F,
-		QuadLuminance4Sgis = 0x8120,
-		QuadLuminance8Sgis = 0x8121,
-		QuadIntensity4Sgis = 0x8122,
-		QuadIntensity8Sgis = 0x8123,
-		DualTextureSelectSgis = 0x8124,
-		QuadTextureSelectSgis = 0x8125,
-		PointSizeMin = 0x8126,
-		PointSizeMinArb = 0x8126,
-		PointSizeMinExt = 0x8126,
-		PointSizeMinSgis = 0x8126,
-		PointSizeMax = 0x8127,
-		PointSizeMaxArb = 0x8127,
-		PointSizeMaxExt = 0x8127,
-		PointSizeMaxSgis = 0x8127,
-		PointFadeThresholdSize = 0x8128,
-		PointFadeThresholdSizeArb = 0x8128,
-		PointFadeThresholdSizeExt = 0x8128,
-		PointFadeThresholdSizeSgis = 0x8128,
-		DistanceAttenuationExt = 0x8129,
-		DistanceAttenuationSgis = 0x8129,
-		PointDistanceAttenuation = 0x8129,
-		PointDistanceAttenuationArb = 0x8129,
-		FogFuncSgis = 0x812A,
-		FogFuncPointsSgis = 0x812B,
-		MaxFogFuncPointsSgis = 0x812C,
-		ClampToBorder = 0x812D,
-		ClampToBorderArb = 0x812D,
-		ClampToBorderExt = 0x812D,
-		ClampToBorderNv = 0x812D,
-		ClampToBorderSgis = 0x812D,
-		ClampToBorderOes = 0x812D,
-		TextureMultiBufferHintSgix = 0x812E,
-		ClampToEdge = 0x812F,
-		ClampToEdgeSgis = 0x812F,
-		PackSkipVolumesSgis = 0x8130,
-		PackImageDepthSgis = 0x8131,
-		UnpackSkipVolumesSgis = 0x8132,
-		UnpackImageDepthSgis = 0x8133,
-		Texture4DSgis = 0x8134,
-		ProxyTexture4DSgis = 0x8135,
-		Texture4DsizeSgis = 0x8136,
-		TextureWrapQSgis = 0x8137,
-		Max4DTextureSizeSgis = 0x8138,
-		PixelTexGenSgix = 0x8139,
-		TextureMinLod = 0x813A,
-		TextureMinLodSgis = 0x813A,
-		TextureMaxLod = 0x813B,
-		TextureMaxLodSgis = 0x813B,
-		TextureBaseLevel = 0x813C,
-		TextureBaseLevelSgis = 0x813C,
-		TextureMaxLevel = 0x813D,
-		TextureMaxLevelApple = 0x813D,
-		TextureMaxLevelSgis = 0x813D,
-		PixelTileBestAlignmentSgix = 0x813E,
-		PixelTileCacheIncrementSgix = 0x813F,
-		PixelTileWidthSgix = 0x8140,
-		PixelTileHeightSgix = 0x8141,
-		PixelTileGridWidthSgix = 0x8142,
-		PixelTileGridHeightSgix = 0x8143,
-		PixelTileGridDepthSgix = 0x8144,
-		PixelTileCacheSizeSgix = 0x8145,
-		Filter4Sgis = 0x8146,
-		TextureFilter4SizeSgis = 0x8147,
-		SpriteSgix = 0x8148,
-		SpriteModeSgix = 0x8149,
-		SpriteAxisSgix = 0x814A,
-		SpriteTranslationSgix = 0x814B,
-		SpriteAxialSgix = 0x814C,
-		SpriteObjectAlignedSgix = 0x814D,
-		SpriteEyeAlignedSgix = 0x814E,
-		Texture4DBindingSgis = 0x814F,
-		IgnoreBorderHp = 0x8150,
-		ConstantBorder = 0x8151,
-		ConstantBorderHp = 0x8151,
-		ReplicateBorder = 0x8153,
-		ReplicateBorderHp = 0x8153,
-		ConvolutionBorderColor = 0x8154,
-		ConvolutionBorderColorHp = 0x8154,
-		ImageScaleXHp = 0x8155,
-		ImageScaleYHp = 0x8156,
-		ImageTranslateXHp = 0x8157,
-		ImageTranslateYHp = 0x8158,
-		ImageRotateAngleHp = 0x8159,
-		ImageRotateOriginXHp = 0x815A,
-		ImageRotateOriginYHp = 0x815B,
-		ImageMagFilterHp = 0x815C,
-		ImageMinFilterHp = 0x815D,
-		ImageCubicWeightHp = 0x815E,
-		CubicHp = 0x815F,
-		AverageHp = 0x8160,
-		ImageTransform2DHp = 0x8161,
-		PostImageTransformColorTableHp = 0x8162,
-		ProxyPostImageTransformColorTableHp = 0x8163,
-		OcclusionTestHp = 0x8165,
-		OcclusionTestResultHp = 0x8166,
-		TextureLightingModeHp = 0x8167,
-		TexturePostSpecularHp = 0x8168,
-		TexturePreSpecularHp = 0x8169,
-		LinearClipmapLinearSgix = 0x8170,
-		TextureClipmapCenterSgix = 0x8171,
-		TextureClipmapFrameSgix = 0x8172,
-		TextureClipmapOffsetSgix = 0x8173,
-		TextureClipmapVirtualDepthSgix = 0x8174,
-		TextureClipmapLodOffsetSgix = 0x8175,
-		TextureClipmapDepthSgix = 0x8176,
-		MaxClipmapDepthSgix = 0x8177,
-		MaxClipmapVirtualDepthSgix = 0x8178,
-		PostTextureFilterBiasSgix = 0x8179,
-		PostTextureFilterScaleSgix = 0x817A,
-		PostTextureFilterBiasRangeSgix = 0x817B,
-		PostTextureFilterScaleRangeSgix = 0x817C,
-		ReferencePlaneSgix = 0x817D,
-		ReferencePlaneEquationSgix = 0x817E,
-		IrInstrument1Sgix = 0x817F,
-		InstrumentBufferPointerSgix = 0x8180,
-		InstrumentMeasurementsSgix = 0x8181,
-		ListPrioritySgix = 0x8182,
-		CalligraphicFragmentSgix = 0x8183,
-		PixelTexGenQCeilingSgix = 0x8184,
-		PixelTexGenQRoundSgix = 0x8185,
-		PixelTexGenQFloorSgix = 0x8186,
-		PixelTexGenAlphaLsSgix = 0x8189,
-		PixelTexGenAlphaMsSgix = 0x818A,
-		FramezoomSgix = 0x818B,
-		FramezoomFactorSgix = 0x818C,
-		MaxFramezoomFactorSgix = 0x818D,
-		TextureLodBiasSSgix = 0x818E,
-		TextureLodBiasTSgix = 0x818F,
-		TextureLodBiasRSgix = 0x8190,
-		GenerateMipmap = 0x8191,
-		GenerateMipmapSgis = 0x8191,
-		GenerateMipmapHint = 0x8192,
-		GenerateMipmapHintSgis = 0x8192,
-		GeometryDeformationSgix = 0x8194,
-		TextureDeformationSgix = 0x8195,
-		DeformationsMaskSgix = 0x8196,
-		MaxDeformationOrderSgix = 0x8197,
-		FogOffsetSgix = 0x8198,
-		FogOffsetValueSgix = 0x8199,
-		TextureCompareSgix = 0x819A,
-		TextureCompareOperatorSgix = 0x819B,
-		TextureLequalRSgix = 0x819C,
-		TextureGequalRSgix = 0x819D,
-		DepthComponent16 = 0x81A5,
-		DepthComponent16Arb = 0x81A5,
-		DepthComponent16Oes = 0x81A5,
-		DepthComponent16Sgix = 0x81A5,
-		DepthComponent24 = 0x81A6,
-		DepthComponent24Arb = 0x81A6,
-		DepthComponent24Oes = 0x81A6,
-		DepthComponent24Sgix = 0x81A6,
-		DepthComponent32 = 0x81A7,
-		DepthComponent32Arb = 0x81A7,
-		DepthComponent32Oes = 0x81A7,
-		DepthComponent32Sgix = 0x81A7,
-		ArrayElementLockFirstExt = 0x81A8,
-		ArrayElementLockCountExt = 0x81A9,
-		CullVertexExt = 0x81AA,
-		CullVertexEyePositionExt = 0x81AB,
-		CullVertexObjectPositionExt = 0x81AC,
-		IuiV2FExt = 0x81AD,
-		IuiV3FExt = 0x81AE,
-		IuiN3FV2FExt = 0x81AF,
-		IuiN3FV3FExt = 0x81B0,
-		T2FIuiV2FExt = 0x81B1,
-		T2FIuiV3FExt = 0x81B2,
-		T2FIuiN3FV2FExt = 0x81B3,
-		T2FIuiN3FV3FExt = 0x81B4,
-		IndexTestExt = 0x81B5,
-		IndexTestFuncExt = 0x81B6,
-		IndexTestRefExt = 0x81B7,
-		IndexMaterialExt = 0x81B8,
-		IndexMaterialParameterExt = 0x81B9,
-		IndexMaterialFaceExt = 0x81BA,
-		Ycrcb422Sgix = 0x81BB,
-		Ycrcb444Sgix = 0x81BC,
-		WrapBorderSun = 0x81D4,
-		UnpackConstantDataSunx = 0x81D5,
-		TextureConstantDataSunx = 0x81D6,
-		TriangleListSun = 0x81D7,
-		ReplacementCodeSun = 0x81D8,
-		GlobalAlphaSun = 0x81D9,
-		GlobalAlphaFactorSun = 0x81DA,
-		TextureColorWritemaskSgis = 0x81EF,
-		EyeDistanceToPointSgis = 0x81F0,
-		ObjectDistanceToPointSgis = 0x81F1,
-		EyeDistanceToLineSgis = 0x81F2,
-		ObjectDistanceToLineSgis = 0x81F3,
-		EyePointSgis = 0x81F4,
-		ObjectPointSgis = 0x81F5,
-		EyeLineSgis = 0x81F6,
-		ObjectLineSgis = 0x81F7,
-		LightModelColorControl = 0x81F8,
-		LightModelColorControlExt = 0x81F8,
-		SingleColor = 0x81F9,
-		SingleColorExt = 0x81F9,
-		SeparateSpecularColor = 0x81FA,
-		SeparateSpecularColorExt = 0x81FA,
-		SharedTexturePaletteExt = 0x81FB,
-		TextFragmentShaderAti = 0x8200,
-		FramebufferAttachmentColorEncoding = 0x8210,
-		FramebufferAttachmentColorEncodingExt = 0x8210,
-		FramebufferAttachmentComponentType = 0x8211,
-		FramebufferAttachmentComponentTypeExt = 0x8211,
-		FramebufferAttachmentRedSize = 0x8212,
-		FramebufferAttachmentGreenSize = 0x8213,
-		FramebufferAttachmentBlueSize = 0x8214,
-		FramebufferAttachmentAlphaSize = 0x8215,
-		FramebufferAttachmentDepthSize = 0x8216,
-		FramebufferAttachmentStencilSize = 0x8217,
-		FramebufferDefault = 0x8218,
-		FramebufferUndefined = 0x8219,
-		FramebufferUndefinedOes = 0x8219,
-		DepthStencilAttachment = 0x821A,
-		MajorVersion = 0x821B,
-		MinorVersion = 0x821C,
-		NumExtensions = 0x821D,
-		ContextFlags = 0x821E,
-		BufferImmutableStorage = 0x821F,
-		BufferImmutableStorageExt = 0x821F,
-		BufferStorageFlags = 0x8220,
-		BufferStorageFlagsExt = 0x8220,
-		PrimitiveRestartForPatchesSupported = 0x8221,
-		PrimitiveRestartForPatchesSupportedOes = 0x8221,
-		Index = 0x8222,
-		CompressedRed = 0x8225,
-		CompressedRg = 0x8226,
-		Rg = 0x8227,
-		RgExt = 0x8227,
-		RgInteger = 0x8228,
-		R8 = 0x8229,
-		R8Ext = 0x8229,
-		R16 = 0x822A,
-		R16Ext = 0x822A,
-		Rg8 = 0x822B,
-		Rg8Ext = 0x822B,
-		Rg16 = 0x822C,
-		Rg16Ext = 0x822C,
-		R16F = 0x822D,
-		R16FExt = 0x822D,
-		R32F = 0x822E,
-		R32FExt = 0x822E,
-		Rg16F = 0x822F,
-		Rg16FExt = 0x822F,
-		Rg32F = 0x8230,
-		Rg32FExt = 0x8230,
-		R8I = 0x8231,
-		R8Ui = 0x8232,
-		R16I = 0x8233,
-		R16Ui = 0x8234,
-		R32I = 0x8235,
-		R32Ui = 0x8236,
-		Rg8I = 0x8237,
-		Rg8Ui = 0x8238,
-		Rg16I = 0x8239,
-		Rg16Ui = 0x823A,
-		Rg32I = 0x823B,
-		Rg32Ui = 0x823C,
-		SyncClEventArb = 0x8240,
-		SyncClEventCompleteArb = 0x8241,
-		DebugOutputSynchronous = 0x8242,
-		DebugOutputSynchronousArb = 0x8242,
-		DebugOutputSynchronousKhr = 0x8242,
-		DebugNextLoggedMessageLength = 0x8243,
-		DebugNextLoggedMessageLengthArb = 0x8243,
-		DebugNextLoggedMessageLengthKhr = 0x8243,
-		DebugCallbackFunction = 0x8244,
-		DebugCallbackFunctionArb = 0x8244,
-		DebugCallbackFunctionKhr = 0x8244,
-		DebugCallbackUserParam = 0x8245,
-		DebugCallbackUserParamArb = 0x8245,
-		DebugCallbackUserParamKhr = 0x8245,
-		DebugSourceApi = 0x8246,
-		DebugSourceApiArb = 0x8246,
-		DebugSourceApiKhr = 0x8246,
-		DebugSourceWindowSystem = 0x8247,
-		DebugSourceWindowSystemArb = 0x8247,
-		DebugSourceWindowSystemKhr = 0x8247,
-		DebugSourceShaderCompiler = 0x8248,
-		DebugSourceShaderCompilerArb = 0x8248,
-		DebugSourceShaderCompilerKhr = 0x8248,
-		DebugSourceThirdParty = 0x8249,
-		DebugSourceThirdPartyArb = 0x8249,
-		DebugSourceThirdPartyKhr = 0x8249,
-		DebugSourceApplication = 0x824A,
-		DebugSourceApplicationArb = 0x824A,
-		DebugSourceApplicationKhr = 0x824A,
-		DebugSourceOther = 0x824B,
-		DebugSourceOtherArb = 0x824B,
-		DebugSourceOtherKhr = 0x824B,
-		DebugTypeError = 0x824C,
-		DebugTypeErrorArb = 0x824C,
-		DebugTypeErrorKhr = 0x824C,
-		DebugTypeDeprecatedBehavior = 0x824D,
-		DebugTypeDeprecatedBehaviorArb = 0x824D,
-		DebugTypeDeprecatedBehaviorKhr = 0x824D,
-		DebugTypeUndefinedBehavior = 0x824E,
-		DebugTypeUndefinedBehaviorArb = 0x824E,
-		DebugTypeUndefinedBehaviorKhr = 0x824E,
-		DebugTypePortability = 0x824F,
-		DebugTypePortabilityArb = 0x824F,
-		DebugTypePortabilityKhr = 0x824F,
-		DebugTypePerformance = 0x8250,
-		DebugTypePerformanceArb = 0x8250,
-		DebugTypePerformanceKhr = 0x8250,
-		DebugTypeOther = 0x8251,
-		DebugTypeOtherArb = 0x8251,
-		DebugTypeOtherKhr = 0x8251,
-		LoseContextOnReset = 0x8252,
-		LoseContextOnResetArb = 0x8252,
-		LoseContextOnResetExt = 0x8252,
-		LoseContextOnResetKhr = 0x8252,
-		GuiltyContextReset = 0x8253,
-		GuiltyContextResetArb = 0x8253,
-		GuiltyContextResetExt = 0x8253,
-		GuiltyContextResetKhr = 0x8253,
-		InnocentContextReset = 0x8254,
-		InnocentContextResetArb = 0x8254,
-		InnocentContextResetExt = 0x8254,
-		InnocentContextResetKhr = 0x8254,
-		UnknownContextReset = 0x8255,
-		UnknownContextResetArb = 0x8255,
-		UnknownContextResetExt = 0x8255,
-		UnknownContextResetKhr = 0x8255,
-		ResetNotificationStrategy = 0x8256,
-		ResetNotificationStrategyArb = 0x8256,
-		ResetNotificationStrategyExt = 0x8256,
-		ResetNotificationStrategyKhr = 0x8256,
-		ProgramBinaryRetrievableHint = 0x8257,
-		ProgramSeparable = 0x8258,
-		ProgramSeparableExt = 0x8258,
-		ActiveProgram = 0x8259,
-		ProgramPipelineBinding = 0x825A,
-		ProgramPipelineBindingExt = 0x825A,
-		MaxViewports = 0x825B,
-		MaxViewportsNv = 0x825B,
-		MaxViewportsOes = 0x825B,
-		ViewportSubpixelBits = 0x825C,
-		ViewportSubpixelBitsExt = 0x825C,
-		ViewportSubpixelBitsNv = 0x825C,
-		ViewportSubpixelBitsOes = 0x825C,
-		ViewportBoundsRange = 0x825D,
-		ViewportBoundsRangeExt = 0x825D,
-		ViewportBoundsRangeNv = 0x825D,
-		ViewportBoundsRangeOes = 0x825D,
-		LayerProvokingVertex = 0x825E,
-		LayerProvokingVertexExt = 0x825E,
-		LayerProvokingVertexOes = 0x825E,
-		ViewportIndexProvokingVertex = 0x825F,
-		ViewportIndexProvokingVertexExt = 0x825F,
-		ViewportIndexProvokingVertexNv = 0x825F,
-		ViewportIndexProvokingVertexOes = 0x825F,
-		UndefinedVertex = 0x8260,
-		UndefinedVertexExt = 0x8260,
-		UndefinedVertexOes = 0x8260,
-		NoResetNotification = 0x8261,
-		NoResetNotificationArb = 0x8261,
-		NoResetNotificationExt = 0x8261,
-		NoResetNotificationKhr = 0x8261,
-		MaxComputeSharedMemorySize = 0x8262,
-		MaxComputeUniformComponents = 0x8263,
-		MaxComputeAtomicCounterBuffers = 0x8264,
-		MaxComputeAtomicCounters = 0x8265,
-		MaxCombinedComputeUniformComponents = 0x8266,
-		ComputeWorkGroupSize = 0x8267,
-		DebugTypeMarker = 0x8268,
-		DebugTypeMarkerKhr = 0x8268,
-		DebugTypePushGroup = 0x8269,
-		DebugTypePushGroupKhr = 0x8269,
-		DebugTypePopGroup = 0x826A,
-		DebugTypePopGroupKhr = 0x826A,
-		DebugSeverityNotification = 0x826B,
-		DebugSeverityNotificationKhr = 0x826B,
-		MaxDebugGroupStackDepth = 0x826C,
-		MaxDebugGroupStackDepthKhr = 0x826C,
-		DebugGroupStackDepth = 0x826D,
-		DebugGroupStackDepthKhr = 0x826D,
-		MaxUniformLocations = 0x826E,
-		InternalformatSupported = 0x826F,
-		InternalformatPreferred = 0x8270,
-		InternalformatRedSize = 0x8271,
-		InternalformatGreenSize = 0x8272,
-		InternalformatBlueSize = 0x8273,
-		InternalformatAlphaSize = 0x8274,
-		InternalformatDepthSize = 0x8275,
-		InternalformatStencilSize = 0x8276,
-		InternalformatSharedSize = 0x8277,
-		InternalformatRedType = 0x8278,
-		InternalformatGreenType = 0x8279,
-		InternalformatBlueType = 0x827A,
-		InternalformatAlphaType = 0x827B,
-		InternalformatDepthType = 0x827C,
-		InternalformatStencilType = 0x827D,
-		MaxWidth = 0x827E,
-		MaxHeight = 0x827F,
-		MaxDepth = 0x8280,
-		MaxLayers = 0x8281,
-		MaxCombinedDimensions = 0x8282,
-		ColorComponents = 0x8283,
-		DepthComponents = 0x8284,
-		StencilComponents = 0x8285,
-		ColorRenderable = 0x8286,
-		DepthRenderable = 0x8287,
-		StencilRenderable = 0x8288,
-		FramebufferRenderable = 0x8289,
-		FramebufferRenderableLayered = 0x828A,
-		FramebufferBlend = 0x828B,
-		ReadPixels = 0x828C,
-		ReadPixelsFormat = 0x828D,
-		ReadPixelsType = 0x828E,
-		TextureImageFormat = 0x828F,
-		TextureImageType = 0x8290,
-		GetTextureImageFormat = 0x8291,
-		GetTextureImageType = 0x8292,
-		Mipmap = 0x8293,
-		ManualGenerateMipmap = 0x8294,
 		/// <summary>
-		/// Should be deprecated<br/>
+		/// Primitive type for points.
 		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Points = 0x0000,
+
+		/// <summary>
+		/// Primitive type for lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Lines = 0x0001,
+
+		/// <summary>
+		/// Primitive type for a loop of lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineLoop = 0x0002,
+
+		/// <summary>
+		/// Primitive type for a strip of lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineStrip = 0x0003,
+
+		/// <summary>
+		/// Primitive type for triangles.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
+		Triangles = 0x0004,
+
+		/// <summary>
+		/// Primitive type for a strip of triangles.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TriangleStrip = 0x0005,
+
+		/// <summary>
+		/// Primitive type for a fan of triangles.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TriangleFan = 0x0006,
+
+		/// <summary>
+		/// Primitive type for quadrilaterals.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
+		Quads = 0x0007,
+
+		/// <summary>
+		/// Primitive type for quadrilaterals, specific to EXT.
+		/// </summary>
+		/// <remarks></remarks>
+		QuadsExt = 0x0007,
+
+		/// <summary>
+		/// Primitive type for a strip of quadrilaterals.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		QuadStrip = 0x0008,
+
+		/// <summary>
+		/// Primitive type for polygons.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Polygon = 0x0009,
+
+		/// <summary>
+		/// Primitive type for lines with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
+		LinesAdjacency = 0x000A,
+
+		/// <summary>
+		/// Lines adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
+		LinesAdjacencyArb = 0x000A,
+
+		/// <summary>
+		/// Lines adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4</remarks>
+		LinesAdjacencyExt = 0x000A,
+
+		/// <summary>
+		/// Line strip with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
+		LineStripAdjacency = 0x000B,
+
+		/// <summary>
+		/// Line strip adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
+		LineStripAdjacencyArb = 0x000B,
+
+		/// <summary>
+		/// Line strip adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4</remarks>
+		LineStripAdjacencyExt = 0x000B,
+
+		/// <summary>
+		/// Triangles with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
+		TrianglesAdjacency = 0x000C,
+
+		/// <summary>
+		/// Triangles adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
+		TrianglesAdjacencyArb = 0x000C,
+
+		/// <summary>
+		/// Triangles adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4</remarks>
+		TrianglesAdjacencyExt = 0x000C,
+
+		/// <summary>
+		/// Triangle strip with adjacency information.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
+		TriangleStripAdjacency = 0x000D,
+
+		/// <summary>
+		/// Triangle strip adjacency primitive type (ARB).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
+		TriangleStripAdjacencyArb = 0x000D,
+
+		/// <summary>
+		/// Triangle strip adjacency primitive type (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4</remarks>
+		TriangleStripAdjacencyExt = 0x000D,
+
+		/// <summary>
+		/// Primitive type for patches.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader<br/>GL_NV_gpu_shader5</remarks>
+		Patches = 0x000E,
+
+		/// <summary>
+		/// Primitive type for patches, specific to EXT.
+		/// </summary>
+		/// <remarks></remarks>
+		PatchesExt = 0x000E,
+
+		/// <summary>
+		/// Accumulation buffer operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Accum = 0x0100,
+
+		/// <summary>
+		/// Load operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Load = 0x0101,
+
+		/// <summary>
+		/// Return operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Return = 0x0102,
+
+		/// <summary>
+		/// Multiply operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Mult = 0x0103,
+
+		/// <summary>
+		/// Add operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Add = 0x0104,
+
+		/// <summary>
+		/// Never passes the depth test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Never = 0x0200,
+
+		/// <summary>
+		/// Passes if the value is less than the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Less = 0x0201,
+
+		/// <summary>
+		/// Passes if the value is equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
+		Equal = 0x0202,
+
+		/// <summary>
+		/// Passes if the value is less than or equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Lequal = 0x0203,
+
+		/// <summary>
+		/// Passes if the value is greater than the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Greater = 0x0204,
+
+		/// <summary>
+		/// Passes if the value is not equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Notequal = 0x0205,
+
+		/// <summary>
+		/// Passes if the value is greater than or equal to the reference.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Gequal = 0x0206,
+
+		/// <summary>
+		/// Always passes the depth test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Always = 0x0207,
+
+		/// <summary>
+		/// Source color for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		SrcColor = 0x0300,
+
+		/// <summary>
+		/// One minus the source color for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OneMinusSrcColor = 0x0301,
+
+		/// <summary>
+		/// Source alpha for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		SrcAlpha = 0x0302,
+
+		/// <summary>
+		/// One minus the source alpha for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OneMinusSrcAlpha = 0x0303,
+
+		/// <summary>
+		/// Destination alpha for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DstAlpha = 0x0304,
+
+		/// <summary>
+		/// One minus the destination alpha for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OneMinusDstAlpha = 0x0305,
+
+		/// <summary>
+		/// Destination color for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DstColor = 0x0306,
+
+		/// <summary>
+		/// One minus the destination color for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OneMinusDstColor = 0x0307,
+
+		/// <summary>
+		/// Source alpha saturate for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		SrcAlphaSaturate = 0x0308,
+
+		/// <summary>
+		/// Front left color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		FrontLeft = 0x0400,
+
+		/// <summary>
+		/// Front right color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		FrontRight = 0x0401,
+
+		/// <summary>
+		/// Back left color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		BackLeft = 0x0402,
+
+		/// <summary>
+		/// Back right color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		BackRight = 0x0403,
+
+		/// <summary>
+		/// Front color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Front = 0x0404,
+
+		/// <summary>
+		/// Back color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_1_compatibility</remarks>
+		Back = 0x0405,
+
+		/// <summary>
+		/// Left color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Left = 0x0406,
+
+		/// <summary>
+		/// Right color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Right = 0x0407,
+
+		/// <summary>
+		/// Both front and back color buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		FrontAndBack = 0x0408,
+
+		/// <summary>
+		/// Auxiliary color buffer 0.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Aux0 = 0x0409,
+
+		/// <summary>
+		/// Auxiliary color buffer 1.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Aux1 = 0x040A,
+
+		/// <summary>
+		/// Auxiliary color buffer 2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Aux2 = 0x040B,
+
+		/// <summary>
+		/// Auxiliary color buffer 3.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Aux3 = 0x040C,
+
+		/// <summary>
+		/// Indicates an invalid enum value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		InvalidEnum = 0x0500,
+
+		/// <summary>
+		/// Indicates an invalid value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		InvalidValue = 0x0501,
+
+		/// <summary>
+		/// Indicates an invalid operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		InvalidOperation = 0x0502,
+
+		/// <summary>
+		/// Indicates a stack overflow error.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.3 - GL 4.6<br/>GL 4.0 Compat - GL 4.2 Compat<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		StackOverflow = 0x0503,
+
+		/// <summary>
+		/// Indicates a stack underflow error.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.3 - GL 4.6<br/>GL 4.0 Compat - GL 4.2 Compat<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		StackUnderflow = 0x0504,
+
+		/// <summary>
+		/// Indicates an out of memory error.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OutOfMemory = 0x0505,
+
+		/// <summary>
+		/// Indicates an invalid framebuffer operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		InvalidFramebufferOperation = 0x0506,
+
+		/// <summary>
+		/// Invalid framebuffer operation, specific to EXT.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
+		InvalidFramebufferOperationExt = 0x0506,
+
+		/// <summary>
+		/// Invalid framebuffer operation, specific to OES.
+		/// </summary>
+		/// <remarks></remarks>
+		InvalidFramebufferOperationOes = 0x0506,
+
+		/// <summary>
+		/// Indicates 2D rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl2D = 0x0600,
+
+		/// <summary>
+		/// Indicates 3D rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl3D = 0x0601,
+
+		/// <summary>
+		/// Indicates 3D color rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl3DColor = 0x0602,
+
+		/// <summary>
+		/// Indicates 3D color texture rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl3DColorTexture = 0x0603,
+
+		/// <summary>
+		/// Indicates 4D color texture rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl4DColorTexture = 0x0604,
+
+		/// <summary>
+		/// Token for pass-through operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PassThroughToken = 0x0700,
+
+		/// <summary>
+		/// Token for point operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PointToken = 0x0701,
+
+		/// <summary>
+		/// Token for line operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LineToken = 0x0702,
+
+		/// <summary>
+		/// Token for polygon operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PolygonToken = 0x0703,
+
+		/// <summary>
+		/// Token for bitmap operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		BitmapToken = 0x0704,
+
+		/// <summary>
+		/// Token for drawing pixels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		DrawPixelToken = 0x0705,
+
+		/// <summary>
+		/// Token for copying pixels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CopyPixelToken = 0x0706,
+
+		/// <summary>
+		/// Token for resetting line operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LineResetToken = 0x0707,
+
+		/// <summary>
+		/// Exponential function.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Exp = 0x0800,
+
+		/// <summary>
+		/// Exponential function base 2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Exp2 = 0x0801,
+
+		/// <summary>
+		/// Indicates clockwise winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
+		Cw = 0x0900,
+
+		/// <summary>
+		/// Indicates counter-clockwise winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
+		Ccw = 0x0901,
+
+		/// <summary>
+		/// Coefficient for curve operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Coeff = 0x0A00,
+
+		/// <summary>
+		/// Order of the curve.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Order = 0x0A01,
+
+		/// <summary>
+		/// Domain for curve operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Domain = 0x0A02,
+
+		/// <summary>
+		/// Current color used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentColor = 0x0B00,
+
+		/// <summary>
+		/// Current color index used for indexed colors.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentIndex = 0x0B01,
+
+		/// <summary>
+		/// Current normal vector.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentNormal = 0x0B02,
+
+		/// <summary>
+		/// Current texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentTextureCoords = 0x0B03,
+
+		/// <summary>
+		/// Current color for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentRasterColor = 0x0B04,
+
+		/// <summary>
+		/// Current color index for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentRasterIndex = 0x0B05,
+
+		/// <summary>
+		/// Current texture coordinates for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentRasterTextureCoords = 0x0B06,
+
+		/// <summary>
+		/// Current position for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentRasterPosition = 0x0B07,
+
+		/// <summary>
+		/// Indicates if the current raster position is valid.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentRasterPositionValid = 0x0B08,
+
+		/// <summary>
+		/// Current distance for raster operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CurrentRasterDistance = 0x0B09,
+
+		/// <summary>
+		/// Indicates point smoothing is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PointSmooth = 0x0B10,
+
+		/// <summary>
+		/// Current size of points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PointSize = 0x0B11,
+
+		/// <summary>
+		/// Range of valid point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PointSizeRange = 0x0B12,
+
+		/// <summary>
+		/// Range of smooth point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SmoothPointSizeRange = 0x0B12,
+
+		/// <summary>
+		/// Granularity of point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PointSizeGranularity = 0x0B13,
+
+		/// <summary>
+		/// Granularity of smooth point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SmoothPointSizeGranularity = 0x0B13,
+
+		/// <summary>
+		/// Indicates line smoothing is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineSmooth = 0x0B20,
+
+		/// <summary>
+		/// Current width of lines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineWidth = 0x0B21,
+
+		/// <summary>
+		/// Range of valid line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineWidthRange = 0x0B22,
+
+		/// <summary>
+		/// Range of smooth line widths.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SmoothLineWidthRange = 0x0B22,
+
+		/// <summary>
+		/// Granularity of line widths.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineWidthGranularity = 0x0B23,
+
+		/// <summary>
+		/// Granularity of smooth line widths.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SmoothLineWidthGranularity = 0x0B23,
+
+		/// <summary>
+		/// Indicates line stipple pattern is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LineStipple = 0x0B24,
+
+		/// <summary>
+		/// Current line stipple pattern.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LineStipplePattern = 0x0B25,
+
+		/// <summary>
+		/// Repeat factor for line stipple pattern.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LineStippleRepeat = 0x0B26,
+
+		/// <summary>
+		/// Indicates the current display list mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ListMode = 0x0B30,
+
+		/// <summary>
+		/// Maximum allowed nesting of display lists.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxListNesting = 0x0B31,
+
+		/// <summary>
+		/// Base index for display lists.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ListBase = 0x0B32,
+
+		/// <summary>
+		/// Current index for display lists.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ListIndex = 0x0B33,
+
+		/// <summary>
+		/// Specifies the rendering mode for polygons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PolygonMode = 0x0B40,
+
+		/// <summary>
+		/// Enables or disables polygon smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PolygonSmooth = 0x0B41,
+
+		/// <summary>
+		/// Enables or disables polygon stippling.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PolygonStipple = 0x0B42,
+
+		/// <summary>
+		/// Indicates if edge vertices are to be rendered.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		EdgeFlag = 0x0B43,
+
+		/// <summary>
+		/// Enables or disables face culling.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		CullFace = 0x0B44,
+
+		/// <summary>
+		/// Specifies the culling mode (front, back, or both).
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		CullFaceMode = 0x0B45,
+
+		/// <summary>
+		/// Specifies the front face winding order.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		FrontFace = 0x0B46,
+
+		/// <summary>
+		/// Enables or disables lighting calculations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Lighting = 0x0B50,
+
+		/// <summary>
+		/// Specifies whether local viewer lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LightModelLocalViewer = 0x0B51,
+
+		/// <summary>
+		/// Specifies if two-sided lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LightModelTwoSide = 0x0B52,
+
+		/// <summary>
+		/// Specifies the ambient light color.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LightModelAmbient = 0x0B53,
+
+		/// <summary>
+		/// Specifies the shading model (flat or smooth).
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ShadeModel = 0x0B54,
+
+		/// <summary>
+		/// Specifies which face to apply color material to.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorMaterialFace = 0x0B55,
+
+		/// <summary>
+		/// Specifies which material property is affected by color material.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorMaterialParameter = 0x0B56,
+
+		/// <summary>
+		/// Enables or disables color material.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorMaterial = 0x0B57,
+
+		/// <summary>
+		/// Enables or disables fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
+		Fog = 0x0B60,
+
+		/// <summary>
+		/// Specifies the fog index value.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogIndex = 0x0B61,
+
+		/// <summary>
+		/// Specifies the density of the fog.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogDensity = 0x0B62,
+
+		/// <summary>
+		/// Specifies the starting distance for fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogStart = 0x0B63,
+
+		/// <summary>
+		/// Specifies the ending distance for fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogEnd = 0x0B64,
+
+		/// <summary>
+		/// Specifies the fog mode (exp, exp2, linear).
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogMode = 0x0B65,
+
+		/// <summary>
+		/// Specifies the color of the fog.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogColor = 0x0B66,
+
+		/// <summary>
+		/// Specifies the mapping of depth values to normalized device coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		DepthRange = 0x0B70,
+
+		/// <summary>
+		/// Enables or disables depth testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DepthTest = 0x0B71,
+
+		/// <summary>
+		/// Enables or disables writing to the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DepthWritemask = 0x0B72,
+
+		/// <summary>
+		/// Specifies the clear value for the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DepthClearValue = 0x0B73,
+
+		/// <summary>
+		/// Specifies the function used for depth comparisons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DepthFunc = 0x0B74,
+
+		/// <summary>
+		/// Specifies the clear value for the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AccumClearValue = 0x0B80,
+
+		/// <summary>
+		/// Enables or disables stencil testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilTest = 0x0B90,
+
+		/// <summary>
+		/// Specifies the clear value for the stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilClearValue = 0x0B91,
+
+		/// <summary>
+		/// Specifies the function used for stencil testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilFunc = 0x0B92,
+
+		/// <summary>
+		/// Specifies the mask used for stencil values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilValueMask = 0x0B93,
+
+		/// <summary>
+		/// Specifies the action to take on stencil test failure.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilFail = 0x0B94,
+
+		/// <summary>
+		/// Specifies action on stencil test success but depth test failure.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilPassDepthFail = 0x0B95,
+
+		/// <summary>
+		/// Specifies action on stencil test and depth test success.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilPassDepthPass = 0x0B96,
+
+		/// <summary>
+		/// Specifies the reference value for stencil testing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilRef = 0x0B97,
+
+		/// <summary>
+		/// Specifies the mask for writing stencil values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		StencilWritemask = 0x0B98,
+
+		/// <summary>
+		/// Specifies the current matrix mode (modelview, projection, etc.).
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MatrixMode = 0x0BA0,
+
+		/// <summary>
+		/// Enables or disables normalization of normals.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Normalize = 0x0BA1,
+
+		/// <summary>
+		/// Specifies the viewport dimensions.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		Viewport = 0x0BA2,
+
+		/// <summary>
+		/// Current depth of the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ModelviewStackDepth = 0x0BA3,
+
+		/// <summary>
+		/// Modelview stack depth for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
+		Modelview0StackDepthExt = 0x0BA3,
+
+		/// <summary>
+		/// Current depth of the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ProjectionStackDepth = 0x0BA4,
+
+		/// <summary>
+		/// Current depth of the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureStackDepth = 0x0BA5,
+
+		/// <summary>
+		/// Current modelview matrix.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ModelviewMatrix = 0x0BA6,
+
+		/// <summary>
+		/// Modelview matrix for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
+		Modelview0MatrixExt = 0x0BA6,
+
+		/// <summary>
+		/// Current projection matrix.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ProjectionMatrix = 0x0BA7,
+
+		/// <summary>
+		/// Current texture matrix.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureMatrix = 0x0BA8,
+
+		/// <summary>
+		/// Current depth of the attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AttribStackDepth = 0x0BB0,
+
+		/// <summary>
+		/// Current depth of the client attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClientAttribStackDepth = 0x0BB1,
+
+		/// <summary>
+		/// Enables or disables alpha testing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AlphaTest = 0x0BC0,
+
+		/// <summary>
+		/// Alpha testing, specific to QCOM extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		AlphaTestQcom = 0x0BC0,
+
+		/// <summary>
+		/// Specifies the function for alpha testing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AlphaTestFunc = 0x0BC1,
+
+		/// <summary>
+		/// Alpha test function for QCOM extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		AlphaTestFuncQcom = 0x0BC1,
+
+		/// <summary>
+		/// Specifies the reference value for alpha testing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AlphaTestRef = 0x0BC2,
+
+		/// <summary>
+		/// Reference value for alpha testing, specific to QCOM.
+		/// </summary>
+		/// <remarks></remarks>
+		AlphaTestRefQcom = 0x0BC2,
+
+		/// <summary>
+		/// Enables or disables dithering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Dither = 0x0BD0,
+
+		/// <summary>
+		/// Specifies the destination factor for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		BlendDst = 0x0BE0,
+
+		/// <summary>
+		/// Specifies the source factor for blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		BlendSrc = 0x0BE1,
+
+		/// <summary>
+		/// Enables or disables blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Blend = 0x0BE2,
+
+		/// <summary>
+		/// Specifies the current logical operation mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LogicOpMode = 0x0BF0,
+
+		/// <summary>
+		/// Enables or disables index logic operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexLogicOp = 0x0BF1,
+
+		/// <summary>
+		/// Specifies the logical operation to perform.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LogicOp = 0x0BF1,
+
+		/// <summary>
+		/// Enables or disables color logic operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		ColorLogicOp = 0x0BF2,
+
+		/// <summary>
+		/// Number of auxiliary color buffers available.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AuxBuffers = 0x0C00,
+
+		/// <summary>
+		/// Specifies the current draw buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DrawBuffer = 0x0C01,
+
+		/// <summary>
+		/// Specifies the current draw buffer, specific to EXT.
+		/// </summary>
+		/// <remarks></remarks>
+		DrawBufferExt = 0x0C01,
+
+		/// <summary>
+		/// Specifies the buffer into which pixel data is read.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ReadBuffer = 0x0C02,
+
+		/// <summary>
+		/// Specifies the read buffer, specific to EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		ReadBufferExt = 0x0C02,
+
+		/// <summary>
+		/// Specifies the read buffer, specific to NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		ReadBufferNv = 0x0C02,
+
+		/// <summary>
+		/// Specifies the rectangle that bounds the scissor test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		ScissorBox = 0x0C10,
+
+		/// <summary>
+		/// Enables or disables the scissor test.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		ScissorTest = 0x0C11,
+
+		/// <summary>
+		/// Specifies the clear value for the index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexClearValue = 0x0C20,
+
+		/// <summary>
+		/// Specifies the write mask for the index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexWritemask = 0x0C21,
+
+		/// <summary>
+		/// Specifies the clear value for the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ColorClearValue = 0x0C22,
+
+		/// <summary>
+		/// Specifies the write mask for the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ColorWritemask = 0x0C23,
+
+		/// <summary>
+		/// Specifies whether to use color index or RGBA mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexMode = 0x0C30,
+
+		/// <summary>
+		/// Specifies that RGBA mode is used.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		RgbaMode = 0x0C31,
+
+		/// <summary>
+		/// Enables or disables double buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Doublebuffer = 0x0C32,
+
+		/// <summary>
+		/// Enables or disables stereo buffering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Stereo = 0x0C33,
+
+		/// <summary>
+		/// Specifies the rendering mode (e.g., selection or rendering).
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		RenderMode = 0x0C40,
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for perspective correction.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PerspectiveCorrectionHint = 0x0C50,
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for point smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PointSmoothHint = 0x0C51,
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for line smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LineSmoothHint = 0x0C52,
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for polygon smoothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PolygonSmoothHint = 0x0C53,
+
+		/// <summary>
+		/// Hints to the OpenGL implementation for fog calculations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FogHint = 0x0C54,
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the S coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureGenS = 0x0C60,
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the T coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureGenT = 0x0C61,
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the R coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureGenR = 0x0C62,
+
+		/// <summary>
+		/// Enables or disables texture coordinate generation for the Q coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureGenQ = 0x0C63,
+
+		/// <summary>
+		/// Defines a pixel map for mapping index values to index values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToI = 0x0C70,
+
+		/// <summary>
+		/// Defines a pixel map for mapping color index values to color index values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapSToS = 0x0C71,
+
+		/// <summary>
+		/// Defines a pixel map for mapping index values to red component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToR = 0x0C72,
+
+		/// <summary>
+		/// Defines a pixel map for mapping index values to green component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToG = 0x0C73,
+
+		/// <summary>
+		/// Defines a pixel map for mapping index values to blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToB = 0x0C74,
+
+		/// <summary>
+		/// Defines a pixel map for mapping index values to alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToA = 0x0C75,
+
+		/// <summary>
+		/// Defines a pixel map for mapping red component values to red component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapRToR = 0x0C76,
+
+		/// <summary>
+		/// Defines a pixel map for mapping green component values to green component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapGToG = 0x0C77,
+
+		/// <summary>
+		/// Defines a pixel map for mapping blue component values to blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapBToB = 0x0C78,
+
+		/// <summary>
+		/// Defines a pixel map for mapping alpha component values to alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapAToA = 0x0C79,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to index mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToISize = 0x0CB0,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for color index to color index mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapSToSSize = 0x0CB1,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to red component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToRSize = 0x0CB2,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to green component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToGSize = 0x0CB3,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to blue component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToBSize = 0x0CB4,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for index to alpha component mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapIToASize = 0x0CB5,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for red to red mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapRToRSize = 0x0CB6,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for green to green mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapGToGSize = 0x0CB7,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for blue to blue mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapBToBSize = 0x0CB8,
+
+		/// <summary>
+		/// Specifies the size of the pixel map for alpha to alpha mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PixelMapAToASize = 0x0CB9,
+
+		/// <summary>
+		/// Enables or disables swapping of bytes when unpacking pixel data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnpackSwapBytes = 0x0CF0,
+
+		/// <summary>
+		/// Specifies whether the least significant bit is unpacked first.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnpackLsbFirst = 0x0CF1,
+
+		/// <summary>
+		/// Specifies the number of pixels in a row when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnpackRowLength = 0x0CF2,
+
+		/// <summary>
+		/// Specifies the row length for unpacking, specific to EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		UnpackRowLengthExt = 0x0CF2,
+
+		/// <summary>
+		/// Specifies the number of rows to skip when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnpackSkipRows = 0x0CF3,
+
+		/// <summary>
+		/// Specifies the number of rows to skip, specific to EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		UnpackSkipRowsExt = 0x0CF3,
+
+		/// <summary>
+		/// Specifies the number of pixels to skip when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnpackSkipPixels = 0x0CF4,
+
+		/// <summary>
+		/// Specifies the number of pixels to skip, specific to EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		UnpackSkipPixelsExt = 0x0CF4,
+
+		/// <summary>
+		/// Specifies the alignment of pixel data in memory when unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnpackAlignment = 0x0CF5,
+
+		/// <summary>
+		/// Enables or disables swapping of bytes when packing pixel data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PackSwapBytes = 0x0D00,
+
+		/// <summary>
+		/// Specifies whether the least significant bit is packed first.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PackLsbFirst = 0x0D01,
+
+		/// <summary>
+		/// Specifies the number of pixels in a row when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PackRowLength = 0x0D02,
+
+		/// <summary>
+		/// Specifies the row length for packing, specific to NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		PackRowLengthNv = 0x0D02,
+
+		/// <summary>
+		/// Specifies the number of rows to skip when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PackSkipRows = 0x0D03,
+
+		/// <summary>
+		/// Specifies the number of rows to skip, specific to NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		PackSkipRowsNv = 0x0D03,
+
+		/// <summary>
+		/// Specifies the number of pixels to skip when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PackSkipPixels = 0x0D04,
+
+		/// <summary>
+		/// Specifies the number of pixels to skip, specific to NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		PackSkipPixelsNv = 0x0D04,
+
+		/// <summary>
+		/// Specifies the alignment of pixel data in memory when packing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		PackAlignment = 0x0D05,
+
+		/// <summary>
+		/// Enables or disables color mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MapColor = 0x0D10,
+
+		/// <summary>
+		/// Enables or disables stencil mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MapStencil = 0x0D11,
+
+		/// <summary>
+		/// Specifies a shift value for index values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexShift = 0x0D12,
+
+		/// <summary>
+		/// Specifies an offset for index values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexOffset = 0x0D13,
+
+		/// <summary>
+		/// Specifies a scale factor for red component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		RedScale = 0x0D14,
+
+		/// <summary>
+		/// Specifies a bias for red component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		RedBias = 0x0D15,
+
+		/// <summary>
+		/// Specifies the zoom factor in the X direction.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ZoomX = 0x0D16,
+
+		/// <summary>
+		/// Specifies the zoom factor in the Y direction.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ZoomY = 0x0D17,
+
+		/// <summary>
+		/// Specifies a scale factor for green component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		GreenScale = 0x0D18,
+
+		/// <summary>
+		/// Specifies a bias for green component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		GreenBias = 0x0D19,
+
+		/// <summary>
+		/// Specifies a scale factor for blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		BlueScale = 0x0D1A,
+
+		/// <summary>
+		/// Specifies a bias for blue component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		BlueBias = 0x0D1B,
+
+		/// <summary>
+		/// Specifies a scale factor for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AlphaScale = 0x0D1C,
+
+		/// <summary>
+		/// Specifies a bias for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AlphaBias = 0x0D1D,
+
+		/// <summary>
+		/// Specifies a scale factor for depth values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		DepthScale = 0x0D1E,
+
+		/// <summary>
+		/// Specifies a bias factor for depth values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		DepthBias = 0x0D1F,
+
+		/// <summary>
+		/// Specifies the maximum order of evaluation for the evaluation functions.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxEvalOrder = 0x0D30,
+
+		/// <summary>
+		/// Specifies the maximum number of light sources supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxLights = 0x0D31,
+
+		/// <summary>
+		/// Specifies the maximum number of clipping planes supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxClipPlanes = 0x0D32,
+
+		/// <summary>
+		/// Specifies the maximum number of clip distances.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		MaxClipDistances = 0x0D32,
+
+		/// <summary>
+		/// Specifies the maximum dimensions of a texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		MaxTextureSize = 0x0D33,
+
+		/// <summary>
+		/// Specifies the maximum size of the pixel map table.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxPixelMapTable = 0x0D34,
+
+		/// <summary>
+		/// Specifies the maximum depth of the attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxAttribStackDepth = 0x0D35,
+
+		/// <summary>
+		/// Specifies the maximum depth of the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxModelviewStackDepth = 0x0D36,
+
+		/// <summary>
+		/// Specifies the maximum depth of the name stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxNameStackDepth = 0x0D37,
+
+		/// <summary>
+		/// Specifies the maximum depth of the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxProjectionStackDepth = 0x0D38,
+
+		/// <summary>
+		/// Specifies the maximum depth of the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxTextureStackDepth = 0x0D39,
+
+		/// <summary>
+		/// Specifies the maximum dimensions of the viewport.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		MaxViewportDims = 0x0D3A,
+
+		/// <summary>
+		/// Specifies the maximum depth of the client attribute stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		MaxClientAttribStackDepth = 0x0D3B,
+
+		/// <summary>
+		/// Specifies the number of bits used for subpixel precision.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		SubpixelBits = 0x0D50,
+
+		/// <summary>
+		/// Specifies the number of bits used for index values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexBits = 0x0D51,
+
+		/// <summary>
+		/// Specifies the number of bits used for the red component.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		RedBits = 0x0D52,
+
+		/// <summary>
+		/// Specifies the number of bits used for the green component.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		GreenBits = 0x0D53,
+
+		/// <summary>
+		/// Specifies the number of bits used for the blue component.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		BlueBits = 0x0D54,
+
+		/// <summary>
+		/// Specifies the number of bits used for the alpha component.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AlphaBits = 0x0D55,
+
+		/// <summary>
+		/// Specifies the number of bits used for depth buffering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		DepthBits = 0x0D56,
+
+		/// <summary>
+		/// Specifies the number of bits used for stencil buffering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		StencilBits = 0x0D57,
+
+		/// <summary>
+		/// Specifies the number of bits used for the red component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AccumRedBits = 0x0D58,
+
+		/// <summary>
+		/// Specifies the number of bits used for the green component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AccumGreenBits = 0x0D59,
+
+		/// <summary>
+		/// Specifies the number of bits used for the blue component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AccumBlueBits = 0x0D5A,
+
+		/// <summary>
+		/// Specifies the number of bits used for the alpha component in the accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AccumAlphaBits = 0x0D5B,
+
+		/// <summary>
+		/// Specifies the current depth of the name stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		NameStackDepth = 0x0D70,
+
+		/// <summary>
+		/// Enables or disables automatic normal generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AutoNormal = 0x0D80,
+
+		/// <summary>
+		/// Specifies a one-dimensional color map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1Color4 = 0x0D90,
+
+		/// <summary>
+		/// Specifies a one-dimensional index map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1Index = 0x0D91,
+
+		/// <summary>
+		/// Specifies a one-dimensional normal map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1Normal = 0x0D92,
+
+		/// <summary>
+		/// Specifies the first texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1TextureCoord1 = 0x0D93,
+
+		/// <summary>
+		/// Specifies the second texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1TextureCoord2 = 0x0D94,
+
+		/// <summary>
+		/// Specifies the third texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1TextureCoord3 = 0x0D95,
+
+		/// <summary>
+		/// Specifies the fourth texture coordinate in a one-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1TextureCoord4 = 0x0D96,
+
+		/// <summary>
+		/// Specifies a three-dimensional vertex map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1Vertex3 = 0x0D97,
+
+		/// <summary>
+		/// Specifies a four-dimensional vertex map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1Vertex4 = 0x0D98,
+
+		/// <summary>
+		/// Specifies a two-dimensional color map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2Color4 = 0x0DB0,
+
+		/// <summary>
+		/// Specifies a two-dimensional index map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2Index = 0x0DB1,
+
+		/// <summary>
+		/// Specifies a two-dimensional normal map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2Normal = 0x0DB2,
+
+		/// <summary>
+		/// Specifies the first texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2TextureCoord1 = 0x0DB3,
+
+		/// <summary>
+		/// Specifies the second texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2TextureCoord2 = 0x0DB4,
+
+		/// <summary>
+		/// Specifies the third texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2TextureCoord3 = 0x0DB5,
+
+		/// <summary>
+		/// Specifies the fourth texture coordinate in a two-dimensional map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2TextureCoord4 = 0x0DB6,
+
+		/// <summary>
+		/// Specifies a three-dimensional vertex map for two-dimensional evaluation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2Vertex3 = 0x0DB7,
+
+		/// <summary>
+		/// Specifies a four-dimensional vertex map for two-dimensional evaluation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2Vertex4 = 0x0DB8,
+
+		/// <summary>
+		/// Specifies the domain of a one-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1GridDomain = 0x0DD0,
+
+		/// <summary>
+		/// Specifies the number of segments in a one-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map1GridSegments = 0x0DD1,
+
+		/// <summary>
+		/// Specifies the domain of a two-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2GridDomain = 0x0DD2,
+
+		/// <summary>
+		/// Specifies the number of segments in a two-dimensional grid.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Map2GridSegments = 0x0DD3,
+
+		/// <summary>
+		/// Specifies a one-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		Texture1D = 0x0DE0,
+
+		/// <summary>
+		/// Specifies a two-dimensional texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		Texture2D = 0x0DE1,
+
+		/// <summary>
+		/// Specifies the pointer to the feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FeedbackBufferPointer = 0x0DF0,
+
+		/// <summary>
+		/// Specifies the size of the feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FeedbackBufferSize = 0x0DF1,
+
+		/// <summary>
+		/// Specifies the type of the feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		FeedbackBufferType = 0x0DF2,
+
+		/// <summary>
+		/// Specifies the pointer to the selection buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SelectionBufferPointer = 0x0DF3,
+
+		/// <summary>
+		/// Specifies the size of the selection buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SelectionBufferSize = 0x0DF4,
+
+		/// <summary>
+		/// Specifies the width of the texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureWidth = 0x1000,
+
+		/// <summary>
+		/// Specifies the height of the texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureHeight = 0x1001,
+
+		/// <summary>
+		/// Specifies the internal format of the texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureInternalFormat = 0x1003,
+
+		/// <summary>
+		/// Specifies the number of components in the texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureComponents = 0x1003,
+
+		/// <summary>
+		/// Specifies the border color of the texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureBorderColor = 0x1004,
+
+		/// <summary>
+		/// Specifies the border color for NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		TextureBorderColorNv = 0x1004,
+
+		/// <summary>
+		/// Specifies the width of the texture border.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureBorder = 0x1005,
+
+		/// <summary>
+		/// Specifies that the implementation can ignore this parameter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DontCare = 0x1100,
+
+		/// <summary>
+		/// Specifies that the fastest performance option is desired.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Fastest = 0x1101,
+
+		/// <summary>
+		/// Specifies that the nicest quality option is desired.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Nicest = 0x1102,
+
+		/// <summary>
+		/// Specifies the ambient light color.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Ambient = 0x1200,
+
+		/// <summary>
+		/// Specifies the diffuse light color.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Diffuse = 0x1201,
+
+		/// <summary>
+		/// Specifies the specular light color.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Specular = 0x1202,
+
+		/// <summary>
+		/// Specifies the position of the light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Position = 0x1203,
+
+		/// <summary>
+		/// Specifies the direction of the spotlight.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SpotDirection = 0x1204,
+
+		/// <summary>
+		/// Specifies the exponent for the spotlight attenuation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SpotExponent = 0x1205,
+
+		/// <summary>
+		/// Specifies the cutoff angle for the spotlight.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SpotCutoff = 0x1206,
+
+		/// <summary>
+		/// Specifies the constant attenuation factor for lights.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ConstantAttenuation = 0x1207,
+
+		/// <summary>
+		/// Specifies the linear attenuation factor for lights.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LinearAttenuation = 0x1208,
+
+		/// <summary>
+		/// Specifies the quadratic attenuation factor for lights.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		QuadraticAttenuation = 0x1209,
+
+		/// <summary>
+		/// Specifies that the display list is to be compiled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Compile = 0x1300,
+
+		/// <summary>
+		/// Specifies that the display list is to be compiled and executed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		CompileAndExecute = 0x1301,
+
+		/// <summary>
+		/// Specifies a signed byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Byte = 0x1400,
+
+		/// <summary>
+		/// Specifies an unsigned byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnsignedByte = 0x1401,
+
+		/// <summary>
+		/// Specifies a signed short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Short = 0x1402,
+
+		/// <summary>
+		/// Specifies an unsigned short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnsignedShort = 0x1403,
+
+		/// <summary>
+		/// Specifies a signed integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Int = 0x1404,
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		UnsignedInt = 0x1405,
+
+		/// <summary>
+		/// Specifies a floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
+		Float = 0x1406,
+
+		/// <summary>
+		/// Specifies a data type that uses 2 bytes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl2Bytes = 0x1407,
+
+		/// <summary>
+		/// Specifies a data type that uses 3 bytes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl3Bytes = 0x1408,
+
+		/// <summary>
+		/// Specifies a data type that uses 4 bytes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Gl4Bytes = 0x1409,
+
+		/// <summary>
+		/// Specifies a double-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit<br/>GL_ARB_gpu_shader_fp64</remarks>
+		Double = 0x140A,
+
+		/// <summary>
+		/// Specifies a double-precision data type for EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		DoubleExt = 0x140A,
+
+		/// <summary>
+		/// Specifies a half-precision floating-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_half_float_vertex</remarks>
+		HalfFloat = 0x140B,
+
+		/// <summary>
+		/// Specifies a half-precision data type for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_half_float_pixel</remarks>
+		HalfFloatArb = 0x140B,
+
+		/// <summary>
+		/// Specifies a half-precision data type for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_half_float</remarks>
+		HalfFloatNv = 0x140B,
+
+		/// <summary>
+		/// Specifies a half-precision data type for Apple extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_float_pixels</remarks>
+		HalfApple = 0x140B,
+
+		/// <summary>
+		/// Specifies a fixed-point data type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
+		Fixed = 0x140C,
+
+		/// <summary>
+		/// Specifies a 64-bit signed integer for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
+		Int64Arb = 0x140E,
+
+		/// <summary>
+		/// Specifies a 64-bit signed integer for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_NV_vertex_attrib_integer_64bit<br/>GL_AMD_gpu_shader_int64</remarks>
+		Int64Nv = 0x140E,
+
+		/// <summary>
+		/// Specifies a 64-bit unsigned integer for ARB extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture<br/>GL_ARB_gpu_shader_int64</remarks>
+		UnsignedInt64Arb = 0x140F,
+
+		/// <summary>
+		/// Specifies a 64-bit unsigned integer for NV extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_NV_vertex_attrib_integer_64bit<br/>GL_AMD_gpu_shader_int64</remarks>
+		UnsignedInt64Nv = 0x140F,
+
+		/// <summary>
+		/// Specifies a clear operation for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Clear = 0x1500,
+
+		/// <summary>
+		/// Specifies a logical AND operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		And = 0x1501,
+
+		/// <summary>
+		/// Specifies a logical AND operation with reverse.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		AndReverse = 0x1502,
+
+		/// <summary>
+		/// Specifies a copy operation for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Copy = 0x1503,
+
+		/// <summary>
+		/// Specifies a logical AND operation followed by inversion.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		AndInverted = 0x1504,
+
+		/// <summary>
+		/// Specifies a no-operation, effectively does nothing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Noop = 0x1505,
+
+		/// <summary>
+		/// Specifies a logical XOR operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Xor = 0x1506,
+
+		/// <summary>
+		/// Specifies a logical OR operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Or = 0x1507,
+
+		/// <summary>
+		/// Specifies a logical NOR operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Nor = 0x1508,
+
+		/// <summary>
+		/// Specifies a logical equivalence operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Equiv = 0x1509,
+
+		/// <summary>
+		/// Specifies a logical inversion operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_NV_blend_equation_advanced</remarks>
+		Invert = 0x150A,
+
+		/// <summary>
+		/// Specifies a logical OR operation with reverse.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OrReverse = 0x150B,
+
+		/// <summary>
+		/// Specifies a copy operation that inverts the source.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		CopyInverted = 0x150C,
+
+		/// <summary>
+		/// Specifies a logical OR operation followed by inversion.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		OrInverted = 0x150D,
+
+		/// <summary>
+		/// Specifies a logical NAND operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Nand = 0x150E,
+
+		/// <summary>
+		/// Specifies a set operation for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Set = 0x150F,
+
+		/// <summary>
+		/// Specifies the emission color for lighting.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Emission = 0x1600,
+
+		/// <summary>
+		/// Specifies the shininess factor for specular highlights.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Shininess = 0x1601,
+
+		/// <summary>
+		/// Specifies both ambient and diffuse light properties.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		AmbientAndDiffuse = 0x1602,
+
+		/// <summary>
+		/// Specifies a color index mode for indexed color displays.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorIndexes = 0x1603,
+
+		/// <summary>
+		/// Specifies the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Modelview = 0x1700,
+
+		/// <summary>
+		/// Specifies the first modelview matrix for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
+		Modelview0Ext = 0x1700,
+
+		/// <summary>
+		/// Specifies the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Projection = 0x1701,
+
+		/// <summary>
+		/// Specifies the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Texture = 0x1702,
+
+		/// <summary>
+		/// Specifies the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Color = 0x1800,
+
+		/// <summary>
+		/// Specifies the color buffer for EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		ColorExt = 0x1800,
+
+		/// <summary>
+		/// Specifies the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Depth = 0x1801,
+
+		/// <summary>
+		/// Specifies the depth buffer for EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		DepthExt = 0x1801,
+
+		/// <summary>
+		/// Specifies the stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Stencil = 0x1802,
+
+		/// <summary>
+		/// Specifies the stencil buffer for EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		StencilExt = 0x1802,
+
+		/// <summary>
+		/// Specifies color index mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorIndex = 0x1900,
+
+		/// <summary>
+		/// Specifies the stencil index buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_stencil8</remarks>
+		StencilIndex = 0x1901,
+
+		/// <summary>
+		/// Specifies the stencil index buffer for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		StencilIndexOes = 0x1901,
+
+		/// <summary>
+		/// Specifies a depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		DepthComponent = 0x1902,
+
+		/// <summary>
+		/// Specifies the red color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
+		Red = 0x1903,
+
+		/// <summary>
+		/// Specifies the red color component for EXT extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		RedExt = 0x1903,
+
+		/// <summary>
+		/// Specifies the green color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
+		Green = 0x1904,
+
+		/// <summary>
+		/// Specifies the blue color component.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
+		Blue = 0x1905,
+
+		/// <summary>
+		/// Specifies the alpha component for transparency.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
+		Alpha = 0x1906,
+
+		/// <summary>
+		/// Specifies a color in RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Rgb = 0x1907,
+
+		/// <summary>
+		/// Specifies a color in RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Rgba = 0x1908,
+
+		/// <summary>
+		/// Specifies a grayscale color value.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance = 0x1909,
+
+		/// <summary>
+		/// Specifies a grayscale value with an alpha channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LuminanceAlpha = 0x190A,
+
+		/// <summary>
+		/// Specifies a bitmap data type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Bitmap = 0x1A00,
+
+		/// <summary>
+		/// Specifies the point primitive.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Point = 0x1B00,
+
+		/// <summary>
+		/// Specifies the line primitive.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Line = 0x1B01,
+
+		/// <summary>
+		/// Specifies fill mode for polygons.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Fill = 0x1B02,
+
+		/// <summary>
+		/// Specifies fill mode for polygons for NV extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		FillNv = 0x1B02,
+
+		/// <summary>
+		/// Specifies render mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Render = 0x1C00,
+
+		/// <summary>
+		/// Specifies feedback mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Feedback = 0x1C01,
+
+		/// <summary>
+		/// Specifies selection mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Select = 0x1C02,
+
+		/// <summary>
+		/// Specifies flat shading model.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Flat = 0x1D00,
+
+		/// <summary>
+		/// Specifies smooth shading model.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Smooth = 0x1D01,
+
+		/// <summary>
+		/// Specifies keeping the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Keep = 0x1E00,
+
+		/// <summary>
+		/// Specifies replacing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Replace = 0x1E01,
+
+		/// <summary>
+		/// Specifies incrementing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Incr = 0x1E02,
+
+		/// <summary>
+		/// Specifies decrementing the current value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Decr = 0x1E03,
+
+		/// <summary>
+		/// Specifies the vendor of the OpenGL implementation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Vendor = 0x1F00,
+
+		/// <summary>
+		/// Specifies the renderer of the OpenGL implementation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Renderer = 0x1F01,
+
+		/// <summary>
+		/// Specifies the version of the OpenGL implementation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Version = 0x1F02,
+
+		/// <summary>
+		/// Specifies the supported OpenGL extensions.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Extensions = 0x1F03,
+
+		/// <summary>
+		/// Specifies the S texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		S = 0x2000,
+
+		/// <summary>
+		/// Specifies the T texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T = 0x2001,
+
+		/// <summary>
+		/// Specifies the R texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		R = 0x2002,
+
+		/// <summary>
+		/// Specifies the Q texture coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Q = 0x2003,
+
+		/// <summary>
+		/// Specifies modulation of texture colors.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Modulate = 0x2100,
+
+		/// <summary>
+		/// Specifies decal texture mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Decal = 0x2101,
+
+		/// <summary>
+		/// Specifies the texture environment mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureEnvMode = 0x2200,
+
+		/// <summary>
+		/// Specifies the color for the texture environment.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureEnvColor = 0x2201,
+
+		/// <summary>
+		/// Specifies the texture environment settings.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureEnv = 0x2300,
+
+		/// <summary>
+		/// Specifies eye linear texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		EyeLinear = 0x2400,
+
+		/// <summary>
+		/// Specifies object linear texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ObjectLinear = 0x2401,
+
+		/// <summary>
+		/// Specifies spherical mapping for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SphereMap = 0x2402,
+
+		/// <summary>
+		/// Specifies the texture generation mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureGenMode = 0x2500,
+
+		/// <summary>
+		/// Specifies the texture generation mode for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		TextureGenModeOes = 0x2500,
+
+		/// <summary>
+		/// Specifies the object plane for texture generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ObjectPlane = 0x2501,
+
+		/// <summary>
+		/// Specifies the eye plane for texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_NV_fog_distance</remarks>
+		EyePlane = 0x2502,
+
+		/// <summary>
+		/// Specifies nearest neighbor filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Nearest = 0x2600,
+
+		/// <summary>
+		/// Specifies linear filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Linear = 0x2601,
+
+		/// <summary>
+		/// Specifies nearest neighbor filtering with nearest mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		NearestMipmapNearest = 0x2700,
+
+		/// <summary>
+		/// Specifies linear filtering with nearest mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LinearMipmapNearest = 0x2701,
+
+		/// <summary>
+		/// Specifies nearest neighbor filtering with linear mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		NearestMipmapLinear = 0x2702,
+
+		/// <summary>
+		/// Specifies linear filtering with linear mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		LinearMipmapLinear = 0x2703,
+
+		/// <summary>
+		/// Specifies the texture magnification filter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureMagFilter = 0x2800,
+
+		/// <summary>
+		/// Specifies the texture minification filter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureMinFilter = 0x2801,
+
+		/// <summary>
+		/// Specifies the texture wrapping mode for the S coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureWrapS = 0x2802,
+
+		/// <summary>
+		/// Specifies the texture wrapping mode for the T coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		TextureWrapT = 0x2803,
+
+		/// <summary>
+		/// Specifies clamping for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Clamp = 0x2900,
+
+		/// <summary>
+		/// Specifies repeating for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		Repeat = 0x2901,
+
+		/// <summary>
+		/// Specifies the factor for polygon offset.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PolygonOffsetUnits = 0x2A00,
+
+		/// <summary>
+		/// Specifies polygon offset for point primitives.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PolygonOffsetPoint = 0x2A01,
+
+		/// <summary>
+		/// Specifies polygon offset for line primitives.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PolygonOffsetLine = 0x2A02,
+
+		/// <summary>
+		/// Specifies a 2-byte RGB format with 3 bits for each channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		R3G3B2 = 0x2A10,
+
+		/// <summary>
+		/// Specifies vertex data in 2D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		V2F = 0x2A20,
+
+		/// <summary>
+		/// Specifies vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		V3F = 0x2A21,
+
+		/// <summary>
+		/// Specifies color data with 4 unsigned bytes and vertex data in 2D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		C4UbV2F = 0x2A22,
+
+		/// <summary>
+		/// Specifies color data with 4 unsigned bytes and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		C4UbV3F = 0x2A23,
+
+		/// <summary>
+		/// Specifies color data with 3 floating-point components and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		C3FV3F = 0x2A24,
+
+		/// <summary>
+		/// Specifies normal data with 3 floating-point components and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		N3FV3F = 0x2A25,
+
+		/// <summary>
+		/// Specifies color data with 4 floating-point components, normal data, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		C4FN3FV3F = 0x2A26,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T2FV3F = 0x2A27,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 4 floating-point components and vertex data in 4D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T4FV4F = 0x2A28,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, color data with 4 unsigned bytes, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T2FC4UbV3F = 0x2A29,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, color data with 3 floating-point components, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T2FC3FV3F = 0x2A2A,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, normal data with 3 floating-point components, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T2FN3FV3F = 0x2A2B,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 2 floating-point components, color data with 4 floating-point components, normal data, and vertex data in 3D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T2FC4FN3FV3F = 0x2A2C,
+
+		/// <summary>
+		/// Specifies texture coordinate data with 4 floating-point components, color data with 4 floating-point components, normal data, and vertex data in 4D floating-point format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		T4FC4FN3FV4F = 0x2A2D,
+
+		/// <summary>
+		/// Specifies the first clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClipPlane0 = 0x3000,
+
+		/// <summary>
+		/// Specifies the first clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance0 = 0x3000,
+
+		/// <summary>
+		/// Specifies the second clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClipPlane1 = 0x3001,
+
+		/// <summary>
+		/// Specifies the second clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance1 = 0x3001,
+
+		/// <summary>
+		/// Specifies the third clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClipPlane2 = 0x3002,
+
+		/// <summary>
+		/// Specifies the third clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance2 = 0x3002,
+
+		/// <summary>
+		/// Specifies the fourth clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClipPlane3 = 0x3003,
+
+		/// <summary>
+		/// Specifies the fourth clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance3 = 0x3003,
+
+		/// <summary>
+		/// Specifies the fifth clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClipPlane4 = 0x3004,
+
+		/// <summary>
+		/// Specifies the fifth clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance4 = 0x3004,
+
+		/// <summary>
+		/// Specifies the sixth clipping plane.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ClipPlane5 = 0x3005,
+
+		/// <summary>
+		/// Specifies the sixth clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance5 = 0x3005,
+
+		/// <summary>
+		/// Specifies the seventh clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance6 = 0x3006,
+
+		/// <summary>
+		/// Specifies the eighth clipping distance.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ClipDistance7 = 0x3007,
+
+		/// <summary>
+		/// Specifies the first light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light0 = 0x4000,
+
+		/// <summary>
+		/// Specifies the second light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light1 = 0x4001,
+
+		/// <summary>
+		/// Specifies the third light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light2 = 0x4002,
+
+		/// <summary>
+		/// Specifies the fourth light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light3 = 0x4003,
+
+		/// <summary>
+		/// Specifies the fifth light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light4 = 0x4004,
+
+		/// <summary>
+		/// Specifies the sixth light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light5 = 0x4005,
+
+		/// <summary>
+		/// Specifies the seventh light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light6 = 0x4006,
+
+		/// <summary>
+		/// Specifies the eighth light source.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Light7 = 0x4007,
+
+		/// <summary>
+		/// Specifies a color format with alpha, blue, green, and red channels for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_abgr</remarks>
+		AbgrExt = 0x8000,
+
+		/// <summary>
+		/// Specifies a constant color for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConstantColor = 0x8001,
+
+		/// <summary>
+		/// Specifies one minus the constant color for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		OneMinusConstantColor = 0x8002,
+
+		/// <summary>
+		/// Specifies a constant alpha value for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConstantAlpha = 0x8003,
+
+		/// <summary>
+		/// Specifies one minus the constant alpha for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		OneMinusConstantAlpha = 0x8004,
+
+		/// <summary>
+		/// Specifies the blend color for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		BlendColor = 0x8005,
+
+		/// <summary>
+		/// Specifies the blend color for blending operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_color</remarks>
+		BlendColorExt = 0x8005,
+
+		/// <summary>
+		/// Specifies the addition function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		FuncAdd = 0x8006,
+
+		/// <summary>
+		/// Specifies the addition function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
+		FuncAddExt = 0x8006,
+
+		/// <summary>
+		/// Specifies the minimum function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Min = 0x8007,
+
+		/// <summary>
+		/// Specifies the minimum function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
+		MinExt = 0x8007,
+
+		/// <summary>
+		/// Specifies the maximum function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Max = 0x8008,
+
+		/// <summary>
+		/// Specifies the maximum function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
+		MaxExt = 0x8008,
+
+		/// <summary>
+		/// Specifies the blend equation for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		BlendEquation = 0x8009,
+
+		/// <summary>
+		/// Specifies the blend equation for blending operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
+		BlendEquationExt = 0x8009,
+
+		/// <summary>
+		/// Specifies the blend equation for blending (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
+		BlendEquationOes = 0x8009,
+
+		/// <summary>
+		/// Specifies the RGB blend equation for blending operations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		BlendEquationRgb = 0x8009,
+
+		/// <summary>
+		/// Specifies the subtraction function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		FuncSubtract = 0x800A,
+
+		/// <summary>
+		/// Specifies the subtraction function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_subtract</remarks>
+		FuncSubtractExt = 0x800A,
+
+		/// <summary>
+		/// Specifies the reverse subtraction function for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		FuncReverseSubtract = 0x800B,
+
+		/// <summary>
+		/// Specifies the reverse subtraction function for blending (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_subtract</remarks>
+		FuncReverseSubtractExt = 0x800B,
+
+		/// <summary>
+		/// Specifies a color format with cyan, magenta, yellow, and black channels for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
+		CmykExt = 0x800C,
+
+		/// <summary>
+		/// Specifies a color format with cyan, magenta, yellow, black, and alpha channels for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
+		CmykaExt = 0x800D,
+
+		/// <summary>
+		/// Specifies hints for packing CMYK data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
+		PackCmykHintExt = 0x800E,
+
+		/// <summary>
+		/// Specifies hints for unpacking CMYK data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cmyka</remarks>
+		UnpackCmykHintExt = 0x800F,
+
+		/// <summary>
+		/// Specifies 1D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Convolution1D = 0x8010,
+
+		/// <summary>
+		/// Specifies 1D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		Convolution1DExt = 0x8010,
+
+		/// <summary>
+		/// Specifies 2D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Convolution2D = 0x8011,
+
+		/// <summary>
+		/// Specifies 2D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		Convolution2DExt = 0x8011,
+
+		/// <summary>
+		/// Specifies separable 2D convolution operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Separable2D = 0x8012,
+
+		/// <summary>
+		/// Specifies separable 2D convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		Separable2DExt = 0x8012,
+
+		/// <summary>
+		/// Specifies the border mode for convolution operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionBorderMode = 0x8013,
+
+		/// <summary>
+		/// Specifies the border mode for convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ConvolutionBorderModeExt = 0x8013,
+
+		/// <summary>
+		/// Specifies the scale factor for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionFilterScale = 0x8014,
+
+		/// <summary>
+		/// Specifies the scale factor for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ConvolutionFilterScaleExt = 0x8014,
+
+		/// <summary>
+		/// Specifies the bias for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionFilterBias = 0x8015,
+
+		/// <summary>
+		/// Specifies the bias for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ConvolutionFilterBiasExt = 0x8015,
+
+		/// <summary>
+		/// Specifies reduction operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Reduce = 0x8016,
+
+		/// <summary>
+		/// Specifies reduction operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ReduceExt = 0x8016,
+
+		/// <summary>
+		/// Specifies the format for convolution operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionFormat = 0x8017,
+
+		/// <summary>
+		/// Specifies the format for convolution operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ConvolutionFormatExt = 0x8017,
+
+		/// <summary>
+		/// Specifies the width of the convolution filter.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionWidth = 0x8018,
+
+		/// <summary>
+		/// Specifies the width of the convolution filter for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ConvolutionWidthExt = 0x8018,
+
+		/// <summary>
+		/// Specifies the height of the convolution filter.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionHeight = 0x8019,
+
+		/// <summary>
+		/// Specifies the height of the convolution filter for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		ConvolutionHeightExt = 0x8019,
+
+		/// <summary>
+		/// Specifies the maximum width for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		MaxConvolutionWidth = 0x801A,
+
+		/// <summary>
+		/// Specifies the maximum width for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		MaxConvolutionWidthExt = 0x801A,
+
+		/// <summary>
+		/// Specifies the maximum height for convolution filters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		MaxConvolutionHeight = 0x801B,
+
+		/// <summary>
+		/// Specifies the maximum height for convolution filters for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		MaxConvolutionHeightExt = 0x801B,
+
+		/// <summary>
+		/// Specifies the scale factor for the red component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionRedScale = 0x801C,
+
+		/// <summary>
+		/// Specifies the scale factor for the red component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionRedScaleExt = 0x801C,
+
+		/// <summary>
+		/// Specifies the scale factor for the green component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionGreenScale = 0x801D,
+
+		/// <summary>
+		/// Specifies the scale factor for the green component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionGreenScaleExt = 0x801D,
+
+		/// <summary>
+		/// Specifies the scale factor for the blue component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionBlueScale = 0x801E,
+
+		/// <summary>
+		/// Specifies the scale factor for the blue component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionBlueScaleExt = 0x801E,
+
+		/// <summary>
+		/// Specifies the scale factor for the alpha component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionAlphaScale = 0x801F,
+
+		/// <summary>
+		/// Specifies the scale factor for the alpha component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionAlphaScaleExt = 0x801F,
+
+		/// <summary>
+		/// Specifies the bias for the red component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionRedBias = 0x8020,
+
+		/// <summary>
+		/// Specifies the bias for the red component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionRedBiasExt = 0x8020,
+
+		/// <summary>
+		/// Specifies the bias for the green component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionGreenBias = 0x8021,
+
+		/// <summary>
+		/// Specifies the bias for the green component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionGreenBiasExt = 0x8021,
+
+		/// <summary>
+		/// Specifies the bias for the blue component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionBlueBias = 0x8022,
+
+		/// <summary>
+		/// Specifies the bias for the blue component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionBlueBiasExt = 0x8022,
+
+		/// <summary>
+		/// Specifies the bias for the alpha component after convolution.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionAlphaBias = 0x8023,
+
+		/// <summary>
+		/// Specifies the bias for the alpha component after convolution for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
+		PostConvolutionAlphaBiasExt = 0x8023,
+
+		/// <summary>
+		/// Specifies histogram operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Histogram = 0x8024,
+
+		/// <summary>
+		/// Specifies histogram operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramExt = 0x8024,
+
+		/// <summary>
+		/// Specifies proxy histogram operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ProxyHistogram = 0x8025,
+
+		/// <summary>
+		/// Specifies proxy histogram operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		ProxyHistogramExt = 0x8025,
+
+		/// <summary>
+		/// Specifies the width of the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramWidth = 0x8026,
+
+		/// <summary>
+		/// Specifies the width of the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramWidthExt = 0x8026,
+
+		/// <summary>
+		/// Specifies the format of the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramFormat = 0x8027,
+
+		/// <summary>
+		/// Specifies the format of the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramFormatExt = 0x8027,
+
+		/// <summary>
+		/// Specifies the size of the red component in the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramRedSize = 0x8028,
+
+		/// <summary>
+		/// Specifies the size of the red component in the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramRedSizeExt = 0x8028,
+
+		/// <summary>
+		/// Specifies the size of the green component in the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramGreenSize = 0x8029,
+
+		/// <summary>
+		/// Specifies the size of the green component in the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramGreenSizeExt = 0x8029,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramBlueSize = 0x802A,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramBlueSizeExt = 0x802A,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramAlphaSize = 0x802B,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramAlphaSizeExt = 0x802B,
+
+		/// <summary>
+		/// Specifies the size of the luminance component in the histogram.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramLuminanceSize = 0x802C,
+
+		/// <summary>
+		/// Specifies the size of the luminance component in the histogram for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramLuminanceSizeExt = 0x802C,
+
+		/// <summary>
+		/// Specifies the sink for histogram data.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		HistogramSink = 0x802D,
+
+		/// <summary>
+		/// Specifies the sink for histogram data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		HistogramSinkExt = 0x802D,
+
+		/// <summary>
+		/// Specifies min/max operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		Minmax = 0x802E,
+
+		/// <summary>
+		/// Specifies min/max operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		MinmaxExt = 0x802E,
+
+		/// <summary>
+		/// Specifies the format for min/max operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		MinmaxFormat = 0x802F,
+
+		/// <summary>
+		/// Specifies the format for min/max operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		MinmaxFormatExt = 0x802F,
+
+		/// <summary>
+		/// Specifies the sink for min/max data.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		MinmaxSink = 0x8030,
+
+		/// <summary>
+		/// Specifies the sink for min/max data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		MinmaxSinkExt = 0x8030,
+
+		/// <summary>
+		/// Specifies an error condition when a table is too large for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
+		TableTooLargeExt = 0x8031,
+
+		/// <summary>
+		/// Specifies an error condition when a table is too large.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		TableTooLarge = 0x8031,
+
+		/// <summary>
+		/// Specifies a format with 3 bits for red, 3 bits for green, and 2 bits for blue.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedByte332 = 0x8032,
+
+		/// <summary>
+		/// Specifies a format with 3 bits for red, 3 bits for green, and 2 bits for blue for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_pixels</remarks>
+		UnsignedByte332Ext = 0x8032,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for each color channel and 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedShort4444 = 0x8033,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for each color channel and 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_pixels</remarks>
+		UnsignedShort4444Ext = 0x8033,
+
+		/// <summary>
+		/// Specifies a format with 5 bits for red, 5 bits for green, 5 bits for blue, and 1 bit for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedShort5551 = 0x8034,
+
+		/// <summary>
+		/// Specifies a format with 5 bits for red, 5 bits for green, 5 bits for blue, and 1 bit for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_pixels</remarks>
+		UnsignedShort5551Ext = 0x8034,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for each color channel and 8 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedInt8888 = 0x8035,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for each color channel and 8 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_pixels</remarks>
+		UnsignedInt8888Ext = 0x8035,
+
+		/// <summary>
+		/// Specifies a format with 10 bits for each color channel and 2 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedInt1010102 = 0x8036,
+
+		/// <summary>
+		/// Specifies a format with 10 bits for each color channel and 2 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_pixels</remarks>
+		UnsignedInt1010102Ext = 0x8036,
+
+		/// <summary>
+		/// Specifies the polygon offset for filled polygons.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PolygonOffsetFill = 0x8037,
+
+		/// <summary>
+		/// Specifies the scale factor for polygon offsets.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PolygonOffsetFactor = 0x8038,
+
+		/// <summary>
+		/// Specifies the bias for polygon offsets for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_polygon_offset</remarks>
+		PolygonOffsetBiasExt = 0x8039,
+
+		/// <summary>
+		/// Specifies that normals should be rescaled when they are transformed for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_rescale_normal</remarks>
+		RescaleNormalExt = 0x803A,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Alpha4 = 0x803B,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Alpha4Ext = 0x803B,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Alpha8 = 0x803C,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
+		Alpha8Ext = 0x803C,
+
+		/// <summary>
+		/// Specifies an 8-bit alpha format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Alpha8Oes = 0x803C,
+
+		/// <summary>
+		/// Specifies a 12-bit alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Alpha12 = 0x803D,
+
+		/// <summary>
+		/// Specifies a 12-bit alpha format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Alpha12Ext = 0x803D,
+
+		/// <summary>
+		/// Specifies a 16-bit alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Alpha16 = 0x803E,
+
+		/// <summary>
+		/// Specifies a 16-bit alpha format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Alpha16Ext = 0x803E,
+
+		/// <summary>
+		/// Specifies a 4-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance4 = 0x803F,
+
+		/// <summary>
+		/// Specifies a 4-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance4Ext = 0x803F,
+
+		/// <summary>
+		/// Specifies an 8-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance8 = 0x8040,
+
+		/// <summary>
+		/// Specifies an 8-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
+		Luminance8Ext = 0x8040,
+
+		/// <summary>
+		/// Specifies an 8-bit luminance format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Luminance8Oes = 0x8040,
+
+		/// <summary>
+		/// Specifies a 12-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance12 = 0x8041,
+
+		/// <summary>
+		/// Specifies a 12-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance12Ext = 0x8041,
+
+		/// <summary>
+		/// Specifies a 16-bit luminance format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance16 = 0x8042,
+
+		/// <summary>
+		/// Specifies a 16-bit luminance format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance16Ext = 0x8042,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for luminance and 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance4Alpha4 = 0x8043,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for luminance and 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance4Alpha4Ext = 0x8043,
+
+		/// <summary>
+		/// Specifies a format with 4 bits for luminance and 4 bits for alpha for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Luminance4Alpha4Oes = 0x8043,
+
+		/// <summary>
+		/// Specifies a format with 6 bits for luminance and 2 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance6Alpha2 = 0x8044,
+
+		/// <summary>
+		/// Specifies a format with 6 bits for luminance and 2 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance6Alpha2Ext = 0x8044,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for luminance and 8 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance8Alpha8 = 0x8045,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for luminance and 8 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
+		Luminance8Alpha8Ext = 0x8045,
+
+		/// <summary>
+		/// Specifies a format with 8 bits for luminance and 8 bits for alpha for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Luminance8Alpha8Oes = 0x8045,
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 4 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance12Alpha4 = 0x8046,
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 4 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance12Alpha4Ext = 0x8046,
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 12 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance12Alpha12 = 0x8047,
+
+		/// <summary>
+		/// Specifies a format with 12 bits for luminance and 12 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance12Alpha12Ext = 0x8047,
+
+		/// <summary>
+		/// Specifies a format with 16 bits for luminance and 16 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Luminance16Alpha16 = 0x8048,
+
+		/// <summary>
+		/// Specifies a format with 16 bits for luminance and 16 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Luminance16Alpha16Ext = 0x8048,
+
+		/// <summary>
+		/// Specifies intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Intensity = 0x8049,
+
+		/// <summary>
+		/// Specifies a 4-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Intensity4 = 0x804A,
+
+		/// <summary>
+		/// Specifies a 4-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Intensity4Ext = 0x804A,
+
+		/// <summary>
+		/// Specifies an 8-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Intensity8 = 0x804B,
+
+		/// <summary>
+		/// Specifies an 8-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Intensity8Ext = 0x804B,
+
+		/// <summary>
+		/// Specifies a 12-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Intensity12 = 0x804C,
+
+		/// <summary>
+		/// Specifies a 12-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Intensity12Ext = 0x804C,
+
+		/// <summary>
+		/// Specifies a 16-bit intensity format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		Intensity16 = 0x804D,
+
+		/// <summary>
+		/// Specifies a 16-bit intensity format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Intensity16Ext = 0x804D,
+
+		/// <summary>
+		/// Specifies a 2-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb2Ext = 0x804E,
+
+		/// <summary>
+		/// Specifies a 4-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb4 = 0x804F,
+
+		/// <summary>
+		/// Specifies a 4-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb4Ext = 0x804F,
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb5 = 0x8050,
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb5Ext = 0x8050,
+
+		/// <summary>
+		/// Specifies an 8-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb8 = 0x8051,
+
+		/// <summary>
+		/// Specifies an 8-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb8Ext = 0x8051,
+
+		/// <summary>
+		/// Specifies an 8-bit RGB format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Rgb8Oes = 0x8051,
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb10 = 0x8052,
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
+		Rgb10Ext = 0x8052,
+
+		/// <summary>
+		/// Specifies a 12-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb12 = 0x8053,
+
+		/// <summary>
+		/// Specifies a 12-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb12Ext = 0x8053,
+
+		/// <summary>
+		/// Specifies a 16-bit RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb16 = 0x8054,
+
+		/// <summary>
+		/// Specifies a 16-bit RGB format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb16Ext = 0x8054,
+
+		/// <summary>
+		/// Specifies a 2-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgba2 = 0x8055,
+
+		/// <summary>
+		/// Specifies a 2-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgba2Ext = 0x8055,
+
+		/// <summary>
+		/// Specifies a 4-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgba4 = 0x8056,
+
+		/// <summary>
+		/// Specifies a 4-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgba4Ext = 0x8056,
+
+		/// <summary>
+		/// Specifies a 4-bit RGBA format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Rgba4Oes = 0x8056,
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format with 1-bit alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb5A1 = 0x8057,
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format with 1-bit alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgb5A1Ext = 0x8057,
+
+		/// <summary>
+		/// Specifies a 5-bit RGB format with 1-bit alpha for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Rgb5A1Oes = 0x8057,
+
+		/// <summary>
+		/// Specifies an 8-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgba8 = 0x8058,
+
+		/// <summary>
+		/// Specifies an 8-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgba8Ext = 0x8058,
+
+		/// <summary>
+		/// Specifies an 8-bit RGBA format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Rgba8Oes = 0x8058,
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format with 2 bits for alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgb10A2 = 0x8059,
+
+		/// <summary>
+		/// Specifies a 10-bit RGB format with 2 bits for alpha for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture<br/>GL_EXT_texture_storage</remarks>
+		Rgb10A2Ext = 0x8059,
+
+		/// <summary>
+		/// Specifies a 12-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgba12 = 0x805A,
+
+		/// <summary>
+		/// Specifies a 12-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgba12Ext = 0x805A,
+
+		/// <summary>
+		/// Specifies a 16-bit RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Rgba16 = 0x805B,
+
+		/// <summary>
+		/// Specifies a 16-bit RGBA format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		Rgba16Ext = 0x805B,
+
+		/// <summary>
+		/// Specifies the size of the red component in texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureRedSize = 0x805C,
+
+		/// <summary>
+		/// Specifies the size of the green component in texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureGreenSize = 0x805D,
+
+		/// <summary>
+		/// Specifies the size of the blue component in texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureBlueSize = 0x805E,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureAlphaSize = 0x805F,
+
+		/// <summary>
+		/// Specifies the size of the luminance component in texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureLuminanceSize = 0x8060,
+
+		/// <summary>
+		/// Specifies the size of the intensity component in texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureIntensitySize = 0x8061,
+
+		/// <summary>
+		/// Specifies a replacement operation for texture mapping (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		ReplaceExt = 0x8062,
+
+		/// <summary>
+		/// Specifies a proxy texture for 1D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		ProxyTexture1D = 0x8063,
+
+		/// <summary>
+		/// Specifies a proxy texture for 1D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		ProxyTexture1DExt = 0x8063,
+
+		/// <summary>
+		/// Specifies a proxy texture for 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		ProxyTexture2D = 0x8064,
+
+		/// <summary>
+		/// Specifies a proxy texture for 2D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		ProxyTexture2DExt = 0x8064,
+
+		/// <summary>
+		/// Specifies an error condition when a texture is too large for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture</remarks>
+		TextureTooLargeExt = 0x8065,
+
+		/// <summary>
+		/// Specifies texture priority for texture operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TexturePriority = 0x8066,
+
+		/// <summary>
+		/// Specifies texture priority for texture operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
+		TexturePriorityExt = 0x8066,
+
+		/// <summary>
+		/// Specifies whether a texture is resident in graphics memory.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureResident = 0x8067,
+
+		/// <summary>
+		/// Specifies the currently bound 1D texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		TextureBinding1D = 0x8068,
+
+		/// <summary>
+		/// Specifies the currently bound 2D texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		TextureBinding2D = 0x8069,
+
+		/// <summary>
+		/// Specifies the currently bound 3D texture for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
+		Texture3DBindingExt = 0x806A,
+
+		/// <summary>
+		/// Specifies the currently bound 3D texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		TextureBinding3D = 0x806A,
+
+		/// <summary>
+		/// Specifies the number of images to skip when packing textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PackSkipImages = 0x806B,
+
+		/// <summary>
+		/// Specifies the number of images to skip when packing textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		PackSkipImagesExt = 0x806B,
+
+		/// <summary>
+		/// Specifies the height of images in the texture packing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PackImageHeight = 0x806C,
+
+		/// <summary>
+		/// Specifies the height of images in the texture packing for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		PackImageHeightExt = 0x806C,
+
+		/// <summary>
+		/// Specifies the number of images to skip when unpacking textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnpackSkipImages = 0x806D,
+
+		/// <summary>
+		/// Specifies the number of images to skip when unpacking textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		UnpackSkipImagesExt = 0x806D,
+
+		/// <summary>
+		/// Specifies the height of images in the texture unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnpackImageHeight = 0x806E,
+
+		/// <summary>
+		/// Specifies the height of images in the texture unpacking for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		UnpackImageHeightExt = 0x806E,
+
+		/// <summary>
+		/// Specifies a 3D texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		Texture3D = 0x806F,
+
+		/// <summary>
+		/// Specifies a 3D texture for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		Texture3DExt = 0x806F,
+
+		/// <summary>
+		/// Specifies a 3D texture for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		Texture3DOes = 0x806F,
+
+		/// <summary>
+		/// Specifies a proxy texture for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		ProxyTexture3D = 0x8070,
+
+		/// <summary>
+		/// Specifies a proxy texture for 3D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		ProxyTexture3DExt = 0x8070,
+
+		/// <summary>
+		/// Specifies the depth of a 3D texture for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		TextureDepthExt = 0x8071,
+
+		/// <summary>
+		/// Specifies the wrapping mode for the R coordinate of 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureWrapR = 0x8072,
+
+		/// <summary>
+		/// Specifies the wrapping mode for the R coordinate of 3D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		TextureWrapRExt = 0x8072,
+
+		/// <summary>
+		/// Specifies the wrapping mode for the R coordinate of 3D textures for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		TextureWrapROes = 0x8072,
+
+		/// <summary>
+		/// Specifies the maximum size for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Max3DTextureSize = 0x8073,
+
+		/// <summary>
+		/// Specifies the maximum size for 3D textures for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture3D</remarks>
+		Max3DTextureSizeExt = 0x8073,
+
+		/// <summary>
+		/// Specifies a vertex array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.3 - GL 4.6<br/>GL 4.0 Compat - GL 4.2 Compat<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		VertexArray = 0x8074,
+
+		/// <summary>
+		/// Specifies a normal array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		NormalArray = 0x8075,
+
+		/// <summary>
+		/// Specifies a color array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorArray = 0x8076,
+
+		/// <summary>
+		/// Specifies an index array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexArray = 0x8077,
+
+		/// <summary>
+		/// Specifies a texture coordinate array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureCoordArray = 0x8078,
+
+		/// <summary>
+		/// Specifies an edge flag array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		EdgeFlagArray = 0x8079,
+
+		/// <summary>
+		/// Specifies the size of each vertex in the vertex array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		VertexArraySize = 0x807A,
+
+		/// <summary>
+		/// Specifies the data type of the vertex array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		VertexArrayType = 0x807B,
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between vertex array elements.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		VertexArrayStride = 0x807C,
+
+		/// <summary>
+		/// Specifies the count of vertices in the vertex array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		VertexArrayCountExt = 0x807D,
+
+		/// <summary>
+		/// Specifies the data type of the normal array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		NormalArrayType = 0x807E,
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between normal array elements.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		NormalArrayStride = 0x807F,
+
+		/// <summary>
+		/// Specifies the count of normals in the normal array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		NormalArrayCountExt = 0x8080,
+
+		/// <summary>
+		/// Specifies the size of each color in the color array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorArraySize = 0x8081,
+
+		/// <summary>
+		/// Specifies the data type of the color array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorArrayType = 0x8082,
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between color array elements.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorArrayStride = 0x8083,
+
+		/// <summary>
+		/// Specifies the count of colors in the color array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		ColorArrayCountExt = 0x8084,
+
+		/// <summary>
+		/// Specifies the data type of the index array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexArrayType = 0x8085,
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between index array elements.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexArrayStride = 0x8086,
+
+		/// <summary>
+		/// Specifies the count of indices in the index array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		IndexArrayCountExt = 0x8087,
+
+		/// <summary>
+		/// Specifies the size of each texture coordinate in the texture coordinate array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureCoordArraySize = 0x8088,
+
+		/// <summary>
+		/// Specifies the data type of the texture coordinate array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureCoordArrayType = 0x8089,
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between texture coordinate array elements.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureCoordArrayStride = 0x808A,
+
+		/// <summary>
+		/// Specifies the count of texture coordinates in the texture coordinate array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		TextureCoordArrayCountExt = 0x808B,
+
+		/// <summary>
+		/// Specifies the stride (byte offset) between edge flag array elements.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		EdgeFlagArrayStride = 0x808C,
+
+		/// <summary>
+		/// Specifies the count of edge flags in the edge flag array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		EdgeFlagArrayCountExt = 0x808D,
+
+		/// <summary>
+		/// Specifies the pointer to the vertex array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		VertexArrayPointer = 0x808E,
+
+		/// <summary>
+		/// Specifies the pointer to the vertex array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		VertexArrayPointerExt = 0x808E,
+
+		/// <summary>
+		/// Specifies the pointer to the normal array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		NormalArrayPointer = 0x808F,
+
+		/// <summary>
+		/// Specifies the pointer to the normal array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		NormalArrayPointerExt = 0x808F,
+
+		/// <summary>
+		/// Specifies the pointer to the color array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		ColorArrayPointer = 0x8090,
+
+		/// <summary>
+		/// Specifies the pointer to the color array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		ColorArrayPointerExt = 0x8090,
+
+		/// <summary>
+		/// Specifies the pointer to the index array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		IndexArrayPointer = 0x8091,
+
+		/// <summary>
+		/// Specifies the pointer to the index array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		IndexArrayPointerExt = 0x8091,
+
+		/// <summary>
+		/// Specifies the pointer to the texture coordinate array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		TextureCoordArrayPointer = 0x8092,
+
+		/// <summary>
+		/// Specifies the pointer to the texture coordinate array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		TextureCoordArrayPointerExt = 0x8092,
+
+		/// <summary>
+		/// Specifies the pointer to the edge flag array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		EdgeFlagArrayPointer = 0x8093,
+
+		/// <summary>
+		/// Specifies the pointer to the edge flag array for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_array</remarks>
+		EdgeFlagArrayPointerExt = 0x8093,
+
+		/// <summary>
+		/// Specifies interlaced rendering mode for SGIX extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		InterlaceSgix = 0x8094,
+
+		/// <summary>
+		/// Specifies detail texture for 2D textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DetailTexture2DSgis = 0x8095,
+
+		/// <summary>
+		/// Specifies the binding for detail textures in 2D for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		DetailTexture2DBindingSgis = 0x8096,
+
+		/// <summary>
+		/// Specifies linear detail texture filtering for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		LinearDetailSgis = 0x8097,
+
+		/// <summary>
+		/// Specifies linear detail texture filtering with alpha for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		LinearDetailAlphaSgis = 0x8098,
+
+		/// <summary>
+		/// Specifies linear detail texture filtering with color for SGIS extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		LinearDetailColorSgis = 0x8099,
+
+		/// <summary>
+		/// Specifies the level of detail for textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DetailTextureLevelSgis = 0x809A,
+
+		/// <summary>
+		/// Specifies the mode for detail textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DetailTextureModeSgis = 0x809B,
+
+		/// <summary>
+		/// Specifies function points for detail textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DetailTextureFuncPointsSgis = 0x809C,
+
+		/// <summary>
+		/// Specifies multisampling for anti-aliasing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Multisample = 0x809D,
+
+		/// <summary>
+		/// Specifies multisampling for anti-aliasing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MultisampleSgis = 0x809D,
+
+		/// <summary>
+		/// Specifies alpha-to-coverage sampling for anti-aliasing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SampleAlphaToCoverage = 0x809E,
+
+		/// <summary>
+		/// Specifies alpha-to-mask sampling for anti-aliasing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SampleAlphaToMaskSgis = 0x809E,
+
+		/// <summary>
+		/// Specifies sampling to one for anti-aliasing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SampleAlphaToOne = 0x809F,
+
+		/// <summary>
+		/// Specifies sampling to one for anti-aliasing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SampleAlphaToOneSgis = 0x809F,
+
+		/// <summary>
+		/// Specifies the sample coverage value for alpha blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SampleCoverage = 0x80A0,
+
+		/// <summary>
+		/// Specifies the sample mask for controlling sample coverage (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SampleMaskSgis = 0x80A0,
+
+		/// <summary>
+		/// Specifies a single-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl1PassExt = 0x80A1,
+
+		/// <summary>
+		/// Specifies a single-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl1PassSgis = 0x80A1,
+
+		/// <summary>
+		/// Specifies the first pass of a two-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl2Pass0Ext = 0x80A2,
+
+		/// <summary>
+		/// Specifies the first pass of a two-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl2Pass0Sgis = 0x80A2,
+
+		/// <summary>
+		/// Specifies the second pass of a two-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl2Pass1Ext = 0x80A3,
+
+		/// <summary>
+		/// Specifies the second pass of a two-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl2Pass1Sgis = 0x80A3,
+
+		/// <summary>
+		/// Specifies the first pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl4Pass0Ext = 0x80A4,
+
+		/// <summary>
+		/// Specifies the first pass of a four-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl4Pass0Sgis = 0x80A4,
+
+		/// <summary>
+		/// Specifies the second pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl4Pass1Ext = 0x80A5,
+
+		/// <summary>
+		/// Specifies the second pass of a four-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl4Pass1Sgis = 0x80A5,
+
+		/// <summary>
+		/// Specifies the third pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl4Pass2Ext = 0x80A6,
+
+		/// <summary>
+		/// Specifies the third pass of a four-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl4Pass2Sgis = 0x80A6,
+
+		/// <summary>
+		/// Specifies the fourth pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
+		Gl4Pass3Ext = 0x80A7,
+
+		/// <summary>
+		/// Specifies the fourth pass of a four-pass rendering mode (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Gl4Pass3Sgis = 0x80A7,
+
+		/// <summary>
+		/// Specifies the number of sample buffers used for multisampling.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SampleBuffers = 0x80A8,
+
+		/// <summary>
+		/// Specifies the number of sample buffers used for multisampling (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SampleBuffersSgis = 0x80A8,
+
+		/// <summary>
+		/// Specifies the number of samples in a sample buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		Samples = 0x80A9,
+
+		/// <summary>
+		/// Specifies the number of samples in a sample buffer (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SamplesSgis = 0x80A9,
+
+		/// <summary>
+		/// Specifies the sample coverage value.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SampleCoverageValue = 0x80AA,
+
+		/// <summary>
+		/// Specifies the value of the sample mask (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SampleMaskValueSgis = 0x80AA,
+
+		/// <summary>
+		/// Specifies whether to invert the sample coverage.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		SampleCoverageInvert = 0x80AB,
+
+		/// <summary>
+		/// Specifies whether to invert the sample mask (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SampleMaskInvertSgis = 0x80AB,
+
+		/// <summary>
+		/// Specifies the sample pattern for multisampling (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SamplePatternSgis = 0x80AC,
+
+		/// <summary>
+		/// Specifies linear sharpening of textures (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		LinearSharpenSgis = 0x80AD,
+
+		/// <summary>
+		/// Specifies linear sharpening of textures with alpha (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		LinearSharpenAlphaSgis = 0x80AE,
+
+		/// <summary>
+		/// Specifies linear sharpening of textures with color (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		LinearSharpenColorSgis = 0x80AF,
+
+		/// <summary>
+		/// Specifies function points for texture sharpening (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SharpenTextureFuncPointsSgis = 0x80B0,
+
+		/// <summary>
+		/// Specifies the color matrix for color transformation (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorMatrixSgi = 0x80B1,
+
+		/// <summary>
+		/// Specifies the depth of the color matrix stack (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorMatrixStackDepthSgi = 0x80B2,
+
+		/// <summary>
+		/// Specifies the maximum depth of the color matrix stack (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxColorMatrixStackDepthSgi = 0x80B3,
+
+		/// <summary>
+		/// Specifies the red scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixRedScale = 0x80B4,
+
+		/// <summary>
+		/// Specifies the red scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixRedScaleSgi = 0x80B4,
+
+		/// <summary>
+		/// Specifies the green scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixGreenScale = 0x80B5,
+
+		/// <summary>
+		/// Specifies the green scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixGreenScaleSgi = 0x80B5,
+
+		/// <summary>
+		/// Specifies the blue scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixBlueScale = 0x80B6,
+
+		/// <summary>
+		/// Specifies the blue scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixBlueScaleSgi = 0x80B6,
+
+		/// <summary>
+		/// Specifies the alpha scale for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixAlphaScale = 0x80B7,
+
+		/// <summary>
+		/// Specifies the alpha scale for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixAlphaScaleSgi = 0x80B7,
+
+		/// <summary>
+		/// Specifies the red bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixRedBias = 0x80B8,
+
+		/// <summary>
+		/// Specifies the red bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixRedBiasSgi = 0x80B8,
+
+		/// <summary>
+		/// Specifies the green bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixGreenBias = 0x80B9,
+
+		/// <summary>
+		/// Specifies the green bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixGreenBiasSgi = 0x80B9,
+
+		/// <summary>
+		/// Specifies the blue bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixBlueBias = 0x80BA,
+
+		/// <summary>
+		/// Specifies the blue bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixBlueBiasSgi = 0x80BA,
+
+		/// <summary>
+		/// Specifies the alpha bias for post-color matrix transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixAlphaBias = 0x80BB,
+
+		/// <summary>
+		/// Specifies the alpha bias for post-color matrix transformations (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixAlphaBiasSgi = 0x80BB,
+
+		/// <summary>
+		/// Specifies the texture color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureColorTableSgi = 0x80BC,
+
+		/// <summary>
+		/// Specifies a proxy for the texture color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ProxyTextureColorTableSgi = 0x80BD,
+
+		/// <summary>
+		/// Specifies texture environment bias for SGIX extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		TextureEnvBiasSgix = 0x80BE,
+
+		/// <summary>
+		/// Specifies shadow ambient properties for SGIX extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		ShadowAmbientSgix = 0x80BF,
+
+		/// <summary>
+		/// Specifies the destination color for RGB blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		BlendDstRgb = 0x80C8,
+
+		/// <summary>
+		/// Specifies the source color for RGB blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		BlendSrcRgb = 0x80C9,
+
+		/// <summary>
+		/// Specifies the destination alpha for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		BlendDstAlpha = 0x80CA,
+
+		/// <summary>
+		/// Specifies the source alpha for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		BlendSrcAlpha = 0x80CB,
+
+		/// <summary>
+		/// Specifies a color table for color lookup.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTable = 0x80D0,
+
+		/// <summary>
+		/// Specifies a color table for color lookup (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableSgi = 0x80D0,
+
+		/// <summary>
+		/// Specifies a color table for post-convolution processing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostConvolutionColorTable = 0x80D1,
+
+		/// <summary>
+		/// Specifies a color table for post-convolution processing (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostConvolutionColorTableSgi = 0x80D1,
+
+		/// <summary>
+		/// Specifies a color table for post-color matrix processing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		PostColorMatrixColorTable = 0x80D2,
+
+		/// <summary>
+		/// Specifies a color table for post-color matrix processing (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostColorMatrixColorTableSgi = 0x80D2,
+
+		/// <summary>
+		/// Specifies a proxy for color tables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ProxyColorTable = 0x80D3,
+
+		/// <summary>
+		/// Specifies a proxy for color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ProxyColorTableSgi = 0x80D3,
+
+		/// <summary>
+		/// Specifies a proxy for post-convolution color tables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ProxyPostConvolutionColorTable = 0x80D4,
+
+		/// <summary>
+		/// Specifies a proxy for post-convolution color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ProxyPostConvolutionColorTableSgi = 0x80D4,
+
+		/// <summary>
+		/// Specifies a proxy for post-color matrix color tables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ProxyPostColorMatrixColorTable = 0x80D5,
+
+		/// <summary>
+		/// Specifies a proxy for post-color matrix color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ProxyPostColorMatrixColorTableSgi = 0x80D5,
+
+		/// <summary>
+		/// Specifies the scale factor for color tables.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableScale = 0x80D6,
+
+		/// <summary>
+		/// Specifies the scale factor for color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableScaleSgi = 0x80D6,
+
+		/// <summary>
+		/// Specifies the bias for color tables.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableBias = 0x80D7,
+
+		/// <summary>
+		/// Specifies the bias for color tables (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableBiasSgi = 0x80D7,
+
+		/// <summary>
+		/// Specifies the format of the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableFormat = 0x80D8,
+
+		/// <summary>
+		/// Specifies the format of the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableFormatSgi = 0x80D8,
+
+		/// <summary>
+		/// Specifies the width of the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableWidth = 0x80D9,
+
+		/// <summary>
+		/// Specifies the width of the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableWidthSgi = 0x80D9,
+
+		/// <summary>
+		/// Specifies the size of the red component in the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableRedSize = 0x80DA,
+
+		/// <summary>
+		/// Specifies the size of the red component in the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableRedSizeSgi = 0x80DA,
+
+		/// <summary>
+		/// Specifies the size of the green component in the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableGreenSize = 0x80DB,
+
+		/// <summary>
+		/// Specifies the size of the green component in the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableGreenSizeSgi = 0x80DB,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableBlueSize = 0x80DC,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableBlueSizeSgi = 0x80DC,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableAlphaSize = 0x80DD,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableAlphaSizeSgi = 0x80DD,
+
+		/// <summary>
+		/// Specifies the size of the luminance component in the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableLuminanceSize = 0x80DE,
+
+		/// <summary>
+		/// Specifies the size of the luminance component in the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableLuminanceSizeSgi = 0x80DE,
+
+		/// <summary>
+		/// Specifies the size of the intensity component in the color table.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ColorTableIntensitySize = 0x80DF,
+
+		/// <summary>
+		/// Specifies the size of the intensity component in the color table (SGI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ColorTableIntensitySizeSgi = 0x80DF,
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		Bgr = 0x80E0,
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bgra</remarks>
+		BgrExt = 0x80E0,
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red, alpha.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_vertex_array_bgra<br/>GL_ARB_vertex_array_bgra</remarks>
+		Bgra = 0x80E1,
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red, alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_bgra</remarks>
+		BgraExt = 0x80E1,
+
+		/// <summary>
+		/// Specifies the order of the color components as blue, green, red, alpha in image data.
+		/// </summary>
+		/// <remarks></remarks>
+		BgraImg = 0x80E1,
+
+		/// <summary>
+		/// Specifies the maximum number of vertices in a single draw call.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		MaxElementsVertices = 0x80E8,
+
+		/// <summary>
+		/// Specifies the maximum number of indices in a single draw call.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		MaxElementsIndices = 0x80E9,
+
+		/// <summary>
+		/// Specifies the hint for using the Phong shading model in Win32 extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		PhongHintWin = 0x80EB,
+
+		/// <summary>
+		/// Specifies a buffer for parameters.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		ParameterBuffer = 0x80EE,
+
+		/// <summary>
+		/// Specifies the hint for clipping volume (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_clip_volume_hint</remarks>
+		ClipVolumeClippingHintExt = 0x80F0,
+
+		/// <summary>
+		/// Specifies dual alpha with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualAlpha4Sgis = 0x8110,
+
+		/// <summary>
+		/// Specifies dual alpha with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualAlpha8Sgis = 0x8111,
+
+		/// <summary>
+		/// Specifies dual alpha with 12 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualAlpha12Sgis = 0x8112,
+
+		/// <summary>
+		/// Specifies dual alpha with 16 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualAlpha16Sgis = 0x8113,
+
+		/// <summary>
+		/// Specifies dual luminance with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualLuminance4Sgis = 0x8114,
+
+		/// <summary>
+		/// Specifies dual luminance with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualLuminance8Sgis = 0x8115,
+
+		/// <summary>
+		/// Specifies dual luminance with 12 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualLuminance12Sgis = 0x8116,
+
+		/// <summary>
+		/// Specifies dual luminance with 16 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualLuminance16Sgis = 0x8117,
+
+		/// <summary>
+		/// Specifies dual intensity with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualIntensity4Sgis = 0x8118,
+
+		/// <summary>
+		/// Specifies dual intensity with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualIntensity8Sgis = 0x8119,
+
+		/// <summary>
+		/// Specifies dual intensity with 12 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualIntensity12Sgis = 0x811A,
+
+		/// <summary>
+		/// Specifies dual intensity with 16 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualIntensity16Sgis = 0x811B,
+
+		/// <summary>
+		/// Specifies dual luminance and alpha with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualLuminanceAlpha4Sgis = 0x811C,
+
+		/// <summary>
+		/// Specifies dual luminance and alpha with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualLuminanceAlpha8Sgis = 0x811D,
+
+		/// <summary>
+		/// Specifies quad alpha with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadAlpha4Sgis = 0x811E,
+
+		/// <summary>
+		/// Specifies quad alpha with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadAlpha8Sgis = 0x811F,
+
+		/// <summary>
+		/// Specifies quad luminance with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadLuminance4Sgis = 0x8120,
+
+		/// <summary>
+		/// Specifies quad luminance with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadLuminance8Sgis = 0x8121,
+
+		/// <summary>
+		/// Specifies quad intensity with 4 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadIntensity4Sgis = 0x8122,
+
+		/// <summary>
+		/// Specifies quad intensity with 8 bits (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadIntensity8Sgis = 0x8123,
+
+		/// <summary>
+		/// Specifies dual texture selection (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DualTextureSelectSgis = 0x8124,
+
+		/// <summary>
+		/// Specifies quad texture selection (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		QuadTextureSelectSgis = 0x8125,
+
+		/// <summary>
+		/// Specifies the minimum size of points.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PointSizeMin = 0x8126,
+
+		/// <summary>
+		/// Specifies the minimum size of points (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
+		PointSizeMinArb = 0x8126,
+
+		/// <summary>
+		/// Specifies the minimum size of points (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
+		PointSizeMinExt = 0x8126,
+
+		/// <summary>
+		/// Specifies the minimum size of points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PointSizeMinSgis = 0x8126,
+
+		/// <summary>
+		/// Specifies the maximum size of points.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PointSizeMax = 0x8127,
+
+		/// <summary>
+		/// Specifies the maximum size of points (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
+		PointSizeMaxArb = 0x8127,
+
+		/// <summary>
+		/// Specifies the maximum size of points (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
+		PointSizeMaxExt = 0x8127,
+
+		/// <summary>
+		/// Specifies the maximum size of points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PointSizeMaxSgis = 0x8127,
+
+		/// <summary>
+		/// Specifies the size threshold for point fading.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		PointFadeThresholdSize = 0x8128,
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
+		PointFadeThresholdSizeArb = 0x8128,
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
+		PointFadeThresholdSizeExt = 0x8128,
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PointFadeThresholdSizeSgis = 0x8128,
+
+		/// <summary>
+		/// Specifies the distance attenuation factor (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
+		DistanceAttenuationExt = 0x8129,
+
+		/// <summary>
+		/// Specifies the distance attenuation factor (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DistanceAttenuationSgis = 0x8129,
+
+		/// <summary>
+		/// Specifies point distance attenuation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		PointDistanceAttenuation = 0x8129,
+
+		/// <summary>
+		/// Specifies point distance attenuation (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
+		PointDistanceAttenuationArb = 0x8129,
+
+		/// <summary>
+		/// Specifies the fog function (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FogFuncSgis = 0x812A,
+
+		/// <summary>
+		/// Specifies points for the fog function (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FogFuncPointsSgis = 0x812B,
+
+		/// <summary>
+		/// Specifies the maximum number of fog function points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxFogFuncPointsSgis = 0x812C,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		ClampToBorder = 0x812D,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_border_clamp</remarks>
+		ClampToBorderArb = 0x812D,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ClampToBorderExt = 0x812D,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ClampToBorderNv = 0x812D,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ClampToBorderSgis = 0x812D,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ClampToBorderOes = 0x812D,
+
+		/// <summary>
+		/// Specifies a hint for multi-buffered textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMultiBufferHintSgix = 0x812E,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the edge.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		ClampToEdge = 0x812F,
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the edge (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ClampToEdgeSgis = 0x812F,
+
+		/// <summary>
+		/// Specifies the number of volumes to skip when packing (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PackSkipVolumesSgis = 0x8130,
+
+		/// <summary>
+		/// Specifies the depth of the packed image (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PackImageDepthSgis = 0x8131,
+
+		/// <summary>
+		/// Specifies the number of volumes to skip when unpacking (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnpackSkipVolumesSgis = 0x8132,
+
+		/// <summary>
+		/// Specifies the depth of the unpacked image (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnpackImageDepthSgis = 0x8133,
+
+		/// <summary>
+		/// Specifies a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Texture4DSgis = 0x8134,
+
+		/// <summary>
+		/// Specifies a proxy for a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ProxyTexture4DSgis = 0x8135,
+
+		/// <summary>
+		/// Specifies the size of a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Texture4DsizeSgis = 0x8136,
+
+		/// <summary>
+		/// Specifies the wrap mode for the Q coordinate (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureWrapQSgis = 0x8137,
+
+		/// <summary>
+		/// Specifies the maximum size of a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Max4DTextureSizeSgis = 0x8138,
+
+		/// <summary>
+		/// Specifies pixel texture generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenSgix = 0x8139,
+
+		/// <summary>
+		/// Specifies the minimum level of detail for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureMinLod = 0x813A,
+
+		/// <summary>
+		/// Specifies the minimum level of detail for texture filtering (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMinLodSgis = 0x813A,
+
+		/// <summary>
+		/// Specifies the maximum level of detail for texture filtering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureMaxLod = 0x813B,
+
+		/// <summary>
+		/// Specifies the maximum level of detail for texture filtering (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMaxLodSgis = 0x813B,
+
+		/// <summary>
+		/// Specifies the base mipmap level of a texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureBaseLevel = 0x813C,
+
+		/// <summary>
+		/// Specifies the base mipmap level of a texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureBaseLevelSgis = 0x813C,
+
+		/// <summary>
+		/// Specifies the maximum mipmap level of a texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		TextureMaxLevel = 0x813D,
+
+		/// <summary>
+		/// Specifies the maximum mipmap level of a texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMaxLevelSgis = 0x813D,
+
+		/// <summary>
+		/// Specifies the best alignment for pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileBestAlignmentSgix = 0x813E,
+
+		/// <summary>
+		/// Specifies the cache increment for pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileCacheIncrementSgix = 0x813F,
+
+		/// <summary>
+		/// Specifies the width of pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileWidthSgix = 0x8140,
+
+		/// <summary>
+		/// Specifies the height of pixel tiles (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileHeightSgix = 0x8141,
+
+		/// <summary>
+		/// Specifies the width of the pixel tile grid (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileGridWidthSgix = 0x8142,
+
+		/// <summary>
+		/// Specifies the height of the pixel tile grid (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileGridHeightSgix = 0x8143,
+
+		/// <summary>
+		/// Specifies the depth of the pixel tile grid (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileGridDepthSgix = 0x8144,
+
+		/// <summary>
+		/// Specifies the size of the pixel tile cache (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTileCacheSizeSgix = 0x8145,
+
+		/// <summary>
+		/// Specifies a filter with four components (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Filter4Sgis = 0x8146,
+
+		/// <summary>
+		/// Specifies the size of the four-component texture filter (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureFilter4SizeSgis = 0x8147,
+
+		/// <summary>
+		/// Specifies the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteSgix = 0x8148,
+
+		/// <summary>
+		/// Specifies the mode of the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteModeSgix = 0x8149,
+
+		/// <summary>
+		/// Specifies the axis for the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteAxisSgix = 0x814A,
+
+		/// <summary>
+		/// Specifies the translation for the sprite (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteTranslationSgix = 0x814B,
+
+		/// <summary>
+		/// Specifies axial sprite behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteAxialSgix = 0x814C,
+
+		/// <summary>
+		/// Specifies object-aligned sprite behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteObjectAlignedSgix = 0x814D,
+
+		/// <summary>
+		/// Specifies eye-aligned sprite behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		SpriteEyeAlignedSgix = 0x814E,
+
+		/// <summary>
+		/// Specifies the binding of a 4D texture (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Texture4DBindingSgis = 0x814F,
+
+		/// <summary>
+		/// Specifies the border color for convolutions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
+		ConvolutionBorderColor = 0x8154,
+
+		/// <summary>
+		/// Specifies the scale factor in the X direction for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageScaleXHp = 0x8155,
+
+		/// <summary>
+		/// Specifies the scale factor in the Y direction for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageScaleYHp = 0x8156,
+
+		/// <summary>
+		/// Specifies the translation in the X direction for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageTranslateXHp = 0x8157,
+
+		/// <summary>
+		/// Specifies the translation in the Y direction for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageTranslateYHp = 0x8158,
+
+		/// <summary>
+		/// Specifies the rotation angle for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageRotateAngleHp = 0x8159,
+
+		/// <summary>
+		/// Specifies the origin for rotation in the X direction for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageRotateOriginXHp = 0x815A,
+
+		/// <summary>
+		/// Specifies the origin for rotation in the Y direction for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageRotateOriginYHp = 0x815B,
+
+		/// <summary>
+		/// Specifies the magnification filter for images (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageMagFilterHp = 0x815C,
+
+		/// <summary>
+		/// Specifies the minification filter for images (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageMinFilterHp = 0x815D,
+
+		/// <summary>
+		/// Specifies the cubic weight for image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageCubicWeightHp = 0x815E,
+
+		/// <summary>
+		/// Specifies 2D image transformations (HP extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ImageTransform2DHp = 0x8161,
+
+		/// <summary>
+		/// Specifies linear clipmap filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		LinearClipmapLinearSgix = 0x8170,
+
+		/// <summary>
+		/// Specifies the center of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureClipmapCenterSgix = 0x8171,
+
+		/// <summary>
+		/// Specifies the frame of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureClipmapFrameSgix = 0x8172,
+
+		/// <summary>
+		/// Specifies the offset for the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureClipmapOffsetSgix = 0x8173,
+
+		/// <summary>
+		/// Specifies the virtual depth of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureClipmapVirtualDepthSgix = 0x8174,
+
+		/// <summary>
+		/// Specifies the LOD offset for the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureClipmapLodOffsetSgix = 0x8175,
+
+		/// <summary>
+		/// Specifies the depth of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureClipmapDepthSgix = 0x8176,
+
+		/// <summary>
+		/// Specifies the maximum depth of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxClipmapDepthSgix = 0x8177,
+
+		/// <summary>
+		/// Specifies the maximum virtual depth of the clipmap (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxClipmapVirtualDepthSgix = 0x8178,
+
+		/// <summary>
+		/// Specifies the bias for post texture filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostTextureFilterBiasSgix = 0x8179,
+
+		/// <summary>
+		/// Specifies the scale for post texture filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostTextureFilterScaleSgix = 0x817A,
+
+		/// <summary>
+		/// Specifies the bias range for post texture filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostTextureFilterBiasRangeSgix = 0x817B,
+
+		/// <summary>
+		/// Specifies the scale range for post texture filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PostTextureFilterScaleRangeSgix = 0x817C,
+
+		/// <summary>
+		/// Specifies the reference plane for operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ReferencePlaneSgix = 0x817D,
+
+		/// <summary>
+		/// Specifies the equation for the reference plane (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ReferencePlaneEquationSgix = 0x817E,
+
+		/// <summary>
+		/// Specifies the first instrument for IR measurements (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		IrInstrument1Sgix = 0x817F,
+
+		/// <summary>
+		/// Specifies the pointer to the instrument buffer (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		InstrumentBufferPointerSgix = 0x8180,
+
+		/// <summary>
+		/// Specifies the measurements taken by the instrument (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		InstrumentMeasurementsSgix = 0x8181,
+
+		/// <summary>
+		/// Specifies the priority of display lists (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ListPrioritySgix = 0x8182,
+
+		/// <summary>
+		/// Specifies calligraphic fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		CalligraphicFragmentSgix = 0x8183,
+
+		/// <summary>
+		/// Specifies ceiling behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenQCeilingSgix = 0x8184,
+
+		/// <summary>
+		/// Specifies rounding behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenQRoundSgix = 0x8185,
+
+		/// <summary>
+		/// Specifies floor behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenQFloorSgix = 0x8186,
+
+		/// <summary>
+		/// Specifies alpha generation behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenAlphaLsSgix = 0x8189,
+
+		/// <summary>
+		/// Specifies multi-sample alpha generation behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenAlphaMsSgix = 0x818A,
+
+		/// <summary>
+		/// Specifies zoom behavior for frames (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FramezoomSgix = 0x818B,
+
+		/// <summary>
+		/// Specifies the zoom factor for frames (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FramezoomFactorSgix = 0x818C,
+
+		/// <summary>
+		/// Specifies the maximum frame zoom factor (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxFramezoomFactorSgix = 0x818D,
+
+		/// <summary>
+		/// Specifies the LOD bias for the S texture coordinate (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureLodBiasSSgix = 0x818E,
+
+		/// <summary>
+		/// Specifies the LOD bias for the T texture coordinate (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureLodBiasTSgix = 0x818F,
+
+		/// <summary>
+		/// Specifies the LOD bias for the R texture coordinate (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureLodBiasRSgix = 0x8190,
+
+		/// <summary>
+		/// Specifies the generation of mipmaps.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		GenerateMipmap = 0x8191,
+
+		/// <summary>
+		/// Specifies the generation of mipmaps (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		GenerateMipmapSgis = 0x8191,
+
+		/// <summary>
+		/// Specifies a hint for generating mipmaps.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		GenerateMipmapHint = 0x8192,
+
+		/// <summary>
+		/// Specifies a hint for generating mipmaps (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		GenerateMipmapHintSgis = 0x8192,
+
+		/// <summary>
+		/// Specifies geometry deformation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		GeometryDeformationSgix = 0x8194,
+
+		/// <summary>
+		/// Specifies texture deformation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureDeformationSgix = 0x8195,
+
+		/// <summary>
+		/// Specifies a mask for deformations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DeformationsMaskSgix = 0x8196,
+
+		/// <summary>
+		/// Specifies the fog offset (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FogOffsetSgix = 0x8198,
+
+		/// <summary>
+		/// Specifies the value for fog offset (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FogOffsetValueSgix = 0x8199,
+
+		/// <summary>
+		/// Specifies texture comparison behavior (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureCompareSgix = 0x819A,
+
+		/// <summary>
+		/// Specifies the operator used for texture comparison (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureCompareOperatorSgix = 0x819B,
+
+		/// <summary>
+		/// Specifies the less than or equal comparison for texture (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureLequalRSgix = 0x819C,
+
+		/// <summary>
+		/// Specifies the greater than or equal comparison for texture (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureGequalRSgix = 0x819D,
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		DepthComponent16 = 0x81A5,
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_depth_texture</remarks>
+		DepthComponent16Arb = 0x81A5,
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DepthComponent16Oes = 0x81A5,
+
+		/// <summary>
+		/// Specifies a 16-bit depth component for textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DepthComponent16Sgix = 0x81A5,
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		DepthComponent24 = 0x81A6,
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_depth_texture</remarks>
+		DepthComponent24Arb = 0x81A6,
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DepthComponent24Oes = 0x81A6,
+
+		/// <summary>
+		/// Specifies a 24-bit depth component for textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DepthComponent24Sgix = 0x81A6,
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		DepthComponent32 = 0x81A7,
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_depth_texture</remarks>
+		DepthComponent32Arb = 0x81A7,
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DepthComponent32Oes = 0x81A7,
+
+		/// <summary>
+		/// Specifies a 32-bit depth component for textures (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		DepthComponent32Sgix = 0x81A7,
+
+		/// <summary>
+		/// Specifies eye position based vertex culling (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
+		CullVertexEyePositionExt = 0x81AB,
+
+		/// <summary>
+		/// Specifies object position based vertex culling (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
+		CullVertexObjectPositionExt = 0x81AC,
+
+		/// <summary>
+		/// Specifies YCrCb 4:2:2 format (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Ycrcb422Sgix = 0x81BB,
+
+		/// <summary>
+		/// Specifies YCrCb 4:4:4 format (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Ycrcb444Sgix = 0x81BC,
+
+		/// <summary>
+		/// Specifies the eye distance to a point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		EyeDistanceToPointSgis = 0x81F0,
+
+		/// <summary>
+		/// Specifies the object distance to a point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ObjectDistanceToPointSgis = 0x81F1,
+
+		/// <summary>
+		/// Specifies the eye distance to a line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		EyeDistanceToLineSgis = 0x81F2,
+
+		/// <summary>
+		/// Specifies the object distance to a line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ObjectDistanceToLineSgis = 0x81F3,
+
+		/// <summary>
+		/// Specifies the eye point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		EyePointSgis = 0x81F4,
+
+		/// <summary>
+		/// Specifies the object point for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ObjectPointSgis = 0x81F5,
+
+		/// <summary>
+		/// Specifies the eye line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		EyeLineSgis = 0x81F6,
+
+		/// <summary>
+		/// Specifies the object line for calculations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ObjectLineSgis = 0x81F7,
+
+		/// <summary>
+		/// Specifies color control for lighting.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		LightModelColorControl = 0x81F8,
+
+		/// <summary>
+		/// Specifies color control for lighting (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
+		LightModelColorControlExt = 0x81F8,
+
+		/// <summary>
+		/// Specifies single color lighting behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SingleColor = 0x81F9,
+
+		/// <summary>
+		/// Specifies single color lighting behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
+		SingleColorExt = 0x81F9,
+
+		/// <summary>
+		/// Specifies separate specular color behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		SeparateSpecularColor = 0x81FA,
+
+		/// <summary>
+		/// Specifies separate specular color behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
+		SeparateSpecularColorExt = 0x81FA,
+
+		/// <summary>
+		/// Specifies shared texture palette behavior (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shared_texture_palette</remarks>
+		SharedTexturePaletteExt = 0x81FB,
+
+		/// <summary>
+		/// Specifies text fragment shader behavior (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextFragmentShaderAti = 0x8200,
+
+		/// <summary>
+		/// Specifies the color encoding for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentColorEncoding = 0x8210,
+
+		/// <summary>
+		/// Specifies the color encoding for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FramebufferAttachmentColorEncodingExt = 0x8210,
+
+		/// <summary>
+		/// Specifies the component type for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentComponentType = 0x8211,
+
+		/// <summary>
+		/// Specifies the component type for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FramebufferAttachmentComponentTypeExt = 0x8211,
+
+		/// <summary>
+		/// Specifies the red size for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentRedSize = 0x8212,
+
+		/// <summary>
+		/// Specifies the green size for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentGreenSize = 0x8213,
+
+		/// <summary>
+		/// Specifies the blue size for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentBlueSize = 0x8214,
+
+		/// <summary>
+		/// Specifies the alpha size for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentAlphaSize = 0x8215,
+
+		/// <summary>
+		/// Specifies the depth size for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentDepthSize = 0x8216,
+
+		/// <summary>
+		/// Specifies the stencil size for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferAttachmentStencilSize = 0x8217,
+
+		/// <summary>
+		/// Specifies an undefined framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		FramebufferUndefined = 0x8219,
+
+		/// <summary>
+		/// Specifies a depth-stencil attachment for framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
+		DepthStencilAttachment = 0x821A,
+
+		/// <summary>
+		/// Specifies the major version of the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		MajorVersion = 0x821B,
+
+		/// <summary>
+		/// Specifies the minor version of the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		MinorVersion = 0x821C,
+
+		/// <summary>
+		/// Specifies the number of extensions available in the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		NumExtensions = 0x821D,
+
+		/// <summary>
+		/// Specifies the context flags for the OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		ContextFlags = 0x821E,
+
+		/// <summary>
+		/// Specifies immutable storage for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
+		BufferImmutableStorage = 0x821F,
+
+		/// <summary>
+		/// Specifies storage flags for buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
+		BufferStorageFlags = 0x8220,
+
+		/// <summary>
+		/// Specifies a compressed red texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		CompressedRed = 0x8225,
+
+		/// <summary>
+		/// Specifies a compressed RG texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		CompressedRg = 0x8226,
+
+		/// <summary>
+		/// Specifies RG color format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg = 0x8227,
+
+		/// <summary>
+		/// Specifies RG integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		RgInteger = 0x8228,
+
+		/// <summary>
+		/// Specifies 8-bit red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R8 = 0x8229,
+
+		/// <summary>
+		/// Specifies 8-bit red component format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
+		R8Ext = 0x8229,
+
+		/// <summary>
+		/// Specifies 16-bit red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R16 = 0x822A,
+
+		/// <summary>
+		/// Specifies 16-bit red component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		R16Ext = 0x822A,
+
+		/// <summary>
+		/// Specifies 8-bit RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg8 = 0x822B,
+
+		/// <summary>
+		/// Specifies 8-bit RG format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
+		Rg8Ext = 0x822B,
+
+		/// <summary>
+		/// Specifies 16-bit RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg16 = 0x822C,
+
+		/// <summary>
+		/// Specifies 16-bit RG format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		Rg16Ext = 0x822C,
+
+		/// <summary>
+		/// Specifies 16-bit floating-point red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R16F = 0x822D,
+
+		/// <summary>
+		/// Specifies 16-bit floating-point red component format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
+		R16FExt = 0x822D,
+
+		/// <summary>
+		/// Specifies 32-bit floating-point red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R32F = 0x822E,
+
+		/// <summary>
+		/// Specifies 32-bit floating-point red component format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
+		R32FExt = 0x822E,
+
+		/// <summary>
+		/// Specifies 16-bit floating-point RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg16F = 0x822F,
+
+		/// <summary>
+		/// Specifies 16-bit floating-point RG format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
+		Rg16FExt = 0x822F,
+
+		/// <summary>
+		/// Specifies 32-bit floating-point RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg32F = 0x8230,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RG format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
+		Rg32FExt = 0x8230,
+
+		/// <summary>
+		/// Specifies an 8-bit signed integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R8I = 0x8231,
+
+		/// <summary>
+		/// Specifies an 8-bit unsigned integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R8Ui = 0x8232,
+
+		/// <summary>
+		/// Specifies a 16-bit signed integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R16I = 0x8233,
+
+		/// <summary>
+		/// Specifies a 16-bit unsigned integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R16Ui = 0x8234,
+
+		/// <summary>
+		/// Specifies a 32-bit signed integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R32I = 0x8235,
+
+		/// <summary>
+		/// Specifies a 32-bit unsigned integer red component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		R32Ui = 0x8236,
+
+		/// <summary>
+		/// Specifies an 8-bit signed integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg8I = 0x8237,
+
+		/// <summary>
+		/// Specifies an 8-bit unsigned integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg<br/>GL_AMD_interleaved_elements</remarks>
+		Rg8Ui = 0x8238,
+
+		/// <summary>
+		/// Specifies a 16-bit signed integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg16I = 0x8239,
+
+		/// <summary>
+		/// Specifies a 16-bit unsigned integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg<br/>GL_AMD_interleaved_elements</remarks>
+		Rg16Ui = 0x823A,
+
+		/// <summary>
+		/// Specifies a 32-bit signed integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg32I = 0x823B,
+
+		/// <summary>
+		/// Specifies a 32-bit unsigned integer RG format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rg</remarks>
+		Rg32Ui = 0x823C,
+
+		/// <summary>
+		/// Specifies synchronous debugging output behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugOutputSynchronous = 0x8242,
+
+		/// <summary>
+		/// Specifies the function to call for debug messages.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugCallbackFunction = 0x8244,
+
+		/// <summary>
+		/// Specifies user parameter for the debug callback function.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugCallbackUserParam = 0x8245,
+
+		/// <summary>
+		/// Specifies the source of debug messages as API calls.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSourceApi = 0x8246,
+
+		/// <summary>
+		/// Specifies the source of debug messages as window system related.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSourceWindowSystem = 0x8247,
+
+		/// <summary>
+		/// Specifies the source of debug messages as shader compiler related.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSourceShaderCompiler = 0x8248,
+
+		/// <summary>
+		/// Specifies the source of debug messages as third-party applications.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSourceThirdParty = 0x8249,
+
+		/// <summary>
+		/// Specifies the source of debug messages as application related.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSourceApplication = 0x824A,
+
+		/// <summary>
+		/// Specifies the source of debug messages as other.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSourceOther = 0x824B,
+
+		/// <summary>
+		/// Specifies an error type debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypeError = 0x824C,
+
+		/// <summary>
+		/// Specifies a deprecated behavior type debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypeDeprecatedBehavior = 0x824D,
+
+		/// <summary>
+		/// Specifies an undefined behavior type debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypeUndefinedBehavior = 0x824E,
+
+		/// <summary>
+		/// Specifies a portability type debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypePortability = 0x824F,
+
+		/// <summary>
+		/// Specifies a performance type debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypePerformance = 0x8250,
+
+		/// <summary>
+		/// Specifies another type of debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypeOther = 0x8251,
+
+		/// <summary>
+		/// Specifies a guilty context reset behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
+		GuiltyContextReset = 0x8253,
+
+		/// <summary>
+		/// Specifies an innocent context reset behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
+		InnocentContextReset = 0x8254,
+
+		/// <summary>
+		/// Specifies an unknown context reset behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
+		UnknownContextReset = 0x8255,
+
+		/// <summary>
+		/// Specifies a hint that program binaries are retrievable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
+		ProgramBinaryRetrievableHint = 0x8257,
+
+		/// <summary>
+		/// Specifies that a program is separable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		ProgramSeparable = 0x8258,
+
+		/// <summary>
+		/// Specifies the currently active program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		ActiveProgram = 0x8259,
+
+		/// <summary>
+		/// Specifies the program pipeline binding.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
+		ProgramPipelineBinding = 0x825A,
+
+		/// <summary>
+		/// Specifies the maximum number of viewports.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		MaxViewports = 0x825B,
+
+		/// <summary>
+		/// Specifies the number of bits for subpixel precision in viewports.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		ViewportSubpixelBits = 0x825C,
+
+		/// <summary>
+		/// Specifies the bounds range for viewports.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		ViewportBoundsRange = 0x825D,
+
+		/// <summary>
+		/// Specifies the layer provoking vertex behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		LayerProvokingVertex = 0x825E,
+
+		/// <summary>
+		/// Specifies the viewport index provoking vertex behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
+		ViewportIndexProvokingVertex = 0x825F,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform components in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
+		MaxComputeUniformComponents = 0x8263,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counter buffers in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
+		MaxComputeAtomicCounterBuffers = 0x8264,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
+		MaxComputeAtomicCounters = 0x8265,
+
+		/// <summary>
+		/// Specifies the maximum combined uniform components across all compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
+		MaxCombinedComputeUniformComponents = 0x8266,
+
+		/// <summary>
+		/// Specifies the work group size in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
+		ComputeWorkGroupSize = 0x8267,
+
+		/// <summary>
+		/// Specifies a debug type marker.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypeMarker = 0x8268,
+
+		/// <summary>
+		/// Specifies the start of a debug push group.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypePushGroup = 0x8269,
+
+		/// <summary>
+		/// Specifies the end of a debug push group.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugTypePopGroup = 0x826A,
+
+		/// <summary>
+		/// Specifies a notification severity for debug messages.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugSeverityNotification = 0x826B,
+
+		/// <summary>
+		/// Specifies the maximum depth of debug group stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		MaxDebugGroupStackDepth = 0x826C,
+
+		/// <summary>
+		/// Specifies the current depth of the debug group stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		DebugGroupStackDepth = 0x826D,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform locations available.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_explicit_uniform_location</remarks>
+		MaxUniformLocations = 0x826E,
+
+		/// <summary>
+		/// Specifies if a given internal format is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatSupported = 0x826F,
+
+		/// <summary>
+		/// Specifies the preferred internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatPreferred = 0x8270,
+
+		/// <summary>
+		/// Specifies the size of the red component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatRedSize = 0x8271,
+
+		/// <summary>
+		/// Specifies the size of the green component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatGreenSize = 0x8272,
+
+		/// <summary>
+		/// Specifies the size of the blue component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatBlueSize = 0x8273,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatAlphaSize = 0x8274,
+
+		/// <summary>
+		/// Specifies the size of the depth component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatDepthSize = 0x8275,
+
+		/// <summary>
+		/// Specifies the size of the stencil component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatStencilSize = 0x8276,
+
+		/// <summary>
+		/// Specifies the size of shared components in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatSharedSize = 0x8277,
+
+		/// <summary>
+		/// Specifies the type of the red component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatRedType = 0x8278,
+
+		/// <summary>
+		/// Specifies the type of the green component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatGreenType = 0x8279,
+
+		/// <summary>
+		/// Specifies the type of the blue component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatBlueType = 0x827A,
+
+		/// <summary>
+		/// Specifies the type of the alpha component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatAlphaType = 0x827B,
+
+		/// <summary>
+		/// Specifies the type of the depth component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatDepthType = 0x827C,
+
+		/// <summary>
+		/// Specifies the type of the stencil component in an internal format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		InternalformatStencilType = 0x827D,
+
+		/// <summary>
+		/// Specifies the maximum width of textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		MaxWidth = 0x827E,
+
+		/// <summary>
+		/// Specifies the maximum height of textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		MaxHeight = 0x827F,
+
+		/// <summary>
+		/// Specifies the maximum depth of textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		MaxDepth = 0x8280,
+
+		/// <summary>
+		/// Specifies the maximum number of layers in 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		MaxLayers = 0x8281,
+
+		/// <summary>
+		/// Specifies the number of color components.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ColorComponents = 0x8283,
+
+		/// <summary>
+		/// Specifies if color rendering is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ColorRenderable = 0x8286,
+
+		/// <summary>
+		/// Specifies if depth rendering is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		DepthRenderable = 0x8287,
+
+		/// <summary>
+		/// Specifies if stencil rendering is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		StencilRenderable = 0x8288,
+
+		/// <summary>
+		/// Specifies if the framebuffer is renderable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		FramebufferRenderable = 0x8289,
+
+		/// <summary>
+		/// Specifies if the framebuffer is renderable and layered.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		FramebufferRenderableLayered = 0x828A,
+
+		/// <summary>
+		/// Specifies if framebuffer blending is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		FramebufferBlend = 0x828B,
+
+		/// <summary>
+		/// Specifies the read pixels operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ReadPixels = 0x828C,
+
+		/// <summary>
+		/// Specifies the format for reading pixels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ReadPixelsFormat = 0x828D,
+
+		/// <summary>
+		/// Specifies the data type for reading pixels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ReadPixelsType = 0x828E,
+
+		/// <summary>
+		/// Specifies the format of a texture image.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureImageFormat = 0x828F,
+
+		/// <summary>
+		/// Specifies the data type of a texture image.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureImageType = 0x8290,
+
+		/// <summary>
+		/// Specifies the format for getting a texture image.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		GetTextureImageFormat = 0x8291,
+
+		/// <summary>
+		/// Specifies the data type for getting a texture image.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		GetTextureImageType = 0x8292,
+
+		/// <summary>
+		/// Specifies the mipmap generation behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		Mipmap = 0x8293,
+
+		/// <summary>
+		/// Specifies automatic mipmap generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		AutoGenerateMipmap = 0x8295,
 
+		/// <summary>
+		/// Specifies the color encoding method.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		ColorEncoding = 0x8296,
-		SrgbRead = 0x8297,
-		SrgbWrite = 0x8298,
-		SrgbDecodeArb = 0x8299,
-		Filter = 0x829A,
-		VertexTexture = 0x829B,
-		TessControlTexture = 0x829C,
-		TessEvaluationTexture = 0x829D,
-		GeometryTexture = 0x829E,
-		FragmentTexture = 0x829F,
-		ComputeTexture = 0x82A0,
-		TextureShadow = 0x82A1,
-		TextureGather = 0x82A2,
-		TextureGatherShadow = 0x82A3,
-		ShaderImageLoad = 0x82A4,
-		ShaderImageStore = 0x82A5,
-		ShaderImageAtomic = 0x82A6,
-		ImageTexelSize = 0x82A7,
-		ImageCompatibilityClass = 0x82A8,
-		ImagePixelFormat = 0x82A9,
-		ImagePixelType = 0x82AA,
-		SimultaneousTextureAndDepthTest = 0x82AC,
-		SimultaneousTextureAndStencilTest = 0x82AD,
-		SimultaneousTextureAndDepthWrite = 0x82AE,
-		SimultaneousTextureAndStencilWrite = 0x82AF,
-		TextureCompressedBlockWidth = 0x82B1,
-		TextureCompressedBlockHeight = 0x82B2,
-		TextureCompressedBlockSize = 0x82B3,
-		ClearBuffer = 0x82B4,
-		TextureView = 0x82B5,
-		ViewCompatibilityClass = 0x82B6,
-		FullSupport = 0x82B7,
-		CaveatSupport = 0x82B8,
-		ImageClass4X32 = 0x82B9,
-		ImageClass2X32 = 0x82BA,
-		ImageClass1X32 = 0x82BB,
-		ImageClass4X16 = 0x82BC,
-		ImageClass2X16 = 0x82BD,
-		ImageClass1X16 = 0x82BE,
-		ImageClass4X8 = 0x82BF,
-		ImageClass2X8 = 0x82C0,
-		ImageClass1X8 = 0x82C1,
-		ImageClass111110 = 0x82C2,
-		ImageClass1010102 = 0x82C3,
-		ViewClass128Bits = 0x82C4,
-		ViewClass96Bits = 0x82C5,
-		ViewClass64Bits = 0x82C6,
-		ViewClass48Bits = 0x82C7,
-		ViewClass32Bits = 0x82C8,
-		ViewClass24Bits = 0x82C9,
-		ViewClass16Bits = 0x82CA,
-		ViewClass8Bits = 0x82CB,
-		ViewClassS3TcDxt1Rgb = 0x82CC,
-		ViewClassS3TcDxt1Rgba = 0x82CD,
-		ViewClassS3TcDxt3Rgba = 0x82CE,
-		ViewClassS3TcDxt5Rgba = 0x82CF,
-		ViewClassRgtc1Red = 0x82D0,
-		ViewClassRgtc2Rg = 0x82D1,
-		ViewClassBptcUnorm = 0x82D2,
-		ViewClassBptcFloat = 0x82D3,
-		VertexAttribBinding = 0x82D4,
-		VertexAttribRelativeOffset = 0x82D5,
-		VertexBindingDivisor = 0x82D6,
-		VertexBindingOffset = 0x82D7,
-		VertexBindingStride = 0x82D8,
-		MaxVertexAttribRelativeOffset = 0x82D9,
-		MaxVertexAttribBindings = 0x82DA,
-		TextureViewMinLevel = 0x82DB,
-		TextureViewMinLevelExt = 0x82DB,
-		TextureViewMinLevelOes = 0x82DB,
-		TextureViewNumLevels = 0x82DC,
-		TextureViewNumLevelsExt = 0x82DC,
-		TextureViewNumLevelsOes = 0x82DC,
-		TextureViewMinLayer = 0x82DD,
-		TextureViewMinLayerExt = 0x82DD,
-		TextureViewMinLayerOes = 0x82DD,
-		TextureViewNumLayers = 0x82DE,
-		TextureViewNumLayersExt = 0x82DE,
-		TextureViewNumLayersOes = 0x82DE,
-		TextureImmutableLevels = 0x82DF,
-		Buffer = 0x82E0,
-		BufferKhr = 0x82E0,
-		Shader = 0x82E1,
-		ShaderKhr = 0x82E1,
-		Program = 0x82E2,
-		ProgramKhr = 0x82E2,
-		Query = 0x82E3,
-		QueryKhr = 0x82E3,
-		ProgramPipeline = 0x82E4,
-		ProgramPipelineKhr = 0x82E4,
-		MaxVertexAttribStride = 0x82E5,
-		Sampler = 0x82E6,
-		SamplerKhr = 0x82E6,
-		DisplayList = 0x82E7,
-		MaxLabelLength = 0x82E8,
-		MaxLabelLengthKhr = 0x82E8,
-		NumShadingLanguageVersions = 0x82E9,
-		QueryTarget = 0x82EA,
-		TransformFeedbackOverflow = 0x82EC,
-		TransformFeedbackOverflowArb = 0x82EC,
-		TransformFeedbackStreamOverflow = 0x82ED,
-		TransformFeedbackStreamOverflowArb = 0x82ED,
-		VerticesSubmitted = 0x82EE,
-		VerticesSubmittedArb = 0x82EE,
-		PrimitivesSubmitted = 0x82EF,
-		PrimitivesSubmittedArb = 0x82EF,
-		VertexShaderInvocations = 0x82F0,
-		VertexShaderInvocationsArb = 0x82F0,
-		TessControlShaderPatches = 0x82F1,
-		TessControlShaderPatchesArb = 0x82F1,
-		TessEvaluationShaderInvocations = 0x82F2,
-		TessEvaluationShaderInvocationsArb = 0x82F2,
-		GeometryShaderPrimitivesEmitted = 0x82F3,
-		GeometryShaderPrimitivesEmittedArb = 0x82F3,
-		FragmentShaderInvocations = 0x82F4,
-		FragmentShaderInvocationsArb = 0x82F4,
-		ComputeShaderInvocations = 0x82F5,
-		ComputeShaderInvocationsArb = 0x82F5,
-		ClippingInputPrimitives = 0x82F6,
-		ClippingInputPrimitivesArb = 0x82F6,
-		ClippingOutputPrimitives = 0x82F7,
-		ClippingOutputPrimitivesArb = 0x82F7,
-		SparseBufferPageSizeArb = 0x82F8,
-		MaxCullDistances = 0x82F9,
-		MaxCullDistancesExt = 0x82F9,
-		MaxCombinedClipAndCullDistances = 0x82FA,
-		MaxCombinedClipAndCullDistancesExt = 0x82FA,
-		ContextReleaseBehavior = 0x82FB,
-		ContextReleaseBehaviorKhr = 0x82FB,
-		ContextReleaseBehaviorFlush = 0x82FC,
-		ContextReleaseBehaviorFlushKhr = 0x82FC,
-		/// <summary>
-		/// Reserved for future<br/>
-		/// </summary>
-		RobustGpuTimeoutMsKhr = 0x82FD,
 
-		DepthPassInstrumentSgix = 0x8310,
-		DepthPassInstrumentCountersSgix = 0x8311,
-		DepthPassInstrumentMaxSgix = 0x8312,
-		FragmentsInstrumentSgix = 0x8313,
-		FragmentsInstrumentCountersSgix = 0x8314,
-		FragmentsInstrumentMaxSgix = 0x8315,
-		ConvolutionHintSgix = 0x8316,
-		YcrcbSgix = 0x8318,
-		YcrcbaSgix = 0x8319,
-		UnpackCompressedSizeSgix = 0x831A,
-		PackMaxCompressedSizeSgix = 0x831B,
-		PackCompressedSizeSgix = 0x831C,
-		Slim8USgix = 0x831D,
-		Slim10USgix = 0x831E,
-		Slim12SSgix = 0x831F,
-		AlphaMinSgix = 0x8320,
-		AlphaMaxSgix = 0x8321,
-		ScalebiasHintSgix = 0x8322,
-		AsyncMarkerSgix = 0x8329,
-		PixelTexGenModeSgix = 0x832B,
-		AsyncHistogramSgix = 0x832C,
-		MaxAsyncHistogramSgix = 0x832D,
-		PixelTransform2DExt = 0x8330,
-		PixelMagFilterExt = 0x8331,
-		PixelMinFilterExt = 0x8332,
-		PixelCubicWeightExt = 0x8333,
-		CubicExt = 0x8334,
-		AverageExt = 0x8335,
-		PixelTransform2DStackDepthExt = 0x8336,
-		MaxPixelTransform2DStackDepthExt = 0x8337,
-		PixelTransform2DMatrixExt = 0x8338,
-		FragmentMaterialExt = 0x8349,
-		FragmentNormalExt = 0x834A,
-		FragmentColorExt = 0x834C,
-		AttenuationExt = 0x834D,
-		ShadowAttenuationExt = 0x834E,
-		TextureApplicationModeExt = 0x834F,
-		TextureLightExt = 0x8350,
-		TextureMaterialFaceExt = 0x8351,
-		TextureMaterialParameterExt = 0x8352,
-		PixelTextureSgis = 0x8353,
-		PixelFragmentRgbSourceSgis = 0x8354,
-		PixelFragmentAlphaSourceSgis = 0x8355,
-		PixelGroupColorSgis = 0x8356,
-		LineQualityHintSgix = 0x835B,
-		AsyncTexImageSgix = 0x835C,
-		AsyncDrawPixelsSgix = 0x835D,
-		AsyncReadPixelsSgix = 0x835E,
-		MaxAsyncTexImageSgix = 0x835F,
-		MaxAsyncDrawPixelsSgix = 0x8360,
-		MaxAsyncReadPixelsSgix = 0x8361,
-		UnsignedByte233Rev = 0x8362,
-		UnsignedByte233RevExt = 0x8362,
-		UnsignedShort565 = 0x8363,
-		UnsignedShort565Ext = 0x8363,
-		UnsignedShort565Rev = 0x8364,
-		UnsignedShort565RevExt = 0x8364,
-		UnsignedShort4444Rev = 0x8365,
-		UnsignedShort4444RevExt = 0x8365,
-		UnsignedShort4444RevImg = 0x8365,
-		UnsignedShort1555Rev = 0x8366,
-		UnsignedShort1555RevExt = 0x8366,
-		UnsignedInt8888Rev = 0x8367,
-		UnsignedInt8888RevExt = 0x8367,
-		UnsignedInt2101010Rev = 0x8368,
-		UnsignedInt2101010RevExt = 0x8368,
-		TextureMaxClampSSgix = 0x8369,
-		TextureMaxClampTSgix = 0x836A,
-		TextureMaxClampRSgix = 0x836B,
-		MirroredRepeat = 0x8370,
-		MirroredRepeatArb = 0x8370,
-		MirroredRepeatIbm = 0x8370,
-		MirroredRepeatOes = 0x8370,
-		RgbS3Tc = 0x83A0,
-		Rgb4S3Tc = 0x83A1,
-		RgbaS3Tc = 0x83A2,
-		Rgba4S3Tc = 0x83A3,
-		RgbaDxt5S3Tc = 0x83A4,
-		Rgba4Dxt5S3Tc = 0x83A5,
-		VertexPreclipSgix = 0x83EE,
-		VertexPreclipHintSgix = 0x83EF,
-		CompressedRgbS3TcDxt1Ext = 0x83F0,
-		CompressedRgbaS3TcDxt1Ext = 0x83F1,
-		CompressedRgbaS3TcDxt3Angle = 0x83F2,
-		CompressedRgbaS3TcDxt3Ext = 0x83F2,
-		CompressedRgbaS3TcDxt5Angle = 0x83F3,
-		CompressedRgbaS3TcDxt5Ext = 0x83F3,
-		ParallelArraysIntel = 0x83F4,
-		VertexArrayParallelPointersIntel = 0x83F5,
-		NormalArrayParallelPointersIntel = 0x83F6,
-		ColorArrayParallelPointersIntel = 0x83F7,
-		TextureCoordArrayParallelPointersIntel = 0x83F8,
-		PerfqueryDonotFlushIntel = 0x83F9,
-		PerfqueryFlushIntel = 0x83FA,
-		PerfqueryWaitIntel = 0x83FB,
-		BlackholeRenderIntel = 0x83FC,
-		ConservativeRasterizationIntel = 0x83FE,
-		TextureMemoryLayoutIntel = 0x83FF,
-		FragmentLightingSgix = 0x8400,
-		FragmentColorMaterialSgix = 0x8401,
-		FragmentColorMaterialFaceSgix = 0x8402,
-		FragmentColorMaterialParameterSgix = 0x8403,
-		MaxFragmentLightsSgix = 0x8404,
-		MaxActiveLightsSgix = 0x8405,
-		CurrentRasterNormalSgix = 0x8406,
-		LightEnvModeSgix = 0x8407,
-		FragmentLightModelLocalViewerSgix = 0x8408,
-		FragmentLightModelTwoSideSgix = 0x8409,
-		FragmentLightModelAmbientSgix = 0x840A,
-		FragmentLightModelNormalInterpolationSgix = 0x840B,
-		FragmentLight0Sgix = 0x840C,
-		FragmentLight1Sgix = 0x840D,
-		FragmentLight2Sgix = 0x840E,
-		FragmentLight3Sgix = 0x840F,
-		FragmentLight4Sgix = 0x8410,
-		FragmentLight5Sgix = 0x8411,
-		FragmentLight6Sgix = 0x8412,
-		FragmentLight7Sgix = 0x8413,
 		/// <summary>
-		/// Formerly 0x842C in SGI specfile<br/>
+		/// Specifies if sRGB read is supported.
 		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		SrgbRead = 0x8297,
+
+		/// <summary>
+		/// Specifies if sRGB write is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		SrgbWrite = 0x8298,
+
+		/// <summary>
+		/// Specifies the filtering method for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		Filter = 0x829A,
+
+		/// <summary>
+		/// Specifies if vertex textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		VertexTexture = 0x829B,
+
+		/// <summary>
+		/// Specifies if tessellation control textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TessControlTexture = 0x829C,
+
+		/// <summary>
+		/// Specifies if tessellation evaluation textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TessEvaluationTexture = 0x829D,
+
+		/// <summary>
+		/// Specifies if geometry textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		GeometryTexture = 0x829E,
+
+		/// <summary>
+		/// Specifies if fragment textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		FragmentTexture = 0x829F,
+
+		/// <summary>
+		/// Specifies if compute textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ComputeTexture = 0x82A0,
+
+		/// <summary>
+		/// Specifies if shadow textures are supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureShadow = 0x82A1,
+
+		/// <summary>
+		/// Specifies if texture gathering is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureGather = 0x82A2,
+
+		/// <summary>
+		/// Specifies if shadow texture gathering is supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureGatherShadow = 0x82A3,
+
+		/// <summary>
+		/// Specifies the shader image load operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ShaderImageLoad = 0x82A4,
+
+		/// <summary>
+		/// Specifies the shader image store operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ShaderImageStore = 0x82A5,
+
+		/// <summary>
+		/// Specifies atomic operations on shader images.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ShaderImageAtomic = 0x82A6,
+
+		/// <summary>
+		/// Specifies the size of texels in images.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ImageTexelSize = 0x82A7,
+
+		/// <summary>
+		/// Specifies the compatibility class for images.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ImageCompatibilityClass = 0x82A8,
+
+		/// <summary>
+		/// Specifies the pixel format of an image.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ImagePixelFormat = 0x82A9,
+
+		/// <summary>
+		/// Specifies the pixel type of an image.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ImagePixelType = 0x82AA,
+
+		/// <summary>
+		/// Specifies simultaneous texture and depth testing behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		SimultaneousTextureAndDepthTest = 0x82AC,
+
+		/// <summary>
+		/// Specifies simultaneous texture and stencil testing behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		SimultaneousTextureAndStencilTest = 0x82AD,
+
+		/// <summary>
+		/// Specifies simultaneous texture and depth writing behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		SimultaneousTextureAndDepthWrite = 0x82AE,
+
+		/// <summary>
+		/// Specifies simultaneous texture and stencil writing behavior.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		SimultaneousTextureAndStencilWrite = 0x82AF,
+
+		/// <summary>
+		/// Specifies the width of a compressed texture block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureCompressedBlockWidth = 0x82B1,
+
+		/// <summary>
+		/// Specifies the height of a compressed texture block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureCompressedBlockHeight = 0x82B2,
+
+		/// <summary>
+		/// Specifies the size of a compressed texture block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureCompressedBlockSize = 0x82B3,
+
+		/// <summary>
+		/// Specifies the clear buffer operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ClearBuffer = 0x82B4,
+
+		/// <summary>
+		/// Specifies the texture view operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		TextureView = 0x82B5,
+
+		/// <summary>
+		/// Specifies the compatibility class for views.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
+		ViewCompatibilityClass = 0x82B6,
+
+		/// <summary>
+		/// Specifies the vertex attribute binding.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		VertexAttribBinding = 0x82D4,
+
+		/// <summary>
+		/// Specifies the relative offset for vertex attributes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		VertexAttribRelativeOffset = 0x82D5,
+
+		/// <summary>
+		/// Specifies the divisor for vertex binding.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		VertexBindingDivisor = 0x82D6,
+
+		/// <summary>
+		/// Specifies the offset for vertex binding.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		VertexBindingOffset = 0x82D7,
+
+		/// <summary>
+		/// Specifies the stride for vertex binding.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		VertexBindingStride = 0x82D8,
+
+		/// <summary>
+		/// Specifies the maximum relative offset for vertex attributes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		MaxVertexAttribRelativeOffset = 0x82D9,
+
+		/// <summary>
+		/// Specifies the maximum number of vertex attrib bindings.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
+		MaxVertexAttribBindings = 0x82DA,
+
+		/// <summary>
+		/// Specifies buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		Buffer = 0x82E0,
+
+		/// <summary>
+		/// Specifies shader objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		Shader = 0x82E1,
+
+		/// <summary>
+		/// Specifies program objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		Program = 0x82E2,
+
+		/// <summary>
+		/// Specifies query objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		Query = 0x82E3,
+
+		/// <summary>
+		/// Specifies program pipeline objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		ProgramPipeline = 0x82E4,
+
+		/// <summary>
+		/// Specifies sampler objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_EXT_debug_label<br/>GL_KHR_debug</remarks>
+		Sampler = 0x82E6,
+
+		/// <summary>
+		/// Specifies the maximum length of labels.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
+		MaxLabelLength = 0x82E8,
+
+		/// <summary>
+		/// Specifies the target for queries.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		QueryTarget = 0x82EA,
+
+		/// <summary>
+		/// Specifies overflow in transform feedback operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		TransformFeedbackOverflow = 0x82EC,
+
+		/// <summary>
+		/// Specifies the number of vertices submitted.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		VerticesSubmitted = 0x82EE,
+
+		/// <summary>
+		/// Specifies the number of primitives submitted.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		PrimitivesSubmitted = 0x82EF,
+
+		/// <summary>
+		/// Specifies the number of invocations of the vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
+		VertexShaderInvocations = 0x82F0,
+
+		/// <summary>
+		/// Specifies hints for convolution operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ConvolutionHintSgix = 0x8316,
+
+		/// <summary>
+		/// Specifies the minimum alpha value (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AlphaMinSgix = 0x8320,
+
+		/// <summary>
+		/// Specifies the maximum alpha value (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AlphaMaxSgix = 0x8321,
+
+		/// <summary>
+		/// Specifies hints for scale-bias operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		ScalebiasHintSgix = 0x8322,
+
+		/// <summary>
+		/// Specifies asynchronous markers (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AsyncMarkerSgix = 0x8329,
+
+		/// <summary>
+		/// Specifies the pixel texture generation mode (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTexGenModeSgix = 0x832B,
+
+		/// <summary>
+		/// Specifies asynchronous histogram operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AsyncHistogramSgix = 0x832C,
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous histogram operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxAsyncHistogramSgix = 0x832D,
+
+		/// <summary>
+		/// Specifies 2D pixel transformation (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
+		PixelTransform2DExt = 0x8330,
+
+		/// <summary>
+		/// Specifies the magnification filter for pixel operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
+		PixelMagFilterExt = 0x8331,
+
+		/// <summary>
+		/// Specifies the minification filter for pixel operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
+		PixelMinFilterExt = 0x8332,
+
+		/// <summary>
+		/// Specifies the cubic weight for pixel operations (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
+		PixelCubicWeightExt = 0x8333,
+
+		/// <summary>
+		/// Specifies material properties for fragments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
+		FragmentMaterialExt = 0x8349,
+
+		/// <summary>
+		/// Specifies normal properties for fragments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
+		FragmentNormalExt = 0x834A,
+
+		/// <summary>
+		/// Specifies color properties for fragments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
+		FragmentColorExt = 0x834C,
+
+		/// <summary>
+		/// Specifies attenuation properties (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
+		AttenuationExt = 0x834D,
+
+		/// <summary>
+		/// Specifies shadow attenuation properties (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
+		ShadowAttenuationExt = 0x834E,
+
+		/// <summary>
+		/// Specifies pixel texture operations (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelTextureSgis = 0x8353,
+
+		/// <summary>
+		/// Specifies the RGB source for pixel fragment (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelFragmentRgbSourceSgis = 0x8354,
+
+		/// <summary>
+		/// Specifies the alpha source for pixel fragment (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
+		PixelFragmentAlphaSourceSgis = 0x8355,
+
+		/// <summary>
+		/// Specifies hints for line quality (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		LineQualityHintSgix = 0x835B,
+
+		/// <summary>
+		/// Specifies asynchronous texture image operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AsyncTexImageSgix = 0x835C,
+
+		/// <summary>
+		/// Specifies asynchronous pixel drawing operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AsyncDrawPixelsSgix = 0x835D,
+
+		/// <summary>
+		/// Specifies asynchronous pixel reading operations (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		AsyncReadPixelsSgix = 0x835E,
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous texture images (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxAsyncTexImageSgix = 0x835F,
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous draw pixels (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxAsyncDrawPixelsSgix = 0x8360,
+
+		/// <summary>
+		/// Specifies the maximum number of asynchronous read pixels (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxAsyncReadPixelsSgix = 0x8361,
+
+		/// <summary>
+		/// Specifies unsigned byte format in 2-3-3 reversed order.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedByte233Rev = 0x8362,
+
+		/// <summary>
+		/// Specifies unsigned byte format in 2-3-3 reversed order (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedByte233RevExt = 0x8362,
+
+		/// <summary>
+		/// Specifies unsigned short format in 5-6-5 format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedShort565 = 0x8363,
+
+		/// <summary>
+		/// Specifies unsigned short format in 5-6-5 format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedShort565Ext = 0x8363,
+
+		/// <summary>
+		/// Specifies unsigned short format in 5-6-5 format reversed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedShort565Rev = 0x8364,
+
+		/// <summary>
+		/// Specifies unsigned short format in 5-6-5 reversed (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedShort565RevExt = 0x8364,
+
+		/// <summary>
+		/// Specifies unsigned short format in 4-4-4-4 reversed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedShort4444Rev = 0x8365,
+
+		/// <summary>
+		/// Specifies unsigned short format in 4-4-4-4 reversed (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedShort4444RevExt = 0x8365,
+
+		/// <summary>
+		/// Specifies unsigned short format in 4-4-4-4 reversed for images.
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedShort4444RevImg = 0x8365,
+
+		/// <summary>
+		/// Specifies unsigned short format in 1-5-5-5 reversed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedShort1555Rev = 0x8366,
+
+		/// <summary>
+		/// Specifies unsigned short format in 1-5-5-5 reversed (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedShort1555RevExt = 0x8366,
+
+		/// <summary>
+		/// Specifies unsigned int format in 8-8-8-8 reversed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		UnsignedInt8888Rev = 0x8367,
+
+		/// <summary>
+		/// Specifies unsigned int format in 8-8-8-8 reversed (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedInt8888RevExt = 0x8367,
+
+		/// <summary>
+		/// Specifies unsigned int format in 2-10-10-10 reversed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
+		UnsignedInt2101010Rev = 0x8368,
+
+		/// <summary>
+		/// Specifies unsigned int format in 2-10-10-10 reversed (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
+		UnsignedInt2101010RevExt = 0x8368,
+
+		/// <summary>
+		/// Specifies the maximum clamp value for S texture coordinates (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMaxClampSSgix = 0x8369,
+
+		/// <summary>
+		/// Specifies the maximum clamp value for T texture coordinates (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMaxClampTSgix = 0x836A,
+
+		/// <summary>
+		/// Specifies the maximum clamp value for R texture coordinates (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		TextureMaxClampRSgix = 0x836B,
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		MirroredRepeat = 0x8370,
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_mirrored_repeat</remarks>
+		MirroredRepeatArb = 0x8370,
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode in IBM extensions.
+		/// </summary>
+		/// <remarks></remarks>
+		MirroredRepeatIbm = 0x8370,
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MirroredRepeatOes = 0x8370,
+
+		/// <summary>
+		/// Specifies vertex pre-clipping (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		VertexPreclipSgix = 0x83EE,
+
+		/// <summary>
+		/// Specifies hints for vertex pre-clipping (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		VertexPreclipHintSgix = 0x83EF,
+
+		/// <summary>
+		/// Specifies S3TC DXT1 compressed RGB texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
+		CompressedRgbS3TcDxt1Ext = 0x83F0,
+
+		/// <summary>
+		/// Specifies S3TC DXT1 compressed RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
+		CompressedRgbaS3TcDxt1Ext = 0x83F1,
+
+		/// <summary>
+		/// Specifies S3TC DXT3 compressed RGBA texture format (ANGLE extension).
+		/// </summary>
+		/// <remarks></remarks>
+		CompressedRgbaS3TcDxt3Angle = 0x83F2,
+
+		/// <summary>
+		/// Specifies S3TC DXT3 compressed RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
+		CompressedRgbaS3TcDxt3Ext = 0x83F2,
+
+		/// <summary>
+		/// Specifies S3TC DXT5 compressed RGBA texture format (ANGLE extension).
+		/// </summary>
+		/// <remarks></remarks>
+		CompressedRgbaS3TcDxt5Angle = 0x83F3,
+
+		/// <summary>
+		/// Specifies S3TC DXT5 compressed RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_s3tc</remarks>
+		CompressedRgbaS3TcDxt5Ext = 0x83F3,
+
+		/// <summary>
+		/// Specifies not to flush performance queries (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
+		PerfqueryDonotFlushIntel = 0x83F9,
+
+		/// <summary>
+		/// Specifies to flush performance queries (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
+		PerfqueryFlushIntel = 0x83FA,
+
+		/// <summary>
+		/// Specifies to wait for performance queries (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
+		PerfqueryWaitIntel = 0x83FB,
+
+		/// <summary>
+		/// Specifies memory layout for textures (INTEL extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
+		TextureMemoryLayoutIntel = 0x83FF,
+
+		/// <summary>
+		/// Enables fragment lighting (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLightingSgix = 0x8400,
+
+		/// <summary>
+		/// Specifies color material properties for fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentColorMaterialSgix = 0x8401,
+
+		/// <summary>
+		/// Specifies the face for fragment color material properties (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentColorMaterialFaceSgix = 0x8402,
+
+		/// <summary>
+		/// Specifies material parameters for fragment colors (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentColorMaterialParameterSgix = 0x8403,
+
+		/// <summary>
+		/// Specifies the maximum number of fragment lights (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxFragmentLightsSgix = 0x8404,
+
+		/// <summary>
+		/// Specifies the maximum number of active lights (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		MaxActiveLightsSgix = 0x8405,
+
+		/// <summary>
+		/// Specifies the mode of the light environment (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		LightEnvModeSgix = 0x8407,
+
+		/// <summary>
+		/// Specifies the local viewer mode for fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLightModelLocalViewerSgix = 0x8408,
+
+		/// <summary>
+		/// Specifies the two-sided lighting mode for fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLightModelTwoSideSgix = 0x8409,
+
+		/// <summary>
+		/// Specifies the ambient light model for fragments (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLightModelAmbientSgix = 0x840A,
+
+		/// <summary>
+		/// Specifies normal interpolation for the fragment light model (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLightModelNormalInterpolationSgix = 0x840B,
+
+		/// <summary>
+		/// Specifies the first fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight0Sgix = 0x840C,
+
+		/// <summary>
+		/// Specifies the second fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight1Sgix = 0x840D,
+
+		/// <summary>
+		/// Specifies the third fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight2Sgix = 0x840E,
+
+		/// <summary>
+		/// Specifies the fourth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight3Sgix = 0x840F,
+
+		/// <summary>
+		/// Specifies the fifth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight4Sgix = 0x8410,
+
+		/// <summary>
+		/// Specifies the sixth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight5Sgix = 0x8411,
+
+		/// <summary>
+		/// Specifies the seventh fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight6Sgix = 0x8412,
+
+		/// <summary>
+		/// Specifies the eighth fragment light source (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
+		FragmentLight7Sgix = 0x8413,
+
+		/// <summary>
+		/// Specifies packing resample method (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PackResampleSgix = 0x842E,
 
 		/// <summary>
-		/// Formerly 0x842D in SGI specfile<br/>
+		/// Specifies unpacking resample method (SGIX extension).
 		/// </summary>
+		/// <remarks></remarks>
 		UnpackResampleSgix = 0x842F,
 
 		/// <summary>
-		/// Formerly 0x8430 in SGI specfile<br/>
+		/// Specifies decimation method for resampling (SGIX extension).
 		/// </summary>
+		/// <remarks></remarks>
 		ResampleDecimateSgix = 0x8430,
 
 		/// <summary>
-		/// Formerly 0x842E in SGI specfile<br/>
+		/// Specifies replication method for resampling (SGIX extension).
 		/// </summary>
+		/// <remarks></remarks>
 		ResampleReplicateSgix = 0x8433,
 
 		/// <summary>
-		/// Formerly 0x842F in SGI specfile<br/>
+		/// Specifies zero-fill method for resampling (SGIX extension).
 		/// </summary>
+		/// <remarks></remarks>
 		ResampleZeroFillSgix = 0x8434,
 
-		TangentArrayExt = 0x8439,
-		BinormalArrayExt = 0x843A,
-		CurrentTangentExt = 0x843B,
-		CurrentBinormalExt = 0x843C,
-		TangentArrayTypeExt = 0x843E,
-		TangentArrayStrideExt = 0x843F,
-		BinormalArrayTypeExt = 0x8440,
-		BinormalArrayStrideExt = 0x8441,
-		TangentArrayPointerExt = 0x8442,
-		BinormalArrayPointerExt = 0x8443,
-		Map1TangentExt = 0x8444,
-		Map2TangentExt = 0x8445,
-		Map1BinormalExt = 0x8446,
-		Map2BinormalExt = 0x8447,
+		/// <summary>
+		/// Specifies nearest clipmap nearest filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NearestClipmapNearestSgix = 0x844D,
+
+		/// <summary>
+		/// Specifies nearest clipmap linear filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NearestClipmapLinearSgix = 0x844E,
+
+		/// <summary>
+		/// Specifies linear clipmap nearest filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LinearClipmapNearestSgix = 0x844F,
-		FogCoordinateSource = 0x8450,
-		FogCoordinateSourceExt = 0x8450,
+
+		/// <summary>
+		/// Specifies the source of fog coordinates (deprecated).
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		FogCoordSrc = 0x8450,
+
+		/// <summary>
+		/// Specifies fog coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		FogCoordinate = 0x8451,
+
+		/// <summary>
+		/// Specifies fog coordinate (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
 		FogCoordinateExt = 0x8451,
+
+		/// <summary>
+		/// Specifies fog coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		FogCoord = 0x8451,
+
+		/// <summary>
+		/// Specifies fragment depth.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		FragmentDepth = 0x8452,
+
+		/// <summary>
+		/// Specifies fragment depth (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord<br/>GL_EXT_light_texture</remarks>
 		FragmentDepthExt = 0x8452,
-		CurrentFogCoordinate = 0x8453,
-		CurrentFogCoord = 0x8453,
-		CurrentFogCoordinateExt = 0x8453,
-		FogCoordinateArrayType = 0x8454,
-		FogCoordinateArrayTypeExt = 0x8454,
-		FogCoordArrayType = 0x8454,
-		FogCoordinateArrayStride = 0x8455,
-		FogCoordinateArrayStrideExt = 0x8455,
-		FogCoordArrayStride = 0x8455,
-		FogCoordinateArrayPointer = 0x8456,
-		FogCoordinateArrayPointerExt = 0x8456,
-		FogCoordArrayPointer = 0x8456,
-		FogCoordinateArray = 0x8457,
-		FogCoordinateArrayExt = 0x8457,
-		FogCoordArray = 0x8457,
-		ColorSum = 0x8458,
-		ColorSumArb = 0x8458,
-		ColorSumExt = 0x8458,
-		CurrentSecondaryColor = 0x8459,
-		CurrentSecondaryColorExt = 0x8459,
-		SecondaryColorArraySize = 0x845A,
-		SecondaryColorArraySizeExt = 0x845A,
-		SecondaryColorArrayType = 0x845B,
-		SecondaryColorArrayTypeExt = 0x845B,
-		SecondaryColorArrayStride = 0x845C,
-		SecondaryColorArrayStrideExt = 0x845C,
-		SecondaryColorArrayPointer = 0x845D,
-		SecondaryColorArrayPointerExt = 0x845D,
-		SecondaryColorArray = 0x845E,
-		SecondaryColorArrayExt = 0x845E,
-		CurrentRasterSecondaryColor = 0x845F,
+
+		/// <summary>
+		/// Specifies the range of aliased point sizes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		AliasedPointSizeRange = 0x846D,
+
+		/// <summary>
+		/// Specifies the range of aliased line widths.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		AliasedLineWidthRange = 0x846E,
-		ScreenCoordinatesRend = 0x8490,
-		InvertedScreenWRend = 0x8491,
+
+		/// <summary>
+		/// Specifies texture unit 0.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture0 = 0x84C0,
+
+		/// <summary>
+		/// Specifies texture unit 0 (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture<br/>GL_NV_register_combiners</remarks>
 		Texture0Arb = 0x84C0,
+
+		/// <summary>
+		/// Specifies texture unit 1.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture1 = 0x84C1,
+
+		/// <summary>
+		/// Specifies texture unit 1 (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture<br/>GL_NV_register_combiners</remarks>
 		Texture1Arb = 0x84C1,
+
+		/// <summary>
+		/// Specifies texture unit 2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture2 = 0x84C2,
-		Texture2Arb = 0x84C2,
+
+		/// <summary>
+		/// Specifies texture unit 3.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture3 = 0x84C3,
-		Texture3Arb = 0x84C3,
+
+		/// <summary>
+		/// Specifies texture unit 4.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture4 = 0x84C4,
-		Texture4Arb = 0x84C4,
+
+		/// <summary>
+		/// Specifies texture unit 5.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture5 = 0x84C5,
-		Texture5Arb = 0x84C5,
+
+		/// <summary>
+		/// Specifies texture unit 6.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture6 = 0x84C6,
-		Texture6Arb = 0x84C6,
+
+		/// <summary>
+		/// Specifies texture unit 7.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture7 = 0x84C7,
-		Texture7Arb = 0x84C7,
+
+		/// <summary>
+		/// Specifies texture unit 8.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture8 = 0x84C8,
-		Texture8Arb = 0x84C8,
+
+		/// <summary>
+		/// Specifies texture unit 9.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture9 = 0x84C9,
-		Texture9Arb = 0x84C9,
+
+		/// <summary>
+		/// Specifies texture unit 10.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture10 = 0x84CA,
-		Texture10Arb = 0x84CA,
+
+		/// <summary>
+		/// Specifies texture unit 11.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture11 = 0x84CB,
-		Texture11Arb = 0x84CB,
+
+		/// <summary>
+		/// Specifies texture unit 12.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture12 = 0x84CC,
-		Texture12Arb = 0x84CC,
+
+		/// <summary>
+		/// Specifies texture unit 13.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture13 = 0x84CD,
-		Texture13Arb = 0x84CD,
+
+		/// <summary>
+		/// Specifies texture unit 14.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture14 = 0x84CE,
-		Texture14Arb = 0x84CE,
+
+		/// <summary>
+		/// Specifies texture unit 15.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture15 = 0x84CF,
-		Texture15Arb = 0x84CF,
+
+		/// <summary>
+		/// Specifies texture unit 16.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture16 = 0x84D0,
-		Texture16Arb = 0x84D0,
+
+		/// <summary>
+		/// Specifies texture unit 17.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture17 = 0x84D1,
-		Texture17Arb = 0x84D1,
+
+		/// <summary>
+		/// Specifies texture unit 18.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture18 = 0x84D2,
-		Texture18Arb = 0x84D2,
+
+		/// <summary>
+		/// Specifies texture unit 19.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture19 = 0x84D3,
-		Texture19Arb = 0x84D3,
+
+		/// <summary>
+		/// Specifies texture unit 20.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture20 = 0x84D4,
-		Texture20Arb = 0x84D4,
+
+		/// <summary>
+		/// Specifies texture unit 21.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture21 = 0x84D5,
-		Texture21Arb = 0x84D5,
+
+		/// <summary>
+		/// Specifies texture unit 22.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture22 = 0x84D6,
-		Texture22Arb = 0x84D6,
+
+		/// <summary>
+		/// Specifies texture unit 23.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture23 = 0x84D7,
-		Texture23Arb = 0x84D7,
+
+		/// <summary>
+		/// Specifies texture unit 24.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture24 = 0x84D8,
-		Texture24Arb = 0x84D8,
+
+		/// <summary>
+		/// Specifies texture unit 25.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture25 = 0x84D9,
-		Texture25Arb = 0x84D9,
+
+		/// <summary>
+		/// Specifies texture unit 26.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture26 = 0x84DA,
-		Texture26Arb = 0x84DA,
+
+		/// <summary>
+		/// Specifies texture unit 27.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture27 = 0x84DB,
-		Texture27Arb = 0x84DB,
+
+		/// <summary>
+		/// Specifies texture unit 28.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture28 = 0x84DC,
-		Texture28Arb = 0x84DC,
+
+		/// <summary>
+		/// Specifies texture unit 29.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture29 = 0x84DD,
-		Texture29Arb = 0x84DD,
+
+		/// <summary>
+		/// Specifies texture unit 30.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture30 = 0x84DE,
-		Texture30Arb = 0x84DE,
+
+		/// <summary>
+		/// Specifies texture unit 31.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		Texture31 = 0x84DF,
-		Texture31Arb = 0x84DF,
+
+		/// <summary>
+		/// Specifies the active texture unit.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ActiveTexture = 0x84E0,
-		ActiveTextureArb = 0x84E0,
-		ClientActiveTexture = 0x84E1,
-		ClientActiveTextureArb = 0x84E1,
-		MaxTextureUnits = 0x84E2,
-		MaxTextureUnitsArb = 0x84E2,
-		TransposeModelviewMatrix = 0x84E3,
-		TransposeModelviewMatrixArb = 0x84E3,
-		PathTransposeModelviewMatrixNv = 0x84E3,
-		TransposeProjectionMatrix = 0x84E4,
-		TransposeProjectionMatrixArb = 0x84E4,
-		PathTransposeProjectionMatrixNv = 0x84E4,
-		TransposeTextureMatrix = 0x84E5,
-		TransposeTextureMatrixArb = 0x84E5,
-		TransposeColorMatrix = 0x84E6,
-		TransposeColorMatrixArb = 0x84E6,
-		Subtract = 0x84E7,
-		SubtractArb = 0x84E7,
+
+		/// <summary>
+		/// Specifies the maximum size of renderbuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		MaxRenderbufferSize = 0x84E8,
-		MaxRenderbufferSizeExt = 0x84E8,
-		MaxRenderbufferSizeOes = 0x84E8,
-		CompressedAlpha = 0x84E9,
-		CompressedAlphaArb = 0x84E9,
-		CompressedLuminance = 0x84EA,
-		CompressedLuminanceArb = 0x84EA,
-		CompressedLuminanceAlpha = 0x84EB,
-		CompressedLuminanceAlphaArb = 0x84EB,
-		CompressedIntensity = 0x84EC,
-		CompressedIntensityArb = 0x84EC,
+
+		/// <summary>
+		/// Specifies compressed RGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedRgb = 0x84ED,
-		CompressedRgbArb = 0x84ED,
+
+		/// <summary>
+		/// Specifies compressed RGBA format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedRgba = 0x84EE,
-		CompressedRgbaArb = 0x84EE,
+
+		/// <summary>
+		/// Specifies the hint for texture compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCompressionHint = 0x84EF,
+
+		/// <summary>
+		/// Specifies the hint for texture compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		TextureCompressionHintArb = 0x84EF,
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by a tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		UniformBlockReferencedByTessControlShader = 0x84F0,
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by a tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		UniformBlockReferencedByTessEvaluationShader = 0x84F1,
+
+		/// <summary>
+		/// Specifies if all operations are completed (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		AllCompletedNv = 0x84F2,
+
+		/// <summary>
+		/// Specifies the status of a fence (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		FenceStatusNv = 0x84F3,
+
+		/// <summary>
+		/// Specifies the condition for a fence (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
 		FenceConditionNv = 0x84F4,
+
+		/// <summary>
+		/// Specifies a rectangle texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureRectangle = 0x84F5,
+
+		/// <summary>
+		/// Specifies a rectangle texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_rectangle</remarks>
 		TextureRectangleArb = 0x84F5,
+
+		/// <summary>
+		/// Specifies a rectangle texture (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_rectangle</remarks>
 		TextureRectangleNv = 0x84F5,
+
+		/// <summary>
+		/// Specifies the texture currently bound to the rectangle target.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBindingRectangle = 0x84F6,
+
+		/// <summary>
+		/// Specifies the texture currently bound to the rectangle target (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_rectangle</remarks>
 		TextureBindingRectangleArb = 0x84F6,
+
+		/// <summary>
+		/// Specifies the texture currently bound to the rectangle target (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_rectangle</remarks>
 		TextureBindingRectangleNv = 0x84F6,
+
+		/// <summary>
+		/// Specifies a proxy for rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		ProxyTextureRectangle = 0x84F7,
+
+		/// <summary>
+		/// Specifies a proxy for rectangle textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_rectangle</remarks>
 		ProxyTextureRectangleArb = 0x84F7,
+
+		/// <summary>
+		/// Specifies a proxy for rectangle textures (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_rectangle</remarks>
 		ProxyTextureRectangleNv = 0x84F7,
+
+		/// <summary>
+		/// Specifies the maximum size of rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		MaxRectangleTextureSize = 0x84F8,
-		MaxRectangleTextureSizeArb = 0x84F8,
-		MaxRectangleTextureSizeNv = 0x84F8,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DepthStencil = 0x84F9,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_depth_stencil</remarks>
 		DepthStencilExt = 0x84F9,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_packed_depth_stencil</remarks>
 		DepthStencilNv = 0x84F9,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil buffer format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthStencilOes = 0x84F9,
+
+		/// <summary>
+		/// Specifies a 24-bit depth and 8-bit stencil format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		UnsignedInt248 = 0x84FA,
+
+		/// <summary>
+		/// Specifies a 24-bit depth and 8-bit stencil format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_depth_stencil</remarks>
 		UnsignedInt248Ext = 0x84FA,
+
+		/// <summary>
+		/// Specifies a 24-bit depth and 8-bit stencil format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_packed_depth_stencil</remarks>
 		UnsignedInt248Nv = 0x84FA,
+
+		/// <summary>
+		/// Specifies a 24-bit depth and 8-bit stencil format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnsignedInt248Oes = 0x84FA,
+
+		/// <summary>
+		/// Specifies the maximum Level of Detail (LOD) bias.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		MaxTextureLodBias = 0x84FD,
-		MaxTextureLodBiasExt = 0x84FD,
+
+		/// <summary>
+		/// Specifies the maximum anisotropic filtering level.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_filter_anisotropic</remarks>
 		TextureMaxAnisotropy = 0x84FE,
-		TextureMaxAnisotropyExt = 0x84FE,
-		MaxTextureMaxAnisotropy = 0x84FF,
-		MaxTextureMaxAnisotropyExt = 0x84FF,
+
+		/// <summary>
+		/// Specifies the texture filter control mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		TextureFilterControl = 0x8500,
-		TextureFilterControlExt = 0x8500,
+
+		/// <summary>
+		/// Specifies the LOD bias applied to textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureLodBias = 0x8501,
-		TextureLodBiasExt = 0x8501,
-		Modelview1StackDepthExt = 0x8502,
-		Combine4Nv = 0x8503,
-		MaxShininessNv = 0x8504,
-		MaxSpotExponentNv = 0x8505,
-		Modelview1MatrixExt = 0x8506,
+
+		/// <summary>
+		/// Specifies wrap mode for incremental blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		IncrWrap = 0x8507,
-		IncrWrapExt = 0x8507,
-		IncrWrapOes = 0x8507,
+
+		/// <summary>
+		/// Specifies wrap mode for decremental blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DecrWrap = 0x8508,
-		DecrWrapExt = 0x8508,
-		DecrWrapOes = 0x8508,
-		VertexWeightingExt = 0x8509,
-		Modelview1Arb = 0x850A,
-		Modelview1Ext = 0x850A,
-		CurrentVertexWeightExt = 0x850B,
-		VertexWeightArrayExt = 0x850C,
-		VertexWeightArraySizeExt = 0x850D,
-		VertexWeightArrayTypeExt = 0x850E,
-		VertexWeightArrayStrideExt = 0x850F,
-		VertexWeightArrayPointerExt = 0x8510,
+
+		/// <summary>
+		/// Specifies a normal map texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		NormalMap = 0x8511,
+
+		/// <summary>
+		/// Specifies a normal map texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		NormalMapArb = 0x8511,
+
+		/// <summary>
+		/// Specifies a normal map texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		NormalMapExt = 0x8511,
+
+		/// <summary>
+		/// Specifies a normal map texture (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texgen_reflection</remarks>
 		NormalMapNv = 0x8511,
+
+		/// <summary>
+		/// Specifies a normal map texture (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NormalMapOes = 0x8511,
+
+		/// <summary>
+		/// Specifies a reflection map texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ReflectionMap = 0x8512,
+
+		/// <summary>
+		/// Specifies a reflection map texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		ReflectionMapArb = 0x8512,
+
+		/// <summary>
+		/// Specifies a reflection map texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		ReflectionMapExt = 0x8512,
+
+		/// <summary>
+		/// Specifies a reflection map texture (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texgen_reflection</remarks>
 		ReflectionMapNv = 0x8512,
+
+		/// <summary>
+		/// Specifies a reflection map texture (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ReflectionMapOes = 0x8512,
+
+		/// <summary>
+		/// Specifies a cube map texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureCubeMap = 0x8513,
+
+		/// <summary>
+		/// Specifies a cube map texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapArb = 0x8513,
+
+		/// <summary>
+		/// Specifies a cube map texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapExt = 0x8513,
+
+		/// <summary>
+		/// Specifies a cube map texture (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapOes = 0x8513,
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBindingCubeMap = 0x8514,
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureBindingCubeMapArb = 0x8514,
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureBindingCubeMapExt = 0x8514,
+
+		/// <summary>
+		/// Specifies the currently bound cube map texture (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureBindingCubeMapOes = 0x8514,
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCubeMapPositiveX = 0x8515,
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapPositiveXArb = 0x8515,
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapPositiveXExt = 0x8515,
+
+		/// <summary>
+		/// Specifies the positive X face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapPositiveXOes = 0x8515,
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCubeMapNegativeX = 0x8516,
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapNegativeXArb = 0x8516,
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapNegativeXExt = 0x8516,
+
+		/// <summary>
+		/// Specifies the negative X face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapNegativeXOes = 0x8516,
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCubeMapPositiveY = 0x8517,
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapPositiveYArb = 0x8517,
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapPositiveYExt = 0x8517,
+
+		/// <summary>
+		/// Specifies the positive Y face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapPositiveYOes = 0x8517,
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCubeMapNegativeY = 0x8518,
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapNegativeYArb = 0x8518,
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapNegativeYExt = 0x8518,
+
+		/// <summary>
+		/// Specifies the negative Y face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapNegativeYOes = 0x8518,
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCubeMapPositiveZ = 0x8519,
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapPositiveZArb = 0x8519,
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapPositiveZExt = 0x8519,
+
+		/// <summary>
+		/// Specifies the positive Z face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapPositiveZOes = 0x8519,
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCubeMapNegativeZ = 0x851A,
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		TextureCubeMapNegativeZArb = 0x851A,
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		TextureCubeMapNegativeZExt = 0x851A,
+
+		/// <summary>
+		/// Specifies the negative Z face of the cube map (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapNegativeZOes = 0x851A,
+
+		/// <summary>
+		/// Specifies a proxy for cube map textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ProxyTextureCubeMap = 0x851B,
+
+		/// <summary>
+		/// Specifies a proxy for cube map textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		ProxyTextureCubeMapArb = 0x851B,
+
+		/// <summary>
+		/// Specifies a proxy for cube map textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		ProxyTextureCubeMapExt = 0x851B,
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		MaxCubeMapTextureSize = 0x851C,
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map</remarks>
 		MaxCubeMapTextureSizeArb = 0x851C,
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_cube_map</remarks>
 		MaxCubeMapTextureSizeExt = 0x851C,
+
+		/// <summary>
+		/// Specifies the maximum size of cube map textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxCubeMapTextureSizeOes = 0x851C,
-		VertexArrayRangeApple = 0x851D,
-		VertexArrayRangeNv = 0x851D,
-		VertexArrayRangeLengthApple = 0x851E,
-		VertexArrayRangeLengthNv = 0x851E,
-		VertexArrayRangeValidNv = 0x851F,
+
+		/// <summary>
+		/// Specifies the storage hint for vertex arrays (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		VertexArrayStorageHintApple = 0x851F,
-		MaxVertexArrayRangeElementNv = 0x8520,
-		VertexArrayRangePointerApple = 0x8521,
-		VertexArrayRangePointerNv = 0x8521,
-		RegisterCombinersNv = 0x8522,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableANv = 0x8523,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableBNv = 0x8524,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableCNv = 0x8525,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableDNv = 0x8526,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableENv = 0x8527,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableFNv = 0x8528,
+
+		/// <summary>
+		/// Specifies a variable in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		VariableGNv = 0x8529,
-		ConstantColor0Nv = 0x852A,
-		ConstantColor1Nv = 0x852B,
+
+		/// <summary>
+		/// Specifies the primary color input in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering<br/>GL_NV_register_combiners</remarks>
 		PrimaryColorNv = 0x852C,
+
+		/// <summary>
+		/// Specifies the secondary color input in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering<br/>GL_NV_register_combiners</remarks>
 		SecondaryColorNv = 0x852D,
+
+		/// <summary>
+		/// Specifies a spare register in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Spare0Nv = 0x852E,
+
+		/// <summary>
+		/// Specifies another spare register in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Spare1Nv = 0x852F,
+
+		/// <summary>
+		/// Specifies a discard operation in NV register combiners.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		DiscardNv = 0x8530,
-		ETimesFNv = 0x8531,
-		Spare0PlusSecondaryColorNv = 0x8532,
-		VertexArrayRangeWithoutFlushNv = 0x8533,
+
+		/// <summary>
+		/// Specifies the hint for multisample filtering (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_multisample_filter_hint</remarks>
 		MultisampleFilterHintNv = 0x8534,
-		PerStageConstantsNv = 0x8535,
+
+		/// <summary>
+		/// Specifies an unsigned identity operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		UnsignedIdentityNv = 0x8536,
+
+		/// <summary>
+		/// Specifies an unsigned invert operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		UnsignedInvertNv = 0x8537,
+
+		/// <summary>
+		/// Specifies an expansion operation for normal values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ExpandNormalNv = 0x8538,
+
+		/// <summary>
+		/// Specifies an expansion operation for negated values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ExpandNegateNv = 0x8539,
+
+		/// <summary>
+		/// Specifies half bias for normal values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		HalfBiasNormalNv = 0x853A,
+
+		/// <summary>
+		/// Specifies half bias for negated values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		HalfBiasNegateNv = 0x853B,
+
+		/// <summary>
+		/// Specifies a signed identity operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		SignedIdentityNv = 0x853C,
+
+		/// <summary>
+		/// Specifies a signed negate operation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		SignedNegateNv = 0x853D,
+
+		/// <summary>
+		/// Specifies a scaling operation by two (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ScaleByTwoNv = 0x853E,
+
+		/// <summary>
+		/// Specifies a scaling operation by four (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ScaleByFourNv = 0x853F,
+
+		/// <summary>
+		/// Specifies a scaling operation by one half (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ScaleByOneHalfNv = 0x8540,
+
+		/// <summary>
+		/// Specifies bias by negative one half (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		BiasByNegativeOneHalfNv = 0x8541,
+
+		/// <summary>
+		/// Specifies the input for combiners (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		CombinerInputNv = 0x8542,
+
+		/// <summary>
+		/// Specifies the mapping for combiners (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		CombinerMappingNv = 0x8543,
+
+		/// <summary>
+		/// Specifies the usage of combiner components (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		CombinerComponentUsageNv = 0x8544,
-		CombinerAbDotProductNv = 0x8545,
-		CombinerCdDotProductNv = 0x8546,
-		CombinerMuxSumNv = 0x8547,
-		CombinerScaleNv = 0x8548,
-		CombinerBiasNv = 0x8549,
-		CombinerAbOutputNv = 0x854A,
-		CombinerCdOutputNv = 0x854B,
-		CombinerSumOutputNv = 0x854C,
-		MaxGeneralCombinersNv = 0x854D,
-		NumGeneralCombinersNv = 0x854E,
-		ColorSumClampNv = 0x854F,
+
+		/// <summary>
+		/// Specifies the first combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner0Nv = 0x8550,
+
+		/// <summary>
+		/// Specifies the second combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner1Nv = 0x8551,
+
+		/// <summary>
+		/// Specifies the third combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner2Nv = 0x8552,
+
+		/// <summary>
+		/// Specifies the fourth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner3Nv = 0x8553,
+
+		/// <summary>
+		/// Specifies the fifth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner4Nv = 0x8554,
+
+		/// <summary>
+		/// Specifies the sixth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner5Nv = 0x8555,
+
+		/// <summary>
+		/// Specifies the seventh combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner6Nv = 0x8556,
+
+		/// <summary>
+		/// Specifies the eighth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner7Nv = 0x8557,
-		PrimitiveRestartNv = 0x8558,
-		PrimitiveRestartIndexNv = 0x8559,
-		FogDistanceModeNv = 0x855A,
-		EyeRadialNv = 0x855B,
-		EyePlaneAbsoluteNv = 0x855C,
-		EmbossLightNv = 0x855D,
-		EmbossConstantNv = 0x855E,
-		EmbossMapNv = 0x855F,
-		RedMinClampIngr = 0x8560,
-		GreenMinClampIngr = 0x8561,
-		BlueMinClampIngr = 0x8562,
-		AlphaMinClampIngr = 0x8563,
-		RedMaxClampIngr = 0x8564,
-		GreenMaxClampIngr = 0x8565,
-		BlueMaxClampIngr = 0x8566,
-		AlphaMaxClampIngr = 0x8567,
-		InterlaceReadIngr = 0x8568,
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Combine = 0x8570,
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		CombineArb = 0x8570,
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		CombineExt = 0x8570,
+
+		/// <summary>
+		/// Specifies the RGB combine mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CombineRgb = 0x8571,
+
+		/// <summary>
+		/// Specifies the RGB combine mode (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		CombineRgbArb = 0x8571,
+
+		/// <summary>
+		/// Specifies the RGB combine mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		CombineRgbExt = 0x8571,
+
+		/// <summary>
+		/// Specifies the alpha combine mode.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CombineAlpha = 0x8572,
+
+		/// <summary>
+		/// Specifies the alpha combine mode (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		CombineAlphaArb = 0x8572,
+
+		/// <summary>
+		/// Specifies the alpha combine mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		CombineAlphaExt = 0x8572,
+
+		/// <summary>
+		/// Specifies the scale factor for RGB values.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		RgbScale = 0x8573,
+
+		/// <summary>
+		/// Specifies the scale factor for RGB values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		RgbScaleArb = 0x8573,
+
+		/// <summary>
+		/// Specifies the scale factor for RGB values (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		RgbScaleExt = 0x8573,
+
+		/// <summary>
+		/// Specifies a signed addition operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		AddSigned = 0x8574,
+
+		/// <summary>
+		/// Specifies a signed addition operation (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		AddSignedArb = 0x8574,
+
+		/// <summary>
+		/// Specifies a signed addition operation (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		AddSignedExt = 0x8574,
+
+		/// <summary>
+		/// Specifies interpolation for combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Interpolate = 0x8575,
+
+		/// <summary>
+		/// Specifies interpolation for combine modes (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		InterpolateArb = 0x8575,
+
+		/// <summary>
+		/// Specifies interpolation for combine modes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		InterpolateExt = 0x8575,
+
+		/// <summary>
+		/// Specifies a constant value for combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Constant = 0x8576,
+
+		/// <summary>
+		/// Specifies a constant value for combine modes (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		ConstantArb = 0x8576,
+
+		/// <summary>
+		/// Specifies a constant value for combine modes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		ConstantExt = 0x8576,
+
+		/// <summary>
+		/// Specifies a constant value (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ConstantNv = 0x8576,
+
+		/// <summary>
+		/// Specifies the primary color input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PrimaryColor = 0x8577,
+
+		/// <summary>
+		/// Specifies the primary color input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		PrimaryColorArb = 0x8577,
+
+		/// <summary>
+		/// Specifies the primary color input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		PrimaryColorExt = 0x8577,
+
+		/// <summary>
+		/// Specifies the previous output in combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Previous = 0x8578,
+
+		/// <summary>
+		/// Specifies the previous output in combine modes (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		PreviousArb = 0x8578,
+
+		/// <summary>
+		/// Specifies the previous output in combine modes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		PreviousExt = 0x8578,
+
+		/// <summary>
+		/// Specifies the first RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Source0Rgb = 0x8580,
+
+		/// <summary>
+		/// Specifies the first RGB source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source0RgbArb = 0x8580,
+
+		/// <summary>
+		/// Specifies the first RGB source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source0RgbExt = 0x8580,
+
+		/// <summary>
+		/// Specifies the first RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Src0Rgb = 0x8580,
+
+		/// <summary>
+		/// Specifies the second RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Source1Rgb = 0x8581,
+
+		/// <summary>
+		/// Specifies the second RGB source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source1RgbArb = 0x8581,
+
+		/// <summary>
+		/// Specifies the second RGB source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source1RgbExt = 0x8581,
+
+		/// <summary>
+		/// Specifies the second RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Src1Rgb = 0x8581,
+
+		/// <summary>
+		/// Specifies the third RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Source2Rgb = 0x8582,
+
+		/// <summary>
+		/// Specifies the third RGB source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source2RgbArb = 0x8582,
+
+		/// <summary>
+		/// Specifies the third RGB source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source2RgbExt = 0x8582,
+
+		/// <summary>
+		/// Specifies the third RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Src2Rgb = 0x8582,
+
+		/// <summary>
+		/// Specifies the fourth RGB source input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Source3RgbNv = 0x8583,
+
+		/// <summary>
+		/// Specifies the first alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Source0Alpha = 0x8588,
+
+		/// <summary>
+		/// Specifies the first alpha source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source0AlphaArb = 0x8588,
+
+		/// <summary>
+		/// Specifies the first alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source0AlphaExt = 0x8588,
+
+		/// <summary>
+		/// Specifies the first alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Src0Alpha = 0x8588,
+
+		/// <summary>
+		/// Specifies the second alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Source1Alpha = 0x8589,
+
+		/// <summary>
+		/// Specifies the second alpha source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source1AlphaArb = 0x8589,
+
+		/// <summary>
+		/// Specifies the second alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source1AlphaExt = 0x8589,
+
+		/// <summary>
+		/// Specifies the second alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		Src1Alpha = 0x8589,
+
+		/// <summary>
+		/// Specifies the second alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Src1AlphaExt = 0x8589,
+
+		/// <summary>
+		/// Specifies the third alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Source2Alpha = 0x858A,
+
+		/// <summary>
+		/// Specifies the third alpha source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source2AlphaArb = 0x858A,
+
+		/// <summary>
+		/// Specifies the third alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source2AlphaExt = 0x858A,
+
+		/// <summary>
+		/// Specifies the third alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Src2Alpha = 0x858A,
+
+		/// <summary>
+		/// Specifies the fourth alpha source input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Source3AlphaNv = 0x858B,
+
+		/// <summary>
+		/// Specifies the first RGB operand input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Operand0Rgb = 0x8590,
+
+		/// <summary>
+		/// Specifies the first RGB operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand0RgbArb = 0x8590,
+
+		/// <summary>
+		/// Specifies the first RGB operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand0RgbExt = 0x8590,
+
+		/// <summary>
+		/// Specifies the second RGB operand input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Operand1Rgb = 0x8591,
+
+		/// <summary>
+		/// Specifies the second RGB operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand1RgbArb = 0x8591,
+
+		/// <summary>
+		/// Specifies the second RGB operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand1RgbExt = 0x8591,
+
+		/// <summary>
+		/// Specifies the third RGB operand input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Operand2Rgb = 0x8592,
+
+		/// <summary>
+		/// Specifies the third RGB operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand2RgbArb = 0x8592,
+
+		/// <summary>
+		/// Specifies the third RGB operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand2RgbExt = 0x8592,
+
+		/// <summary>
+		/// Specifies the fourth RGB operand input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Operand3RgbNv = 0x8593,
+
+		/// <summary>
+		/// Specifies the first alpha operand input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Operand0Alpha = 0x8598,
+
+		/// <summary>
+		/// Specifies the first alpha operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand0AlphaArb = 0x8598,
+
+		/// <summary>
+		/// Specifies the first alpha operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand0AlphaExt = 0x8598,
+
+		/// <summary>
+		/// Specifies the second alpha operand input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Operand1Alpha = 0x8599,
+
+		/// <summary>
+		/// Specifies the second alpha operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand1AlphaArb = 0x8599,
+
+		/// <summary>
+		/// Specifies the second alpha operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand1AlphaExt = 0x8599,
+
+		/// <summary>
+		/// Specifies the third alpha operand input.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Operand2Alpha = 0x859A,
+
+		/// <summary>
+		/// Specifies the third alpha operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand2AlphaArb = 0x859A,
+
+		/// <summary>
+		/// Specifies the third alpha operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand2AlphaExt = 0x859A,
+
+		/// <summary>
+		/// Specifies the fourth alpha operand input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Operand3AlphaNv = 0x859B,
+
+		/// <summary>
+		/// Specifies the subsample rate for packing (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PackSubsampleRateSgix = 0x85A0,
+
+		/// <summary>
+		/// Specifies the subsample rate for unpacking (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		UnpackSubsampleRateSgix = 0x85A1,
+
+		/// <summary>
+		/// Specifies a pixel subsample rate of 4:4:4:4 (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelSubsample4444Sgix = 0x85A2,
+
+		/// <summary>
+		/// Specifies a pixel subsample rate of 2:4:2:4 (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelSubsample2424Sgix = 0x85A3,
+
+		/// <summary>
+		/// Specifies a pixel subsample rate of 4:2:4:2 (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelSubsample4242Sgix = 0x85A4,
+
+		/// <summary>
+		/// Specifies perturbation for texture coordinates (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_perturb_normal</remarks>
 		PerturbExt = 0x85AE,
-		TextureNormalExt = 0x85AF,
-		LightModelSpecularVectorApple = 0x85B0,
+
+		/// <summary>
+		/// Specifies a hint for transformations (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_transform_hint</remarks>
 		TransformHintApple = 0x85B1,
-		UnpackClientStorageApple = 0x85B2,
-		BufferObjectApple = 0x85B3,
+
+		/// <summary>
+		/// Specifies client storage (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_range</remarks>
 		StorageClientApple = 0x85B4,
+
+		/// <summary>
+		/// Specifies the current vertex array binding.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		VertexArrayBinding = 0x85B5,
-		VertexArrayBindingApple = 0x85B5,
-		VertexArrayBindingOes = 0x85B5,
-		TextureRangeLengthApple = 0x85B7,
-		TextureRangePointerApple = 0x85B8,
-		Ycbcr422Apple = 0x85B9,
-		UnsignedShort88Apple = 0x85BA,
-		UnsignedShort88Mesa = 0x85BA,
-		UnsignedShort88RevApple = 0x85BB,
-		UnsignedShort88RevMesa = 0x85BB,
+
+		/// <summary>
+		/// Specifies texture storage hints (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range</remarks>
 		TextureStorageHintApple = 0x85BC,
-		StoragePrivateApple = 0x85BD,
+
+		/// <summary>
+		/// Specifies cached storage (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range<br/>GL_APPLE_vertex_array_range</remarks>
 		StorageCachedApple = 0x85BE,
+
+		/// <summary>
+		/// Specifies shared storage (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range<br/>GL_APPLE_vertex_array_range</remarks>
 		StorageSharedApple = 0x85BF,
-		ReplacementCodeArraySun = 0x85C0,
-		ReplacementCodeArrayTypeSun = 0x85C1,
-		ReplacementCodeArrayStrideSun = 0x85C2,
-		ReplacementCodeArrayPointerSun = 0x85C3,
-		R1UiV3FSun = 0x85C4,
-		R1UiC4UbV3FSun = 0x85C5,
-		R1UiC3FV3FSun = 0x85C6,
-		R1UiN3FV3FSun = 0x85C7,
-		R1UiC4FN3FV3FSun = 0x85C8,
-		R1UiT2FV3FSun = 0x85C9,
-		R1UiT2FN3FV3FSun = 0x85CA,
-		R1UiT2FC4FN3FV3FSun = 0x85CB,
-		SliceAccumSun = 0x85CC,
-		QuadMeshSun = 0x8614,
-		TriangleMeshSun = 0x8615,
+
+		/// <summary>
+		/// Specifies vertex program functionality (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program</remarks>
 		VertexProgramArb = 0x8620,
-		VertexProgramNv = 0x8620,
-		VertexStateProgramNv = 0x8621,
+
+		/// <summary>
+		/// Specifies whether the vertex attribute array is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArrayEnabled = 0x8622,
-		VertexAttribArrayEnabledArb = 0x8622,
-		AttribArraySizeNv = 0x8623,
+
+		/// <summary>
+		/// Specifies the size of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArraySize = 0x8623,
-		VertexAttribArraySizeArb = 0x8623,
-		AttribArrayStrideNv = 0x8624,
+
+		/// <summary>
+		/// Specifies the stride of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArrayStride = 0x8624,
-		VertexAttribArrayStrideArb = 0x8624,
-		AttribArrayTypeNv = 0x8625,
+
+		/// <summary>
+		/// Specifies the type of the vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArrayType = 0x8625,
-		VertexAttribArrayTypeArb = 0x8625,
-		CurrentAttribNv = 0x8626,
+
+		/// <summary>
+		/// Specifies the current vertex attribute.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CurrentVertexAttrib = 0x8626,
-		CurrentVertexAttribArb = 0x8626,
-		ProgramLengthArb = 0x8627,
-		ProgramLengthNv = 0x8627,
+
+		/// <summary>
+		/// Specifies the program string (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		ProgramStringArb = 0x8628,
-		ProgramStringNv = 0x8628,
-		ModelviewProjectionNv = 0x8629,
-		IdentityNv = 0x862A,
-		InverseNv = 0x862B,
-		TransposeNv = 0x862C,
-		InverseTransposeNv = 0x862D,
-		MaxProgramMatrixStackDepthArb = 0x862E,
-		MaxTrackMatrixStackDepthNv = 0x862E,
-		MaxProgramMatricesArb = 0x862F,
-		MaxTrackMatricesNv = 0x862F,
-		Matrix0Nv = 0x8630,
-		Matrix1Nv = 0x8631,
-		Matrix2Nv = 0x8632,
-		Matrix3Nv = 0x8633,
-		Matrix4Nv = 0x8634,
-		Matrix5Nv = 0x8635,
-		Matrix6Nv = 0x8636,
-		Matrix7Nv = 0x8637,
-		CurrentMatrixStackDepthArb = 0x8640,
-		CurrentMatrixStackDepthNv = 0x8640,
-		CurrentMatrixArb = 0x8641,
-		CurrentMatrixNv = 0x8641,
-		VertexProgramPointSize = 0x8642,
-		VertexProgramPointSizeArb = 0x8642,
-		VertexProgramPointSizeNv = 0x8642,
+
+		/// <summary>
+		/// Specifies the point size for programs.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		ProgramPointSize = 0x8642,
-		ProgramPointSizeArb = 0x8642,
-		ProgramPointSizeExt = 0x8642,
-		VertexProgramTwoSide = 0x8643,
-		VertexProgramTwoSideArb = 0x8643,
-		VertexProgramTwoSideNv = 0x8643,
+
+		/// <summary>
+		/// Specifies program parameters (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
 		ProgramParameterNv = 0x8644,
-		AttribArrayPointerNv = 0x8645,
+
+		/// <summary>
+		/// Specifies the pointer to vertex attribute arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArrayPointer = 0x8645,
+
+		/// <summary>
+		/// Specifies the pointer to vertex attribute arrays (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
 		VertexAttribArrayPointerArb = 0x8645,
-		ProgramTargetNv = 0x8646,
-		ProgramResidentNv = 0x8647,
-		TrackMatrixNv = 0x8648,
-		TrackMatrixTransformNv = 0x8649,
-		VertexProgramBindingNv = 0x864A,
-		ProgramErrorPositionArb = 0x864B,
-		ProgramErrorPositionNv = 0x864B,
-		OffsetTextureRectangleNv = 0x864C,
-		OffsetTextureRectangleScaleNv = 0x864D,
-		DotProductTextureRectangleNv = 0x864E,
+
+		/// <summary>
+		/// Specifies whether depth clamping is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_depth_clamp</remarks>
 		DepthClamp = 0x864F,
-		DepthClampNv = 0x864F,
-		DepthClampExt = 0x864F,
-		VertexAttribArray0Nv = 0x8650,
-		VertexAttribArray1Nv = 0x8651,
-		VertexAttribArray2Nv = 0x8652,
-		VertexAttribArray3Nv = 0x8653,
-		VertexAttribArray4Nv = 0x8654,
-		VertexAttribArray5Nv = 0x8655,
-		VertexAttribArray6Nv = 0x8656,
-		VertexAttribArray7Nv = 0x8657,
-		VertexAttribArray8Nv = 0x8658,
-		VertexAttribArray9Nv = 0x8659,
-		VertexAttribArray10Nv = 0x865A,
-		VertexAttribArray11Nv = 0x865B,
-		VertexAttribArray12Nv = 0x865C,
-		VertexAttribArray13Nv = 0x865D,
-		VertexAttribArray14Nv = 0x865E,
-		VertexAttribArray15Nv = 0x865F,
-		Map1VertexAttrib04Nv = 0x8660,
-		Map1VertexAttrib14Nv = 0x8661,
-		Map1VertexAttrib24Nv = 0x8662,
-		Map1VertexAttrib34Nv = 0x8663,
-		Map1VertexAttrib44Nv = 0x8664,
-		Map1VertexAttrib54Nv = 0x8665,
-		Map1VertexAttrib64Nv = 0x8666,
-		Map1VertexAttrib74Nv = 0x8667,
-		Map1VertexAttrib84Nv = 0x8668,
-		Map1VertexAttrib94Nv = 0x8669,
-		Map1VertexAttrib104Nv = 0x866A,
-		Map1VertexAttrib114Nv = 0x866B,
-		Map1VertexAttrib124Nv = 0x866C,
-		Map1VertexAttrib134Nv = 0x866D,
-		Map1VertexAttrib144Nv = 0x866E,
-		Map1VertexAttrib154Nv = 0x866F,
-		Map2VertexAttrib04Nv = 0x8670,
-		Map2VertexAttrib14Nv = 0x8671,
-		Map2VertexAttrib24Nv = 0x8672,
-		Map2VertexAttrib34Nv = 0x8673,
-		Map2VertexAttrib44Nv = 0x8674,
-		Map2VertexAttrib54Nv = 0x8675,
-		Map2VertexAttrib64Nv = 0x8676,
-		Map2VertexAttrib74Nv = 0x8677,
-		/// <summary>
-		/// NOT an alias. Accidental reuse of GL_MAP2_VERTEX_ATTRIB7_4_NV<br/>
-		/// </summary>
-		ProgramBindingArb = 0x8677,
 
-		Map2VertexAttrib84Nv = 0x8678,
-		Map2VertexAttrib94Nv = 0x8679,
-		Map2VertexAttrib104Nv = 0x867A,
-		Map2VertexAttrib114Nv = 0x867B,
-		Map2VertexAttrib124Nv = 0x867C,
-		Map2VertexAttrib134Nv = 0x867D,
-		Map2VertexAttrib144Nv = 0x867E,
-		Map2VertexAttrib154Nv = 0x867F,
-		TextureCompressedImageSize = 0x86A0,
-		TextureCompressedImageSizeArb = 0x86A0,
+		/// <summary>
+		/// Indicates if a texture is compressed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureCompressed = 0x86A1,
-		TextureCompressedArb = 0x86A1,
+
+		/// <summary>
+		/// Specifies the number of compressed texture formats available.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		NumCompressedTextureFormats = 0x86A2,
-		NumCompressedTextureFormatsArb = 0x86A2,
+
+		/// <summary>
+		/// Lists the compressed texture formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedTextureFormats = 0x86A3,
-		CompressedTextureFormatsArb = 0x86A3,
-		MaxVertexUnitsArb = 0x86A4,
-		MaxVertexUnitsOes = 0x86A4,
-		ActiveVertexUnitsArb = 0x86A5,
-		WeightSumUnityArb = 0x86A6,
-		VertexBlendArb = 0x86A7,
-		CurrentWeightArb = 0x86A8,
-		WeightArrayTypeArb = 0x86A9,
-		WeightArrayTypeOes = 0x86A9,
-		WeightArrayStrideArb = 0x86AA,
-		WeightArrayStrideOes = 0x86AA,
-		WeightArraySizeArb = 0x86AB,
-		WeightArraySizeOes = 0x86AB,
-		WeightArrayPointerArb = 0x86AC,
-		WeightArrayPointerOes = 0x86AC,
-		WeightArrayArb = 0x86AD,
-		WeightArrayOes = 0x86AD,
-		Dot3Rgb = 0x86AE,
-		Dot3RgbArb = 0x86AE,
-		Dot3Rgba = 0x86AF,
-		Dot3RgbaArb = 0x86AF,
-		Dot3RgbaImg = 0x86AF,
-		CompressedRgbFxt13Dfx = 0x86B0,
-		CompressedRgbaFxt13Dfx = 0x86B1,
-		Multisample3Dfx = 0x86B2,
-		SampleBuffers3Dfx = 0x86B3,
-		Samples3Dfx = 0x86B4,
+
+		/// <summary>
+		/// Specifies 2D evaluation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		Eval2DNv = 0x86C0,
+
+		/// <summary>
+		/// Specifies triangular 2D evaluation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		EvalTriangular2DNv = 0x86C1,
+
+		/// <summary>
+		/// Specifies tessellation mapping (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		MapTessellationNv = 0x86C2,
+
+		/// <summary>
+		/// Specifies the U order for attribute mapping (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		MapAttribUOrderNv = 0x86C3,
+
+		/// <summary>
+		/// Specifies the V order for attribute mapping (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		MapAttribVOrderNv = 0x86C4,
-		EvalFractionalTessellationNv = 0x86C5,
-		EvalVertexAttrib0Nv = 0x86C6,
-		EvalVertexAttrib1Nv = 0x86C7,
-		EvalVertexAttrib2Nv = 0x86C8,
-		EvalVertexAttrib3Nv = 0x86C9,
-		EvalVertexAttrib4Nv = 0x86CA,
-		EvalVertexAttrib5Nv = 0x86CB,
-		EvalVertexAttrib6Nv = 0x86CC,
-		EvalVertexAttrib7Nv = 0x86CD,
-		EvalVertexAttrib8Nv = 0x86CE,
-		EvalVertexAttrib9Nv = 0x86CF,
-		EvalVertexAttrib10Nv = 0x86D0,
-		EvalVertexAttrib11Nv = 0x86D1,
-		EvalVertexAttrib12Nv = 0x86D2,
-		EvalVertexAttrib13Nv = 0x86D3,
-		EvalVertexAttrib14Nv = 0x86D4,
-		EvalVertexAttrib15Nv = 0x86D5,
-		MaxMapTessellationNv = 0x86D6,
-		MaxRationalEvalOrderNv = 0x86D7,
-		MaxProgramPatchAttribsNv = 0x86D8,
-		RgbaUnsignedDotProductMappingNv = 0x86D9,
-		UnsignedIntS8S888Nv = 0x86DA,
-		UnsignedInt88S8S8RevNv = 0x86DB,
-		DsdtMagIntensityNv = 0x86DC,
-		ShaderConsistentNv = 0x86DD,
-		TextureShaderNv = 0x86DE,
-		ShaderOperationNv = 0x86DF,
-		CullModesNv = 0x86E0,
-		OffsetTextureMatrixNv = 0x86E1,
-		OffsetTexture2DMatrixNv = 0x86E1,
-		OffsetTextureScaleNv = 0x86E2,
-		OffsetTexture2DScaleNv = 0x86E2,
-		OffsetTextureBiasNv = 0x86E3,
-		OffsetTexture2DBiasNv = 0x86E3,
-		PreviousTextureInputNv = 0x86E4,
-		ConstEyeNv = 0x86E5,
-		PassThroughNv = 0x86E6,
-		CullFragmentNv = 0x86E7,
-		OffsetTexture2DNv = 0x86E8,
-		DependentArTexture2DNv = 0x86E9,
-		DependentGbTexture2DNv = 0x86EA,
-		SurfaceStateNv = 0x86EB,
-		DotProductNv = 0x86EC,
-		DotProductDepthReplaceNv = 0x86ED,
-		DotProductTexture2DNv = 0x86EE,
-		DotProductTexture3DNv = 0x86EF,
-		DotProductTextureCubeMapNv = 0x86F0,
-		DotProductDiffuseCubeMapNv = 0x86F1,
-		DotProductReflectCubeMapNv = 0x86F2,
-		DotProductConstEyeReflectCubeMapNv = 0x86F3,
-		HiloNv = 0x86F4,
-		DsdtNv = 0x86F5,
-		DsdtMagNv = 0x86F6,
-		DsdtMagVibNv = 0x86F7,
-		Hilo16Nv = 0x86F8,
-		SignedHiloNv = 0x86F9,
-		SignedHilo16Nv = 0x86FA,
-		SignedRgbaNv = 0x86FB,
-		SignedRgba8Nv = 0x86FC,
-		SurfaceRegisteredNv = 0x86FD,
-		SignedRgbNv = 0x86FE,
-		SignedRgb8Nv = 0x86FF,
-		SurfaceMappedNv = 0x8700,
-		SignedLuminanceNv = 0x8701,
-		SignedLuminance8Nv = 0x8702,
-		SignedLuminanceAlphaNv = 0x8703,
-		SignedLuminance8Alpha8Nv = 0x8704,
-		SignedAlphaNv = 0x8705,
-		SignedAlpha8Nv = 0x8706,
-		SignedIntensityNv = 0x8707,
-		SignedIntensity8Nv = 0x8708,
-		Dsdt8Nv = 0x8709,
-		Dsdt8Mag8Nv = 0x870A,
-		Dsdt8Mag8Intensity8Nv = 0x870B,
-		SignedRgbUnsignedAlphaNv = 0x870C,
-		SignedRgb8UnsignedAlpha8Nv = 0x870D,
-		HiScaleNv = 0x870E,
-		LoScaleNv = 0x870F,
-		DsScaleNv = 0x8710,
-		DtScaleNv = 0x8711,
-		MagnitudeScaleNv = 0x8712,
-		VibranceScaleNv = 0x8713,
-		HiBiasNv = 0x8714,
-		LoBiasNv = 0x8715,
-		DsBiasNv = 0x8716,
-		DtBiasNv = 0x8717,
-		MagnitudeBiasNv = 0x8718,
-		VibranceBiasNv = 0x8719,
-		TextureBorderValuesNv = 0x871A,
-		TextureHiSizeNv = 0x871B,
-		TextureLoSizeNv = 0x871C,
-		TextureDsSizeNv = 0x871D,
-		TextureDtSizeNv = 0x871E,
-		TextureMagSizeNv = 0x871F,
-		Modelview2Arb = 0x8722,
-		Modelview3Arb = 0x8723,
-		Modelview4Arb = 0x8724,
-		Modelview5Arb = 0x8725,
-		Modelview6Arb = 0x8726,
-		Modelview7Arb = 0x8727,
-		Modelview8Arb = 0x8728,
-		Modelview9Arb = 0x8729,
-		Modelview10Arb = 0x872A,
-		Modelview11Arb = 0x872B,
-		Modelview12Arb = 0x872C,
-		Modelview13Arb = 0x872D,
-		Modelview14Arb = 0x872E,
-		Modelview15Arb = 0x872F,
-		Modelview16Arb = 0x8730,
-		Modelview17Arb = 0x8731,
-		Modelview18Arb = 0x8732,
-		Modelview19Arb = 0x8733,
-		Modelview20Arb = 0x8734,
-		Modelview21Arb = 0x8735,
-		Modelview22Arb = 0x8736,
-		Modelview23Arb = 0x8737,
-		Modelview24Arb = 0x8738,
-		Modelview25Arb = 0x8739,
-		Modelview26Arb = 0x873A,
-		Modelview27Arb = 0x873B,
-		Modelview28Arb = 0x873C,
-		Modelview29Arb = 0x873D,
-		Modelview30Arb = 0x873E,
-		Modelview31Arb = 0x873F,
-		Dot3RgbExt = 0x8740,
-		/// <summary>
-		/// NOT an alias. Accidental reuse of GL_DOT3_RGB_EXT<br/>
-		/// </summary>
-		Z400BinaryAmd = 0x8740,
 
-		Dot3RgbaExt = 0x8741,
 		/// <summary>
-		/// NOT an alias. Accidental reuse of GL_DOT3_RGBA_EXT<br/>
+		/// Specifies the length of a program binary.
 		/// </summary>
-		ProgramBinaryLengthOes = 0x8741,
-
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
 		ProgramBinaryLength = 0x8741,
-		MirrorClampAti = 0x8742,
-		MirrorClampExt = 0x8742,
-		MirrorClampToEdge = 0x8743,
-		MirrorClampToEdgeAti = 0x8743,
-		MirrorClampToEdgeExt = 0x8743,
-		ModulateAddAti = 0x8744,
-		ModulateSignedAddAti = 0x8745,
-		ModulateSubtractAti = 0x8746,
-		SetAmd = 0x874A,
-		ReplaceValueAmd = 0x874B,
-		StencilOpValueAmd = 0x874C,
-		StencilBackOpValueAmd = 0x874D,
+
+		/// <summary>
+		/// Specifies long vertex attribute array functionality.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6</remarks>
 		VertexAttribArrayLong = 0x874E,
-		OcclusionQueryEventMaskAmd = 0x874F,
+
+		/// <summary>
+		/// Specifies depth-stencil functionality (MESA extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthStencilMesa = 0x8750,
-		UnsignedInt248Mesa = 0x8751,
-		UnsignedInt824RevMesa = 0x8752,
-		UnsignedShort151Mesa = 0x8753,
-		UnsignedShort115RevMesa = 0x8754,
-		TraceMaskMesa = 0x8755,
-		TraceNameMesa = 0x8756,
-		YcbcrMesa = 0x8757,
-		PackInvertMesa = 0x8758,
-		/// <summary>
-		/// NOT an alias. Accidental reuse of GL_TEXTURE_1D_STACK_MESAX<br/>
-		/// </summary>
-		DebugObjectMesa = 0x8759,
 
-		Texture1DStackMesax = 0x8759,
 		/// <summary>
-		/// NOT an alias. Accidental reuse of GL_TEXTURE_2D_STACK_MESAX<br/>
+		/// Specifies static buffer usage (ATI extension).
 		/// </summary>
-		DebugPrintMesa = 0x875A,
-
-		Texture2DStackMesax = 0x875A,
-		/// <summary>
-		/// NOT an alias. Accidental reuse of GL_PROXY_TEXTURE_1D_STACK_MESAX<br/>
-		/// </summary>
-		DebugAssertMesa = 0x875B,
-
-		ProxyTexture1DStackMesax = 0x875B,
-		ProxyTexture2DStackMesax = 0x875C,
-		Texture1DStackBindingMesax = 0x875D,
-		Texture2DStackBindingMesax = 0x875E,
-		ProgramBinaryFormatMesa = 0x875F,
+		/// <remarks></remarks>
 		StaticAti = 0x8760,
+
+		/// <summary>
+		/// Specifies dynamic buffer usage (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DynamicAti = 0x8761,
+
+		/// <summary>
+		/// Specifies preservation of data (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PreserveAti = 0x8762,
+
+		/// <summary>
+		/// Specifies data discard behavior (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DiscardAti = 0x8763,
+
+		/// <summary>
+		/// Specifies the size of a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		BufferSize = 0x8764,
+
+		/// <summary>
+		/// Specifies the size of a buffer (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		BufferSizeArb = 0x8764,
+
+		/// <summary>
+		/// Specifies the size of an object buffer (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectBufferSizeAti = 0x8764,
+
+		/// <summary>
+		/// Specifies the usage of a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		BufferUsage = 0x8765,
+
+		/// <summary>
+		/// Specifies the usage of a buffer (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		BufferUsageArb = 0x8765,
+
+		/// <summary>
+		/// Specifies the usage of an object buffer (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ObjectBufferUsageAti = 0x8765,
-		ArrayObjectBufferAti = 0x8766,
-		ArrayObjectOffsetAti = 0x8767,
-		ElementArrayAti = 0x8768,
-		ElementArrayTypeAti = 0x8769,
-		ElementArrayPointerAti = 0x876A,
-		MaxVertexStreamsAti = 0x876B,
+
+		/// <summary>
+		/// Specifies the first vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream0Ati = 0x876C,
+
+		/// <summary>
+		/// Specifies the second vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream1Ati = 0x876D,
+
+		/// <summary>
+		/// Specifies the third vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream2Ati = 0x876E,
+
+		/// <summary>
+		/// Specifies the fourth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream3Ati = 0x876F,
+
+		/// <summary>
+		/// Specifies the fifth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream4Ati = 0x8770,
+
+		/// <summary>
+		/// Specifies the sixth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream5Ati = 0x8771,
+
+		/// <summary>
+		/// Specifies the seventh vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream6Ati = 0x8772,
+
+		/// <summary>
+		/// Specifies the eighth vertex stream (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexStream7Ati = 0x8773,
-		VertexSourceAti = 0x8774,
+
+		/// <summary>
+		/// Specifies the bump rotation matrix (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		BumpRotMatrixAti = 0x8775,
+
+		/// <summary>
+		/// Specifies the size of the bump rotation matrix (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		BumpRotMatrixSizeAti = 0x8776,
+
+		/// <summary>
+		/// Specifies the number of texture units for bump mapping (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		BumpNumTexUnitsAti = 0x8777,
+
+		/// <summary>
+		/// Specifies the bump texture units (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		BumpTexUnitsAti = 0x8778,
-		DudvAti = 0x8779,
-		Du8Dv8Ati = 0x877A,
-		BumpEnvmapAti = 0x877B,
-		BumpTargetAti = 0x877C,
-		VertexShaderExt = 0x8780,
-		VertexShaderBindingExt = 0x8781,
+
+		/// <summary>
+		/// Specifies the index operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpIndexExt = 0x8782,
+
+		/// <summary>
+		/// Specifies the negate operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpNegateExt = 0x8783,
+
+		/// <summary>
+		/// Specifies the dot product operation for 3-component vectors in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpDot3Ext = 0x8784,
+
+		/// <summary>
+		/// Specifies the dot product operation for 4-component vectors in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpDot4Ext = 0x8785,
+
+		/// <summary>
+		/// Specifies the multiplication operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpMulExt = 0x8786,
+
+		/// <summary>
+		/// Specifies the addition operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpAddExt = 0x8787,
+
+		/// <summary>
+		/// Specifies the multiply-add operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpMaddExt = 0x8788,
+
+		/// <summary>
+		/// Specifies the fractional part operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpFracExt = 0x8789,
+
+		/// <summary>
+		/// Specifies the maximum operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpMaxExt = 0x878A,
+
+		/// <summary>
+		/// Specifies the minimum operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpMinExt = 0x878B,
+
+		/// <summary>
+		/// Specifies the set greater than or equal operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpSetGeExt = 0x878C,
+
+		/// <summary>
+		/// Specifies the set less than operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpSetLtExt = 0x878D,
+
+		/// <summary>
+		/// Specifies the clamp operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpClampExt = 0x878E,
+
+		/// <summary>
+		/// Specifies the floor operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpFloorExt = 0x878F,
+
+		/// <summary>
+		/// Specifies the round operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpRoundExt = 0x8790,
+
+		/// <summary>
+		/// Specifies the base 2 exponential operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpExpBase2Ext = 0x8791,
+
+		/// <summary>
+		/// Specifies the base 2 logarithm operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpLogBase2Ext = 0x8792,
+
+		/// <summary>
+		/// Specifies the power operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpPowerExt = 0x8793,
+
+		/// <summary>
+		/// Specifies the reciprocal operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpRecipExt = 0x8794,
+
+		/// <summary>
+		/// Specifies the reciprocal square root operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpRecipSqrtExt = 0x8795,
+
+		/// <summary>
+		/// Specifies the subtraction operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpSubExt = 0x8796,
+
+		/// <summary>
+		/// Specifies the cross product operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpCrossProductExt = 0x8797,
+
+		/// <summary>
+		/// Specifies the matrix multiplication operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpMultiplyMatrixExt = 0x8798,
+
+		/// <summary>
+		/// Specifies the move operation in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OpMovExt = 0x8799,
-		OutputVertexExt = 0x879A,
-		OutputColor0Ext = 0x879B,
-		OutputColor1Ext = 0x879C,
-		OutputTextureCoord0Ext = 0x879D,
-		OutputTextureCoord1Ext = 0x879E,
-		OutputTextureCoord2Ext = 0x879F,
-		OutputTextureCoord3Ext = 0x87A0,
-		OutputTextureCoord4Ext = 0x87A1,
-		OutputTextureCoord5Ext = 0x87A2,
-		OutputTextureCoord6Ext = 0x87A3,
-		OutputTextureCoord7Ext = 0x87A4,
-		OutputTextureCoord8Ext = 0x87A5,
-		OutputTextureCoord9Ext = 0x87A6,
-		OutputTextureCoord10Ext = 0x87A7,
-		OutputTextureCoord11Ext = 0x87A8,
-		OutputTextureCoord12Ext = 0x87A9,
-		OutputTextureCoord13Ext = 0x87AA,
-		OutputTextureCoord14Ext = 0x87AB,
-		OutputTextureCoord15Ext = 0x87AC,
-		OutputTextureCoord16Ext = 0x87AD,
-		OutputTextureCoord17Ext = 0x87AE,
-		OutputTextureCoord18Ext = 0x87AF,
-		OutputTextureCoord19Ext = 0x87B0,
-		OutputTextureCoord20Ext = 0x87B1,
-		OutputTextureCoord21Ext = 0x87B2,
-		OutputTextureCoord22Ext = 0x87B3,
-		OutputTextureCoord23Ext = 0x87B4,
-		OutputTextureCoord24Ext = 0x87B5,
-		OutputTextureCoord25Ext = 0x87B6,
-		OutputTextureCoord26Ext = 0x87B7,
-		OutputTextureCoord27Ext = 0x87B8,
-		OutputTextureCoord28Ext = 0x87B9,
-		OutputTextureCoord29Ext = 0x87BA,
-		OutputTextureCoord30Ext = 0x87BB,
-		OutputTextureCoord31Ext = 0x87BC,
-		OutputFogExt = 0x87BD,
+
+		/// <summary>
+		/// Specifies scalar output from EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ScalarExt = 0x87BE,
+
+		/// <summary>
+		/// Specifies a vector in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VectorExt = 0x87BF,
+
+		/// <summary>
+		/// Specifies a matrix in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		MatrixExt = 0x87C0,
+
+		/// <summary>
+		/// Specifies a variant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VariantExt = 0x87C1,
+
+		/// <summary>
+		/// Specifies an invariant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		InvariantExt = 0x87C2,
+
+		/// <summary>
+		/// Specifies a local constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		LocalConstantExt = 0x87C3,
+
+		/// <summary>
+		/// Specifies a local variable in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		LocalExt = 0x87C4,
-		MaxVertexShaderInstructionsExt = 0x87C5,
-		MaxVertexShaderVariantsExt = 0x87C6,
-		MaxVertexShaderInvariantsExt = 0x87C7,
-		MaxVertexShaderLocalConstantsExt = 0x87C8,
-		MaxVertexShaderLocalsExt = 0x87C9,
-		MaxOptimizedVertexShaderInstructionsExt = 0x87CA,
-		MaxOptimizedVertexShaderVariantsExt = 0x87CB,
-		MaxOptimizedVertexShaderLocalConstantsExt = 0x87CC,
-		MaxOptimizedVertexShaderInvariantsExt = 0x87CD,
-		MaxOptimizedVertexShaderLocalsExt = 0x87CE,
-		VertexShaderInstructionsExt = 0x87CF,
-		VertexShaderVariantsExt = 0x87D0,
-		VertexShaderInvariantsExt = 0x87D1,
-		VertexShaderLocalConstantsExt = 0x87D2,
-		VertexShaderLocalsExt = 0x87D3,
-		VertexShaderOptimizedExt = 0x87D4,
+
+		/// <summary>
+		/// Specifies the X component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		XExt = 0x87D5,
+
+		/// <summary>
+		/// Specifies the Y component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		YExt = 0x87D6,
+
+		/// <summary>
+		/// Specifies the Z component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ZExt = 0x87D7,
+
+		/// <summary>
+		/// Specifies the W component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		WExt = 0x87D8,
+
+		/// <summary>
+		/// Specifies the negative X component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeXExt = 0x87D9,
+
+		/// <summary>
+		/// Specifies the negative Y component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeYExt = 0x87DA,
+
+		/// <summary>
+		/// Specifies the negative Z component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeZExt = 0x87DB,
+
+		/// <summary>
+		/// Specifies the negative W component in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeWExt = 0x87DC,
+
+		/// <summary>
+		/// Specifies the zero constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		ZeroExt = 0x87DD,
+
+		/// <summary>
+		/// Specifies the one constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		OneExt = 0x87DE,
+
+		/// <summary>
+		/// Specifies the negative one constant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NegativeOneExt = 0x87DF,
+
+		/// <summary>
+		/// Specifies the normalized range in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		NormalizedRangeExt = 0x87E0,
+
+		/// <summary>
+		/// Specifies the full range in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		FullRangeExt = 0x87E1,
+
+		/// <summary>
+		/// Specifies the current vertex in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		CurrentVertexExt = 0x87E2,
+
+		/// <summary>
+		/// Specifies the Model-View-Projection matrix in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		MvpMatrixExt = 0x87E3,
+
+		/// <summary>
+		/// Specifies the value of a variant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VariantValueExt = 0x87E4,
+
+		/// <summary>
+		/// Specifies the data type of a variant in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VariantDatatypeExt = 0x87E5,
+
+		/// <summary>
+		/// Specifies the stride of a variant array in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VariantArrayStrideExt = 0x87E6,
+
+		/// <summary>
+		/// Specifies the type of a variant array in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VariantArrayTypeExt = 0x87E7,
+
+		/// <summary>
+		/// Specifies a variant array in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		VariantArrayExt = 0x87E8,
-		VariantArrayPointerExt = 0x87E9,
-		InvariantValueExt = 0x87EA,
-		InvariantDatatypeExt = 0x87EB,
-		LocalConstantValueExt = 0x87EC,
-		LocalConstantDatatypeExt = 0x87ED,
-		AtcRgbaInterpolatedAlphaAmd = 0x87EE,
-		PnTrianglesAti = 0x87F0,
-		MaxPnTrianglesTesselationLevelAti = 0x87F1,
+
+		/// <summary>
+		/// Specifies the point mode for PN triangles (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PnTrianglesPointModeAti = 0x87F2,
+
+		/// <summary>
+		/// Specifies the normal mode for PN triangles (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PnTrianglesNormalModeAti = 0x87F3,
+
+		/// <summary>
+		/// Specifies the tessellation level for PN triangles (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PnTrianglesTesselationLevelAti = 0x87F4,
-		PnTrianglesPointModeLinearAti = 0x87F5,
-		PnTrianglesPointModeCubicAti = 0x87F6,
-		PnTrianglesNormalModeLinearAti = 0x87F7,
-		PnTrianglesNormalModeQuadraticAti = 0x87F8,
-		Gl3DcXAmd = 0x87F9,
-		Gl3DcXyAmd = 0x87FA,
-		VboFreeMemoryAti = 0x87FB,
-		TextureFreeMemoryAti = 0x87FC,
-		RenderbufferFreeMemoryAti = 0x87FD,
+
+		/// <summary>
+		/// Specifies the number of program binary formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
 		NumProgramBinaryFormats = 0x87FE,
-		NumProgramBinaryFormatsOes = 0x87FE,
+
+		/// <summary>
+		/// Specifies available program binary formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
 		ProgramBinaryFormats = 0x87FF,
-		ProgramBinaryFormatsOes = 0x87FF,
+
+		/// <summary>
+		/// Specifies the stencil function for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackFunc = 0x8800,
-		StencilBackFuncAti = 0x8800,
+
+		/// <summary>
+		/// Specifies the stencil operation on failure for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackFail = 0x8801,
-		StencilBackFailAti = 0x8801,
+
+		/// <summary>
+		/// Specifies the stencil operation on depth fail for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackPassDepthFail = 0x8802,
-		StencilBackPassDepthFailAti = 0x8802,
+
+		/// <summary>
+		/// Specifies the stencil operation on depth pass for the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackPassDepthPass = 0x8803,
-		StencilBackPassDepthPassAti = 0x8803,
+
+		/// <summary>
+		/// Specifies a fragment program (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program</remarks>
 		FragmentProgramArb = 0x8804,
-		ProgramAluInstructionsArb = 0x8805,
-		ProgramTexInstructionsArb = 0x8806,
-		ProgramTexIndirectionsArb = 0x8807,
-		ProgramNativeAluInstructionsArb = 0x8808,
-		ProgramNativeTexInstructionsArb = 0x8809,
-		ProgramNativeTexIndirectionsArb = 0x880A,
-		MaxProgramAluInstructionsArb = 0x880B,
-		MaxProgramTexInstructionsArb = 0x880C,
-		MaxProgramTexIndirectionsArb = 0x880D,
-		MaxProgramNativeAluInstructionsArb = 0x880E,
-		MaxProgramNativeTexInstructionsArb = 0x880F,
-		MaxProgramNativeTexIndirectionsArb = 0x8810,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGBA texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba32F = 0x8814,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGBA texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgba32FArb = 0x8814,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgba32FExt = 0x8814,
-		RgbaFloat32Apple = 0x8814,
-		RgbaFloat32Ati = 0x8814,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGB texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_object_rgb32</remarks>
 		Rgb32F = 0x8815,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGB texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgb32FArb = 0x8815,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point RGB texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgb32FExt = 0x8815,
-		RgbFloat32Apple = 0x8815,
-		RgbFloat32Ati = 0x8815,
-		Alpha32FArb = 0x8816,
-		Alpha32FExt = 0x8816,
-		AlphaFloat32Apple = 0x8816,
-		AlphaFloat32Ati = 0x8816,
-		Intensity32FArb = 0x8817,
-		IntensityFloat32Apple = 0x8817,
-		IntensityFloat32Ati = 0x8817,
-		Luminance32FArb = 0x8818,
-		Luminance32FExt = 0x8818,
-		LuminanceFloat32Apple = 0x8818,
-		LuminanceFloat32Ati = 0x8818,
-		LuminanceAlpha32FArb = 0x8819,
-		LuminanceAlpha32FExt = 0x8819,
-		LuminanceAlphaFloat32Apple = 0x8819,
-		LuminanceAlphaFloat32Ati = 0x8819,
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGBA texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba16F = 0x881A,
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGBA texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgba16FArb = 0x881A,
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGBA texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgba16FExt = 0x881A,
-		RgbaFloat16Apple = 0x881A,
-		RgbaFloat16Ati = 0x881A,
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGB texture format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb16F = 0x881B,
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGB texture format (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_float</remarks>
 		Rgb16FArb = 0x881B,
+
+		/// <summary>
+		/// Specifies a 16-bit floating-point RGB texture format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage</remarks>
 		Rgb16FExt = 0x881B,
-		RgbFloat16Apple = 0x881B,
-		RgbFloat16Ati = 0x881B,
-		Alpha16FArb = 0x881C,
-		Alpha16FExt = 0x881C,
-		AlphaFloat16Apple = 0x881C,
-		AlphaFloat16Ati = 0x881C,
-		Intensity16FArb = 0x881D,
-		IntensityFloat16Apple = 0x881D,
-		IntensityFloat16Ati = 0x881D,
-		Luminance16FArb = 0x881E,
-		Luminance16FExt = 0x881E,
-		LuminanceFloat16Apple = 0x881E,
-		LuminanceFloat16Ati = 0x881E,
-		LuminanceAlpha16FArb = 0x881F,
-		LuminanceAlpha16FExt = 0x881F,
-		LuminanceAlphaFloat16Apple = 0x881F,
-		LuminanceAlphaFloat16Ati = 0x881F,
-		RgbaFloatModeArb = 0x8820,
-		RgbaFloatModeAti = 0x8820,
-		WriteonlyRenderingQcom = 0x8823,
+
+		/// <summary>
+		/// Specifies the maximum number of draw buffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxDrawBuffers = 0x8824,
-		MaxDrawBuffersArb = 0x8824,
-		MaxDrawBuffersAti = 0x8824,
-		MaxDrawBuffersExt = 0x8824,
-		MaxDrawBuffersNv = 0x8824,
-		DrawBuffer0 = 0x8825,
-		DrawBuffer0Arb = 0x8825,
-		DrawBuffer0Ati = 0x8825,
-		DrawBuffer0Ext = 0x8825,
-		DrawBuffer0Nv = 0x8825,
-		DrawBuffer1 = 0x8826,
-		DrawBuffer1Arb = 0x8826,
-		DrawBuffer1Ati = 0x8826,
-		DrawBuffer1Ext = 0x8826,
-		DrawBuffer1Nv = 0x8826,
-		DrawBuffer2 = 0x8827,
-		DrawBuffer2Arb = 0x8827,
-		DrawBuffer2Ati = 0x8827,
-		DrawBuffer2Ext = 0x8827,
-		DrawBuffer2Nv = 0x8827,
-		DrawBuffer3 = 0x8828,
-		DrawBuffer3Arb = 0x8828,
-		DrawBuffer3Ati = 0x8828,
-		DrawBuffer3Ext = 0x8828,
-		DrawBuffer3Nv = 0x8828,
-		DrawBuffer4 = 0x8829,
-		DrawBuffer4Arb = 0x8829,
-		DrawBuffer4Ati = 0x8829,
-		DrawBuffer4Ext = 0x8829,
-		DrawBuffer4Nv = 0x8829,
-		DrawBuffer5 = 0x882A,
-		DrawBuffer5Arb = 0x882A,
-		DrawBuffer5Ati = 0x882A,
-		DrawBuffer5Ext = 0x882A,
-		DrawBuffer5Nv = 0x882A,
-		DrawBuffer6 = 0x882B,
-		DrawBuffer6Arb = 0x882B,
-		DrawBuffer6Ati = 0x882B,
-		DrawBuffer6Ext = 0x882B,
-		DrawBuffer6Nv = 0x882B,
-		DrawBuffer7 = 0x882C,
-		DrawBuffer7Arb = 0x882C,
-		DrawBuffer7Ati = 0x882C,
-		DrawBuffer7Ext = 0x882C,
-		DrawBuffer7Nv = 0x882C,
-		DrawBuffer8 = 0x882D,
-		DrawBuffer8Arb = 0x882D,
-		DrawBuffer8Ati = 0x882D,
-		DrawBuffer8Ext = 0x882D,
-		DrawBuffer8Nv = 0x882D,
-		DrawBuffer9 = 0x882E,
-		DrawBuffer9Arb = 0x882E,
-		DrawBuffer9Ati = 0x882E,
-		DrawBuffer9Ext = 0x882E,
-		DrawBuffer9Nv = 0x882E,
-		DrawBuffer10 = 0x882F,
-		DrawBuffer10Arb = 0x882F,
-		DrawBuffer10Ati = 0x882F,
-		DrawBuffer10Ext = 0x882F,
-		DrawBuffer10Nv = 0x882F,
-		DrawBuffer11 = 0x8830,
-		DrawBuffer11Arb = 0x8830,
-		DrawBuffer11Ati = 0x8830,
-		DrawBuffer11Ext = 0x8830,
-		DrawBuffer11Nv = 0x8830,
-		DrawBuffer12 = 0x8831,
-		DrawBuffer12Arb = 0x8831,
-		DrawBuffer12Ati = 0x8831,
-		DrawBuffer12Ext = 0x8831,
-		DrawBuffer12Nv = 0x8831,
-		DrawBuffer13 = 0x8832,
-		DrawBuffer13Arb = 0x8832,
-		DrawBuffer13Ati = 0x8832,
-		DrawBuffer13Ext = 0x8832,
-		DrawBuffer13Nv = 0x8832,
-		DrawBuffer14 = 0x8833,
-		DrawBuffer14Arb = 0x8833,
-		DrawBuffer14Ati = 0x8833,
-		DrawBuffer14Ext = 0x8833,
-		DrawBuffer14Nv = 0x8833,
-		DrawBuffer15 = 0x8834,
-		DrawBuffer15Arb = 0x8834,
-		DrawBuffer15Ati = 0x8834,
-		DrawBuffer15Ext = 0x8834,
-		DrawBuffer15Nv = 0x8834,
-		ColorClearUnclampedValueAti = 0x8835,
-		/// <summary>
-		/// Defined by Mesa but not ATI<br/>
-		/// </summary>
-		CompressedLuminanceAlpha3DcAti = 0x8837,
 
+		/// <summary>
+		/// Specifies the blend equation for alpha blending.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BlendEquationAlpha = 0x883D,
-		BlendEquationAlphaExt = 0x883D,
-		BlendEquationAlphaOes = 0x883D,
-		SubsampleDistanceAmd = 0x883F,
-		MatrixPaletteArb = 0x8840,
-		MatrixPaletteOes = 0x8840,
-		MaxMatrixPaletteStackDepthArb = 0x8841,
-		MaxPaletteMatricesArb = 0x8842,
-		MaxPaletteMatricesOes = 0x8842,
-		CurrentPaletteMatrixArb = 0x8843,
-		CurrentPaletteMatrixOes = 0x8843,
-		MatrixIndexArrayArb = 0x8844,
-		MatrixIndexArrayOes = 0x8844,
-		CurrentMatrixIndexArb = 0x8845,
-		MatrixIndexArraySizeArb = 0x8846,
-		MatrixIndexArraySizeOes = 0x8846,
-		MatrixIndexArrayTypeArb = 0x8847,
-		MatrixIndexArrayTypeOes = 0x8847,
-		MatrixIndexArrayStrideArb = 0x8848,
-		MatrixIndexArrayStrideOes = 0x8848,
-		MatrixIndexArrayPointerArb = 0x8849,
-		MatrixIndexArrayPointerOes = 0x8849,
-		TextureDepthSize = 0x884A,
-		TextureDepthSizeArb = 0x884A,
-		DepthTextureMode = 0x884B,
-		DepthTextureModeArb = 0x884B,
+
+		/// <summary>
+		/// Specifies the comparison mode for texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCompareMode = 0x884C,
-		TextureCompareModeArb = 0x884C,
-		TextureCompareModeExt = 0x884C,
+
+		/// <summary>
+		/// Specifies the comparison function for texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCompareFunc = 0x884D,
-		TextureCompareFuncArb = 0x884D,
-		TextureCompareFuncExt = 0x884D,
+
+		/// <summary>
+		/// Specifies comparison of R component to texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CompareRToTexture = 0x884E,
-		CompareRToTextureArb = 0x884E,
-		CompareRefDepthToTextureExt = 0x884E,
+
+		/// <summary>
+		/// Specifies comparison of reference to texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CompareRefToTexture = 0x884E,
-		CompareRefToTextureExt = 0x884E,
+
+		/// <summary>
+		/// Enables seamless texture cube mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_seamless_cube_map<br/>GL_ARB_seamless_cubemap_per_texture<br/>GL_AMD_seamless_cubemap_per_texture</remarks>
 		TextureCubeMapSeamless = 0x884F,
-		OffsetProjectiveTexture2DNv = 0x8850,
-		OffsetProjectiveTexture2DScaleNv = 0x8851,
-		OffsetProjectiveTextureRectangleNv = 0x8852,
-		OffsetProjectiveTextureRectangleScaleNv = 0x8853,
-		OffsetHiloTexture2DNv = 0x8854,
-		OffsetHiloTextureRectangleNv = 0x8855,
-		OffsetHiloProjectiveTexture2DNv = 0x8856,
-		OffsetHiloProjectiveTextureRectangleNv = 0x8857,
-		DependentHiloTexture2DNv = 0x8858,
-		DependentRgbTexture3DNv = 0x8859,
-		DependentRgbTextureCubeMapNv = 0x885A,
-		DotProductPassThroughNv = 0x885B,
-		DotProductTexture1DNv = 0x885C,
-		DotProductAffineDepthReplaceNv = 0x885D,
-		Hilo8Nv = 0x885E,
-		SignedHilo8Nv = 0x885F,
-		ForceBlueToOneNv = 0x8860,
+
+		/// <summary>
+		/// Enables point sprite rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		PointSprite = 0x8861,
-		PointSpriteArb = 0x8861,
-		PointSpriteNv = 0x8861,
-		PointSpriteOes = 0x8861,
+
+		/// <summary>
+		/// Enables coordinate replacement.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		CoordReplace = 0x8862,
-		CoordReplaceArb = 0x8862,
-		CoordReplaceNv = 0x8862,
-		CoordReplaceOes = 0x8862,
-		PointSpriteRModeNv = 0x8863,
-		PixelCounterBitsNv = 0x8864,
+
+		/// <summary>
+		/// Specifies the number of bits in query counters.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		QueryCounterBits = 0x8864,
-		QueryCounterBitsArb = 0x8864,
-		QueryCounterBitsExt = 0x8864,
-		CurrentOcclusionQueryIdNv = 0x8865,
+
+		/// <summary>
+		/// Specifies the current query.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		CurrentQuery = 0x8865,
-		CurrentQueryArb = 0x8865,
-		CurrentQueryExt = 0x8865,
+
+		/// <summary>
+		/// Specifies the pixel count (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		PixelCountNv = 0x8866,
+
+		/// <summary>
+		/// Specifies the result of the query.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		QueryResult = 0x8866,
-		QueryResultArb = 0x8866,
-		QueryResultExt = 0x8866,
+
+		/// <summary>
+		/// Specifies if pixel counts are available (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		PixelCountAvailableNv = 0x8867,
+
+		/// <summary>
+		/// Specifies if the query result is available.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		QueryResultAvailable = 0x8867,
-		QueryResultAvailableArb = 0x8867,
-		QueryResultAvailableExt = 0x8867,
-		MaxFragmentProgramLocalParametersNv = 0x8868,
+
+		/// <summary>
+		/// Specifies the maximum number of vertex attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxVertexAttribs = 0x8869,
-		MaxVertexAttribsArb = 0x8869,
+
+		/// <summary>
+		/// Specifies whether vertex attributes are normalized.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArrayNormalized = 0x886A,
-		VertexAttribArrayNormalizedArb = 0x886A,
-		MaxTessControlInputComponents = 0x886C,
-		MaxTessControlInputComponentsExt = 0x886C,
-		MaxTessControlInputComponentsOes = 0x886C,
-		MaxTessEvaluationInputComponents = 0x886D,
-		MaxTessEvaluationInputComponentsExt = 0x886D,
-		MaxTessEvaluationInputComponentsOes = 0x886D,
-		DepthStencilToRgbaNv = 0x886E,
-		DepthStencilToBgraNv = 0x886F,
-		FragmentProgramNv = 0x8870,
-		MaxTextureCoords = 0x8871,
-		MaxTextureCoordsArb = 0x8871,
-		MaxTextureCoordsNv = 0x8871,
+
+		/// <summary>
+		/// Specifies the maximum number of texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxTextureImageUnits = 0x8872,
-		MaxTextureImageUnitsArb = 0x8872,
-		MaxTextureImageUnitsNv = 0x8872,
-		FragmentProgramBindingNv = 0x8873,
-		ProgramErrorStringArb = 0x8874,
-		ProgramErrorStringNv = 0x8874,
+
+		/// <summary>
+		/// Specifies the program format in ASCII (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		ProgramFormatAsciiArb = 0x8875,
-		ProgramFormatArb = 0x8876,
+
+		/// <summary>
+		/// Specifies the range for writing pixel data (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
 		WritePixelDataRangeNv = 0x8878,
+
+		/// <summary>
+		/// Specifies the range for reading pixel data (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
 		ReadPixelDataRangeNv = 0x8879,
-		WritePixelDataRangeLengthNv = 0x887A,
-		ReadPixelDataRangeLengthNv = 0x887B,
-		WritePixelDataRangePointerNv = 0x887C,
-		ReadPixelDataRangePointerNv = 0x887D,
-		GeometryShaderInvocations = 0x887F,
-		GeometryShaderInvocationsExt = 0x887F,
-		GeometryShaderInvocationsOes = 0x887F,
-		FloatRNv = 0x8880,
-		FloatRgNv = 0x8881,
-		FloatRgbNv = 0x8882,
-		FloatRgbaNv = 0x8883,
-		FloatR16Nv = 0x8884,
-		FloatR32Nv = 0x8885,
-		FloatRg16Nv = 0x8886,
-		FloatRg32Nv = 0x8887,
-		FloatRgb16Nv = 0x8888,
-		FloatRgb32Nv = 0x8889,
-		FloatRgba16Nv = 0x888A,
-		FloatRgba32Nv = 0x888B,
-		TextureFloatComponentsNv = 0x888C,
-		FloatClearColorValueNv = 0x888D,
-		FloatRgbaModeNv = 0x888E,
-		TextureUnsignedRemapModeNv = 0x888F,
-		DepthBoundsTestExt = 0x8890,
-		DepthBoundsExt = 0x8891,
+
+		/// <summary>
+		/// Specifies an array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ArrayBuffer = 0x8892,
-		ArrayBufferArb = 0x8892,
+
+		/// <summary>
+		/// Specifies an element array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ElementArrayBuffer = 0x8893,
-		ElementArrayBufferArb = 0x8893,
+
+		/// <summary>
+		/// Specifies the binding point for the array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ArrayBufferBinding = 0x8894,
-		ArrayBufferBindingArb = 0x8894,
+
+		/// <summary>
+		/// Specifies the binding point for the element array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ElementArrayBufferBinding = 0x8895,
-		ElementArrayBufferBindingArb = 0x8895,
-		VertexArrayBufferBinding = 0x8896,
-		VertexArrayBufferBindingArb = 0x8896,
-		NormalArrayBufferBinding = 0x8897,
-		NormalArrayBufferBindingArb = 0x8897,
-		ColorArrayBufferBinding = 0x8898,
-		ColorArrayBufferBindingArb = 0x8898,
-		IndexArrayBufferBinding = 0x8899,
-		IndexArrayBufferBindingArb = 0x8899,
-		TextureCoordArrayBufferBinding = 0x889A,
-		TextureCoordArrayBufferBindingArb = 0x889A,
-		EdgeFlagArrayBufferBinding = 0x889B,
-		EdgeFlagArrayBufferBindingArb = 0x889B,
-		SecondaryColorArrayBufferBinding = 0x889C,
-		SecondaryColorArrayBufferBindingArb = 0x889C,
-		FogCoordinateArrayBufferBindingArb = 0x889D,
-		FogCoordinateArrayBufferBinding = 0x889D,
-		FogCoordArrayBufferBinding = 0x889D,
-		WeightArrayBufferBinding = 0x889E,
-		WeightArrayBufferBindingArb = 0x889E,
-		WeightArrayBufferBindingOes = 0x889E,
+
+		/// <summary>
+		/// Specifies the binding point for the vertex attrib array buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		VertexAttribArrayBufferBinding = 0x889F,
-		VertexAttribArrayBufferBindingArb = 0x889F,
-		ProgramInstructionsArb = 0x88A0,
-		MaxProgramInstructionsArb = 0x88A1,
-		ProgramNativeInstructionsArb = 0x88A2,
-		MaxProgramNativeInstructionsArb = 0x88A3,
-		ProgramTemporariesArb = 0x88A4,
-		MaxProgramTemporariesArb = 0x88A5,
-		ProgramNativeTemporariesArb = 0x88A6,
-		MaxProgramNativeTemporariesArb = 0x88A7,
-		ProgramParametersArb = 0x88A8,
-		MaxProgramParametersArb = 0x88A9,
-		ProgramNativeParametersArb = 0x88AA,
-		MaxProgramNativeParametersArb = 0x88AB,
-		ProgramAttribsArb = 0x88AC,
-		MaxProgramAttribsArb = 0x88AD,
-		ProgramNativeAttribsArb = 0x88AE,
-		MaxProgramNativeAttribsArb = 0x88AF,
-		ProgramAddressRegistersArb = 0x88B0,
-		MaxProgramAddressRegistersArb = 0x88B1,
-		ProgramNativeAddressRegistersArb = 0x88B2,
-		MaxProgramNativeAddressRegistersArb = 0x88B3,
-		MaxProgramLocalParametersArb = 0x88B4,
-		MaxProgramEnvParametersArb = 0x88B5,
-		ProgramUnderNativeLimitsArb = 0x88B6,
-		TransposeCurrentMatrixArb = 0x88B7,
+
+		/// <summary>
+		/// Specifies read-only access to a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		ReadOnly = 0x88B8,
-		ReadOnlyArb = 0x88B8,
+
+		/// <summary>
+		/// Specifies write-only access to a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_NV_shader_buffer_store</remarks>
 		WriteOnly = 0x88B9,
-		WriteOnlyArb = 0x88B9,
-		WriteOnlyOes = 0x88B9,
+
+		/// <summary>
+		/// Specifies read/write access to a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_NV_shader_buffer_store</remarks>
 		ReadWrite = 0x88BA,
-		ReadWriteArb = 0x88BA,
+
+		/// <summary>
+		/// Specifies the access type for buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		BufferAccess = 0x88BB,
+
+		/// <summary>
+		/// Specifies the access type for buffer objects (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		BufferAccessArb = 0x88BB,
-		BufferAccessOes = 0x88BB,
+
+		/// <summary>
+		/// Specifies if a buffer is mapped.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		BufferMapped = 0x88BC,
+
+		/// <summary>
+		/// Specifies if a buffer is mapped (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		BufferMappedArb = 0x88BC,
-		BufferMappedOes = 0x88BC,
+
+		/// <summary>
+		/// Specifies a pointer to a mapped buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		BufferMapPointer = 0x88BD,
+
+		/// <summary>
+		/// Specifies a pointer to a mapped buffer (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
 		BufferMapPointerArb = 0x88BD,
-		BufferMapPointerOes = 0x88BD,
-		WriteDiscardNv = 0x88BE,
+
+		/// <summary>
+		/// Specifies the elapsed time since a specific event.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		TimeElapsed = 0x88BF,
-		TimeElapsedExt = 0x88BF,
-		Matrix0Arb = 0x88C0,
-		Matrix1Arb = 0x88C1,
-		Matrix2Arb = 0x88C2,
-		Matrix3Arb = 0x88C3,
-		Matrix4Arb = 0x88C4,
-		Matrix5Arb = 0x88C5,
-		Matrix6Arb = 0x88C6,
-		Matrix7Arb = 0x88C7,
-		Matrix8Arb = 0x88C8,
-		Matrix9Arb = 0x88C9,
-		Matrix10Arb = 0x88CA,
-		Matrix11Arb = 0x88CB,
-		Matrix12Arb = 0x88CC,
-		Matrix13Arb = 0x88CD,
-		Matrix14Arb = 0x88CE,
-		Matrix15Arb = 0x88CF,
-		Matrix16Arb = 0x88D0,
-		Matrix17Arb = 0x88D1,
-		Matrix18Arb = 0x88D2,
-		Matrix19Arb = 0x88D3,
-		Matrix20Arb = 0x88D4,
-		Matrix21Arb = 0x88D5,
-		Matrix22Arb = 0x88D6,
-		Matrix23Arb = 0x88D7,
-		Matrix24Arb = 0x88D8,
-		Matrix25Arb = 0x88D9,
-		Matrix26Arb = 0x88DA,
-		Matrix27Arb = 0x88DB,
-		Matrix28Arb = 0x88DC,
-		Matrix29Arb = 0x88DD,
-		Matrix30Arb = 0x88DE,
-		Matrix31Arb = 0x88DF,
+
+		/// <summary>
+		/// Specifies a hint that data will be set frequently and used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		StreamDraw = 0x88E0,
-		StreamDrawArb = 0x88E0,
+
+		/// <summary>
+		/// Specifies a hint that data will be read frequently.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		StreamRead = 0x88E1,
-		StreamReadArb = 0x88E1,
+
+		/// <summary>
+		/// Specifies a hint that data will be copied frequently.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		StreamCopy = 0x88E2,
-		StreamCopyArb = 0x88E2,
+
+		/// <summary>
+		/// Specifies a hint that data will be set once and used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		StaticDraw = 0x88E4,
-		StaticDrawArb = 0x88E4,
+
+		/// <summary>
+		/// Specifies a hint that data will be read once.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		StaticRead = 0x88E5,
-		StaticReadArb = 0x88E5,
+
+		/// <summary>
+		/// Specifies a hint that data will be copied once.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		StaticCopy = 0x88E6,
-		StaticCopyArb = 0x88E6,
+
+		/// <summary>
+		/// Specifies a hint that data will be changed frequently and used for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DynamicDraw = 0x88E8,
-		DynamicDrawArb = 0x88E8,
+
+		/// <summary>
+		/// Specifies a hint that data will be read frequently.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DynamicRead = 0x88E9,
-		DynamicReadArb = 0x88E9,
+
+		/// <summary>
+		/// Specifies a hint that data will be copied frequently.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		DynamicCopy = 0x88EA,
-		DynamicCopyArb = 0x88EA,
+
+		/// <summary>
+		/// Specifies a buffer for pixel packing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		PixelPackBuffer = 0x88EB,
-		PixelPackBufferArb = 0x88EB,
-		PixelPackBufferExt = 0x88EB,
-		PixelPackBufferNv = 0x88EB,
+
+		/// <summary>
+		/// Specifies a buffer for pixel unpacking.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		PixelUnpackBuffer = 0x88EC,
-		PixelUnpackBufferArb = 0x88EC,
-		PixelUnpackBufferExt = 0x88EC,
-		PixelUnpackBufferNv = 0x88EC,
+
+		/// <summary>
+		/// Specifies the binding point for the pixel pack buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		PixelPackBufferBinding = 0x88ED,
-		PixelPackBufferBindingArb = 0x88ED,
-		PixelPackBufferBindingExt = 0x88ED,
-		PixelPackBufferBindingNv = 0x88ED,
-		Etc1Srgb8Nv = 0x88EE,
+
+		/// <summary>
+		/// Specifies the binding point for the pixel unpack buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		PixelUnpackBufferBinding = 0x88EF,
-		PixelUnpackBufferBindingArb = 0x88EF,
-		PixelUnpackBufferBindingExt = 0x88EF,
-		PixelUnpackBufferBindingNv = 0x88EF,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Depth24Stencil8 = 0x88F0,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_depth_stencil</remarks>
 		Depth24Stencil8Ext = 0x88F0,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format for OES extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		Depth24Stencil8Oes = 0x88F0,
-		TextureStencilSize = 0x88F1,
-		TextureStencilSizeExt = 0x88F1,
-		StencilTagBitsExt = 0x88F2,
-		StencilClearTagValueExt = 0x88F3,
-		MaxProgramExecInstructionsNv = 0x88F4,
-		MaxProgramCallDepthNv = 0x88F5,
-		MaxProgramIfDepthNv = 0x88F6,
-		MaxProgramLoopDepthNv = 0x88F7,
-		MaxProgramLoopCountNv = 0x88F8,
+
+		/// <summary>
+		/// Specifies the second source color for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		Src1Color = 0x88F9,
-		Src1ColorExt = 0x88F9,
+
+		/// <summary>
+		/// Specifies the one minus second source color for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		OneMinusSrc1Color = 0x88FA,
-		OneMinusSrc1ColorExt = 0x88FA,
+
+		/// <summary>
+		/// Specifies the one minus second source alpha for blending.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		OneMinusSrc1Alpha = 0x88FB,
-		OneMinusSrc1AlphaExt = 0x88FB,
+
+		/// <summary>
+		/// Specifies the maximum number of dual source draw buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		MaxDualSourceDrawBuffers = 0x88FC,
-		MaxDualSourceDrawBuffersExt = 0x88FC,
+
+		/// <summary>
+		/// Specifies if the vertex attribute array contains integer data.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexAttribArrayInteger = 0x88FD,
+
+		/// <summary>
+		/// Specifies if the vertex attribute array contains integer data (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4</remarks>
 		VertexAttribArrayIntegerExt = 0x88FD,
-		VertexAttribArrayIntegerNv = 0x88FD,
+
+		/// <summary>
+		/// Specifies the divisor for a vertex attribute array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X</remarks>
 		VertexAttribArrayDivisor = 0x88FE,
-		VertexAttribArrayDivisorAngle = 0x88FE,
-		VertexAttribArrayDivisorArb = 0x88FE,
-		VertexAttribArrayDivisorExt = 0x88FE,
-		VertexAttribArrayDivisorNv = 0x88FE,
+
+		/// <summary>
+		/// Specifies the maximum number of texture layers for array textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxArrayTextureLayers = 0x88FF,
-		MaxArrayTextureLayersExt = 0x88FF,
+
+		/// <summary>
+		/// Specifies the minimum texture coordinate offset for programs.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MinProgramTexelOffset = 0x8904,
-		MinProgramTexelOffsetExt = 0x8904,
-		MinProgramTexelOffsetNv = 0x8904,
+
+		/// <summary>
+		/// Specifies the maximum texture coordinate offset for programs.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxProgramTexelOffset = 0x8905,
-		MaxProgramTexelOffsetExt = 0x8905,
-		MaxProgramTexelOffsetNv = 0x8905,
-		ProgramAttribComponentsNv = 0x8906,
-		ProgramResultComponentsNv = 0x8907,
-		MaxProgramAttribComponentsNv = 0x8908,
-		MaxProgramResultComponentsNv = 0x8909,
-		StencilTestTwoSideExt = 0x8910,
-		ActiveStencilFaceExt = 0x8911,
-		MirrorClampToBorderExt = 0x8912,
+
+		/// <summary>
+		/// Specifies the number of samples passed in an occlusion query.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		SamplesPassed = 0x8914,
-		SamplesPassedArb = 0x8914,
+
+		/// <summary>
+		/// Specifies the output vertices of a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		GeometryVerticesOut = 0x8916,
-		GeometryLinkedVerticesOutExt = 0x8916,
-		GeometryLinkedVerticesOutOes = 0x8916,
+
+		/// <summary>
+		/// Specifies the input type for a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		GeometryInputType = 0x8917,
-		GeometryLinkedInputTypeExt = 0x8917,
-		GeometryLinkedInputTypeOes = 0x8917,
+
+		/// <summary>
+		/// Specifies the output type for a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		GeometryOutputType = 0x8918,
-		GeometryLinkedOutputTypeExt = 0x8918,
-		GeometryLinkedOutputTypeOes = 0x8918,
+
+		/// <summary>
+		/// Specifies the binding point for texture samplers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		SamplerBinding = 0x8919,
-		ClampVertexColor = 0x891A,
+
+		/// <summary>
+		/// Specifies clamping for vertex colors (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		ClampVertexColorArb = 0x891A,
-		ClampFragmentColor = 0x891B,
+
+		/// <summary>
+		/// Specifies clamping for fragment colors (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		ClampFragmentColorArb = 0x891B,
+
+		/// <summary>
+		/// Specifies clamping for read colors.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ClampReadColor = 0x891C,
+
+		/// <summary>
+		/// Specifies clamping for read colors (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		ClampReadColorArb = 0x891C,
+
+		/// <summary>
+		/// Specifies that a texture format only supports fixed-point formats.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FixedOnly = 0x891D,
+
+		/// <summary>
+		/// Specifies that a texture format only supports fixed-point formats (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
 		FixedOnlyArb = 0x891D,
+
+		/// <summary>
+		/// Specifies the tessellation control program (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_tessellation_program5</remarks>
 		TessControlProgramNv = 0x891E,
+
+		/// <summary>
+		/// Specifies the tessellation evaluation program (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_tessellation_program5</remarks>
 		TessEvaluationProgramNv = 0x891F,
+
+		/// <summary>
+		/// Specifies a fragment shader (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShaderAti = 0x8920,
+
+		/// <summary>
+		/// Specifies the first register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg0Ati = 0x8921,
+
+		/// <summary>
+		/// Specifies the second register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg1Ati = 0x8922,
+
+		/// <summary>
+		/// Specifies the third register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg2Ati = 0x8923,
+
+		/// <summary>
+		/// Specifies the fourth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg3Ati = 0x8924,
+
+		/// <summary>
+		/// Specifies the fifth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg4Ati = 0x8925,
+
+		/// <summary>
+		/// Specifies the sixth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg5Ati = 0x8926,
+
+		/// <summary>
+		/// Specifies the seventh register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg6Ati = 0x8927,
+
+		/// <summary>
+		/// Specifies the eighth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg7Ati = 0x8928,
+
+		/// <summary>
+		/// Specifies the ninth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg8Ati = 0x8929,
+
+		/// <summary>
+		/// Specifies the tenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg9Ati = 0x892A,
+
+		/// <summary>
+		/// Specifies the eleventh register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg10Ati = 0x892B,
+
+		/// <summary>
+		/// Specifies the twelfth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg11Ati = 0x892C,
+
+		/// <summary>
+		/// Specifies the thirteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg12Ati = 0x892D,
+
+		/// <summary>
+		/// Specifies the fourteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg13Ati = 0x892E,
+
+		/// <summary>
+		/// Specifies the fifteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg14Ati = 0x892F,
+
+		/// <summary>
+		/// Specifies the sixteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg15Ati = 0x8930,
+
+		/// <summary>
+		/// Specifies the seventeenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg16Ati = 0x8931,
+
+		/// <summary>
+		/// Specifies the eighteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg17Ati = 0x8932,
+
+		/// <summary>
+		/// Specifies the nineteenth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg18Ati = 0x8933,
+
+		/// <summary>
+		/// Specifies the twentieth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg19Ati = 0x8934,
+
+		/// <summary>
+		/// Specifies the twenty-first register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg20Ati = 0x8935,
+
+		/// <summary>
+		/// Specifies the twenty-second register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg21Ati = 0x8936,
+
+		/// <summary>
+		/// Specifies the twenty-third register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg22Ati = 0x8937,
+
+		/// <summary>
+		/// Specifies the twenty-fourth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg23Ati = 0x8938,
+
+		/// <summary>
+		/// Specifies the twenty-fifth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg24Ati = 0x8939,
+
+		/// <summary>
+		/// Specifies the twenty-sixth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg25Ati = 0x893A,
+
+		/// <summary>
+		/// Specifies the twenty-seventh register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg26Ati = 0x893B,
+
+		/// <summary>
+		/// Specifies the twenty-eighth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg27Ati = 0x893C,
+
+		/// <summary>
+		/// Specifies the twenty-ninth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg28Ati = 0x893D,
+
+		/// <summary>
+		/// Specifies the thirtieth register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg29Ati = 0x893E,
+
+		/// <summary>
+		/// Specifies the thirty-first register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg30Ati = 0x893F,
+
+		/// <summary>
+		/// Specifies the thirty-second register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Reg31Ati = 0x8940,
+
+		/// <summary>
+		/// Specifies the first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con0Ati = 0x8941,
+
+		/// <summary>
+		/// Specifies the second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con1Ati = 0x8942,
+
+		/// <summary>
+		/// Specifies the third constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con2Ati = 0x8943,
+
+		/// <summary>
+		/// Specifies the fourth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con3Ati = 0x8944,
+
+		/// <summary>
+		/// Specifies the fifth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con4Ati = 0x8945,
+
+		/// <summary>
+		/// Specifies the sixth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con5Ati = 0x8946,
+
+		/// <summary>
+		/// Specifies the seventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con6Ati = 0x8947,
+
+		/// <summary>
+		/// Specifies the eighth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con7Ati = 0x8948,
+
+		/// <summary>
+		/// Specifies the ninth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con8Ati = 0x8949,
+
+		/// <summary>
+		/// Specifies the tenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con9Ati = 0x894A,
+
+		/// <summary>
+		/// Specifies the eleventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con10Ati = 0x894B,
+
+		/// <summary>
+		/// Specifies the twelfth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con11Ati = 0x894C,
+
+		/// <summary>
+		/// Specifies the thirteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con12Ati = 0x894D,
+
+		/// <summary>
+		/// Specifies the fourteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con13Ati = 0x894E,
+
+		/// <summary>
+		/// Specifies the fifteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con14Ati = 0x894F,
+
+		/// <summary>
+		/// Specifies the sixteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con15Ati = 0x8950,
+
+		/// <summary>
+		/// Specifies the seventeenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con16Ati = 0x8951,
+
+		/// <summary>
+		/// Specifies the eighteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con17Ati = 0x8952,
+
+		/// <summary>
+		/// Specifies the nineteenth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con18Ati = 0x8953,
+
+		/// <summary>
+		/// Specifies the twentieth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con19Ati = 0x8954,
+
+		/// <summary>
+		/// Specifies the twenty-first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con20Ati = 0x8955,
+
+		/// <summary>
+		/// Specifies the twenty-second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con21Ati = 0x8956,
+
+		/// <summary>
+		/// Specifies the twenty-third constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con22Ati = 0x8957,
+
+		/// <summary>
+		/// Specifies the twenty-fourth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con23Ati = 0x8958,
+
+		/// <summary>
+		/// Specifies the twenty-fifth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con24Ati = 0x8959,
+
+		/// <summary>
+		/// Specifies the twenty-sixth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con25Ati = 0x895A,
+
+		/// <summary>
+		/// Specifies the twenty-seventh constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con26Ati = 0x895B,
+
+		/// <summary>
+		/// Specifies the twenty-eighth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con27Ati = 0x895C,
+
+		/// <summary>
+		/// Specifies the twenty-ninth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con28Ati = 0x895D,
+
+		/// <summary>
+		/// Specifies the thirtieth constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con29Ati = 0x895E,
+
+		/// <summary>
+		/// Specifies the thirty-first constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con30Ati = 0x895F,
+
+		/// <summary>
+		/// Specifies the thirty-second constant in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Con31Ati = 0x8960,
+
+		/// <summary>
+		/// Specifies the move operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		MovAti = 0x8961,
+
+		/// <summary>
+		/// Specifies the addition operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		AddAti = 0x8963,
+
+		/// <summary>
+		/// Specifies the multiplication operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		MulAti = 0x8964,
+
+		/// <summary>
+		/// Specifies the subtraction operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SubAti = 0x8965,
+
+		/// <summary>
+		/// Specifies the dot product of three components in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Dot3Ati = 0x8966,
+
+		/// <summary>
+		/// Specifies the dot product of four components in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Dot4Ati = 0x8967,
+
+		/// <summary>
+		/// Specifies the multiply-add operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		MadAti = 0x8968,
+
+		/// <summary>
+		/// Specifies the linear interpolation operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		LerpAti = 0x8969,
+
+		/// <summary>
+		/// Specifies the conditional operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		CndAti = 0x896A,
+
+		/// <summary>
+		/// Specifies the first conditional operation in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Cnd0Ati = 0x896B,
+
+		/// <summary>
+		/// Specifies the addition of a dot product of two components in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		Dot2AddAti = 0x896C,
+
+		/// <summary>
+		/// Specifies a secondary interpolator in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SecondaryInterpolatorAti = 0x896D,
-		NumFragmentRegistersAti = 0x896E,
-		NumFragmentConstantsAti = 0x896F,
-		NumPassesAti = 0x8970,
-		NumInstructionsPerPassAti = 0x8971,
-		NumInstructionsTotalAti = 0x8972,
-		NumInputInterpolatorComponentsAti = 0x8973,
-		NumLoopbackComponentsAti = 0x8974,
-		ColorAlphaPairingAti = 0x8975,
+
+		/// <summary>
+		/// Specifies the swizzle operation for STR channels in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SwizzleStrAti = 0x8976,
+
+		/// <summary>
+		/// Specifies the swizzle operation for STQ channels in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SwizzleStqAti = 0x8977,
+
+		/// <summary>
+		/// Specifies the swizzle operation for STR channels with destination register in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SwizzleStrDrAti = 0x8978,
+
+		/// <summary>
+		/// Specifies the swizzle operation for STQ channels with destination queue in ATI fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		SwizzleStqDqAti = 0x8979,
-		SwizzleStrqAti = 0x897A,
-		SwizzleStrqDqAti = 0x897B,
-		InterlaceOml = 0x8980,
-		InterlaceReadOml = 0x8981,
-		FormatSubsample2424Oml = 0x8982,
-		FormatSubsample244244Oml = 0x8983,
+
+		/// <summary>
+		/// Specifies packing for resampling textures in OML extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		PackResampleOml = 0x8984,
+
+		/// <summary>
+		/// Specifies unpacking for resampling textures in OML extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		UnpackResampleOml = 0x8985,
-		ResampleReplicateOml = 0x8986,
-		ResampleZeroFillOml = 0x8987,
-		ResampleAverageOml = 0x8988,
-		ResampleDecimateOml = 0x8989,
-		PointSizeArrayTypeOes = 0x898A,
-		PointSizeArrayStrideOes = 0x898B,
-		PointSizeArrayPointerOes = 0x898C,
-		ModelviewMatrixFloatAsIntBitsOes = 0x898D,
-		ProjectionMatrixFloatAsIntBitsOes = 0x898E,
-		TextureMatrixFloatAsIntBitsOes = 0x898F,
-		VertexAttribMap1Apple = 0x8A00,
-		VertexAttribMap2Apple = 0x8A01,
-		VertexAttribMap1SizeApple = 0x8A02,
-		VertexAttribMap1CoeffApple = 0x8A03,
-		VertexAttribMap1OrderApple = 0x8A04,
-		VertexAttribMap1DomainApple = 0x8A05,
-		VertexAttribMap2SizeApple = 0x8A06,
-		VertexAttribMap2CoeffApple = 0x8A07,
-		VertexAttribMap2OrderApple = 0x8A08,
-		VertexAttribMap2DomainApple = 0x8A09,
+
+		/// <summary>
+		/// Specifies the draw pixels operation (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		DrawPixelsApple = 0x8A0A,
+
+		/// <summary>
+		/// Specifies a fence object (APPLE extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
 		FenceApple = 0x8A0B,
-		ElementArrayApple = 0x8A0C,
-		ElementArrayTypeApple = 0x8A0D,
-		ElementArrayPointerApple = 0x8A0E,
-		ColorFloatApple = 0x8A0F,
+
+		/// <summary>
+		/// Specifies a uniform buffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBuffer = 0x8A11,
-		BufferSerializedModifyApple = 0x8A12,
-		BufferFlushingUnmapApple = 0x8A13,
-		AuxDepthStencilApple = 0x8A14,
-		PackRowBytesApple = 0x8A15,
-		UnpackRowBytesApple = 0x8A16,
-		ReleasedApple = 0x8A19,
-		VolatileApple = 0x8A1A,
-		RetainedApple = 0x8A1B,
-		UndefinedApple = 0x8A1C,
-		PurgeableApple = 0x8A1D,
-		Rgb422Apple = 0x8A1F,
+
+		/// <summary>
+		/// Specifies the binding point for uniform buffers in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferBinding = 0x8A28,
+
+		/// <summary>
+		/// Specifies the start of a uniform buffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferStart = 0x8A29,
+
+		/// <summary>
+		/// Specifies the size of a uniform buffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferSize = 0x8A2A,
+
+		/// <summary>
+		/// Specifies the maximum number of vertex uniform blocks supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxVertexUniformBlocks = 0x8A2B,
+
+		/// <summary>
+		/// Specifies the maximum number of geometry uniform blocks supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxGeometryUniformBlocks = 0x8A2C,
-		MaxGeometryUniformBlocksExt = 0x8A2C,
-		MaxGeometryUniformBlocksOes = 0x8A2C,
+
+		/// <summary>
+		/// Specifies the maximum number of fragment uniform blocks supported.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxFragmentUniformBlocks = 0x8A2D,
+
+		/// <summary>
+		/// Specifies the maximum number of combined uniform blocks across all shader types.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedUniformBlocks = 0x8A2E,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform buffer bindings.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxUniformBufferBindings = 0x8A2F,
+
+		/// <summary>
+		/// Specifies the maximum size of a single uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxUniformBlockSize = 0x8A30,
+
+		/// <summary>
+		/// Specifies the maximum number of combined vertex uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedVertexUniformComponents = 0x8A31,
+
+		/// <summary>
+		/// Specifies the maximum number of combined geometry uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedGeometryUniformComponents = 0x8A32,
-		MaxCombinedGeometryUniformComponentsExt = 0x8A32,
-		MaxCombinedGeometryUniformComponentsOes = 0x8A32,
+
+		/// <summary>
+		/// Specifies the maximum number of combined fragment uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MaxCombinedFragmentUniformComponents = 0x8A33,
+
+		/// <summary>
+		/// Specifies the alignment requirements for uniform buffer offsets.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBufferOffsetAlignment = 0x8A34,
+
+		/// <summary>
+		/// Specifies the maximum length of an active uniform block name.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ActiveUniformBlockMaxNameLength = 0x8A35,
+
+		/// <summary>
+		/// Specifies the number of active uniform blocks.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ActiveUniformBlocks = 0x8A36,
+
+		/// <summary>
+		/// Specifies the type of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformType = 0x8A37,
+
+		/// <summary>
+		/// Specifies the size of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformSize = 0x8A38,
+
+		/// <summary>
+		/// Specifies the length of the name of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformNameLength = 0x8A39,
+
+		/// <summary>
+		/// Specifies the index of a uniform block for a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockIndex = 0x8A3A,
+
+		/// <summary>
+		/// Specifies the offset of a uniform variable within a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformOffset = 0x8A3B,
+
+		/// <summary>
+		/// Specifies the stride between consecutive elements of an array of uniform variables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformArrayStride = 0x8A3C,
+
+		/// <summary>
+		/// Specifies the stride between consecutive matrices in an array of uniform variables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformMatrixStride = 0x8A3D,
+
+		/// <summary>
+		/// Specifies whether a uniform matrix is stored in row-major order.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformIsRowMajor = 0x8A3E,
+
+		/// <summary>
+		/// Specifies the binding point for a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockBinding = 0x8A3F,
+
+		/// <summary>
+		/// Specifies the data size of a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockDataSize = 0x8A40,
+
+		/// <summary>
+		/// Specifies the length of a uniform block name.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockNameLength = 0x8A41,
+
+		/// <summary>
+		/// Specifies the number of active uniforms in a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockActiveUniforms = 0x8A42,
+
+		/// <summary>
+		/// Specifies the indices of active uniforms in a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockActiveUniformIndices = 0x8A43,
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by the vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockReferencedByVertexShader = 0x8A44,
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by the geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockReferencedByGeometryShader = 0x8A45,
+
+		/// <summary>
+		/// Specifies whether a uniform block is referenced by the fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		UniformBlockReferencedByFragmentShader = 0x8A46,
-		TextureSrgbDecodeExt = 0x8A48,
-		DecodeExt = 0x8A49,
-		SkipDecodeExt = 0x8A4A,
-		ProgramPipelineObjectExt = 0x8A4F,
-		RgbRaw422Apple = 0x8A51,
-		FragmentShaderDiscardsSamplesExt = 0x8A52,
-		SyncObjectApple = 0x8A53,
-		CompressedSrgbPvrtc2Bppv1Ext = 0x8A54,
-		CompressedSrgbPvrtc4Bppv1Ext = 0x8A55,
-		CompressedSrgbAlphaPvrtc2Bppv1Ext = 0x8A56,
-		CompressedSrgbAlphaPvrtc4Bppv1Ext = 0x8A57,
+
+		/// <summary>
+		/// Specifies a fragment shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FragmentShader = 0x8B30,
+
+		/// <summary>
+		/// Specifies a fragment shader object (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_shader</remarks>
 		FragmentShaderArb = 0x8B30,
+
+		/// <summary>
+		/// Specifies a vertex shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		VertexShader = 0x8B31,
+
+		/// <summary>
+		/// Specifies a vertex shader object (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_shader</remarks>
 		VertexShaderArb = 0x8B31,
+
+		/// <summary>
+		/// Specifies a program object (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		ProgramObjectArb = 0x8B40,
+
+		/// <summary>
+		/// Specifies a program object (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_label</remarks>
 		ProgramObjectExt = 0x8B40,
-		ShaderObjectArb = 0x8B48,
-		ShaderObjectExt = 0x8B48,
+
+		/// <summary>
+		/// Specifies the maximum number of fragment uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxFragmentUniformComponents = 0x8B49,
-		MaxFragmentUniformComponentsArb = 0x8B49,
+
+		/// <summary>
+		/// Specifies the maximum number of vertex uniform components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxVertexUniformComponents = 0x8B4A,
-		MaxVertexUniformComponentsArb = 0x8B4A,
+
+		/// <summary>
+		/// Specifies the maximum number of varying float values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxVaryingFloats = 0x8B4B,
+
+		/// <summary>
+		/// Specifies the maximum number of varying components.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		MaxVaryingComponents = 0x8B4B,
-		MaxVaryingComponentsExt = 0x8B4B,
-		MaxVaryingFloatsArb = 0x8B4B,
+
+		/// <summary>
+		/// Specifies the maximum number of vertex texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxVertexTextureImageUnits = 0x8B4C,
-		MaxVertexTextureImageUnitsArb = 0x8B4C,
+
+		/// <summary>
+		/// Specifies the maximum number of combined texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		MaxCombinedTextureImageUnits = 0x8B4D,
-		MaxCombinedTextureImageUnitsArb = 0x8B4D,
-		ObjectTypeArb = 0x8B4E,
+
+		/// <summary>
+		/// Specifies the type of a shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ShaderType = 0x8B4F,
-		ObjectSubtypeArb = 0x8B4F,
+
+		/// <summary>
+		/// Specifies a 2-component vector of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatVec2 = 0x8B50,
+
+		/// <summary>
+		/// Specifies a 2-component vector of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatVec2Arb = 0x8B50,
+
+		/// <summary>
+		/// Specifies a 3-component vector of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatVec3 = 0x8B51,
+
+		/// <summary>
+		/// Specifies a 3-component vector of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatVec3Arb = 0x8B51,
+
+		/// <summary>
+		/// Specifies a 4-component vector of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatVec4 = 0x8B52,
+
+		/// <summary>
+		/// Specifies a 4-component vector of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatVec4Arb = 0x8B52,
+
+		/// <summary>
+		/// Specifies a 2-component vector of integers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntVec2 = 0x8B53,
+
+		/// <summary>
+		/// Specifies a 2-component vector of integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		IntVec2Arb = 0x8B53,
+
+		/// <summary>
+		/// Specifies a 3-component vector of integers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntVec3 = 0x8B54,
+
+		/// <summary>
+		/// Specifies a 3-component vector of integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		IntVec3Arb = 0x8B54,
+
+		/// <summary>
+		/// Specifies a 4-component vector of integers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntVec4 = 0x8B55,
+
+		/// <summary>
+		/// Specifies a 4-component vector of integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		IntVec4Arb = 0x8B55,
+
+		/// <summary>
+		/// Specifies a boolean value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Bool = 0x8B56,
+
+		/// <summary>
+		/// Specifies a boolean value (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolArb = 0x8B56,
+
+		/// <summary>
+		/// Specifies a 2-component vector of boolean values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BoolVec2 = 0x8B57,
+
+		/// <summary>
+		/// Specifies a 2-component vector of boolean values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolVec2Arb = 0x8B57,
+
+		/// <summary>
+		/// Specifies a 3-component vector of boolean values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BoolVec3 = 0x8B58,
+
+		/// <summary>
+		/// Specifies a 3-component vector of boolean values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolVec3Arb = 0x8B58,
+
+		/// <summary>
+		/// Specifies a 4-component vector of boolean values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BoolVec4 = 0x8B59,
+
+		/// <summary>
+		/// Specifies a 4-component vector of boolean values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		BoolVec4Arb = 0x8B59,
+
+		/// <summary>
+		/// Specifies a 2x2 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatMat2 = 0x8B5A,
+
+		/// <summary>
+		/// Specifies a 2x2 matrix of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatMat2Arb = 0x8B5A,
+
+		/// <summary>
+		/// Specifies a 3x3 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatMat3 = 0x8B5B,
+
+		/// <summary>
+		/// Specifies a 3x3 matrix of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatMat3Arb = 0x8B5B,
+
+		/// <summary>
+		/// Specifies a 4x4 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FloatMat4 = 0x8B5C,
+
+		/// <summary>
+		/// Specifies a 4x4 matrix of floating-point numbers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects<br/>GL_ARB_vertex_shader</remarks>
 		FloatMat4Arb = 0x8B5C,
+
+		/// <summary>
+		/// Specifies a 1D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1D = 0x8B5D,
+
+		/// <summary>
+		/// Specifies a 1D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler1DArb = 0x8B5D,
+
+		/// <summary>
+		/// Specifies a 2D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2D = 0x8B5E,
+
+		/// <summary>
+		/// Specifies a 2D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DArb = 0x8B5E,
+
+		/// <summary>
+		/// Specifies a 3D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler3D = 0x8B5F,
+
+		/// <summary>
+		/// Specifies a 3D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler3DArb = 0x8B5F,
+
+		/// <summary>
+		/// Specifies a 3D sampler for textures (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Sampler3DOes = 0x8B5F,
+
+		/// <summary>
+		/// Specifies a cube map sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCube = 0x8B60,
+
+		/// <summary>
+		/// Specifies a cube map sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		SamplerCubeArb = 0x8B60,
+
+		/// <summary>
+		/// Specifies a 1D shadow sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1DShadow = 0x8B61,
+
+		/// <summary>
+		/// Specifies a 1D shadow sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler1DShadowArb = 0x8B61,
+
+		/// <summary>
+		/// Specifies a 2D shadow sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2DShadow = 0x8B62,
+
+		/// <summary>
+		/// Specifies a 2D shadow sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DShadowArb = 0x8B62,
+
+		/// <summary>
+		/// Specifies a 2D shadow sampler for textures (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Sampler2DShadowExt = 0x8B62,
+
+		/// <summary>
+		/// Specifies a rectangular 2D sampler for textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		Sampler2DRect = 0x8B63,
+
+		/// <summary>
+		/// Specifies a rectangular 2D sampler for textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DRectArb = 0x8B63,
+
+		/// <summary>
+		/// Specifies a shadow sampler for rectangular 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		Sampler2DRectShadow = 0x8B64,
+
+		/// <summary>
+		/// Specifies a shadow sampler for rectangular 2D textures (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
 		Sampler2DRectShadowArb = 0x8B64,
+
+		/// <summary>
+		/// Specifies a 2x3 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat2X3 = 0x8B65,
+
+		/// <summary>
+		/// Specifies a 2x3 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat2X3Nv = 0x8B65,
+
+		/// <summary>
+		/// Specifies a 2x4 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat2X4 = 0x8B66,
+
+		/// <summary>
+		/// Specifies a 2x4 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat2X4Nv = 0x8B66,
+
+		/// <summary>
+		/// Specifies a 3x2 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat3X2 = 0x8B67,
+
+		/// <summary>
+		/// Specifies a 3x2 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat3X2Nv = 0x8B67,
+
+		/// <summary>
+		/// Specifies a 3x4 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat3X4 = 0x8B68,
+
+		/// <summary>
+		/// Specifies a 3x4 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat3X4Nv = 0x8B68,
+
+		/// <summary>
+		/// Specifies a 4x2 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat4X2 = 0x8B69,
+
+		/// <summary>
+		/// Specifies a 4x2 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat4X2Nv = 0x8B69,
+
+		/// <summary>
+		/// Specifies a 4x3 matrix of floating-point numbers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		FloatMat4X3 = 0x8B6A,
+
+		/// <summary>
+		/// Specifies a 4x3 matrix of floating-point numbers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FloatMat4X3Nv = 0x8B6A,
+
+		/// <summary>
+		/// Specifies the delete status of an OpenGL object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		DeleteStatus = 0x8B80,
-		ObjectDeleteStatusArb = 0x8B80,
+
+		/// <summary>
+		/// Specifies the compile status of a shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CompileStatus = 0x8B81,
-		ObjectCompileStatusArb = 0x8B81,
+
+		/// <summary>
+		/// Specifies the link status of a program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		LinkStatus = 0x8B82,
-		ObjectLinkStatusArb = 0x8B82,
+
+		/// <summary>
+		/// Specifies the validation status of a program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ValidateStatus = 0x8B83,
-		ObjectValidateStatusArb = 0x8B83,
+
+		/// <summary>
+		/// Specifies the length of the information log for a shader or program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		InfoLogLength = 0x8B84,
-		ObjectInfoLogLengthArb = 0x8B84,
+
+		/// <summary>
+		/// Specifies the number of attached shaders to a program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		AttachedShaders = 0x8B85,
-		ObjectAttachedObjectsArb = 0x8B85,
+
+		/// <summary>
+		/// Specifies the number of active uniform variables for a program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ActiveUniforms = 0x8B86,
-		ObjectActiveUniformsArb = 0x8B86,
+
+		/// <summary>
+		/// Specifies the maximum length of an active uniform variable's name.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ActiveUniformMaxLength = 0x8B87,
-		ObjectActiveUniformMaxLengthArb = 0x8B87,
+
+		/// <summary>
+		/// Specifies the length of the source code for a shader object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ShaderSourceLength = 0x8B88,
-		ObjectShaderSourceLengthArb = 0x8B88,
+
+		/// <summary>
+		/// Specifies the number of active attribute variables for a program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ActiveAttributes = 0x8B89,
-		ObjectActiveAttributesArb = 0x8B89,
+
+		/// <summary>
+		/// Specifies the maximum length of an active attribute variable's name.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ActiveAttributeMaxLength = 0x8B8A,
-		ObjectActiveAttributeMaxLengthArb = 0x8B8A,
+
+		/// <summary>
+		/// Specifies the hint for fragment shader derivative calculations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		FragmentShaderDerivativeHint = 0x8B8B,
+
+		/// <summary>
+		/// Specifies the hint for fragment shader derivative calculations (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_shader</remarks>
 		FragmentShaderDerivativeHintArb = 0x8B8B,
+
+		/// <summary>
+		/// Specifies the hint for fragment shader derivative calculations (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShaderDerivativeHintOes = 0x8B8B,
+
+		/// <summary>
+		/// Specifies the version of the shading language used.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ShadingLanguageVersion = 0x8B8C,
-		ShadingLanguageVersionArb = 0x8B8C,
+
+		/// <summary>
+		/// Specifies the currently active program object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		CurrentProgram = 0x8B8D,
-		/// <summary>
-		/// For the OpenGL version of EXT_separate_shader_objects<br/>
-		/// </summary>
-		ActiveProgramExt = 0x8B8D,
 
-		Palette4Rgb8Oes = 0x8B90,
-		Palette4Rgba8Oes = 0x8B91,
-		Palette4R5G6B5Oes = 0x8B92,
-		Palette4Rgba4Oes = 0x8B93,
-		Palette4Rgb5A1Oes = 0x8B94,
-		Palette8Rgb8Oes = 0x8B95,
-		Palette8Rgba8Oes = 0x8B96,
-		Palette8R5G6B5Oes = 0x8B97,
-		Palette8Rgba4Oes = 0x8B98,
-		Palette8Rgb5A1Oes = 0x8B99,
+		/// <summary>
+		/// Specifies the type for reading implementation colors.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ImplementationColorReadType = 0x8B9A,
-		ImplementationColorReadTypeOes = 0x8B9A,
+
+		/// <summary>
+		/// Specifies the format for reading implementation colors.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ImplementationColorReadFormat = 0x8B9B,
-		ImplementationColorReadFormatOes = 0x8B9B,
-		PointSizeArrayOes = 0x8B9C,
-		TextureCropRectOes = 0x8B9D,
-		MatrixIndexArrayBufferBindingOes = 0x8B9E,
-		PointSizeArrayBufferBindingOes = 0x8B9F,
-		FragmentProgramPositionMesa = 0x8BB0,
-		FragmentProgramCallbackMesa = 0x8BB1,
-		FragmentProgramCallbackFuncMesa = 0x8BB2,
-		FragmentProgramCallbackDataMesa = 0x8BB3,
-		VertexProgramPositionMesa = 0x8BB4,
-		VertexProgramCallbackMesa = 0x8BB5,
-		VertexProgramCallbackFuncMesa = 0x8BB6,
-		VertexProgramCallbackDataMesa = 0x8BB7,
-		TileRasterOrderFixedMesa = 0x8BB8,
-		TileRasterOrderIncreasingXMesa = 0x8BB9,
-		TileRasterOrderIncreasingYMesa = 0x8BBA,
-		FramebufferFlipYMesa = 0x8BBB,
-		FramebufferFlipXMesa = 0x8BBC,
-		FramebufferSwapXyMesa = 0x8BBD,
-		CounterTypeAmd = 0x8BC0,
-		CounterRangeAmd = 0x8BC1,
-		UnsignedInt64Amd = 0x8BC2,
-		PercentageAmd = 0x8BC3,
-		PerfmonResultAvailableAmd = 0x8BC4,
-		PerfmonResultSizeAmd = 0x8BC5,
-		PerfmonResultAmd = 0x8BC6,
-		TextureWidthQcom = 0x8BD2,
-		TextureHeightQcom = 0x8BD3,
-		TextureDepthQcom = 0x8BD4,
-		TextureInternalFormatQcom = 0x8BD5,
-		TextureFormatQcom = 0x8BD6,
-		TextureTypeQcom = 0x8BD7,
-		TextureImageValidQcom = 0x8BD8,
-		TextureNumLevelsQcom = 0x8BD9,
-		TextureTargetQcom = 0x8BDA,
-		TextureObjectValidQcom = 0x8BDB,
-		StateRestore = 0x8BDC,
-		SamplerExternal2DY2YExt = 0x8BE7,
-		TextureProtectedExt = 0x8BFA,
-		TextureFoveatedFeatureBitsQcom = 0x8BFB,
-		TextureFoveatedMinPixelDensityQcom = 0x8BFC,
-		TextureFoveatedFeatureQueryQcom = 0x8BFD,
-		TextureFoveatedNumFocalPointsQueryQcom = 0x8BFE,
-		FramebufferIncompleteFoveationQcom = 0x8BFF,
-		CompressedRgbPvrtc4Bppv1Img = 0x8C00,
-		CompressedRgbPvrtc2Bppv1Img = 0x8C01,
-		CompressedRgbaPvrtc4Bppv1Img = 0x8C02,
-		CompressedRgbaPvrtc2Bppv1Img = 0x8C03,
-		ModulateColorImg = 0x8C04,
-		RecipAddSignedAlphaImg = 0x8C05,
-		TextureAlphaModulateImg = 0x8C06,
-		FactorAlphaModulateImg = 0x8C07,
-		FragmentAlphaModulateImg = 0x8C08,
-		AddBlendImg = 0x8C09,
+
+		/// <summary>
+		/// Specifies the SGX binary format in the IMG extension.
+		/// </summary>
+		/// <remarks></remarks>
 		SgxBinaryImg = 0x8C0A,
-		TextureRedType = 0x8C10,
-		TextureRedTypeArb = 0x8C10,
-		TextureGreenType = 0x8C11,
-		TextureGreenTypeArb = 0x8C11,
-		TextureBlueType = 0x8C12,
-		TextureBlueTypeArb = 0x8C12,
-		TextureAlphaType = 0x8C13,
-		TextureAlphaTypeArb = 0x8C13,
-		TextureLuminanceType = 0x8C14,
-		TextureLuminanceTypeArb = 0x8C14,
-		TextureIntensityType = 0x8C15,
-		TextureIntensityTypeArb = 0x8C15,
-		TextureDepthType = 0x8C16,
-		TextureDepthTypeArb = 0x8C16,
-		UnsignedNormalized = 0x8C17,
-		UnsignedNormalizedArb = 0x8C17,
-		UnsignedNormalizedExt = 0x8C17,
+
+		/// <summary>
+		/// Specifies a 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture1DArray = 0x8C18,
-		Texture1DArrayExt = 0x8C18,
+
+		/// <summary>
+		/// Specifies a proxy for a 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ProxyTexture1DArray = 0x8C19,
+
+		/// <summary>
+		/// Specifies a proxy for a 1D array texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array</remarks>
 		ProxyTexture1DArrayExt = 0x8C19,
+
+		/// <summary>
+		/// Specifies a 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		Texture2DArray = 0x8C1A,
-		Texture2DArrayExt = 0x8C1A,
+
+		/// <summary>
+		/// Specifies a proxy for a 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ProxyTexture2DArray = 0x8C1B,
+
+		/// <summary>
+		/// Specifies a proxy for a 2D array texture (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array</remarks>
 		ProxyTexture2DArrayExt = 0x8C1B,
+
+		/// <summary>
+		/// Specifies the currently bound 1D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding1DArray = 0x8C1C,
-		TextureBinding1DArrayExt = 0x8C1C,
+
+		/// <summary>
+		/// Specifies the currently bound 2D array texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBinding2DArray = 0x8C1D,
-		TextureBinding2DArrayExt = 0x8C1D,
+
+		/// <summary>
+		/// Specifies the geometry program (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4</remarks>
 		GeometryProgramNv = 0x8C26,
-		MaxProgramOutputVerticesNv = 0x8C27,
-		MaxProgramTotalOutputComponentsNv = 0x8C28,
+
+		/// <summary>
+		/// Specifies the maximum number of geometry texture image units.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		MaxGeometryTextureImageUnits = 0x8C29,
-		MaxGeometryTextureImageUnitsArb = 0x8C29,
-		MaxGeometryTextureImageUnitsExt = 0x8C29,
-		MaxGeometryTextureImageUnitsOes = 0x8C29,
+
+		/// <summary>
+		/// Specifies a texture buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureBuffer = 0x8C2A,
-		TextureBufferArb = 0x8C2A,
-		TextureBufferExt = 0x8C2A,
-		TextureBufferOes = 0x8C2A,
-		/// <summary>
-		/// Equivalent to GL_TEXTURE_BUFFER_ARB query, but named more consistently<br/>
-		/// </summary>
-		TextureBufferBinding = 0x8C2A,
 
-		TextureBufferBindingExt = 0x8C2A,
-		TextureBufferBindingOes = 0x8C2A,
+		/// <summary>
+		/// Specifies the maximum size of texture buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		MaxTextureBufferSize = 0x8C2B,
-		MaxTextureBufferSizeArb = 0x8C2B,
-		MaxTextureBufferSizeExt = 0x8C2B,
-		MaxTextureBufferSizeOes = 0x8C2B,
+
+		/// <summary>
+		/// Specifies the binding for texture buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		TextureBindingBuffer = 0x8C2C,
-		TextureBindingBufferArb = 0x8C2C,
-		TextureBindingBufferExt = 0x8C2C,
-		TextureBindingBufferOes = 0x8C2C,
-		TextureBufferDataStoreBinding = 0x8C2D,
-		TextureBufferDataStoreBindingArb = 0x8C2D,
-		TextureBufferDataStoreBindingExt = 0x8C2D,
-		TextureBufferDataStoreBindingOes = 0x8C2D,
-		TextureBufferFormatArb = 0x8C2E,
-		TextureBufferFormatExt = 0x8C2E,
+
+		/// <summary>
+		/// Specifies if any samples passed in the current sample.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_occlusion_query2</remarks>
 		AnySamplesPassed = 0x8C2F,
-		AnySamplesPassedExt = 0x8C2F,
+
+		/// <summary>
+		/// Specifies sample shading for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SampleShading = 0x8C36,
-		SampleShadingArb = 0x8C36,
-		SampleShadingOes = 0x8C36,
-		MinSampleShadingValue = 0x8C37,
-		MinSampleShadingValueArb = 0x8C37,
-		MinSampleShadingValueOes = 0x8C37,
+
+		/// <summary>
+		/// Specifies the R11F_G11F_B10F format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		R11FG11FB10F = 0x8C3A,
+
+		/// <summary>
+		/// Specifies the R11F_G11F_B10F format in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		R11FG11FB10FApple = 0x8C3A,
+
+		/// <summary>
+		/// Specifies the R11F_G11F_B10F format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_float</remarks>
 		R11FG11FB10FExt = 0x8C3A,
+
+		/// <summary>
+		/// Specifies the unsigned integer format 10F_11F_11F reversed.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_10f_11f_11f_rev</remarks>
 		UnsignedInt10F11F11FRev = 0x8C3B,
+
+		/// <summary>
+		/// Specifies the unsigned integer format 10F_11F_11F reversed in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		UnsignedInt10F11F11FRevApple = 0x8C3B,
+
+		/// <summary>
+		/// Specifies the unsigned integer format 10F_11F_11F reversed (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_packed_float</remarks>
 		UnsignedInt10F11F11FRevExt = 0x8C3B,
-		RgbaSignedComponentsExt = 0x8C3C,
+
+		/// <summary>
+		/// Specifies the RGB9_E5 format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb9E5 = 0x8C3D,
+
+		/// <summary>
+		/// Specifies the RGB9_E5 format in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb9E5Apple = 0x8C3D,
+
+		/// <summary>
+		/// Specifies the RGB9_E5 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_shared_exponent</remarks>
 		Rgb9E5Ext = 0x8C3D,
+
+		/// <summary>
+		/// Specifies the unsigned integer format 5_9_9_9 reversed.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedInt5999Rev = 0x8C3E,
+
+		/// <summary>
+		/// Specifies the unsigned integer format 5_9_9_9 reversed in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		UnsignedInt5999RevApple = 0x8C3E,
+
+		/// <summary>
+		/// Specifies the unsigned integer format 5_9_9_9 reversed (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_shared_exponent</remarks>
 		UnsignedInt5999RevExt = 0x8C3E,
-		TextureSharedSize = 0x8C3F,
-		TextureSharedSizeExt = 0x8C3F,
+
+		/// <summary>
+		/// Specifies the sRGB color space.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		Srgb = 0x8C40,
+
+		/// <summary>
+		/// Specifies the sRGB color space (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		SrgbExt = 0x8C40,
+
+		/// <summary>
+		/// Specifies a sRGB format with 8 bits per channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		Srgb8 = 0x8C41,
+
+		/// <summary>
+		/// Specifies a sRGB format with 8 bits per channel (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		Srgb8Ext = 0x8C41,
+
+		/// <summary>
+		/// Specifies a sRGB format with 8 bits per channel (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Srgb8Nv = 0x8C41,
+
+		/// <summary>
+		/// Specifies the sRGB alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		SrgbAlpha = 0x8C42,
+
+		/// <summary>
+		/// Specifies the sRGB alpha format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		SrgbAlphaExt = 0x8C42,
+
+		/// <summary>
+		/// Specifies a sRGB alpha format with 8 bits per channel.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		Srgb8Alpha8 = 0x8C43,
+
+		/// <summary>
+		/// Specifies a sRGB alpha format with 8 bits per channel (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		Srgb8Alpha8Ext = 0x8C43,
-		SluminanceAlpha = 0x8C44,
-		SluminanceAlphaExt = 0x8C44,
-		SluminanceAlphaNv = 0x8C44,
-		Sluminance8Alpha8 = 0x8C45,
-		Sluminance8Alpha8Ext = 0x8C45,
-		Sluminance8Alpha8Nv = 0x8C45,
-		Sluminance = 0x8C46,
-		SluminanceExt = 0x8C46,
-		SluminanceNv = 0x8C46,
-		Sluminance8 = 0x8C47,
-		Sluminance8Ext = 0x8C47,
-		Sluminance8Nv = 0x8C47,
+
+		/// <summary>
+		/// Specifies a compressed sRGB format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedSrgb = 0x8C48,
-		CompressedSrgbExt = 0x8C48,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		CompressedSrgbAlpha = 0x8C49,
-		CompressedSrgbAlphaExt = 0x8C49,
-		CompressedSluminance = 0x8C4A,
-		CompressedSluminanceExt = 0x8C4A,
-		CompressedSluminanceAlpha = 0x8C4B,
-		CompressedSluminanceAlphaExt = 0x8C4B,
+
+		/// <summary>
+		/// Specifies a compressed sRGB DXT1 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbS3TcDxt1Ext = 0x8C4C,
+
+		/// <summary>
+		/// Specifies a compressed sRGB DXT1 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbS3TcDxt1Nv = 0x8C4C,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT1 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbAlphaS3TcDxt1Ext = 0x8C4D,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT1 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaS3TcDxt1Nv = 0x8C4D,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT3 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbAlphaS3TcDxt3Ext = 0x8C4E,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT3 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaS3TcDxt3Nv = 0x8C4E,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT5 format (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB</remarks>
 		CompressedSrgbAlphaS3TcDxt5Ext = 0x8C4F,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha DXT5 format (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaS3TcDxt5Nv = 0x8C4F,
-		CompressedLuminanceLatc1Ext = 0x8C70,
-		CompressedSignedLuminanceLatc1Ext = 0x8C71,
-		CompressedLuminanceAlphaLatc2Ext = 0x8C72,
-		CompressedSignedLuminanceAlphaLatc2Ext = 0x8C73,
-		TessControlProgramParameterBufferNv = 0x8C74,
-		TessEvaluationProgramParameterBufferNv = 0x8C75,
+
+		/// <summary>
+		/// Specifies the maximum length of varying variables for transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackVaryingMaxLength = 0x8C76,
-		TransformFeedbackVaryingMaxLengthExt = 0x8C76,
-		BackPrimaryColorNv = 0x8C77,
-		BackSecondaryColorNv = 0x8C78,
-		TextureCoordNv = 0x8C79,
-		ClipDistanceNv = 0x8C7A,
-		VertexIdNv = 0x8C7B,
-		PrimitiveIdNv = 0x8C7C,
-		GenericAttribNv = 0x8C7D,
-		TransformFeedbackAttribsNv = 0x8C7E,
+
+		/// <summary>
+		/// Specifies the buffer mode for transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackBufferMode = 0x8C7F,
-		TransformFeedbackBufferModeExt = 0x8C7F,
-		TransformFeedbackBufferModeNv = 0x8C7F,
-		MaxTransformFeedbackSeparateComponents = 0x8C80,
-		MaxTransformFeedbackSeparateComponentsExt = 0x8C80,
-		MaxTransformFeedbackSeparateComponentsNv = 0x8C80,
-		ActiveVaryingsNv = 0x8C81,
-		ActiveVaryingMaxLengthNv = 0x8C82,
+
+		/// <summary>
+		/// Specifies the transform feedback varyings.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackVaryings = 0x8C83,
-		TransformFeedbackVaryingsExt = 0x8C83,
-		TransformFeedbackVaryingsNv = 0x8C83,
+
+		/// <summary>
+		/// Specifies the start of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackBufferStart = 0x8C84,
-		TransformFeedbackBufferStartExt = 0x8C84,
-		TransformFeedbackBufferStartNv = 0x8C84,
+
+		/// <summary>
+		/// Specifies the size of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackBufferSize = 0x8C85,
-		TransformFeedbackBufferSizeExt = 0x8C85,
-		TransformFeedbackBufferSizeNv = 0x8C85,
-		TransformFeedbackRecordNv = 0x8C86,
+
+		/// <summary>
+		/// Specifies the number of primitives generated.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		PrimitivesGenerated = 0x8C87,
-		PrimitivesGeneratedExt = 0x8C87,
-		PrimitivesGeneratedNv = 0x8C87,
-		PrimitivesGeneratedOes = 0x8C87,
+
+		/// <summary>
+		/// Specifies the number of primitives written during transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackPrimitivesWritten = 0x8C88,
-		TransformFeedbackPrimitivesWrittenExt = 0x8C88,
-		TransformFeedbackPrimitivesWrittenNv = 0x8C88,
+
+		/// <summary>
+		/// Specifies the rasterizer discard mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		RasterizerDiscard = 0x8C89,
-		RasterizerDiscardExt = 0x8C89,
-		RasterizerDiscardNv = 0x8C89,
-		MaxTransformFeedbackInterleavedComponents = 0x8C8A,
-		MaxTransformFeedbackInterleavedComponentsExt = 0x8C8A,
-		MaxTransformFeedbackInterleavedComponentsNv = 0x8C8A,
-		MaxTransformFeedbackSeparateAttribs = 0x8C8B,
-		MaxTransformFeedbackSeparateAttribsExt = 0x8C8B,
-		MaxTransformFeedbackSeparateAttribsNv = 0x8C8B,
+
+		/// <summary>
+		/// Specifies interleaved attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		InterleavedAttribs = 0x8C8C,
-		InterleavedAttribsExt = 0x8C8C,
-		InterleavedAttribsNv = 0x8C8C,
+
+		/// <summary>
+		/// Specifies separate attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SeparateAttribs = 0x8C8D,
-		SeparateAttribsExt = 0x8C8D,
-		SeparateAttribsNv = 0x8C8D,
+
+		/// <summary>
+		/// Specifies the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_enhanced_layouts</remarks>
 		TransformFeedbackBuffer = 0x8C8E,
-		TransformFeedbackBufferExt = 0x8C8E,
-		TransformFeedbackBufferNv = 0x8C8E,
+
+		/// <summary>
+		/// Specifies the binding of the transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TransformFeedbackBufferBinding = 0x8C8F,
-		TransformFeedbackBufferBindingExt = 0x8C8F,
-		TransformFeedbackBufferBindingNv = 0x8C8F,
+
+		/// <summary>
+		/// Specifies the X coordinate of the search block for motion estimation in the QCOM extension.
+		/// </summary>
+		/// <remarks></remarks>
 		MotionEstimationSearchBlockXQcom = 0x8C90,
+
+		/// <summary>
+		/// Specifies the Y coordinate of the search block for motion estimation in the QCOM extension.
+		/// </summary>
+		/// <remarks></remarks>
 		MotionEstimationSearchBlockYQcom = 0x8C91,
-		AtcRgbAmd = 0x8C92,
-		AtcRgbaExplicitAlphaAmd = 0x8C93,
-		TextureLodBiasQcom = 0x8C96,
-		PointSpriteCoordOrigin = 0x8CA0,
+
+		/// <summary>
+		/// Specifies that the lower-left corner is the origin for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		LowerLeft = 0x8CA1,
-		LowerLeftExt = 0x8CA1,
+
+		/// <summary>
+		/// Specifies that the upper-left corner is the origin for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		UpperLeft = 0x8CA2,
-		UpperLeftExt = 0x8CA2,
+
+		/// <summary>
+		/// Specifies the reference value for stencil tests on the back face.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackRef = 0x8CA3,
+
+		/// <summary>
+		/// Specifies the mask value for the back face stencil tests.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackValueMask = 0x8CA4,
+
+		/// <summary>
+		/// Specifies the write mask for the back face stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		StencilBackWritemask = 0x8CA5,
+
+		/// <summary>
+		/// Specifies the binding of the draw framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DrawFramebufferBinding = 0x8CA6,
-		DrawFramebufferBindingAngle = 0x8CA6,
-		DrawFramebufferBindingApple = 0x8CA6,
-		DrawFramebufferBindingExt = 0x8CA6,
-		DrawFramebufferBindingNv = 0x8CA6,
-		FramebufferBinding = 0x8CA6,
-		FramebufferBindingAngle = 0x8CA6,
-		FramebufferBindingExt = 0x8CA6,
-		FramebufferBindingOes = 0x8CA6,
+
+		/// <summary>
+		/// Specifies the binding of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferBinding = 0x8CA7,
-		RenderbufferBindingAngle = 0x8CA7,
-		RenderbufferBindingExt = 0x8CA7,
-		RenderbufferBindingOes = 0x8CA7,
+
+		/// <summary>
+		/// Specifies the read framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ReadFramebuffer = 0x8CA8,
-		ReadFramebufferAngle = 0x8CA8,
-		ReadFramebufferApple = 0x8CA8,
-		ReadFramebufferExt = 0x8CA8,
-		ReadFramebufferNv = 0x8CA8,
+
+		/// <summary>
+		/// Specifies the draw framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DrawFramebuffer = 0x8CA9,
-		DrawFramebufferAngle = 0x8CA9,
-		DrawFramebufferApple = 0x8CA9,
-		DrawFramebufferExt = 0x8CA9,
-		DrawFramebufferNv = 0x8CA9,
+
+		/// <summary>
+		/// Specifies the binding of the read framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ReadFramebufferBinding = 0x8CAA,
-		ReadFramebufferBindingAngle = 0x8CAA,
-		ReadFramebufferBindingApple = 0x8CAA,
-		ReadFramebufferBindingExt = 0x8CAA,
-		ReadFramebufferBindingNv = 0x8CAA,
+
+		/// <summary>
+		/// Specifies the number of coverage samples for renderbuffers (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample_coverage</remarks>
 		RenderbufferCoverageSamplesNv = 0x8CAB,
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferSamples = 0x8CAB,
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers in the ANGLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferSamplesAngle = 0x8CAB,
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers in the APPLE extension.
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferSamplesApple = 0x8CAB,
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_multisample</remarks>
 		RenderbufferSamplesExt = 0x8CAB,
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffers (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferSamplesNv = 0x8CAB,
+
+		/// <summary>
+		/// Specifies a 32-bit floating-point depth component format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_depth_buffer_float</remarks>
 		DepthComponent32F = 0x8CAC,
+
+		/// <summary>
+		/// Specifies a depth-stencil format with 32-bit float depth and 8-bit stencil.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_depth_buffer_float</remarks>
 		Depth32FStencil8 = 0x8CAD,
+
+		/// <summary>
+		/// Specifies the object type for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferAttachmentObjectType = 0x8CD0,
+
+		/// <summary>
+		/// Specifies the object type for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		FramebufferAttachmentObjectTypeExt = 0x8CD0,
+
+		/// <summary>
+		/// Specifies the object type for framebuffer attachments (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentObjectTypeOes = 0x8CD0,
+
+		/// <summary>
+		/// Specifies the object name for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferAttachmentObjectName = 0x8CD1,
+
+		/// <summary>
+		/// Specifies the object name for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		FramebufferAttachmentObjectNameExt = 0x8CD1,
+
+		/// <summary>
+		/// Specifies the object name for framebuffer attachments (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentObjectNameOes = 0x8CD1,
+
+		/// <summary>
+		/// Specifies the texture level for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferAttachmentTextureLevel = 0x8CD2,
+
+		/// <summary>
+		/// Specifies the texture level for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		FramebufferAttachmentTextureLevelExt = 0x8CD2,
+
+		/// <summary>
+		/// Specifies the texture level for framebuffer attachments (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentTextureLevelOes = 0x8CD2,
+
+		/// <summary>
+		/// Specifies the cube map face for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferAttachmentTextureCubeMapFace = 0x8CD3,
+
+		/// <summary>
+		/// Specifies the cube map face for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		FramebufferAttachmentTextureCubeMapFaceExt = 0x8CD3,
+
+		/// <summary>
+		/// Specifies the cube map face for framebuffer attachments (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentTextureCubeMapFaceOes = 0x8CD3,
+
+		/// <summary>
+		/// Specifies the 3D texture Z-offset for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		FramebufferAttachmentTexture3DZoffsetExt = 0x8CD4,
+
+		/// <summary>
+		/// Specifies the 3D texture Z-offset for framebuffer attachments (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentTexture3DZoffsetOes = 0x8CD4,
+
+		/// <summary>
+		/// Specifies the texture layer for framebuffer attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_geometry_shader4</remarks>
 		FramebufferAttachmentTextureLayer = 0x8CD4,
+
+		/// <summary>
+		/// Specifies the texture layer for framebuffer attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_EXT_texture_array<br/>GL_NV_geometry_program4</remarks>
 		FramebufferAttachmentTextureLayerExt = 0x8CD4,
+
+		/// <summary>
+		/// Specifies that the framebuffer is complete.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferComplete = 0x8CD5,
-		FramebufferCompleteExt = 0x8CD5,
-		FramebufferCompleteOes = 0x8CD5,
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to attachment issues.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferIncompleteAttachment = 0x8CD6,
-		FramebufferIncompleteAttachmentExt = 0x8CD6,
-		FramebufferIncompleteAttachmentOes = 0x8CD6,
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to missing attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferIncompleteMissingAttachment = 0x8CD7,
-		FramebufferIncompleteMissingAttachmentExt = 0x8CD7,
-		FramebufferIncompleteMissingAttachmentOes = 0x8CD7,
-		FramebufferIncompleteDimensions = 0x8CD9,
-		FramebufferIncompleteDimensionsExt = 0x8CD9,
-		FramebufferIncompleteDimensionsOes = 0x8CD9,
-		FramebufferIncompleteFormatsExt = 0x8CDA,
-		FramebufferIncompleteFormatsOes = 0x8CDA,
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to draw buffer issues.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferIncompleteDrawBuffer = 0x8CDB,
-		FramebufferIncompleteDrawBufferExt = 0x8CDB,
-		FramebufferIncompleteDrawBufferOes = 0x8CDB,
+
+		/// <summary>
+		/// Specifies that the framebuffer is incomplete due to read buffer issues.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferIncompleteReadBuffer = 0x8CDC,
-		FramebufferIncompleteReadBufferExt = 0x8CDC,
-		FramebufferIncompleteReadBufferOes = 0x8CDC,
+
+		/// <summary>
+		/// Specifies that the framebuffer is unsupported.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferUnsupported = 0x8CDD,
-		FramebufferUnsupportedExt = 0x8CDD,
-		FramebufferUnsupportedOes = 0x8CDD,
+
+		/// <summary>
+		/// Specifies the maximum number of color attachments.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		MaxColorAttachments = 0x8CDF,
+
+		/// <summary>
+		/// Specifies the maximum number of color attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		MaxColorAttachmentsExt = 0x8CDF,
+
+		/// <summary>
+		/// Specifies the maximum number of color attachments (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxColorAttachmentsNv = 0x8CDF,
+
+		/// <summary>
+		/// Specifies the first color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment0 = 0x8CE0,
+
+		/// <summary>
+		/// Specifies the first color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment0Ext = 0x8CE0,
+
+		/// <summary>
+		/// Specifies the first color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment0Nv = 0x8CE0,
+
+		/// <summary>
+		/// Specifies the first color attachment (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment0Oes = 0x8CE0,
+
+		/// <summary>
+		/// Specifies the second color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment1 = 0x8CE1,
+
+		/// <summary>
+		/// Specifies the second color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment1Ext = 0x8CE1,
+
+		/// <summary>
+		/// Specifies the second color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment1Nv = 0x8CE1,
+
+		/// <summary>
+		/// Specifies the third color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment2 = 0x8CE2,
+
+		/// <summary>
+		/// Specifies the third color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment2Ext = 0x8CE2,
+
+		/// <summary>
+		/// Specifies the third color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment2Nv = 0x8CE2,
+
+		/// <summary>
+		/// Specifies the fourth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment3 = 0x8CE3,
+
+		/// <summary>
+		/// Specifies the fourth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment3Ext = 0x8CE3,
+
+		/// <summary>
+		/// Specifies the fourth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment3Nv = 0x8CE3,
+
+		/// <summary>
+		/// Specifies the fifth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment4 = 0x8CE4,
+
+		/// <summary>
+		/// Specifies the fifth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment4Ext = 0x8CE4,
+
+		/// <summary>
+		/// Specifies the fifth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment4Nv = 0x8CE4,
+
+		/// <summary>
+		/// Specifies the sixth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment5 = 0x8CE5,
+
+		/// <summary>
+		/// Specifies the sixth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment5Ext = 0x8CE5,
+
+		/// <summary>
+		/// Specifies the sixth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment5Nv = 0x8CE5,
+
+		/// <summary>
+		/// Specifies the seventh color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment6 = 0x8CE6,
+
+		/// <summary>
+		/// Specifies the seventh color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment6Ext = 0x8CE6,
+
+		/// <summary>
+		/// Specifies the seventh color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment6Nv = 0x8CE6,
+
+		/// <summary>
+		/// Specifies the eighth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment7 = 0x8CE7,
+
+		/// <summary>
+		/// Specifies the eighth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment7Ext = 0x8CE7,
+
+		/// <summary>
+		/// Specifies the eighth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment7Nv = 0x8CE7,
+
+		/// <summary>
+		/// Specifies the ninth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment8 = 0x8CE8,
+
+		/// <summary>
+		/// Specifies the ninth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment8Ext = 0x8CE8,
+
+		/// <summary>
+		/// Specifies the ninth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment8Nv = 0x8CE8,
+
+		/// <summary>
+		/// Specifies the tenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment9 = 0x8CE9,
+
+		/// <summary>
+		/// Specifies the tenth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment9Ext = 0x8CE9,
+
+		/// <summary>
+		/// Specifies the tenth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment9Nv = 0x8CE9,
+
+		/// <summary>
+		/// Specifies the eleventh color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment10 = 0x8CEA,
+
+		/// <summary>
+		/// Specifies the eleventh color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment10Ext = 0x8CEA,
+
+		/// <summary>
+		/// Specifies the eleventh color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment10Nv = 0x8CEA,
+
+		/// <summary>
+		/// Specifies the twelfth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment11 = 0x8CEB,
+
+		/// <summary>
+		/// Specifies the twelfth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment11Ext = 0x8CEB,
+
+		/// <summary>
+		/// Specifies the twelfth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment11Nv = 0x8CEB,
+
+		/// <summary>
+		/// Specifies the thirteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment12 = 0x8CEC,
+
+		/// <summary>
+		/// Specifies the thirteenth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment12Ext = 0x8CEC,
+
+		/// <summary>
+		/// Specifies the thirteenth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment12Nv = 0x8CEC,
+
+		/// <summary>
+		/// Specifies the fourteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment13 = 0x8CED,
+
+		/// <summary>
+		/// Specifies the fourteenth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment13Ext = 0x8CED,
+
+		/// <summary>
+		/// Specifies the fourteenth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment13Nv = 0x8CED,
+
+		/// <summary>
+		/// Specifies the fifteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment14 = 0x8CEE,
+
+		/// <summary>
+		/// Specifies the fifteenth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment14Ext = 0x8CEE,
+
+		/// <summary>
+		/// Specifies the fifteenth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment14Nv = 0x8CEE,
+
+		/// <summary>
+		/// Specifies the sixteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ColorAttachment15 = 0x8CEF,
+
+		/// <summary>
+		/// Specifies the sixteenth color attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		ColorAttachment15Ext = 0x8CEF,
+
+		/// <summary>
+		/// Specifies the sixteenth color attachment (NV extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ColorAttachment15Nv = 0x8CEF,
+
+		/// <summary>
+		/// Specifies the seventeenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment16 = 0x8CF0,
+
+		/// <summary>
+		/// Specifies the eighteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment17 = 0x8CF1,
+
+		/// <summary>
+		/// Specifies the nineteenth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment18 = 0x8CF2,
+
+		/// <summary>
+		/// Specifies the twentieth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment19 = 0x8CF3,
+
+		/// <summary>
+		/// Specifies the twenty-first color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment20 = 0x8CF4,
+
+		/// <summary>
+		/// Specifies the twenty-second color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment21 = 0x8CF5,
+
+		/// <summary>
+		/// Specifies the twenty-third color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment22 = 0x8CF6,
+
+		/// <summary>
+		/// Specifies the twenty-fourth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment23 = 0x8CF7,
+
+		/// <summary>
+		/// Specifies the twenty-fifth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment24 = 0x8CF8,
+
+		/// <summary>
+		/// Specifies the twenty-sixth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment25 = 0x8CF9,
+
+		/// <summary>
+		/// Specifies the twenty-seventh color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment26 = 0x8CFA,
+
+		/// <summary>
+		/// Specifies the twenty-eighth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment27 = 0x8CFB,
+
+		/// <summary>
+		/// Specifies the twenty-ninth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment28 = 0x8CFC,
+
+		/// <summary>
+		/// Specifies the thirtieth color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment29 = 0x8CFD,
+
+		/// <summary>
+		/// Specifies the thirty-first color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment30 = 0x8CFE,
+
+		/// <summary>
+		/// Specifies the thirty-second color attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ColorAttachment31 = 0x8CFF,
+
+		/// <summary>
+		/// Specifies the depth attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DepthAttachment = 0x8D00,
+
+		/// <summary>
+		/// Specifies the depth attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		DepthAttachmentExt = 0x8D00,
+
+		/// <summary>
+		/// Specifies the depth attachment (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DepthAttachmentOes = 0x8D00,
+
+		/// <summary>
+		/// Specifies the stencil attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilAttachment = 0x8D20,
+
+		/// <summary>
+		/// Specifies the stencil attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilAttachmentExt = 0x8D20,
+
+		/// <summary>
+		/// Specifies the stencil attachment (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilAttachmentOes = 0x8D20,
+
+		/// <summary>
+		/// Specifies the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Framebuffer = 0x8D40,
-		FramebufferExt = 0x8D40,
+
+		/// <summary>
+		/// Specifies the framebuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferOes = 0x8D40,
+
+		/// <summary>
+		/// Specifies the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_internalformat_query2<br/>GL_NV_internalformat_sample_query</remarks>
 		Renderbuffer = 0x8D41,
-		RenderbufferExt = 0x8D41,
+
+		/// <summary>
+		/// Specifies the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferOes = 0x8D41,
+
+		/// <summary>
+		/// Specifies the width of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferWidth = 0x8D42,
+
+		/// <summary>
+		/// Specifies the width of the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferWidthExt = 0x8D42,
+
+		/// <summary>
+		/// Specifies the width of the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferWidthOes = 0x8D42,
+
+		/// <summary>
+		/// Specifies the height of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferHeight = 0x8D43,
+
+		/// <summary>
+		/// Specifies the height of the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferHeightExt = 0x8D43,
+
+		/// <summary>
+		/// Specifies the height of the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferHeightOes = 0x8D43,
+
+		/// <summary>
+		/// Specifies the internal format of the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferInternalFormat = 0x8D44,
+
+		/// <summary>
+		/// Specifies the internal format of the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferInternalFormatExt = 0x8D44,
+
+		/// <summary>
+		/// Specifies the internal format of the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferInternalFormatOes = 0x8D44,
+
+		/// <summary>
+		/// Specifies a stencil index format with 1 bit.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilIndex1 = 0x8D46,
+
+		/// <summary>
+		/// Specifies a stencil index format with 1 bit (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex1Ext = 0x8D46,
+
+		/// <summary>
+		/// Specifies a stencil index format with 1 bit (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndex1Oes = 0x8D46,
+
+		/// <summary>
+		/// Specifies a stencil index format with 4 bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilIndex4 = 0x8D47,
+
+		/// <summary>
+		/// Specifies a stencil index format with 4 bits (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex4Ext = 0x8D47,
+
+		/// <summary>
+		/// Specifies a stencil index format with 4 bits (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndex4Oes = 0x8D47,
+
+		/// <summary>
+		/// Specifies a stencil index format with 8 bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_texture_stencil8</remarks>
 		StencilIndex8 = 0x8D48,
+
+		/// <summary>
+		/// Specifies a stencil index format with 8 bits (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex8Ext = 0x8D48,
+
+		/// <summary>
+		/// Specifies a stencil index format with 8 bits (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StencilIndex8Oes = 0x8D48,
+
+		/// <summary>
+		/// Specifies a stencil index format with 16 bits.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		StencilIndex16 = 0x8D49,
+
+		/// <summary>
+		/// Specifies a stencil index format with 16 bits (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		StencilIndex16Ext = 0x8D49,
+
+		/// <summary>
+		/// Specifies the size of the red component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferRedSize = 0x8D50,
+
+		/// <summary>
+		/// Specifies the size of the red component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferRedSizeExt = 0x8D50,
+
+		/// <summary>
+		/// Specifies the size of the red component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferRedSizeOes = 0x8D50,
+
+		/// <summary>
+		/// Specifies the size of the green component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferGreenSize = 0x8D51,
+
+		/// <summary>
+		/// Specifies the size of the green component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferGreenSizeExt = 0x8D51,
+
+		/// <summary>
+		/// Specifies the size of the green component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferGreenSizeOes = 0x8D51,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferBlueSize = 0x8D52,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferBlueSizeExt = 0x8D52,
+
+		/// <summary>
+		/// Specifies the size of the blue component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferBlueSizeOes = 0x8D52,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferAlphaSize = 0x8D53,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferAlphaSizeExt = 0x8D53,
+
+		/// <summary>
+		/// Specifies the size of the alpha component in the renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferAlphaSizeOes = 0x8D53,
+
+		/// <summary>
+		/// Specifies the depth size of a renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferDepthSize = 0x8D54,
+
+		/// <summary>
+		/// Specifies the depth size of a renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferDepthSizeExt = 0x8D54,
+
+		/// <summary>
+		/// Specifies the depth size of a renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferDepthSizeOes = 0x8D54,
+
+		/// <summary>
+		/// Specifies the stencil size of a renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		RenderbufferStencilSize = 0x8D55,
+
+		/// <summary>
+		/// Specifies the stencil size of a renderbuffer (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
 		RenderbufferStencilSizeExt = 0x8D55,
+
+		/// <summary>
+		/// Specifies the stencil size of a renderbuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferStencilSizeOes = 0x8D55,
+
+		/// <summary>
+		/// Indicates that a framebuffer is incomplete due to multisample attachment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		FramebufferIncompleteMultisample = 0x8D56,
-		FramebufferIncompleteMultisampleAngle = 0x8D56,
-		FramebufferIncompleteMultisampleApple = 0x8D56,
-		FramebufferIncompleteMultisampleExt = 0x8D56,
-		FramebufferIncompleteMultisampleNv = 0x8D56,
-		MaxSamples = 0x8D57,
-		MaxSamplesAngle = 0x8D57,
-		MaxSamplesApple = 0x8D57,
-		MaxSamplesExt = 0x8D57,
-		MaxSamplesNv = 0x8D57,
+
+		/// <summary>
+		/// Specifies the string for texture generation (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureGenStrOes = 0x8D60,
-		HalfFloatOes = 0x8D61,
+
+		/// <summary>
+		/// Specifies RGB565 format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb565Oes = 0x8D62,
+
+		/// <summary>
+		/// Specifies RGB565 format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		Rgb565 = 0x8D62,
+
+		/// <summary>
+		/// Specifies the ETC1 RGB8 format (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Etc1Rgb8Oes = 0x8D64,
-		TextureExternalOes = 0x8D65,
-		SamplerExternalOes = 0x8D66,
-		TextureBindingExternalOes = 0x8D67,
-		RequiredTextureImageUnitsOes = 0x8D68,
+
+		/// <summary>
+		/// Specifies the fixed index for primitive restart.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		PrimitiveRestartFixedIndex = 0x8D69,
+
+		/// <summary>
+		/// Indicates a conservative test for any samples passed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		AnySamplesPassedConservative = 0x8D6A,
-		AnySamplesPassedConservativeExt = 0x8D6A,
+
+		/// <summary>
+		/// Specifies the maximum element index for indexed drawing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		MaxElementIndex = 0x8D6B,
+
+		/// <summary>
+		/// Specifies the number of samples of the texture attached to a framebuffer (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentTextureSamplesExt = 0x8D6C,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba32Ui = 0x8D70,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba32UiExt = 0x8D70,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_object_rgb32</remarks>
 		Rgb32Ui = 0x8D71,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb32UiExt = 0x8D71,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha32UiExt = 0x8D72,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity32UiExt = 0x8D73,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance32UiExt = 0x8D74,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 32 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha32UiExt = 0x8D75,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba16Ui = 0x8D76,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba16UiExt = 0x8D76,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb16Ui = 0x8D77,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb16UiExt = 0x8D77,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha16UiExt = 0x8D78,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity16UiExt = 0x8D79,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance16UiExt = 0x8D7A,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 16 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha16UiExt = 0x8D7B,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
 		Rgba8Ui = 0x8D7C,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba8UiExt = 0x8D7C,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb8Ui = 0x8D7D,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb8UiExt = 0x8D7D,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha8UiExt = 0x8D7E,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity8UiExt = 0x8D7F,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance8UiExt = 0x8D80,
+
+		/// <summary>
+		/// Specifies an unsigned integer format with 8 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha8UiExt = 0x8D81,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba32I = 0x8D82,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba32IExt = 0x8D82,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_object_rgb32<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		Rgb32I = 0x8D83,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb32IExt = 0x8D83,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha32IExt = 0x8D84,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity32IExt = 0x8D85,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance32IExt = 0x8D86,
+
+		/// <summary>
+		/// Specifies a signed integer format with 32 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha32IExt = 0x8D87,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba16I = 0x8D88,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba16IExt = 0x8D88,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb16I = 0x8D89,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb16IExt = 0x8D89,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha16IExt = 0x8D8A,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity16IExt = 0x8D8B,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance16IExt = 0x8D8C,
+
+		/// <summary>
+		/// Specifies a signed integer format with 16 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha16IExt = 0x8D8D,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGBA.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgba8I = 0x8D8E,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGBA (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgba8IExt = 0x8D8E,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGB.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Rgb8I = 0x8D8F,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits per channel for RGB (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Rgb8IExt = 0x8D8F,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Alpha8IExt = 0x8D90,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for intensity (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Intensity8IExt = 0x8D91,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for luminance (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		Luminance8IExt = 0x8D92,
+
+		/// <summary>
+		/// Specifies a signed integer format with 8 bits for luminance and alpha (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		LuminanceAlpha8IExt = 0x8D93,
+
+		/// <summary>
+		/// Specifies the red integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		RedInteger = 0x8D94,
-		RedIntegerExt = 0x8D94,
+
+		/// <summary>
+		/// Specifies the green integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		GreenInteger = 0x8D95,
-		GreenIntegerExt = 0x8D95,
+
+		/// <summary>
+		/// Specifies the blue integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BlueInteger = 0x8D96,
-		BlueIntegerExt = 0x8D96,
-		AlphaInteger = 0x8D97,
-		AlphaIntegerExt = 0x8D97,
+
+		/// <summary>
+		/// Specifies the RGB integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		RgbInteger = 0x8D98,
-		RgbIntegerExt = 0x8D98,
+
+		/// <summary>
+		/// Specifies the RGBA integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		RgbaInteger = 0x8D99,
-		RgbaIntegerExt = 0x8D99,
+
+		/// <summary>
+		/// Specifies the BGR integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BgrInteger = 0x8D9A,
-		BgrIntegerExt = 0x8D9A,
+
+		/// <summary>
+		/// Specifies the BGRA integer format.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BgraInteger = 0x8D9B,
-		BgraIntegerExt = 0x8D9B,
-		LuminanceIntegerExt = 0x8D9C,
-		LuminanceAlphaIntegerExt = 0x8D9D,
-		RgbaIntegerModeExt = 0x8D9E,
+
+		/// <summary>
+		/// Specifies the integer format with reversed 2-10-10-10 layout.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
 		Int2101010Rev = 0x8D9F,
-		MaxProgramParameterBufferBindingsNv = 0x8DA0,
-		MaxProgramParameterBufferSizeNv = 0x8DA1,
-		VertexProgramParameterBufferNv = 0x8DA2,
-		GeometryProgramParameterBufferNv = 0x8DA3,
-		FragmentProgramParameterBufferNv = 0x8DA4,
-		MaxProgramGenericAttribsNv = 0x8DA5,
-		MaxProgramGenericResultsNv = 0x8DA6,
+
+		/// <summary>
+		/// Indicates that a framebuffer attachment is layered.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		FramebufferAttachmentLayered = 0x8DA7,
+
+		/// <summary>
+		/// Indicates that a framebuffer attachment is layered (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		FramebufferAttachmentLayeredArb = 0x8DA7,
+
+		/// <summary>
+		/// Indicates that a framebuffer attachment is layered (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_NV_geometry_program4</remarks>
 		FramebufferAttachmentLayeredExt = 0x8DA7,
+
+		/// <summary>
+		/// Indicates that a framebuffer attachment is layered (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentLayeredOes = 0x8DA7,
+
+		/// <summary>
+		/// Indicates incomplete framebuffer due to layer targets.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		FramebufferIncompleteLayerTargets = 0x8DA8,
-		FramebufferIncompleteLayerTargetsArb = 0x8DA8,
-		FramebufferIncompleteLayerTargetsExt = 0x8DA8,
-		FramebufferIncompleteLayerTargetsOes = 0x8DA8,
-		FramebufferIncompleteLayerCountArb = 0x8DA9,
-		FramebufferIncompleteLayerCountExt = 0x8DA9,
-		LayerNv = 0x8DAA,
+
+		/// <summary>
+		/// Specifies a depth component format with 32-bit floating point (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		DepthComponent32FNv = 0x8DAB,
+
+		/// <summary>
+		/// Specifies a combined depth and stencil format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		Depth32FStencil8Nv = 0x8DAC,
+
+		/// <summary>
+		/// Specifies a format with 32-bit floating point and 24-bit unsigned integer depth.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_depth_buffer_float</remarks>
 		Float32UnsignedInt248Rev = 0x8DAD,
+
+		/// <summary>
+		/// Specifies a format with 32-bit floating point and 24-bit unsigned integer depth (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
 		Float32UnsignedInt248RevNv = 0x8DAD,
-		ShaderIncludeArb = 0x8DAE,
-		DepthBufferFloatModeNv = 0x8DAF,
+
+		/// <summary>
+		/// Indicates support for sRGB framebuffer in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_sRGB</remarks>
 		FramebufferSrgb = 0x8DB9,
-		FramebufferSrgbExt = 0x8DB9,
-		FramebufferSrgbCapableExt = 0x8DBA,
+
+		/// <summary>
+		/// Specifies the compressed format for single-channel red textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedRedRgtc1 = 0x8DBB,
+
+		/// <summary>
+		/// Specifies the compressed format for single-channel red textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedRedRgtc1Ext = 0x8DBB,
+
+		/// <summary>
+		/// Specifies the signed compressed format for single-channel red textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedSignedRedRgtc1 = 0x8DBC,
+
+		/// <summary>
+		/// Specifies the signed compressed format for single-channel red textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedSignedRedRgtc1Ext = 0x8DBC,
+
+		/// <summary>
+		/// Specifies the compressed format for dual-channel red-green textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedRedGreenRgtc2Ext = 0x8DBD,
+
+		/// <summary>
+		/// Specifies the compressed format for dual-channel red-green textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedRgRgtc2 = 0x8DBD,
+
+		/// <summary>
+		/// Specifies the signed compressed format for dual-channel red-green textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_compression_rgtc</remarks>
 		CompressedSignedRedGreenRgtc2Ext = 0x8DBE,
+
+		/// <summary>
+		/// Specifies the signed compressed format for dual-channel red-green textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_compression_rgtc</remarks>
 		CompressedSignedRgRgtc2 = 0x8DBE,
+
+		/// <summary>
+		/// Specifies a 1D array sampler.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1DArray = 0x8DC0,
-		Sampler1DArrayExt = 0x8DC0,
+
+		/// <summary>
+		/// Specifies a 2D array sampler.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2DArray = 0x8DC1,
-		Sampler2DArrayExt = 0x8DC1,
+
+		/// <summary>
+		/// Specifies a buffer sampler.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		SamplerBuffer = 0x8DC2,
-		SamplerBufferExt = 0x8DC2,
-		SamplerBufferOes = 0x8DC2,
+
+		/// <summary>
+		/// Specifies a shadow sampler for 1D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler1DArrayShadow = 0x8DC3,
-		Sampler1DArrayShadowExt = 0x8DC3,
+
+		/// <summary>
+		/// Specifies a shadow sampler for 2D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Sampler2DArrayShadow = 0x8DC4,
-		Sampler2DArrayShadowExt = 0x8DC4,
-		Sampler2DArrayShadowNv = 0x8DC4,
+
+		/// <summary>
+		/// Specifies a shadow sampler for cube maps.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCubeShadow = 0x8DC5,
-		SamplerCubeShadowExt = 0x8DC5,
-		SamplerCubeShadowNv = 0x8DC5,
+
+		/// <summary>
+		/// Specifies a 2D unsigned integer vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntVec2 = 0x8DC6,
-		UnsignedIntVec2Ext = 0x8DC6,
+
+		/// <summary>
+		/// Specifies a 3D unsigned integer vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntVec3 = 0x8DC7,
-		UnsignedIntVec3Ext = 0x8DC7,
+
+		/// <summary>
+		/// Specifies a 4D unsigned integer vector.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntVec4 = 0x8DC8,
-		UnsignedIntVec4Ext = 0x8DC8,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 1D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler1D = 0x8DC9,
-		IntSampler1DExt = 0x8DC9,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler2D = 0x8DCA,
-		IntSampler2DExt = 0x8DCA,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler3D = 0x8DCB,
-		IntSampler3DExt = 0x8DCB,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for cube maps.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSamplerCube = 0x8DCC,
-		IntSamplerCubeExt = 0x8DCC,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 2D rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		IntSampler2DRect = 0x8DCD,
-		IntSampler2DRectExt = 0x8DCD,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 1D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler1DArray = 0x8DCE,
-		IntSampler1DArrayExt = 0x8DCE,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for 2D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSampler2DArray = 0x8DCF,
-		IntSampler2DArrayExt = 0x8DCF,
+
+		/// <summary>
+		/// Specifies a signed integer sampler for buffer textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		IntSamplerBuffer = 0x8DD0,
-		IntSamplerBufferExt = 0x8DD0,
-		IntSamplerBufferOes = 0x8DD0,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 1D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler1D = 0x8DD1,
-		UnsignedIntSampler1DExt = 0x8DD1,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler2D = 0x8DD2,
-		UnsignedIntSampler2DExt = 0x8DD2,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler3D = 0x8DD3,
-		UnsignedIntSampler3DExt = 0x8DD3,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for cube maps.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSamplerCube = 0x8DD4,
-		UnsignedIntSamplerCubeExt = 0x8DD4,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D rectangle textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		UnsignedIntSampler2DRect = 0x8DD5,
-		UnsignedIntSampler2DRectExt = 0x8DD5,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 1D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler1DArray = 0x8DD6,
-		UnsignedIntSampler1DArrayExt = 0x8DD6,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSampler2DArray = 0x8DD7,
-		UnsignedIntSampler2DArrayExt = 0x8DD7,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for buffer textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		UnsignedIntSamplerBuffer = 0x8DD8,
-		UnsignedIntSamplerBufferExt = 0x8DD8,
-		UnsignedIntSamplerBufferOes = 0x8DD8,
+
+		/// <summary>
+		/// Specifies the geometry shader type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		GeometryShader = 0x8DD9,
-		GeometryShaderArb = 0x8DD9,
-		GeometryShaderExt = 0x8DD9,
-		GeometryShaderOes = 0x8DD9,
-		GeometryVerticesOutArb = 0x8DDA,
-		GeometryVerticesOutExt = 0x8DDA,
-		GeometryInputTypeArb = 0x8DDB,
-		GeometryInputTypeExt = 0x8DDB,
-		GeometryOutputTypeArb = 0x8DDC,
-		GeometryOutputTypeExt = 0x8DDC,
-		MaxGeometryVaryingComponentsArb = 0x8DDD,
-		MaxGeometryVaryingComponentsExt = 0x8DDD,
-		MaxVertexVaryingComponentsArb = 0x8DDE,
-		MaxVertexVaryingComponentsExt = 0x8DDE,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform components for geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		MaxGeometryUniformComponents = 0x8DDF,
-		MaxGeometryUniformComponentsArb = 0x8DDF,
-		MaxGeometryUniformComponentsExt = 0x8DDF,
-		MaxGeometryUniformComponentsOes = 0x8DDF,
-		MaxGeometryOutputVertices = 0x8DE0,
-		MaxGeometryOutputVerticesArb = 0x8DE0,
-		MaxGeometryOutputVerticesExt = 0x8DE0,
-		MaxGeometryOutputVerticesOes = 0x8DE0,
-		MaxGeometryTotalOutputComponents = 0x8DE1,
-		MaxGeometryTotalOutputComponentsArb = 0x8DE1,
-		MaxGeometryTotalOutputComponentsExt = 0x8DE1,
-		MaxGeometryTotalOutputComponentsOes = 0x8DE1,
-		MaxVertexBindableUniformsExt = 0x8DE2,
-		MaxFragmentBindableUniformsExt = 0x8DE3,
-		MaxGeometryBindableUniformsExt = 0x8DE4,
+
+		/// <summary>
+		/// Indicates the number of active subroutines in a program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
 		ActiveSubroutines = 0x8DE5,
+
+		/// <summary>
+		/// Indicates the number of active subroutine uniforms in a program.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
 		ActiveSubroutineUniforms = 0x8DE6,
-		MaxSubroutines = 0x8DE7,
-		MaxSubroutineUniformLocations = 0x8DE8,
-		NamedStringLengthArb = 0x8DE9,
-		NamedStringTypeArb = 0x8DEA,
-		MaxBindableUniformSizeExt = 0x8DED,
-		UniformBufferExt = 0x8DEE,
-		UniformBufferBindingExt = 0x8DEF,
+
+		/// <summary>
+		/// Specifies the low precision float type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		LowFloat = 0x8DF0,
+
+		/// <summary>
+		/// Specifies the medium precision float type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MediumFloat = 0x8DF1,
+
+		/// <summary>
+		/// Specifies the high precision float type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		HighFloat = 0x8DF2,
+
+		/// <summary>
+		/// Specifies the low precision integer type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		LowInt = 0x8DF3,
+
+		/// <summary>
+		/// Specifies the medium precision integer type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MediumInt = 0x8DF4,
+
+		/// <summary>
+		/// Specifies the high precision integer type.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		HighInt = 0x8DF5,
-		UnsignedInt1010102Oes = 0x8DF6,
-		Int1010102Oes = 0x8DF7,
+
+		/// <summary>
+		/// Specifies the formats of binary shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ShaderBinaryFormats = 0x8DF8,
+
+		/// <summary>
+		/// Specifies the number of supported shader binary formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		NumShaderBinaryFormats = 0x8DF9,
+
+		/// <summary>
+		/// Specifies whether the shader compiler is available.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		ShaderCompiler = 0x8DFA,
+
+		/// <summary>
+		/// Specifies the maximum number of vectors for vertex shader uniforms.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MaxVertexUniformVectors = 0x8DFB,
+
+		/// <summary>
+		/// Specifies the maximum number of varying vectors between vertex and fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MaxVaryingVectors = 0x8DFC,
+
+		/// <summary>
+		/// Specifies the maximum number of vectors for fragment shader uniforms.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		MaxFragmentUniformVectors = 0x8DFD,
+
+		/// <summary>
+		/// Specifies the number of color samples in a renderbuffer for NV extension.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample_coverage</remarks>
 		RenderbufferColorSamplesNv = 0x8E10,
-		MaxMultisampleCoverageModesNv = 0x8E11,
-		MultisampleCoverageModesNv = 0x8E12,
+
+		/// <summary>
+		/// Specifies a query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryWait = 0x8E13,
-		QueryWaitNv = 0x8E13,
+
+		/// <summary>
+		/// Specifies a query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryNoWait = 0x8E14,
-		QueryNoWaitNv = 0x8E14,
+
+		/// <summary>
+		/// Specifies a region query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryByRegionWait = 0x8E15,
-		QueryByRegionWaitNv = 0x8E15,
+
+		/// <summary>
+		/// Specifies a region query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		QueryByRegionNoWait = 0x8E16,
-		QueryByRegionNoWaitNv = 0x8E16,
+
+		/// <summary>
+		/// Specifies an inverted query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryWaitInverted = 0x8E17,
+
+		/// <summary>
+		/// Specifies an inverted query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryNoWaitInverted = 0x8E18,
+
+		/// <summary>
+		/// Specifies an inverted region query that will wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryByRegionWaitInverted = 0x8E19,
+
+		/// <summary>
+		/// Specifies an inverted region query that will not wait for results.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_conditional_render_inverted</remarks>
 		QueryByRegionNoWaitInverted = 0x8E1A,
-		PolygonOffsetClamp = 0x8E1B,
-		PolygonOffsetClampExt = 0x8E1B,
-		MaxCombinedTessControlUniformComponents = 0x8E1E,
-		MaxCombinedTessControlUniformComponentsExt = 0x8E1E,
-		MaxCombinedTessControlUniformComponentsOes = 0x8E1E,
-		MaxCombinedTessEvaluationUniformComponents = 0x8E1F,
-		MaxCombinedTessEvaluationUniformComponentsExt = 0x8E1F,
-		MaxCombinedTessEvaluationUniformComponentsOes = 0x8E1F,
-		ColorSamplesNv = 0x8E20,
+
+		/// <summary>
+		/// Specifies the transform feedback target.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_EXT_debug_label<br/>GL_ARB_transform_feedback2</remarks>
 		TransformFeedback = 0x8E22,
-		TransformFeedbackNv = 0x8E22,
-		TransformFeedbackBufferPaused = 0x8E23,
+
+		/// <summary>
+		/// Indicates that transform feedback is paused.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		TransformFeedbackPaused = 0x8E23,
-		TransformFeedbackBufferPausedNv = 0x8E23,
-		TransformFeedbackBufferActive = 0x8E24,
+
+		/// <summary>
+		/// Indicates that transform feedback is active.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		TransformFeedbackActive = 0x8E24,
-		TransformFeedbackBufferActiveNv = 0x8E24,
-		TransformFeedbackBinding = 0x8E25,
-		TransformFeedbackBindingNv = 0x8E25,
-		FrameNv = 0x8E26,
-		FieldsNv = 0x8E27,
-		CurrentTimeNv = 0x8E28,
+
+		/// <summary>
+		/// Specifies the timestamp in OpenGL.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		Timestamp = 0x8E28,
+
+		/// <summary>
+		/// Specifies the timestamp (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TimestampExt = 0x8E28,
-		NumFillStreamsNv = 0x8E29,
-		PresentTimeNv = 0x8E2A,
-		PresentDurationNv = 0x8E2B,
-		DepthComponent16NonlinearNv = 0x8E2C,
-		ProgramMatrixExt = 0x8E2D,
-		TransposeProgramMatrixExt = 0x8E2E,
-		ProgramMatrixStackDepthExt = 0x8E2F,
+
+		/// <summary>
+		/// Specifies the swizzle component for red in texture operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_swizzle</remarks>
 		TextureSwizzleR = 0x8E42,
-		TextureSwizzleRExt = 0x8E42,
+
+		/// <summary>
+		/// Specifies the swizzle component for green in texture operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_swizzle</remarks>
 		TextureSwizzleG = 0x8E43,
-		TextureSwizzleGExt = 0x8E43,
+
+		/// <summary>
+		/// Specifies the swizzle component for blue in texture operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_swizzle</remarks>
 		TextureSwizzleB = 0x8E44,
-		TextureSwizzleBExt = 0x8E44,
+
+		/// <summary>
+		/// Specifies the swizzle component for alpha in texture operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_swizzle</remarks>
 		TextureSwizzleA = 0x8E45,
-		TextureSwizzleAExt = 0x8E45,
+
+		/// <summary>
+		/// Specifies the swizzle components for RGBA in texture operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_swizzle</remarks>
 		TextureSwizzleRgba = 0x8E46,
-		TextureSwizzleRgbaExt = 0x8E46,
+
+		/// <summary>
+		/// Indicates the number of active subroutine uniform locations.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
 		ActiveSubroutineUniformLocations = 0x8E47,
+
+		/// <summary>
+		/// Specifies the maximum length of an active subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
 		ActiveSubroutineMaxLength = 0x8E48,
+
+		/// <summary>
+		/// Specifies the maximum length of an active subroutine uniform.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
 		ActiveSubroutineUniformMaxLength = 0x8E49,
+
+		/// <summary>
+		/// Specifies the number of compatible subroutines.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query<br/>GL_ARB_shader_subroutine</remarks>
 		NumCompatibleSubroutines = 0x8E4A,
+
+		/// <summary>
+		/// Indicates that subroutines in a shader program are compatible with each other.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query<br/>GL_ARB_shader_subroutine</remarks>
 		CompatibleSubroutines = 0x8E4B,
-		QuadsFollowProvokingVertexConvention = 0x8E4C,
-		QuadsFollowProvokingVertexConventionExt = 0x8E4C,
+
+		/// <summary>
+		/// Specifies the convention for interpreting the first vertex in vertex processing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex<br/>GL_ARB_viewport_array</remarks>
 		FirstVertexConvention = 0x8E4D,
-		FirstVertexConventionExt = 0x8E4D,
-		FirstVertexConventionOes = 0x8E4D,
+
+		/// <summary>
+		/// Specifies the convention for interpreting the last vertex in vertex processing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex<br/>GL_ARB_viewport_array</remarks>
 		LastVertexConvention = 0x8E4E,
-		LastVertexConventionExt = 0x8E4E,
-		LastVertexConventionOes = 0x8E4E,
+
+		/// <summary>
+		/// Specifies which vertex of a primitive is considered the provoking vertex.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex<br/>GL_ARB_viewport_array</remarks>
 		ProvokingVertex = 0x8E4F,
-		ProvokingVertexExt = 0x8E4F,
+
+		/// <summary>
+		/// Specifies the position of samples for multisampling.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		SamplePosition = 0x8E50,
-		SamplePositionNv = 0x8E50,
+
+		/// <summary>
+		/// Specifies the location of samples (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		SampleLocationArb = 0x8E50,
-		SampleLocationNv = 0x8E50,
+
+		/// <summary>
+		/// Specifies a mask that controls sample writing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		SampleMask = 0x8E51,
-		SampleMaskNv = 0x8E51,
-		SampleMaskValue = 0x8E52,
-		SampleMaskValueNv = 0x8E52,
-		TextureBindingRenderbufferNv = 0x8E53,
-		TextureRenderbufferDataStoreBindingNv = 0x8E54,
-		TextureRenderbufferNv = 0x8E55,
-		SamplerRenderbufferNv = 0x8E56,
-		IntSamplerRenderbufferNv = 0x8E57,
-		UnsignedIntSamplerRenderbufferNv = 0x8E58,
+
+		/// <summary>
+		/// Specifies the maximum number of words in a sample mask.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxSampleMaskWords = 0x8E59,
-		MaxSampleMaskWordsNv = 0x8E59,
-		MaxGeometryProgramInvocationsNv = 0x8E5A,
-		MaxGeometryShaderInvocations = 0x8E5A,
-		MaxGeometryShaderInvocationsExt = 0x8E5A,
-		MaxGeometryShaderInvocationsOes = 0x8E5A,
-		MinFragmentInterpolationOffset = 0x8E5B,
-		MinFragmentInterpolationOffsetOes = 0x8E5B,
-		MinFragmentInterpolationOffsetNv = 0x8E5B,
-		MaxFragmentInterpolationOffset = 0x8E5C,
-		MaxFragmentInterpolationOffsetOes = 0x8E5C,
-		MaxFragmentInterpolationOffsetNv = 0x8E5C,
-		FragmentInterpolationOffsetBits = 0x8E5D,
-		FragmentInterpolationOffsetBitsOes = 0x8E5D,
-		FragmentProgramInterpolationOffsetBitsNv = 0x8E5D,
-		MinProgramTextureGatherOffset = 0x8E5E,
-		MinProgramTextureGatherOffsetArb = 0x8E5E,
-		MinProgramTextureGatherOffsetNv = 0x8E5E,
-		MaxProgramTextureGatherOffset = 0x8E5F,
-		MaxProgramTextureGatherOffsetArb = 0x8E5F,
-		MaxProgramTextureGatherOffsetNv = 0x8E5F,
-		MaxMeshUniformBlocksNv = 0x8E60,
-		MaxMeshTextureImageUnitsNv = 0x8E61,
-		MaxMeshImageUniformsNv = 0x8E62,
-		MaxMeshUniformComponentsNv = 0x8E63,
-		MaxMeshAtomicCounterBuffersNv = 0x8E64,
-		MaxMeshAtomicCountersNv = 0x8E65,
-		MaxMeshShaderStorageBlocksNv = 0x8E66,
-		MaxCombinedMeshUniformComponentsNv = 0x8E67,
-		MaxTaskUniformBlocksNv = 0x8E68,
-		MaxTaskTextureImageUnitsNv = 0x8E69,
-		MaxTaskImageUniformsNv = 0x8E6A,
-		MaxTaskUniformComponentsNv = 0x8E6B,
-		MaxTaskAtomicCounterBuffersNv = 0x8E6C,
-		MaxTaskAtomicCountersNv = 0x8E6D,
-		MaxTaskShaderStorageBlocksNv = 0x8E6E,
-		MaxCombinedTaskUniformComponentsNv = 0x8E6F,
-		MaxTransformFeedbackBuffers = 0x8E70,
-		MaxVertexStreams = 0x8E71,
+
+		/// <summary>
+		/// Specifies the number of vertices per patch.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		PatchVertices = 0x8E72,
-		PatchVerticesExt = 0x8E72,
-		PatchVerticesOes = 0x8E72,
+
+		/// <summary>
+		/// Specifies the default inner tessellation level.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		PatchDefaultInnerLevel = 0x8E73,
-		PatchDefaultInnerLevelExt = 0x8E73,
+
+		/// <summary>
+		/// Specifies the default outer tessellation level.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		PatchDefaultOuterLevel = 0x8E74,
-		PatchDefaultOuterLevelExt = 0x8E74,
-		TessControlOutputVertices = 0x8E75,
-		TessControlOutputVerticesExt = 0x8E75,
-		TessControlOutputVerticesOes = 0x8E75,
-		TessGenMode = 0x8E76,
-		TessGenModeExt = 0x8E76,
-		TessGenModeOes = 0x8E76,
-		TessGenSpacing = 0x8E77,
-		TessGenSpacingExt = 0x8E77,
-		TessGenSpacingOes = 0x8E77,
-		TessGenVertexOrder = 0x8E78,
-		TessGenVertexOrderExt = 0x8E78,
-		TessGenVertexOrderOes = 0x8E78,
-		TessGenPointMode = 0x8E79,
-		TessGenPointModeExt = 0x8E79,
-		TessGenPointModeOes = 0x8E79,
-		Isolines = 0x8E7A,
-		IsolinesExt = 0x8E7A,
-		IsolinesOes = 0x8E7A,
-		FractionalOdd = 0x8E7B,
-		FractionalOddExt = 0x8E7B,
-		FractionalOddOes = 0x8E7B,
-		FractionalEven = 0x8E7C,
-		FractionalEvenExt = 0x8E7C,
-		FractionalEvenOes = 0x8E7C,
-		MaxPatchVertices = 0x8E7D,
-		MaxPatchVerticesExt = 0x8E7D,
-		MaxPatchVerticesOes = 0x8E7D,
-		MaxTessGenLevel = 0x8E7E,
-		MaxTessGenLevelExt = 0x8E7E,
-		MaxTessGenLevelOes = 0x8E7E,
-		MaxTessControlUniformComponents = 0x8E7F,
-		MaxTessControlUniformComponentsExt = 0x8E7F,
-		MaxTessControlUniformComponentsOes = 0x8E7F,
-		MaxTessEvaluationUniformComponents = 0x8E80,
-		MaxTessEvaluationUniformComponentsExt = 0x8E80,
-		MaxTessEvaluationUniformComponentsOes = 0x8E80,
-		MaxTessControlTextureImageUnits = 0x8E81,
-		MaxTessControlTextureImageUnitsExt = 0x8E81,
-		MaxTessControlTextureImageUnitsOes = 0x8E81,
-		MaxTessEvaluationTextureImageUnits = 0x8E82,
-		MaxTessEvaluationTextureImageUnitsExt = 0x8E82,
-		MaxTessEvaluationTextureImageUnitsOes = 0x8E82,
-		MaxTessControlOutputComponents = 0x8E83,
-		MaxTessControlOutputComponentsExt = 0x8E83,
-		MaxTessControlOutputComponentsOes = 0x8E83,
-		MaxTessPatchComponents = 0x8E84,
-		MaxTessPatchComponentsExt = 0x8E84,
-		MaxTessPatchComponentsOes = 0x8E84,
-		MaxTessControlTotalOutputComponents = 0x8E85,
-		MaxTessControlTotalOutputComponentsExt = 0x8E85,
-		MaxTessControlTotalOutputComponentsOes = 0x8E85,
-		MaxTessEvaluationOutputComponents = 0x8E86,
-		MaxTessEvaluationOutputComponentsExt = 0x8E86,
-		MaxTessEvaluationOutputComponentsOes = 0x8E86,
+
+		/// <summary>
+		/// Specifies the tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		TessEvaluationShader = 0x8E87,
-		TessEvaluationShaderExt = 0x8E87,
-		TessEvaluationShaderOes = 0x8E87,
+
+		/// <summary>
+		/// Specifies the tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		TessControlShader = 0x8E88,
-		TessControlShaderExt = 0x8E88,
-		TessControlShaderOes = 0x8E88,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform blocks for tessellation control shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		MaxTessControlUniformBlocks = 0x8E89,
-		MaxTessControlUniformBlocksExt = 0x8E89,
-		MaxTessControlUniformBlocksOes = 0x8E89,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform blocks for tessellation evaluation shaders.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
 		MaxTessEvaluationUniformBlocks = 0x8E8A,
-		MaxTessEvaluationUniformBlocksExt = 0x8E8A,
-		MaxTessEvaluationUniformBlocksOes = 0x8E8A,
+
+		/// <summary>
+		/// Specifies the compressed format for RGBA textures using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedRgbaBptcUnorm = 0x8E8C,
+
+		/// <summary>
+		/// Specifies the compressed format for RGBA textures using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedRgbaBptcUnormArb = 0x8E8C,
+
+		/// <summary>
+		/// Specifies the compressed format for RGBA textures using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaBptcUnormExt = 0x8E8C,
+
+		/// <summary>
+		/// Specifies the compressed format for sRGB textures with alpha using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedSrgbAlphaBptcUnorm = 0x8E8D,
+
+		/// <summary>
+		/// Specifies the compressed format for sRGB textures with alpha using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedSrgbAlphaBptcUnormArb = 0x8E8D,
+
+		/// <summary>
+		/// Specifies the compressed format for sRGB textures with alpha using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgbAlphaBptcUnormExt = 0x8E8D,
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with signed floating point data using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedRgbBptcSignedFloat = 0x8E8E,
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with signed floating point data using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedRgbBptcSignedFloatArb = 0x8E8E,
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with signed floating point data using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbBptcSignedFloatExt = 0x8E8E,
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with unsigned floating point data using BPTC compression.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6</remarks>
 		CompressedRgbBptcUnsignedFloat = 0x8E8F,
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with unsigned floating point data using BPTC compression (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression_bptc</remarks>
 		CompressedRgbBptcUnsignedFloatArb = 0x8E8F,
+
+		/// <summary>
+		/// Specifies the compressed format for RGB textures with unsigned floating point data using BPTC compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbBptcUnsignedFloatExt = 0x8E8F,
-		TrpImg = 0x8EA0,
-		TrpErrorContextResetImg = 0x8EA1,
-		TrpUnsupportedContextImg = 0x8EA2,
-		PvricSignatureMismatchImg = 0x8EA3,
-		CoverageComponentNv = 0x8ED0,
-		CoverageComponent4Nv = 0x8ED1,
-		CoverageAttachmentNv = 0x8ED2,
-		CoverageBuffersNv = 0x8ED3,
-		CoverageSamplesNv = 0x8ED4,
-		CoverageAllFragmentsNv = 0x8ED5,
-		CoverageEdgeFragmentsNv = 0x8ED6,
-		CoverageAutomaticNv = 0x8ED7,
-		InclusiveExt = 0x8F10,
-		ExclusiveExt = 0x8F11,
-		WindowRectangleExt = 0x8F12,
-		WindowRectangleModeExt = 0x8F13,
-		MaxWindowRectanglesExt = 0x8F14,
-		NumWindowRectanglesExt = 0x8F15,
-		BufferGpuAddressNv = 0x8F1D,
-		VertexAttribArrayUnifiedNv = 0x8F1E,
-		ElementArrayUnifiedNv = 0x8F1F,
-		VertexAttribArrayAddressNv = 0x8F20,
-		VertexArrayAddressNv = 0x8F21,
-		NormalArrayAddressNv = 0x8F22,
-		ColorArrayAddressNv = 0x8F23,
-		IndexArrayAddressNv = 0x8F24,
-		TextureCoordArrayAddressNv = 0x8F25,
-		EdgeFlagArrayAddressNv = 0x8F26,
-		SecondaryColorArrayAddressNv = 0x8F27,
-		FogCoordArrayAddressNv = 0x8F28,
-		ElementArrayAddressNv = 0x8F29,
-		VertexAttribArrayLengthNv = 0x8F2A,
-		VertexArrayLengthNv = 0x8F2B,
-		NormalArrayLengthNv = 0x8F2C,
-		ColorArrayLengthNv = 0x8F2D,
-		IndexArrayLengthNv = 0x8F2E,
-		TextureCoordArrayLengthNv = 0x8F2F,
-		EdgeFlagArrayLengthNv = 0x8F30,
-		SecondaryColorArrayLengthNv = 0x8F31,
-		FogCoordArrayLengthNv = 0x8F32,
-		ElementArrayLengthNv = 0x8F33,
-		GpuAddressNv = 0x8F34,
-		MaxShaderBufferAddressNv = 0x8F35,
+
+		/// <summary>
+		/// Specifies the buffer used for reading during a copy operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
 		CopyReadBuffer = 0x8F36,
-		CopyReadBufferNv = 0x8F36,
-		CopyReadBufferBinding = 0x8F36,
+
+		/// <summary>
+		/// Specifies the buffer used for writing during a copy operation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
 		CopyWriteBuffer = 0x8F37,
-		CopyWriteBufferNv = 0x8F37,
-		CopyWriteBufferBinding = 0x8F37,
-		MaxImageUnits = 0x8F38,
-		MaxImageUnitsExt = 0x8F38,
-		MaxCombinedImageUnitsAndFragmentOutputs = 0x8F39,
-		MaxCombinedImageUnitsAndFragmentOutputsExt = 0x8F39,
-		MaxCombinedShaderOutputResources = 0x8F39,
-		ImageBindingName = 0x8F3A,
-		ImageBindingNameExt = 0x8F3A,
-		ImageBindingLevel = 0x8F3B,
-		ImageBindingLevelExt = 0x8F3B,
-		ImageBindingLayered = 0x8F3C,
-		ImageBindingLayeredExt = 0x8F3C,
-		ImageBindingLayer = 0x8F3D,
-		ImageBindingLayerExt = 0x8F3D,
-		ImageBindingAccess = 0x8F3E,
-		ImageBindingAccessExt = 0x8F3E,
+
+		/// <summary>
+		/// Specifies a buffer used for indirect draw calls.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
 		DrawIndirectBuffer = 0x8F3F,
-		DrawIndirectUnifiedNv = 0x8F40,
-		DrawIndirectAddressNv = 0x8F41,
-		DrawIndirectLengthNv = 0x8F42,
-		DrawIndirectBufferBinding = 0x8F43,
-		MaxProgramSubroutineParametersNv = 0x8F44,
-		MaxProgramSubroutineNumNv = 0x8F45,
+
+		/// <summary>
+		/// Specifies a 2x2 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat2 = 0x8F46,
-		DoubleMat2Ext = 0x8F46,
+
+		/// <summary>
+		/// Specifies a 3x3 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat3 = 0x8F47,
-		DoubleMat3Ext = 0x8F47,
+
+		/// <summary>
+		/// Specifies a 4x4 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat4 = 0x8F48,
-		DoubleMat4Ext = 0x8F48,
+
+		/// <summary>
+		/// Specifies a 2x3 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat2X3 = 0x8F49,
-		DoubleMat2X3Ext = 0x8F49,
+
+		/// <summary>
+		/// Specifies a 2x4 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat2X4 = 0x8F4A,
-		DoubleMat2X4Ext = 0x8F4A,
+
+		/// <summary>
+		/// Specifies a 3x2 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat3X2 = 0x8F4B,
-		DoubleMat3X2Ext = 0x8F4B,
+
+		/// <summary>
+		/// Specifies a 3x4 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat3X4 = 0x8F4C,
-		DoubleMat3X4Ext = 0x8F4C,
+
+		/// <summary>
+		/// Specifies a 4x2 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat4X2 = 0x8F4D,
-		DoubleMat4X2Ext = 0x8F4D,
+
+		/// <summary>
+		/// Specifies a 4x3 matrix of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleMat4X3 = 0x8F4E,
-		DoubleMat4X3Ext = 0x8F4E,
-		VertexBindingBuffer = 0x8F4F,
+
+		/// <summary>
+		/// Specifies a shader binary format for ARM architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		MaliShaderBinaryArm = 0x8F60,
-		MaliProgramBinaryArm = 0x8F61,
-		MaxShaderPixelLocalStorageFastSizeExt = 0x8F63,
-		ShaderPixelLocalStorageExt = 0x8F64,
+
+		/// <summary>
+		/// Indicates whether per-sample fetching is supported in ARM shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		FetchPerSampleArm = 0x8F65,
+
+		/// <summary>
+		/// Specifies framebuffer fetch capabilities for multiple render targets in ARM fragment shaders.
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShaderFramebufferFetchMrtArm = 0x8F66,
-		MaxShaderPixelLocalStorageSizeExt = 0x8F67,
-		TextureAstcDecodePrecisionExt = 0x8F69,
+
+		/// <summary>
+		/// Indicates support for unnormalized texture coordinates in ARM architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		TextureUnnormalizedCoordinatesArm = 0x8F6A,
+
+		/// <summary>
+		/// Specifies the number of fixed rates for surface compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NumSurfaceCompressionFixedRatesExt = 0x8F6E,
+
+		/// <summary>
+		/// Indicates support for non-trivial combiners for fragment shading rates (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateNonTrivialCombinersSupportedExt = 0x8F6F,
-		RedSnorm = 0x8F90,
-		RgSnorm = 0x8F91,
-		RgbSnorm = 0x8F92,
-		RgbaSnorm = 0x8F93,
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed red component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		R8Snorm = 0x8F94,
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed red-green component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rg8Snorm = 0x8F95,
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed RGB component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgb8Snorm = 0x8F96,
+
+		/// <summary>
+		/// Specifies an 8-bit normalized signed RGBA component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgba8Snorm = 0x8F97,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		R16Snorm = 0x8F98,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		R16SnormExt = 0x8F98,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red-green component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rg16Snorm = 0x8F99,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed red-green component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rg16SnormExt = 0x8F99,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGB component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgb16Snorm = 0x8F9A,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGB component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rgb16SnormExt = 0x8F9A,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGBA component format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_EXT_texture_snorm</remarks>
 		Rgba16Snorm = 0x8F9B,
+
+		/// <summary>
+		/// Specifies a 16-bit normalized signed RGBA component format (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Rgba16SnormExt = 0x8F9B,
-		SignedNormalized = 0x8F9C,
+
+		/// <summary>
+		/// Indicates the use of primitive restart in drawing commands.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		PrimitiveRestart = 0x8F9D,
+
+		/// <summary>
+		/// Specifies the index used for primitive restart.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		PrimitiveRestartIndex = 0x8F9E,
-		MaxProgramTextureGatherComponentsArb = 0x8F9F,
-		PerfmonGlobalModeQcom = 0x8FA0,
-		MaxShaderSubsampledImageUnitsQcom = 0x8FA1,
+
+		/// <summary>
+		/// Specifies a hint for binning control in the QCOM extension.
+		/// </summary>
+		/// <remarks></remarks>
 		BinningControlHintQcom = 0x8FB0,
-		CpuOptimizedQcom = 0x8FB1,
-		GpuOptimizedQcom = 0x8FB2,
-		RenderDirectToFramebufferQcom = 0x8FB3,
-		GpuDisjointExt = 0x8FBB,
+
+		/// <summary>
+		/// Specifies a texture format for 8-bit signed red (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB_R8</remarks>
 		Sr8Ext = 0x8FBD,
+
+		/// <summary>
+		/// Specifies a texture format for 8-bit signed red-green (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_sRGB_RG8</remarks>
 		Srg8Ext = 0x8FBE,
-		TextureFormatSrgbOverrideExt = 0x8FBF,
+
+		/// <summary>
+		/// Specifies a shader binary format for VIV architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderBinaryViv = 0x8FC4,
-		Int8Nv = 0x8FE0,
-		Int8Vec2Nv = 0x8FE1,
-		Int8Vec3Nv = 0x8FE2,
-		Int8Vec4Nv = 0x8FE3,
-		Int16Nv = 0x8FE4,
-		Int16Vec2Nv = 0x8FE5,
-		Int16Vec3Nv = 0x8FE6,
-		Int16Vec4Nv = 0x8FE7,
+
+		/// <summary>
+		/// Specifies a 2-component vector of 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Vec2Arb = 0x8FE9,
-		Int64Vec2Nv = 0x8FE9,
+
+		/// <summary>
+		/// Specifies a 3-component vector of 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Vec3Arb = 0x8FEA,
-		Int64Vec3Nv = 0x8FEA,
+
+		/// <summary>
+		/// Specifies a 4-component vector of 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		Int64Vec4Arb = 0x8FEB,
-		Int64Vec4Nv = 0x8FEB,
-		UnsignedInt8Nv = 0x8FEC,
-		UnsignedInt8Vec2Nv = 0x8FED,
-		UnsignedInt8Vec3Nv = 0x8FEE,
-		UnsignedInt8Vec4Nv = 0x8FEF,
-		UnsignedInt16Nv = 0x8FF0,
-		UnsignedInt16Vec2Nv = 0x8FF1,
-		UnsignedInt16Vec3Nv = 0x8FF2,
-		UnsignedInt16Vec4Nv = 0x8FF3,
+
+		/// <summary>
+		/// Specifies a 2-component vector of unsigned 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Vec2Arb = 0x8FF5,
-		UnsignedInt64Vec2Nv = 0x8FF5,
+
+		/// <summary>
+		/// Specifies a 3-component vector of unsigned 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Vec3Arb = 0x8FF6,
-		UnsignedInt64Vec3Nv = 0x8FF6,
+
+		/// <summary>
+		/// Specifies a 4-component vector of unsigned 64-bit integers (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
 		UnsignedInt64Vec4Arb = 0x8FF7,
-		UnsignedInt64Vec4Nv = 0x8FF7,
-		Float16Nv = 0x8FF8,
-		Float16Vec2Nv = 0x8FF9,
-		Float16Vec3Nv = 0x8FFA,
-		Float16Vec4Nv = 0x8FFB,
+
+		/// <summary>
+		/// Specifies a 2-component vector of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleVec2 = 0x8FFC,
-		DoubleVec2Ext = 0x8FFC,
+
+		/// <summary>
+		/// Specifies a 3-component vector of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleVec3 = 0x8FFD,
-		DoubleVec3Ext = 0x8FFD,
+
+		/// <summary>
+		/// Specifies a 4-component vector of double-precision floating-point values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64<br/>GL_ARB_vertex_attrib_64bit</remarks>
 		DoubleVec4 = 0x8FFE,
-		DoubleVec4Ext = 0x8FFE,
-		SamplerBufferAmd = 0x9001,
-		IntSamplerBufferAmd = 0x9002,
-		UnsignedIntSamplerBufferAmd = 0x9003,
-		TessellationModeAmd = 0x9004,
-		TessellationFactorAmd = 0x9005,
-		DiscreteAmd = 0x9006,
-		ContinuousAmd = 0x9007,
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		TextureCubeMapArray = 0x9009,
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map_array</remarks>
 		TextureCubeMapArrayArb = 0x9009,
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapArrayExt = 0x9009,
+
+		/// <summary>
+		/// Specifies a texture format for cube map arrays (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCubeMapArrayOes = 0x9009,
-		TextureBindingCubeMapArray = 0x900A,
-		TextureBindingCubeMapArrayArb = 0x900A,
-		TextureBindingCubeMapArrayExt = 0x900A,
-		TextureBindingCubeMapArrayOes = 0x900A,
+
+		/// <summary>
+		/// Specifies a proxy texture for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		ProxyTextureCubeMapArray = 0x900B,
+
+		/// <summary>
+		/// Specifies a proxy texture for cube map arrays (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_cube_map_array</remarks>
 		ProxyTextureCubeMapArrayArb = 0x900B,
+
+		/// <summary>
+		/// Specifies a sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCubeMapArray = 0x900C,
-		SamplerCubeMapArrayArb = 0x900C,
-		SamplerCubeMapArrayExt = 0x900C,
-		SamplerCubeMapArrayOes = 0x900C,
+
+		/// <summary>
+		/// Specifies a shadow sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SamplerCubeMapArrayShadow = 0x900D,
-		SamplerCubeMapArrayShadowArb = 0x900D,
-		SamplerCubeMapArrayShadowExt = 0x900D,
-		SamplerCubeMapArrayShadowOes = 0x900D,
+
+		/// <summary>
+		/// Specifies an integer sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		IntSamplerCubeMapArray = 0x900E,
-		IntSamplerCubeMapArrayArb = 0x900E,
-		IntSamplerCubeMapArrayExt = 0x900E,
-		IntSamplerCubeMapArrayOes = 0x900E,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for cube map arrays.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedIntSamplerCubeMapArray = 0x900F,
-		UnsignedIntSamplerCubeMapArrayArb = 0x900F,
-		UnsignedIntSamplerCubeMapArrayExt = 0x900F,
-		UnsignedIntSamplerCubeMapArrayOes = 0x900F,
-		AlphaSnorm = 0x9010,
-		LuminanceSnorm = 0x9011,
-		LuminanceAlphaSnorm = 0x9012,
-		IntensitySnorm = 0x9013,
-		Alpha8Snorm = 0x9014,
-		Luminance8Snorm = 0x9015,
-		Luminance8Alpha8Snorm = 0x9016,
-		Intensity8Snorm = 0x9017,
-		Alpha16Snorm = 0x9018,
-		Luminance16Snorm = 0x9019,
-		Luminance16Alpha16Snorm = 0x901A,
-		Intensity16Snorm = 0x901B,
-		FactorMinAmd = 0x901C,
-		FactorMaxAmd = 0x901D,
-		DepthClampNearAmd = 0x901E,
-		DepthClampFarAmd = 0x901F,
-		VideoBufferNv = 0x9020,
-		VideoBufferBindingNv = 0x9021,
-		FieldUpperNv = 0x9022,
-		FieldLowerNv = 0x9023,
-		NumVideoCaptureStreamsNv = 0x9024,
-		NextVideoCaptureBufferStatusNv = 0x9025,
-		VideoCaptureTo422SupportedNv = 0x9026,
-		LastVideoCaptureStatusNv = 0x9027,
-		VideoBufferPitchNv = 0x9028,
-		VideoColorConversionMatrixNv = 0x9029,
-		VideoColorConversionMaxNv = 0x902A,
-		VideoColorConversionMinNv = 0x902B,
-		VideoColorConversionOffsetNv = 0x902C,
-		VideoBufferInternalFormatNv = 0x902D,
-		PartialSuccessNv = 0x902E,
-		SuccessNv = 0x902F,
-		FailureNv = 0x9030,
-		Ycbycr8422Nv = 0x9031,
-		Ycbaycr8A4224Nv = 0x9032,
-		Z6Y10Z6Cb10Z6Y10Z6Cr10422Nv = 0x9033,
-		Z6Y10Z6Cb10Z6A10Z6Y10Z6Cr10Z6A104224Nv = 0x9034,
-		Z4Y12Z4Cb12Z4Y12Z4Cr12422Nv = 0x9035,
-		Z4Y12Z4Cb12Z4A12Z4Y12Z4Cr12Z4A124224Nv = 0x9036,
-		Z4Y12Z4Cb12Z4Cr12444Nv = 0x9037,
-		VideoCaptureFrameWidthNv = 0x9038,
-		VideoCaptureFrameHeightNv = 0x9039,
-		VideoCaptureFieldUpperHeightNv = 0x903A,
-		VideoCaptureFieldLowerHeightNv = 0x903B,
-		VideoCaptureSurfaceOriginNv = 0x903C,
-		TextureCoverageSamplesNv = 0x9045,
-		TextureColorSamplesNv = 0x9046,
-		GpuMemoryInfoDedicatedVidmemNvx = 0x9047,
-		GpuMemoryInfoTotalAvailableMemoryNvx = 0x9048,
-		GpuMemoryInfoCurrentAvailableVidmemNvx = 0x9049,
-		GpuMemoryInfoEvictionCountNvx = 0x904A,
-		GpuMemoryInfoEvictedMemoryNvx = 0x904B,
+
+		/// <summary>
+		/// Specifies a 1D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image1D = 0x904C,
-		Image1DExt = 0x904C,
+
+		/// <summary>
+		/// Specifies a 2D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2D = 0x904D,
-		Image2DExt = 0x904D,
+
+		/// <summary>
+		/// Specifies a 3D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image3D = 0x904E,
-		Image3DExt = 0x904E,
+
+		/// <summary>
+		/// Specifies a 2D rectangular image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DRect = 0x904F,
-		Image2DRectExt = 0x904F,
+
+		/// <summary>
+		/// Specifies a cube map image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageCube = 0x9050,
-		ImageCubeExt = 0x9050,
+
+		/// <summary>
+		/// Specifies a buffer image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageBuffer = 0x9051,
-		ImageBufferExt = 0x9051,
-		ImageBufferOes = 0x9051,
+
+		/// <summary>
+		/// Specifies a 1D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image1DArray = 0x9052,
-		Image1DArrayExt = 0x9052,
+
+		/// <summary>
+		/// Specifies a 2D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DArray = 0x9053,
-		Image2DArrayExt = 0x9053,
+
+		/// <summary>
+		/// Specifies a cube map array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageCubeMapArray = 0x9054,
-		ImageCubeMapArrayExt = 0x9054,
-		ImageCubeMapArrayOes = 0x9054,
+
+		/// <summary>
+		/// Specifies a 2D multisample image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DMultisample = 0x9055,
-		Image2DMultisampleExt = 0x9055,
+
+		/// <summary>
+		/// Specifies a 2D multisample array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		Image2DMultisampleArray = 0x9056,
-		Image2DMultisampleArrayExt = 0x9056,
+
+		/// <summary>
+		/// Specifies an integer 1D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage1D = 0x9057,
-		IntImage1DExt = 0x9057,
+
+		/// <summary>
+		/// Specifies an integer 2D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2D = 0x9058,
-		IntImage2DExt = 0x9058,
+
+		/// <summary>
+		/// Specifies an integer 3D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage3D = 0x9059,
-		IntImage3DExt = 0x9059,
+
+		/// <summary>
+		/// Specifies an integer 2D rectangular image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DRect = 0x905A,
-		IntImage2DRectExt = 0x905A,
+
+		/// <summary>
+		/// Specifies an integer cube map image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImageCube = 0x905B,
-		IntImageCubeExt = 0x905B,
+
+		/// <summary>
+		/// Specifies an integer buffer image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImageBuffer = 0x905C,
-		IntImageBufferExt = 0x905C,
-		IntImageBufferOes = 0x905C,
+
+		/// <summary>
+		/// Specifies an integer 1D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage1DArray = 0x905D,
-		IntImage1DArrayExt = 0x905D,
+
+		/// <summary>
+		/// Specifies an integer 2D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DArray = 0x905E,
-		IntImage2DArrayExt = 0x905E,
+
+		/// <summary>
+		/// Specifies an integer cube map array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImageCubeMapArray = 0x905F,
-		IntImageCubeMapArrayExt = 0x905F,
-		IntImageCubeMapArrayOes = 0x905F,
+
+		/// <summary>
+		/// Specifies an integer 2D multisample image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DMultisample = 0x9060,
-		IntImage2DMultisampleExt = 0x9060,
+
+		/// <summary>
+		/// Specifies an integer 2D multisample array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		IntImage2DMultisampleArray = 0x9061,
-		IntImage2DMultisampleArrayExt = 0x9061,
+
+		/// <summary>
+		/// Specifies an unsigned integer 1D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage1D = 0x9062,
-		UnsignedIntImage1DExt = 0x9062,
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2D = 0x9063,
-		UnsignedIntImage2DExt = 0x9063,
+
+		/// <summary>
+		/// Specifies an unsigned integer 3D image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage3D = 0x9064,
-		UnsignedIntImage3DExt = 0x9064,
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D rectangular image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DRect = 0x9065,
-		UnsignedIntImage2DRectExt = 0x9065,
+
+		/// <summary>
+		/// Specifies an unsigned integer cube map image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImageCube = 0x9066,
-		UnsignedIntImageCubeExt = 0x9066,
+
+		/// <summary>
+		/// Specifies an unsigned integer buffer image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImageBuffer = 0x9067,
-		UnsignedIntImageBufferExt = 0x9067,
-		UnsignedIntImageBufferOes = 0x9067,
+
+		/// <summary>
+		/// Specifies an unsigned integer 1D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage1DArray = 0x9068,
-		UnsignedIntImage1DArrayExt = 0x9068,
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DArray = 0x9069,
-		UnsignedIntImage2DArrayExt = 0x9069,
+
+		/// <summary>
+		/// Specifies an unsigned integer cube map array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImageCubeMapArray = 0x906A,
-		UnsignedIntImageCubeMapArrayExt = 0x906A,
-		UnsignedIntImageCubeMapArrayOes = 0x906A,
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D multisample image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DMultisample = 0x906B,
-		UnsignedIntImage2DMultisampleExt = 0x906B,
+
+		/// <summary>
+		/// Specifies an unsigned integer 2D multisample array image format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UnsignedIntImage2DMultisampleArray = 0x906C,
-		UnsignedIntImage2DMultisampleArrayExt = 0x906C,
-		MaxImageSamples = 0x906D,
-		MaxImageSamplesExt = 0x906D,
-		ImageBindingFormat = 0x906E,
-		ImageBindingFormatExt = 0x906E,
+
+		/// <summary>
+		/// Specifies a 10-2-10-2 unsigned integer format for images.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_rgb10_a2ui</remarks>
 		Rgb10A2Ui = 0x906F,
+
+		/// <summary>
+		/// Specifies the SVG path format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathFormatSvgNv = 0x9070,
+
+		/// <summary>
+		/// Specifies the PostScript path format (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathFormatPsNv = 0x9071,
+
+		/// <summary>
+		/// Specifies the standard font name (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		StandardFontNameNv = 0x9072,
+
+		/// <summary>
+		/// Specifies the system font name (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SystemFontNameNv = 0x9073,
+
+		/// <summary>
+		/// Specifies the file name (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FileNameNv = 0x9074,
+
+		/// <summary>
+		/// Specifies the stroke width for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathStrokeWidthNv = 0x9075,
+
+		/// <summary>
+		/// Specifies the end caps style for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathEndCapsNv = 0x9076,
+
+		/// <summary>
+		/// Specifies the initial end cap style for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathInitialEndCapNv = 0x9077,
+
+		/// <summary>
+		/// Specifies the terminal end cap style for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathTerminalEndCapNv = 0x9078,
+
+		/// <summary>
+		/// Specifies the join style for path segments (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathJoinStyleNv = 0x9079,
+
+		/// <summary>
+		/// Specifies the miter limit for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathMiterLimitNv = 0x907A,
+
+		/// <summary>
+		/// Specifies the dash caps style for dashed paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathDashCapsNv = 0x907B,
+
+		/// <summary>
+		/// Specifies the initial dash cap style for dashed paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathInitialDashCapNv = 0x907C,
+
+		/// <summary>
+		/// Specifies the terminal dash cap style for dashed paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathTerminalDashCapNv = 0x907D,
+
+		/// <summary>
+		/// Specifies the dash offset for dashed paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathDashOffsetNv = 0x907E,
+
+		/// <summary>
+		/// Specifies the client length for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathClientLengthNv = 0x907F,
+
+		/// <summary>
+		/// Specifies the fill mode for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathFillModeNv = 0x9080,
+
+		/// <summary>
+		/// Specifies the fill mask for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathFillMaskNv = 0x9081,
+
+		/// <summary>
+		/// Specifies the fill cover mode for paths (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathFillCoverModeNv = 0x9082,
+
+		/// <summary>
+		/// Specifies the cover mode for strokes in path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathStrokeCoverModeNv = 0x9083,
+
+		/// <summary>
+		/// Defines the mask used for path stroke rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathStrokeMaskNv = 0x9084,
+
+		/// <summary>
+		/// Increments the count for certain operations in NV path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		CountUpNv = 0x9088,
+
+		/// <summary>
+		/// Decrements the count for certain operations in NV path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		CountDownNv = 0x9089,
+
+		/// <summary>
+		/// Specifies the bounding box for a path object.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathObjectBoundingBoxNv = 0x908A,
+
+		/// <summary>
+		/// Specifies the convex hull calculation mode for path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ConvexHullNv = 0x908B,
+
+		/// <summary>
+		/// Defines the bounding box for path or object.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		BoundingBoxNv = 0x908D,
+
+		/// <summary>
+		/// Specifies the X-axis translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TranslateXNv = 0x908E,
+
+		/// <summary>
+		/// Specifies the Y-axis translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TranslateYNv = 0x908F,
+
+		/// <summary>
+		/// Specifies a 2D translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Translate2DNv = 0x9090,
+
+		/// <summary>
+		/// Specifies a 3D translation in NV path transformations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Translate3DNv = 0x9091,
+
+		/// <summary>
+		/// Specifies a 2D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Affine2DNv = 0x9092,
+
+		/// <summary>
+		/// Specifies a 3D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Affine3DNv = 0x9094,
+
+		/// <summary>
+		/// Specifies the transpose of a 2D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TransposeAffine2DNv = 0x9096,
+
+		/// <summary>
+		/// Specifies the transpose of a 3D affine transformation.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		TransposeAffine3DNv = 0x9098,
+
+		/// <summary>
+		/// Specifies UTF-8 encoding for text in path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Utf8Nv = 0x909A,
+
+		/// <summary>
+		/// Specifies UTF-16 encoding for text in path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		Utf16Nv = 0x909B,
+
+		/// <summary>
+		/// Defines the bounding box encompassing multiple bounding boxes.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		BoundingBoxOfBoundingBoxesNv = 0x909C,
+
+		/// <summary>
+		/// Specifies the number of commands in a path.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathCommandCountNv = 0x909D,
+
+		/// <summary>
+		/// Specifies the number of coordinates in a path.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathCoordCountNv = 0x909E,
+
+		/// <summary>
+		/// Specifies the number of dashes in a dash array.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathDashArrayCountNv = 0x909F,
+
+		/// <summary>
+		/// Specifies the computed length of a path.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathComputedLengthNv = 0x90A0,
+
+		/// <summary>
+		/// Defines the bounding box for path fill operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathFillBoundingBoxNv = 0x90A1,
+
+		/// <summary>
+		/// Defines the bounding box for path stroke operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathStrokeBoundingBoxNv = 0x90A2,
-		SquareNv = 0x90A3,
-		RoundNv = 0x90A4,
-		TriangularNv = 0x90A5,
-		BevelNv = 0x90A6,
-		MiterRevertNv = 0x90A7,
-		MiterTruncateNv = 0x90A8,
+
+		/// <summary>
+		/// Specifies behavior to skip rendering of missing glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		SkipMissingGlyphNv = 0x90A9,
+
+		/// <summary>
+		/// Specifies behavior to use a default glyph for missing characters.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		UseMissingGlyphNv = 0x90AA,
-		PathErrorPositionNv = 0x90AB,
-		PathFogGenModeNv = 0x90AC,
+
+		/// <summary>
+		/// Accumulates adjacent path pairs in certain operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		AccumAdjacentPairsNv = 0x90AD,
+
+		/// <summary>
+		/// Specifies adjacent pairs for path operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		AdjacentPairsNv = 0x90AE,
+
+		/// <summary>
+		/// Specifies operations from the first element to the rest.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FirstToRestNv = 0x90AF,
-		PathGenModeNv = 0x90B0,
-		PathGenCoeffNv = 0x90B1,
-		PathGenColorFormatNv = 0x90B2,
-		PathGenComponentsNv = 0x90B3,
+
+		/// <summary>
+		/// Resets the dash offset for path rendering.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PathDashOffsetResetNv = 0x90B4,
-		MoveToResetsNv = 0x90B5,
-		MoveToContinuesNv = 0x90B6,
-		PathStencilFuncNv = 0x90B7,
-		PathStencilRefNv = 0x90B8,
-		PathStencilValueMaskNv = 0x90B9,
-		ScaledResolveFastestExt = 0x90BA,
-		ScaledResolveNicestExt = 0x90BB,
+
+		/// <summary>
+		/// Specifies the minimum alignment for buffer mapping.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_alignment</remarks>
 		MinMapBufferAlignment = 0x90BC,
-		PathStencilDepthOffsetFactorNv = 0x90BD,
-		PathStencilDepthOffsetUnitsNv = 0x90BE,
-		PathCoverDepthFuncNv = 0x90BF,
+
+		/// <summary>
+		/// Specifies the compatibility type for image formats.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_shader_image_load_store</remarks>
 		ImageFormatCompatibilityType = 0x90C7,
-		ImageFormatCompatibilityBySize = 0x90C8,
-		ImageFormatCompatibilityByClass = 0x90C9,
-		MaxVertexImageUniforms = 0x90CA,
-		MaxTessControlImageUniforms = 0x90CB,
-		MaxTessControlImageUniformsExt = 0x90CB,
-		MaxTessControlImageUniformsOes = 0x90CB,
-		MaxTessEvaluationImageUniforms = 0x90CC,
-		MaxTessEvaluationImageUniformsExt = 0x90CC,
-		MaxTessEvaluationImageUniformsOes = 0x90CC,
-		MaxGeometryImageUniforms = 0x90CD,
-		MaxGeometryImageUniformsExt = 0x90CD,
-		MaxGeometryImageUniformsOes = 0x90CD,
-		MaxFragmentImageUniforms = 0x90CE,
-		MaxCombinedImageUniforms = 0x90CF,
-		MaxDeep3DTextureWidthHeightNv = 0x90D0,
-		MaxDeep3DTextureDepthNv = 0x90D1,
+
+		/// <summary>
+		/// Specifies the target for shader storage buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBuffer = 0x90D2,
+
+		/// <summary>
+		/// Specifies the binding point for shader storage buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferBinding = 0x90D3,
+
+		/// <summary>
+		/// Specifies the starting offset for shader storage buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferStart = 0x90D4,
+
+		/// <summary>
+		/// Specifies the size of shader storage buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferSize = 0x90D5,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in vertex shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxVertexShaderStorageBlocks = 0x90D6,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxGeometryShaderStorageBlocks = 0x90D7,
-		MaxGeometryShaderStorageBlocksExt = 0x90D7,
-		MaxGeometryShaderStorageBlocksOes = 0x90D7,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in tessellation control shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxTessControlShaderStorageBlocks = 0x90D8,
-		MaxTessControlShaderStorageBlocksExt = 0x90D8,
-		MaxTessControlShaderStorageBlocksOes = 0x90D8,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in tessellation evaluation shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxTessEvaluationShaderStorageBlocks = 0x90D9,
-		MaxTessEvaluationShaderStorageBlocksExt = 0x90D9,
-		MaxTessEvaluationShaderStorageBlocksOes = 0x90D9,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxFragmentShaderStorageBlocks = 0x90DA,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage blocks in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxComputeShaderStorageBlocks = 0x90DB,
+
+		/// <summary>
+		/// Specifies the maximum number of combined shader storage blocks across all shader stages.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxCombinedShaderStorageBlocks = 0x90DC,
+
+		/// <summary>
+		/// Specifies the maximum number of shader storage buffer bindings.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		MaxShaderStorageBufferBindings = 0x90DD,
-		MaxShaderStorageBlockSize = 0x90DE,
+
+		/// <summary>
+		/// Specifies the alignment requirements for shader storage buffer offsets.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBufferOffsetAlignment = 0x90DF,
-		SyncX11FenceExt = 0x90E1,
+
+		/// <summary>
+		/// Specifies the mode for depth-stencil textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_stencil_texturing</remarks>
 		DepthStencilTextureMode = 0x90EA,
+
+		/// <summary>
+		/// Specifies the maximum number of invocations in a compute work group.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeWorkGroupInvocations = 0x90EB,
-		MaxComputeFixedGroupInvocationsArb = 0x90EB,
+
+		/// <summary>
+		/// Specifies uniform blocks referenced by compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		UniformBlockReferencedByComputeShader = 0x90EC,
+
+		/// <summary>
+		/// Specifies atomic counter buffers referenced by compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		AtomicCounterBufferReferencedByComputeShader = 0x90ED,
+
+		/// <summary>
+		/// Specifies the buffer for indirect dispatch commands.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		DispatchIndirectBuffer = 0x90EE,
+
+		/// <summary>
+		/// Specifies the binding point for indirect dispatch buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		DispatchIndirectBufferBinding = 0x90EF,
-		ColorAttachmentExt = 0x90F0,
-		MultiviewExt = 0x90F1,
-		MaxMultiviewBuffersExt = 0x90F2,
-		ContextRobustAccess = 0x90F3,
-		ContextRobustAccessExt = 0x90F3,
-		ContextRobustAccessKhr = 0x90F3,
+
+		/// <summary>
+		/// Specifies a compute program object (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_compute_program5</remarks>
 		ComputeProgramNv = 0x90FB,
-		ComputeProgramParameterBufferNv = 0x90FC,
+
+		/// <summary>
+		/// Specifies a 2D multisample texture target.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_texture_multisample<br/>GL_NV_internalformat_sample_query</remarks>
 		Texture2DMultisample = 0x9100,
+
+		/// <summary>
+		/// Specifies a proxy target for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		ProxyTexture2DMultisample = 0x9101,
+
+		/// <summary>
+		/// Specifies a 2D multisample array texture target.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2<br/>GL_ARB_texture_multisample<br/>GL_NV_internalformat_sample_query</remarks>
 		Texture2DMultisampleArray = 0x9102,
-		Texture2DMultisampleArrayOes = 0x9102,
+
+		/// <summary>
+		/// Specifies a proxy target for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		ProxyTexture2DMultisampleArray = 0x9103,
+
+		/// <summary>
+		/// Specifies the binding point for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access<br/>GL_ARB_texture_multisample</remarks>
 		TextureBinding2DMultisample = 0x9104,
+
+		/// <summary>
+		/// Specifies the binding point for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access<br/>GL_ARB_texture_multisample</remarks>
 		TextureBinding2DMultisampleArray = 0x9105,
-		TextureBinding2DMultisampleArrayOes = 0x9105,
-		TextureSamples = 0x9106,
-		TextureFixedSampleLocations = 0x9107,
+
+		/// <summary>
+		/// Specifies a sampler for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		Sampler2DMultisample = 0x9108,
+
+		/// <summary>
+		/// Specifies an integer sampler for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		IntSampler2DMultisample = 0x9109,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D multisample textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		UnsignedIntSampler2DMultisample = 0x910A,
+
+		/// <summary>
+		/// Specifies a sampler for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		Sampler2DMultisampleArray = 0x910B,
-		Sampler2DMultisampleArrayOes = 0x910B,
+
+		/// <summary>
+		/// Specifies an integer sampler for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		IntSampler2DMultisampleArray = 0x910C,
-		IntSampler2DMultisampleArrayOes = 0x910C,
+
+		/// <summary>
+		/// Specifies an unsigned integer sampler for 2D multisample array textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		UnsignedIntSampler2DMultisampleArray = 0x910D,
-		UnsignedIntSampler2DMultisampleArrayOes = 0x910D,
+
+		/// <summary>
+		/// Specifies the maximum number of color texture samples.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxColorTextureSamples = 0x910E,
+
+		/// <summary>
+		/// Specifies the maximum number of depth texture samples.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxDepthTextureSamples = 0x910F,
+
+		/// <summary>
+		/// Specifies the maximum number of integer texture samples.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		MaxIntegerSamples = 0x9110,
+
+		/// <summary>
+		/// Specifies the maximum timeout for server wait operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		MaxServerWaitTimeout = 0x9111,
-		MaxServerWaitTimeoutApple = 0x9111,
+
+		/// <summary>
+		/// Specifies the type of an OpenGL object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		ObjectType = 0x9112,
-		ObjectTypeApple = 0x9112,
+
+		/// <summary>
+		/// Specifies the condition for synchronization objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		SyncCondition = 0x9113,
-		SyncConditionApple = 0x9113,
+
+		/// <summary>
+		/// Specifies the status of a synchronization object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		SyncStatus = 0x9114,
-		SyncStatusApple = 0x9114,
+
+		/// <summary>
+		/// Specifies the flags for synchronization objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		SyncFlags = 0x9115,
-		SyncFlagsApple = 0x9115,
-		SyncFence = 0x9116,
-		SyncFenceApple = 0x9116,
+
+		/// <summary>
+		/// Indicates that GPU commands have completed execution.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		SyncGpuCommandsComplete = 0x9117,
-		SyncGpuCommandsCompleteApple = 0x9117,
-		Unsignaled = 0x9118,
-		UnsignaledApple = 0x9118,
-		Signaled = 0x9119,
-		SignaledApple = 0x9119,
+
+		/// <summary>
+		/// Indicates that a synchronization object was already signaled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		AlreadySignaled = 0x911A,
-		AlreadySignaledApple = 0x911A,
+
+		/// <summary>
+		/// Indicates that a timeout has expired for synchronization.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		TimeoutExpired = 0x911B,
-		TimeoutExpiredApple = 0x911B,
+
+		/// <summary>
+		/// Indicates that the condition for synchronization has been satisfied.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		ConditionSatisfied = 0x911C,
-		ConditionSatisfiedApple = 0x911C,
+
+		/// <summary>
+		/// Indicates that the wait operation failed.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		WaitFailed = 0x911D,
-		WaitFailedApple = 0x911D,
+
+		/// <summary>
+		/// Specifies the access flags for buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BufferAccessFlags = 0x911F,
+
+		/// <summary>
+		/// Specifies the length of a mapped buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BufferMapLength = 0x9120,
+
+		/// <summary>
+		/// Specifies the offset for a mapped buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		BufferMapOffset = 0x9121,
+
+		/// <summary>
+		/// Specifies the maximum number of output components for vertex shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		MaxVertexOutputComponents = 0x9122,
+
+		/// <summary>
+		/// Specifies the maximum number of input components for geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		MaxGeometryInputComponents = 0x9123,
-		MaxGeometryInputComponentsExt = 0x9123,
-		MaxGeometryInputComponentsOes = 0x9123,
+
+		/// <summary>
+		/// Specifies the maximum number of output components for geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		MaxGeometryOutputComponents = 0x9124,
-		MaxGeometryOutputComponentsExt = 0x9124,
-		MaxGeometryOutputComponentsOes = 0x9124,
+
+		/// <summary>
+		/// Specifies the maximum number of input components for fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		MaxFragmentInputComponents = 0x9125,
+
+		/// <summary>
+		/// Specifies the profile mask for an OpenGL context.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		ContextProfileMask = 0x9126,
-		UnpackCompressedBlockWidth = 0x9127,
-		UnpackCompressedBlockHeight = 0x9128,
-		UnpackCompressedBlockDepth = 0x9129,
-		UnpackCompressedBlockSize = 0x912A,
-		PackCompressedBlockWidth = 0x912B,
-		PackCompressedBlockHeight = 0x912C,
-		PackCompressedBlockDepth = 0x912D,
-		PackCompressedBlockSize = 0x912E,
-		TextureImmutableFormat = 0x912F,
-		TextureImmutableFormatExt = 0x912F,
-		SgxProgramBinaryImg = 0x9130,
+
+		/// <summary>
+		/// Specifies the number of samples for a renderbuffer (IMG extension).
+		/// </summary>
+		/// <remarks></remarks>
 		RenderbufferSamplesImg = 0x9133,
-		FramebufferIncompleteMultisampleImg = 0x9134,
-		MaxSamplesImg = 0x9135,
-		TextureSamplesImg = 0x9136,
-		CompressedRgbaPvrtc2Bppv2Img = 0x9137,
-		CompressedRgbaPvrtc4Bppv2Img = 0x9138,
-		CubicImg = 0x9139,
-		CubicMipmapNearestImg = 0x913A,
-		CubicMipmapLinearImg = 0x913B,
-		FramebufferIncompleteMultisampleAndDownsampleImg = 0x913C,
-		NumDownsampleScalesImg = 0x913D,
-		DownsampleScalesImg = 0x913E,
+
+		/// <summary>
+		/// Specifies the texture scale for framebuffer attachments (IMG extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferAttachmentTextureScaleImg = 0x913F,
-		MaxDebugMessageLength = 0x9143,
-		MaxDebugMessageLengthAmd = 0x9143,
-		MaxDebugMessageLengthArb = 0x9143,
-		MaxDebugMessageLengthKhr = 0x9143,
-		MaxDebugLoggedMessages = 0x9144,
-		MaxDebugLoggedMessagesAmd = 0x9144,
-		MaxDebugLoggedMessagesArb = 0x9144,
-		MaxDebugLoggedMessagesKhr = 0x9144,
-		DebugLoggedMessages = 0x9145,
-		DebugLoggedMessagesAmd = 0x9145,
-		DebugLoggedMessagesArb = 0x9145,
-		DebugLoggedMessagesKhr = 0x9145,
+
+		/// <summary>
+		/// Indicates a high-severity debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugSeverityHigh = 0x9146,
-		DebugSeverityHighAmd = 0x9146,
-		DebugSeverityHighArb = 0x9146,
-		DebugSeverityHighKhr = 0x9146,
+
+		/// <summary>
+		/// Indicates a medium-severity debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugSeverityMedium = 0x9147,
-		DebugSeverityMediumAmd = 0x9147,
-		DebugSeverityMediumArb = 0x9147,
-		DebugSeverityMediumKhr = 0x9147,
+
+		/// <summary>
+		/// Indicates a low-severity debug message.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugSeverityLow = 0x9148,
-		DebugSeverityLowAmd = 0x9148,
-		DebugSeverityLowArb = 0x9148,
-		DebugSeverityLowKhr = 0x9148,
-		DebugCategoryApiErrorAmd = 0x9149,
-		DebugCategoryWindowSystemAmd = 0x914A,
-		DebugCategoryDeprecationAmd = 0x914B,
-		DebugCategoryUndefinedBehaviorAmd = 0x914C,
-		DebugCategoryPerformanceAmd = 0x914D,
-		DebugCategoryShaderCompilerAmd = 0x914E,
-		DebugCategoryApplicationAmd = 0x914F,
-		DebugCategoryOtherAmd = 0x9150,
-		BufferObjectExt = 0x9151,
-		DataBufferAmd = 0x9151,
-		PerformanceMonitorAmd = 0x9152,
-		QueryObjectAmd = 0x9153,
-		QueryObjectExt = 0x9153,
-		VertexArrayObjectAmd = 0x9154,
-		VertexArrayObjectExt = 0x9154,
-		SamplerObjectAmd = 0x9155,
-		ExternalVirtualMemoryBufferAmd = 0x9160,
+
+		/// <summary>
+		/// Specifies a query buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_query_buffer_object</remarks>
 		QueryBuffer = 0x9192,
-		QueryBufferAmd = 0x9192,
-		QueryBufferBinding = 0x9193,
-		QueryBufferBindingAmd = 0x9193,
+
+		/// <summary>
+		/// Specifies that query results are returned without waiting.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_query_buffer_object</remarks>
 		QueryResultNoWait = 0x9194,
-		QueryResultNoWaitAmd = 0x9194,
-		VirtualPageSizeXArb = 0x9195,
-		VirtualPageSizeXExt = 0x9195,
-		VirtualPageSizeXAmd = 0x9195,
-		VirtualPageSizeYArb = 0x9196,
-		VirtualPageSizeYExt = 0x9196,
-		VirtualPageSizeYAmd = 0x9196,
-		VirtualPageSizeZArb = 0x9197,
-		VirtualPageSizeZExt = 0x9197,
-		VirtualPageSizeZAmd = 0x9197,
-		MaxSparseTextureSizeArb = 0x9198,
-		MaxSparseTextureSizeExt = 0x9198,
-		MaxSparseTextureSizeAmd = 0x9198,
-		MaxSparse3DTextureSizeArb = 0x9199,
-		MaxSparse3DTextureSizeExt = 0x9199,
-		MaxSparse3DTextureSizeAmd = 0x9199,
-		MaxSparseArrayTextureLayers = 0x919A,
-		MaxSparseArrayTextureLayersArb = 0x919A,
-		MaxSparseArrayTextureLayersExt = 0x919A,
-		MinSparseLevelAmd = 0x919B,
-		MinLodWarningAmd = 0x919C,
-		TextureBufferOffset = 0x919D,
-		TextureBufferOffsetExt = 0x919D,
-		TextureBufferOffsetOes = 0x919D,
-		TextureBufferSize = 0x919E,
-		TextureBufferSizeExt = 0x919E,
-		TextureBufferSizeOes = 0x919E,
+
+		/// <summary>
+		/// Specifies the alignment requirement for texture buffer offsets.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_range</remarks>
 		TextureBufferOffsetAlignment = 0x919F,
-		TextureBufferOffsetAlignmentExt = 0x919F,
-		TextureBufferOffsetAlignmentOes = 0x919F,
-		StreamRasterizationAmd = 0x91A0,
-		VertexElementSwizzleAmd = 0x91A4,
-		VertexIdSwizzleAmd = 0x91A5,
-		TextureSparseArb = 0x91A6,
-		TextureSparseExt = 0x91A6,
-		VirtualPageSizeIndexArb = 0x91A7,
-		VirtualPageSizeIndexExt = 0x91A7,
-		NumVirtualPageSizesArb = 0x91A8,
-		NumVirtualPageSizesExt = 0x91A8,
-		SparseTextureFullArrayCubeMipmapsArb = 0x91A9,
-		SparseTextureFullArrayCubeMipmapsExt = 0x91A9,
-		NumSparseLevelsArb = 0x91AA,
-		NumSparseLevelsExt = 0x91AA,
-		PixelsPerSamplePatternXAmd = 0x91AE,
-		PixelsPerSamplePatternYAmd = 0x91AF,
-		MaxShaderCompilerThreadsKhr = 0x91B0,
-		MaxShaderCompilerThreadsArb = 0x91B0,
-		CompletionStatusKhr = 0x91B1,
-		CompletionStatusArb = 0x91B1,
+
+		/// <summary>
+		/// Specifies the number of samples for renderbuffer storage (AMD extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_multisample_advanced</remarks>
 		RenderbufferStorageSamplesAmd = 0x91B2,
-		MaxColorFramebufferSamplesAmd = 0x91B3,
-		MaxColorFramebufferStorageSamplesAmd = 0x91B4,
-		MaxDepthStencilFramebufferSamplesAmd = 0x91B5,
-		NumSupportedMultisampleModesAmd = 0x91B6,
-		SupportedMultisampleModesAmd = 0x91B7,
+
+		/// <summary>
+		/// Specifies a compute shader stage.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		ComputeShader = 0x91B9,
+
+		/// <summary>
+		/// Specifies the maximum number of uniform blocks in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeUniformBlocks = 0x91BB,
+
+		/// <summary>
+		/// Specifies the maximum number of texture image units in compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeTextureImageUnits = 0x91BC,
-		MaxComputeImageUniforms = 0x91BD,
+
+		/// <summary>
+		/// Specifies the maximum number of work groups for compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeWorkGroupCount = 0x91BE,
+
+		/// <summary>
+		/// Specifies the maximum size of a work group for compute shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
 		MaxComputeWorkGroupSize = 0x91BF,
-		MaxComputeFixedGroupSizeArb = 0x91BF,
-		Float16Mat2Amd = 0x91C5,
-		Float16Mat3Amd = 0x91C6,
-		Float16Mat4Amd = 0x91C7,
-		Float16Mat2X3Amd = 0x91C8,
-		Float16Mat2X4Amd = 0x91C9,
-		Float16Mat3X2Amd = 0x91CA,
-		Float16Mat3X4Amd = 0x91CB,
-		Float16Mat4X2Amd = 0x91CC,
-		Float16Mat4X3Amd = 0x91CD,
-		UnpackFlipYWebgl = 0x9240,
-		UnpackPremultiplyAlphaWebgl = 0x9241,
-		ContextLostWebgl = 0x9242,
-		UnpackColorspaceConversionWebgl = 0x9243,
-		BrowserDefaultWebgl = 0x9244,
-		/// <summary>
-		/// From the WEBGL_debug_renderer_info extension<br/>
-		/// </summary>
-		UnmaskedVendorWebgl = 0x9245,
 
 		/// <summary>
-		/// From the WEBGL_debug_renderer_info extension<br/>
+		/// Specifies a shader binary format (DMP extension).
 		/// </summary>
-		UnmaskedRendererWebgl = 0x9246,
-
-		MaxClientWaitTimeoutWebgl = 0x9247,
-		/// <summary>
-		/// From the WEBGL_video_texture extension<br/>
-		/// </summary>
-		TextureVideoImageWebgl = 0x9248,
-
-		/// <summary>
-		/// From the WEBGL_video_texture extension<br/>
-		/// </summary>
-		SamplerVideoImageWebgl = 0x9249,
-
+		/// <remarks></remarks>
 		ShaderBinaryDmp = 0x9250,
-		Smaphs30ProgramBinaryDmp = 0x9251,
-		SmaphsProgramBinaryDmp = 0x9252,
-		DmpProgramBinaryDmp = 0x9253,
+
+		/// <summary>
+		/// Specifies a shader binary format (FJ extension).
+		/// </summary>
+		/// <remarks></remarks>
 		GccsoShaderBinaryFj = 0x9260,
+
+		/// <summary>
+		/// Specifies a compressed single-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedR11Eac = 0x9270,
+
+		/// <summary>
+		/// Specifies a compressed single-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedR11EacOes = 0x9270,
+
+		/// <summary>
+		/// Specifies a signed compressed single-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSignedR11Eac = 0x9271,
+
+		/// <summary>
+		/// Specifies a signed compressed single-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSignedR11EacOes = 0x9271,
+
+		/// <summary>
+		/// Specifies a compressed dual-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRg11Eac = 0x9272,
+
+		/// <summary>
+		/// Specifies a compressed dual-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRg11EacOes = 0x9272,
+
+		/// <summary>
+		/// Specifies a signed compressed dual-channel texture format using EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSignedRg11Eac = 0x9273,
+
+		/// <summary>
+		/// Specifies a signed compressed dual-channel texture format using EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSignedRg11EacOes = 0x9273,
+
+		/// <summary>
+		/// Specifies a compressed RGB texture format using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRgb8Etc2 = 0x9274,
+
+		/// <summary>
+		/// Specifies a compressed RGB texture format using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgb8Etc2Oes = 0x9274,
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSrgb8Etc2 = 0x9275,
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Etc2Oes = 0x9275,
+
+		/// <summary>
+		/// Specifies a compressed RGB texture with punchthrough alpha using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRgb8PunchthroughAlpha1Etc2 = 0x9276,
+
+		/// <summary>
+		/// Specifies a compressed RGB texture with punchthrough alpha using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgb8PunchthroughAlpha1Etc2Oes = 0x9276,
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture with punchthrough alpha using ETC2.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSrgb8PunchthroughAlpha1Etc2 = 0x9277,
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture with punchthrough alpha using ETC2 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8PunchthroughAlpha1Etc2Oes = 0x9277,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format using ETC2 and EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedRgba8Etc2Eac = 0x9278,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format using ETC2 and EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgba8Etc2EacOes = 0x9278,
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format with alpha using ETC2 and EAC.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES3_compatibility</remarks>
 		CompressedSrgb8Alpha8Etc2Eac = 0x9279,
+
+		/// <summary>
+		/// Specifies a compressed sRGB texture format with alpha using ETC2 and EAC (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Etc2EacOes = 0x9279,
-		BlendPremultipliedSrcNv = 0x9280,
-		BlendOverlapNv = 0x9281,
-		UncorrelatedNv = 0x9282,
-		DisjointNv = 0x9283,
-		ConjointNv = 0x9284,
-		BlendAdvancedCoherentKhr = 0x9285,
-		BlendAdvancedCoherentNv = 0x9285,
-		SrcNv = 0x9286,
-		DstNv = 0x9287,
-		SrcOverNv = 0x9288,
-		DstOverNv = 0x9289,
-		SrcInNv = 0x928A,
-		DstInNv = 0x928B,
-		SrcOutNv = 0x928C,
-		DstOutNv = 0x928D,
-		SrcAtopNv = 0x928E,
-		DstAtopNv = 0x928F,
-		PlusNv = 0x9291,
-		PlusDarkerNv = 0x9292,
-		Multiply = 0x9294,
-		MultiplyKhr = 0x9294,
-		MultiplyNv = 0x9294,
-		Screen = 0x9295,
-		ScreenKhr = 0x9295,
-		ScreenNv = 0x9295,
-		Overlay = 0x9296,
-		OverlayKhr = 0x9296,
-		OverlayNv = 0x9296,
-		Darken = 0x9297,
-		DarkenKhr = 0x9297,
-		DarkenNv = 0x9297,
-		Lighten = 0x9298,
-		LightenKhr = 0x9298,
-		LightenNv = 0x9298,
-		Colordodge = 0x9299,
-		ColordodgeKhr = 0x9299,
-		ColordodgeNv = 0x9299,
-		Colorburn = 0x929A,
-		ColorburnKhr = 0x929A,
-		ColorburnNv = 0x929A,
-		Hardlight = 0x929B,
-		HardlightKhr = 0x929B,
-		HardlightNv = 0x929B,
-		Softlight = 0x929C,
-		SoftlightKhr = 0x929C,
-		SoftlightNv = 0x929C,
-		Difference = 0x929E,
-		DifferenceKhr = 0x929E,
-		DifferenceNv = 0x929E,
-		MinusNv = 0x929F,
-		Exclusion = 0x92A0,
-		ExclusionKhr = 0x92A0,
-		ExclusionNv = 0x92A0,
-		ContrastNv = 0x92A1,
-		InvertRgbNv = 0x92A3,
-		LineardodgeNv = 0x92A4,
-		LinearburnNv = 0x92A5,
-		VividlightNv = 0x92A6,
-		LinearlightNv = 0x92A7,
-		PinlightNv = 0x92A8,
-		HardmixNv = 0x92A9,
-		HslHue = 0x92AD,
-		HslHueKhr = 0x92AD,
-		HslHueNv = 0x92AD,
-		HslSaturation = 0x92AE,
-		HslSaturationKhr = 0x92AE,
-		HslSaturationNv = 0x92AE,
-		HslColor = 0x92AF,
-		HslColorKhr = 0x92AF,
-		HslColorNv = 0x92AF,
-		HslLuminosity = 0x92B0,
-		HslLuminosityKhr = 0x92B0,
-		HslLuminosityNv = 0x92B0,
-		PlusClampedNv = 0x92B1,
-		PlusClampedAlphaNv = 0x92B2,
-		MinusClampedNv = 0x92B3,
-		InvertOvgNv = 0x92B4,
-		MaxLgpuGpusNvx = 0x92BA,
-		MulticastGpusNv = 0x92BA,
-		PurgedContextResetNv = 0x92BB,
-		PrimitiveBoundingBoxArb = 0x92BE,
-		PrimitiveBoundingBox = 0x92BE,
-		PrimitiveBoundingBoxExt = 0x92BE,
-		PrimitiveBoundingBoxOes = 0x92BE,
-		AlphaToCoverageDitherModeNv = 0x92BF,
+
+		/// <summary>
+		/// Specifies an atomic counter buffer object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBuffer = 0x92C0,
+
+		/// <summary>
+		/// Specifies the binding point for atomic counter buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferBinding = 0x92C1,
-		AtomicCounterBufferStart = 0x92C2,
-		AtomicCounterBufferSize = 0x92C3,
+
+		/// <summary>
+		/// Specifies the data size of atomic counter buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferDataSize = 0x92C4,
+
+		/// <summary>
+		/// Specifies the number of active atomic counters in a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferActiveAtomicCounters = 0x92C5,
+
+		/// <summary>
+		/// Specifies the indices of active atomic counters in a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferActiveAtomicCounterIndices = 0x92C6,
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferReferencedByVertexShader = 0x92C7,
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferReferencedByTessControlShader = 0x92C8,
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferReferencedByTessEvaluationShader = 0x92C9,
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferReferencedByGeometryShader = 0x92CA,
+
+		/// <summary>
+		/// Indicates if an atomic counter buffer is referenced by a fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferReferencedByFragmentShader = 0x92CB,
-		MaxVertexAtomicCounterBuffers = 0x92CC,
-		MaxTessControlAtomicCounterBuffers = 0x92CD,
-		MaxTessControlAtomicCounterBuffersExt = 0x92CD,
-		MaxTessControlAtomicCounterBuffersOes = 0x92CD,
-		MaxTessEvaluationAtomicCounterBuffers = 0x92CE,
-		MaxTessEvaluationAtomicCounterBuffersExt = 0x92CE,
-		MaxTessEvaluationAtomicCounterBuffersOes = 0x92CE,
-		MaxGeometryAtomicCounterBuffers = 0x92CF,
-		MaxGeometryAtomicCounterBuffersExt = 0x92CF,
-		MaxGeometryAtomicCounterBuffersOes = 0x92CF,
-		MaxFragmentAtomicCounterBuffers = 0x92D0,
-		MaxCombinedAtomicCounterBuffers = 0x92D1,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in vertex shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxVertexAtomicCounters = 0x92D2,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in tessellation control shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxTessControlAtomicCounters = 0x92D3,
-		MaxTessControlAtomicCountersExt = 0x92D3,
-		MaxTessControlAtomicCountersOes = 0x92D3,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in tessellation evaluation shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxTessEvaluationAtomicCounters = 0x92D4,
-		MaxTessEvaluationAtomicCountersExt = 0x92D4,
-		MaxTessEvaluationAtomicCountersOes = 0x92D4,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in geometry shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxGeometryAtomicCounters = 0x92D5,
-		MaxGeometryAtomicCountersExt = 0x92D5,
-		MaxGeometryAtomicCountersOes = 0x92D5,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters in fragment shaders.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxFragmentAtomicCounters = 0x92D6,
+
+		/// <summary>
+		/// Specifies the maximum number of atomic counters across all shader stages.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		MaxCombinedAtomicCounters = 0x92D7,
-		MaxAtomicCounterBufferSize = 0x92D8,
+
+		/// <summary>
+		/// Specifies the number of active atomic counter buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		ActiveAtomicCounterBuffers = 0x92D9,
+
+		/// <summary>
+		/// Specifies the atomic counter buffer index in a uniform.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		UniformAtomicCounterBufferIndex = 0x92DA,
-		UnsignedIntAtomicCounter = 0x92DB,
-		MaxAtomicCounterBufferBindings = 0x92DC,
-		FragmentCoverageToColorNv = 0x92DD,
-		FragmentCoverageColorNv = 0x92DE,
-		MeshOutputPerVertexGranularityNv = 0x92DF,
+
+		/// <summary>
+		/// Enables or disables debug output messages.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		DebugOutput = 0x92E0,
-		DebugOutputKhr = 0x92E0,
+
+		/// <summary>
+		/// Specifies a uniform variable in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Uniform = 0x92E1,
+
+		/// <summary>
+		/// Specifies a uniform block in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		UniformBlock = 0x92E2,
+
+		/// <summary>
+		/// Specifies input to a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ProgramInput = 0x92E3,
+
+		/// <summary>
+		/// Specifies output from a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ProgramOutput = 0x92E4,
+
+		/// <summary>
+		/// Specifies a buffer variable in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		BufferVariable = 0x92E5,
+
+		/// <summary>
+		/// Specifies a shader storage block in a shader program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ShaderStorageBlock = 0x92E6,
+
+		/// <summary>
+		/// Specifies whether a variable is per-patch.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		IsPerPatch = 0x92E7,
-		IsPerPatchExt = 0x92E7,
-		IsPerPatchOes = 0x92E7,
+
+		/// <summary>
+		/// Specifies a subroutine in a vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		VertexSubroutine = 0x92E8,
+
+		/// <summary>
+		/// Specifies a subroutine in a tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessControlSubroutine = 0x92E9,
+
+		/// <summary>
+		/// Specifies a subroutine in a tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessEvaluationSubroutine = 0x92EA,
+
+		/// <summary>
+		/// Specifies a subroutine in a geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		GeometrySubroutine = 0x92EB,
+
+		/// <summary>
+		/// Specifies a subroutine in a fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		FragmentSubroutine = 0x92EC,
+
+		/// <summary>
+		/// Specifies a subroutine in a compute shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ComputeSubroutine = 0x92ED,
+
+		/// <summary>
+		/// Specifies a uniform for a vertex shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		VertexSubroutineUniform = 0x92EE,
+
+		/// <summary>
+		/// Specifies a uniform for a tessellation control shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessControlSubroutineUniform = 0x92EF,
+
+		/// <summary>
+		/// Specifies a uniform for a tessellation evaluation shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TessEvaluationSubroutineUniform = 0x92F0,
+
+		/// <summary>
+		/// Specifies a uniform for a geometry shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		GeometrySubroutineUniform = 0x92F1,
+
+		/// <summary>
+		/// Specifies a uniform for a fragment shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		FragmentSubroutineUniform = 0x92F2,
+
+		/// <summary>
+		/// Specifies a uniform for a compute shader subroutine.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ComputeSubroutineUniform = 0x92F3,
+
+		/// <summary>
+		/// Specifies a varying variable captured during transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TransformFeedbackVarying = 0x92F4,
+
+		/// <summary>
+		/// Specifies the number of active resources in a program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ActiveResources = 0x92F5,
+
+		/// <summary>
+		/// Specifies the maximum length of a resource name.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MaxNameLength = 0x92F6,
+
+		/// <summary>
+		/// Specifies the maximum number of active variables in a program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MaxNumActiveVariables = 0x92F7,
+
+		/// <summary>
+		/// Specifies the maximum number of compatible subroutines.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MaxNumCompatibleSubroutines = 0x92F8,
+
+		/// <summary>
+		/// Specifies the length of a resource name.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		NameLength = 0x92F9,
+
+		/// <summary>
+		/// Specifies the data type of a variable or attribute.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Type = 0x92FA,
+
+		/// <summary>
+		/// Specifies the size of an array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ArraySize = 0x92FB,
+
+		/// <summary>
+		/// Specifies the offset of a variable within a block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Offset = 0x92FC,
+
+		/// <summary>
+		/// Specifies the index of a block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		BlockIndex = 0x92FD,
+
+		/// <summary>
+		/// Specifies the stride between elements in an array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ArrayStride = 0x92FE,
+
+		/// <summary>
+		/// Specifies the stride between columns in a matrix.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MatrixStride = 0x92FF,
+
+		/// <summary>
+		/// Indicates if a matrix is stored in row-major order.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		IsRowMajor = 0x9300,
+
+		/// <summary>
+		/// Specifies the index of an atomic counter buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		AtomicCounterBufferIndex = 0x9301,
+
+		/// <summary>
+		/// Specifies the binding point of a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		BufferBinding = 0x9302,
+
+		/// <summary>
+		/// Specifies the size of the data in a buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		BufferDataSize = 0x9303,
+
+		/// <summary>
+		/// Specifies the number of active variables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		NumActiveVariables = 0x9304,
+
+		/// <summary>
+		/// Specifies the list of active variables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ActiveVariables = 0x9305,
+
+		/// <summary>
+		/// Indicates if a resource is referenced by the vertex shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ReferencedByVertexShader = 0x9306,
+
+		/// <summary>
+		/// Indicates if a resource is referenced by the tessellation control shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ReferencedByTessControlShader = 0x9307,
-		ReferencedByTessControlShaderExt = 0x9307,
-		ReferencedByTessControlShaderOes = 0x9307,
+
+		/// <summary>
+		/// Indicates if a resource is referenced by the tessellation evaluation shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ReferencedByTessEvaluationShader = 0x9308,
-		ReferencedByTessEvaluationShaderExt = 0x9308,
-		ReferencedByTessEvaluationShaderOes = 0x9308,
+
+		/// <summary>
+		/// Indicates if a resource is referenced by the geometry shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ReferencedByGeometryShader = 0x9309,
-		ReferencedByGeometryShaderExt = 0x9309,
-		ReferencedByGeometryShaderOes = 0x9309,
+
+		/// <summary>
+		/// Indicates if a resource is referenced by the fragment shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ReferencedByFragmentShader = 0x930A,
+
+		/// <summary>
+		/// Indicates if a resource is referenced by the compute shader.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ReferencedByComputeShader = 0x930B,
+
+		/// <summary>
+		/// Specifies the size of a top-level array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TopLevelArraySize = 0x930C,
+
+		/// <summary>
+		/// Specifies the stride between elements in a top-level array.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		TopLevelArrayStride = 0x930D,
+
+		/// <summary>
+		/// Specifies the location of a variable in a program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		Location = 0x930E,
+
+		/// <summary>
+		/// Specifies the location index of a variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		LocationIndex = 0x930F,
-		LocationIndexExt = 0x930F,
+
+		/// <summary>
+		/// Specifies the default width of the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		FramebufferDefaultWidth = 0x9310,
+
+		/// <summary>
+		/// Specifies the default height of the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		FramebufferDefaultHeight = 0x9311,
+
+		/// <summary>
+		/// Specifies the default number of layers in the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		FramebufferDefaultLayers = 0x9312,
-		FramebufferDefaultLayersExt = 0x9312,
-		FramebufferDefaultLayersOes = 0x9312,
+
+		/// <summary>
+		/// Specifies the default number of samples in the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		FramebufferDefaultSamples = 0x9313,
+
+		/// <summary>
+		/// Specifies if fixed sample locations are used in the default framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		FramebufferDefaultFixedSampleLocations = 0x9314,
+
+		/// <summary>
+		/// Specifies the maximum width of framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferWidth = 0x9315,
+
+		/// <summary>
+		/// Specifies the maximum height of framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferHeight = 0x9316,
+
+		/// <summary>
+		/// Specifies the maximum number of layers in framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferLayers = 0x9317,
-		MaxFramebufferLayersExt = 0x9317,
-		MaxFramebufferLayersOes = 0x9317,
+
+		/// <summary>
+		/// Specifies the maximum number of samples in framebuffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
 		MaxFramebufferSamples = 0x9318,
-		RasterMultisampleExt = 0x9327,
-		RasterSamplesExt = 0x9328,
-		MaxRasterSamplesExt = 0x9329,
-		RasterFixedSampleLocationsExt = 0x932A,
-		MultisampleRasterizationAllowedExt = 0x932B,
-		EffectiveRasterSamplesExt = 0x932C,
-		DepthSamplesNv = 0x932D,
-		StencilSamplesNv = 0x932E,
-		MixedDepthSamplesSupportedNv = 0x932F,
-		MixedStencilSamplesSupportedNv = 0x9330,
-		CoverageModulationTableNv = 0x9331,
-		CoverageModulationNv = 0x9332,
-		CoverageModulationTableSizeNv = 0x9333,
-		WarpSizeNv = 0x9339,
-		WarpsPerSmNv = 0x933A,
-		SmCountNv = 0x933B,
-		FillRectangleNv = 0x933C,
-		SampleLocationSubpixelBitsArb = 0x933D,
-		SampleLocationSubpixelBitsNv = 0x933D,
-		SampleLocationPixelGridWidthArb = 0x933E,
-		SampleLocationPixelGridWidthNv = 0x933E,
-		SampleLocationPixelGridHeightArb = 0x933F,
-		SampleLocationPixelGridHeightNv = 0x933F,
-		ProgrammableSampleLocationTableSizeArb = 0x9340,
-		ProgrammableSampleLocationTableSizeNv = 0x9340,
+
+		/// <summary>
+		/// Indicates if programmable sample locations are supported (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		ProgrammableSampleLocationArb = 0x9341,
-		ProgrammableSampleLocationNv = 0x9341,
-		FramebufferProgrammableSampleLocationsArb = 0x9342,
-		FramebufferProgrammableSampleLocationsNv = 0x9342,
-		FramebufferSampleLocationPixelGridArb = 0x9343,
-		FramebufferSampleLocationPixelGridNv = 0x9343,
-		MaxComputeVariableGroupInvocationsArb = 0x9344,
-		MaxComputeVariableGroupSizeArb = 0x9345,
-		ConservativeRasterizationNv = 0x9346,
-		SubpixelPrecisionBiasXBitsNv = 0x9347,
-		SubpixelPrecisionBiasYBitsNv = 0x9348,
-		MaxSubpixelPrecisionBiasBitsNv = 0x9349,
+
+		/// <summary>
+		/// Specifies the component of a location variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_enhanced_layouts</remarks>
 		LocationComponent = 0x934A,
+
+		/// <summary>
+		/// Specifies the buffer index for transform feedback.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_enhanced_layouts</remarks>
 		TransformFeedbackBufferIndex = 0x934B,
+
+		/// <summary>
+		/// Specifies the stride of a transform feedback buffer.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_enhanced_layouts</remarks>
 		TransformFeedbackBufferStride = 0x934C,
-		AlphaToCoverageDitherDefaultNv = 0x934D,
-		AlphaToCoverageDitherEnableNv = 0x934E,
-		AlphaToCoverageDitherDisableNv = 0x934F,
-		ViewportSwizzlePositiveXNv = 0x9350,
-		ViewportSwizzleNegativeXNv = 0x9351,
-		ViewportSwizzlePositiveYNv = 0x9352,
-		ViewportSwizzleNegativeYNv = 0x9353,
-		ViewportSwizzlePositiveZNv = 0x9354,
-		ViewportSwizzleNegativeZNv = 0x9355,
-		ViewportSwizzlePositiveWNv = 0x9356,
-		ViewportSwizzleNegativeWNv = 0x9357,
-		ViewportSwizzleXNv = 0x9358,
-		ViewportSwizzleYNv = 0x9359,
-		ViewportSwizzleZNv = 0x935A,
-		ViewportSwizzleWNv = 0x935B,
-		ClipOrigin = 0x935C,
-		ClipOriginExt = 0x935C,
-		ClipDepthMode = 0x935D,
-		ClipDepthModeExt = 0x935D,
+
+		/// <summary>
+		/// Specifies the clip space depth range from -1 to 1.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		NegativeOneToOne = 0x935E,
-		NegativeOneToOneExt = 0x935E,
+
+		/// <summary>
+		/// Specifies the clip space depth range from 0 to 1.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
 		ZeroToOne = 0x935F,
-		ZeroToOneExt = 0x935F,
+
+		/// <summary>
+		/// Clears a texture to a specified value.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
 		ClearTexture = 0x9365,
-		TextureReductionModeArb = 0x9366,
-		TextureReductionModeExt = 0x9366,
-		WeightedAverageArb = 0x9367,
-		WeightedAverageExt = 0x9367,
-		FontGlyphsAvailableNv = 0x9368,
-		FontTargetUnavailableNv = 0x9369,
-		FontUnavailableNv = 0x936A,
-		FontUnintelligibleNv = 0x936B,
-		StandardFontFormatNv = 0x936C,
-		FragmentInputNv = 0x936D,
-		UniformBufferUnifiedNv = 0x936E,
-		UniformBufferAddressNv = 0x936F,
-		UniformBufferLengthNv = 0x9370,
-		MultisamplesNv = 0x9371,
-		SupersampleScaleXNv = 0x9372,
-		SupersampleScaleYNv = 0x9373,
-		ConformantNv = 0x9374,
-		ConservativeRasterDilateNv = 0x9379,
-		ConservativeRasterDilateRangeNv = 0x937A,
-		ConservativeRasterDilateGranularityNv = 0x937B,
-		ViewportPositionWScaleNv = 0x937C,
-		ViewportPositionWScaleXCoeffNv = 0x937D,
-		ViewportPositionWScaleYCoeffNv = 0x937E,
-		RepresentativeFragmentTestNv = 0x937F,
+
+		/// <summary>
+		/// Specifies the number of supported sample counts.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query<br/>GL_ARB_internalformat_query2</remarks>
 		NumSampleCounts = 0x9380,
-		MultisampleLineWidthRangeArb = 0x9381,
-		MultisampleLineWidthRange = 0x9381,
-		MultisampleLineWidthGranularityArb = 0x9382,
-		MultisampleLineWidthGranularity = 0x9382,
-		ViewClassEacR11 = 0x9383,
-		ViewClassEacRg11 = 0x9384,
-		ViewClassEtc2Rgb = 0x9385,
-		ViewClassEtc2Rgba = 0x9386,
-		ViewClassEtc2EacRgba = 0x9387,
-		ViewClassAstc4X4Rgba = 0x9388,
-		ViewClassAstc5X4Rgba = 0x9389,
-		ViewClassAstc5X5Rgba = 0x938A,
-		ViewClassAstc6X5Rgba = 0x938B,
-		ViewClassAstc6X6Rgba = 0x938C,
-		ViewClassAstc8X5Rgba = 0x938D,
-		ViewClassAstc8X6Rgba = 0x938E,
-		ViewClassAstc8X8Rgba = 0x938F,
-		ViewClassAstc10X5Rgba = 0x9390,
-		ViewClassAstc10X6Rgba = 0x9391,
-		ViewClassAstc10X8Rgba = 0x9392,
-		ViewClassAstc10X10Rgba = 0x9393,
-		ViewClassAstc12X10Rgba = 0x9394,
-		ViewClassAstc12X12Rgba = 0x9395,
-		TranslatedShaderSourceLengthAngle = 0x93A0,
-		Bgra8Ext = 0x93A1,
-		TextureUsageAngle = 0x93A2,
-		FramebufferAttachmentAngle = 0x93A3,
-		PackReverseRowOrderAngle = 0x93A4,
-		ProgramBinaryAngle = 0x93A6,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X4 = 0x93B0,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc4X4Khr = 0x93B0,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X4 = 0x93B1,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc5X4Khr = 0x93B1,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X5 = 0x93B2,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc5X5Khr = 0x93B2,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X5 = 0x93B3,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc6X5Khr = 0x93B3,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X6 = 0x93B4,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc6X6Khr = 0x93B4,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc8X5 = 0x93B5,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc8X5Khr = 0x93B5,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc8X6 = 0x93B6,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc8X6Khr = 0x93B6,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc8X8 = 0x93B7,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 8x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc8X8Khr = 0x93B7,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X5 = 0x93B8,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X5Khr = 0x93B8,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X6 = 0x93B9,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X6Khr = 0x93B9,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X8 = 0x93BA,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X8Khr = 0x93BA,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc10X10 = 0x93BB,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 10x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc10X10Khr = 0x93BB,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc12X10 = 0x93BC,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc12X10Khr = 0x93BC,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x12.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc12X12 = 0x93BD,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 12x12 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedRgbaAstc12X12Khr = 0x93BD,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 3x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc3X3X3Oes = 0x93C0,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X3X3Oes = 0x93C1,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X4X3Oes = 0x93C2,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 4x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc4X4X4Oes = 0x93C3,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X4X4Oes = 0x93C4,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X5X4Oes = 0x93C5,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 5x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc5X5X5Oes = 0x93C6,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X5X5Oes = 0x93C7,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X6X5Oes = 0x93C8,
+
+		/// <summary>
+		/// Specifies a compressed RGBA texture format with ASTC 6x6x6 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedRgbaAstc6X6X6Oes = 0x93C9,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X4 = 0x93D0,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc4X4Khr = 0x93D0,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x4.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X4 = 0x93D1,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x4 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc5X4Khr = 0x93D1,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X5 = 0x93D2,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc5X5Khr = 0x93D2,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X5 = 0x93D3,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc6X5Khr = 0x93D3,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X6 = 0x93D4,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc6X6Khr = 0x93D4,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc8X5 = 0x93D5,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc8X5Khr = 0x93D5,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc8X6 = 0x93D6,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc8X6Khr = 0x93D6,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc8X8 = 0x93D7,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 8x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc8X8Khr = 0x93D7,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x5.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X5 = 0x93D8,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x5 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X5Khr = 0x93D8,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x6.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X6 = 0x93D9,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x6 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X6Khr = 0x93D9,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x8.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X8 = 0x93DA,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x8 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X8Khr = 0x93DA,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc10X10 = 0x93DB,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 10x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc10X10Khr = 0x93DB,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x10.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc12X10 = 0x93DC,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x10 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc12X10Khr = 0x93DC,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x12.
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc12X12 = 0x93DD,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 12x12 (KHR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_texture_compression_astc_hdr<br/>GL_KHR_texture_compression_astc_ldr</remarks>
 		CompressedSrgb8Alpha8Astc12X12Khr = 0x93DD,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 3x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc3X3X3Oes = 0x93E0,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x3x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X3X3Oes = 0x93E1,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4x3 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X4X3Oes = 0x93E2,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 4x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc4X4X4Oes = 0x93E3,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x4x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X4X4Oes = 0x93E4,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5x4 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X5X4Oes = 0x93E5,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 5x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc5X5X5Oes = 0x93E6,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x5x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X5X5Oes = 0x93E7,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6x5 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X6X5Oes = 0x93E8,
+
+		/// <summary>
+		/// Specifies a compressed sRGB alpha texture format with ASTC 6x6x6 (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		CompressedSrgb8Alpha8Astc6X6X6Oes = 0x93E9,
-		CompressedSrgbAlphaPvrtc2Bppv2Img = 0x93F0,
-		CompressedSrgbAlphaPvrtc4Bppv2Img = 0x93F1,
-		PerfqueryCounterEventIntel = 0x94F0,
-		PerfqueryCounterDurationNormIntel = 0x94F1,
-		PerfqueryCounterDurationRawIntel = 0x94F2,
-		PerfqueryCounterThroughputIntel = 0x94F3,
-		PerfqueryCounterRawIntel = 0x94F4,
-		PerfqueryCounterTimestampIntel = 0x94F5,
-		PerfqueryCounterDataUint32Intel = 0x94F8,
-		PerfqueryCounterDataUint64Intel = 0x94F9,
-		PerfqueryCounterDataFloatIntel = 0x94FA,
-		PerfqueryCounterDataDoubleIntel = 0x94FB,
-		PerfqueryCounterDataBool32Intel = 0x94FC,
-		PerfqueryQueryNameLengthMaxIntel = 0x94FD,
-		PerfqueryCounterNameLengthMaxIntel = 0x94FE,
-		PerfqueryCounterDescLengthMaxIntel = 0x94FF,
-		PerfqueryGpaExtendedCountersIntel = 0x9500,
+
+		/// <summary>
+		/// Specifies a layout where depth is read-only and stencil is an attachment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutDepthReadOnlyStencilAttachmentExt = 0x9530,
+
+		/// <summary>
+		/// Specifies a layout where depth is an attachment and stencil is read-only (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutDepthAttachmentStencilReadOnlyExt = 0x9531,
-		SubgroupSizeKhr = 0x9532,
-		SubgroupSupportedStagesKhr = 0x9533,
-		SubgroupSupportedFeaturesKhr = 0x9534,
-		SubgroupQuadAllStagesKhr = 0x9535,
-		MaxMeshTotalMemorySizeNv = 0x9536,
-		MaxTaskTotalMemorySizeNv = 0x9537,
-		MaxMeshOutputVerticesNv = 0x9538,
-		MaxMeshOutputPrimitivesNv = 0x9539,
-		MaxTaskOutputCountNv = 0x953A,
-		MaxMeshWorkGroupSizeNv = 0x953B,
-		MaxTaskWorkGroupSizeNv = 0x953C,
-		MaxDrawMeshTasksCountNv = 0x953D,
-		MeshWorkGroupSizeNv = 0x953E,
-		TaskWorkGroupSizeNv = 0x953F,
-		QueryResourceTypeVidmemAllocNv = 0x9540,
-		QueryResourceMemtypeVidmemNv = 0x9542,
-		MeshOutputPerPrimitiveGranularityNv = 0x9543,
-		QueryResourceSysReservedNv = 0x9544,
-		QueryResourceTextureNv = 0x9545,
-		QueryResourceRenderbufferNv = 0x9546,
-		QueryResourceBufferobjectNv = 0x9547,
-		PerGpuStorageNv = 0x9548,
-		MulticastProgrammableSampleLocationNv = 0x9549,
-		UploadGpuMaskNvx = 0x954A,
-		ConservativeRasterModeNv = 0x954D,
-		ConservativeRasterModePostSnapNv = 0x954E,
-		ConservativeRasterModePreSnapTrianglesNv = 0x954F,
-		ConservativeRasterModePreSnapNv = 0x9550,
+
+		/// <summary>
+		/// Specifies the SPIR-V shader binary format.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6</remarks>
 		ShaderBinaryFormatSpirV = 0x9551,
-		ShaderBinaryFormatSpirVArb = 0x9551,
-		SpirVBinary = 0x9552,
-		SpirVBinaryArb = 0x9552,
-		SpirVExtensions = 0x9553,
-		NumSpirVExtensions = 0x9554,
-		ScissorTestExclusiveNv = 0x9555,
-		ScissorBoxExclusiveNv = 0x9556,
-		MaxMeshViewsNv = 0x9557,
-		RenderGpuMaskNv = 0x9558,
-		MeshShaderNv = 0x9559,
-		TaskShaderNv = 0x955A,
-		ShadingRateImageBindingNv = 0x955B,
-		ShadingRateImageTexelWidthNv = 0x955C,
-		ShadingRateImageTexelHeightNv = 0x955D,
-		ShadingRateImagePaletteSizeNv = 0x955E,
-		MaxCoarseFragmentSamplesNv = 0x955F,
-		ShadingRateImageNv = 0x9563,
-		ShadingRateNoInvocationsNv = 0x9564,
-		ShadingRate1InvocationPerPixelNv = 0x9565,
-		ShadingRate1InvocationPer1X2PixelsNv = 0x9566,
-		ShadingRate1InvocationPer2X1PixelsNv = 0x9567,
-		ShadingRate1InvocationPer2X2PixelsNv = 0x9568,
-		ShadingRate1InvocationPer2X4PixelsNv = 0x9569,
-		ShadingRate1InvocationPer4X2PixelsNv = 0x956A,
-		ShadingRate1InvocationPer4X4PixelsNv = 0x956B,
-		ShadingRate2InvocationsPerPixelNv = 0x956C,
-		ShadingRate4InvocationsPerPixelNv = 0x956D,
-		ShadingRate8InvocationsPerPixelNv = 0x956E,
-		ShadingRate16InvocationsPerPixelNv = 0x956F,
-		MeshVerticesOutNv = 0x9579,
-		MeshPrimitivesOutNv = 0x957A,
-		MeshOutputTypeNv = 0x957B,
-		MeshSubroutineNv = 0x957C,
-		TaskSubroutineNv = 0x957D,
-		MeshSubroutineUniformNv = 0x957E,
-		TaskSubroutineUniformNv = 0x957F,
+
+		/// <summary>
+		/// Specifies the tiling mode for textures (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		TextureTilingExt = 0x9580,
+
+		/// <summary>
+		/// Indicates whether a memory object is dedicated (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		DedicatedMemoryObjectExt = 0x9581,
-		NumTilingTypesExt = 0x9582,
-		TilingTypesExt = 0x9583,
-		OptimalTilingExt = 0x9584,
-		LinearTilingExt = 0x9585,
+
+		/// <summary>
+		/// Specifies an opaque file descriptor handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_fd<br/>GL_EXT_semaphore_fd</remarks>
 		HandleTypeOpaqueFdExt = 0x9586,
+
+		/// <summary>
+		/// Specifies an opaque Windows handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		HandleTypeOpaqueWin32Ext = 0x9587,
+
+		/// <summary>
+		/// Specifies an opaque Windows Kernel-Mode handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		HandleTypeOpaqueWin32KmtExt = 0x9588,
+
+		/// <summary>
+		/// Specifies a D3D12 tile pool handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		HandleTypeD3D12TilepoolExt = 0x9589,
+
+		/// <summary>
+		/// Specifies a D3D12 resource handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		HandleTypeD3D12ResourceExt = 0x958A,
+
+		/// <summary>
+		/// Specifies a D3D11 image handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		HandleTypeD3D11ImageExt = 0x958B,
+
+		/// <summary>
+		/// Specifies a D3D11 image Kernel-Mode handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		HandleTypeD3D11ImageKmtExt = 0x958C,
+
+		/// <summary>
+		/// Specifies a general layout for resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutGeneralExt = 0x958D,
+
+		/// <summary>
+		/// Specifies a layout for color attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutColorAttachmentExt = 0x958E,
+
+		/// <summary>
+		/// Specifies a layout for depth-stencil attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutDepthStencilAttachmentExt = 0x958F,
+
+		/// <summary>
+		/// Specifies a layout for read-only depth-stencil attachments (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutDepthStencilReadOnlyExt = 0x9590,
+
+		/// <summary>
+		/// Specifies a layout for shader read-only resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutShaderReadOnlyExt = 0x9591,
+
+		/// <summary>
+		/// Specifies a layout for transfer source resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutTransferSrcExt = 0x9592,
+
+		/// <summary>
+		/// Specifies a layout for transfer destination resources (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore</remarks>
 		LayoutTransferDstExt = 0x9593,
+
+		/// <summary>
+		/// Specifies a D3D12 fence handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		HandleTypeD3D12FenceExt = 0x9594,
+
+		/// <summary>
+		/// Specifies a D3D12 fence value (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		D3D12FenceValueExt = 0x9595,
+
+		/// <summary>
+		/// Specifies the value of a timeline semaphore (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		TimelineSemaphoreValueNv = 0x9595,
+
+		/// <summary>
+		/// Specifies the number of available device UUIDs (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		NumDeviceUuidsExt = 0x9596,
+
+		/// <summary>
+		/// Specifies a device UUID (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		DeviceUuidExt = 0x9597,
+
+		/// <summary>
+		/// Specifies a driver UUID (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		DriverUuidExt = 0x9598,
+
+		/// <summary>
+		/// Specifies a device LUID (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		DeviceLuidExt = 0x9599,
+
+		/// <summary>
+		/// Specifies a device node mask (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		DeviceNodeMaskExt = 0x959A,
+
+		/// <summary>
+		/// Indicates that a memory object is protected (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		ProtectedMemoryObjectExt = 0x959B,
-		UniformBlockReferencedByMeshShaderNv = 0x959C,
-		UniformBlockReferencedByTaskShaderNv = 0x959D,
-		AtomicCounterBufferReferencedByMeshShaderNv = 0x959E,
-		AtomicCounterBufferReferencedByTaskShaderNv = 0x959F,
-		ReferencedByMeshShaderNv = 0x95A0,
-		ReferencedByTaskShaderNv = 0x95A1,
-		MaxMeshWorkGroupInvocationsNv = 0x95A2,
-		MaxTaskWorkGroupInvocationsNv = 0x95A3,
-		AttachedMemoryObjectNv = 0x95A4,
-		AttachedMemoryOffsetNv = 0x95A5,
-		MemoryAttachableAlignmentNv = 0x95A6,
-		MemoryAttachableSizeNv = 0x95A7,
-		MemoryAttachableNv = 0x95A8,
-		DetachedMemoryIncarnationNv = 0x95A9,
-		DetachedTexturesNv = 0x95AA,
-		DetachedBuffersNv = 0x95AB,
-		MaxDetachedTexturesNv = 0x95AC,
-		MaxDetachedBuffersNv = 0x95AD,
-		ShadingRateSampleOrderDefaultNv = 0x95AE,
-		ShadingRateSampleOrderPixelMajorNv = 0x95AF,
-		ShadingRateSampleOrderSampleMajorNv = 0x95B0,
+
+		/// <summary>
+		/// Specifies the shading rate image per primitive (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_shading_rate</remarks>
 		ShadingRateImagePerPrimitiveNv = 0x95B1,
+
+		/// <summary>
+		/// Specifies the number of entries in the shading rate image palette (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_shading_rate</remarks>
 		ShadingRateImagePaletteCountNv = 0x95B2,
+
+		/// <summary>
+		/// Specifies the type of semaphore (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		SemaphoreTypeNv = 0x95B3,
+
+		/// <summary>
+		/// Specifies a binary semaphore type (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		SemaphoreTypeBinaryNv = 0x95B4,
+
+		/// <summary>
+		/// Specifies a timeline semaphore type (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		SemaphoreTypeTimelineNv = 0x95B5,
+
+		/// <summary>
+		/// Specifies the maximum difference between timeline semaphore values (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
 		MaxTimelineSemaphoreValueDifferenceNv = 0x95B6,
+
+		/// <summary>
+		/// Specifies the number of views for a framebuffer texture attachment (OVR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OVR_multiview</remarks>
 		FramebufferAttachmentTextureNumViewsOvr = 0x9630,
-		MaxViewsOvr = 0x9631,
+
+		/// <summary>
+		/// Specifies the base view index for a framebuffer texture attachment (OVR extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OVR_multiview</remarks>
 		FramebufferAttachmentTextureBaseViewIndexOvr = 0x9632,
-		FramebufferIncompleteViewTargetsOvr = 0x9633,
-		GsShaderBinaryMtk = 0x9640,
-		GsProgramBinaryMtk = 0x9641,
-		MaxShaderCombinedLocalStorageFastSizeExt = 0x9650,
-		MaxShaderCombinedLocalStorageSizeExt = 0x9651,
-		FramebufferIncompleteInsufficientShaderCombinedLocalStorageExt = 0x9652,
+
+		/// <summary>
+		/// Specifies the cutoff density for foveated textures (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureFoveatedCutoffDensityQcom = 0x96A0,
+
+		/// <summary>
+		/// Indicates non-coherent framebuffer fetch (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FramebufferFetchNoncoherentQcom = 0x96A2,
-		ValidateShaderBinaryQcom = 0x96A3,
+
+		/// <summary>
+		/// Specifies the shading rate (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRateQcom = 0x96A4,
+
+		/// <summary>
+		/// Preserves the aspect ratio for shading rates (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRatePreserveAspectRatioQcom = 0x96A5,
+
+		/// <summary>
+		/// Specifies a shading rate of 1x1 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate1X1PixelsQcom = 0x96A6,
+
+		/// <summary>
+		/// Specifies a shading rate of 1x2 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate1X2PixelsQcom = 0x96A7,
+
+		/// <summary>
+		/// Specifies a shading rate of 2x1 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate2X1PixelsQcom = 0x96A8,
+
+		/// <summary>
+		/// Specifies a shading rate of 2x2 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate2X2PixelsQcom = 0x96A9,
+
+		/// <summary>
+		/// Specifies a shading rate of 1x4 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate1X4PixelsQcom = 0x96AA,
+
+		/// <summary>
+		/// Specifies a shading rate of 4x1 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate4X1PixelsQcom = 0x96AB,
+
+		/// <summary>
+		/// Specifies a shading rate of 4x2 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate4X2PixelsQcom = 0x96AC,
+
+		/// <summary>
+		/// Specifies a shading rate of 2x4 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate2X4PixelsQcom = 0x96AD,
+
+		/// <summary>
+		/// Specifies a shading rate of 4x4 pixels (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate4X4PixelsQcom = 0x96AE,
+
+		/// <summary>
+		/// Specifies a shading rate of 1x1 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate1X1PixelsExt = 0x96A6,
+
+		/// <summary>
+		/// Specifies a shading rate of 1x2 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate1X2PixelsExt = 0x96A7,
+
+		/// <summary>
+		/// Specifies a shading rate of 2x1 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate2X1PixelsExt = 0x96A8,
+
+		/// <summary>
+		/// Specifies a shading rate of 2x2 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate2X2PixelsExt = 0x96A9,
+
+		/// <summary>
+		/// Specifies a shading rate of 1x4 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate1X4PixelsExt = 0x96AA,
+
+		/// <summary>
+		/// Specifies a shading rate of 4x1 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate4X1PixelsExt = 0x96AB,
+
+		/// <summary>
+		/// Specifies a shading rate of 4x2 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate4X2PixelsExt = 0x96AC,
+
+		/// <summary>
+		/// Specifies a shading rate of 2x4 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate2X4PixelsExt = 0x96AD,
+
+		/// <summary>
+		/// Specifies a shading rate of 4x4 pixels (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRate4X4PixelsExt = 0x96AE,
+
+		/// <summary>
+		/// Indicates whether surface compression is enabled (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionExt = 0x96C0,
+
+		/// <summary>
+		/// Specifies no fixed-rate surface compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRateNoneExt = 0x96C1,
+
+		/// <summary>
+		/// Specifies default fixed-rate surface compression (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRateDefaultExt = 0x96C2,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 1 bit per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate1BpcExt = 0x96C4,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 2 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate2BpcExt = 0x96C5,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 3 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate3BpcExt = 0x96C6,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 4 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate4BpcExt = 0x96C7,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 5 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate5BpcExt = 0x96C8,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 6 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate6BpcExt = 0x96C9,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 7 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate7BpcExt = 0x96CA,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 8 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate8BpcExt = 0x96CB,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 9 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate9BpcExt = 0x96CC,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 10 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate10BpcExt = 0x96CD,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 11 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate11BpcExt = 0x96CE,
+
+		/// <summary>
+		/// Specifies fixed-rate surface compression at 12 bits per component (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SurfaceCompressionFixedRate12BpcExt = 0x96CF,
+
+		/// <summary>
+		/// Specifies the shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRateExt = 0x96D0,
+
+		/// <summary>
+		/// Specifies the shading rate attachment (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShadingRateAttachmentExt = 0x96D1,
+
+		/// <summary>
+		/// Specifies to keep the current shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpKeepExt = 0x96D2,
+
+		/// <summary>
+		/// Specifies to replace the current shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpReplaceExt = 0x96D3,
+
+		/// <summary>
+		/// Specifies the minimum shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpMinExt = 0x96D4,
+
+		/// <summary>
+		/// Specifies the maximum shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpMaxExt = 0x96D5,
+
+		/// <summary>
+		/// Specifies to multiply the current shading rate (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateCombinerOpMulExt = 0x96D6,
+
+		/// <summary>
+		/// Specifies the minimum texel width for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MinFragmentShadingRateAttachmentTexelWidthExt = 0x96D7,
+
+		/// <summary>
+		/// Specifies the maximum texel width for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFragmentShadingRateAttachmentTexelWidthExt = 0x96D8,
+
+		/// <summary>
+		/// Specifies the minimum texel height for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MinFragmentShadingRateAttachmentTexelHeightExt = 0x96D9,
+
+		/// <summary>
+		/// Specifies the maximum texel height for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFragmentShadingRateAttachmentTexelHeightExt = 0x96DA,
+
+		/// <summary>
+		/// Specifies the maximum aspect ratio for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 0x96DB,
+
+		/// <summary>
+		/// Specifies the maximum number of layers for fragment shading rate attachments (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxFragmentShadingRateAttachmentLayersExt = 0x96DC,
+
+		/// <summary>
+		/// Indicates support for fragment shading rates with depth and stencil writes (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 0x96DD,
+
+		/// <summary>
+		/// Indicates support for fragment shading rates with sample mask (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateWithSampleMaskSupportedExt = 0x96DE,
+
+		/// <summary>
+		/// Indicates support for fragment shading rate attachments with default framebuffers (EXT extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 0x96DF,
+
+		/// <summary>
+		/// Specifies the number of shader cores (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCoreCountArm = 0x96F0,
+
+		/// <summary>
+		/// Specifies the number of active shader cores (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCoreActiveCountArm = 0x96F1,
+
+		/// <summary>
+		/// Specifies the present shader core mask (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCorePresentMaskArm = 0x96F2,
+
+		/// <summary>
+		/// Specifies the maximum warp count for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCoreMaxWarpCountArm = 0x96F3,
+
+		/// <summary>
+		/// Specifies the pixel rate for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCorePixelRateArm = 0x96F4,
+
+		/// <summary>
+		/// Specifies the texel rate for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCoreTexelRateArm = 0x96F5,
+
+		/// <summary>
+		/// Specifies the fused multiply-add rate for shader cores (ARM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ShaderCoreFmaRateArm = 0x96F6,
+
+		/// <summary>
+		/// Specifies Y component degamma for textures (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureYDegammaQcom = 0x9710,
+
+		/// <summary>
+		/// Specifies CbCr component degamma for textures (QCOM extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureCbcrDegammaQcom = 0x9711,
-		RasterPositionUnclippedIbm = 0x19262,
-		CullVertexIbm = 103050,
-		AllStaticDataIbm = 103060,
-		StaticVertexArrayIbm = 103061,
-		VertexArrayListIbm = 103070,
-		NormalArrayListIbm = 103071,
-		ColorArrayListIbm = 103072,
-		IndexArrayListIbm = 103073,
-		TextureCoordArrayListIbm = 103074,
-		EdgeFlagArrayListIbm = 103075,
-		FogCoordinateArrayListIbm = 103076,
-		SecondaryColorArrayListIbm = 103077,
-		VertexArrayListStrideIbm = 103080,
-		NormalArrayListStrideIbm = 103081,
-		ColorArrayListStrideIbm = 103082,
-		IndexArrayListStrideIbm = 103083,
-		TextureCoordArrayListStrideIbm = 103084,
-		EdgeFlagArrayListStrideIbm = 103085,
-		FogCoordinateArrayListStrideIbm = 103086,
-		SecondaryColorArrayListStrideIbm = 103087,
+
+		/// <summary>
+		/// Indicates a preference for double buffering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PreferDoublebufferHintPgi = 0x1A1F8,
+
+		/// <summary>
+		/// Indicates a hint to conserve memory (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ConserveMemoryHintPgi = 0x1A1FD,
+
+		/// <summary>
+		/// Indicates a hint to reclaim memory (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ReclaimMemoryHintPgi = 0x1A1FE,
-		NativeGraphicsHandlePgi = 0x1A202,
+
+		/// <summary>
+		/// Indicates a hint to begin using native graphics (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NativeGraphicsBeginHintPgi = 0x1A203,
+
+		/// <summary>
+		/// Indicates a hint to end using native graphics (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NativeGraphicsEndHintPgi = 0x1A204,
+
+		/// <summary>
+		/// Indicates a hint for always fast rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlwaysFastHintPgi = 0x1A20C,
+
+		/// <summary>
+		/// Indicates a hint for always soft rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AlwaysSoftHintPgi = 0x1A20D,
+
+		/// <summary>
+		/// Indicates a hint to allow drawing of objects (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AllowDrawObjHintPgi = 0x1A20E,
+
+		/// <summary>
+		/// Indicates a hint to allow drawing of windows (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AllowDrawWinHintPgi = 0x1A20F,
+
+		/// <summary>
+		/// Indicates a hint to allow drawing of fragments (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AllowDrawFrgHintPgi = 0x1A210,
+
+		/// <summary>
+		/// Indicates a hint to allow drawing of memory (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		AllowDrawMemHintPgi = 0x1A211,
+
+		/// <summary>
+		/// Indicates a hint for strict depth function checks (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StrictDepthfuncHintPgi = 0x1A216,
+
+		/// <summary>
+		/// Indicates a hint for strict lighting checks (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StrictLightingHintPgi = 0x1A217,
+
+		/// <summary>
+		/// Indicates a hint for strict scissor checks (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StrictScissorHintPgi = 0x1A218,
+
+		/// <summary>
+		/// Indicates a hint for full stipple rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FullStippleHintPgi = 0x1A219,
+
+		/// <summary>
+		/// Indicates a hint for near clipping (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ClipNearHintPgi = 0x1A220,
+
+		/// <summary>
+		/// Indicates a hint for far clipping (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ClipFarHintPgi = 0x1A221,
+
+		/// <summary>
+		/// Indicates a hint for wide line rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		WideLineHintPgi = 0x1A222,
+
+		/// <summary>
+		/// Indicates a hint for backface normal rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		BackNormalsHintPgi = 0x1A223,
+
+		/// <summary>
+		/// Indicates a hint for vertex data optimization (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexDataHintPgi = 0x1A22A,
+
+		/// <summary>
+		/// Indicates a hint for vertex consistency (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		VertexConsistentHintPgi = 0x1A22B,
+
+		/// <summary>
+		/// Indicates a hint for material side rendering (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaterialSideHintPgi = 0x1A22C,
+
+		/// <summary>
+		/// Indicates a hint for the maximum vertex count (PGI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		MaxVertexHintPgi = 0x1A22D,
 	}
 }

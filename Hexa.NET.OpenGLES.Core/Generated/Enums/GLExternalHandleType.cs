@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLExternalHandleType : uint
 	{
+		/// <summary>
+		/// Specifies an opaque file descriptor handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_fd<br/>GL_EXT_semaphore_fd</remarks>
 		OpaqueFdExt = unchecked((uint)0x9586),
+
+		/// <summary>
+		/// Specifies an opaque Windows handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		OpaqueWin32Ext = unchecked((uint)0x9587),
+
+		/// <summary>
+		/// Specifies an opaque Windows Kernel-Mode handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		OpaqueWin32KmtExt = unchecked((uint)0x9588),
+
+		/// <summary>
+		/// Specifies a D3D12 tile pool handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		D3D12TilepoolExt = unchecked((uint)0x9589),
+
+		/// <summary>
+		/// Specifies a D3D12 resource handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		D3D12ResourceExt = unchecked((uint)0x958A),
+
+		/// <summary>
+		/// Specifies a D3D11 image handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		D3D11ImageExt = unchecked((uint)0x958B),
+
+		/// <summary>
+		/// Specifies a D3D11 image Kernel-Mode handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
 		D3D11ImageKmtExt = unchecked((uint)0x958C),
+
+		/// <summary>
+		/// Specifies a D3D12 fence handle type (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
 		D3D12FenceExt = unchecked((uint)0x9594),
 	}
 }

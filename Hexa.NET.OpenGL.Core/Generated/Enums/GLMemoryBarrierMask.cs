@@ -15,36 +15,190 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMemoryBarrierMask : uint
 	{
+		/// <summary>
+		/// Barriers for vertex attribute arrays.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		VertexAttribArrayBarrierBit = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Vertex attribute array barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		VertexAttribArrayBarrierBitExt = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Barriers for element arrays.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ElementArrayBarrierBit = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Element array barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		ElementArrayBarrierBitExt = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Barriers for uniform data.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		UniformBarrierBit = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Uniform barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		UniformBarrierBitExt = unchecked((uint)0x00000004),
+
+		/// <summary>
+		/// Barriers for texture fetching.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		TextureFetchBarrierBit = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Texture fetch barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		TextureFetchBarrierBitExt = unchecked((uint)0x00000008),
+
+		/// <summary>
+		/// Global access barrier for shaders (NV).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_store</remarks>
 		ShaderGlobalAccessBarrierBitNv = unchecked((uint)0x00000010),
+
+		/// <summary>
+		/// Barrier for shader image access.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		ShaderImageAccessBarrierBit = unchecked((uint)0x00000020),
+
+		/// <summary>
+		/// Shader image access barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		ShaderImageAccessBarrierBitExt = unchecked((uint)0x00000020),
+
+		/// <summary>
+		/// Indicates command barrier synchronization.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		CommandBarrierBit = unchecked((uint)0x00000040),
+
+		/// <summary>
+		/// Command barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		CommandBarrierBitExt = unchecked((uint)0x00000040),
+
+		/// <summary>
+		/// Synchronizes pixel buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		PixelBufferBarrierBit = unchecked((uint)0x00000080),
+
+		/// <summary>
+		/// Pixel buffer barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		PixelBufferBarrierBitExt = unchecked((uint)0x00000080),
+
+		/// <summary>
+		/// Synchronizes texture updates.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		TextureUpdateBarrierBit = unchecked((uint)0x00000100),
+
+		/// <summary>
+		/// Texture update barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		TextureUpdateBarrierBitExt = unchecked((uint)0x00000100),
+
+		/// <summary>
+		/// Synchronizes buffer updates.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		BufferUpdateBarrierBit = unchecked((uint)0x00000200),
+
+		/// <summary>
+		/// Buffer update barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		BufferUpdateBarrierBitExt = unchecked((uint)0x00000200),
+
+		/// <summary>
+		/// Synchronizes framebuffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		FramebufferBarrierBit = unchecked((uint)0x00000400),
+
+		/// <summary>
+		/// Framebuffer barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		FramebufferBarrierBitExt = unchecked((uint)0x00000400),
+
+		/// <summary>
+		/// Synchronizes transform feedback operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		TransformFeedbackBarrierBit = unchecked((uint)0x00000800),
+
+		/// <summary>
+		/// Transform feedback barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		TransformFeedbackBarrierBitExt = unchecked((uint)0x00000800),
+
+		/// <summary>
+		/// Synchronizes atomic counter operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		AtomicCounterBarrierBit = unchecked((uint)0x00001000),
+
+		/// <summary>
+		/// Atomic counter barrier for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		AtomicCounterBarrierBitExt = unchecked((uint)0x00001000),
+
+		/// <summary>
+		/// Synchronizes shader storage access.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
 		ShaderStorageBarrierBit = unchecked((uint)0x00002000),
+
+		/// <summary>
+		/// Barrier for client-mapped buffers.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
 		ClientMappedBufferBarrierBit = unchecked((uint)0x00004000),
+
+		/// <summary>
+		/// Client-mapped buffer barrier for extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		ClientMappedBufferBarrierBitExt = unchecked((uint)0x00004000),
+
+		/// <summary>
+		/// Synchronizes query buffer operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_query_buffer_object</remarks>
 		QueryBufferBarrierBit = unchecked((uint)0x00008000),
+
+		/// <summary>
+		/// Indicates all barrier bits.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
 		AllBarrierBits = unchecked((uint)0xFFFFFFFF),
+
+		/// <summary>
+		/// All barrier bits for extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
 		AllBarrierBitsExt = unchecked((uint)0xFFFFFFFF),
 	}
 }

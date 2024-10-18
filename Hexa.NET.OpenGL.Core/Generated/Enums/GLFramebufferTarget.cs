@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFramebufferTarget : uint
 	{
+		/// <summary>
+		/// Specifies the read framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		ReadFramebuffer = unchecked((uint)0x8CA8),
+
+		/// <summary>
+		/// Specifies the draw framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		DrawFramebuffer = unchecked((uint)0x8CA9),
+
+		/// <summary>
+		/// Specifies the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Framebuffer = unchecked((uint)0x8D40),
+
+		/// <summary>
+		/// Specifies the framebuffer (OES extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Oes = unchecked((uint)0x8D40),
 	}
 }

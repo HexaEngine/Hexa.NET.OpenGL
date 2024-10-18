@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLEvalTargetNV : uint
 	{
+		/// <summary>
+		/// Specifies 2D evaluation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		Eval2DNv = unchecked((uint)0x86C0),
+
+		/// <summary>
+		/// Specifies triangular 2D evaluation (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		Triangular2DNv = unchecked((uint)0x86C1),
 	}
 }

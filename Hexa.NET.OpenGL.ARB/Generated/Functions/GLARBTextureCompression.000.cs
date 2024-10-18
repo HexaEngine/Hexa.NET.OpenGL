@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage1DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
 		{
 			CompressedTexImage1DARBNative(target, level, internalformat, width, border, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage1DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint data)
 		{
 			CompressedTexImage1DARBNative(target, level, internalformat, width, border, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage1DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage2DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
 		{
 			CompressedTexImage2DARBNative(target, level, internalformat, width, height, border, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage2DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint data)
 		{
 			CompressedTexImage2DARBNative(target, level, internalformat, width, height, border, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage2DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -82,16 +106,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage3DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
 		{
 			CompressedTexImage3DARBNative(target, level, internalformat, width, height, depth, border, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage3DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
 		{
 			CompressedTexImage3DARBNative(target, level, internalformat, width, height, depth, border, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexImage3DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -110,16 +146,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage1DARB(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage1DARBNative(target, level, xoffset, width, format, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage1DARB(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage1DARBNative(target, level, xoffset, width, format, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage1DARB<TData>(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -138,16 +186,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage2DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage2DARBNative(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage2DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage2DARBNative(target, level, xoffset, yoffset, width, height, format, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage2DARB<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -166,16 +226,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage3DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage3DARBNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage3DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage3DARBNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void CompressedTexSubImage3DARB<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -194,16 +266,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void GetCompressedTexImageARB(GLTextureTarget target, int level, void* img)
 		{
 			GetCompressedTexImageARBNative(target, level, img);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void GetCompressedTexImageARB(GLTextureTarget target, int level, nint img)
 		{
 			GetCompressedTexImageARBNative(target, level, (void*)img);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
 		public static void GetCompressedTexImageARB<TImg>(GLTextureTarget target, int level, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)

@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSyncStatus : uint
 	{
+		/// <summary>
+		/// Indicates that a synchronization object was already signaled.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		AlreadySignaled = unchecked((uint)0x911A),
+
+		/// <summary>
+		/// Indicates that a timeout has expired for synchronization.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		TimeoutExpired = unchecked((uint)0x911B),
+
+		/// <summary>
+		/// Indicates that the condition for synchronization has been satisfied.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		ConditionSatisfied = unchecked((uint)0x911C),
+
+		/// <summary>
+		/// Indicates that the wait operation failed.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		WaitFailed = unchecked((uint)0x911D),
 	}
 }

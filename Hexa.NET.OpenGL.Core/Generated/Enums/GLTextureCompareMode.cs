@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureCompareMode : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies comparison of R component to texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		RToTexture = unchecked((uint)0x884E),
+
+		/// <summary>
+		/// Specifies comparison of reference to texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		RefToTexture = unchecked((uint)0x884E),
 	}
 }

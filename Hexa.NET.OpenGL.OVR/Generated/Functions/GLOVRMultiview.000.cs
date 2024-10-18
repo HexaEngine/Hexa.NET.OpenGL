@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.OVR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OVR_multiview</remarks>
 		public static void FramebufferTextureMultiviewOVR(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
 		{
 			FramebufferTextureMultiviewOVRNative(target, attachment, texture, level, baseViewIndex, numViews);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.OVR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OVR_multiview</remarks>
 		public static void NamedFramebufferTextureMultiviewOVR(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
 		{
 			NamedFramebufferTextureMultiviewOVRNative(framebuffer, attachment, texture, level, baseViewIndex, numViews);

@@ -15,28 +15,142 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathMetricMask : uint
 	{
+		/// <summary>
+		/// Indicates glyph width property.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphWidthBitNv = unchecked((uint)0x01),
+
+		/// <summary>
+		/// Indicates glyph height property.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphHeightBitNv = unchecked((uint)0x02),
+
+		/// <summary>
+		/// Indicates horizontal bearing X for glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphHorizontalBearingXBitNv = unchecked((uint)0x04),
+
+		/// <summary>
+		/// Indicates horizontal bearing Y for glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphHorizontalBearingYBitNv = unchecked((uint)0x08),
+
+		/// <summary>
+		/// Indicates horizontal bearing advance for glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphHorizontalBearingAdvanceBitNv = unchecked((uint)0x10),
+
+		/// <summary>
+		/// Indicates vertical bearing X for glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphVerticalBearingXBitNv = unchecked((uint)0x20),
+
+		/// <summary>
+		/// Indicates vertical bearing Y for glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphVerticalBearingYBitNv = unchecked((uint)0x40),
+
+		/// <summary>
+		/// Indicates vertical bearing advance for glyphs.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphVerticalBearingAdvanceBitNv = unchecked((uint)0x80),
+
+		/// <summary>
+		/// Indicates if glyphs have kerning.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		GlyphHasKerningBitNv = unchecked((uint)0x100),
+
+		/// <summary>
+		/// Indicates minimum X bounds for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontXMinBoundsBitNv = unchecked((uint)0x00010000),
+
+		/// <summary>
+		/// Indicates minimum Y bounds for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontYMinBoundsBitNv = unchecked((uint)0x00020000),
+
+		/// <summary>
+		/// Indicates maximum X bounds for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontXMaxBoundsBitNv = unchecked((uint)0x00040000),
+
+		/// <summary>
+		/// Indicates maximum Y bounds for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontYMaxBoundsBitNv = unchecked((uint)0x00080000),
+
+		/// <summary>
+		/// Indicates units per EM for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontUnitsPerEmBitNv = unchecked((uint)0x00100000),
+
+		/// <summary>
+		/// Indicates ascender value for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontAscenderBitNv = unchecked((uint)0x00200000),
+
+		/// <summary>
+		/// Indicates descender value for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontDescenderBitNv = unchecked((uint)0x00400000),
+
+		/// <summary>
+		/// Indicates font height.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontHeightBitNv = unchecked((uint)0x00800000),
+
+		/// <summary>
+		/// Indicates maximum advance width for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontMaxAdvanceWidthBitNv = unchecked((uint)0x01000000),
+
+		/// <summary>
+		/// Indicates maximum advance height for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontMaxAdvanceHeightBitNv = unchecked((uint)0x02000000),
+
+		/// <summary>
+		/// Indicates underline position for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontUnderlinePositionBitNv = unchecked((uint)0x04000000),
+
+		/// <summary>
+		/// Indicates underline thickness for font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontUnderlineThicknessBitNv = unchecked((uint)0x08000000),
+
+		/// <summary>
+		/// Indicates if font has kerning.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontHasKerningBitNv = unchecked((uint)0x10000000),
+
+		/// <summary>
+		/// Indicates number of glyph indices in font.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		FontNumGlyphIndicesBitNv = unchecked((uint)0x20000000),
 	}
 }

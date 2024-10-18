@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, byte* name, double* @params)
 		{
 			GetProgramNamedParameterdvNVNative(id, len, name, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, string name, double* @params)
 		{
 			byte* pStr0 = null;
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, Span<byte> name, double* @params)
 		{
 			fixed (byte* pname0 = name)
@@ -65,6 +77,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, ref byte name, double* @params)
 		{
 			fixed (byte* pname0 = &name)
@@ -73,6 +89,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, byte* name, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
@@ -81,6 +101,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, byte* name, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
@@ -89,6 +113,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, Span<byte> name, Span<double> @params)
 		{
 			fixed (byte* pname0 = name)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterdvNV(uint id, int len, ref byte name, ref double @params)
 		{
 			fixed (byte* pname0 = &name)
@@ -121,11 +153,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, float* @params)
 		{
 			GetProgramNamedParameterfvNVNative(id, len, name, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, out float @params)
 		{
 			float pparams;
@@ -133,6 +173,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -141,6 +185,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, string name, float* @params)
 		{
 			byte* pStr0 = null;
@@ -167,6 +215,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, Span<byte> name, float* @params)
 		{
 			fixed (byte* pname0 = name)
@@ -175,6 +227,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, ref byte name, float* @params)
 		{
 			fixed (byte* pname0 = &name)
@@ -193,11 +249,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dNV(uint id, int len, byte* name, double x, double y, double z, double w)
 		{
 			ProgramNamedParameter4dNVNative(id, len, name, x, y, z, w);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dNV(uint id, int len, string name, double x, double y, double z, double w)
 		{
 			byte* pStr0 = null;
@@ -224,6 +288,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dNV(uint id, int len, Span<byte> name, double x, double y, double z, double w)
 		{
 			fixed (byte* pname0 = name)
@@ -232,6 +300,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dNV(uint id, int len, ref byte name, double x, double y, double z, double w)
 		{
 			fixed (byte* pname0 = &name)
@@ -250,11 +322,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, byte* name, double* v)
 		{
 			ProgramNamedParameter4dvNVNative(id, len, name, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, string name, double* v)
 		{
 			byte* pStr0 = null;
@@ -281,6 +361,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, Span<byte> name, double* v)
 		{
 			fixed (byte* pname0 = name)
@@ -289,6 +373,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, ref byte name, double* v)
 		{
 			fixed (byte* pname0 = &name)
@@ -297,6 +385,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, byte* name, Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -305,6 +397,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, byte* name, ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -313,6 +409,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, Span<byte> name, Span<double> v)
 		{
 			fixed (byte* pname0 = name)
@@ -324,6 +424,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4dvNV(uint id, int len, ref byte name, ref double v)
 		{
 			fixed (byte* pname0 = &name)
@@ -345,11 +449,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fNV(uint id, int len, byte* name, float x, float y, float z, float w)
 		{
 			ProgramNamedParameter4fNVNative(id, len, name, x, y, z, w);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fNV(uint id, int len, string name, float x, float y, float z, float w)
 		{
 			byte* pStr0 = null;
@@ -376,6 +488,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fNV(uint id, int len, Span<byte> name, float x, float y, float z, float w)
 		{
 			fixed (byte* pname0 = name)
@@ -384,6 +500,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fNV(uint id, int len, ref byte name, float x, float y, float z, float w)
 		{
 			fixed (byte* pname0 = &name)
@@ -402,11 +522,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, byte* name, float* v)
 		{
 			ProgramNamedParameter4fvNVNative(id, len, name, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, string name, float* v)
 		{
 			byte* pStr0 = null;
@@ -433,6 +561,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, Span<byte> name, float* v)
 		{
 			fixed (byte* pname0 = name)
@@ -441,6 +573,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, ref byte name, float* v)
 		{
 			fixed (byte* pname0 = &name)
@@ -449,6 +585,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, byte* name, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -457,6 +597,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, byte* name, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -465,6 +609,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, Span<byte> name, Span<float> v)
 		{
 			fixed (byte* pname0 = name)
@@ -476,6 +624,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void ProgramNamedParameter4fvNV(uint id, int len, ref byte name, ref float v)
 		{
 			fixed (byte* pname0 = &name)

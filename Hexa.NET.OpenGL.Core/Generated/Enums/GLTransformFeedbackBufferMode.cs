@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTransformFeedbackBufferMode : uint
 	{
+		/// <summary>
+		/// Specifies interleaved attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		InterleavedAttribs = unchecked((uint)0x8C8C),
+
+		/// <summary>
+		/// Specifies separate attributes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		SeparateAttribs = unchecked((uint)0x8C8D),
 	}
 }

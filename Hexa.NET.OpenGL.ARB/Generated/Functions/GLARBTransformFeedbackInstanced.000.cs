@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render multiple instances of primitives using a count derived from a transform feedback object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback_instanced</remarks>
 		public static void DrawTransformFeedbackInstanced(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			DrawTransformFeedbackInstancedNative(mode, id, instancecount);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render multiple instances of primitives using a count derived from a specifed stream of a transform feedback object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback_instanced</remarks>
 		public static void DrawTransformFeedbackStreamInstanced(GLPrimitiveType mode, uint id, uint stream, int instancecount)
 		{
 			DrawTransformFeedbackStreamInstancedNative(mode, id, stream, instancecount);

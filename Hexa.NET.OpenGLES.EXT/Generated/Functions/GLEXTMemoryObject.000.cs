@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void BufferStorageMemEXT(GLBufferTargetARB target, nint size, uint memory, ulong offset)
 		{
 			BufferStorageMemEXTNative(target, size, memory, offset);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void CreateMemoryObjectsEXT(int n, uint* memoryObjects)
 		{
 			CreateMemoryObjectsEXTNative(n, memoryObjects);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void CreateMemoryObjectsEXT(int n, Span<uint> memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = memoryObjects)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void CreateMemoryObjectsEXT(int n, ref uint memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = &memoryObjects)
@@ -72,16 +88,28 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void DeleteMemoryObjectsEXT(int n, uint* memoryObjects)
 		{
 			DeleteMemoryObjectsEXTNative(n, memoryObjects);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void DeleteMemoryObjectsEX(uint memoryObject)
 		{
 			DeleteMemoryObjectsEXTNative(1, &memoryObject);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void DeleteMemoryObjectsEXT(int n, Span<uint> memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = memoryObjects)
@@ -90,6 +118,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void DeleteMemoryObjectsEXT(int n, ref uint memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = &memoryObjects)
@@ -108,11 +140,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
 		{
 			GetMemoryObjectParameterivEXTNative(memoryObject, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, out int @params)
 		{
 			int pparams;
@@ -120,6 +160,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -138,11 +182,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, byte* data)
 		{
 			GetUnsignedBytevEXTNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, string data)
 		{
 			byte* pStr0 = null;
@@ -169,6 +221,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -177,6 +233,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytevEXT(GLGetPName pname, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -195,11 +255,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, byte* data)
 		{
 			GetUnsignedBytei_vEXTNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, string data)
 		{
 			byte* pStr0 = null;
@@ -226,6 +294,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -234,6 +306,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -252,6 +328,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static bool IsMemoryObjectEXT(uint memoryObject)
 		{
 			byte ret = IsMemoryObjectEXTNative(memoryObject);
@@ -268,11 +348,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
 		{
 			MemoryObjectParameterivEXTNative(memoryObject, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, out int @params)
 		{
 			int pparams;
@@ -280,6 +368,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -298,6 +390,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void NamedBufferStorageMemEXT(uint buffer, nint size, uint memory, ulong offset)
 		{
 			NamedBufferStorageMemEXTNative(buffer, size, memory, offset);
@@ -313,6 +409,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TexStorageMem1DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
 		{
 			TexStorageMem1DEXTNative(target, levels, internalFormat, width, memory, offset);
@@ -328,6 +428,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TexStorageMem2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
 		{
 			TexStorageMem2DEXTNative(target, levels, internalFormat, width, height, memory, offset);
@@ -343,6 +447,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TexStorageMem2DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TexStorageMem2DMultisampleEXTNative(target, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
@@ -358,6 +466,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TexStorageMem3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
 		{
 			TexStorageMem3DEXTNative(target, levels, internalFormat, width, height, depth, memory, offset);
@@ -373,6 +485,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TexStorageMem3DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TexStorageMem3DMultisampleEXTNative(target, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
@@ -388,6 +504,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TextureStorageMem1DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
 		{
 			TextureStorageMem1DEXTNative(texture, levels, internalFormat, width, memory, offset);
@@ -403,6 +523,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TextureStorageMem2DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
 		{
 			TextureStorageMem2DEXTNative(texture, levels, internalFormat, width, height, memory, offset);
@@ -418,6 +542,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TextureStorageMem2DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TextureStorageMem2DMultisampleEXTNative(texture, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
@@ -433,6 +561,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TextureStorageMem3DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
 		{
 			TextureStorageMem3DEXTNative(texture, levels, internalFormat, width, height, depth, memory, offset);
@@ -448,6 +580,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
 		public static void TextureStorageMem3DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TextureStorageMem3DMultisampleEXTNative(texture, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);

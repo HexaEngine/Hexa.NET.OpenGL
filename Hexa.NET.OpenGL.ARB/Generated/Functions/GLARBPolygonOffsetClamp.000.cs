@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_polygon_offset_clamp</remarks>
 		public static void PolygonOffsetClamp(float factor, float units, float clamp)
 		{
 			PolygonOffsetClampNative(factor, units, clamp);

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void InsertEventMarkerEXT(int length, byte* marker)
 		{
 			InsertEventMarkerEXTNative(length, marker);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void InsertEventMarkerEXT(int length, string marker)
 		{
 			byte* pStr0 = null;
@@ -57,6 +65,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void InsertEventMarkerEXT(int length, Span<byte> marker)
 		{
 			fixed (byte* pmarker0 = marker)
@@ -65,6 +77,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void InsertEventMarkerEXT(int length, ref byte marker)
 		{
 			fixed (byte* pmarker0 = &marker)
@@ -83,6 +99,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void PopGroupMarkerEXT()
 		{
 			PopGroupMarkerEXTNative();
@@ -98,11 +118,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void PushGroupMarkerEXT(int length, byte* marker)
 		{
 			PushGroupMarkerEXTNative(length, marker);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void PushGroupMarkerEXT(int length, string marker)
 		{
 			byte* pStr0 = null;
@@ -129,6 +157,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void PushGroupMarkerEXT(int length, Span<byte> marker)
 		{
 			fixed (byte* pmarker0 = marker)
@@ -137,6 +169,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
 		public static void PushGroupMarkerEXT(int length, ref byte marker)
 		{
 			fixed (byte* pmarker0 = &marker)

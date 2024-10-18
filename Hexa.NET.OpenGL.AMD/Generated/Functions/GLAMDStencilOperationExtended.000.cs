@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_stencil_operation_extended</remarks>
 		public static void StencilOpValueAMD(GLTriangleFace face, uint value)
 		{
 			StencilOpValueAMDNative(face, value);

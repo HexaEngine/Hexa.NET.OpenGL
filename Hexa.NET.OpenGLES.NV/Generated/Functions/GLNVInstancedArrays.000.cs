@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_instanced_arrays</remarks>
 		public static void VertexAttribDivisorNV(uint index, uint divisor)
 		{
 			VertexAttribDivisorNVNative(index, divisor);

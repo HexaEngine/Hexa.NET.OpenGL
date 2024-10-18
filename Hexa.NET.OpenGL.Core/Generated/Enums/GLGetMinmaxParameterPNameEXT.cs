@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLGetMinmaxParameterPNameEXT : uint
 	{
+		/// <summary>
+		/// Specifies the format for min/max operations.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Format = unchecked((uint)0x802F),
+
+		/// <summary>
+		/// Specifies the format for min/max operations for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		FormatExt = unchecked((uint)0x802F),
+
+		/// <summary>
+		/// Specifies the sink for min/max data.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Sink = unchecked((uint)0x8030),
+
+		/// <summary>
+		/// Specifies the sink for min/max data for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
 		SinkExt = unchecked((uint)0x8030),
 	}
 }

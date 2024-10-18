@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_copy_buffer</remarks>
 		public static void CopyBufferSubDataNV(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			CopyBufferSubDataNVNative(readTarget, writeTarget, readOffset, writeOffset, size);

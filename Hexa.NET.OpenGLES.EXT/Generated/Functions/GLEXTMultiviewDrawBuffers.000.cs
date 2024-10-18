@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, int* indices)
 		{
 			DrawBuffersIndexedEXTNative(n, location, indices);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, int* indices)
 		{
 			fixed (GLEnum* plocation0 = location)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, ref GLEnum location, int* indices)
 		{
 			fixed (GLEnum* plocation0 = &location)
@@ -47,6 +59,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, Span<int> indices)
 		{
 			fixed (int* pindices0 = indices)
@@ -55,6 +71,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, ref int indices)
 		{
 			fixed (int* pindices0 = &indices)
@@ -63,6 +83,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, Span<int> indices)
 		{
 			fixed (GLEnum* plocation0 = location)
@@ -74,6 +98,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void DrawBuffersIndexedEXT(int n, ref GLEnum location, ref int indices)
 		{
 			fixed (GLEnum* plocation0 = &location)
@@ -95,11 +123,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void GetIntegeri_vEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vEXTNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void GetIntegeri_vEXT(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -108,6 +144,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void GetIntegeri_vEXT(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -126,6 +166,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
 		public static void ReadBufferIndexedEXT(GLReadBufferMode src, int index)
 		{
 			ReadBufferIndexedEXTNative(src, index);

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void BindShadingRateImageNV(uint texture)
 		{
 			BindShadingRateImageNVNative(texture);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, GLEnum* rate)
 		{
 			GetShadingRateImagePaletteNVNative(viewport, entry, rate);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, Span<GLEnum> rate)
 		{
 			fixed (GLEnum* prate0 = rate)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, ref GLEnum rate)
 		{
 			fixed (GLEnum* prate0 = &rate)
@@ -72,11 +88,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, int* location)
 		{
 			GetShadingRateSampleLocationivNVNative(rate, samples, index, location);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, Span<int> location)
 		{
 			fixed (int* plocation0 = location)
@@ -85,6 +109,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, ref int location)
 		{
 			fixed (int* plocation0 = &location)
@@ -103,6 +131,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateImageBarrierNV(bool synchronize)
 		{
 			ShadingRateImageBarrierNVNative(synchronize);
@@ -118,11 +150,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, GLEnum* rates)
 		{
 			ShadingRateImagePaletteNVNative(viewport, first, count, rates);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, Span<GLEnum> rates)
 		{
 			fixed (GLEnum* prates0 = rates)
@@ -131,6 +171,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, ref GLEnum rates)
 		{
 			fixed (GLEnum* prates0 = &rates)
@@ -149,6 +193,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateSampleOrderNV(GLEnum order)
 		{
 			ShadingRateSampleOrderNVNative(order);
@@ -164,11 +212,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, int* locations)
 		{
 			ShadingRateSampleOrderCustomNVNative(rate, samples, locations);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, Span<int> locations)
 		{
 			fixed (int* plocations0 = locations)
@@ -177,6 +233,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
 		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, ref int locations)
 		{
 			fixed (int* plocations0 = &locations)

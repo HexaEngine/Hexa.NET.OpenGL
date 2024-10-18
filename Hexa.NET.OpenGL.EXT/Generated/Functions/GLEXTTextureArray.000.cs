@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array<br/>GL_NV_geometry_program4</remarks>
 		public static void FramebufferTextureLayerEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerEXTNative(target, attachment, texture, level, layer);

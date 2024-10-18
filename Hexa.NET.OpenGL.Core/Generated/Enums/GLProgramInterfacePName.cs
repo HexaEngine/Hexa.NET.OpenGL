@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLProgramInterfacePName : uint
 	{
+		/// <summary>
+		/// Specifies the number of active resources in a program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		ActiveResources = unchecked((uint)0x92F5),
+
+		/// <summary>
+		/// Specifies the maximum length of a resource name.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MaxNameLength = unchecked((uint)0x92F6),
+
+		/// <summary>
+		/// Specifies the maximum number of active variables in a program.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MaxNumActiveVariables = unchecked((uint)0x92F7),
+
+		/// <summary>
+		/// Specifies the maximum number of compatible subroutines.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		MaxNumCompatibleSubroutines = unchecked((uint)0x92F8),
 	}
 }

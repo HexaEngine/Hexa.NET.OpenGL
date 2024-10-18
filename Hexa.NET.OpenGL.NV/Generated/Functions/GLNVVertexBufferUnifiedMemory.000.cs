@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void BufferAddressRangeNV(GLEnum pname, uint index, ulong address, nint length)
 		{
 			BufferAddressRangeNVNative(pname, index, address, length);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void ColorFormatNV(int size, GLColorPointerType type, int stride)
 		{
 			ColorFormatNVNative(size, type, stride);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void EdgeFlagFormatNV(int stride)
 		{
 			EdgeFlagFormatNVNative(stride);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void FogCoordFormatNV(GLEnum type, int stride)
 		{
 			FogCoordFormatNVNative(type, stride);
@@ -86,11 +102,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void GetIntegerui64i_vNV(GLEnum value, uint index, ulong* result)
 		{
 			GetIntegerui64i_vNVNative(value, index, result);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void GetIntegerui64i_vNV(GLEnum value, uint index, Span<ulong> result)
 		{
 			fixed (ulong* presult0 = result)
@@ -99,6 +123,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void GetIntegerui64i_vNV(GLEnum value, uint index, ref ulong result)
 		{
 			fixed (ulong* presult0 = &result)
@@ -117,6 +145,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void IndexFormatNV(GLEnum type, int stride)
 		{
 			IndexFormatNVNative(type, stride);
@@ -132,6 +164,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void NormalFormatNV(GLEnum type, int stride)
 		{
 			NormalFormatNVNative(type, stride);
@@ -147,6 +183,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void SecondaryColorFormatNV(int size, GLColorPointerType type, int stride)
 		{
 			SecondaryColorFormatNVNative(size, type, stride);
@@ -162,6 +202,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void TexCoordFormatNV(int size, GLEnum type, int stride)
 		{
 			TexCoordFormatNVNative(size, type, stride);
@@ -177,6 +221,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void VertexAttribFormatNV(uint index, int size, GLVertexAttribType type, bool normalized, int stride)
 		{
 			VertexAttribFormatNVNative(index, size, type, normalized, stride);
@@ -192,6 +240,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void VertexAttribIFormatNV(uint index, int size, GLVertexAttribIType type, int stride)
 		{
 			VertexAttribIFormatNVNative(index, size, type, stride);
@@ -207,6 +259,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_buffer_unified_memory</remarks>
 		public static void VertexFormatNV(int size, GLVertexPointerType type, int stride)
 		{
 			VertexFormatNVNative(size, type, stride);

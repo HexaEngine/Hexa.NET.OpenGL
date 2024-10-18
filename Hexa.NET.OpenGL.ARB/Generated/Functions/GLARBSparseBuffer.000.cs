@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sparse_buffer</remarks>
 		public static void BufferPageCommitmentARB(GLEnum target, nint offset, nint size, bool commit)
 		{
 			BufferPageCommitmentARBNative(target, offset, size, commit);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sparse_buffer</remarks>
 		public static void NamedBufferPageCommitmentARB(uint buffer, nint offset, nint size, bool commit)
 		{
 			NamedBufferPageCommitmentARBNative(buffer, offset, size, commit);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sparse_buffer</remarks>
 		public static void NamedBufferPageCommitmentEXT(uint buffer, nint offset, nint size, bool commit)
 		{
 			NamedBufferPageCommitmentEXTNative(buffer, offset, size, commit);

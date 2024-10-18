@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, float* v)
 		{
 			FramebufferSampleLocationsfvNVNative(target, start, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, float* v)
 		{
 			NamedFramebufferSampleLocationsfvNVNative(framebuffer, start, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -70,6 +90,10 @@ namespace Hexa.NET.OpenGLES.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -88,6 +112,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
 		public static void ResolveDepthValuesNV()
 		{
 			ResolveDepthValuesNVNative();

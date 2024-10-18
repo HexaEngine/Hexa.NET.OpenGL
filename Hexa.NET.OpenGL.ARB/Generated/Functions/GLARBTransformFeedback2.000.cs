@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a transform feedback object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void BindTransformFeedback(GLBindTransformFeedbackTarget target, uint id)
 		{
 			BindTransformFeedbackNative(target, id);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Delete transform feedback objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacks(int n, uint* ids)
 		{
 			DeleteTransformFeedbacksNative(n, ids);
 		}
 
+		/// <summary>
+		/// Delete transform feedback objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void DeleteTransformFeedback(uint id)
 		{
 			DeleteTransformFeedbacksNative(1, &id);
 		}
 
+		/// <summary>
+		/// Delete transform feedback objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacks(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Delete transform feedback objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void DeleteTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives using a count derived from a transform feedback object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void DrawTransformFeedback(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackNative(mode, id);
@@ -92,11 +116,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Reserve transform feedback object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void GenTransformFeedbacks(int n, uint* ids)
 		{
 			GenTransformFeedbacksNative(n, ids);
 		}
 
+		/// <summary>
+		/// Reserve transform feedback object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static uint GenTransformFeedback()
 		{
 			uint result;
@@ -104,6 +136,10 @@ namespace Hexa.NET.OpenGL.ARB
 			return result;
 		}
 
+		/// <summary>
+		/// Reserve transform feedback object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void GenTransformFeedbacks(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -112,6 +148,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Reserve transform feedback object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void GenTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -130,6 +170,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Determine if a name corresponds to a transform feedback object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static bool IsTransformFeedback(uint id)
 		{
 			byte ret = IsTransformFeedbackNative(id);
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Pause transform feedback operations
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void PauseTransformFeedback()
 		{
 			PauseTransformFeedbackNative();
@@ -161,6 +209,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Resume transform feedback operations
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
 		public static void ResumeTransformFeedback()
 		{
 			ResumeTransformFeedbackNative();

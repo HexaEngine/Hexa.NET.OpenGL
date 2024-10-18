@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		public static void PointParameterfEXT(GLPointParameterNameARB pname, float param)
 		{
 			PointParameterfEXTNative(pname, param);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		public static void PointParameterfvEXT(GLPointParameterNameARB pname, float* @params)
 		{
 			PointParameterfvEXTNative(pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		public static void PointParameterfvEXT(GLPointParameterNameARB pname, out float @params)
 		{
 			float pparams;
@@ -53,6 +65,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		public static void PointParameterfvEXT(GLPointParameterNameARB pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)

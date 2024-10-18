@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
 		public static void BlendEquationSeparateiOES(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateiOESNative(buf, modeRGB, modeAlpha);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
 		public static void BlendEquationiOES(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationiOESNative(buf, mode);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
 		public static void BlendFuncSeparateiOES(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateiOESNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
 		public static void BlendFunciOES(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			BlendFunciOESNative(buf, src, dst);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
 		public static void ColorMaskiOES(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiOESNative(index, r, g, b, a);
@@ -101,6 +121,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
 		public static void DisableiOES(GLEnableCap target, uint index)
 		{
 			DisableiOESNative(target, index);
@@ -116,6 +140,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
 		public static void EnableiOES(GLEnableCap target, uint index)
 		{
 			EnableiOESNative(target, index);
@@ -131,6 +159,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
 		public static bool IsEnablediOES(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediOESNative(target, index);

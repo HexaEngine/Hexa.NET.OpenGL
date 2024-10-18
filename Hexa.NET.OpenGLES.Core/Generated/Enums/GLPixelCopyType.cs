@@ -15,11 +15,40 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPixelCopyType : uint
 	{
+		/// <summary>
+		/// Specifies the color buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Color = unchecked((uint)0x1800),
+
+		/// <summary>
+		/// Specifies the color buffer for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_discard_framebuffer</remarks>
 		ColorExt = unchecked((uint)0x1800),
+
+		/// <summary>
+		/// Specifies the depth buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Depth = unchecked((uint)0x1801),
+
+		/// <summary>
+		/// Specifies the depth buffer for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_discard_framebuffer</remarks>
 		DepthExt = unchecked((uint)0x1801),
+
+		/// <summary>
+		/// Specifies the stencil buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Stencil = unchecked((uint)0x1802),
+
+		/// <summary>
+		/// Specifies the stencil buffer for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_discard_framebuffer</remarks>
 		StencilExt = unchecked((uint)0x1802),
 	}
 }

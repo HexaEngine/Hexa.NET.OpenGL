@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLRenderingMode : uint
 	{
+		/// <summary>
+		/// Specifies render mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Render = unchecked((uint)0x1C00),
+
+		/// <summary>
+		/// Specifies feedback mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Feedback = unchecked((uint)0x1C01),
+
+		/// <summary>
+		/// Specifies selection mode for drawing.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Select = unchecked((uint)0x1C02),
 	}
 }

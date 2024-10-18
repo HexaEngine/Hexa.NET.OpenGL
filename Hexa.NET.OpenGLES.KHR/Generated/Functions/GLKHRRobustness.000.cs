@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// Check if the rendering context has not been lost due to software or hardware issues
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static GLEnum GetGraphicsResetStatus()
 		{
 			GLEnum ret = GetGraphicsResetStatusNative();
@@ -42,6 +46,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static GLEnum GetGraphicsResetStatusKHR()
 		{
 			GLEnum ret = GetGraphicsResetStatusKHRNative();
@@ -58,11 +66,19 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfv(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfv(uint program, int location, int bufSize, out float @params)
 		{
 			float pparams;
@@ -70,6 +86,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfv(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -88,11 +108,19 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfvKHR(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvKHRNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfvKHR(uint program, int location, int bufSize, out float @params)
 		{
 			float pparams;
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfvKHR(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -118,11 +150,19 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformiv(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformiv(uint program, int location, int bufSize, out int @params)
 		{
 			int pparams;
@@ -130,6 +170,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformiv(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -148,11 +192,19 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformivKHR(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivKHRNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformivKHR(uint program, int location, int bufSize, out int @params)
 		{
 			int pparams;
@@ -160,6 +212,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformivKHR(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -178,11 +234,19 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuiv(uint program, int location, int bufSize, uint* @params)
 		{
 			GetnUniformuivNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuiv(uint program, int location, int bufSize, out uint @params)
 		{
 			uint pparams;
@@ -190,6 +254,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuiv(uint program, int location, int bufSize, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -208,11 +276,19 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuivKHR(uint program, int location, int bufSize, uint* @params)
 		{
 			GetnUniformuivKHRNative(program, location, bufSize, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuivKHR(uint program, int location, int bufSize, out uint @params)
 		{
 			uint pparams;
@@ -220,6 +296,10 @@ namespace Hexa.NET.OpenGLES.KHR
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuivKHR(uint program, int location, int bufSize, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -238,16 +318,28 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsNative(x, y, width, height, format, type, bufSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void ReadnPixels<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -266,16 +358,28 @@ namespace Hexa.NET.OpenGLES.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void ReadnPixelsKHR<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)

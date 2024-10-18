@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLLightTexturePNameEXT : uint
 	{
+		/// <summary>
+		/// Specifies attenuation properties (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
 		AttenuationExt = unchecked((uint)0x834D),
+
+		/// <summary>
+		/// Specifies shadow attenuation properties (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_light_texture</remarks>
 		ShadowAttenuationExt = unchecked((uint)0x834E),
 	}
 }

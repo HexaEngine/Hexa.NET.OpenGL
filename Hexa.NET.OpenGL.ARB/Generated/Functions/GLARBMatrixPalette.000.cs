@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void CurrentPaletteMatrixARB(int index)
 		{
 			CurrentPaletteMatrixARBNative(index);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
 		{
 			MatrixIndexPointerARBNative(size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
 		{
 			MatrixIndexPointerARBNative(size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexPointerARB<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -69,11 +85,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexubvARB(int size, byte* indices)
 		{
 			MatrixIndexubvARBNative(size, indices);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexubvARB(int size, string indices)
 		{
 			byte* pStr0 = null;
@@ -100,6 +124,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexubvARB(int size, Span<byte> indices)
 		{
 			fixed (byte* pindices0 = indices)
@@ -108,6 +136,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexubvARB(int size, ref byte indices)
 		{
 			fixed (byte* pindices0 = &indices)
@@ -126,11 +158,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexuivARB(int size, uint* indices)
 		{
 			MatrixIndexuivARBNative(size, indices);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexuivARB(int size, Span<uint> indices)
 		{
 			fixed (uint* pindices0 = indices)
@@ -139,6 +179,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexuivARB(int size, ref uint indices)
 		{
 			fixed (uint* pindices0 = &indices)
@@ -157,11 +201,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexusvARB(int size, ushort* indices)
 		{
 			MatrixIndexusvARBNative(size, indices);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexusvARB(int size, Span<ushort> indices)
 		{
 			fixed (ushort* pindices0 = indices)
@@ -170,6 +222,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
 		public static void MatrixIndexusvARB(int size, ref ushort indices)
 		{
 			fixed (ushort* pindices0 = &indices)

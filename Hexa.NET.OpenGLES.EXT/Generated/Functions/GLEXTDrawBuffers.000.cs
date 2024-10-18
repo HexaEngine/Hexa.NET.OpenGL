@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers</remarks>
 		public static void DrawBuffersEXT(int n, GLEnum* bufs)
 		{
 			DrawBuffersEXTNative(n, bufs);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers</remarks>
 		public static void DrawBuffersEXT(int n, Span<GLEnum> bufs)
 		{
 			fixed (GLEnum* pbufs0 = bufs)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers</remarks>
 		public static void DrawBuffersEXT(int n, ref GLEnum bufs)
 		{
 			fixed (GLEnum* pbufs0 = &bufs)

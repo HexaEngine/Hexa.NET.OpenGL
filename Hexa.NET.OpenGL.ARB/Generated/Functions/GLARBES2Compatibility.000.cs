@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ClearDepthf(float d)
 		{
 			ClearDepthfNative(d);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void DepthRangef(float n, float f)
 		{
 			DepthRangefNative(n, f);
@@ -56,11 +64,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, int* precision)
 		{
 			GetShaderPrecisionFormatNative(shadertype, precisiontype, range, precision);
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, int* precision)
 		{
 			fixed (int* prange0 = range)
@@ -69,6 +85,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, int* precision)
 		{
 			fixed (int* prange0 = &range)
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, Span<int> precision)
 		{
 			fixed (int* pprecision0 = precision)
@@ -85,6 +109,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, ref int precision)
 		{
 			fixed (int* pprecision0 = &precision)
@@ -93,6 +121,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, Span<int> precision)
 		{
 			fixed (int* prange0 = range)
@@ -104,6 +136,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the range and precision for numeric formats supported by the shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, ref int precision)
 		{
 			fixed (int* prange0 = &range)
@@ -125,6 +161,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Release resources consumed by the implementation's shader compiler
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ReleaseShaderCompiler()
 		{
 			ReleaseShaderCompilerNative();
@@ -140,11 +180,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ShaderBinary(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
 		{
 			ShaderBinaryNative(count, shaders, binaryFormat, binary, length);
 		}
 
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ShaderBinary(int count, Span<uint> shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
 		{
 			fixed (uint* pshaders0 = shaders)
@@ -153,6 +201,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ShaderBinary(int count, ref uint shaders, GLShaderBinaryFormat binaryFormat, void* binary, int length)
 		{
 			fixed (uint* pshaders0 = &shaders)
@@ -161,11 +213,19 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ShaderBinary(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, nint binary, int length)
 		{
 			ShaderBinaryNative(count, shaders, binaryFormat, (void*)binary, length);
 		}
 
+		/// <summary>
+		/// Load pre-compiled shader binaries
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
 		public static void ShaderBinary<TBinary>(int count, uint* shaders, GLShaderBinaryFormat binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
 		{
 			fixed (TBinary* pbinary0 = binary)

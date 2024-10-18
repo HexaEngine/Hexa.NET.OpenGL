@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void BufferAttachMemoryNV(GLBufferTargetARB target, uint memory, ulong offset)
 		{
 			BufferAttachMemoryNVNative(target, memory, offset);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, uint* @params)
 		{
 			GetMemoryObjectDetachedResourcesuivNVNative(memory, pname, first, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, out uint @params)
 		{
 			uint pparams;
@@ -53,6 +65,10 @@ namespace Hexa.NET.OpenGLES.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -71,6 +87,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void NamedBufferAttachMemoryNV(uint buffer, uint memory, ulong offset)
 		{
 			NamedBufferAttachMemoryNVNative(buffer, memory, offset);
@@ -86,6 +106,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void ResetMemoryObjectParameterNV(uint memory, GLEnum pname)
 		{
 			ResetMemoryObjectParameterNVNative(memory, pname);
@@ -101,6 +125,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void TexAttachMemoryNV(GLTextureTarget target, uint memory, ulong offset)
 		{
 			TexAttachMemoryNVNative(target, memory, offset);
@@ -116,6 +144,10 @@ namespace Hexa.NET.OpenGLES.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
 		public static void TextureAttachMemoryNV(uint texture, uint memory, ulong offset)
 		{
 			TextureAttachMemoryNVNative(texture, memory, offset);

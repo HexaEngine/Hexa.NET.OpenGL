@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static void DeleteNamesAMD(GLEnum identifier, uint num, uint* names)
 		{
 			DeleteNamesAMDNative(identifier, num, names);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static void DeleteNamesAMD(GLEnum identifier, uint num, Span<uint> names)
 		{
 			fixed (uint* pnames0 = names)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static void DeleteNamesAMD(GLEnum identifier, uint num, ref uint names)
 		{
 			fixed (uint* pnames0 = &names)
@@ -57,11 +69,19 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static void GenNamesAMD(GLEnum identifier, uint num, uint* names)
 		{
 			GenNamesAMDNative(identifier, num, names);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static void GenNamesAMD(GLEnum identifier, uint num, Span<uint> names)
 		{
 			fixed (uint* pnames0 = names)
@@ -70,6 +90,10 @@ namespace Hexa.NET.OpenGL.AMD
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static void GenNamesAMD(GLEnum identifier, uint num, ref uint names)
 		{
 			fixed (uint* pnames0 = &names)
@@ -88,6 +112,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
 		public static bool IsNameAMD(GLEnum identifier, uint name)
 		{
 			byte ret = IsNameAMDNative(identifier, name);

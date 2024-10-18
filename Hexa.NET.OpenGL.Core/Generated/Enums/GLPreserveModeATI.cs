@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPreserveModeATI : uint
 	{
+		/// <summary>
+		/// Specifies preservation of data (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Ati = unchecked((uint)0x8762),
+
+		/// <summary>
+		/// Specifies data discard behavior (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DiscardAti = unchecked((uint)0x8763),
 	}
 }

@@ -15,85 +15,484 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureEnvParameter : uint
 	{
+		/// <summary>
+		/// Specifies a scale factor for alpha component values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AlphaScale = unchecked((uint)0x0D1C),
+
+		/// <summary>
+		/// Specifies the texture environment mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Mode = unchecked((uint)0x2200),
+
+		/// <summary>
+		/// Specifies the color for the texture environment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Color = unchecked((uint)0x2201),
+
+		/// <summary>
+		/// Specifies the LOD bias applied to textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		LodBias = unchecked((uint)0x8501),
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Combine = unchecked((uint)0x8570),
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		CombineArb = unchecked((uint)0x8570),
+
+		/// <summary>
+		/// Specifies the combine mode for texture environment (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		CombineExt = unchecked((uint)0x8570),
+
+		/// <summary>
+		/// Specifies the RGB combine mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CombineRgb = unchecked((uint)0x8571),
+
+		/// <summary>
+		/// Specifies the RGB combine mode (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		CombineRgbArb = unchecked((uint)0x8571),
+
+		/// <summary>
+		/// Specifies the RGB combine mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		CombineRgbExt = unchecked((uint)0x8571),
+
+		/// <summary>
+		/// Specifies the alpha combine mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CombineAlpha = unchecked((uint)0x8572),
+
+		/// <summary>
+		/// Specifies the alpha combine mode (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		CombineAlphaArb = unchecked((uint)0x8572),
+
+		/// <summary>
+		/// Specifies the alpha combine mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		CombineAlphaExt = unchecked((uint)0x8572),
+
+		/// <summary>
+		/// Specifies the scale factor for RGB values.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RgbScale = unchecked((uint)0x8573),
+
+		/// <summary>
+		/// Specifies the scale factor for RGB values (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		RgbScaleArb = unchecked((uint)0x8573),
+
+		/// <summary>
+		/// Specifies the scale factor for RGB values (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		RgbScaleExt = unchecked((uint)0x8573),
+
+		/// <summary>
+		/// Specifies a signed addition operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		AddSigned = unchecked((uint)0x8574),
+
+		/// <summary>
+		/// Specifies a signed addition operation (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		AddSignedArb = unchecked((uint)0x8574),
+
+		/// <summary>
+		/// Specifies a signed addition operation (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		AddSignedExt = unchecked((uint)0x8574),
+
+		/// <summary>
+		/// Specifies interpolation for combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Interpolate = unchecked((uint)0x8575),
+
+		/// <summary>
+		/// Specifies interpolation for combine modes (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		InterpolateArb = unchecked((uint)0x8575),
+
+		/// <summary>
+		/// Specifies interpolation for combine modes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		InterpolateExt = unchecked((uint)0x8575),
+
+		/// <summary>
+		/// Specifies a constant value for combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Constant = unchecked((uint)0x8576),
+
+		/// <summary>
+		/// Specifies a constant value for combine modes (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		ConstantArb = unchecked((uint)0x8576),
+
+		/// <summary>
+		/// Specifies a constant value for combine modes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		ConstantExt = unchecked((uint)0x8576),
+
+		/// <summary>
+		/// Specifies a constant value (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ConstantNv = unchecked((uint)0x8576),
+
+		/// <summary>
+		/// Specifies the primary color input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		PrimaryColor = unchecked((uint)0x8577),
+
+		/// <summary>
+		/// Specifies the primary color input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		PrimaryColorArb = unchecked((uint)0x8577),
+
+		/// <summary>
+		/// Specifies the primary color input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		PrimaryColorExt = unchecked((uint)0x8577),
+
+		/// <summary>
+		/// Specifies the previous output in combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Previous = unchecked((uint)0x8578),
+
+		/// <summary>
+		/// Specifies the previous output in combine modes (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		PreviousArb = unchecked((uint)0x8578),
+
+		/// <summary>
+		/// Specifies the previous output in combine modes (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		PreviousExt = unchecked((uint)0x8578),
+
+		/// <summary>
+		/// Specifies the first RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Source0Rgb = unchecked((uint)0x8580),
+
+		/// <summary>
+		/// Specifies the first RGB source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source0RgbArb = unchecked((uint)0x8580),
+
+		/// <summary>
+		/// Specifies the first RGB source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source0RgbExt = unchecked((uint)0x8580),
+
+		/// <summary>
+		/// Specifies the first RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Src0Rgb = unchecked((uint)0x8580),
+
+		/// <summary>
+		/// Specifies the second RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Source1Rgb = unchecked((uint)0x8581),
+
+		/// <summary>
+		/// Specifies the second RGB source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source1RgbArb = unchecked((uint)0x8581),
+
+		/// <summary>
+		/// Specifies the second RGB source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source1RgbExt = unchecked((uint)0x8581),
+
+		/// <summary>
+		/// Specifies the second RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Src1Rgb = unchecked((uint)0x8581),
+
+		/// <summary>
+		/// Specifies the third RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Source2Rgb = unchecked((uint)0x8582),
+
+		/// <summary>
+		/// Specifies the third RGB source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source2RgbArb = unchecked((uint)0x8582),
+
+		/// <summary>
+		/// Specifies the third RGB source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source2RgbExt = unchecked((uint)0x8582),
+
+		/// <summary>
+		/// Specifies the third RGB source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Src2Rgb = unchecked((uint)0x8582),
+
+		/// <summary>
+		/// Specifies the fourth RGB source input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Source3RgbNv = unchecked((uint)0x8583),
+
+		/// <summary>
+		/// Specifies the first alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Source0Alpha = unchecked((uint)0x8588),
+
+		/// <summary>
+		/// Specifies the first alpha source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source0AlphaArb = unchecked((uint)0x8588),
+
+		/// <summary>
+		/// Specifies the first alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source0AlphaExt = unchecked((uint)0x8588),
+
+		/// <summary>
+		/// Specifies the first alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Src0Alpha = unchecked((uint)0x8588),
+
+		/// <summary>
+		/// Specifies the second alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Source1Alpha = unchecked((uint)0x8589),
+
+		/// <summary>
+		/// Specifies the second alpha source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source1AlphaArb = unchecked((uint)0x8589),
+
+		/// <summary>
+		/// Specifies the second alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source1AlphaExt = unchecked((uint)0x8589),
+
+		/// <summary>
+		/// Specifies the second alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		Src1Alpha = unchecked((uint)0x8589),
+
+		/// <summary>
+		/// Specifies the second alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_extended</remarks>
 		Src1AlphaExt = unchecked((uint)0x8589),
+
+		/// <summary>
+		/// Specifies the third alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Source2Alpha = unchecked((uint)0x858A),
+
+		/// <summary>
+		/// Specifies the third alpha source input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Source2AlphaArb = unchecked((uint)0x858A),
+
+		/// <summary>
+		/// Specifies the third alpha source input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Source2AlphaExt = unchecked((uint)0x858A),
+
+		/// <summary>
+		/// Specifies the third alpha source input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Src2Alpha = unchecked((uint)0x858A),
+
+		/// <summary>
+		/// Specifies the fourth alpha source input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Source3AlphaNv = unchecked((uint)0x858B),
+
+		/// <summary>
+		/// Specifies the first RGB operand input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Operand0Rgb = unchecked((uint)0x8590),
+
+		/// <summary>
+		/// Specifies the first RGB operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand0RgbArb = unchecked((uint)0x8590),
+
+		/// <summary>
+		/// Specifies the first RGB operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand0RgbExt = unchecked((uint)0x8590),
+
+		/// <summary>
+		/// Specifies the second RGB operand input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Operand1Rgb = unchecked((uint)0x8591),
+
+		/// <summary>
+		/// Specifies the second RGB operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand1RgbArb = unchecked((uint)0x8591),
+
+		/// <summary>
+		/// Specifies the second RGB operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand1RgbExt = unchecked((uint)0x8591),
+
+		/// <summary>
+		/// Specifies the third RGB operand input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Operand2Rgb = unchecked((uint)0x8592),
+
+		/// <summary>
+		/// Specifies the third RGB operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand2RgbArb = unchecked((uint)0x8592),
+
+		/// <summary>
+		/// Specifies the third RGB operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand2RgbExt = unchecked((uint)0x8592),
+
+		/// <summary>
+		/// Specifies the fourth RGB operand input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Operand3RgbNv = unchecked((uint)0x8593),
+
+		/// <summary>
+		/// Specifies the first alpha operand input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Operand0Alpha = unchecked((uint)0x8598),
+
+		/// <summary>
+		/// Specifies the first alpha operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand0AlphaArb = unchecked((uint)0x8598),
+
+		/// <summary>
+		/// Specifies the first alpha operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand0AlphaExt = unchecked((uint)0x8598),
+
+		/// <summary>
+		/// Specifies the second alpha operand input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Operand1Alpha = unchecked((uint)0x8599),
+
+		/// <summary>
+		/// Specifies the second alpha operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand1AlphaArb = unchecked((uint)0x8599),
+
+		/// <summary>
+		/// Specifies the second alpha operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand1AlphaExt = unchecked((uint)0x8599),
+
+		/// <summary>
+		/// Specifies the third alpha operand input.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Operand2Alpha = unchecked((uint)0x859A),
+
+		/// <summary>
+		/// Specifies the third alpha operand input (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_env_combine</remarks>
 		Operand2AlphaArb = unchecked((uint)0x859A),
+
+		/// <summary>
+		/// Specifies the third alpha operand input (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_env_combine</remarks>
 		Operand2AlphaExt = unchecked((uint)0x859A),
+
+		/// <summary>
+		/// Specifies the fourth alpha operand input (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_env_combine4</remarks>
 		Operand3AlphaNv = unchecked((uint)0x859B),
+
+		/// <summary>
+		/// Enables coordinate replacement.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		CoordReplace = unchecked((uint)0x8862),
 	}
 }

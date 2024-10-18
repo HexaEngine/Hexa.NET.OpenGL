@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLHistogramTarget : uint
 	{
+		/// <summary>
+		/// Specifies histogram operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		Histogram = unchecked((uint)0x8024),
+
+		/// <summary>
+		/// Specifies proxy histogram operations.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 Compat - GL 4.6 Compat<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		ProxyHistogram = unchecked((uint)0x8025),
 	}
 }

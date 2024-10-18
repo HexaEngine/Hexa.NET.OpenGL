@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexShaderWriteMaskEXT : uint
 	{
+		/// <summary>
+		/// Boolean false value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		False = unchecked((uint)0),
+
+		/// <summary>
+		/// Boolean true value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		True = unchecked((uint)1),
 	}
 }

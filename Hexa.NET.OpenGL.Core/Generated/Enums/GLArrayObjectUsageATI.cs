@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLArrayObjectUsageATI : uint
 	{
+		/// <summary>
+		/// Specifies static buffer usage (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		StaticAti = unchecked((uint)0x8760),
+
+		/// <summary>
+		/// Specifies dynamic buffer usage (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DynamicAti = unchecked((uint)0x8761),
 	}
 }

@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFogParameter : uint
 	{
+		/// <summary>
+		/// Specifies the fog index value.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Index = unchecked((uint)0x0B61),
+
+		/// <summary>
+		/// Specifies the density of the fog.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Density = unchecked((uint)0x0B62),
+
+		/// <summary>
+		/// Specifies the starting distance for fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Start = unchecked((uint)0x0B63),
+
+		/// <summary>
+		/// Specifies the ending distance for fog effects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		End = unchecked((uint)0x0B64),
+
+		/// <summary>
+		/// Specifies the fog mode (exp, exp2, linear).
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Mode = unchecked((uint)0x0B65),
+
+		/// <summary>
+		/// Specifies the color of the fog.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Color = unchecked((uint)0x0B66),
+
+		/// <summary>
+		/// Specifies the value for fog offset (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		OffsetValueSgix = unchecked((uint)0x8199),
 	}
 }

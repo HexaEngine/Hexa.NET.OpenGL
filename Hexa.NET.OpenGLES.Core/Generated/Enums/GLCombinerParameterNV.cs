@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLCombinerParameterNV : uint
 	{
+		/// <summary>
+		/// Specifies the input for combiners (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		InputNv = unchecked((uint)0x8542),
+
+		/// <summary>
+		/// Specifies the mapping for combiners (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		MappingNv = unchecked((uint)0x8543),
+
+		/// <summary>
+		/// Specifies the usage of combiner components (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		ComponentUsageNv = unchecked((uint)0x8544),
 	}
 }

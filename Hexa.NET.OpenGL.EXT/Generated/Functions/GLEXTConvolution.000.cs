@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionFilter1DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter1DEXTNative(target, internalformat, width, format, type, image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionFilter1DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			ConvolutionFilter1DEXTNative(target, internalformat, width, format, type, (void*)image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionFilter1DEXT<TImage>(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionFilter2DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter2DEXTNative(target, internalformat, width, height, format, type, image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionFilter2DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			ConvolutionFilter2DEXTNative(target, internalformat, width, height, format, type, (void*)image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionFilter2DEXT<TImage>(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
@@ -82,6 +106,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterfEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, float @params)
 		{
 			ConvolutionParameterfEXTNative(target, pname, @params);
@@ -97,11 +125,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, float* @params)
 		{
 			ConvolutionParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out float @params)
 		{
 			float pparams;
@@ -109,6 +145,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -127,6 +167,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameteriEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int @params)
 		{
 			ConvolutionParameteriEXTNative(target, pname, @params);
@@ -142,11 +186,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
 		{
 			ConvolutionParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out int @params)
 		{
 			int pparams;
@@ -154,6 +206,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -172,6 +228,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void CopyConvolutionFilter1DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			CopyConvolutionFilter1DEXTNative(target, internalformat, x, y, width);
@@ -187,6 +247,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void CopyConvolutionFilter2DEXT(GLConvolutionTargetEXT target, GLInternalFormat internalformat, int x, int y, int width, int height)
 		{
 			CopyConvolutionFilter2DEXTNative(target, internalformat, x, y, width, height);
@@ -202,16 +266,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionFilterEXT(GLConvolutionTargetEXT target, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			GetConvolutionFilterEXTNative(target, format, type, image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionFilterEXT(GLConvolutionTargetEXT target, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			GetConvolutionFilterEXTNative(target, format, type, (void*)image);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionFilterEXT<TImage>(GLConvolutionTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
@@ -230,11 +306,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, float* @params)
 		{
 			GetConvolutionParameterfvEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out float @params)
 		{
 			float pparams;
@@ -242,6 +326,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -260,11 +348,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
 		{
 			GetConvolutionParameterivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out int @params)
 		{
 			int pparams;
@@ -272,6 +368,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -290,16 +390,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, void* span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, row, column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, void* span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, (void*)row, column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, void* span) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -308,11 +420,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, void* span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, row, (void*)column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, void* span) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
@@ -321,11 +441,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, void* span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, (void*)row, (void*)column, span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -337,11 +465,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, nint span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, row, column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, Span<TSpan> span) where TSpan : unmanaged
 		{
 			fixed (TSpan* pspan0 = span)
@@ -350,11 +486,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, nint span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, (void*)row, column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -366,11 +510,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, nint span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, row, (void*)column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
@@ -382,11 +534,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, nint span)
 		{
 			GetSeparableFilterEXTNative(target, format, type, (void*)row, (void*)column, (void*)span);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void GetSeparableFilterEXT<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -411,16 +571,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
 			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, row, column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, void* column)
 		{
 			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, (void*)row, column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT<TRow>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
@@ -429,11 +601,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, nint column)
 		{
 			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, row, (void*)column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT<TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
@@ -442,11 +622,19 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, nint column)
 		{
 			SeparableFilter2DEXTNative(target, internalformat, width, height, format, type, (void*)row, (void*)column);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
 		public static void SeparableFilter2DEXT<TRow, TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3bEXT(sbyte bx, sbyte by, sbyte bz)
 		{
 			Binormal3bEXTNative(bx, by, bz);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3bvEXT(sbyte* v)
 		{
 			Binormal3bvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3bvEXT(Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3dEXT(double bx, double by, double bz)
 		{
 			Binormal3dEXTNative(bx, by, bz);
@@ -87,11 +107,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3dvEXT(double* v)
 		{
 			Binormal3dvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3dvEXT(Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -100,6 +128,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -118,6 +150,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3fEXT(float bx, float by, float bz)
 		{
 			Binormal3fEXTNative(bx, by, bz);
@@ -133,11 +169,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3fvEXT(float* v)
 		{
 			Binormal3fvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3fvEXT(Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -146,6 +190,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -164,6 +212,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3iEXT(int bx, int by, int bz)
 		{
 			Binormal3iEXTNative(bx, by, bz);
@@ -179,11 +231,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3ivEXT(int* v)
 		{
 			Binormal3ivEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3ivEXT(Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -192,6 +252,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -210,6 +274,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3sEXT(short bx, short by, short bz)
 		{
 			Binormal3sEXTNative(bx, by, bz);
@@ -225,11 +293,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3svEXT(short* v)
 		{
 			Binormal3svEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3svEXT(Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -238,6 +314,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Binormal3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -256,16 +336,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, void* pointer)
 		{
 			BinormalPointerEXTNative(type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, nint pointer)
 		{
 			BinormalPointerEXTNative(type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void BinormalPointerEXT<TPointer>(GLBinormalPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
@@ -284,6 +376,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3bEXT(sbyte tx, sbyte ty, sbyte tz)
 		{
 			Tangent3bEXTNative(tx, ty, tz);
@@ -299,11 +395,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3bvEXT(sbyte* v)
 		{
 			Tangent3bvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3bvEXT(Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
@@ -312,6 +416,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -330,6 +438,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3dEXT(double tx, double ty, double tz)
 		{
 			Tangent3dEXTNative(tx, ty, tz);
@@ -345,11 +457,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3dvEXT(double* v)
 		{
 			Tangent3dvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3dvEXT(Span<double> v)
 		{
 			fixed (double* pv0 = v)
@@ -358,6 +478,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
@@ -376,6 +500,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3fEXT(float tx, float ty, float tz)
 		{
 			Tangent3fEXTNative(tx, ty, tz);
@@ -391,11 +519,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3fvEXT(float* v)
 		{
 			Tangent3fvEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3fvEXT(Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -404,6 +540,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -422,6 +562,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3iEXT(int tx, int ty, int tz)
 		{
 			Tangent3iEXTNative(tx, ty, tz);
@@ -437,11 +581,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3ivEXT(int* v)
 		{
 			Tangent3ivEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3ivEXT(Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -450,6 +602,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -468,6 +624,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3sEXT(short tx, short ty, short tz)
 		{
 			Tangent3sEXTNative(tx, ty, tz);
@@ -483,11 +643,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3svEXT(short* v)
 		{
 			Tangent3svEXTNative(v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3svEXT(Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -496,6 +664,10 @@ namespace Hexa.NET.OpenGL.EXT
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void Tangent3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -514,16 +686,28 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, void* pointer)
 		{
 			TangentPointerEXTNative(type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, nint pointer)
 		{
 			TangentPointerEXTNative(type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
 		public static void TangentPointerEXT<TPointer>(GLTangentPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

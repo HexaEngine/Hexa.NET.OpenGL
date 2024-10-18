@@ -18,21 +18,100 @@ namespace Hexa.NET.OpenGLES
 	/// </summary>
 	public enum GLSpecialNumbers : ulong
 	{
+		/// <summary>
+		/// Boolean false value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		False = unchecked((ulong)0),
+
+		/// <summary>
+		/// Indicates no error occurred.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_robustness<br/>GL_KHR_robustness<br/>GL_EXT_robustness</remarks>
 		NoError = unchecked((ulong)0),
+
+		/// <summary>
+		/// Numeric zero value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_blend_equation_advanced<br/>GL_NV_register_combiners<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		Zero = unchecked((ulong)0),
+
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((ulong)0),
+
+		/// <summary>
+		/// No value, specific to OES extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
 		NoneOes = unchecked((ulong)0),
+
+		/// <summary>
+		/// Boolean true value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		True = unchecked((ulong)1),
+
+		/// <summary>
+		/// Numeric one value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed<br/>GL_OES_draw_buffers_indexed</remarks>
 		One = unchecked((ulong)1),
+
+		/// <summary>
+		/// Indicates an invalid index.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		InvalidIndex = unchecked((ulong)0xFFFFFFFF),
+
+		/// <summary>
+		/// Indicates all pixels (AMD).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
 		AllPixelsAmd = unchecked((ulong)0xFFFFFFFF),
+
+		/// <summary>
+		/// Indicates a timeout that is ignored.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		TimeoutIgnored = unchecked((ulong)0xFFFFFFFFFFFFFFFF),
+
+		/// <summary>
+		/// Timeout ignored, specific to Apple implementations.
+		/// </summary>
+		/// <remarks></remarks>
 		TimeoutIgnoredApple = unchecked((ulong)0xFFFFFFFFFFFFFFFF),
+
+		/// <summary>
+		/// Version for OpenGL ES CL 1.0.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VersionEsCl10 = unchecked((ulong)1),
+
+		/// <summary>
+		/// Version for OpenGL ES CM 1.1.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VersionEsCm11 = unchecked((ulong)1),
+
+		/// <summary>
+		/// Version for OpenGL ES CL 1.1.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		VersionEsCl11 = unchecked((ulong)1),
+
+		/// <summary>
+		/// UUID size extension (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
 		UuidSizeExt = unchecked((ulong)16),
+
+		/// <summary>
+		/// LUID size extension (EXT).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32<br/>GL_EXT_semaphore_win32</remarks>
 		LuidSizeExt = unchecked((ulong)8),
 	}
 }

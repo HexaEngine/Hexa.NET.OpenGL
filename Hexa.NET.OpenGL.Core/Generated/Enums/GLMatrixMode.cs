@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMatrixMode : uint
 	{
+		/// <summary>
+		/// Specifies the modelview matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Modelview = unchecked((uint)0x1700),
+
+		/// <summary>
+		/// Specifies the first modelview matrix for EXT extensions.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
 		Modelview0Ext = unchecked((uint)0x1700),
+
+		/// <summary>
+		/// Specifies the projection matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Projection = unchecked((uint)0x1701),
+
+		/// <summary>
+		/// Specifies the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Texture = unchecked((uint)0x1702),
 	}
 }

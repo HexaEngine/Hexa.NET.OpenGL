@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Select active texture unit
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void ActiveTexture(GLTextureUnit texture)
 		{
 			ActiveTextureNative(texture);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Attaches a shader object to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void AttachShader(uint program, uint shader)
 		{
 			AttachShaderNative(program, shader);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Start conditional rendering
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BeginConditionalRender(uint id, GLConditionalRenderMode mode)
 		{
 			BeginConditionalRenderNative(id, mode);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delimit the boundaries of a query object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BeginQuery(GLQueryTarget target, uint id)
 		{
 			BeginQueryNative(target, id);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Start transform feedback operation
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BeginTransformFeedback(GLPrimitiveType primitiveMode)
 		{
 			BeginTransformFeedbackNative(primitiveMode);
@@ -101,11 +121,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Associates a generic vertex attribute index with a named attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindAttribLocation(uint program, uint index, byte* name)
 		{
 			BindAttribLocationNative(program, index, name);
 		}
 
+		/// <summary>
+		/// Associates a generic vertex attribute index with a named attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindAttribLocation(uint program, uint index, string name)
 		{
 			byte* pStr0 = null;
@@ -132,6 +160,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Associates a generic vertex attribute index with a named attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindAttribLocation(uint program, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -140,6 +172,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Associates a generic vertex attribute index with a named attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindAttribLocation(uint program, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -158,6 +194,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a named buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BindBuffer(GLBufferTargetARB target, uint buffer)
 		{
 			BindBufferNative(target, buffer);
@@ -173,6 +213,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a buffer object to an indexed buffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void BindBufferBase(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			BindBufferBaseNative(target, index, buffer);
@@ -188,6 +232,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a range within a buffer object to an indexed buffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void BindBufferRange(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			BindBufferRangeNative(target, index, buffer, offset, size);
@@ -203,11 +251,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindFragDataLocation(uint program, uint color, byte* name)
 		{
 			BindFragDataLocationNative(program, color, name);
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindFragDataLocation(uint program, uint color, string name)
 		{
 			byte* pStr0 = null;
@@ -234,6 +290,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindFragDataLocation(uint program, uint color, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -242,6 +302,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BindFragDataLocation(uint program, uint color, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -260,11 +324,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number and index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, byte* name)
 		{
 			BindFragDataLocationIndexedNative(program, colorNumber, index, name);
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number and index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, string name)
 		{
 			byte* pStr0 = null;
@@ -291,6 +363,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number and index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -299,6 +375,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Bind a user-defined varying out variable to a fragment shader color number and index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -317,6 +397,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a framebuffer to a framebuffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void BindFramebuffer(GLFramebufferTarget target, uint framebuffer)
 		{
 			BindFramebufferNative(target, framebuffer);
@@ -332,6 +416,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a renderbuffer to a renderbuffer target
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void BindRenderbuffer(GLRenderbufferTarget target, uint renderbuffer)
 		{
 			BindRenderbufferNative(target, renderbuffer);
@@ -347,6 +435,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a named sampler to a texturing target
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void BindSampler(uint unit, uint sampler)
 		{
 			BindSamplerNative(unit, sampler);
@@ -362,6 +454,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a named texture to a texturing target
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BindTexture(GLTextureTarget target, uint texture)
 		{
 			BindTextureNative(target, texture);
@@ -377,6 +473,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Bind a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void BindVertexArray(uint array)
 		{
 			BindVertexArrayNative(array);
@@ -392,6 +492,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Set the blend color
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void BlendColor(float red, float green, float blue, float alpha)
 		{
 			BlendColorNative(red, green, blue, alpha);
@@ -407,6 +511,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void BlendEquation(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationNative(mode);
@@ -422,6 +530,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BlendEquationSeparate(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateNative(modeRGB, modeAlpha);
@@ -437,6 +549,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void BlendFunc(GLBlendingFactor sfactor, GLBlendingFactor dfactor)
 		{
 			BlendFuncNative(sfactor, dfactor);
@@ -452,6 +568,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BlendFuncSeparate(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
 		{
 			BlendFuncSeparateNative(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
@@ -467,6 +587,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Copy a block of pixels from one framebuffer object to another
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
 		{
 			BlitFramebufferNative(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
@@ -482,16 +606,31 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Creates and initializes a buffer object's data
+		///     store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BufferData(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
 		{
 			BufferDataNative(target, size, data, usage);
 		}
 
+		/// <summary>
+		/// Creates and initializes a buffer object's data
+		///     store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BufferData(GLBufferTargetARB target, nint size, nint data, GLBufferUsageARB usage)
 		{
 			BufferDataNative(target, size, (void*)data, usage);
 		}
 
+		/// <summary>
+		/// Creates and initializes a buffer object's data
+		///     store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BufferData<TData>(GLBufferTargetARB target, nint size, Span<TData> data, GLBufferUsageARB usage) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -510,16 +649,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Updates a subset of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BufferSubData(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			BufferSubDataNative(target, offset, size, data);
 		}
 
+		/// <summary>
+		/// Updates a subset of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BufferSubData(GLBufferTargetARB target, nint offset, nint size, nint data)
 		{
 			BufferSubDataNative(target, offset, size, (void*)data);
 		}
 
+		/// <summary>
+		/// Updates a subset of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void BufferSubData<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -538,6 +689,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Check the completeness status of a framebuffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static GLEnum CheckFramebufferStatus(GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckFramebufferStatusNative(target);
@@ -554,6 +709,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify whether data read via glReadPixels should be clamped
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClampColor(GLClampColorTargetARB target, GLClampColorModeARB clamp)
 		{
 			ClampColorNative(target, clamp);
@@ -569,6 +728,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Clear buffers to preset values
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Clear(GLClearBufferMask mask)
 		{
 			ClearNative(mask);
@@ -584,6 +747,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferfi(GLBuffer buffer, int drawbuffer, float depth, int stencil)
 		{
 			ClearBufferfiNative(buffer, drawbuffer, depth, stencil);
@@ -599,11 +766,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferfv(GLBuffer buffer, int drawbuffer, float* value)
 		{
 			ClearBufferfvNative(buffer, drawbuffer, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferfv(GLBuffer buffer, int drawbuffer, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
@@ -612,6 +787,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferfv(GLBuffer buffer, int drawbuffer, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
@@ -630,11 +809,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferiv(GLBuffer buffer, int drawbuffer, int* value)
 		{
 			ClearBufferivNative(buffer, drawbuffer, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferiv(GLBuffer buffer, int drawbuffer, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
@@ -643,6 +830,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferiv(GLBuffer buffer, int drawbuffer, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
@@ -661,11 +852,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferuiv(GLBuffer buffer, int drawbuffer, uint* value)
 		{
 			ClearBufferuivNative(buffer, drawbuffer, value);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferuiv(GLBuffer buffer, int drawbuffer, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
@@ -674,6 +873,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearBufferuiv(GLBuffer buffer, int drawbuffer, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
@@ -692,6 +895,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify clear values for the color buffers
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearColor(float red, float green, float blue, float alpha)
 		{
 			ClearColorNative(red, green, blue, alpha);
@@ -707,6 +914,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify the clear value for the depth buffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearDepth(double depth)
 		{
 			ClearDepthNative(depth);
@@ -722,6 +933,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify the clear value for the stencil buffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ClearStencil(int s)
 		{
 			ClearStencilNative(s);
@@ -737,6 +952,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Block and wait for a sync object to become signaled
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static GLEnum ClientWaitSync(GLSync sync, GLSyncObjectMask flags, ulong timeout)
 		{
 			GLEnum ret = ClientWaitSyncNative(sync, flags, timeout);
@@ -753,6 +972,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ColorMask(bool red, bool green, bool blue, bool alpha)
 		{
 			ColorMaskNative(red, green, blue, alpha);
@@ -768,6 +991,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void ColorMaski(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiNative(index, r, g, b, a);
@@ -783,6 +1010,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Compiles a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void CompileShader(uint shader)
 		{
 			CompileShaderNative(shader);
@@ -798,16 +1029,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
 		{
 			CompressedTexImage1DNative(target, level, internalformat, width, border, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint data)
 		{
 			CompressedTexImage1DNative(target, level, internalformat, width, border, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage1D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -826,16 +1069,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
 		{
 			CompressedTexImage2DNative(target, level, internalformat, width, height, border, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint data)
 		{
 			CompressedTexImage2DNative(target, level, internalformat, width, height, border, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage2D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -854,16 +1109,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
 		{
 			CompressedTexImage3DNative(target, level, internalformat, width, height, depth, border, imageSize, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
 		{
 			CompressedTexImage3DNative(target, level, internalformat, width, height, depth, border, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexImage3D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -882,16 +1149,31 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify a one-dimensional texture subimage in a compressed
+		///     format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage1DNative(target, level, xoffset, width, format, imageSize, data);
 		}
 
+		/// <summary>
+		/// Specify a one-dimensional texture subimage in a compressed
+		///     format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage1DNative(target, level, xoffset, width, format, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// Specify a one-dimensional texture subimage in a compressed
+		///     format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage1D<TData>(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -910,16 +1192,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify a two-dimensional texture subimage in a compressed format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
 
+		/// <summary>
+		/// Specify a two-dimensional texture subimage in a compressed format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// Specify a two-dimensional texture subimage in a compressed format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage2D<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -938,16 +1232,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify a three-dimensional texture subimage in a compressed format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 		}
 
+		/// <summary>
+		/// Specify a three-dimensional texture subimage in a compressed format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
 		}
 
+		/// <summary>
+		/// Specify a three-dimensional texture subimage in a compressed format
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CompressedTexSubImage3D<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -966,6 +1272,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Copy all or part of the data store of a buffer object to the data store of another buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
 		public static void CopyBufferSubData(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			CopyBufferSubDataNative(readTarget, writeTarget, readOffset, writeOffset, size);
@@ -981,6 +1291,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CopyTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			CopyTexImage1DNative(target, level, internalformat, x, y, width, border);
@@ -996,6 +1310,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CopyTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			CopyTexImage2DNative(target, level, internalformat, x, y, width, height, border);
@@ -1011,6 +1329,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CopyTexSubImage1D(GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			CopyTexSubImage1DNative(target, level, xoffset, x, y, width);
@@ -1026,6 +1348,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CopyTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			CopyTexSubImage2DNative(target, level, xoffset, yoffset, x, y, width, height);
@@ -1041,6 +1367,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void CopyTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			CopyTexSubImage3DNative(target, level, xoffset, yoffset, zoffset, x, y, width, height);
@@ -1056,6 +1386,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Creates a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static uint CreateProgram()
 		{
 			uint ret = CreateProgramNative();
@@ -1072,6 +1406,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Creates a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static uint CreateShader(GLShaderType type)
 		{
 			uint ret = CreateShaderNative(type);
@@ -1088,6 +1426,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify whether front- or back-facing facets can be culled
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void CullFace(GLTriangleFace mode)
 		{
 			CullFaceNative(mode);
@@ -1103,16 +1445,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete named buffer objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteBuffers(int n, uint* buffers)
 		{
 			DeleteBuffersNative(n, buffers);
 		}
 
+		/// <summary>
+		/// Delete named buffer objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteBuffer(uint buffer)
 		{
 			DeleteBuffersNative(1, &buffer);
 		}
 
+		/// <summary>
+		/// Delete named buffer objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteBuffers(int n, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -1121,6 +1475,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete named buffer objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -1139,16 +1497,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffers(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffer(uint framebuffer)
 		{
 			DeleteFramebuffersNative(1, &framebuffer);
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffers(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -1157,6 +1527,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete framebuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -1175,6 +1549,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Deletes a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DeleteProgram(uint program)
 		{
 			DeleteProgramNative(program);
@@ -1190,16 +1568,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete named query objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteQueries(int n, uint* ids)
 		{
 			DeleteQueriesNative(n, ids);
 		}
 
+		/// <summary>
+		/// Delete named query objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteQuerie(uint id)
 		{
 			DeleteQueriesNative(1, &id);
 		}
 
+		/// <summary>
+		/// Delete named query objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteQueries(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -1208,6 +1598,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete named query objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteQueries(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -1226,16 +1620,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffers(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffer(uint renderbuffer)
 		{
 			DeleteRenderbuffersNative(1, &renderbuffer);
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffers(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -1244,6 +1650,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete renderbuffer objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -1262,16 +1672,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void DeleteSamplers(int count, uint* samplers)
 		{
 			DeleteSamplersNative(count, samplers);
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void DeleteSampler(uint sampler)
 		{
 			DeleteSamplersNative(1, &sampler);
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void DeleteSamplers(int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
@@ -1280,6 +1702,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete named sampler objects
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void DeleteSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -1298,6 +1724,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Deletes a shader object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DeleteShader(uint shader)
 		{
 			DeleteShaderNative(shader);
@@ -1313,6 +1743,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete a sync object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static void DeleteSync(GLSync sync)
 		{
 			DeleteSyncNative(sync);
@@ -1328,16 +1762,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete named textures
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteTextures(int n, uint* textures)
 		{
 			DeleteTexturesNative(n, textures);
 		}
 
+		/// <summary>
+		/// Delete named textures
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteTexture(uint texture)
 		{
 			DeleteTexturesNative(1, &texture);
 		}
 
+		/// <summary>
+		/// Delete named textures
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteTextures(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -1346,6 +1792,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete named textures
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DeleteTextures(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -1364,16 +1814,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArrays(int n, uint* arrays)
 		{
 			DeleteVertexArraysNative(n, arrays);
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArray(uint array)
 		{
 			DeleteVertexArraysNative(1, &array);
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -1382,6 +1844,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Delete vertex array objects
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void DeleteVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -1400,6 +1866,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify the value used for depth buffer comparisons
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DepthFunc(GLDepthFunction func)
 		{
 			DepthFuncNative(func);
@@ -1415,6 +1885,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Enable or disable writing into the depth buffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DepthMask(bool flag)
 		{
 			DepthMaskNative(flag);
@@ -1430,6 +1904,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify mapping of depth values from normalized device coordinates to window coordinates
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DepthRange(double n, double f)
 		{
 			DepthRangeNative(n, f);
@@ -1445,6 +1923,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Detaches a shader object from a program object to which it is attached
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DetachShader(uint program, uint shader)
 		{
 			DetachShaderNative(program, shader);
@@ -1460,6 +1942,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Disable(GLEnableCap cap)
 		{
 			DisableNative(cap);
@@ -1475,6 +1961,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DisableVertexAttribArray(uint index)
 		{
 			DisableVertexAttribArrayNative(index);
@@ -1490,6 +1980,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Disablei(GLEnableCap target, uint index)
 		{
 			DisableiNative(target, index);
@@ -1505,6 +1999,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawArrays(GLPrimitiveType mode, int first, int count)
 		{
 			DrawArraysNative(mode, first, count);
@@ -1520,6 +2018,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Draw multiple instances of a range of elements
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		public static void DrawArraysInstanced(GLPrimitiveType mode, int first, int count, int instancecount)
 		{
 			DrawArraysInstancedNative(mode, first, count, instancecount);
@@ -1535,6 +2037,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specify which color buffers are to be drawn into
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DrawBuffer(GLDrawBufferMode buf)
 		{
 			DrawBufferNative(buf);
@@ -1550,6 +2056,11 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Specifies a list of color buffers to be drawn
+		///     into
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void DrawBuffers(int n, GLDrawBufferMode bufs)
 		{
 			DrawBuffersNative(n, bufs);
@@ -1565,16 +2076,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawElements(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices)
 		{
 			DrawElementsNative(mode, count, type, indices);
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawElements(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices)
 		{
 			DrawElementsNative(mode, count, type, (void*)indices);
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawElements<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -1593,16 +2116,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawElementsBaseVertexNative(mode, count, type, indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawElementsBaseVertexNative(mode, count, type, (void*)indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -1621,16 +2156,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Draw multiple instances of a set of elements
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		public static void DrawElementsInstanced(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount)
 		{
 			DrawElementsInstancedNative(mode, count, type, indices, instancecount);
 		}
 
+		/// <summary>
+		/// Draw multiple instances of a set of elements
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		public static void DrawElementsInstanced(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount)
 		{
 			DrawElementsInstancedNative(mode, count, type, (void*)indices, instancecount);
 		}
 
+		/// <summary>
+		/// Draw multiple instances of a set of elements
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
 		public static void DrawElementsInstanced<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -1649,16 +2196,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Render multiple instances of a set of primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, indices, instancecount, basevertex);
 		}
 
+		/// <summary>
+		/// Render multiple instances of a set of primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, (void*)indices, instancecount, basevertex);
 		}
 
+		/// <summary>
+		/// Render multiple instances of a set of primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawElementsInstancedBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -1677,16 +2236,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawRangeElements(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices)
 		{
 			DrawRangeElementsNative(mode, start, end, count, type, indices);
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawRangeElements(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices)
 		{
 			DrawRangeElementsNative(mode, start, end, count, type, (void*)indices);
 		}
 
+		/// <summary>
+		/// Render primitives from array data
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void DrawRangeElements<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -1705,16 +2276,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, (void*)indices, basevertex);
 		}
 
+		/// <summary>
+		/// Render primitives from array data with a per-element offset
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
 		public static void DrawRangeElementsBaseVertex<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -1733,6 +2316,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Enable(GLEnableCap cap)
 		{
 			EnableNative(cap);
@@ -1748,6 +2335,11 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Enable or disable a generic vertex attribute
+		///     array
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void EnableVertexAttribArray(uint index)
 		{
 			EnableVertexAttribArrayNative(index);
@@ -1763,6 +2355,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Enablei(GLEnableCap target, uint index)
 		{
 			EnableiNative(target, index);
@@ -1778,6 +2374,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void EndConditionalRender()
 		{
 			EndConditionalRenderNative();
@@ -1793,6 +2393,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void EndQuery(GLQueryTarget target)
 		{
 			EndQueryNative(target);
@@ -1808,6 +2412,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void EndTransformFeedback()
 		{
 			EndTransformFeedbackNative();
@@ -1823,6 +2431,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Create a new sync object and insert it into the GL command stream
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static GLSync FenceSync(GLSyncCondition condition, GLSyncBehaviorFlags flags)
 		{
 			GLSync ret = FenceSyncNative(condition, flags);
@@ -1839,6 +2451,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Block until all GL execution is complete
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Finish()
 		{
 			FinishNative();
@@ -1854,6 +2470,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Force execution of GL commands in finite time
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void Flush()
 		{
 			FlushNative();
@@ -1869,6 +2489,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Indicate modifications to a range of a mapped buffer
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_map_buffer_range</remarks>
 		public static void FlushMappedBufferRange(GLBufferTargetARB target, nint offset, nint length)
 		{
 			FlushMappedBufferRangeNative(target, offset, length);
@@ -1884,6 +2508,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Attach a renderbuffer as a logical buffer of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferRenderbuffer(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
 		{
 			FramebufferRenderbufferNative(target, attachment, renderbuffertarget, renderbuffer);
@@ -1899,6 +2527,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Attach a level of a texture object as a logical buffer of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void FramebufferTexture(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureNative(target, attachment, texture, level);
@@ -1914,6 +2546,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTexture1D(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture1DNative(target, attachment, textarget, texture, level);
@@ -1929,6 +2565,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTexture2D(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			FramebufferTexture2DNative(target, attachment, textarget, texture, level);
@@ -1944,6 +2584,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTexture3D(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
 		{
 			FramebufferTexture3DNative(target, attachment, textarget, texture, level, zoffset);
@@ -1959,6 +2603,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Attach a single layer of a texture object as a logical buffer of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void FramebufferTextureLayer(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerNative(target, attachment, texture, level, layer);
@@ -1974,6 +2622,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Define front- and back-facing polygons
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void FrontFace(GLFrontFaceDirection mode)
 		{
 			FrontFaceNative(mode);
@@ -1989,11 +2641,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate buffer object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenBuffers(int n, uint* buffers)
 		{
 			GenBuffersNative(n, buffers);
 		}
 
+		/// <summary>
+		/// Generate buffer object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static uint GenBuffer()
 		{
 			uint result;
@@ -2001,6 +2661,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate buffer object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenBuffers(int n, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
@@ -2009,6 +2673,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate buffer object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
@@ -2027,11 +2695,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenFramebuffers(int n, uint* framebuffers)
 		{
 			GenFramebuffersNative(n, framebuffers);
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static uint GenFramebuffer()
 		{
 			uint result;
@@ -2039,6 +2715,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenFramebuffers(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
@@ -2047,6 +2727,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate framebuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
@@ -2065,11 +2749,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate query object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenQueries(int n, uint* ids)
 		{
 			GenQueriesNative(n, ids);
 		}
 
+		/// <summary>
+		/// Generate query object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static uint GenQuerie()
 		{
 			uint result;
@@ -2077,6 +2769,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate query object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenQueries(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -2085,6 +2781,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate query object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenQueries(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -2103,11 +2803,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenRenderbuffers(int n, uint* renderbuffers)
 		{
 			GenRenderbuffersNative(n, renderbuffers);
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static uint GenRenderbuffer()
 		{
 			uint result;
@@ -2115,6 +2823,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenRenderbuffers(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
@@ -2123,6 +2835,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate renderbuffer object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
@@ -2141,11 +2857,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void GenSamplers(int count, uint* samplers)
 		{
 			GenSamplersNative(count, samplers);
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static uint GenSampler()
 		{
 			uint result;
@@ -2153,6 +2877,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void GenSamplers(int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
@@ -2161,6 +2889,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate sampler object names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void GenSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
@@ -2179,11 +2911,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate texture names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenTextures(int n, uint* textures)
 		{
 			GenTexturesNative(n, textures);
 		}
 
+		/// <summary>
+		/// Generate texture names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static uint GenTexture()
 		{
 			uint result;
@@ -2191,6 +2931,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate texture names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenTextures(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
@@ -2199,6 +2943,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate texture names
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GenTextures(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
@@ -2217,11 +2965,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void GenVertexArrays(int n, uint* arrays)
 		{
 			GenVertexArraysNative(n, arrays);
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static uint GenVertexArray()
 		{
 			uint result;
@@ -2229,6 +2985,10 @@ namespace Hexa.NET.OpenGL
 			return result;
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void GenVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
@@ -2237,6 +2997,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Generate vertex array object names
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
 		public static void GenVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
@@ -2255,6 +3019,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Generate mipmaps for a specified texture object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GenerateMipmap(GLTextureTarget target)
 		{
 			GenerateMipmapNative(target);
@@ -2270,11 +3038,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
 		{
 			GetActiveAttribNative(program, index, bufSize, length, size, type, name);
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -2283,6 +3059,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -2291,6 +3071,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = size)
@@ -2299,6 +3083,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
@@ -2307,6 +3095,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -2318,6 +3110,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -2329,6 +3125,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, string name)
 		{
 			byte* pStr0 = null;
@@ -2355,6 +3155,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -2363,6 +3167,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -2371,6 +3179,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -2382,6 +3194,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -2393,6 +3209,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
@@ -2404,6 +3224,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -2415,6 +3239,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -2429,6 +3257,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active attribute variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -2453,11 +3285,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, int* size, GLUniformType type, byte* name)
 		{
 			GetActiveUniformNative(program, index, bufSize, length, size, type, name);
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, Span<int> length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -2466,6 +3306,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, ref int length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -2474,6 +3318,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, Span<int> size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = size)
@@ -2482,6 +3330,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
@@ -2490,6 +3342,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = length)
@@ -2501,6 +3357,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, ref int length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
@@ -2512,6 +3372,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, int* size, GLUniformType type, string name)
 		{
 			byte* pStr0 = null;
@@ -2538,6 +3402,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -2546,6 +3414,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -2554,6 +3426,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, Span<int> length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -2565,6 +3441,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, ref int length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -2576,6 +3456,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, Span<int> size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
@@ -2587,6 +3471,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, int* length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
@@ -2598,6 +3486,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
@@ -2612,6 +3504,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about an active uniform variable for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, ref int length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
@@ -2636,11 +3532,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, byte* uniformBlockName)
 		{
 			GetActiveUniformBlockNameNative(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, Span<int> length, byte* uniformBlockName)
 		{
 			fixed (int* plength0 = length)
@@ -2649,6 +3553,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, ref int length, byte* uniformBlockName)
 		{
 			fixed (int* plength0 = &length)
@@ -2657,6 +3565,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, string uniformBlockName)
 		{
 			byte* pStr0 = null;
@@ -2683,6 +3595,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, Span<byte> uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = uniformBlockName)
@@ -2691,6 +3607,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, int* length, ref byte uniformBlockName)
 		{
 			fixed (byte* puniformBlockName0 = &uniformBlockName)
@@ -2699,6 +3619,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, Span<int> length, Span<byte> uniformBlockName)
 		{
 			fixed (int* plength0 = length)
@@ -2710,6 +3634,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the name of an active uniform block
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, ref int length, ref byte uniformBlockName)
 		{
 			fixed (int* plength0 = &length)
@@ -2731,11 +3659,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, int* @params)
 		{
 			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, out int @params)
 		{
 			int pparams;
@@ -2743,6 +3679,10 @@ namespace Hexa.NET.OpenGL
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -2761,11 +3701,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, byte* uniformName)
 		{
 			GetActiveUniformNameNative(program, uniformIndex, bufSize, length, uniformName);
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, Span<int> length, byte* uniformName)
 		{
 			fixed (int* plength0 = length)
@@ -2774,6 +3722,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, ref int length, byte* uniformName)
 		{
 			fixed (int* plength0 = &length)
@@ -2782,6 +3734,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, string uniformName)
 		{
 			byte* pStr0 = null;
@@ -2808,6 +3764,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, Span<byte> uniformName)
 		{
 			fixed (byte* puniformName0 = uniformName)
@@ -2816,6 +3776,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, int* length, ref byte uniformName)
 		{
 			fixed (byte* puniformName0 = &uniformName)
@@ -2824,6 +3788,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, Span<int> length, Span<byte> uniformName)
 		{
 			fixed (int* plength0 = length)
@@ -2835,6 +3803,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the name of an active uniform
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, ref int length, ref byte uniformName)
 		{
 			fixed (int* plength0 = &length)
@@ -2856,11 +3828,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, int* @params)
 		{
 			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, @params);
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, out int @params)
 		{
 			int pparams;
@@ -2868,6 +3848,10 @@ namespace Hexa.NET.OpenGL
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -2876,6 +3860,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, Span<uint> uniformIndices, GLUniformPName pname, int* @params)
 		{
 			fixed (uint* puniformIndices0 = uniformIndices)
@@ -2884,6 +3872,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns information about several active uniform variables for the specified program object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, ref uint uniformIndices, GLUniformPName pname, int* @params)
 		{
 			fixed (uint* puniformIndices0 = &uniformIndices)
@@ -2902,11 +3894,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, int* count, uint* shaders)
 		{
 			GetAttachedShadersNative(program, maxCount, count, shaders);
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, Span<int> count, uint* shaders)
 		{
 			fixed (int* pcount0 = count)
@@ -2915,6 +3915,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, ref int count, uint* shaders)
 		{
 			fixed (int* pcount0 = &count)
@@ -2923,6 +3927,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, int* count, Span<uint> shaders)
 		{
 			fixed (uint* pshaders0 = shaders)
@@ -2931,6 +3939,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, int* count, ref uint shaders)
 		{
 			fixed (uint* pshaders0 = &shaders)
@@ -2939,6 +3951,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, Span<int> count, Span<uint> shaders)
 		{
 			fixed (int* pcount0 = count)
@@ -2950,6 +3966,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the handles of the shader objects attached to a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetAttachedShaders(uint program, int maxCount, ref int count, ref uint shaders)
 		{
 			fixed (int* pcount0 = &count)
@@ -2971,12 +3991,20 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns the location of an attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetAttribLocation(uint program, byte* name)
 		{
 			int ret = GetAttribLocationNative(program, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// Returns the location of an attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetAttribLocation(uint program, string name)
 		{
 			byte* pStr0 = null;
@@ -3004,6 +4032,10 @@ namespace Hexa.NET.OpenGL
 			return ret;
 		}
 
+		/// <summary>
+		/// Returns the location of an attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetAttribLocation(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -3013,6 +4045,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the location of an attribute variable
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetAttribLocation(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -3032,11 +4068,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleani_v(GLBufferTargetARB target, uint index, byte* data)
 		{
 			GetBooleani_vNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleani_v(GLBufferTargetARB target, uint index, string data)
 		{
 			byte* pStr0 = null;
@@ -3063,6 +4107,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleani_v(GLBufferTargetARB target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -3071,6 +4119,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleani_v(GLBufferTargetARB target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -3089,11 +4141,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleanv(GLGetPName pname, byte* data)
 		{
 			GetBooleanvNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleanv(GLGetPName pname, string data)
 		{
 			byte* pStr0 = null;
@@ -3120,6 +4180,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleanv(GLGetPName pname, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
@@ -3128,6 +4192,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleanv(GLGetPName pname, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
@@ -3146,11 +4214,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
 		{
 			GetBufferParameteri64vNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, out long @params)
 		{
 			long pparams;
@@ -3158,6 +4234,10 @@ namespace Hexa.NET.OpenGL
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
@@ -3176,11 +4256,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Return parameters of a buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
 		{
 			GetBufferParameterivNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// Return parameters of a buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
 		{
 			int pparams;
@@ -3188,6 +4276,10 @@ namespace Hexa.NET.OpenGL
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Return parameters of a buffer object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -3206,6 +4298,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Return the pointer to a mapped buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferPointerv(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetBufferPointervNative(target, pname, @params);
@@ -3221,16 +4317,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns a subset of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferSubData(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			GetBufferSubDataNative(target, offset, size, data);
 		}
 
+		/// <summary>
+		/// Returns a subset of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferSubData(GLBufferTargetARB target, nint offset, nint size, nint data)
 		{
 			GetBufferSubDataNative(target, offset, size, (void*)data);
 		}
 
+		/// <summary>
+		/// Returns a subset of a buffer object's data store
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferSubData<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
@@ -3249,16 +4357,28 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Return a compressed texture image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetCompressedTexImage(GLTextureTarget target, int level, void* img)
 		{
 			GetCompressedTexImageNative(target, level, img);
 		}
 
+		/// <summary>
+		/// Return a compressed texture image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetCompressedTexImage(GLTextureTarget target, int level, nint img)
 		{
 			GetCompressedTexImageNative(target, level, (void*)img);
 		}
 
+		/// <summary>
+		/// Return a compressed texture image
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetCompressedTexImage<TImg>(GLTextureTarget target, int level, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
@@ -3277,11 +4397,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetDoublev(GLGetPName pname, double* data)
 		{
 			GetDoublevNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetDoublev(GLGetPName pname, Span<double> data)
 		{
 			fixed (double* pdata0 = data)
@@ -3290,6 +4418,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetDoublev(GLGetPName pname, ref double data)
 		{
 			fixed (double* pdata0 = &data)
@@ -3308,6 +4440,10 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Return error information
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static GLEnum GetError()
 		{
 			GLEnum ret = GetErrorNative();
@@ -3324,11 +4460,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetFloatv(GLGetPName pname, float* data)
 		{
 			GetFloatvNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetFloatv(GLGetPName pname, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
@@ -3337,6 +4481,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetFloatv(GLGetPName pname, ref float data)
 		{
 			fixed (float* pdata0 = &data)
@@ -3355,12 +4503,20 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Query the bindings of color indices to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static int GetFragDataIndex(uint program, byte* name)
 		{
 			int ret = GetFragDataIndexNative(program, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// Query the bindings of color indices to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static int GetFragDataIndex(uint program, string name)
 		{
 			byte* pStr0 = null;
@@ -3388,6 +4544,10 @@ namespace Hexa.NET.OpenGL
 			return ret;
 		}
 
+		/// <summary>
+		/// Query the bindings of color indices to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static int GetFragDataIndex(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -3397,6 +4557,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the bindings of color indices to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
 		public static int GetFragDataIndex(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -3416,12 +4580,20 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Query the bindings of color numbers to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetFragDataLocation(uint program, byte* name)
 		{
 			int ret = GetFragDataLocationNative(program, name);
 			return ret;
 		}
 
+		/// <summary>
+		/// Query the bindings of color numbers to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetFragDataLocation(uint program, string name)
 		{
 			byte* pStr0 = null;
@@ -3449,6 +4621,10 @@ namespace Hexa.NET.OpenGL
 			return ret;
 		}
 
+		/// <summary>
+		/// Query the bindings of color numbers to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetFragDataLocation(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
@@ -3458,6 +4634,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Query the bindings of color numbers to user-defined varying out variables
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static int GetFragDataLocation(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
@@ -3477,11 +4657,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve information about attachments of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferAttachmentParameterivNative(target, attachment, pname, @params);
 		}
 
+		/// <summary>
+		/// Retrieve information about attachments of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparams;
@@ -3489,6 +4677,10 @@ namespace Hexa.NET.OpenGL
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// Retrieve information about attachments of a framebuffer object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -3507,11 +4699,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void GetInteger64i_v(GLGetPName target, uint index, long* data)
 		{
 			GetInteger64i_vNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void GetInteger64i_v(GLGetPName target, uint index, Span<long> data)
 		{
 			fixed (long* pdata0 = data)
@@ -3520,6 +4720,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
 		public static void GetInteger64i_v(GLGetPName target, uint index, ref long data)
 		{
 			fixed (long* pdata0 = &data)
@@ -3538,11 +4742,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static void GetInteger64v(GLGetPName pname, long* data)
 		{
 			GetInteger64vNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static void GetInteger64v(GLGetPName pname, Span<long> data)
 		{
 			fixed (long* pdata0 = data)
@@ -3551,6 +4763,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static void GetInteger64v(GLGetPName pname, ref long data)
 		{
 			fixed (long* pdata0 = &data)
@@ -3569,11 +4785,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetIntegeri_v(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vNative(target, index, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -3582,6 +4806,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetIntegeri_v(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -3600,11 +4828,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetIntegerv(GLGetPName pname, int* data)
 		{
 			GetIntegervNative(pname, data);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetIntegerv(GLGetPName pname, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
@@ -3613,6 +4849,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetIntegerv(GLGetPName pname, ref int data)
 		{
 			fixed (int* pdata0 = &data)
@@ -3631,11 +4871,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Retrieve the location of a sample
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			GetMultisamplefvNative(pname, index, val);
 		}
 
+		/// <summary>
+		/// Retrieve the location of a sample
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
 		{
 			fixed (float* pval0 = val)
@@ -3644,6 +4892,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Retrieve the location of a sample
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
 		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)
@@ -3662,11 +4914,19 @@ namespace Hexa.NET.OpenGL
 			#endif
 		}
 
+		/// <summary>
+		/// Returns the information log for a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetProgramInfoLog(uint program, int bufSize, int* length, byte* infoLog)
 		{
 			GetProgramInfoLogNative(program, bufSize, length, infoLog);
 		}
 
+		/// <summary>
+		/// Returns the information log for a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static string GetProgramInfoLog(uint program)
 		{
 			int pStrSize0;
@@ -3691,6 +4951,10 @@ namespace Hexa.NET.OpenGL
 			return ret;
 		}
 
+		/// <summary>
+		/// Returns the information log for a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetProgramInfoLog(uint program, int bufSize, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
@@ -3699,6 +4963,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the information log for a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetProgramInfoLog(uint program, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
@@ -3707,6 +4975,10 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the information log for a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetProgramInfoLog(uint program, int bufSize, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
@@ -3733,1284 +5005,15 @@ namespace Hexa.NET.OpenGL
 			}
 		}
 
+		/// <summary>
+		/// Returns the information log for a program object
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetProgramInfoLog(uint program, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
 				GetProgramInfoLogNative(program, bufSize, length, pinfoLog0);
-			}
-		}
-
-		public static void GetProgramInfoLog(uint program, int bufSize, int* length, ref byte infoLog)
-		{
-			fixed (byte* pinfoLog0 = &infoLog)
-			{
-				GetProgramInfoLogNative(program, bufSize, length, pinfoLog0);
-			}
-		}
-
-		public static void GetProgramInfoLog(uint program, int bufSize, Span<int> length, Span<byte> infoLog)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (byte* pinfoLog1 = infoLog)
-				{
-					GetProgramInfoLogNative(program, bufSize, plength0, pinfoLog1);
-				}
-			}
-		}
-
-		public static void GetProgramInfoLog(uint program, int bufSize, ref int length, ref byte infoLog)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (byte* pinfoLog1 = &infoLog)
-				{
-					GetProgramInfoLogNative(program, bufSize, plength0, pinfoLog1);
-				}
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramivNative(uint program, GLProgramPropertyARB pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLProgramPropertyARB, int*, void>)funcTable[132])(program, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLProgramPropertyARB, nint, void>)funcTable[132])(program, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, int* @params)
-		{
-			GetProgramivNative(program, pname, @params);
-		}
-
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, out int @params)
-		{
-			int pparams;
-			GetProgramivNative(program, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetProgramivNative(program, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjecti64vNative(uint id, GLQueryObjectParameterName pname, long* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, long*, void>)funcTable[133])(id, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, nint, void>)funcTable[133])(id, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, long* @params)
-		{
-			GetQueryObjecti64vNative(id, pname, @params);
-		}
-
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, out long @params)
-		{
-			long pparams;
-			GetQueryObjecti64vNative(id, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, Span<long> @params)
-		{
-			fixed (long* pparams = @params)
-			{
-				GetQueryObjecti64vNative(id, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectivNative(uint id, GLQueryObjectParameterName pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, int*, void>)funcTable[134])(id, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, nint, void>)funcTable[134])(id, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, int* @params)
-		{
-			GetQueryObjectivNative(id, pname, @params);
-		}
-
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, out int @params)
-		{
-			int pparams;
-			GetQueryObjectivNative(id, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetQueryObjectivNative(id, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectui64vNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, ulong*, void>)funcTable[135])(id, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, nint, void>)funcTable[135])(id, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, ulong* @params)
-		{
-			GetQueryObjectui64vNative(id, pname, @params);
-		}
-
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, out ulong @params)
-		{
-			ulong pparams;
-			GetQueryObjectui64vNative(id, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
-		{
-			fixed (ulong* pparams = @params)
-			{
-				GetQueryObjectui64vNative(id, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectuivNative(uint id, GLQueryObjectParameterName pname, uint* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, uint*, void>)funcTable[136])(id, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, nint, void>)funcTable[136])(id, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, uint* @params)
-		{
-			GetQueryObjectuivNative(id, pname, @params);
-		}
-
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, out uint @params)
-		{
-			uint pparams;
-			GetQueryObjectuivNative(id, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
-		{
-			fixed (uint* pparams = @params)
-			{
-				GetQueryObjectuivNative(id, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryivNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLQueryTarget, GLQueryParameterName, int*, void>)funcTable[137])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLQueryTarget, GLQueryParameterName, nint, void>)funcTable[137])(target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, int* @params)
-		{
-			GetQueryivNative(target, pname, @params);
-		}
-
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, out int @params)
-		{
-			int pparams;
-			GetQueryivNative(target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetQueryivNative(target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetRenderbufferParameterivNative(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLRenderbufferParameterName, int*, void>)funcTable[138])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLRenderbufferParameterName, nint, void>)funcTable[138])(target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
-		{
-			GetRenderbufferParameterivNative(target, pname, @params);
-		}
-
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
-		{
-			int pparams;
-			GetRenderbufferParameterivNative(target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetRenderbufferParameterivNative(target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterIivNative(uint sampler, GLSamplerParameterI pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[139])(sampler, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[139])(sampler, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, int* @params)
-		{
-			GetSamplerParameterIivNative(sampler, pname, @params);
-		}
-
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int @params)
-		{
-			int pparams;
-			GetSamplerParameterIivNative(sampler, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetSamplerParameterIivNative(sampler, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterIuivNative(uint sampler, GLSamplerParameterI pname, uint* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, uint*, void>)funcTable[140])(sampler, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[140])(sampler, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, uint* @params)
-		{
-			GetSamplerParameterIuivNative(sampler, pname, @params);
-		}
-
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint @params)
-		{
-			uint pparams;
-			GetSamplerParameterIuivNative(sampler, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
-		{
-			fixed (uint* pparams = @params)
-			{
-				GetSamplerParameterIuivNative(sampler, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterfvNative(uint sampler, GLSamplerParameterF pname, float* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float*, void>)funcTable[141])(sampler, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, nint, void>)funcTable[141])(sampler, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* @params)
-		{
-			GetSamplerParameterfvNative(sampler, pname, @params);
-		}
-
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
-		{
-			float pparams;
-			GetSamplerParameterfvNative(sampler, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> @params)
-		{
-			fixed (float* pparams = @params)
-			{
-				GetSamplerParameterfvNative(sampler, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterivNative(uint sampler, GLSamplerParameterI pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[142])(sampler, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, nint, void>)funcTable[142])(sampler, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* @params)
-		{
-			GetSamplerParameterivNative(sampler, pname, @params);
-		}
-
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
-		{
-			int pparams;
-			GetSamplerParameterivNative(sampler, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetSamplerParameterivNative(sampler, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderInfoLogNative(uint shader, int bufSize, int* length, byte* infoLog)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[143])(shader, bufSize, length, infoLog);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, nint, nint, void>)funcTable[143])(shader, bufSize, (nint)length, (nint)infoLog);
-			#endif
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, byte* infoLog)
-		{
-			GetShaderInfoLogNative(shader, bufSize, length, infoLog);
-		}
-
-		public static string GetShaderInfoLog(uint shader)
-		{
-			int pStrSize0;
-			GetShaderiv(shader, GLShaderParameterName.InfoLogLength, &pStrSize0);
-
-			byte* pStr0 = null;
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-			}
-			else
-			{
-				byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-				pStr0 = pStrStack0;
-			}
-			GetShaderInfoLogNative(shader, pStrSize0, null, pStr0);
-			string ret = Utils.DecodeStringUTF8(pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-			return ret;
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, Span<int> length, byte* infoLog)
-		{
-			fixed (int* plength0 = length)
-			{
-				GetShaderInfoLogNative(shader, bufSize, plength0, infoLog);
-			}
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, ref int length, byte* infoLog)
-		{
-			fixed (int* plength0 = &length)
-			{
-				GetShaderInfoLogNative(shader, bufSize, plength0, infoLog);
-			}
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, string infoLog)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (infoLog != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(infoLog);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(infoLog, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			GetShaderInfoLogNative(shader, bufSize, length, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, Span<byte> infoLog)
-		{
-			fixed (byte* pinfoLog0 = infoLog)
-			{
-				GetShaderInfoLogNative(shader, bufSize, length, pinfoLog0);
-			}
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, ref byte infoLog)
-		{
-			fixed (byte* pinfoLog0 = &infoLog)
-			{
-				GetShaderInfoLogNative(shader, bufSize, length, pinfoLog0);
-			}
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, Span<int> length, Span<byte> infoLog)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (byte* pinfoLog1 = infoLog)
-				{
-					GetShaderInfoLogNative(shader, bufSize, plength0, pinfoLog1);
-				}
-			}
-		}
-
-		public static void GetShaderInfoLog(uint shader, int bufSize, ref int length, ref byte infoLog)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (byte* pinfoLog1 = &infoLog)
-				{
-					GetShaderInfoLogNative(shader, bufSize, plength0, pinfoLog1);
-				}
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderSourceNative(uint shader, int bufSize, int* length, byte* source)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[144])(shader, bufSize, length, source);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, nint, nint, void>)funcTable[144])(shader, bufSize, (nint)length, (nint)source);
-			#endif
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, int* length, byte* source)
-		{
-			GetShaderSourceNative(shader, bufSize, length, source);
-		}
-
-		public static string GetShaderSource(uint shader)
-		{
-			int pStrSize0;
-			GetShaderiv(shader, GLShaderParameterName.SourceLength, &pStrSize0);
-
-			byte* pStr0 = null;
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-			}
-			else
-			{
-				byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-				pStr0 = pStrStack0;
-			}
-			GetShaderSourceNative(shader, pStrSize0, null, pStr0);
-			string ret = Utils.DecodeStringUTF8(pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-			return ret;
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, Span<int> length, byte* source)
-		{
-			fixed (int* plength0 = length)
-			{
-				GetShaderSourceNative(shader, bufSize, plength0, source);
-			}
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, ref int length, byte* source)
-		{
-			fixed (int* plength0 = &length)
-			{
-				GetShaderSourceNative(shader, bufSize, plength0, source);
-			}
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, int* length, string source)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (source != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(source);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(source, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			GetShaderSourceNative(shader, bufSize, length, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, int* length, Span<byte> source)
-		{
-			fixed (byte* psource0 = source)
-			{
-				GetShaderSourceNative(shader, bufSize, length, psource0);
-			}
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, int* length, ref byte source)
-		{
-			fixed (byte* psource0 = &source)
-			{
-				GetShaderSourceNative(shader, bufSize, length, psource0);
-			}
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, Span<int> length, Span<byte> source)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (byte* psource1 = source)
-				{
-					GetShaderSourceNative(shader, bufSize, plength0, psource1);
-				}
-			}
-		}
-
-		public static void GetShaderSource(uint shader, int bufSize, ref int length, ref byte source)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (byte* psource1 = &source)
-				{
-					GetShaderSourceNative(shader, bufSize, plength0, psource1);
-				}
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderivNative(uint shader, GLShaderParameterName pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, GLShaderParameterName, int*, void>)funcTable[145])(shader, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, GLShaderParameterName, nint, void>)funcTable[145])(shader, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, int* @params)
-		{
-			GetShaderivNative(shader, pname, @params);
-		}
-
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, out int @params)
-		{
-			int pparams;
-			GetShaderivNative(shader, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetShaderivNative(shader, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte* GetStringNative(GLStringName name)
-		{
-			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<GLStringName, byte*>)funcTable[146])(name);
-			#else
-			return (byte*)((delegate* unmanaged[Cdecl]<GLStringName, nint>)funcTable[146])(name);
-			#endif
-		}
-
-		public static byte* GetString(GLStringName name)
-		{
-			byte* ret = GetStringNative(name);
-			return ret;
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte* GetStringiNative(GLStringName name, uint index)
-		{
-			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<GLStringName, uint, byte*>)funcTable[147])(name, index);
-			#else
-			return (byte*)((delegate* unmanaged[Cdecl]<GLStringName, uint, nint>)funcTable[147])(name, index);
-			#endif
-		}
-
-		public static byte* GetStringi(GLStringName name, uint index)
-		{
-			byte* ret = GetStringiNative(name, index);
-			return ret;
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSyncivNative(GLSync sync, GLSyncParameterName pname, int count, int* length, int* values)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLSync, GLSyncParameterName, int, int*, int*, void>)funcTable[148])(sync, pname, count, length, values);
-			#else
-			((delegate* unmanaged[Cdecl]<GLSync, GLSyncParameterName, int, nint, nint, void>)funcTable[148])(sync, pname, count, (nint)length, (nint)values);
-			#endif
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, int* values)
-		{
-			GetSyncivNative(sync, pname, count, length, values);
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, int* values)
-		{
-			fixed (int* plength0 = length)
-			{
-				GetSyncivNative(sync, pname, count, plength0, values);
-			}
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, ref int length, int* values)
-		{
-			fixed (int* plength0 = &length)
-			{
-				GetSyncivNative(sync, pname, count, plength0, values);
-			}
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, Span<int> values)
-		{
-			fixed (int* pvalues0 = values)
-			{
-				GetSyncivNative(sync, pname, count, length, pvalues0);
-			}
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, ref int values)
-		{
-			fixed (int* pvalues0 = &values)
-			{
-				GetSyncivNative(sync, pname, count, length, pvalues0);
-			}
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, Span<int> values)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (int* pvalues1 = values)
-				{
-					GetSyncivNative(sync, pname, count, plength0, pvalues1);
-				}
-			}
-		}
-
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, ref int length, ref int values)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (int* pvalues1 = &values)
-				{
-					GetSyncivNative(sync, pname, count, plength0, pvalues1);
-				}
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexImageNative(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[149])(target, level, format, type, pixels);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLPixelFormat, GLPixelType, nint, void>)funcTable[149])(target, level, format, type, (nint)pixels);
-			#endif
-		}
-
-		public static void GetTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
-		{
-			GetTexImageNative(target, level, format, type, pixels);
-		}
-
-		public static void GetTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
-		{
-			GetTexImageNative(target, level, format, type, (void*)pixels);
-		}
-
-		public static void GetTexImage<TPixels>(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
-		{
-			fixed (TPixels* ppixels0 = pixels)
-			{
-				GetTexImageNative(target, level, format, type, ppixels0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexLevelParameterfvNative(GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, float*, void>)funcTable[150])(target, level, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, nint, void>)funcTable[150])(target, level, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
-		{
-			GetTexLevelParameterfvNative(target, level, pname, @params);
-		}
-
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, out float @params)
-		{
-			float pparams;
-			GetTexLevelParameterfvNative(target, level, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
-		{
-			fixed (float* pparams = @params)
-			{
-				GetTexLevelParameterfvNative(target, level, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexLevelParameterivNative(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, int*, void>)funcTable[151])(target, level, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, nint, void>)funcTable[151])(target, level, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
-		{
-			GetTexLevelParameterivNative(target, level, pname, @params);
-		}
-
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
-		{
-			int pparams;
-			GetTexLevelParameterivNative(target, level, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetTexLevelParameterivNative(target, level, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterIivNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[152])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, nint, void>)funcTable[152])(target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
-		{
-			GetTexParameterIivNative(target, pname, @params);
-		}
-
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
-		{
-			int pparams;
-			GetTexParameterIivNative(target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetTexParameterIivNative(target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterIuivNative(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, uint*, void>)funcTable[153])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, nint, void>)funcTable[153])(target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetTexParameterIuiv(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
-		{
-			GetTexParameterIuivNative(target, pname, @params);
-		}
-
-		public static void GetTexParameterIuiv(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
-		{
-			uint pparams;
-			GetTexParameterIuivNative(target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetTexParameterIuiv(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
-		{
-			fixed (uint* pparams = @params)
-			{
-				GetTexParameterIuivNative(target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterfvNative(GLTextureTarget target, GLGetTextureParameter pname, float* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, float*, void>)funcTable[154])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, nint, void>)funcTable[154])(target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetTexParameterfv(GLTextureTarget target, GLGetTextureParameter pname, float* @params)
-		{
-			GetTexParameterfvNative(target, pname, @params);
-		}
-
-		public static void GetTexParameterfv(GLTextureTarget target, GLGetTextureParameter pname, out float @params)
-		{
-			float pparams;
-			GetTexParameterfvNative(target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetTexParameterfv(GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
-		{
-			fixed (float* pparams = @params)
-			{
-				GetTexParameterfvNative(target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterivNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[155])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, nint, void>)funcTable[155])(target, pname, (nint)@params);
-			#endif
-		}
-
-		public static void GetTexParameteriv(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
-		{
-			GetTexParameterivNative(target, pname, @params);
-		}
-
-		public static void GetTexParameteriv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
-		{
-			int pparams;
-			GetTexParameterivNative(target, pname, &pparams);
-			@params = pparams;
-		}
-
-		public static void GetTexParameteriv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetTexParameterivNative(target, pname, pparams);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTransformFeedbackVaryingNative(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, int, int*, int*, GLAttributeType, byte*, void>)funcTable[156])(program, index, bufSize, length, size, type, name);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, int, nint, nint, GLAttributeType, nint, void>)funcTable[156])(program, index, bufSize, (nint)length, (nint)size, type, (nint)name);
-			#endif
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
-		{
-			GetTransformFeedbackVaryingNative(program, index, bufSize, length, size, type, name);
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, byte* name)
-		{
-			fixed (int* plength0 = length)
-			{
-				GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, size, type, name);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, byte* name)
-		{
-			fixed (int* plength0 = &length)
-			{
-				GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, size, type, name);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, byte* name)
-		{
-			fixed (int* psize0 = size)
-			{
-				GetTransformFeedbackVaryingNative(program, index, bufSize, length, psize0, type, name);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, byte* name)
-		{
-			fixed (int* psize0 = &size)
-			{
-				GetTransformFeedbackVaryingNative(program, index, bufSize, length, psize0, type, name);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, byte* name)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (int* psize1 = size)
-				{
-					GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, psize1, type, name);
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, byte* name)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (int* psize1 = &size)
-				{
-					GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, psize1, type, name);
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, string name)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (name != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(name);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(name, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			GetTransformFeedbackVaryingNative(program, index, bufSize, length, size, type, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, Span<byte> name)
-		{
-			fixed (byte* pname0 = name)
-			{
-				GetTransformFeedbackVaryingNative(program, index, bufSize, length, size, type, pname0);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, ref byte name)
-		{
-			fixed (byte* pname0 = &name)
-			{
-				GetTransformFeedbackVaryingNative(program, index, bufSize, length, size, type, pname0);
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, Span<byte> name)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (byte* pname1 = name)
-				{
-					GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, size, type, pname1);
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, ref byte name)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (byte* pname1 = &name)
-				{
-					GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, size, type, pname1);
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, Span<byte> name)
-		{
-			fixed (int* psize0 = size)
-			{
-				fixed (byte* pname1 = name)
-				{
-					GetTransformFeedbackVaryingNative(program, index, bufSize, length, psize0, type, pname1);
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, ref byte name)
-		{
-			fixed (int* psize0 = &size)
-			{
-				fixed (byte* pname1 = &name)
-				{
-					GetTransformFeedbackVaryingNative(program, index, bufSize, length, psize0, type, pname1);
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, Span<byte> name)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (int* psize1 = size)
-				{
-					fixed (byte* pname2 = name)
-					{
-						GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, psize1, type, pname2);
-					}
-				}
-			}
-		}
-
-		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, ref byte name)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (int* psize1 = &size)
-				{
-					fixed (byte* pname2 = &name)
-					{
-						GetTransformFeedbackVaryingNative(program, index, bufSize, plength0, psize1, type, pname2);
-					}
-				}
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetUniformBlockIndexNative(uint program, byte* uniformBlockName)
-		{
-			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<uint, byte*, uint>)funcTable[157])(program, uniformBlockName);
-			#else
-			return (uint)((delegate* unmanaged[Cdecl]<uint, nint, uint>)funcTable[157])(program, (nint)uniformBlockName);
-			#endif
-		}
-
-		public static uint GetUniformBlockIndex(uint program, byte* uniformBlockName)
-		{
-			uint ret = GetUniformBlockIndexNative(program, uniformBlockName);
-			return ret;
-		}
-
-		public static uint GetUniformBlockIndex(uint program, string uniformBlockName)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (uniformBlockName != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(uniformBlockName);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(uniformBlockName, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			uint ret = GetUniformBlockIndexNative(program, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-			return ret;
-		}
-
-		public static uint GetUniformBlockIndex(uint program, Span<byte> uniformBlockName)
-		{
-			fixed (byte* puniformBlockName0 = uniformBlockName)
-			{
-				uint ret = GetUniformBlockIndexNative(program, puniformBlockName0);
-				return ret;
-			}
-		}
-
-		public static uint GetUniformBlockIndex(uint program, ref byte uniformBlockName)
-		{
-			fixed (byte* puniformBlockName0 = &uniformBlockName)
-			{
-				uint ret = GetUniformBlockIndexNative(program, puniformBlockName0);
-				return ret;
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformIndicesNative(uint program, int uniformCount, byte** uniformNames, uint* uniformIndices)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int, byte**, uint*, void>)funcTable[158])(program, uniformCount, uniformNames, uniformIndices);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, int, nint, nint, void>)funcTable[158])(program, uniformCount, (nint)uniformNames, (nint)uniformIndices);
-			#endif
-		}
-
-		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, uint* uniformIndices)
-		{
-			GetUniformIndicesNative(program, uniformCount, uniformNames, uniformIndices);
-		}
-
-		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, Span<uint> uniformIndices)
-		{
-			fixed (uint* puniformIndices0 = uniformIndices)
-			{
-				GetUniformIndicesNative(program, uniformCount, uniformNames, puniformIndices0);
-			}
-		}
-
-		public static void GetUniformIndices(uint program, int uniformCount, byte** uniformNames, ref uint uniformIndices)
-		{
-			fixed (uint* puniformIndices0 = &uniformIndices)
-			{
-				GetUniformIndicesNative(program, uniformCount, uniformNames, puniformIndices0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetUniformLocationNative(uint program, byte* name)
-		{
-			#if NET5_0_OR_GREATER
-			return ((delegate* unmanaged[Cdecl]<uint, byte*, int>)funcTable[159])(program, name);
-			#else
-			return (int)((delegate* unmanaged[Cdecl]<uint, nint, int>)funcTable[159])(program, (nint)name);
-			#endif
-		}
-
-		public static int GetUniformLocation(uint program, byte* name)
-		{
-			int ret = GetUniformLocationNative(program, name);
-			return ret;
-		}
-
-		public static int GetUniformLocation(uint program, string name)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (name != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(name);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(name, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			int ret = GetUniformLocationNative(program, pStr0);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-			return ret;
-		}
-
-		public static int GetUniformLocation(uint program, Span<byte> name)
-		{
-			fixed (byte* pname0 = name)
-			{
-				int ret = GetUniformLocationNative(program, pname0);
-				return ret;
-			}
-		}
-
-		public static int GetUniformLocation(uint program, ref byte name)
-		{
-			fixed (byte* pname0 = &name)
-			{
-				int ret = GetUniformLocationNative(program, pname0);
-				return ret;
 			}
 		}
 	}

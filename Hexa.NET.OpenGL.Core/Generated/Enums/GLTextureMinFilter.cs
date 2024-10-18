@@ -15,19 +15,88 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLTextureMinFilter : uint
 	{
+		/// <summary>
+		/// Specifies nearest neighbor filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Nearest = unchecked((uint)0x2600),
+
+		/// <summary>
+		/// Specifies linear filtering for textures.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Linear = unchecked((uint)0x2601),
+
+		/// <summary>
+		/// Specifies nearest neighbor filtering with nearest mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		NearestMipmapNearest = unchecked((uint)0x2700),
+
+		/// <summary>
+		/// Specifies linear filtering with nearest mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		LinearMipmapNearest = unchecked((uint)0x2701),
+
+		/// <summary>
+		/// Specifies nearest neighbor filtering with linear mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		NearestMipmapLinear = unchecked((uint)0x2702),
+
+		/// <summary>
+		/// Specifies linear filtering with linear mipmap.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		LinearMipmapLinear = unchecked((uint)0x2703),
+
+		/// <summary>
+		/// Specifies a filter with four components (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		Filter4Sgis = unchecked((uint)0x8146),
+
+		/// <summary>
+		/// Specifies linear clipmap filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LinearClipmapLinearSgix = unchecked((uint)0x8170),
+
+		/// <summary>
+		/// Specifies ceiling behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenQCeilingSgix = unchecked((uint)0x8184),
+
+		/// <summary>
+		/// Specifies rounding behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenQRoundSgix = unchecked((uint)0x8185),
+
+		/// <summary>
+		/// Specifies floor behavior for Q generation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelTexGenQFloorSgix = unchecked((uint)0x8186),
+
+		/// <summary>
+		/// Specifies nearest clipmap nearest filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NearestClipmapNearestSgix = unchecked((uint)0x844D),
+
+		/// <summary>
+		/// Specifies nearest clipmap linear filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NearestClipmapLinearSgix = unchecked((uint)0x844E),
+
+		/// <summary>
+		/// Specifies linear clipmap nearest filtering (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		LinearClipmapNearestSgix = unchecked((uint)0x844F),
 	}
 }

@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFfdTargetSGIX : uint
 	{
+		/// <summary>
+		/// Specifies geometry deformation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		GeometryDeformationSgix = unchecked((uint)0x8194),
+
+		/// <summary>
+		/// Specifies texture deformation (SGIX extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureDeformationSgix = unchecked((uint)0x8195),
 	}
 }

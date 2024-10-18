@@ -26,16 +26,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_draw_indirect</remarks>
 		public static void MultiDrawArraysIndirect(GLPrimitiveType mode, void* indirect, int drawcount, int stride)
 		{
 			MultiDrawArraysIndirectNative(mode, indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_draw_indirect</remarks>
 		public static void MultiDrawArraysIndirect(GLPrimitiveType mode, nint indirect, int drawcount, int stride)
 		{
 			MultiDrawArraysIndirectNative(mode, (void*)indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// Render multiple sets of primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_draw_indirect</remarks>
 		public static void MultiDrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
@@ -54,16 +66,28 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// Render indexed primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_draw_indirect</remarks>
 		public static void MultiDrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
 			MultiDrawElementsIndirectNative(mode, type, indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// Render indexed primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_draw_indirect</remarks>
 		public static void MultiDrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawcount, int stride)
 		{
 			MultiDrawElementsIndirectNative(mode, type, (void*)indirect, drawcount, stride);
 		}
 
+		/// <summary>
+		/// Render indexed primitives from array data, taking parameters from memory
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_draw_indirect</remarks>
 		public static void MultiDrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawcount, int stride) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)

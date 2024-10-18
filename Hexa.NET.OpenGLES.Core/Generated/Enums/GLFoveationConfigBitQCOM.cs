@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLFoveationConfigBitQCOM : uint
 	{
+		/// <summary>
+		/// Enables foveation rendering (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		EnableBitQcom = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Foveation scaled bin method (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		ScaledBinMethodBitQcom = unchecked((uint)0x00000002),
+
+		/// <summary>
+		/// Foveation subsampled layout method (QCOM).
+		/// </summary>
+		/// <remarks></remarks>
 		SubsampledLayoutMethodBitQcom = unchecked((uint)0x00000004),
 	}
 }

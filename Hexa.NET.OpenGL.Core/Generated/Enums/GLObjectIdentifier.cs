@@ -15,16 +15,70 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLObjectIdentifier : uint
 	{
+		/// <summary>
+		/// Specifies the texture matrix stack.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		Texture = unchecked((uint)0x1702),
+
+		/// <summary>
+		/// Specifies a vertex array for rendering.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.3 - GL 4.6<br/>GL 4.0 Compat - GL 4.2 Compat<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		VertexArray = unchecked((uint)0x8074),
+
+		/// <summary>
+		/// Specifies buffer objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Buffer = unchecked((uint)0x82E0),
+
+		/// <summary>
+		/// Specifies shader objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Shader = unchecked((uint)0x82E1),
+
+		/// <summary>
+		/// Specifies program objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Program = unchecked((uint)0x82E2),
+
+		/// <summary>
+		/// Specifies query objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		Query = unchecked((uint)0x82E3),
+
+		/// <summary>
+		/// Specifies program pipeline objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
 		ProgramPipeline = unchecked((uint)0x82E4),
+
+		/// <summary>
+		/// Specifies sampler objects.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_EXT_debug_label<br/>GL_KHR_debug</remarks>
 		Sampler = unchecked((uint)0x82E6),
+
+		/// <summary>
+		/// Specifies the framebuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		Framebuffer = unchecked((uint)0x8D40),
+
+		/// <summary>
+		/// Specifies the renderbuffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object<br/>GL_ARB_internalformat_query2<br/>GL_NV_internalformat_sample_query</remarks>
 		Renderbuffer = unchecked((uint)0x8D41),
+
+		/// <summary>
+		/// Specifies the transform feedback target.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_EXT_debug_label<br/>GL_ARB_transform_feedback2</remarks>
 		TransformFeedback = unchecked((uint)0x8E22),
 	}
 }

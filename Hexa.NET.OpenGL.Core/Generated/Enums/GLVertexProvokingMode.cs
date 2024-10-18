@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLVertexProvokingMode : uint
 	{
+		/// <summary>
+		/// Specifies the convention for interpreting the first vertex in vertex processing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex<br/>GL_ARB_viewport_array</remarks>
 		FirstVertexConvention = unchecked((uint)0x8E4D),
+
+		/// <summary>
+		/// Specifies the convention for interpreting the last vertex in vertex processing.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex<br/>GL_ARB_viewport_array</remarks>
 		LastVertexConvention = unchecked((uint)0x8E4E),
 	}
 }

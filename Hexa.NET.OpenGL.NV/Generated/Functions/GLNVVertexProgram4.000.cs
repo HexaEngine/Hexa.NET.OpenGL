@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, int* @params)
 		{
 			GetVertexAttribIivEXTNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, out int @params)
 		{
 			int pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, uint* @params)
 		{
 			GetVertexAttribIuivEXTNative(index, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, out uint @params)
 		{
 			uint pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -86,6 +110,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1iEXT(uint index, int x)
 		{
 			VertexAttribI1iEXTNative(index, x);
@@ -101,11 +129,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1ivEXT(uint index, int* v)
 		{
 			VertexAttribI1ivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -114,6 +150,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -132,6 +172,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1uiEXT(uint index, uint x)
 		{
 			VertexAttribI1uiEXTNative(index, x);
@@ -147,11 +191,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1uivEXT(uint index, uint* v)
 		{
 			VertexAttribI1uivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -160,6 +212,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI1uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -178,6 +234,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2iEXT(uint index, int x, int y)
 		{
 			VertexAttribI2iEXTNative(index, x, y);
@@ -193,11 +253,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2ivEXT(uint index, int* v)
 		{
 			VertexAttribI2ivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -206,6 +274,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -224,6 +296,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2uiEXT(uint index, uint x, uint y)
 		{
 			VertexAttribI2uiEXTNative(index, x, y);
@@ -239,11 +315,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2uivEXT(uint index, uint* v)
 		{
 			VertexAttribI2uivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -252,6 +336,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI2uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -270,6 +358,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3iEXT(uint index, int x, int y, int z)
 		{
 			VertexAttribI3iEXTNative(index, x, y, z);
@@ -285,11 +377,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3ivEXT(uint index, int* v)
 		{
 			VertexAttribI3ivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -298,6 +398,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -316,6 +420,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3uiEXT(uint index, uint x, uint y, uint z)
 		{
 			VertexAttribI3uiEXTNative(index, x, y, z);
@@ -331,11 +439,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3uivEXT(uint index, uint* v)
 		{
 			VertexAttribI3uivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -344,6 +460,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI3uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -362,11 +482,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4bvEXT(uint index, sbyte* v)
 		{
 			VertexAttribI4bvEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4bvEXT(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
@@ -375,6 +503,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4bvEXT(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
@@ -393,6 +525,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4iEXT(uint index, int x, int y, int z, int w)
 		{
 			VertexAttribI4iEXTNative(index, x, y, z, w);
@@ -408,11 +544,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ivEXT(uint index, int* v)
 		{
 			VertexAttribI4ivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
@@ -421,6 +565,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
@@ -439,11 +587,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4svEXT(uint index, short* v)
 		{
 			VertexAttribI4svEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4svEXT(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
@@ -452,6 +608,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4svEXT(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
@@ -470,11 +630,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ubvEXT(uint index, byte* v)
 		{
 			VertexAttribI4ubvEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ubvEXT(uint index, string v)
 		{
 			byte* pStr0 = null;
@@ -501,6 +669,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ubvEXT(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
@@ -509,6 +681,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4ubvEXT(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
@@ -527,6 +703,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4uiEXT(uint index, uint x, uint y, uint z, uint w)
 		{
 			VertexAttribI4uiEXTNative(index, x, y, z, w);
@@ -542,11 +722,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4uivEXT(uint index, uint* v)
 		{
 			VertexAttribI4uivEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
@@ -555,6 +743,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
@@ -573,11 +765,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4usvEXT(uint index, ushort* v)
 		{
 			VertexAttribI4usvEXTNative(index, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4usvEXT(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
@@ -586,6 +786,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribI4usvEXT(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
@@ -604,16 +808,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			VertexAttribIPointerEXTNative(index, size, type, stride, pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
 		{
 			VertexAttribIPointerEXTNative(index, size, type, stride, (void*)pointer);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
 		public static void VertexAttribIPointerEXT<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)

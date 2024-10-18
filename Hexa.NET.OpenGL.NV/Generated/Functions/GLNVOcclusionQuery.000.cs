@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void BeginOcclusionQueryNV(uint id)
 		{
 			BeginOcclusionQueryNVNative(id);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void DeleteOcclusionQueriesNV(int n, uint* ids)
 		{
 			DeleteOcclusionQueriesNVNative(n, ids);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void DeleteOcclusionQueriesN(uint id)
 		{
 			DeleteOcclusionQueriesNVNative(1, &id);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void DeleteOcclusionQueriesNV(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void DeleteOcclusionQueriesNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -77,6 +97,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void EndOcclusionQueryNV()
 		{
 			EndOcclusionQueryNVNative();
@@ -92,11 +116,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GenOcclusionQueriesNV(int n, uint* ids)
 		{
 			GenOcclusionQueriesNVNative(n, ids);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static uint GenOcclusionQueriesN()
 		{
 			uint result;
@@ -104,6 +136,10 @@ namespace Hexa.NET.OpenGL.NV
 			return result;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GenOcclusionQueriesNV(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
@@ -112,6 +148,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GenOcclusionQueriesNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
@@ -130,11 +170,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, int* @params)
 		{
 			GetOcclusionQueryivNVNative(id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, out int @params)
 		{
 			int pparams;
@@ -142,6 +190,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -160,11 +212,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, uint* @params)
 		{
 			GetOcclusionQueryuivNVNative(id, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, out uint @params)
 		{
 			uint pparams;
@@ -172,6 +232,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -190,6 +254,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
 		public static bool IsOcclusionQueryNV(uint id)
 		{
 			byte ret = IsOcclusionQueryNVNative(id);

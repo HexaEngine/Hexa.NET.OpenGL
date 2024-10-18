@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLElementPointerTypeATI : uint
 	{
+		/// <summary>
+		/// Specifies an unsigned byte data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedByte = unchecked((uint)0x1401),
+
+		/// <summary>
+		/// Specifies an unsigned short data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedShort = unchecked((uint)0x1403),
+
+		/// <summary>
+		/// Specifies an unsigned integer data type.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		UnsignedInt = unchecked((uint)0x1405),
 	}
 }

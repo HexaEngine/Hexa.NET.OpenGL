@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
 		public static void DrawArraysInstancedANGLE(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			DrawArraysInstancedANGLENative(mode, first, count, primcount);
@@ -41,16 +45,28 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
 		public static void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedANGLENative(mode, count, type, indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
 		public static void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedANGLENative(mode, count, type, (void*)indices, primcount);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
 		public static void DrawElementsInstancedANGLE<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
@@ -69,6 +85,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
 		public static void VertexAttribDivisorANGLE(uint index, uint divisor)
 		{
 			VertexAttribDivisorANGLENative(index, divisor);

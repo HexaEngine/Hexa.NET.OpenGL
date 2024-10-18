@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		public static void ClearColorIiEXT(int red, int green, int blue, int alpha)
 		{
 			ClearColorIiEXTNative(red, green, blue, alpha);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
 		public static void ClearColorIuiEXT(uint red, uint green, uint blue, uint alpha)
 		{
 			ClearColorIuiEXTNative(red, green, blue, alpha);
@@ -56,11 +64,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexParameterIivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
 			int pparams;
@@ -68,6 +84,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -86,11 +106,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			GetTexParameterIuivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
 		{
 			uint pparams;
@@ -98,6 +126,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -116,11 +148,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TexParameterIivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, out int @params)
 		{
 			int pparams;
@@ -128,6 +168,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -146,11 +190,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			TexParameterIuivEXTNative(target, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
 		{
 			uint pparams;
@@ -158,6 +210,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
 		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)

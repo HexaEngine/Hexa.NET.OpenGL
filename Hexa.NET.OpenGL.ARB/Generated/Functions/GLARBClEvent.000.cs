@@ -26,12 +26,20 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(ClContext* context, ClEvent* evnt, uint flags)
 		{
 			GLSync ret = CreateSyncFromCLeventARBNative(context, evnt, flags);
 			return ret;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(Span<ClContext> context, ClEvent* evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = context)
@@ -41,6 +49,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(ref ClContext context, ClEvent* evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = &context)
@@ -50,6 +62,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(ClContext* context, Span<ClEvent> evnt, uint flags)
 		{
 			fixed (ClEvent* pevnt0 = evnt)
@@ -59,6 +75,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(ClContext* context, ref ClEvent evnt, uint flags)
 		{
 			fixed (ClEvent* pevnt0 = &evnt)
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(Span<ClContext> context, Span<ClEvent> evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = context)
@@ -80,6 +104,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
 		public static GLSync CreateSyncFromCLeventARB(ref ClContext context, ref ClEvent evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = &context)

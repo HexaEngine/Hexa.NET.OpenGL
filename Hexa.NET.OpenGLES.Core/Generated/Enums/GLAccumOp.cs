@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLAccumOp : uint
 	{
+		/// <summary>
+		/// Accumulation buffer operation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Accum = unchecked((uint)0x0100),
+
+		/// <summary>
+		/// Load operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Load = unchecked((uint)0x0101),
+
+		/// <summary>
+		/// Return operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Return = unchecked((uint)0x0102),
+
+		/// <summary>
+		/// Multiply operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Mult = unchecked((uint)0x0103),
+
+		/// <summary>
+		/// Add operation for accumulation buffer.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Add = unchecked((uint)0x0104),
 	}
 }

@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLVertexShaderParameterEXT : uint
 	{
+		/// <summary>
+		/// Specifies the current vertex in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		CurrentVertexExt = unchecked((uint)0x87E2),
+
+		/// <summary>
+		/// Specifies the Model-View-Projection matrix in EXT vertex shader.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
 		MvpMatrixExt = unchecked((uint)0x87E3),
 	}
 }

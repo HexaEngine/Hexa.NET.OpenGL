@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* @params)
 		{
 			ProgramBufferParametersIivNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, out int @params)
 		{
 			int pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* @params)
 		{
 			ProgramBufferParametersIuivNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, out uint @params)
 		{
 			uint pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
@@ -86,11 +110,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* @params)
 		{
 			ProgramBufferParametersfvNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, out float @params)
 		{
 			float pparams;
@@ -98,6 +130,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
 		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<float> @params)
 		{
 			fixed (float* pparams = @params)

@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTraceMaskMESA : uint
 	{
+		/// <summary>
+		/// Trace operations bit (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		OperationsBitMesa = unchecked((uint)0x0001),
+
+		/// <summary>
+		/// Trace primitives bit (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		PrimitivesBitMesa = unchecked((uint)0x0002),
+
+		/// <summary>
+		/// Trace arrays bit (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		ArraysBitMesa = unchecked((uint)0x0004),
+
+		/// <summary>
+		/// Trace textures bit (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		TexturesBitMesa = unchecked((uint)0x0008),
+
+		/// <summary>
+		/// Trace pixels bit (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		PixelsBitMesa = unchecked((uint)0x0010),
+
+		/// <summary>
+		/// Trace errors bit (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		ErrorsBitMesa = unchecked((uint)0x0020),
+
+		/// <summary>
+		/// Trace all bits (Mesa).
+		/// </summary>
+		/// <remarks></remarks>
 		AllBitsMesa = unchecked((uint)0xFFFF),
 	}
 }

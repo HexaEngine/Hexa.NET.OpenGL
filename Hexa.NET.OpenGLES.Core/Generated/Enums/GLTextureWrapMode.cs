@@ -15,19 +15,88 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureWrapMode : uint
 	{
+		/// <summary>
+		/// Specifies clamping for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Clamp = unchecked((uint)0x2900),
+
+		/// <summary>
+		/// Specifies repeating for texture coordinates.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		Repeat = unchecked((uint)0x2901),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClampToBorder = unchecked((uint)0x812D),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_border_clamp</remarks>
 		ClampToBorderArb = unchecked((uint)0x812D),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
 		ClampToBorderExt = unchecked((uint)0x812D),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_border_clamp</remarks>
 		ClampToBorderNv = unchecked((uint)0x812D),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ClampToBorderSgis = unchecked((uint)0x812D),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the border (OES extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_border_clamp</remarks>
 		ClampToBorderOes = unchecked((uint)0x812D),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the edge.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		ClampToEdge = unchecked((uint)0x812F),
+
+		/// <summary>
+		/// Specifies clamping behavior for texture coordinates to the edge (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		ClampToEdgeSgis = unchecked((uint)0x812F),
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		MirroredRepeat = unchecked((uint)0x8370),
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_mirrored_repeat</remarks>
 		MirroredRepeatArb = unchecked((uint)0x8370),
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode in IBM extensions.
+		/// </summary>
+		/// <remarks></remarks>
 		MirroredRepeatIbm = unchecked((uint)0x8370),
+
+		/// <summary>
+		/// Specifies mirrored repeat texture wrapping mode (OES extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_texture_mirrored_repeat</remarks>
 		MirroredRepeatOes = unchecked((uint)0x8370),
 	}
 }

@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.INTEL
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_INTEL_framebuffer_CMAA</remarks>
 		public static void ApplyFramebufferAttachmentCMAAINTEL()
 		{
 			ApplyFramebufferAttachmentCMAAINTELNative();

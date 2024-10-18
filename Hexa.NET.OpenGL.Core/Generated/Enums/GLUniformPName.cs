@@ -15,14 +15,58 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLUniformPName : uint
 	{
+		/// <summary>
+		/// Specifies the type of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		Type = unchecked((uint)0x8A37),
+
+		/// <summary>
+		/// Specifies the size of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine<br/>GL_ARB_uniform_buffer_object</remarks>
 		Size = unchecked((uint)0x8A38),
+
+		/// <summary>
+		/// Specifies the length of the name of a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine<br/>GL_ARB_uniform_buffer_object</remarks>
 		Length = unchecked((uint)0x8A39),
+
+		/// <summary>
+		/// Specifies the index of a uniform block for a uniform variable.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		BlockIndex = unchecked((uint)0x8A3A),
+
+		/// <summary>
+		/// Specifies the offset of a uniform variable within a uniform block.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		Offset = unchecked((uint)0x8A3B),
+
+		/// <summary>
+		/// Specifies the stride between consecutive elements of an array of uniform variables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		ArrayStride = unchecked((uint)0x8A3C),
+
+		/// <summary>
+		/// Specifies the stride between consecutive matrices in an array of uniform variables.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		MatrixStride = unchecked((uint)0x8A3D),
+
+		/// <summary>
+		/// Specifies whether a uniform matrix is stored in row-major order.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		IsRowMajor = unchecked((uint)0x8A3E),
+
+		/// <summary>
+		/// Specifies the atomic counter buffer index in a uniform.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		AtomicCounterBufferIndex = unchecked((uint)0x92DA),
 	}
 }

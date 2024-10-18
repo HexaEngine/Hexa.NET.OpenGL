@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.ANGLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ANGLE_framebuffer_multisample</remarks>
 		public static void RenderbufferStorageMultisampleANGLE(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleANGLENative(target, samples, internalformat, width, height);

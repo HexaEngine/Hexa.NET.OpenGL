@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLSamplerParameterI : uint
 	{
+		/// <summary>
+		/// Specifies the texture magnification filter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TextureMagFilter = unchecked((uint)0x2800),
+
+		/// <summary>
+		/// Specifies the texture minification filter.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TextureMinFilter = unchecked((uint)0x2801),
+
+		/// <summary>
+		/// Specifies the texture wrapping mode for the S coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TextureWrapS = unchecked((uint)0x2802),
+
+		/// <summary>
+		/// Specifies the texture wrapping mode for the T coordinate.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		TextureWrapT = unchecked((uint)0x2803),
+
+		/// <summary>
+		/// Specifies the wrapping mode for the R coordinate of 3D textures.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureWrapR = unchecked((uint)0x8072),
+
+		/// <summary>
+		/// Specifies the comparison mode for texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCompareMode = unchecked((uint)0x884C),
+
+		/// <summary>
+		/// Specifies the comparison function for texture.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		TextureCompareFunc = unchecked((uint)0x884D),
+
+		/// <summary>
+		/// Indicates support for unnormalized texture coordinates in ARM architecture.
+		/// </summary>
+		/// <remarks></remarks>
 		TextureUnnormalizedCoordinatesArm = unchecked((uint)0x8F6A),
 	}
 }

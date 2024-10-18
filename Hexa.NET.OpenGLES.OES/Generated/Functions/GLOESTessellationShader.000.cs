@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.OES
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_OES_tessellation_shader</remarks>
 		public static void PatchParameteriOES(GLPatchParameterName pname, int value)
 		{
 			PatchParameteriOESNative(pname, value);

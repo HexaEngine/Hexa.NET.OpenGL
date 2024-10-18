@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_buffers_blend</remarks>
 		public static void BlendEquationSeparateiARB(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateiARBNative(buf, modeRGB, modeAlpha);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_buffers_blend</remarks>
 		public static void BlendEquationiARB(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationiARBNative(buf, mode);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_buffers_blend</remarks>
 		public static void BlendFuncSeparateiARB(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateiARBNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_buffers_blend</remarks>
 		public static void BlendFunciARB(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			BlendFunciARBNative(buf, src, dst);

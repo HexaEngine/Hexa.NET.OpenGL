@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTextureCompareMode : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies comparison of R component to texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RToTexture = unchecked((uint)0x884E),
+
+		/// <summary>
+		/// Specifies comparison of reference to texture.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		RefToTexture = unchecked((uint)0x884E),
 	}
 }

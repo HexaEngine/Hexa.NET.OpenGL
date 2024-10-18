@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLSyncCondition : uint
 	{
+		/// <summary>
+		/// Indicates that GPU commands have completed execution.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		GpuCommandsComplete = unchecked((uint)0x9117),
 	}
 }

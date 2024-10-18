@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_sparse_texture</remarks>
 		public static void TexPageCommitmentEXT(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			TexPageCommitmentEXTNative(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);

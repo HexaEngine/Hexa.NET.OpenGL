@@ -15,9 +15,28 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLGraphicsResetStatus : uint
 	{
+		/// <summary>
+		/// Indicates no error occurred.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_robustness<br/>GL_KHR_robustness<br/>GL_EXT_robustness</remarks>
 		NoError = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies a guilty context reset behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		GuiltyContextReset = unchecked((uint)0x8253),
+
+		/// <summary>
+		/// Specifies an innocent context reset behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		InnocentContextReset = unchecked((uint)0x8254),
+
+		/// <summary>
+		/// Specifies an unknown context reset behavior.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		UnknownContextReset = unchecked((uint)0x8255),
 	}
 }

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, uint* semaphoreArray, ulong* fenceValueArray)
 		{
 			ClientWaitSemaphoreui64NVXNative(fenceObjectCount, semaphoreArray, fenceValueArray);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, Span<uint> semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = semaphoreArray)
@@ -39,6 +47,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, ref uint semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -47,6 +59,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, uint* semaphoreArray, Span<ulong> fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
@@ -55,6 +71,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, uint* semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
@@ -63,6 +83,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, Span<uint> semaphoreArray, Span<ulong> fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = semaphoreArray)
@@ -74,6 +98,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void ClientWaitSemaphoreui64NVX(int fenceObjectCount, ref uint semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -95,6 +123,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static uint CreateProgressFenceNVX()
 		{
 			uint ret = CreateProgressFenceNVXNative();
@@ -111,11 +143,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, uint* semaphoreArray, ulong* fenceValueArray)
 		{
 			SignalSemaphoreui64NVXNative(signalGpu, fenceObjectCount, semaphoreArray, fenceValueArray);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, Span<uint> semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = semaphoreArray)
@@ -124,6 +164,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, ref uint semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -132,6 +176,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, uint* semaphoreArray, Span<ulong> fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
@@ -140,6 +188,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, uint* semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
@@ -148,6 +200,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, Span<uint> semaphoreArray, Span<ulong> fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = semaphoreArray)
@@ -159,6 +215,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void SignalSemaphoreui64NVX(uint signalGpu, int fenceObjectCount, ref uint semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -180,11 +240,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, uint* semaphoreArray, ulong* fenceValueArray)
 		{
 			WaitSemaphoreui64NVXNative(waitGpu, fenceObjectCount, semaphoreArray, fenceValueArray);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, Span<uint> semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = semaphoreArray)
@@ -193,6 +261,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, ref uint semaphoreArray, ulong* fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)
@@ -201,6 +273,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, uint* semaphoreArray, Span<ulong> fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
@@ -209,6 +285,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, uint* semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
@@ -217,6 +297,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, Span<uint> semaphoreArray, Span<ulong> fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = semaphoreArray)
@@ -228,6 +312,10 @@ namespace Hexa.NET.OpenGL.NV
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NVX_progress_fence</remarks>
 		public static void WaitSemaphoreui64NVX(uint waitGpu, int fenceObjectCount, ref uint semaphoreArray, ref ulong fenceValueArray)
 		{
 			fixed (uint* psemaphoreArray0 = &semaphoreArray)

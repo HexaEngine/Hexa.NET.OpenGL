@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLFfdMaskSGIX : uint
 	{
+		/// <summary>
+		/// Indicates texture deformation capability (SGIX).
+		/// </summary>
+		/// <remarks></remarks>
 		TextureDeformationBitSgix = unchecked((uint)0x00000001),
+
+		/// <summary>
+		/// Indicates geometry deformation capability (SGIX).
+		/// </summary>
+		/// <remarks></remarks>
 		GeometryDeformationBitSgix = unchecked((uint)0x00000002),
 	}
 }

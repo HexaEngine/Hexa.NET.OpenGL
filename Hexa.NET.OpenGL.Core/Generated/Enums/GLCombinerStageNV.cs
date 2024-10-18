@@ -15,13 +15,52 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLCombinerStageNV : uint
 	{
+		/// <summary>
+		/// Specifies the first combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner0Nv = unchecked((uint)0x8550),
+
+		/// <summary>
+		/// Specifies the second combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner1Nv = unchecked((uint)0x8551),
+
+		/// <summary>
+		/// Specifies the third combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner2Nv = unchecked((uint)0x8552),
+
+		/// <summary>
+		/// Specifies the fourth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner3Nv = unchecked((uint)0x8553),
+
+		/// <summary>
+		/// Specifies the fifth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner4Nv = unchecked((uint)0x8554),
+
+		/// <summary>
+		/// Specifies the sixth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner5Nv = unchecked((uint)0x8555),
+
+		/// <summary>
+		/// Specifies the seventh combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner6Nv = unchecked((uint)0x8556),
+
+		/// <summary>
+		/// Specifies the eighth combiner (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
 		Combiner7Nv = unchecked((uint)0x8557),
 	}
 }

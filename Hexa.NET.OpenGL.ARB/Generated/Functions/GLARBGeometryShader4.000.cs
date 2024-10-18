@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		public static void FramebufferTextureARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureARBNative(target, attachment, texture, level);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		public static void FramebufferTextureFaceARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			FramebufferTextureFaceARBNative(target, attachment, texture, level, face);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		public static void FramebufferTextureLayerARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerARBNative(target, attachment, texture, level, layer);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
 		public static void ProgramParameteriARB(uint program, GLProgramParameterPName pname, int value)
 		{
 			ProgramParameteriARBNative(program, pname, value);

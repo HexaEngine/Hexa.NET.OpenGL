@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_texture_barrier</remarks>
 		public static void TextureBarrierNV()
 		{
 			TextureBarrierNVNative();

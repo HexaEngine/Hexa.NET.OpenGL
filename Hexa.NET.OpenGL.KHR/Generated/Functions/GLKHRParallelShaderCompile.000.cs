@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.KHR
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_KHR_parallel_shader_compile</remarks>
 		public static void MaxShaderCompilerThreadsKHR(uint count)
 		{
 			MaxShaderCompilerThreadsKHRNative(count);

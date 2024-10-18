@@ -15,7 +15,16 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLBoolean : uint
 	{
+		/// <summary>
+		/// Boolean false value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		False = unchecked((uint)0),
+
+		/// <summary>
+		/// Boolean true value.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		True = unchecked((uint)1),
 	}
 }

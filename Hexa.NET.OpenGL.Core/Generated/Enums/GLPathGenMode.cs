@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPathGenMode : uint
 	{
+		/// <summary>
+		/// Indicates no value or null.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_NV_register_combiners<br/>GL_KHR_context_flush_control</remarks>
 		None = unchecked((uint)0),
+
+		/// <summary>
+		/// Specifies eye linear texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		EyeLinear = unchecked((uint)0x2400),
+
+		/// <summary>
+		/// Specifies object linear texture coordinate generation.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ObjectLinear = unchecked((uint)0x2401),
+
+		/// <summary>
+		/// Specifies a constant value for combine modes.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Constant = unchecked((uint)0x8576),
+
+		/// <summary>
+		/// Specifies the bounding box for a path object.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
 		ObjectBoundingBoxNv = unchecked((uint)0x908A),
 	}
 }

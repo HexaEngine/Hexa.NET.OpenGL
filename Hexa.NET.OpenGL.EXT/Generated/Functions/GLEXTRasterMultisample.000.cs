@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_raster_multisample<br/>GL_NV_framebuffer_mixed_samples</remarks>
 		public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
 		{
 			RasterSamplesEXTNative(samples, fixedsamplelocations);

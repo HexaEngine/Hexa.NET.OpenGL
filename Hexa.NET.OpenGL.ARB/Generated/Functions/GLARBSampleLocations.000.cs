@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void EvaluateDepthValuesARB()
 		{
 			EvaluateDepthValuesARBNative();
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, float* v)
 		{
 			FramebufferSampleLocationsfvARBNative(target, start, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -54,6 +66,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
@@ -72,11 +88,19 @@ namespace Hexa.NET.OpenGL.ARB
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, float* v)
 		{
 			NamedFramebufferSampleLocationsfvARBNative(framebuffer, start, count, v);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
@@ -85,6 +109,10 @@ namespace Hexa.NET.OpenGL.ARB
 			}
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
 		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)

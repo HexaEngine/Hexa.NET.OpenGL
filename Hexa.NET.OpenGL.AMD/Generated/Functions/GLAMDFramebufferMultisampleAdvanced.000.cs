@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_multisample_advanced</remarks>
 		public static void NamedRenderbufferStorageMultisampleAdvancedAMD(uint renderbuffer, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			NamedRenderbufferStorageMultisampleAdvancedAMDNative(renderbuffer, samples, storageSamples, internalformat, width, height);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGL.AMD
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_multisample_advanced</remarks>
 		public static void RenderbufferStorageMultisampleAdvancedAMD(GLRenderbufferTarget target, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleAdvancedAMDNative(target, samples, storageSamples, internalformat, width, height);

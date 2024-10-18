@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLPNTrianglesPNameATI : uint
 	{
+		/// <summary>
+		/// Specifies the point mode for PN triangles (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		PointModeAti = unchecked((uint)0x87F2),
+
+		/// <summary>
+		/// Specifies the normal mode for PN triangles (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		NormalModeAti = unchecked((uint)0x87F3),
+
+		/// <summary>
+		/// Specifies the tessellation level for PN triangles (ATI extension).
+		/// </summary>
+		/// <remarks></remarks>
 		TesselationLevelAti = unchecked((uint)0x87F4),
 	}
 }

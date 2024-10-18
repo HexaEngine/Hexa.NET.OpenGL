@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
 		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, int* @params)
 		{
 			GetObjectParameterivAPPLENative(objectType, name, pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
 		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, out int @params)
 		{
 			int pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
 		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
@@ -56,6 +68,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
 		public static GLEnum ObjectPurgeableAPPLE(GLEnum objectType, uint name, GLEnum option)
 		{
 			GLEnum ret = ObjectPurgeableAPPLENative(objectType, name, option);
@@ -72,6 +88,10 @@ namespace Hexa.NET.OpenGL.APPLE
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
 		public static GLEnum ObjectUnpurgeableAPPLE(GLEnum objectType, uint name, GLEnum option)
 		{
 			GLEnum ret = ObjectUnpurgeableAPPLENative(objectType, name, option);

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
 		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, float* @params)
 		{
 			ProgramEnvParameters4fvEXTNative(target, index, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
 		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, out float @params)
 		{
 			float pparams;
@@ -38,6 +46,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
 		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
@@ -56,11 +68,19 @@ namespace Hexa.NET.OpenGL.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
 		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, float* @params)
 		{
 			ProgramLocalParameters4fvEXTNative(target, index, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
 		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, out float @params)
 		{
 			float pparams;
@@ -68,6 +88,10 @@ namespace Hexa.NET.OpenGL.EXT
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
 		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
 			fixed (float* pparams = @params)

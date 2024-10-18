@@ -15,8 +15,22 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLTriangleListSUN : uint
 	{
+		/// <summary>
+		/// Command to restart a sequence (SUN).
+		/// </summary>
+		/// <remarks></remarks>
 		RestartSun = unchecked((uint)0x0001),
+
+		/// <summary>
+		/// Replace the middle of a sequence (SUN).
+		/// </summary>
+		/// <remarks></remarks>
 		ReplaceMiddleSun = unchecked((uint)0x0002),
+
+		/// <summary>
+		/// Replace the oldest sequence (SUN).
+		/// </summary>
+		/// <remarks></remarks>
 		ReplaceOldestSun = unchecked((uint)0x0003),
 	}
 }

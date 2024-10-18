@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void BlendEquationSeparateiEXT(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateiEXTNative(buf, modeRGB, modeAlpha);
@@ -41,6 +45,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void BlendEquationiEXT(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationiEXTNative(buf, mode);
@@ -56,6 +64,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void BlendFuncSeparateiEXT(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateiEXTNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -71,6 +83,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void BlendFunciEXT(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			BlendFunciEXTNative(buf, src, dst);
@@ -86,6 +102,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void ColorMaskiEXT(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiEXTNative(index, r, g, b, a);
@@ -101,6 +121,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void DisableiEXT(GLEnableCap target, uint index)
 		{
 			DisableiEXTNative(target, index);
@@ -116,6 +140,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static void EnableiEXT(GLEnableCap target, uint index)
 		{
 			EnableiEXTNative(target, index);
@@ -131,6 +159,10 @@ namespace Hexa.NET.OpenGLES.EXT
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
 		public static bool IsEnablediEXT(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediEXTNative(target, index);

@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLMapParameterNV : uint
 	{
+		/// <summary>
+		/// Specifies tessellation mapping (NV extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
 		TessellationNv = unchecked((uint)0x86C2),
 	}
 }

@@ -26,11 +26,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
 		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, uint* param)
 		{
 			GetProgramSubroutineParameteruivNVNative(target, index, param);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
 		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, out uint param)
 		{
 			uint pparam;
@@ -48,11 +56,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
 		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, uint* @params)
 		{
 			ProgramSubroutineParametersuivNVNative(target, count, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
 		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, out uint @params)
 		{
 			uint pparams;
@@ -60,6 +76,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
 		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)

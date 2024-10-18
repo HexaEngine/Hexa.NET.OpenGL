@@ -15,6 +15,10 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLProgramStringProperty : uint
 	{
+		/// <summary>
+		/// Specifies the program string (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
 		Arb = unchecked((uint)0x8628),
 	}
 }

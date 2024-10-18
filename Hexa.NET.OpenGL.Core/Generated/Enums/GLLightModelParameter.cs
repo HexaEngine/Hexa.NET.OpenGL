@@ -15,10 +15,34 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLLightModelParameter : uint
 	{
+		/// <summary>
+		/// Specifies whether local viewer lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		LocalViewer = unchecked((uint)0x0B51),
+
+		/// <summary>
+		/// Specifies if two-sided lighting is enabled.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		TwoSide = unchecked((uint)0x0B52),
+
+		/// <summary>
+		/// Specifies the ambient light color.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		Ambient = unchecked((uint)0x0B53),
+
+		/// <summary>
+		/// Specifies color control for lighting.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
 		ColorControl = unchecked((uint)0x81F8),
+
+		/// <summary>
+		/// Specifies color control for lighting (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_specular_color</remarks>
 		ColorControlExt = unchecked((uint)0x81F8),
 	}
 }

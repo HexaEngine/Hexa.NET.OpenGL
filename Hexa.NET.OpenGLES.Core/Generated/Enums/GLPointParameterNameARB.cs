@@ -15,21 +15,100 @@ namespace Hexa.NET.OpenGLES
 {
 	public enum GLPointParameterNameARB : uint
 	{
+		/// <summary>
+		/// Specifies the minimum size of points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SizeMin = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the minimum size of points (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		SizeMinArb = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the minimum size of points (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		SizeMinExt = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the minimum size of points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SizeMinSgis = unchecked((uint)0x8126),
+
+		/// <summary>
+		/// Specifies the maximum size of points.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		SizeMax = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the maximum size of points (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		SizeMaxArb = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the maximum size of points (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		SizeMaxExt = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the maximum size of points (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		SizeMaxSgis = unchecked((uint)0x8127),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		FadeThresholdSize = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		FadeThresholdSizeArb = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		FadeThresholdSizeExt = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the size threshold for point fading (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		FadeThresholdSizeSgis = unchecked((uint)0x8128),
+
+		/// <summary>
+		/// Specifies the distance attenuation factor (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
 		DistanceAttenuationExt = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies the distance attenuation factor (SGIS extension).
+		/// </summary>
+		/// <remarks></remarks>
 		DistanceAttenuationSgis = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies point distance attenuation.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		DistanceAttenuation = unchecked((uint)0x8129),
+
+		/// <summary>
+		/// Specifies point distance attenuation (ARB extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
 		DistanceAttenuationArb = unchecked((uint)0x8129),
 	}
 }

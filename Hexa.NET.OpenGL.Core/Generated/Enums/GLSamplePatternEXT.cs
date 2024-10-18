@@ -15,12 +15,46 @@ namespace Hexa.NET.OpenGL
 {
 	public enum GLSamplePatternEXT : uint
 	{
+		/// <summary>
+		/// Specifies a single-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl1PassExt = unchecked((uint)0x80A1),
+
+		/// <summary>
+		/// Specifies the first pass of a two-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl2Pass0Ext = unchecked((uint)0x80A2),
+
+		/// <summary>
+		/// Specifies the second pass of a two-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl2Pass1Ext = unchecked((uint)0x80A3),
+
+		/// <summary>
+		/// Specifies the first pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl4Pass0Ext = unchecked((uint)0x80A4),
+
+		/// <summary>
+		/// Specifies the second pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl4Pass1Ext = unchecked((uint)0x80A5),
+
+		/// <summary>
+		/// Specifies the third pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl4Pass2Ext = unchecked((uint)0x80A6),
+
+		/// <summary>
+		/// Specifies the fourth pass of a four-pass rendering mode (EXT extension).
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
 		Gl4Pass3Ext = unchecked((uint)0x80A7),
 	}
 }

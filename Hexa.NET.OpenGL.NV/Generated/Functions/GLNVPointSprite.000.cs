@@ -26,6 +26,10 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_point_sprite</remarks>
 		public static void PointParameteriNV(GLPointParameterNameARB pname, int param)
 		{
 			PointParameteriNVNative(pname, param);
@@ -41,11 +45,19 @@ namespace Hexa.NET.OpenGL.NV
 			#endif
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_point_sprite</remarks>
 		public static void PointParameterivNV(GLPointParameterNameARB pname, int* @params)
 		{
 			PointParameterivNVNative(pname, @params);
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_point_sprite</remarks>
 		public static void PointParameterivNV(GLPointParameterNameARB pname, out int @params)
 		{
 			int pparams;
@@ -53,6 +65,10 @@ namespace Hexa.NET.OpenGL.NV
 			@params = pparams;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_point_sprite</remarks>
 		public static void PointParameterivNV(GLPointParameterNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
