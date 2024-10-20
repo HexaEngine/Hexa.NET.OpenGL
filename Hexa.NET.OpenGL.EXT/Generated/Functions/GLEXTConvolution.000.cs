@@ -138,22 +138,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out float @params)
+		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<float> @params)
 		{
-			float pparams;
-			ConvolutionParameterfvEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ConvolutionParameterfvEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<float> @params)
+		public static void ConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ConvolutionParameterfvEXTNative(target, pname, pparams);
+				ConvolutionParameterfvEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -199,22 +200,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out int @params)
+		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
 		{
-			int pparams;
-			ConvolutionParameterivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				ConvolutionParameterivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
+		public static void ConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				ConvolutionParameterivEXTNative(target, pname, pparams);
+				ConvolutionParameterivEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -319,22 +321,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out float @params)
+		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<float> @params)
 		{
-			float pparams;
-			GetConvolutionParameterfvEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetConvolutionParameterfvEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<float> @params)
+		public static void GetConvolutionParameterfvEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetConvolutionParameterfvEXTNative(target, pname, pparams);
+				GetConvolutionParameterfvEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -361,22 +364,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, out int @params)
+		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
 		{
-			int pparams;
-			GetConvolutionParameterivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetConvolutionParameterivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_convolution</remarks>
-		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
+		public static void GetConvolutionParameterivEXT(GLConvolutionTargetEXT target, GLConvolutionParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetConvolutionParameterivEXTNative(target, pname, pparams);
+				GetConvolutionParameterivEXTNative(target, pname, pparams0);
 			}
 		}
 

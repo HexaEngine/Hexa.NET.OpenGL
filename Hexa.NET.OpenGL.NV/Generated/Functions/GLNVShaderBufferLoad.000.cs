@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, out ulong @params)
+		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetBufferParameterui64vNVNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetBufferParameterui64vNVNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, Span<ulong> @params)
+		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetBufferParameterui64vNVNative(target, pname, pparams);
+				GetBufferParameterui64vNVNative(target, pname, pparams0);
 			}
 		}
 
@@ -124,22 +125,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, out ulong @params)
+		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetNamedBufferParameterui64vNVNative(buffer, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetNamedBufferParameterui64vNVNative(buffer, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, Span<ulong> @params)
+		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetNamedBufferParameterui64vNVNative(buffer, pname, pparams);
+				GetNamedBufferParameterui64vNVNative(buffer, pname, pparams0);
 			}
 		}
 
@@ -166,22 +168,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, out ulong @params)
+		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetUniformui64vNVNative(program, location, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetUniformui64vNVNative(program, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
+		public static void GetUniformui64vNV(uint program, int location, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetUniformui64vNVNative(program, location, pparams);
+				GetUniformui64vNVNative(program, location, pparams0);
 			}
 		}
 

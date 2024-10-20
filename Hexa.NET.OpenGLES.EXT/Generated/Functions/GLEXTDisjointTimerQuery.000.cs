@@ -226,22 +226,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, out long @params)
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
 		{
-			long pparams;
-			GetQueryObjecti64vEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetQueryObjecti64vEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetQueryObjecti64vEXTNative(id, pname, pparams);
+				GetQueryObjecti64vEXTNative(id, pname, pparams0);
 			}
 		}
 
@@ -268,22 +269,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, out int @params)
+		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetQueryObjectivEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetQueryObjectivEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetQueryObjectivEXTNative(id, pname, pparams);
+				GetQueryObjectivEXTNative(id, pname, pparams0);
 			}
 		}
 
@@ -310,22 +312,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, out ulong @params)
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetQueryObjectui64vEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetQueryObjectui64vEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetQueryObjectui64vEXTNative(id, pname, pparams);
+				GetQueryObjectui64vEXTNative(id, pname, pparams0);
 			}
 		}
 
@@ -352,22 +355,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, out uint @params)
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetQueryObjectuivEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetQueryObjectuivEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetQueryObjectuivEXTNative(id, pname, pparams);
+				GetQueryObjectuivEXTNative(id, pname, pparams0);
 			}
 		}
 
@@ -394,22 +398,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, out int @params)
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetQueryivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetQueryivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetQueryivEXTNative(target, pname, pparams);
+				GetQueryivEXTNative(target, pname, pparams0);
 			}
 		}
 

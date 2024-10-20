@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, out int @params)
+		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			GetObjectParameterivAPPLENative(objectType, name, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetObjectParameterivAPPLENative(objectType, name, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, Span<int> @params)
+		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetObjectParameterivAPPLENative(objectType, name, pname, pparams);
+				GetObjectParameterivAPPLENative(objectType, name, pname, pparams0);
 			}
 		}
 

@@ -39,23 +39,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, Span<double> @params)
+		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, out double @params)
 		{
-			fixed (double* pparams0 = @params)
-			{
-				GetVertexAttribLdvNative(index, pname, pparams0);
-			}
+			double pparam;
+			GetVertexAttribLdvNative(index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, ref double @params)
+		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, Span<double> @params)
 		{
-			fixed (double* pparams0 = &@params)
+			fixed (double* pparams = @params)
 			{
-				GetVertexAttribLdvNative(index, pname, pparams0);
+				GetVertexAttribLdvNative(index, pname, pparams);
 			}
 		}
 

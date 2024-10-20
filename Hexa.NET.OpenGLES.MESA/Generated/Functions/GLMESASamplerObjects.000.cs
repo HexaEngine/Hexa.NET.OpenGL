@@ -166,9 +166,9 @@ namespace Hexa.NET.OpenGLES.MESA
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
 		{
-			float pparams;
-			GetSamplerParameterfvNative(sampler, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetSamplerParameterfvNative(sampler, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -208,9 +208,9 @@ namespace Hexa.NET.OpenGLES.MESA
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			int pparams;
-			GetSamplerParameterivNative(sampler, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetSamplerParameterivNative(sampler, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -287,11 +287,24 @@ namespace Hexa.NET.OpenGLES.MESA
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
-		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> param)
 		{
-			float pparam;
-			SamplerParameterfvNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (float* pparam0 = param)
+			{
+				SamplerParameterfvNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float param)
+		{
+			fixed (float* pparam0 = &param)
+			{
+				SamplerParameterfvNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -336,11 +349,24 @@ namespace Hexa.NET.OpenGLES.MESA
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
-		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> param)
 		{
-			int pparam;
-			SamplerParameterivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				SamplerParameterivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				SamplerParameterivNative(sampler, pname, pparam0);
+			}
 		}
 
 	}

@@ -41,9 +41,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, out int @params)
 		{
-			int pparams;
-			GetProgramInterfaceivNative(program, programInterface, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetProgramInterfaceivNative(program, programInterface, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -441,9 +441,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
 		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, out int @params)
 		{
-			int pparams;
-			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, &pparams);
-			@params = pparams;
+			int pparam;
+			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

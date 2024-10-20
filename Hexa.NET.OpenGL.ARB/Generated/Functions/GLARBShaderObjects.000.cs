@@ -646,22 +646,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, out float @params)
+		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, Span<float> @params)
 		{
-			float pparams;
-			GetObjectParameterfvARBNative(obj, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetObjectParameterfvARBNative(obj, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, Span<float> @params)
+		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetObjectParameterfvARBNative(obj, pname, pparams);
+				GetObjectParameterfvARBNative(obj, pname, pparams0);
 			}
 		}
 
@@ -688,22 +689,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterivARB(uint obj, GLEnum pname, out int @params)
+		public static void GetObjectParameterivARB(uint obj, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			GetObjectParameterivARBNative(obj, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetObjectParameterivARBNative(obj, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterivARB(uint obj, GLEnum pname, Span<int> @params)
+		public static void GetObjectParameterivARB(uint obj, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetObjectParameterivARBNative(obj, pname, pparams);
+				GetObjectParameterivARBNative(obj, pname, pparams0);
 			}
 		}
 
@@ -934,22 +936,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformfvARB(uint programObj, int location, out float @params)
+		public static void GetUniformfvARB(uint programObj, int location, Span<float> @params)
 		{
-			float pparams;
-			GetUniformfvARBNative(programObj, location, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetUniformfvARBNative(programObj, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformfvARB(uint programObj, int location, Span<float> @params)
+		public static void GetUniformfvARB(uint programObj, int location, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetUniformfvARBNative(programObj, location, pparams);
+				GetUniformfvARBNative(programObj, location, pparams0);
 			}
 		}
 
@@ -976,22 +979,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformivARB(uint programObj, int location, out int @params)
+		public static void GetUniformivARB(uint programObj, int location, Span<int> @params)
 		{
-			int pparams;
-			GetUniformivARBNative(programObj, location, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetUniformivARBNative(programObj, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformivARB(uint programObj, int location, Span<int> @params)
+		public static void GetUniformivARB(uint programObj, int location, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetUniformivARBNative(programObj, location, pparams);
+				GetUniformivARBNative(programObj, location, pparams0);
 			}
 		}
 

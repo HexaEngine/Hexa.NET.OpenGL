@@ -444,9 +444,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			int pparams;
-			GetFramebufferAttachmentParameterivNative(target, attachment, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetFramebufferAttachmentParameterivNative(target, attachment, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -486,9 +486,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
 		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
-			int pparams;
-			GetRenderbufferParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetRenderbufferParameterivNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

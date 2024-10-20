@@ -17,15 +17,108 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void TexParameterIuivNative(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, uint*, void>)funcTable[813])(target, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[813])(target, pname, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		{
+			TexParameterIuivNative(target, pname, @params);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		{
+			fixed (uint* pparams0 = @params)
+			{
+				TexParameterIuivNative(target, pname, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		{
+			fixed (uint* pparams0 = &@params)
+			{
+				TexParameterIuivNative(target, pname, pparams0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void TexParameterfNative(GLTextureTarget target, GLTextureParameterName pname, float param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float, void>)funcTable[814])(target, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float, void>)funcTable[814])(target, pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterf(GLTextureTarget target, GLTextureParameterName pname, float param)
+		{
+			TexParameterfNative(target, pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void TexParameterfvNative(GLTextureTarget target, GLTextureParameterName pname, float* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float*, void>)funcTable[815])(target, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, nint, void>)funcTable[815])(target, pname, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, float* @params)
+		{
+			TexParameterfvNative(target, pname, @params);
+		}
+
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = @params)
 			{
-				TexParameterfvNative(target, pname, pparams);
+				TexParameterfvNative(target, pname, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, ref float @params)
+		{
+			fixed (float* pparams0 = &@params)
+			{
+				TexParameterfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -71,22 +164,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TexParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexParameterivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexParameterivNative(target, pname, pparams);
+				TexParameterivNative(target, pname, pparams0);
 			}
 		}
 
@@ -385,22 +479,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, out int @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TextureParameterIivNative(texture, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TextureParameterIivNative(texture, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TextureParameterIivNative(texture, pname, pparams);
+				TextureParameterIivNative(texture, pname, pparams0);
 			}
 		}
 
@@ -427,22 +522,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, out uint @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			TextureParameterIuivNative(texture, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				TextureParameterIuivNative(texture, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				TextureParameterIuivNative(texture, pname, pparams);
+				TextureParameterIuivNative(texture, pname, pparams0);
 			}
 		}
 
@@ -488,11 +584,24 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, out float param)
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, Span<float> param)
 		{
-			float pparam;
-			TextureParameterfvNative(texture, pname, &pparam);
-			param = pparam;
+			fixed (float* pparam0 = param)
+			{
+				TextureParameterfvNative(texture, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, ref float param)
+		{
+			fixed (float* pparam0 = &param)
+			{
+				TextureParameterfvNative(texture, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -537,11 +646,24 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, out int param)
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, Span<int> param)
 		{
-			int pparam;
-			TextureParameterivNative(texture, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				TextureParameterivNative(texture, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				TextureParameterivNative(texture, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4898,130 +5020,6 @@ namespace Hexa.NET.OpenGL
 		public static void VertexAttrib4f(uint index, float x, float y, float z, float w)
 		{
 			VertexAttrib4fNative(index, x, y, z, w);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fvNative(uint index, float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[968])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[968])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4fv(uint index, float* v)
-		{
-			VertexAttrib4fvNative(index, v);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4fv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				VertexAttrib4fvNative(index, pv0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4fv(uint index, ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				VertexAttrib4fvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ivNative(uint index, int* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[969])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[969])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4iv(uint index, int* v)
-		{
-			VertexAttrib4ivNative(index, v);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4iv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttrib4ivNative(index, pv0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4iv(uint index, ref int v)
-		{
-			fixed (int* pv0 = &v)
-			{
-				VertexAttrib4ivNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[970])(index, x, y, z, w);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[970])(index, x, y, z, w);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4s(uint index, short x, short y, short z, short w)
-		{
-			VertexAttrib4sNative(index, x, y, z, w);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4svNative(uint index, short* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[971])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[971])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4sv(uint index, short* v)
-		{
-			VertexAttrib4svNative(index, v);
 		}
 	}
 }

@@ -58,22 +58,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
-		public static void PointParameterfvEXT(GLPointParameterNameARB pname, out float @params)
+		public static void PointParameterfvEXT(GLPointParameterNameARB pname, Span<float> @params)
 		{
-			float pparams;
-			PointParameterfvEXTNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				PointParameterfvEXTNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_point_parameters</remarks>
-		public static void PointParameterfvEXT(GLPointParameterNameARB pname, Span<float> @params)
+		public static void PointParameterfvEXT(GLPointParameterNameARB pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				PointParameterfvEXTNative(pname, pparams);
+				PointParameterfvEXTNative(pname, pparams0);
 			}
 		}
 

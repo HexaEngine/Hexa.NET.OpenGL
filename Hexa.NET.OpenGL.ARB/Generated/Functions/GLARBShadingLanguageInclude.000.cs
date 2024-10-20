@@ -483,29 +483,6 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, out int @params)
-		{
-			int pparams;
-			GetNamedStringivARBNative(namelen, name, pname, &pparams);
-			@params = pparams;
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, Span<int> @params)
-		{
-			fixed (int* pparams = @params)
-			{
-				GetNamedStringivARBNative(namelen, name, pname, pparams);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
 		public static void GetNamedStringivARB(int namelen, string name, GLEnum pname, int* @params)
 		{
 			byte* pStr0 = null;
@@ -553,6 +530,60 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (byte* pname0 = &name)
 			{
 				GetNamedStringivARBNative(namelen, pname0, pname, @params);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
+		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, Span<int> @params)
+		{
+			fixed (int* pparams0 = @params)
+			{
+				GetNamedStringivARBNative(namelen, name, pname, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
+		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, ref int @params)
+		{
+			fixed (int* pparams0 = &@params)
+			{
+				GetNamedStringivARBNative(namelen, name, pname, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
+		public static void GetNamedStringivARB(int namelen, Span<byte> name, GLEnum pname, Span<int> @params)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (int* pparams1 = @params)
+				{
+					GetNamedStringivARBNative(namelen, pname0, pname, pparams1);
+				}
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
+		public static void GetNamedStringivARB(int namelen, ref byte name, GLEnum pname, ref int @params)
+		{
+			fixed (byte* pname0 = &name)
+			{
+				fixed (int* pparams1 = &@params)
+				{
+					GetNamedStringivARBNative(namelen, pname0, pname, pparams1);
+				}
 			}
 		}
 

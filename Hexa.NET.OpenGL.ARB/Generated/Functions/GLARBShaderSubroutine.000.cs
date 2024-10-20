@@ -293,23 +293,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
+		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, out int values)
 		{
-			fixed (int* pvalues0 = values)
-			{
-				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pvalues0);
-			}
+			int pparam;
+			GetActiveSubroutineUniformivNative(program, shadertype, index, pname, &pparam);
+			values = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, ref int values)
+		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
 		{
-			fixed (int* pvalues0 = &values)
+			fixed (int* pparams = values)
 			{
-				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pvalues0);
+				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pparams);
 			}
 		}
 
@@ -336,23 +335,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
+		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, out int values)
 		{
-			fixed (int* pvalues0 = values)
-			{
-				GetProgramStageivNative(program, shadertype, pname, pvalues0);
-			}
+			int pparam;
+			GetProgramStageivNative(program, shadertype, pname, &pparam);
+			values = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, ref int values)
+		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
 		{
-			fixed (int* pvalues0 = &values)
+			fixed (int* pparams = values)
 			{
-				GetProgramStageivNative(program, shadertype, pname, pvalues0);
+				GetProgramStageivNative(program, shadertype, pname, pparams);
 			}
 		}
 
@@ -535,9 +533,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
 		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, out uint @params)
 		{
-			uint pparams;
-			GetUniformSubroutineuivNative(shadertype, location, &pparams);
-			@params = pparams;
+			uint pparam;
+			GetUniformSubroutineuivNative(shadertype, location, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

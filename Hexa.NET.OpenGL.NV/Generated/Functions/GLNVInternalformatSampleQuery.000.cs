@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
-		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, out int @params)
+		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, Span<int> @params)
 		{
-			int pparams;
-			GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
-		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, Span<int> @params)
+		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, pparams);
+				GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, pparams0);
 			}
 		}
 

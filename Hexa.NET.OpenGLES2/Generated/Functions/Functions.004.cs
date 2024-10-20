@@ -21,6 +21,168 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, string pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			byte* pStr0 = null;
+			int pStrSize0 = 0;
+			if (pEntryPoint != null)
+			{
+				pStrSize0 = Utils.GetByteCountUTF8(pEntryPoint);
+				if (pStrSize0 >= Utils.MaxStackallocSize)
+				{
+					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
+				}
+				else
+				{
+					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
+					pStr0 = pStrStack0;
+				}
+				int pStrOffset0 = Utils.EncodeStringUTF8(pEntryPoint, pStr0, pStrSize0);
+				pStr0[pStrOffset0] = 0;
+			}
+			SpecializeShaderNative(shader, pStr0, numSpecializationConstants, pConstantIndex, pConstantValue);
+			if (pStrSize0 >= Utils.MaxStackallocSize)
+			{
+				Utils.Free(pStr0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
+			{
+				SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		{
+			fixed (uint* ppConstantIndex0 = pConstantIndex)
+			{
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
+		{
+			fixed (uint* ppConstantIndex0 = &pConstantIndex)
+			{
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				fixed (uint* ppConstantIndex1 = pConstantIndex)
+				{
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
+				}
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
+			{
+				fixed (uint* ppConstantIndex1 = &pConstantIndex)
+				{
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
+				}
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
+		{
+			fixed (uint* ppConstantValue0 = pConstantValue)
+			{
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
+		{
+			fixed (uint* ppConstantValue0 = &pConstantValue)
+			{
+				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = pEntryPoint)
+			{
+				fixed (uint* ppConstantValue1 = pConstantValue)
+				{
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, ppConstantValue1);
+				}
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
+		{
+			fixed (byte* ppEntryPoint0 = &pEntryPoint)
+			{
+				fixed (uint* ppConstantValue1 = &pConstantValue)
+				{
+					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, ppConstantValue1);
+				}
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = pConstantIndex)
@@ -317,22 +479,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out float @params)
+		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
 		{
-			float pparams;
-			TexEnvfvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				TexEnvfvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				TexEnvfvNative(target, pname, pparams);
+				TexEnvfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -378,22 +541,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
+		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
-			int pparams;
-			TexEnvivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexEnvivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexEnvivNative(target, pname, pparams);
+				TexEnvivNative(target, pname, pparams0);
 			}
 		}
 
@@ -439,22 +603,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
+		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
-			int pparams;
-			TexEnvxvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexEnvxvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexEnvxvNative(target, pname, pparams);
+				TexEnvxvNative(target, pname, pparams0);
 			}
 		}
 
@@ -639,22 +804,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TexParameterIivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexParameterIivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexParameterIivNative(target, pname, pparams);
+				TexParameterIivNative(target, pname, pparams0);
 			}
 		}
 
@@ -681,22 +847,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			TexParameterIuivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				TexParameterIuivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				TexParameterIuivNative(target, pname, pparams);
+				TexParameterIuivNative(target, pname, pparams0);
 			}
 		}
 
@@ -742,22 +909,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, out float @params)
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
-			float pparams;
-			TexParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				TexParameterfvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				TexParameterfvNative(target, pname, pparams);
+				TexParameterfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -803,22 +971,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TexParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexParameterivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexParameterivNative(target, pname, pparams);
+				TexParameterivNative(target, pname, pparams0);
 			}
 		}
 
@@ -864,22 +1033,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
+		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
-			int pparams;
-			TexParameterxvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexParameterxvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexParameterxvNative(target, pname, pparams);
+				TexParameterxvNative(target, pname, pparams0);
 			}
 		}
 
@@ -1178,22 +1348,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, out int @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TextureParameterIivNative(texture, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TextureParameterIivNative(texture, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TextureParameterIivNative(texture, pname, pparams);
+				TextureParameterIivNative(texture, pname, pparams0);
 			}
 		}
 
@@ -1220,22 +1391,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, out uint @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			TextureParameterIuivNative(texture, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				TextureParameterIuivNative(texture, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				TextureParameterIuivNative(texture, pname, pparams);
+				TextureParameterIuivNative(texture, pname, pparams0);
 			}
 		}
 
@@ -1281,11 +1453,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, out float param)
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, Span<float> param)
 		{
-			float pparam;
-			TextureParameterfvNative(texture, pname, &pparam);
-			param = pparam;
+			fixed (float* pparam0 = param)
+			{
+				TextureParameterfvNative(texture, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, ref float param)
+		{
+			fixed (float* pparam0 = &param)
+			{
+				TextureParameterfvNative(texture, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1330,11 +1515,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, out int param)
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, Span<int> param)
 		{
-			int pparam;
-			TextureParameterivNative(texture, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				TextureParameterivNative(texture, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				TextureParameterivNative(texture, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4822,204 +5020,6 @@ namespace Hexa.NET.OpenGLES
 			fixed (ushort* pv0 = &v)
 			{
 				VertexAttrib4NusvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4bvNative(uint index, sbyte* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[676])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[676])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4bv(uint index, sbyte* v)
-		{
-			VertexAttrib4bvNative(index, v);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4bv(uint index, Span<sbyte> v)
-		{
-			fixed (sbyte* pv0 = v)
-			{
-				VertexAttrib4bvNative(index, pv0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4bv(uint index, ref sbyte v)
-		{
-			fixed (sbyte* pv0 = &v)
-			{
-				VertexAttrib4bvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dNative(uint index, double x, double y, double z, double w)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[677])(index, x, y, z, w);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[677])(index, x, y, z, w);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4d(uint index, double x, double y, double z, double w)
-		{
-			VertexAttrib4dNative(index, x, y, z, w);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dvNative(uint index, double* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[678])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[678])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4dv(uint index, double* v)
-		{
-			VertexAttrib4dvNative(index, v);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4dv(uint index, Span<double> v)
-		{
-			fixed (double* pv0 = v)
-			{
-				VertexAttrib4dvNative(index, pv0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4dv(uint index, ref double v)
-		{
-			fixed (double* pv0 = &v)
-			{
-				VertexAttrib4dvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fNative(uint index, float x, float y, float z, float w)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[679])(index, x, y, z, w);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[679])(index, x, y, z, w);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4f(uint index, float x, float y, float z, float w)
-		{
-			VertexAttrib4fNative(index, x, y, z, w);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fvNative(uint index, float* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[680])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[680])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4fv(uint index, float* v)
-		{
-			VertexAttrib4fvNative(index, v);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4fv(uint index, Span<float> v)
-		{
-			fixed (float* pv0 = v)
-			{
-				VertexAttrib4fvNative(index, pv0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4fv(uint index, ref float v)
-		{
-			fixed (float* pv0 = &v)
-			{
-				VertexAttrib4fvNative(index, pv0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ivNative(uint index, int* v)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[681])(index, v);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[681])(index, (nint)v);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4iv(uint index, int* v)
-		{
-			VertexAttrib4ivNative(index, v);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4iv(uint index, Span<int> v)
-		{
-			fixed (int* pv0 = v)
-			{
-				VertexAttrib4ivNative(index, pv0);
 			}
 		}
 	}

@@ -81,9 +81,9 @@ namespace Hexa.NET.OpenGL.KHR
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformfv(uint program, int location, int bufSize, out float @params)
 		{
-			float pparams;
-			GetnUniformfvNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			float pparam;
+			GetnUniformfvNative(program, location, bufSize, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -121,22 +121,23 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfvKHR(uint program, int location, int bufSize, out float @params)
+		public static void GetnUniformfvKHR(uint program, int location, int bufSize, Span<float> @params)
 		{
-			float pparams;
-			GetnUniformfvKHRNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetnUniformfvKHRNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfvKHR(uint program, int location, int bufSize, Span<float> @params)
+		public static void GetnUniformfvKHR(uint program, int location, int bufSize, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetnUniformfvKHRNative(program, location, bufSize, pparams);
+				GetnUniformfvKHRNative(program, location, bufSize, pparams0);
 			}
 		}
 
@@ -165,9 +166,9 @@ namespace Hexa.NET.OpenGL.KHR
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformiv(uint program, int location, int bufSize, out int @params)
 		{
-			int pparams;
-			GetnUniformivNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			int pparam;
+			GetnUniformivNative(program, location, bufSize, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -205,22 +206,23 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformivKHR(uint program, int location, int bufSize, out int @params)
+		public static void GetnUniformivKHR(uint program, int location, int bufSize, Span<int> @params)
 		{
-			int pparams;
-			GetnUniformivKHRNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetnUniformivKHRNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformivKHR(uint program, int location, int bufSize, Span<int> @params)
+		public static void GetnUniformivKHR(uint program, int location, int bufSize, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetnUniformivKHRNative(program, location, bufSize, pparams);
+				GetnUniformivKHRNative(program, location, bufSize, pparams0);
 			}
 		}
 
@@ -249,9 +251,9 @@ namespace Hexa.NET.OpenGL.KHR
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
 		public static void GetnUniformuiv(uint program, int location, int bufSize, out uint @params)
 		{
-			uint pparams;
-			GetnUniformuivNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			uint pparam;
+			GetnUniformuivNative(program, location, bufSize, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -289,22 +291,23 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuivKHR(uint program, int location, int bufSize, out uint @params)
+		public static void GetnUniformuivKHR(uint program, int location, int bufSize, Span<uint> @params)
 		{
-			uint pparams;
-			GetnUniformuivKHRNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetnUniformuivKHRNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuivKHR(uint program, int location, int bufSize, Span<uint> @params)
+		public static void GetnUniformuivKHR(uint program, int location, int bufSize, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetnUniformuivKHRNative(program, location, bufSize, pparams);
+				GetnUniformuivKHRNative(program, location, bufSize, pparams0);
 			}
 		}
 

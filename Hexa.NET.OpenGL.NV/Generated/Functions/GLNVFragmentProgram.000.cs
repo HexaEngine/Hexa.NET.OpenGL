@@ -166,29 +166,6 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
-		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, out float @params)
-		{
-			float pparams;
-			GetProgramNamedParameterfvNVNative(id, len, name, &pparams);
-			@params = pparams;
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
-		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, Span<float> @params)
-		{
-			fixed (float* pparams = @params)
-			{
-				GetProgramNamedParameterfvNVNative(id, len, name, pparams);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
 		public static void GetProgramNamedParameterfvNV(uint id, int len, string name, float* @params)
 		{
 			byte* pStr0 = null;
@@ -236,6 +213,60 @@ namespace Hexa.NET.OpenGL.NV
 			fixed (byte* pname0 = &name)
 			{
 				GetProgramNamedParameterfvNVNative(id, len, pname0, @params);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
+		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, Span<float> @params)
+		{
+			fixed (float* pparams0 = @params)
+			{
+				GetProgramNamedParameterfvNVNative(id, len, name, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
+		public static void GetProgramNamedParameterfvNV(uint id, int len, byte* name, ref float @params)
+		{
+			fixed (float* pparams0 = &@params)
+			{
+				GetProgramNamedParameterfvNVNative(id, len, name, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
+		public static void GetProgramNamedParameterfvNV(uint id, int len, Span<byte> name, Span<float> @params)
+		{
+			fixed (byte* pname0 = name)
+			{
+				fixed (float* pparams1 = @params)
+				{
+					GetProgramNamedParameterfvNVNative(id, len, pname0, pparams1);
+				}
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_program</remarks>
+		public static void GetProgramNamedParameterfvNV(uint id, int len, ref byte name, ref float @params)
+		{
+			fixed (byte* pname0 = &name)
+			{
+				fixed (float* pparams1 = &@params)
+				{
+					GetProgramNamedParameterfvNVNative(id, len, pname0, pparams1);
+				}
 			}
 		}
 

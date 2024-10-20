@@ -21,11 +21,94 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void LightModelxv(GLLightModelParameter pname, int* param)
+		{
+			LightModelxvNative(pname, param);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void LightModelxv(GLLightModelParameter pname, Span<int> param)
+		{
+			fixed (int* pparam0 = param)
+			{
+				LightModelxvNative(pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void LightModelxv(GLLightModelParameter pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				LightModelxvNative(pname, pparam0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void LightfNative(GLLightName light, GLLightParameter pname, float param)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, float, void>)funcTable[369])(light, pname, param);
+			#else
+			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, float, void>)funcTable[369])(light, pname, param);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void Lightf(GLLightName light, GLLightParameter pname, float param)
+		{
+			LightfNative(light, pname, param);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void LightfvNative(GLLightName light, GLLightParameter pname, float* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, float*, void>)funcTable[370])(light, pname, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, nint, void>)funcTable[370])(light, pname, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void Lightfv(GLLightName light, GLLightParameter pname, float* @params)
+		{
+			LightfvNative(light, pname, @params);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
 		public static void Lightfv(GLLightName light, GLLightParameter pname, Span<float> @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = @params)
 			{
-				LightfvNative(light, pname, pparams);
+				LightfvNative(light, pname, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void Lightfv(GLLightName light, GLLightParameter pname, ref float @params)
+		{
+			fixed (float* pparams0 = &@params)
+			{
+				LightfvNative(light, pname, pparams0);
 			}
 		}
 
@@ -71,22 +154,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Lightxv(GLLightName light, GLLightParameter pname, out int @params)
+		public static void Lightxv(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
-			int pparams;
-			LightxvNative(light, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				LightxvNative(light, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Lightxv(GLLightName light, GLLightParameter pname, Span<int> @params)
+		public static void Lightxv(GLLightName light, GLLightParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				LightxvNative(light, pname, pparams);
+				LightxvNative(light, pname, pparams0);
 			}
 		}
 
@@ -393,22 +477,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, out float @params)
+		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
 		{
-			float pparams;
-			MaterialfvNative(face, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				MaterialfvNative(face, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
+		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				MaterialfvNative(face, pname, pparams);
+				MaterialfvNative(face, pname, pparams0);
 			}
 		}
 
@@ -454,11 +539,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Materialxv(GLTriangleFace face, GLMaterialParameter pname, out int param)
+		public static void Materialxv(GLTriangleFace face, GLMaterialParameter pname, Span<int> param)
 		{
-			int pparam;
-			MaterialxvNative(face, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				MaterialxvNative(face, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.</remarks>
+		public static void Materialxv(GLTriangleFace face, GLMaterialParameter pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				MaterialxvNative(face, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1793,22 +1891,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
 		{
-			float pparams;
-			PointParameterfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				PointParameterfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				PointParameterfvNative(pname, pparams);
+				PointParameterfvNative(pname, pparams0);
 			}
 		}
 
@@ -1854,22 +1953,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
 		{
-			int pparams;
-			PointParameterivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				PointParameterivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				PointParameterivNative(pname, pparams);
+				PointParameterivNative(pname, pparams0);
 			}
 		}
 
@@ -1915,22 +2015,23 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void PointParameterxv(GLPointParameterNameARB pname, out int @params)
+		public static void PointParameterxv(GLPointParameterNameARB pname, Span<int> @params)
 		{
-			int pparams;
-			PointParameterxvNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				PointParameterxvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void PointParameterxv(GLPointParameterNameARB pname, Span<int> @params)
+		public static void PointParameterxv(GLPointParameterNameARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				PointParameterxvNative(pname, pparams);
+				PointParameterxvNative(pname, pparams0);
 			}
 		}
 
@@ -4374,11 +4475,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int param)
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, Span<int> param)
 		{
-			int pparam;
-			SamplerParameterIivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				SamplerParameterIivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				SamplerParameterIivNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4404,11 +4518,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint param)
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, Span<uint> param)
 		{
-			uint pparam;
-			SamplerParameterIuivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (uint* pparam0 = param)
+			{
+				SamplerParameterIuivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, ref uint param)
+		{
+			fixed (uint* pparam0 = &param)
+			{
+				SamplerParameterIuivNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4453,11 +4580,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
-		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> param)
 		{
-			float pparam;
-			SamplerParameterfvNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (float* pparam0 = param)
+			{
+				SamplerParameterfvNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float param)
+		{
+			fixed (float* pparam0 = &param)
+			{
+				SamplerParameterfvNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4502,11 +4642,24 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
-		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> param)
 		{
-			int pparam;
-			SamplerParameterivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				SamplerParameterivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				SamplerParameterivNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4865,164 +5018,6 @@ namespace Hexa.NET.OpenGLES
 			fixed (int* plength0 = &length)
 			{
 				ShaderSourceNative(shader, count, str, plength0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderStorageBlockBindingNative(uint program, uint storageBlockIndex, uint storageBlockBinding)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[526])(program, storageBlockIndex, storageBlockBinding);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[526])(program, storageBlockIndex, storageBlockBinding);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
-		public static void ShaderStorageBlockBinding(uint program, uint storageBlockIndex, uint storageBlockBinding)
-		{
-			ShaderStorageBlockBindingNative(program, storageBlockIndex, storageBlockBinding);
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SpecializeShaderNative(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<uint, byte*, uint, uint*, uint*, void>)funcTable[527])(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue);
-			#else
-			((delegate* unmanaged[Cdecl]<uint, nint, uint, nint, nint, void>)funcTable[527])(shader, (nint)pEntryPoint, numSpecializationConstants, (nint)pConstantIndex, (nint)pConstantValue);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
-		{
-			SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue);
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, string pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
-		{
-			byte* pStr0 = null;
-			int pStrSize0 = 0;
-			if (pEntryPoint != null)
-			{
-				pStrSize0 = Utils.GetByteCountUTF8(pEntryPoint);
-				if (pStrSize0 >= Utils.MaxStackallocSize)
-				{
-					pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-				}
-				else
-				{
-					byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-					pStr0 = pStrStack0;
-				}
-				int pStrOffset0 = Utils.EncodeStringUTF8(pEntryPoint, pStr0, pStrSize0);
-				pStr0[pStrOffset0] = 0;
-			}
-			SpecializeShaderNative(shader, pStr0, numSpecializationConstants, pConstantIndex, pConstantValue);
-			if (pStrSize0 >= Utils.MaxStackallocSize)
-			{
-				Utils.Free(pStr0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
-		{
-			fixed (byte* ppEntryPoint0 = pEntryPoint)
-			{
-				SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, pConstantValue);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
-		{
-			fixed (byte* ppEntryPoint0 = &pEntryPoint)
-			{
-				SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, pConstantIndex, pConstantValue);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
-		{
-			fixed (uint* ppConstantIndex0 = pConstantIndex)
-			{
-				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
-		{
-			fixed (uint* ppConstantIndex0 = &pConstantIndex)
-			{
-				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, ppConstantIndex0, pConstantValue);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
-		{
-			fixed (byte* ppEntryPoint0 = pEntryPoint)
-			{
-				fixed (uint* ppConstantIndex1 = pConstantIndex)
-				{
-					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
-				}
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
-		{
-			fixed (byte* ppEntryPoint0 = &pEntryPoint)
-			{
-				fixed (uint* ppConstantIndex1 = &pConstantIndex)
-				{
-					SpecializeShaderNative(shader, ppEntryPoint0, numSpecializationConstants, ppConstantIndex1, pConstantValue);
-				}
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
-		{
-			fixed (uint* ppConstantValue0 = pConstantValue)
-			{
-				SpecializeShaderNative(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, ppConstantValue0);
 			}
 		}
 	}

@@ -59,22 +59,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformfvEXT(uint program, int location, int bufSize, out float @params)
+		public static void GetnUniformfvEXT(uint program, int location, int bufSize, Span<float> @params)
 		{
-			float pparams;
-			GetnUniformfvEXTNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetnUniformfvEXTNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformfvEXT(uint program, int location, int bufSize, Span<float> @params)
+		public static void GetnUniformfvEXT(uint program, int location, int bufSize, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetnUniformfvEXTNative(program, location, bufSize, pparams);
+				GetnUniformfvEXTNative(program, location, bufSize, pparams0);
 			}
 		}
 
@@ -101,22 +102,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformivEXT(uint program, int location, int bufSize, out int @params)
+		public static void GetnUniformivEXT(uint program, int location, int bufSize, Span<int> @params)
 		{
-			int pparams;
-			GetnUniformivEXTNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetnUniformivEXTNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformivEXT(uint program, int location, int bufSize, Span<int> @params)
+		public static void GetnUniformivEXT(uint program, int location, int bufSize, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetnUniformivEXTNative(program, location, bufSize, pparams);
+				GetnUniformivEXTNative(program, location, bufSize, pparams0);
 			}
 		}
 

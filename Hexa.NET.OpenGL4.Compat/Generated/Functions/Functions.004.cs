@@ -17,6 +17,48 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
+		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
+		{
+			fixed (int* pbasevertex0 = &basevertex)
+			{
+				MultiDrawElementsBaseVertexNative(mode, count, type, indices, drawcount, pbasevertex0);
+			}
+		}
+
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
+		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int drawcount, Span<int> basevertex)
+		{
+			fixed (int* pcount0 = count)
+			{
+				fixed (int* pbasevertex1 = basevertex)
+				{
+					MultiDrawElementsBaseVertexNative(mode, pcount0, type, indices, drawcount, pbasevertex1);
+				}
+			}
+		}
+
+		/// <summary>
+		/// Render multiple sets of primitives by specifying indices of array data elements and an index to apply to each index
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
+		public static void MultiDrawElementsBaseVertex(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int drawcount, ref int basevertex)
+		{
+			fixed (int* pcount0 = &count)
+			{
+				fixed (int* pbasevertex1 = &basevertex)
+				{
+					MultiDrawElementsBaseVertexNative(mode, pcount0, type, indices, drawcount, pbasevertex1);
+				}
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void MultiDrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawcount, int stride)
 		{
@@ -2611,22 +2653,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
 		{
-			float pparams;
-			PointParameterfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				PointParameterfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				PointParameterfvNative(pname, pparams);
+				PointParameterfvNative(pname, pparams0);
 			}
 		}
 
@@ -2672,22 +2715,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
 		{
-			int pparams;
-			PointParameterivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				PointParameterivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				PointParameterivNative(pname, pparams);
+				PointParameterivNative(pname, pparams0);
 			}
 		}
 
@@ -4980,49 +5024,6 @@ namespace Hexa.NET.OpenGL
 			{
 				Utils.Free(pStr0);
 			}
-		}
-
-		/// <summary>
-		/// Push a named debug group into the command stream
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void PushDebugGroup(GLDebugSource source, uint id, int length, Span<byte> message)
-		{
-			fixed (byte* pmessage0 = message)
-			{
-				PushDebugGroupNative(source, id, length, pmessage0);
-			}
-		}
-
-		/// <summary>
-		/// Push a named debug group into the command stream
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void PushDebugGroup(GLDebugSource source, uint id, int length, ref byte message)
-		{
-			fixed (byte* pmessage0 = &message)
-			{
-				PushDebugGroupNative(source, id, length, pmessage0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushMatrixNative()
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<void>)funcTable[664])();
-			#else
-			((delegate* unmanaged[Cdecl]<void>)funcTable[664])();
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void PushMatrix()
-		{
-			PushMatrixNative();
 		}
 	}
 }

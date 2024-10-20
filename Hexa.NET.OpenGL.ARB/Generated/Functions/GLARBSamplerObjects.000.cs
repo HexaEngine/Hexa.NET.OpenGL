@@ -166,9 +166,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			int pparams;
-			GetSamplerParameterIivNative(sampler, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetSamplerParameterIivNative(sampler, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -208,9 +208,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
 		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint @params)
 		{
-			uint pparams;
-			GetSamplerParameterIuivNative(sampler, pname, &pparams);
-			@params = pparams;
+			uint pparam;
+			GetSamplerParameterIuivNative(sampler, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -250,9 +250,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
 		{
-			float pparams;
-			GetSamplerParameterfvNative(sampler, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetSamplerParameterfvNative(sampler, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -292,9 +292,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
 		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
-			int pparams;
-			GetSamplerParameterivNative(sampler, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetSamplerParameterivNative(sampler, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -352,11 +352,24 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int param)
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, Span<int> param)
 		{
-			int pparam;
-			SamplerParameterIivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				SamplerParameterIivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIiv(uint sampler, GLSamplerParameterI pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				SamplerParameterIivNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -382,11 +395,24 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint param)
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, Span<uint> param)
 		{
-			uint pparam;
-			SamplerParameterIuivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (uint* pparam0 = param)
+			{
+				SamplerParameterIuivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
+		public static void SamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, ref uint param)
+		{
+			fixed (uint* pparam0 = &param)
+			{
+				SamplerParameterIuivNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -431,11 +457,24 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
-		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float param)
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> param)
 		{
-			float pparam;
-			SamplerParameterfvNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (float* pparam0 = param)
+			{
+				SamplerParameterfvNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
+		public static void SamplerParameterfv(uint sampler, GLSamplerParameterF pname, ref float param)
+		{
+			fixed (float* pparam0 = &param)
+			{
+				SamplerParameterfvNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -480,11 +519,24 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
-		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int param)
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> param)
 		{
-			int pparam;
-			SamplerParameterivNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				SamplerParameterivNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects<br/>GL_MESA_sampler_objects</remarks>
+		public static void SamplerParameteriv(uint sampler, GLSamplerParameterI pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				SamplerParameterivNative(sampler, pname, pparam0);
+			}
 		}
 
 	}

@@ -98,9 +98,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
 		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, out int @params)
 		{
-			int pparams;
-			GetQueryIndexedivNative(target, index, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetQueryIndexedivNative(target, index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

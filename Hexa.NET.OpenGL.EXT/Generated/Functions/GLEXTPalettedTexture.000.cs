@@ -119,22 +119,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
+		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
-			float pparams;
-			GetColorTableParameterfvEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetColorTableParameterfvEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
+		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetColorTableParameterfvEXTNative(target, pname, pparams);
+				GetColorTableParameterfvEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -161,22 +162,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
+		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
-			int pparams;
-			GetColorTableParameterivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetColorTableParameterivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
+		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetColorTableParameterivEXTNative(target, pname, pparams);
+				GetColorTableParameterivEXTNative(target, pname, pparams0);
 			}
 		}
 

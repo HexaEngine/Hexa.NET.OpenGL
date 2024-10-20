@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformi64vARB(uint program, int location, out long @params)
+		public static void GetUniformi64vARB(uint program, int location, Span<long> @params)
 		{
-			long pparams;
-			GetUniformi64vARBNative(program, location, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetUniformi64vARBNative(program, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformi64vARB(uint program, int location, Span<long> @params)
+		public static void GetUniformi64vARB(uint program, int location, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetUniformi64vARBNative(program, location, pparams);
+				GetUniformi64vARBNative(program, location, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformui64vARB(uint program, int location, out ulong @params)
+		public static void GetUniformui64vARB(uint program, int location, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetUniformui64vARBNative(program, location, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetUniformui64vARBNative(program, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformui64vARB(uint program, int location, Span<ulong> @params)
+		public static void GetUniformui64vARB(uint program, int location, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetUniformui64vARBNative(program, location, pparams);
+				GetUniformui64vARBNative(program, location, pparams0);
 			}
 		}
 
@@ -123,22 +125,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformi64vARB(uint program, int location, int bufSize, out long @params)
+		public static void GetnUniformi64vARB(uint program, int location, int bufSize, Span<long> @params)
 		{
-			long pparams;
-			GetnUniformi64vARBNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetnUniformi64vARBNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformi64vARB(uint program, int location, int bufSize, Span<long> @params)
+		public static void GetnUniformi64vARB(uint program, int location, int bufSize, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetnUniformi64vARBNative(program, location, bufSize, pparams);
+				GetnUniformi64vARBNative(program, location, bufSize, pparams0);
 			}
 		}
 
@@ -165,22 +168,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformui64vARB(uint program, int location, int bufSize, out ulong @params)
+		public static void GetnUniformui64vARB(uint program, int location, int bufSize, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetnUniformui64vARBNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetnUniformui64vARBNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformui64vARB(uint program, int location, int bufSize, Span<ulong> @params)
+		public static void GetnUniformui64vARB(uint program, int location, int bufSize, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetnUniformui64vARBNative(program, location, bufSize, pparams);
+				GetnUniformui64vARBNative(program, location, bufSize, pparams0);
 			}
 		}
 

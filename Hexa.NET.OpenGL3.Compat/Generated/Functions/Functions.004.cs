@@ -17,6 +17,37 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform1uiv(int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				Uniform1uivNative(location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2fNative(int location, float v0, float v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[577])(location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[577])(location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2f(int location, float v0, float v1)
+		{
+			Uniform2fNative(location, v0, v1);
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void Uniform2fvNative(int location, int count, float* value)
 		{

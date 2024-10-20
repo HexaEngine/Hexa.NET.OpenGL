@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, out int @params)
+		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, Span<int> @params)
 		{
-			int pparams;
-			GetVertexAttribIivEXTNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetVertexAttribIivEXTNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, Span<int> @params)
+		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetVertexAttribIivEXTNative(index, pname, pparams);
+				GetVertexAttribIivEXTNative(index, pname, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, out uint @params)
+		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetVertexAttribIuivEXTNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetVertexAttribIuivEXTNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, Span<uint> @params)
+		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetVertexAttribIuivEXTNative(index, pname, pparams);
+				GetVertexAttribIuivEXTNative(index, pname, pparams0);
 			}
 		}
 

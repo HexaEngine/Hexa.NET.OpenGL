@@ -164,22 +164,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, out int @params)
+		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, Span<int> @params)
 		{
-			int pparams;
-			GetFenceivNVNative(fence, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetFenceivNVNative(fence, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, Span<int> @params)
+		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetFenceivNVNative(fence, pname, pparams);
+				GetFenceivNVNative(fence, pname, pparams0);
 			}
 		}
 

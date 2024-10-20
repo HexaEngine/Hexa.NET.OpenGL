@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, out long @params)
+		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, Span<long> @params)
 		{
-			long pparams;
-			GetVertexAttribLi64vNVNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetVertexAttribLi64vNVNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, Span<long> @params)
+		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetVertexAttribLi64vNVNative(index, pname, pparams);
+				GetVertexAttribLi64vNVNative(index, pname, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, out ulong @params)
+		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetVertexAttribLui64vNVNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetVertexAttribLui64vNVNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
+		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetVertexAttribLui64vNVNative(index, pname, pparams);
+				GetVertexAttribLui64vNVNative(index, pname, pparams0);
 			}
 		}
 

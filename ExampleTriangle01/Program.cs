@@ -21,9 +21,9 @@ GLFW.MakeContextCurrent(window);
 
 GL.InitApi(new BindingsContext());
 
-uint _vertexArrayObject;
-uint _vertexBufferObject;
-uint _shaderProgram;
+uint vertexArrayObject;
+uint vertexBufferObject;
+uint shaderProgram;
 
 Vertex[] _vertices =
 [
@@ -35,12 +35,12 @@ Vertex[] _vertices =
 GL.ClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 // Generate and bind a Vertex Array Object (VAO)
-_vertexArrayObject = GL.GenVertexArray();
-GL.BindVertexArray(_vertexArrayObject);
+vertexArrayObject = GL.GenVertexArray();
+GL.BindVertexArray(vertexArrayObject);
 
 // Generate and bind a Vertex Buffer Object (VBO)
-_vertexBufferObject = GL.GenBuffer();
-GL.BindBuffer(GLBufferTargetARB.ArrayBuffer, _vertexBufferObject);
+vertexBufferObject = GL.GenBuffer();
+GL.BindBuffer(GLBufferTargetARB.ArrayBuffer, vertexBufferObject);
 
 GL.BufferData<Vertex>(GLBufferTargetARB.ArrayBuffer, _vertices.Length * Vertex.Size, _vertices, GLBufferUsageARB.StaticDraw);
 
@@ -51,7 +51,7 @@ GL.VertexAttribPointer(1, 4, GLVertexAttribPointerType.Float, false, Vertex.Size
 GL.EnableVertexAttribArray(1);
 
 // Compile shaders and link them into a program
-_shaderProgram = CompileShaders();
+shaderProgram = CompileShaders();
 
 while (GLFW.WindowShouldClose(window) == 0)
 {
@@ -61,8 +61,8 @@ while (GLFW.WindowShouldClose(window) == 0)
     GL.Clear(GLClearBufferMask.ColorBufferBit);
 
     // Use the shader program and bind the VAO
-    GL.UseProgram(_shaderProgram);
-    GL.BindVertexArray(_vertexArrayObject);
+    GL.UseProgram(shaderProgram);
+    GL.BindVertexArray(vertexArrayObject);
 
     // Draw the triangle
     GL.DrawArrays(GLPrimitiveType.Triangles, 0, 3);
@@ -71,9 +71,9 @@ while (GLFW.WindowShouldClose(window) == 0)
     GLFW.SwapBuffers(window);
 }
 
-GL.DeleteBuffer(_vertexBufferObject);
-GL.DeleteVertexArray(_vertexArrayObject);
-GL.DeleteProgram(_shaderProgram);
+GL.DeleteBuffer(vertexBufferObject);
+GL.DeleteVertexArray(vertexArrayObject);
+GL.DeleteProgram(shaderProgram);
 
 GLFW.DestroyWindow(window);
 

@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, out long @params)
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
 		{
-			long pparams;
-			GetQueryObjecti64vEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetQueryObjecti64vEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetQueryObjecti64vEXTNative(id, pname, pparams);
+				GetQueryObjecti64vEXTNative(id, pname, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, out ulong @params)
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetQueryObjectui64vEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetQueryObjectui64vEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetQueryObjectui64vEXTNative(id, pname, pparams);
+				GetQueryObjectui64vEXTNative(id, pname, pparams0);
 			}
 		}
 

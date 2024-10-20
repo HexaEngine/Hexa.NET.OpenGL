@@ -21,6 +21,71 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, ref float @params)
+		{
+			fixed (float* pparams0 = &@params)
+			{
+				NamedProgramLocalParameters4fvEXTNative(program, target, index, count, pparams0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void NamedProgramLocalParametersI4ivEXTNative(uint program, GLProgramTarget target, uint index, int count, int* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int, int*, void>)funcTable[157])(program, target, index, count, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int, nint, void>)funcTable[157])(program, target, index, count, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParametersI4ivEXT(uint program, GLProgramTarget target, uint index, int count, int* @params)
+		{
+			NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, @params);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParametersI4ivEXT(uint program, GLProgramTarget target, uint index, int count, Span<int> @params)
+		{
+			fixed (int* pparams0 = @params)
+			{
+				NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, pparams0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
+		public static void NamedProgramLocalParametersI4ivEXT(uint program, GLProgramTarget target, uint index, int count, ref int @params)
+		{
+			fixed (int* pparams0 = &@params)
+			{
+				NamedProgramLocalParametersI4ivEXTNative(program, target, index, count, pparams0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void NamedProgramLocalParametersI4uivEXTNative(uint program, GLProgramTarget target, uint index, int count, uint* @params)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int, uint*, void>)funcTable[158])(program, target, index, count, @params);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int, nint, void>)funcTable[158])(program, target, index, count, (nint)@params);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
 		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, @params);
@@ -30,22 +95,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, out uint @params)
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, Span<uint> @params)
 		{
-			uint pparams;
-			NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, Span<uint> @params)
+		public static void NamedProgramLocalParametersI4uivEXT(uint program, GLProgramTarget target, uint index, int count, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, pparams);
+				NamedProgramLocalParametersI4uivEXTNative(program, target, index, count, pparams0);
 			}
 		}
 
@@ -2131,22 +2197,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TextureParameterIivEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TextureParameterIivEXTNative(texture, target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TextureParameterIivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TextureParameterIivEXTNative(texture, target, pname, pparams);
+				TextureParameterIivEXTNative(texture, target, pname, pparams0);
 			}
 		}
 
@@ -2173,22 +2240,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out uint @params)
+		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			TextureParameterIuivEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				TextureParameterIuivEXTNative(texture, target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		public static void TextureParameterIuivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				TextureParameterIuivEXTNative(texture, target, pname, pparams);
+				TextureParameterIuivEXTNative(texture, target, pname, pparams0);
 			}
 		}
 
@@ -2234,22 +2302,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out float @params)
+		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
-			float pparams;
-			TextureParameterfvEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				TextureParameterfvEXTNative(texture, target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		public static void TextureParameterfvEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				TextureParameterfvEXTNative(texture, target, pname, pparams);
+				TextureParameterfvEXTNative(texture, target, pname, pparams0);
 			}
 		}
 
@@ -2295,22 +2364,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TextureParameterivEXTNative(texture, target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TextureParameterivEXTNative(texture, target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TextureParameterivEXT(uint texture, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TextureParameterivEXTNative(texture, target, pname, pparams);
+				TextureParameterivEXTNative(texture, target, pname, pparams0);
 			}
 		}
 

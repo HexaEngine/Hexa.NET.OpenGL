@@ -245,22 +245,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, out float @params)
+		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, Span<float> @params)
 		{
-			float pparams;
-			ExecuteProgramNVNative(target, id, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ExecuteProgramNVNative(target, id, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, Span<float> @params)
+		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ExecuteProgramNVNative(target, id, pparams);
+				ExecuteProgramNVNative(target, id, pparams0);
 			}
 		}
 
@@ -384,22 +385,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, out float @params)
+		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<float> @params)
 		{
-			float pparams;
-			GetProgramParameterfvNVNative(target, index, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetProgramParameterfvNVNative(target, index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<float> @params)
+		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetProgramParameterfvNVNative(target, index, pname, pparams);
+				GetProgramParameterfvNVNative(target, index, pname, pparams0);
 			}
 		}
 
@@ -499,22 +501,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, out int @params)
+		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, Span<int> @params)
 		{
-			int pparams;
-			GetProgramivNVNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetProgramivNVNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, Span<int> @params)
+		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetProgramivNVNative(id, pname, pparams);
+				GetProgramivNVNative(id, pname, pparams0);
 			}
 		}
 
@@ -541,22 +544,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, out int @params)
+		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, Span<int> @params)
 		{
-			int pparams;
-			GetTrackMatrixivNVNative(target, address, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetTrackMatrixivNVNative(target, address, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, Span<int> @params)
+		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetTrackMatrixivNVNative(target, address, pname, pparams);
+				GetTrackMatrixivNVNative(target, address, pname, pparams0);
 			}
 		}
 
@@ -645,22 +649,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, out float @params)
+		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, Span<float> @params)
 		{
-			float pparams;
-			GetVertexAttribfvNVNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetVertexAttribfvNVNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, Span<float> @params)
+		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetVertexAttribfvNVNative(index, pname, pparams);
+				GetVertexAttribfvNVNative(index, pname, pparams0);
 			}
 		}
 
@@ -687,22 +692,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, out int @params)
+		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, Span<int> @params)
 		{
-			int pparams;
-			GetVertexAttribivNVNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetVertexAttribivNVNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, Span<int> @params)
+		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetVertexAttribivNVNative(index, pname, pparams);
+				GetVertexAttribivNVNative(index, pname, pparams0);
 			}
 		}
 

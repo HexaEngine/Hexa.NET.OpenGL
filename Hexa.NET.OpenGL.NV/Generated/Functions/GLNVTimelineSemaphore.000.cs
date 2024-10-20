@@ -82,22 +82,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, out int @params)
+		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetSemaphoreParameterivNVNative(semaphore, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetSemaphoreParameterivNVNative(semaphore, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
+		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetSemaphoreParameterivNVNative(semaphore, pname, pparams);
+				GetSemaphoreParameterivNVNative(semaphore, pname, pparams0);
 			}
 		}
 
@@ -124,22 +125,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, out int @params)
+		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			SemaphoreParameterivNVNative(semaphore, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				SemaphoreParameterivNVNative(semaphore, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
+		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				SemaphoreParameterivNVNative(semaphore, pname, pparams);
+				SemaphoreParameterivNVNative(semaphore, pname, pparams0);
 			}
 		}
 

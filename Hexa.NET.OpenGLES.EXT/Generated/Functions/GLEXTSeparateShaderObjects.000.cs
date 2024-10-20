@@ -426,22 +426,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_shader_objects</remarks>
-		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, out int @params)
+		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetProgramPipelineivEXTNative(pipeline, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetProgramPipelineivEXTNative(pipeline, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_separate_shader_objects</remarks>
-		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
+		public static void GetProgramPipelineivEXT(uint pipeline, GLPipelineParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetProgramPipelineivEXTNative(pipeline, pname, pparams);
+				GetProgramPipelineivEXTNative(pipeline, pname, pparams0);
 			}
 		}
 

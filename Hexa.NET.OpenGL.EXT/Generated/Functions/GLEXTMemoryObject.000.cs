@@ -153,22 +153,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, out int @params)
+		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetMemoryObjectParameterivEXTNative(memoryObject, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetMemoryObjectParameterivEXTNative(memoryObject, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
+		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetMemoryObjectParameterivEXTNative(memoryObject, pname, pparams);
+				GetMemoryObjectParameterivEXTNative(memoryObject, pname, pparams0);
 			}
 		}
 
@@ -361,22 +362,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, out int @params)
+		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			MemoryObjectParameterivEXTNative(memoryObject, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				MemoryObjectParameterivEXTNative(memoryObject, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
+		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				MemoryObjectParameterivEXTNative(memoryObject, pname, pparams);
+				MemoryObjectParameterivEXTNative(memoryObject, pname, pparams0);
 			}
 		}
 

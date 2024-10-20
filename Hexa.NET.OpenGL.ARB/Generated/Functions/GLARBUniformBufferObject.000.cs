@@ -206,9 +206,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, out int @params)
 		{
-			int pparams;
-			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -375,9 +375,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, out int @params)
 		{
-			int pparams;
-			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -439,23 +439,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
+		public static void GetIntegeri_v(GLGetPName target, uint index, out int data)
 		{
-			fixed (int* pdata0 = data)
-			{
-				GetIntegeri_vNative(target, index, pdata0);
-			}
+			int pparam;
+			GetIntegeri_vNative(target, index, &pparam);
+			data = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void GetIntegeri_v(GLGetPName target, uint index, ref int data)
+		public static void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
 		{
-			fixed (int* pdata0 = &data)
+			fixed (int* pparams = data)
 			{
-				GetIntegeri_vNative(target, index, pdata0);
+				GetIntegeri_vNative(target, index, pparams);
 			}
 		}
 

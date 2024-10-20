@@ -79,22 +79,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
+		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
 		{
-			float pparams;
-			GetHistogramParameterfvEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetHistogramParameterfvEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
+		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetHistogramParameterfvEXTNative(target, pname, pparams);
+				GetHistogramParameterfvEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -121,22 +122,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
+		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
-			int pparams;
-			GetHistogramParameterivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetHistogramParameterivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
+		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetHistogramParameterivEXTNative(target, pname, pparams);
+				GetHistogramParameterivEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -203,22 +205,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
+		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
 		{
-			float pparams;
-			GetMinmaxParameterfvEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetMinmaxParameterfvEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
+		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetMinmaxParameterfvEXTNative(target, pname, pparams);
+				GetMinmaxParameterfvEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -245,22 +248,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
+		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
 		{
-			int pparams;
-			GetMinmaxParameterivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetMinmaxParameterivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
+		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetMinmaxParameterivEXTNative(target, pname, pparams);
+				GetMinmaxParameterivEXTNative(target, pname, pparams0);
 			}
 		}
 

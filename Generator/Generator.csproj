@@ -106,4 +106,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Steps\" />
+  </ItemGroup>
+
 </Project>

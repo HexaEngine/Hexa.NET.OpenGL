@@ -244,22 +244,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
+		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
 		{
-			int pparams;
-			GetBufferParameterivARBNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetBufferParameterivARBNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
+		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetBufferParameterivARBNative(target, pname, pparams);
+				GetBufferParameterivARBNative(target, pname, pparams0);
 			}
 		}
 

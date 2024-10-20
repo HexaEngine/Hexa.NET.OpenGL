@@ -158,22 +158,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, out float @params)
+		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
 		{
-			float pparams;
-			GetVideoCaptureStreamfvNVNative(videoCaptureSlot, stream, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetVideoCaptureStreamfvNVNative(videoCaptureSlot, stream, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
+		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetVideoCaptureStreamfvNVNative(videoCaptureSlot, stream, pname, pparams);
+				GetVideoCaptureStreamfvNVNative(videoCaptureSlot, stream, pname, pparams0);
 			}
 		}
 
@@ -200,22 +201,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, out int @params)
+		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			GetVideoCaptureStreamivNVNative(videoCaptureSlot, stream, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetVideoCaptureStreamivNVNative(videoCaptureSlot, stream, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
+		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetVideoCaptureStreamivNVNative(videoCaptureSlot, stream, pname, pparams);
+				GetVideoCaptureStreamivNVNative(videoCaptureSlot, stream, pname, pparams0);
 			}
 		}
 
@@ -242,22 +244,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, out int @params)
+		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			GetVideoCaptureivNVNative(videoCaptureSlot, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetVideoCaptureivNVNative(videoCaptureSlot, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, Span<int> @params)
+		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetVideoCaptureivNVNative(videoCaptureSlot, pname, pparams);
+				GetVideoCaptureivNVNative(videoCaptureSlot, pname, pparams0);
 			}
 		}
 
@@ -431,22 +434,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, out float @params)
+		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
 		{
-			float pparams;
-			VideoCaptureStreamParameterfvNVNative(videoCaptureSlot, stream, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				VideoCaptureStreamParameterfvNVNative(videoCaptureSlot, stream, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
+		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				VideoCaptureStreamParameterfvNVNative(videoCaptureSlot, stream, pname, pparams);
+				VideoCaptureStreamParameterfvNVNative(videoCaptureSlot, stream, pname, pparams0);
 			}
 		}
 
@@ -473,22 +477,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, out int @params)
+		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			VideoCaptureStreamParameterivNVNative(videoCaptureSlot, stream, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				VideoCaptureStreamParameterivNVNative(videoCaptureSlot, stream, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
+		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				VideoCaptureStreamParameterivNVNative(videoCaptureSlot, stream, pname, pparams);
+				VideoCaptureStreamParameterivNVNative(videoCaptureSlot, stream, pname, pparams0);
 			}
 		}
 

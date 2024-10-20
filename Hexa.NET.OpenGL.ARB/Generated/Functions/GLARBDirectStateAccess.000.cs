@@ -1026,9 +1026,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, out long @params)
 		{
-			long pparams;
-			GetNamedBufferParameteri64vNative(buffer, pname, &pparams);
-			@params = pparams;
+			long pparam;
+			GetNamedBufferParameteri64vNative(buffer, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1068,9 +1068,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, out int @params)
 		{
-			int pparams;
-			GetNamedBufferParameterivNative(buffer, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetNamedBufferParameterivNative(buffer, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1169,9 +1169,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
-			int pparams;
-			GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1216,6 +1216,18 @@ namespace Hexa.NET.OpenGL.ARB
 			param = pparam;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, Span<int> param)
+		{
+			fixed (int* pparams = param)
+			{
+				GetNamedFramebufferParameterivNative(framebuffer, pname, pparams);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetNamedRenderbufferParameterivNative(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
 		{
@@ -1241,9 +1253,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, out int @params)
 		{
-			int pparams;
-			GetNamedRenderbufferParameterivNative(renderbuffer, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetNamedRenderbufferParameterivNative(renderbuffer, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1399,9 +1411,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetTextureLevelParameterfv(uint texture, int level, GLGetTextureParameter pname, out float @params)
 		{
-			float pparams;
-			GetTextureLevelParameterfvNative(texture, level, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetTextureLevelParameterfvNative(texture, level, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1441,9 +1453,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetTextureLevelParameteriv(uint texture, int level, GLGetTextureParameter pname, out int @params)
 		{
-			int pparams;
-			GetTextureLevelParameterivNative(texture, level, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetTextureLevelParameterivNative(texture, level, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1483,9 +1495,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetTextureParameterIiv(uint texture, GLGetTextureParameter pname, out int @params)
 		{
-			int pparams;
-			GetTextureParameterIivNative(texture, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetTextureParameterIivNative(texture, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1525,9 +1537,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetTextureParameterIuiv(uint texture, GLGetTextureParameter pname, out uint @params)
 		{
-			uint pparams;
-			GetTextureParameterIuivNative(texture, pname, &pparams);
-			@params = pparams;
+			uint pparam;
+			GetTextureParameterIuivNative(texture, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1567,9 +1579,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetTextureParameterfv(uint texture, GLGetTextureParameter pname, out float @params)
 		{
-			float pparams;
-			GetTextureParameterfvNative(texture, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetTextureParameterfvNative(texture, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1609,9 +1621,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
 		public static void GetTextureParameteriv(uint texture, GLGetTextureParameter pname, out int @params)
 		{
-			int pparams;
-			GetTextureParameterivNative(texture, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetTextureParameterivNative(texture, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1656,6 +1668,18 @@ namespace Hexa.NET.OpenGL.ARB
 			param = pparam;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetTransformFeedbacki64_v(uint xfb, GLTransformFeedbackPName pname, uint index, Span<long> param)
+		{
+			fixed (long* pparams = param)
+			{
+				GetTransformFeedbacki64_vNative(xfb, pname, index, pparams);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetTransformFeedbacki_vNative(uint xfb, GLTransformFeedbackPName pname, uint index, int* param)
 		{
@@ -1684,6 +1708,18 @@ namespace Hexa.NET.OpenGL.ARB
 			int pparam;
 			GetTransformFeedbacki_vNative(xfb, pname, index, &pparam);
 			param = pparam;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetTransformFeedbacki_v(uint xfb, GLTransformFeedbackPName pname, uint index, Span<int> param)
+		{
+			fixed (int* pparams = param)
+			{
+				GetTransformFeedbacki_vNative(xfb, pname, index, pparams);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1716,6 +1752,18 @@ namespace Hexa.NET.OpenGL.ARB
 			param = pparam;
 		}
 
+		/// <summary>
+		/// Query the state of a transform feedback object.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetTransformFeedbackiv(uint xfb, GLTransformFeedbackPName pname, Span<int> param)
+		{
+			fixed (int* pparams = param)
+			{
+				GetTransformFeedbackivNative(xfb, pname, pparams);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetVertexArrayIndexed64ivNative(uint vaobj, uint index, GLVertexArrayPName pname, long* param)
 		{
@@ -1744,6 +1792,18 @@ namespace Hexa.NET.OpenGL.ARB
 			long pparam;
 			GetVertexArrayIndexed64ivNative(vaobj, index, pname, &pparam);
 			param = pparam;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetVertexArrayIndexed64iv(uint vaobj, uint index, GLVertexArrayPName pname, Span<long> param)
+		{
+			fixed (long* pparams = param)
+			{
+				GetVertexArrayIndexed64ivNative(vaobj, index, pname, pparams);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1776,6 +1836,18 @@ namespace Hexa.NET.OpenGL.ARB
 			param = pparam;
 		}
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetVertexArrayIndexediv(uint vaobj, uint index, GLVertexArrayPName pname, Span<int> param)
+		{
+			fixed (int* pparams = param)
+			{
+				GetVertexArrayIndexedivNative(vaobj, index, pname, pparams);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetVertexArrayivNative(uint vaobj, GLVertexArrayPName pname, int* param)
 		{
@@ -1804,6 +1876,18 @@ namespace Hexa.NET.OpenGL.ARB
 			int pparam;
 			GetVertexArrayivNative(vaobj, pname, &pparam);
 			param = pparam;
+		}
+
+		/// <summary>
+		/// Retrieve parameters of a vertex array object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void GetVertexArrayiv(uint vaobj, GLVertexArrayPName pname, Span<int> param)
+		{
+			fixed (int* pparams = param)
+			{
+				GetVertexArrayivNative(vaobj, pname, pparams);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2236,22 +2320,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, out int @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TextureParameterIivNative(texture, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TextureParameterIivNative(texture, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
+		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TextureParameterIivNative(texture, pname, pparams);
+				TextureParameterIivNative(texture, pname, pparams0);
 			}
 		}
 
@@ -2278,22 +2363,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, out uint @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			TextureParameterIuivNative(texture, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				TextureParameterIuivNative(texture, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
+		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				TextureParameterIuivNative(texture, pname, pparams);
+				TextureParameterIuivNative(texture, pname, pparams0);
 			}
 		}
 
@@ -2339,11 +2425,24 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, out float param)
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, Span<float> param)
 		{
-			float pparam;
-			TextureParameterfvNative(texture, pname, &pparam);
-			param = pparam;
+			fixed (float* pparam0 = param)
+			{
+				TextureParameterfvNative(texture, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, ref float param)
+		{
+			fixed (float* pparam0 = &param)
+			{
+				TextureParameterfvNative(texture, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2388,11 +2487,24 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, out int param)
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, Span<int> param)
 		{
-			int pparam;
-			TextureParameterivNative(texture, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				TextureParameterivNative(texture, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
+		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				TextureParameterivNative(texture, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]

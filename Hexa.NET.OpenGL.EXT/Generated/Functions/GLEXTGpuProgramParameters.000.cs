@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, out float @params)
+		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
-			float pparams;
-			ProgramEnvParameters4fvEXTNative(target, index, count, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ProgramEnvParameters4fvEXTNative(target, index, count, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
+		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ProgramEnvParameters4fvEXTNative(target, index, count, pparams);
+				ProgramEnvParameters4fvEXTNative(target, index, count, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, out float @params)
+		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
-			float pparams;
-			ProgramLocalParameters4fvEXTNative(target, index, count, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ProgramLocalParameters4fvEXTNative(target, index, count, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
+		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ProgramLocalParameters4fvEXTNative(target, index, count, pparams);
+				ProgramLocalParameters4fvEXTNative(target, index, count, pparams0);
 			}
 		}
 

@@ -45,6 +45,9 @@
         public Alias Alias { get; set; }
 
         [XmlIgnore]
+        public string Name { get => Proto.Name; set => Proto.Name = value; }
+
+        [XmlIgnore]
         public HashSet<string> SupportedVersions { get; } = [];
 
         [XmlIgnore]

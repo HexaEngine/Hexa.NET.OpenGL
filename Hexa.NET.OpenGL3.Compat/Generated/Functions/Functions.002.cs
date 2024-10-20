@@ -17,32 +17,6 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
-		/// <summary>
-		/// Retrieve the index of a named uniform block
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static uint GetUniformBlockIndex(uint program, Span<byte> uniformBlockName)
-		{
-			fixed (byte* puniformBlockName0 = uniformBlockName)
-			{
-				uint ret = GetUniformBlockIndexNative(program, puniformBlockName0);
-				return ret;
-			}
-		}
-
-		/// <summary>
-		/// Retrieve the index of a named uniform block
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static uint GetUniformBlockIndex(uint program, ref byte uniformBlockName)
-		{
-			fixed (byte* puniformBlockName0 = &uniformBlockName)
-			{
-				uint ret = GetUniformBlockIndexNative(program, puniformBlockName0);
-				return ret;
-			}
-		}
-
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void GetUniformIndicesNative(uint program, int uniformCount, byte** uniformNames, uint* uniformIndices)
 		{
@@ -188,9 +162,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetUniformfv(uint program, int location, out float @params)
 		{
-			float pparams;
-			GetUniformfvNative(program, location, &pparams);
-			@params = pparams;
+			float pparam;
+			GetUniformfvNative(program, location, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -230,9 +204,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetUniformiv(uint program, int location, out int @params)
 		{
-			int pparams;
-			GetUniformivNative(program, location, &pparams);
-			@params = pparams;
+			int pparam;
+			GetUniformivNative(program, location, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -272,9 +246,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetUniformuiv(uint program, int location, out uint @params)
 		{
-			uint pparams;
-			GetUniformuivNative(program, location, &pparams);
-			@params = pparams;
+			uint pparam;
+			GetUniformuivNative(program, location, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -314,9 +288,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetVertexAttribIiv(uint index, GLVertexAttribEnum pname, out int @params)
 		{
-			int pparams;
-			GetVertexAttribIivNative(index, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetVertexAttribIivNative(index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -356,9 +330,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetVertexAttribIuiv(uint index, GLVertexAttribEnum pname, out uint @params)
 		{
-			uint pparams;
-			GetVertexAttribIuivNative(index, pname, &pparams);
-			@params = pparams;
+			uint pparam;
+			GetVertexAttribIuivNative(index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -415,23 +389,22 @@ namespace Hexa.NET.OpenGL
 		/// Return a generic vertex attribute parameter
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetVertexAttribdv(uint index, GLVertexAttribPropertyARB pname, Span<double> @params)
+		public static void GetVertexAttribdv(uint index, GLVertexAttribPropertyARB pname, out double @params)
 		{
-			fixed (double* pparams0 = @params)
-			{
-				GetVertexAttribdvNative(index, pname, pparams0);
-			}
+			double pparam;
+			GetVertexAttribdvNative(index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
 		/// Return a generic vertex attribute parameter
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetVertexAttribdv(uint index, GLVertexAttribPropertyARB pname, ref double @params)
+		public static void GetVertexAttribdv(uint index, GLVertexAttribPropertyARB pname, Span<double> @params)
 		{
-			fixed (double* pparams0 = &@params)
+			fixed (double* pparams = @params)
 			{
-				GetVertexAttribdvNative(index, pname, pparams0);
+				GetVertexAttribdvNative(index, pname, pparams);
 			}
 		}
 
@@ -460,9 +433,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetVertexAttribfv(uint index, GLVertexAttribPropertyARB pname, out float @params)
 		{
-			float pparams;
-			GetVertexAttribfvNative(index, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetVertexAttribfvNative(index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -502,9 +475,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetVertexAttribiv(uint index, GLVertexAttribPropertyARB pname, out int @params)
 		{
-			int pparams;
-			GetVertexAttribivNative(index, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetVertexAttribivNative(index, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -1298,22 +1271,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void LightModelfv(GLLightModelParameter pname, out float @params)
+		public static void LightModelfv(GLLightModelParameter pname, Span<float> @params)
 		{
-			float pparams;
-			LightModelfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				LightModelfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void LightModelfv(GLLightModelParameter pname, Span<float> @params)
+		public static void LightModelfv(GLLightModelParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				LightModelfvNative(pname, pparams);
+				LightModelfvNative(pname, pparams0);
 			}
 		}
 
@@ -1359,22 +1333,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void LightModeliv(GLLightModelParameter pname, out int @params)
+		public static void LightModeliv(GLLightModelParameter pname, Span<int> @params)
 		{
-			int pparams;
-			LightModelivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				LightModelivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void LightModeliv(GLLightModelParameter pname, Span<int> @params)
+		public static void LightModeliv(GLLightModelParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				LightModelivNative(pname, pparams);
+				LightModelivNative(pname, pparams0);
 			}
 		}
 
@@ -1420,22 +1395,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Lightfv(GLLightName light, GLLightParameter pname, out float @params)
+		public static void Lightfv(GLLightName light, GLLightParameter pname, Span<float> @params)
 		{
-			float pparams;
-			LightfvNative(light, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				LightfvNative(light, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Lightfv(GLLightName light, GLLightParameter pname, Span<float> @params)
+		public static void Lightfv(GLLightName light, GLLightParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				LightfvNative(light, pname, pparams);
+				LightfvNative(light, pname, pparams0);
 			}
 		}
 
@@ -1481,22 +1457,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Lightiv(GLLightName light, GLLightParameter pname, out int @params)
+		public static void Lightiv(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
-			int pparams;
-			LightivNative(light, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				LightivNative(light, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Lightiv(GLLightName light, GLLightParameter pname, Span<int> @params)
+		public static void Lightiv(GLLightName light, GLLightParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				LightivNative(light, pname, pparams);
+				LightivNative(light, pname, pparams0);
 			}
 		}
 
@@ -2135,22 +2112,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, out float @params)
+		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
 		{
-			float pparams;
-			MaterialfvNative(face, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				MaterialfvNative(face, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
+		public static void Materialfv(GLTriangleFace face, GLMaterialParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				MaterialfvNative(face, pname, pparams);
+				MaterialfvNative(face, pname, pparams0);
 			}
 		}
 
@@ -2196,22 +2174,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, out int @params)
+		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
 		{
-			int pparams;
-			MaterialivNative(face, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				MaterialivNative(face, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
+		public static void Materialiv(GLTriangleFace face, GLMaterialParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				MaterialivNative(face, pname, pparams);
+				MaterialivNative(face, pname, pparams0);
 			}
 		}
 
@@ -4618,22 +4597,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
 		{
-			float pparams;
-			PointParameterfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				PointParameterfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				PointParameterfvNative(pname, pparams);
+				PointParameterfvNative(pname, pparams0);
 			}
 		}
 
@@ -4679,22 +4659,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
 		{
-			int pparams;
-			PointParameterivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				PointParameterivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				PointParameterivNative(pname, pparams);
+				PointParameterivNative(pname, pparams0);
 			}
 		}
 
@@ -5018,6 +4999,25 @@ namespace Hexa.NET.OpenGL
 					PrioritizeTexturesNative(n, ptextures0, ppriorities1);
 				}
 			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void ProvokingVertexNative(GLVertexProvokingMode mode)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[418])(mode);
+			#else
+			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[418])(mode);
+			#endif
+		}
+
+		/// <summary>
+		/// Specifiy the vertex to be used as the source of data for flat shaded varyings
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_provoking_vertex</remarks>
+		public static void ProvokingVertex(GLVertexProvokingMode mode)
+		{
+			ProvokingVertexNative(mode);
 		}
 	}
 }

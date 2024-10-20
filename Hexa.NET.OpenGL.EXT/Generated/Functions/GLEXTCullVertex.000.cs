@@ -82,22 +82,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterfvEXT(GLCullParameterEXT pname, out float @params)
+		public static void CullParameterfvEXT(GLCullParameterEXT pname, Span<float> @params)
 		{
-			float pparams;
-			CullParameterfvEXTNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				CullParameterfvEXTNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterfvEXT(GLCullParameterEXT pname, Span<float> @params)
+		public static void CullParameterfvEXT(GLCullParameterEXT pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				CullParameterfvEXTNative(pname, pparams);
+				CullParameterfvEXTNative(pname, pparams0);
 			}
 		}
 

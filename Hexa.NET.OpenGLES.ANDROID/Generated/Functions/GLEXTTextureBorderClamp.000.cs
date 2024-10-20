@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, out int @params)
+		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, Span<int> @params)
 		{
-			int pparams;
-			GetSamplerParameterIivEXTNative(sampler, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetSamplerParameterIivEXTNative(sampler, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		public static void GetSamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetSamplerParameterIivEXTNative(sampler, pname, pparams);
+				GetSamplerParameterIivEXTNative(sampler, pname, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, out uint @params)
+		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetSamplerParameterIuivEXTNative(sampler, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetSamplerParameterIuivEXTNative(sampler, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
+		public static void GetSamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetSamplerParameterIuivEXTNative(sampler, pname, pparams);
+				GetSamplerParameterIuivEXTNative(sampler, pname, pparams0);
 			}
 		}
 
@@ -123,22 +125,23 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
+		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
-			int pparams;
-			GetTexParameterIivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetTexParameterIivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetTexParameterIivEXTNative(target, pname, pparams);
+				GetTexParameterIivEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -165,22 +168,23 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, out uint @params)
+		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetTexParameterIuivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetTexParameterIuivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetTexParameterIuivEXTNative(target, pname, pparams);
+				GetTexParameterIuivEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -207,11 +211,24 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void SamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, out int param)
+		public static void SamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, Span<int> param)
 		{
-			int pparam;
-			SamplerParameterIivEXTNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (int* pparam0 = param)
+			{
+				SamplerParameterIivEXTNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
+		public static void SamplerParameterIivEXT(uint sampler, GLSamplerParameterI pname, ref int param)
+		{
+			fixed (int* pparam0 = &param)
+			{
+				SamplerParameterIivEXTNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -237,11 +254,24 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void SamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, out uint param)
+		public static void SamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, Span<uint> param)
 		{
-			uint pparam;
-			SamplerParameterIuivEXTNative(sampler, pname, &pparam);
-			param = pparam;
+			fixed (uint* pparam0 = param)
+			{
+				SamplerParameterIuivEXTNative(sampler, pname, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_border_clamp</remarks>
+		public static void SamplerParameterIuivEXT(uint sampler, GLSamplerParameterI pname, ref uint param)
+		{
+			fixed (uint* pparam0 = &param)
+			{
+				SamplerParameterIuivEXTNative(sampler, pname, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -267,22 +297,23 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TexParameterIivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexParameterIivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexParameterIivEXTNative(target, pname, pparams);
+				TexParameterIivEXTNative(target, pname, pparams0);
 			}
 		}
 
@@ -309,22 +340,23 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, out uint @params)
+		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			TexParameterIuivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				TexParameterIuivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				TexParameterIuivEXTNative(target, pname, pparams);
+				TexParameterIuivEXTNative(target, pname, pparams0);
 			}
 		}
 

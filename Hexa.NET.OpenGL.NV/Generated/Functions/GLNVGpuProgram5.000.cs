@@ -39,11 +39,24 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, out uint param)
+		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, Span<uint> param)
 		{
-			uint pparam;
-			GetProgramSubroutineParameteruivNVNative(target, index, &pparam);
-			param = pparam;
+			fixed (uint* pparam0 = param)
+			{
+				GetProgramSubroutineParameteruivNVNative(target, index, pparam0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
+		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, ref uint param)
+		{
+			fixed (uint* pparam0 = &param)
+			{
+				GetProgramSubroutineParameteruivNVNative(target, index, pparam0);
+			}
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,22 +82,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, out uint @params)
+		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, Span<uint> @params)
 		{
-			uint pparams;
-			ProgramSubroutineParametersuivNVNative(target, count, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				ProgramSubroutineParametersuivNVNative(target, count, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, Span<uint> @params)
+		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				ProgramSubroutineParametersuivNVNative(target, count, pparams);
+				ProgramSubroutineParametersuivNVNative(target, count, pparams0);
 			}
 		}
 

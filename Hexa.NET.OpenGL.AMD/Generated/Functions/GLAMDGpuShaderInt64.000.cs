@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformi64vNV(uint program, int location, out long @params)
+		public static void GetUniformi64vNV(uint program, int location, Span<long> @params)
 		{
-			long pparams;
-			GetUniformi64vNVNative(program, location, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetUniformi64vNVNative(program, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformi64vNV(uint program, int location, Span<long> @params)
+		public static void GetUniformi64vNV(uint program, int location, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetUniformi64vNVNative(program, location, pparams);
+				GetUniformi64vNVNative(program, location, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, out ulong @params)
+		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetUniformui64vNVNative(program, location, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetUniformui64vNVNative(program, location, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
+		public static void GetUniformui64vNV(uint program, int location, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetUniformui64vNVNative(program, location, pparams);
+				GetUniformui64vNVNative(program, location, pparams0);
 			}
 		}
 

@@ -3,8 +3,11 @@ using HexaGen;
 using HexaGen.Core;
 using HexaGen.Core.CSharp;
 using HexaGen.Metadata;
+using System.Collections.Generic;
+using System.Security.AccessControl;
 using System.Text;
 using System.Text.Json;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 internal class Program
@@ -100,7 +103,7 @@ internal class Program
 
         composer.Compose(config);
 
-        GatherUsedTargets(registry, featureTarget, compatibility, out _, out HashSet<string> usedCommands);
+        registry.GatherUsedTargets(featureTarget, compatibility, out _, out HashSet<string> usedCommands);
         FunctionTableBuilder functionTableBuilder = new();
         using CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
 
@@ -129,7 +132,7 @@ internal class Program
 
         composer.Compose(config);
 
-        foreach (var (extensionName, originalName, _, usedCommands) in GatherUsedTargetsForExtension(registry, extensionTarget, apiTargets))
+        foreach (var (extensionName, originalName, _, usedCommands) in registry.GatherUsedTargetsForExtension(extensionTarget, apiTargets))
         {
             WriteExtension(registry, outputPath, groupToEnumName, es, functionsOutputPath, config, originalName, extensionName, usedCommands);
         }
@@ -156,10 +159,27 @@ internal class Program
     private static void WriteVariations(ICodeWriter writer, string returnType, Overload overload)
     {
         Parameter[] parameters = overload.Parameters;
+
+        long mask = 0;
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            Parameter parameter = parameters[i];
+            var pointerDepth = parameter.Type.AsSpan().Count('*');
+            if (parameter.Type == "void*" || parameter.Type == "byte*" || (pointerDepth == 1 && parameter.Type != "void*" && !parameter.IsOut))
+            {
+                mask |= 1L << i;
+            }
+        }
+
         long maxVariations = (long)Math.Pow(2L, parameters.Length);
         HashSet<Overload> defs = [overload];
         for (long ix = 1; ix < maxVariations; ix++)
         {
+            if ((ix & mask) == 0)
+            {
+                continue;
+            }
+
             Parameter[] stringVariation = new Parameter[parameters.Length];
             Parameter[] spanVariation = new Parameter[parameters.Length];
             Parameter[] refVariation = new Parameter[parameters.Length];
@@ -417,160 +437,6 @@ internal class Program
         return result.Replace(" ", string.Empty);
     }
 
-    private static void GatherUsedTargets(GlRegistry registry, string featureTarget, bool compatibility, out HashSet<string> usedEnums, out HashSet<string> usedCommands)
-    {
-        bool es = false;
-        if (featureTarget.Contains("GL_VERSION_ES"))
-        {
-            es = true;
-        }
-        usedEnums = [];
-        usedCommands = [];
-        foreach (var feature in registry.Features)
-        {
-            if (es && !feature.Name.Contains("GL_VERSION_ES"))
-            {
-                continue;
-            }
-
-            foreach (var require in feature.Require)
-            {
-                if (require.Profile != null)
-                {
-                    if (require.Profile == "core" && compatibility)
-                    {
-                        continue;
-                    }
-
-                    if (require.Profile == "compatibility" && !compatibility)
-                    {
-                        continue;
-                    }
-                }
-
-                foreach (var @enum in require.Enums)
-                {
-                    usedEnums.Add(@enum.Name);
-                }
-
-                foreach (var command in require.Commands)
-                {
-                    usedCommands.Add(command.Name);
-                }
-            }
-
-            foreach (var remove in feature.Remove)
-            {
-                if (remove.Profile != null)
-                {
-                    if (remove.Profile == "core" && compatibility)
-                    {
-                        continue;
-                    }
-
-                    if (remove.Profile == "compatibility" && !compatibility)
-                    {
-                        continue;
-                    }
-                }
-
-                foreach (var @enum in remove.Enums)
-                {
-                    usedEnums.Remove(@enum.Name);
-                }
-
-                foreach (var command in remove.Commands)
-                {
-                    usedCommands.Remove(command.Name);
-                }
-            }
-
-            if (feature.Name == featureTarget)
-            {
-                break;
-            }
-        }
-    }
-
-    private static IEnumerable<(string extensionName, string originalName, HashSet<string> usedEnums, HashSet<string> usedCommands)> GatherUsedTargetsForExtension(GlRegistry registry, string featureTarget, HashSet<string> apiTargets)
-    {
-        HashSet<string> androidTarget = [
-            "GL_KHR_debug",
-            "GL_KHR_texture_compression_astc_ldr",
-            "GL_KHR_blend_equation_advanced",
-            "GL_OES_sample_shading",
-            "GL_OES_sample_variables",
-            "GL_OES_shader_image_atomic",
-            "GL_OES_shader_multisample_interpolation",
-            "GL_OES_texture_stencil8",
-            "GL_OES_texture_storage_multisample_2d_array",
-            "GL_EXT_copy_image",
-            "GL_EXT_draw_buffers_indexed",
-            "GL_EXT_geometry_shader",
-            "GL_EXT_gpu_shader5",
-            "GL_EXT_primitive_bounding_box",
-            "GL_EXT_shader_io_blocks",
-            "GL_EXT_tessellation_shader",
-            "GL_EXT_texture_border_clamp",
-            "GL_EXT_texture_buffer",
-            "GL_EXT_texture_cube_map_array",
-            "GL_EXT_texture_srgb_decode",
-            ];
-        HashSet<string> usedEnums = [];
-        HashSet<string> usedCommands = [];
-        foreach (var extension in registry.Extensions.Extension)
-        {
-            usedEnums.Clear();
-            usedCommands.Clear();
-
-            if (featureTarget == "GL_ANDROID")
-            {
-                if (!androidTarget.Contains(extension.Name))
-                {
-                    continue;
-                }
-            }
-            else if (!extension.Name.StartsWith(featureTarget))
-            {
-                continue;
-            }
-
-            if (!extension.SupportedList.Any(apiTargets.Contains))
-            {
-                continue;
-            }
-
-            string nameFormatted = string.Join(string.Empty, extension.Name.Split('_', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Select(Capitalize));
-
-            foreach (var require in extension.Require)
-            {
-                foreach (var @enum in require.Enums)
-                {
-                    usedEnums.Add(@enum.Name);
-                }
-
-                foreach (var command in require.Commands)
-                {
-                    usedCommands.Add(command.Name);
-                }
-            }
-
-            yield return (nameFormatted, extension.Name, usedEnums, usedCommands);
-        }
-    }
-
-    private static unsafe string Capitalize(string x)
-    {
-        if (x.Length == 0) return x;
-
-        fixed (char* px = x)
-        {
-            px[0] = char.ToUpper(px[0]);
-        }
-
-        return x;
-    }
-
     private static Dictionary<string, string> GenerateEnums(CsCodeGeneratorConfig config, GlRegistry registry, string apiTarget)
     {
         Dictionary<string, List<Generator.Enum>> groups = [];
@@ -613,13 +479,13 @@ internal class Program
 
         if (apiTarget == "gl")
         {
-            ExtractVersions(registry, nameToEnum, false);
-            ExtractExtensions(registry, nameToEnum, false);
+            registry.ExtractVersions(nameToEnum, false);
+            registry.ExtractExtensions(nameToEnum, false);
         }
         if (apiTarget == "gles2")
         {
-            ExtractVersions(registry, nameToEnum, true);
-            ExtractExtensions(registry, nameToEnum, true);
+            registry.ExtractVersions(nameToEnum, true);
+            registry.ExtractExtensions(nameToEnum, true);
         }
 
         Dictionary<string, string?> groupToComment = [];
@@ -703,534 +569,6 @@ internal class Program
         }
 
         return groupToEnumName;
-    }
-
-    private static void ExtractVersions(GlRegistry registry, Dictionary<string, Generator.Enum> nameToEnum, bool es)
-    {
-        HashSet<string> majorVersions = es ? ["GL_ES_VERSION_2", "GL_ES_VERSION_3"] : ["GL_VERSION_1", "GL_VERSION_2", "GL_VERSION_3", "GL_VERSION_4"];
-        Dictionary<string, List<string>> minorVersions = [];
-        Dictionary<string, List<string>> minorCoreVersions = [];
-        Dictionary<string, List<string>> minorCompatVersions = [];
-        for (int i = 0; i < registry.Features.Count; i++)
-        {
-            Feature feature = registry.Features[i];
-
-            if (es && !feature.Name.StartsWith("GL_ES_VERSION"))
-            {
-                continue;
-            }
-
-            foreach (var majorVersion in majorVersions)
-            {
-                if (feature.Name.StartsWith(majorVersion))
-                {
-                    if (!minorVersions.TryGetValue(majorVersion, out var v) | !minorCoreVersions.TryGetValue(majorVersion, out var vc) | !minorCompatVersions.TryGetValue(majorVersion, out var vcomp))
-                    {
-                        v = [];
-                        vc = [];
-                        vcomp = [];
-                        minorVersions.Add(majorVersion, v);
-                        minorCoreVersions.Add(majorVersion, vc);
-                        minorCompatVersions.Add(majorVersion, vcomp);
-                    }
-                    v!.Add(feature.Name);
-                    if (!es && (feature.Name.StartsWith("GL_VERSION_3") || feature.Name.StartsWith("GL_VERSION_4")))
-                    {
-                        vc!.Add(feature.Name + "_CORE");
-                        vcomp!.Add(feature.Name + "_COMPAT");
-                    }
-                }
-            }
-
-            GatherUsedTargets(registry, feature.Name, false, out var usedEnums, out _);
-
-            if (!es && (feature.Name.StartsWith("GL_VERSION_3") || feature.Name.StartsWith("GL_VERSION_4")))
-            {
-                string featureName = $"{feature.Name}_CORE";
-
-                foreach (var reqEnum in usedEnums)
-                {
-                    var @enum = nameToEnum[reqEnum];
-                    @enum.SupportedVersions.Add(featureName);
-                }
-
-                string featureNameComp = $"{feature.Name}_COMPAT";
-                GatherUsedTargets(registry, feature.Name, true, out var usedEnumsCompat, out _);
-                foreach (var reqEnum in usedEnumsCompat)
-                {
-                    var @enum = nameToEnum[reqEnum];
-                    if (@enum.SupportedVersions.Contains(featureName))
-                    {
-                        @enum.SupportedVersions.Remove(featureName);
-                        @enum.SupportedVersions.Add(feature.Name);
-                    }
-                    else
-                    {
-                        @enum.SupportedVersions.Add(featureNameComp);
-                    }
-                }
-            }
-            else
-            {
-                foreach (var reqEnum in usedEnums)
-                {
-                    var @enum = nameToEnum[reqEnum];
-                    @enum.SupportedVersions.Add(feature.Name);
-                }
-            }
-
-            if (!es && feature.Name == "GL_VERSION_4_6")
-            {
-                break;
-            }
-
-            if (es && feature.Name == "GL_ES_VERSION_3_2")
-            {
-                break;
-            }
-        }
-
-        static string GetFriendlyName(string name)
-        {
-            // eg transform GL_VERSION_4_6 => GL 4.6     GL_VERSION_4_6_CORE => GL 4.6 Core
-            // eg transform GL_ES_VERSION_2_0 => GL ES 2.0
-
-            ReadOnlySpan<char> span = name.AsSpan();
-
-            if (span.StartsWith("GL_ES_VERSION_"))
-            {
-                span = span["GL_ES_VERSION_".Length..];
-                char major = span[0];
-                char minor = span[2];
-                return $"GL ES {major}.{minor}";
-            }
-
-            int underscores = span.Count('_');
-
-            if (underscores == 3) // we actually only need the last digits
-            {
-                span = span["GL_VERSION_".Length..];
-                char major = span[0];
-                char minor = span[2];
-                return $"GL {major}.{minor}";
-            }
-
-            if (underscores == 4)
-            {
-                span = span["GL_VERSION_".Length..];
-                char major = span[0];
-                char minor = span[2];
-                span = span[3..];
-                bool core = span.SequenceEqual("CORE");
-                return $"GL {major}.{minor} {(core ? "Core" : "Compat")}";
-            }
-
-            throw new FormatException();
-        }
-
-        static void EmitRange(List<string> ranges, int start, int end, List<string> vers)
-        {
-            if (start == end)
-            {
-                ranges.Add(GetFriendlyName(vers[start]));
-            }
-            else
-            {
-                ranges.Add($"{GetFriendlyName(vers[start])} - {GetFriendlyName(vers[end])}");
-            }
-        }
-
-        static void EmitFor(Generator.Enum @enum, List<string> ranges, string majorVersion, List<string> vers, bool core, bool compat)
-        {
-            int start = -1;
-            int end = -1;
-            for (int i = 0; i < vers.Count; i++)
-            {
-                string minorVersion = vers[i];
-                if (@enum.SupportedVersions.Contains(minorVersion))
-                {
-                    if (start == -1)
-                    {
-                        start = i;
-                    }
-                    end = i;
-                }
-                else if (start != -1)
-                {
-                    EmitRange(ranges, start, end, vers);
-                    start = -1;
-                }
-            }
-
-            if (start == -1)
-            {
-                return;
-            }
-
-            if (start == 0 && end == vers.Count - 1)
-            {
-                if (core)
-                {
-                    ranges.Add(GetFriendlyName($"{majorVersion}_X_CORE"));
-                }
-                else if (compat)
-                {
-                    ranges.Add(GetFriendlyName($"{majorVersion}_X_COMPAT"));
-                }
-                else
-                {
-                    ranges.Add(GetFriendlyName($"{majorVersion}_X"));
-                }
-            }
-            else
-            {
-                EmitRange(ranges, start, end, vers);
-            }
-        }
-
-        foreach (var pair in nameToEnum)
-        {
-            var @enum = pair.Value;
-
-            if (@enum.SupportedVersions.Count == 0)
-                continue;
-
-            var ranges = new List<string>();
-
-            foreach (var majorVersion in majorVersions)
-            {
-                var vers = minorVersions[majorVersion];
-                EmitFor(@enum, ranges, majorVersion, vers, false, false);
-                if (!es && minorCoreVersions.TryGetValue(majorVersion, out var vc))
-                {
-                    EmitFor(@enum, ranges, majorVersion, vc, true, false);
-                }
-                if (!es && minorCompatVersions.TryGetValue(majorVersion, out var vcomp))
-                {
-                    EmitFor(@enum, ranges, majorVersion, vcomp, false, true);
-                }
-            }
-
-            bool all = true;
-            foreach (var range in ranges)
-            {
-                if (es)
-                {
-                    if (range != "GL ES 1.X" && range != "GL ES 2.X" && range != "GL ES 3.X")
-                    {
-                        all = false;
-                        break;
-                    }
-                }
-                else if (range != "GL 1.X" && range != "GL 2.X" && range != "GL 3.X" && range != "GL 4.X")
-                {
-                    all = false;
-                    break;
-                }
-            }
-
-            if (all)
-            {
-                @enum.SupportedVersionText = $"Supported Versions: All {(es ? "GL ES" : "GL")} versions.";
-            }
-            else
-            {
-                @enum.SupportedVersionText = $"Supported Versions:<br/>{string.Join("<br/>", ranges)}";
-            }
-        }
-    }
-
-    private static void ExtractExtensions(GlRegistry registry, Dictionary<string, Generator.Enum> nameToEnum, bool es)
-    {
-        HashSet<string> apiTargets = es ? ["gles1", "gles2"] : ["gl", "glcore"];
-        HashSet<string> extensionTargets = es ? acceptedExtensionsEs : acceptedExtensions;
-
-        foreach (var targetApi in extensionTargets)
-        {
-            foreach (var (_, originalName, usedEnums, _) in GatherUsedTargetsForExtension(registry, targetApi, apiTargets))
-            {
-                foreach (var reqEnum in usedEnums)
-                {
-                    var @enum = nameToEnum[reqEnum];
-                    @enum.UsedByExtensions.Add(originalName);
-                }
-            }
-        }
-
-        foreach (var pair in nameToEnum)
-        {
-            var @enum = pair.Value;
-            if (@enum.UsedByExtensions.Count == 0)
-            {
-                continue;
-            }
-
-            @enum.UsedByExtensionsText = $"Used by Extensions:<br/>{string.Join("<br/>", @enum.UsedByExtensions)}";
-        }
-    }
-
-    private static void ExtractVersions(GlRegistry registry, Dictionary<string, Command> nameToCommand, bool es)
-    {
-        HashSet<string> majorVersions = es ? ["GL_ES_VERSION_2", "GL_ES_VERSION_3"] : ["GL_VERSION_1", "GL_VERSION_2", "GL_VERSION_3", "GL_VERSION_4"];
-        Dictionary<string, List<string>> minorVersions = [];
-        Dictionary<string, List<string>> minorCoreVersions = [];
-        Dictionary<string, List<string>> minorCompatVersions = [];
-        for (int i = 0; i < registry.Features.Count; i++)
-        {
-            Feature feature = registry.Features[i];
-
-            if (es && !feature.Name.StartsWith("GL_ES_VERSION"))
-            {
-                continue;
-            }
-
-            foreach (var majorVersion in majorVersions)
-            {
-                if (feature.Name.StartsWith(majorVersion))
-                {
-                    if (!minorVersions.TryGetValue(majorVersion, out var v) | !minorCoreVersions.TryGetValue(majorVersion, out var vc) | !minorCompatVersions.TryGetValue(majorVersion, out var vcomp))
-                    {
-                        v = [];
-                        vc = [];
-                        vcomp = [];
-                        minorVersions.Add(majorVersion, v);
-                        minorCoreVersions.Add(majorVersion, vc);
-                        minorCompatVersions.Add(majorVersion, vcomp);
-                    }
-                    v!.Add(feature.Name);
-                    if (!es && (feature.Name.StartsWith("GL_VERSION_3") || feature.Name.StartsWith("GL_VERSION_4")))
-                    {
-                        vc!.Add(feature.Name + "_CORE");
-                        vcomp!.Add(feature.Name + "_COMPAT");
-                    }
-                }
-            }
-
-            GatherUsedTargets(registry, feature.Name, false, out _, out var usedCommands);
-
-            if (!es && (feature.Name.StartsWith("GL_VERSION_3") || feature.Name.StartsWith("GL_VERSION_4")))
-            {
-                string featureName = $"{feature.Name}_CORE";
-
-                foreach (var reqCommand in usedCommands)
-                {
-                    var command = nameToCommand[reqCommand];
-                    command.SupportedVersions.Add(featureName);
-                }
-
-                string featureNameComp = $"{feature.Name}_COMPAT";
-                GatherUsedTargets(registry, feature.Name, true, out _, out var usedCommandsCompat);
-                foreach (var reqCommand in usedCommandsCompat)
-                {
-                    var command = nameToCommand[reqCommand];
-                    if (command.SupportedVersions.Contains(featureName))
-                    {
-                        command.SupportedVersions.Remove(featureName);
-                        command.SupportedVersions.Add(feature.Name);
-                    }
-                    else
-                    {
-                        command.SupportedVersions.Add(featureNameComp);
-                    }
-                }
-            }
-            else
-            {
-                foreach (var reqCommand in usedCommands)
-                {
-                    var command = nameToCommand[reqCommand];
-                    command.SupportedVersions.Add(feature.Name);
-                }
-            }
-
-            if (!es && feature.Name == "GL_VERSION_4_6")
-            {
-                break;
-            }
-
-            if (es && feature.Name == "GL_ES_VERSION_3_2")
-            {
-                break;
-            }
-        }
-
-        static string GetFriendlyName(string name)
-        {
-            // eg transform GL_VERSION_4_6 => GL 4.6     GL_VERSION_4_6_CORE => GL 4.6 Core
-            // eg transform GL_ES_VERSION_2_0 => GL ES 2.0
-
-            ReadOnlySpan<char> span = name.AsSpan();
-
-            if (span.StartsWith("GL_ES_VERSION_"))
-            {
-                span = span["GL_ES_VERSION_".Length..];
-                char major = span[0];
-                char minor = span[2];
-                return $"GL ES {major}.{minor}";
-            }
-
-            int underscores = span.Count('_');
-
-            if (underscores == 3) // we actually only need the last digits
-            {
-                span = span["GL_VERSION_".Length..];
-                char major = span[0];
-                char minor = span[2];
-                return $"GL {major}.{minor}";
-            }
-
-            if (underscores == 4)
-            {
-                span = span["GL_VERSION_".Length..];
-                char major = span[0];
-                char minor = span[2];
-                span = span[3..];
-                bool core = span.SequenceEqual("CORE");
-                return $"GL {major}.{minor} {(core ? "Core" : "Compat")}";
-            }
-
-            throw new FormatException();
-        }
-
-        static void EmitRange(List<string> ranges, int start, int end, List<string> vers)
-        {
-            if (start == end)
-            {
-                ranges.Add(GetFriendlyName(vers[start]));
-            }
-            else
-            {
-                ranges.Add($"{GetFriendlyName(vers[start])} - {GetFriendlyName(vers[end])}");
-            }
-        }
-
-        static void EmitFor(Command command, List<string> ranges, string majorVersion, List<string> vers, bool core, bool compat)
-        {
-            int start = -1;
-            int end = -1;
-            for (int i = 0; i < vers.Count; i++)
-            {
-                string minorVersion = vers[i];
-                if (command.SupportedVersions.Contains(minorVersion))
-                {
-                    if (start == -1)
-                    {
-                        start = i;
-                    }
-                    end = i;
-                }
-                else if (start != -1)
-                {
-                    EmitRange(ranges, start, end, vers);
-                    start = -1;
-                }
-            }
-
-            if (start == -1)
-            {
-                return;
-            }
-
-            if (start == 0 && end == vers.Count - 1)
-            {
-                if (core)
-                {
-                    ranges.Add(GetFriendlyName($"{majorVersion}_X_CORE"));
-                }
-                else if (compat)
-                {
-                    ranges.Add(GetFriendlyName($"{majorVersion}_X_COMPAT"));
-                }
-                else
-                {
-                    ranges.Add(GetFriendlyName($"{majorVersion}_X"));
-                }
-            }
-            else
-            {
-                EmitRange(ranges, start, end, vers);
-            }
-        }
-
-        foreach (var pair in nameToCommand)
-        {
-            var command = pair.Value;
-
-            if (command.SupportedVersions.Count == 0)
-                continue;
-
-            var ranges = new List<string>();
-
-            foreach (var majorVersion in majorVersions)
-            {
-                var vers = minorVersions[majorVersion];
-                EmitFor(command, ranges, majorVersion, vers, false, false);
-                if (!es && minorCoreVersions.TryGetValue(majorVersion, out var vc))
-                {
-                    EmitFor(command, ranges, majorVersion, vc, true, false);
-                }
-                if (!es && minorCompatVersions.TryGetValue(majorVersion, out var vcomp))
-                {
-                    EmitFor(command, ranges, majorVersion, vcomp, false, true);
-                }
-            }
-
-            bool all = true;
-            foreach (var range in ranges)
-            {
-                if (es)
-                {
-                    if (range != "GL ES 1.X" && range != "GL ES 2.X" && range != "GL ES 3.X")
-                    {
-                        all = false;
-                        break;
-                    }
-                }
-                else if (range != "GL 1.X" && range != "GL 2.X" && range != "GL 3.X" && range != "GL 4.X")
-                {
-                    all = false;
-                    break;
-                }
-            }
-
-            if (all)
-            {
-                command.SupportedVersionText = $"Supported Versions: All {(es ? "GL ES" : "GL")} versions.";
-            }
-            else
-            {
-                command.SupportedVersionText = $"Supported Versions:<br/>{string.Join("<br/>", ranges)}";
-            }
-        }
-    }
-
-    private static void ExtractExtensions(GlRegistry registry, Dictionary<string, Command> nameToCommand, bool es)
-    {
-        HashSet<string> apiTargets = es ? ["gles1", "gles2"] : ["gl", "glcore"];
-        HashSet<string> extensionTargets = es ? acceptedExtensionsEs : acceptedExtensions;
-
-        foreach (var targetApi in extensionTargets)
-        {
-            foreach (var (_, originalName, _, usedCommands) in GatherUsedTargetsForExtension(registry, targetApi, apiTargets))
-            {
-                foreach (var reqCommand in usedCommands)
-                {
-                    var command = nameToCommand[reqCommand];
-                    command.UsedByExtensions.Add(originalName);
-                }
-            }
-        }
-
-        foreach (var pair in nameToCommand)
-        {
-            var command = pair.Value;
-            if (command.UsedByExtensions.Count == 0)
-            {
-                continue;
-            }
-
-            command.UsedByExtensionsText = $"Used by Extensions:<br/>{string.Join("<br/>", command.UsedByExtensions)}";
-        }
     }
 
     public struct Parameter : IEquatable<Parameter>
@@ -1401,7 +739,7 @@ internal class Program
 
         foreach (var targetApi in extensionTargets)
         {
-            foreach (var (_, originalName, _, usedCommands) in GatherUsedTargetsForExtension(registry, targetApi, apiTargets))
+            foreach (var (_, originalName, _, usedCommands) in registry.GatherUsedTargetsForExtension(targetApi, apiTargets))
             {
                 foreach (var reqCommand in usedCommands)
                 {
@@ -1417,11 +755,11 @@ internal class Program
 
         foreach (var command in registry.Commands)
         {
-            nameToCommand.Add(command.Proto.Name, command);
+            nameToCommand.Add(command.Name, command);
         }
 
-        ExtractVersions(registry, nameToCommand, es);
-        ExtractExtensions(registry, nameToCommand, es);
+        registry.ExtractVersions(nameToCommand, es);
+        registry.ExtractExtensions(nameToCommand, es);
 
         Dictionary<string, CommandComment?> nameToComment = [];
         FileStream fs;
@@ -1547,9 +885,11 @@ internal class Program
                 sbTypelessApi.Append(paramName);
             }
 
+            var arrayParams = parameters.ToArray();
+
             bool isBool = returnType == "byte";
 
-            int idx = functionTableBuilder.Add(command.Proto.Name);
+            int idx = functionTableBuilder.Add(command.Name);
 
             string returnTypeOld = returnType;
             if (returnTypeOld == "bool")
@@ -1572,17 +912,17 @@ internal class Program
                 sbNameless.Append($", {returnType}");
             }
 
-            StringBuilder builder = new();
+            StringBuilder summaryBuilder = new();
 
             var comment = GetCommandComment(command, nameToComment);
 
-            builder.AppendLine("/// <summary>");
+            summaryBuilder.AppendLine("/// <summary>");
 
             foreach (var line in comment.Comment!.Split("\n"))
             {
-                builder.AppendLine($"/// {line}");
+                summaryBuilder.AppendLine($"/// {line}");
             }
-            builder.AppendLine("/// </summary>");
+            summaryBuilder.AppendLine("/// </summary>");
 
             /*
             foreach (var parameter in comment.Parameters)
@@ -1615,23 +955,23 @@ internal class Program
                 }
             }*/
 
-            builder.Append($"/// <remarks>");
+            summaryBuilder.Append($"/// <remarks>");
             if (command.SupportedVersionText != null)
             {
-                builder.Append(command.SupportedVersionText);
+                summaryBuilder.Append(command.SupportedVersionText);
             }
             if (command.UsedByExtensionsText != null)
             {
                 if (command.SupportedVersionText != null)
                 {
-                    builder.Append("<br/><br/>");
+                    summaryBuilder.Append("<br/><br/>");
                 }
-                builder.Append(command.UsedByExtensionsText);
+                summaryBuilder.Append(command.UsedByExtensionsText);
             }
 
-            builder.AppendLine("</remarks>");
-            string commandComment = builder.ToString();
-            builder.Clear();
+            summaryBuilder.AppendLine("</remarks>");
+            string commandComment = summaryBuilder.ToString();
+            summaryBuilder.Clear();
 
             string paramSignatureNameless = sbNameless.ToString();
             string delegateSig;
@@ -1639,14 +979,14 @@ internal class Program
             string delegateSigApi;
             if (returnType != "void")
             {
-                delegateSig = $"return ((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbTypeless});";
-                delegateSigCompat = $"return ({returnType})((delegate* unmanaged[Cdecl]<{sbCompatibilityNameless}>)funcTable[{idx}])({sbCompatibilityTypeless});";
+                delegateSig = $"return ((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, false)}>)funcTable[{idx}])({sbTypeless});";
+                delegateSigCompat = $"return ({returnType})((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, true)}>)funcTable[{idx}])({sbCompatibilityTypeless});";
                 delegateSigApi = $"{returnType} ret = {name}Native({sbTypelessApi});";
             }
             else
             {
-                delegateSig = $"((delegate* unmanaged[Cdecl]<{paramSignatureNameless}>)funcTable[{idx}])({sbTypeless});";
-                delegateSigCompat = $"((delegate* unmanaged[Cdecl]<{sbCompatibilityNameless}>)funcTable[{idx}])({sbCompatibilityTypeless});";
+                delegateSig = $"((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, false)}>)funcTable[{idx}])({sbTypeless});";
+                delegateSigCompat = $"((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, true)}>)funcTable[{idx}])({sbCompatibilityTypeless});";
                 delegateSigApi = $"{name}Native({sbTypelessApi});";
             }
 
@@ -1682,8 +1022,6 @@ internal class Program
             writer.EndBlock();
             writer.WriteLine();
 
-            var arrayParams = parameters.ToArray();
-
             logger.LogInfo($"defined {csSigApi}");
 
             if (name.StartsWith("Gen") && parameters.Count == 2 && parameters[0].Type == "int" && parameters[1].Type == "uint*")
@@ -1716,6 +1054,48 @@ internal class Program
                 logger.LogInfo($"defined {signature}");
             }
 
+            if (command.Name.StartsWith("glGet") && command.Name.EndsWith('v') && !parameters[^1].Type.StartsWith("void") && parameters[^1].Type.AsSpan().Count('*') == 1)
+            {
+                var lastParam = parameters[^1];
+                var baseType = lastParam.Type[..^1];
+
+                Parameter[] variationParams = [.. arrayParams];
+
+                variationParams[^1] = new(lastParam.Name, $"out {baseType}");
+                var signature = MakeApiSignature(summaryBuilder, name, returnType, variationParams);
+
+                variationParams[^1] = new("&pparam", lastParam.Type);
+                var caller = MakeInvokeSignature(summaryBuilder, name, returnType, variationParams);
+
+                writer.WriteLines(commandComment);
+                writer.BeginBlock($"public static {signature}");
+                writer.WriteLine($"{baseType} pparam;");
+                writer.WriteLine($"{caller}");
+                writer.WriteLine($"{lastParam.Name} = pparam;");
+                writer.EndBlock();
+                writer.WriteLine();
+                logger.LogInfo($"defined {signature}");
+
+                variationParams[^1] = new(lastParam.Name, $"Span<{baseType}>");
+                signature = MakeApiSignature(summaryBuilder, name, returnType, variationParams);
+
+                variationParams[^1] = new("pparams", lastParam.Type);
+                caller = MakeInvokeSignature(summaryBuilder, name, returnType, variationParams);
+
+                writer.WriteLines(commandComment);
+                writer.BeginBlock($"public static {signature}");
+                writer.BeginBlock($"fixed ({baseType}* pparams = {lastParam.Name})");
+                writer.WriteLine($"{caller}");
+                writer.EndBlock();
+                writer.EndBlock();
+                writer.WriteLine();
+                logger.LogInfo($"defined {signature}");
+
+                lastParam.IsOut = true;
+
+                arrayParams[^1] = lastParam;
+            }
+            /*
             if (parameters.Count > 0 && parameters[^1].Type == "int*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
             {
                 VariationFor(writer, commandComment, delegateSigApi, csSigApi, arrayParams, "int", parameters[^1].Name == "param");
@@ -1735,7 +1115,7 @@ internal class Program
             if (parameters.Count > 0 && parameters[^1].Type == "long*" && (parameters[^1].Name == "@params" || parameters[^1].Name == "param"))
             {
                 VariationFor(writer, commandComment, delegateSigApi, csSigApi, arrayParams, "long", parameters[^1].Name == "param");
-            }
+            }*/
 
             // void GetShaderInfoLogNative(uint shader, int bufSize, int* length, byte* infoLog) For reference
             if (name.StartsWith("Get") &&
@@ -1837,13 +1217,151 @@ internal class Program
         }
     }
 
+    private static string MakeInvokeSignature(StringBuilder sb, string funcName, string returnType, Parameter[] parameters)
+    {
+        sb.Clear();
+
+        bool first = true;
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            Parameter param = parameters[i];
+            var paramType = param.Type;
+            var paramName = param.Name;
+
+            if (!first)
+            {
+                sb.Append(", ");
+            }
+
+            first = false;
+
+            sb.Append(paramName);
+        }
+
+        string delegateSigApi;
+        if (returnType != "void")
+        {
+            delegateSigApi = $"{returnType} ret = {funcName}Native({sb});";
+        }
+        else
+        {
+            delegateSigApi = $"{funcName}Native({sb});";
+        }
+
+        sb.Clear();
+
+        return delegateSigApi;
+    }
+
+    private static string MakeApiSignature(StringBuilder sb, string funcName, string returnType, Parameter[] parameters)
+    {
+        sb.Clear();
+
+        bool first = true;
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            Parameter param = parameters[i];
+            var paramType = param.Type;
+            var paramName = param.Name;
+
+            if (!first)
+            {
+                sb.Append(", ");
+            }
+
+            first = false;
+            sb.Append($"{paramType} {paramName}");
+        }
+
+        bool isBool = returnType == "byte";
+
+        string csSigApi = $"{(isBool ? "bool" : returnType)} {funcName}({sb})";
+
+        sb.Clear();
+
+        return csSigApi;
+    }
+
+    private static string MakeDelegateSignature(StringBuilder sb, CsCodeGeneratorConfig config, string returnType, Parameter[] parameters, bool compatibility)
+    {
+        sb.Clear();
+
+        bool first = true;
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            Parameter param = parameters[i];
+            var paramType = param.Type;
+            var paramName = param.Name;
+            var paramIsBool = paramType == "bool";
+
+            if (paramIsBool)
+            {
+                paramType = "bool";
+            }
+
+            if (!first)
+            {
+                sb.Append(", ");
+            }
+            else
+            {
+                first = false;
+            }
+
+            if (Config.DelegateTypes.Contains(paramType))
+            {
+                sb.Append("nint");
+                continue;
+            }
+
+            if (paramIsBool)
+            {
+                sb.Append("byte");
+                continue;
+            }
+
+            if (compatibility && paramType.Contains('*'))
+            {
+                sb.Append("nint");
+            }
+            else
+            {
+                sb.Append(paramType);
+            }
+        }
+
+        if (compatibility && returnType == "bool")
+        {
+            returnType = config.GetBoolType();
+        }
+        if (compatibility && returnType.Contains('*'))
+        {
+            returnType = "nint";
+        }
+
+        if (first)
+        {
+            sb.Append(returnType);
+        }
+        else
+        {
+            sb.Append($", {returnType}");
+        }
+
+        string result = sb.ToString();
+
+        sb.Clear();
+
+        return result;
+    }
+
     private static CommandComment GetCommandComment(Command command, Dictionary<string, CommandComment?> nameToComment)
     {
-        if (nameToComment.TryGetValue(command.Proto.Name, out var comment) && comment != null)
+        if (nameToComment.TryGetValue(command.Name, out var comment) && comment != null)
         {
             return comment;
         }
-        return new(command.Proto.Name, "To be documented.", []);
+        return new(command.Name, "To be documented.", []);
     }
 
     public static void WriteStringConvertToUnmanagedWithSizeArray(ICodeWriter writer, string name, int i)
@@ -1889,62 +1407,6 @@ internal class Program
         }
     }
 
-    /* For reference
-        public static void ShaderSource(uint shader, string source)
-        {
-            byte* pStr0 = null;
-            int pStrSize0 = 0;
-            if (source != null)
-            {
-                pStrSize0 = Utils.GetByteCountUTF8(source);
-                if (pStrSize0 >= Utils.MaxStackallocSize)
-                {
-                    pStr0 = Utils.Alloc<byte>(pStrSize0 + 1);
-                }
-                else
-                {
-                    byte* pStrStack0 = stackalloc byte[pStrSize0 + 1];
-                    pStr0 = pStrStack0;
-                }
-                int pStrOffset0 = Utils.EncodeStringUTF8(source, pStr0, pStrSize0);
-                pStr0[pStrOffset0] = 0;
-            }
-            ShaderSourceNative(shader, 1, &pStr0, &pStrSize0);
-            if (pStrSize0 >= Utils.MaxStackallocSize)
-            {
-                Utils.Free(pStr0);
-            }
-        }
-    */
-    /* For reference
-        public static string GetProgramInfoLog(uint program)
-        {
-            int len;
-            GetProgramivNative(program, GLProgramPropertyARB.InfoLogLength, &len);
-
-            byte* pStr0 = null;
-            if (len >= Utils.MaxStackallocSize)
-            {
-                pStr0 = Utils.Alloc<byte>(len + 1);
-            }
-            else
-            {
-                byte* pStrStack0 = stackalloc byte[len + 1];
-                pStr0 = pStrStack0;
-            }
-
-            GetProgramInfoLogNative(program, len, null, pStr0);
-            string ret = Utils.DecodeStringUTF8(pStr0);
-
-            if (len >= Utils.MaxStackallocSize)
-            {
-                Utils.Free(pStr0);
-            }
-
-            return ret;
-        }
-     */
-
     private static string? FindEnum(string commandNameTarget, HashSet<string> usedCommands, GlRegistry registry, Dictionary<string, string> groupToEnumName)
     {
         if (!usedCommands.Contains(commandNameTarget))
@@ -1954,7 +1416,7 @@ internal class Program
 
         foreach (var command in registry.Commands)
         {
-            if (command.Proto.Name == commandNameTarget)
+            if (command.Name == commandNameTarget)
             {
                 if (command.Params.Count >= 2 && command.Params[1].PType == "GLenum")
                 {

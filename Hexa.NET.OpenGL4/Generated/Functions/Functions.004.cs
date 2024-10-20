@@ -17,6 +17,159 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2uiNative(int location, uint v0, uint v1)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, uint, uint, void>)funcTable[519])(location, v0, v1);
+			#else
+			((delegate* unmanaged[Cdecl]<int, uint, uint, void>)funcTable[519])(location, v0, v1);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2ui(int location, uint v0, uint v1)
+		{
+			Uniform2uiNative(location, v0, v1);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform2uivNative(int location, int count, uint* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[520])(location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[520])(location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2uiv(int location, int count, uint* value)
+		{
+			Uniform2uivNative(location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2uiv(int location, int count, Span<uint> value)
+		{
+			fixed (uint* pvalue0 = value)
+			{
+				Uniform2uivNative(location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform2uiv(int location, int count, ref uint value)
+		{
+			fixed (uint* pvalue0 = &value)
+			{
+				Uniform2uivNative(location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform3dNative(int location, double x, double y, double z)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, double, double, double, void>)funcTable[521])(location, x, y, z);
+			#else
+			((delegate* unmanaged[Cdecl]<int, double, double, double, void>)funcTable[521])(location, x, y, z);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3d(int location, double x, double y, double z)
+		{
+			Uniform3dNative(location, x, y, z);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform3dvNative(int location, int count, double* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[522])(location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[522])(location, count, (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3dv(int location, int count, double* value)
+		{
+			Uniform3dvNative(location, count, value);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3dv(int location, int count, Span<double> value)
+		{
+			fixed (double* pvalue0 = value)
+			{
+				Uniform3dvNative(location, count, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
+		public static void Uniform3dv(int location, int count, ref double value)
+		{
+			fixed (double* pvalue0 = &value)
+			{
+				Uniform3dvNative(location, count, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform3fNative(int location, float v0, float v1, float v2)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[523])(location, v0, v1, v2);
+			#else
+			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[523])(location, v0, v1, v2);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void Uniform3f(int location, float v0, float v1, float v2)
+		{
+			Uniform3fNative(location, v0, v1, v2);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void Uniform3fvNative(int location, int count, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[524])(location, count, value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, nint, void>)funcTable[524])(location, count, (nint)value);
+			#endif
+		}
+
 		/// <summary>
 		/// To be documented.
 		/// </summary>

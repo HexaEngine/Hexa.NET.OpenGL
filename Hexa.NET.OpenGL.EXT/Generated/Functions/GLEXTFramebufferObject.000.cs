@@ -404,22 +404,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
+		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public static void GetFramebufferAttachmentParameterivEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, pparams);
+				GetFramebufferAttachmentParameterivEXTNative(target, attachment, pname, pparams0);
 			}
 		}
 
@@ -446,22 +447,23 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
-		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
+		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetRenderbufferParameterivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetRenderbufferParameterivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_framebuffer_object</remarks>
-		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		public static void GetRenderbufferParameterivEXT(GLRenderbufferTarget target, GLRenderbufferParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetRenderbufferParameterivEXTNative(target, pname, pparams);
+				GetRenderbufferParameterivEXTNative(target, pname, pparams0);
 			}
 		}
 

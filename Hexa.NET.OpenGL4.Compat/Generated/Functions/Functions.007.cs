@@ -17,6 +17,130 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void VertexAttrib4fvNative(uint index, float* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[968])(index, v);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[968])(index, (nint)v);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4fv(uint index, float* v)
+		{
+			VertexAttrib4fvNative(index, v);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4fv(uint index, Span<float> v)
+		{
+			fixed (float* pv0 = v)
+			{
+				VertexAttrib4fvNative(index, pv0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4fv(uint index, ref float v)
+		{
+			fixed (float* pv0 = &v)
+			{
+				VertexAttrib4fvNative(index, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void VertexAttrib4ivNative(uint index, int* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[969])(index, v);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[969])(index, (nint)v);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4iv(uint index, int* v)
+		{
+			VertexAttrib4ivNative(index, v);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4iv(uint index, Span<int> v)
+		{
+			fixed (int* pv0 = v)
+			{
+				VertexAttrib4ivNative(index, pv0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4iv(uint index, ref int v)
+		{
+			fixed (int* pv0 = &v)
+			{
+				VertexAttrib4ivNative(index, pv0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[970])(index, x, y, z, w);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[970])(index, x, y, z, w);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4s(uint index, short x, short y, short z, short w)
+		{
+			VertexAttrib4sNative(index, x, y, z, w);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void VertexAttrib4svNative(uint index, short* v)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[971])(index, v);
+			#else
+			((delegate* unmanaged[Cdecl]<uint, nint, void>)funcTable[971])(index, (nint)v);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void VertexAttrib4sv(uint index, short* v)
+		{
+			VertexAttrib4svNative(index, v);
+		}
+
 		/// <summary>
 		/// To be documented.
 		/// </summary>

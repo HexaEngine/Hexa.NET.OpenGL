@@ -41,9 +41,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, out int @params)
 		{
-			int pparams;
-			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

@@ -366,22 +366,23 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
+		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public static void GetFramebufferAttachmentParameterivOES(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, pparams);
+				GetFramebufferAttachmentParameterivOESNative(target, attachment, pname, pparams0);
 			}
 		}
 
@@ -408,22 +409,23 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
-		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
+		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetRenderbufferParameterivOESNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetRenderbufferParameterivOESNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_framebuffer_object</remarks>
-		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		public static void GetRenderbufferParameterivOES(GLRenderbufferTarget target, GLRenderbufferParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetRenderbufferParameterivOESNative(target, pname, pparams);
+				GetRenderbufferParameterivOESNative(target, pname, pparams0);
 			}
 		}
 

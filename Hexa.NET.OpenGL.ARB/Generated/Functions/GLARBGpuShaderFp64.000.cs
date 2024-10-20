@@ -39,23 +39,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void GetUniformdv(uint program, int location, Span<double> @params)
+		public static void GetUniformdv(uint program, int location, out double @params)
 		{
-			fixed (double* pparams0 = @params)
-			{
-				GetUniformdvNative(program, location, pparams0);
-			}
+			double pparam;
+			GetUniformdvNative(program, location, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void GetUniformdv(uint program, int location, ref double @params)
+		public static void GetUniformdv(uint program, int location, Span<double> @params)
 		{
-			fixed (double* pparams0 = &@params)
+			fixed (double* pparams = @params)
 			{
-				GetUniformdvNative(program, location, pparams0);
+				GetUniformdvNative(program, location, pparams);
 			}
 		}
 

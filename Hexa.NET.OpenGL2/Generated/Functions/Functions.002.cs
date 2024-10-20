@@ -17,6 +17,18 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
+		public static void MultiTexCoord4sv(GLTextureUnit target, ref short v)
+		{
+			fixed (short* pv0 = &v)
+			{
+				MultiTexCoord4svNative(target, pv0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void NewListNative(uint list, GLListMode mode)
 		{
@@ -690,22 +702,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, out float @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
 		{
-			float pparams;
-			PointParameterfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				PointParameterfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameterfv(GLPointParameterNameARB pname, Span<float> @params)
+		public static void PointParameterfv(GLPointParameterNameARB pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				PointParameterfvNative(pname, pparams);
+				PointParameterfvNative(pname, pparams0);
 			}
 		}
 
@@ -751,22 +764,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, out int @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
 		{
-			int pparams;
-			PointParameterivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				PointParameterivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void PointParameteriv(GLPointParameterNameARB pname, Span<int> @params)
+		public static void PointParameteriv(GLPointParameterNameARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				PointParameterivNative(pname, pparams);
+				PointParameterivNative(pname, pparams0);
 			}
 		}
 
@@ -4480,22 +4494,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out float @params)
+		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
 		{
-			float pparams;
-			TexEnvfvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				TexEnvfvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				TexEnvfvNative(target, pname, pparams);
+				TexEnvfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -4541,22 +4556,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
+		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
-			int pparams;
-			TexEnvivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexEnvivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexEnvivNative(target, pname, pparams);
+				TexEnvivNative(target, pname, pparams0);
 			}
 		}
 
@@ -4664,22 +4680,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
+		public static void TexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
 		{
-			float pparams;
-			TexGenfvNative(coord, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				TexGenfvNative(coord, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		public static void TexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				TexGenfvNative(coord, pname, pparams);
+				TexGenfvNative(coord, pname, pparams0);
 			}
 		}
 
@@ -4725,22 +4742,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
+		public static void TexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
-			int pparams;
-			TexGenivNative(coord, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexGenivNative(coord, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void TexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		public static void TexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexGenivNative(coord, pname, pparams);
+				TexGenivNative(coord, pname, pparams0);
 			}
 		}
 
@@ -4906,22 +4924,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, out float @params)
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
-			float pparams;
-			TexParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				TexParameterfvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				TexParameterfvNative(target, pname, pparams);
+				TexParameterfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -4967,22 +4986,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, out int @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			TexParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				TexParameterivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				TexParameterivNative(target, pname, pparams);
+				TexParameterivNative(target, pname, pparams0);
 			}
 		}
 
@@ -5003,27 +5023,6 @@ namespace Hexa.NET.OpenGL
 		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage1DNative(target, level, xoffset, width, format, type, pixels);
-		}
-
-		/// <summary>
-		/// Specify a one-dimensional texture subimage
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
-		{
-			TexSubImage1DNative(target, level, xoffset, width, format, type, (void*)pixels);
-		}
-
-		/// <summary>
-		/// Specify a one-dimensional texture subimage
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void TexSubImage1D<TPixels>(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
-		{
-			fixed (TPixels* ppixels0 = pixels)
-			{
-				TexSubImage1DNative(target, level, xoffset, width, format, type, ppixels0);
-			}
 		}
 	}
 }

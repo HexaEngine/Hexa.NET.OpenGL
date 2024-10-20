@@ -58,22 +58,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, out uint @params)
+		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, Span<uint> @params)
 		{
-			uint pparams;
-			GetMemoryObjectDetachedResourcesuivNVNative(memory, pname, first, count, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetMemoryObjectDetachedResourcesuivNVNative(memory, pname, first, count, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, Span<uint> @params)
+		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetMemoryObjectDetachedResourcesuivNVNative(memory, pname, first, count, pparams);
+				GetMemoryObjectDetachedResourcesuivNVNative(memory, pname, first, count, pparams0);
 			}
 		}
 

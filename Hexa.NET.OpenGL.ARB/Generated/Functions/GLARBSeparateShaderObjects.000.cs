@@ -360,9 +360,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
 		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, out int @params)
 		{
-			int pparams;
-			GetProgramPipelineivNative(pipeline, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetProgramPipelineivNative(pipeline, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

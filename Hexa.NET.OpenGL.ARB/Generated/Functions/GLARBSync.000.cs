@@ -98,23 +98,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetInteger64v(GLGetPName pname, Span<long> data)
+		public static void GetInteger64v(GLGetPName pname, out long data)
 		{
-			fixed (long* pdata0 = data)
-			{
-				GetInteger64vNative(pname, pdata0);
-			}
+			long pparam;
+			GetInteger64vNative(pname, &pparam);
+			data = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetInteger64v(GLGetPName pname, ref long data)
+		public static void GetInteger64v(GLGetPName pname, Span<long> data)
 		{
-			fixed (long* pdata0 = &data)
+			fixed (long* pparams = data)
 			{
-				GetInteger64vNative(pname, pdata0);
+				GetInteger64vNative(pname, pparams);
 			}
 		}
 
@@ -141,6 +140,29 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the properties of a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
+		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, out int values)
+		{
+			int pparam;
+			GetSyncivNative(sync, pname, count, length, &pparam);
+			values = pparam;
+		}
+
+		/// <summary>
+		/// Query the properties of a sync object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
+		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, Span<int> values)
+		{
+			fixed (int* pparams = values)
+			{
+				GetSyncivNative(sync, pname, count, length, pparams);
+			}
+		}
+
+		/// <summary>
+		/// Query the properties of a sync object
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
 		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, int* values)
 		{
 			fixed (int* plength0 = length)
@@ -158,60 +180,6 @@ namespace Hexa.NET.OpenGL.ARB
 			fixed (int* plength0 = &length)
 			{
 				GetSyncivNative(sync, pname, count, plength0, values);
-			}
-		}
-
-		/// <summary>
-		/// Query the properties of a sync object
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, Span<int> values)
-		{
-			fixed (int* pvalues0 = values)
-			{
-				GetSyncivNative(sync, pname, count, length, pvalues0);
-			}
-		}
-
-		/// <summary>
-		/// Query the properties of a sync object
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, ref int values)
-		{
-			fixed (int* pvalues0 = &values)
-			{
-				GetSyncivNative(sync, pname, count, length, pvalues0);
-			}
-		}
-
-		/// <summary>
-		/// Query the properties of a sync object
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, Span<int> values)
-		{
-			fixed (int* plength0 = length)
-			{
-				fixed (int* pvalues1 = values)
-				{
-					GetSyncivNative(sync, pname, count, plength0, pvalues1);
-				}
-			}
-		}
-
-		/// <summary>
-		/// Query the properties of a sync object
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, ref int length, ref int values)
-		{
-			fixed (int* plength0 = &length)
-			{
-				fixed (int* pvalues1 = &values)
-				{
-					GetSyncivNative(sync, pname, count, plength0, pvalues1);
-				}
 			}
 		}
 

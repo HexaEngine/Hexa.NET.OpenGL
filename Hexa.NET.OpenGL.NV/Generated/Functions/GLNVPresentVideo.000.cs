@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, out long @params)
+		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, Span<long> @params)
 		{
-			long pparams;
-			GetVideoi64vNVNative(videoSlot, pname, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				GetVideoi64vNVNative(videoSlot, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, Span<long> @params)
+		public static void GetVideoi64vNV(uint videoSlot, GLEnum pname, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				GetVideoi64vNVNative(videoSlot, pname, pparams);
+				GetVideoi64vNVNative(videoSlot, pname, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideoivNV(uint videoSlot, GLEnum pname, out int @params)
+		public static void GetVideoivNV(uint videoSlot, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			GetVideoivNVNative(videoSlot, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetVideoivNVNative(videoSlot, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideoivNV(uint videoSlot, GLEnum pname, Span<int> @params)
+		public static void GetVideoivNV(uint videoSlot, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetVideoivNVNative(videoSlot, pname, pparams);
+				GetVideoivNVNative(videoSlot, pname, pparams0);
 			}
 		}
 
@@ -123,22 +125,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, out ulong @params)
+		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetVideoui64vNVNative(videoSlot, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetVideoui64vNVNative(videoSlot, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, Span<ulong> @params)
+		public static void GetVideoui64vNV(uint videoSlot, GLEnum pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetVideoui64vNVNative(videoSlot, pname, pparams);
+				GetVideoui64vNVNative(videoSlot, pname, pparams0);
 			}
 		}
 
@@ -165,22 +168,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideouivNV(uint videoSlot, GLEnum pname, out uint @params)
+		public static void GetVideouivNV(uint videoSlot, GLEnum pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetVideouivNVNative(videoSlot, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetVideouivNVNative(videoSlot, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_present_video</remarks>
-		public static void GetVideouivNV(uint videoSlot, GLEnum pname, Span<uint> @params)
+		public static void GetVideouivNV(uint videoSlot, GLEnum pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetVideouivNVNative(videoSlot, pname, pparams);
+				GetVideouivNVNative(videoSlot, pname, pparams0);
 			}
 		}
 

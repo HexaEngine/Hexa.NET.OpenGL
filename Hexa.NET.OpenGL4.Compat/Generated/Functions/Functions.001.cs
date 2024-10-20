@@ -2692,22 +2692,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogfv(GLFogParameter pname, out float @params)
+		public static void Fogfv(GLFogParameter pname, Span<float> @params)
 		{
-			float pparams;
-			FogfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				FogfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogfv(GLFogParameter pname, Span<float> @params)
+		public static void Fogfv(GLFogParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				FogfvNative(pname, pparams);
+				FogfvNative(pname, pparams0);
 			}
 		}
 
@@ -2753,22 +2754,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogiv(GLFogParameter pname, out int @params)
+		public static void Fogiv(GLFogParameter pname, Span<int> @params)
 		{
-			int pparams;
-			FogivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				FogivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogiv(GLFogParameter pname, Span<int> @params)
+		public static void Fogiv(GLFogParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				FogivNative(pname, pparams);
+				FogivNative(pname, pparams0);
 			}
 		}
 
@@ -3512,9 +3514,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
 		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, out int @params)
 		{
-			int pparams;
-			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -4053,23 +4055,22 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
+		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, out int values)
 		{
-			fixed (int* pvalues0 = values)
-			{
-				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pvalues0);
-			}
+			int pparam;
+			GetActiveSubroutineUniformivNative(program, shadertype, index, pname, &pparam);
+			values = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, ref int values)
+		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
 		{
-			fixed (int* pvalues0 = &values)
+			fixed (int* pparams = values)
 			{
-				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pvalues0);
+				GetActiveSubroutineUniformivNative(program, shadertype, index, pname, pparams);
 			}
 		}
 
@@ -4472,9 +4473,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformBlockiv(uint program, uint uniformBlockIndex, GLUniformBlockPName pname, out int @params)
 		{
-			int pparams;
-			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetActiveUniformBlockivNative(program, uniformBlockIndex, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -4641,9 +4642,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
 		public static void GetActiveUniformsiv(uint program, int uniformCount, uint* uniformIndices, GLUniformPName pname, out int @params)
 		{
-			int pparams;
-			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetActiveUniformsivNative(program, uniformCount, uniformIndices, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -4879,6 +4880,29 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void GetBooleani_v(GLBufferTargetARB target, uint index, out byte data)
+		{
+			byte pparam;
+			GetBooleani_vNative(target, index, &pparam);
+			data = pparam;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void GetBooleani_v(GLBufferTargetARB target, uint index, Span<byte> data)
+		{
+			fixed (byte* pparams = data)
+			{
+				GetBooleani_vNative(target, index, pparams);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleani_v(GLBufferTargetARB target, uint index, string data)
 		{
 			byte* pStr0 = null;
@@ -4909,21 +4933,9 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetBooleani_v(GLBufferTargetARB target, uint index, Span<byte> data)
+		public static void GetBooleani_v(GLBufferTargetARB target, uint index, ReadOnlySpan<byte> data)
 		{
 			fixed (byte* pdata0 = data)
-			{
-				GetBooleani_vNative(target, index, pdata0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetBooleani_v(GLBufferTargetARB target, uint index, ref byte data)
-		{
-			fixed (byte* pdata0 = &data)
 			{
 				GetBooleani_vNative(target, index, pdata0);
 			}
@@ -4946,6 +4958,29 @@ namespace Hexa.NET.OpenGL
 		public static void GetBooleanv(GLGetPName pname, byte* data)
 		{
 			GetBooleanvNative(pname, data);
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void GetBooleanv(GLGetPName pname, out byte data)
+		{
+			byte pparam;
+			GetBooleanvNative(pname, &pparam);
+			data = pparam;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void GetBooleanv(GLGetPName pname, Span<byte> data)
+		{
+			fixed (byte* pparams = data)
+			{
+				GetBooleanvNative(pname, pparams);
+			}
 		}
 
 		/// <summary>
@@ -4982,43 +5017,12 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetBooleanv(GLGetPName pname, Span<byte> data)
+		public static void GetBooleanv(GLGetPName pname, ReadOnlySpan<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
 				GetBooleanvNative(pname, pdata0);
 			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetBooleanv(GLGetPName pname, ref byte data)
-		{
-			fixed (byte* pdata0 = &data)
-			{
-				GetBooleanvNative(pname, pdata0);
-			}
-		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferParameteri64vNative(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
-		{
-			#if NET5_0_OR_GREATER
-			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPNameARB, long*, void>)funcTable[280])(target, pname, @params);
-			#else
-			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPNameARB, nint, void>)funcTable[280])(target, pname, (nint)@params);
-			#endif
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
-		{
-			GetBufferParameteri64vNative(target, pname, @params);
 		}
 	}
 }

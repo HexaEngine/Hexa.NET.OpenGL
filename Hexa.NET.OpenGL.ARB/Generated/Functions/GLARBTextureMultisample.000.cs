@@ -39,23 +39,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the location of a sample
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
+		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, out float val)
 		{
-			fixed (float* pval0 = val)
-			{
-				GetMultisamplefvNative(pname, index, pval0);
-			}
+			float pparam;
+			GetMultisamplefvNative(pname, index, &pparam);
+			val = pparam;
 		}
 
 		/// <summary>
 		/// Retrieve the location of a sample
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, ref float val)
+		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
 		{
-			fixed (float* pval0 = &val)
+			fixed (float* pparams = val)
 			{
-				GetMultisamplefvNative(pname, index, pval0);
+				GetMultisamplefvNative(pname, index, pparams);
 			}
 		}
 

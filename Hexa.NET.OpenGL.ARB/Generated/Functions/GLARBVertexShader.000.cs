@@ -536,22 +536,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
-		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, out float @params)
+		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, Span<float> @params)
 		{
-			float pparams;
-			GetVertexAttribfvARBNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetVertexAttribfvARBNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
-		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, Span<float> @params)
+		public static void GetVertexAttribfvARB(uint index, GLVertexAttribPropertyARB pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetVertexAttribfvARBNative(index, pname, pparams);
+				GetVertexAttribfvARBNative(index, pname, pparams0);
 			}
 		}
 
@@ -578,22 +579,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
-		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, out int @params)
+		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, Span<int> @params)
 		{
-			int pparams;
-			GetVertexAttribivARBNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetVertexAttribivARBNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_program<br/>GL_ARB_vertex_shader</remarks>
-		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, Span<int> @params)
+		public static void GetVertexAttribivARB(uint index, GLVertexAttribPropertyARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetVertexAttribivARBNative(index, pname, pparams);
+				GetVertexAttribivARBNative(index, pname, pparams0);
 			}
 		}
 

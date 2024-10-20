@@ -3828,22 +3828,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogfv(GLFogParameter pname, out float @params)
+		public static void Fogfv(GLFogParameter pname, Span<float> @params)
 		{
-			float pparams;
-			FogfvNative(pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				FogfvNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogfv(GLFogParameter pname, Span<float> @params)
+		public static void Fogfv(GLFogParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				FogfvNative(pname, pparams);
+				FogfvNative(pname, pparams0);
 			}
 		}
 
@@ -3889,22 +3890,23 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogiv(GLFogParameter pname, out int @params)
+		public static void Fogiv(GLFogParameter pname, Span<int> @params)
 		{
-			int pparams;
-			FogivNative(pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				FogivNative(pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Fogiv(GLFogParameter pname, Span<int> @params)
+		public static void Fogiv(GLFogParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				FogivNative(pname, pparams);
+				FogivNative(pname, pparams0);
 			}
 		}
 
@@ -4819,6 +4821,29 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void GetBooleanv(GLGetPName pname, out byte data)
+		{
+			byte pparam;
+			GetBooleanvNative(pname, &pparam);
+			data = pparam;
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
+		public static void GetBooleanv(GLGetPName pname, Span<byte> data)
+		{
+			fixed (byte* pparams = data)
+			{
+				GetBooleanvNative(pname, pparams);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions: All GL versions.</remarks>
 		public static void GetBooleanv(GLGetPName pname, string data)
 		{
 			byte* pStr0 = null;
@@ -4849,21 +4874,9 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetBooleanv(GLGetPName pname, Span<byte> data)
+		public static void GetBooleanv(GLGetPName pname, ReadOnlySpan<byte> data)
 		{
 			fixed (byte* pdata0 = data)
-			{
-				GetBooleanvNative(pname, pdata0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetBooleanv(GLGetPName pname, ref byte data)
-		{
-			fixed (byte* pdata0 = &data)
 			{
 				GetBooleanvNative(pname, pdata0);
 			}
@@ -4894,9 +4907,9 @@ namespace Hexa.NET.OpenGL
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
 		{
-			int pparams;
-			GetBufferParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetBufferParameterivNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -4996,18 +5009,6 @@ namespace Hexa.NET.OpenGL
 		public static void GetClipPlane(GLClipPlaneName plane, Span<double> equation)
 		{
 			fixed (double* pequation0 = equation)
-			{
-				GetClipPlaneNative(plane, pequation0);
-			}
-		}
-
-		/// <summary>
-		/// To be documented.
-		/// </summary>
-		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetClipPlane(GLClipPlaneName plane, ref double equation)
-		{
-			fixed (double* pequation0 = &equation)
 			{
 				GetClipPlaneNative(plane, pequation0);
 			}

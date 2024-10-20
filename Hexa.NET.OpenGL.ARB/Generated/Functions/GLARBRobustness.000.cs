@@ -854,22 +854,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformfvARB(uint program, int location, int bufSize, out float @params)
+		public static void GetnUniformfvARB(uint program, int location, int bufSize, Span<float> @params)
 		{
-			float pparams;
-			GetnUniformfvARBNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetnUniformfvARBNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformfvARB(uint program, int location, int bufSize, Span<float> @params)
+		public static void GetnUniformfvARB(uint program, int location, int bufSize, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetnUniformfvARBNative(program, location, bufSize, pparams);
+				GetnUniformfvARBNative(program, location, bufSize, pparams0);
 			}
 		}
 
@@ -896,22 +897,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformivARB(uint program, int location, int bufSize, out int @params)
+		public static void GetnUniformivARB(uint program, int location, int bufSize, Span<int> @params)
 		{
-			int pparams;
-			GetnUniformivARBNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetnUniformivARBNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformivARB(uint program, int location, int bufSize, Span<int> @params)
+		public static void GetnUniformivARB(uint program, int location, int bufSize, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetnUniformivARBNative(program, location, bufSize, pparams);
+				GetnUniformivARBNative(program, location, bufSize, pparams0);
 			}
 		}
 
@@ -938,22 +940,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformuivARB(uint program, int location, int bufSize, out uint @params)
+		public static void GetnUniformuivARB(uint program, int location, int bufSize, Span<uint> @params)
 		{
-			uint pparams;
-			GetnUniformuivARBNative(program, location, bufSize, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetnUniformuivARBNative(program, location, bufSize, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformuivARB(uint program, int location, int bufSize, Span<uint> @params)
+		public static void GetnUniformuivARB(uint program, int location, int bufSize, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetnUniformuivARBNative(program, location, bufSize, pparams);
+				GetnUniformuivARBNative(program, location, bufSize, pparams0);
 			}
 		}
 

@@ -41,9 +41,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
 		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out long @params)
 		{
-			long pparams;
-			GetInternalformati64vNative(target, internalformat, pname, count, &pparams);
-			@params = pparams;
+			long pparam;
+			GetInternalformati64vNative(target, internalformat, pname, count, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

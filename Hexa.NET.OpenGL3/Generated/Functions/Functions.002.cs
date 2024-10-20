@@ -21,6 +21,40 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void UniformMatrix3x2fv(int location, int count, bool transpose, Span<float> value)
+		{
+			fixed (float* pvalue0 = value)
+			{
+				UniformMatrix3x2fvNative(location, count, transpose, pvalue0);
+			}
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value)
+		{
+			fixed (float* pvalue0 = &value)
+			{
+				UniformMatrix3x2fvNative(location, count, transpose, pvalue0);
+			}
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		internal static void UniformMatrix3x4fvNative(int location, int count, bool transpose, float* value)
+		{
+			#if NET5_0_OR_GREATER
+			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[268])(location, count, *((byte*)(&transpose)), value);
+			#else
+			((delegate* unmanaged[Cdecl]<int, int, byte, nint, void>)funcTable[268])(location, count, *((byte*)(&transpose)), (nint)value);
+			#endif
+		}
+
+		/// <summary>
+		/// To be documented.
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
 		public static void UniformMatrix3x4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x4fvNative(location, count, transpose, value);

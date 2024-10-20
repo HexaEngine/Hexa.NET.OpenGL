@@ -163,23 +163,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
+		public static void GetDoublei_v(GLGetPName target, uint index, out double data)
 		{
-			fixed (double* pdata0 = data)
-			{
-				GetDoublei_vNative(target, index, pdata0);
-			}
+			double pparam;
+			GetDoublei_vNative(target, index, &pparam);
+			data = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, ref double data)
+		public static void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
 		{
-			fixed (double* pdata0 = &data)
+			fixed (double* pparams = data)
 			{
-				GetDoublei_vNative(target, index, pdata0);
+				GetDoublei_vNative(target, index, pparams);
 			}
 		}
 
@@ -206,23 +205,22 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, Span<float> data)
+		public static void GetFloati_v(GLGetPName target, uint index, out float data)
 		{
-			fixed (float* pdata0 = data)
-			{
-				GetFloati_vNative(target, index, pdata0);
-			}
+			float pparam;
+			GetFloati_vNative(target, index, &pparam);
+			data = pparam;
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, ref float data)
+		public static void GetFloati_v(GLGetPName target, uint index, Span<float> data)
 		{
-			fixed (float* pdata0 = &data)
+			fixed (float* pparams = data)
 			{
-				GetFloati_vNative(target, index, pdata0);
+				GetFloati_vNative(target, index, pparams);
 			}
 		}
 

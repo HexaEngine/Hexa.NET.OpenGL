@@ -183,22 +183,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, out uint @params)
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetQueryObjectuivEXTNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetQueryObjectuivEXTNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetQueryObjectuivEXTNative(id, pname, pparams);
+				GetQueryObjectuivEXTNative(id, pname, pparams0);
 			}
 		}
 
@@ -225,22 +226,23 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, out int @params)
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetQueryivEXTNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetQueryivEXTNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetQueryivEXTNative(target, pname, pparams);
+				GetQueryivEXTNative(target, pname, pparams0);
 			}
 		}
 

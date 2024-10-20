@@ -207,22 +207,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, out float @params)
+		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
-			float pparams;
-			GetProgramEnvParameterfvARBNative(target, index, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetProgramEnvParameterfvARBNative(target, index, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
+		public static void GetProgramEnvParameterfvARB(GLProgramTarget target, uint index, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetProgramEnvParameterfvARBNative(target, index, pparams);
+				GetProgramEnvParameterfvARBNative(target, index, pparams0);
 			}
 		}
 
@@ -292,22 +293,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, out float @params)
+		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
-			float pparams;
-			GetProgramLocalParameterfvARBNative(target, index, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetProgramLocalParameterfvARBNative(target, index, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, Span<float> @params)
+		public static void GetProgramLocalParameterfvARB(GLProgramTarget target, uint index, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetProgramLocalParameterfvARBNative(target, index, pparams);
+				GetProgramLocalParameterfvARBNative(target, index, pparams0);
 			}
 		}
 
@@ -374,22 +376,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, out int @params)
+		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
 		{
-			int pparams;
-			GetProgramivARBNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetProgramivARBNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
+		public static void GetProgramivARB(GLProgramTarget target, GLProgramPropertyARB pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetProgramivARBNative(target, pname, pparams);
+				GetProgramivARBNative(target, pname, pparams0);
 			}
 		}
 
@@ -517,22 +520,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, out float @params)
+		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
-			float pparams;
-			ProgramEnvParameter4fvARBNative(target, index, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ProgramEnvParameter4fvARBNative(target, index, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
+		public static void ProgramEnvParameter4fvARB(GLProgramTarget target, uint index, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ProgramEnvParameter4fvARBNative(target, index, pparams);
+				ProgramEnvParameter4fvARBNative(target, index, pparams0);
 			}
 		}
 
@@ -640,22 +644,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, out float @params)
+		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
 		{
-			float pparams;
-			ProgramLocalParameter4fvARBNative(target, index, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ProgramLocalParameter4fvARBNative(target, index, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_fragment_program<br/>GL_ARB_vertex_program</remarks>
-		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, Span<float> @params)
+		public static void ProgramLocalParameter4fvARB(GLProgramTarget target, uint index, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ProgramLocalParameter4fvARBNative(target, index, pparams);
+				ProgramLocalParameter4fvARBNative(target, index, pparams0);
 			}
 		}
 

@@ -99,22 +99,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
-		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, out ulong @params)
+		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			GetVertexAttribLui64vARBNative(index, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				GetVertexAttribLui64vARBNative(index, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_bindless_texture</remarks>
-		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
+		public static void GetVertexAttribLui64vARB(uint index, GLVertexAttribEnum pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				GetVertexAttribLui64vARBNative(index, pname, pparams);
+				GetVertexAttribLui64vARBNative(index, pname, pparams0);
 			}
 		}
 

@@ -41,9 +41,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, out long @params)
 		{
-			long pparams;
-			GetQueryObjecti64vNative(id, pname, &pparams);
-			@params = pparams;
+			long pparam;
+			GetQueryObjecti64vNative(id, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -83,9 +83,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
 		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, out ulong @params)
 		{
-			ulong pparams;
-			GetQueryObjectui64vNative(id, pname, &pparams);
-			@params = pparams;
+			ulong pparam;
+			GetQueryObjectui64vNative(id, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>

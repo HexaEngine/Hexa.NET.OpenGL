@@ -17,6 +17,27 @@ namespace Hexa.NET.OpenGL
 	public static unsafe partial class GL
 	{
 
+		/// <summary>
+		/// Specify a one-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		{
+			TexSubImage1DNative(target, level, xoffset, width, format, type, (void*)pixels);
+		}
+
+		/// <summary>
+		/// Specify a one-dimensional texture subimage
+		/// </summary>
+		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
+		public static void TexSubImage1D<TPixels>(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		{
+			fixed (TPixels* ppixels0 = pixels)
+			{
+				TexSubImage1DNative(target, level, xoffset, width, format, type, ppixels0);
+			}
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		internal static void TexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{

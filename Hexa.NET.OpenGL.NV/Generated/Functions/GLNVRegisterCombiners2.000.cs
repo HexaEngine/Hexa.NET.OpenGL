@@ -39,22 +39,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
-		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, out float @params)
+		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
 		{
-			float pparams;
-			CombinerStageParameterfvNVNative(stage, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				CombinerStageParameterfvNVNative(stage, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
-		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
+		public static void CombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				CombinerStageParameterfvNVNative(stage, pname, pparams);
+				CombinerStageParameterfvNVNative(stage, pname, pparams0);
 			}
 		}
 
@@ -81,22 +82,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
-		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, out float @params)
+		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
 		{
-			float pparams;
-			GetCombinerStageParameterfvNVNative(stage, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				GetCombinerStageParameterfvNVNative(stage, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners2</remarks>
-		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, Span<float> @params)
+		public static void GetCombinerStageParameterfvNV(GLCombinerStageNV stage, GLCombinerParameterNV pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				GetCombinerStageParameterfvNVNative(stage, pname, pparams);
+				GetCombinerStageParameterfvNVNative(stage, pname, pparams0);
 			}
 		}
 

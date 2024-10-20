@@ -183,22 +183,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
-		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, out int @params)
+		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<int> @params)
 		{
-			int pparams;
-			GetOcclusionQueryivNVNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetOcclusionQueryivNVNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
-		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<int> @params)
+		public static void GetOcclusionQueryivNV(uint id, GLOcclusionQueryParameterNameNV pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetOcclusionQueryivNVNative(id, pname, pparams);
+				GetOcclusionQueryivNVNative(id, pname, pparams0);
 			}
 		}
 
@@ -225,22 +226,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
-		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, out uint @params)
+		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetOcclusionQueryuivNVNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetOcclusionQueryuivNVNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_occlusion_query</remarks>
-		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, Span<uint> @params)
+		public static void GetOcclusionQueryuivNV(uint id, GLOcclusionQueryParameterNameNV pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetOcclusionQueryuivNVNative(id, pname, pparams);
+				GetOcclusionQueryuivNVNative(id, pname, pparams0);
 			}
 		}
 

@@ -183,22 +183,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, out int @params)
+		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetQueryObjectivARBNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetQueryObjectivARBNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetQueryObjectivARBNative(id, pname, pparams);
+				GetQueryObjectivARBNative(id, pname, pparams0);
 			}
 		}
 
@@ -225,22 +226,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, out uint @params)
+		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
 		{
-			uint pparams;
-			GetQueryObjectuivARBNative(id, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				GetQueryObjectuivARBNative(id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				GetQueryObjectuivARBNative(id, pname, pparams);
+				GetQueryObjectuivARBNative(id, pname, pparams0);
 			}
 		}
 
@@ -267,22 +269,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, out int @params)
+		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetQueryivARBNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetQueryivARBNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetQueryivARBNative(target, pname, pparams);
+				GetQueryivARBNative(target, pname, pparams0);
 			}
 		}
 

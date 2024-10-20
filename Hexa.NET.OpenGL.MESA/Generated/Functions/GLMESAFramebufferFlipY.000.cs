@@ -58,22 +58,23 @@ namespace Hexa.NET.OpenGL.MESA
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_MESA_framebuffer_flip_y</remarks>
-		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, out int @params)
+		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
-			int pparams;
-			GetFramebufferParameterivMESANative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				GetFramebufferParameterivMESANative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_MESA_framebuffer_flip_y</remarks>
-		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public static void GetFramebufferParameterivMESA(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				GetFramebufferParameterivMESANative(target, pname, pparams);
+				GetFramebufferParameterivMESANative(target, pname, pparams0);
 			}
 		}
 

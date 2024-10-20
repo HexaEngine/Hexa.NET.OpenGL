@@ -198,22 +198,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, out long @params)
+		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, Span<long> @params)
 		{
-			long pparams;
-			MulticastGetQueryObjecti64vNVNative(gpu, id, pname, &pparams);
-			@params = pparams;
+			fixed (long* pparams0 = @params)
+			{
+				MulticastGetQueryObjecti64vNVNative(gpu, id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, Span<long> @params)
+		public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, GLEnum pname, ref long @params)
 		{
-			fixed (long* pparams = @params)
+			fixed (long* pparams0 = &@params)
 			{
-				MulticastGetQueryObjecti64vNVNative(gpu, id, pname, pparams);
+				MulticastGetQueryObjecti64vNVNative(gpu, id, pname, pparams0);
 			}
 		}
 
@@ -240,22 +241,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, out int @params)
+		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, Span<int> @params)
 		{
-			int pparams;
-			MulticastGetQueryObjectivNVNative(gpu, id, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				MulticastGetQueryObjectivNVNative(gpu, id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, Span<int> @params)
+		public static void MulticastGetQueryObjectivNV(uint gpu, uint id, GLEnum pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				MulticastGetQueryObjectivNVNative(gpu, id, pname, pparams);
+				MulticastGetQueryObjectivNVNative(gpu, id, pname, pparams0);
 			}
 		}
 
@@ -282,22 +284,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, out ulong @params)
+		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, Span<ulong> @params)
 		{
-			ulong pparams;
-			MulticastGetQueryObjectui64vNVNative(gpu, id, pname, &pparams);
-			@params = pparams;
+			fixed (ulong* pparams0 = @params)
+			{
+				MulticastGetQueryObjectui64vNVNative(gpu, id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, Span<ulong> @params)
+		public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, GLEnum pname, ref ulong @params)
 		{
-			fixed (ulong* pparams = @params)
+			fixed (ulong* pparams0 = &@params)
 			{
-				MulticastGetQueryObjectui64vNVNative(gpu, id, pname, pparams);
+				MulticastGetQueryObjectui64vNVNative(gpu, id, pname, pparams0);
 			}
 		}
 
@@ -324,22 +327,23 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, out uint @params)
+		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, Span<uint> @params)
 		{
-			uint pparams;
-			MulticastGetQueryObjectuivNVNative(gpu, id, pname, &pparams);
-			@params = pparams;
+			fixed (uint* pparams0 = @params)
+			{
+				MulticastGetQueryObjectuivNVNative(gpu, id, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_multicast</remarks>
-		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, Span<uint> @params)
+		public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, GLEnum pname, ref uint @params)
 		{
-			fixed (uint* pparams = @params)
+			fixed (uint* pparams0 = &@params)
 			{
-				MulticastGetQueryObjectuivNVNative(gpu, id, pname, pparams);
+				MulticastGetQueryObjectuivNVNative(gpu, id, pname, pparams0);
 			}
 		}
 

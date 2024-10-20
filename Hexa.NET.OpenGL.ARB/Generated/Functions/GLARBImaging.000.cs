@@ -157,22 +157,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
+		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
-			float pparams;
-			ColorTableParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ColorTableParameterfvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
+		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ColorTableParameterfvNative(target, pname, pparams);
+				ColorTableParameterfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -199,22 +200,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
+		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
-			int pparams;
-			ColorTableParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				ColorTableParameterivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
+		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				ColorTableParameterivNative(target, pname, pparams);
+				ColorTableParameterivNative(target, pname, pparams0);
 			}
 		}
 
@@ -340,22 +342,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, out float @params)
+		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
 		{
-			float pparams;
-			ConvolutionParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (float* pparams0 = @params)
+			{
+				ConvolutionParameterfvNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
+		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, ref float @params)
 		{
-			fixed (float* pparams = @params)
+			fixed (float* pparams0 = &@params)
 			{
-				ConvolutionParameterfvNative(target, pname, pparams);
+				ConvolutionParameterfvNative(target, pname, pparams0);
 			}
 		}
 
@@ -401,22 +404,23 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, out int @params)
+		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
 		{
-			int pparams;
-			ConvolutionParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			fixed (int* pparams0 = @params)
+			{
+				ConvolutionParameterivNative(target, pname, pparams0);
+			}
 		}
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
+		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, ref int @params)
 		{
-			fixed (int* pparams = @params)
+			fixed (int* pparams0 = &@params)
 			{
-				ConvolutionParameterivNative(target, pname, pparams);
+				ConvolutionParameterivNative(target, pname, pparams0);
 			}
 		}
 
@@ -561,9 +565,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
 		{
-			float pparams;
-			GetColorTableParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetColorTableParameterfvNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -603,9 +607,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
 		{
-			int pparams;
-			GetColorTableParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetColorTableParameterivNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -685,9 +689,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, out float @params)
 		{
-			float pparams;
-			GetConvolutionParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetConvolutionParameterfvNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -727,9 +731,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, out int @params)
 		{
-			int pparams;
-			GetConvolutionParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetConvolutionParameterivNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -809,9 +813,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
 		{
-			float pparams;
-			GetHistogramParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetHistogramParameterfvNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -851,9 +855,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
 		{
-			int pparams;
-			GetHistogramParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetHistogramParameterivNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -933,9 +937,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
 		{
-			float pparams;
-			GetMinmaxParameterfvNative(target, pname, &pparams);
-			@params = pparams;
+			float pparam;
+			GetMinmaxParameterfvNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
@@ -975,9 +979,9 @@ namespace Hexa.NET.OpenGL.ARB
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
 		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
 		{
-			int pparams;
-			GetMinmaxParameterivNative(target, pname, &pparams);
-			@params = pparams;
+			int pparam;
+			GetMinmaxParameterivNative(target, pname, &pparam);
+			@params = pparam;
 		}
 
 		/// <summary>
