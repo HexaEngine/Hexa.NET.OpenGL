@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.MESA
 {
 	public unsafe partial class GLMESAFramebufferFlipY
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.OVR
 {
 	public unsafe partial class GLOVRMultiview
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.APPLE
 {
 	public unsafe partial class GLAPPLEVertexArrayObject
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

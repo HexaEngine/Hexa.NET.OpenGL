@@ -4,6 +4,7 @@
 
     public class GLBase
     {
-        public static INativeContext NativeContext { get; set; } = null!;
+        [ThreadStatic]
+        public static INativeContext NativeContext = null!;
     }
 }

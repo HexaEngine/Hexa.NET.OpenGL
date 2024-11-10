@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.INTEL
 {
 	public unsafe partial class GLINTELMapTexture
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

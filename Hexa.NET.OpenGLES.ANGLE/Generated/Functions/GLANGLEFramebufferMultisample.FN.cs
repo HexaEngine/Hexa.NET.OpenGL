@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 {
 	public unsafe partial class GLANGLEFramebufferMultisample
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

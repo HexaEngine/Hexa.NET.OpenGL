@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.INTEL
 {
 	public unsafe partial class GLINTELFramebufferCMAA
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

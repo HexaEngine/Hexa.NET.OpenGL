@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.AMD
 {
 	public unsafe partial class GLAMDFramebufferSamplePositions
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

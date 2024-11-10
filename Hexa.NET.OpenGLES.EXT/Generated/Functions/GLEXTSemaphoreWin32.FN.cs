@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.EXT
 {
 	public unsafe partial class GLEXTSemaphoreWin32
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

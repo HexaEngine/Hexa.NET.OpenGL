@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.EXT
 {
 	public unsafe partial class GLEXTDrawInstanced
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

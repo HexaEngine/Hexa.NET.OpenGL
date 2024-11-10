@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 {
 	public unsafe partial class GLANGLEFramebufferBlit
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

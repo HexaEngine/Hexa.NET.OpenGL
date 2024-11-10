@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.ARB
 {
 	public unsafe partial class GLARBGpuShaderInt64
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.KHR
 {
 	public unsafe partial class GLKHRDebug
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

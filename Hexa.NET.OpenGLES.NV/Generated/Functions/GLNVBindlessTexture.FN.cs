@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.NV
 {
 	public unsafe partial class GLNVBindlessTexture
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

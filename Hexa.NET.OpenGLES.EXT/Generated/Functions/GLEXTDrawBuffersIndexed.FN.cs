@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.EXT
 {
 	public unsafe partial class GLEXTDrawBuffersIndexed
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.KHR
 {
 	public unsafe partial class GLKHRBlendEquationAdvanced
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

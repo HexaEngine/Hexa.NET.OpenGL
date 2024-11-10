@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.MESA
 {
 	public unsafe partial class GLMESASamplerObjects
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

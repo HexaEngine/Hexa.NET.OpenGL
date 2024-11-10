@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.NV
 {
 	public unsafe partial class GLNVVdpauInterop2
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

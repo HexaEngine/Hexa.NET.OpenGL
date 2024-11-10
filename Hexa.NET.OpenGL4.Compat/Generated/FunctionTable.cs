@@ -15,8 +15,8 @@ namespace Hexa.NET.OpenGL
 {
 	public unsafe partial class GL
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
-		public static INativeContext NativeContext { get; internal set; }
 
 		public static bool Initialized => funcTable != null;
 

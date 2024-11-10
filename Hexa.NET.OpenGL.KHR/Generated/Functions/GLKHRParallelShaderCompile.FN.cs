@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.KHR
 {
 	public unsafe partial class GLKHRParallelShaderCompile
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.OES
 {
 	public unsafe partial class GLOESGetProgramBinary
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

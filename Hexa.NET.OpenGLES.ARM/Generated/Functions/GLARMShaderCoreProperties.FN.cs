@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.ARM
 {
 	public unsafe partial class GLARMShaderCoreProperties
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

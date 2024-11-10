@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGL.ARB
 {
 	public unsafe partial class GLARBES31Compatibility
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

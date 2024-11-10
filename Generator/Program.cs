@@ -780,6 +780,8 @@ internal class Program
         JsonSerializer.Serialize(fs, nameToComment, new JsonSerializerOptions(JsonSerializerDefaults.General) { WriteIndented = true });
         fs.Close();
 
+        StringBuilder sbDefault = new();
+
         foreach (var command in registry.Commands)
         {
             string name = command.Proto.Name;
@@ -796,18 +798,8 @@ internal class Program
 
             string returnType = ParseType(config, command.Proto);
 
-            StringBuilder sbDefault = new();
-            StringBuilder sbNameless = new();
-            StringBuilder sbTypeless = new();
-            StringBuilder sbTypelessApi = new();
-            StringBuilder sbCompatibilityNameless = new();
-            StringBuilder sbCompatibilityTypeless = new();
-
             List<Parameter> parameters = [];
 
-            HashSet<string> delegateTypes = ["GLDebugProc", "GLDebugProcARB", "GLVulkanProcNV", "GLDebugProcAMD", "GLDebugProcKHR"];
-
-            bool first = true;
             for (int i = 0; i < command.Params.Count; i++)
             {
                 Param param = command.Params[i];
@@ -831,58 +823,6 @@ internal class Program
                 }
 
                 parameters.Add(new(paramName, paramType));
-
-                if (!first)
-                {
-                    sbDefault.Append(", ");
-                    sbNameless.Append(", ");
-                    sbTypeless.Append(", ");
-                    sbTypelessApi.Append(", ");
-                    sbCompatibilityNameless.Append(", ");
-                    sbCompatibilityTypeless.Append(", ");
-                }
-                else
-                {
-                    first = false;
-                }
-
-                if (delegateTypes.Contains(paramType))
-                {
-                    sbCompatibilityNameless.Append("nint");
-                    sbCompatibilityTypeless.Append($"Utils.GetFunctionPointerForDelegate({paramName})");
-                    sbDefault.Append($"{paramType} {paramName}");
-                    sbNameless.Append("void*");
-                    sbTypeless.Append($"(void*)Utils.GetFunctionPointerForDelegate({paramName})");
-                    sbTypelessApi.Append(paramName);
-                    continue;
-                }
-
-                if (paramIsBool)
-                {
-                    sbCompatibilityNameless.Append("byte");
-                    sbCompatibilityTypeless.Append($"*((byte*)(&{paramName}))");
-                    sbDefault.Append($"{paramType} {paramName}");
-                    sbNameless.Append("byte");
-                    sbTypeless.Append($"*((byte*)(&{paramName}))");
-                    sbTypelessApi.Append(paramName);
-                    continue;
-                }
-
-                if (paramType.Contains('*'))
-                {
-                    sbCompatibilityNameless.Append("nint");
-                    sbCompatibilityTypeless.Append($"(nint){paramName}");
-                }
-                else
-                {
-                    sbCompatibilityNameless.Append(paramType);
-                    sbCompatibilityTypeless.Append(paramName);
-                }
-
-                sbDefault.Append($"{paramType} {paramName}");
-                sbNameless.Append(paramType);
-                sbTypeless.Append(paramName);
-                sbTypelessApi.Append(paramName);
             }
 
             var arrayParams = parameters.ToArray();
@@ -891,138 +831,43 @@ internal class Program
 
             int idx = functionTableBuilder.Add(command.Name);
 
-            string returnTypeOld = returnType;
-            if (returnTypeOld == "bool")
-            {
-                returnTypeOld = config.GetBoolType();
-            }
-            if (returnTypeOld.Contains('*'))
-            {
-                returnTypeOld = "nint";
-            }
+            string commandComment = MakeComment(nameToComment, sbDefault, command);
 
-            if (first)
-            {
-                sbCompatibilityNameless.Append(returnTypeOld);
-                sbNameless.Append(returnType);
-            }
-            else
-            {
-                sbCompatibilityNameless.Append($", {returnTypeOld}");
-                sbNameless.Append($", {returnType}");
-            }
-
-            StringBuilder summaryBuilder = new();
-
-            var comment = GetCommandComment(command, nameToComment);
-
-            summaryBuilder.AppendLine("/// <summary>");
-
-            foreach (var line in comment.Comment!.Split("\n"))
-            {
-                summaryBuilder.AppendLine($"/// {line}");
-            }
-            summaryBuilder.AppendLine("/// </summary>");
-
-            /*
-            foreach (var parameter in comment.Parameters)
-            {
-                if (parameter.Name == null)
-                {
-                    continue;
-                }
-                builder.Append($"/// <param name=\"{parameter.Name}\">");
-
-                if (parameter.Comment == null)
-                {
-                    builder.AppendLine("</param>");
-                    continue;
-                }
-
-                var lines = parameter.Comment.Trim().Split("\n");
-                if (lines.Length == 1)
-                {
-                    builder.AppendLine($"{lines[0]}</param>");
-                }
-                else
-                {
-                    builder.AppendLine();
-                    foreach (var line in lines)
-                    {
-                        builder.AppendLine($"/// {line}");
-                    }
-                    builder.AppendLine("/// </param>");
-                }
-            }*/
-
-            summaryBuilder.Append($"/// <remarks>");
-            if (command.SupportedVersionText != null)
-            {
-                summaryBuilder.Append(command.SupportedVersionText);
-            }
-            if (command.UsedByExtensionsText != null)
-            {
-                if (command.SupportedVersionText != null)
-                {
-                    summaryBuilder.Append("<br/><br/>");
-                }
-                summaryBuilder.Append(command.UsedByExtensionsText);
-            }
-
-            summaryBuilder.AppendLine("</remarks>");
-            string commandComment = summaryBuilder.ToString();
-            summaryBuilder.Clear();
-
-            string paramSignatureNameless = sbNameless.ToString();
-            string delegateSig;
-            string delegateSigCompat;
-            string delegateSigApi;
-            if (returnType != "void")
-            {
-                delegateSig = $"return ((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, false)}>)funcTable[{idx}])({sbTypeless});";
-                delegateSigCompat = $"return ({returnType})((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, true)}>)funcTable[{idx}])({sbCompatibilityTypeless});";
-                delegateSigApi = $"{returnType} ret = {name}Native({sbTypelessApi});";
-            }
-            else
-            {
-                delegateSig = $"((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, false)}>)funcTable[{idx}])({sbTypeless});";
-                delegateSigCompat = $"((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sbNameless, config, returnType, arrayParams, true)}>)funcTable[{idx}])({sbCompatibilityTypeless});";
-                delegateSigApi = $"{name}Native({sbTypelessApi});";
-            }
-
-            string paramSignature = sbDefault.ToString();
-            string csSig = $"internal static {returnType} {name}Native({paramSignature})";
-            string csSigApi = $"{(isBool ? "bool" : returnType)} {name}({paramSignature})";
+            string paramSignature = MakeApiSignature(sbDefault, arrayParams);
 
             writer.WriteLine("[MethodImpl(MethodImplOptions.AggressiveInlining)]");
-            writer.BeginBlock(csSig);
+            writer.BeginBlock($"internal static {returnType} {name}Native({paramSignature})");
             writer.WriteLine("#if NET5_0_OR_GREATER");
-            writer.WriteLine(delegateSig);
+            writer.WriteLine(MakeDelegateInvokeSignatureFull(sbDefault, config, idx, returnType, arrayParams, false));
             writer.WriteLine("#else");
-            writer.WriteLine(delegateSigCompat);
+            writer.WriteLine(MakeDelegateInvokeSignatureFull(sbDefault, config, idx, returnType, arrayParams, true));
             writer.WriteLine("#endif");
 
             writer.EndBlock();
             writer.WriteLine();
 
-            writer.WriteLines(commandComment);
-            writer.BeginBlock($"public static {csSigApi}");
-            writer.WriteLine(delegateSigApi);
-            if (returnType != "void")
-            {
-                if (isBool)
-                {
-                    writer.WriteLine("return ret != 0;");
-                }
-                else
-                {
-                    writer.WriteLine("return ret;");
-                }
-            }
-            writer.EndBlock();
-            writer.WriteLine();
+            //writer.WriteLines(commandComment);
 
-            logger.LogInfo($"defined {csSigApi}");
+            Overload overload = new(name, arrayParams, commandComment);
+            WriteFunction(returnType, name, arrayParams, writer, [], overload);
+
+            /* writer.BeginBlock($"public static {$"{(isBool ? "bool" : returnType)} {name}({paramSignature})"}");
+             writer.WriteLine(MakeInvokeSignatureFull(sbDefault, name, returnType, arrayParams));
+             if (returnType != "void")
+             {
+                 if (isBool)
+                 {
+                     writer.WriteLine("return ret != 0;");
+                 }
+                 else
+                 {
+                     writer.WriteLine("return ret;");
+                 }
+             }
+             writer.EndBlock();
+             writer.WriteLine();*/
+
+            logger.LogInfo($"defined {$"{(isBool ? "bool" : returnType)} {name}({paramSignature})"}");
 
             if (name.StartsWith("Gen") && parameters.Count == 2 && parameters[0].Type == "int" && parameters[1].Type == "uint*")
             {
@@ -1062,10 +907,10 @@ internal class Program
                 Parameter[] variationParams = [.. arrayParams];
 
                 variationParams[^1] = new(lastParam.Name, $"out {baseType}");
-                var signature = MakeApiSignature(summaryBuilder, name, returnType, variationParams);
+                var signature = MakeApiSignatureFull(sbDefault, name, returnType, variationParams);
 
                 variationParams[^1] = new("&pparam", lastParam.Type);
-                var caller = MakeInvokeSignature(summaryBuilder, name, returnType, variationParams);
+                var caller = MakeInvokeSignatureFull(sbDefault, name, returnType, variationParams);
 
                 writer.WriteLines(commandComment);
                 writer.BeginBlock($"public static {signature}");
@@ -1077,10 +922,10 @@ internal class Program
                 logger.LogInfo($"defined {signature}");
 
                 variationParams[^1] = new(lastParam.Name, $"Span<{baseType}>");
-                signature = MakeApiSignature(summaryBuilder, name, returnType, variationParams);
+                signature = MakeApiSignatureFull(sbDefault, name, returnType, variationParams);
 
                 variationParams[^1] = new("pparams", lastParam.Type);
-                caller = MakeInvokeSignature(summaryBuilder, name, returnType, variationParams);
+                caller = MakeInvokeSignatureFull(sbDefault, name, returnType, variationParams);
 
                 writer.WriteLines(commandComment);
                 writer.BeginBlock($"public static {signature}");
@@ -1151,7 +996,7 @@ internal class Program
                     if (enumName != null)
                     {
                         string enumItem = $"{enumName}.{postfix}Length";
-                        string sig = csSigApi.Replace("void", "string").Replace($", int bufSize, int* length, byte* {parameters[^1].Name}", "");
+                        string sig = $"{(isBool ? "bool" : returnType)} {name}({paramSignature})".Replace("void", "string").Replace($", int bufSize, int* length, byte* {parameters[^1].Name}", "");
                         writer.WriteLines(commandComment);
                         writer.BeginBlock($"public static {sig}");
                         writer.WriteLine("int pStrSize0;");
@@ -1211,13 +1056,89 @@ internal class Program
             {
             }
 
-            Overload overload = new(name, arrayParams, commandComment);
-
             WriteVariations(writer, returnType, overload);
         }
     }
 
-    private static string MakeInvokeSignature(StringBuilder sb, string funcName, string returnType, Parameter[] parameters)
+    private static string MakeComment(Dictionary<string, CommandComment?> nameToComment, StringBuilder sbDefault, Command command)
+    {
+        var comment = GetCommandComment(command, nameToComment);
+
+        sbDefault.AppendLine("/// <summary>");
+
+        foreach (var line in comment.Comment!.Split("\n"))
+        {
+            sbDefault.AppendLine($"/// {line}");
+        }
+        sbDefault.AppendLine("/// </summary>");
+
+        /*
+        foreach (var parameter in comment.Parameters)
+        {
+            if (parameter.Name == null)
+            {
+                continue;
+            }
+            builder.Append($"/// <param name=\"{parameter.Name}\">");
+
+            if (parameter.Comment == null)
+            {
+                builder.AppendLine("</param>");
+                continue;
+            }
+
+            var lines = parameter.Comment.Trim().Split("\n");
+            if (lines.Length == 1)
+            {
+                builder.AppendLine($"{lines[0]}</param>");
+            }
+            else
+            {
+                builder.AppendLine();
+                foreach (var line in lines)
+                {
+                    builder.AppendLine($"/// {line}");
+                }
+                builder.AppendLine("/// </param>");
+            }
+        }*/
+
+        sbDefault.Append($"/// <remarks>");
+        if (command.SupportedVersionText != null)
+        {
+            sbDefault.Append(command.SupportedVersionText);
+        }
+        if (command.UsedByExtensionsText != null)
+        {
+            if (command.SupportedVersionText != null)
+            {
+                sbDefault.Append("<br/><br/>");
+            }
+            sbDefault.Append(command.UsedByExtensionsText);
+        }
+
+        sbDefault.AppendLine("</remarks>");
+        string commandComment = sbDefault.ToString();
+        sbDefault.Clear();
+        return commandComment;
+    }
+
+    private static string MakeInvokeSignatureFull(StringBuilder sb, string funcName, string returnType, Parameter[] parameters)
+    {
+        string delegateSigApi;
+        if (returnType != "void")
+        {
+            delegateSigApi = $"{returnType} ret = {funcName}Native({MakeInvokeSignature(sb, parameters)});";
+        }
+        else
+        {
+            delegateSigApi = $"{funcName}Native({MakeInvokeSignature(sb, parameters)});";
+        }
+
+        return delegateSigApi;
+    }
+
+    private static string MakeInvokeSignature(StringBuilder sb, Parameter[] parameters)
     {
         sb.Clear();
 
@@ -1225,7 +1146,6 @@ internal class Program
         for (int i = 0; i < parameters.Length; i++)
         {
             Parameter param = parameters[i];
-            var paramType = param.Type;
             var paramName = param.Name;
 
             if (!first)
@@ -1238,22 +1158,23 @@ internal class Program
             sb.Append(paramName);
         }
 
-        string delegateSigApi;
-        if (returnType != "void")
-        {
-            delegateSigApi = $"{returnType} ret = {funcName}Native({sb});";
-        }
-        else
-        {
-            delegateSigApi = $"{funcName}Native({sb});";
-        }
+        string delegateSigApi = sb.ToString();
 
         sb.Clear();
 
         return delegateSigApi;
     }
 
-    private static string MakeApiSignature(StringBuilder sb, string funcName, string returnType, Parameter[] parameters)
+    private static string MakeApiSignatureFull(StringBuilder sb, string funcName, string returnType, Parameter[] parameters)
+    {
+        bool isBool = returnType == "byte";
+
+        string csSigApi = $"{(isBool ? "bool" : returnType)} {funcName}({MakeApiSignature(sb, parameters)})";
+
+        return csSigApi;
+    }
+
+    private static string MakeApiSignature(StringBuilder sb, Parameter[] parameters)
     {
         sb.Clear();
 
@@ -1273,9 +1194,7 @@ internal class Program
             sb.Append($"{paramType} {paramName}");
         }
 
-        bool isBool = returnType == "byte";
-
-        string csSigApi = $"{(isBool ? "bool" : returnType)} {funcName}({sb})";
+        string csSigApi = sb.ToString();
 
         sb.Clear();
 
@@ -1291,7 +1210,6 @@ internal class Program
         {
             Parameter param = parameters[i];
             var paramType = param.Type;
-            var paramName = param.Name;
             var paramIsBool = paramType == "bool";
 
             if (paramIsBool)
@@ -1303,14 +1221,12 @@ internal class Program
             {
                 sb.Append(", ");
             }
-            else
-            {
-                first = false;
-            }
+
+            first = false;
 
             if (Config.DelegateTypes.Contains(paramType))
             {
-                sb.Append("nint");
+                sb.Append(compatibility ? "nint" : "void*");
                 continue;
             }
 
@@ -1323,11 +1239,10 @@ internal class Program
             if (compatibility && paramType.Contains('*'))
             {
                 sb.Append("nint");
+                continue;
             }
-            else
-            {
-                sb.Append(paramType);
-            }
+
+            sb.Append(paramType);
         }
 
         if (compatibility && returnType == "bool")
@@ -1353,6 +1268,70 @@ internal class Program
         sb.Clear();
 
         return result;
+    }
+
+    private static string MakeDelegateInvokeSignature(StringBuilder sb, Parameter[] parameters, bool compatibility)
+    {
+        sb.Clear();
+
+        bool first = true;
+        for (int i = 0; i < parameters.Length; i++)
+        {
+            Parameter param = parameters[i];
+            var paramType = param.Type;
+            var paramName = param.Name;
+            var paramIsBool = paramType == "bool";
+
+            if (!first)
+            {
+                sb.Append(", ");
+            }
+
+            first = false;
+
+            if (Config.DelegateTypes.Contains(paramType))
+            {
+                sb.Append(compatibility ? $"Utils.GetFunctionPointerForDelegate({paramName})" : $"(void*)Utils.GetFunctionPointerForDelegate({paramName})");
+                continue;
+            }
+
+            if (paramIsBool)
+            {
+                sb.Append($"*((byte*)(&{paramName}))");
+                continue;
+            }
+
+            if (compatibility && paramType.Contains('*'))
+            {
+                sb.Append($"(nint){paramName}");
+                continue;
+            }
+
+            sb.Append(paramName);
+        }
+
+        string result = sb.ToString();
+
+        sb.Clear();
+
+        return result;
+    }
+
+    private static string MakeDelegateInvokeSignatureFull(StringBuilder sb, CsCodeGeneratorConfig config, int idx, string returnType, Parameter[] parameters, bool compatibility)
+    {
+        if (returnType != "void")
+        {
+            if (compatibility)
+            {
+                return $"return ({returnType})((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sb, config, returnType, parameters, true)}>)funcTable[{idx}])({MakeDelegateInvokeSignature(sb, parameters, compatibility)});";
+            }
+            else
+            {
+                return $"return ((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sb, config, returnType, parameters, compatibility)}>)funcTable[{idx}])({MakeDelegateInvokeSignature(sb, parameters, compatibility)});";
+            }
+        }
+
+        return $"((delegate* unmanaged[Cdecl]<{MakeDelegateSignature(sb, config, returnType, parameters, compatibility)}>)funcTable[{idx}])({MakeDelegateInvokeSignature(sb, parameters, compatibility)});";
     }
 
     private static CommandComment GetCommandComment(Command command, Dictionary<string, CommandComment?> nameToComment)
@@ -1429,61 +1408,14 @@ internal class Program
         return null;
     }
 
-    private static void VariationFor(ICodeWriter writer, string commandComment, string delegateSigApi, string csSigApi, Parameter[] arrayParams, string baseType, bool singular)
-    {
-        var last = arrayParams[^1];
-
-        if (singular)
-        {
-            var signature = csSigApi.Replace($"{baseType}* param", $"out {baseType} param");
-            var caller = delegateSigApi.Replace(last.Name, "&pparam");
-            writer.WriteLines(commandComment);
-            writer.BeginBlock($"public static {signature}");
-            writer.WriteLine($"{baseType} pparam;");
-            writer.WriteLine($"{caller}");
-            writer.WriteLine("param = pparam;");
-            writer.EndBlock();
-            writer.WriteLine();
-            logger.LogInfo($"defined {signature}");
-        }
-        else
-        {
-            var signature = csSigApi.Replace($"{baseType}* @params", $"out {baseType} @params");
-            var caller = delegateSigApi.Replace(last.Name, "&pparams");
-            writer.WriteLines(commandComment);
-            writer.BeginBlock($"public static {signature}");
-            writer.WriteLine($"{baseType} pparams;");
-            writer.WriteLine($"{caller}");
-            writer.WriteLine("@params = pparams;");
-            writer.EndBlock();
-            writer.WriteLine();
-            logger.LogInfo($"defined {signature}");
-
-            signature = csSigApi.Replace($"{baseType}* @params", $"Span<{baseType}> @params");
-            caller = delegateSigApi.Replace(last.Name, "pparams");
-            writer.WriteLines(commandComment);
-            writer.BeginBlock($"public static {signature}");
-            writer.BeginBlock($"fixed ({baseType}* pparams = @params)");
-            writer.WriteLine($"{caller}");
-            writer.EndBlock();
-            writer.EndBlock();
-            writer.WriteLine();
-            logger.LogInfo($"defined {signature}");
-        }
-
-        last.IsOut = true;
-
-        arrayParams[^1] = last;
-    }
-
     private static void WriteFunctionTable(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder)
     {
         var initString = functionTableBuilder.Finish(out var count);
         using var writerfuncTable = new CsCodeWriter(outputPath, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
         using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
         {
+            writerfuncTable.WriteLine("[ThreadStatic]");
             writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
-            writerfuncTable.WriteLine("public static INativeContext NativeContext { get; internal set; }");
             writerfuncTable.WriteLine();
             writerfuncTable.WriteLine($"public static bool Initialized => funcTable != null;");
             writerfuncTable.WriteLine();
@@ -1517,6 +1449,7 @@ internal class Program
         using var writer = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics", baseNamespace], config.HeaderInjector);
         using (writer.PushBlock($"public unsafe partial class {config.ApiName}"))
         {
+            writer.WriteLine("[ThreadStatic]");
             writer.WriteLine("internal static FunctionTable funcTable;");
             writer.WriteLine();
             writer.WriteLine($"public static bool Initialized => funcTable != null;");

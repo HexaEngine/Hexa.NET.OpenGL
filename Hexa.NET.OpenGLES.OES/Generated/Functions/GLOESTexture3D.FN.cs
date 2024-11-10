@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.OES
 {
 	public unsafe partial class GLOESTexture3D
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;

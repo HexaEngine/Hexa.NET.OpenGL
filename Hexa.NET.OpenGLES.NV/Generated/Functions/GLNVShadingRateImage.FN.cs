@@ -16,6 +16,7 @@ namespace Hexa.NET.OpenGLES.NV
 {
 	public unsafe partial class GLNVShadingRateImage
 	{
+		[ThreadStatic]
 		internal static FunctionTable funcTable;
 
 		public static bool Initialized => funcTable != null;
