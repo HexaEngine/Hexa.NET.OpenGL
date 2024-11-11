@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESGetProgramBinary
+	public unsafe partial class GLOESGetProgramBinary
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramBinaryOESNative(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
+		internal void GetProgramBinaryOESNative(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, GLEnum*, void*, void>)funcTable[0])(program, bufSize, length, binaryFormat, binary);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
 		{
 			GetProgramBinaryOESNative(program, bufSize, length, binaryFormat, binary);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
 		{
 			fixed (GLEnum* pbinaryFormat0 = binaryFormat)
 			{
@@ -75,7 +75,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, int* length, ref GLEnum binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, int* length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (GLEnum* pbinaryFormat0 = &binaryFormat)
 			{
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
+		public void GetProgramBinaryOES(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
 		{
 			GetProgramBinaryOESNative(program, bufSize, length, binaryFormat, (void*)binary);
 		}
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void GetProgramBinaryOES<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
+		public void GetProgramBinaryOES<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
 		{
 			fixed (TBinary* pbinary0 = binary)
 			{
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramBinaryOESNative(uint program, GLEnum binaryFormat, void* binary, int length)
+		internal void ProgramBinaryOESNative(uint program, GLEnum binaryFormat, void* binary, int length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, void*, int, void>)funcTable[1])(program, binaryFormat, binary, length);
@@ -148,7 +148,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void ProgramBinaryOES(uint program, GLEnum binaryFormat, void* binary, int length)
+		public void ProgramBinaryOES(uint program, GLEnum binaryFormat, void* binary, int length)
 		{
 			ProgramBinaryOESNative(program, binaryFormat, binary, length);
 		}
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void ProgramBinaryOES(uint program, GLEnum binaryFormat, nint binary, int length)
+		public void ProgramBinaryOES(uint program, GLEnum binaryFormat, nint binary, int length)
 		{
 			ProgramBinaryOESNative(program, binaryFormat, (void*)binary, length);
 		}
@@ -166,7 +166,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_get_program_binary</remarks>
-		public static void ProgramBinaryOES<TBinary>(uint program, GLEnum binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
+		public void ProgramBinaryOES<TBinary>(uint program, GLEnum binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
 		{
 			fixed (TBinary* pbinary0 = binary)
 			{

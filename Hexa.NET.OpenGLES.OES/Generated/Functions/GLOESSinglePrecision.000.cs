@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESSinglePrecision
+	public unsafe partial class GLOESSinglePrecision
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearDepthfOESNative(float depth)
+		internal void ClearDepthfOESNative(float depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[0])(depth);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void ClearDepthfOES(float depth)
+		public void ClearDepthfOES(float depth)
 		{
 			ClearDepthfOESNative(depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClipPlanefOESNative(GLClipPlaneName plane, float* equation)
+		internal void ClipPlanefOESNative(GLClipPlaneName plane, float* equation)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipPlaneName, float*, void>)funcTable[1])(plane, equation);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void ClipPlanefOES(GLClipPlaneName plane, float* equation)
+		public void ClipPlanefOES(GLClipPlaneName plane, float* equation)
 		{
 			ClipPlanefOESNative(plane, equation);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void ClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
+		public void ClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
 		{
 			fixed (float* pequation0 = equation)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void ClipPlanefOES(GLClipPlaneName plane, ref float equation)
+		public void ClipPlanefOES(GLClipPlaneName plane, ref float equation)
 		{
 			fixed (float* pequation0 = &equation)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangefOESNative(float n, float f)
+		internal void DepthRangefOESNative(float n, float f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[2])(n, f);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void DepthRangefOES(float n, float f)
+		public void DepthRangefOES(float n, float f)
 		{
 			DepthRangefOESNative(n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FrustumfOESNative(float l, float r, float b, float t, float n, float f)
+		internal void FrustumfOESNative(float l, float r, float b, float t, float n, float f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, float, float, void>)funcTable[3])(l, r, b, t, n, f);
@@ -111,13 +111,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void FrustumfOES(float l, float r, float b, float t, float n, float f)
+		public void FrustumfOES(float l, float r, float b, float t, float n, float f)
 		{
 			FrustumfOESNative(l, r, b, t, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetClipPlanefOESNative(GLClipPlaneName plane, float* equation)
+		internal void GetClipPlanefOESNative(GLClipPlaneName plane, float* equation)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipPlaneName, float*, void>)funcTable[4])(plane, equation);
@@ -130,7 +130,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void GetClipPlanefOES(GLClipPlaneName plane, float* equation)
+		public void GetClipPlanefOES(GLClipPlaneName plane, float* equation)
 		{
 			GetClipPlanefOESNative(plane, equation);
 		}
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void GetClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
+		public void GetClipPlanefOES(GLClipPlaneName plane, Span<float> equation)
 		{
 			fixed (float* pequation0 = equation)
 			{
@@ -151,7 +151,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void GetClipPlanefOES(GLClipPlaneName plane, ref float equation)
+		public void GetClipPlanefOES(GLClipPlaneName plane, ref float equation)
 		{
 			fixed (float* pequation0 = &equation)
 			{
@@ -160,7 +160,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void OrthofOESNative(float l, float r, float b, float t, float n, float f)
+		internal void OrthofOESNative(float l, float r, float b, float t, float n, float f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, float, float, void>)funcTable[5])(l, r, b, t, n, f);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_single_precision</remarks>
-		public static void OrthofOES(float l, float r, float b, float t, float n, float f)
+		public void OrthofOES(float l, float r, float b, float t, float n, float f)
 		{
 			OrthofOESNative(l, r, b, t, n, f);
 		}

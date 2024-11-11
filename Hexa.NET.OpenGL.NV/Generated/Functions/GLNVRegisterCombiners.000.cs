@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVRegisterCombiners
+	public unsafe partial class GLNVRegisterCombiners
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerInputNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
+		internal void CombinerInputNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerVariableNV, GLCombinerRegisterNV, GLCombinerMappingNV, GLCombinerComponentUsageNV, void>)funcTable[0])(stage, portion, variable, input, mapping, componentUsage);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerInputNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
+		public void CombinerInputNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
 		{
 			CombinerInputNVNative(stage, portion, variable, input, mapping, componentUsage);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerOutputNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, bool abDotProduct, bool cdDotProduct, bool muxSum)
+		internal void CombinerOutputNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, bool abDotProduct, bool cdDotProduct, bool muxSum)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerRegisterNV, GLCombinerScaleNV, GLCombinerBiasNV, byte, byte, byte, void>)funcTable[1])(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, *((byte*)(&abDotProduct)), *((byte*)(&cdDotProduct)), *((byte*)(&muxSum)));
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerOutputNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, bool abDotProduct, bool cdDotProduct, bool muxSum)
+		public void CombinerOutputNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerRegisterNV abOutput, GLCombinerRegisterNV cdOutput, GLCombinerRegisterNV sumOutput, GLCombinerScaleNV scale, GLCombinerBiasNV bias, bool abDotProduct, bool cdDotProduct, bool muxSum)
 		{
 			CombinerOutputNVNative(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, abDotProduct, cdDotProduct, muxSum);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerParameterfNVNative(GLCombinerParameterNV pname, float param)
+		internal void CombinerParameterfNVNative(GLCombinerParameterNV pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerParameterNV, float, void>)funcTable[2])(pname, param);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterfNV(GLCombinerParameterNV pname, float param)
+		public void CombinerParameterfNV(GLCombinerParameterNV pname, float param)
 		{
 			CombinerParameterfNVNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerParameterfvNVNative(GLCombinerParameterNV pname, float* @params)
+		internal void CombinerParameterfvNVNative(GLCombinerParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerParameterNV, float*, void>)funcTable[3])(pname, @params);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterfvNV(GLCombinerParameterNV pname, float* @params)
+		public void CombinerParameterfvNV(GLCombinerParameterNV pname, float* @params)
 		{
 			CombinerParameterfvNVNative(pname, @params);
 		}
@@ -96,7 +96,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterfvNV(GLCombinerParameterNV pname, Span<float> @params)
+		public void CombinerParameterfvNV(GLCombinerParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterfvNV(GLCombinerParameterNV pname, ref float @params)
+		public void CombinerParameterfvNV(GLCombinerParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerParameteriNVNative(GLCombinerParameterNV pname, int param)
+		internal void CombinerParameteriNVNative(GLCombinerParameterNV pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerParameterNV, int, void>)funcTable[4])(pname, param);
@@ -130,13 +130,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameteriNV(GLCombinerParameterNV pname, int param)
+		public void CombinerParameteriNV(GLCombinerParameterNV pname, int param)
 		{
 			CombinerParameteriNVNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CombinerParameterivNVNative(GLCombinerParameterNV pname, int* @params)
+		internal void CombinerParameterivNVNative(GLCombinerParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerParameterNV, int*, void>)funcTable[5])(pname, @params);
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterivNV(GLCombinerParameterNV pname, int* @params)
+		public void CombinerParameterivNV(GLCombinerParameterNV pname, int* @params)
 		{
 			CombinerParameterivNVNative(pname, @params);
 		}
@@ -158,7 +158,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterivNV(GLCombinerParameterNV pname, Span<int> @params)
+		public void CombinerParameterivNV(GLCombinerParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -170,7 +170,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void CombinerParameterivNV(GLCombinerParameterNV pname, ref int @params)
+		public void CombinerParameterivNV(GLCombinerParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -179,7 +179,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FinalCombinerInputNVNative(GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
+		internal void FinalCombinerInputNVNative(GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerVariableNV, GLCombinerRegisterNV, GLCombinerMappingNV, GLCombinerComponentUsageNV, void>)funcTable[6])(variable, input, mapping, componentUsage);
@@ -192,13 +192,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void FinalCombinerInputNV(GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
+		public void FinalCombinerInputNV(GLCombinerVariableNV variable, GLCombinerRegisterNV input, GLCombinerMappingNV mapping, GLCombinerComponentUsageNV componentUsage)
 		{
 			FinalCombinerInputNVNative(variable, input, mapping, componentUsage);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCombinerInputParameterfvNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
+		internal void GetCombinerInputParameterfvNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerVariableNV, GLCombinerParameterNV, float*, void>)funcTable[7])(stage, portion, variable, pname, @params);
@@ -211,7 +211,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerInputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
+		public void GetCombinerInputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
 		{
 			GetCombinerInputParameterfvNVNative(stage, portion, variable, pname, @params);
 		}
@@ -220,7 +220,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerInputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<float> @params)
+		public void GetCombinerInputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -232,7 +232,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerInputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref float @params)
+		public void GetCombinerInputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -241,7 +241,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCombinerInputParameterivNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
+		internal void GetCombinerInputParameterivNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerVariableNV, GLCombinerParameterNV, int*, void>)funcTable[8])(stage, portion, variable, pname, @params);
@@ -254,7 +254,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerInputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
+		public void GetCombinerInputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
 		{
 			GetCombinerInputParameterivNVNative(stage, portion, variable, pname, @params);
 		}
@@ -263,7 +263,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerInputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<int> @params)
+		public void GetCombinerInputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -275,7 +275,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerInputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref int @params)
+		public void GetCombinerInputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -284,7 +284,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCombinerOutputParameterfvNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, float* @params)
+		internal void GetCombinerOutputParameterfvNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerParameterNV, float*, void>)funcTable[9])(stage, portion, pname, @params);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerOutputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, float* @params)
+		public void GetCombinerOutputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, float* @params)
 		{
 			GetCombinerOutputParameterfvNVNative(stage, portion, pname, @params);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerOutputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, Span<float> @params)
+		public void GetCombinerOutputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerOutputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, ref float @params)
+		public void GetCombinerOutputParameterfvNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCombinerOutputParameterivNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, int* @params)
+		internal void GetCombinerOutputParameterivNVNative(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerStageNV, GLCombinerPortionNV, GLCombinerParameterNV, int*, void>)funcTable[10])(stage, portion, pname, @params);
@@ -340,7 +340,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerOutputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, int* @params)
+		public void GetCombinerOutputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, int* @params)
 		{
 			GetCombinerOutputParameterivNVNative(stage, portion, pname, @params);
 		}
@@ -349,7 +349,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerOutputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, Span<int> @params)
+		public void GetCombinerOutputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -361,7 +361,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetCombinerOutputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, ref int @params)
+		public void GetCombinerOutputParameterivNV(GLCombinerStageNV stage, GLCombinerPortionNV portion, GLCombinerParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -370,7 +370,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFinalCombinerInputParameterfvNVNative(GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
+		internal void GetFinalCombinerInputParameterfvNVNative(GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerVariableNV, GLCombinerParameterNV, float*, void>)funcTable[11])(variable, pname, @params);
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetFinalCombinerInputParameterfvNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
+		public void GetFinalCombinerInputParameterfvNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, float* @params)
 		{
 			GetFinalCombinerInputParameterfvNVNative(variable, pname, @params);
 		}
@@ -392,7 +392,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetFinalCombinerInputParameterfvNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<float> @params)
+		public void GetFinalCombinerInputParameterfvNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -404,7 +404,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetFinalCombinerInputParameterfvNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref float @params)
+		public void GetFinalCombinerInputParameterfvNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -413,7 +413,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFinalCombinerInputParameterivNVNative(GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
+		internal void GetFinalCombinerInputParameterivNVNative(GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCombinerVariableNV, GLCombinerParameterNV, int*, void>)funcTable[12])(variable, pname, @params);
@@ -426,7 +426,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetFinalCombinerInputParameterivNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
+		public void GetFinalCombinerInputParameterivNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, int* @params)
 		{
 			GetFinalCombinerInputParameterivNVNative(variable, pname, @params);
 		}
@@ -435,7 +435,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetFinalCombinerInputParameterivNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<int> @params)
+		public void GetFinalCombinerInputParameterivNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -447,7 +447,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_register_combiners</remarks>
-		public static void GetFinalCombinerInputParameterivNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref int @params)
+		public void GetFinalCombinerInputParameterivNV(GLCombinerVariableNV variable, GLCombinerParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

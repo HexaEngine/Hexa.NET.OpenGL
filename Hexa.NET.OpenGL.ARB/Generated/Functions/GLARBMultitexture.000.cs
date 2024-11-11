@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBMultitexture
+	public unsafe partial class GLARBMultitexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ActiveTextureARBNative(GLTextureUnit texture)
+		internal void ActiveTextureARBNative(GLTextureUnit texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, void>)funcTable[0])(texture);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void ActiveTextureARB(GLTextureUnit texture)
+		public void ActiveTextureARB(GLTextureUnit texture)
 		{
 			ActiveTextureARBNative(texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClientActiveTextureARBNative(GLTextureUnit texture)
+		internal void ClientActiveTextureARBNative(GLTextureUnit texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, void>)funcTable[1])(texture);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void ClientActiveTextureARB(GLTextureUnit texture)
+		public void ClientActiveTextureARB(GLTextureUnit texture)
 		{
 			ClientActiveTextureARBNative(texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1dARBNative(GLTextureUnit target, double s)
+		internal void MultiTexCoord1dARBNative(GLTextureUnit target, double s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double, void>)funcTable[2])(target, s);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1dARB(GLTextureUnit target, double s)
+		public void MultiTexCoord1dARB(GLTextureUnit target, double s)
 		{
 			MultiTexCoord1dARBNative(target, s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1dvARBNative(GLTextureUnit target, double* v)
+		internal void MultiTexCoord1dvARBNative(GLTextureUnit target, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double*, void>)funcTable[3])(target, v);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1dvARB(GLTextureUnit target, double* v)
+		public void MultiTexCoord1dvARB(GLTextureUnit target, double* v)
 		{
 			MultiTexCoord1dvARBNative(target, v);
 		}
@@ -96,7 +96,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1dvARB(GLTextureUnit target, Span<double> v)
+		public void MultiTexCoord1dvARB(GLTextureUnit target, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1dvARB(GLTextureUnit target, ref double v)
+		public void MultiTexCoord1dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1fARBNative(GLTextureUnit target, float s)
+		internal void MultiTexCoord1fARBNative(GLTextureUnit target, float s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float, void>)funcTable[4])(target, s);
@@ -130,13 +130,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1fARB(GLTextureUnit target, float s)
+		public void MultiTexCoord1fARB(GLTextureUnit target, float s)
 		{
 			MultiTexCoord1fARBNative(target, s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1fvARBNative(GLTextureUnit target, float* v)
+		internal void MultiTexCoord1fvARBNative(GLTextureUnit target, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float*, void>)funcTable[5])(target, v);
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1fvARB(GLTextureUnit target, float* v)
+		public void MultiTexCoord1fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord1fvARBNative(target, v);
 		}
@@ -158,7 +158,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1fvARB(GLTextureUnit target, Span<float> v)
+		public void MultiTexCoord1fvARB(GLTextureUnit target, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -170,7 +170,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1fvARB(GLTextureUnit target, ref float v)
+		public void MultiTexCoord1fvARB(GLTextureUnit target, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -179,7 +179,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1iARBNative(GLTextureUnit target, int s)
+		internal void MultiTexCoord1iARBNative(GLTextureUnit target, int s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, void>)funcTable[6])(target, s);
@@ -192,13 +192,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1iARB(GLTextureUnit target, int s)
+		public void MultiTexCoord1iARB(GLTextureUnit target, int s)
 		{
 			MultiTexCoord1iARBNative(target, s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1ivARBNative(GLTextureUnit target, int* v)
+		internal void MultiTexCoord1ivARBNative(GLTextureUnit target, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[7])(target, v);
@@ -211,7 +211,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1ivARB(GLTextureUnit target, int* v)
+		public void MultiTexCoord1ivARB(GLTextureUnit target, int* v)
 		{
 			MultiTexCoord1ivARBNative(target, v);
 		}
@@ -220,7 +220,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1ivARB(GLTextureUnit target, Span<int> v)
+		public void MultiTexCoord1ivARB(GLTextureUnit target, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -232,7 +232,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1ivARB(GLTextureUnit target, ref int v)
+		public void MultiTexCoord1ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -241,7 +241,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1sARBNative(GLTextureUnit target, short s)
+		internal void MultiTexCoord1sARBNative(GLTextureUnit target, short s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short, void>)funcTable[8])(target, s);
@@ -254,13 +254,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1sARB(GLTextureUnit target, short s)
+		public void MultiTexCoord1sARB(GLTextureUnit target, short s)
 		{
 			MultiTexCoord1sARBNative(target, s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1svARBNative(GLTextureUnit target, short* v)
+		internal void MultiTexCoord1svARBNative(GLTextureUnit target, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short*, void>)funcTable[9])(target, v);
@@ -273,7 +273,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1svARB(GLTextureUnit target, short* v)
+		public void MultiTexCoord1svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord1svARBNative(target, v);
 		}
@@ -282,7 +282,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1svARB(GLTextureUnit target, Span<short> v)
+		public void MultiTexCoord1svARB(GLTextureUnit target, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -294,7 +294,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord1svARB(GLTextureUnit target, ref short v)
+		public void MultiTexCoord1svARB(GLTextureUnit target, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2dARBNative(GLTextureUnit target, double s, double t)
+		internal void MultiTexCoord2dARBNative(GLTextureUnit target, double s, double t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double, double, void>)funcTable[10])(target, s, t);
@@ -316,13 +316,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2dARB(GLTextureUnit target, double s, double t)
+		public void MultiTexCoord2dARB(GLTextureUnit target, double s, double t)
 		{
 			MultiTexCoord2dARBNative(target, s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2dvARBNative(GLTextureUnit target, double* v)
+		internal void MultiTexCoord2dvARBNative(GLTextureUnit target, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double*, void>)funcTable[11])(target, v);
@@ -335,7 +335,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2dvARB(GLTextureUnit target, double* v)
+		public void MultiTexCoord2dvARB(GLTextureUnit target, double* v)
 		{
 			MultiTexCoord2dvARBNative(target, v);
 		}
@@ -344,7 +344,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2dvARB(GLTextureUnit target, Span<double> v)
+		public void MultiTexCoord2dvARB(GLTextureUnit target, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -356,7 +356,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2dvARB(GLTextureUnit target, ref double v)
+		public void MultiTexCoord2dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -365,7 +365,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2fARBNative(GLTextureUnit target, float s, float t)
+		internal void MultiTexCoord2fARBNative(GLTextureUnit target, float s, float t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float, float, void>)funcTable[12])(target, s, t);
@@ -378,13 +378,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2fARB(GLTextureUnit target, float s, float t)
+		public void MultiTexCoord2fARB(GLTextureUnit target, float s, float t)
 		{
 			MultiTexCoord2fARBNative(target, s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2fvARBNative(GLTextureUnit target, float* v)
+		internal void MultiTexCoord2fvARBNative(GLTextureUnit target, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float*, void>)funcTable[13])(target, v);
@@ -397,7 +397,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2fvARB(GLTextureUnit target, float* v)
+		public void MultiTexCoord2fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord2fvARBNative(target, v);
 		}
@@ -406,7 +406,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2fvARB(GLTextureUnit target, Span<float> v)
+		public void MultiTexCoord2fvARB(GLTextureUnit target, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -418,7 +418,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2fvARB(GLTextureUnit target, ref float v)
+		public void MultiTexCoord2fvARB(GLTextureUnit target, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -427,7 +427,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2iARBNative(GLTextureUnit target, int s, int t)
+		internal void MultiTexCoord2iARBNative(GLTextureUnit target, int s, int t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, int, void>)funcTable[14])(target, s, t);
@@ -440,13 +440,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2iARB(GLTextureUnit target, int s, int t)
+		public void MultiTexCoord2iARB(GLTextureUnit target, int s, int t)
 		{
 			MultiTexCoord2iARBNative(target, s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2ivARBNative(GLTextureUnit target, int* v)
+		internal void MultiTexCoord2ivARBNative(GLTextureUnit target, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[15])(target, v);
@@ -459,7 +459,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2ivARB(GLTextureUnit target, int* v)
+		public void MultiTexCoord2ivARB(GLTextureUnit target, int* v)
 		{
 			MultiTexCoord2ivARBNative(target, v);
 		}
@@ -468,7 +468,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2ivARB(GLTextureUnit target, Span<int> v)
+		public void MultiTexCoord2ivARB(GLTextureUnit target, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -480,7 +480,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2ivARB(GLTextureUnit target, ref int v)
+		public void MultiTexCoord2ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -489,7 +489,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2sARBNative(GLTextureUnit target, short s, short t)
+		internal void MultiTexCoord2sARBNative(GLTextureUnit target, short s, short t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short, short, void>)funcTable[16])(target, s, t);
@@ -502,13 +502,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2sARB(GLTextureUnit target, short s, short t)
+		public void MultiTexCoord2sARB(GLTextureUnit target, short s, short t)
 		{
 			MultiTexCoord2sARBNative(target, s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2svARBNative(GLTextureUnit target, short* v)
+		internal void MultiTexCoord2svARBNative(GLTextureUnit target, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short*, void>)funcTable[17])(target, v);
@@ -521,7 +521,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2svARB(GLTextureUnit target, short* v)
+		public void MultiTexCoord2svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord2svARBNative(target, v);
 		}
@@ -530,7 +530,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2svARB(GLTextureUnit target, Span<short> v)
+		public void MultiTexCoord2svARB(GLTextureUnit target, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -542,7 +542,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord2svARB(GLTextureUnit target, ref short v)
+		public void MultiTexCoord2svARB(GLTextureUnit target, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -551,7 +551,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3dARBNative(GLTextureUnit target, double s, double t, double r)
+		internal void MultiTexCoord3dARBNative(GLTextureUnit target, double s, double t, double r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double, double, double, void>)funcTable[18])(target, s, t, r);
@@ -564,13 +564,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3dARB(GLTextureUnit target, double s, double t, double r)
+		public void MultiTexCoord3dARB(GLTextureUnit target, double s, double t, double r)
 		{
 			MultiTexCoord3dARBNative(target, s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3dvARBNative(GLTextureUnit target, double* v)
+		internal void MultiTexCoord3dvARBNative(GLTextureUnit target, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double*, void>)funcTable[19])(target, v);
@@ -583,7 +583,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3dvARB(GLTextureUnit target, double* v)
+		public void MultiTexCoord3dvARB(GLTextureUnit target, double* v)
 		{
 			MultiTexCoord3dvARBNative(target, v);
 		}
@@ -592,7 +592,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3dvARB(GLTextureUnit target, Span<double> v)
+		public void MultiTexCoord3dvARB(GLTextureUnit target, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -604,7 +604,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3dvARB(GLTextureUnit target, ref double v)
+		public void MultiTexCoord3dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -613,7 +613,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3fARBNative(GLTextureUnit target, float s, float t, float r)
+		internal void MultiTexCoord3fARBNative(GLTextureUnit target, float s, float t, float r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float, float, float, void>)funcTable[20])(target, s, t, r);
@@ -626,13 +626,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3fARB(GLTextureUnit target, float s, float t, float r)
+		public void MultiTexCoord3fARB(GLTextureUnit target, float s, float t, float r)
 		{
 			MultiTexCoord3fARBNative(target, s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3fvARBNative(GLTextureUnit target, float* v)
+		internal void MultiTexCoord3fvARBNative(GLTextureUnit target, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float*, void>)funcTable[21])(target, v);
@@ -645,7 +645,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3fvARB(GLTextureUnit target, float* v)
+		public void MultiTexCoord3fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord3fvARBNative(target, v);
 		}
@@ -654,7 +654,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3fvARB(GLTextureUnit target, Span<float> v)
+		public void MultiTexCoord3fvARB(GLTextureUnit target, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -666,7 +666,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3fvARB(GLTextureUnit target, ref float v)
+		public void MultiTexCoord3fvARB(GLTextureUnit target, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -675,7 +675,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3iARBNative(GLTextureUnit target, int s, int t, int r)
+		internal void MultiTexCoord3iARBNative(GLTextureUnit target, int s, int t, int r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, int, int, void>)funcTable[22])(target, s, t, r);
@@ -688,13 +688,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3iARB(GLTextureUnit target, int s, int t, int r)
+		public void MultiTexCoord3iARB(GLTextureUnit target, int s, int t, int r)
 		{
 			MultiTexCoord3iARBNative(target, s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3ivARBNative(GLTextureUnit target, int* v)
+		internal void MultiTexCoord3ivARBNative(GLTextureUnit target, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[23])(target, v);
@@ -707,7 +707,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3ivARB(GLTextureUnit target, int* v)
+		public void MultiTexCoord3ivARB(GLTextureUnit target, int* v)
 		{
 			MultiTexCoord3ivARBNative(target, v);
 		}
@@ -716,7 +716,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3ivARB(GLTextureUnit target, Span<int> v)
+		public void MultiTexCoord3ivARB(GLTextureUnit target, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -728,7 +728,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3ivARB(GLTextureUnit target, ref int v)
+		public void MultiTexCoord3ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -737,7 +737,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3sARBNative(GLTextureUnit target, short s, short t, short r)
+		internal void MultiTexCoord3sARBNative(GLTextureUnit target, short s, short t, short r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short, short, short, void>)funcTable[24])(target, s, t, r);
@@ -750,13 +750,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3sARB(GLTextureUnit target, short s, short t, short r)
+		public void MultiTexCoord3sARB(GLTextureUnit target, short s, short t, short r)
 		{
 			MultiTexCoord3sARBNative(target, s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3svARBNative(GLTextureUnit target, short* v)
+		internal void MultiTexCoord3svARBNative(GLTextureUnit target, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short*, void>)funcTable[25])(target, v);
@@ -769,7 +769,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3svARB(GLTextureUnit target, short* v)
+		public void MultiTexCoord3svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord3svARBNative(target, v);
 		}
@@ -778,7 +778,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3svARB(GLTextureUnit target, Span<short> v)
+		public void MultiTexCoord3svARB(GLTextureUnit target, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -790,7 +790,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord3svARB(GLTextureUnit target, ref short v)
+		public void MultiTexCoord3svARB(GLTextureUnit target, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -799,7 +799,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4dARBNative(GLTextureUnit target, double s, double t, double r, double q)
+		internal void MultiTexCoord4dARBNative(GLTextureUnit target, double s, double t, double r, double q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double, double, double, double, void>)funcTable[26])(target, s, t, r, q);
@@ -812,13 +812,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4dARB(GLTextureUnit target, double s, double t, double r, double q)
+		public void MultiTexCoord4dARB(GLTextureUnit target, double s, double t, double r, double q)
 		{
 			MultiTexCoord4dARBNative(target, s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4dvARBNative(GLTextureUnit target, double* v)
+		internal void MultiTexCoord4dvARBNative(GLTextureUnit target, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, double*, void>)funcTable[27])(target, v);
@@ -831,7 +831,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4dvARB(GLTextureUnit target, double* v)
+		public void MultiTexCoord4dvARB(GLTextureUnit target, double* v)
 		{
 			MultiTexCoord4dvARBNative(target, v);
 		}
@@ -840,7 +840,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4dvARB(GLTextureUnit target, Span<double> v)
+		public void MultiTexCoord4dvARB(GLTextureUnit target, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -852,7 +852,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4dvARB(GLTextureUnit target, ref double v)
+		public void MultiTexCoord4dvARB(GLTextureUnit target, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -861,7 +861,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4fARBNative(GLTextureUnit target, float s, float t, float r, float q)
+		internal void MultiTexCoord4fARBNative(GLTextureUnit target, float s, float t, float r, float q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float, float, float, float, void>)funcTable[28])(target, s, t, r, q);
@@ -874,13 +874,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4fARB(GLTextureUnit target, float s, float t, float r, float q)
+		public void MultiTexCoord4fARB(GLTextureUnit target, float s, float t, float r, float q)
 		{
 			MultiTexCoord4fARBNative(target, s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4fvARBNative(GLTextureUnit target, float* v)
+		internal void MultiTexCoord4fvARBNative(GLTextureUnit target, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, float*, void>)funcTable[29])(target, v);
@@ -893,7 +893,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4fvARB(GLTextureUnit target, float* v)
+		public void MultiTexCoord4fvARB(GLTextureUnit target, float* v)
 		{
 			MultiTexCoord4fvARBNative(target, v);
 		}
@@ -902,7 +902,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4fvARB(GLTextureUnit target, Span<float> v)
+		public void MultiTexCoord4fvARB(GLTextureUnit target, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -914,7 +914,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4fvARB(GLTextureUnit target, ref float v)
+		public void MultiTexCoord4fvARB(GLTextureUnit target, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -923,7 +923,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4iARBNative(GLTextureUnit target, int s, int t, int r, int q)
+		internal void MultiTexCoord4iARBNative(GLTextureUnit target, int s, int t, int r, int q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, int, int, int, void>)funcTable[30])(target, s, t, r, q);
@@ -936,13 +936,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4iARB(GLTextureUnit target, int s, int t, int r, int q)
+		public void MultiTexCoord4iARB(GLTextureUnit target, int s, int t, int r, int q)
 		{
 			MultiTexCoord4iARBNative(target, s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4ivARBNative(GLTextureUnit target, int* v)
+		internal void MultiTexCoord4ivARBNative(GLTextureUnit target, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[31])(target, v);
@@ -955,7 +955,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4ivARB(GLTextureUnit target, int* v)
+		public void MultiTexCoord4ivARB(GLTextureUnit target, int* v)
 		{
 			MultiTexCoord4ivARBNative(target, v);
 		}
@@ -964,7 +964,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4ivARB(GLTextureUnit target, Span<int> v)
+		public void MultiTexCoord4ivARB(GLTextureUnit target, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -976,7 +976,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4ivARB(GLTextureUnit target, ref int v)
+		public void MultiTexCoord4ivARB(GLTextureUnit target, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -985,7 +985,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4sARBNative(GLTextureUnit target, short s, short t, short r, short q)
+		internal void MultiTexCoord4sARBNative(GLTextureUnit target, short s, short t, short r, short q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short, short, short, short, void>)funcTable[32])(target, s, t, r, q);
@@ -998,13 +998,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4sARB(GLTextureUnit target, short s, short t, short r, short q)
+		public void MultiTexCoord4sARB(GLTextureUnit target, short s, short t, short r, short q)
 		{
 			MultiTexCoord4sARBNative(target, s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4svARBNative(GLTextureUnit target, short* v)
+		internal void MultiTexCoord4svARBNative(GLTextureUnit target, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, short*, void>)funcTable[33])(target, v);
@@ -1017,7 +1017,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4svARB(GLTextureUnit target, short* v)
+		public void MultiTexCoord4svARB(GLTextureUnit target, short* v)
 		{
 			MultiTexCoord4svARBNative(target, v);
 		}
@@ -1026,7 +1026,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4svARB(GLTextureUnit target, Span<short> v)
+		public void MultiTexCoord4svARB(GLTextureUnit target, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1038,7 +1038,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multitexture</remarks>
-		public static void MultiTexCoord4svARB(GLTextureUnit target, ref short v)
+		public void MultiTexCoord4svARB(GLTextureUnit target, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDGpuShaderInt64
+	public unsafe partial class GLAMDGpuShaderInt64
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformi64vNVNative(uint program, int location, long* @params)
+		internal void GetUniformi64vNVNative(uint program, int location, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long*, void>)funcTable[0])(program, location, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformi64vNV(uint program, int location, long* @params)
+		public void GetUniformi64vNV(uint program, int location, long* @params)
 		{
 			GetUniformi64vNVNative(program, location, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformi64vNV(uint program, int location, Span<long> @params)
+		public void GetUniformi64vNV(uint program, int location, Span<long> @params)
 		{
 			fixed (long* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformi64vNV(uint program, int location, ref long @params)
+		public void GetUniformi64vNV(uint program, int location, ref long @params)
 		{
 			fixed (long* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformui64vNVNative(uint program, int location, ulong* @params)
+		internal void GetUniformui64vNVNative(uint program, int location, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong*, void>)funcTable[1])(program, location, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, ulong* @params)
+		public void GetUniformui64vNV(uint program, int location, ulong* @params)
 		{
 			GetUniformui64vNVNative(program, location, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
+		public void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, ref ulong @params)
+		public void GetUniformui64vNV(uint program, int location, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1i64NVNative(uint program, int location, long x)
+		internal void ProgramUniform1i64NVNative(uint program, int location, long x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, void>)funcTable[2])(program, location, x);
@@ -116,13 +116,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64NV(uint program, int location, long x)
+		public void ProgramUniform1i64NV(uint program, int location, long x)
 		{
 			ProgramUniform1i64NVNative(program, location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1i64vNVNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform1i64vNVNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[3])(program, location, count, value);
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64vNV(uint program, int location, int count, long* value)
+		public void ProgramUniform1i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform1i64vNVNative(program, location, count, value);
 		}
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64vNV(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform1i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -156,7 +156,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64vNV(uint program, int location, int count, ref long value)
+		public void ProgramUniform1i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1ui64NVNative(uint program, int location, ulong x)
+		internal void ProgramUniform1ui64NVNative(uint program, int location, ulong x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, void>)funcTable[4])(program, location, x);
@@ -178,13 +178,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64NV(uint program, int location, ulong x)
+		public void ProgramUniform1ui64NV(uint program, int location, ulong x)
 		{
 			ProgramUniform1ui64NVNative(program, location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1ui64vNVNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform1ui64vNVNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[5])(program, location, count, value);
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64vNV(uint program, int location, int count, ulong* value)
+		public void ProgramUniform1ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform1ui64vNVNative(program, location, count, value);
 		}
@@ -206,7 +206,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64vNV(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform1ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64vNV(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform1ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -227,7 +227,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2i64NVNative(uint program, int location, long x, long y)
+		internal void ProgramUniform2i64NVNative(uint program, int location, long x, long y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, long, void>)funcTable[6])(program, location, x, y);
@@ -240,13 +240,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64NV(uint program, int location, long x, long y)
+		public void ProgramUniform2i64NV(uint program, int location, long x, long y)
 		{
 			ProgramUniform2i64NVNative(program, location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2i64vNVNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform2i64vNVNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[7])(program, location, count, value);
@@ -259,7 +259,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64vNV(uint program, int location, int count, long* value)
+		public void ProgramUniform2i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform2i64vNVNative(program, location, count, value);
 		}
@@ -268,7 +268,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64vNV(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform2i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -280,7 +280,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64vNV(uint program, int location, int count, ref long value)
+		public void ProgramUniform2i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -289,7 +289,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2ui64NVNative(uint program, int location, ulong x, ulong y)
+		internal void ProgramUniform2ui64NVNative(uint program, int location, ulong x, ulong y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, ulong, void>)funcTable[8])(program, location, x, y);
@@ -302,13 +302,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64NV(uint program, int location, ulong x, ulong y)
+		public void ProgramUniform2ui64NV(uint program, int location, ulong x, ulong y)
 		{
 			ProgramUniform2ui64NVNative(program, location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2ui64vNVNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform2ui64vNVNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[9])(program, location, count, value);
@@ -321,7 +321,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64vNV(uint program, int location, int count, ulong* value)
+		public void ProgramUniform2ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform2ui64vNVNative(program, location, count, value);
 		}
@@ -330,7 +330,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64vNV(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform2ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64vNV(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform2ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -351,7 +351,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3i64NVNative(uint program, int location, long x, long y, long z)
+		internal void ProgramUniform3i64NVNative(uint program, int location, long x, long y, long z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, long, long, void>)funcTable[10])(program, location, x, y, z);
@@ -364,13 +364,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64NV(uint program, int location, long x, long y, long z)
+		public void ProgramUniform3i64NV(uint program, int location, long x, long y, long z)
 		{
 			ProgramUniform3i64NVNative(program, location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3i64vNVNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform3i64vNVNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[11])(program, location, count, value);
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64vNV(uint program, int location, int count, long* value)
+		public void ProgramUniform3i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform3i64vNVNative(program, location, count, value);
 		}
@@ -392,7 +392,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64vNV(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform3i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -404,7 +404,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64vNV(uint program, int location, int count, ref long value)
+		public void ProgramUniform3i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -413,7 +413,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3ui64NVNative(uint program, int location, ulong x, ulong y, ulong z)
+		internal void ProgramUniform3ui64NVNative(uint program, int location, ulong x, ulong y, ulong z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, ulong, ulong, void>)funcTable[12])(program, location, x, y, z);
@@ -426,13 +426,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64NV(uint program, int location, ulong x, ulong y, ulong z)
+		public void ProgramUniform3ui64NV(uint program, int location, ulong x, ulong y, ulong z)
 		{
 			ProgramUniform3ui64NVNative(program, location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3ui64vNVNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform3ui64vNVNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[13])(program, location, count, value);
@@ -445,7 +445,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64vNV(uint program, int location, int count, ulong* value)
+		public void ProgramUniform3ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform3ui64vNVNative(program, location, count, value);
 		}
@@ -454,7 +454,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64vNV(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform3ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -466,7 +466,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64vNV(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform3ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -475,7 +475,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4i64NVNative(uint program, int location, long x, long y, long z, long w)
+		internal void ProgramUniform4i64NVNative(uint program, int location, long x, long y, long z, long w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, long, long, long, void>)funcTable[14])(program, location, x, y, z, w);
@@ -488,13 +488,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64NV(uint program, int location, long x, long y, long z, long w)
+		public void ProgramUniform4i64NV(uint program, int location, long x, long y, long z, long w)
 		{
 			ProgramUniform4i64NVNative(program, location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4i64vNVNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform4i64vNVNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[15])(program, location, count, value);
@@ -507,7 +507,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64vNV(uint program, int location, int count, long* value)
+		public void ProgramUniform4i64vNV(uint program, int location, int count, long* value)
 		{
 			ProgramUniform4i64vNVNative(program, location, count, value);
 		}
@@ -516,7 +516,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64vNV(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform4i64vNV(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -528,7 +528,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64vNV(uint program, int location, int count, ref long value)
+		public void ProgramUniform4i64vNV(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -537,7 +537,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4ui64NVNative(uint program, int location, ulong x, ulong y, ulong z, ulong w)
+		internal void ProgramUniform4ui64NVNative(uint program, int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, ulong, ulong, ulong, void>)funcTable[16])(program, location, x, y, z, w);
@@ -550,13 +550,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64NV(uint program, int location, ulong x, ulong y, ulong z, ulong w)
+		public void ProgramUniform4ui64NV(uint program, int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			ProgramUniform4ui64NVNative(program, location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4ui64vNVNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform4ui64vNVNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[17])(program, location, count, value);
@@ -569,7 +569,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64vNV(uint program, int location, int count, ulong* value)
+		public void ProgramUniform4ui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform4ui64vNVNative(program, location, count, value);
 		}
@@ -578,7 +578,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64vNV(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform4ui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -590,7 +590,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64vNV(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform4ui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -599,7 +599,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1i64NVNative(int location, long x)
+		internal void Uniform1i64NVNative(int location, long x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, void>)funcTable[18])(location, x);
@@ -612,13 +612,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1i64NV(int location, long x)
+		public void Uniform1i64NV(int location, long x)
 		{
 			Uniform1i64NVNative(location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1i64vNVNative(int location, int count, long* value)
+		internal void Uniform1i64vNVNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[19])(location, count, value);
@@ -631,7 +631,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1i64vNV(int location, int count, long* value)
+		public void Uniform1i64vNV(int location, int count, long* value)
 		{
 			Uniform1i64vNVNative(location, count, value);
 		}
@@ -640,7 +640,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1i64vNV(int location, int count, Span<long> value)
+		public void Uniform1i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -652,7 +652,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1i64vNV(int location, int count, ref long value)
+		public void Uniform1i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -661,7 +661,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1ui64NVNative(int location, ulong x)
+		internal void Uniform1ui64NVNative(int location, ulong x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, void>)funcTable[20])(location, x);
@@ -674,13 +674,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1ui64NV(int location, ulong x)
+		public void Uniform1ui64NV(int location, ulong x)
 		{
 			Uniform1ui64NVNative(location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1ui64vNVNative(int location, int count, ulong* value)
+		internal void Uniform1ui64vNVNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[21])(location, count, value);
@@ -693,7 +693,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1ui64vNV(int location, int count, ulong* value)
+		public void Uniform1ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform1ui64vNVNative(location, count, value);
 		}
@@ -702,7 +702,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1ui64vNV(int location, int count, Span<ulong> value)
+		public void Uniform1ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -714,7 +714,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform1ui64vNV(int location, int count, ref ulong value)
+		public void Uniform1ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -723,7 +723,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2i64NVNative(int location, long x, long y)
+		internal void Uniform2i64NVNative(int location, long x, long y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, long, void>)funcTable[22])(location, x, y);
@@ -736,13 +736,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2i64NV(int location, long x, long y)
+		public void Uniform2i64NV(int location, long x, long y)
 		{
 			Uniform2i64NVNative(location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2i64vNVNative(int location, int count, long* value)
+		internal void Uniform2i64vNVNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[23])(location, count, value);
@@ -755,7 +755,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2i64vNV(int location, int count, long* value)
+		public void Uniform2i64vNV(int location, int count, long* value)
 		{
 			Uniform2i64vNVNative(location, count, value);
 		}
@@ -764,7 +764,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2i64vNV(int location, int count, Span<long> value)
+		public void Uniform2i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -776,7 +776,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2i64vNV(int location, int count, ref long value)
+		public void Uniform2i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -785,7 +785,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ui64NVNative(int location, ulong x, ulong y)
+		internal void Uniform2ui64NVNative(int location, ulong x, ulong y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, ulong, void>)funcTable[24])(location, x, y);
@@ -798,13 +798,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2ui64NV(int location, ulong x, ulong y)
+		public void Uniform2ui64NV(int location, ulong x, ulong y)
 		{
 			Uniform2ui64NVNative(location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ui64vNVNative(int location, int count, ulong* value)
+		internal void Uniform2ui64vNVNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[25])(location, count, value);
@@ -817,7 +817,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2ui64vNV(int location, int count, ulong* value)
+		public void Uniform2ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform2ui64vNVNative(location, count, value);
 		}
@@ -826,7 +826,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2ui64vNV(int location, int count, Span<ulong> value)
+		public void Uniform2ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -838,7 +838,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform2ui64vNV(int location, int count, ref ulong value)
+		public void Uniform2ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -847,7 +847,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3i64NVNative(int location, long x, long y, long z)
+		internal void Uniform3i64NVNative(int location, long x, long y, long z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, long, long, void>)funcTable[26])(location, x, y, z);
@@ -860,13 +860,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3i64NV(int location, long x, long y, long z)
+		public void Uniform3i64NV(int location, long x, long y, long z)
 		{
 			Uniform3i64NVNative(location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3i64vNVNative(int location, int count, long* value)
+		internal void Uniform3i64vNVNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[27])(location, count, value);
@@ -879,7 +879,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3i64vNV(int location, int count, long* value)
+		public void Uniform3i64vNV(int location, int count, long* value)
 		{
 			Uniform3i64vNVNative(location, count, value);
 		}
@@ -888,7 +888,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3i64vNV(int location, int count, Span<long> value)
+		public void Uniform3i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -900,7 +900,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3i64vNV(int location, int count, ref long value)
+		public void Uniform3i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -909,7 +909,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ui64NVNative(int location, ulong x, ulong y, ulong z)
+		internal void Uniform3ui64NVNative(int location, ulong x, ulong y, ulong z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, ulong, ulong, void>)funcTable[28])(location, x, y, z);
@@ -922,13 +922,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3ui64NV(int location, ulong x, ulong y, ulong z)
+		public void Uniform3ui64NV(int location, ulong x, ulong y, ulong z)
 		{
 			Uniform3ui64NVNative(location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ui64vNVNative(int location, int count, ulong* value)
+		internal void Uniform3ui64vNVNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[29])(location, count, value);
@@ -941,7 +941,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3ui64vNV(int location, int count, ulong* value)
+		public void Uniform3ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform3ui64vNVNative(location, count, value);
 		}
@@ -950,7 +950,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3ui64vNV(int location, int count, Span<ulong> value)
+		public void Uniform3ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -962,7 +962,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform3ui64vNV(int location, int count, ref ulong value)
+		public void Uniform3ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -971,7 +971,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4i64NVNative(int location, long x, long y, long z, long w)
+		internal void Uniform4i64NVNative(int location, long x, long y, long z, long w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, long, long, long, void>)funcTable[30])(location, x, y, z, w);
@@ -984,13 +984,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4i64NV(int location, long x, long y, long z, long w)
+		public void Uniform4i64NV(int location, long x, long y, long z, long w)
 		{
 			Uniform4i64NVNative(location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4i64vNVNative(int location, int count, long* value)
+		internal void Uniform4i64vNVNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[31])(location, count, value);
@@ -1003,7 +1003,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4i64vNV(int location, int count, long* value)
+		public void Uniform4i64vNV(int location, int count, long* value)
 		{
 			Uniform4i64vNVNative(location, count, value);
 		}
@@ -1012,7 +1012,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4i64vNV(int location, int count, Span<long> value)
+		public void Uniform4i64vNV(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -1024,7 +1024,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4i64vNV(int location, int count, ref long value)
+		public void Uniform4i64vNV(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -1033,7 +1033,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ui64NVNative(int location, ulong x, ulong y, ulong z, ulong w)
+		internal void Uniform4ui64NVNative(int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, ulong, ulong, ulong, void>)funcTable[32])(location, x, y, z, w);
@@ -1046,13 +1046,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4ui64NV(int location, ulong x, ulong y, ulong z, ulong w)
+		public void Uniform4ui64NV(int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			Uniform4ui64NVNative(location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ui64vNVNative(int location, int count, ulong* value)
+		internal void Uniform4ui64vNVNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[33])(location, count, value);
@@ -1065,7 +1065,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4ui64vNV(int location, int count, ulong* value)
+		public void Uniform4ui64vNV(int location, int count, ulong* value)
 		{
 			Uniform4ui64vNVNative(location, count, value);
 		}
@@ -1074,7 +1074,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4ui64vNV(int location, int count, Span<ulong> value)
+		public void Uniform4ui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -1086,7 +1086,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_shader5<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void Uniform4ui64vNV(int location, int count, ref ulong value)
+		public void Uniform4ui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTStencilTwoSide
+	public unsafe partial class GLEXTStencilTwoSide
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ActiveStencilFaceEXTNative(GLTriangleFace face)
+		internal void ActiveStencilFaceEXTNative(GLTriangleFace face)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, void>)funcTable[0])(face);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_stencil_two_side</remarks>
-		public static void ActiveStencilFaceEXT(GLTriangleFace face)
+		public void ActiveStencilFaceEXT(GLTriangleFace face)
 		{
 			ActiveStencilFaceEXTNative(face);
 		}

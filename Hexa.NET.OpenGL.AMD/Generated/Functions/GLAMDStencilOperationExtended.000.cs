@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDStencilOperationExtended
+	public unsafe partial class GLAMDStencilOperationExtended
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilOpValueAMDNative(GLTriangleFace face, uint value)
+		internal void StencilOpValueAMDNative(GLTriangleFace face, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, uint, void>)funcTable[0])(face, value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_stencil_operation_extended</remarks>
-		public static void StencilOpValueAMD(GLTriangleFace face, uint value)
+		public void StencilOpValueAMD(GLTriangleFace face, uint value)
 		{
 			StencilOpValueAMDNative(face, value);
 		}

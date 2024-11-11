@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVBindlessMultiDrawIndirectCount
+	public unsafe partial class GLNVBindlessMultiDrawIndirectCount
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawArraysIndirectBindlessCountNVNative(GLPrimitiveType mode, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		internal void MultiDrawArraysIndirectBindlessCountNVNative(GLPrimitiveType mode, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void*, int, int, int, int, void>)funcTable[0])(mode, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
-		public static void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		public void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawArraysIndirectBindlessCountNVNative(mode, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
-		public static void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		public void MultiDrawArraysIndirectBindlessCountNV(GLPrimitiveType mode, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawArraysIndirectBindlessCountNVNative(mode, (void*)indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
-		public static void MultiDrawArraysIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
+		public void MultiDrawArraysIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawElementsIndirectBindlessCountNVNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		internal void MultiDrawElementsIndirectBindlessCountNVNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, GLDrawElementsType, void*, int, int, int, int, void>)funcTable[1])(mode, type, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
-		public static void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		public void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawElementsIndirectBindlessCountNVNative(mode, type, indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
-		public static void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
+		public void MultiDrawElementsIndirectBindlessCountNV(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount)
 		{
 			MultiDrawElementsIndirectBindlessCountNVNative(mode, type, (void*)indirect, drawCount, maxDrawCount, stride, vertexBufferCount);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_multi_draw_indirect_count</remarks>
-		public static void MultiDrawElementsIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
+		public void MultiDrawElementsIndirectBindlessCountNV<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int drawCount, int maxDrawCount, int stride, int vertexBufferCount) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{

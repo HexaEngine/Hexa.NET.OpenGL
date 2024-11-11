@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBPointParameters
+	public unsafe partial class GLARBPointParameters
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PointParameterfARBNative(GLPointParameterNameARB pname, float param)
+		internal void PointParameterfARBNative(GLPointParameterNameARB pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, float, void>)funcTable[0])(pname, param);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
-		public static void PointParameterfARB(GLPointParameterNameARB pname, float param)
+		public void PointParameterfARB(GLPointParameterNameARB pname, float param)
 		{
 			PointParameterfARBNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PointParameterfvARBNative(GLPointParameterNameARB pname, float* @params)
+		internal void PointParameterfvARBNative(GLPointParameterNameARB pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, float*, void>)funcTable[1])(pname, @params);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
-		public static void PointParameterfvARB(GLPointParameterNameARB pname, float* @params)
+		public void PointParameterfvARB(GLPointParameterNameARB pname, float* @params)
 		{
 			PointParameterfvARBNative(pname, @params);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
-		public static void PointParameterfvARB(GLPointParameterNameARB pname, Span<float> @params)
+		public void PointParameterfvARB(GLPointParameterNameARB pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_point_parameters</remarks>
-		public static void PointParameterfvARB(GLPointParameterNameARB pname, ref float @params)
+		public void PointParameterfvARB(GLPointParameterNameARB pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{

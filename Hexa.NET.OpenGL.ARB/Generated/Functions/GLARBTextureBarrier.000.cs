@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTextureBarrier
+	public unsafe partial class GLARBTextureBarrier
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBarrierNative()
+		internal void TextureBarrierNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Controls the ordering of reads and writes to rendered fragments across drawing commands
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_texture_barrier</remarks>
-		public static void TextureBarrier()
+		public void TextureBarrier()
 		{
 			TextureBarrierNative();
 		}

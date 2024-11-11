@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBVertexBufferObject
+	public unsafe partial class GLARBVertexBufferObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferARBNative(GLBufferTargetARB target, uint buffer)
+		internal void BindBufferARBNative(GLBufferTargetARB target, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, void>)funcTable[0])(target, buffer);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BindBufferARB(GLBufferTargetARB target, uint buffer)
+		public void BindBufferARB(GLBufferTargetARB target, uint buffer)
 		{
 			BindBufferARBNative(target, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferDataARBNative(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
+		internal void BufferDataARBNative(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, void*, GLBufferUsageARB, void>)funcTable[1])(target, size, data, usage);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BufferDataARB(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
+		public void BufferDataARB(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
 		{
 			BufferDataARBNative(target, size, data, usage);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BufferDataARB(GLBufferTargetARB target, nint size, nint data, GLBufferUsageARB usage)
+		public void BufferDataARB(GLBufferTargetARB target, nint size, nint data, GLBufferUsageARB usage)
 		{
 			BufferDataARBNative(target, size, (void*)data, usage);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BufferDataARB<TData>(GLBufferTargetARB target, nint size, Span<TData> data, GLBufferUsageARB usage) where TData : unmanaged
+		public void BufferDataARB<TData>(GLBufferTargetARB target, nint size, Span<TData> data, GLBufferUsageARB usage) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -76,7 +76,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferSubDataARBNative(GLBufferTargetARB target, nint offset, nint size, void* data)
+		internal void BufferSubDataARBNative(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, void*, void>)funcTable[2])(target, offset, size, data);
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, void* data)
+		public void BufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			BufferSubDataARBNative(target, offset, size, data);
 		}
@@ -98,7 +98,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, nint data)
+		public void BufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, nint data)
 		{
 			BufferSubDataARBNative(target, offset, size, (void*)data);
 		}
@@ -107,7 +107,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void BufferSubDataARB<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void BufferSubDataARB<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteBuffersARBNative(int n, uint* buffers)
+		internal void DeleteBuffersARBNative(int n, uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, buffers);
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void DeleteBuffersARB(int n, uint* buffers)
+		public void DeleteBuffersARB(int n, uint* buffers)
 		{
 			DeleteBuffersARBNative(n, buffers);
 		}
@@ -138,7 +138,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void DeleteBuffersAR(uint buffer)
+		public void DeleteBuffersAR(uint buffer)
 		{
 			DeleteBuffersARBNative(1, &buffer);
 		}
@@ -147,7 +147,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void DeleteBuffersARB(int n, Span<uint> buffers)
+		public void DeleteBuffersARB(int n, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void DeleteBuffersARB(int n, ref uint buffers)
+		public void DeleteBuffersARB(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenBuffersARBNative(int n, uint* buffers)
+		internal void GenBuffersARBNative(int n, uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[4])(n, buffers);
@@ -181,7 +181,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GenBuffersARB(int n, uint* buffers)
+		public void GenBuffersARB(int n, uint* buffers)
 		{
 			GenBuffersARBNative(n, buffers);
 		}
@@ -190,7 +190,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static uint GenBuffersAR()
+		public uint GenBuffersAR()
 		{
 			uint result;
 			GenBuffersARBNative(1, &result);
@@ -201,7 +201,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GenBuffersARB(int n, Span<uint> buffers)
+		public void GenBuffersARB(int n, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -213,7 +213,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GenBuffersARB(int n, ref uint buffers)
+		public void GenBuffersARB(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -222,7 +222,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferParameterivARBNative(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
+		internal void GetBufferParameterivARBNative(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPNameARB, int*, void>)funcTable[5])(target, pname, @params);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
+		public void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
 		{
 			GetBufferParameterivARBNative(target, pname, @params);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
+		public void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, ref int @params)
+		public void GetBufferParameterivARB(GLBufferTargetARB target, GLBufferPNameARB pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferPointervARBNative(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
+		internal void GetBufferPointervARBNative(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPointerNameARB, void**, void>)funcTable[6])(target, pname, @params);
@@ -278,13 +278,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferPointervARB(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
+		public void GetBufferPointervARB(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetBufferPointervARBNative(target, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferSubDataARBNative(GLBufferTargetARB target, nint offset, nint size, void* data)
+		internal void GetBufferSubDataARBNative(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, void*, void>)funcTable[7])(target, offset, size, data);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, void* data)
+		public void GetBufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			GetBufferSubDataARBNative(target, offset, size, data);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, nint data)
+		public void GetBufferSubDataARB(GLBufferTargetARB target, nint offset, nint size, nint data)
 		{
 			GetBufferSubDataARBNative(target, offset, size, (void*)data);
 		}
@@ -315,7 +315,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void GetBufferSubDataARB<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void GetBufferSubDataARB<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -324,7 +324,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsBufferARBNative(uint buffer)
+		internal byte IsBufferARBNative(uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[8])(buffer);
@@ -337,14 +337,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static bool IsBufferARB(uint buffer)
+		public bool IsBufferARB(uint buffer)
 		{
 			byte ret = IsBufferARBNative(buffer);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* MapBufferARBNative(GLBufferTargetARB target, GLBufferAccessARB access)
+		internal void* MapBufferARBNative(GLBufferTargetARB target, GLBufferAccessARB access)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferAccessARB, void*>)funcTable[9])(target, access);
@@ -357,14 +357,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static void* MapBufferARB(GLBufferTargetARB target, GLBufferAccessARB access)
+		public void* MapBufferARB(GLBufferTargetARB target, GLBufferAccessARB access)
 		{
 			void* ret = MapBufferARBNative(target, access);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapBufferARBNative(GLBufferTargetARB target)
+		internal byte UnmapBufferARBNative(GLBufferTargetARB target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, byte>)funcTable[10])(target);
@@ -377,7 +377,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_buffer_object</remarks>
-		public static bool UnmapBufferARB(GLBufferTargetARB target)
+		public bool UnmapBufferARB(GLBufferTargetARB target)
 		{
 			byte ret = UnmapBufferARBNative(target);
 			return ret != 0;

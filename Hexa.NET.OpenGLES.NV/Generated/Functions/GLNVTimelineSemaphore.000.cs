@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVTimelineSemaphore
+	public unsafe partial class GLNVTimelineSemaphore
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateSemaphoresNVNative(int n, uint* semaphores)
+		internal void CreateSemaphoresNVNative(int n, uint* semaphores)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[0])(n, semaphores);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void CreateSemaphoresNV(int n, uint* semaphores)
+		public void CreateSemaphoresNV(int n, uint* semaphores)
 		{
 			CreateSemaphoresNVNative(n, semaphores);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void CreateSemaphoresNV(int n, Span<uint> semaphores)
+		public void CreateSemaphoresNV(int n, Span<uint> semaphores)
 		{
 			fixed (uint* psemaphores0 = semaphores)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void CreateSemaphoresNV(int n, ref uint semaphores)
+		public void CreateSemaphoresNV(int n, ref uint semaphores)
 		{
 			fixed (uint* psemaphores0 = &semaphores)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSemaphoreParameterivNVNative(uint semaphore, GLSemaphoreParameterName pname, int* @params)
+		internal void GetSemaphoreParameterivNVNative(uint semaphore, GLSemaphoreParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSemaphoreParameterName, int*, void>)funcTable[1])(semaphore, pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, int* @params)
+		public void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, int* @params)
 		{
 			GetSemaphoreParameterivNVNative(semaphore, pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
+		public void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
+		public void GetSemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SemaphoreParameterivNVNative(uint semaphore, GLSemaphoreParameterName pname, int* @params)
+		internal void SemaphoreParameterivNVNative(uint semaphore, GLSemaphoreParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSemaphoreParameterName, int*, void>)funcTable[2])(semaphore, pname, @params);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, int* @params)
+		public void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, int* @params)
 		{
 			SemaphoreParameterivNVNative(semaphore, pname, @params);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
+		public void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_timeline_semaphore</remarks>
-		public static void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
+		public void SemaphoreParameterivNV(uint semaphore, GLSemaphoreParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

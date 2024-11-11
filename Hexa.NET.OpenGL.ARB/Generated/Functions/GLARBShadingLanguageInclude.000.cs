@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBShadingLanguageInclude
+	public unsafe partial class GLARBShadingLanguageInclude
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompileShaderIncludeARBNative(uint shader, int count, byte** path, int* length)
+		internal void CompileShaderIncludeARBNative(uint shader, int count, byte** path, int* length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, byte**, int*, void>)funcTable[0])(shader, count, path, length);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void CompileShaderIncludeARB(uint shader, int count, byte** path, int* length)
+		public void CompileShaderIncludeARB(uint shader, int count, byte** path, int* length)
 		{
 			CompileShaderIncludeARBNative(shader, count, path, length);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void CompileShaderIncludeARB(uint shader, int count, byte** path, Span<int> length)
+		public void CompileShaderIncludeARB(uint shader, int count, byte** path, Span<int> length)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void CompileShaderIncludeARB(uint shader, int count, byte** path, ref int length)
+		public void CompileShaderIncludeARB(uint shader, int count, byte** path, ref int length)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteNamedStringARBNative(int namelen, byte* name)
+		internal void DeleteNamedStringARBNative(int namelen, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[1])(namelen, name);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void DeleteNamedStringARB(int namelen, byte* name)
+		public void DeleteNamedStringARB(int namelen, byte* name)
 		{
 			DeleteNamedStringARBNative(namelen, name);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void DeleteNamedStringARB(int namelen, string name)
+		public void DeleteNamedStringARB(int namelen, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -112,7 +112,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void DeleteNamedStringARB(int namelen, Span<byte> name)
+		public void DeleteNamedStringARB(int namelen, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -124,7 +124,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void DeleteNamedStringARB(int namelen, ref byte name)
+		public void DeleteNamedStringARB(int namelen, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedStringARBNative(int namelen, byte* name, int bufSize, int* stringlen, byte* str)
+		internal void GetNamedStringARBNative(int namelen, byte* name, int bufSize, int* stringlen, byte* str)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, int, int*, byte*, void>)funcTable[2])(namelen, name, bufSize, stringlen, str);
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, byte* str)
 		{
 			GetNamedStringARBNative(namelen, name, bufSize, stringlen, str);
 		}
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, string name, int bufSize, int* stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, string name, int bufSize, int* stringlen, byte* str)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -185,7 +185,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, int* stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, int* stringlen, byte* str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, ref byte name, int bufSize, int* stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, ref byte name, int bufSize, int* stringlen, byte* str)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -209,7 +209,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, Span<int> stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, Span<int> stringlen, byte* str)
 		{
 			fixed (int* pstringlen0 = stringlen)
 			{
@@ -221,7 +221,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, ref int stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, ref int stringlen, byte* str)
 		{
 			fixed (int* pstringlen0 = &stringlen)
 			{
@@ -233,7 +233,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, Span<int> stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, Span<int> stringlen, byte* str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, ref byte name, int bufSize, ref int stringlen, byte* str)
+		public void GetNamedStringARB(int namelen, ref byte name, int bufSize, ref int stringlen, byte* str)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -263,7 +263,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, string str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, string str)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -293,7 +293,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, Span<byte> str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, Span<byte> str)
 		{
 			fixed (byte* pstr0 = str)
 			{
@@ -305,7 +305,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, ref byte str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, ref byte str)
 		{
 			fixed (byte* pstr0 = &str)
 			{
@@ -317,7 +317,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, string name, int bufSize, int* stringlen, string str)
+		public void GetNamedStringARB(int namelen, string name, int bufSize, int* stringlen, string str)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, int* stringlen, Span<byte> str)
+		public void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, int* stringlen, Span<byte> str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, ref byte name, int bufSize, int* stringlen, ref byte str)
+		public void GetNamedStringARB(int namelen, ref byte name, int bufSize, int* stringlen, ref byte str)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -398,7 +398,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, Span<int> stringlen, Span<byte> str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, Span<int> stringlen, Span<byte> str)
 		{
 			fixed (int* pstringlen0 = stringlen)
 			{
@@ -413,7 +413,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, byte* name, int bufSize, ref int stringlen, ref byte str)
+		public void GetNamedStringARB(int namelen, byte* name, int bufSize, ref int stringlen, ref byte str)
 		{
 			fixed (int* pstringlen0 = &stringlen)
 			{
@@ -428,7 +428,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, Span<int> stringlen, Span<byte> str)
+		public void GetNamedStringARB(int namelen, Span<byte> name, int bufSize, Span<int> stringlen, Span<byte> str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -446,7 +446,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringARB(int namelen, ref byte name, int bufSize, ref int stringlen, ref byte str)
+		public void GetNamedStringARB(int namelen, ref byte name, int bufSize, ref int stringlen, ref byte str)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -461,7 +461,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedStringivARBNative(int namelen, byte* name, GLEnum pname, int* @params)
+		internal void GetNamedStringivARBNative(int namelen, byte* name, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, GLEnum, int*, void>)funcTable[3])(namelen, name, pname, @params);
@@ -474,7 +474,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, int* @params)
+		public void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, int* @params)
 		{
 			GetNamedStringivARBNative(namelen, name, pname, @params);
 		}
@@ -483,7 +483,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, string name, GLEnum pname, int* @params)
+		public void GetNamedStringivARB(int namelen, string name, GLEnum pname, int* @params)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, Span<byte> name, GLEnum pname, int* @params)
+		public void GetNamedStringivARB(int namelen, Span<byte> name, GLEnum pname, int* @params)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -525,7 +525,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, ref byte name, GLEnum pname, int* @params)
+		public void GetNamedStringivARB(int namelen, ref byte name, GLEnum pname, int* @params)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -537,7 +537,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, Span<int> @params)
+		public void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -549,7 +549,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, ref int @params)
+		public void GetNamedStringivARB(int namelen, byte* name, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -561,7 +561,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, Span<byte> name, GLEnum pname, Span<int> @params)
+		public void GetNamedStringivARB(int namelen, Span<byte> name, GLEnum pname, Span<int> @params)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -576,7 +576,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void GetNamedStringivARB(int namelen, ref byte name, GLEnum pname, ref int @params)
+		public void GetNamedStringivARB(int namelen, ref byte name, GLEnum pname, ref int @params)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -588,7 +588,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsNamedStringARBNative(int namelen, byte* name)
+		internal byte IsNamedStringARBNative(int namelen, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int, byte*, byte>)funcTable[4])(namelen, name);
@@ -601,7 +601,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static bool IsNamedStringARB(int namelen, byte* name)
+		public bool IsNamedStringARB(int namelen, byte* name)
 		{
 			byte ret = IsNamedStringARBNative(namelen, name);
 			return ret != 0;
@@ -611,7 +611,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static bool IsNamedStringARB(int namelen, string name)
+		public bool IsNamedStringARB(int namelen, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -642,7 +642,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static bool IsNamedStringARB(int namelen, Span<byte> name)
+		public bool IsNamedStringARB(int namelen, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -655,7 +655,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static bool IsNamedStringARB(int namelen, ref byte name)
+		public bool IsNamedStringARB(int namelen, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -665,7 +665,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedStringARBNative(GLEnum type, int namelen, byte* name, int stringlen, byte* str)
+		internal void NamedStringARBNative(GLEnum type, int namelen, byte* name, int stringlen, byte* str)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, byte*, int, byte*, void>)funcTable[5])(type, namelen, name, stringlen, str);
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, byte* str)
+		public void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, byte* str)
 		{
 			NamedStringARBNative(type, namelen, name, stringlen, str);
 		}
@@ -687,7 +687,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, string name, int stringlen, byte* str)
+		public void NamedStringARB(GLEnum type, int namelen, string name, int stringlen, byte* str)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -717,7 +717,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, Span<byte> name, int stringlen, byte* str)
+		public void NamedStringARB(GLEnum type, int namelen, Span<byte> name, int stringlen, byte* str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -729,7 +729,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, ref byte name, int stringlen, byte* str)
+		public void NamedStringARB(GLEnum type, int namelen, ref byte name, int stringlen, byte* str)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -741,7 +741,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, string str)
+		public void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, string str)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -771,7 +771,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, Span<byte> str)
+		public void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, Span<byte> str)
 		{
 			fixed (byte* pstr0 = str)
 			{
@@ -783,7 +783,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, ref byte str)
+		public void NamedStringARB(GLEnum type, int namelen, byte* name, int stringlen, ref byte str)
 		{
 			fixed (byte* pstr0 = &str)
 			{
@@ -795,7 +795,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, string name, int stringlen, string str)
+		public void NamedStringARB(GLEnum type, int namelen, string name, int stringlen, string str)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -846,7 +846,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, Span<byte> name, int stringlen, Span<byte> str)
+		public void NamedStringARB(GLEnum type, int namelen, Span<byte> name, int stringlen, Span<byte> str)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -861,7 +861,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shading_language_include</remarks>
-		public static void NamedStringARB(GLEnum type, int namelen, ref byte name, int stringlen, ref byte str)
+		public void NamedStringARB(GLEnum type, int namelen, ref byte name, int stringlen, ref byte str)
 		{
 			fixed (byte* pname0 = &name)
 			{

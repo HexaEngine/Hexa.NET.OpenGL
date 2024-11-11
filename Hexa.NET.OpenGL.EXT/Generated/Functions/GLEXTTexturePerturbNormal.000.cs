@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTTexturePerturbNormal
+	public unsafe partial class GLEXTTexturePerturbNormal
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureNormalEXTNative(GLTextureNormalModeEXT mode)
+		internal void TextureNormalEXTNative(GLTextureNormalModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureNormalModeEXT, void>)funcTable[0])(mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_perturb_normal</remarks>
-		public static void TextureNormalEXT(GLTextureNormalModeEXT mode)
+		public void TextureNormalEXT(GLTextureNormalModeEXT mode)
 		{
 			TextureNormalEXTNative(mode);
 		}

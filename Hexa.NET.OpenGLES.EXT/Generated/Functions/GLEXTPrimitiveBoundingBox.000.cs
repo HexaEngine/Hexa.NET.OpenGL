@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTPrimitiveBoundingBox
+	public unsafe partial class GLEXTPrimitiveBoundingBox
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrimitiveBoundingBoxEXTNative(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
+		internal void PrimitiveBoundingBoxEXTNative(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, float, float, float, float, void>)funcTable[0])(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_primitive_bounding_box</remarks>
-		public static void PrimitiveBoundingBoxEXT(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
+		public void PrimitiveBoundingBoxEXT(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			PrimitiveBoundingBoxEXTNative(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
 		}

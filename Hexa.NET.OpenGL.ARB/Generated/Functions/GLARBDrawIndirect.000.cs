@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBDrawIndirect
+	public unsafe partial class GLARBDrawIndirect
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysIndirectNative(GLPrimitiveType mode, void* indirect)
+		internal void DrawArraysIndirectNative(GLPrimitiveType mode, void* indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void*, void>)funcTable[0])(mode, indirect);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawArraysIndirect(GLPrimitiveType mode, void* indirect)
+		public void DrawArraysIndirect(GLPrimitiveType mode, void* indirect)
 		{
 			DrawArraysIndirectNative(mode, indirect);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawArraysIndirect(GLPrimitiveType mode, nint indirect)
+		public void DrawArraysIndirect(GLPrimitiveType mode, nint indirect)
 		{
 			DrawArraysIndirectNative(mode, (void*)indirect);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect) where TIndirect : unmanaged
+		public void DrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
+		internal void DrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, GLDrawElementsType, void*, void>)funcTable[1])(mode, type, indirect);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render indexed primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
+		public void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
 			DrawElementsIndirectNative(mode, type, indirect);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render indexed primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect)
+		public void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect)
 		{
 			DrawElementsIndirectNative(mode, type, (void*)indirect);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render indexed primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect) where TIndirect : unmanaged
+		public void DrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{

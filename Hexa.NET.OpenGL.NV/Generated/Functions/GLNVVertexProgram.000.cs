@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVVertexProgram
+	public unsafe partial class GLNVVertexProgram
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte AreProgramsResidentNVNative(int n, uint* programs, byte* residences)
+		internal byte AreProgramsResidentNVNative(int n, uint* programs, byte* residences)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int, uint*, byte*, byte>)funcTable[0])(n, programs, residences);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, uint* programs, byte* residences)
+		public bool AreProgramsResidentNV(int n, uint* programs, byte* residences)
 		{
 			byte ret = AreProgramsResidentNVNative(n, programs, residences);
 			return ret != 0;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, Span<uint> programs, byte* residences)
+		public bool AreProgramsResidentNV(int n, Span<uint> programs, byte* residences)
 		{
 			fixed (uint* pprograms0 = programs)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, ref uint programs, byte* residences)
+		public bool AreProgramsResidentNV(int n, ref uint programs, byte* residences)
 		{
 			fixed (uint* pprograms0 = &programs)
 			{
@@ -66,7 +66,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, uint* programs, string residences)
+		public bool AreProgramsResidentNV(int n, uint* programs, string residences)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -97,7 +97,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, uint* programs, Span<byte> residences)
+		public bool AreProgramsResidentNV(int n, uint* programs, Span<byte> residences)
 		{
 			fixed (byte* presidences0 = residences)
 			{
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, uint* programs, ref byte residences)
+		public bool AreProgramsResidentNV(int n, uint* programs, ref byte residences)
 		{
 			fixed (byte* presidences0 = &residences)
 			{
@@ -123,7 +123,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, Span<uint> programs, Span<byte> residences)
+		public bool AreProgramsResidentNV(int n, Span<uint> programs, Span<byte> residences)
 		{
 			fixed (uint* pprograms0 = programs)
 			{
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool AreProgramsResidentNV(int n, ref uint programs, ref byte residences)
+		public bool AreProgramsResidentNV(int n, ref uint programs, ref byte residences)
 		{
 			fixed (uint* pprograms0 = &programs)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindProgramNVNative(GLVertexAttribEnumNV target, uint id)
+		internal void BindProgramNVNative(GLVertexAttribEnumNV target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, void>)funcTable[1])(target, id);
@@ -165,13 +165,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void BindProgramNV(GLVertexAttribEnumNV target, uint id)
+		public void BindProgramNV(GLVertexAttribEnumNV target, uint id)
 		{
 			BindProgramNVNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteProgramsNVNative(int n, uint* programs)
+		internal void DeleteProgramsNVNative(int n, uint* programs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, programs);
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void DeleteProgramsNV(int n, uint* programs)
+		public void DeleteProgramsNV(int n, uint* programs)
 		{
 			DeleteProgramsNVNative(n, programs);
 		}
@@ -193,7 +193,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void DeleteProgramsN(uint program)
+		public void DeleteProgramsN(uint program)
 		{
 			DeleteProgramsNVNative(1, &program);
 		}
@@ -202,7 +202,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void DeleteProgramsNV(int n, Span<uint> programs)
+		public void DeleteProgramsNV(int n, Span<uint> programs)
 		{
 			fixed (uint* pprograms0 = programs)
 			{
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void DeleteProgramsNV(int n, ref uint programs)
+		public void DeleteProgramsNV(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
 			{
@@ -223,7 +223,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ExecuteProgramNVNative(GLVertexAttribEnumNV target, uint id, float* @params)
+		internal void ExecuteProgramNVNative(GLVertexAttribEnumNV target, uint id, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, float*, void>)funcTable[3])(target, id, @params);
@@ -236,7 +236,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, float* @params)
+		public void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, float* @params)
 		{
 			ExecuteProgramNVNative(target, id, @params);
 		}
@@ -245,7 +245,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, Span<float> @params)
+		public void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -257,7 +257,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, ref float @params)
+		public void ExecuteProgramNV(GLVertexAttribEnumNV target, uint id, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -266,7 +266,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenProgramsNVNative(int n, uint* programs)
+		internal void GenProgramsNVNative(int n, uint* programs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[4])(n, programs);
@@ -279,7 +279,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GenProgramsNV(int n, uint* programs)
+		public void GenProgramsNV(int n, uint* programs)
 		{
 			GenProgramsNVNative(n, programs);
 		}
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static uint GenProgramsN()
+		public uint GenProgramsN()
 		{
 			uint result;
 			GenProgramsNVNative(1, &result);
@@ -299,7 +299,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GenProgramsNV(int n, Span<uint> programs)
+		public void GenProgramsNV(int n, Span<uint> programs)
 		{
 			fixed (uint* pprograms0 = programs)
 			{
@@ -311,7 +311,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GenProgramsNV(int n, ref uint programs)
+		public void GenProgramsNV(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
 			{
@@ -320,7 +320,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramParameterdvNVNative(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, double* @params)
+		internal void GetProgramParameterdvNVNative(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, GLVertexAttribEnumNV, double*, void>)funcTable[5])(target, index, pname, @params);
@@ -333,7 +333,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, double* @params)
+		public void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, double* @params)
 		{
 			GetProgramParameterdvNVNative(target, index, pname, @params);
 		}
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<double> @params)
+		public void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, ref double @params)
+		public void GetProgramParameterdvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -363,7 +363,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramParameterfvNVNative(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, float* @params)
+		internal void GetProgramParameterfvNVNative(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, GLVertexAttribEnumNV, float*, void>)funcTable[6])(target, index, pname, @params);
@@ -376,7 +376,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, float* @params)
+		public void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, float* @params)
 		{
 			GetProgramParameterfvNVNative(target, index, pname, @params);
 		}
@@ -385,7 +385,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<float> @params)
+		public void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -397,7 +397,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, ref float @params)
+		public void GetProgramParameterfvNV(GLVertexAttribEnumNV target, uint index, GLVertexAttribEnumNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -406,7 +406,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramStringNVNative(uint id, GLVertexAttribEnumNV pname, byte* program)
+		internal void GetProgramStringNVNative(uint id, GLVertexAttribEnumNV pname, byte* program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnumNV, byte*, void>)funcTable[7])(id, pname, program);
@@ -419,7 +419,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, byte* program)
+		public void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, byte* program)
 		{
 			GetProgramStringNVNative(id, pname, program);
 		}
@@ -428,7 +428,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, string program)
+		public void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, string program)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -458,7 +458,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, Span<byte> program)
+		public void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, Span<byte> program)
 		{
 			fixed (byte* pprogram0 = program)
 			{
@@ -470,7 +470,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, ref byte program)
+		public void GetProgramStringNV(uint id, GLVertexAttribEnumNV pname, ref byte program)
 		{
 			fixed (byte* pprogram0 = &program)
 			{
@@ -479,7 +479,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramivNVNative(uint id, GLVertexAttribEnumNV pname, int* @params)
+		internal void GetProgramivNVNative(uint id, GLVertexAttribEnumNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnumNV, int*, void>)funcTable[8])(id, pname, @params);
@@ -492,7 +492,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, int* @params)
+		public void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, int* @params)
 		{
 			GetProgramivNVNative(id, pname, @params);
 		}
@@ -501,7 +501,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, Span<int> @params)
+		public void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, ref int @params)
+		public void GetProgramivNV(uint id, GLVertexAttribEnumNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -522,7 +522,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTrackMatrixivNVNative(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, int* @params)
+		internal void GetTrackMatrixivNVNative(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, GLVertexAttribEnumNV, int*, void>)funcTable[9])(target, address, pname, @params);
@@ -535,7 +535,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, int* @params)
+		public void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, int* @params)
 		{
 			GetTrackMatrixivNVNative(target, address, pname, @params);
 		}
@@ -544,7 +544,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, Span<int> @params)
+		public void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -556,7 +556,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, ref int @params)
+		public void GetTrackMatrixivNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -565,7 +565,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribPointervNVNative(uint index, GLVertexAttribEnumNV pname, void** pointer)
+		internal void GetVertexAttribPointervNVNative(uint index, GLVertexAttribEnumNV pname, void** pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnumNV, void**, void>)funcTable[10])(index, pname, pointer);
@@ -578,13 +578,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribPointervNV(uint index, GLVertexAttribEnumNV pname, void** pointer)
+		public void GetVertexAttribPointervNV(uint index, GLVertexAttribEnumNV pname, void** pointer)
 		{
 			GetVertexAttribPointervNVNative(index, pname, pointer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribdvNVNative(uint index, GLVertexAttribEnumNV pname, double* @params)
+		internal void GetVertexAttribdvNVNative(uint index, GLVertexAttribEnumNV pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnumNV, double*, void>)funcTable[11])(index, pname, @params);
@@ -597,7 +597,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, double* @params)
+		public void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, double* @params)
 		{
 			GetVertexAttribdvNVNative(index, pname, @params);
 		}
@@ -606,7 +606,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, Span<double> @params)
+		public void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -618,7 +618,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, ref double @params)
+		public void GetVertexAttribdvNV(uint index, GLVertexAttribEnumNV pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -627,7 +627,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribfvNVNative(uint index, GLVertexAttribEnumNV pname, float* @params)
+		internal void GetVertexAttribfvNVNative(uint index, GLVertexAttribEnumNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnumNV, float*, void>)funcTable[12])(index, pname, @params);
@@ -640,7 +640,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, float* @params)
+		public void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, float* @params)
 		{
 			GetVertexAttribfvNVNative(index, pname, @params);
 		}
@@ -649,7 +649,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, Span<float> @params)
+		public void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -661,7 +661,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, ref float @params)
+		public void GetVertexAttribfvNV(uint index, GLVertexAttribEnumNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -670,7 +670,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribivNVNative(uint index, GLVertexAttribEnumNV pname, int* @params)
+		internal void GetVertexAttribivNVNative(uint index, GLVertexAttribEnumNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnumNV, int*, void>)funcTable[13])(index, pname, @params);
@@ -683,7 +683,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, int* @params)
+		public void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, int* @params)
 		{
 			GetVertexAttribivNVNative(index, pname, @params);
 		}
@@ -692,7 +692,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, Span<int> @params)
+		public void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -704,7 +704,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, ref int @params)
+		public void GetVertexAttribivNV(uint index, GLVertexAttribEnumNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -713,7 +713,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsProgramNVNative(uint id)
+		internal byte IsProgramNVNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[14])(id);
@@ -726,14 +726,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static bool IsProgramNV(uint id)
+		public bool IsProgramNV(uint id)
 		{
 			byte ret = IsProgramNVNative(id);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LoadProgramNVNative(GLVertexAttribEnumNV target, uint id, int len, byte* program)
+		internal void LoadProgramNVNative(GLVertexAttribEnumNV target, uint id, int len, byte* program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, int, byte*, void>)funcTable[15])(target, id, len, program);
@@ -746,7 +746,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, byte* program)
+		public void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, byte* program)
 		{
 			LoadProgramNVNative(target, id, len, program);
 		}
@@ -755,7 +755,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, string program)
+		public void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, string program)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -785,7 +785,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, Span<byte> program)
+		public void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, Span<byte> program)
 		{
 			fixed (byte* pprogram0 = program)
 			{
@@ -797,7 +797,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, ref byte program)
+		public void LoadProgramNV(GLVertexAttribEnumNV target, uint id, int len, ref byte program)
 		{
 			fixed (byte* pprogram0 = &program)
 			{
@@ -806,7 +806,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameter4dNVNative(GLVertexAttribEnumNV target, uint index, double x, double y, double z, double w)
+		internal void ProgramParameter4dNVNative(GLVertexAttribEnumNV target, uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, double, double, double, double, void>)funcTable[16])(target, index, x, y, z, w);
@@ -819,13 +819,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4dNV(GLVertexAttribEnumNV target, uint index, double x, double y, double z, double w)
+		public void ProgramParameter4dNV(GLVertexAttribEnumNV target, uint index, double x, double y, double z, double w)
 		{
 			ProgramParameter4dNVNative(target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameter4dvNVNative(GLVertexAttribEnumNV target, uint index, double* v)
+		internal void ProgramParameter4dvNVNative(GLVertexAttribEnumNV target, uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, double*, void>)funcTable[17])(target, index, v);
@@ -838,7 +838,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, double* v)
+		public void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, double* v)
 		{
 			ProgramParameter4dvNVNative(target, index, v);
 		}
@@ -847,7 +847,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, Span<double> v)
+		public void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -859,7 +859,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, ref double v)
+		public void ProgramParameter4dvNV(GLVertexAttribEnumNV target, uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -868,7 +868,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameter4fNVNative(GLVertexAttribEnumNV target, uint index, float x, float y, float z, float w)
+		internal void ProgramParameter4fNVNative(GLVertexAttribEnumNV target, uint index, float x, float y, float z, float w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, float, float, float, float, void>)funcTable[18])(target, index, x, y, z, w);
@@ -881,13 +881,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4fNV(GLVertexAttribEnumNV target, uint index, float x, float y, float z, float w)
+		public void ProgramParameter4fNV(GLVertexAttribEnumNV target, uint index, float x, float y, float z, float w)
 		{
 			ProgramParameter4fNVNative(target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameter4fvNVNative(GLVertexAttribEnumNV target, uint index, float* v)
+		internal void ProgramParameter4fvNVNative(GLVertexAttribEnumNV target, uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, float*, void>)funcTable[19])(target, index, v);
@@ -900,7 +900,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, float* v)
+		public void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, float* v)
 		{
 			ProgramParameter4fvNVNative(target, index, v);
 		}
@@ -909,7 +909,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, Span<float> v)
+		public void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -921,7 +921,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, ref float v)
+		public void ProgramParameter4fvNV(GLVertexAttribEnumNV target, uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -930,7 +930,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameters4dvNVNative(GLVertexAttribEnumNV target, uint index, int count, double* v)
+		internal void ProgramParameters4dvNVNative(GLVertexAttribEnumNV target, uint index, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, int, double*, void>)funcTable[20])(target, index, count, v);
@@ -943,7 +943,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, double* v)
+		public void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, double* v)
 		{
 			ProgramParameters4dvNVNative(target, index, count, v);
 		}
@@ -952,7 +952,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, Span<double> v)
+		public void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -964,7 +964,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, ref double v)
+		public void ProgramParameters4dvNV(GLVertexAttribEnumNV target, uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -973,7 +973,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameters4fvNVNative(GLVertexAttribEnumNV target, uint index, int count, float* v)
+		internal void ProgramParameters4fvNVNative(GLVertexAttribEnumNV target, uint index, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, int, float*, void>)funcTable[21])(target, index, count, v);
@@ -986,7 +986,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, float* v)
+		public void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, float* v)
 		{
 			ProgramParameters4fvNVNative(target, index, count, v);
 		}
@@ -995,7 +995,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, Span<float> v)
+		public void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1007,7 +1007,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, ref float v)
+		public void ProgramParameters4fvNV(GLVertexAttribEnumNV target, uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1016,7 +1016,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RequestResidentProgramsNVNative(int n, uint* programs)
+		internal void RequestResidentProgramsNVNative(int n, uint* programs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[22])(n, programs);
@@ -1029,7 +1029,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void RequestResidentProgramsNV(int n, uint* programs)
+		public void RequestResidentProgramsNV(int n, uint* programs)
 		{
 			RequestResidentProgramsNVNative(n, programs);
 		}
@@ -1038,7 +1038,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void RequestResidentProgramsNV(int n, Span<uint> programs)
+		public void RequestResidentProgramsNV(int n, Span<uint> programs)
 		{
 			fixed (uint* pprograms0 = programs)
 			{
@@ -1050,7 +1050,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void RequestResidentProgramsNV(int n, ref uint programs)
+		public void RequestResidentProgramsNV(int n, ref uint programs)
 		{
 			fixed (uint* pprograms0 = &programs)
 			{
@@ -1059,7 +1059,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TrackMatrixNVNative(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV matrix, GLVertexAttribEnumNV transform)
+		internal void TrackMatrixNVNative(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV matrix, GLVertexAttribEnumNV transform)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexAttribEnumNV, uint, GLVertexAttribEnumNV, GLVertexAttribEnumNV, void>)funcTable[23])(target, address, matrix, transform);
@@ -1072,13 +1072,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void TrackMatrixNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV matrix, GLVertexAttribEnumNV transform)
+		public void TrackMatrixNV(GLVertexAttribEnumNV target, uint address, GLVertexAttribEnumNV matrix, GLVertexAttribEnumNV transform)
 		{
 			TrackMatrixNVNative(target, address, matrix, transform);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dNVNative(uint index, double x)
+		internal void VertexAttrib1dNVNative(uint index, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[24])(index, x);
@@ -1091,13 +1091,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1dNV(uint index, double x)
+		public void VertexAttrib1dNV(uint index, double x)
 		{
 			VertexAttrib1dNVNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dvNVNative(uint index, double* v)
+		internal void VertexAttrib1dvNVNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[25])(index, v);
@@ -1110,7 +1110,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1dvNV(uint index, double* v)
+		public void VertexAttrib1dvNV(uint index, double* v)
 		{
 			VertexAttrib1dvNVNative(index, v);
 		}
@@ -1119,7 +1119,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1dvNV(uint index, Span<double> v)
+		public void VertexAttrib1dvNV(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1131,7 +1131,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1dvNV(uint index, ref double v)
+		public void VertexAttrib1dvNV(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1140,7 +1140,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fNVNative(uint index, float x)
+		internal void VertexAttrib1fNVNative(uint index, float x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, void>)funcTable[26])(index, x);
@@ -1153,13 +1153,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1fNV(uint index, float x)
+		public void VertexAttrib1fNV(uint index, float x)
 		{
 			VertexAttrib1fNVNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fvNVNative(uint index, float* v)
+		internal void VertexAttrib1fvNVNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[27])(index, v);
@@ -1172,7 +1172,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1fvNV(uint index, float* v)
+		public void VertexAttrib1fvNV(uint index, float* v)
 		{
 			VertexAttrib1fvNVNative(index, v);
 		}
@@ -1181,7 +1181,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1fvNV(uint index, Span<float> v)
+		public void VertexAttrib1fvNV(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1193,7 +1193,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1fvNV(uint index, ref float v)
+		public void VertexAttrib1fvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1202,7 +1202,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1sNVNative(uint index, short x)
+		internal void VertexAttrib1sNVNative(uint index, short x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, void>)funcTable[28])(index, x);
@@ -1215,13 +1215,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1sNV(uint index, short x)
+		public void VertexAttrib1sNV(uint index, short x)
 		{
 			VertexAttrib1sNVNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1svNVNative(uint index, short* v)
+		internal void VertexAttrib1svNVNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[29])(index, v);
@@ -1234,7 +1234,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1svNV(uint index, short* v)
+		public void VertexAttrib1svNV(uint index, short* v)
 		{
 			VertexAttrib1svNVNative(index, v);
 		}
@@ -1243,7 +1243,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1svNV(uint index, Span<short> v)
+		public void VertexAttrib1svNV(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1255,7 +1255,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib1svNV(uint index, ref short v)
+		public void VertexAttrib1svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1264,7 +1264,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dNVNative(uint index, double x, double y)
+		internal void VertexAttrib2dNVNative(uint index, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[30])(index, x, y);
@@ -1277,13 +1277,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2dNV(uint index, double x, double y)
+		public void VertexAttrib2dNV(uint index, double x, double y)
 		{
 			VertexAttrib2dNVNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dvNVNative(uint index, double* v)
+		internal void VertexAttrib2dvNVNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[31])(index, v);
@@ -1296,7 +1296,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2dvNV(uint index, double* v)
+		public void VertexAttrib2dvNV(uint index, double* v)
 		{
 			VertexAttrib2dvNVNative(index, v);
 		}
@@ -1305,7 +1305,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2dvNV(uint index, Span<double> v)
+		public void VertexAttrib2dvNV(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1317,7 +1317,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2dvNV(uint index, ref double v)
+		public void VertexAttrib2dvNV(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1326,7 +1326,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fNVNative(uint index, float x, float y)
+		internal void VertexAttrib2fNVNative(uint index, float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[32])(index, x, y);
@@ -1339,13 +1339,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2fNV(uint index, float x, float y)
+		public void VertexAttrib2fNV(uint index, float x, float y)
 		{
 			VertexAttrib2fNVNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fvNVNative(uint index, float* v)
+		internal void VertexAttrib2fvNVNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[33])(index, v);
@@ -1358,7 +1358,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2fvNV(uint index, float* v)
+		public void VertexAttrib2fvNV(uint index, float* v)
 		{
 			VertexAttrib2fvNVNative(index, v);
 		}
@@ -1367,7 +1367,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2fvNV(uint index, Span<float> v)
+		public void VertexAttrib2fvNV(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1379,7 +1379,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2fvNV(uint index, ref float v)
+		public void VertexAttrib2fvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1388,7 +1388,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2sNVNative(uint index, short x, short y)
+		internal void VertexAttrib2sNVNative(uint index, short x, short y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, void>)funcTable[34])(index, x, y);
@@ -1401,13 +1401,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2sNV(uint index, short x, short y)
+		public void VertexAttrib2sNV(uint index, short x, short y)
 		{
 			VertexAttrib2sNVNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2svNVNative(uint index, short* v)
+		internal void VertexAttrib2svNVNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[35])(index, v);
@@ -1420,7 +1420,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2svNV(uint index, short* v)
+		public void VertexAttrib2svNV(uint index, short* v)
 		{
 			VertexAttrib2svNVNative(index, v);
 		}
@@ -1429,7 +1429,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2svNV(uint index, Span<short> v)
+		public void VertexAttrib2svNV(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1441,7 +1441,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib2svNV(uint index, ref short v)
+		public void VertexAttrib2svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1450,7 +1450,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dNVNative(uint index, double x, double y, double z)
+		internal void VertexAttrib3dNVNative(uint index, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[36])(index, x, y, z);
@@ -1463,13 +1463,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3dNV(uint index, double x, double y, double z)
+		public void VertexAttrib3dNV(uint index, double x, double y, double z)
 		{
 			VertexAttrib3dNVNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dvNVNative(uint index, double* v)
+		internal void VertexAttrib3dvNVNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[37])(index, v);
@@ -1482,7 +1482,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3dvNV(uint index, double* v)
+		public void VertexAttrib3dvNV(uint index, double* v)
 		{
 			VertexAttrib3dvNVNative(index, v);
 		}
@@ -1491,7 +1491,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3dvNV(uint index, Span<double> v)
+		public void VertexAttrib3dvNV(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1503,7 +1503,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3dvNV(uint index, ref double v)
+		public void VertexAttrib3dvNV(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1512,7 +1512,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fNVNative(uint index, float x, float y, float z)
+		internal void VertexAttrib3fNVNative(uint index, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, void>)funcTable[38])(index, x, y, z);
@@ -1525,13 +1525,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3fNV(uint index, float x, float y, float z)
+		public void VertexAttrib3fNV(uint index, float x, float y, float z)
 		{
 			VertexAttrib3fNVNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fvNVNative(uint index, float* v)
+		internal void VertexAttrib3fvNVNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[39])(index, v);
@@ -1544,7 +1544,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3fvNV(uint index, float* v)
+		public void VertexAttrib3fvNV(uint index, float* v)
 		{
 			VertexAttrib3fvNVNative(index, v);
 		}
@@ -1553,7 +1553,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3fvNV(uint index, Span<float> v)
+		public void VertexAttrib3fvNV(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1565,7 +1565,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3fvNV(uint index, ref float v)
+		public void VertexAttrib3fvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1574,7 +1574,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3sNVNative(uint index, short x, short y, short z)
+		internal void VertexAttrib3sNVNative(uint index, short x, short y, short z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, short, void>)funcTable[40])(index, x, y, z);
@@ -1587,13 +1587,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3sNV(uint index, short x, short y, short z)
+		public void VertexAttrib3sNV(uint index, short x, short y, short z)
 		{
 			VertexAttrib3sNVNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3svNVNative(uint index, short* v)
+		internal void VertexAttrib3svNVNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[41])(index, v);
@@ -1606,7 +1606,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3svNV(uint index, short* v)
+		public void VertexAttrib3svNV(uint index, short* v)
 		{
 			VertexAttrib3svNVNative(index, v);
 		}
@@ -1615,7 +1615,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3svNV(uint index, Span<short> v)
+		public void VertexAttrib3svNV(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1627,7 +1627,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib3svNV(uint index, ref short v)
+		public void VertexAttrib3svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1636,7 +1636,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dNVNative(uint index, double x, double y, double z, double w)
+		internal void VertexAttrib4dNVNative(uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[42])(index, x, y, z, w);
@@ -1649,13 +1649,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4dNV(uint index, double x, double y, double z, double w)
+		public void VertexAttrib4dNV(uint index, double x, double y, double z, double w)
 		{
 			VertexAttrib4dNVNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dvNVNative(uint index, double* v)
+		internal void VertexAttrib4dvNVNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[43])(index, v);
@@ -1668,7 +1668,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4dvNV(uint index, double* v)
+		public void VertexAttrib4dvNV(uint index, double* v)
 		{
 			VertexAttrib4dvNVNative(index, v);
 		}
@@ -1677,7 +1677,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4dvNV(uint index, Span<double> v)
+		public void VertexAttrib4dvNV(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1689,7 +1689,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4dvNV(uint index, ref double v)
+		public void VertexAttrib4dvNV(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1698,7 +1698,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fNVNative(uint index, float x, float y, float z, float w)
+		internal void VertexAttrib4fNVNative(uint index, float x, float y, float z, float w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[44])(index, x, y, z, w);
@@ -1711,13 +1711,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4fNV(uint index, float x, float y, float z, float w)
+		public void VertexAttrib4fNV(uint index, float x, float y, float z, float w)
 		{
 			VertexAttrib4fNVNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fvNVNative(uint index, float* v)
+		internal void VertexAttrib4fvNVNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[45])(index, v);
@@ -1730,7 +1730,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4fvNV(uint index, float* v)
+		public void VertexAttrib4fvNV(uint index, float* v)
 		{
 			VertexAttrib4fvNVNative(index, v);
 		}
@@ -1739,7 +1739,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4fvNV(uint index, Span<float> v)
+		public void VertexAttrib4fvNV(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1751,7 +1751,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4fvNV(uint index, ref float v)
+		public void VertexAttrib4fvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1760,7 +1760,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4sNVNative(uint index, short x, short y, short z, short w)
+		internal void VertexAttrib4sNVNative(uint index, short x, short y, short z, short w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[46])(index, x, y, z, w);
@@ -1773,13 +1773,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4sNV(uint index, short x, short y, short z, short w)
+		public void VertexAttrib4sNV(uint index, short x, short y, short z, short w)
 		{
 			VertexAttrib4sNVNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4svNVNative(uint index, short* v)
+		internal void VertexAttrib4svNVNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[47])(index, v);
@@ -1792,7 +1792,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4svNV(uint index, short* v)
+		public void VertexAttrib4svNV(uint index, short* v)
 		{
 			VertexAttrib4svNVNative(index, v);
 		}
@@ -1801,7 +1801,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4svNV(uint index, Span<short> v)
+		public void VertexAttrib4svNV(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1813,7 +1813,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4svNV(uint index, ref short v)
+		public void VertexAttrib4svNV(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1822,7 +1822,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ubNVNative(uint index, bool x, bool y, bool z, bool w)
+		internal void VertexAttrib4ubNVNative(uint index, bool x, bool y, bool z, bool w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[48])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
@@ -1835,13 +1835,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4ubNV(uint index, bool x, bool y, bool z, bool w)
+		public void VertexAttrib4ubNV(uint index, bool x, bool y, bool z, bool w)
 		{
 			VertexAttrib4ubNVNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ubvNVNative(uint index, byte* v)
+		internal void VertexAttrib4ubvNVNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[49])(index, v);
@@ -1854,7 +1854,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4ubvNV(uint index, byte* v)
+		public void VertexAttrib4ubvNV(uint index, byte* v)
 		{
 			VertexAttrib4ubvNVNative(index, v);
 		}
@@ -1863,7 +1863,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4ubvNV(uint index, string v)
+		public void VertexAttrib4ubvNV(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -1893,7 +1893,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4ubvNV(uint index, Span<byte> v)
+		public void VertexAttrib4ubvNV(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -1905,7 +1905,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttrib4ubvNV(uint index, ref byte v)
+		public void VertexAttrib4ubvNV(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -1914,7 +1914,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribPointerNVNative(uint index, int fsize, GLVertexAttribEnumNV type, int stride, void* pointer)
+		internal void VertexAttribPointerNVNative(uint index, int fsize, GLVertexAttribEnumNV type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribEnumNV, int, void*, void>)funcTable[50])(index, fsize, type, stride, pointer);
@@ -1927,7 +1927,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribPointerNV(uint index, int fsize, GLVertexAttribEnumNV type, int stride, void* pointer)
+		public void VertexAttribPointerNV(uint index, int fsize, GLVertexAttribEnumNV type, int stride, void* pointer)
 		{
 			VertexAttribPointerNVNative(index, fsize, type, stride, pointer);
 		}
@@ -1936,7 +1936,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribPointerNV(uint index, int fsize, GLVertexAttribEnumNV type, int stride, nint pointer)
+		public void VertexAttribPointerNV(uint index, int fsize, GLVertexAttribEnumNV type, int stride, nint pointer)
 		{
 			VertexAttribPointerNVNative(index, fsize, type, stride, (void*)pointer);
 		}
@@ -1945,7 +1945,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribPointerNV<TPointer>(uint index, int fsize, GLVertexAttribEnumNV type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribPointerNV<TPointer>(uint index, int fsize, GLVertexAttribEnumNV type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -1954,7 +1954,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs1dvNVNative(uint index, int count, double* v)
+		internal void VertexAttribs1dvNVNative(uint index, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[51])(index, count, v);
@@ -1967,7 +1967,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1dvNV(uint index, int count, double* v)
+		public void VertexAttribs1dvNV(uint index, int count, double* v)
 		{
 			VertexAttribs1dvNVNative(index, count, v);
 		}
@@ -1976,7 +1976,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1dvNV(uint index, int count, Span<double> v)
+		public void VertexAttribs1dvNV(uint index, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1988,7 +1988,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1dvNV(uint index, int count, ref double v)
+		public void VertexAttribs1dvNV(uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1997,7 +1997,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs1fvNVNative(uint index, int count, float* v)
+		internal void VertexAttribs1fvNVNative(uint index, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[52])(index, count, v);
@@ -2010,7 +2010,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1fvNV(uint index, int count, float* v)
+		public void VertexAttribs1fvNV(uint index, int count, float* v)
 		{
 			VertexAttribs1fvNVNative(index, count, v);
 		}
@@ -2019,7 +2019,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1fvNV(uint index, int count, Span<float> v)
+		public void VertexAttribs1fvNV(uint index, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2031,7 +2031,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1fvNV(uint index, int count, ref float v)
+		public void VertexAttribs1fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2040,7 +2040,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs1svNVNative(uint index, int count, short* v)
+		internal void VertexAttribs1svNVNative(uint index, int count, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, short*, void>)funcTable[53])(index, count, v);
@@ -2053,7 +2053,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1svNV(uint index, int count, short* v)
+		public void VertexAttribs1svNV(uint index, int count, short* v)
 		{
 			VertexAttribs1svNVNative(index, count, v);
 		}
@@ -2062,7 +2062,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1svNV(uint index, int count, Span<short> v)
+		public void VertexAttribs1svNV(uint index, int count, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2074,7 +2074,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs1svNV(uint index, int count, ref short v)
+		public void VertexAttribs1svNV(uint index, int count, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2083,7 +2083,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs2dvNVNative(uint index, int count, double* v)
+		internal void VertexAttribs2dvNVNative(uint index, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[54])(index, count, v);
@@ -2096,7 +2096,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2dvNV(uint index, int count, double* v)
+		public void VertexAttribs2dvNV(uint index, int count, double* v)
 		{
 			VertexAttribs2dvNVNative(index, count, v);
 		}
@@ -2105,7 +2105,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2dvNV(uint index, int count, Span<double> v)
+		public void VertexAttribs2dvNV(uint index, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -2117,7 +2117,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2dvNV(uint index, int count, ref double v)
+		public void VertexAttribs2dvNV(uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -2126,7 +2126,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs2fvNVNative(uint index, int count, float* v)
+		internal void VertexAttribs2fvNVNative(uint index, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[55])(index, count, v);
@@ -2139,7 +2139,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2fvNV(uint index, int count, float* v)
+		public void VertexAttribs2fvNV(uint index, int count, float* v)
 		{
 			VertexAttribs2fvNVNative(index, count, v);
 		}
@@ -2148,7 +2148,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2fvNV(uint index, int count, Span<float> v)
+		public void VertexAttribs2fvNV(uint index, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2160,7 +2160,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2fvNV(uint index, int count, ref float v)
+		public void VertexAttribs2fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2169,7 +2169,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs2svNVNative(uint index, int count, short* v)
+		internal void VertexAttribs2svNVNative(uint index, int count, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, short*, void>)funcTable[56])(index, count, v);
@@ -2182,7 +2182,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2svNV(uint index, int count, short* v)
+		public void VertexAttribs2svNV(uint index, int count, short* v)
 		{
 			VertexAttribs2svNVNative(index, count, v);
 		}
@@ -2191,7 +2191,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2svNV(uint index, int count, Span<short> v)
+		public void VertexAttribs2svNV(uint index, int count, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2203,7 +2203,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs2svNV(uint index, int count, ref short v)
+		public void VertexAttribs2svNV(uint index, int count, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2212,7 +2212,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs3dvNVNative(uint index, int count, double* v)
+		internal void VertexAttribs3dvNVNative(uint index, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[57])(index, count, v);
@@ -2225,7 +2225,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3dvNV(uint index, int count, double* v)
+		public void VertexAttribs3dvNV(uint index, int count, double* v)
 		{
 			VertexAttribs3dvNVNative(index, count, v);
 		}
@@ -2234,7 +2234,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3dvNV(uint index, int count, Span<double> v)
+		public void VertexAttribs3dvNV(uint index, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -2246,7 +2246,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3dvNV(uint index, int count, ref double v)
+		public void VertexAttribs3dvNV(uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -2255,7 +2255,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs3fvNVNative(uint index, int count, float* v)
+		internal void VertexAttribs3fvNVNative(uint index, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[58])(index, count, v);
@@ -2268,7 +2268,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3fvNV(uint index, int count, float* v)
+		public void VertexAttribs3fvNV(uint index, int count, float* v)
 		{
 			VertexAttribs3fvNVNative(index, count, v);
 		}
@@ -2277,7 +2277,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3fvNV(uint index, int count, Span<float> v)
+		public void VertexAttribs3fvNV(uint index, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2289,7 +2289,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3fvNV(uint index, int count, ref float v)
+		public void VertexAttribs3fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2298,7 +2298,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs3svNVNative(uint index, int count, short* v)
+		internal void VertexAttribs3svNVNative(uint index, int count, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, short*, void>)funcTable[59])(index, count, v);
@@ -2311,7 +2311,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3svNV(uint index, int count, short* v)
+		public void VertexAttribs3svNV(uint index, int count, short* v)
 		{
 			VertexAttribs3svNVNative(index, count, v);
 		}
@@ -2320,7 +2320,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3svNV(uint index, int count, Span<short> v)
+		public void VertexAttribs3svNV(uint index, int count, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2332,7 +2332,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs3svNV(uint index, int count, ref short v)
+		public void VertexAttribs3svNV(uint index, int count, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2341,7 +2341,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs4dvNVNative(uint index, int count, double* v)
+		internal void VertexAttribs4dvNVNative(uint index, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[60])(index, count, v);
@@ -2354,7 +2354,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4dvNV(uint index, int count, double* v)
+		public void VertexAttribs4dvNV(uint index, int count, double* v)
 		{
 			VertexAttribs4dvNVNative(index, count, v);
 		}
@@ -2363,7 +2363,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4dvNV(uint index, int count, Span<double> v)
+		public void VertexAttribs4dvNV(uint index, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -2375,7 +2375,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4dvNV(uint index, int count, ref double v)
+		public void VertexAttribs4dvNV(uint index, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -2384,7 +2384,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs4fvNVNative(uint index, int count, float* v)
+		internal void VertexAttribs4fvNVNative(uint index, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[61])(index, count, v);
@@ -2397,7 +2397,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4fvNV(uint index, int count, float* v)
+		public void VertexAttribs4fvNV(uint index, int count, float* v)
 		{
 			VertexAttribs4fvNVNative(index, count, v);
 		}
@@ -2406,7 +2406,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4fvNV(uint index, int count, Span<float> v)
+		public void VertexAttribs4fvNV(uint index, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2418,7 +2418,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4fvNV(uint index, int count, ref float v)
+		public void VertexAttribs4fvNV(uint index, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2427,7 +2427,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs4svNVNative(uint index, int count, short* v)
+		internal void VertexAttribs4svNVNative(uint index, int count, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, short*, void>)funcTable[62])(index, count, v);
@@ -2440,7 +2440,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4svNV(uint index, int count, short* v)
+		public void VertexAttribs4svNV(uint index, int count, short* v)
 		{
 			VertexAttribs4svNVNative(index, count, v);
 		}
@@ -2449,7 +2449,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4svNV(uint index, int count, Span<short> v)
+		public void VertexAttribs4svNV(uint index, int count, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2461,7 +2461,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4svNV(uint index, int count, ref short v)
+		public void VertexAttribs4svNV(uint index, int count, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2470,7 +2470,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribs4ubvNVNative(uint index, int count, byte* v)
+		internal void VertexAttribs4ubvNVNative(uint index, int count, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, byte*, void>)funcTable[63])(index, count, v);
@@ -2483,7 +2483,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4ubvNV(uint index, int count, byte* v)
+		public void VertexAttribs4ubvNV(uint index, int count, byte* v)
 		{
 			VertexAttribs4ubvNVNative(index, count, v);
 		}
@@ -2492,7 +2492,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4ubvNV(uint index, int count, string v)
+		public void VertexAttribs4ubvNV(uint index, int count, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2522,7 +2522,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4ubvNV(uint index, int count, Span<byte> v)
+		public void VertexAttribs4ubvNV(uint index, int count, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -2534,7 +2534,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_program</remarks>
-		public static void VertexAttribs4ubvNV(uint index, int count, ref byte v)
+		public void VertexAttribs4ubvNV(uint index, int count, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{

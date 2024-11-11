@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ANDROID
 {
-	public static unsafe partial class GLOESSampleShading
+	public unsafe partial class GLOESSampleShading
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MinSampleShadingOESNative(float value)
+		internal void MinSampleShadingOESNative(float value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[0])(value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_sample_shading</remarks>
-		public static void MinSampleShadingOES(float value)
+		public void MinSampleShadingOES(float value)
 		{
 			MinSampleShadingOESNative(value);
 		}

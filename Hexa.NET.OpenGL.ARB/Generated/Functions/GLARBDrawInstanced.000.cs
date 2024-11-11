@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBDrawInstanced
+	public unsafe partial class GLARBDrawInstanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysInstancedARBNative(GLPrimitiveType mode, int first, int count, int primcount)
+		internal void DrawArraysInstancedARBNative(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, int, void>)funcTable[0])(mode, first, count, primcount);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
-		public static void DrawArraysInstancedARB(GLPrimitiveType mode, int first, int count, int primcount)
+		public void DrawArraysInstancedARB(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			DrawArraysInstancedARBNative(mode, first, count, primcount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedARBNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		internal void DrawElementsInstancedARBNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, void>)funcTable[1])(mode, count, type, indices, primcount);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
-		public static void DrawElementsInstancedARB(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		public void DrawElementsInstancedARB(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedARBNative(mode, count, type, indices, primcount);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
-		public static void DrawElementsInstancedARB(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		public void DrawElementsInstancedARB(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedARBNative(mode, count, type, (void*)indices, primcount);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_instanced</remarks>
-		public static void DrawElementsInstancedARB<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		public void DrawElementsInstancedARB<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTExternalBuffer
+	public unsafe partial class GLEXTExternalBuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferStorageExternalEXTNative(GLEnum target, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
+		internal void BufferStorageExternalEXTNative(GLEnum target, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, nint, nint, GLeglClientBufferEXT, GLBufferStorageMask, void>)funcTable[0])(target, offset, size, clientBuffer, flags);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_external_buffer</remarks>
-		public static void BufferStorageExternalEXT(GLEnum target, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
+		public void BufferStorageExternalEXT(GLEnum target, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
 		{
 			BufferStorageExternalEXTNative(target, offset, size, clientBuffer, flags);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferStorageExternalEXTNative(uint buffer, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
+		internal void NamedBufferStorageExternalEXTNative(uint buffer, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, GLeglClientBufferEXT, GLBufferStorageMask, void>)funcTable[1])(buffer, offset, size, clientBuffer, flags);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_external_buffer</remarks>
-		public static void NamedBufferStorageExternalEXT(uint buffer, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
+		public void NamedBufferStorageExternalEXT(uint buffer, nint offset, nint size, GLeglClientBufferEXT clientBuffer, GLBufferStorageMask flags)
 		{
 			NamedBufferStorageExternalEXTNative(buffer, offset, size, clientBuffer, flags);
 		}

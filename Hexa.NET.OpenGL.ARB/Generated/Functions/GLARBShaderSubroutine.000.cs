@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBShaderSubroutine
+	public unsafe partial class GLARBShaderSubroutine
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetActiveSubroutineNameNative(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
+		internal void GetActiveSubroutineNameNative(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLShaderType, uint, int, int*, byte*, void>)funcTable[0])(program, shadertype, index, bufSize, length, name);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
 		{
 			GetActiveSubroutineNameNative(program, shadertype, index, bufSize, length, name);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, byte* name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, byte* name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, string name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -93,7 +93,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, Span<byte> name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -105,7 +105,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, ref byte name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, Span<byte> name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, ref byte name)
+		public void GetActiveSubroutineName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetActiveSubroutineUniformNameNative(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
+		internal void GetActiveSubroutineUniformNameNative(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLShaderType, uint, int, int*, byte*, void>)funcTable[1])(program, shadertype, index, bufSize, length, name);
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, byte* name)
 		{
 			GetActiveSubroutineUniformNameNative(program, shadertype, index, bufSize, length, name);
 		}
@@ -166,7 +166,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, byte* name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -178,7 +178,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, byte* name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -190,7 +190,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, string name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -220,7 +220,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, Span<byte> name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -232,7 +232,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, ref byte name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, int* length, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, Span<byte> name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, Span<int> length, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -259,7 +259,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an active shader subroutine uniform
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, ref byte name)
+		public void GetActiveSubroutineUniformName(uint program, GLShaderType shadertype, uint index, int bufSize, ref int length, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -271,7 +271,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetActiveSubroutineUniformivNative(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, int* values)
+		internal void GetActiveSubroutineUniformivNative(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLShaderType, uint, GLSubroutineParameterName, int*, void>)funcTable[2])(program, shadertype, index, pname, values);
@@ -284,7 +284,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, int* values)
+		public void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, int* values)
 		{
 			GetActiveSubroutineUniformivNative(program, shadertype, index, pname, values);
 		}
@@ -293,7 +293,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, out int values)
+		public void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, out int values)
 		{
 			int pparam;
 			GetActiveSubroutineUniformivNative(program, shadertype, index, pname, &pparam);
@@ -304,7 +304,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
+		public void GetActiveSubroutineUniformiv(uint program, GLShaderType shadertype, uint index, GLSubroutineParameterName pname, Span<int> values)
 		{
 			fixed (int* pparams = values)
 			{
@@ -313,7 +313,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramStageivNative(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
+		internal void GetProgramStageivNative(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLShaderType, GLProgramStagePName, int*, void>)funcTable[3])(program, shadertype, pname, values);
@@ -326,7 +326,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
+		public void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
 		{
 			GetProgramStageivNative(program, shadertype, pname, values);
 		}
@@ -335,7 +335,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, out int values)
+		public void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, out int values)
 		{
 			int pparam;
 			GetProgramStageivNative(program, shadertype, pname, &pparam);
@@ -346,7 +346,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
+		public void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
 		{
 			fixed (int* pparams = values)
 			{
@@ -355,7 +355,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetSubroutineIndexNative(uint program, GLShaderType shadertype, byte* name)
+		internal uint GetSubroutineIndexNative(uint program, GLShaderType shadertype, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLShaderType, byte*, uint>)funcTable[4])(program, shadertype, name);
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, byte* name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, byte* name)
 		{
 			uint ret = GetSubroutineIndexNative(program, shadertype, name);
 			return ret;
@@ -378,7 +378,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, string name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -409,7 +409,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, Span<byte> name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -422,7 +422,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, ref byte name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -432,7 +432,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetSubroutineUniformLocationNative(uint program, GLShaderType shadertype, byte* name)
+		internal int GetSubroutineUniformLocationNative(uint program, GLShaderType shadertype, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLShaderType, byte*, int>)funcTable[5])(program, shadertype, name);
@@ -445,7 +445,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, byte* name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, byte* name)
 		{
 			int ret = GetSubroutineUniformLocationNative(program, shadertype, name);
 			return ret;
@@ -455,7 +455,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, string name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -486,7 +486,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, Span<byte> name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -499,7 +499,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, ref byte name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -509,7 +509,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformSubroutineuivNative(GLShaderType shadertype, int location, uint* @params)
+		internal void GetUniformSubroutineuivNative(GLShaderType shadertype, int location, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLShaderType, int, uint*, void>)funcTable[6])(shadertype, location, @params);
@@ -522,7 +522,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, uint* @params)
+		public void GetUniformSubroutineuiv(GLShaderType shadertype, int location, uint* @params)
 		{
 			GetUniformSubroutineuivNative(shadertype, location, @params);
 		}
@@ -531,7 +531,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, out uint @params)
+		public void GetUniformSubroutineuiv(GLShaderType shadertype, int location, out uint @params)
 		{
 			uint pparam;
 			GetUniformSubroutineuivNative(shadertype, location, &pparam);
@@ -542,7 +542,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetUniformSubroutineuiv(GLShaderType shadertype, int location, Span<uint> @params)
+		public void GetUniformSubroutineuiv(GLShaderType shadertype, int location, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
 			{
@@ -551,7 +551,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformSubroutinesuivNative(GLShaderType shadertype, int count, uint* indices)
+		internal void UniformSubroutinesuivNative(GLShaderType shadertype, int count, uint* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLShaderType, int, uint*, void>)funcTable[7])(shadertype, count, indices);
@@ -564,7 +564,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, uint* indices)
+		public void UniformSubroutinesuiv(GLShaderType shadertype, int count, uint* indices)
 		{
 			UniformSubroutinesuivNative(shadertype, count, indices);
 		}
@@ -573,7 +573,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, Span<uint> indices)
+		public void UniformSubroutinesuiv(GLShaderType shadertype, int count, Span<uint> indices)
 		{
 			fixed (uint* pindices0 = indices)
 			{
@@ -585,7 +585,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, ref uint indices)
+		public void UniformSubroutinesuiv(GLShaderType shadertype, int count, ref uint indices)
 		{
 			fixed (uint* pindices0 = &indices)
 			{

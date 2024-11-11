@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVAlphaToCoverageDitherControl
+	public unsafe partial class GLNVAlphaToCoverageDitherControl
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void AlphaToCoverageDitherControlNVNative(GLEnum mode)
+		internal void AlphaToCoverageDitherControlNVNative(GLEnum mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[0])(mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_alpha_to_coverage_dither_control</remarks>
-		public static void AlphaToCoverageDitherControlNV(GLEnum mode)
+		public void AlphaToCoverageDitherControlNV(GLEnum mode)
 		{
 			AlphaToCoverageDitherControlNVNative(mode);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLEFlushBufferRange
+	public unsafe partial class GLAPPLEFlushBufferRange
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferParameteriAPPLENative(GLEnum target, GLEnum pname, int param)
+		internal void BufferParameteriAPPLENative(GLEnum target, GLEnum pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, int, void>)funcTable[0])(target, pname, param);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_flush_buffer_range</remarks>
-		public static void BufferParameteriAPPLE(GLEnum target, GLEnum pname, int param)
+		public void BufferParameteriAPPLE(GLEnum target, GLEnum pname, int param)
 		{
 			BufferParameteriAPPLENative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FlushMappedBufferRangeAPPLENative(GLBufferTargetARB target, nint offset, nint size)
+		internal void FlushMappedBufferRangeAPPLENative(GLBufferTargetARB target, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, void>)funcTable[1])(target, offset, size);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_flush_buffer_range</remarks>
-		public static void FlushMappedBufferRangeAPPLE(GLBufferTargetARB target, nint offset, nint size)
+		public void FlushMappedBufferRangeAPPLE(GLBufferTargetARB target, nint offset, nint size)
 		{
 			FlushMappedBufferRangeAPPLENative(target, offset, size);
 		}

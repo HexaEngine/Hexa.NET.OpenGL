@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTSecondaryColor
+	public unsafe partial class GLEXTSecondaryColor
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3bEXTNative(sbyte red, sbyte green, sbyte blue)
+		internal void SecondaryColor3bEXTNative(sbyte red, sbyte green, sbyte blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, void>)funcTable[0])(red, green, blue);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3bEXT(sbyte red, sbyte green, sbyte blue)
+		public void SecondaryColor3bEXT(sbyte red, sbyte green, sbyte blue)
 		{
 			SecondaryColor3bEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3bvEXTNative(sbyte* v)
+		internal void SecondaryColor3bvEXTNative(sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[1])(v);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3bvEXT(sbyte* v)
+		public void SecondaryColor3bvEXT(sbyte* v)
 		{
 			SecondaryColor3bvEXTNative(v);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3bvEXT(Span<sbyte> v)
+		public void SecondaryColor3bvEXT(Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3bvEXT(ref sbyte v)
+		public void SecondaryColor3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3dEXTNative(double red, double green, double blue)
+		internal void SecondaryColor3dEXTNative(double red, double green, double blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[2])(red, green, blue);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3dEXT(double red, double green, double blue)
+		public void SecondaryColor3dEXT(double red, double green, double blue)
 		{
 			SecondaryColor3dEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3dvEXTNative(double* v)
+		internal void SecondaryColor3dvEXTNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[3])(v);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3dvEXT(double* v)
+		public void SecondaryColor3dvEXT(double* v)
 		{
 			SecondaryColor3dvEXTNative(v);
 		}
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3dvEXT(Span<double> v)
+		public void SecondaryColor3dvEXT(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3dvEXT(ref double v)
+		public void SecondaryColor3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3fEXTNative(float red, float green, float blue)
+		internal void SecondaryColor3fEXTNative(float red, float green, float blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[4])(red, green, blue);
@@ -154,13 +154,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3fEXT(float red, float green, float blue)
+		public void SecondaryColor3fEXT(float red, float green, float blue)
 		{
 			SecondaryColor3fEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3fvEXTNative(float* v)
+		internal void SecondaryColor3fvEXTNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[5])(v);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3fvEXT(float* v)
+		public void SecondaryColor3fvEXT(float* v)
 		{
 			SecondaryColor3fvEXTNative(v);
 		}
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3fvEXT(Span<float> v)
+		public void SecondaryColor3fvEXT(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -194,7 +194,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3fvEXT(ref float v)
+		public void SecondaryColor3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3iEXTNative(int red, int green, int blue)
+		internal void SecondaryColor3iEXTNative(int red, int green, int blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[6])(red, green, blue);
@@ -216,13 +216,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3iEXT(int red, int green, int blue)
+		public void SecondaryColor3iEXT(int red, int green, int blue)
 		{
 			SecondaryColor3iEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3ivEXTNative(int* v)
+		internal void SecondaryColor3ivEXTNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[7])(v);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ivEXT(int* v)
+		public void SecondaryColor3ivEXT(int* v)
 		{
 			SecondaryColor3ivEXTNative(v);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ivEXT(Span<int> v)
+		public void SecondaryColor3ivEXT(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ivEXT(ref int v)
+		public void SecondaryColor3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3sEXTNative(short red, short green, short blue)
+		internal void SecondaryColor3sEXTNative(short red, short green, short blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, void>)funcTable[8])(red, green, blue);
@@ -278,13 +278,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3sEXT(short red, short green, short blue)
+		public void SecondaryColor3sEXT(short red, short green, short blue)
 		{
 			SecondaryColor3sEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3svEXTNative(short* v)
+		internal void SecondaryColor3svEXTNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[9])(v);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3svEXT(short* v)
+		public void SecondaryColor3svEXT(short* v)
 		{
 			SecondaryColor3svEXTNative(v);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3svEXT(Span<short> v)
+		public void SecondaryColor3svEXT(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3svEXT(ref short v)
+		public void SecondaryColor3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3ubEXTNative(bool red, bool green, bool blue)
+		internal void SecondaryColor3ubEXTNative(bool red, bool green, bool blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte, byte, byte, void>)funcTable[10])(*((byte*)(&red)), *((byte*)(&green)), *((byte*)(&blue)));
@@ -340,13 +340,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ubEXT(bool red, bool green, bool blue)
+		public void SecondaryColor3ubEXT(bool red, bool green, bool blue)
 		{
 			SecondaryColor3ubEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3ubvEXTNative(byte* v)
+		internal void SecondaryColor3ubvEXTNative(byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte*, void>)funcTable[11])(v);
@@ -359,7 +359,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ubvEXT(byte* v)
+		public void SecondaryColor3ubvEXT(byte* v)
 		{
 			SecondaryColor3ubvEXTNative(v);
 		}
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ubvEXT(string v)
+		public void SecondaryColor3ubvEXT(string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -398,7 +398,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ubvEXT(Span<byte> v)
+		public void SecondaryColor3ubvEXT(Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -410,7 +410,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3ubvEXT(ref byte v)
+		public void SecondaryColor3ubvEXT(ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -419,7 +419,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3uiEXTNative(uint red, uint green, uint blue)
+		internal void SecondaryColor3uiEXTNative(uint red, uint green, uint blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[12])(red, green, blue);
@@ -432,13 +432,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3uiEXT(uint red, uint green, uint blue)
+		public void SecondaryColor3uiEXT(uint red, uint green, uint blue)
 		{
 			SecondaryColor3uiEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3uivEXTNative(uint* v)
+		internal void SecondaryColor3uivEXTNative(uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint*, void>)funcTable[13])(v);
@@ -451,7 +451,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3uivEXT(uint* v)
+		public void SecondaryColor3uivEXT(uint* v)
 		{
 			SecondaryColor3uivEXTNative(v);
 		}
@@ -460,7 +460,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3uivEXT(Span<uint> v)
+		public void SecondaryColor3uivEXT(Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -472,7 +472,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3uivEXT(ref uint v)
+		public void SecondaryColor3uivEXT(ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -481,7 +481,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3usEXTNative(ushort red, ushort green, ushort blue)
+		internal void SecondaryColor3usEXTNative(ushort red, ushort green, ushort blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ushort, ushort, ushort, void>)funcTable[14])(red, green, blue);
@@ -494,13 +494,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3usEXT(ushort red, ushort green, ushort blue)
+		public void SecondaryColor3usEXT(ushort red, ushort green, ushort blue)
 		{
 			SecondaryColor3usEXTNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColor3usvEXTNative(ushort* v)
+		internal void SecondaryColor3usvEXTNative(ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ushort*, void>)funcTable[15])(v);
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3usvEXT(ushort* v)
+		public void SecondaryColor3usvEXT(ushort* v)
 		{
 			SecondaryColor3usvEXTNative(v);
 		}
@@ -522,7 +522,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3usvEXT(Span<ushort> v)
+		public void SecondaryColor3usvEXT(Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -534,7 +534,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColor3usvEXT(ref ushort v)
+		public void SecondaryColor3usvEXT(ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -543,7 +543,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColorPointerEXTNative(int size, GLColorPointerType type, int stride, void* pointer)
+		internal void SecondaryColorPointerEXTNative(int size, GLColorPointerType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLColorPointerType, int, void*, void>)funcTable[16])(size, type, stride, pointer);
@@ -556,7 +556,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, void* pointer)
+		public void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, void* pointer)
 		{
 			SecondaryColorPointerEXTNative(size, type, stride, pointer);
 		}
@@ -565,7 +565,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, nint pointer)
+		public void SecondaryColorPointerEXT(int size, GLColorPointerType type, int stride, nint pointer)
 		{
 			SecondaryColorPointerEXTNative(size, type, stride, (void*)pointer);
 		}
@@ -574,7 +574,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_secondary_color</remarks>
-		public static void SecondaryColorPointerEXT<TPointer>(int size, GLColorPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void SecondaryColorPointerEXT<TPointer>(int size, GLColorPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

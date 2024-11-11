@@ -14,11 +14,11 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL
 {
-	public static unsafe partial class GL
+	public unsafe partial class GL
 	{
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferParameteri64vNative(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
+		internal void GetBufferParameteri64vNative(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPNameARB, long*, void>)funcTable[280])(target, pname, @params);
@@ -31,7 +31,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
+		public void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, long* @params)
 		{
 			GetBufferParameteri64vNative(target, pname, @params);
 		}
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, out long @params)
+		public void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, out long @params)
 		{
 			long pparam;
 			GetBufferParameteri64vNative(target, pname, &pparam);
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, Span<long> @params)
+		public void GetBufferParameteri64v(GLBufferTargetARB target, GLBufferPNameARB pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferParameterivNative(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
+		internal void GetBufferParameterivNative(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPNameARB, int*, void>)funcTable[281])(target, pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of a buffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
+		public void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, int* @params)
 		{
 			GetBufferParameterivNative(target, pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of a buffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
+		public void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, out int @params)
 		{
 			int pparam;
 			GetBufferParameterivNative(target, pname, &pparam);
@@ -93,7 +93,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of a buffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
+		public void GetBufferParameteriv(GLBufferTargetARB target, GLBufferPNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferPointervNative(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
+		internal void GetBufferPointervNative(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPointerNameARB, void**, void>)funcTable[282])(target, pname, @params);
@@ -115,13 +115,13 @@ namespace Hexa.NET.OpenGL
 		/// Return the pointer to a mapped buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferPointerv(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
+		public void GetBufferPointerv(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetBufferPointervNative(target, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferSubDataNative(GLBufferTargetARB target, nint offset, nint size, void* data)
+		internal void GetBufferSubDataNative(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, void*, void>)funcTable[283])(target, offset, size, data);
@@ -134,7 +134,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a subset of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferSubData(GLBufferTargetARB target, nint offset, nint size, void* data)
+		public void GetBufferSubData(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			GetBufferSubDataNative(target, offset, size, data);
 		}
@@ -143,7 +143,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a subset of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferSubData(GLBufferTargetARB target, nint offset, nint size, nint data)
+		public void GetBufferSubData(GLBufferTargetARB target, nint offset, nint size, nint data)
 		{
 			GetBufferSubDataNative(target, offset, size, (void*)data);
 		}
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a subset of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetBufferSubData<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void GetBufferSubData<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetClipPlaneNative(GLClipPlaneName plane, double* equation)
+		internal void GetClipPlaneNative(GLClipPlaneName plane, double* equation)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipPlaneName, double*, void>)funcTable[284])(plane, equation);
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetClipPlane(GLClipPlaneName plane, double* equation)
+		public void GetClipPlane(GLClipPlaneName plane, double* equation)
 		{
 			GetClipPlaneNative(plane, equation);
 		}
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetClipPlane(GLClipPlaneName plane, Span<double> equation)
+		public void GetClipPlane(GLClipPlaneName plane, Span<double> equation)
 		{
 			fixed (double* pequation0 = equation)
 			{
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetClipPlane(GLClipPlaneName plane, ref double equation)
+		public void GetClipPlane(GLClipPlaneName plane, ref double equation)
 		{
 			fixed (double* pequation0 = &equation)
 			{
@@ -204,7 +204,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCompressedTexImageNative(GLTextureTarget target, int level, void* img)
+		internal void GetCompressedTexImageNative(GLTextureTarget target, int level, void* img)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, void*, void>)funcTable[285])(target, level, img);
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a compressed texture image
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetCompressedTexImage(GLTextureTarget target, int level, void* img)
+		public void GetCompressedTexImage(GLTextureTarget target, int level, void* img)
 		{
 			GetCompressedTexImageNative(target, level, img);
 		}
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a compressed texture image
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetCompressedTexImage(GLTextureTarget target, int level, nint img)
+		public void GetCompressedTexImage(GLTextureTarget target, int level, nint img)
 		{
 			GetCompressedTexImageNative(target, level, (void*)img);
 		}
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a compressed texture image
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetCompressedTexImage<TImg>(GLTextureTarget target, int level, Span<TImg> img) where TImg : unmanaged
+		public void GetCompressedTexImage<TImg>(GLTextureTarget target, int level, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
 			{
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCompressedTextureImageNative(uint texture, int level, int bufSize, void* pixels)
+		internal void GetCompressedTextureImageNative(uint texture, int level, int bufSize, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, void*, void>)funcTable[286])(texture, level, bufSize, pixels);
@@ -257,7 +257,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetCompressedTextureImage(uint texture, int level, int bufSize, void* pixels)
+		public void GetCompressedTextureImage(uint texture, int level, int bufSize, void* pixels)
 		{
 			GetCompressedTextureImageNative(texture, level, bufSize, pixels);
 		}
@@ -266,7 +266,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetCompressedTextureImage(uint texture, int level, int bufSize, nint pixels)
+		public void GetCompressedTextureImage(uint texture, int level, int bufSize, nint pixels)
 		{
 			GetCompressedTextureImageNative(texture, level, bufSize, (void*)pixels);
 		}
@@ -275,7 +275,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetCompressedTextureImage<TPixels>(uint texture, int level, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
+		public void GetCompressedTextureImage<TPixels>(uint texture, int level, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -284,7 +284,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCompressedTextureSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, void* pixels)
+		internal void GetCompressedTextureSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, void*, void>)funcTable[287])(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels);
@@ -298,7 +298,7 @@ namespace Hexa.NET.OpenGL
 		///     compressed texture object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
-		public static void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, void* pixels)
+		public void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, void* pixels)
 		{
 			GetCompressedTextureSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels);
 		}
@@ -308,7 +308,7 @@ namespace Hexa.NET.OpenGL
 		///     compressed texture object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
-		public static void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, nint pixels)
+		public void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, nint pixels)
 		{
 			GetCompressedTextureSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, (void*)pixels);
 		}
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGL
 		///     compressed texture object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_texture_sub_image</remarks>
-		public static void GetCompressedTextureSubImage<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
+		public void GetCompressedTextureSubImage<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetDebugMessageLogNative(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
+		internal uint GetDebugMessageLogNative(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, GLDebugSource, GLDebugType, uint*, GLDebugSeverity, int*, byte*, uint>)funcTable[288])(count, bufSize, sources, types, ids, severities, lengths, messageLog);
@@ -340,7 +340,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			uint ret = GetDebugMessageLogNative(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 			return ret;
@@ -350,7 +350,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -363,7 +363,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -376,7 +376,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = lengths)
 			{
@@ -389,7 +389,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
 			{
@@ -402,7 +402,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -418,7 +418,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, byte* messageLog)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -434,7 +434,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, string messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, string messageLog)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -465,7 +465,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (byte* pmessageLog0 = messageLog)
 			{
@@ -478,7 +478,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (byte* pmessageLog0 = &messageLog)
 			{
@@ -491,7 +491,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, int* lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -507,7 +507,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, int* lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -523,7 +523,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (int* plengths0 = lengths)
 			{
@@ -539,7 +539,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, uint* ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (int* plengths0 = &lengths)
 			{
@@ -555,7 +555,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, Span<uint> ids, GLDebugSeverity severities, Span<int> lengths, Span<byte> messageLog)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -574,7 +574,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve messages from the debug message log
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
+		public uint GetDebugMessageLog(uint count, int bufSize, GLDebugSource sources, GLDebugType types, ref uint ids, GLDebugSeverity severities, ref int lengths, ref byte messageLog)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -590,7 +590,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetDoublei_vNative(GLGetPName target, uint index, double* data)
+		internal void GetDoublei_vNative(GLGetPName target, uint index, double* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, double*, void>)funcTable[289])(target, index, data);
@@ -603,7 +603,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, double* data)
+		public void GetDoublei_v(GLGetPName target, uint index, double* data)
 		{
 			GetDoublei_vNative(target, index, data);
 		}
@@ -612,7 +612,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, out double data)
+		public void GetDoublei_v(GLGetPName target, uint index, out double data)
 		{
 			double pparam;
 			GetDoublei_vNative(target, index, &pparam);
@@ -623,7 +623,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
+		public void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
 		{
 			fixed (double* pparams = data)
 			{
@@ -632,7 +632,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetDoublevNative(GLGetPName pname, double* data)
+		internal void GetDoublevNative(GLGetPName pname, double* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, double*, void>)funcTable[290])(pname, data);
@@ -645,7 +645,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetDoublev(GLGetPName pname, double* data)
+		public void GetDoublev(GLGetPName pname, double* data)
 		{
 			GetDoublevNative(pname, data);
 		}
@@ -654,7 +654,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetDoublev(GLGetPName pname, out double data)
+		public void GetDoublev(GLGetPName pname, out double data)
 		{
 			double pparam;
 			GetDoublevNative(pname, &pparam);
@@ -665,7 +665,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetDoublev(GLGetPName pname, Span<double> data)
+		public void GetDoublev(GLGetPName pname, Span<double> data)
 		{
 			fixed (double* pparams = data)
 			{
@@ -674,7 +674,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum GetErrorNative()
+		internal GLEnum GetErrorNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum>)funcTable[291])();
@@ -687,14 +687,14 @@ namespace Hexa.NET.OpenGL
 		/// Return error information
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static GLEnum GetError()
+		public GLEnum GetError()
 		{
 			GLEnum ret = GetErrorNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloati_vNative(GLGetPName target, uint index, float* data)
+		internal void GetFloati_vNative(GLGetPName target, uint index, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, float*, void>)funcTable[292])(target, index, data);
@@ -707,7 +707,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, float* data)
+		public void GetFloati_v(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vNative(target, index, data);
 		}
@@ -716,7 +716,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, out float data)
+		public void GetFloati_v(GLGetPName target, uint index, out float data)
 		{
 			float pparam;
 			GetFloati_vNative(target, index, &pparam);
@@ -727,7 +727,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, Span<float> data)
+		public void GetFloati_v(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pparams = data)
 			{
@@ -736,7 +736,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloatvNative(GLGetPName pname, float* data)
+		internal void GetFloatvNative(GLGetPName pname, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, float*, void>)funcTable[293])(pname, data);
@@ -749,7 +749,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetFloatv(GLGetPName pname, float* data)
+		public void GetFloatv(GLGetPName pname, float* data)
 		{
 			GetFloatvNative(pname, data);
 		}
@@ -758,7 +758,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetFloatv(GLGetPName pname, out float data)
+		public void GetFloatv(GLGetPName pname, out float data)
 		{
 			float pparam;
 			GetFloatvNative(pname, &pparam);
@@ -769,7 +769,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetFloatv(GLGetPName pname, Span<float> data)
+		public void GetFloatv(GLGetPName pname, Span<float> data)
 		{
 			fixed (float* pparams = data)
 			{
@@ -778,7 +778,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetFragDataIndexNative(uint program, byte* name)
+		internal int GetFragDataIndexNative(uint program, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte*, int>)funcTable[294])(program, name);
@@ -791,7 +791,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, byte* name)
+		public int GetFragDataIndex(uint program, byte* name)
 		{
 			int ret = GetFragDataIndexNative(program, name);
 			return ret;
@@ -801,7 +801,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, string name)
+		public int GetFragDataIndex(uint program, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -832,7 +832,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, Span<byte> name)
+		public int GetFragDataIndex(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -845,7 +845,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, ref byte name)
+		public int GetFragDataIndex(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -855,7 +855,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetFragDataLocationNative(uint program, byte* name)
+		internal int GetFragDataLocationNative(uint program, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte*, int>)funcTable[295])(program, name);
@@ -868,7 +868,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color numbers to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static int GetFragDataLocation(uint program, byte* name)
+		public int GetFragDataLocation(uint program, byte* name)
 		{
 			int ret = GetFragDataLocationNative(program, name);
 			return ret;
@@ -878,7 +878,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color numbers to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static int GetFragDataLocation(uint program, string name)
+		public int GetFragDataLocation(uint program, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -909,7 +909,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color numbers to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static int GetFragDataLocation(uint program, Span<byte> name)
+		public int GetFragDataLocation(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -922,7 +922,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the bindings of color numbers to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static int GetFragDataLocation(uint program, ref byte name)
+		public int GetFragDataLocation(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -932,7 +932,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFramebufferAttachmentParameterivNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
+		internal void GetFramebufferAttachmentParameterivNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, GLFramebufferAttachmentParameterName, int*, void>)funcTable[296])(target, attachment, pname, @params);
@@ -945,7 +945,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve information about attachments of a framebuffer object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
+		public void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferAttachmentParameterivNative(target, attachment, pname, @params);
 		}
@@ -954,7 +954,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve information about attachments of a framebuffer object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
+		public void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparam;
 			GetFramebufferAttachmentParameterivNative(target, attachment, pname, &pparam);
@@ -965,7 +965,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve information about attachments of a framebuffer object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public void GetFramebufferAttachmentParameteriv(GLFramebufferTarget target, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -974,7 +974,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFramebufferParameterivNative(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, int* @params)
+		internal void GetFramebufferParameterivNative(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachmentParameterName, int*, void>)funcTable[297])(target, pname, @params);
@@ -987,7 +987,7 @@ namespace Hexa.NET.OpenGL
 		/// Query a named parameter of a framebuffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
-		public static void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, int* @params)
+		public void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetFramebufferParameterivNative(target, pname, @params);
 		}
@@ -996,7 +996,7 @@ namespace Hexa.NET.OpenGL
 		/// Query a named parameter of a framebuffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
-		public static void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, out int @params)
+		public void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparam;
 			GetFramebufferParameterivNative(target, pname, &pparam);
@@ -1007,7 +1007,7 @@ namespace Hexa.NET.OpenGL
 		/// Query a named parameter of a framebuffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_no_attachments</remarks>
-		public static void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public void GetFramebufferParameteriv(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1016,7 +1016,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum GetGraphicsResetStatusNative()
+		internal GLEnum GetGraphicsResetStatusNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum>)funcTable[298])();
@@ -1029,14 +1029,14 @@ namespace Hexa.NET.OpenGL
 		/// Check if the rendering context has not been lost due to software or hardware issues
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static GLEnum GetGraphicsResetStatus()
+		public GLEnum GetGraphicsResetStatus()
 		{
 			GLEnum ret = GetGraphicsResetStatusNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInteger64i_vNative(GLGetPName target, uint index, long* data)
+		internal void GetInteger64i_vNative(GLGetPName target, uint index, long* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, long*, void>)funcTable[299])(target, index, data);
@@ -1049,7 +1049,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetInteger64i_v(GLGetPName target, uint index, long* data)
+		public void GetInteger64i_v(GLGetPName target, uint index, long* data)
 		{
 			GetInteger64i_vNative(target, index, data);
 		}
@@ -1058,7 +1058,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetInteger64i_v(GLGetPName target, uint index, out long data)
+		public void GetInteger64i_v(GLGetPName target, uint index, out long data)
 		{
 			long pparam;
 			GetInteger64i_vNative(target, index, &pparam);
@@ -1069,7 +1069,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X</remarks>
-		public static void GetInteger64i_v(GLGetPName target, uint index, Span<long> data)
+		public void GetInteger64i_v(GLGetPName target, uint index, Span<long> data)
 		{
 			fixed (long* pparams = data)
 			{
@@ -1078,7 +1078,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInteger64vNative(GLGetPName pname, long* data)
+		internal void GetInteger64vNative(GLGetPName pname, long* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, long*, void>)funcTable[300])(pname, data);
@@ -1091,7 +1091,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetInteger64v(GLGetPName pname, long* data)
+		public void GetInteger64v(GLGetPName pname, long* data)
 		{
 			GetInteger64vNative(pname, data);
 		}
@@ -1100,7 +1100,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetInteger64v(GLGetPName pname, out long data)
+		public void GetInteger64v(GLGetPName pname, out long data)
 		{
 			long pparam;
 			GetInteger64vNative(pname, &pparam);
@@ -1111,7 +1111,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetInteger64v(GLGetPName pname, Span<long> data)
+		public void GetInteger64v(GLGetPName pname, Span<long> data)
 		{
 			fixed (long* pparams = data)
 			{
@@ -1120,7 +1120,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegeri_vNative(GLGetPName target, uint index, int* data)
+		internal void GetIntegeri_vNative(GLGetPName target, uint index, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, int*, void>)funcTable[301])(target, index, data);
@@ -1133,7 +1133,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void GetIntegeri_v(GLGetPName target, uint index, int* data)
+		public void GetIntegeri_v(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vNative(target, index, data);
 		}
@@ -1142,7 +1142,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void GetIntegeri_v(GLGetPName target, uint index, out int data)
+		public void GetIntegeri_v(GLGetPName target, uint index, out int data)
 		{
 			int pparam;
 			GetIntegeri_vNative(target, index, &pparam);
@@ -1153,7 +1153,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
+		public void GetIntegeri_v(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pparams = data)
 			{
@@ -1162,7 +1162,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegervNative(GLGetPName pname, int* data)
+		internal void GetIntegervNative(GLGetPName pname, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, int*, void>)funcTable[302])(pname, data);
@@ -1175,7 +1175,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetIntegerv(GLGetPName pname, int* data)
+		public void GetIntegerv(GLGetPName pname, int* data)
 		{
 			GetIntegervNative(pname, data);
 		}
@@ -1184,7 +1184,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetIntegerv(GLGetPName pname, out int data)
+		public void GetIntegerv(GLGetPName pname, out int data)
 		{
 			int pparam;
 			GetIntegervNative(pname, &pparam);
@@ -1195,7 +1195,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetIntegerv(GLGetPName pname, Span<int> data)
+		public void GetIntegerv(GLGetPName pname, Span<int> data)
 		{
 			fixed (int* pparams = data)
 			{
@@ -1204,7 +1204,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInternalformati64vNative(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, long* @params)
+		internal void GetInternalformati64vNative(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLInternalFormat, GLInternalFormatPName, int, long*, void>)funcTable[303])(target, internalformat, pname, count, @params);
@@ -1217,7 +1217,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
-		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, long* @params)
+		public void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, long* @params)
 		{
 			GetInternalformati64vNative(target, internalformat, pname, count, @params);
 		}
@@ -1226,7 +1226,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
-		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out long @params)
+		public void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out long @params)
 		{
 			long pparam;
 			GetInternalformati64vNative(target, internalformat, pname, count, &pparam);
@@ -1237,7 +1237,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query2</remarks>
-		public static void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, Span<long> @params)
+		public void GetInternalformati64v(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
 			{
@@ -1246,7 +1246,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInternalformativNative(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, int* @params)
+		internal void GetInternalformativNative(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLInternalFormat, GLInternalFormatPName, int, int*, void>)funcTable[304])(target, internalformat, pname, count, @params);
@@ -1259,7 +1259,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query</remarks>
-		public static void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, int* @params)
+		public void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, int* @params)
 		{
 			GetInternalformativNative(target, internalformat, pname, count, @params);
 		}
@@ -1268,7 +1268,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query</remarks>
-		public static void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out int @params)
+		public void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, out int @params)
 		{
 			int pparam;
 			GetInternalformativNative(target, internalformat, pname, count, &pparam);
@@ -1279,7 +1279,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_internalformat_query</remarks>
-		public static void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, Span<int> @params)
+		public void GetInternalformativ(GLTextureTarget target, GLInternalFormat internalformat, GLInternalFormatPName pname, int count, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1288,7 +1288,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLightfvNative(GLLightName light, GLLightParameter pname, float* @params)
+		internal void GetLightfvNative(GLLightName light, GLLightParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, float*, void>)funcTable[305])(light, pname, @params);
@@ -1301,7 +1301,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetLightfv(GLLightName light, GLLightParameter pname, float* @params)
+		public void GetLightfv(GLLightName light, GLLightParameter pname, float* @params)
 		{
 			GetLightfvNative(light, pname, @params);
 		}
@@ -1310,7 +1310,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetLightfv(GLLightName light, GLLightParameter pname, out float @params)
+		public void GetLightfv(GLLightName light, GLLightParameter pname, out float @params)
 		{
 			float pparam;
 			GetLightfvNative(light, pname, &pparam);
@@ -1321,7 +1321,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetLightfv(GLLightName light, GLLightParameter pname, Span<float> @params)
+		public void GetLightfv(GLLightName light, GLLightParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -1330,7 +1330,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLightivNative(GLLightName light, GLLightParameter pname, int* @params)
+		internal void GetLightivNative(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, int*, void>)funcTable[306])(light, pname, @params);
@@ -1343,7 +1343,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetLightiv(GLLightName light, GLLightParameter pname, int* @params)
+		public void GetLightiv(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			GetLightivNative(light, pname, @params);
 		}
@@ -1352,7 +1352,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetLightiv(GLLightName light, GLLightParameter pname, out int @params)
+		public void GetLightiv(GLLightName light, GLLightParameter pname, out int @params)
 		{
 			int pparam;
 			GetLightivNative(light, pname, &pparam);
@@ -1363,7 +1363,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetLightiv(GLLightName light, GLLightParameter pname, Span<int> @params)
+		public void GetLightiv(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1372,7 +1372,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapdvNative(GLMapTarget target, GLGetMapQuery query, double* v)
+		internal void GetMapdvNative(GLMapTarget target, GLGetMapQuery query, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLGetMapQuery, double*, void>)funcTable[307])(target, query, v);
@@ -1385,7 +1385,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapdv(GLMapTarget target, GLGetMapQuery query, double* v)
+		public void GetMapdv(GLMapTarget target, GLGetMapQuery query, double* v)
 		{
 			GetMapdvNative(target, query, v);
 		}
@@ -1394,7 +1394,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapdv(GLMapTarget target, GLGetMapQuery query, out double v)
+		public void GetMapdv(GLMapTarget target, GLGetMapQuery query, out double v)
 		{
 			double pparam;
 			GetMapdvNative(target, query, &pparam);
@@ -1405,7 +1405,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapdv(GLMapTarget target, GLGetMapQuery query, Span<double> v)
+		public void GetMapdv(GLMapTarget target, GLGetMapQuery query, Span<double> v)
 		{
 			fixed (double* pparams = v)
 			{
@@ -1414,7 +1414,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapfvNative(GLMapTarget target, GLGetMapQuery query, float* v)
+		internal void GetMapfvNative(GLMapTarget target, GLGetMapQuery query, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLGetMapQuery, float*, void>)funcTable[308])(target, query, v);
@@ -1427,7 +1427,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapfv(GLMapTarget target, GLGetMapQuery query, float* v)
+		public void GetMapfv(GLMapTarget target, GLGetMapQuery query, float* v)
 		{
 			GetMapfvNative(target, query, v);
 		}
@@ -1436,7 +1436,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapfv(GLMapTarget target, GLGetMapQuery query, out float v)
+		public void GetMapfv(GLMapTarget target, GLGetMapQuery query, out float v)
 		{
 			float pparam;
 			GetMapfvNative(target, query, &pparam);
@@ -1447,7 +1447,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapfv(GLMapTarget target, GLGetMapQuery query, Span<float> v)
+		public void GetMapfv(GLMapTarget target, GLGetMapQuery query, Span<float> v)
 		{
 			fixed (float* pparams = v)
 			{
@@ -1456,7 +1456,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapivNative(GLMapTarget target, GLGetMapQuery query, int* v)
+		internal void GetMapivNative(GLMapTarget target, GLGetMapQuery query, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLGetMapQuery, int*, void>)funcTable[309])(target, query, v);
@@ -1469,7 +1469,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapiv(GLMapTarget target, GLGetMapQuery query, int* v)
+		public void GetMapiv(GLMapTarget target, GLGetMapQuery query, int* v)
 		{
 			GetMapivNative(target, query, v);
 		}
@@ -1478,7 +1478,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapiv(GLMapTarget target, GLGetMapQuery query, out int v)
+		public void GetMapiv(GLMapTarget target, GLGetMapQuery query, out int v)
 		{
 			int pparam;
 			GetMapivNative(target, query, &pparam);
@@ -1489,7 +1489,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMapiv(GLMapTarget target, GLGetMapQuery query, Span<int> v)
+		public void GetMapiv(GLMapTarget target, GLGetMapQuery query, Span<int> v)
 		{
 			fixed (int* pparams = v)
 			{
@@ -1498,7 +1498,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMaterialfvNative(GLTriangleFace face, GLMaterialParameter pname, float* @params)
+		internal void GetMaterialfvNative(GLTriangleFace face, GLMaterialParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, float*, void>)funcTable[310])(face, pname, @params);
@@ -1511,7 +1511,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMaterialfv(GLTriangleFace face, GLMaterialParameter pname, float* @params)
+		public void GetMaterialfv(GLTriangleFace face, GLMaterialParameter pname, float* @params)
 		{
 			GetMaterialfvNative(face, pname, @params);
 		}
@@ -1520,7 +1520,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMaterialfv(GLTriangleFace face, GLMaterialParameter pname, out float @params)
+		public void GetMaterialfv(GLTriangleFace face, GLMaterialParameter pname, out float @params)
 		{
 			float pparam;
 			GetMaterialfvNative(face, pname, &pparam);
@@ -1531,7 +1531,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMaterialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
+		public void GetMaterialfv(GLTriangleFace face, GLMaterialParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -1540,7 +1540,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMaterialivNative(GLTriangleFace face, GLMaterialParameter pname, int* @params)
+		internal void GetMaterialivNative(GLTriangleFace face, GLMaterialParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, int*, void>)funcTable[311])(face, pname, @params);
@@ -1553,7 +1553,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMaterialiv(GLTriangleFace face, GLMaterialParameter pname, int* @params)
+		public void GetMaterialiv(GLTriangleFace face, GLMaterialParameter pname, int* @params)
 		{
 			GetMaterialivNative(face, pname, @params);
 		}
@@ -1562,7 +1562,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMaterialiv(GLTriangleFace face, GLMaterialParameter pname, out int @params)
+		public void GetMaterialiv(GLTriangleFace face, GLMaterialParameter pname, out int @params)
 		{
 			int pparam;
 			GetMaterialivNative(face, pname, &pparam);
@@ -1573,7 +1573,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetMaterialiv(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
+		public void GetMaterialiv(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1582,7 +1582,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultisamplefvNative(GLGetMultisamplePNameNV pname, uint index, float* val)
+		internal void GetMultisamplefvNative(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetMultisamplePNameNV, uint, float*, void>)funcTable[312])(pname, index, val);
@@ -1595,7 +1595,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a sample
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, float* val)
+		public void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			GetMultisamplefvNative(pname, index, val);
 		}
@@ -1604,7 +1604,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a sample
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, out float val)
+		public void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, out float val)
 		{
 			float pparam;
 			GetMultisamplefvNative(pname, index, &pparam);
@@ -1615,7 +1615,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a sample
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
+		public void GetMultisamplefv(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
 		{
 			fixed (float* pparams = val)
 			{
@@ -1624,7 +1624,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferParameteri64vNative(uint buffer, GLBufferPNameARB pname, long* @params)
+		internal void GetNamedBufferParameteri64vNative(uint buffer, GLBufferPNameARB pname, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBufferPNameARB, long*, void>)funcTable[313])(buffer, pname, @params);
@@ -1637,7 +1637,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, long* @params)
+		public void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, long* @params)
 		{
 			GetNamedBufferParameteri64vNative(buffer, pname, @params);
 		}
@@ -1646,7 +1646,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, out long @params)
+		public void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, out long @params)
 		{
 			long pparam;
 			GetNamedBufferParameteri64vNative(buffer, pname, &pparam);
@@ -1657,7 +1657,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, Span<long> @params)
+		public void GetNamedBufferParameteri64v(uint buffer, GLBufferPNameARB pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
 			{
@@ -1666,7 +1666,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferParameterivNative(uint buffer, GLBufferPNameARB pname, int* @params)
+		internal void GetNamedBufferParameterivNative(uint buffer, GLBufferPNameARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBufferPNameARB, int*, void>)funcTable[314])(buffer, pname, @params);
@@ -1679,7 +1679,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, int* @params)
+		public void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, int* @params)
 		{
 			GetNamedBufferParameterivNative(buffer, pname, @params);
 		}
@@ -1688,7 +1688,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, out int @params)
+		public void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, out int @params)
 		{
 			int pparam;
 			GetNamedBufferParameterivNative(buffer, pname, &pparam);
@@ -1699,7 +1699,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, Span<int> @params)
+		public void GetNamedBufferParameteriv(uint buffer, GLBufferPNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1708,7 +1708,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferPointervNative(uint buffer, GLBufferPointerNameARB pname, void** @params)
+		internal void GetNamedBufferPointervNative(uint buffer, GLBufferPointerNameARB pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBufferPointerNameARB, void**, void>)funcTable[315])(buffer, pname, @params);
@@ -1721,13 +1721,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferPointerv(uint buffer, GLBufferPointerNameARB pname, void** @params)
+		public void GetNamedBufferPointerv(uint buffer, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetNamedBufferPointervNative(buffer, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferSubDataNative(uint buffer, nint offset, nint size, void* data)
+		internal void GetNamedBufferSubDataNative(uint buffer, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, void*, void>)funcTable[316])(buffer, offset, size, data);
@@ -1740,7 +1740,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferSubData(uint buffer, nint offset, nint size, void* data)
+		public void GetNamedBufferSubData(uint buffer, nint offset, nint size, void* data)
 		{
 			GetNamedBufferSubDataNative(buffer, offset, size, data);
 		}
@@ -1749,7 +1749,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferSubData(uint buffer, nint offset, nint size, nint data)
+		public void GetNamedBufferSubData(uint buffer, nint offset, nint size, nint data)
 		{
 			GetNamedBufferSubDataNative(buffer, offset, size, (void*)data);
 		}
@@ -1758,7 +1758,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedBufferSubData<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void GetNamedBufferSubData<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1767,7 +1767,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedFramebufferAttachmentParameterivNative(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
+		internal void GetNamedFramebufferAttachmentParameterivNative(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, GLFramebufferAttachmentParameterName, int*, void>)funcTable[317])(framebuffer, attachment, pname, @params);
@@ -1780,7 +1780,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
+		public void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, @params);
 		}
@@ -1789,7 +1789,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
+		public void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, out int @params)
 		{
 			int pparam;
 			GetNamedFramebufferAttachmentParameterivNative(framebuffer, attachment, pname, &pparam);
@@ -1800,7 +1800,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1809,7 +1809,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedFramebufferParameterivNative(uint framebuffer, GLGetFramebufferParameter pname, int* param)
+		internal void GetNamedFramebufferParameterivNative(uint framebuffer, GLGetFramebufferParameter pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetFramebufferParameter, int*, void>)funcTable[318])(framebuffer, pname, param);
@@ -1822,7 +1822,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, int* param)
+		public void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, int* param)
 		{
 			GetNamedFramebufferParameterivNative(framebuffer, pname, param);
 		}
@@ -1831,7 +1831,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, out int param)
+		public void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, out int param)
 		{
 			int pparam;
 			GetNamedFramebufferParameterivNative(framebuffer, pname, &pparam);
@@ -1842,7 +1842,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, Span<int> param)
+		public void GetNamedFramebufferParameteriv(uint framebuffer, GLGetFramebufferParameter pname, Span<int> param)
 		{
 			fixed (int* pparams = param)
 			{
@@ -1851,7 +1851,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedRenderbufferParameterivNative(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
+		internal void GetNamedRenderbufferParameterivNative(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLRenderbufferParameterName, int*, void>)funcTable[319])(renderbuffer, pname, @params);
@@ -1864,7 +1864,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
+		public void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
 		{
 			GetNamedRenderbufferParameterivNative(renderbuffer, pname, @params);
 		}
@@ -1873,7 +1873,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, out int @params)
+		public void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, out int @params)
 		{
 			int pparam;
 			GetNamedRenderbufferParameterivNative(renderbuffer, pname, &pparam);
@@ -1884,7 +1884,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, Span<int> @params)
+		public void GetNamedRenderbufferParameteriv(uint renderbuffer, GLRenderbufferParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -1893,7 +1893,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetObjectLabelNative(GLObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label)
+		internal void GetObjectLabelNative(GLObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLObjectIdentifier, uint, int, int*, byte*, void>)funcTable[320])(identifier, name, bufSize, length, label);
@@ -1906,7 +1906,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label)
 		{
 			GetObjectLabelNative(identifier, name, bufSize, length, label);
 		}
@@ -1915,7 +1915,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, Span<int> length, byte* label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -1927,7 +1927,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, ref int length, byte* label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -1939,7 +1939,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, string label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -1969,7 +1969,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, Span<byte> label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
 			{
@@ -1981,7 +1981,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, ref byte label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
 			{
@@ -1993,7 +1993,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, Span<int> length, Span<byte> label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2008,7 +2008,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a named object identified within a namespace
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, ref int length, ref byte label)
+		public void GetObjectLabel(GLObjectIdentifier identifier, uint name, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2020,7 +2020,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetObjectPtrLabelNative(void* ptr, int bufSize, int* length, byte* label)
+		internal void GetObjectPtrLabelNative(void* ptr, int bufSize, int* length, byte* label)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void*, int, int*, byte*, void>)funcTable[321])(ptr, bufSize, length, label);
@@ -2033,7 +2033,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label)
 		{
 			GetObjectPtrLabelNative(ptr, bufSize, length, label);
 		}
@@ -2042,7 +2042,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(nint ptr, int bufSize, int* length, byte* label)
+		public void GetObjectPtrLabel(nint ptr, int bufSize, int* length, byte* label)
 		{
 			GetObjectPtrLabelNative((void*)ptr, bufSize, length, label);
 		}
@@ -2051,7 +2051,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel<TPtr>(Span<TPtr> ptr, int bufSize, int* length, byte* label) where TPtr : unmanaged
+		public void GetObjectPtrLabel<TPtr>(Span<TPtr> ptr, int bufSize, int* length, byte* label) where TPtr : unmanaged
 		{
 			fixed (TPtr* pptr0 = ptr)
 			{
@@ -2063,7 +2063,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, Span<int> length, byte* label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, Span<int> length, byte* label)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2075,7 +2075,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, ref int length, byte* label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, ref int length, byte* label)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2087,7 +2087,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, string label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, int* length, string label)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2117,7 +2117,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, Span<byte> label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, int* length, Span<byte> label)
 		{
 			fixed (byte* plabel0 = label)
 			{
@@ -2129,7 +2129,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, ref byte label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, int* length, ref byte label)
 		{
 			fixed (byte* plabel0 = &label)
 			{
@@ -2141,7 +2141,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, Span<int> length, Span<byte> label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, Span<int> length, Span<byte> label)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2156,7 +2156,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the label of a sync object identified by a pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetObjectPtrLabel(void* ptr, int bufSize, ref int length, ref byte label)
+		public void GetObjectPtrLabel(void* ptr, int bufSize, ref int length, ref byte label)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2168,7 +2168,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPixelMapfvNative(GLPixelMap map, float* values)
+		internal void GetPixelMapfvNative(GLPixelMap map, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, float*, void>)funcTable[322])(map, values);
@@ -2181,7 +2181,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapfv(GLPixelMap map, float* values)
+		public void GetPixelMapfv(GLPixelMap map, float* values)
 		{
 			GetPixelMapfvNative(map, values);
 		}
@@ -2190,7 +2190,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapfv(GLPixelMap map, out float values)
+		public void GetPixelMapfv(GLPixelMap map, out float values)
 		{
 			float pparam;
 			GetPixelMapfvNative(map, &pparam);
@@ -2201,7 +2201,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapfv(GLPixelMap map, Span<float> values)
+		public void GetPixelMapfv(GLPixelMap map, Span<float> values)
 		{
 			fixed (float* pparams = values)
 			{
@@ -2210,7 +2210,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPixelMapuivNative(GLPixelMap map, uint* values)
+		internal void GetPixelMapuivNative(GLPixelMap map, uint* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, uint*, void>)funcTable[323])(map, values);
@@ -2223,7 +2223,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapuiv(GLPixelMap map, uint* values)
+		public void GetPixelMapuiv(GLPixelMap map, uint* values)
 		{
 			GetPixelMapuivNative(map, values);
 		}
@@ -2232,7 +2232,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapuiv(GLPixelMap map, out uint values)
+		public void GetPixelMapuiv(GLPixelMap map, out uint values)
 		{
 			uint pparam;
 			GetPixelMapuivNative(map, &pparam);
@@ -2243,7 +2243,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapuiv(GLPixelMap map, Span<uint> values)
+		public void GetPixelMapuiv(GLPixelMap map, Span<uint> values)
 		{
 			fixed (uint* pparams = values)
 			{
@@ -2252,7 +2252,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPixelMapusvNative(GLPixelMap map, ushort* values)
+		internal void GetPixelMapusvNative(GLPixelMap map, ushort* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, ushort*, void>)funcTable[324])(map, values);
@@ -2265,7 +2265,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapusv(GLPixelMap map, ushort* values)
+		public void GetPixelMapusv(GLPixelMap map, ushort* values)
 		{
 			GetPixelMapusvNative(map, values);
 		}
@@ -2274,7 +2274,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapusv(GLPixelMap map, out ushort values)
+		public void GetPixelMapusv(GLPixelMap map, out ushort values)
 		{
 			ushort pparam;
 			GetPixelMapusvNative(map, &pparam);
@@ -2285,7 +2285,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPixelMapusv(GLPixelMap map, Span<ushort> values)
+		public void GetPixelMapusv(GLPixelMap map, Span<ushort> values)
 		{
 			fixed (ushort* pparams = values)
 			{
@@ -2294,7 +2294,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPointervNative(GLGetPointervPName pname, void** @params)
+		internal void GetPointervNative(GLGetPointervPName pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPointervPName, void**, void>)funcTable[325])(pname, @params);
@@ -2307,13 +2307,13 @@ namespace Hexa.NET.OpenGL
 		/// Return the address of the specified pointer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.3 - GL 4.6<br/>GL 4.0 Compat - GL 4.2 Compat<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void GetPointerv(GLGetPointervPName pname, void** @params)
+		public void GetPointerv(GLGetPointervPName pname, void** @params)
 		{
 			GetPointervNative(pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPolygonStippleNative(byte* mask)
+		internal void GetPolygonStippleNative(byte* mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte*, void>)funcTable[326])(mask);
@@ -2326,7 +2326,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPolygonStipple(byte* mask)
+		public void GetPolygonStipple(byte* mask)
 		{
 			GetPolygonStippleNative(mask);
 		}
@@ -2335,7 +2335,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPolygonStipple(string mask)
+		public void GetPolygonStipple(string mask)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2365,7 +2365,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPolygonStipple(Span<byte> mask)
+		public void GetPolygonStipple(Span<byte> mask)
 		{
 			fixed (byte* pmask0 = mask)
 			{
@@ -2377,7 +2377,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetPolygonStipple(ref byte mask)
+		public void GetPolygonStipple(ref byte mask)
 		{
 			fixed (byte* pmask0 = &mask)
 			{
@@ -2386,7 +2386,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramBinaryNative(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
+		internal void GetProgramBinaryNative(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, GLEnum*, void*, void>)funcTable[327])(program, bufSize, length, binaryFormat, binary);
@@ -2399,7 +2399,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
 		{
 			GetProgramBinaryNative(program, bufSize, length, binaryFormat, binary);
 		}
@@ -2408,7 +2408,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2420,7 +2420,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2432,7 +2432,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
 		{
 			fixed (GLEnum* pbinaryFormat0 = binaryFormat)
 			{
@@ -2444,7 +2444,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, ref GLEnum binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (GLEnum* pbinaryFormat0 = &binaryFormat)
 			{
@@ -2456,7 +2456,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2471,7 +2471,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2486,7 +2486,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
 		{
 			GetProgramBinaryNative(program, bufSize, length, binaryFormat, (void*)binary);
 		}
@@ -2495,7 +2495,7 @@ namespace Hexa.NET.OpenGL
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
+		public void GetProgramBinary<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
 		{
 			fixed (TBinary* pbinary0 = binary)
 			{
@@ -2504,7 +2504,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramInfoLogNative(uint program, int bufSize, int* length, byte* infoLog)
+		internal void GetProgramInfoLogNative(uint program, int bufSize, int* length, byte* infoLog)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[328])(program, bufSize, length, infoLog);
@@ -2517,7 +2517,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, int* length, byte* infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, int* length, byte* infoLog)
 		{
 			GetProgramInfoLogNative(program, bufSize, length, infoLog);
 		}
@@ -2526,7 +2526,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static string GetProgramInfoLog(uint program)
+		public string GetProgramInfoLog(uint program)
 		{
 			int pStrSize0;
 			GetProgramiv(program, GLProgramPropertyARB.InfoLogLength, &pStrSize0);
@@ -2554,7 +2554,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, Span<int> length, byte* infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2566,7 +2566,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, ref int length, byte* infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2578,7 +2578,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, int* length, string infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2608,7 +2608,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, int* length, Span<byte> infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -2620,7 +2620,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, int* length, ref byte infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, int* length, ref byte infoLog)
 		{
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
@@ -2632,7 +2632,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, Span<int> length, Span<byte> infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, Span<int> length, Span<byte> infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2647,7 +2647,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramInfoLog(uint program, int bufSize, ref int length, ref byte infoLog)
+		public void GetProgramInfoLog(uint program, int bufSize, ref int length, ref byte infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2659,7 +2659,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramInterfaceivNative(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
+		internal void GetProgramInterfaceivNative(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, GLProgramInterfacePName, int*, void>)funcTable[329])(program, programInterface, pname, @params);
@@ -2672,7 +2672,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
+		public void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
 		{
 			GetProgramInterfaceivNative(program, programInterface, pname, @params);
 		}
@@ -2681,7 +2681,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, out int @params)
+		public void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, out int @params)
 		{
 			int pparam;
 			GetProgramInterfaceivNative(program, programInterface, pname, &pparam);
@@ -2692,7 +2692,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, Span<int> @params)
+		public void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -2701,7 +2701,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramPipelineInfoLogNative(uint pipeline, int bufSize, int* length, byte* infoLog)
+		internal void GetProgramPipelineInfoLogNative(uint pipeline, int bufSize, int* length, byte* infoLog)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[330])(pipeline, bufSize, length, infoLog);
@@ -2714,7 +2714,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, byte* infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, byte* infoLog)
 		{
 			GetProgramPipelineInfoLogNative(pipeline, bufSize, length, infoLog);
 		}
@@ -2723,7 +2723,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static string GetProgramPipelineInfoLog(uint pipeline)
+		public string GetProgramPipelineInfoLog(uint pipeline)
 		{
 			int pStrSize0;
 			GetProgramPipelineiv(pipeline, GLPipelineParameterName.InfoLogLength, &pStrSize0);
@@ -2751,7 +2751,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, byte* infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2763,7 +2763,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, byte* infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2775,7 +2775,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, string infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2805,7 +2805,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, Span<byte> infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -2817,7 +2817,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, ref byte infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, int* length, ref byte infoLog)
 		{
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
@@ -2829,7 +2829,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, Span<byte> infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, Span<int> length, Span<byte> infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -2844,7 +2844,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the info log string from a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, ref byte infoLog)
+		public void GetProgramPipelineInfoLog(uint pipeline, int bufSize, ref int length, ref byte infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -2856,7 +2856,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramPipelineivNative(uint pipeline, GLPipelineParameterName pname, int* @params)
+		internal void GetProgramPipelineivNative(uint pipeline, GLPipelineParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPipelineParameterName, int*, void>)funcTable[331])(pipeline, pname, @params);
@@ -2869,7 +2869,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, int* @params)
+		public void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, int* @params)
 		{
 			GetProgramPipelineivNative(pipeline, pname, @params);
 		}
@@ -2878,7 +2878,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, out int @params)
+		public void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, out int @params)
 		{
 			int pparam;
 			GetProgramPipelineivNative(pipeline, pname, &pparam);
@@ -2889,7 +2889,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
+		public void GetProgramPipelineiv(uint pipeline, GLPipelineParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -2898,7 +2898,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetProgramResourceIndexNative(uint program, GLProgramInterface programInterface, byte* name)
+		internal uint GetProgramResourceIndexNative(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, byte*, uint>)funcTable[332])(program, programInterface, name);
@@ -2911,7 +2911,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, byte* name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			uint ret = GetProgramResourceIndexNative(program, programInterface, name);
 			return ret;
@@ -2921,7 +2921,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, string name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2952,7 +2952,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -2965,7 +2965,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, ref byte name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -2975,7 +2975,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetProgramResourceLocationNative(uint program, GLProgramInterface programInterface, byte* name)
+		internal int GetProgramResourceLocationNative(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, byte*, int>)funcTable[333])(program, programInterface, name);
@@ -2988,7 +2988,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, byte* name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			int ret = GetProgramResourceLocationNative(program, programInterface, name);
 			return ret;
@@ -2998,7 +2998,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, string name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3029,7 +3029,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, Span<byte> name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -3042,7 +3042,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, ref byte name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -3052,7 +3052,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetProgramResourceLocationIndexNative(uint program, GLProgramInterface programInterface, byte* name)
+		internal int GetProgramResourceLocationIndexNative(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, byte*, int>)funcTable[334])(program, programInterface, name);
@@ -3065,7 +3065,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, byte* name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			int ret = GetProgramResourceLocationIndexNative(program, programInterface, name);
 			return ret;
@@ -3075,7 +3075,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, string name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3106,7 +3106,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -3119,7 +3119,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, ref byte name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -3129,7 +3129,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramResourceNameNative(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
+		internal void GetProgramResourceNameNative(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, uint, int, int*, byte*, void>)funcTable[335])(program, programInterface, index, bufSize, length, name);
@@ -3142,7 +3142,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
 		{
 			GetProgramResourceNameNative(program, programInterface, index, bufSize, length, name);
 		}
@@ -3151,7 +3151,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, byte* name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -3163,7 +3163,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, byte* name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -3175,7 +3175,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, string name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3205,7 +3205,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, Span<byte> name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -3217,7 +3217,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, ref byte name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -3229,7 +3229,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, Span<byte> name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -3244,7 +3244,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, ref byte name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -3256,7 +3256,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramResourceivNative(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
+		internal void GetProgramResourceivNative(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, uint, int, GLProgramResourceProperty, int, int*, int*, void>)funcTable[336])(program, programInterface, index, propCount, props, count, length, @params);
@@ -3269,7 +3269,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
 		{
 			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, @params);
 		}
@@ -3278,7 +3278,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, out int @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, out int @params)
 		{
 			int pparam;
 			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, &pparam);
@@ -3289,7 +3289,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, Span<int> @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3301,7 +3301,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, Span<int> length, int* @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, Span<int> length, int* @params)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -3313,7 +3313,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, ref int length, int* @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, ref int length, int* @params)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -3322,7 +3322,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramStageivNative(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
+		internal void GetProgramStageivNative(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLShaderType, GLProgramStagePName, int*, void>)funcTable[337])(program, shadertype, pname, values);
@@ -3335,7 +3335,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
+		public void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, int* values)
 		{
 			GetProgramStageivNative(program, shadertype, pname, values);
 		}
@@ -3344,7 +3344,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, out int values)
+		public void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, out int values)
 		{
 			int pparam;
 			GetProgramStageivNative(program, shadertype, pname, &pparam);
@@ -3355,7 +3355,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
+		public void GetProgramStageiv(uint program, GLShaderType shadertype, GLProgramStagePName pname, Span<int> values)
 		{
 			fixed (int* pparams = values)
 			{
@@ -3364,7 +3364,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramivNative(uint program, GLProgramPropertyARB pname, int* @params)
+		internal void GetProgramivNative(uint program, GLProgramPropertyARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramPropertyARB, int*, void>)funcTable[338])(program, pname, @params);
@@ -3377,7 +3377,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a parameter from a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, int* @params)
+		public void GetProgramiv(uint program, GLProgramPropertyARB pname, int* @params)
 		{
 			GetProgramivNative(program, pname, @params);
 		}
@@ -3386,7 +3386,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a parameter from a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, out int @params)
+		public void GetProgramiv(uint program, GLProgramPropertyARB pname, out int @params)
 		{
 			int pparam;
 			GetProgramivNative(program, pname, &pparam);
@@ -3397,7 +3397,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a parameter from a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetProgramiv(uint program, GLProgramPropertyARB pname, Span<int> @params)
+		public void GetProgramiv(uint program, GLProgramPropertyARB pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3406,7 +3406,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryBufferObjecti64vNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		internal void GetQueryBufferObjecti64vNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLQueryObjectParameterName, nint, void>)funcTable[339])(id, buffer, pname, offset);
@@ -3419,13 +3419,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetQueryBufferObjecti64v(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		public void GetQueryBufferObjecti64v(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			GetQueryBufferObjecti64vNative(id, buffer, pname, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryBufferObjectivNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		internal void GetQueryBufferObjectivNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLQueryObjectParameterName, nint, void>)funcTable[340])(id, buffer, pname, offset);
@@ -3438,13 +3438,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetQueryBufferObjectiv(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		public void GetQueryBufferObjectiv(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			GetQueryBufferObjectivNative(id, buffer, pname, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryBufferObjectui64vNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		internal void GetQueryBufferObjectui64vNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLQueryObjectParameterName, nint, void>)funcTable[341])(id, buffer, pname, offset);
@@ -3457,13 +3457,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetQueryBufferObjectui64v(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		public void GetQueryBufferObjectui64v(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			GetQueryBufferObjectui64vNative(id, buffer, pname, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryBufferObjectuivNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		internal void GetQueryBufferObjectuivNative(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLQueryObjectParameterName, nint, void>)funcTable[342])(id, buffer, pname, offset);
@@ -3476,13 +3476,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void GetQueryBufferObjectuiv(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
+		public void GetQueryBufferObjectuiv(uint id, uint buffer, GLQueryObjectParameterName pname, nint offset)
 		{
 			GetQueryBufferObjectuivNative(id, buffer, pname, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryIndexedivNative(GLQueryTarget target, uint index, GLQueryParameterName pname, int* @params)
+		internal void GetQueryIndexedivNative(GLQueryTarget target, uint index, GLQueryParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, uint, GLQueryParameterName, int*, void>)funcTable[343])(target, index, pname, @params);
@@ -3495,7 +3495,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of an indexed query object target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
-		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, int* @params)
+		public void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, int* @params)
 		{
 			GetQueryIndexedivNative(target, index, pname, @params);
 		}
@@ -3504,7 +3504,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of an indexed query object target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
-		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, out int @params)
+		public void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, out int @params)
 		{
 			int pparam;
 			GetQueryIndexedivNative(target, index, pname, &pparam);
@@ -3515,7 +3515,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of an indexed query object target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
-		public static void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, Span<int> @params)
+		public void GetQueryIndexediv(GLQueryTarget target, uint index, GLQueryParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3524,7 +3524,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjecti64vNative(uint id, GLQueryObjectParameterName pname, long* @params)
+		internal void GetQueryObjecti64vNative(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, long*, void>)funcTable[344])(id, pname, @params);
@@ -3537,7 +3537,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, long* @params)
+		public void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			GetQueryObjecti64vNative(id, pname, @params);
 		}
@@ -3546,7 +3546,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, out long @params)
+		public void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, out long @params)
 		{
 			long pparam;
 			GetQueryObjecti64vNative(id, pname, &pparam);
@@ -3557,7 +3557,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
-		public static void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		public void GetQueryObjecti64v(uint id, GLQueryObjectParameterName pname, Span<long> @params)
 		{
 			fixed (long* pparams = @params)
 			{
@@ -3566,7 +3566,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectivNative(uint id, GLQueryObjectParameterName pname, int* @params)
+		internal void GetQueryObjectivNative(uint id, GLQueryObjectParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, int*, void>)funcTable[345])(id, pname, @params);
@@ -3579,7 +3579,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, int* @params)
+		public void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, int* @params)
 		{
 			GetQueryObjectivNative(id, pname, @params);
 		}
@@ -3588,7 +3588,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, out int @params)
+		public void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, out int @params)
 		{
 			int pparam;
 			GetQueryObjectivNative(id, pname, &pparam);
@@ -3599,7 +3599,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		public void GetQueryObjectiv(uint id, GLQueryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3608,7 +3608,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectui64vNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
+		internal void GetQueryObjectui64vNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, ulong*, void>)funcTable[346])(id, pname, @params);
@@ -3621,7 +3621,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, ulong* @params)
+		public void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			GetQueryObjectui64vNative(id, pname, @params);
 		}
@@ -3630,7 +3630,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, out ulong @params)
+		public void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, out ulong @params)
 		{
 			ulong pparam;
 			GetQueryObjectui64vNative(id, pname, &pparam);
@@ -3641,7 +3641,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_timer_query</remarks>
-		public static void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		public void GetQueryObjectui64v(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams = @params)
 			{
@@ -3650,7 +3650,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectuivNative(uint id, GLQueryObjectParameterName pname, uint* @params)
+		internal void GetQueryObjectuivNative(uint id, GLQueryObjectParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, uint*, void>)funcTable[347])(id, pname, @params);
@@ -3663,7 +3663,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, uint* @params)
+		public void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, uint* @params)
 		{
 			GetQueryObjectuivNative(id, pname, @params);
 		}
@@ -3672,7 +3672,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, out uint @params)
+		public void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, out uint @params)
 		{
 			uint pparam;
 			GetQueryObjectuivNative(id, pname, &pparam);
@@ -3683,7 +3683,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		public void GetQueryObjectuiv(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
 			{
@@ -3692,7 +3692,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryivNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
+		internal void GetQueryivNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, GLQueryParameterName, int*, void>)funcTable[348])(target, pname, @params);
@@ -3705,7 +3705,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of a query object target
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, int* @params)
+		public void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, int* @params)
 		{
 			GetQueryivNative(target, pname, @params);
 		}
@@ -3714,7 +3714,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of a query object target
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, out int @params)
+		public void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, out int @params)
 		{
 			int pparam;
 			GetQueryivNative(target, pname, &pparam);
@@ -3725,7 +3725,7 @@ namespace Hexa.NET.OpenGL
 		/// Return parameters of a query object target
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		public void GetQueryiv(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3734,7 +3734,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetRenderbufferParameterivNative(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
+		internal void GetRenderbufferParameterivNative(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, GLRenderbufferParameterName, int*, void>)funcTable[349])(target, pname, @params);
@@ -3747,7 +3747,7 @@ namespace Hexa.NET.OpenGL
 		/// Query a named parameter of a renderbuffer object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
+		public void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, int* @params)
 		{
 			GetRenderbufferParameterivNative(target, pname, @params);
 		}
@@ -3756,7 +3756,7 @@ namespace Hexa.NET.OpenGL
 		/// Query a named parameter of a renderbuffer object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
+		public void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, out int @params)
 		{
 			int pparam;
 			GetRenderbufferParameterivNative(target, pname, &pparam);
@@ -3767,7 +3767,7 @@ namespace Hexa.NET.OpenGL
 		/// Query a named parameter of a renderbuffer object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
+		public void GetRenderbufferParameteriv(GLRenderbufferTarget target, GLRenderbufferParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3776,7 +3776,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterIivNative(uint sampler, GLSamplerParameterI pname, int* @params)
+		internal void GetSamplerParameterIivNative(uint sampler, GLSamplerParameterI pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[350])(sampler, pname, @params);
@@ -3789,7 +3789,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, int* @params)
+		public void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, int* @params)
 		{
 			GetSamplerParameterIivNative(sampler, pname, @params);
 		}
@@ -3798,7 +3798,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int @params)
+		public void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
 			int pparam;
 			GetSamplerParameterIivNative(sampler, pname, &pparam);
@@ -3809,7 +3809,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		public void GetSamplerParameterIiv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3818,7 +3818,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterIuivNative(uint sampler, GLSamplerParameterI pname, uint* @params)
+		internal void GetSamplerParameterIuivNative(uint sampler, GLSamplerParameterI pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, uint*, void>)funcTable[351])(sampler, pname, @params);
@@ -3831,7 +3831,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, uint* @params)
+		public void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, uint* @params)
 		{
 			GetSamplerParameterIuivNative(sampler, pname, @params);
 		}
@@ -3840,7 +3840,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint @params)
+		public void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, out uint @params)
 		{
 			uint pparam;
 			GetSamplerParameterIuivNative(sampler, pname, &pparam);
@@ -3851,7 +3851,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
+		public void GetSamplerParameterIuiv(uint sampler, GLSamplerParameterI pname, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
 			{
@@ -3860,7 +3860,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterfvNative(uint sampler, GLSamplerParameterF pname, float* @params)
+		internal void GetSamplerParameterfvNative(uint sampler, GLSamplerParameterF pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterF, float*, void>)funcTable[352])(sampler, pname, @params);
@@ -3873,7 +3873,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* @params)
+		public void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, float* @params)
 		{
 			GetSamplerParameterfvNative(sampler, pname, @params);
 		}
@@ -3882,7 +3882,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
+		public void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, out float @params)
 		{
 			float pparam;
 			GetSamplerParameterfvNative(sampler, pname, &pparam);
@@ -3893,7 +3893,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> @params)
+		public void GetSamplerParameterfv(uint sampler, GLSamplerParameterF pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -3902,7 +3902,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSamplerParameterivNative(uint sampler, GLSamplerParameterI pname, int* @params)
+		internal void GetSamplerParameterivNative(uint sampler, GLSamplerParameterI pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSamplerParameterI, int*, void>)funcTable[353])(sampler, pname, @params);
@@ -3915,7 +3915,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* @params)
+		public void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, int* @params)
 		{
 			GetSamplerParameterivNative(sampler, pname, @params);
 		}
@@ -3924,7 +3924,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
+		public void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, out int @params)
 		{
 			int pparam;
 			GetSamplerParameterivNative(sampler, pname, &pparam);
@@ -3935,7 +3935,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
+		public void GetSamplerParameteriv(uint sampler, GLSamplerParameterI pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -3944,7 +3944,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderInfoLogNative(uint shader, int bufSize, int* length, byte* infoLog)
+		internal void GetShaderInfoLogNative(uint shader, int bufSize, int* length, byte* infoLog)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[354])(shader, bufSize, length, infoLog);
@@ -3957,7 +3957,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, byte* infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, int* length, byte* infoLog)
 		{
 			GetShaderInfoLogNative(shader, bufSize, length, infoLog);
 		}
@@ -3966,7 +3966,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static string GetShaderInfoLog(uint shader)
+		public string GetShaderInfoLog(uint shader)
 		{
 			int pStrSize0;
 			GetShaderiv(shader, GLShaderParameterName.InfoLogLength, &pStrSize0);
@@ -3994,7 +3994,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, Span<int> length, byte* infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -4006,7 +4006,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, ref int length, byte* infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -4018,7 +4018,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, string infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4048,7 +4048,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, Span<byte> infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -4060,7 +4060,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, int* length, ref byte infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, int* length, ref byte infoLog)
 		{
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
@@ -4072,7 +4072,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, Span<int> length, Span<byte> infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, Span<int> length, Span<byte> infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -4087,7 +4087,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the information log for a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderInfoLog(uint shader, int bufSize, ref int length, ref byte infoLog)
+		public void GetShaderInfoLog(uint shader, int bufSize, ref int length, ref byte infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -4099,7 +4099,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderPrecisionFormatNative(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, int* precision)
+		internal void GetShaderPrecisionFormatNative(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, int* precision)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLShaderType, GLPrecisionType, int*, int*, void>)funcTable[355])(shadertype, precisiontype, range, precision);
@@ -4112,7 +4112,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, int* precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, int* precision)
 		{
 			GetShaderPrecisionFormatNative(shadertype, precisiontype, range, precision);
 		}
@@ -4121,7 +4121,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, int* precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, int* precision)
 		{
 			fixed (int* prange0 = range)
 			{
@@ -4133,7 +4133,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, int* precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, int* precision)
 		{
 			fixed (int* prange0 = &range)
 			{
@@ -4145,7 +4145,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, Span<int> precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, Span<int> precision)
 		{
 			fixed (int* pprecision0 = precision)
 			{
@@ -4157,7 +4157,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, ref int precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, int* range, ref int precision)
 		{
 			fixed (int* pprecision0 = &precision)
 			{
@@ -4169,7 +4169,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, Span<int> precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, Span<int> range, Span<int> precision)
 		{
 			fixed (int* prange0 = range)
 			{
@@ -4184,7 +4184,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the range and precision for numeric formats supported by the shader compiler
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, ref int precision)
+		public void GetShaderPrecisionFormat(GLShaderType shadertype, GLPrecisionType precisiontype, ref int range, ref int precision)
 		{
 			fixed (int* prange0 = &range)
 			{
@@ -4196,7 +4196,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderSourceNative(uint shader, int bufSize, int* length, byte* source)
+		internal void GetShaderSourceNative(uint shader, int bufSize, int* length, byte* source)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[356])(shader, bufSize, length, source);
@@ -4209,7 +4209,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, int* length, byte* source)
+		public void GetShaderSource(uint shader, int bufSize, int* length, byte* source)
 		{
 			GetShaderSourceNative(shader, bufSize, length, source);
 		}
@@ -4218,7 +4218,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static string GetShaderSource(uint shader)
+		public string GetShaderSource(uint shader)
 		{
 			int pStrSize0;
 			GetShaderiv(shader, GLShaderParameterName.SourceLength, &pStrSize0);
@@ -4246,7 +4246,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, Span<int> length, byte* source)
+		public void GetShaderSource(uint shader, int bufSize, Span<int> length, byte* source)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -4258,7 +4258,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, ref int length, byte* source)
+		public void GetShaderSource(uint shader, int bufSize, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -4270,7 +4270,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, int* length, string source)
+		public void GetShaderSource(uint shader, int bufSize, int* length, string source)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4300,7 +4300,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, int* length, Span<byte> source)
+		public void GetShaderSource(uint shader, int bufSize, int* length, Span<byte> source)
 		{
 			fixed (byte* psource0 = source)
 			{
@@ -4312,7 +4312,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, int* length, ref byte source)
+		public void GetShaderSource(uint shader, int bufSize, int* length, ref byte source)
 		{
 			fixed (byte* psource0 = &source)
 			{
@@ -4324,7 +4324,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, Span<int> length, Span<byte> source)
+		public void GetShaderSource(uint shader, int bufSize, Span<int> length, Span<byte> source)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -4339,7 +4339,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns the source code string from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderSource(uint shader, int bufSize, ref int length, ref byte source)
+		public void GetShaderSource(uint shader, int bufSize, ref int length, ref byte source)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -4351,7 +4351,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderivNative(uint shader, GLShaderParameterName pname, int* @params)
+		internal void GetShaderivNative(uint shader, GLShaderParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLShaderParameterName, int*, void>)funcTable[357])(shader, pname, @params);
@@ -4364,7 +4364,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a parameter from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, int* @params)
+		public void GetShaderiv(uint shader, GLShaderParameterName pname, int* @params)
 		{
 			GetShaderivNative(shader, pname, @params);
 		}
@@ -4373,7 +4373,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a parameter from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, out int @params)
+		public void GetShaderiv(uint shader, GLShaderParameterName pname, out int @params)
 		{
 			int pparam;
 			GetShaderivNative(shader, pname, &pparam);
@@ -4384,7 +4384,7 @@ namespace Hexa.NET.OpenGL
 		/// Returns a parameter from a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetShaderiv(uint shader, GLShaderParameterName pname, Span<int> @params)
+		public void GetShaderiv(uint shader, GLShaderParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -4393,7 +4393,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte* GetStringNative(GLStringName name)
+		internal byte* GetStringNative(GLStringName name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLStringName, byte*>)funcTable[358])(name);
@@ -4406,14 +4406,14 @@ namespace Hexa.NET.OpenGL
 		/// Return a string describing the current GL connection
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static byte* GetString(GLStringName name)
+		public byte* GetString(GLStringName name)
 		{
 			byte* ret = GetStringNative(name);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte* GetStringiNative(GLStringName name, uint index)
+		internal byte* GetStringiNative(GLStringName name, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLStringName, uint, byte*>)funcTable[359])(name, index);
@@ -4426,14 +4426,14 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static byte* GetStringi(GLStringName name, uint index)
+		public byte* GetStringi(GLStringName name, uint index)
 		{
 			byte* ret = GetStringiNative(name, index);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetSubroutineIndexNative(uint program, GLShaderType shadertype, byte* name)
+		internal uint GetSubroutineIndexNative(uint program, GLShaderType shadertype, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLShaderType, byte*, uint>)funcTable[360])(program, shadertype, name);
@@ -4446,7 +4446,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, byte* name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, byte* name)
 		{
 			uint ret = GetSubroutineIndexNative(program, shadertype, name);
 			return ret;
@@ -4456,7 +4456,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, string name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4487,7 +4487,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, Span<byte> name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -4500,7 +4500,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the index of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static uint GetSubroutineIndex(uint program, GLShaderType shadertype, ref byte name)
+		public uint GetSubroutineIndex(uint program, GLShaderType shadertype, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -4510,7 +4510,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetSubroutineUniformLocationNative(uint program, GLShaderType shadertype, byte* name)
+		internal int GetSubroutineUniformLocationNative(uint program, GLShaderType shadertype, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLShaderType, byte*, int>)funcTable[361])(program, shadertype, name);
@@ -4523,7 +4523,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, byte* name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, byte* name)
 		{
 			int ret = GetSubroutineUniformLocationNative(program, shadertype, name);
 			return ret;
@@ -4533,7 +4533,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, string name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4564,7 +4564,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, Span<byte> name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -4577,7 +4577,7 @@ namespace Hexa.NET.OpenGL
 		/// Retrieve the location of a subroutine uniform of a given shader stage within a program
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, ref byte name)
+		public int GetSubroutineUniformLocation(uint program, GLShaderType shadertype, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -4587,7 +4587,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSyncivNative(GLSync sync, GLSyncParameterName pname, int count, int* length, int* values)
+		internal void GetSyncivNative(GLSync sync, GLSyncParameterName pname, int count, int* length, int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSync, GLSyncParameterName, int, int*, int*, void>)funcTable[362])(sync, pname, count, length, values);
@@ -4600,7 +4600,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the properties of a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, int* values)
+		public void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, int* values)
 		{
 			GetSyncivNative(sync, pname, count, length, values);
 		}
@@ -4609,7 +4609,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the properties of a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, out int values)
+		public void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, out int values)
 		{
 			int pparam;
 			GetSyncivNative(sync, pname, count, length, &pparam);
@@ -4620,7 +4620,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the properties of a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, Span<int> values)
+		public void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, int* length, Span<int> values)
 		{
 			fixed (int* pparams = values)
 			{
@@ -4632,7 +4632,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the properties of a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, int* values)
+		public void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, Span<int> length, int* values)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -4644,7 +4644,7 @@ namespace Hexa.NET.OpenGL
 		/// Query the properties of a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, ref int length, int* values)
+		public void GetSynciv(GLSync sync, GLSyncParameterName pname, int count, ref int length, int* values)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -4653,7 +4653,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexEnvfvNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		internal void GetTexEnvfvNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, float*, void>)funcTable[363])(target, pname, @params);
@@ -4666,7 +4666,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		public void GetTexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			GetTexEnvfvNative(target, pname, @params);
 		}
@@ -4675,7 +4675,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out float @params)
+		public void GetTexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out float @params)
 		{
 			float pparam;
 			GetTexEnvfvNative(target, pname, &pparam);
@@ -4686,7 +4686,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		public void GetTexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -4695,7 +4695,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexEnvivNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void GetTexEnvivNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[364])(target, pname, @params);
@@ -4708,7 +4708,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void GetTexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			GetTexEnvivNative(target, pname, @params);
 		}
@@ -4717,7 +4717,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
+		public void GetTexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, out int @params)
 		{
 			int pparam;
 			GetTexEnvivNative(target, pname, &pparam);
@@ -4728,7 +4728,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void GetTexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -4737,7 +4737,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexGendvNative(GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
+		internal void GetTexGendvNative(GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureCoordName, GLTextureGenParameter, double*, void>)funcTable[365])(coord, pname, @params);
@@ -4750,7 +4750,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGendv(GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
+		public void GetTexGendv(GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
 		{
 			GetTexGendvNative(coord, pname, @params);
 		}
@@ -4759,7 +4759,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGendv(GLTextureCoordName coord, GLTextureGenParameter pname, out double @params)
+		public void GetTexGendv(GLTextureCoordName coord, GLTextureGenParameter pname, out double @params)
 		{
 			double pparam;
 			GetTexGendvNative(coord, pname, &pparam);
@@ -4770,7 +4770,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGendv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
+		public void GetTexGendv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
 		{
 			fixed (double* pparams = @params)
 			{
@@ -4779,7 +4779,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexGenfvNative(GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
+		internal void GetTexGenfvNative(GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureCoordName, GLTextureGenParameter, float*, void>)funcTable[366])(coord, pname, @params);
@@ -4792,7 +4792,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
+		public void GetTexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			GetTexGenfvNative(coord, pname, @params);
 		}
@@ -4801,7 +4801,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
+		public void GetTexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, out float @params)
 		{
 			float pparam;
 			GetTexGenfvNative(coord, pname, &pparam);
@@ -4812,7 +4812,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		public void GetTexGenfv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -4821,7 +4821,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexGenivNative(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		internal void GetTexGenivNative(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureCoordName, GLTextureGenParameter, int*, void>)funcTable[367])(coord, pname, @params);
@@ -4834,7 +4834,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		public void GetTexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			GetTexGenivNative(coord, pname, @params);
 		}
@@ -4843,7 +4843,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
+		public void GetTexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, out int @params)
 		{
 			int pparam;
 			GetTexGenivNative(coord, pname, &pparam);
@@ -4854,7 +4854,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void GetTexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		public void GetTexGeniv(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -4863,7 +4863,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexImageNative(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void GetTexImageNative(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[368])(target, level, format, type, pixels);
@@ -4876,7 +4876,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void GetTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			GetTexImageNative(target, level, format, type, pixels);
 		}
@@ -4885,7 +4885,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void GetTexImage(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			GetTexImageNative(target, level, format, type, (void*)pixels);
 		}
@@ -4894,7 +4894,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexImage<TPixels>(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void GetTexImage<TPixels>(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4903,7 +4903,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexLevelParameterfvNative(GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
+		internal void GetTexLevelParameterfvNative(GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, float*, void>)funcTable[369])(target, level, pname, @params);
@@ -4916,7 +4916,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
+		public void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
 		{
 			GetTexLevelParameterfvNative(target, level, pname, @params);
 		}
@@ -4925,7 +4925,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, out float @params)
+		public void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, out float @params)
 		{
 			float pparam;
 			GetTexLevelParameterfvNative(target, level, pname, &pparam);
@@ -4936,7 +4936,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
+		public void GetTexLevelParameterfv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -4945,7 +4945,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexLevelParameterivNative(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		internal void GetTexLevelParameterivNative(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, int*, void>)funcTable[370])(target, level, pname, @params);
@@ -4958,7 +4958,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		public void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexLevelParameterivNative(target, level, pname, @params);
 		}
@@ -4967,7 +4967,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
+		public void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, out int @params)
 		{
 			int pparam;
 			GetTexLevelParameterivNative(target, level, pname, &pparam);
@@ -4978,7 +4978,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTexLevelParameteriv(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -4987,7 +4987,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterIivNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetTexParameterIivNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[371])(target, pname, @params);
@@ -5000,7 +5000,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexParameterIivNative(target, pname, @params);
 		}
@@ -5009,7 +5009,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
+		public void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, out int @params)
 		{
 			int pparam;
 			GetTexParameterIivNative(target, pname, &pparam);
@@ -5020,7 +5020,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTexParameterIiv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDVertexShaderTessellator
+	public unsafe partial class GLAMDVertexShaderTessellator
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TessellationFactorAMDNative(float factor)
+		internal void TessellationFactorAMDNative(float factor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[0])(factor);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_vertex_shader_tessellator</remarks>
-		public static void TessellationFactorAMD(float factor)
+		public void TessellationFactorAMD(float factor)
 		{
 			TessellationFactorAMDNative(factor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TessellationModeAMDNative(GLEnum mode)
+		internal void TessellationModeAMDNative(GLEnum mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[1])(mode);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_vertex_shader_tessellator</remarks>
-		public static void TessellationModeAMD(GLEnum mode)
+		public void TessellationModeAMD(GLEnum mode)
 		{
 			TessellationModeAMDNative(mode);
 		}

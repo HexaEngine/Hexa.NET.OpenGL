@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTPixelTransform
+	public unsafe partial class GLEXTPixelTransform
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPixelTransformParameterfvEXTNative(GLEnum target, GLEnum pname, float* @params)
+		internal void GetPixelTransformParameterfvEXTNative(GLEnum target, GLEnum pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, float*, void>)funcTable[0])(target, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, float* @params)
+		public void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, float* @params)
 		{
 			GetPixelTransformParameterfvEXTNative(target, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, Span<float> @params)
+		public void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, ref float @params)
+		public void GetPixelTransformParameterfvEXT(GLEnum target, GLEnum pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPixelTransformParameterivEXTNative(GLEnum target, GLEnum pname, int* @params)
+		internal void GetPixelTransformParameterivEXTNative(GLEnum target, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, int*, void>)funcTable[1])(target, pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, int* @params)
+		public void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, int* @params)
 		{
 			GetPixelTransformParameterivEXTNative(target, pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, Span<int> @params)
+		public void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, ref int @params)
+		public void GetPixelTransformParameterivEXT(GLEnum target, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelTransformParameterfEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float param)
+		internal void PixelTransformParameterfEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelTransformTargetEXT, GLPixelTransformPNameEXT, float, void>)funcTable[2])(target, pname, param);
@@ -116,13 +116,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterfEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float param)
+		public void PixelTransformParameterfEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float param)
 		{
 			PixelTransformParameterfEXTNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelTransformParameterfvEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float* @params)
+		internal void PixelTransformParameterfvEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelTransformTargetEXT, GLPixelTransformPNameEXT, float*, void>)funcTable[3])(target, pname, @params);
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float* @params)
+		public void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, float* @params)
 		{
 			PixelTransformParameterfvEXTNative(target, pname, @params);
 		}
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, Span<float> @params)
+		public void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -156,7 +156,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, ref float @params)
+		public void PixelTransformParameterfvEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelTransformParameteriEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int param)
+		internal void PixelTransformParameteriEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelTransformTargetEXT, GLPixelTransformPNameEXT, int, void>)funcTable[4])(target, pname, param);
@@ -178,13 +178,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameteriEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int param)
+		public void PixelTransformParameteriEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int param)
 		{
 			PixelTransformParameteriEXTNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelTransformParameterivEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int* @params)
+		internal void PixelTransformParameterivEXTNative(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelTransformTargetEXT, GLPixelTransformPNameEXT, int*, void>)funcTable[5])(target, pname, @params);
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int* @params)
+		public void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, int* @params)
 		{
 			PixelTransformParameterivEXTNative(target, pname, @params);
 		}
@@ -206,7 +206,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, Span<int> @params)
+		public void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_pixel_transform</remarks>
-		public static void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, ref int @params)
+		public void PixelTransformParameterivEXT(GLPixelTransformTargetEXT target, GLPixelTransformPNameEXT pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

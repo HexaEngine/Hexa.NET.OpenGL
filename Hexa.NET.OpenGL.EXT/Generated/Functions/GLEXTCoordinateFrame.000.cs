@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTCoordinateFrame
+	public unsafe partial class GLEXTCoordinateFrame
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3bEXTNative(sbyte bx, sbyte by, sbyte bz)
+		internal void Binormal3bEXTNative(sbyte bx, sbyte by, sbyte bz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, void>)funcTable[0])(bx, by, bz);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3bEXT(sbyte bx, sbyte by, sbyte bz)
+		public void Binormal3bEXT(sbyte bx, sbyte by, sbyte bz)
 		{
 			Binormal3bEXTNative(bx, by, bz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3bvEXTNative(sbyte* v)
+		internal void Binormal3bvEXTNative(sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[1])(v);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3bvEXT(sbyte* v)
+		public void Binormal3bvEXT(sbyte* v)
 		{
 			Binormal3bvEXTNative(v);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3bvEXT(Span<sbyte> v)
+		public void Binormal3bvEXT(Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3bvEXT(ref sbyte v)
+		public void Binormal3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3dEXTNative(double bx, double by, double bz)
+		internal void Binormal3dEXTNative(double bx, double by, double bz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[2])(bx, by, bz);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3dEXT(double bx, double by, double bz)
+		public void Binormal3dEXT(double bx, double by, double bz)
 		{
 			Binormal3dEXTNative(bx, by, bz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3dvEXTNative(double* v)
+		internal void Binormal3dvEXTNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[3])(v);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3dvEXT(double* v)
+		public void Binormal3dvEXT(double* v)
 		{
 			Binormal3dvEXTNative(v);
 		}
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3dvEXT(Span<double> v)
+		public void Binormal3dvEXT(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3dvEXT(ref double v)
+		public void Binormal3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3fEXTNative(float bx, float by, float bz)
+		internal void Binormal3fEXTNative(float bx, float by, float bz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[4])(bx, by, bz);
@@ -154,13 +154,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3fEXT(float bx, float by, float bz)
+		public void Binormal3fEXT(float bx, float by, float bz)
 		{
 			Binormal3fEXTNative(bx, by, bz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3fvEXTNative(float* v)
+		internal void Binormal3fvEXTNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[5])(v);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3fvEXT(float* v)
+		public void Binormal3fvEXT(float* v)
 		{
 			Binormal3fvEXTNative(v);
 		}
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3fvEXT(Span<float> v)
+		public void Binormal3fvEXT(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -194,7 +194,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3fvEXT(ref float v)
+		public void Binormal3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3iEXTNative(int bx, int by, int bz)
+		internal void Binormal3iEXTNative(int bx, int by, int bz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[6])(bx, by, bz);
@@ -216,13 +216,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3iEXT(int bx, int by, int bz)
+		public void Binormal3iEXT(int bx, int by, int bz)
 		{
 			Binormal3iEXTNative(bx, by, bz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3ivEXTNative(int* v)
+		internal void Binormal3ivEXTNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[7])(v);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3ivEXT(int* v)
+		public void Binormal3ivEXT(int* v)
 		{
 			Binormal3ivEXTNative(v);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3ivEXT(Span<int> v)
+		public void Binormal3ivEXT(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3ivEXT(ref int v)
+		public void Binormal3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3sEXTNative(short bx, short by, short bz)
+		internal void Binormal3sEXTNative(short bx, short by, short bz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, void>)funcTable[8])(bx, by, bz);
@@ -278,13 +278,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3sEXT(short bx, short by, short bz)
+		public void Binormal3sEXT(short bx, short by, short bz)
 		{
 			Binormal3sEXTNative(bx, by, bz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Binormal3svEXTNative(short* v)
+		internal void Binormal3svEXTNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[9])(v);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3svEXT(short* v)
+		public void Binormal3svEXT(short* v)
 		{
 			Binormal3svEXTNative(v);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3svEXT(Span<short> v)
+		public void Binormal3svEXT(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Binormal3svEXT(ref short v)
+		public void Binormal3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BinormalPointerEXTNative(GLBinormalPointerTypeEXT type, int stride, void* pointer)
+		internal void BinormalPointerEXTNative(GLBinormalPointerTypeEXT type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBinormalPointerTypeEXT, int, void*, void>)funcTable[10])(type, stride, pointer);
@@ -340,7 +340,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, void* pointer)
+		public void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, void* pointer)
 		{
 			BinormalPointerEXTNative(type, stride, pointer);
 		}
@@ -349,7 +349,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, nint pointer)
+		public void BinormalPointerEXT(GLBinormalPointerTypeEXT type, int stride, nint pointer)
 		{
 			BinormalPointerEXTNative(type, stride, (void*)pointer);
 		}
@@ -358,7 +358,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void BinormalPointerEXT<TPointer>(GLBinormalPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void BinormalPointerEXT<TPointer>(GLBinormalPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -367,7 +367,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3bEXTNative(sbyte tx, sbyte ty, sbyte tz)
+		internal void Tangent3bEXTNative(sbyte tx, sbyte ty, sbyte tz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, void>)funcTable[11])(tx, ty, tz);
@@ -380,13 +380,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3bEXT(sbyte tx, sbyte ty, sbyte tz)
+		public void Tangent3bEXT(sbyte tx, sbyte ty, sbyte tz)
 		{
 			Tangent3bEXTNative(tx, ty, tz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3bvEXTNative(sbyte* v)
+		internal void Tangent3bvEXTNative(sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[12])(v);
@@ -399,7 +399,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3bvEXT(sbyte* v)
+		public void Tangent3bvEXT(sbyte* v)
 		{
 			Tangent3bvEXTNative(v);
 		}
@@ -408,7 +408,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3bvEXT(Span<sbyte> v)
+		public void Tangent3bvEXT(Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -420,7 +420,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3bvEXT(ref sbyte v)
+		public void Tangent3bvEXT(ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -429,7 +429,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3dEXTNative(double tx, double ty, double tz)
+		internal void Tangent3dEXTNative(double tx, double ty, double tz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[13])(tx, ty, tz);
@@ -442,13 +442,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3dEXT(double tx, double ty, double tz)
+		public void Tangent3dEXT(double tx, double ty, double tz)
 		{
 			Tangent3dEXTNative(tx, ty, tz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3dvEXTNative(double* v)
+		internal void Tangent3dvEXTNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[14])(v);
@@ -461,7 +461,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3dvEXT(double* v)
+		public void Tangent3dvEXT(double* v)
 		{
 			Tangent3dvEXTNative(v);
 		}
@@ -470,7 +470,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3dvEXT(Span<double> v)
+		public void Tangent3dvEXT(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -482,7 +482,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3dvEXT(ref double v)
+		public void Tangent3dvEXT(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -491,7 +491,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3fEXTNative(float tx, float ty, float tz)
+		internal void Tangent3fEXTNative(float tx, float ty, float tz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[15])(tx, ty, tz);
@@ -504,13 +504,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3fEXT(float tx, float ty, float tz)
+		public void Tangent3fEXT(float tx, float ty, float tz)
 		{
 			Tangent3fEXTNative(tx, ty, tz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3fvEXTNative(float* v)
+		internal void Tangent3fvEXTNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[16])(v);
@@ -523,7 +523,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3fvEXT(float* v)
+		public void Tangent3fvEXT(float* v)
 		{
 			Tangent3fvEXTNative(v);
 		}
@@ -532,7 +532,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3fvEXT(Span<float> v)
+		public void Tangent3fvEXT(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -544,7 +544,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3fvEXT(ref float v)
+		public void Tangent3fvEXT(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -553,7 +553,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3iEXTNative(int tx, int ty, int tz)
+		internal void Tangent3iEXTNative(int tx, int ty, int tz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[17])(tx, ty, tz);
@@ -566,13 +566,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3iEXT(int tx, int ty, int tz)
+		public void Tangent3iEXT(int tx, int ty, int tz)
 		{
 			Tangent3iEXTNative(tx, ty, tz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3ivEXTNative(int* v)
+		internal void Tangent3ivEXTNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[18])(v);
@@ -585,7 +585,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3ivEXT(int* v)
+		public void Tangent3ivEXT(int* v)
 		{
 			Tangent3ivEXTNative(v);
 		}
@@ -594,7 +594,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3ivEXT(Span<int> v)
+		public void Tangent3ivEXT(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -606,7 +606,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3ivEXT(ref int v)
+		public void Tangent3ivEXT(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -615,7 +615,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3sEXTNative(short tx, short ty, short tz)
+		internal void Tangent3sEXTNative(short tx, short ty, short tz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, void>)funcTable[19])(tx, ty, tz);
@@ -628,13 +628,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3sEXT(short tx, short ty, short tz)
+		public void Tangent3sEXT(short tx, short ty, short tz)
 		{
 			Tangent3sEXTNative(tx, ty, tz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Tangent3svEXTNative(short* v)
+		internal void Tangent3svEXTNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[20])(v);
@@ -647,7 +647,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3svEXT(short* v)
+		public void Tangent3svEXT(short* v)
 		{
 			Tangent3svEXTNative(v);
 		}
@@ -656,7 +656,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3svEXT(Span<short> v)
+		public void Tangent3svEXT(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -668,7 +668,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void Tangent3svEXT(ref short v)
+		public void Tangent3svEXT(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -677,7 +677,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TangentPointerEXTNative(GLTangentPointerTypeEXT type, int stride, void* pointer)
+		internal void TangentPointerEXTNative(GLTangentPointerTypeEXT type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTangentPointerTypeEXT, int, void*, void>)funcTable[21])(type, stride, pointer);
@@ -690,7 +690,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, void* pointer)
+		public void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, void* pointer)
 		{
 			TangentPointerEXTNative(type, stride, pointer);
 		}
@@ -699,7 +699,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, nint pointer)
+		public void TangentPointerEXT(GLTangentPointerTypeEXT type, int stride, nint pointer)
 		{
 			TangentPointerEXTNative(type, stride, (void*)pointer);
 		}
@@ -708,7 +708,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_coordinate_frame</remarks>
-		public static void TangentPointerEXT<TPointer>(GLTangentPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void TangentPointerEXT<TPointer>(GLTangentPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

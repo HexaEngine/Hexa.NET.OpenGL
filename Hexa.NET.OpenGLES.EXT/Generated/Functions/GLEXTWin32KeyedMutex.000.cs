@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTWin32KeyedMutex
+	public unsafe partial class GLEXTWin32KeyedMutex
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte AcquireKeyedMutexWin32EXTNative(uint memory, ulong key, uint timeout)
+		internal byte AcquireKeyedMutexWin32EXTNative(uint memory, ulong key, uint timeout)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, ulong, uint, byte>)funcTable[0])(memory, key, timeout);
@@ -30,14 +30,14 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_win32_keyed_mutex</remarks>
-		public static bool AcquireKeyedMutexWin32EXT(uint memory, ulong key, uint timeout)
+		public bool AcquireKeyedMutexWin32EXT(uint memory, ulong key, uint timeout)
 		{
 			byte ret = AcquireKeyedMutexWin32EXTNative(memory, key, timeout);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte ReleaseKeyedMutexWin32EXTNative(uint memory, ulong key)
+		internal byte ReleaseKeyedMutexWin32EXTNative(uint memory, ulong key)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, ulong, byte>)funcTable[1])(memory, key);
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_win32_keyed_mutex</remarks>
-		public static bool ReleaseKeyedMutexWin32EXT(uint memory, ulong key)
+		public bool ReleaseKeyedMutexWin32EXT(uint memory, ulong key)
 		{
 			byte ret = ReleaseKeyedMutexWin32EXTNative(memory, key);
 			return ret != 0;

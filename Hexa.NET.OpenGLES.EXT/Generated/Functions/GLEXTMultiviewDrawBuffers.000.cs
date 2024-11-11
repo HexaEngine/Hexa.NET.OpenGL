@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTMultiviewDrawBuffers
+	public unsafe partial class GLEXTMultiviewDrawBuffers
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawBuffersIndexedEXTNative(int n, GLEnum* location, int* indices)
+		internal void DrawBuffersIndexedEXTNative(int n, GLEnum* location, int* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLEnum*, int*, void>)funcTable[0])(n, location, indices);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, int* indices)
+		public void DrawBuffersIndexedEXT(int n, GLEnum* location, int* indices)
 		{
 			DrawBuffersIndexedEXTNative(n, location, indices);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, int* indices)
+		public void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, int* indices)
 		{
 			fixed (GLEnum* plocation0 = location)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, ref GLEnum location, int* indices)
+		public void DrawBuffersIndexedEXT(int n, ref GLEnum location, int* indices)
 		{
 			fixed (GLEnum* plocation0 = &location)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, Span<int> indices)
+		public void DrawBuffersIndexedEXT(int n, GLEnum* location, Span<int> indices)
 		{
 			fixed (int* pindices0 = indices)
 			{
@@ -75,7 +75,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, GLEnum* location, ref int indices)
+		public void DrawBuffersIndexedEXT(int n, GLEnum* location, ref int indices)
 		{
 			fixed (int* pindices0 = &indices)
 			{
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, Span<int> indices)
+		public void DrawBuffersIndexedEXT(int n, Span<GLEnum> location, Span<int> indices)
 		{
 			fixed (GLEnum* plocation0 = location)
 			{
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void DrawBuffersIndexedEXT(int n, ref GLEnum location, ref int indices)
+		public void DrawBuffersIndexedEXT(int n, ref GLEnum location, ref int indices)
 		{
 			fixed (GLEnum* plocation0 = &location)
 			{
@@ -114,7 +114,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegeri_vEXTNative(GLGetPName target, uint index, int* data)
+		internal void GetIntegeri_vEXTNative(GLGetPName target, uint index, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, int*, void>)funcTable[1])(target, index, data);
@@ -127,7 +127,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void GetIntegeri_vEXT(GLGetPName target, uint index, int* data)
+		public void GetIntegeri_vEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegeri_vEXTNative(target, index, data);
 		}
@@ -136,7 +136,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void GetIntegeri_vEXT(GLGetPName target, uint index, Span<int> data)
+		public void GetIntegeri_vEXT(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
 			{
@@ -148,7 +148,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void GetIntegeri_vEXT(GLGetPName target, uint index, ref int data)
+		public void GetIntegeri_vEXT(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
 			{
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadBufferIndexedEXTNative(GLReadBufferMode src, int index)
+		internal void ReadBufferIndexedEXTNative(GLReadBufferMode src, int index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLReadBufferMode, int, void>)funcTable[2])(src, index);
@@ -170,7 +170,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multiview_draw_buffers</remarks>
-		public static void ReadBufferIndexedEXT(GLReadBufferMode src, int index)
+		public void ReadBufferIndexedEXT(GLReadBufferMode src, int index)
 		{
 			ReadBufferIndexedEXTNative(src, index);
 		}

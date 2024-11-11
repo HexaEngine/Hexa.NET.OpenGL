@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBSparseTexture
+	public unsafe partial class GLARBSparseTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexPageCommitmentARBNative(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
+		internal void TexPageCommitmentARBNative(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, int, int, int, int, int, int, byte, void>)funcTable[0])(target, level, xoffset, yoffset, zoffset, width, height, depth, *((byte*)(&commit)));
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sparse_texture</remarks>
-		public static void TexPageCommitmentARB(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
+		public void TexPageCommitmentARB(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			TexPageCommitmentARBNative(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTPolygonOffset
+	public unsafe partial class GLEXTPolygonOffset
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonOffsetEXTNative(float factor, float bias)
+		internal void PolygonOffsetEXTNative(float factor, float bias)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[0])(factor, bias);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_polygon_offset</remarks>
-		public static void PolygonOffsetEXT(float factor, float bias)
+		public void PolygonOffsetEXT(float factor, float bias)
 		{
 			PolygonOffsetEXTNative(factor, bias);
 		}

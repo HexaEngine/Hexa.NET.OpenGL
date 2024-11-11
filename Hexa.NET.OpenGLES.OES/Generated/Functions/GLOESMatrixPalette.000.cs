@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESMatrixPalette
+	public unsafe partial class GLOESMatrixPalette
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CurrentPaletteMatrixOESNative(uint matrixpaletteindex)
+		internal void CurrentPaletteMatrixOESNative(uint matrixpaletteindex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(matrixpaletteindex);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void CurrentPaletteMatrixOES(uint matrixpaletteindex)
+		public void CurrentPaletteMatrixOES(uint matrixpaletteindex)
 		{
 			CurrentPaletteMatrixOESNative(matrixpaletteindex);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LoadPaletteFromModelViewMatrixOESNative()
+		internal void LoadPaletteFromModelViewMatrixOESNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void LoadPaletteFromModelViewMatrixOES()
+		public void LoadPaletteFromModelViewMatrixOES()
 		{
 			LoadPaletteFromModelViewMatrixOESNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixIndexPointerOESNative(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
+		internal void MatrixIndexPointerOESNative(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLMatrixIndexPointerTypeARB, int, void*, void>)funcTable[2])(size, type, stride, pointer);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void MatrixIndexPointerOES(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
+		public void MatrixIndexPointerOES(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
 		{
 			MatrixIndexPointerOESNative(size, type, stride, pointer);
 		}
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void MatrixIndexPointerOES(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
+		public void MatrixIndexPointerOES(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
 		{
 			MatrixIndexPointerOESNative(size, type, stride, (void*)pointer);
 		}
@@ -86,7 +86,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void MatrixIndexPointerOES<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void MatrixIndexPointerOES<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -95,7 +95,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightPointerOESNative(int size, GLEnum type, int stride, void* pointer)
+		internal void WeightPointerOESNative(int size, GLEnum type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLEnum, int, void*, void>)funcTable[3])(size, type, stride, pointer);
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void WeightPointerOES(int size, GLEnum type, int stride, void* pointer)
+		public void WeightPointerOES(int size, GLEnum type, int stride, void* pointer)
 		{
 			WeightPointerOESNative(size, type, stride, pointer);
 		}
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void WeightPointerOES(int size, GLEnum type, int stride, nint pointer)
+		public void WeightPointerOES(int size, GLEnum type, int stride, nint pointer)
 		{
 			WeightPointerOESNative(size, type, stride, (void*)pointer);
 		}
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_matrix_palette</remarks>
-		public static void WeightPointerOES<TPointer>(int size, GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void WeightPointerOES<TPointer>(int size, GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

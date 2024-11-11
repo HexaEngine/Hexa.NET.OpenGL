@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVXLinkedGpuMulticast
+	public unsafe partial class GLNVXLinkedGpuMulticast
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LGPUCopyImageSubDataNVXNative(uint sourceGpu, uint destinationGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srxY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int width, int height, int depth)
+		internal void LGPUCopyImageSubDataNVXNative(uint sourceGpu, uint destinationGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srxY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int width, int height, int depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, GLEnum, int, int, int, int, uint, GLEnum, int, int, int, int, int, int, int, void>)funcTable[0])(sourceGpu, destinationGpuMask, srcName, srcTarget, srcLevel, srcX, srxY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
-		public static void LGPUCopyImageSubDataNVX(uint sourceGpu, uint destinationGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srxY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int width, int height, int depth)
+		public void LGPUCopyImageSubDataNVX(uint sourceGpu, uint destinationGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srxY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int width, int height, int depth)
 		{
 			LGPUCopyImageSubDataNVXNative(sourceGpu, destinationGpuMask, srcName, srcTarget, srcLevel, srcX, srxY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, width, height, depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LGPUInterlockNVXNative()
+		internal void LGPUInterlockNVXNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
-		public static void LGPUInterlockNVX()
+		public void LGPUInterlockNVX()
 		{
 			LGPUInterlockNVXNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LGPUNamedBufferSubDataNVXNative(uint gpuMask, uint buffer, nint offset, nint size, void* data)
+		internal void LGPUNamedBufferSubDataNVXNative(uint gpuMask, uint buffer, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, nint, nint, void*, void>)funcTable[2])(gpuMask, buffer, offset, size, data);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
-		public static void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, void* data)
+		public void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, void* data)
 		{
 			LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, data);
 		}
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
-		public static void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, nint data)
+		public void LGPUNamedBufferSubDataNVX(uint gpuMask, uint buffer, nint offset, nint size, nint data)
 		{
 			LGPUNamedBufferSubDataNVXNative(gpuMask, buffer, offset, size, (void*)data);
 		}
@@ -86,7 +86,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_linked_gpu_multicast</remarks>
-		public static void LGPUNamedBufferSubDataNVX<TData>(uint gpuMask, uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void LGPUNamedBufferSubDataNVX<TData>(uint gpuMask, uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{

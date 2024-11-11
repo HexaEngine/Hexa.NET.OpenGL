@@ -14,47 +14,30 @@ using Hexa.NET.OpenGL;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public unsafe partial class GLARBDebugOutput
+	public unsafe partial class GLARBDebugOutput : GLExtension, IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
-
-		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
-
 		public const string ExtensionName = "GL_ARB_debug_output";
 
-		/// <summary>
-		/// Tries to initialize the function table of the extension, call before you access any function.
-		/// </summary>
-		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
-		public static bool TryInitExtension()
+		public GLARBDebugOutput() : base(4)
 		{
-			if (!IsSupported) return false;
-			InitExtension();
-			return true;
 		}
 
-		/// <summary>
-		/// Initializes the function table of the extension, call before you access any function.
-		/// </summary>
-		public static void InitExtension()
+		public override bool IsSupported(IGLContext context)
 		{
-			if (funcTable != null) return;
-			if (GLBase.NativeContext == null) throw new InvalidOperationException("OpenGL is not initialized, call GL.InitApi.");
-			funcTable = new FunctionTable(GLBase.NativeContext, 4);
+			return context.IsExtensionSupported(ExtensionName);
+		}
+
+		protected override void InitTable(FunctionTable funcTable)
+		{
 			funcTable.Load(0, "glDebugMessageCallbackARB");
 			funcTable.Load(1, "glDebugMessageControlARB");
 			funcTable.Load(2, "glDebugMessageInsertARB");
 			funcTable.Load(3, "glGetDebugMessageLogARB");
 		}
 
-		public static void FreeExtension()
+		public void Dispose()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
+			funcTable.Dispose();
 		}
 	}
 }

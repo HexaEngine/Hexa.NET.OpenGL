@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBViewportArray
+	public unsafe partial class GLARBViewportArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeArraydvNVNative(uint first, int count, double* v)
+		internal void DepthRangeArraydvNVNative(uint first, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[0])(first, count, v);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArraydvNV(uint first, int count, double* v)
+		public void DepthRangeArraydvNV(uint first, int count, double* v)
 		{
 			DepthRangeArraydvNVNative(first, count, v);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArraydvNV(uint first, int count, Span<double> v)
+		public void DepthRangeArraydvNV(uint first, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArraydvNV(uint first, int count, ref double v)
+		public void DepthRangeArraydvNV(uint first, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeArrayvNative(uint first, int count, double* v)
+		internal void DepthRangeArrayvNative(uint first, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[1])(first, count, v);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArrayv(uint first, int count, double* v)
+		public void DepthRangeArrayv(uint first, int count, double* v)
 		{
 			DepthRangeArrayvNative(first, count, v);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArrayv(uint first, int count, Span<double> v)
+		public void DepthRangeArrayv(uint first, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArrayv(uint first, int count, ref double v)
+		public void DepthRangeArrayv(uint first, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeIndexedNative(uint index, double n, double f)
+		internal void DepthRangeIndexedNative(uint index, double n, double f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[2])(index, n, f);
@@ -116,13 +116,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Specify mapping of depth values from normalized device coordinates to window coordinates for a specified viewport
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeIndexed(uint index, double n, double f)
+		public void DepthRangeIndexed(uint index, double n, double f)
 		{
 			DepthRangeIndexedNative(index, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeIndexeddNVNative(uint index, double n, double f)
+		internal void DepthRangeIndexeddNVNative(uint index, double n, double f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[3])(index, n, f);
@@ -135,13 +135,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeIndexeddNV(uint index, double n, double f)
+		public void DepthRangeIndexeddNV(uint index, double n, double f)
 		{
 			DepthRangeIndexeddNVNative(index, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetDoublei_vNative(GLGetPName target, uint index, double* data)
+		internal void GetDoublei_vNative(GLGetPName target, uint index, double* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, double*, void>)funcTable[4])(target, index, data);
@@ -154,7 +154,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, double* data)
+		public void GetDoublei_v(GLGetPName target, uint index, double* data)
 		{
 			GetDoublei_vNative(target, index, data);
 		}
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, out double data)
+		public void GetDoublei_v(GLGetPName target, uint index, out double data)
 		{
 			double pparam;
 			GetDoublei_vNative(target, index, &pparam);
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
+		public void GetDoublei_v(GLGetPName target, uint index, Span<double> data)
 		{
 			fixed (double* pparams = data)
 			{
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloati_vNative(GLGetPName target, uint index, float* data)
+		internal void GetFloati_vNative(GLGetPName target, uint index, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, float*, void>)funcTable[5])(target, index, data);
@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, float* data)
+		public void GetFloati_v(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vNative(target, index, data);
 		}
@@ -205,7 +205,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, out float data)
+		public void GetFloati_v(GLGetPName target, uint index, out float data)
 		{
 			float pparam;
 			GetFloati_vNative(target, index, &pparam);
@@ -216,7 +216,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void GetFloati_v(GLGetPName target, uint index, Span<float> data)
+		public void GetFloati_v(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pparams = data)
 			{
@@ -225,7 +225,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorArrayvNative(uint first, int count, int* v)
+		internal void ScissorArrayvNative(uint first, int count, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[6])(first, count, v);
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorArrayv(uint first, int count, int* v)
+		public void ScissorArrayv(uint first, int count, int* v)
 		{
 			ScissorArrayvNative(first, count, v);
 		}
@@ -247,7 +247,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorArrayv(uint first, int count, Span<int> v)
+		public void ScissorArrayv(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -259,7 +259,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorArrayv(uint first, int count, ref int v)
+		public void ScissorArrayv(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -268,7 +268,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorIndexedNative(uint index, int left, int bottom, int width, int height)
+		internal void ScissorIndexedNative(uint index, int left, int bottom, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[7])(index, left, bottom, width, height);
@@ -281,13 +281,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Define the scissor box for a specific viewport
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorIndexed(uint index, int left, int bottom, int width, int height)
+		public void ScissorIndexed(uint index, int left, int bottom, int width, int height)
 		{
 			ScissorIndexedNative(index, left, bottom, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorIndexedvNative(uint index, int* v)
+		internal void ScissorIndexedvNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[8])(index, v);
@@ -300,7 +300,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorIndexedv(uint index, int* v)
+		public void ScissorIndexedv(uint index, int* v)
 		{
 			ScissorIndexedvNative(index, v);
 		}
@@ -309,7 +309,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorIndexedv(uint index, Span<int> v)
+		public void ScissorIndexedv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -321,7 +321,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ScissorIndexedv(uint index, ref int v)
+		public void ScissorIndexedv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -330,7 +330,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportArrayvNative(uint first, int count, float* v)
+		internal void ViewportArrayvNative(uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[9])(first, count, v);
@@ -343,7 +343,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportArrayv(uint first, int count, float* v)
+		public void ViewportArrayv(uint first, int count, float* v)
 		{
 			ViewportArrayvNative(first, count, v);
 		}
@@ -352,7 +352,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportArrayv(uint first, int count, Span<float> v)
+		public void ViewportArrayv(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -364,7 +364,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportArrayv(uint first, int count, ref float v)
+		public void ViewportArrayv(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -373,7 +373,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfNative(uint index, float x, float y, float w, float h)
+		internal void ViewportIndexedfNative(uint index, float x, float y, float w, float h)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[10])(index, x, y, w, h);
@@ -386,13 +386,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedf(uint index, float x, float y, float w, float h)
+		public void ViewportIndexedf(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfNative(index, x, y, w, h);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfvNative(uint index, float* v)
+		internal void ViewportIndexedfvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[11])(index, v);
@@ -405,7 +405,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedfv(uint index, float* v)
+		public void ViewportIndexedfv(uint index, float* v)
 		{
 			ViewportIndexedfvNative(index, v);
 		}
@@ -414,7 +414,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedfv(uint index, Span<float> v)
+		public void ViewportIndexedfv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -426,7 +426,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedfv(uint index, ref float v)
+		public void ViewportIndexedfv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{

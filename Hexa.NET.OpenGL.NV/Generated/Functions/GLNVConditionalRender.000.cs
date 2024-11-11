@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVConditionalRender
+	public unsafe partial class GLNVConditionalRender
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginConditionalRenderNVNative(uint id, GLConditionalRenderMode mode)
+		internal void BeginConditionalRenderNVNative(uint id, GLConditionalRenderMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLConditionalRenderMode, void>)funcTable[0])(id, mode);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_conditional_render</remarks>
-		public static void BeginConditionalRenderNV(uint id, GLConditionalRenderMode mode)
+		public void BeginConditionalRenderNV(uint id, GLConditionalRenderMode mode)
 		{
 			BeginConditionalRenderNVNative(id, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndConditionalRenderNVNative()
+		internal void EndConditionalRenderNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_conditional_render</remarks>
-		public static void EndConditionalRenderNV()
+		public void EndConditionalRenderNV()
 		{
 			EndConditionalRenderNVNative();
 		}

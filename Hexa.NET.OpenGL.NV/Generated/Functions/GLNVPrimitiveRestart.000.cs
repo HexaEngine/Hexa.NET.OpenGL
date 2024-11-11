@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVPrimitiveRestart
+	public unsafe partial class GLNVPrimitiveRestart
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrimitiveRestartIndexNVNative(uint index)
+		internal void PrimitiveRestartIndexNVNative(uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(index);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_restart</remarks>
-		public static void PrimitiveRestartIndexNV(uint index)
+		public void PrimitiveRestartIndexNV(uint index)
 		{
 			PrimitiveRestartIndexNVNative(index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrimitiveRestartNVNative()
+		internal void PrimitiveRestartNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_primitive_restart</remarks>
-		public static void PrimitiveRestartNV()
+		public void PrimitiveRestartNV()
 		{
 			PrimitiveRestartNVNative();
 		}

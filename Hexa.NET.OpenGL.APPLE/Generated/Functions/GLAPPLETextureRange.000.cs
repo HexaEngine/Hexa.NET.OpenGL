@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLETextureRange
+	public unsafe partial class GLAPPLETextureRange
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterPointervAPPLENative(GLEnum target, GLEnum pname, void** @params)
+		internal void GetTexParameterPointervAPPLENative(GLEnum target, GLEnum pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, void**, void>)funcTable[0])(target, pname, @params);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range</remarks>
-		public static void GetTexParameterPointervAPPLE(GLEnum target, GLEnum pname, void** @params)
+		public void GetTexParameterPointervAPPLE(GLEnum target, GLEnum pname, void** @params)
 		{
 			GetTexParameterPointervAPPLENative(target, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureRangeAPPLENative(GLEnum target, int length, void* pointer)
+		internal void TextureRangeAPPLENative(GLEnum target, int length, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, void*, void>)funcTable[1])(target, length, pointer);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range</remarks>
-		public static void TextureRangeAPPLE(GLEnum target, int length, void* pointer)
+		public void TextureRangeAPPLE(GLEnum target, int length, void* pointer)
 		{
 			TextureRangeAPPLENative(target, length, pointer);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range</remarks>
-		public static void TextureRangeAPPLE(GLEnum target, int length, nint pointer)
+		public void TextureRangeAPPLE(GLEnum target, int length, nint pointer)
 		{
 			TextureRangeAPPLENative(target, length, (void*)pointer);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_texture_range</remarks>
-		public static void TextureRangeAPPLE<TPointer>(GLEnum target, int length, Span<TPointer> pointer) where TPointer : unmanaged
+		public void TextureRangeAPPLE<TPointer>(GLEnum target, int length, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

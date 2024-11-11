@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVScissorExclusive
+	public unsafe partial class GLNVScissorExclusive
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorExclusiveArrayvNVNative(uint first, int count, int* v)
+		internal void ScissorExclusiveArrayvNVNative(uint first, int count, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[0])(first, count, v);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
-		public static void ScissorExclusiveArrayvNV(uint first, int count, int* v)
+		public void ScissorExclusiveArrayvNV(uint first, int count, int* v)
 		{
 			ScissorExclusiveArrayvNVNative(first, count, v);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
-		public static void ScissorExclusiveArrayvNV(uint first, int count, Span<int> v)
+		public void ScissorExclusiveArrayvNV(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
-		public static void ScissorExclusiveArrayvNV(uint first, int count, ref int v)
+		public void ScissorExclusiveArrayvNV(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorExclusiveNVNative(int x, int y, int width, int height)
+		internal void ScissorExclusiveNVNative(int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[1])(x, y, width, height);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_scissor_exclusive</remarks>
-		public static void ScissorExclusiveNV(int x, int y, int width, int height)
+		public void ScissorExclusiveNV(int x, int y, int width, int height)
 		{
 			ScissorExclusiveNVNative(x, y, width, height);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBParallelShaderCompile
+	public unsafe partial class GLARBParallelShaderCompile
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MaxShaderCompilerThreadsARBNative(uint count)
+		internal void MaxShaderCompilerThreadsARBNative(uint count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(count);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_parallel_shader_compile</remarks>
-		public static void MaxShaderCompilerThreadsARB(uint count)
+		public void MaxShaderCompilerThreadsARB(uint count)
 		{
 			MaxShaderCompilerThreadsARBNative(count);
 		}

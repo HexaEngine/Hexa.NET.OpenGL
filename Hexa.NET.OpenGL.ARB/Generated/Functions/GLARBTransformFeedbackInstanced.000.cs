@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTransformFeedbackInstanced
+	public unsafe partial class GLARBTransformFeedbackInstanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackInstancedNative(GLPrimitiveType mode, uint id, int instancecount)
+		internal void DrawTransformFeedbackInstancedNative(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, int, void>)funcTable[0])(mode, id, instancecount);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render multiple instances of primitives using a count derived from a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback_instanced</remarks>
-		public static void DrawTransformFeedbackInstanced(GLPrimitiveType mode, uint id, int instancecount)
+		public void DrawTransformFeedbackInstanced(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			DrawTransformFeedbackInstancedNative(mode, id, instancecount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackStreamInstancedNative(GLPrimitiveType mode, uint id, uint stream, int instancecount)
+		internal void DrawTransformFeedbackStreamInstancedNative(GLPrimitiveType mode, uint id, uint stream, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, int, void>)funcTable[1])(mode, id, stream, instancecount);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render multiple instances of primitives using a count derived from a specifed stream of a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback_instanced</remarks>
-		public static void DrawTransformFeedbackStreamInstanced(GLPrimitiveType mode, uint id, uint stream, int instancecount)
+		public void DrawTransformFeedbackStreamInstanced(GLPrimitiveType mode, uint id, uint stream, int instancecount)
 		{
 			DrawTransformFeedbackStreamInstancedNative(mode, id, stream, instancecount);
 		}

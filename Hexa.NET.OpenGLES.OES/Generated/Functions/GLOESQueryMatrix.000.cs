@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESQueryMatrix
+	public unsafe partial class GLOESQueryMatrix
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint QueryMatrixxOESNative(int* mantissa, int* exponent)
+		internal uint QueryMatrixxOESNative(int* mantissa, int* exponent)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int*, int*, uint>)funcTable[0])(mantissa, exponent);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(int* mantissa, int* exponent)
+		public uint QueryMatrixxOES(int* mantissa, int* exponent)
 		{
 			uint ret = QueryMatrixxOESNative(mantissa, exponent);
 			return ret;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(Span<int> mantissa, int* exponent)
+		public uint QueryMatrixxOES(Span<int> mantissa, int* exponent)
 		{
 			fixed (int* pmantissa0 = mantissa)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(ref int mantissa, int* exponent)
+		public uint QueryMatrixxOES(ref int mantissa, int* exponent)
 		{
 			fixed (int* pmantissa0 = &mantissa)
 			{
@@ -66,7 +66,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(int* mantissa, Span<int> exponent)
+		public uint QueryMatrixxOES(int* mantissa, Span<int> exponent)
 		{
 			fixed (int* pexponent0 = exponent)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(int* mantissa, ref int exponent)
+		public uint QueryMatrixxOES(int* mantissa, ref int exponent)
 		{
 			fixed (int* pexponent0 = &exponent)
 			{
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(Span<int> mantissa, Span<int> exponent)
+		public uint QueryMatrixxOES(Span<int> mantissa, Span<int> exponent)
 		{
 			fixed (int* pmantissa0 = mantissa)
 			{
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_query_matrix</remarks>
-		public static uint QueryMatrixxOES(ref int mantissa, ref int exponent)
+		public uint QueryMatrixxOES(ref int mantissa, ref int exponent)
 		{
 			fixed (int* pmantissa0 = &mantissa)
 			{

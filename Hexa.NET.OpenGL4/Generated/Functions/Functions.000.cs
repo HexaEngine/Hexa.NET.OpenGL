@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL
 {
-	public static unsafe partial class GL
+	public unsafe partial class GL
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ActiveShaderProgramNative(uint pipeline, uint program)
+		internal void ActiveShaderProgramNative(uint pipeline, uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(pipeline, program);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL
 		/// Set the active program object for a program pipeline object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void ActiveShaderProgram(uint pipeline, uint program)
+		public void ActiveShaderProgram(uint pipeline, uint program)
 		{
 			ActiveShaderProgramNative(pipeline, program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ActiveTextureNative(GLTextureUnit texture)
+		internal void ActiveTextureNative(GLTextureUnit texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, void>)funcTable[1])(texture);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL
 		/// Select active texture unit
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void ActiveTexture(GLTextureUnit texture)
+		public void ActiveTexture(GLTextureUnit texture)
 		{
 			ActiveTextureNative(texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void AttachShaderNative(uint program, uint shader)
+		internal void AttachShaderNative(uint program, uint shader)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[2])(program, shader);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL
 		/// Attaches a shader object to a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void AttachShader(uint program, uint shader)
+		public void AttachShader(uint program, uint shader)
 		{
 			AttachShaderNative(program, shader);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginConditionalRenderNative(uint id, GLConditionalRenderMode mode)
+		internal void BeginConditionalRenderNative(uint id, GLConditionalRenderMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLConditionalRenderMode, void>)funcTable[3])(id, mode);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGL
 		/// Start conditional rendering
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BeginConditionalRender(uint id, GLConditionalRenderMode mode)
+		public void BeginConditionalRender(uint id, GLConditionalRenderMode mode)
 		{
 			BeginConditionalRenderNative(id, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginQueryNative(GLQueryTarget target, uint id)
+		internal void BeginQueryNative(GLQueryTarget target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, uint, void>)funcTable[4])(target, id);
@@ -106,13 +106,13 @@ namespace Hexa.NET.OpenGL
 		/// Delimit the boundaries of a query object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BeginQuery(GLQueryTarget target, uint id)
+		public void BeginQuery(GLQueryTarget target, uint id)
 		{
 			BeginQueryNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginQueryIndexedNative(GLQueryTarget target, uint index, uint id)
+		internal void BeginQueryIndexedNative(GLQueryTarget target, uint index, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, uint, uint, void>)funcTable[5])(target, index, id);
@@ -125,13 +125,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
-		public static void BeginQueryIndexed(GLQueryTarget target, uint index, uint id)
+		public void BeginQueryIndexed(GLQueryTarget target, uint index, uint id)
 		{
 			BeginQueryIndexedNative(target, index, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginTransformFeedbackNative(GLPrimitiveType primitiveMode)
+		internal void BeginTransformFeedbackNative(GLPrimitiveType primitiveMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void>)funcTable[6])(primitiveMode);
@@ -144,13 +144,13 @@ namespace Hexa.NET.OpenGL
 		/// Start transform feedback operation
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BeginTransformFeedback(GLPrimitiveType primitiveMode)
+		public void BeginTransformFeedback(GLPrimitiveType primitiveMode)
 		{
 			BeginTransformFeedbackNative(primitiveMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindAttribLocationNative(uint program, uint index, byte* name)
+		internal void BindAttribLocationNative(uint program, uint index, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, byte*, void>)funcTable[7])(program, index, name);
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGL
 		/// Associates a generic vertex attribute index with a named attribute variable
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindAttribLocation(uint program, uint index, byte* name)
+		public void BindAttribLocation(uint program, uint index, byte* name)
 		{
 			BindAttribLocationNative(program, index, name);
 		}
@@ -172,7 +172,7 @@ namespace Hexa.NET.OpenGL
 		/// Associates a generic vertex attribute index with a named attribute variable
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindAttribLocation(uint program, uint index, string name)
+		public void BindAttribLocation(uint program, uint index, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -202,7 +202,7 @@ namespace Hexa.NET.OpenGL
 		/// Associates a generic vertex attribute index with a named attribute variable
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindAttribLocation(uint program, uint index, Span<byte> name)
+		public void BindAttribLocation(uint program, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGL
 		/// Associates a generic vertex attribute index with a named attribute variable
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindAttribLocation(uint program, uint index, ref byte name)
+		public void BindAttribLocation(uint program, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -223,7 +223,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferNative(GLBufferTargetARB target, uint buffer)
+		internal void BindBufferNative(GLBufferTargetARB target, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, void>)funcTable[8])(target, buffer);
@@ -236,13 +236,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a named buffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BindBuffer(GLBufferTargetARB target, uint buffer)
+		public void BindBuffer(GLBufferTargetARB target, uint buffer)
 		{
 			BindBufferNative(target, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferBaseNative(GLBufferTargetARB target, uint index, uint buffer)
+		internal void BindBufferBaseNative(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, void>)funcTable[9])(target, index, buffer);
@@ -255,13 +255,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a buffer object to an indexed buffer target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void BindBufferBase(GLBufferTargetARB target, uint index, uint buffer)
+		public void BindBufferBase(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			BindBufferBaseNative(target, index, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferRangeNative(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
+		internal void BindBufferRangeNative(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, nint, nint, void>)funcTable[10])(target, index, buffer, offset, size);
@@ -274,13 +274,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a range within a buffer object to an indexed buffer target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void BindBufferRange(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
+		public void BindBufferRange(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			BindBufferRangeNative(target, index, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBuffersBaseNative(GLBufferTargetARB target, uint first, int count, uint* buffers)
+		internal void BindBuffersBaseNative(GLBufferTargetARB target, uint first, int count, uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, int, uint*, void>)funcTable[11])(target, first, count, buffers);
@@ -293,7 +293,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, uint* buffers)
+		public void BindBuffersBase(GLBufferTargetARB target, uint first, int count, uint* buffers)
 		{
 			BindBuffersBaseNative(target, first, count, buffers);
 		}
@@ -302,7 +302,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, Span<uint> buffers)
+		public void BindBuffersBase(GLBufferTargetARB target, uint first, int count, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -314,7 +314,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersBase(GLBufferTargetARB target, uint first, int count, ref uint buffers)
+		public void BindBuffersBase(GLBufferTargetARB target, uint first, int count, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -323,7 +323,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBuffersRangeNative(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, nint* sizes)
+		internal void BindBuffersRangeNative(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, nint* sizes)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, int, uint*, nint*, nint*, void>)funcTable[12])(target, first, count, buffers, offsets, sizes);
@@ -336,7 +336,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, nint* sizes)
 		{
 			BindBuffersRangeNative(target, first, count, buffers, offsets, sizes);
 		}
@@ -345,7 +345,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -357,7 +357,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -369,7 +369,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, nint* sizes)
 		{
 			fixed (nint* poffsets0 = offsets)
 			{
@@ -381,7 +381,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, nint* sizes)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
@@ -393,7 +393,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -408,7 +408,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, ref nint offsets, nint* sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, ref nint offsets, nint* sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -423,7 +423,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, Span<nint> sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, Span<nint> sizes)
 		{
 			fixed (nint* psizes0 = sizes)
 			{
@@ -435,7 +435,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, ref nint sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, nint* offsets, ref nint sizes)
 		{
 			fixed (nint* psizes0 = &sizes)
 			{
@@ -447,7 +447,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, Span<nint> sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, nint* offsets, Span<nint> sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -462,7 +462,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, ref nint sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, nint* offsets, ref nint sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -477,7 +477,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, Span<nint> sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, Span<nint> offsets, Span<nint> sizes)
 		{
 			fixed (nint* poffsets0 = offsets)
 			{
@@ -492,7 +492,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, ref nint sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, uint* buffers, ref nint offsets, ref nint sizes)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
@@ -507,7 +507,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<nint> sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<nint> sizes)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -525,7 +525,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind ranges of one or more buffer objects to a sequence of indexed buffer targets
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, ref nint offsets, ref nint sizes)
+		public void BindBuffersRange(GLBufferTargetARB target, uint first, int count, ref uint buffers, ref nint offsets, ref nint sizes)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -540,7 +540,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindFragDataLocationNative(uint program, uint color, byte* name)
+		internal void BindFragDataLocationNative(uint program, uint color, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, byte*, void>)funcTable[13])(program, color, name);
@@ -553,7 +553,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindFragDataLocation(uint program, uint color, byte* name)
+		public void BindFragDataLocation(uint program, uint color, byte* name)
 		{
 			BindFragDataLocationNative(program, color, name);
 		}
@@ -562,7 +562,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindFragDataLocation(uint program, uint color, string name)
+		public void BindFragDataLocation(uint program, uint color, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -592,7 +592,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindFragDataLocation(uint program, uint color, Span<byte> name)
+		public void BindFragDataLocation(uint program, uint color, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -604,7 +604,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BindFragDataLocation(uint program, uint color, ref byte name)
+		public void BindFragDataLocation(uint program, uint color, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -613,7 +613,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindFragDataLocationIndexedNative(uint program, uint colorNumber, uint index, byte* name)
+		internal void BindFragDataLocationIndexedNative(uint program, uint colorNumber, uint index, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, byte*, void>)funcTable[14])(program, colorNumber, index, name);
@@ -626,7 +626,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, byte* name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, byte* name)
 		{
 			BindFragDataLocationIndexedNative(program, colorNumber, index, name);
 		}
@@ -635,7 +635,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, string name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -665,7 +665,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, Span<byte> name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -677,7 +677,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, ref byte name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -686,7 +686,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindFramebufferNative(GLFramebufferTarget target, uint framebuffer)
+		internal void BindFramebufferNative(GLFramebufferTarget target, uint framebuffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, uint, void>)funcTable[15])(target, framebuffer);
@@ -699,13 +699,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a framebuffer to a framebuffer target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void BindFramebuffer(GLFramebufferTarget target, uint framebuffer)
+		public void BindFramebuffer(GLFramebufferTarget target, uint framebuffer)
 		{
 			BindFramebufferNative(target, framebuffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindImageTextureNative(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
+		internal void BindImageTextureNative(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, GLInternalFormat, void>)funcTable[16])(unit, texture, level, *((byte*)(&layered)), layer, access, format);
@@ -718,13 +718,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a level of a texture to an image unit
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
-		public static void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
+		public void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			BindImageTextureNative(unit, texture, level, layered, layer, access, format);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindImageTexturesNative(uint first, int count, uint* textures)
+		internal void BindImageTexturesNative(uint first, int count, uint* textures)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, void>)funcTable[17])(first, count, textures);
@@ -737,7 +737,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named texture images to a sequence of consecutive image units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindImageTextures(uint first, int count, uint* textures)
+		public void BindImageTextures(uint first, int count, uint* textures)
 		{
 			BindImageTexturesNative(first, count, textures);
 		}
@@ -746,7 +746,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named texture images to a sequence of consecutive image units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindImageTextures(uint first, int count, Span<uint> textures)
+		public void BindImageTextures(uint first, int count, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -758,7 +758,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named texture images to a sequence of consecutive image units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindImageTextures(uint first, int count, ref uint textures)
+		public void BindImageTextures(uint first, int count, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -767,7 +767,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindProgramPipelineNative(uint pipeline)
+		internal void BindProgramPipelineNative(uint pipeline)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[18])(pipeline);
@@ -780,13 +780,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a program pipeline to the current context
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void BindProgramPipeline(uint pipeline)
+		public void BindProgramPipeline(uint pipeline)
 		{
 			BindProgramPipelineNative(pipeline);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindRenderbufferNative(GLRenderbufferTarget target, uint renderbuffer)
+		internal void BindRenderbufferNative(GLRenderbufferTarget target, uint renderbuffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, uint, void>)funcTable[19])(target, renderbuffer);
@@ -799,13 +799,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a renderbuffer to a renderbuffer target
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void BindRenderbuffer(GLRenderbufferTarget target, uint renderbuffer)
+		public void BindRenderbuffer(GLRenderbufferTarget target, uint renderbuffer)
 		{
 			BindRenderbufferNative(target, renderbuffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindSamplerNative(uint unit, uint sampler)
+		internal void BindSamplerNative(uint unit, uint sampler)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[20])(unit, sampler);
@@ -818,13 +818,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a named sampler to a texturing target
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void BindSampler(uint unit, uint sampler)
+		public void BindSampler(uint unit, uint sampler)
 		{
 			BindSamplerNative(unit, sampler);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindSamplersNative(uint first, int count, uint* samplers)
+		internal void BindSamplersNative(uint first, int count, uint* samplers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, void>)funcTable[21])(first, count, samplers);
@@ -837,7 +837,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named sampler objects to a sequence of consecutive sampler units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindSamplers(uint first, int count, uint* samplers)
+		public void BindSamplers(uint first, int count, uint* samplers)
 		{
 			BindSamplersNative(first, count, samplers);
 		}
@@ -846,7 +846,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named sampler objects to a sequence of consecutive sampler units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindSamplers(uint first, int count, Span<uint> samplers)
+		public void BindSamplers(uint first, int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
 			{
@@ -858,7 +858,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named sampler objects to a sequence of consecutive sampler units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindSamplers(uint first, int count, ref uint samplers)
+		public void BindSamplers(uint first, int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
 			{
@@ -867,7 +867,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTextureNative(GLTextureTarget target, uint texture)
+		internal void BindTextureNative(GLTextureTarget target, uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, uint, void>)funcTable[22])(target, texture);
@@ -880,13 +880,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a named texture to a texturing target
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BindTexture(GLTextureTarget target, uint texture)
+		public void BindTexture(GLTextureTarget target, uint texture)
 		{
 			BindTextureNative(target, texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTextureUnitNative(uint unit, uint texture)
+		internal void BindTextureUnitNative(uint unit, uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[23])(unit, texture);
@@ -899,13 +899,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind an existing texture object to the specified texture unit 
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void BindTextureUnit(uint unit, uint texture)
+		public void BindTextureUnit(uint unit, uint texture)
 		{
 			BindTextureUnitNative(unit, texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTexturesNative(uint first, int count, uint* textures)
+		internal void BindTexturesNative(uint first, int count, uint* textures)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, void>)funcTable[24])(first, count, textures);
@@ -918,7 +918,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named textures to a sequence of consecutive texture units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindTextures(uint first, int count, uint* textures)
+		public void BindTextures(uint first, int count, uint* textures)
 		{
 			BindTexturesNative(first, count, textures);
 		}
@@ -927,7 +927,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named textures to a sequence of consecutive texture units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindTextures(uint first, int count, Span<uint> textures)
+		public void BindTextures(uint first, int count, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -939,7 +939,7 @@ namespace Hexa.NET.OpenGL
 		/// Bind one or more named textures to a sequence of consecutive texture units
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindTextures(uint first, int count, ref uint textures)
+		public void BindTextures(uint first, int count, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -948,7 +948,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTransformFeedbackNative(GLBindTransformFeedbackTarget target, uint id)
+		internal void BindTransformFeedbackNative(GLBindTransformFeedbackTarget target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBindTransformFeedbackTarget, uint, void>)funcTable[25])(target, id);
@@ -961,13 +961,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void BindTransformFeedback(GLBindTransformFeedbackTarget target, uint id)
+		public void BindTransformFeedback(GLBindTransformFeedbackTarget target, uint id)
 		{
 			BindTransformFeedbackNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexArrayNative(uint array)
+		internal void BindVertexArrayNative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[26])(array);
@@ -980,13 +980,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void BindVertexArray(uint array)
+		public void BindVertexArray(uint array)
 		{
 			BindVertexArrayNative(array);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexBufferNative(uint bindingindex, uint buffer, nint offset, int stride)
+		internal void BindVertexBufferNative(uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, nint, int, void>)funcTable[27])(bindingindex, buffer, offset, stride);
@@ -999,13 +999,13 @@ namespace Hexa.NET.OpenGL
 		/// Bind a buffer to a vertex buffer bind point
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void BindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride)
+		public void BindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			BindVertexBufferNative(bindingindex, buffer, offset, stride);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexBuffersNative(uint first, int count, uint* buffers, nint* offsets, int* strides)
+		internal void BindVertexBuffersNative(uint first, int count, uint* buffers, nint* offsets, int* strides)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, nint*, int*, void>)funcTable[28])(first, count, buffers, offsets, strides);
@@ -1018,7 +1018,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, int* strides)
 		{
 			BindVertexBuffersNative(first, count, buffers, offsets, strides);
 		}
@@ -1027,7 +1027,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -1039,7 +1039,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -1051,7 +1051,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = offsets)
 			{
@@ -1063,7 +1063,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
@@ -1075,7 +1075,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -1090,7 +1090,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, ref uint buffers, ref nint offsets, int* strides)
+		public void BindVertexBuffers(uint first, int count, ref uint buffers, ref nint offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -1105,7 +1105,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
 		{
 			fixed (int* pstrides0 = strides)
 			{
@@ -1117,7 +1117,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, ref int strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, nint* offsets, ref int strides)
 		{
 			fixed (int* pstrides0 = &strides)
 			{
@@ -1129,7 +1129,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
+		public void BindVertexBuffers(uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -1144,7 +1144,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, ref int strides)
+		public void BindVertexBuffers(uint first, int count, ref uint buffers, nint* offsets, ref int strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -1159,7 +1159,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
 		{
 			fixed (nint* poffsets0 = offsets)
 			{
@@ -1174,7 +1174,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, ref int strides)
+		public void BindVertexBuffers(uint first, int count, uint* buffers, ref nint offsets, ref int strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
@@ -1189,7 +1189,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
+		public void BindVertexBuffers(uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -1207,7 +1207,7 @@ namespace Hexa.NET.OpenGL
 		/// Attach multiple buffer objects to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_multi_bind</remarks>
-		public static void BindVertexBuffers(uint first, int count, ref uint buffers, ref nint offsets, ref int strides)
+		public void BindVertexBuffers(uint first, int count, ref uint buffers, ref nint offsets, ref int strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -1222,7 +1222,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendColorNative(float red, float green, float blue, float alpha)
+		internal void BlendColorNative(float red, float green, float blue, float alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, void>)funcTable[29])(red, green, blue, alpha);
@@ -1235,13 +1235,13 @@ namespace Hexa.NET.OpenGL
 		/// Set the blend color
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void BlendColor(float red, float green, float blue, float alpha)
+		public void BlendColor(float red, float green, float blue, float alpha)
 		{
 			BlendColorNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationNative(GLBlendEquationModeEXT mode)
+		internal void BlendEquationNative(GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendEquationModeEXT, void>)funcTable[30])(mode);
@@ -1254,13 +1254,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void BlendEquation(GLBlendEquationModeEXT mode)
+		public void BlendEquation(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationSeparateNative(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		internal void BlendEquationSeparateNative(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendEquationModeEXT, GLBlendEquationModeEXT, void>)funcTable[31])(modeRGB, modeAlpha);
@@ -1273,13 +1273,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BlendEquationSeparate(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		public void BlendEquationSeparate(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateNative(modeRGB, modeAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationSeparateiNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		internal void BlendEquationSeparateiNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, GLBlendEquationModeEXT, void>)funcTable[32])(buf, modeRGB, modeAlpha);
@@ -1292,13 +1292,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BlendEquationSeparatei(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		public void BlendEquationSeparatei(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateiNative(buf, modeRGB, modeAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationiNative(uint buf, GLBlendEquationModeEXT mode)
+		internal void BlendEquationiNative(uint buf, GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, void>)funcTable[33])(buf, mode);
@@ -1311,13 +1311,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BlendEquationi(uint buf, GLBlendEquationModeEXT mode)
+		public void BlendEquationi(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationiNative(buf, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncNative(GLBlendingFactor sfactor, GLBlendingFactor dfactor)
+		internal void BlendFuncNative(GLBlendingFactor sfactor, GLBlendingFactor dfactor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendingFactor, GLBlendingFactor, void>)funcTable[34])(sfactor, dfactor);
@@ -1330,13 +1330,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BlendFunc(GLBlendingFactor sfactor, GLBlendingFactor dfactor)
+		public void BlendFunc(GLBlendingFactor sfactor, GLBlendingFactor dfactor)
 		{
 			BlendFuncNative(sfactor, dfactor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncSeparateNative(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
+		internal void BlendFuncSeparateNative(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, void>)funcTable[35])(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
@@ -1349,13 +1349,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BlendFuncSeparate(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
+		public void BlendFuncSeparate(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
 		{
 			BlendFuncSeparateNative(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncSeparateiNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		internal void BlendFuncSeparateiNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, void>)funcTable[36])(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -1368,13 +1368,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BlendFuncSeparatei(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		public void BlendFuncSeparatei(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateiNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFunciNative(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
+		internal void BlendFunciNative(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, void>)funcTable[37])(buf, src, dst);
@@ -1387,13 +1387,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void BlendFunci(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
+		public void BlendFunci(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			BlendFunciNative(buf, src, dst);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlitFramebufferNative(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
+		internal void BlitFramebufferNative(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, int, int, int, GLClearBufferMask, GLBlitFramebufferFilter, void>)funcTable[38])(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
@@ -1406,13 +1406,13 @@ namespace Hexa.NET.OpenGL
 		/// Copy a block of pixels from one framebuffer object to another
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
+		public void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
 		{
 			BlitFramebufferNative(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlitNamedFramebufferNative(uint readFramebuffer, uint drawFramebuffer, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
+		internal void BlitNamedFramebufferNative(uint readFramebuffer, uint drawFramebuffer, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, int, int, int, int, int, int, int, GLClearBufferMask, GLBlitFramebufferFilter, void>)funcTable[39])(readFramebuffer, drawFramebuffer, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
@@ -1425,13 +1425,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void BlitNamedFramebuffer(uint readFramebuffer, uint drawFramebuffer, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
+		public void BlitNamedFramebuffer(uint readFramebuffer, uint drawFramebuffer, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, GLClearBufferMask mask, GLBlitFramebufferFilter filter)
 		{
 			BlitNamedFramebufferNative(readFramebuffer, drawFramebuffer, srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferDataNative(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
+		internal void BufferDataNative(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, void*, GLBufferUsageARB, void>)funcTable[40])(target, size, data, usage);
@@ -1445,7 +1445,7 @@ namespace Hexa.NET.OpenGL
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BufferData(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
+		public void BufferData(GLBufferTargetARB target, nint size, void* data, GLBufferUsageARB usage)
 		{
 			BufferDataNative(target, size, data, usage);
 		}
@@ -1455,7 +1455,7 @@ namespace Hexa.NET.OpenGL
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BufferData(GLBufferTargetARB target, nint size, nint data, GLBufferUsageARB usage)
+		public void BufferData(GLBufferTargetARB target, nint size, nint data, GLBufferUsageARB usage)
 		{
 			BufferDataNative(target, size, (void*)data, usage);
 		}
@@ -1465,7 +1465,7 @@ namespace Hexa.NET.OpenGL
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BufferData<TData>(GLBufferTargetARB target, nint size, Span<TData> data, GLBufferUsageARB usage) where TData : unmanaged
+		public void BufferData<TData>(GLBufferTargetARB target, nint size, Span<TData> data, GLBufferUsageARB usage) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1474,7 +1474,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferStorageNative(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
+		internal void BufferStorageNative(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, void*, GLBufferStorageMask, void>)funcTable[41])(target, size, data, flags);
@@ -1488,7 +1488,7 @@ namespace Hexa.NET.OpenGL
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
-		public static void BufferStorage(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
+		public void BufferStorage(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			BufferStorageNative(target, size, data, flags);
 		}
@@ -1498,7 +1498,7 @@ namespace Hexa.NET.OpenGL
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
-		public static void BufferStorage(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
+		public void BufferStorage(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
 		{
 			BufferStorageNative(target, size, (void*)data, flags);
 		}
@@ -1508,7 +1508,7 @@ namespace Hexa.NET.OpenGL
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
-		public static void BufferStorage<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		public void BufferStorage<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1517,7 +1517,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferSubDataNative(GLBufferTargetARB target, nint offset, nint size, void* data)
+		internal void BufferSubDataNative(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, void*, void>)funcTable[42])(target, offset, size, data);
@@ -1530,7 +1530,7 @@ namespace Hexa.NET.OpenGL
 		/// Updates a subset of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BufferSubData(GLBufferTargetARB target, nint offset, nint size, void* data)
+		public void BufferSubData(GLBufferTargetARB target, nint offset, nint size, void* data)
 		{
 			BufferSubDataNative(target, offset, size, data);
 		}
@@ -1539,7 +1539,7 @@ namespace Hexa.NET.OpenGL
 		/// Updates a subset of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BufferSubData(GLBufferTargetARB target, nint offset, nint size, nint data)
+		public void BufferSubData(GLBufferTargetARB target, nint offset, nint size, nint data)
 		{
 			BufferSubDataNative(target, offset, size, (void*)data);
 		}
@@ -1548,7 +1548,7 @@ namespace Hexa.NET.OpenGL
 		/// Updates a subset of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void BufferSubData<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void BufferSubData<TData>(GLBufferTargetARB target, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1557,7 +1557,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum CheckFramebufferStatusNative(GLFramebufferTarget target)
+		internal GLEnum CheckFramebufferStatusNative(GLFramebufferTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLEnum>)funcTable[43])(target);
@@ -1570,14 +1570,14 @@ namespace Hexa.NET.OpenGL
 		/// Check the completeness status of a framebuffer
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static GLEnum CheckFramebufferStatus(GLFramebufferTarget target)
+		public GLEnum CheckFramebufferStatus(GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckFramebufferStatusNative(target);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum CheckNamedFramebufferStatusNative(uint framebuffer, GLFramebufferTarget target)
+		internal GLEnum CheckNamedFramebufferStatusNative(uint framebuffer, GLFramebufferTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLFramebufferTarget, GLEnum>)funcTable[44])(framebuffer, target);
@@ -1590,14 +1590,14 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static GLEnum CheckNamedFramebufferStatus(uint framebuffer, GLFramebufferTarget target)
+		public GLEnum CheckNamedFramebufferStatus(uint framebuffer, GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckNamedFramebufferStatusNative(framebuffer, target);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClampColorNative(GLClampColorTargetARB target, GLClampColorModeARB clamp)
+		internal void ClampColorNative(GLClampColorTargetARB target, GLClampColorModeARB clamp)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClampColorTargetARB, GLClampColorModeARB, void>)funcTable[45])(target, clamp);
@@ -1610,13 +1610,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify whether data read via glReadPixels should be clamped
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClampColor(GLClampColorTargetARB target, GLClampColorModeARB clamp)
+		public void ClampColor(GLClampColorTargetARB target, GLClampColorModeARB clamp)
 		{
 			ClampColorNative(target, clamp);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNative(GLClearBufferMask mask)
+		internal void ClearNative(GLClearBufferMask mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClearBufferMask, void>)funcTable[46])(mask);
@@ -1629,13 +1629,13 @@ namespace Hexa.NET.OpenGL
 		/// Clear buffers to preset values
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Clear(GLClearBufferMask mask)
+		public void Clear(GLClearBufferMask mask)
 		{
 			ClearNative(mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearBufferDataNative(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearBufferDataNative(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, GLSizedInternalFormat, GLPixelFormat, GLPixelType, void*, void>)funcTable[47])(target, internalformat, format, type, data);
@@ -1648,7 +1648,7 @@ namespace Hexa.NET.OpenGL
 		/// Fill a buffer object's data store with a fixed value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
-		public static void ClearBufferData(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearBufferData(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearBufferDataNative(target, internalformat, format, type, data);
 		}
@@ -1657,7 +1657,7 @@ namespace Hexa.NET.OpenGL
 		/// Fill a buffer object's data store with a fixed value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
-		public static void ClearBufferData(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearBufferData(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearBufferDataNative(target, internalformat, format, type, (void*)data);
 		}
@@ -1666,7 +1666,7 @@ namespace Hexa.NET.OpenGL
 		/// Fill a buffer object's data store with a fixed value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
-		public static void ClearBufferData<TData>(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearBufferData<TData>(GLBufferStorageTarget target, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1675,7 +1675,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearBufferSubDataNative(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearBufferSubDataNative(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLSizedInternalFormat, nint, nint, GLPixelFormat, GLPixelType, void*, void>)funcTable[48])(target, internalformat, offset, size, format, type, data);
@@ -1688,7 +1688,7 @@ namespace Hexa.NET.OpenGL
 		/// Fill all or part of buffer object's data store with a fixed value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
-		public static void ClearBufferSubData(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearBufferSubData(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearBufferSubDataNative(target, internalformat, offset, size, format, type, data);
 		}
@@ -1697,7 +1697,7 @@ namespace Hexa.NET.OpenGL
 		/// Fill all or part of buffer object's data store with a fixed value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
-		public static void ClearBufferSubData(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearBufferSubData(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearBufferSubDataNative(target, internalformat, offset, size, format, type, (void*)data);
 		}
@@ -1706,7 +1706,7 @@ namespace Hexa.NET.OpenGL
 		/// Fill all or part of buffer object's data store with a fixed value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_buffer_object</remarks>
-		public static void ClearBufferSubData<TData>(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearBufferSubData<TData>(GLBufferTargetARB target, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1715,7 +1715,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearBufferfiNative(GLBuffer buffer, int drawbuffer, float depth, int stencil)
+		internal void ClearBufferfiNative(GLBuffer buffer, int drawbuffer, float depth, int stencil)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBuffer, int, float, int, void>)funcTable[49])(buffer, drawbuffer, depth, stencil);
@@ -1728,13 +1728,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferfi(GLBuffer buffer, int drawbuffer, float depth, int stencil)
+		public void ClearBufferfi(GLBuffer buffer, int drawbuffer, float depth, int stencil)
 		{
 			ClearBufferfiNative(buffer, drawbuffer, depth, stencil);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearBufferfvNative(GLBuffer buffer, int drawbuffer, float* value)
+		internal void ClearBufferfvNative(GLBuffer buffer, int drawbuffer, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBuffer, int, float*, void>)funcTable[50])(buffer, drawbuffer, value);
@@ -1747,7 +1747,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferfv(GLBuffer buffer, int drawbuffer, float* value)
+		public void ClearBufferfv(GLBuffer buffer, int drawbuffer, float* value)
 		{
 			ClearBufferfvNative(buffer, drawbuffer, value);
 		}
@@ -1756,7 +1756,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferfv(GLBuffer buffer, int drawbuffer, Span<float> value)
+		public void ClearBufferfv(GLBuffer buffer, int drawbuffer, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1768,7 +1768,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferfv(GLBuffer buffer, int drawbuffer, ref float value)
+		public void ClearBufferfv(GLBuffer buffer, int drawbuffer, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1777,7 +1777,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearBufferivNative(GLBuffer buffer, int drawbuffer, int* value)
+		internal void ClearBufferivNative(GLBuffer buffer, int drawbuffer, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBuffer, int, int*, void>)funcTable[51])(buffer, drawbuffer, value);
@@ -1790,7 +1790,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferiv(GLBuffer buffer, int drawbuffer, int* value)
+		public void ClearBufferiv(GLBuffer buffer, int drawbuffer, int* value)
 		{
 			ClearBufferivNative(buffer, drawbuffer, value);
 		}
@@ -1799,7 +1799,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferiv(GLBuffer buffer, int drawbuffer, Span<int> value)
+		public void ClearBufferiv(GLBuffer buffer, int drawbuffer, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -1811,7 +1811,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferiv(GLBuffer buffer, int drawbuffer, ref int value)
+		public void ClearBufferiv(GLBuffer buffer, int drawbuffer, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -1820,7 +1820,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearBufferuivNative(GLBuffer buffer, int drawbuffer, uint* value)
+		internal void ClearBufferuivNative(GLBuffer buffer, int drawbuffer, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBuffer, int, uint*, void>)funcTable[52])(buffer, drawbuffer, value);
@@ -1833,7 +1833,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferuiv(GLBuffer buffer, int drawbuffer, uint* value)
+		public void ClearBufferuiv(GLBuffer buffer, int drawbuffer, uint* value)
 		{
 			ClearBufferuivNative(buffer, drawbuffer, value);
 		}
@@ -1842,7 +1842,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferuiv(GLBuffer buffer, int drawbuffer, Span<uint> value)
+		public void ClearBufferuiv(GLBuffer buffer, int drawbuffer, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1854,7 +1854,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearBufferuiv(GLBuffer buffer, int drawbuffer, ref uint value)
+		public void ClearBufferuiv(GLBuffer buffer, int drawbuffer, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1863,7 +1863,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearColorNative(float red, float green, float blue, float alpha)
+		internal void ClearColorNative(float red, float green, float blue, float alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, void>)funcTable[53])(red, green, blue, alpha);
@@ -1876,13 +1876,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify clear values for the color buffers
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearColor(float red, float green, float blue, float alpha)
+		public void ClearColor(float red, float green, float blue, float alpha)
 		{
 			ClearColorNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearDepthNative(double depth)
+		internal void ClearDepthNative(double depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, void>)funcTable[54])(depth);
@@ -1895,13 +1895,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify the clear value for the depth buffer
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearDepth(double depth)
+		public void ClearDepth(double depth)
 		{
 			ClearDepthNative(depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearDepthfNative(float d)
+		internal void ClearDepthfNative(float d)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[55])(d);
@@ -1914,13 +1914,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void ClearDepthf(float d)
+		public void ClearDepthf(float d)
 		{
 			ClearDepthfNative(d);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedBufferDataNative(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearNamedBufferDataNative(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, GLPixelFormat, GLPixelType, void*, void>)funcTable[56])(buffer, internalformat, format, type, data);
@@ -1933,7 +1933,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedBufferData(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearNamedBufferData(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearNamedBufferDataNative(buffer, internalformat, format, type, data);
 		}
@@ -1942,7 +1942,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedBufferData(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearNamedBufferData(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearNamedBufferDataNative(buffer, internalformat, format, type, (void*)data);
 		}
@@ -1951,7 +1951,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedBufferData<TData>(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearNamedBufferData<TData>(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -1960,7 +1960,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedBufferSubDataNative(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearNamedBufferSubDataNative(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, nint, nint, GLPixelFormat, GLPixelType, void*, void>)funcTable[57])(buffer, internalformat, offset, size, format, type, data);
@@ -1973,7 +1973,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedBufferSubData(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearNamedBufferSubData(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearNamedBufferSubDataNative(buffer, internalformat, offset, size, format, type, data);
 		}
@@ -1982,7 +1982,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedBufferSubData(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearNamedBufferSubData(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearNamedBufferSubDataNative(buffer, internalformat, offset, size, format, type, (void*)data);
 		}
@@ -1991,7 +1991,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedBufferSubData<TData>(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearNamedBufferSubData<TData>(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2000,7 +2000,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedFramebufferfiNative(uint framebuffer, GLBuffer buffer, int drawbuffer, float depth, int stencil)
+		internal void ClearNamedFramebufferfiNative(uint framebuffer, GLBuffer buffer, int drawbuffer, float depth, int stencil)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBuffer, int, float, int, void>)funcTable[58])(framebuffer, buffer, drawbuffer, depth, stencil);
@@ -2013,13 +2013,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferfi(uint framebuffer, GLBuffer buffer, int drawbuffer, float depth, int stencil)
+		public void ClearNamedFramebufferfi(uint framebuffer, GLBuffer buffer, int drawbuffer, float depth, int stencil)
 		{
 			ClearNamedFramebufferfiNative(framebuffer, buffer, drawbuffer, depth, stencil);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedFramebufferfvNative(uint framebuffer, GLBuffer buffer, int drawbuffer, float* value)
+		internal void ClearNamedFramebufferfvNative(uint framebuffer, GLBuffer buffer, int drawbuffer, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBuffer, int, float*, void>)funcTable[59])(framebuffer, buffer, drawbuffer, value);
@@ -2032,7 +2032,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, float* value)
+		public void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, float* value)
 		{
 			ClearNamedFramebufferfvNative(framebuffer, buffer, drawbuffer, value);
 		}
@@ -2041,7 +2041,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<float> value)
+		public void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -2053,7 +2053,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref float value)
+		public void ClearNamedFramebufferfv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -2062,7 +2062,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedFramebufferivNative(uint framebuffer, GLBuffer buffer, int drawbuffer, int* value)
+		internal void ClearNamedFramebufferivNative(uint framebuffer, GLBuffer buffer, int drawbuffer, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBuffer, int, int*, void>)funcTable[60])(framebuffer, buffer, drawbuffer, value);
@@ -2075,7 +2075,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, int* value)
+		public void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, int* value)
 		{
 			ClearNamedFramebufferivNative(framebuffer, buffer, drawbuffer, value);
 		}
@@ -2084,7 +2084,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<int> value)
+		public void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -2096,7 +2096,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref int value)
+		public void ClearNamedFramebufferiv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -2105,7 +2105,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedFramebufferuivNative(uint framebuffer, GLBuffer buffer, int drawbuffer, uint* value)
+		internal void ClearNamedFramebufferuivNative(uint framebuffer, GLBuffer buffer, int drawbuffer, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBuffer, int, uint*, void>)funcTable[61])(framebuffer, buffer, drawbuffer, value);
@@ -2118,7 +2118,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, uint* value)
+		public void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, uint* value)
 		{
 			ClearNamedFramebufferuivNative(framebuffer, buffer, drawbuffer, value);
 		}
@@ -2127,7 +2127,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<uint> value)
+		public void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -2139,7 +2139,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref uint value)
+		public void ClearNamedFramebufferuiv(uint framebuffer, GLBuffer buffer, int drawbuffer, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -2148,7 +2148,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearStencilNative(int s)
+		internal void ClearStencilNative(int s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[62])(s);
@@ -2161,13 +2161,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify the clear value for the stencil buffer
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ClearStencil(int s)
+		public void ClearStencil(int s)
 		{
 			ClearStencilNative(s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearTexImageNative(uint texture, int level, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearTexImageNative(uint texture, int level, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[63])(texture, level, format, type, data);
@@ -2180,7 +2180,7 @@ namespace Hexa.NET.OpenGL
 		/// Fills all a texture image with a constant value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
-		public static void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexImageNative(texture, level, format, type, data);
 		}
@@ -2189,7 +2189,7 @@ namespace Hexa.NET.OpenGL
 		/// Fills all a texture image with a constant value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
-		public static void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearTexImage(uint texture, int level, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearTexImageNative(texture, level, format, type, (void*)data);
 		}
@@ -2198,7 +2198,7 @@ namespace Hexa.NET.OpenGL
 		/// Fills all a texture image with a constant value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
-		public static void ClearTexImage<TData>(uint texture, int level, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearTexImage<TData>(uint texture, int level, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2207,7 +2207,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearTexSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearTexSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[64])(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
@@ -2220,7 +2220,7 @@ namespace Hexa.NET.OpenGL
 		/// Fills all or part of a texture image with a constant value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
-		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data);
 		}
@@ -2229,7 +2229,7 @@ namespace Hexa.NET.OpenGL
 		/// Fills all or part of a texture image with a constant value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
-		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)data);
 		}
@@ -2238,7 +2238,7 @@ namespace Hexa.NET.OpenGL
 		/// Fills all or part of a texture image with a constant value
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clear_texture</remarks>
-		public static void ClearTexSubImage<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearTexSubImage<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2247,7 +2247,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum ClientWaitSyncNative(GLSync sync, GLSyncObjectMask flags, ulong timeout)
+		internal GLEnum ClientWaitSyncNative(GLSync sync, GLSyncObjectMask flags, ulong timeout)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLSync, GLSyncObjectMask, ulong, GLEnum>)funcTable[65])(sync, flags, timeout);
@@ -2260,14 +2260,14 @@ namespace Hexa.NET.OpenGL
 		/// Block and wait for a sync object to become signaled
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static GLEnum ClientWaitSync(GLSync sync, GLSyncObjectMask flags, ulong timeout)
+		public GLEnum ClientWaitSync(GLSync sync, GLSyncObjectMask flags, ulong timeout)
 		{
 			GLEnum ret = ClientWaitSyncNative(sync, flags, timeout);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClipControlNative(GLClipControlOrigin origin, GLClipControlDepth depth)
+		internal void ClipControlNative(GLClipControlOrigin origin, GLClipControlDepth depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipControlOrigin, GLClipControlDepth, void>)funcTable[66])(origin, depth);
@@ -2280,13 +2280,13 @@ namespace Hexa.NET.OpenGL
 		/// Control clip coordinate to window coordinate behavior
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
-		public static void ClipControl(GLClipControlOrigin origin, GLClipControlDepth depth)
+		public void ClipControl(GLClipControlOrigin origin, GLClipControlDepth depth)
 		{
 			ClipControlNative(origin, depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskNative(bool red, bool green, bool blue, bool alpha)
+		internal void ColorMaskNative(bool red, bool green, bool blue, bool alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte, byte, byte, byte, void>)funcTable[67])(*((byte*)(&red)), *((byte*)(&green)), *((byte*)(&blue)), *((byte*)(&alpha)));
@@ -2299,13 +2299,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ColorMask(bool red, bool green, bool blue, bool alpha)
+		public void ColorMask(bool red, bool green, bool blue, bool alpha)
 		{
 			ColorMaskNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskiNative(uint index, bool r, bool g, bool b, bool a)
+		internal void ColorMaskiNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[68])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
@@ -2318,13 +2318,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ColorMaski(uint index, bool r, bool g, bool b, bool a)
+		public void ColorMaski(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiNative(index, r, g, b, a);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompileShaderNative(uint shader)
+		internal void CompileShaderNative(uint shader)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[69])(shader);
@@ -2337,13 +2337,13 @@ namespace Hexa.NET.OpenGL
 		/// Compiles a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void CompileShader(uint shader)
+		public void CompileShader(uint shader)
 		{
 			CompileShaderNative(shader);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
+		internal void CompressedTexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, void*, void>)funcTable[70])(target, level, internalformat, width, border, imageSize, data);
@@ -2356,7 +2356,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
+		public void CompressedTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
 		{
 			CompressedTexImage1DNative(target, level, internalformat, width, border, imageSize, data);
 		}
@@ -2365,7 +2365,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint data)
+		public void CompressedTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint data)
 		{
 			CompressedTexImage1DNative(target, level, internalformat, width, border, imageSize, (void*)data);
 		}
@@ -2374,7 +2374,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage1D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexImage1D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2383,7 +2383,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
+		internal void CompressedTexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, void*, void>)funcTable[71])(target, level, internalformat, width, height, border, imageSize, data);
@@ -2396,7 +2396,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
+		public void CompressedTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
 		{
 			CompressedTexImage2DNative(target, level, internalformat, width, height, border, imageSize, data);
 		}
@@ -2405,7 +2405,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint data)
+		public void CompressedTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint data)
 		{
 			CompressedTexImage2DNative(target, level, internalformat, width, height, border, imageSize, (void*)data);
 		}
@@ -2414,7 +2414,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage2D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexImage2D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2423,7 +2423,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexImage3DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
+		internal void CompressedTexImage3DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void*, void>)funcTable[72])(target, level, internalformat, width, height, depth, border, imageSize, data);
@@ -2436,7 +2436,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
+		public void CompressedTexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
 		{
 			CompressedTexImage3DNative(target, level, internalformat, width, height, depth, border, imageSize, data);
 		}
@@ -2445,7 +2445,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
+		public void CompressedTexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
 		{
 			CompressedTexImage3DNative(target, level, internalformat, width, height, depth, border, imageSize, (void*)data);
 		}
@@ -2454,7 +2454,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexImage3D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexImage3D<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2463,7 +2463,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, GLInternalFormat, int, void*, void>)funcTable[73])(target, level, xoffset, width, format, imageSize, data);
@@ -2477,7 +2477,7 @@ namespace Hexa.NET.OpenGL
 		///     format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage1DNative(target, level, xoffset, width, format, imageSize, data);
 		}
@@ -2487,7 +2487,7 @@ namespace Hexa.NET.OpenGL
 		///     format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage1DNative(target, level, xoffset, width, format, imageSize, (void*)data);
 		}
@@ -2497,7 +2497,7 @@ namespace Hexa.NET.OpenGL
 		///     format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage1D<TData>(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexSubImage1D<TData>(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2506,7 +2506,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[74])(target, level, xoffset, yoffset, width, height, format, imageSize, data);
@@ -2519,7 +2519,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a two-dimensional texture subimage in a compressed format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
@@ -2528,7 +2528,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a two-dimensional texture subimage in a compressed format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, imageSize, (void*)data);
 		}
@@ -2537,7 +2537,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a two-dimensional texture subimage in a compressed format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage2D<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexSubImage2D<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2546,7 +2546,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[75])(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
@@ -2559,7 +2559,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a three-dimensional texture subimage in a compressed format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 		}
@@ -2568,7 +2568,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a three-dimensional texture subimage in a compressed format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
 		}
@@ -2577,7 +2577,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a three-dimensional texture subimage in a compressed format
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.3 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CompressedTexSubImage3D<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexSubImage3D<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2586,7 +2586,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureSubImage1DNative(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTextureSubImage1DNative(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, GLInternalFormat, int, void*, void>)funcTable[76])(texture, level, xoffset, width, format, imageSize, data);
@@ -2599,7 +2599,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTextureSubImage1DNative(texture, level, xoffset, width, format, imageSize, data);
 		}
@@ -2608,7 +2608,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTextureSubImage1DNative(texture, level, xoffset, width, format, imageSize, (void*)data);
 		}
@@ -2617,7 +2617,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage1D<TData>(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTextureSubImage1D<TData>(uint texture, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2626,7 +2626,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[77])(texture, level, xoffset, yoffset, width, height, format, imageSize, data);
@@ -2639,7 +2639,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
@@ -2648,7 +2648,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, imageSize, (void*)data);
 		}
@@ -2657,7 +2657,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage2D<TData>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTextureSubImage2D<TData>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2666,7 +2666,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[78])(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
@@ -2679,7 +2679,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 		}
@@ -2688,7 +2688,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
 		}
@@ -2697,7 +2697,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CompressedTextureSubImage3D<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTextureSubImage3D<TData>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2706,7 +2706,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyBufferSubDataNative(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
+		internal void CopyBufferSubDataNative(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCopyBufferSubDataTarget, GLCopyBufferSubDataTarget, nint, nint, nint, void>)funcTable[79])(readTarget, writeTarget, readOffset, writeOffset, size);
@@ -2719,13 +2719,13 @@ namespace Hexa.NET.OpenGL
 		/// Copy all or part of the data store of a buffer object to the data store of another buffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
-		public static void CopyBufferSubData(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
+		public void CopyBufferSubData(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			CopyBufferSubDataNative(readTarget, writeTarget, readOffset, writeOffset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyImageSubDataNative(uint srcName, GLCopyImageSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLCopyImageSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth)
+		internal void CopyImageSubDataNative(uint srcName, GLCopyImageSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLCopyImageSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLCopyImageSubDataTarget, int, int, int, int, uint, GLCopyImageSubDataTarget, int, int, int, int, int, int, int, void>)funcTable[80])(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
@@ -2738,13 +2738,13 @@ namespace Hexa.NET.OpenGL
 		/// Perform a raw data copy between two images
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_copy_image</remarks>
-		public static void CopyImageSubData(uint srcName, GLCopyImageSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLCopyImageSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth)
+		public void CopyImageSubData(uint srcName, GLCopyImageSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLCopyImageSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth)
 		{
 			CopyImageSubDataNative(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyNamedBufferSubDataNative(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
+		internal void CopyNamedBufferSubDataNative(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, nint, nint, nint, void>)funcTable[81])(readBuffer, writeBuffer, readOffset, writeOffset, size);
@@ -2757,13 +2757,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CopyNamedBufferSubData(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
+		public void CopyNamedBufferSubData(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
 		{
 			CopyNamedBufferSubDataNative(readBuffer, writeBuffer, readOffset, writeOffset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
+		internal void CopyTexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, void>)funcTable[82])(target, level, internalformat, x, y, width, border);
@@ -2776,13 +2776,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CopyTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
+		public void CopyTexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			CopyTexImage1DNative(target, level, internalformat, x, y, width, border);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
+		internal void CopyTexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void>)funcTable[83])(target, level, internalformat, x, y, width, height, border);
@@ -2795,13 +2795,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CopyTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
+		public void CopyTexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			CopyTexImage2DNative(target, level, internalformat, x, y, width, height, border);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int x, int y, int width)
+		internal void CopyTexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, void>)funcTable[84])(target, level, xoffset, x, y, width);
@@ -2814,13 +2814,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CopyTexSubImage1D(GLTextureTarget target, int level, int xoffset, int x, int y, int width)
+		public void CopyTexSubImage1D(GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			CopyTexSubImage1DNative(target, level, xoffset, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		internal void CopyTexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, void>)funcTable[85])(target, level, xoffset, yoffset, x, y, width, height);
@@ -2833,13 +2833,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CopyTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		public void CopyTexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			CopyTexSubImage2DNative(target, level, xoffset, yoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		internal void CopyTexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, int, void>)funcTable[86])(target, level, xoffset, yoffset, zoffset, x, y, width, height);
@@ -2852,13 +2852,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void CopyTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		public void CopyTexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			CopyTexSubImage3DNative(target, level, xoffset, yoffset, zoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureSubImage1DNative(uint texture, int level, int xoffset, int x, int y, int width)
+		internal void CopyTextureSubImage1DNative(uint texture, int level, int xoffset, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, void>)funcTable[87])(texture, level, xoffset, x, y, width);
@@ -2871,13 +2871,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CopyTextureSubImage1D(uint texture, int level, int xoffset, int x, int y, int width)
+		public void CopyTextureSubImage1D(uint texture, int level, int xoffset, int x, int y, int width)
 		{
 			CopyTextureSubImage1DNative(texture, level, xoffset, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		internal void CopyTextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, void>)funcTable[88])(texture, level, xoffset, yoffset, x, y, width, height);
@@ -2890,13 +2890,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CopyTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		public void CopyTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			CopyTextureSubImage2DNative(texture, level, xoffset, yoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		internal void CopyTextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, void>)funcTable[89])(texture, level, xoffset, yoffset, zoffset, x, y, width, height);
@@ -2909,13 +2909,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CopyTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		public void CopyTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			CopyTextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateBuffersNative(int n, uint* buffers)
+		internal void CreateBuffersNative(int n, uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[90])(n, buffers);
@@ -2928,7 +2928,7 @@ namespace Hexa.NET.OpenGL
 		/// Create buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateBuffers(int n, uint* buffers)
+		public void CreateBuffers(int n, uint* buffers)
 		{
 			CreateBuffersNative(n, buffers);
 		}
@@ -2937,7 +2937,7 @@ namespace Hexa.NET.OpenGL
 		/// Create buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateBuffers(int n, Span<uint> buffers)
+		public void CreateBuffers(int n, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -2949,7 +2949,7 @@ namespace Hexa.NET.OpenGL
 		/// Create buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateBuffers(int n, ref uint buffers)
+		public void CreateBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -2958,7 +2958,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateFramebuffersNative(int n, uint* framebuffers)
+		internal void CreateFramebuffersNative(int n, uint* framebuffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[91])(n, framebuffers);
@@ -2971,7 +2971,7 @@ namespace Hexa.NET.OpenGL
 		/// Create framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateFramebuffers(int n, uint* framebuffers)
+		public void CreateFramebuffers(int n, uint* framebuffers)
 		{
 			CreateFramebuffersNative(n, framebuffers);
 		}
@@ -2980,7 +2980,7 @@ namespace Hexa.NET.OpenGL
 		/// Create framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateFramebuffers(int n, Span<uint> framebuffers)
+		public void CreateFramebuffers(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
 			{
@@ -2992,7 +2992,7 @@ namespace Hexa.NET.OpenGL
 		/// Create framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateFramebuffers(int n, ref uint framebuffers)
+		public void CreateFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
 			{
@@ -3001,7 +3001,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint CreateProgramNative()
+		internal uint CreateProgramNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint>)funcTable[92])();
@@ -3014,14 +3014,14 @@ namespace Hexa.NET.OpenGL
 		/// Creates a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static uint CreateProgram()
+		public uint CreateProgram()
 		{
 			uint ret = CreateProgramNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateProgramPipelinesNative(int n, uint* pipelines)
+		internal void CreateProgramPipelinesNative(int n, uint* pipelines)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[93])(n, pipelines);
@@ -3034,7 +3034,7 @@ namespace Hexa.NET.OpenGL
 		/// Create program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateProgramPipelines(int n, uint* pipelines)
+		public void CreateProgramPipelines(int n, uint* pipelines)
 		{
 			CreateProgramPipelinesNative(n, pipelines);
 		}
@@ -3043,7 +3043,7 @@ namespace Hexa.NET.OpenGL
 		/// Create program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateProgramPipelines(int n, Span<uint> pipelines)
+		public void CreateProgramPipelines(int n, Span<uint> pipelines)
 		{
 			fixed (uint* ppipelines0 = pipelines)
 			{
@@ -3055,7 +3055,7 @@ namespace Hexa.NET.OpenGL
 		/// Create program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateProgramPipelines(int n, ref uint pipelines)
+		public void CreateProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
 			{
@@ -3064,7 +3064,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateQueriesNative(GLQueryTarget target, int n, uint* ids)
+		internal void CreateQueriesNative(GLQueryTarget target, int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, int, uint*, void>)funcTable[94])(target, n, ids);
@@ -3077,7 +3077,7 @@ namespace Hexa.NET.OpenGL
 		/// Create query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateQueries(GLQueryTarget target, int n, uint* ids)
+		public void CreateQueries(GLQueryTarget target, int n, uint* ids)
 		{
 			CreateQueriesNative(target, n, ids);
 		}
@@ -3086,7 +3086,7 @@ namespace Hexa.NET.OpenGL
 		/// Create query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateQueries(GLQueryTarget target, int n, Span<uint> ids)
+		public void CreateQueries(GLQueryTarget target, int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -3098,7 +3098,7 @@ namespace Hexa.NET.OpenGL
 		/// Create query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateQueries(GLQueryTarget target, int n, ref uint ids)
+		public void CreateQueries(GLQueryTarget target, int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -3107,7 +3107,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateRenderbuffersNative(int n, uint* renderbuffers)
+		internal void CreateRenderbuffersNative(int n, uint* renderbuffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[95])(n, renderbuffers);
@@ -3120,7 +3120,7 @@ namespace Hexa.NET.OpenGL
 		/// Create renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateRenderbuffers(int n, uint* renderbuffers)
+		public void CreateRenderbuffers(int n, uint* renderbuffers)
 		{
 			CreateRenderbuffersNative(n, renderbuffers);
 		}
@@ -3129,7 +3129,7 @@ namespace Hexa.NET.OpenGL
 		/// Create renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateRenderbuffers(int n, Span<uint> renderbuffers)
+		public void CreateRenderbuffers(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
 			{
@@ -3141,7 +3141,7 @@ namespace Hexa.NET.OpenGL
 		/// Create renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateRenderbuffers(int n, ref uint renderbuffers)
+		public void CreateRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
 			{
@@ -3150,7 +3150,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateSamplersNative(int n, uint* samplers)
+		internal void CreateSamplersNative(int n, uint* samplers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[96])(n, samplers);
@@ -3163,7 +3163,7 @@ namespace Hexa.NET.OpenGL
 		/// Create sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateSamplers(int n, uint* samplers)
+		public void CreateSamplers(int n, uint* samplers)
 		{
 			CreateSamplersNative(n, samplers);
 		}
@@ -3172,7 +3172,7 @@ namespace Hexa.NET.OpenGL
 		/// Create sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateSamplers(int n, Span<uint> samplers)
+		public void CreateSamplers(int n, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
 			{
@@ -3184,7 +3184,7 @@ namespace Hexa.NET.OpenGL
 		/// Create sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateSamplers(int n, ref uint samplers)
+		public void CreateSamplers(int n, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
 			{
@@ -3193,7 +3193,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint CreateShaderNative(GLShaderType type)
+		internal uint CreateShaderNative(GLShaderType type)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLShaderType, uint>)funcTable[97])(type);
@@ -3206,14 +3206,14 @@ namespace Hexa.NET.OpenGL
 		/// Creates a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static uint CreateShader(GLShaderType type)
+		public uint CreateShader(GLShaderType type)
 		{
 			uint ret = CreateShaderNative(type);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint CreateShaderProgramvNative(GLShaderType type, int count, byte** strings)
+		internal uint CreateShaderProgramvNative(GLShaderType type, int count, byte** strings)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLShaderType, int, byte**, uint>)funcTable[98])(type, count, strings);
@@ -3226,14 +3226,14 @@ namespace Hexa.NET.OpenGL
 		/// Create a stand-alone program from an array of null-terminated source code strings
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static uint CreateShaderProgramv(GLShaderType type, int count, byte** strings)
+		public uint CreateShaderProgramv(GLShaderType type, int count, byte** strings)
 		{
 			uint ret = CreateShaderProgramvNative(type, count, strings);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateTexturesNative(GLTextureTarget target, int n, uint* textures)
+		internal void CreateTexturesNative(GLTextureTarget target, int n, uint* textures)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, uint*, void>)funcTable[99])(target, n, textures);
@@ -3246,7 +3246,7 @@ namespace Hexa.NET.OpenGL
 		/// Create texture objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateTextures(GLTextureTarget target, int n, uint* textures)
+		public void CreateTextures(GLTextureTarget target, int n, uint* textures)
 		{
 			CreateTexturesNative(target, n, textures);
 		}
@@ -3255,7 +3255,7 @@ namespace Hexa.NET.OpenGL
 		/// Create texture objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateTextures(GLTextureTarget target, int n, Span<uint> textures)
+		public void CreateTextures(GLTextureTarget target, int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -3267,7 +3267,7 @@ namespace Hexa.NET.OpenGL
 		/// Create texture objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateTextures(GLTextureTarget target, int n, ref uint textures)
+		public void CreateTextures(GLTextureTarget target, int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -3276,7 +3276,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateTransformFeedbacksNative(int n, uint* ids)
+		internal void CreateTransformFeedbacksNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[100])(n, ids);
@@ -3289,7 +3289,7 @@ namespace Hexa.NET.OpenGL
 		/// Create transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateTransformFeedbacks(int n, uint* ids)
+		public void CreateTransformFeedbacks(int n, uint* ids)
 		{
 			CreateTransformFeedbacksNative(n, ids);
 		}
@@ -3298,7 +3298,7 @@ namespace Hexa.NET.OpenGL
 		/// Create transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateTransformFeedbacks(int n, Span<uint> ids)
+		public void CreateTransformFeedbacks(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -3310,7 +3310,7 @@ namespace Hexa.NET.OpenGL
 		/// Create transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateTransformFeedbacks(int n, ref uint ids)
+		public void CreateTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -3319,7 +3319,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateVertexArraysNative(int n, uint* arrays)
+		internal void CreateVertexArraysNative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[101])(n, arrays);
@@ -3332,7 +3332,7 @@ namespace Hexa.NET.OpenGL
 		/// Create vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateVertexArrays(int n, uint* arrays)
+		public void CreateVertexArrays(int n, uint* arrays)
 		{
 			CreateVertexArraysNative(n, arrays);
 		}
@@ -3341,7 +3341,7 @@ namespace Hexa.NET.OpenGL
 		/// Create vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateVertexArrays(int n, Span<uint> arrays)
+		public void CreateVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -3353,7 +3353,7 @@ namespace Hexa.NET.OpenGL
 		/// Create vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void CreateVertexArrays(int n, ref uint arrays)
+		public void CreateVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -3362,7 +3362,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CullFaceNative(GLTriangleFace mode)
+		internal void CullFaceNative(GLTriangleFace mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, void>)funcTable[102])(mode);
@@ -3375,13 +3375,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify whether front- or back-facing facets can be culled
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void CullFace(GLTriangleFace mode)
+		public void CullFace(GLTriangleFace mode)
 		{
 			CullFaceNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageCallbackNative(GLDebugProc callback, void* userParam)
+		internal void DebugMessageCallbackNative(GLDebugProc callback, void* userParam)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void*, void*, void>)funcTable[103])((void*)Utils.GetFunctionPointerForDelegate(callback), userParam);
@@ -3394,7 +3394,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a callback to receive debugging messages from the GL
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageCallback(GLDebugProc callback, void* userParam)
+		public void DebugMessageCallback(GLDebugProc callback, void* userParam)
 		{
 			DebugMessageCallbackNative(callback, userParam);
 		}
@@ -3403,7 +3403,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a callback to receive debugging messages from the GL
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageCallback(GLDebugProc callback, nint userParam)
+		public void DebugMessageCallback(GLDebugProc callback, nint userParam)
 		{
 			DebugMessageCallbackNative(callback, (void*)userParam);
 		}
@@ -3412,7 +3412,7 @@ namespace Hexa.NET.OpenGL
 		/// Specify a callback to receive debugging messages from the GL
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageCallback<TUserParam>(GLDebugProc callback, Span<TUserParam> userParam) where TUserParam : unmanaged
+		public void DebugMessageCallback<TUserParam>(GLDebugProc callback, Span<TUserParam> userParam) where TUserParam : unmanaged
 		{
 			fixed (TUserParam* puserParam0 = userParam)
 			{
@@ -3421,7 +3421,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageControlNative(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
+		internal void DebugMessageControlNative(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLDebugSource, GLDebugType, GLDebugSeverity, int, uint*, byte, void>)funcTable[104])(source, type, severity, count, ids, *((byte*)(&enabled)));
@@ -3434,7 +3434,7 @@ namespace Hexa.NET.OpenGL
 		/// Control the reporting of debug messages in a debug context
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
+		public void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			DebugMessageControlNative(source, type, severity, count, ids, enabled);
 		}
@@ -3443,7 +3443,7 @@ namespace Hexa.NET.OpenGL
 		/// Control the reporting of debug messages in a debug context
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
+		public void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -3455,7 +3455,7 @@ namespace Hexa.NET.OpenGL
 		/// Control the reporting of debug messages in a debug context
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
+		public void DebugMessageControl(GLDebugSource source, GLDebugType type, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -3464,7 +3464,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageInsertNative(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
+		internal void DebugMessageInsertNative(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLDebugSource, GLDebugType, uint, GLDebugSeverity, int, byte*, void>)funcTable[105])(source, type, id, severity, length, buf);
@@ -3477,7 +3477,7 @@ namespace Hexa.NET.OpenGL
 		/// Inject an application-supplied message into the debug message queue
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
+		public void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, byte* buf)
 		{
 			DebugMessageInsertNative(source, type, id, severity, length, buf);
 		}
@@ -3486,7 +3486,7 @@ namespace Hexa.NET.OpenGL
 		/// Inject an application-supplied message into the debug message queue
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, string buf)
+		public void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, string buf)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3516,7 +3516,7 @@ namespace Hexa.NET.OpenGL
 		/// Inject an application-supplied message into the debug message queue
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, Span<byte> buf)
+		public void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, Span<byte> buf)
 		{
 			fixed (byte* pbuf0 = buf)
 			{
@@ -3528,7 +3528,7 @@ namespace Hexa.NET.OpenGL
 		/// Inject an application-supplied message into the debug message queue
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_debug</remarks>
-		public static void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, ref byte buf)
+		public void DebugMessageInsert(GLDebugSource source, GLDebugType type, uint id, GLDebugSeverity severity, int length, ref byte buf)
 		{
 			fixed (byte* pbuf0 = &buf)
 			{
@@ -3537,7 +3537,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteBuffersNative(int n, uint* buffers)
+		internal void DeleteBuffersNative(int n, uint* buffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[106])(n, buffers);
@@ -3550,7 +3550,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteBuffers(int n, uint* buffers)
+		public void DeleteBuffers(int n, uint* buffers)
 		{
 			DeleteBuffersNative(n, buffers);
 		}
@@ -3559,7 +3559,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteBuffer(uint buffer)
+		public void DeleteBuffer(uint buffer)
 		{
 			DeleteBuffersNative(1, &buffer);
 		}
@@ -3568,7 +3568,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteBuffers(int n, Span<uint> buffers)
+		public void DeleteBuffers(int n, Span<uint> buffers)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -3580,7 +3580,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named buffer objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteBuffers(int n, ref uint buffers)
+		public void DeleteBuffers(int n, ref uint buffers)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -3589,7 +3589,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteFramebuffersNative(int n, uint* framebuffers)
+		internal void DeleteFramebuffersNative(int n, uint* framebuffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[107])(n, framebuffers);
@@ -3602,7 +3602,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteFramebuffers(int n, uint* framebuffers)
+		public void DeleteFramebuffers(int n, uint* framebuffers)
 		{
 			DeleteFramebuffersNative(n, framebuffers);
 		}
@@ -3611,7 +3611,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteFramebuffer(uint framebuffer)
+		public void DeleteFramebuffer(uint framebuffer)
 		{
 			DeleteFramebuffersNative(1, &framebuffer);
 		}
@@ -3620,7 +3620,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteFramebuffers(int n, Span<uint> framebuffers)
+		public void DeleteFramebuffers(int n, Span<uint> framebuffers)
 		{
 			fixed (uint* pframebuffers0 = framebuffers)
 			{
@@ -3632,7 +3632,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete framebuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteFramebuffers(int n, ref uint framebuffers)
+		public void DeleteFramebuffers(int n, ref uint framebuffers)
 		{
 			fixed (uint* pframebuffers0 = &framebuffers)
 			{
@@ -3641,7 +3641,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteProgramNative(uint program)
+		internal void DeleteProgramNative(uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[108])(program);
@@ -3654,13 +3654,13 @@ namespace Hexa.NET.OpenGL
 		/// Deletes a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DeleteProgram(uint program)
+		public void DeleteProgram(uint program)
 		{
 			DeleteProgramNative(program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteProgramPipelinesNative(int n, uint* pipelines)
+		internal void DeleteProgramPipelinesNative(int n, uint* pipelines)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[109])(n, pipelines);
@@ -3673,7 +3673,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void DeleteProgramPipelines(int n, uint* pipelines)
+		public void DeleteProgramPipelines(int n, uint* pipelines)
 		{
 			DeleteProgramPipelinesNative(n, pipelines);
 		}
@@ -3682,7 +3682,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void DeleteProgramPipeline(uint pipeline)
+		public void DeleteProgramPipeline(uint pipeline)
 		{
 			DeleteProgramPipelinesNative(1, &pipeline);
 		}
@@ -3691,7 +3691,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void DeleteProgramPipelines(int n, Span<uint> pipelines)
+		public void DeleteProgramPipelines(int n, Span<uint> pipelines)
 		{
 			fixed (uint* ppipelines0 = pipelines)
 			{
@@ -3703,7 +3703,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete program pipeline objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void DeleteProgramPipelines(int n, ref uint pipelines)
+		public void DeleteProgramPipelines(int n, ref uint pipelines)
 		{
 			fixed (uint* ppipelines0 = &pipelines)
 			{
@@ -3712,7 +3712,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteQueriesNative(int n, uint* ids)
+		internal void DeleteQueriesNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[110])(n, ids);
@@ -3725,7 +3725,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteQueries(int n, uint* ids)
+		public void DeleteQueries(int n, uint* ids)
 		{
 			DeleteQueriesNative(n, ids);
 		}
@@ -3734,7 +3734,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteQuerie(uint id)
+		public void DeleteQuerie(uint id)
 		{
 			DeleteQueriesNative(1, &id);
 		}
@@ -3743,7 +3743,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteQueries(int n, Span<uint> ids)
+		public void DeleteQueries(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -3755,7 +3755,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named query objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteQueries(int n, ref uint ids)
+		public void DeleteQueries(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -3764,7 +3764,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteRenderbuffersNative(int n, uint* renderbuffers)
+		internal void DeleteRenderbuffersNative(int n, uint* renderbuffers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[111])(n, renderbuffers);
@@ -3777,7 +3777,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteRenderbuffers(int n, uint* renderbuffers)
+		public void DeleteRenderbuffers(int n, uint* renderbuffers)
 		{
 			DeleteRenderbuffersNative(n, renderbuffers);
 		}
@@ -3786,7 +3786,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteRenderbuffer(uint renderbuffer)
+		public void DeleteRenderbuffer(uint renderbuffer)
 		{
 			DeleteRenderbuffersNative(1, &renderbuffer);
 		}
@@ -3795,7 +3795,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteRenderbuffers(int n, Span<uint> renderbuffers)
+		public void DeleteRenderbuffers(int n, Span<uint> renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = renderbuffers)
 			{
@@ -3807,7 +3807,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete renderbuffer objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_framebuffer_object</remarks>
-		public static void DeleteRenderbuffers(int n, ref uint renderbuffers)
+		public void DeleteRenderbuffers(int n, ref uint renderbuffers)
 		{
 			fixed (uint* prenderbuffers0 = &renderbuffers)
 			{
@@ -3816,7 +3816,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteSamplersNative(int count, uint* samplers)
+		internal void DeleteSamplersNative(int count, uint* samplers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[112])(count, samplers);
@@ -3829,7 +3829,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void DeleteSamplers(int count, uint* samplers)
+		public void DeleteSamplers(int count, uint* samplers)
 		{
 			DeleteSamplersNative(count, samplers);
 		}
@@ -3838,7 +3838,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void DeleteSampler(uint sampler)
+		public void DeleteSampler(uint sampler)
 		{
 			DeleteSamplersNative(1, &sampler);
 		}
@@ -3847,7 +3847,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void DeleteSamplers(int count, Span<uint> samplers)
+		public void DeleteSamplers(int count, Span<uint> samplers)
 		{
 			fixed (uint* psamplers0 = samplers)
 			{
@@ -3859,7 +3859,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named sampler objects
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sampler_objects</remarks>
-		public static void DeleteSamplers(int count, ref uint samplers)
+		public void DeleteSamplers(int count, ref uint samplers)
 		{
 			fixed (uint* psamplers0 = &samplers)
 			{
@@ -3868,7 +3868,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteShaderNative(uint shader)
+		internal void DeleteShaderNative(uint shader)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[113])(shader);
@@ -3881,13 +3881,13 @@ namespace Hexa.NET.OpenGL
 		/// Deletes a shader object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DeleteShader(uint shader)
+		public void DeleteShader(uint shader)
 		{
 			DeleteShaderNative(shader);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteSyncNative(GLSync sync)
+		internal void DeleteSyncNative(GLSync sync)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSync, void>)funcTable[114])(sync);
@@ -3900,13 +3900,13 @@ namespace Hexa.NET.OpenGL
 		/// Delete a sync object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void DeleteSync(GLSync sync)
+		public void DeleteSync(GLSync sync)
 		{
 			DeleteSyncNative(sync);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteTexturesNative(int n, uint* textures)
+		internal void DeleteTexturesNative(int n, uint* textures)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[115])(n, textures);
@@ -3919,7 +3919,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named textures
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteTextures(int n, uint* textures)
+		public void DeleteTextures(int n, uint* textures)
 		{
 			DeleteTexturesNative(n, textures);
 		}
@@ -3928,7 +3928,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named textures
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteTexture(uint texture)
+		public void DeleteTexture(uint texture)
 		{
 			DeleteTexturesNative(1, &texture);
 		}
@@ -3937,7 +3937,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named textures
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteTextures(int n, Span<uint> textures)
+		public void DeleteTextures(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -3949,7 +3949,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete named textures
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DeleteTextures(int n, ref uint textures)
+		public void DeleteTextures(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -3958,7 +3958,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteTransformFeedbacksNative(int n, uint* ids)
+		internal void DeleteTransformFeedbacksNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[116])(n, ids);
@@ -3971,7 +3971,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacks(int n, uint* ids)
+		public void DeleteTransformFeedbacks(int n, uint* ids)
 		{
 			DeleteTransformFeedbacksNative(n, ids);
 		}
@@ -3980,7 +3980,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedback(uint id)
+		public void DeleteTransformFeedback(uint id)
 		{
 			DeleteTransformFeedbacksNative(1, &id);
 		}
@@ -3989,7 +3989,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacks(int n, Span<uint> ids)
+		public void DeleteTransformFeedbacks(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -4001,7 +4001,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacks(int n, ref uint ids)
+		public void DeleteTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -4010,7 +4010,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteVertexArraysNative(int n, uint* arrays)
+		internal void DeleteVertexArraysNative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[117])(n, arrays);
@@ -4023,7 +4023,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArrays(int n, uint* arrays)
+		public void DeleteVertexArrays(int n, uint* arrays)
 		{
 			DeleteVertexArraysNative(n, arrays);
 		}
@@ -4032,7 +4032,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArray(uint array)
+		public void DeleteVertexArray(uint array)
 		{
 			DeleteVertexArraysNative(1, &array);
 		}
@@ -4041,7 +4041,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArrays(int n, Span<uint> arrays)
+		public void DeleteVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -4053,7 +4053,7 @@ namespace Hexa.NET.OpenGL
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArrays(int n, ref uint arrays)
+		public void DeleteVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -4062,7 +4062,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthFuncNative(GLDepthFunction func)
+		internal void DepthFuncNative(GLDepthFunction func)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLDepthFunction, void>)funcTable[118])(func);
@@ -4075,13 +4075,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify the value used for depth buffer comparisons
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DepthFunc(GLDepthFunction func)
+		public void DepthFunc(GLDepthFunction func)
 		{
 			DepthFuncNative(func);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthMaskNative(bool flag)
+		internal void DepthMaskNative(bool flag)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[119])(*((byte*)(&flag)));
@@ -4094,13 +4094,13 @@ namespace Hexa.NET.OpenGL
 		/// Enable or disable writing into the depth buffer
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DepthMask(bool flag)
+		public void DepthMask(bool flag)
 		{
 			DepthMaskNative(flag);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeNative(double n, double f)
+		internal void DepthRangeNative(double n, double f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[120])(n, f);
@@ -4113,13 +4113,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify mapping of depth values from normalized device coordinates to window coordinates
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DepthRange(double n, double f)
+		public void DepthRange(double n, double f)
 		{
 			DepthRangeNative(n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeArrayvNative(uint first, int count, double* v)
+		internal void DepthRangeArrayvNative(uint first, int count, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, double*, void>)funcTable[121])(first, count, v);
@@ -4132,7 +4132,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArrayv(uint first, int count, double* v)
+		public void DepthRangeArrayv(uint first, int count, double* v)
 		{
 			DepthRangeArrayvNative(first, count, v);
 		}
@@ -4141,7 +4141,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArrayv(uint first, int count, Span<double> v)
+		public void DepthRangeArrayv(uint first, int count, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -4153,7 +4153,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeArrayv(uint first, int count, ref double v)
+		public void DepthRangeArrayv(uint first, int count, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -4162,7 +4162,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeIndexedNative(uint index, double n, double f)
+		internal void DepthRangeIndexedNative(uint index, double n, double f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[122])(index, n, f);
@@ -4175,13 +4175,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify mapping of depth values from normalized device coordinates to window coordinates for a specified viewport
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void DepthRangeIndexed(uint index, double n, double f)
+		public void DepthRangeIndexed(uint index, double n, double f)
 		{
 			DepthRangeIndexedNative(index, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangefNative(float n, float f)
+		internal void DepthRangefNative(float n, float f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[123])(n, f);
@@ -4194,13 +4194,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_ES2_compatibility</remarks>
-		public static void DepthRangef(float n, float f)
+		public void DepthRangef(float n, float f)
 		{
 			DepthRangefNative(n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DetachShaderNative(uint program, uint shader)
+		internal void DetachShaderNative(uint program, uint shader)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[124])(program, shader);
@@ -4213,13 +4213,13 @@ namespace Hexa.NET.OpenGL
 		/// Detaches a shader object from a program object to which it is attached
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DetachShader(uint program, uint shader)
+		public void DetachShader(uint program, uint shader)
 		{
 			DetachShaderNative(program, shader);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableNative(GLEnableCap cap)
+		internal void DisableNative(GLEnableCap cap)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, void>)funcTable[125])(cap);
@@ -4232,13 +4232,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Disable(GLEnableCap cap)
+		public void Disable(GLEnableCap cap)
 		{
 			DisableNative(cap);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableVertexArrayAttribNative(uint vaobj, uint index)
+		internal void DisableVertexArrayAttribNative(uint vaobj, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[126])(vaobj, index);
@@ -4251,13 +4251,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void DisableVertexArrayAttrib(uint vaobj, uint index)
+		public void DisableVertexArrayAttrib(uint vaobj, uint index)
 		{
 			DisableVertexArrayAttribNative(vaobj, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableVertexAttribArrayNative(uint index)
+		internal void DisableVertexAttribArrayNative(uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[127])(index);
@@ -4270,13 +4270,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DisableVertexAttribArray(uint index)
+		public void DisableVertexAttribArray(uint index)
 		{
 			DisableVertexAttribArrayNative(index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableiNative(GLEnableCap target, uint index)
+		internal void DisableiNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[128])(target, index);
@@ -4289,13 +4289,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Disablei(GLEnableCap target, uint index)
+		public void Disablei(GLEnableCap target, uint index)
 		{
 			DisableiNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DispatchComputeNative(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
+		internal void DispatchComputeNative(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[129])(numGroupsX, numGroupsY, numGroupsZ);
@@ -4308,13 +4308,13 @@ namespace Hexa.NET.OpenGL
 		/// Launch one or more compute work groups
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
-		public static void DispatchCompute(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
+		public void DispatchCompute(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
 		{
 			DispatchComputeNative(numGroupsX, numGroupsY, numGroupsZ);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DispatchComputeIndirectNative(nint indirect)
+		internal void DispatchComputeIndirectNative(nint indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[130])(indirect);
@@ -4327,13 +4327,13 @@ namespace Hexa.NET.OpenGL
 		/// Launch one or more compute work groups using parameters stored in a buffer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
-		public static void DispatchComputeIndirect(nint indirect)
+		public void DispatchComputeIndirect(nint indirect)
 		{
 			DispatchComputeIndirectNative(indirect);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysNative(GLPrimitiveType mode, int first, int count)
+		internal void DrawArraysNative(GLPrimitiveType mode, int first, int count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, void>)funcTable[131])(mode, first, count);
@@ -4346,13 +4346,13 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawArrays(GLPrimitiveType mode, int first, int count)
+		public void DrawArrays(GLPrimitiveType mode, int first, int count)
 		{
 			DrawArraysNative(mode, first, count);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysIndirectNative(GLPrimitiveType mode, void* indirect)
+		internal void DrawArraysIndirectNative(GLPrimitiveType mode, void* indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void*, void>)funcTable[132])(mode, indirect);
@@ -4365,7 +4365,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawArraysIndirect(GLPrimitiveType mode, void* indirect)
+		public void DrawArraysIndirect(GLPrimitiveType mode, void* indirect)
 		{
 			DrawArraysIndirectNative(mode, indirect);
 		}
@@ -4374,7 +4374,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawArraysIndirect(GLPrimitiveType mode, nint indirect)
+		public void DrawArraysIndirect(GLPrimitiveType mode, nint indirect)
 		{
 			DrawArraysIndirectNative(mode, (void*)indirect);
 		}
@@ -4383,7 +4383,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect) where TIndirect : unmanaged
+		public void DrawArraysIndirect<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{
@@ -4392,7 +4392,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysInstancedNative(GLPrimitiveType mode, int first, int count, int instancecount)
+		internal void DrawArraysInstancedNative(GLPrimitiveType mode, int first, int count, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, int, void>)funcTable[133])(mode, first, count, instancecount);
@@ -4405,13 +4405,13 @@ namespace Hexa.NET.OpenGL
 		/// Draw multiple instances of a range of elements
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
-		public static void DrawArraysInstanced(GLPrimitiveType mode, int first, int count, int instancecount)
+		public void DrawArraysInstanced(GLPrimitiveType mode, int first, int count, int instancecount)
 		{
 			DrawArraysInstancedNative(mode, first, count, instancecount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysInstancedBaseInstanceNative(GLPrimitiveType mode, int first, int count, int instancecount, uint baseinstance)
+		internal void DrawArraysInstancedBaseInstanceNative(GLPrimitiveType mode, int first, int count, int instancecount, uint baseinstance)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, int, uint, void>)funcTable[134])(mode, first, count, instancecount, baseinstance);
@@ -4424,13 +4424,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawArraysInstancedBaseInstance(GLPrimitiveType mode, int first, int count, int instancecount, uint baseinstance)
+		public void DrawArraysInstancedBaseInstance(GLPrimitiveType mode, int first, int count, int instancecount, uint baseinstance)
 		{
 			DrawArraysInstancedBaseInstanceNative(mode, first, count, instancecount, baseinstance);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawBufferNative(GLDrawBufferMode buf)
+		internal void DrawBufferNative(GLDrawBufferMode buf)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLDrawBufferMode, void>)funcTable[135])(buf);
@@ -4443,13 +4443,13 @@ namespace Hexa.NET.OpenGL
 		/// Specify which color buffers are to be drawn into
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DrawBuffer(GLDrawBufferMode buf)
+		public void DrawBuffer(GLDrawBufferMode buf)
 		{
 			DrawBufferNative(buf);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawBuffersNative(int n, GLDrawBufferMode bufs)
+		internal void DrawBuffersNative(int n, GLDrawBufferMode bufs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLDrawBufferMode, void>)funcTable[136])(n, bufs);
@@ -4463,13 +4463,13 @@ namespace Hexa.NET.OpenGL
 		///     into
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void DrawBuffers(int n, GLDrawBufferMode bufs)
+		public void DrawBuffers(int n, GLDrawBufferMode bufs)
 		{
 			DrawBuffersNative(n, bufs);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices)
+		internal void DrawElementsNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, void>)funcTable[137])(mode, count, type, indices);
@@ -4482,7 +4482,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawElements(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices)
+		public void DrawElements(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices)
 		{
 			DrawElementsNative(mode, count, type, indices);
 		}
@@ -4491,7 +4491,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawElements(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices)
+		public void DrawElements(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices)
 		{
 			DrawElementsNative(mode, count, type, (void*)indices);
 		}
@@ -4500,7 +4500,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawElements<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
+		public void DrawElements<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4509,7 +4509,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsBaseVertexNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
+		internal void DrawElementsBaseVertexNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, void>)funcTable[138])(mode, count, type, indices, basevertex);
@@ -4522,7 +4522,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
+		public void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawElementsBaseVertexNative(mode, count, type, indices, basevertex);
 		}
@@ -4531,7 +4531,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
+		public void DrawElementsBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawElementsBaseVertexNative(mode, count, type, (void*)indices, basevertex);
 		}
@@ -4540,7 +4540,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawElementsBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
+		public void DrawElementsBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4549,7 +4549,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
+		internal void DrawElementsIndirectNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, GLDrawElementsType, void*, void>)funcTable[139])(mode, type, indirect);
@@ -4562,7 +4562,7 @@ namespace Hexa.NET.OpenGL
 		/// Render indexed primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
+		public void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, void* indirect)
 		{
 			DrawElementsIndirectNative(mode, type, indirect);
 		}
@@ -4571,7 +4571,7 @@ namespace Hexa.NET.OpenGL
 		/// Render indexed primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect)
+		public void DrawElementsIndirect(GLPrimitiveType mode, GLDrawElementsType type, nint indirect)
 		{
 			DrawElementsIndirectNative(mode, type, (void*)indirect);
 		}
@@ -4580,7 +4580,7 @@ namespace Hexa.NET.OpenGL
 		/// Render indexed primitives from array data, taking parameters from memory
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_draw_indirect</remarks>
-		public static void DrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect) where TIndirect : unmanaged
+		public void DrawElementsIndirect<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{
@@ -4589,7 +4589,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount)
+		internal void DrawElementsInstancedNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, void>)funcTable[140])(mode, count, type, indices, instancecount);
@@ -4602,7 +4602,7 @@ namespace Hexa.NET.OpenGL
 		/// Draw multiple instances of a set of elements
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
-		public static void DrawElementsInstanced(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount)
+		public void DrawElementsInstanced(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount)
 		{
 			DrawElementsInstancedNative(mode, count, type, indices, instancecount);
 		}
@@ -4611,7 +4611,7 @@ namespace Hexa.NET.OpenGL
 		/// Draw multiple instances of a set of elements
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
-		public static void DrawElementsInstanced(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount)
+		public void DrawElementsInstanced(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount)
 		{
 			DrawElementsInstancedNative(mode, count, type, (void*)indices, instancecount);
 		}
@@ -4620,7 +4620,7 @@ namespace Hexa.NET.OpenGL
 		/// Draw multiple instances of a set of elements
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X</remarks>
-		public static void DrawElementsInstanced<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount) where TIndices : unmanaged
+		public void DrawElementsInstanced<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4629,7 +4629,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedBaseInstanceNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, uint baseinstance)
+		internal void DrawElementsInstancedBaseInstanceNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, uint baseinstance)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, uint, void>)funcTable[141])(mode, count, type, indices, instancecount, baseinstance);
@@ -4642,7 +4642,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawElementsInstancedBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, uint baseinstance)
+		public void DrawElementsInstancedBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, uint baseinstance)
 		{
 			DrawElementsInstancedBaseInstanceNative(mode, count, type, indices, instancecount, baseinstance);
 		}
@@ -4651,7 +4651,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawElementsInstancedBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, uint baseinstance)
+		public void DrawElementsInstancedBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, uint baseinstance)
 		{
 			DrawElementsInstancedBaseInstanceNative(mode, count, type, (void*)indices, instancecount, baseinstance);
 		}
@@ -4660,7 +4660,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawElementsInstancedBaseInstance<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, uint baseinstance) where TIndices : unmanaged
+		public void DrawElementsInstancedBaseInstance<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, uint baseinstance) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4669,7 +4669,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedBaseVertexNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
+		internal void DrawElementsInstancedBaseVertexNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, int, void>)funcTable[142])(mode, count, type, indices, instancecount, basevertex);
@@ -4682,7 +4682,7 @@ namespace Hexa.NET.OpenGL
 		/// Render multiple instances of a set of primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
+		public void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, indices, instancecount, basevertex);
 		}
@@ -4691,7 +4691,7 @@ namespace Hexa.NET.OpenGL
 		/// Render multiple instances of a set of primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
+		public void DrawElementsInstancedBaseVertex(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex)
 		{
 			DrawElementsInstancedBaseVertexNative(mode, count, type, (void*)indices, instancecount, basevertex);
 		}
@@ -4700,7 +4700,7 @@ namespace Hexa.NET.OpenGL
 		/// Render multiple instances of a set of primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawElementsInstancedBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
+		public void DrawElementsInstancedBaseVertex<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4709,7 +4709,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedBaseVertexBaseInstanceNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
+		internal void DrawElementsInstancedBaseVertexBaseInstanceNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, int, uint, void>)funcTable[143])(mode, count, type, indices, instancecount, basevertex, baseinstance);
@@ -4722,7 +4722,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
+		public void DrawElementsInstancedBaseVertexBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance)
 		{
 			DrawElementsInstancedBaseVertexBaseInstanceNative(mode, count, type, indices, instancecount, basevertex, baseinstance);
 		}
@@ -4731,7 +4731,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex, uint baseinstance)
+		public void DrawElementsInstancedBaseVertexBaseInstance(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int instancecount, int basevertex, uint baseinstance)
 		{
 			DrawElementsInstancedBaseVertexBaseInstanceNative(mode, count, type, (void*)indices, instancecount, basevertex, baseinstance);
 		}
@@ -4740,7 +4740,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_base_instance</remarks>
-		public static void DrawElementsInstancedBaseVertexBaseInstance<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex, uint baseinstance) where TIndices : unmanaged
+		public void DrawElementsInstancedBaseVertexBaseInstance<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int instancecount, int basevertex, uint baseinstance) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4749,7 +4749,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawRangeElementsNative(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices)
+		internal void DrawRangeElementsNative(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, int, GLDrawElementsType, void*, void>)funcTable[144])(mode, start, end, count, type, indices);
@@ -4762,7 +4762,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawRangeElements(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices)
+		public void DrawRangeElements(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices)
 		{
 			DrawRangeElementsNative(mode, start, end, count, type, indices);
 		}
@@ -4771,7 +4771,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawRangeElements(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices)
+		public void DrawRangeElements(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices)
 		{
 			DrawRangeElementsNative(mode, start, end, count, type, (void*)indices);
 		}
@@ -4780,7 +4780,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.2 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void DrawRangeElements<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
+		public void DrawRangeElements<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4789,7 +4789,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawRangeElementsBaseVertexNative(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
+		internal void DrawRangeElementsBaseVertexNative(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, int, GLDrawElementsType, void*, int, void>)funcTable[145])(mode, start, end, count, type, indices, basevertex);
@@ -4802,7 +4802,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
+		public void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, void* indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, indices, basevertex);
 		}
@@ -4811,7 +4811,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
+		public void DrawRangeElementsBaseVertex(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, nint indices, int basevertex)
 		{
 			DrawRangeElementsBaseVertexNative(mode, start, end, count, type, (void*)indices, basevertex);
 		}
@@ -4820,7 +4820,7 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives from array data with a per-element offset
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_draw_elements_base_vertex</remarks>
-		public static void DrawRangeElementsBaseVertex<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
+		public void DrawRangeElementsBaseVertex<TIndices>(GLPrimitiveType mode, uint start, uint end, int count, GLDrawElementsType type, Span<TIndices> indices, int basevertex) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -4829,7 +4829,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackNative(GLPrimitiveType mode, uint id)
+		internal void DrawTransformFeedbackNative(GLPrimitiveType mode, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, void>)funcTable[146])(mode, id);
@@ -4842,13 +4842,13 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives using a count derived from a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DrawTransformFeedback(GLPrimitiveType mode, uint id)
+		public void DrawTransformFeedback(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackNative(mode, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackInstancedNative(GLPrimitiveType mode, uint id, int instancecount)
+		internal void DrawTransformFeedbackInstancedNative(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, int, void>)funcTable[147])(mode, id, instancecount);
@@ -4861,13 +4861,13 @@ namespace Hexa.NET.OpenGL
 		/// Render multiple instances of primitives using a count derived from a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback_instanced</remarks>
-		public static void DrawTransformFeedbackInstanced(GLPrimitiveType mode, uint id, int instancecount)
+		public void DrawTransformFeedbackInstanced(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			DrawTransformFeedbackInstancedNative(mode, id, instancecount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackStreamNative(GLPrimitiveType mode, uint id, uint stream)
+		internal void DrawTransformFeedbackStreamNative(GLPrimitiveType mode, uint id, uint stream)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, void>)funcTable[148])(mode, id, stream);
@@ -4880,13 +4880,13 @@ namespace Hexa.NET.OpenGL
 		/// Render primitives using a count derived from a specifed stream of a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback3</remarks>
-		public static void DrawTransformFeedbackStream(GLPrimitiveType mode, uint id, uint stream)
+		public void DrawTransformFeedbackStream(GLPrimitiveType mode, uint id, uint stream)
 		{
 			DrawTransformFeedbackStreamNative(mode, id, stream);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackStreamInstancedNative(GLPrimitiveType mode, uint id, uint stream, int instancecount)
+		internal void DrawTransformFeedbackStreamInstancedNative(GLPrimitiveType mode, uint id, uint stream, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, int, void>)funcTable[149])(mode, id, stream, instancecount);
@@ -4899,13 +4899,13 @@ namespace Hexa.NET.OpenGL
 		/// Render multiple instances of primitives using a count derived from a specifed stream of a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback_instanced</remarks>
-		public static void DrawTransformFeedbackStreamInstanced(GLPrimitiveType mode, uint id, uint stream, int instancecount)
+		public void DrawTransformFeedbackStreamInstanced(GLPrimitiveType mode, uint id, uint stream, int instancecount)
 		{
 			DrawTransformFeedbackStreamInstancedNative(mode, id, stream, instancecount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableNative(GLEnableCap cap)
+		internal void EnableNative(GLEnableCap cap)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, void>)funcTable[150])(cap);
@@ -4918,13 +4918,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Enable(GLEnableCap cap)
+		public void Enable(GLEnableCap cap)
 		{
 			EnableNative(cap);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableVertexArrayAttribNative(uint vaobj, uint index)
+		internal void EnableVertexArrayAttribNative(uint vaobj, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[151])(vaobj, index);
@@ -4937,13 +4937,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void EnableVertexArrayAttrib(uint vaobj, uint index)
+		public void EnableVertexArrayAttrib(uint vaobj, uint index)
 		{
 			EnableVertexArrayAttribNative(vaobj, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableVertexAttribArrayNative(uint index)
+		internal void EnableVertexAttribArrayNative(uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[152])(index);
@@ -4957,13 +4957,13 @@ namespace Hexa.NET.OpenGL
 		///     array
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void EnableVertexAttribArray(uint index)
+		public void EnableVertexAttribArray(uint index)
 		{
 			EnableVertexAttribArrayNative(index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableiNative(GLEnableCap target, uint index)
+		internal void EnableiNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[153])(target, index);
@@ -4976,13 +4976,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Enablei(GLEnableCap target, uint index)
+		public void Enablei(GLEnableCap target, uint index)
 		{
 			EnableiNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndConditionalRenderNative()
+		internal void EndConditionalRenderNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[154])();
@@ -4995,13 +4995,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void EndConditionalRender()
+		public void EndConditionalRender()
 		{
 			EndConditionalRenderNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndQueryNative(GLQueryTarget target)
+		internal void EndQueryNative(GLQueryTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, void>)funcTable[155])(target);
@@ -5014,7 +5014,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void EndQuery(GLQueryTarget target)
+		public void EndQuery(GLQueryTarget target)
 		{
 			EndQueryNative(target);
 		}

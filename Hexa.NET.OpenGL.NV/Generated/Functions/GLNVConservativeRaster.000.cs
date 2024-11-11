@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVConservativeRaster
+	public unsafe partial class GLNVConservativeRaster
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SubpixelPrecisionBiasNVNative(uint xbits, uint ybits)
+		internal void SubpixelPrecisionBiasNVNative(uint xbits, uint ybits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(xbits, ybits);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_conservative_raster</remarks>
-		public static void SubpixelPrecisionBiasNV(uint xbits, uint ybits)
+		public void SubpixelPrecisionBiasNV(uint xbits, uint ybits)
 		{
 			SubpixelPrecisionBiasNVNative(xbits, ybits);
 		}

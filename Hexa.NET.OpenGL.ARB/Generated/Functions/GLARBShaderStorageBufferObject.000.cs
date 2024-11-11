@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBShaderStorageBufferObject
+	public unsafe partial class GLARBShaderStorageBufferObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderStorageBlockBindingNative(uint program, uint storageBlockIndex, uint storageBlockBinding)
+		internal void ShaderStorageBlockBindingNative(uint program, uint storageBlockIndex, uint storageBlockBinding)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[0])(program, storageBlockIndex, storageBlockBinding);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Change an active shader storage block binding
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_storage_buffer_object</remarks>
-		public static void ShaderStorageBlockBinding(uint program, uint storageBlockIndex, uint storageBlockBinding)
+		public void ShaderStorageBlockBinding(uint program, uint storageBlockIndex, uint storageBlockBinding)
 		{
 			ShaderStorageBlockBindingNative(program, storageBlockIndex, storageBlockBinding);
 		}

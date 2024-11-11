@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTEGLImageStorage
+	public unsafe partial class GLEXTEGLImageStorage
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EGLImageTargetTexStorageEXTNative(GLEnum target, GLeglImageOES image, int* attribList)
+		internal void EGLImageTargetTexStorageEXTNative(GLEnum target, GLeglImageOES image, int* attribList)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLeglImageOES, int*, void>)funcTable[0])(target, image, attribList);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
-		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, int* attribList)
+		public void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, int* attribList)
 		{
 			EGLImageTargetTexStorageEXTNative(target, image, attribList);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
-		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, Span<int> attribList)
+		public void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, Span<int> attribList)
 		{
 			fixed (int* pattribList0 = attribList)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
-		public static void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, ref int attribList)
+		public void EGLImageTargetTexStorageEXT(GLEnum target, GLeglImageOES image, ref int attribList)
 		{
 			fixed (int* pattribList0 = &attribList)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EGLImageTargetTextureStorageEXTNative(uint texture, GLeglImageOES image, int* attribList)
+		internal void EGLImageTargetTextureStorageEXTNative(uint texture, GLeglImageOES image, int* attribList)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLeglImageOES, int*, void>)funcTable[1])(texture, image, attribList);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
-		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, int* attribList)
+		public void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, int* attribList)
 		{
 			EGLImageTargetTextureStorageEXTNative(texture, image, attribList);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
-		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, Span<int> attribList)
+		public void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, Span<int> attribList)
 		{
 			fixed (int* pattribList0 = attribList)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_EGL_image_storage</remarks>
-		public static void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, ref int attribList)
+		public void EGLImageTargetTextureStorageEXT(uint texture, GLeglImageOES image, ref int attribList)
 		{
 			fixed (int* pattribList0 = &attribList)
 			{

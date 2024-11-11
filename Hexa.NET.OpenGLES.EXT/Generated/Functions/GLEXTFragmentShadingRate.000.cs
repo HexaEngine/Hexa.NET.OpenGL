@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTFragmentShadingRate
+	public unsafe partial class GLEXTFragmentShadingRate
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferShadingRateEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int baseLayer, int numLayers, int texelWidth, int texelHeight)
+		internal void FramebufferShadingRateEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int baseLayer, int numLayers, int texelWidth, int texelHeight)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, int, int, int, void>)funcTable[0])(target, attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
-		public static void FramebufferShadingRateEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int baseLayer, int numLayers, int texelWidth, int texelHeight)
+		public void FramebufferShadingRateEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int baseLayer, int numLayers, int texelWidth, int texelHeight)
 		{
 			FramebufferShadingRateEXTNative(target, attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFragmentShadingRatesEXTNative(int samples, int maxCount, int* count, GLShadingRate shadingRates)
+		internal void GetFragmentShadingRatesEXTNative(int samples, int maxCount, int* count, GLShadingRate shadingRates)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, GLShadingRate, void>)funcTable[1])(samples, maxCount, count, shadingRates);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
-		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, int* count, GLShadingRate shadingRates)
+		public void GetFragmentShadingRatesEXT(int samples, int maxCount, int* count, GLShadingRate shadingRates)
 		{
 			GetFragmentShadingRatesEXTNative(samples, maxCount, count, shadingRates);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
-		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, Span<int> count, GLShadingRate shadingRates)
+		public void GetFragmentShadingRatesEXT(int samples, int maxCount, Span<int> count, GLShadingRate shadingRates)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
-		public static void GetFragmentShadingRatesEXT(int samples, int maxCount, ref int count, GLShadingRate shadingRates)
+		public void GetFragmentShadingRatesEXT(int samples, int maxCount, ref int count, GLShadingRate shadingRates)
 		{
 			fixed (int* pcount0 = &count)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateEXTNative(GLShadingRate rate)
+		internal void ShadingRateEXTNative(GLShadingRate rate)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLShadingRate, void>)funcTable[2])(rate);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
-		public static void ShadingRateEXT(GLShadingRate rate)
+		public void ShadingRateEXT(GLShadingRate rate)
 		{
 			ShadingRateEXTNative(rate);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateCombinerOpsEXTNative(GLShadingRateCombinerOp combinerOp0, GLShadingRateCombinerOp combinerOp1)
+		internal void ShadingRateCombinerOpsEXTNative(GLShadingRateCombinerOp combinerOp0, GLShadingRateCombinerOp combinerOp1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLShadingRateCombinerOp, GLShadingRateCombinerOp, void>)funcTable[3])(combinerOp0, combinerOp1);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fragment_shading_rate</remarks>
-		public static void ShadingRateCombinerOpsEXT(GLShadingRateCombinerOp combinerOp0, GLShadingRateCombinerOp combinerOp1)
+		public void ShadingRateCombinerOpsEXT(GLShadingRateCombinerOp combinerOp0, GLShadingRateCombinerOp combinerOp1)
 		{
 			ShadingRateCombinerOpsEXTNative(combinerOp0, combinerOp1);
 		}

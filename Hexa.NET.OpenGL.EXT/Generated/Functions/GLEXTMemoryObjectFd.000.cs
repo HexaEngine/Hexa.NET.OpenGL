@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTMemoryObjectFd
+	public unsafe partial class GLEXTMemoryObjectFd
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ImportMemoryFdEXTNative(uint memory, ulong size, GLExternalHandleType handleType, int fd)
+		internal void ImportMemoryFdEXTNative(uint memory, ulong size, GLExternalHandleType handleType, int fd)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, GLExternalHandleType, int, void>)funcTable[0])(memory, size, handleType, fd);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_fd</remarks>
-		public static void ImportMemoryFdEXT(uint memory, ulong size, GLExternalHandleType handleType, int fd)
+		public void ImportMemoryFdEXT(uint memory, ulong size, GLExternalHandleType handleType, int fd)
 		{
 			ImportMemoryFdEXTNative(memory, size, handleType, fd);
 		}

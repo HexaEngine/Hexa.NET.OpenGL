@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.INTEL
 {
-	public static unsafe partial class GLINTELParallelArrays
+	public unsafe partial class GLINTELParallelArrays
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorPointervINTELNative(int size, GLVertexPointerType type, void** pointer)
+		internal void ColorPointervINTELNative(int size, GLVertexPointerType type, void** pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLVertexPointerType, void**, void>)funcTable[0])(size, type, pointer);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
-		public static void ColorPointervINTEL(int size, GLVertexPointerType type, void** pointer)
+		public void ColorPointervINTEL(int size, GLVertexPointerType type, void** pointer)
 		{
 			ColorPointervINTELNative(size, type, pointer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NormalPointervINTELNative(GLNormalPointerType type, void** pointer)
+		internal void NormalPointervINTELNative(GLNormalPointerType type, void** pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLNormalPointerType, void**, void>)funcTable[1])(type, pointer);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
-		public static void NormalPointervINTEL(GLNormalPointerType type, void** pointer)
+		public void NormalPointervINTEL(GLNormalPointerType type, void** pointer)
 		{
 			NormalPointervINTELNative(type, pointer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordPointervINTELNative(int size, GLVertexPointerType type, void** pointer)
+		internal void TexCoordPointervINTELNative(int size, GLVertexPointerType type, void** pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLVertexPointerType, void**, void>)funcTable[2])(size, type, pointer);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
-		public static void TexCoordPointervINTEL(int size, GLVertexPointerType type, void** pointer)
+		public void TexCoordPointervINTEL(int size, GLVertexPointerType type, void** pointer)
 		{
 			TexCoordPointervINTELNative(size, type, pointer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexPointervINTELNative(int size, GLVertexPointerType type, void** pointer)
+		internal void VertexPointervINTELNative(int size, GLVertexPointerType type, void** pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLVertexPointerType, void**, void>)funcTable[3])(size, type, pointer);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_parallel_arrays</remarks>
-		public static void VertexPointervINTEL(int size, GLVertexPointerType type, void** pointer)
+		public void VertexPointervINTEL(int size, GLVertexPointerType type, void** pointer)
 		{
 			VertexPointervINTELNative(size, type, pointer);
 		}

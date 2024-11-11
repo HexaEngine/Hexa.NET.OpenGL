@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTBlendMinmax
+	public unsafe partial class GLEXTBlendMinmax
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationEXTNative(GLBlendEquationModeEXT mode)
+		internal void BlendEquationEXTNative(GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendEquationModeEXT, void>)funcTable[0])(mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_minmax</remarks>
-		public static void BlendEquationEXT(GLBlendEquationModeEXT mode)
+		public void BlendEquationEXT(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationEXTNative(mode);
 		}

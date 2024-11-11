@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVDrawVulkanImage
+	public unsafe partial class GLNVDrawVulkanImage
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawVkImageNVNative(ulong vkImage, uint sampler, float x0, float y0, float x1, float y1, float z, float s0, float t0, float s1, float t1)
+		internal void DrawVkImageNVNative(ulong vkImage, uint sampler, float x0, float y0, float x1, float y1, float z, float s0, float t0, float s1, float t1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, uint, float, float, float, float, float, float, float, float, float, void>)funcTable[0])(vkImage, sampler, x0, y0, x1, y1, z, s0, t0, s1, t1);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static void DrawVkImageNV(ulong vkImage, uint sampler, float x0, float y0, float x1, float y1, float z, float s0, float t0, float s1, float t1)
+		public void DrawVkImageNV(ulong vkImage, uint sampler, float x0, float y0, float x1, float y1, float z, float s0, float t0, float s1, float t1)
 		{
 			DrawVkImageNVNative(vkImage, sampler, x0, y0, x1, y1, z, s0, t0, s1, t1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLVulkanProcNV GetVkProcAddrNVNative(byte* name)
+		internal GLVulkanProcNV GetVkProcAddrNVNative(byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<byte*, GLVulkanProcNV>)funcTable[1])(name);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static GLVulkanProcNV GetVkProcAddrNV(byte* name)
+		public GLVulkanProcNV GetVkProcAddrNV(byte* name)
 		{
 			GLVulkanProcNV ret = GetVkProcAddrNVNative(name);
 			return ret;
@@ -59,7 +59,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static GLVulkanProcNV GetVkProcAddrNV(string name)
+		public GLVulkanProcNV GetVkProcAddrNV(string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -90,7 +90,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static GLVulkanProcNV GetVkProcAddrNV(Span<byte> name)
+		public GLVulkanProcNV GetVkProcAddrNV(Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static GLVulkanProcNV GetVkProcAddrNV(ref byte name)
+		public GLVulkanProcNV GetVkProcAddrNV(ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WaitVkSemaphoreNVNative(ulong vkSemaphore)
+		internal void WaitVkSemaphoreNVNative(ulong vkSemaphore)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, void>)funcTable[2])(vkSemaphore);
@@ -126,13 +126,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static void WaitVkSemaphoreNV(ulong vkSemaphore)
+		public void WaitVkSemaphoreNV(ulong vkSemaphore)
 		{
 			WaitVkSemaphoreNVNative(vkSemaphore);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SignalVkSemaphoreNVNative(ulong vkSemaphore)
+		internal void SignalVkSemaphoreNVNative(ulong vkSemaphore)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, void>)funcTable[3])(vkSemaphore);
@@ -145,13 +145,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static void SignalVkSemaphoreNV(ulong vkSemaphore)
+		public void SignalVkSemaphoreNV(ulong vkSemaphore)
 		{
 			SignalVkSemaphoreNVNative(vkSemaphore);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SignalVkFenceNVNative(ulong vkFence)
+		internal void SignalVkFenceNVNative(ulong vkFence)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, void>)funcTable[4])(vkFence);
@@ -164,7 +164,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_vulkan_image</remarks>
-		public static void SignalVkFenceNV(ulong vkFence)
+		public void SignalVkFenceNV(ulong vkFence)
 		{
 			SignalVkFenceNVNative(vkFence);
 		}

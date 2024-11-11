@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTRasterMultisample
+	public unsafe partial class GLEXTRasterMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterSamplesEXTNative(uint samples, bool fixedsamplelocations)
+		internal void RasterSamplesEXTNative(uint samples, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[0])(samples, *((byte*)(&fixedsamplelocations)));
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_raster_multisample<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
+		public void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
 		{
 			RasterSamplesEXTNative(samples, fixedsamplelocations);
 		}

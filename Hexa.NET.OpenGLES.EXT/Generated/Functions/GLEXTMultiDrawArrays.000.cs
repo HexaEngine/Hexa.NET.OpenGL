@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTMultiDrawArrays
+	public unsafe partial class GLEXTMultiDrawArrays
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawArraysEXTNative(GLPrimitiveType mode, int* first, int* count, int primcount)
+		internal void MultiDrawArraysEXTNative(GLPrimitiveType mode, int* first, int* count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int*, int*, int, void>)funcTable[0])(mode, first, count, primcount);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, int* count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, int* count, int primcount)
 		{
 			MultiDrawArraysEXTNative(mode, first, count, primcount);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, int* count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, int* count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, Span<int> count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, Span<int> count, int primcount)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -75,7 +75,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, ref int count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, int* first, ref int count, int primcount)
 		{
 			fixed (int* pcount0 = &count)
 			{
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, Span<int> count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, Span<int> first, Span<int> count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
 			{
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, ref int count, int primcount)
+		public void MultiDrawArraysEXT(GLPrimitiveType mode, ref int first, ref int count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
 			{
@@ -114,7 +114,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawElementsEXTNative(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int primcount)
+		internal void MultiDrawElementsEXTNative(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int*, GLDrawElementsType, void**, int, void>)funcTable[1])(mode, count, type, indices, primcount);
@@ -127,7 +127,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawElementsEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int primcount)
+		public void MultiDrawElementsEXT(GLPrimitiveType mode, int* count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			MultiDrawElementsEXTNative(mode, count, type, indices, primcount);
 		}
@@ -136,7 +136,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawElementsEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int primcount)
+		public void MultiDrawElementsEXT(GLPrimitiveType mode, Span<int> count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -148,7 +148,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multi_draw_arrays</remarks>
-		public static void MultiDrawElementsEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int primcount)
+		public void MultiDrawElementsEXT(GLPrimitiveType mode, ref int count, GLDrawElementsType type, void** indices, int primcount)
 		{
 			fixed (int* pcount0 = &count)
 			{

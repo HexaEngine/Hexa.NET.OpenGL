@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTSemaphoreFd
+	public unsafe partial class GLEXTSemaphoreFd
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ImportSemaphoreFdEXTNative(uint semaphore, GLExternalHandleType handleType, int fd)
+		internal void ImportSemaphoreFdEXTNative(uint semaphore, GLExternalHandleType handleType, int fd)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLExternalHandleType, int, void>)funcTable[0])(semaphore, handleType, fd);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_fd</remarks>
-		public static void ImportSemaphoreFdEXT(uint semaphore, GLExternalHandleType handleType, int fd)
+		public void ImportSemaphoreFdEXT(uint semaphore, GLExternalHandleType handleType, int fd)
 		{
 			ImportSemaphoreFdEXTNative(semaphore, handleType, fd);
 		}

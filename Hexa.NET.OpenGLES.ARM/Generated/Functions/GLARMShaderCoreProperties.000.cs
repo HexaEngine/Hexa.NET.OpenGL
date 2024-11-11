@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ARM
 {
-	public static unsafe partial class GLARMShaderCoreProperties
+	public unsafe partial class GLARMShaderCoreProperties
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MaxActiveShaderCoresARMNative(uint count)
+		internal void MaxActiveShaderCoresARMNative(uint count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(count);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.ARM
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARM_shader_core_properties</remarks>
-		public static void MaxActiveShaderCoresARM(uint count)
+		public void MaxActiveShaderCoresARM(uint count)
 		{
 			MaxActiveShaderCoresARMNative(count);
 		}

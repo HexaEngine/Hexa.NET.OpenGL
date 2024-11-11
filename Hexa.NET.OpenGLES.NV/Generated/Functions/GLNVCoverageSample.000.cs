@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVCoverageSample
+	public unsafe partial class GLNVCoverageSample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverageMaskNVNative(bool mask)
+		internal void CoverageMaskNVNative(bool mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[0])(*((byte*)(&mask)));
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_coverage_sample</remarks>
-		public static void CoverageMaskNV(bool mask)
+		public void CoverageMaskNV(bool mask)
 		{
 			CoverageMaskNVNative(mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverageOperationNVNative(GLEnum operation)
+		internal void CoverageOperationNVNative(GLEnum operation)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[1])(operation);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_coverage_sample</remarks>
-		public static void CoverageOperationNV(GLEnum operation)
+		public void CoverageOperationNV(GLEnum operation)
 		{
 			CoverageOperationNVNative(operation);
 		}

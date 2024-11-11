@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBES32Compatibility
+	public unsafe partial class GLARBES32Compatibility
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrimitiveBoundingBoxARBNative(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
+		internal void PrimitiveBoundingBoxARBNative(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, float, float, float, float, void>)funcTable[0])(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_ES3_2_compatibility</remarks>
-		public static void PrimitiveBoundingBoxARB(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
+		public void PrimitiveBoundingBoxARB(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			PrimitiveBoundingBoxARBNative(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
 		}

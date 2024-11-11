@@ -14,14 +14,14 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES
 {
-	public static unsafe partial class GL
+	public unsafe partial class GL
 	{
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, string pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, string pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
@@ -75,7 +75,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = pConstantIndex)
 			{
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = &pConstantIndex)
 			{
@@ -99,7 +99,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
@@ -114,7 +114,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
+		public void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, uint* pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
+		public void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (uint* ppConstantValue0 = pConstantValue)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
+		public void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (uint* ppConstantValue0 = &pConstantValue)
 			{
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
+		public void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
+		public void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, uint* pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
+		public void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = pConstantIndex)
 			{
@@ -198,7 +198,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
+		public void SpecializeShader(uint shader, byte* pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (uint* ppConstantIndex0 = &pConstantIndex)
 			{
@@ -213,7 +213,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
+		public void SpecializeShader(uint shader, Span<byte> pEntryPoint, uint numSpecializationConstants, Span<uint> pConstantIndex, Span<uint> pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = pEntryPoint)
 			{
@@ -231,7 +231,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
+		public void SpecializeShader(uint shader, ref byte pEntryPoint, uint numSpecializationConstants, ref uint pConstantIndex, ref uint pConstantValue)
 		{
 			fixed (byte* ppEntryPoint0 = &pEntryPoint)
 			{
@@ -246,7 +246,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilFuncNative(GLStencilFunction func, int reference, uint mask)
+		internal void StencilFuncNative(GLStencilFunction func, int reference, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[526])(func, reference, mask);
@@ -259,13 +259,13 @@ namespace Hexa.NET.OpenGLES
 		/// Set front and back function and reference value for stencil testing
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void StencilFunc(GLStencilFunction func, int reference, uint mask)
+		public void StencilFunc(GLStencilFunction func, int reference, uint mask)
 		{
 			StencilFuncNative(func, reference, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilFuncSeparateNative(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
+		internal void StencilFuncSeparateNative(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilFunction, int, uint, void>)funcTable[527])(face, func, reference, mask);
@@ -278,13 +278,13 @@ namespace Hexa.NET.OpenGLES
 		/// Set front and/or back function and reference value for stencil testing
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void StencilFuncSeparate(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
+		public void StencilFuncSeparate(GLTriangleFace face, GLStencilFunction func, int reference, uint mask)
 		{
 			StencilFuncSeparateNative(face, func, reference, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilMaskNative(uint mask)
+		internal void StencilMaskNative(uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[528])(mask);
@@ -297,13 +297,13 @@ namespace Hexa.NET.OpenGLES
 		/// Control the front and back writing of individual bits in the stencil planes
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void StencilMask(uint mask)
+		public void StencilMask(uint mask)
 		{
 			StencilMaskNative(mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilMaskSeparateNative(GLTriangleFace face, uint mask)
+		internal void StencilMaskSeparateNative(GLTriangleFace face, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, uint, void>)funcTable[529])(face, mask);
@@ -316,13 +316,13 @@ namespace Hexa.NET.OpenGLES
 		/// Control the front and/or back writing of individual bits in the stencil planes
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void StencilMaskSeparate(GLTriangleFace face, uint mask)
+		public void StencilMaskSeparate(GLTriangleFace face, uint mask)
 		{
 			StencilMaskSeparateNative(face, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilOpNative(GLStencilOp fail, GLStencilOp zfail, GLStencilOp zpass)
+		internal void StencilOpNative(GLStencilOp fail, GLStencilOp zfail, GLStencilOp zpass)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLStencilOp, GLStencilOp, GLStencilOp, void>)funcTable[530])(fail, zfail, zpass);
@@ -335,13 +335,13 @@ namespace Hexa.NET.OpenGLES
 		/// Set front and back stencil test actions
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void StencilOp(GLStencilOp fail, GLStencilOp zfail, GLStencilOp zpass)
+		public void StencilOp(GLStencilOp fail, GLStencilOp zfail, GLStencilOp zpass)
 		{
 			StencilOpNative(fail, zfail, zpass);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilOpSeparateNative(GLTriangleFace face, GLStencilOp sfail, GLStencilOp dpfail, GLStencilOp dppass)
+		internal void StencilOpSeparateNative(GLTriangleFace face, GLStencilOp sfail, GLStencilOp dpfail, GLStencilOp dppass)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLStencilOp, GLStencilOp, GLStencilOp, void>)funcTable[531])(face, sfail, dpfail, dppass);
@@ -354,13 +354,13 @@ namespace Hexa.NET.OpenGLES
 		/// Set front and/or back stencil test actions
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void StencilOpSeparate(GLTriangleFace face, GLStencilOp sfail, GLStencilOp dpfail, GLStencilOp dppass)
+		public void StencilOpSeparate(GLTriangleFace face, GLStencilOp sfail, GLStencilOp dpfail, GLStencilOp dppass)
 		{
 			StencilOpSeparateNative(face, sfail, dpfail, dppass);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexBufferNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		internal void TexBufferNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[532])(target, internalformat, buffer);
@@ -373,13 +373,13 @@ namespace Hexa.NET.OpenGLES
 		/// Attach a buffer object's data store to a buffer texture object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexBuffer(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		public void TexBuffer(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferNative(target, internalformat, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexBufferRangeNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
+		internal void TexBufferRangeNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[533])(target, internalformat, buffer, offset, size);
@@ -392,13 +392,13 @@ namespace Hexa.NET.OpenGLES
 		/// Attach a range of a buffer object's data store to a buffer texture object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_buffer_range</remarks>
-		public static void TexBufferRange(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
+		public void TexBufferRange(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			TexBufferRangeNative(target, internalformat, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordPointerNative(int size, GLTexCoordPointerType type, int stride, void* pointer)
+		internal void TexCoordPointerNative(int size, GLTexCoordPointerType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLTexCoordPointerType, int, void*, void>)funcTable[534])(size, type, stride, pointer);
@@ -411,7 +411,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexCoordPointer(int size, GLTexCoordPointerType type, int stride, void* pointer)
+		public void TexCoordPointer(int size, GLTexCoordPointerType type, int stride, void* pointer)
 		{
 			TexCoordPointerNative(size, type, stride, pointer);
 		}
@@ -420,7 +420,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexCoordPointer(int size, GLTexCoordPointerType type, int stride, nint pointer)
+		public void TexCoordPointer(int size, GLTexCoordPointerType type, int stride, nint pointer)
 		{
 			TexCoordPointerNative(size, type, stride, (void*)pointer);
 		}
@@ -429,7 +429,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexCoordPointer<TPointer>(int size, GLTexCoordPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void TexCoordPointer<TPointer>(int size, GLTexCoordPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -438,7 +438,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvfNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
+		internal void TexEnvfNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, float, void>)funcTable[535])(target, pname, param);
@@ -451,13 +451,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvf(GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
+		public void TexEnvf(GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
 		{
 			TexEnvfNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvfvNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		internal void TexEnvfvNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, float*, void>)funcTable[536])(target, pname, @params);
@@ -470,7 +470,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		public void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			TexEnvfvNative(target, pname, @params);
 		}
@@ -479,7 +479,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		public void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -491,7 +491,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
+		public void TexEnvfv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -500,7 +500,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnviNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		internal void TexEnviNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int, void>)funcTable[537])(target, pname, param);
@@ -513,13 +513,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvi(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		public void TexEnvi(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			TexEnviNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvivNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void TexEnvivNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[538])(target, pname, @params);
@@ -532,7 +532,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			TexEnvivNative(target, pname, @params);
 		}
@@ -541,7 +541,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -553,7 +553,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public void TexEnviv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -562,7 +562,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvxNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		internal void TexEnvxNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int, void>)funcTable[539])(target, pname, param);
@@ -575,13 +575,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvx(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		public void TexEnvx(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			TexEnvxNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvxvNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void TexEnvxvNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[540])(target, pname, @params);
@@ -594,7 +594,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			TexEnvxvNative(target, pname, @params);
 		}
@@ -603,7 +603,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -615,7 +615,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public void TexEnvxv(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -624,7 +624,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TexImage1DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[541])(target, level, internalformat, width, border, format, type, pixels);
@@ -637,7 +637,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexImage1DNative(target, level, internalformat, width, border, format, type, pixels);
 		}
@@ -646,7 +646,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TexImage1D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TexImage1DNative(target, level, internalformat, width, border, format, type, (void*)pixels);
 		}
@@ -655,7 +655,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage1D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TexImage1D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -664,7 +664,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TexImage2DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[542])(target, level, internalformat, width, height, border, format, type, pixels);
@@ -677,7 +677,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexImage2DNative(target, level, internalformat, width, height, border, format, type, pixels);
 		}
@@ -686,7 +686,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TexImage2D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TexImage2DNative(target, level, internalformat, width, height, border, format, type, (void*)pixels);
 		}
@@ -695,7 +695,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage2D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TexImage2D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -704,7 +704,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage2DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
+		internal void TexImage2DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, byte, void>)funcTable[543])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
@@ -717,13 +717,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void TexImage2DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
+		public void TexImage2DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TexImage2DMultisampleNative(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage3DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TexImage3DNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[544])(target, level, internalformat, width, height, depth, border, format, type, pixels);
@@ -736,7 +736,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexImage3DNative(target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
@@ -745,7 +745,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TexImage3D(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TexImage3DNative(target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
 		}
@@ -754,7 +754,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexImage3D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TexImage3D<TPixels>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -763,7 +763,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexImage3DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		internal void TexImage3DMultisampleNative(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, byte, void>)funcTable[545])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
@@ -776,13 +776,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_multisample</remarks>
-		public static void TexImage3DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		public void TexImage3DMultisample(GLTextureTarget target, int samples, GLInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexImage3DMultisampleNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterIivNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		internal void TexParameterIivNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[546])(target, pname, @params);
@@ -795,7 +795,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		public void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TexParameterIivNative(target, pname, @params);
 		}
@@ -804,7 +804,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -816,7 +816,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public void TexParameterIiv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -825,7 +825,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterIuivNative(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		internal void TexParameterIuivNative(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, uint*, void>)funcTable[547])(target, pname, @params);
@@ -838,7 +838,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		public void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			TexParameterIuivNative(target, pname, @params);
 		}
@@ -847,7 +847,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		public void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -859,7 +859,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public void TexParameterIuiv(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -868,7 +868,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterfNative(GLTextureTarget target, GLTextureParameterName pname, float param)
+		internal void TexParameterfNative(GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float, void>)funcTable[548])(target, pname, param);
@@ -881,13 +881,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterf(GLTextureTarget target, GLTextureParameterName pname, float param)
+		public void TexParameterf(GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
 			TexParameterfNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterfvNative(GLTextureTarget target, GLTextureParameterName pname, float* @params)
+		internal void TexParameterfvNative(GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, float*, void>)funcTable[549])(target, pname, @params);
@@ -900,7 +900,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, float* @params)
+		public void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
 			TexParameterfvNative(target, pname, @params);
 		}
@@ -909,7 +909,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		public void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -921,7 +921,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, ref float @params)
+		public void TexParameterfv(GLTextureTarget target, GLTextureParameterName pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -930,7 +930,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameteriNative(GLTextureTarget target, GLTextureParameterName pname, int param)
+		internal void TexParameteriNative(GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int, void>)funcTable[550])(target, pname, param);
@@ -943,13 +943,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameteri(GLTextureTarget target, GLTextureParameterName pname, int param)
+		public void TexParameteri(GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
 			TexParameteriNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterivNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		internal void TexParameterivNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[551])(target, pname, @params);
@@ -962,7 +962,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		public void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TexParameterivNative(target, pname, @params);
 		}
@@ -971,7 +971,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -983,7 +983,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public void TexParameteriv(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -992,7 +992,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterxNative(GLTextureTarget target, GLGetTextureParameter pname, int param)
+		internal void TexParameterxNative(GLTextureTarget target, GLGetTextureParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int, void>)funcTable[552])(target, pname, param);
@@ -1005,13 +1005,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterx(GLTextureTarget target, GLGetTextureParameter pname, int param)
+		public void TexParameterx(GLTextureTarget target, GLGetTextureParameter pname, int param)
 		{
 			TexParameterxNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterxvNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void TexParameterxvNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[553])(target, pname, @params);
@@ -1024,7 +1024,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			TexParameterxvNative(target, pname, @params);
 		}
@@ -1033,7 +1033,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1045,7 +1045,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void TexParameterxv(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1054,7 +1054,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage1DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
+		internal void TexStorage1DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, void>)funcTable[554])(target, levels, internalformat, width);
@@ -1067,13 +1067,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
-		public static void TexStorage1D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
+		public void TexStorage1D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			TexStorage1DNative(target, levels, internalformat, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage2DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
+		internal void TexStorage2DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, void>)funcTable[555])(target, levels, internalformat, width, height);
@@ -1086,13 +1086,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
-		public static void TexStorage2D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
+		public void TexStorage2D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			TexStorage2DNative(target, levels, internalformat, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage2DMultisampleNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
+		internal void TexStorage2DMultisampleNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[556])(target, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
@@ -1105,13 +1105,13 @@ namespace Hexa.NET.OpenGLES
 		/// Specify storage for a two-dimensional multisample texture
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage_multisample</remarks>
-		public static void TexStorage2DMultisample(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
+		public void TexStorage2DMultisample(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TexStorage2DMultisampleNative(target, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage3DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
+		internal void TexStorage3DNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, void>)funcTable[557])(target, levels, internalformat, width, height, depth);
@@ -1124,13 +1124,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage</remarks>
-		public static void TexStorage3D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
+		public void TexStorage3D(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			TexStorage3DNative(target, levels, internalformat, width, height, depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage3DMultisampleNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		internal void TexStorage3DMultisampleNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[558])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
@@ -1143,13 +1143,13 @@ namespace Hexa.NET.OpenGLES
 		/// Specify storage for a two-dimensional multisample array texture
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_storage_multisample</remarks>
-		public static void TexStorage3DMultisample(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		public void TexStorage3DMultisample(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexStorage3DMultisampleNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TexSubImage1DNative(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[559])(target, level, xoffset, width, format, type, pixels);
@@ -1162,7 +1162,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage1DNative(target, level, xoffset, width, format, type, pixels);
 		}
@@ -1171,7 +1171,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TexSubImage1D(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TexSubImage1DNative(target, level, xoffset, width, format, type, (void*)pixels);
 		}
@@ -1180,7 +1180,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage1D<TPixels>(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TexSubImage1D<TPixels>(GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1189,7 +1189,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TexSubImage2DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[560])(target, level, xoffset, yoffset, width, height, format, type, pixels);
@@ -1202,7 +1202,7 @@ namespace Hexa.NET.OpenGLES
 		/// Specify a two-dimensional texture subimage
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
@@ -1211,7 +1211,7 @@ namespace Hexa.NET.OpenGLES
 		/// Specify a two-dimensional texture subimage
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TexSubImage2D(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TexSubImage2DNative(target, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
 		}
@@ -1220,7 +1220,7 @@ namespace Hexa.NET.OpenGLES
 		/// Specify a two-dimensional texture subimage
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage2D<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TexSubImage2D<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1229,7 +1229,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TexSubImage3DNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[561])(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
@@ -1242,7 +1242,7 @@ namespace Hexa.NET.OpenGLES
 		/// Specify a three-dimensional texture subimage
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
@@ -1251,7 +1251,7 @@ namespace Hexa.NET.OpenGLES
 		/// Specify a three-dimensional texture subimage
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TexSubImage3D(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TexSubImage3DNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
 		}
@@ -1260,7 +1260,7 @@ namespace Hexa.NET.OpenGLES
 		/// Specify a three-dimensional texture subimage
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TexSubImage3D<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TexSubImage3D<TPixels>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1269,7 +1269,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBarrierNative()
+		internal void TextureBarrierNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[562])();
@@ -1282,13 +1282,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_barrier</remarks>
-		public static void TextureBarrier()
+		public void TextureBarrier()
 		{
 			TextureBarrierNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBufferNative(uint texture, GLSizedInternalFormat internalformat, uint buffer)
+		internal void TextureBufferNative(uint texture, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, uint, void>)funcTable[563])(texture, internalformat, buffer);
@@ -1301,13 +1301,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureBuffer(uint texture, GLSizedInternalFormat internalformat, uint buffer)
+		public void TextureBuffer(uint texture, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TextureBufferNative(texture, internalformat, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBufferRangeNative(uint texture, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
+		internal void TextureBufferRangeNative(uint texture, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[564])(texture, internalformat, buffer, offset, size);
@@ -1320,13 +1320,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureBufferRange(uint texture, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
+		public void TextureBufferRange(uint texture, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			TextureBufferRangeNative(texture, internalformat, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterIivNative(uint texture, GLTextureParameterName pname, int* @params)
+		internal void TextureParameterIivNative(uint texture, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int*, void>)funcTable[565])(texture, pname, @params);
@@ -1339,7 +1339,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, int* @params)
+		public void TextureParameterIiv(uint texture, GLTextureParameterName pname, int* @params)
 		{
 			TextureParameterIivNative(texture, pname, @params);
 		}
@@ -1348,7 +1348,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
+		public void TextureParameterIiv(uint texture, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1360,7 +1360,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIiv(uint texture, GLTextureParameterName pname, ref int @params)
+		public void TextureParameterIiv(uint texture, GLTextureParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1369,7 +1369,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterIuivNative(uint texture, GLTextureParameterName pname, uint* @params)
+		internal void TextureParameterIuivNative(uint texture, GLTextureParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, uint*, void>)funcTable[566])(texture, pname, @params);
@@ -1382,7 +1382,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, uint* @params)
+		public void TextureParameterIuiv(uint texture, GLTextureParameterName pname, uint* @params)
 		{
 			TextureParameterIuivNative(texture, pname, @params);
 		}
@@ -1391,7 +1391,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
+		public void TextureParameterIuiv(uint texture, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -1403,7 +1403,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterIuiv(uint texture, GLTextureParameterName pname, ref uint @params)
+		public void TextureParameterIuiv(uint texture, GLTextureParameterName pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -1412,7 +1412,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterfNative(uint texture, GLTextureParameterName pname, float param)
+		internal void TextureParameterfNative(uint texture, GLTextureParameterName pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, float, void>)funcTable[567])(texture, pname, param);
@@ -1425,13 +1425,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterf(uint texture, GLTextureParameterName pname, float param)
+		public void TextureParameterf(uint texture, GLTextureParameterName pname, float param)
 		{
 			TextureParameterfNative(texture, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterfvNative(uint texture, GLTextureParameterName pname, float* param)
+		internal void TextureParameterfvNative(uint texture, GLTextureParameterName pname, float* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, float*, void>)funcTable[568])(texture, pname, param);
@@ -1444,7 +1444,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, float* param)
+		public void TextureParameterfv(uint texture, GLTextureParameterName pname, float* param)
 		{
 			TextureParameterfvNative(texture, pname, param);
 		}
@@ -1453,7 +1453,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, Span<float> param)
+		public void TextureParameterfv(uint texture, GLTextureParameterName pname, Span<float> param)
 		{
 			fixed (float* pparam0 = param)
 			{
@@ -1465,7 +1465,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameterfv(uint texture, GLTextureParameterName pname, ref float param)
+		public void TextureParameterfv(uint texture, GLTextureParameterName pname, ref float param)
 		{
 			fixed (float* pparam0 = &param)
 			{
@@ -1474,7 +1474,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameteriNative(uint texture, GLTextureParameterName pname, int param)
+		internal void TextureParameteriNative(uint texture, GLTextureParameterName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int, void>)funcTable[569])(texture, pname, param);
@@ -1487,13 +1487,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteri(uint texture, GLTextureParameterName pname, int param)
+		public void TextureParameteri(uint texture, GLTextureParameterName pname, int param)
 		{
 			TextureParameteriNative(texture, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureParameterivNative(uint texture, GLTextureParameterName pname, int* param)
+		internal void TextureParameterivNative(uint texture, GLTextureParameterName pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureParameterName, int*, void>)funcTable[570])(texture, pname, param);
@@ -1506,7 +1506,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, int* param)
+		public void TextureParameteriv(uint texture, GLTextureParameterName pname, int* param)
 		{
 			TextureParameterivNative(texture, pname, param);
 		}
@@ -1515,7 +1515,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, Span<int> param)
+		public void TextureParameteriv(uint texture, GLTextureParameterName pname, Span<int> param)
 		{
 			fixed (int* pparam0 = param)
 			{
@@ -1527,7 +1527,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureParameteriv(uint texture, GLTextureParameterName pname, ref int param)
+		public void TextureParameteriv(uint texture, GLTextureParameterName pname, ref int param)
 		{
 			fixed (int* pparam0 = &param)
 			{
@@ -1536,7 +1536,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage1DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width)
+		internal void TextureStorage1DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, void>)funcTable[571])(texture, levels, internalformat, width);
@@ -1549,13 +1549,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureStorage1D(uint texture, int levels, GLSizedInternalFormat internalformat, int width)
+		public void TextureStorage1D(uint texture, int levels, GLSizedInternalFormat internalformat, int width)
 		{
 			TextureStorage1DNative(texture, levels, internalformat, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage2DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height)
+		internal void TextureStorage2DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, void>)funcTable[572])(texture, levels, internalformat, width, height);
@@ -1568,13 +1568,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureStorage2D(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height)
+		public void TextureStorage2D(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height)
 		{
 			TextureStorage2DNative(texture, levels, internalformat, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage2DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
+		internal void TextureStorage2DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, void>)funcTable[573])(texture, samples, internalformat, width, height, *((byte*)(&fixedsamplelocations)));
@@ -1587,13 +1587,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureStorage2DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
+		public void TextureStorage2DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, bool fixedsamplelocations)
 		{
 			TextureStorage2DMultisampleNative(texture, samples, internalformat, width, height, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage3DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
+		internal void TextureStorage3DNative(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, void>)funcTable[574])(texture, levels, internalformat, width, height, depth);
@@ -1606,13 +1606,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureStorage3D(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
+		public void TextureStorage3D(uint texture, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth)
 		{
 			TextureStorage3DNative(texture, levels, internalformat, width, height, depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorage3DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		internal void TextureStorage3DMultisampleNative(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[575])(texture, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
@@ -1625,13 +1625,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureStorage3DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		public void TextureStorage3DMultisample(uint texture, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TextureStorage3DMultisampleNative(texture, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureSubImage1DNative(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TextureSubImage1DNative(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[576])(texture, level, xoffset, width, format, type, pixels);
@@ -1644,7 +1644,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage1DNative(texture, level, xoffset, width, format, type, pixels);
 		}
@@ -1653,7 +1653,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TextureSubImage1D(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureSubImage1DNative(texture, level, xoffset, width, format, type, (void*)pixels);
 		}
@@ -1662,7 +1662,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage1D<TPixels>(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TextureSubImage1D<TPixels>(uint texture, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1671,7 +1671,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TextureSubImage2DNative(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[577])(texture, level, xoffset, yoffset, width, height, format, type, pixels);
@@ -1684,7 +1684,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
@@ -1693,7 +1693,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureSubImage2DNative(texture, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
 		}
@@ -1702,7 +1702,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage2D<TPixels>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TextureSubImage2D<TPixels>(uint texture, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1711,7 +1711,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void TextureSubImage3DNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[578])(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
@@ -1724,7 +1724,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
@@ -1733,7 +1733,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			TextureSubImage3DNative(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
 		}
@@ -1742,7 +1742,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TextureSubImage3D<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void TextureSubImage3D<TPixels>(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1751,7 +1751,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureViewNative(uint texture, GLTextureTarget target, uint origtexture, GLSizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
+		internal void TextureViewNative(uint texture, GLTextureTarget target, uint origtexture, GLSizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, uint, GLSizedInternalFormat, uint, uint, uint, uint, void>)funcTable[579])(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
@@ -1764,13 +1764,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_texture_view</remarks>
-		public static void TextureView(uint texture, GLTextureTarget target, uint origtexture, GLSizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
+		public void TextureView(uint texture, GLTextureTarget target, uint origtexture, GLSizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers)
 		{
 			TextureViewNative(texture, target, origtexture, internalformat, minlevel, numlevels, minlayer, numlayers);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackBufferBaseNative(uint xfb, uint index, uint buffer)
+		internal void TransformFeedbackBufferBaseNative(uint xfb, uint index, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[580])(xfb, index, buffer);
@@ -1783,13 +1783,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TransformFeedbackBufferBase(uint xfb, uint index, uint buffer)
+		public void TransformFeedbackBufferBase(uint xfb, uint index, uint buffer)
 		{
 			TransformFeedbackBufferBaseNative(xfb, index, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackBufferRangeNative(uint xfb, uint index, uint buffer, nint offset, nint size)
+		internal void TransformFeedbackBufferRangeNative(uint xfb, uint index, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, nint, void>)funcTable[581])(xfb, index, buffer, offset, size);
@@ -1802,13 +1802,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void TransformFeedbackBufferRange(uint xfb, uint index, uint buffer, nint offset, nint size)
+		public void TransformFeedbackBufferRange(uint xfb, uint index, uint buffer, nint offset, nint size)
 		{
 			TransformFeedbackBufferRangeNative(xfb, index, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackVaryingsNative(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
+		internal void TransformFeedbackVaryingsNative(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, byte**, GLTransformFeedbackBufferMode, void>)funcTable[582])(program, count, varyings, bufferMode);
@@ -1821,13 +1821,13 @@ namespace Hexa.NET.OpenGLES
 		/// Specify values to record in transform feedback buffers
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void TransformFeedbackVaryings(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
+		public void TransformFeedbackVaryings(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
 		{
 			TransformFeedbackVaryingsNative(program, count, varyings, bufferMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TranslatefNative(float x, float y, float z)
+		internal void TranslatefNative(float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[583])(x, y, z);
@@ -1840,13 +1840,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Translatef(float x, float y, float z)
+		public void Translatef(float x, float y, float z)
 		{
 			TranslatefNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TranslatexNative(int x, int y, int z)
+		internal void TranslatexNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[584])(x, y, z);
@@ -1859,13 +1859,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Translatex(int x, int y, int z)
+		public void Translatex(int x, int y, int z)
 		{
 			TranslatexNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1dNative(int location, double x)
+		internal void Uniform1dNative(int location, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, double, void>)funcTable[585])(location, x);
@@ -1878,13 +1878,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform1d(int location, double x)
+		public void Uniform1d(int location, double x)
 		{
 			Uniform1dNative(location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1dvNative(int location, int count, double* value)
+		internal void Uniform1dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[586])(location, count, value);
@@ -1897,7 +1897,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform1dv(int location, int count, double* value)
+		public void Uniform1dv(int location, int count, double* value)
 		{
 			Uniform1dvNative(location, count, value);
 		}
@@ -1906,7 +1906,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform1dv(int location, int count, Span<double> value)
+		public void Uniform1dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -1918,7 +1918,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform1dv(int location, int count, ref double value)
+		public void Uniform1dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -1927,7 +1927,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1fNative(int location, float v0)
+		internal void Uniform1fNative(int location, float v0)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, void>)funcTable[587])(location, v0);
@@ -1940,13 +1940,13 @@ namespace Hexa.NET.OpenGLES
 		/// Specify the value of a uniform variable for the current program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1f(int location, float v0)
+		public void Uniform1f(int location, float v0)
 		{
 			Uniform1fNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1fvNative(int location, int count, float* value)
+		internal void Uniform1fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[588])(location, count, value);
@@ -1959,7 +1959,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1fv(int location, int count, float* value)
+		public void Uniform1fv(int location, int count, float* value)
 		{
 			Uniform1fvNative(location, count, value);
 		}
@@ -1968,7 +1968,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1fv(int location, int count, Span<float> value)
+		public void Uniform1fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1980,7 +1980,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1fv(int location, int count, ref float value)
+		public void Uniform1fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1989,7 +1989,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1iNative(int location, int v0)
+		internal void Uniform1iNative(int location, int v0)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[589])(location, v0);
@@ -2002,13 +2002,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1i(int location, int v0)
+		public void Uniform1i(int location, int v0)
 		{
 			Uniform1iNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1ivNative(int location, int count, int* value)
+		internal void Uniform1ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[590])(location, count, value);
@@ -2021,7 +2021,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1iv(int location, int count, int* value)
+		public void Uniform1iv(int location, int count, int* value)
 		{
 			Uniform1ivNative(location, count, value);
 		}
@@ -2030,7 +2030,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1iv(int location, int count, Span<int> value)
+		public void Uniform1iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -2042,7 +2042,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1iv(int location, int count, ref int value)
+		public void Uniform1iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -2051,7 +2051,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1uiNative(int location, uint v0)
+		internal void Uniform1uiNative(int location, uint v0)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, void>)funcTable[591])(location, v0);
@@ -2064,13 +2064,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1ui(int location, uint v0)
+		public void Uniform1ui(int location, uint v0)
 		{
 			Uniform1uiNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1uivNative(int location, int count, uint* value)
+		internal void Uniform1uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[592])(location, count, value);
@@ -2083,7 +2083,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1uiv(int location, int count, uint* value)
+		public void Uniform1uiv(int location, int count, uint* value)
 		{
 			Uniform1uivNative(location, count, value);
 		}
@@ -2092,7 +2092,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1uiv(int location, int count, Span<uint> value)
+		public void Uniform1uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -2104,7 +2104,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform1uiv(int location, int count, ref uint value)
+		public void Uniform1uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -2113,7 +2113,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2dNative(int location, double x, double y)
+		internal void Uniform2dNative(int location, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, double, double, void>)funcTable[593])(location, x, y);
@@ -2126,13 +2126,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform2d(int location, double x, double y)
+		public void Uniform2d(int location, double x, double y)
 		{
 			Uniform2dNative(location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2dvNative(int location, int count, double* value)
+		internal void Uniform2dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[594])(location, count, value);
@@ -2145,7 +2145,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform2dv(int location, int count, double* value)
+		public void Uniform2dv(int location, int count, double* value)
 		{
 			Uniform2dvNative(location, count, value);
 		}
@@ -2154,7 +2154,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform2dv(int location, int count, Span<double> value)
+		public void Uniform2dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -2166,7 +2166,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform2dv(int location, int count, ref double value)
+		public void Uniform2dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -2175,7 +2175,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2fNative(int location, float v0, float v1)
+		internal void Uniform2fNative(int location, float v0, float v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[595])(location, v0, v1);
@@ -2188,13 +2188,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2f(int location, float v0, float v1)
+		public void Uniform2f(int location, float v0, float v1)
 		{
 			Uniform2fNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2fvNative(int location, int count, float* value)
+		internal void Uniform2fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[596])(location, count, value);
@@ -2207,7 +2207,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2fv(int location, int count, float* value)
+		public void Uniform2fv(int location, int count, float* value)
 		{
 			Uniform2fvNative(location, count, value);
 		}
@@ -2216,7 +2216,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2fv(int location, int count, Span<float> value)
+		public void Uniform2fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -2228,7 +2228,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2fv(int location, int count, ref float value)
+		public void Uniform2fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -2237,7 +2237,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2iNative(int location, int v0, int v1)
+		internal void Uniform2iNative(int location, int v0, int v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[597])(location, v0, v1);
@@ -2250,13 +2250,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2i(int location, int v0, int v1)
+		public void Uniform2i(int location, int v0, int v1)
 		{
 			Uniform2iNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ivNative(int location, int count, int* value)
+		internal void Uniform2ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[598])(location, count, value);
@@ -2269,7 +2269,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2iv(int location, int count, int* value)
+		public void Uniform2iv(int location, int count, int* value)
 		{
 			Uniform2ivNative(location, count, value);
 		}
@@ -2278,7 +2278,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2iv(int location, int count, Span<int> value)
+		public void Uniform2iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -2290,7 +2290,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2iv(int location, int count, ref int value)
+		public void Uniform2iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -2299,7 +2299,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2uiNative(int location, uint v0, uint v1)
+		internal void Uniform2uiNative(int location, uint v0, uint v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, uint, void>)funcTable[599])(location, v0, v1);
@@ -2312,13 +2312,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2ui(int location, uint v0, uint v1)
+		public void Uniform2ui(int location, uint v0, uint v1)
 		{
 			Uniform2uiNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2uivNative(int location, int count, uint* value)
+		internal void Uniform2uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[600])(location, count, value);
@@ -2331,7 +2331,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2uiv(int location, int count, uint* value)
+		public void Uniform2uiv(int location, int count, uint* value)
 		{
 			Uniform2uivNative(location, count, value);
 		}
@@ -2340,7 +2340,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2uiv(int location, int count, Span<uint> value)
+		public void Uniform2uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -2352,7 +2352,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform2uiv(int location, int count, ref uint value)
+		public void Uniform2uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -2361,7 +2361,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3dNative(int location, double x, double y, double z)
+		internal void Uniform3dNative(int location, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, double, double, double, void>)funcTable[601])(location, x, y, z);
@@ -2374,13 +2374,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform3d(int location, double x, double y, double z)
+		public void Uniform3d(int location, double x, double y, double z)
 		{
 			Uniform3dNative(location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3dvNative(int location, int count, double* value)
+		internal void Uniform3dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[602])(location, count, value);
@@ -2393,7 +2393,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform3dv(int location, int count, double* value)
+		public void Uniform3dv(int location, int count, double* value)
 		{
 			Uniform3dvNative(location, count, value);
 		}
@@ -2402,7 +2402,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform3dv(int location, int count, Span<double> value)
+		public void Uniform3dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -2414,7 +2414,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform3dv(int location, int count, ref double value)
+		public void Uniform3dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -2423,7 +2423,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3fNative(int location, float v0, float v1, float v2)
+		internal void Uniform3fNative(int location, float v0, float v1, float v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[603])(location, v0, v1, v2);
@@ -2436,13 +2436,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3f(int location, float v0, float v1, float v2)
+		public void Uniform3f(int location, float v0, float v1, float v2)
 		{
 			Uniform3fNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3fvNative(int location, int count, float* value)
+		internal void Uniform3fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[604])(location, count, value);
@@ -2455,7 +2455,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3fv(int location, int count, float* value)
+		public void Uniform3fv(int location, int count, float* value)
 		{
 			Uniform3fvNative(location, count, value);
 		}
@@ -2464,7 +2464,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3fv(int location, int count, Span<float> value)
+		public void Uniform3fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -2476,7 +2476,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3fv(int location, int count, ref float value)
+		public void Uniform3fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -2485,7 +2485,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3iNative(int location, int v0, int v1, int v2)
+		internal void Uniform3iNative(int location, int v0, int v1, int v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[605])(location, v0, v1, v2);
@@ -2498,13 +2498,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3i(int location, int v0, int v1, int v2)
+		public void Uniform3i(int location, int v0, int v1, int v2)
 		{
 			Uniform3iNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ivNative(int location, int count, int* value)
+		internal void Uniform3ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[606])(location, count, value);
@@ -2517,7 +2517,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3iv(int location, int count, int* value)
+		public void Uniform3iv(int location, int count, int* value)
 		{
 			Uniform3ivNative(location, count, value);
 		}
@@ -2526,7 +2526,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3iv(int location, int count, Span<int> value)
+		public void Uniform3iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -2538,7 +2538,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3iv(int location, int count, ref int value)
+		public void Uniform3iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -2547,7 +2547,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3uiNative(int location, uint v0, uint v1, uint v2)
+		internal void Uniform3uiNative(int location, uint v0, uint v1, uint v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, uint, uint, void>)funcTable[607])(location, v0, v1, v2);
@@ -2560,13 +2560,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3ui(int location, uint v0, uint v1, uint v2)
+		public void Uniform3ui(int location, uint v0, uint v1, uint v2)
 		{
 			Uniform3uiNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3uivNative(int location, int count, uint* value)
+		internal void Uniform3uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[608])(location, count, value);
@@ -2579,7 +2579,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3uiv(int location, int count, uint* value)
+		public void Uniform3uiv(int location, int count, uint* value)
 		{
 			Uniform3uivNative(location, count, value);
 		}
@@ -2588,7 +2588,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3uiv(int location, int count, Span<uint> value)
+		public void Uniform3uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -2600,7 +2600,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform3uiv(int location, int count, ref uint value)
+		public void Uniform3uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -2609,7 +2609,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4dNative(int location, double x, double y, double z, double w)
+		internal void Uniform4dNative(int location, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, double, double, double, double, void>)funcTable[609])(location, x, y, z, w);
@@ -2622,13 +2622,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform4d(int location, double x, double y, double z, double w)
+		public void Uniform4d(int location, double x, double y, double z, double w)
 		{
 			Uniform4dNative(location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4dvNative(int location, int count, double* value)
+		internal void Uniform4dvNative(int location, int count, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, double*, void>)funcTable[610])(location, count, value);
@@ -2641,7 +2641,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform4dv(int location, int count, double* value)
+		public void Uniform4dv(int location, int count, double* value)
 		{
 			Uniform4dvNative(location, count, value);
 		}
@@ -2650,7 +2650,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform4dv(int location, int count, Span<double> value)
+		public void Uniform4dv(int location, int count, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -2662,7 +2662,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void Uniform4dv(int location, int count, ref double value)
+		public void Uniform4dv(int location, int count, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -2671,7 +2671,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fNative(int location, float v0, float v1, float v2, float v3)
+		internal void Uniform4fNative(int location, float v0, float v1, float v2, float v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, float, float, void>)funcTable[611])(location, v0, v1, v2, v3);
@@ -2684,13 +2684,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4f(int location, float v0, float v1, float v2, float v3)
+		public void Uniform4f(int location, float v0, float v1, float v2, float v3)
 		{
 			Uniform4fNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fvNative(int location, int count, float* value)
+		internal void Uniform4fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[612])(location, count, value);
@@ -2703,7 +2703,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4fv(int location, int count, float* value)
+		public void Uniform4fv(int location, int count, float* value)
 		{
 			Uniform4fvNative(location, count, value);
 		}
@@ -2712,7 +2712,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4fv(int location, int count, Span<float> value)
+		public void Uniform4fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -2724,7 +2724,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4fv(int location, int count, ref float value)
+		public void Uniform4fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -2733,7 +2733,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4iNative(int location, int v0, int v1, int v2, int v3)
+		internal void Uniform4iNative(int location, int v0, int v1, int v2, int v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[613])(location, v0, v1, v2, v3);
@@ -2746,13 +2746,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4i(int location, int v0, int v1, int v2, int v3)
+		public void Uniform4i(int location, int v0, int v1, int v2, int v3)
 		{
 			Uniform4iNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ivNative(int location, int count, int* value)
+		internal void Uniform4ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[614])(location, count, value);
@@ -2765,7 +2765,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4iv(int location, int count, int* value)
+		public void Uniform4iv(int location, int count, int* value)
 		{
 			Uniform4ivNative(location, count, value);
 		}
@@ -2774,7 +2774,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4iv(int location, int count, Span<int> value)
+		public void Uniform4iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -2786,7 +2786,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4iv(int location, int count, ref int value)
+		public void Uniform4iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -2795,7 +2795,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4uiNative(int location, uint v0, uint v1, uint v2, uint v3)
+		internal void Uniform4uiNative(int location, uint v0, uint v1, uint v2, uint v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, uint, uint, uint, void>)funcTable[615])(location, v0, v1, v2, v3);
@@ -2808,13 +2808,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4ui(int location, uint v0, uint v1, uint v2, uint v3)
+		public void Uniform4ui(int location, uint v0, uint v1, uint v2, uint v3)
 		{
 			Uniform4uiNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4uivNative(int location, int count, uint* value)
+		internal void Uniform4uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[616])(location, count, value);
@@ -2827,7 +2827,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4uiv(int location, int count, uint* value)
+		public void Uniform4uiv(int location, int count, uint* value)
 		{
 			Uniform4uivNative(location, count, value);
 		}
@@ -2836,7 +2836,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4uiv(int location, int count, Span<uint> value)
+		public void Uniform4uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -2848,7 +2848,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Uniform4uiv(int location, int count, ref uint value)
+		public void Uniform4uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -2857,7 +2857,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformBlockBindingNative(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
+		internal void UniformBlockBindingNative(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[617])(program, uniformBlockIndex, uniformBlockBinding);
@@ -2870,13 +2870,13 @@ namespace Hexa.NET.OpenGLES
 		/// Assign a binding point to an active uniform block
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
+		public void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
 		{
 			UniformBlockBindingNative(program, uniformBlockIndex, uniformBlockBinding);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix2dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[618])(location, count, *((byte*)(&transpose)), value);
@@ -2889,7 +2889,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix2dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix2dvNative(location, count, transpose, value);
 		}
@@ -2898,7 +2898,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix2dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -2910,7 +2910,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix2dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -2919,7 +2919,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[619])(location, count, *((byte*)(&transpose)), value);
@@ -2932,7 +2932,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2fvNative(location, count, transpose, value);
 		}
@@ -2941,7 +2941,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -2953,7 +2953,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -2962,7 +2962,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x3dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix2x3dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[620])(location, count, *((byte*)(&transpose)), value);
@@ -2975,7 +2975,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2x3dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix2x3dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix2x3dvNative(location, count, transpose, value);
 		}
@@ -2984,7 +2984,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2x3dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix2x3dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -2996,7 +2996,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2x3dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix2x3dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3005,7 +3005,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x3fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2x3fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[621])(location, count, *((byte*)(&transpose)), value);
@@ -3018,7 +3018,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2x3fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2x3fvNative(location, count, transpose, value);
 		}
@@ -3027,7 +3027,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2x3fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3039,7 +3039,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2x3fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3048,7 +3048,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x4dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix2x4dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[622])(location, count, *((byte*)(&transpose)), value);
@@ -3061,7 +3061,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2x4dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix2x4dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix2x4dvNative(location, count, transpose, value);
 		}
@@ -3070,7 +3070,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2x4dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix2x4dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3082,7 +3082,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix2x4dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix2x4dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3091,7 +3091,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x4fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2x4fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[623])(location, count, *((byte*)(&transpose)), value);
@@ -3104,7 +3104,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2x4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2x4fvNative(location, count, transpose, value);
 		}
@@ -3113,7 +3113,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2x4fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3125,7 +3125,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3134,7 +3134,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix3dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[624])(location, count, *((byte*)(&transpose)), value);
@@ -3147,7 +3147,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix3dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix3dvNative(location, count, transpose, value);
 		}
@@ -3156,7 +3156,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix3dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3168,7 +3168,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix3dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3177,7 +3177,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[625])(location, count, *((byte*)(&transpose)), value);
@@ -3190,7 +3190,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3fvNative(location, count, transpose, value);
 		}
@@ -3199,7 +3199,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3211,7 +3211,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3220,7 +3220,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x2dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix3x2dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[626])(location, count, *((byte*)(&transpose)), value);
@@ -3233,7 +3233,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3x2dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix3x2dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix3x2dvNative(location, count, transpose, value);
 		}
@@ -3242,7 +3242,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3x2dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix3x2dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3254,7 +3254,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3x2dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix3x2dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3263,7 +3263,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x2fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3x2fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[627])(location, count, *((byte*)(&transpose)), value);
@@ -3276,7 +3276,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3x2fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x2fvNative(location, count, transpose, value);
 		}
@@ -3285,7 +3285,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3x2fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3297,7 +3297,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3306,7 +3306,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x4dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix3x4dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[628])(location, count, *((byte*)(&transpose)), value);
@@ -3319,7 +3319,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3x4dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix3x4dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix3x4dvNative(location, count, transpose, value);
 		}
@@ -3328,7 +3328,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3x4dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix3x4dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3340,7 +3340,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix3x4dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix3x4dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3349,7 +3349,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x4fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3x4fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[629])(location, count, *((byte*)(&transpose)), value);
@@ -3362,7 +3362,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3x4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x4fvNative(location, count, transpose, value);
 		}
@@ -3371,7 +3371,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3x4fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3383,7 +3383,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3392,7 +3392,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix4dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[630])(location, count, *((byte*)(&transpose)), value);
@@ -3405,7 +3405,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix4dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix4dvNative(location, count, transpose, value);
 		}
@@ -3414,7 +3414,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix4dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3426,7 +3426,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix4dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3435,7 +3435,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[631])(location, count, *((byte*)(&transpose)), value);
@@ -3448,7 +3448,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4fvNative(location, count, transpose, value);
 		}
@@ -3457,7 +3457,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3469,7 +3469,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3478,7 +3478,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x2dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix4x2dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[632])(location, count, *((byte*)(&transpose)), value);
@@ -3491,7 +3491,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4x2dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix4x2dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix4x2dvNative(location, count, transpose, value);
 		}
@@ -3500,7 +3500,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4x2dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix4x2dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3512,7 +3512,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4x2dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix4x2dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3521,7 +3521,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x2fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4x2fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[633])(location, count, *((byte*)(&transpose)), value);
@@ -3534,7 +3534,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4x2fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4x2fvNative(location, count, transpose, value);
 		}
@@ -3543,7 +3543,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4x2fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3555,7 +3555,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3564,7 +3564,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x3dvNative(int location, int count, bool transpose, double* value)
+		internal void UniformMatrix4x3dvNative(int location, int count, bool transpose, double* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, double*, void>)funcTable[634])(location, count, *((byte*)(&transpose)), value);
@@ -3577,7 +3577,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4x3dv(int location, int count, bool transpose, double* value)
+		public void UniformMatrix4x3dv(int location, int count, bool transpose, double* value)
 		{
 			UniformMatrix4x3dvNative(location, count, transpose, value);
 		}
@@ -3586,7 +3586,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4x3dv(int location, int count, bool transpose, Span<double> value)
+		public void UniformMatrix4x3dv(int location, int count, bool transpose, Span<double> value)
 		{
 			fixed (double* pvalue0 = value)
 			{
@@ -3598,7 +3598,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_gpu_shader_fp64</remarks>
-		public static void UniformMatrix4x3dv(int location, int count, bool transpose, ref double value)
+		public void UniformMatrix4x3dv(int location, int count, bool transpose, ref double value)
 		{
 			fixed (double* pvalue0 = &value)
 			{
@@ -3607,7 +3607,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x3fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4x3fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[635])(location, count, *((byte*)(&transpose)), value);
@@ -3620,7 +3620,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4x3fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4x3fvNative(location, count, transpose, value);
 		}
@@ -3629,7 +3629,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4x3fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -3641,7 +3641,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -3650,7 +3650,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformSubroutinesuivNative(GLShaderType shadertype, int count, uint* indices)
+		internal void UniformSubroutinesuivNative(GLShaderType shadertype, int count, uint* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLShaderType, int, uint*, void>)funcTable[636])(shadertype, count, indices);
@@ -3663,7 +3663,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, uint* indices)
+		public void UniformSubroutinesuiv(GLShaderType shadertype, int count, uint* indices)
 		{
 			UniformSubroutinesuivNative(shadertype, count, indices);
 		}
@@ -3672,7 +3672,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, Span<uint> indices)
+		public void UniformSubroutinesuiv(GLShaderType shadertype, int count, Span<uint> indices)
 		{
 			fixed (uint* pindices0 = indices)
 			{
@@ -3684,7 +3684,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_shader_subroutine</remarks>
-		public static void UniformSubroutinesuiv(GLShaderType shadertype, int count, ref uint indices)
+		public void UniformSubroutinesuiv(GLShaderType shadertype, int count, ref uint indices)
 		{
 			fixed (uint* pindices0 = &indices)
 			{
@@ -3693,7 +3693,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapBufferNative(GLBufferTargetARB target)
+		internal byte UnmapBufferNative(GLBufferTargetARB target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, byte>)funcTable[637])(target);
@@ -3706,14 +3706,14 @@ namespace Hexa.NET.OpenGLES
 		/// Release the mapping of a buffer object's data store into the client's address space
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static bool UnmapBuffer(GLBufferTargetARB target)
+		public bool UnmapBuffer(GLBufferTargetARB target)
 		{
 			byte ret = UnmapBufferNative(target);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapNamedBufferNative(uint buffer)
+		internal byte UnmapNamedBufferNative(uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[638])(buffer);
@@ -3726,14 +3726,14 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static bool UnmapNamedBuffer(uint buffer)
+		public bool UnmapNamedBuffer(uint buffer)
 		{
 			byte ret = UnmapNamedBufferNative(buffer);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UseProgramNative(uint program)
+		internal void UseProgramNative(uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[639])(program);
@@ -3746,13 +3746,13 @@ namespace Hexa.NET.OpenGLES
 		/// Installs a program object as part of current rendering state
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void UseProgram(uint program)
+		public void UseProgram(uint program)
 		{
 			UseProgramNative(program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UseProgramStagesNative(uint pipeline, GLUseProgramStageMask stages, uint program)
+		internal void UseProgramStagesNative(uint pipeline, GLUseProgramStageMask stages, uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLUseProgramStageMask, uint, void>)funcTable[640])(pipeline, stages, program);
@@ -3765,13 +3765,13 @@ namespace Hexa.NET.OpenGLES
 		/// Bind stages of a program object to a program pipeline
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void UseProgramStages(uint pipeline, GLUseProgramStageMask stages, uint program)
+		public void UseProgramStages(uint pipeline, GLUseProgramStageMask stages, uint program)
 		{
 			UseProgramStagesNative(pipeline, stages, program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ValidateProgramNative(uint program)
+		internal void ValidateProgramNative(uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[641])(program);
@@ -3784,13 +3784,13 @@ namespace Hexa.NET.OpenGLES
 		/// Validates a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void ValidateProgram(uint program)
+		public void ValidateProgram(uint program)
 		{
 			ValidateProgramNative(program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ValidateProgramPipelineNative(uint pipeline)
+		internal void ValidateProgramPipelineNative(uint pipeline)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[642])(pipeline);
@@ -3803,13 +3803,13 @@ namespace Hexa.NET.OpenGLES
 		/// Validate a program pipeline object against current GL state
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void ValidateProgramPipeline(uint pipeline)
+		public void ValidateProgramPipeline(uint pipeline)
 		{
 			ValidateProgramPipelineNative(pipeline);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribBindingNative(uint vaobj, uint attribindex, uint bindingindex)
+		internal void VertexArrayAttribBindingNative(uint vaobj, uint attribindex, uint bindingindex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[643])(vaobj, attribindex, bindingindex);
@@ -3822,13 +3822,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayAttribBinding(uint vaobj, uint attribindex, uint bindingindex)
+		public void VertexArrayAttribBinding(uint vaobj, uint attribindex, uint bindingindex)
 		{
 			VertexArrayAttribBindingNative(vaobj, attribindex, bindingindex);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
+		internal void VertexArrayAttribFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribType, byte, uint, void>)funcTable[644])(vaobj, attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
@@ -3841,13 +3841,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayAttribFormat(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
+		public void VertexArrayAttribFormat(uint vaobj, uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexArrayAttribFormatNative(vaobj, attribindex, size, type, normalized, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribIFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		internal void VertexArrayAttribIFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribIType, uint, void>)funcTable[645])(vaobj, attribindex, size, type, relativeoffset);
@@ -3860,13 +3860,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayAttribIFormat(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		public void VertexArrayAttribIFormat(uint vaobj, uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			VertexArrayAttribIFormatNative(vaobj, attribindex, size, type, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayAttribLFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
+		internal void VertexArrayAttribLFormatNative(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, GLVertexAttribLType, uint, void>)funcTable[646])(vaobj, attribindex, size, type, relativeoffset);
@@ -3879,13 +3879,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayAttribLFormat(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
+		public void VertexArrayAttribLFormat(uint vaobj, uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			VertexArrayAttribLFormatNative(vaobj, attribindex, size, type, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayBindingDivisorNative(uint vaobj, uint bindingindex, uint divisor)
+		internal void VertexArrayBindingDivisorNative(uint vaobj, uint bindingindex, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[647])(vaobj, bindingindex, divisor);
@@ -3898,13 +3898,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayBindingDivisor(uint vaobj, uint bindingindex, uint divisor)
+		public void VertexArrayBindingDivisor(uint vaobj, uint bindingindex, uint divisor)
 		{
 			VertexArrayBindingDivisorNative(vaobj, bindingindex, divisor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayElementBufferNative(uint vaobj, uint buffer)
+		internal void VertexArrayElementBufferNative(uint vaobj, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[648])(vaobj, buffer);
@@ -3917,13 +3917,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayElementBuffer(uint vaobj, uint buffer)
+		public void VertexArrayElementBuffer(uint vaobj, uint buffer)
 		{
 			VertexArrayElementBufferNative(vaobj, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexBufferNative(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
+		internal void VertexArrayVertexBufferNative(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, nint, int, void>)funcTable[649])(vaobj, bindingindex, buffer, offset, stride);
@@ -3936,13 +3936,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffer(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
+		public void VertexArrayVertexBuffer(uint vaobj, uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			VertexArrayVertexBufferNative(vaobj, bindingindex, buffer, offset, stride);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayVertexBuffersNative(uint vaobj, uint first, int count, uint* buffers, nint* offsets, int* strides)
+		internal void VertexArrayVertexBuffersNative(uint vaobj, uint first, int count, uint* buffers, nint* offsets, int* strides)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, uint*, nint*, int*, void>)funcTable[650])(vaobj, first, count, buffers, offsets, strides);
@@ -3955,7 +3955,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, int* strides)
 		{
 			VertexArrayVertexBuffersNative(vaobj, first, count, buffers, offsets, strides);
 		}
@@ -3964,7 +3964,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -3976,7 +3976,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -3988,7 +3988,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = offsets)
 			{
@@ -4000,7 +4000,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, int* strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
@@ -4012,7 +4012,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -4027,7 +4027,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, ref nint offsets, int* strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, ref nint offsets, int* strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -4042,7 +4042,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, Span<int> strides)
 		{
 			fixed (int* pstrides0 = strides)
 			{
@@ -4054,7 +4054,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, ref int strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, nint* offsets, ref int strides)
 		{
 			fixed (int* pstrides0 = &strides)
 			{
@@ -4066,7 +4066,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, nint* offsets, Span<int> strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -4081,7 +4081,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, ref int strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, nint* offsets, ref int strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -4096,7 +4096,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, Span<nint> offsets, Span<int> strides)
 		{
 			fixed (nint* poffsets0 = offsets)
 			{
@@ -4111,7 +4111,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, ref int strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint* buffers, ref nint offsets, ref int strides)
 		{
 			fixed (nint* poffsets0 = &offsets)
 			{
@@ -4126,7 +4126,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, Span<uint> buffers, Span<nint> offsets, Span<int> strides)
 		{
 			fixed (uint* pbuffers0 = buffers)
 			{
@@ -4144,7 +4144,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_direct_state_access</remarks>
-		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, ref nint offsets, ref int strides)
+		public void VertexArrayVertexBuffers(uint vaobj, uint first, int count, ref uint buffers, ref nint offsets, ref int strides)
 		{
 			fixed (uint* pbuffers0 = &buffers)
 			{
@@ -4159,7 +4159,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dNative(uint index, double x)
+		internal void VertexAttrib1dNative(uint index, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[651])(index, x);
@@ -4172,13 +4172,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1d(uint index, double x)
+		public void VertexAttrib1d(uint index, double x)
 		{
 			VertexAttrib1dNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dvNative(uint index, double* v)
+		internal void VertexAttrib1dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[652])(index, v);
@@ -4191,7 +4191,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1dv(uint index, double* v)
+		public void VertexAttrib1dv(uint index, double* v)
 		{
 			VertexAttrib1dvNative(index, v);
 		}
@@ -4200,7 +4200,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1dv(uint index, Span<double> v)
+		public void VertexAttrib1dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -4212,7 +4212,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1dv(uint index, ref double v)
+		public void VertexAttrib1dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -4221,7 +4221,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fNative(uint index, float x)
+		internal void VertexAttrib1fNative(uint index, float x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, void>)funcTable[653])(index, x);
@@ -4234,13 +4234,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1f(uint index, float x)
+		public void VertexAttrib1f(uint index, float x)
 		{
 			VertexAttrib1fNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fvNative(uint index, float* v)
+		internal void VertexAttrib1fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[654])(index, v);
@@ -4253,7 +4253,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1fv(uint index, float* v)
+		public void VertexAttrib1fv(uint index, float* v)
 		{
 			VertexAttrib1fvNative(index, v);
 		}
@@ -4262,7 +4262,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1fv(uint index, Span<float> v)
+		public void VertexAttrib1fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -4274,7 +4274,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1fv(uint index, ref float v)
+		public void VertexAttrib1fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -4283,7 +4283,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1sNative(uint index, short x)
+		internal void VertexAttrib1sNative(uint index, short x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, void>)funcTable[655])(index, x);
@@ -4296,13 +4296,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1s(uint index, short x)
+		public void VertexAttrib1s(uint index, short x)
 		{
 			VertexAttrib1sNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1svNative(uint index, short* v)
+		internal void VertexAttrib1svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[656])(index, v);
@@ -4315,7 +4315,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1sv(uint index, short* v)
+		public void VertexAttrib1sv(uint index, short* v)
 		{
 			VertexAttrib1svNative(index, v);
 		}
@@ -4324,7 +4324,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1sv(uint index, Span<short> v)
+		public void VertexAttrib1sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -4336,7 +4336,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib1sv(uint index, ref short v)
+		public void VertexAttrib1sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -4345,7 +4345,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dNative(uint index, double x, double y)
+		internal void VertexAttrib2dNative(uint index, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[657])(index, x, y);
@@ -4358,13 +4358,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2d(uint index, double x, double y)
+		public void VertexAttrib2d(uint index, double x, double y)
 		{
 			VertexAttrib2dNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dvNative(uint index, double* v)
+		internal void VertexAttrib2dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[658])(index, v);
@@ -4377,7 +4377,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2dv(uint index, double* v)
+		public void VertexAttrib2dv(uint index, double* v)
 		{
 			VertexAttrib2dvNative(index, v);
 		}
@@ -4386,7 +4386,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2dv(uint index, Span<double> v)
+		public void VertexAttrib2dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -4398,7 +4398,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2dv(uint index, ref double v)
+		public void VertexAttrib2dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -4407,7 +4407,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fNative(uint index, float x, float y)
+		internal void VertexAttrib2fNative(uint index, float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[659])(index, x, y);
@@ -4420,13 +4420,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2f(uint index, float x, float y)
+		public void VertexAttrib2f(uint index, float x, float y)
 		{
 			VertexAttrib2fNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fvNative(uint index, float* v)
+		internal void VertexAttrib2fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[660])(index, v);
@@ -4439,7 +4439,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2fv(uint index, float* v)
+		public void VertexAttrib2fv(uint index, float* v)
 		{
 			VertexAttrib2fvNative(index, v);
 		}
@@ -4448,7 +4448,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2fv(uint index, Span<float> v)
+		public void VertexAttrib2fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -4460,7 +4460,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2fv(uint index, ref float v)
+		public void VertexAttrib2fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -4469,7 +4469,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2sNative(uint index, short x, short y)
+		internal void VertexAttrib2sNative(uint index, short x, short y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, void>)funcTable[661])(index, x, y);
@@ -4482,13 +4482,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2s(uint index, short x, short y)
+		public void VertexAttrib2s(uint index, short x, short y)
 		{
 			VertexAttrib2sNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2svNative(uint index, short* v)
+		internal void VertexAttrib2svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[662])(index, v);
@@ -4501,7 +4501,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2sv(uint index, short* v)
+		public void VertexAttrib2sv(uint index, short* v)
 		{
 			VertexAttrib2svNative(index, v);
 		}
@@ -4510,7 +4510,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2sv(uint index, Span<short> v)
+		public void VertexAttrib2sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -4522,7 +4522,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib2sv(uint index, ref short v)
+		public void VertexAttrib2sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -4531,7 +4531,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dNative(uint index, double x, double y, double z)
+		internal void VertexAttrib3dNative(uint index, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[663])(index, x, y, z);
@@ -4544,13 +4544,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3d(uint index, double x, double y, double z)
+		public void VertexAttrib3d(uint index, double x, double y, double z)
 		{
 			VertexAttrib3dNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dvNative(uint index, double* v)
+		internal void VertexAttrib3dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[664])(index, v);
@@ -4563,7 +4563,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3dv(uint index, double* v)
+		public void VertexAttrib3dv(uint index, double* v)
 		{
 			VertexAttrib3dvNative(index, v);
 		}
@@ -4572,7 +4572,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3dv(uint index, Span<double> v)
+		public void VertexAttrib3dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -4584,7 +4584,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3dv(uint index, ref double v)
+		public void VertexAttrib3dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -4593,7 +4593,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fNative(uint index, float x, float y, float z)
+		internal void VertexAttrib3fNative(uint index, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, void>)funcTable[665])(index, x, y, z);
@@ -4606,13 +4606,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3f(uint index, float x, float y, float z)
+		public void VertexAttrib3f(uint index, float x, float y, float z)
 		{
 			VertexAttrib3fNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fvNative(uint index, float* v)
+		internal void VertexAttrib3fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[666])(index, v);
@@ -4625,7 +4625,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3fv(uint index, float* v)
+		public void VertexAttrib3fv(uint index, float* v)
 		{
 			VertexAttrib3fvNative(index, v);
 		}
@@ -4634,7 +4634,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3fv(uint index, Span<float> v)
+		public void VertexAttrib3fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -4646,7 +4646,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3fv(uint index, ref float v)
+		public void VertexAttrib3fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -4655,7 +4655,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3sNative(uint index, short x, short y, short z)
+		internal void VertexAttrib3sNative(uint index, short x, short y, short z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, short, void>)funcTable[667])(index, x, y, z);
@@ -4668,13 +4668,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3s(uint index, short x, short y, short z)
+		public void VertexAttrib3s(uint index, short x, short y, short z)
 		{
 			VertexAttrib3sNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3svNative(uint index, short* v)
+		internal void VertexAttrib3svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[668])(index, v);
@@ -4687,7 +4687,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3sv(uint index, short* v)
+		public void VertexAttrib3sv(uint index, short* v)
 		{
 			VertexAttrib3svNative(index, v);
 		}
@@ -4696,7 +4696,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3sv(uint index, Span<short> v)
+		public void VertexAttrib3sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -4708,7 +4708,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib3sv(uint index, ref short v)
+		public void VertexAttrib3sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -4717,7 +4717,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NbvNative(uint index, sbyte* v)
+		internal void VertexAttrib4NbvNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[669])(index, v);
@@ -4730,7 +4730,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nbv(uint index, sbyte* v)
+		public void VertexAttrib4Nbv(uint index, sbyte* v)
 		{
 			VertexAttrib4NbvNative(index, v);
 		}
@@ -4739,7 +4739,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nbv(uint index, Span<sbyte> v)
+		public void VertexAttrib4Nbv(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -4751,7 +4751,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nbv(uint index, ref sbyte v)
+		public void VertexAttrib4Nbv(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -4760,7 +4760,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NivNative(uint index, int* v)
+		internal void VertexAttrib4NivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[670])(index, v);
@@ -4773,7 +4773,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Niv(uint index, int* v)
+		public void VertexAttrib4Niv(uint index, int* v)
 		{
 			VertexAttrib4NivNative(index, v);
 		}
@@ -4782,7 +4782,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Niv(uint index, Span<int> v)
+		public void VertexAttrib4Niv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -4794,7 +4794,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Niv(uint index, ref int v)
+		public void VertexAttrib4Niv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -4803,7 +4803,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NsvNative(uint index, short* v)
+		internal void VertexAttrib4NsvNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[671])(index, v);
@@ -4816,7 +4816,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nsv(uint index, short* v)
+		public void VertexAttrib4Nsv(uint index, short* v)
 		{
 			VertexAttrib4NsvNative(index, v);
 		}
@@ -4825,7 +4825,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nsv(uint index, Span<short> v)
+		public void VertexAttrib4Nsv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -4837,7 +4837,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nsv(uint index, ref short v)
+		public void VertexAttrib4Nsv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -4846,7 +4846,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NubNative(uint index, bool x, bool y, bool z, bool w)
+		internal void VertexAttrib4NubNative(uint index, bool x, bool y, bool z, bool w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[672])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
@@ -4859,13 +4859,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nub(uint index, bool x, bool y, bool z, bool w)
+		public void VertexAttrib4Nub(uint index, bool x, bool y, bool z, bool w)
 		{
 			VertexAttrib4NubNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NubvNative(uint index, byte* v)
+		internal void VertexAttrib4NubvNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[673])(index, v);
@@ -4878,7 +4878,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, byte* v)
+		public void VertexAttrib4Nubv(uint index, byte* v)
 		{
 			VertexAttrib4NubvNative(index, v);
 		}
@@ -4887,7 +4887,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, string v)
+		public void VertexAttrib4Nubv(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -4917,7 +4917,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, Span<byte> v)
+		public void VertexAttrib4Nubv(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -4929,7 +4929,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, ref byte v)
+		public void VertexAttrib4Nubv(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -4938,7 +4938,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NuivNative(uint index, uint* v)
+		internal void VertexAttrib4NuivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[674])(index, v);
@@ -4951,7 +4951,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nuiv(uint index, uint* v)
+		public void VertexAttrib4Nuiv(uint index, uint* v)
 		{
 			VertexAttrib4NuivNative(index, v);
 		}
@@ -4960,7 +4960,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nuiv(uint index, Span<uint> v)
+		public void VertexAttrib4Nuiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -4972,7 +4972,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nuiv(uint index, ref uint v)
+		public void VertexAttrib4Nuiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -4981,7 +4981,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NusvNative(uint index, ushort* v)
+		internal void VertexAttrib4NusvNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[675])(index, v);
@@ -4994,7 +4994,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nusv(uint index, ushort* v)
+		public void VertexAttrib4Nusv(uint index, ushort* v)
 		{
 			VertexAttrib4NusvNative(index, v);
 		}
@@ -5003,7 +5003,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nusv(uint index, Span<ushort> v)
+		public void VertexAttrib4Nusv(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -5015,7 +5015,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4Nusv(uint index, ref ushort v)
+		public void VertexAttrib4Nusv(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{

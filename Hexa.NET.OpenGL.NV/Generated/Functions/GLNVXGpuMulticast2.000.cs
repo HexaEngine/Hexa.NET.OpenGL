@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVXGpuMulticast2
+	public unsafe partial class GLNVXGpuMulticast2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint AsyncCopyBufferSubDataNVXNative(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		internal uint AsyncCopyBufferSubDataNVXNative(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int, uint*, ulong*, uint, uint, uint, uint, nint, nint, nint, int, uint*, ulong*, uint>)funcTable[0])(waitSemaphoreCount, waitSemaphoreArray, fenceValueArray, readGpu, writeGpuMask, readBuffer, writeBuffer, readOffset, writeOffset, size, signalSemaphoreCount, signalSemaphoreArray, signalValueArray);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			uint ret = AsyncCopyBufferSubDataNVXNative(waitSemaphoreCount, waitSemaphoreArray, fenceValueArray, readGpu, writeGpuMask, readBuffer, writeBuffer, readOffset, writeOffset, size, signalSemaphoreCount, signalSemaphoreArray, signalValueArray);
 			return ret;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -66,7 +66,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -124,7 +124,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = signalSemaphoreArray)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = &signalSemaphoreArray)
 			{
@@ -150,7 +150,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -166,7 +166,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
 			{
@@ -198,7 +198,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -233,7 +233,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -252,7 +252,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (ulong* psignalValueArray0 = signalValueArray)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (ulong* psignalValueArray0 = &signalValueArray)
 			{
@@ -278,7 +278,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -294,7 +294,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -310,7 +310,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
 			{
@@ -326,7 +326,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -361,7 +361,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -380,7 +380,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = signalSemaphoreArray)
 			{
@@ -396,7 +396,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = &signalSemaphoreArray)
 			{
@@ -412,7 +412,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -431,7 +431,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -450,7 +450,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = fenceValueArray)
 			{
@@ -469,7 +469,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (ulong* pfenceValueArray0 = &fenceValueArray)
 			{
@@ -488,7 +488,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -510,7 +510,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyBufferSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong fenceValueArray, uint readGpu, uint writeGpuMask, uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -529,7 +529,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint AsyncCopyImageSubDataNVXNative(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		internal uint AsyncCopyImageSubDataNVXNative(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int, uint*, ulong*, uint, uint, uint, GLEnum, int, int, int, int, uint, GLEnum, int, int, int, int, int, int, int, int, uint*, ulong*, uint>)funcTable[1])(waitSemaphoreCount, waitSemaphoreArray, waitValueArray, srcGpu, dstGpuMask, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth, signalSemaphoreCount, signalSemaphoreArray, signalValueArray);
@@ -542,7 +542,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			uint ret = AsyncCopyImageSubDataNVXNative(waitSemaphoreCount, waitSemaphoreArray, waitValueArray, srcGpu, dstGpuMask, srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth, signalSemaphoreCount, signalSemaphoreArray, signalValueArray);
 			return ret;
@@ -552,7 +552,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -565,7 +565,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -578,7 +578,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = waitValueArray)
 			{
@@ -591,7 +591,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = &waitValueArray)
 			{
@@ -604,7 +604,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -620,7 +620,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -636,7 +636,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = signalSemaphoreArray)
 			{
@@ -649,7 +649,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = &signalSemaphoreArray)
 			{
@@ -662,7 +662,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -694,7 +694,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = waitValueArray)
 			{
@@ -710,7 +710,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = &waitValueArray)
 			{
@@ -726,7 +726,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -745,7 +745,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ulong* signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -764,7 +764,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (ulong* psignalValueArray0 = signalValueArray)
 			{
@@ -777,7 +777,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (ulong* psignalValueArray0 = &signalValueArray)
 			{
@@ -790,7 +790,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -806,7 +806,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -822,7 +822,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = waitValueArray)
 			{
@@ -838,7 +838,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = &waitValueArray)
 			{
@@ -854,7 +854,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -873,7 +873,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, uint* signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -892,7 +892,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = signalSemaphoreArray)
 			{
@@ -908,7 +908,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* psignalSemaphoreArray0 = &signalSemaphoreArray)
 			{
@@ -924,7 +924,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -943,7 +943,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ulong* waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -962,7 +962,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = waitValueArray)
 			{
@@ -981,7 +981,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, uint* waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (ulong* pwaitValueArray0 = &waitValueArray)
 			{
@@ -1000,7 +1000,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, Span<uint> waitSemaphoreArray, Span<ulong> waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, Span<uint> signalSemaphoreArray, Span<ulong> signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = waitSemaphoreArray)
 			{
@@ -1022,7 +1022,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
+		public uint AsyncCopyImageSubDataNVX(int waitSemaphoreCount, ref uint waitSemaphoreArray, ref ulong waitValueArray, uint srcGpu, uint dstGpuMask, uint srcName, GLEnum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, GLEnum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth, int signalSemaphoreCount, ref uint signalSemaphoreArray, ref ulong signalValueArray)
 		{
 			fixed (uint* pwaitSemaphoreArray0 = &waitSemaphoreArray)
 			{
@@ -1041,7 +1041,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MulticastScissorArrayvNVXNative(uint gpu, uint first, int count, int* v)
+		internal void MulticastScissorArrayvNVXNative(uint gpu, uint first, int count, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, int*, void>)funcTable[2])(gpu, first, count, v);
@@ -1054,7 +1054,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastScissorArrayvNVX(uint gpu, uint first, int count, int* v)
+		public void MulticastScissorArrayvNVX(uint gpu, uint first, int count, int* v)
 		{
 			MulticastScissorArrayvNVXNative(gpu, first, count, v);
 		}
@@ -1063,7 +1063,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastScissorArrayvNVX(uint gpu, uint first, int count, Span<int> v)
+		public void MulticastScissorArrayvNVX(uint gpu, uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -1075,7 +1075,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastScissorArrayvNVX(uint gpu, uint first, int count, ref int v)
+		public void MulticastScissorArrayvNVX(uint gpu, uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -1084,7 +1084,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MulticastViewportArrayvNVXNative(uint gpu, uint first, int count, float* v)
+		internal void MulticastViewportArrayvNVXNative(uint gpu, uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, float*, void>)funcTable[3])(gpu, first, count, v);
@@ -1097,7 +1097,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastViewportArrayvNVX(uint gpu, uint first, int count, float* v)
+		public void MulticastViewportArrayvNVX(uint gpu, uint first, int count, float* v)
 		{
 			MulticastViewportArrayvNVXNative(gpu, first, count, v);
 		}
@@ -1106,7 +1106,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastViewportArrayvNVX(uint gpu, uint first, int count, Span<float> v)
+		public void MulticastViewportArrayvNVX(uint gpu, uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1118,7 +1118,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastViewportArrayvNVX(uint gpu, uint first, int count, ref float v)
+		public void MulticastViewportArrayvNVX(uint gpu, uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1127,7 +1127,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MulticastViewportPositionWScaleNVXNative(uint gpu, uint index, float xcoeff, float ycoeff)
+		internal void MulticastViewportPositionWScaleNVXNative(uint gpu, uint index, float xcoeff, float ycoeff)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, float, float, void>)funcTable[4])(gpu, index, xcoeff, ycoeff);
@@ -1140,13 +1140,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void MulticastViewportPositionWScaleNVX(uint gpu, uint index, float xcoeff, float ycoeff)
+		public void MulticastViewportPositionWScaleNVX(uint gpu, uint index, float xcoeff, float ycoeff)
 		{
 			MulticastViewportPositionWScaleNVXNative(gpu, index, xcoeff, ycoeff);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UploadGpuMaskNVXNative(uint mask)
+		internal void UploadGpuMaskNVXNative(uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[5])(mask);
@@ -1159,7 +1159,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_gpu_multicast2</remarks>
-		public static void UploadGpuMaskNVX(uint mask)
+		public void UploadGpuMaskNVX(uint mask)
 		{
 			UploadGpuMaskNVXNative(mask);
 		}

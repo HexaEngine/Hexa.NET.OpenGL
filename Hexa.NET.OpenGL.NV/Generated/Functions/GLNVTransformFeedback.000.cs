@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVTransformFeedback
+	public unsafe partial class GLNVTransformFeedback
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ActiveVaryingNVNative(uint program, byte* name)
+		internal void ActiveVaryingNVNative(uint program, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[0])(program, name);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void ActiveVaryingNV(uint program, byte* name)
+		public void ActiveVaryingNV(uint program, byte* name)
 		{
 			ActiveVaryingNVNative(program, name);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void ActiveVaryingNV(uint program, string name)
+		public void ActiveVaryingNV(uint program, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void ActiveVaryingNV(uint program, Span<byte> name)
+		public void ActiveVaryingNV(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -81,7 +81,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void ActiveVaryingNV(uint program, ref byte name)
+		public void ActiveVaryingNV(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -90,7 +90,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginTransformFeedbackNVNative(GLPrimitiveType primitiveMode)
+		internal void BeginTransformFeedbackNVNative(GLPrimitiveType primitiveMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void>)funcTable[1])(primitiveMode);
@@ -103,13 +103,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void BeginTransformFeedbackNV(GLPrimitiveType primitiveMode)
+		public void BeginTransformFeedbackNV(GLPrimitiveType primitiveMode)
 		{
 			BeginTransformFeedbackNVNative(primitiveMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferBaseNVNative(GLBufferTargetARB target, uint index, uint buffer)
+		internal void BindBufferBaseNVNative(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, void>)funcTable[2])(target, index, buffer);
@@ -122,13 +122,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void BindBufferBaseNV(GLBufferTargetARB target, uint index, uint buffer)
+		public void BindBufferBaseNV(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			BindBufferBaseNVNative(target, index, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferOffsetNVNative(GLBufferTargetARB target, uint index, uint buffer, nint offset)
+		internal void BindBufferOffsetNVNative(GLBufferTargetARB target, uint index, uint buffer, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, nint, void>)funcTable[3])(target, index, buffer, offset);
@@ -141,13 +141,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void BindBufferOffsetNV(GLBufferTargetARB target, uint index, uint buffer, nint offset)
+		public void BindBufferOffsetNV(GLBufferTargetARB target, uint index, uint buffer, nint offset)
 		{
 			BindBufferOffsetNVNative(target, index, buffer, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferRangeNVNative(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
+		internal void BindBufferRangeNVNative(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, nint, nint, void>)funcTable[4])(target, index, buffer, offset, size);
@@ -160,13 +160,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void BindBufferRangeNV(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
+		public void BindBufferRangeNV(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			BindBufferRangeNVNative(target, index, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndTransformFeedbackNVNative()
+		internal void EndTransformFeedbackNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[5])();
@@ -179,13 +179,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void EndTransformFeedbackNV()
+		public void EndTransformFeedbackNV()
 		{
 			EndTransformFeedbackNVNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetActiveVaryingNVNative(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, byte* name)
+		internal void GetActiveVaryingNVNative(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, int*, int*, GLEnum*, byte*, void>)funcTable[6])(program, index, bufSize, length, size, type, name);
@@ -198,7 +198,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, byte* name)
 		{
 			GetActiveVaryingNVNative(program, index, bufSize, length, size, type, name);
 		}
@@ -207,7 +207,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, GLEnum* type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -219,7 +219,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, GLEnum* type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -231,7 +231,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, GLEnum* type, byte* name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -243,7 +243,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, GLEnum* type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -255,7 +255,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLEnum* type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -270,7 +270,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, GLEnum* type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, GLEnum* type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -285,7 +285,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, Span<GLEnum> type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, Span<GLEnum> type, byte* name)
 		{
 			fixed (GLEnum* ptype0 = type)
 			{
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, ref GLEnum type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, ref GLEnum type, byte* name)
 		{
 			fixed (GLEnum* ptype0 = &type)
 			{
@@ -309,7 +309,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, Span<GLEnum> type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, Span<GLEnum> type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -324,7 +324,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, ref GLEnum type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, ref GLEnum type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -339,7 +339,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, Span<GLEnum> type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, Span<GLEnum> type, byte* name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, ref GLEnum type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, ref GLEnum type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -369,7 +369,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, Span<GLEnum> type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, Span<GLEnum> type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -387,7 +387,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, ref GLEnum type, byte* name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, ref GLEnum type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -405,7 +405,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, string name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -435,7 +435,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -447,7 +447,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, GLEnum* type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -459,7 +459,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, GLEnum* type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, GLEnum* type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -474,7 +474,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, GLEnum* type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, GLEnum* type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -489,7 +489,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, GLEnum* type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, GLEnum* type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -504,7 +504,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, GLEnum* type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, GLEnum* type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -519,7 +519,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLEnum* type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLEnum* type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -537,7 +537,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, GLEnum* type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, GLEnum* type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -555,7 +555,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, Span<GLEnum> type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, Span<GLEnum> type, Span<byte> name)
 		{
 			fixed (GLEnum* ptype0 = type)
 			{
@@ -570,7 +570,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, ref GLEnum type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, int* size, ref GLEnum type, ref byte name)
 		{
 			fixed (GLEnum* ptype0 = &type)
 			{
@@ -585,7 +585,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, Span<GLEnum> type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, int* size, Span<GLEnum> type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -603,7 +603,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, ref GLEnum type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, int* size, ref GLEnum type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -621,7 +621,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, Span<GLEnum> type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, Span<int> size, Span<GLEnum> type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -639,7 +639,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, ref GLEnum type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, int* length, ref int size, ref GLEnum type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -657,7 +657,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, Span<GLEnum> type, Span<byte> name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, Span<int> length, Span<int> size, Span<GLEnum> type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, ref GLEnum type, ref byte name)
+		public void GetActiveVaryingNV(uint program, uint index, int bufSize, ref int length, ref int size, ref GLEnum type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -696,7 +696,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTransformFeedbackVaryingNVNative(uint program, uint index, int* location)
+		internal void GetTransformFeedbackVaryingNVNative(uint program, uint index, int* location)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int*, void>)funcTable[7])(program, index, location);
@@ -709,7 +709,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingNV(uint program, uint index, int* location)
+		public void GetTransformFeedbackVaryingNV(uint program, uint index, int* location)
 		{
 			GetTransformFeedbackVaryingNVNative(program, index, location);
 		}
@@ -718,7 +718,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingNV(uint program, uint index, Span<int> location)
+		public void GetTransformFeedbackVaryingNV(uint program, uint index, Span<int> location)
 		{
 			fixed (int* plocation0 = location)
 			{
@@ -730,7 +730,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingNV(uint program, uint index, ref int location)
+		public void GetTransformFeedbackVaryingNV(uint program, uint index, ref int location)
 		{
 			fixed (int* plocation0 = &location)
 			{
@@ -739,7 +739,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetVaryingLocationNVNative(uint program, byte* name)
+		internal int GetVaryingLocationNVNative(uint program, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte*, int>)funcTable[8])(program, name);
@@ -752,7 +752,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static int GetVaryingLocationNV(uint program, byte* name)
+		public int GetVaryingLocationNV(uint program, byte* name)
 		{
 			int ret = GetVaryingLocationNVNative(program, name);
 			return ret;
@@ -762,7 +762,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static int GetVaryingLocationNV(uint program, string name)
+		public int GetVaryingLocationNV(uint program, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -793,7 +793,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static int GetVaryingLocationNV(uint program, Span<byte> name)
+		public int GetVaryingLocationNV(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -806,7 +806,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static int GetVaryingLocationNV(uint program, ref byte name)
+		public int GetVaryingLocationNV(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -816,7 +816,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackAttribsNVNative(int count, int* attribs, GLEnum bufferMode)
+		internal void TransformFeedbackAttribsNVNative(int count, int* attribs, GLEnum bufferMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, GLEnum, void>)funcTable[9])(count, attribs, bufferMode);
@@ -829,7 +829,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackAttribsNV(int count, int* attribs, GLEnum bufferMode)
+		public void TransformFeedbackAttribsNV(int count, int* attribs, GLEnum bufferMode)
 		{
 			TransformFeedbackAttribsNVNative(count, attribs, bufferMode);
 		}
@@ -838,7 +838,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackAttribsNV(int count, Span<int> attribs, GLEnum bufferMode)
+		public void TransformFeedbackAttribsNV(int count, Span<int> attribs, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = attribs)
 			{
@@ -850,7 +850,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackAttribsNV(int count, ref int attribs, GLEnum bufferMode)
+		public void TransformFeedbackAttribsNV(int count, ref int attribs, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = &attribs)
 			{
@@ -859,7 +859,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackStreamAttribsNVNative(int count, int* attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
+		internal void TransformFeedbackStreamAttribsNVNative(int count, int* attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, int, int*, GLEnum, void>)funcTable[10])(count, attribs, nbuffers, bufstreams, bufferMode);
@@ -872,7 +872,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
 		{
 			TransformFeedbackStreamAttribsNVNative(count, attribs, nbuffers, bufstreams, bufferMode);
 		}
@@ -881,7 +881,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, Span<int> attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, Span<int> attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = attribs)
 			{
@@ -893,7 +893,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, ref int attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, ref int attribs, int nbuffers, int* bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = &attribs)
 			{
@@ -905,7 +905,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, Span<int> bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, Span<int> bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pbufstreams0 = bufstreams)
 			{
@@ -917,7 +917,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, ref int bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, int* attribs, int nbuffers, ref int bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pbufstreams0 = &bufstreams)
 			{
@@ -929,7 +929,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, Span<int> attribs, int nbuffers, Span<int> bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, Span<int> attribs, int nbuffers, Span<int> bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = attribs)
 			{
@@ -944,7 +944,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackStreamAttribsNV(int count, ref int attribs, int nbuffers, ref int bufstreams, GLEnum bufferMode)
+		public void TransformFeedbackStreamAttribsNV(int count, ref int attribs, int nbuffers, ref int bufstreams, GLEnum bufferMode)
 		{
 			fixed (int* pattribs0 = &attribs)
 			{
@@ -956,7 +956,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackVaryingsNVNative(uint program, int count, GLTransformFeedbackTokenNV locations, GLTransformFeedbackBufferMode bufferMode)
+		internal void TransformFeedbackVaryingsNVNative(uint program, int count, GLTransformFeedbackTokenNV locations, GLTransformFeedbackBufferMode bufferMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLTransformFeedbackTokenNV, GLTransformFeedbackBufferMode, void>)funcTable[11])(program, count, locations, bufferMode);
@@ -969,7 +969,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback</remarks>
-		public static void TransformFeedbackVaryingsNV(uint program, int count, GLTransformFeedbackTokenNV locations, GLTransformFeedbackBufferMode bufferMode)
+		public void TransformFeedbackVaryingsNV(uint program, int count, GLTransformFeedbackTokenNV locations, GLTransformFeedbackBufferMode bufferMode)
 		{
 			TransformFeedbackVaryingsNVNative(program, count, locations, bufferMode);
 		}

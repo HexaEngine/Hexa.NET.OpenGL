@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBGeometryShader4
+	public unsafe partial class GLARBGeometryShader4
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureARBNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
+		internal void FramebufferTextureARBNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, void>)funcTable[0])(target, attachment, texture, level);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
-		public static void FramebufferTextureARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
+		public void FramebufferTextureARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureARBNative(target, attachment, texture, level);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureFaceARBNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
+		internal void FramebufferTextureFaceARBNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, GLTextureTarget, void>)funcTable[1])(target, attachment, texture, level, face);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
-		public static void FramebufferTextureFaceARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
+		public void FramebufferTextureFaceARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			FramebufferTextureFaceARBNative(target, attachment, texture, level, face);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureLayerARBNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
+		internal void FramebufferTextureLayerARBNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, int, void>)funcTable[2])(target, attachment, texture, level, layer);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
-		public static void FramebufferTextureLayerARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
+		public void FramebufferTextureLayerARB(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerARBNative(target, attachment, texture, level, layer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameteriARBNative(uint program, GLProgramParameterPName pname, int value)
+		internal void ProgramParameteriARBNative(uint program, GLProgramParameterPName pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramParameterPName, int, void>)funcTable[3])(program, pname, value);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_geometry_shader4</remarks>
-		public static void ProgramParameteriARB(uint program, GLProgramParameterPName pname, int value)
+		public void ProgramParameteriARB(uint program, GLProgramParameterPName pname, int value)
 		{
 			ProgramParameteriARBNative(program, pname, value);
 		}

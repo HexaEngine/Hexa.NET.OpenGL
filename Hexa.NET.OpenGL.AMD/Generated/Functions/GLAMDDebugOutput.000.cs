@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDDebugOutput
+	public unsafe partial class GLAMDDebugOutput
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageCallbackAMDNative(GLDebugProcAMD callback, void* userParam)
+		internal void DebugMessageCallbackAMDNative(GLDebugProcAMD callback, void* userParam)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void*, void*, void>)funcTable[0])((void*)Utils.GetFunctionPointerForDelegate(callback), userParam);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageCallbackAMD(GLDebugProcAMD callback, void* userParam)
+		public void DebugMessageCallbackAMD(GLDebugProcAMD callback, void* userParam)
 		{
 			DebugMessageCallbackAMDNative(callback, userParam);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageCallbackAMD(GLDebugProcAMD callback, nint userParam)
+		public void DebugMessageCallbackAMD(GLDebugProcAMD callback, nint userParam)
 		{
 			DebugMessageCallbackAMDNative(callback, (void*)userParam);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageCallbackAMD<TUserParam>(GLDebugProcAMD callback, Span<TUserParam> userParam) where TUserParam : unmanaged
+		public void DebugMessageCallbackAMD<TUserParam>(GLDebugProcAMD callback, Span<TUserParam> userParam) where TUserParam : unmanaged
 		{
 			fixed (TUserParam* puserParam0 = userParam)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageEnableAMDNative(GLEnum category, GLDebugSeverity severity, int count, uint* ids, bool enabled)
+		internal void DebugMessageEnableAMDNative(GLEnum category, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLDebugSeverity, int, uint*, byte, void>)funcTable[1])(category, severity, count, ids, *((byte*)(&enabled)));
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, uint* ids, bool enabled)
+		public void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, uint* ids, bool enabled)
 		{
 			DebugMessageEnableAMDNative(category, severity, count, ids, enabled);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
+		public void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, Span<uint> ids, bool enabled)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -91,7 +91,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
+		public void DebugMessageEnableAMD(GLEnum category, GLDebugSeverity severity, int count, ref uint ids, bool enabled)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -100,7 +100,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DebugMessageInsertAMDNative(GLEnum category, GLDebugSeverity severity, uint id, int length, byte* buf)
+		internal void DebugMessageInsertAMDNative(GLEnum category, GLDebugSeverity severity, uint id, int length, byte* buf)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLDebugSeverity, uint, int, byte*, void>)funcTable[2])(category, severity, id, length, buf);
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, byte* buf)
+		public void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, byte* buf)
 		{
 			DebugMessageInsertAMDNative(category, severity, id, length, buf);
 		}
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, string buf)
+		public void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, string buf)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, Span<byte> buf)
+		public void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, Span<byte> buf)
 		{
 			fixed (byte* pbuf0 = buf)
 			{
@@ -164,7 +164,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, ref byte buf)
+		public void DebugMessageInsertAMD(GLEnum category, GLDebugSeverity severity, uint id, int length, ref byte buf)
 		{
 			fixed (byte* pbuf0 = &buf)
 			{
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetDebugMessageLogAMDNative(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
+		internal uint GetDebugMessageLogAMDNative(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, GLEnum*, GLDebugSeverity, uint*, int*, byte*, uint>)funcTable[3])(count, bufSize, categories, severities, ids, lengths, message);
@@ -186,7 +186,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
 		{
 			uint ret = GetDebugMessageLogAMDNative(count, bufSize, categories, severities, ids, lengths, message);
 			return ret;
@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -209,7 +209,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, int* lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -222,7 +222,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, byte* message)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, int* lengths, byte* message)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -264,7 +264,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, int* lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, int* lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -280,7 +280,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, byte* message)
 		{
 			fixed (int* plengths0 = lengths)
 			{
@@ -293,7 +293,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, ref int lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, ref int lengths, byte* message)
 		{
 			fixed (int* plengths0 = &lengths)
 			{
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -322,7 +322,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, ref int lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, ref int lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -338,7 +338,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, byte* message)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, ref int lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, ref int lengths, byte* message)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -370,7 +370,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -389,7 +389,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, ref int lengths, byte* message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, ref int lengths, byte* message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -408,7 +408,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, string message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, string message)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -439,7 +439,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, Span<byte> message)
 		{
 			fixed (byte* pmessage0 = message)
 			{
@@ -452,7 +452,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, int* lengths, ref byte message)
 		{
 			fixed (byte* pmessage0 = &message)
 			{
@@ -465,7 +465,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, int* lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, int* lengths, Span<byte> message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -481,7 +481,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, int* lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, int* lengths, ref byte message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -497,7 +497,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, Span<byte> message)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, int* lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, int* lengths, ref byte message)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -529,7 +529,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, int* lengths, Span<byte> message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -548,7 +548,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, int* lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, int* lengths, ref byte message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -567,7 +567,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, Span<byte> message)
 		{
 			fixed (int* plengths0 = lengths)
 			{
@@ -583,7 +583,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, ref int lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, uint* ids, ref int lengths, ref byte message)
 		{
 			fixed (int* plengths0 = &lengths)
 			{
@@ -599,7 +599,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, uint* ids, Span<int> lengths, Span<byte> message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -618,7 +618,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, ref int lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, uint* ids, ref int lengths, ref byte message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{
@@ -637,7 +637,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, Span<byte> message)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -656,7 +656,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, ref int lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, GLEnum* categories, GLDebugSeverity severities, ref uint ids, ref int lengths, ref byte message)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -675,7 +675,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, Span<byte> message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, Span<GLEnum> categories, GLDebugSeverity severities, Span<uint> ids, Span<int> lengths, Span<byte> message)
 		{
 			fixed (GLEnum* pcategories0 = categories)
 			{
@@ -697,7 +697,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_debug_output</remarks>
-		public static uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, ref int lengths, ref byte message)
+		public uint GetDebugMessageLogAMD(uint count, int bufSize, ref GLEnum categories, GLDebugSeverity severities, ref uint ids, ref int lengths, ref byte message)
 		{
 			fixed (GLEnum* pcategories0 = &categories)
 			{

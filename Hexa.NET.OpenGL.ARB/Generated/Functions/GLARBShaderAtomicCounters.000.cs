@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBShaderAtomicCounters
+	public unsafe partial class GLARBShaderAtomicCounters
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetActiveAtomicCounterBufferivNative(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, int* @params)
+		internal void GetActiveAtomicCounterBufferivNative(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLAtomicCounterBufferPName, int*, void>)funcTable[0])(program, bufferIndex, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve information about the set of active atomic counter buffers for a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
-		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, int* @params)
+		public void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, int* @params)
 		{
 			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve information about the set of active atomic counter buffers for a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
-		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, out int @params)
+		public void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, out int @params)
 		{
 			int pparam;
 			GetActiveAtomicCounterBufferivNative(program, bufferIndex, pname, &pparam);
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Retrieve information about the set of active atomic counter buffers for a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_atomic_counters</remarks>
-		public static void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, Span<int> @params)
+		public void GetActiveAtomicCounterBufferiv(uint program, uint bufferIndex, GLAtomicCounterBufferPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVFramebufferMultisample
+	public unsafe partial class GLNVFramebufferMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RenderbufferStorageMultisampleNVNative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		internal void RenderbufferStorageMultisampleNVNative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[0])(target, samples, internalformat, width, height);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample</remarks>
-		public static void RenderbufferStorageMultisampleNV(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		public void RenderbufferStorageMultisampleNV(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleNVNative(target, samples, internalformat, width, height);
 		}

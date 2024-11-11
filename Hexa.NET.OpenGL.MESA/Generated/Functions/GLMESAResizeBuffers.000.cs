@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.MESA
 {
-	public static unsafe partial class GLMESAResizeBuffers
+	public unsafe partial class GLMESAResizeBuffers
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResizeBuffersMESANative()
+		internal void ResizeBuffersMESANative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.MESA
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_MESA_resize_buffers</remarks>
-		public static void ResizeBuffersMESA()
+		public void ResizeBuffersMESA()
 		{
 			ResizeBuffersMESANative();
 		}

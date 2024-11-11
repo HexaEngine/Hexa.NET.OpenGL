@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBDrawBuffers
+	public unsafe partial class GLARBDrawBuffers
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawBuffersARBNative(int n, GLDrawBufferMode bufs)
+		internal void DrawBuffersARBNative(int n, GLDrawBufferMode bufs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLDrawBufferMode, void>)funcTable[0])(n, bufs);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_draw_buffers</remarks>
-		public static void DrawBuffersARB(int n, GLDrawBufferMode bufs)
+		public void DrawBuffersARB(int n, GLDrawBufferMode bufs)
 		{
 			DrawBuffersARBNative(n, bufs);
 		}

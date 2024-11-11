@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBShaderImageLoadStore
+	public unsafe partial class GLARBShaderImageLoadStore
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindImageTextureNative(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
+		internal void BindImageTextureNative(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, GLInternalFormat, void>)funcTable[0])(unit, texture, level, *((byte*)(&layered)), layer, access, format);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a level of a texture to an image unit
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
-		public static void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
+		public void BindImageTexture(uint unit, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, GLInternalFormat format)
 		{
 			BindImageTextureNative(unit, texture, level, layered, layer, access, format);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MemoryBarrierNative(GLMemoryBarrierMask barriers)
+		internal void MemoryBarrierNative(GLMemoryBarrierMask barriers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMemoryBarrierMask, void>)funcTable[1])(barriers);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Defines a barrier ordering memory transactions
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.2 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_shader_image_load_store</remarks>
-		public static void MemoryBarrier(GLMemoryBarrierMask barriers)
+		public void MemoryBarrier(GLMemoryBarrierMask barriers)
 		{
 			MemoryBarrierNative(barriers);
 		}

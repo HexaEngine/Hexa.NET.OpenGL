@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTDrawBuffers2
+	public unsafe partial class GLEXTDrawBuffers2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskIndexedEXTNative(uint index, bool r, bool g, bool b, bool a)
+		internal void ColorMaskIndexedEXTNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[0])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers2</remarks>
-		public static void ColorMaskIndexedEXT(uint index, bool r, bool g, bool b, bool a)
+		public void ColorMaskIndexedEXT(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskIndexedEXTNative(index, r, g, b, a);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableIndexedEXTNative(GLEnableCap target, uint index)
+		internal void DisableIndexedEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[1])(target, index);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void DisableIndexedEXT(GLEnableCap target, uint index)
+		public void DisableIndexedEXT(GLEnableCap target, uint index)
 		{
 			DisableIndexedEXTNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableIndexedEXTNative(GLEnableCap target, uint index)
+		internal void EnableIndexedEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[2])(target, index);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void EnableIndexedEXT(GLEnableCap target, uint index)
+		public void EnableIndexedEXT(GLEnableCap target, uint index)
 		{
 			EnableIndexedEXTNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBooleanIndexedvEXTNative(GLBufferTargetARB target, uint index, byte* data)
+		internal void GetBooleanIndexedvEXTNative(GLBufferTargetARB target, uint index, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, byte*, void>)funcTable[3])(target, index, data);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, byte* data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, byte* data)
 		{
 			GetBooleanIndexedvEXTNative(target, index, data);
 		}
@@ -96,7 +96,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, string data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -138,7 +138,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ref byte data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -147,7 +147,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegerIndexedvEXTNative(GLGetPName target, uint index, int* data)
+		internal void GetIntegerIndexedvEXTNative(GLGetPName target, uint index, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, int*, void>)funcTable[4])(target, index, data);
@@ -160,7 +160,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, int* data)
+		public void GetIntegerIndexedvEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegerIndexedvEXTNative(target, index, data);
 		}
@@ -169,7 +169,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
+		public void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
 			{
@@ -181,7 +181,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)
+		public void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
 			{
@@ -190,7 +190,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsEnabledIndexedEXTNative(GLEnableCap target, uint index)
+		internal byte IsEnabledIndexedEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnableCap, uint, byte>)funcTable[5])(target, index);
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static bool IsEnabledIndexedEXT(GLEnableCap target, uint index)
+		public bool IsEnabledIndexedEXT(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnabledIndexedEXTNative(target, index);
 			return ret != 0;

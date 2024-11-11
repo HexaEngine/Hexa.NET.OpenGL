@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESFixedPoint
+	public unsafe partial class GLOESFixedPoint
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void AccumxOESNative(GLEnum op, int value)
+		internal void AccumxOESNative(GLEnum op, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, void>)funcTable[0])(op, value);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void AccumxOES(GLEnum op, int value)
+		public void AccumxOES(GLEnum op, int value)
 		{
 			AccumxOESNative(op, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void AlphaFuncxOESNative(GLAlphaFunction func, int reference)
+		internal void AlphaFuncxOESNative(GLAlphaFunction func, int reference)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLAlphaFunction, int, void>)funcTable[1])(func, reference);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void AlphaFuncxOES(GLAlphaFunction func, int reference)
+		public void AlphaFuncxOES(GLAlphaFunction func, int reference)
 		{
 			AlphaFuncxOESNative(func, reference);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BitmapxOESNative(int width, int height, int xorig, int yorig, int xmove, int ymove, byte* bitmap)
+		internal void BitmapxOESNative(int width, int height, int xorig, int yorig, int xmove, int ymove, byte* bitmap)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, int, byte*, void>)funcTable[2])(width, height, xorig, yorig, xmove, ymove, bitmap);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, byte* bitmap)
+		public void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, byte* bitmap)
 		{
 			BitmapxOESNative(width, height, xorig, yorig, xmove, ymove, bitmap);
 		}
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, string bitmap)
+		public void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, string bitmap)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -107,7 +107,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, Span<byte> bitmap)
+		public void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, Span<byte> bitmap)
 		{
 			fixed (byte* pbitmap0 = bitmap)
 			{
@@ -119,7 +119,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, ref byte bitmap)
+		public void BitmapxOES(int width, int height, int xorig, int yorig, int xmove, int ymove, ref byte bitmap)
 		{
 			fixed (byte* pbitmap0 = &bitmap)
 			{
@@ -128,7 +128,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendColorxOESNative(int red, int green, int blue, int alpha)
+		internal void BlendColorxOESNative(int red, int green, int blue, int alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[3])(red, green, blue, alpha);
@@ -141,13 +141,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void BlendColorxOES(int red, int green, int blue, int alpha)
+		public void BlendColorxOES(int red, int green, int blue, int alpha)
 		{
 			BlendColorxOESNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearAccumxOESNative(int red, int green, int blue, int alpha)
+		internal void ClearAccumxOESNative(int red, int green, int blue, int alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[4])(red, green, blue, alpha);
@@ -160,13 +160,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ClearAccumxOES(int red, int green, int blue, int alpha)
+		public void ClearAccumxOES(int red, int green, int blue, int alpha)
 		{
 			ClearAccumxOESNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearColorxOESNative(int red, int green, int blue, int alpha)
+		internal void ClearColorxOESNative(int red, int green, int blue, int alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[5])(red, green, blue, alpha);
@@ -179,13 +179,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ClearColorxOES(int red, int green, int blue, int alpha)
+		public void ClearColorxOES(int red, int green, int blue, int alpha)
 		{
 			ClearColorxOESNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearDepthxOESNative(int depth)
+		internal void ClearDepthxOESNative(int depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[6])(depth);
@@ -198,13 +198,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ClearDepthxOES(int depth)
+		public void ClearDepthxOES(int depth)
 		{
 			ClearDepthxOESNative(depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClipPlanexOESNative(GLClipPlaneName plane, int* equation)
+		internal void ClipPlanexOESNative(GLClipPlaneName plane, int* equation)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipPlaneName, int*, void>)funcTable[7])(plane, equation);
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ClipPlanexOES(GLClipPlaneName plane, int* equation)
+		public void ClipPlanexOES(GLClipPlaneName plane, int* equation)
 		{
 			ClipPlanexOESNative(plane, equation);
 		}
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
+		public void ClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
 		{
 			fixed (int* pequation0 = equation)
 			{
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ClipPlanexOES(GLClipPlaneName plane, ref int equation)
+		public void ClipPlanexOES(GLClipPlaneName plane, ref int equation)
 		{
 			fixed (int* pequation0 = &equation)
 			{
@@ -247,7 +247,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Color3xOESNative(int red, int green, int blue)
+		internal void Color3xOESNative(int red, int green, int blue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[8])(red, green, blue);
@@ -260,13 +260,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color3xOES(int red, int green, int blue)
+		public void Color3xOES(int red, int green, int blue)
 		{
 			Color3xOESNative(red, green, blue);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Color3xvOESNative(int* components)
+		internal void Color3xvOESNative(int* components)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[9])(components);
@@ -279,7 +279,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color3xvOES(int* components)
+		public void Color3xvOES(int* components)
 		{
 			Color3xvOESNative(components);
 		}
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color3xvOES(Span<int> components)
+		public void Color3xvOES(Span<int> components)
 		{
 			fixed (int* pcomponents0 = components)
 			{
@@ -300,7 +300,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color3xvOES(ref int components)
+		public void Color3xvOES(ref int components)
 		{
 			fixed (int* pcomponents0 = &components)
 			{
@@ -309,7 +309,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Color4xOESNative(int red, int green, int blue, int alpha)
+		internal void Color4xOESNative(int red, int green, int blue, int alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[10])(red, green, blue, alpha);
@@ -322,13 +322,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color4xOES(int red, int green, int blue, int alpha)
+		public void Color4xOES(int red, int green, int blue, int alpha)
 		{
 			Color4xOESNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Color4xvOESNative(int* components)
+		internal void Color4xvOESNative(int* components)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[11])(components);
@@ -341,7 +341,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color4xvOES(int* components)
+		public void Color4xvOES(int* components)
 		{
 			Color4xvOESNative(components);
 		}
@@ -350,7 +350,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color4xvOES(Span<int> components)
+		public void Color4xvOES(Span<int> components)
 		{
 			fixed (int* pcomponents0 = components)
 			{
@@ -362,7 +362,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Color4xvOES(ref int components)
+		public void Color4xvOES(ref int components)
 		{
 			fixed (int* pcomponents0 = &components)
 			{
@@ -371,7 +371,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionParameterxOESNative(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int param)
+		internal void ConvolutionParameterxOESNative(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTargetEXT, GLConvolutionParameter, int, void>)funcTable[12])(target, pname, param);
@@ -384,13 +384,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ConvolutionParameterxOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int param)
+		public void ConvolutionParameterxOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int param)
 		{
 			ConvolutionParameterxOESNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionParameterxvOESNative(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
+		internal void ConvolutionParameterxvOESNative(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTargetEXT, GLConvolutionParameter, int*, void>)funcTable[13])(target, pname, @params);
@@ -403,7 +403,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
+		public void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, int* @params)
 		{
 			ConvolutionParameterxvOESNative(target, pname, @params);
 		}
@@ -412,7 +412,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
+		public void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -424,7 +424,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, ref int @params)
+		public void ConvolutionParameterxvOES(GLConvolutionTargetEXT target, GLConvolutionParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -433,7 +433,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangexOESNative(int n, int f)
+		internal void DepthRangexOESNative(int n, int f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[14])(n, f);
@@ -446,13 +446,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void DepthRangexOES(int n, int f)
+		public void DepthRangexOES(int n, int f)
 		{
 			DepthRangexOESNative(n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EvalCoord1xOESNative(int u)
+		internal void EvalCoord1xOESNative(int u)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[15])(u);
@@ -465,13 +465,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord1xOES(int u)
+		public void EvalCoord1xOES(int u)
 		{
 			EvalCoord1xOESNative(u);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EvalCoord1xvOESNative(int* coords)
+		internal void EvalCoord1xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[16])(coords);
@@ -484,7 +484,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord1xvOES(int* coords)
+		public void EvalCoord1xvOES(int* coords)
 		{
 			EvalCoord1xvOESNative(coords);
 		}
@@ -493,7 +493,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord1xvOES(Span<int> coords)
+		public void EvalCoord1xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -505,7 +505,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord1xvOES(ref int coords)
+		public void EvalCoord1xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -514,7 +514,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EvalCoord2xOESNative(int u, int v)
+		internal void EvalCoord2xOESNative(int u, int v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[17])(u, v);
@@ -527,13 +527,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord2xOES(int u, int v)
+		public void EvalCoord2xOES(int u, int v)
 		{
 			EvalCoord2xOESNative(u, v);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EvalCoord2xvOESNative(int* coords)
+		internal void EvalCoord2xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[18])(coords);
@@ -546,7 +546,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord2xvOES(int* coords)
+		public void EvalCoord2xvOES(int* coords)
 		{
 			EvalCoord2xvOESNative(coords);
 		}
@@ -555,7 +555,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord2xvOES(Span<int> coords)
+		public void EvalCoord2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -567,7 +567,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void EvalCoord2xvOES(ref int coords)
+		public void EvalCoord2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -576,7 +576,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FeedbackBufferxOESNative(int n, GLEnum type, int* buffer)
+		internal void FeedbackBufferxOESNative(int n, GLEnum type, int* buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLEnum, int*, void>)funcTable[19])(n, type, buffer);
@@ -589,7 +589,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FeedbackBufferxOES(int n, GLEnum type, int* buffer)
+		public void FeedbackBufferxOES(int n, GLEnum type, int* buffer)
 		{
 			FeedbackBufferxOESNative(n, type, buffer);
 		}
@@ -598,7 +598,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FeedbackBufferxOES(int n, GLEnum type, Span<int> buffer)
+		public void FeedbackBufferxOES(int n, GLEnum type, Span<int> buffer)
 		{
 			fixed (int* pbuffer0 = buffer)
 			{
@@ -610,7 +610,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FeedbackBufferxOES(int n, GLEnum type, ref int buffer)
+		public void FeedbackBufferxOES(int n, GLEnum type, ref int buffer)
 		{
 			fixed (int* pbuffer0 = &buffer)
 			{
@@ -619,7 +619,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogxOESNative(GLFogPName pname, int param)
+		internal void FogxOESNative(GLFogPName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFogPName, int, void>)funcTable[20])(pname, param);
@@ -632,13 +632,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FogxOES(GLFogPName pname, int param)
+		public void FogxOES(GLFogPName pname, int param)
 		{
 			FogxOESNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogxvOESNative(GLFogPName pname, int* param)
+		internal void FogxvOESNative(GLFogPName pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFogPName, int*, void>)funcTable[21])(pname, param);
@@ -651,7 +651,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FogxvOES(GLFogPName pname, int* param)
+		public void FogxvOES(GLFogPName pname, int* param)
 		{
 			FogxvOESNative(pname, param);
 		}
@@ -660,7 +660,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FogxvOES(GLFogPName pname, Span<int> param)
+		public void FogxvOES(GLFogPName pname, Span<int> param)
 		{
 			fixed (int* pparam0 = param)
 			{
@@ -672,7 +672,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FogxvOES(GLFogPName pname, ref int param)
+		public void FogxvOES(GLFogPName pname, ref int param)
 		{
 			fixed (int* pparam0 = &param)
 			{
@@ -681,7 +681,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FrustumxOESNative(int l, int r, int b, int t, int n, int f)
+		internal void FrustumxOESNative(int l, int r, int b, int t, int n, int f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, int, void>)funcTable[22])(l, r, b, t, n, f);
@@ -694,13 +694,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void FrustumxOES(int l, int r, int b, int t, int n, int f)
+		public void FrustumxOES(int l, int r, int b, int t, int n, int f)
 		{
 			FrustumxOESNative(l, r, b, t, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetClipPlanexOESNative(GLClipPlaneName plane, int* equation)
+		internal void GetClipPlanexOESNative(GLClipPlaneName plane, int* equation)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipPlaneName, int*, void>)funcTable[23])(plane, equation);
@@ -713,7 +713,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetClipPlanexOES(GLClipPlaneName plane, int* equation)
+		public void GetClipPlanexOES(GLClipPlaneName plane, int* equation)
 		{
 			GetClipPlanexOESNative(plane, equation);
 		}
@@ -722,7 +722,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
+		public void GetClipPlanexOES(GLClipPlaneName plane, Span<int> equation)
 		{
 			fixed (int* pequation0 = equation)
 			{
@@ -734,7 +734,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetClipPlanexOES(GLClipPlaneName plane, ref int equation)
+		public void GetClipPlanexOES(GLClipPlaneName plane, ref int equation)
 		{
 			fixed (int* pequation0 = &equation)
 			{
@@ -743,7 +743,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetConvolutionParameterxvOESNative(GLEnum target, GLEnum pname, int* @params)
+		internal void GetConvolutionParameterxvOESNative(GLEnum target, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, int*, void>)funcTable[24])(target, pname, @params);
@@ -756,7 +756,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, int* @params)
+		public void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, int* @params)
 		{
 			GetConvolutionParameterxvOESNative(target, pname, @params);
 		}
@@ -765,7 +765,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, Span<int> @params)
+		public void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -777,7 +777,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, ref int @params)
+		public void GetConvolutionParameterxvOES(GLEnum target, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -786,7 +786,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFixedvOESNative(GLGetPName pname, int* @params)
+		internal void GetFixedvOESNative(GLGetPName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, int*, void>)funcTable[25])(pname, @params);
@@ -799,7 +799,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetFixedvOES(GLGetPName pname, int* @params)
+		public void GetFixedvOES(GLGetPName pname, int* @params)
 		{
 			GetFixedvOESNative(pname, @params);
 		}
@@ -808,7 +808,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetFixedvOES(GLGetPName pname, Span<int> @params)
+		public void GetFixedvOES(GLGetPName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -820,7 +820,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetFixedvOES(GLGetPName pname, ref int @params)
+		public void GetFixedvOES(GLGetPName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -829,7 +829,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramParameterxvOESNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
+		internal void GetHistogramParameterxvOESNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, GLGetHistogramParameterPNameEXT, int*, void>)funcTable[26])(target, pname, @params);
@@ -842,7 +842,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
+		public void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			GetHistogramParameterxvOESNative(target, pname, @params);
 		}
@@ -851,7 +851,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
+		public void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -863,7 +863,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref int @params)
+		public void GetHistogramParameterxvOES(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -872,7 +872,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLightxOESNative(GLLightName light, GLLightParameter pname, int* @params)
+		internal void GetLightxOESNative(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, int*, void>)funcTable[27])(light, pname, @params);
@@ -885,7 +885,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetLightxOES(GLLightName light, GLLightParameter pname, int* @params)
+		public void GetLightxOES(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			GetLightxOESNative(light, pname, @params);
 		}
@@ -894,7 +894,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetLightxOES(GLLightName light, GLLightParameter pname, Span<int> @params)
+		public void GetLightxOES(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -906,7 +906,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetLightxOES(GLLightName light, GLLightParameter pname, ref int @params)
+		public void GetLightxOES(GLLightName light, GLLightParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -915,7 +915,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLightxvOESNative(GLLightName light, GLLightParameter pname, int* @params)
+		internal void GetLightxvOESNative(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, int*, void>)funcTable[28])(light, pname, @params);
@@ -928,7 +928,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetLightxvOES(GLLightName light, GLLightParameter pname, int* @params)
+		public void GetLightxvOES(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			GetLightxvOESNative(light, pname, @params);
 		}
@@ -937,7 +937,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetLightxvOES(GLLightName light, GLLightParameter pname, Span<int> @params)
+		public void GetLightxvOES(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -949,7 +949,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetLightxvOES(GLLightName light, GLLightParameter pname, ref int @params)
+		public void GetLightxvOES(GLLightName light, GLLightParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -958,7 +958,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapxvOESNative(GLMapTarget target, GLGetMapQuery query, int* v)
+		internal void GetMapxvOESNative(GLMapTarget target, GLGetMapQuery query, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLGetMapQuery, int*, void>)funcTable[29])(target, query, v);
@@ -971,7 +971,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, int* v)
+		public void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, int* v)
 		{
 			GetMapxvOESNative(target, query, v);
 		}
@@ -980,7 +980,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, Span<int> v)
+		public void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -992,7 +992,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, ref int v)
+		public void GetMapxvOES(GLMapTarget target, GLGetMapQuery query, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -1001,7 +1001,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMaterialxOESNative(GLTriangleFace face, GLMaterialParameter pname, int param)
+		internal void GetMaterialxOESNative(GLTriangleFace face, GLMaterialParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, int, void>)funcTable[30])(face, pname, param);
@@ -1014,13 +1014,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMaterialxOES(GLTriangleFace face, GLMaterialParameter pname, int param)
+		public void GetMaterialxOES(GLTriangleFace face, GLMaterialParameter pname, int param)
 		{
 			GetMaterialxOESNative(face, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMaterialxvOESNative(GLTriangleFace face, GLMaterialParameter pname, int* @params)
+		internal void GetMaterialxvOESNative(GLTriangleFace face, GLMaterialParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, int*, void>)funcTable[31])(face, pname, @params);
@@ -1033,7 +1033,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, int* @params)
+		public void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, int* @params)
 		{
 			GetMaterialxvOESNative(face, pname, @params);
 		}
@@ -1042,7 +1042,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
+		public void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1054,7 +1054,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, ref int @params)
+		public void GetMaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1063,7 +1063,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPixelMapxvNative(GLPixelMap map, int size, int* values)
+		internal void GetPixelMapxvNative(GLPixelMap map, int size, int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, int, int*, void>)funcTable[32])(map, size, values);
@@ -1076,7 +1076,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetPixelMapxv(GLPixelMap map, int size, int* values)
+		public void GetPixelMapxv(GLPixelMap map, int size, int* values)
 		{
 			GetPixelMapxvNative(map, size, values);
 		}
@@ -1085,7 +1085,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetPixelMapxv(GLPixelMap map, int size, out int values)
+		public void GetPixelMapxv(GLPixelMap map, int size, out int values)
 		{
 			int pparam;
 			GetPixelMapxvNative(map, size, &pparam);
@@ -1096,7 +1096,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetPixelMapxv(GLPixelMap map, int size, Span<int> values)
+		public void GetPixelMapxv(GLPixelMap map, int size, Span<int> values)
 		{
 			fixed (int* pparams = values)
 			{
@@ -1105,7 +1105,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexEnvxvOESNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void GetTexEnvxvOESNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[33])(target, pname, @params);
@@ -1118,7 +1118,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			GetTexEnvxvOESNative(target, pname, @params);
 		}
@@ -1127,7 +1127,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1139,7 +1139,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public void GetTexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1148,7 +1148,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexGenxvOESNative(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		internal void GetTexGenxvOESNative(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureCoordName, GLTextureGenParameter, int*, void>)funcTable[34])(coord, pname, @params);
@@ -1161,7 +1161,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		public void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			GetTexGenxvOESNative(coord, pname, @params);
 		}
@@ -1170,7 +1170,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		public void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1182,7 +1182,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public void GetTexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1191,7 +1191,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexLevelParameterxvOESNative(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		internal void GetTexLevelParameterxvOESNative(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLGetTextureParameter, int*, void>)funcTable[35])(target, level, pname, @params);
@@ -1204,7 +1204,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		public void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexLevelParameterxvOESNative(target, level, pname, @params);
 		}
@@ -1213,7 +1213,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1225,7 +1225,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
+		public void GetTexLevelParameterxvOES(GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1234,7 +1234,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterxvOESNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetTexParameterxvOESNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[36])(target, pname, @params);
@@ -1247,7 +1247,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexParameterxvOESNative(target, pname, @params);
 		}
@@ -1256,7 +1256,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1268,7 +1268,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void GetTexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1277,7 +1277,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void IndexxOESNative(int component)
+		internal void IndexxOESNative(int component)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[37])(component);
@@ -1290,13 +1290,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void IndexxOES(int component)
+		public void IndexxOES(int component)
 		{
 			IndexxOESNative(component);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void IndexxvOESNative(int* component)
+		internal void IndexxvOESNative(int* component)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[38])(component);
@@ -1309,7 +1309,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void IndexxvOES(int* component)
+		public void IndexxvOES(int* component)
 		{
 			IndexxvOESNative(component);
 		}
@@ -1318,7 +1318,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void IndexxvOES(Span<int> component)
+		public void IndexxvOES(Span<int> component)
 		{
 			fixed (int* pcomponent0 = component)
 			{
@@ -1330,7 +1330,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void IndexxvOES(ref int component)
+		public void IndexxvOES(ref int component)
 		{
 			fixed (int* pcomponent0 = &component)
 			{
@@ -1339,7 +1339,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LightModelxOESNative(GLLightModelParameter pname, int param)
+		internal void LightModelxOESNative(GLLightModelParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightModelParameter, int, void>)funcTable[39])(pname, param);
@@ -1352,13 +1352,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightModelxOES(GLLightModelParameter pname, int param)
+		public void LightModelxOES(GLLightModelParameter pname, int param)
 		{
 			LightModelxOESNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LightModelxvOESNative(GLLightModelParameter pname, int* param)
+		internal void LightModelxvOESNative(GLLightModelParameter pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightModelParameter, int*, void>)funcTable[40])(pname, param);
@@ -1371,7 +1371,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightModelxvOES(GLLightModelParameter pname, int* param)
+		public void LightModelxvOES(GLLightModelParameter pname, int* param)
 		{
 			LightModelxvOESNative(pname, param);
 		}
@@ -1380,7 +1380,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightModelxvOES(GLLightModelParameter pname, Span<int> param)
+		public void LightModelxvOES(GLLightModelParameter pname, Span<int> param)
 		{
 			fixed (int* pparam0 = param)
 			{
@@ -1392,7 +1392,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightModelxvOES(GLLightModelParameter pname, ref int param)
+		public void LightModelxvOES(GLLightModelParameter pname, ref int param)
 		{
 			fixed (int* pparam0 = &param)
 			{
@@ -1401,7 +1401,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LightxOESNative(GLLightName light, GLLightParameter pname, int param)
+		internal void LightxOESNative(GLLightName light, GLLightParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, int, void>)funcTable[41])(light, pname, param);
@@ -1414,13 +1414,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightxOES(GLLightName light, GLLightParameter pname, int param)
+		public void LightxOES(GLLightName light, GLLightParameter pname, int param)
 		{
 			LightxOESNative(light, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LightxvOESNative(GLLightName light, GLLightParameter pname, int* @params)
+		internal void LightxvOESNative(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, int*, void>)funcTable[42])(light, pname, @params);
@@ -1433,7 +1433,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightxvOES(GLLightName light, GLLightParameter pname, int* @params)
+		public void LightxvOES(GLLightName light, GLLightParameter pname, int* @params)
 		{
 			LightxvOESNative(light, pname, @params);
 		}
@@ -1442,7 +1442,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightxvOES(GLLightName light, GLLightParameter pname, Span<int> @params)
+		public void LightxvOES(GLLightName light, GLLightParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1454,7 +1454,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LightxvOES(GLLightName light, GLLightParameter pname, ref int @params)
+		public void LightxvOES(GLLightName light, GLLightParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1463,7 +1463,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LineWidthxOESNative(int width)
+		internal void LineWidthxOESNative(int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[43])(width);
@@ -1476,13 +1476,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LineWidthxOES(int width)
+		public void LineWidthxOES(int width)
 		{
 			LineWidthxOESNative(width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LoadMatrixxOESNative(int* m)
+		internal void LoadMatrixxOESNative(int* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[44])(m);
@@ -1495,7 +1495,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LoadMatrixxOES(int* m)
+		public void LoadMatrixxOES(int* m)
 		{
 			LoadMatrixxOESNative(m);
 		}
@@ -1504,7 +1504,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LoadMatrixxOES(Span<int> m)
+		public void LoadMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
 			{
@@ -1516,7 +1516,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LoadMatrixxOES(ref int m)
+		public void LoadMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
 			{
@@ -1525,7 +1525,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LoadTransposeMatrixxOESNative(int* m)
+		internal void LoadTransposeMatrixxOESNative(int* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[45])(m);
@@ -1538,7 +1538,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LoadTransposeMatrixxOES(int* m)
+		public void LoadTransposeMatrixxOES(int* m)
 		{
 			LoadTransposeMatrixxOESNative(m);
 		}
@@ -1547,7 +1547,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LoadTransposeMatrixxOES(Span<int> m)
+		public void LoadTransposeMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
 			{
@@ -1559,7 +1559,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void LoadTransposeMatrixxOES(ref int m)
+		public void LoadTransposeMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
 			{
@@ -1568,7 +1568,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Map1xOESNative(GLMapTarget target, int u1, int u2, int stride, int order, int points)
+		internal void Map1xOESNative(GLMapTarget target, int u1, int u2, int stride, int order, int points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, int, int, int, int, int, void>)funcTable[46])(target, u1, u2, stride, order, points);
@@ -1581,13 +1581,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Map1xOES(GLMapTarget target, int u1, int u2, int stride, int order, int points)
+		public void Map1xOES(GLMapTarget target, int u1, int u2, int stride, int order, int points)
 		{
 			Map1xOESNative(target, u1, u2, stride, order, points);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Map2xOESNative(GLMapTarget target, int u1, int u2, int ustride, int uorder, int v1, int v2, int vstride, int vorder, int points)
+		internal void Map2xOESNative(GLMapTarget target, int u1, int u2, int ustride, int uorder, int v1, int v2, int vstride, int vorder, int points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, int, int, int, int, int, int, int, int, int, void>)funcTable[47])(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
@@ -1600,13 +1600,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Map2xOES(GLMapTarget target, int u1, int u2, int ustride, int uorder, int v1, int v2, int vstride, int vorder, int points)
+		public void Map2xOES(GLMapTarget target, int u1, int u2, int ustride, int uorder, int v1, int v2, int vstride, int vorder, int points)
 		{
 			Map2xOESNative(target, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapGrid1xOESNative(int n, int u1, int u2)
+		internal void MapGrid1xOESNative(int n, int u1, int u2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[48])(n, u1, u2);
@@ -1619,13 +1619,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MapGrid1xOES(int n, int u1, int u2)
+		public void MapGrid1xOES(int n, int u1, int u2)
 		{
 			MapGrid1xOESNative(n, u1, u2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapGrid2xOESNative(int n, int u1, int u2, int v1, int v2)
+		internal void MapGrid2xOESNative(int n, int u1, int u2, int v1, int v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[49])(n, u1, u2, v1, v2);
@@ -1638,13 +1638,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MapGrid2xOES(int n, int u1, int u2, int v1, int v2)
+		public void MapGrid2xOES(int n, int u1, int u2, int v1, int v2)
 		{
 			MapGrid2xOESNative(n, u1, u2, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MaterialxOESNative(GLTriangleFace face, GLMaterialParameter pname, int param)
+		internal void MaterialxOESNative(GLTriangleFace face, GLMaterialParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, int, void>)funcTable[50])(face, pname, param);
@@ -1657,13 +1657,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MaterialxOES(GLTriangleFace face, GLMaterialParameter pname, int param)
+		public void MaterialxOES(GLTriangleFace face, GLMaterialParameter pname, int param)
 		{
 			MaterialxOESNative(face, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MaterialxvOESNative(GLTriangleFace face, GLMaterialParameter pname, int* param)
+		internal void MaterialxvOESNative(GLTriangleFace face, GLMaterialParameter pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, int*, void>)funcTable[51])(face, pname, param);
@@ -1676,7 +1676,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, int* param)
+		public void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, int* param)
 		{
 			MaterialxvOESNative(face, pname, param);
 		}
@@ -1685,7 +1685,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, Span<int> param)
+		public void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, Span<int> param)
 		{
 			fixed (int* pparam0 = param)
 			{
@@ -1697,7 +1697,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, ref int param)
+		public void MaterialxvOES(GLTriangleFace face, GLMaterialParameter pname, ref int param)
 		{
 			fixed (int* pparam0 = &param)
 			{
@@ -1706,7 +1706,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultMatrixxOESNative(int* m)
+		internal void MultMatrixxOESNative(int* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[52])(m);
@@ -1719,7 +1719,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultMatrixxOES(int* m)
+		public void MultMatrixxOES(int* m)
 		{
 			MultMatrixxOESNative(m);
 		}
@@ -1728,7 +1728,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultMatrixxOES(Span<int> m)
+		public void MultMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
 			{
@@ -1740,7 +1740,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultMatrixxOES(ref int m)
+		public void MultMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
 			{
@@ -1749,7 +1749,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultTransposeMatrixxOESNative(int* m)
+		internal void MultTransposeMatrixxOESNative(int* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[53])(m);
@@ -1762,7 +1762,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultTransposeMatrixxOES(int* m)
+		public void MultTransposeMatrixxOES(int* m)
 		{
 			MultTransposeMatrixxOESNative(m);
 		}
@@ -1771,7 +1771,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultTransposeMatrixxOES(Span<int> m)
+		public void MultTransposeMatrixxOES(Span<int> m)
 		{
 			fixed (int* pm0 = m)
 			{
@@ -1783,7 +1783,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultTransposeMatrixxOES(ref int m)
+		public void MultTransposeMatrixxOES(ref int m)
 		{
 			fixed (int* pm0 = &m)
 			{
@@ -1792,7 +1792,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1xOESNative(GLTextureUnit texture, int s)
+		internal void MultiTexCoord1xOESNative(GLTextureUnit texture, int s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, void>)funcTable[54])(texture, s);
@@ -1805,13 +1805,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord1xOES(GLTextureUnit texture, int s)
+		public void MultiTexCoord1xOES(GLTextureUnit texture, int s)
 		{
 			MultiTexCoord1xOESNative(texture, s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1xvOESNative(GLTextureUnit texture, int* coords)
+		internal void MultiTexCoord1xvOESNative(GLTextureUnit texture, int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[55])(texture, coords);
@@ -1824,7 +1824,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord1xvOES(GLTextureUnit texture, int* coords)
+		public void MultiTexCoord1xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord1xvOESNative(texture, coords);
 		}
@@ -1833,7 +1833,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord1xvOES(GLTextureUnit texture, Span<int> coords)
+		public void MultiTexCoord1xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -1845,7 +1845,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord1xvOES(GLTextureUnit texture, ref int coords)
+		public void MultiTexCoord1xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -1854,7 +1854,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2xOESNative(GLTextureUnit texture, int s, int t)
+		internal void MultiTexCoord2xOESNative(GLTextureUnit texture, int s, int t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, int, void>)funcTable[56])(texture, s, t);
@@ -1867,13 +1867,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord2xOES(GLTextureUnit texture, int s, int t)
+		public void MultiTexCoord2xOES(GLTextureUnit texture, int s, int t)
 		{
 			MultiTexCoord2xOESNative(texture, s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2xvOESNative(GLTextureUnit texture, int* coords)
+		internal void MultiTexCoord2xvOESNative(GLTextureUnit texture, int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[57])(texture, coords);
@@ -1886,7 +1886,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord2xvOES(GLTextureUnit texture, int* coords)
+		public void MultiTexCoord2xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord2xvOESNative(texture, coords);
 		}
@@ -1895,7 +1895,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord2xvOES(GLTextureUnit texture, Span<int> coords)
+		public void MultiTexCoord2xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -1907,7 +1907,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord2xvOES(GLTextureUnit texture, ref int coords)
+		public void MultiTexCoord2xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -1916,7 +1916,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3xOESNative(GLTextureUnit texture, int s, int t, int r)
+		internal void MultiTexCoord3xOESNative(GLTextureUnit texture, int s, int t, int r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, int, int, void>)funcTable[58])(texture, s, t, r);
@@ -1929,13 +1929,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord3xOES(GLTextureUnit texture, int s, int t, int r)
+		public void MultiTexCoord3xOES(GLTextureUnit texture, int s, int t, int r)
 		{
 			MultiTexCoord3xOESNative(texture, s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3xvOESNative(GLTextureUnit texture, int* coords)
+		internal void MultiTexCoord3xvOESNative(GLTextureUnit texture, int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[59])(texture, coords);
@@ -1948,7 +1948,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord3xvOES(GLTextureUnit texture, int* coords)
+		public void MultiTexCoord3xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord3xvOESNative(texture, coords);
 		}
@@ -1957,7 +1957,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord3xvOES(GLTextureUnit texture, Span<int> coords)
+		public void MultiTexCoord3xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -1969,7 +1969,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord3xvOES(GLTextureUnit texture, ref int coords)
+		public void MultiTexCoord3xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -1978,7 +1978,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4xOESNative(GLTextureUnit texture, int s, int t, int r, int q)
+		internal void MultiTexCoord4xOESNative(GLTextureUnit texture, int s, int t, int r, int q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, int, int, int, void>)funcTable[60])(texture, s, t, r, q);
@@ -1991,13 +1991,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord4xOES(GLTextureUnit texture, int s, int t, int r, int q)
+		public void MultiTexCoord4xOES(GLTextureUnit texture, int s, int t, int r, int q)
 		{
 			MultiTexCoord4xOESNative(texture, s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4xvOESNative(GLTextureUnit texture, int* coords)
+		internal void MultiTexCoord4xvOESNative(GLTextureUnit texture, int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int*, void>)funcTable[61])(texture, coords);
@@ -2010,7 +2010,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord4xvOES(GLTextureUnit texture, int* coords)
+		public void MultiTexCoord4xvOES(GLTextureUnit texture, int* coords)
 		{
 			MultiTexCoord4xvOESNative(texture, coords);
 		}
@@ -2019,7 +2019,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord4xvOES(GLTextureUnit texture, Span<int> coords)
+		public void MultiTexCoord4xvOES(GLTextureUnit texture, Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2031,7 +2031,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void MultiTexCoord4xvOES(GLTextureUnit texture, ref int coords)
+		public void MultiTexCoord4xvOES(GLTextureUnit texture, ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2040,7 +2040,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Normal3xOESNative(int nx, int ny, int nz)
+		internal void Normal3xOESNative(int nx, int ny, int nz)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[62])(nx, ny, nz);
@@ -2053,13 +2053,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Normal3xOES(int nx, int ny, int nz)
+		public void Normal3xOES(int nx, int ny, int nz)
 		{
 			Normal3xOESNative(nx, ny, nz);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Normal3xvOESNative(int* coords)
+		internal void Normal3xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[63])(coords);
@@ -2072,7 +2072,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Normal3xvOES(int* coords)
+		public void Normal3xvOES(int* coords)
 		{
 			Normal3xvOESNative(coords);
 		}
@@ -2081,7 +2081,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Normal3xvOES(Span<int> coords)
+		public void Normal3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2093,7 +2093,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Normal3xvOES(ref int coords)
+		public void Normal3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2102,7 +2102,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void OrthoxOESNative(int l, int r, int b, int t, int n, int f)
+		internal void OrthoxOESNative(int l, int r, int b, int t, int n, int f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, int, void>)funcTable[64])(l, r, b, t, n, f);
@@ -2115,13 +2115,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void OrthoxOES(int l, int r, int b, int t, int n, int f)
+		public void OrthoxOES(int l, int r, int b, int t, int n, int f)
 		{
 			OrthoxOESNative(l, r, b, t, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PassThroughxOESNative(int token)
+		internal void PassThroughxOESNative(int token)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[65])(token);
@@ -2134,13 +2134,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PassThroughxOES(int token)
+		public void PassThroughxOES(int token)
 		{
 			PassThroughxOESNative(token);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelMapxNative(GLPixelMap map, int size, int* values)
+		internal void PixelMapxNative(GLPixelMap map, int size, int* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, int, int*, void>)funcTable[66])(map, size, values);
@@ -2153,7 +2153,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PixelMapx(GLPixelMap map, int size, int* values)
+		public void PixelMapx(GLPixelMap map, int size, int* values)
 		{
 			PixelMapxNative(map, size, values);
 		}
@@ -2162,7 +2162,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PixelMapx(GLPixelMap map, int size, Span<int> values)
+		public void PixelMapx(GLPixelMap map, int size, Span<int> values)
 		{
 			fixed (int* pvalues0 = values)
 			{
@@ -2174,7 +2174,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PixelMapx(GLPixelMap map, int size, ref int values)
+		public void PixelMapx(GLPixelMap map, int size, ref int values)
 		{
 			fixed (int* pvalues0 = &values)
 			{
@@ -2183,7 +2183,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelStorexNative(GLPixelStoreParameter pname, int param)
+		internal void PixelStorexNative(GLPixelStoreParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelStoreParameter, int, void>)funcTable[67])(pname, param);
@@ -2196,13 +2196,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PixelStorex(GLPixelStoreParameter pname, int param)
+		public void PixelStorex(GLPixelStoreParameter pname, int param)
 		{
 			PixelStorexNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelTransferxOESNative(GLPixelTransferParameter pname, int param)
+		internal void PixelTransferxOESNative(GLPixelTransferParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelTransferParameter, int, void>)funcTable[68])(pname, param);
@@ -2215,13 +2215,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PixelTransferxOES(GLPixelTransferParameter pname, int param)
+		public void PixelTransferxOES(GLPixelTransferParameter pname, int param)
 		{
 			PixelTransferxOESNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelZoomxOESNative(int xfactor, int yfactor)
+		internal void PixelZoomxOESNative(int xfactor, int yfactor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[69])(xfactor, yfactor);
@@ -2234,13 +2234,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PixelZoomxOES(int xfactor, int yfactor)
+		public void PixelZoomxOES(int xfactor, int yfactor)
 		{
 			PixelZoomxOESNative(xfactor, yfactor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PointParameterxOESNative(GLPointParameterNameARB pname, int param)
+		internal void PointParameterxOESNative(GLPointParameterNameARB pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, int, void>)funcTable[70])(pname, param);
@@ -2253,13 +2253,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PointParameterxOES(GLPointParameterNameARB pname, int param)
+		public void PointParameterxOES(GLPointParameterNameARB pname, int param)
 		{
 			PointParameterxOESNative(pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PointParameterxvOESNative(GLPointParameterNameARB pname, int* @params)
+		internal void PointParameterxvOESNative(GLPointParameterNameARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPointParameterNameARB, int*, void>)funcTable[71])(pname, @params);
@@ -2272,7 +2272,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PointParameterxvOES(GLPointParameterNameARB pname, int* @params)
+		public void PointParameterxvOES(GLPointParameterNameARB pname, int* @params)
 		{
 			PointParameterxvOESNative(pname, @params);
 		}
@@ -2281,7 +2281,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PointParameterxvOES(GLPointParameterNameARB pname, Span<int> @params)
+		public void PointParameterxvOES(GLPointParameterNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2293,7 +2293,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PointParameterxvOES(GLPointParameterNameARB pname, ref int @params)
+		public void PointParameterxvOES(GLPointParameterNameARB pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2302,7 +2302,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PointSizexOESNative(int size)
+		internal void PointSizexOESNative(int size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[72])(size);
@@ -2315,13 +2315,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PointSizexOES(int size)
+		public void PointSizexOES(int size)
 		{
 			PointSizexOESNative(size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonOffsetxOESNative(int factor, int units)
+		internal void PolygonOffsetxOESNative(int factor, int units)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[73])(factor, units);
@@ -2334,13 +2334,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PolygonOffsetxOES(int factor, int units)
+		public void PolygonOffsetxOES(int factor, int units)
 		{
 			PolygonOffsetxOESNative(factor, units);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrioritizeTexturesxOESNative(int n, uint* textures, int* priorities)
+		internal void PrioritizeTexturesxOESNative(int n, uint* textures, int* priorities)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, int*, void>)funcTable[74])(n, textures, priorities);
@@ -2353,7 +2353,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, uint* textures, int* priorities)
+		public void PrioritizeTexturesxOES(int n, uint* textures, int* priorities)
 		{
 			PrioritizeTexturesxOESNative(n, textures, priorities);
 		}
@@ -2362,7 +2362,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, Span<uint> textures, int* priorities)
+		public void PrioritizeTexturesxOES(int n, Span<uint> textures, int* priorities)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -2374,7 +2374,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, ref uint textures, int* priorities)
+		public void PrioritizeTexturesxOES(int n, ref uint textures, int* priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -2386,7 +2386,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, uint* textures, Span<int> priorities)
+		public void PrioritizeTexturesxOES(int n, uint* textures, Span<int> priorities)
 		{
 			fixed (int* ppriorities0 = priorities)
 			{
@@ -2398,7 +2398,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, uint* textures, ref int priorities)
+		public void PrioritizeTexturesxOES(int n, uint* textures, ref int priorities)
 		{
 			fixed (int* ppriorities0 = &priorities)
 			{
@@ -2410,7 +2410,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, Span<uint> textures, Span<int> priorities)
+		public void PrioritizeTexturesxOES(int n, Span<uint> textures, Span<int> priorities)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -2425,7 +2425,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void PrioritizeTexturesxOES(int n, ref uint textures, ref int priorities)
+		public void PrioritizeTexturesxOES(int n, ref uint textures, ref int priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -2437,7 +2437,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2xOESNative(int x, int y)
+		internal void RasterPos2xOESNative(int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[75])(x, y);
@@ -2450,13 +2450,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos2xOES(int x, int y)
+		public void RasterPos2xOES(int x, int y)
 		{
 			RasterPos2xOESNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos2xvOESNative(int* coords)
+		internal void RasterPos2xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[76])(coords);
@@ -2469,7 +2469,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos2xvOES(int* coords)
+		public void RasterPos2xvOES(int* coords)
 		{
 			RasterPos2xvOESNative(coords);
 		}
@@ -2478,7 +2478,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos2xvOES(Span<int> coords)
+		public void RasterPos2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2490,7 +2490,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos2xvOES(ref int coords)
+		public void RasterPos2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2499,7 +2499,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3xOESNative(int x, int y, int z)
+		internal void RasterPos3xOESNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[77])(x, y, z);
@@ -2512,13 +2512,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos3xOES(int x, int y, int z)
+		public void RasterPos3xOES(int x, int y, int z)
 		{
 			RasterPos3xOESNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos3xvOESNative(int* coords)
+		internal void RasterPos3xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[78])(coords);
@@ -2531,7 +2531,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos3xvOES(int* coords)
+		public void RasterPos3xvOES(int* coords)
 		{
 			RasterPos3xvOESNative(coords);
 		}
@@ -2540,7 +2540,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos3xvOES(Span<int> coords)
+		public void RasterPos3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2552,7 +2552,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos3xvOES(ref int coords)
+		public void RasterPos3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2561,7 +2561,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos4xOESNative(int x, int y, int z, int w)
+		internal void RasterPos4xOESNative(int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[79])(x, y, z, w);
@@ -2574,13 +2574,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos4xOES(int x, int y, int z, int w)
+		public void RasterPos4xOES(int x, int y, int z, int w)
 		{
 			RasterPos4xOESNative(x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterPos4xvOESNative(int* coords)
+		internal void RasterPos4xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[80])(coords);
@@ -2593,7 +2593,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos4xvOES(int* coords)
+		public void RasterPos4xvOES(int* coords)
 		{
 			RasterPos4xvOESNative(coords);
 		}
@@ -2602,7 +2602,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos4xvOES(Span<int> coords)
+		public void RasterPos4xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2614,7 +2614,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RasterPos4xvOES(ref int coords)
+		public void RasterPos4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2623,7 +2623,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RectxOESNative(int x1, int y1, int x2, int y2)
+		internal void RectxOESNative(int x1, int y1, int x2, int y2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[81])(x1, y1, x2, y2);
@@ -2636,13 +2636,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxOES(int x1, int y1, int x2, int y2)
+		public void RectxOES(int x1, int y1, int x2, int y2)
 		{
 			RectxOESNative(x1, y1, x2, y2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RectxvOESNative(int* v1, int* v2)
+		internal void RectxvOESNative(int* v1, int* v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, int*, void>)funcTable[82])(v1, v2);
@@ -2655,7 +2655,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(int* v1, int* v2)
+		public void RectxvOES(int* v1, int* v2)
 		{
 			RectxvOESNative(v1, v2);
 		}
@@ -2664,7 +2664,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(Span<int> v1, int* v2)
+		public void RectxvOES(Span<int> v1, int* v2)
 		{
 			fixed (int* pv10 = v1)
 			{
@@ -2676,7 +2676,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(ref int v1, int* v2)
+		public void RectxvOES(ref int v1, int* v2)
 		{
 			fixed (int* pv10 = &v1)
 			{
@@ -2688,7 +2688,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(int* v1, Span<int> v2)
+		public void RectxvOES(int* v1, Span<int> v2)
 		{
 			fixed (int* pv20 = v2)
 			{
@@ -2700,7 +2700,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(int* v1, ref int v2)
+		public void RectxvOES(int* v1, ref int v2)
 		{
 			fixed (int* pv20 = &v2)
 			{
@@ -2712,7 +2712,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(Span<int> v1, Span<int> v2)
+		public void RectxvOES(Span<int> v1, Span<int> v2)
 		{
 			fixed (int* pv10 = v1)
 			{
@@ -2727,7 +2727,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RectxvOES(ref int v1, ref int v2)
+		public void RectxvOES(ref int v1, ref int v2)
 		{
 			fixed (int* pv10 = &v1)
 			{
@@ -2739,7 +2739,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RotatexOESNative(int angle, int x, int y, int z)
+		internal void RotatexOESNative(int angle, int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[83])(angle, x, y, z);
@@ -2752,13 +2752,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void RotatexOES(int angle, int x, int y, int z)
+		public void RotatexOES(int angle, int x, int y, int z)
 		{
 			RotatexOESNative(angle, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleCoveragexOESNative(int value, bool invert)
+		internal void SampleCoveragexOESNative(int value, bool invert)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte, void>)funcTable[84])(value, *((byte*)(&invert)));
@@ -2771,13 +2771,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void SampleCoveragexOES(int value, bool invert)
+		public void SampleCoveragexOES(int value, bool invert)
 		{
 			SampleCoveragexOESNative(value, invert);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScalexOESNative(int x, int y, int z)
+		internal void ScalexOESNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[85])(x, y, z);
@@ -2790,13 +2790,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void ScalexOES(int x, int y, int z)
+		public void ScalexOES(int x, int y, int z)
 		{
 			ScalexOESNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord1xOESNative(int s)
+		internal void TexCoord1xOESNative(int s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[86])(s);
@@ -2809,13 +2809,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord1xOES(int s)
+		public void TexCoord1xOES(int s)
 		{
 			TexCoord1xOESNative(s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord1xvOESNative(int* coords)
+		internal void TexCoord1xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[87])(coords);
@@ -2828,7 +2828,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord1xvOES(int* coords)
+		public void TexCoord1xvOES(int* coords)
 		{
 			TexCoord1xvOESNative(coords);
 		}
@@ -2837,7 +2837,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord1xvOES(Span<int> coords)
+		public void TexCoord1xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2849,7 +2849,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord1xvOES(ref int coords)
+		public void TexCoord1xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2858,7 +2858,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord2xOESNative(int s, int t)
+		internal void TexCoord2xOESNative(int s, int t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[88])(s, t);
@@ -2871,13 +2871,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord2xOES(int s, int t)
+		public void TexCoord2xOES(int s, int t)
 		{
 			TexCoord2xOESNative(s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord2xvOESNative(int* coords)
+		internal void TexCoord2xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[89])(coords);
@@ -2890,7 +2890,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord2xvOES(int* coords)
+		public void TexCoord2xvOES(int* coords)
 		{
 			TexCoord2xvOESNative(coords);
 		}
@@ -2899,7 +2899,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord2xvOES(Span<int> coords)
+		public void TexCoord2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2911,7 +2911,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord2xvOES(ref int coords)
+		public void TexCoord2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2920,7 +2920,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord3xOESNative(int s, int t, int r)
+		internal void TexCoord3xOESNative(int s, int t, int r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[90])(s, t, r);
@@ -2933,13 +2933,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord3xOES(int s, int t, int r)
+		public void TexCoord3xOES(int s, int t, int r)
 		{
 			TexCoord3xOESNative(s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord3xvOESNative(int* coords)
+		internal void TexCoord3xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[91])(coords);
@@ -2952,7 +2952,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord3xvOES(int* coords)
+		public void TexCoord3xvOES(int* coords)
 		{
 			TexCoord3xvOESNative(coords);
 		}
@@ -2961,7 +2961,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord3xvOES(Span<int> coords)
+		public void TexCoord3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -2973,7 +2973,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord3xvOES(ref int coords)
+		public void TexCoord3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -2982,7 +2982,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord4xOESNative(int s, int t, int r, int q)
+		internal void TexCoord4xOESNative(int s, int t, int r, int q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[92])(s, t, r, q);
@@ -2995,13 +2995,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord4xOES(int s, int t, int r, int q)
+		public void TexCoord4xOES(int s, int t, int r, int q)
 		{
 			TexCoord4xOESNative(s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord4xvOESNative(int* coords)
+		internal void TexCoord4xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[93])(coords);
@@ -3014,7 +3014,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord4xvOES(int* coords)
+		public void TexCoord4xvOES(int* coords)
 		{
 			TexCoord4xvOESNative(coords);
 		}
@@ -3023,7 +3023,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord4xvOES(Span<int> coords)
+		public void TexCoord4xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -3035,7 +3035,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexCoord4xvOES(ref int coords)
+		public void TexCoord4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -3044,7 +3044,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvxOESNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		internal void TexEnvxOESNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int, void>)funcTable[94])(target, pname, param);
@@ -3057,13 +3057,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexEnvxOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		public void TexEnvxOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			TexEnvxOESNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexEnvxvOESNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void TexEnvxvOESNative(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[95])(target, pname, @params);
@@ -3076,7 +3076,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			TexEnvxvOESNative(target, pname, @params);
 		}
@@ -3085,7 +3085,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -3097,7 +3097,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public void TexEnvxvOES(GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -3106,7 +3106,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexGenxOESNative(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
+		internal void TexGenxOESNative(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureCoordName, GLTextureGenParameter, int, void>)funcTable[96])(coord, pname, param);
@@ -3119,13 +3119,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void TexGenxOES(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
+		public void TexGenxOES(GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			TexGenxOESNative(coord, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexGenxvOESNative(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		internal void TexGenxvOESNative(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureCoordName, GLTextureGenParameter, int*, void>)funcTable[97])(coord, pname, @params);
@@ -3138,7 +3138,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		public void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			TexGenxvOESNative(coord, pname, @params);
 		}
@@ -3147,7 +3147,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		public void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -3159,7 +3159,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point<br/>GL_OES_texture_cube_map</remarks>
-		public static void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public void TexGenxvOES(GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -3168,7 +3168,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterxOESNative(GLTextureTarget target, GLGetTextureParameter pname, int param)
+		internal void TexParameterxOESNative(GLTextureTarget target, GLGetTextureParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int, void>)funcTable[98])(target, pname, param);
@@ -3181,13 +3181,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexParameterxOES(GLTextureTarget target, GLGetTextureParameter pname, int param)
+		public void TexParameterxOES(GLTextureTarget target, GLGetTextureParameter pname, int param)
 		{
 			TexParameterxOESNative(target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterxvOESNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void TexParameterxvOESNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[99])(target, pname, @params);
@@ -3200,7 +3200,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			TexParameterxvOESNative(target, pname, @params);
 		}
@@ -3209,7 +3209,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -3221,7 +3221,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void TexParameterxvOES(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -3230,7 +3230,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TranslatexOESNative(int x, int y, int z)
+		internal void TranslatexOESNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[100])(x, y, z);
@@ -3243,13 +3243,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void TranslatexOES(int x, int y, int z)
+		public void TranslatexOES(int x, int y, int z)
 		{
 			TranslatexOESNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2xOESNative(int x)
+		internal void Vertex2xOESNative(int x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[101])(x);
@@ -3262,13 +3262,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex2xOES(int x)
+		public void Vertex2xOES(int x)
 		{
 			Vertex2xOESNative(x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2xvOESNative(int* coords)
+		internal void Vertex2xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[102])(coords);
@@ -3281,7 +3281,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex2xvOES(int* coords)
+		public void Vertex2xvOES(int* coords)
 		{
 			Vertex2xvOESNative(coords);
 		}
@@ -3290,7 +3290,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex2xvOES(Span<int> coords)
+		public void Vertex2xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -3302,7 +3302,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex2xvOES(ref int coords)
+		public void Vertex2xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -3311,7 +3311,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3xOESNative(int x, int y)
+		internal void Vertex3xOESNative(int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[103])(x, y);
@@ -3324,13 +3324,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex3xOES(int x, int y)
+		public void Vertex3xOES(int x, int y)
 		{
 			Vertex3xOESNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3xvOESNative(int* coords)
+		internal void Vertex3xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[104])(coords);
@@ -3343,7 +3343,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex3xvOES(int* coords)
+		public void Vertex3xvOES(int* coords)
 		{
 			Vertex3xvOESNative(coords);
 		}
@@ -3352,7 +3352,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex3xvOES(Span<int> coords)
+		public void Vertex3xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -3364,7 +3364,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex3xvOES(ref int coords)
+		public void Vertex3xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -3373,7 +3373,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4xOESNative(int x, int y, int z)
+		internal void Vertex4xOESNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[105])(x, y, z);
@@ -3386,13 +3386,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex4xOES(int x, int y, int z)
+		public void Vertex4xOES(int x, int y, int z)
 		{
 			Vertex4xOESNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4xvOESNative(int* coords)
+		internal void Vertex4xvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[106])(coords);
@@ -3405,7 +3405,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex4xvOES(int* coords)
+		public void Vertex4xvOES(int* coords)
 		{
 			Vertex4xvOESNative(coords);
 		}
@@ -3414,7 +3414,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex4xvOES(Span<int> coords)
+		public void Vertex4xvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -3426,7 +3426,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_fixed_point</remarks>
-		public static void Vertex4xvOES(ref int coords)
+		public void Vertex4xvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDOcclusionQueryEvent
+	public unsafe partial class GLAMDOcclusionQueryEvent
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void QueryObjectParameteruiAMDNative(GLQueryTarget target, uint id, GLEnum pname, GLOcclusionQueryEventMaskAMD param)
+		internal void QueryObjectParameteruiAMDNative(GLQueryTarget target, uint id, GLEnum pname, GLOcclusionQueryEventMaskAMD param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, uint, GLEnum, GLOcclusionQueryEventMaskAMD, void>)funcTable[0])(target, id, pname, param);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_occlusion_query_event</remarks>
-		public static void QueryObjectParameteruiAMD(GLQueryTarget target, uint id, GLEnum pname, GLOcclusionQueryEventMaskAMD param)
+		public void QueryObjectParameteruiAMD(GLQueryTarget target, uint id, GLEnum pname, GLOcclusionQueryEventMaskAMD param)
 		{
 			QueryObjectParameteruiAMDNative(target, id, pname, param);
 		}

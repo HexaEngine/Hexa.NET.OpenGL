@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVShadingRateImage
+	public unsafe partial class GLNVShadingRateImage
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindShadingRateImageNVNative(uint texture)
+		internal void BindShadingRateImageNVNative(uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(texture);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void BindShadingRateImageNV(uint texture)
+		public void BindShadingRateImageNV(uint texture)
 		{
 			BindShadingRateImageNVNative(texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShadingRateImagePaletteNVNative(uint viewport, uint entry, GLEnum* rate)
+		internal void GetShadingRateImagePaletteNVNative(uint viewport, uint entry, GLEnum* rate)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum*, void>)funcTable[1])(viewport, entry, rate);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, GLEnum* rate)
+		public void GetShadingRateImagePaletteNV(uint viewport, uint entry, GLEnum* rate)
 		{
 			GetShadingRateImagePaletteNVNative(viewport, entry, rate);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, Span<GLEnum> rate)
+		public void GetShadingRateImagePaletteNV(uint viewport, uint entry, Span<GLEnum> rate)
 		{
 			fixed (GLEnum* prate0 = rate)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, ref GLEnum rate)
+		public void GetShadingRateImagePaletteNV(uint viewport, uint entry, ref GLEnum rate)
 		{
 			fixed (GLEnum* prate0 = &rate)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShadingRateSampleLocationivNVNative(GLEnum rate, uint samples, uint index, int* location)
+		internal void GetShadingRateSampleLocationivNVNative(GLEnum rate, uint samples, uint index, int* location)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, uint, int*, void>)funcTable[2])(rate, samples, index, location);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, int* location)
+		public void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, int* location)
 		{
 			GetShadingRateSampleLocationivNVNative(rate, samples, index, location);
 		}
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, Span<int> location)
+		public void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, Span<int> location)
 		{
 			fixed (int* plocation0 = location)
 			{
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, ref int location)
+		public void GetShadingRateSampleLocationivNV(GLEnum rate, uint samples, uint index, ref int location)
 		{
 			fixed (int* plocation0 = &location)
 			{
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateImageBarrierNVNative(bool synchronize)
+		internal void ShadingRateImageBarrierNVNative(bool synchronize)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte, void>)funcTable[3])(*((byte*)(&synchronize)));
@@ -135,13 +135,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateImageBarrierNV(bool synchronize)
+		public void ShadingRateImageBarrierNV(bool synchronize)
 		{
 			ShadingRateImageBarrierNVNative(synchronize);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateImagePaletteNVNative(uint viewport, uint first, int count, GLEnum* rates)
+		internal void ShadingRateImagePaletteNVNative(uint viewport, uint first, int count, GLEnum* rates)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, GLEnum*, void>)funcTable[4])(viewport, first, count, rates);
@@ -154,7 +154,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, GLEnum* rates)
+		public void ShadingRateImagePaletteNV(uint viewport, uint first, int count, GLEnum* rates)
 		{
 			ShadingRateImagePaletteNVNative(viewport, first, count, rates);
 		}
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, Span<GLEnum> rates)
+		public void ShadingRateImagePaletteNV(uint viewport, uint first, int count, Span<GLEnum> rates)
 		{
 			fixed (GLEnum* prates0 = rates)
 			{
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, ref GLEnum rates)
+		public void ShadingRateImagePaletteNV(uint viewport, uint first, int count, ref GLEnum rates)
 		{
 			fixed (GLEnum* prates0 = &rates)
 			{
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateSampleOrderNVNative(GLEnum order)
+		internal void ShadingRateSampleOrderNVNative(GLEnum order)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[5])(order);
@@ -197,13 +197,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateSampleOrderNV(GLEnum order)
+		public void ShadingRateSampleOrderNV(GLEnum order)
 		{
 			ShadingRateSampleOrderNVNative(order);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShadingRateSampleOrderCustomNVNative(GLEnum rate, uint samples, int* locations)
+		internal void ShadingRateSampleOrderCustomNVNative(GLEnum rate, uint samples, int* locations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, int*, void>)funcTable[6])(rate, samples, locations);
@@ -216,7 +216,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, int* locations)
+		public void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, int* locations)
 		{
 			ShadingRateSampleOrderCustomNVNative(rate, samples, locations);
 		}
@@ -225,7 +225,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, Span<int> locations)
+		public void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, Span<int> locations)
 		{
 			fixed (int* plocations0 = locations)
 			{
@@ -237,7 +237,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shading_rate_image</remarks>
-		public static void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, ref int locations)
+		public void ShadingRateSampleOrderCustomNV(GLEnum rate, uint samples, ref int locations)
 		{
 			fixed (int* plocations0 = &locations)
 			{

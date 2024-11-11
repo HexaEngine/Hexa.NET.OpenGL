@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESPrimitiveBoundingBox
+	public unsafe partial class GLOESPrimitiveBoundingBox
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrimitiveBoundingBoxOESNative(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
+		internal void PrimitiveBoundingBoxOESNative(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, float, float, float, float, void>)funcTable[0])(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_primitive_bounding_box</remarks>
-		public static void PrimitiveBoundingBoxOES(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
+		public void PrimitiveBoundingBoxOES(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW)
 		{
 			PrimitiveBoundingBoxOESNative(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
 		}

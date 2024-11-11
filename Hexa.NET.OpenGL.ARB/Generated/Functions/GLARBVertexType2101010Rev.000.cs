@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBVertexType2101010Rev
+	public unsafe partial class GLARBVertexType2101010Rev
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorP3uiNative(GLColorPointerType type, uint color)
+		internal void ColorP3uiNative(GLColorPointerType type, uint color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorPointerType, uint, void>)funcTable[0])(type, color);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP3ui(GLColorPointerType type, uint color)
+		public void ColorP3ui(GLColorPointerType type, uint color)
 		{
 			ColorP3uiNative(type, color);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorP3uivNative(GLColorPointerType type, uint* color)
+		internal void ColorP3uivNative(GLColorPointerType type, uint* color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorPointerType, uint*, void>)funcTable[1])(type, color);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP3uiv(GLColorPointerType type, uint* color)
+		public void ColorP3uiv(GLColorPointerType type, uint* color)
 		{
 			ColorP3uivNative(type, color);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP3uiv(GLColorPointerType type, Span<uint> color)
+		public void ColorP3uiv(GLColorPointerType type, Span<uint> color)
 		{
 			fixed (uint* pcolor0 = color)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP3uiv(GLColorPointerType type, ref uint color)
+		public void ColorP3uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorP4uiNative(GLColorPointerType type, uint color)
+		internal void ColorP4uiNative(GLColorPointerType type, uint color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorPointerType, uint, void>)funcTable[2])(type, color);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP4ui(GLColorPointerType type, uint color)
+		public void ColorP4ui(GLColorPointerType type, uint color)
 		{
 			ColorP4uiNative(type, color);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorP4uivNative(GLColorPointerType type, uint* color)
+		internal void ColorP4uivNative(GLColorPointerType type, uint* color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorPointerType, uint*, void>)funcTable[3])(type, color);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP4uiv(GLColorPointerType type, uint* color)
+		public void ColorP4uiv(GLColorPointerType type, uint* color)
 		{
 			ColorP4uivNative(type, color);
 		}
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP4uiv(GLColorPointerType type, Span<uint> color)
+		public void ColorP4uiv(GLColorPointerType type, Span<uint> color)
 		{
 			fixed (uint* pcolor0 = color)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void ColorP4uiv(GLColorPointerType type, ref uint color)
+		public void ColorP4uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP1uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		internal void MultiTexCoordP1uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint, void>)funcTable[4])(texture, type, coords);
@@ -154,13 +154,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP1ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		public void MultiTexCoordP1ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP1uiNative(texture, type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP1uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		internal void MultiTexCoordP1uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint*, void>)funcTable[5])(texture, type, coords);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		public void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP1uivNative(texture, type, coords);
 		}
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		public void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -194,7 +194,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
+		public void MultiTexCoordP1uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP2uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		internal void MultiTexCoordP2uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint, void>)funcTable[6])(texture, type, coords);
@@ -216,13 +216,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP2ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		public void MultiTexCoordP2ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP2uiNative(texture, type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP2uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		internal void MultiTexCoordP2uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint*, void>)funcTable[7])(texture, type, coords);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		public void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP2uivNative(texture, type, coords);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		public void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
+		public void MultiTexCoordP2uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP3uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		internal void MultiTexCoordP3uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint, void>)funcTable[8])(texture, type, coords);
@@ -278,13 +278,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP3ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		public void MultiTexCoordP3ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP3uiNative(texture, type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP3uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		internal void MultiTexCoordP3uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint*, void>)funcTable[9])(texture, type, coords);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		public void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP3uivNative(texture, type, coords);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		public void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
+		public void MultiTexCoordP3uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP4uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		internal void MultiTexCoordP4uiNative(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint, void>)funcTable[10])(texture, type, coords);
@@ -340,13 +340,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP4ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
+		public void MultiTexCoordP4ui(GLTextureUnit texture, GLTexCoordPointerType type, uint coords)
 		{
 			MultiTexCoordP4uiNative(texture, type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordP4uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		internal void MultiTexCoordP4uivNative(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTexCoordPointerType, uint*, void>)funcTable[11])(texture, type, coords);
@@ -359,7 +359,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
+		public void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, uint* coords)
 		{
 			MultiTexCoordP4uivNative(texture, type, coords);
 		}
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
+		public void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -380,7 +380,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
+		public void MultiTexCoordP4uiv(GLTextureUnit texture, GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -389,7 +389,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NormalP3uiNative(GLNormalPointerType type, uint coords)
+		internal void NormalP3uiNative(GLNormalPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLNormalPointerType, uint, void>)funcTable[12])(type, coords);
@@ -402,13 +402,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void NormalP3ui(GLNormalPointerType type, uint coords)
+		public void NormalP3ui(GLNormalPointerType type, uint coords)
 		{
 			NormalP3uiNative(type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NormalP3uivNative(GLNormalPointerType type, uint* coords)
+		internal void NormalP3uivNative(GLNormalPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLNormalPointerType, uint*, void>)funcTable[13])(type, coords);
@@ -421,7 +421,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void NormalP3uiv(GLNormalPointerType type, uint* coords)
+		public void NormalP3uiv(GLNormalPointerType type, uint* coords)
 		{
 			NormalP3uivNative(type, coords);
 		}
@@ -430,7 +430,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void NormalP3uiv(GLNormalPointerType type, Span<uint> coords)
+		public void NormalP3uiv(GLNormalPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -442,7 +442,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void NormalP3uiv(GLNormalPointerType type, ref uint coords)
+		public void NormalP3uiv(GLNormalPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -451,7 +451,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColorP3uiNative(GLColorPointerType type, uint color)
+		internal void SecondaryColorP3uiNative(GLColorPointerType type, uint color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorPointerType, uint, void>)funcTable[14])(type, color);
@@ -464,13 +464,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void SecondaryColorP3ui(GLColorPointerType type, uint color)
+		public void SecondaryColorP3ui(GLColorPointerType type, uint color)
 		{
 			SecondaryColorP3uiNative(type, color);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SecondaryColorP3uivNative(GLColorPointerType type, uint* color)
+		internal void SecondaryColorP3uivNative(GLColorPointerType type, uint* color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorPointerType, uint*, void>)funcTable[15])(type, color);
@@ -483,7 +483,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void SecondaryColorP3uiv(GLColorPointerType type, uint* color)
+		public void SecondaryColorP3uiv(GLColorPointerType type, uint* color)
 		{
 			SecondaryColorP3uivNative(type, color);
 		}
@@ -492,7 +492,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void SecondaryColorP3uiv(GLColorPointerType type, Span<uint> color)
+		public void SecondaryColorP3uiv(GLColorPointerType type, Span<uint> color)
 		{
 			fixed (uint* pcolor0 = color)
 			{
@@ -504,7 +504,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void SecondaryColorP3uiv(GLColorPointerType type, ref uint color)
+		public void SecondaryColorP3uiv(GLColorPointerType type, ref uint color)
 		{
 			fixed (uint* pcolor0 = &color)
 			{
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP1uiNative(GLTexCoordPointerType type, uint coords)
+		internal void TexCoordP1uiNative(GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint, void>)funcTable[16])(type, coords);
@@ -526,13 +526,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP1ui(GLTexCoordPointerType type, uint coords)
+		public void TexCoordP1ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP1uiNative(type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP1uivNative(GLTexCoordPointerType type, uint* coords)
+		internal void TexCoordP1uivNative(GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint*, void>)funcTable[17])(type, coords);
@@ -545,7 +545,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP1uiv(GLTexCoordPointerType type, uint* coords)
+		public void TexCoordP1uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP1uivNative(type, coords);
 		}
@@ -554,7 +554,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP1uiv(GLTexCoordPointerType type, Span<uint> coords)
+		public void TexCoordP1uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -566,7 +566,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP1uiv(GLTexCoordPointerType type, ref uint coords)
+		public void TexCoordP1uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -575,7 +575,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP2uiNative(GLTexCoordPointerType type, uint coords)
+		internal void TexCoordP2uiNative(GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint, void>)funcTable[18])(type, coords);
@@ -588,13 +588,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP2ui(GLTexCoordPointerType type, uint coords)
+		public void TexCoordP2ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP2uiNative(type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP2uivNative(GLTexCoordPointerType type, uint* coords)
+		internal void TexCoordP2uivNative(GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint*, void>)funcTable[19])(type, coords);
@@ -607,7 +607,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP2uiv(GLTexCoordPointerType type, uint* coords)
+		public void TexCoordP2uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP2uivNative(type, coords);
 		}
@@ -616,7 +616,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP2uiv(GLTexCoordPointerType type, Span<uint> coords)
+		public void TexCoordP2uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -628,7 +628,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP2uiv(GLTexCoordPointerType type, ref uint coords)
+		public void TexCoordP2uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -637,7 +637,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP3uiNative(GLTexCoordPointerType type, uint coords)
+		internal void TexCoordP3uiNative(GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint, void>)funcTable[20])(type, coords);
@@ -650,13 +650,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP3ui(GLTexCoordPointerType type, uint coords)
+		public void TexCoordP3ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP3uiNative(type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP3uivNative(GLTexCoordPointerType type, uint* coords)
+		internal void TexCoordP3uivNative(GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint*, void>)funcTable[21])(type, coords);
@@ -669,7 +669,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP3uiv(GLTexCoordPointerType type, uint* coords)
+		public void TexCoordP3uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP3uivNative(type, coords);
 		}
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP3uiv(GLTexCoordPointerType type, Span<uint> coords)
+		public void TexCoordP3uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -690,7 +690,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP3uiv(GLTexCoordPointerType type, ref uint coords)
+		public void TexCoordP3uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -699,7 +699,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP4uiNative(GLTexCoordPointerType type, uint coords)
+		internal void TexCoordP4uiNative(GLTexCoordPointerType type, uint coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint, void>)funcTable[22])(type, coords);
@@ -712,13 +712,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP4ui(GLTexCoordPointerType type, uint coords)
+		public void TexCoordP4ui(GLTexCoordPointerType type, uint coords)
 		{
 			TexCoordP4uiNative(type, coords);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoordP4uivNative(GLTexCoordPointerType type, uint* coords)
+		internal void TexCoordP4uivNative(GLTexCoordPointerType type, uint* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTexCoordPointerType, uint*, void>)funcTable[23])(type, coords);
@@ -731,7 +731,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP4uiv(GLTexCoordPointerType type, uint* coords)
+		public void TexCoordP4uiv(GLTexCoordPointerType type, uint* coords)
 		{
 			TexCoordP4uivNative(type, coords);
 		}
@@ -740,7 +740,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP4uiv(GLTexCoordPointerType type, Span<uint> coords)
+		public void TexCoordP4uiv(GLTexCoordPointerType type, Span<uint> coords)
 		{
 			fixed (uint* pcoords0 = coords)
 			{
@@ -752,7 +752,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void TexCoordP4uiv(GLTexCoordPointerType type, ref uint coords)
+		public void TexCoordP4uiv(GLTexCoordPointerType type, ref uint coords)
 		{
 			fixed (uint* pcoords0 = &coords)
 			{
@@ -761,7 +761,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[24])(index, type, *((byte*)(&normalized)), value);
@@ -774,13 +774,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP1uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[25])(index, type, *((byte*)(&normalized)), value);
@@ -793,7 +793,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP1uivNative(index, type, normalized, value);
 		}
@@ -802,7 +802,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -814,7 +814,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -823,7 +823,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[26])(index, type, *((byte*)(&normalized)), value);
@@ -836,13 +836,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP2uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[27])(index, type, *((byte*)(&normalized)), value);
@@ -855,7 +855,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP2uivNative(index, type, normalized, value);
 		}
@@ -864,7 +864,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -876,7 +876,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -885,7 +885,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[28])(index, type, *((byte*)(&normalized)), value);
@@ -898,13 +898,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP3uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[29])(index, type, *((byte*)(&normalized)), value);
@@ -917,7 +917,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP3uivNative(index, type, normalized, value);
 		}
@@ -926,7 +926,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -938,7 +938,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -947,7 +947,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[30])(index, type, *((byte*)(&normalized)), value);
@@ -960,13 +960,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP4uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[31])(index, type, *((byte*)(&normalized)), value);
@@ -979,7 +979,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP4uivNative(index, type, normalized, value);
 		}
@@ -988,7 +988,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1000,7 +1000,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1009,7 +1009,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP2uiNative(GLVertexPointerType type, uint value)
+		internal void VertexP2uiNative(GLVertexPointerType type, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint, void>)funcTable[32])(type, value);
@@ -1022,13 +1022,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2ui(GLVertexPointerType type, uint value)
+		public void VertexP2ui(GLVertexPointerType type, uint value)
 		{
 			VertexP2uiNative(type, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP2uivNative(GLVertexPointerType type, uint* value)
+		internal void VertexP2uivNative(GLVertexPointerType type, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint*, void>)funcTable[33])(type, value);
@@ -1041,7 +1041,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2uiv(GLVertexPointerType type, uint* value)
+		public void VertexP2uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP2uivNative(type, value);
 		}
@@ -1050,7 +1050,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2uiv(GLVertexPointerType type, Span<uint> value)
+		public void VertexP2uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1062,7 +1062,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2uiv(GLVertexPointerType type, ref uint value)
+		public void VertexP2uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1071,7 +1071,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP3uiNative(GLVertexPointerType type, uint value)
+		internal void VertexP3uiNative(GLVertexPointerType type, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint, void>)funcTable[34])(type, value);
@@ -1084,13 +1084,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3ui(GLVertexPointerType type, uint value)
+		public void VertexP3ui(GLVertexPointerType type, uint value)
 		{
 			VertexP3uiNative(type, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP3uivNative(GLVertexPointerType type, uint* value)
+		internal void VertexP3uivNative(GLVertexPointerType type, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint*, void>)funcTable[35])(type, value);
@@ -1103,7 +1103,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3uiv(GLVertexPointerType type, uint* value)
+		public void VertexP3uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP3uivNative(type, value);
 		}
@@ -1112,7 +1112,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3uiv(GLVertexPointerType type, Span<uint> value)
+		public void VertexP3uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1124,7 +1124,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3uiv(GLVertexPointerType type, ref uint value)
+		public void VertexP3uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1133,7 +1133,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP4uiNative(GLVertexPointerType type, uint value)
+		internal void VertexP4uiNative(GLVertexPointerType type, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint, void>)funcTable[36])(type, value);
@@ -1146,13 +1146,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4ui(GLVertexPointerType type, uint value)
+		public void VertexP4ui(GLVertexPointerType type, uint value)
 		{
 			VertexP4uiNative(type, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP4uivNative(GLVertexPointerType type, uint* value)
+		internal void VertexP4uivNative(GLVertexPointerType type, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint*, void>)funcTable[37])(type, value);
@@ -1165,7 +1165,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4uiv(GLVertexPointerType type, uint* value)
+		public void VertexP4uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP4uivNative(type, value);
 		}
@@ -1174,7 +1174,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4uiv(GLVertexPointerType type, Span<uint> value)
+		public void VertexP4uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1186,7 +1186,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4uiv(GLVertexPointerType type, ref uint value)
+		public void VertexP4uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{

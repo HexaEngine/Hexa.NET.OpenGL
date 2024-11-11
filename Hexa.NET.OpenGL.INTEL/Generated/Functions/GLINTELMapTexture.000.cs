@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.INTEL
 {
-	public static unsafe partial class GLINTELMapTexture
+	public unsafe partial class GLINTELMapTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* MapTexture2DINTELNative(uint texture, int level, uint access, int* stride, GLEnum* layout)
+		internal void* MapTexture2DINTELNative(uint texture, int level, uint access, int* stride, GLEnum* layout)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, uint, int*, GLEnum*, void*>)funcTable[0])(texture, level, access, stride, layout);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, GLEnum* layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, GLEnum* layout)
 		{
 			void* ret = MapTexture2DINTELNative(texture, level, access, stride, layout);
 			return ret;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, GLEnum* layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, GLEnum* layout)
 		{
 			fixed (int* pstride0 = stride)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, GLEnum* layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, GLEnum* layout)
 		{
 			fixed (int* pstride0 = &stride)
 			{
@@ -66,7 +66,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, Span<GLEnum> layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, Span<GLEnum> layout)
 		{
 			fixed (GLEnum* playout0 = layout)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, ref GLEnum layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, int* stride, ref GLEnum layout)
 		{
 			fixed (GLEnum* playout0 = &layout)
 			{
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, Span<GLEnum> layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, Span<int> stride, Span<GLEnum> layout)
 		{
 			fixed (int* pstride0 = stride)
 			{
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, ref GLEnum layout)
+		public void* MapTexture2DINTEL(uint texture, int level, uint access, ref int stride, ref GLEnum layout)
 		{
 			fixed (int* pstride0 = &stride)
 			{
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SyncTextureINTELNative(uint texture)
+		internal void SyncTextureINTELNative(uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[1])(texture);
@@ -134,13 +134,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void SyncTextureINTEL(uint texture)
+		public void SyncTextureINTEL(uint texture)
 		{
 			SyncTextureINTELNative(texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UnmapTexture2DINTELNative(uint texture, int level)
+		internal void UnmapTexture2DINTELNative(uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[2])(texture, level);
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_map_texture</remarks>
-		public static void UnmapTexture2DINTEL(uint texture, int level)
+		public void UnmapTexture2DINTEL(uint texture, int level)
 		{
 			UnmapTexture2DINTELNative(texture, level);
 		}

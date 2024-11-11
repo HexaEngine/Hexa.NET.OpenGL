@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVFragmentCoverageToColor
+	public unsafe partial class GLNVFragmentCoverageToColor
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FragmentCoverageColorNVNative(uint color)
+		internal void FragmentCoverageColorNVNative(uint color)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(color);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fragment_coverage_to_color</remarks>
-		public static void FragmentCoverageColorNV(uint color)
+		public void FragmentCoverageColorNV(uint color)
 		{
 			FragmentCoverageColorNVNative(color);
 		}

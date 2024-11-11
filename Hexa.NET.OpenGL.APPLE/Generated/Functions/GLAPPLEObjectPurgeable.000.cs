@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLEObjectPurgeable
+	public unsafe partial class GLAPPLEObjectPurgeable
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetObjectParameterivAPPLENative(GLEnum objectType, uint name, GLEnum pname, int* @params)
+		internal void GetObjectParameterivAPPLENative(GLEnum objectType, uint name, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, GLEnum, int*, void>)funcTable[0])(objectType, name, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, int* @params)
+		public void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, int* @params)
 		{
 			GetObjectParameterivAPPLENative(objectType, name, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, Span<int> @params)
+		public void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, ref int @params)
+		public void GetObjectParameterivAPPLE(GLEnum objectType, uint name, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum ObjectPurgeableAPPLENative(GLEnum objectType, uint name, GLEnum option)
+		internal GLEnum ObjectPurgeableAPPLENative(GLEnum objectType, uint name, GLEnum option)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, uint, GLEnum, GLEnum>)funcTable[1])(objectType, name, option);
@@ -73,14 +73,14 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static GLEnum ObjectPurgeableAPPLE(GLEnum objectType, uint name, GLEnum option)
+		public GLEnum ObjectPurgeableAPPLE(GLEnum objectType, uint name, GLEnum option)
 		{
 			GLEnum ret = ObjectPurgeableAPPLENative(objectType, name, option);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum ObjectUnpurgeableAPPLENative(GLEnum objectType, uint name, GLEnum option)
+		internal GLEnum ObjectUnpurgeableAPPLENative(GLEnum objectType, uint name, GLEnum option)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, uint, GLEnum, GLEnum>)funcTable[2])(objectType, name, option);
@@ -93,7 +93,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_object_purgeable</remarks>
-		public static GLEnum ObjectUnpurgeableAPPLE(GLEnum objectType, uint name, GLEnum option)
+		public GLEnum ObjectUnpurgeableAPPLE(GLEnum objectType, uint name, GLEnum option)
 		{
 			GLEnum ret = ObjectUnpurgeableAPPLENative(objectType, name, option);
 			return ret;

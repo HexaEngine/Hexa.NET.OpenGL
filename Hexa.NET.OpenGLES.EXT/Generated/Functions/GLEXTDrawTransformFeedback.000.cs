@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTDrawTransformFeedback
+	public unsafe partial class GLEXTDrawTransformFeedback
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackEXTNative(GLPrimitiveType mode, uint id)
+		internal void DrawTransformFeedbackEXTNative(GLPrimitiveType mode, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, void>)funcTable[0])(mode, id);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_transform_feedback</remarks>
-		public static void DrawTransformFeedbackEXT(GLPrimitiveType mode, uint id)
+		public void DrawTransformFeedbackEXT(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackEXTNative(mode, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackInstancedEXTNative(GLPrimitiveType mode, uint id, int instancecount)
+		internal void DrawTransformFeedbackInstancedEXTNative(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, int, void>)funcTable[1])(mode, id, instancecount);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_transform_feedback</remarks>
-		public static void DrawTransformFeedbackInstancedEXT(GLPrimitiveType mode, uint id, int instancecount)
+		public void DrawTransformFeedbackInstancedEXT(GLPrimitiveType mode, uint id, int instancecount)
 		{
 			DrawTransformFeedbackInstancedEXTNative(mode, id, instancecount);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTextureBufferObject
+	public unsafe partial class GLARBTextureBufferObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexBufferARBNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		internal void TexBufferARBNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[0])(target, internalformat, buffer);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_buffer_object</remarks>
-		public static void TexBufferARB(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		public void TexBufferARB(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferARBNative(target, internalformat, buffer);
 		}

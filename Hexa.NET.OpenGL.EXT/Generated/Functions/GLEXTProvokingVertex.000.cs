@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTProvokingVertex
+	public unsafe partial class GLEXTProvokingVertex
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProvokingVertexEXTNative(GLVertexProvokingMode mode)
+		internal void ProvokingVertexEXTNative(GLVertexProvokingMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexProvokingMode, void>)funcTable[0])(mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_provoking_vertex</remarks>
-		public static void ProvokingVertexEXT(GLVertexProvokingMode mode)
+		public void ProvokingVertexEXT(GLVertexProvokingMode mode)
 		{
 			ProvokingVertexEXTNative(mode);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVBlendEquationAdvanced
+	public unsafe partial class GLNVBlendEquationAdvanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendBarrierNVNative()
+		internal void BlendBarrierNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_blend_equation_advanced</remarks>
-		public static void BlendBarrierNV()
+		public void BlendBarrierNV()
 		{
 			BlendBarrierNVNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendParameteriNVNative(GLEnum pname, int value)
+		internal void BlendParameteriNVNative(GLEnum pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, void>)funcTable[1])(pname, value);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_blend_equation_advanced</remarks>
-		public static void BlendParameteriNV(GLEnum pname, int value)
+		public void BlendParameteriNV(GLEnum pname, int value)
 		{
 			BlendParameteriNVNative(pname, value);
 		}

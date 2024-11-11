@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVVertexArrayRange
+	public unsafe partial class GLNVVertexArrayRange
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FlushVertexArrayRangeNVNative()
+		internal void FlushVertexArrayRangeNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
-		public static void FlushVertexArrayRangeNV()
+		public void FlushVertexArrayRangeNV()
 		{
 			FlushVertexArrayRangeNVNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexArrayRangeNVNative(int length, void* pointer)
+		internal void VertexArrayRangeNVNative(int length, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void*, void>)funcTable[1])(length, pointer);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
-		public static void VertexArrayRangeNV(int length, void* pointer)
+		public void VertexArrayRangeNV(int length, void* pointer)
 		{
 			VertexArrayRangeNVNative(length, pointer);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
-		public static void VertexArrayRangeNV(int length, nint pointer)
+		public void VertexArrayRangeNV(int length, nint pointer)
 		{
 			VertexArrayRangeNVNative(length, (void*)pointer);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_array_range</remarks>
-		public static void VertexArrayRangeNV<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexArrayRangeNV<TPointer>(int length, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

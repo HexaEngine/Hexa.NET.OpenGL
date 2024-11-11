@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVTextureBarrier
+	public unsafe partial class GLNVTextureBarrier
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureBarrierNVNative()
+		internal void TextureBarrierNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_texture_barrier</remarks>
-		public static void TextureBarrierNV()
+		public void TextureBarrierNV()
 		{
 			TextureBarrierNVNative();
 		}

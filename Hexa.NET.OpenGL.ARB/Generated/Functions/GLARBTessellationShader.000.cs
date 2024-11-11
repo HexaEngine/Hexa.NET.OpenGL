@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTessellationShader
+	public unsafe partial class GLARBTessellationShader
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PatchParameterfvNative(GLPatchParameterName pname, float* values)
+		internal void PatchParameterfvNative(GLPatchParameterName pname, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPatchParameterName, float*, void>)funcTable[0])(pname, values);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
-		public static void PatchParameterfv(GLPatchParameterName pname, float* values)
+		public void PatchParameterfv(GLPatchParameterName pname, float* values)
 		{
 			PatchParameterfvNative(pname, values);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
-		public static void PatchParameterfv(GLPatchParameterName pname, Span<float> values)
+		public void PatchParameterfv(GLPatchParameterName pname, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
-		public static void PatchParameterfv(GLPatchParameterName pname, ref float values)
+		public void PatchParameterfv(GLPatchParameterName pname, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PatchParameteriNative(GLPatchParameterName pname, int value)
+		internal void PatchParameteriNative(GLPatchParameterName pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPatchParameterName, int, void>)funcTable[1])(pname, value);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_tessellation_shader</remarks>
-		public static void PatchParameteri(GLPatchParameterName pname, int value)
+		public void PatchParameteri(GLPatchParameterName pname, int value)
 		{
 			PatchParameteriNative(pname, value);
 		}

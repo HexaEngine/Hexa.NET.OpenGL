@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLEFence
+	public unsafe partial class GLAPPLEFence
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteFencesAPPLENative(int n, uint* fences)
+		internal void DeleteFencesAPPLENative(int n, uint* fences)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[0])(n, fences);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void DeleteFencesAPPLE(int n, uint* fences)
+		public void DeleteFencesAPPLE(int n, uint* fences)
 		{
 			DeleteFencesAPPLENative(n, fences);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void DeleteFencesAPPL(uint fence)
+		public void DeleteFencesAPPL(uint fence)
 		{
 			DeleteFencesAPPLENative(1, &fence);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void DeleteFencesAPPLE(int n, Span<uint> fences)
+		public void DeleteFencesAPPLE(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void DeleteFencesAPPLE(int n, ref uint fences)
+		public void DeleteFencesAPPLE(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
 			{
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FinishFenceAPPLENative(uint fence)
+		internal void FinishFenceAPPLENative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[1])(fence);
@@ -82,13 +82,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void FinishFenceAPPLE(uint fence)
+		public void FinishFenceAPPLE(uint fence)
 		{
 			FinishFenceAPPLENative(fence);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FinishObjectAPPLENative(GLObjectTypeAPPLE @object, int name)
+		internal void FinishObjectAPPLENative(GLObjectTypeAPPLE @object, int name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLObjectTypeAPPLE, int, void>)funcTable[2])(@object, name);
@@ -101,13 +101,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void FinishObjectAPPLE(GLObjectTypeAPPLE @object, int name)
+		public void FinishObjectAPPLE(GLObjectTypeAPPLE @object, int name)
 		{
 			FinishObjectAPPLENative(@object, name);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenFencesAPPLENative(int n, uint* fences)
+		internal void GenFencesAPPLENative(int n, uint* fences)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, fences);
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void GenFencesAPPLE(int n, uint* fences)
+		public void GenFencesAPPLE(int n, uint* fences)
 		{
 			GenFencesAPPLENative(n, fences);
 		}
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static uint GenFencesAPPL()
+		public uint GenFencesAPPL()
 		{
 			uint result;
 			GenFencesAPPLENative(1, &result);
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void GenFencesAPPLE(int n, Span<uint> fences)
+		public void GenFencesAPPLE(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void GenFencesAPPLE(int n, ref uint fences)
+		public void GenFencesAPPLE(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsFenceAPPLENative(uint fence)
+		internal byte IsFenceAPPLENative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[4])(fence);
@@ -174,14 +174,14 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static bool IsFenceAPPLE(uint fence)
+		public bool IsFenceAPPLE(uint fence)
 		{
 			byte ret = IsFenceAPPLENative(fence);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SetFenceAPPLENative(uint fence)
+		internal void SetFenceAPPLENative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[5])(fence);
@@ -194,13 +194,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static void SetFenceAPPLE(uint fence)
+		public void SetFenceAPPLE(uint fence)
 		{
 			SetFenceAPPLENative(fence);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte TestFenceAPPLENative(uint fence)
+		internal byte TestFenceAPPLENative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[6])(fence);
@@ -213,14 +213,14 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static bool TestFenceAPPLE(uint fence)
+		public bool TestFenceAPPLE(uint fence)
 		{
 			byte ret = TestFenceAPPLENative(fence);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte TestObjectAPPLENative(GLObjectTypeAPPLE @object, uint name)
+		internal byte TestObjectAPPLENative(GLObjectTypeAPPLE @object, uint name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLObjectTypeAPPLE, uint, byte>)funcTable[7])(@object, name);
@@ -233,7 +233,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_fence</remarks>
-		public static bool TestObjectAPPLE(GLObjectTypeAPPLE @object, uint name)
+		public bool TestObjectAPPLE(GLObjectTypeAPPLE @object, uint name)
 		{
 			byte ret = TestObjectAPPLENative(@object, name);
 			return ret != 0;

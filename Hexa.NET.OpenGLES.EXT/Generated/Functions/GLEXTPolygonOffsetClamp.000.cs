@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTPolygonOffsetClamp
+	public unsafe partial class GLEXTPolygonOffsetClamp
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonOffsetClampEXTNative(float factor, float units, float clamp)
+		internal void PolygonOffsetClampEXTNative(float factor, float units, float clamp)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[0])(factor, units, clamp);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_polygon_offset_clamp</remarks>
-		public static void PolygonOffsetClampEXT(float factor, float units, float clamp)
+		public void PolygonOffsetClampEXT(float factor, float units, float clamp)
 		{
 			PolygonOffsetClampEXTNative(factor, units, clamp);
 		}

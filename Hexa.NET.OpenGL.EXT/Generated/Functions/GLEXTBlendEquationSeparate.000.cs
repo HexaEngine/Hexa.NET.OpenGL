@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTBlendEquationSeparate
+	public unsafe partial class GLEXTBlendEquationSeparate
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationSeparateEXTNative(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		internal void BlendEquationSeparateEXTNative(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendEquationModeEXT, GLBlendEquationModeEXT, void>)funcTable[0])(modeRGB, modeAlpha);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_equation_separate</remarks>
-		public static void BlendEquationSeparateEXT(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		public void BlendEquationSeparateEXT(GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateEXTNative(modeRGB, modeAlpha);
 		}

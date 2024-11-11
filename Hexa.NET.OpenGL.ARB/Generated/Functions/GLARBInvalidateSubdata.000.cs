@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBInvalidateSubdata
+	public unsafe partial class GLARBInvalidateSubdata
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InvalidateBufferDataNative(uint buffer)
+		internal void InvalidateBufferDataNative(uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(buffer);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Invalidate the content of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
-		public static void InvalidateBufferData(uint buffer)
+		public void InvalidateBufferData(uint buffer)
 		{
 			InvalidateBufferDataNative(buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InvalidateBufferSubDataNative(uint buffer, nint offset, nint length)
+		internal void InvalidateBufferSubDataNative(uint buffer, nint offset, nint length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, void>)funcTable[1])(buffer, offset, length);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Invalidate a region of a buffer object's data store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
-		public static void InvalidateBufferSubData(uint buffer, nint offset, nint length)
+		public void InvalidateBufferSubData(uint buffer, nint offset, nint length)
 		{
 			InvalidateBufferSubDataNative(buffer, offset, length);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InvalidateFramebufferNative(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
+		internal void InvalidateFramebufferNative(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, int, GLInvalidateFramebufferAttachment, void>)funcTable[2])(target, numAttachments, attachments);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Invalidate the content of some or all of a framebuffer's attachments
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
-		public static void InvalidateFramebuffer(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
+		public void InvalidateFramebuffer(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
 		{
 			InvalidateFramebufferNative(target, numAttachments, attachments);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InvalidateSubFramebufferNative(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments, int x, int y, int width, int height)
+		internal void InvalidateSubFramebufferNative(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, int, GLInvalidateFramebufferAttachment, int, int, int, int, void>)funcTable[3])(target, numAttachments, attachments, x, y, width, height);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Invalidate the content of a region of some or all of a framebuffer's attachments
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
-		public static void InvalidateSubFramebuffer(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments, int x, int y, int width, int height)
+		public void InvalidateSubFramebuffer(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments, int x, int y, int width, int height)
 		{
 			InvalidateSubFramebufferNative(target, numAttachments, attachments, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InvalidateTexImageNative(uint texture, int level)
+		internal void InvalidateTexImageNative(uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[4])(texture, level);
@@ -106,13 +106,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Invalidate the entirety a texture image
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
-		public static void InvalidateTexImage(uint texture, int level)
+		public void InvalidateTexImage(uint texture, int level)
 		{
 			InvalidateTexImageNative(texture, level);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InvalidateTexSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth)
+		internal void InvalidateTexSubImageNative(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, void>)funcTable[5])(texture, level, xoffset, yoffset, zoffset, width, height, depth);
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Invalidate a region of a texture image
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_invalidate_subdata</remarks>
-		public static void InvalidateTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth)
+		public void InvalidateTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth)
 		{
 			InvalidateTexSubImageNative(texture, level, xoffset, yoffset, zoffset, width, height, depth);
 		}

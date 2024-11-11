@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTTimerQuery
+	public unsafe partial class GLEXTTimerQuery
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjecti64vEXTNative(uint id, GLQueryObjectParameterName pname, long* @params)
+		internal void GetQueryObjecti64vEXTNative(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, long*, void>)funcTable[0])(id, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, long* @params)
+		public void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			GetQueryObjecti64vEXTNative(id, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		public void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
 		{
 			fixed (long* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
+		public void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
 		{
 			fixed (long* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectui64vEXTNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
+		internal void GetQueryObjectui64vEXTNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, ulong*, void>)funcTable[1])(id, pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ulong* @params)
+		public void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			GetQueryObjectui64vEXTNative(id, pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		public void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
+		public void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ANDROID
 {
-	public static unsafe partial class GLOESTextureStorageMultisample2dArray
+	public unsafe partial class GLOESTextureStorageMultisample2dArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorage3DMultisampleOESNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		internal void TexStorage3DMultisampleOESNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, void>)funcTable[0])(target, samples, internalformat, width, height, depth, *((byte*)(&fixedsamplelocations)));
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_texture_storage_multisample_2d_array</remarks>
-		public static void TexStorage3DMultisampleOES(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
+		public void TexStorage3DMultisampleOES(GLTextureTarget target, int samples, GLSizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations)
 		{
 			TexStorage3DMultisampleOESNative(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 		}

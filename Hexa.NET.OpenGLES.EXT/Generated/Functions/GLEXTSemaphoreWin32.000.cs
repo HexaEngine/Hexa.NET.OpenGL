@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTSemaphoreWin32
+	public unsafe partial class GLEXTSemaphoreWin32
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ImportSemaphoreWin32HandleEXTNative(uint semaphore, GLExternalHandleType handleType, void* handle)
+		internal void ImportSemaphoreWin32HandleEXTNative(uint semaphore, GLExternalHandleType handleType, void* handle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLExternalHandleType, void*, void>)funcTable[0])(semaphore, handleType, handle);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
-		public static void ImportSemaphoreWin32HandleEXT(uint semaphore, GLExternalHandleType handleType, void* handle)
+		public void ImportSemaphoreWin32HandleEXT(uint semaphore, GLExternalHandleType handleType, void* handle)
 		{
 			ImportSemaphoreWin32HandleEXTNative(semaphore, handleType, handle);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
-		public static void ImportSemaphoreWin32HandleEXT(uint semaphore, GLExternalHandleType handleType, nint handle)
+		public void ImportSemaphoreWin32HandleEXT(uint semaphore, GLExternalHandleType handleType, nint handle)
 		{
 			ImportSemaphoreWin32HandleEXTNative(semaphore, handleType, (void*)handle);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
-		public static void ImportSemaphoreWin32HandleEXT<THandle>(uint semaphore, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
+		public void ImportSemaphoreWin32HandleEXT<THandle>(uint semaphore, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
 		{
 			fixed (THandle* phandle0 = handle)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ImportSemaphoreWin32NameEXTNative(uint semaphore, GLExternalHandleType handleType, void* name)
+		internal void ImportSemaphoreWin32NameEXTNative(uint semaphore, GLExternalHandleType handleType, void* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLExternalHandleType, void*, void>)funcTable[1])(semaphore, handleType, name);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
-		public static void ImportSemaphoreWin32NameEXT(uint semaphore, GLExternalHandleType handleType, void* name)
+		public void ImportSemaphoreWin32NameEXT(uint semaphore, GLExternalHandleType handleType, void* name)
 		{
 			ImportSemaphoreWin32NameEXTNative(semaphore, handleType, name);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
-		public static void ImportSemaphoreWin32NameEXT(uint semaphore, GLExternalHandleType handleType, nint name)
+		public void ImportSemaphoreWin32NameEXT(uint semaphore, GLExternalHandleType handleType, nint name)
 		{
 			ImportSemaphoreWin32NameEXTNative(semaphore, handleType, (void*)name);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_semaphore_win32</remarks>
-		public static void ImportSemaphoreWin32NameEXT<TName>(uint semaphore, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
+		public void ImportSemaphoreWin32NameEXT<TName>(uint semaphore, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
 		{
 			fixed (TName* pname0 = name)
 			{

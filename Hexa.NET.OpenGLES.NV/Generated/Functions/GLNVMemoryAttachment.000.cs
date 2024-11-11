@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVMemoryAttachment
+	public unsafe partial class GLNVMemoryAttachment
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferAttachMemoryNVNative(GLBufferTargetARB target, uint memory, ulong offset)
+		internal void BufferAttachMemoryNVNative(GLBufferTargetARB target, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, ulong, void>)funcTable[0])(target, memory, offset);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void BufferAttachMemoryNV(GLBufferTargetARB target, uint memory, ulong offset)
+		public void BufferAttachMemoryNV(GLBufferTargetARB target, uint memory, ulong offset)
 		{
 			BufferAttachMemoryNVNative(target, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMemoryObjectDetachedResourcesuivNVNative(uint memory, GLEnum pname, int first, int count, uint* @params)
+		internal void GetMemoryObjectDetachedResourcesuivNVNative(uint memory, GLEnum pname, int first, int count, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, int, uint*, void>)funcTable[1])(memory, pname, first, count, @params);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, uint* @params)
+		public void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, uint* @params)
 		{
 			GetMemoryObjectDetachedResourcesuivNVNative(memory, pname, first, count, @params);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, Span<uint> @params)
+		public void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, ref uint @params)
+		public void GetMemoryObjectDetachedResourcesuivNV(uint memory, GLEnum pname, int first, int count, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferAttachMemoryNVNative(uint buffer, uint memory, ulong offset)
+		internal void NamedBufferAttachMemoryNVNative(uint buffer, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, ulong, void>)funcTable[2])(buffer, memory, offset);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void NamedBufferAttachMemoryNV(uint buffer, uint memory, ulong offset)
+		public void NamedBufferAttachMemoryNV(uint buffer, uint memory, ulong offset)
 		{
 			NamedBufferAttachMemoryNVNative(buffer, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResetMemoryObjectParameterNVNative(uint memory, GLEnum pname)
+		internal void ResetMemoryObjectParameterNVNative(uint memory, GLEnum pname)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, void>)funcTable[3])(memory, pname);
@@ -111,13 +111,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void ResetMemoryObjectParameterNV(uint memory, GLEnum pname)
+		public void ResetMemoryObjectParameterNV(uint memory, GLEnum pname)
 		{
 			ResetMemoryObjectParameterNVNative(memory, pname);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexAttachMemoryNVNative(GLTextureTarget target, uint memory, ulong offset)
+		internal void TexAttachMemoryNVNative(GLTextureTarget target, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, uint, ulong, void>)funcTable[4])(target, memory, offset);
@@ -130,13 +130,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void TexAttachMemoryNV(GLTextureTarget target, uint memory, ulong offset)
+		public void TexAttachMemoryNV(GLTextureTarget target, uint memory, ulong offset)
 		{
 			TexAttachMemoryNVNative(target, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureAttachMemoryNVNative(uint texture, uint memory, ulong offset)
+		internal void TextureAttachMemoryNVNative(uint texture, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, ulong, void>)funcTable[5])(texture, memory, offset);
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_attachment</remarks>
-		public static void TextureAttachMemoryNV(uint texture, uint memory, ulong offset)
+		public void TextureAttachMemoryNV(uint texture, uint memory, ulong offset)
 		{
 			TextureAttachMemoryNVNative(texture, memory, offset);
 		}

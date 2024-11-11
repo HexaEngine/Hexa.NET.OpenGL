@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBGpuShaderInt64
+	public unsafe partial class GLARBGpuShaderInt64
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformi64vARBNative(uint program, int location, long* @params)
+		internal void GetUniformi64vARBNative(uint program, int location, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long*, void>)funcTable[0])(program, location, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformi64vARB(uint program, int location, long* @params)
+		public void GetUniformi64vARB(uint program, int location, long* @params)
 		{
 			GetUniformi64vARBNative(program, location, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformi64vARB(uint program, int location, Span<long> @params)
+		public void GetUniformi64vARB(uint program, int location, Span<long> @params)
 		{
 			fixed (long* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformi64vARB(uint program, int location, ref long @params)
+		public void GetUniformi64vARB(uint program, int location, ref long @params)
 		{
 			fixed (long* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformui64vARBNative(uint program, int location, ulong* @params)
+		internal void GetUniformui64vARBNative(uint program, int location, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong*, void>)funcTable[1])(program, location, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformui64vARB(uint program, int location, ulong* @params)
+		public void GetUniformui64vARB(uint program, int location, ulong* @params)
 		{
 			GetUniformui64vARBNative(program, location, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformui64vARB(uint program, int location, Span<ulong> @params)
+		public void GetUniformui64vARB(uint program, int location, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetUniformui64vARB(uint program, int location, ref ulong @params)
+		public void GetUniformui64vARB(uint program, int location, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformi64vARBNative(uint program, int location, int bufSize, long* @params)
+		internal void GetnUniformi64vARBNative(uint program, int location, int bufSize, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[2])(program, location, bufSize, @params);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformi64vARB(uint program, int location, int bufSize, long* @params)
+		public void GetnUniformi64vARB(uint program, int location, int bufSize, long* @params)
 		{
 			GetnUniformi64vARBNative(program, location, bufSize, @params);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformi64vARB(uint program, int location, int bufSize, Span<long> @params)
+		public void GetnUniformi64vARB(uint program, int location, int bufSize, Span<long> @params)
 		{
 			fixed (long* pparams0 = @params)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformi64vARB(uint program, int location, int bufSize, ref long @params)
+		public void GetnUniformi64vARB(uint program, int location, int bufSize, ref long @params)
 		{
 			fixed (long* pparams0 = &@params)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformui64vARBNative(uint program, int location, int bufSize, ulong* @params)
+		internal void GetnUniformui64vARBNative(uint program, int location, int bufSize, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[3])(program, location, bufSize, @params);
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformui64vARB(uint program, int location, int bufSize, ulong* @params)
+		public void GetnUniformui64vARB(uint program, int location, int bufSize, ulong* @params)
 		{
 			GetnUniformui64vARBNative(program, location, bufSize, @params);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformui64vARB(uint program, int location, int bufSize, Span<ulong> @params)
+		public void GetnUniformui64vARB(uint program, int location, int bufSize, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void GetnUniformui64vARB(uint program, int location, int bufSize, ref ulong @params)
+		public void GetnUniformui64vARB(uint program, int location, int bufSize, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -189,7 +189,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1i64ARBNative(uint program, int location, long x)
+		internal void ProgramUniform1i64ARBNative(uint program, int location, long x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, void>)funcTable[4])(program, location, x);
@@ -202,13 +202,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64ARB(uint program, int location, long x)
+		public void ProgramUniform1i64ARB(uint program, int location, long x)
 		{
 			ProgramUniform1i64ARBNative(program, location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1i64vARBNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform1i64vARBNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[5])(program, location, count, value);
@@ -221,7 +221,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64vARB(uint program, int location, int count, long* value)
+		public void ProgramUniform1i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform1i64vARBNative(program, location, count, value);
 		}
@@ -230,7 +230,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64vARB(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform1i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -242,7 +242,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1i64vARB(uint program, int location, int count, ref long value)
+		public void ProgramUniform1i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -251,7 +251,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1ui64ARBNative(uint program, int location, ulong x)
+		internal void ProgramUniform1ui64ARBNative(uint program, int location, ulong x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, void>)funcTable[6])(program, location, x);
@@ -264,13 +264,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64ARB(uint program, int location, ulong x)
+		public void ProgramUniform1ui64ARB(uint program, int location, ulong x)
 		{
 			ProgramUniform1ui64ARBNative(program, location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform1ui64vARBNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform1ui64vARBNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[7])(program, location, count, value);
@@ -283,7 +283,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64vARB(uint program, int location, int count, ulong* value)
+		public void ProgramUniform1ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform1ui64vARBNative(program, location, count, value);
 		}
@@ -292,7 +292,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64vARB(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform1ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -304,7 +304,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform1ui64vARB(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform1ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -313,7 +313,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2i64ARBNative(uint program, int location, long x, long y)
+		internal void ProgramUniform2i64ARBNative(uint program, int location, long x, long y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, long, void>)funcTable[8])(program, location, x, y);
@@ -326,13 +326,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64ARB(uint program, int location, long x, long y)
+		public void ProgramUniform2i64ARB(uint program, int location, long x, long y)
 		{
 			ProgramUniform2i64ARBNative(program, location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2i64vARBNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform2i64vARBNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[9])(program, location, count, value);
@@ -345,7 +345,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64vARB(uint program, int location, int count, long* value)
+		public void ProgramUniform2i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform2i64vARBNative(program, location, count, value);
 		}
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64vARB(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform2i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -366,7 +366,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2i64vARB(uint program, int location, int count, ref long value)
+		public void ProgramUniform2i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -375,7 +375,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2ui64ARBNative(uint program, int location, ulong x, ulong y)
+		internal void ProgramUniform2ui64ARBNative(uint program, int location, ulong x, ulong y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, ulong, void>)funcTable[10])(program, location, x, y);
@@ -388,13 +388,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64ARB(uint program, int location, ulong x, ulong y)
+		public void ProgramUniform2ui64ARB(uint program, int location, ulong x, ulong y)
 		{
 			ProgramUniform2ui64ARBNative(program, location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform2ui64vARBNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform2ui64vARBNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[11])(program, location, count, value);
@@ -407,7 +407,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64vARB(uint program, int location, int count, ulong* value)
+		public void ProgramUniform2ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform2ui64vARBNative(program, location, count, value);
 		}
@@ -416,7 +416,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64vARB(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform2ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -428,7 +428,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform2ui64vARB(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform2ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -437,7 +437,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3i64ARBNative(uint program, int location, long x, long y, long z)
+		internal void ProgramUniform3i64ARBNative(uint program, int location, long x, long y, long z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, long, long, void>)funcTable[12])(program, location, x, y, z);
@@ -450,13 +450,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64ARB(uint program, int location, long x, long y, long z)
+		public void ProgramUniform3i64ARB(uint program, int location, long x, long y, long z)
 		{
 			ProgramUniform3i64ARBNative(program, location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3i64vARBNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform3i64vARBNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[13])(program, location, count, value);
@@ -469,7 +469,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64vARB(uint program, int location, int count, long* value)
+		public void ProgramUniform3i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform3i64vARBNative(program, location, count, value);
 		}
@@ -478,7 +478,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64vARB(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform3i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -490,7 +490,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3i64vARB(uint program, int location, int count, ref long value)
+		public void ProgramUniform3i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -499,7 +499,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3ui64ARBNative(uint program, int location, ulong x, ulong y, ulong z)
+		internal void ProgramUniform3ui64ARBNative(uint program, int location, ulong x, ulong y, ulong z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, ulong, ulong, void>)funcTable[14])(program, location, x, y, z);
@@ -512,13 +512,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64ARB(uint program, int location, ulong x, ulong y, ulong z)
+		public void ProgramUniform3ui64ARB(uint program, int location, ulong x, ulong y, ulong z)
 		{
 			ProgramUniform3ui64ARBNative(program, location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform3ui64vARBNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform3ui64vARBNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[15])(program, location, count, value);
@@ -531,7 +531,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64vARB(uint program, int location, int count, ulong* value)
+		public void ProgramUniform3ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform3ui64vARBNative(program, location, count, value);
 		}
@@ -540,7 +540,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64vARB(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform3ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -552,7 +552,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform3ui64vARB(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform3ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -561,7 +561,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4i64ARBNative(uint program, int location, long x, long y, long z, long w)
+		internal void ProgramUniform4i64ARBNative(uint program, int location, long x, long y, long z, long w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, long, long, long, long, void>)funcTable[16])(program, location, x, y, z, w);
@@ -574,13 +574,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64ARB(uint program, int location, long x, long y, long z, long w)
+		public void ProgramUniform4i64ARB(uint program, int location, long x, long y, long z, long w)
 		{
 			ProgramUniform4i64ARBNative(program, location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4i64vARBNative(uint program, int location, int count, long* value)
+		internal void ProgramUniform4i64vARBNative(uint program, int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, long*, void>)funcTable[17])(program, location, count, value);
@@ -593,7 +593,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64vARB(uint program, int location, int count, long* value)
+		public void ProgramUniform4i64vARB(uint program, int location, int count, long* value)
 		{
 			ProgramUniform4i64vARBNative(program, location, count, value);
 		}
@@ -602,7 +602,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64vARB(uint program, int location, int count, Span<long> value)
+		public void ProgramUniform4i64vARB(uint program, int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -614,7 +614,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4i64vARB(uint program, int location, int count, ref long value)
+		public void ProgramUniform4i64vARB(uint program, int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -623,7 +623,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4ui64ARBNative(uint program, int location, ulong x, ulong y, ulong z, ulong w)
+		internal void ProgramUniform4ui64ARBNative(uint program, int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, ulong, ulong, ulong, void>)funcTable[18])(program, location, x, y, z, w);
@@ -636,13 +636,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64ARB(uint program, int location, ulong x, ulong y, ulong z, ulong w)
+		public void ProgramUniform4ui64ARB(uint program, int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			ProgramUniform4ui64ARBNative(program, location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniform4ui64vARBNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniform4ui64vARBNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[19])(program, location, count, value);
@@ -655,7 +655,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64vARB(uint program, int location, int count, ulong* value)
+		public void ProgramUniform4ui64vARB(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniform4ui64vARBNative(program, location, count, value);
 		}
@@ -664,7 +664,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64vARB(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniform4ui64vARB(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -676,7 +676,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void ProgramUniform4ui64vARB(uint program, int location, int count, ref ulong value)
+		public void ProgramUniform4ui64vARB(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -685,7 +685,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1i64ARBNative(int location, long x)
+		internal void Uniform1i64ARBNative(int location, long x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, void>)funcTable[20])(location, x);
@@ -698,13 +698,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1i64ARB(int location, long x)
+		public void Uniform1i64ARB(int location, long x)
 		{
 			Uniform1i64ARBNative(location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1i64vARBNative(int location, int count, long* value)
+		internal void Uniform1i64vARBNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[21])(location, count, value);
@@ -717,7 +717,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1i64vARB(int location, int count, long* value)
+		public void Uniform1i64vARB(int location, int count, long* value)
 		{
 			Uniform1i64vARBNative(location, count, value);
 		}
@@ -726,7 +726,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1i64vARB(int location, int count, Span<long> value)
+		public void Uniform1i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -738,7 +738,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1i64vARB(int location, int count, ref long value)
+		public void Uniform1i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -747,7 +747,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1ui64ARBNative(int location, ulong x)
+		internal void Uniform1ui64ARBNative(int location, ulong x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, void>)funcTable[22])(location, x);
@@ -760,13 +760,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1ui64ARB(int location, ulong x)
+		public void Uniform1ui64ARB(int location, ulong x)
 		{
 			Uniform1ui64ARBNative(location, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1ui64vARBNative(int location, int count, ulong* value)
+		internal void Uniform1ui64vARBNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[23])(location, count, value);
@@ -779,7 +779,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1ui64vARB(int location, int count, ulong* value)
+		public void Uniform1ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform1ui64vARBNative(location, count, value);
 		}
@@ -788,7 +788,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1ui64vARB(int location, int count, Span<ulong> value)
+		public void Uniform1ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -800,7 +800,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform1ui64vARB(int location, int count, ref ulong value)
+		public void Uniform1ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -809,7 +809,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2i64ARBNative(int location, long x, long y)
+		internal void Uniform2i64ARBNative(int location, long x, long y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, long, void>)funcTable[24])(location, x, y);
@@ -822,13 +822,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2i64ARB(int location, long x, long y)
+		public void Uniform2i64ARB(int location, long x, long y)
 		{
 			Uniform2i64ARBNative(location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2i64vARBNative(int location, int count, long* value)
+		internal void Uniform2i64vARBNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[25])(location, count, value);
@@ -841,7 +841,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2i64vARB(int location, int count, long* value)
+		public void Uniform2i64vARB(int location, int count, long* value)
 		{
 			Uniform2i64vARBNative(location, count, value);
 		}
@@ -850,7 +850,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2i64vARB(int location, int count, Span<long> value)
+		public void Uniform2i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -862,7 +862,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2i64vARB(int location, int count, ref long value)
+		public void Uniform2i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -871,7 +871,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ui64ARBNative(int location, ulong x, ulong y)
+		internal void Uniform2ui64ARBNative(int location, ulong x, ulong y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, ulong, void>)funcTable[26])(location, x, y);
@@ -884,13 +884,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2ui64ARB(int location, ulong x, ulong y)
+		public void Uniform2ui64ARB(int location, ulong x, ulong y)
 		{
 			Uniform2ui64ARBNative(location, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ui64vARBNative(int location, int count, ulong* value)
+		internal void Uniform2ui64vARBNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[27])(location, count, value);
@@ -903,7 +903,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2ui64vARB(int location, int count, ulong* value)
+		public void Uniform2ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform2ui64vARBNative(location, count, value);
 		}
@@ -912,7 +912,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2ui64vARB(int location, int count, Span<ulong> value)
+		public void Uniform2ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -924,7 +924,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform2ui64vARB(int location, int count, ref ulong value)
+		public void Uniform2ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -933,7 +933,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3i64ARBNative(int location, long x, long y, long z)
+		internal void Uniform3i64ARBNative(int location, long x, long y, long z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, long, long, void>)funcTable[28])(location, x, y, z);
@@ -946,13 +946,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3i64ARB(int location, long x, long y, long z)
+		public void Uniform3i64ARB(int location, long x, long y, long z)
 		{
 			Uniform3i64ARBNative(location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3i64vARBNative(int location, int count, long* value)
+		internal void Uniform3i64vARBNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[29])(location, count, value);
@@ -965,7 +965,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3i64vARB(int location, int count, long* value)
+		public void Uniform3i64vARB(int location, int count, long* value)
 		{
 			Uniform3i64vARBNative(location, count, value);
 		}
@@ -974,7 +974,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3i64vARB(int location, int count, Span<long> value)
+		public void Uniform3i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -986,7 +986,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3i64vARB(int location, int count, ref long value)
+		public void Uniform3i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -995,7 +995,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ui64ARBNative(int location, ulong x, ulong y, ulong z)
+		internal void Uniform3ui64ARBNative(int location, ulong x, ulong y, ulong z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, ulong, ulong, void>)funcTable[30])(location, x, y, z);
@@ -1008,13 +1008,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3ui64ARB(int location, ulong x, ulong y, ulong z)
+		public void Uniform3ui64ARB(int location, ulong x, ulong y, ulong z)
 		{
 			Uniform3ui64ARBNative(location, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ui64vARBNative(int location, int count, ulong* value)
+		internal void Uniform3ui64vARBNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[31])(location, count, value);
@@ -1027,7 +1027,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3ui64vARB(int location, int count, ulong* value)
+		public void Uniform3ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform3ui64vARBNative(location, count, value);
 		}
@@ -1036,7 +1036,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3ui64vARB(int location, int count, Span<ulong> value)
+		public void Uniform3ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -1048,7 +1048,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform3ui64vARB(int location, int count, ref ulong value)
+		public void Uniform3ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -1057,7 +1057,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4i64ARBNative(int location, long x, long y, long z, long w)
+		internal void Uniform4i64ARBNative(int location, long x, long y, long z, long w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, long, long, long, long, void>)funcTable[32])(location, x, y, z, w);
@@ -1070,13 +1070,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4i64ARB(int location, long x, long y, long z, long w)
+		public void Uniform4i64ARB(int location, long x, long y, long z, long w)
 		{
 			Uniform4i64ARBNative(location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4i64vARBNative(int location, int count, long* value)
+		internal void Uniform4i64vARBNative(int location, int count, long* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, long*, void>)funcTable[33])(location, count, value);
@@ -1089,7 +1089,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4i64vARB(int location, int count, long* value)
+		public void Uniform4i64vARB(int location, int count, long* value)
 		{
 			Uniform4i64vARBNative(location, count, value);
 		}
@@ -1098,7 +1098,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4i64vARB(int location, int count, Span<long> value)
+		public void Uniform4i64vARB(int location, int count, Span<long> value)
 		{
 			fixed (long* pvalue0 = value)
 			{
@@ -1110,7 +1110,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4i64vARB(int location, int count, ref long value)
+		public void Uniform4i64vARB(int location, int count, ref long value)
 		{
 			fixed (long* pvalue0 = &value)
 			{
@@ -1119,7 +1119,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ui64ARBNative(int location, ulong x, ulong y, ulong z, ulong w)
+		internal void Uniform4ui64ARBNative(int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, ulong, ulong, ulong, void>)funcTable[34])(location, x, y, z, w);
@@ -1132,13 +1132,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4ui64ARB(int location, ulong x, ulong y, ulong z, ulong w)
+		public void Uniform4ui64ARB(int location, ulong x, ulong y, ulong z, ulong w)
 		{
 			Uniform4ui64ARBNative(location, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ui64vARBNative(int location, int count, ulong* value)
+		internal void Uniform4ui64vARBNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[35])(location, count, value);
@@ -1151,7 +1151,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4ui64vARB(int location, int count, ulong* value)
+		public void Uniform4ui64vARB(int location, int count, ulong* value)
 		{
 			Uniform4ui64vARBNative(location, count, value);
 		}
@@ -1160,7 +1160,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4ui64vARB(int location, int count, Span<ulong> value)
+		public void Uniform4ui64vARB(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -1172,7 +1172,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_gpu_shader_int64</remarks>
-		public static void Uniform4ui64vARB(int location, int count, ref ulong value)
+		public void Uniform4ui64vARB(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{

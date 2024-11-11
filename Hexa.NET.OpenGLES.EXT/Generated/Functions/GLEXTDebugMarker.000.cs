@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTDebugMarker
+	public unsafe partial class GLEXTDebugMarker
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InsertEventMarkerEXTNative(int length, byte* marker)
+		internal void InsertEventMarkerEXTNative(int length, byte* marker)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[0])(length, marker);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void InsertEventMarkerEXT(int length, byte* marker)
+		public void InsertEventMarkerEXT(int length, byte* marker)
 		{
 			InsertEventMarkerEXTNative(length, marker);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void InsertEventMarkerEXT(int length, string marker)
+		public void InsertEventMarkerEXT(int length, string marker)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void InsertEventMarkerEXT(int length, Span<byte> marker)
+		public void InsertEventMarkerEXT(int length, Span<byte> marker)
 		{
 			fixed (byte* pmarker0 = marker)
 			{
@@ -81,7 +81,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void InsertEventMarkerEXT(int length, ref byte marker)
+		public void InsertEventMarkerEXT(int length, ref byte marker)
 		{
 			fixed (byte* pmarker0 = &marker)
 			{
@@ -90,7 +90,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PopGroupMarkerEXTNative()
+		internal void PopGroupMarkerEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -103,13 +103,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void PopGroupMarkerEXT()
+		public void PopGroupMarkerEXT()
 		{
 			PopGroupMarkerEXTNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PushGroupMarkerEXTNative(int length, byte* marker)
+		internal void PushGroupMarkerEXTNative(int length, byte* marker)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[2])(length, marker);
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void PushGroupMarkerEXT(int length, byte* marker)
+		public void PushGroupMarkerEXT(int length, byte* marker)
 		{
 			PushGroupMarkerEXTNative(length, marker);
 		}
@@ -131,7 +131,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void PushGroupMarkerEXT(int length, string marker)
+		public void PushGroupMarkerEXT(int length, string marker)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void PushGroupMarkerEXT(int length, Span<byte> marker)
+		public void PushGroupMarkerEXT(int length, Span<byte> marker)
 		{
 			fixed (byte* pmarker0 = marker)
 			{
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_debug_marker</remarks>
-		public static void PushGroupMarkerEXT(int length, ref byte marker)
+		public void PushGroupMarkerEXT(int length, ref byte marker)
 		{
 			fixed (byte* pmarker0 = &marker)
 			{

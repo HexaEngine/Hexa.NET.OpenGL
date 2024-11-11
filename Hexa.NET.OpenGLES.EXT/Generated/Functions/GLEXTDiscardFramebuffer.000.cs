@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTDiscardFramebuffer
+	public unsafe partial class GLEXTDiscardFramebuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DiscardFramebufferEXTNative(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
+		internal void DiscardFramebufferEXTNative(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, int, GLInvalidateFramebufferAttachment, void>)funcTable[0])(target, numAttachments, attachments);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_discard_framebuffer</remarks>
-		public static void DiscardFramebufferEXT(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
+		public void DiscardFramebufferEXT(GLFramebufferTarget target, int numAttachments, GLInvalidateFramebufferAttachment attachments)
 		{
 			DiscardFramebufferEXTNative(target, numAttachments, attachments);
 		}

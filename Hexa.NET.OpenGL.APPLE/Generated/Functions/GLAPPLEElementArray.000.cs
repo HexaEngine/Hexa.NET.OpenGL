@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLEElementArray
+	public unsafe partial class GLAPPLEElementArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementArrayAPPLENative(GLPrimitiveType mode, int first, int count)
+		internal void DrawElementArrayAPPLENative(GLPrimitiveType mode, int first, int count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, void>)funcTable[0])(mode, first, count);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void DrawElementArrayAPPLE(GLPrimitiveType mode, int first, int count)
+		public void DrawElementArrayAPPLE(GLPrimitiveType mode, int first, int count)
 		{
 			DrawElementArrayAPPLENative(mode, first, count);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawRangeElementArrayAPPLENative(GLPrimitiveType mode, uint start, uint end, int first, int count)
+		internal void DrawRangeElementArrayAPPLENative(GLPrimitiveType mode, uint start, uint end, int first, int count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, int, int, void>)funcTable[1])(mode, start, end, first, count);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void DrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int first, int count)
+		public void DrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int first, int count)
 		{
 			DrawRangeElementArrayAPPLENative(mode, start, end, first, count);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ElementPointerAPPLENative(GLElementPointerTypeATI type, void* pointer)
+		internal void ElementPointerAPPLENative(GLElementPointerTypeATI type, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLElementPointerTypeATI, void*, void>)funcTable[2])(type, pointer);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void ElementPointerAPPLE(GLElementPointerTypeATI type, void* pointer)
+		public void ElementPointerAPPLE(GLElementPointerTypeATI type, void* pointer)
 		{
 			ElementPointerAPPLENative(type, pointer);
 		}
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void ElementPointerAPPLE(GLElementPointerTypeATI type, nint pointer)
+		public void ElementPointerAPPLE(GLElementPointerTypeATI type, nint pointer)
 		{
 			ElementPointerAPPLENative(type, (void*)pointer);
 		}
@@ -86,7 +86,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void ElementPointerAPPLE<TPointer>(GLElementPointerTypeATI type, Span<TPointer> pointer) where TPointer : unmanaged
+		public void ElementPointerAPPLE<TPointer>(GLElementPointerTypeATI type, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -95,7 +95,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawElementArrayAPPLENative(GLPrimitiveType mode, int* first, int* count, int primcount)
+		internal void MultiDrawElementArrayAPPLENative(GLPrimitiveType mode, int* first, int* count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int*, int*, int, void>)funcTable[3])(mode, first, count, primcount);
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, int* first, int* count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, int* first, int* count, int primcount)
 		{
 			MultiDrawElementArrayAPPLENative(mode, first, count, primcount);
 		}
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, Span<int> first, int* count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, Span<int> first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
 			{
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, ref int first, int* count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, ref int first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, int* first, Span<int> count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, int* first, Span<int> count, int primcount)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, int* first, ref int count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, int* first, ref int count, int primcount)
 		{
 			fixed (int* pcount0 = &count)
 			{
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, Span<int> first, Span<int> count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, Span<int> first, Span<int> count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, ref int first, ref int count, int primcount)
+		public void MultiDrawElementArrayAPPLE(GLPrimitiveType mode, ref int first, ref int count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
 			{
@@ -192,7 +192,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawRangeElementArrayAPPLENative(GLPrimitiveType mode, uint start, uint end, int* first, int* count, int primcount)
+		internal void MultiDrawRangeElementArrayAPPLENative(GLPrimitiveType mode, uint start, uint end, int* first, int* count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, uint, int*, int*, int, void>)funcTable[4])(mode, start, end, first, count, primcount);
@@ -205,7 +205,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int* first, int* count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int* first, int* count, int primcount)
 		{
 			MultiDrawRangeElementArrayAPPLENative(mode, start, end, first, count, primcount);
 		}
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, Span<int> first, int* count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, Span<int> first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
 			{
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, ref int first, int* count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, ref int first, int* count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
 			{
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int* first, Span<int> count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int* first, Span<int> count, int primcount)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -250,7 +250,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int* first, ref int count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, int* first, ref int count, int primcount)
 		{
 			fixed (int* pcount0 = &count)
 			{
@@ -262,7 +262,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, Span<int> first, Span<int> count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, Span<int> first, Span<int> count, int primcount)
 		{
 			fixed (int* pfirst0 = first)
 			{
@@ -277,7 +277,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_element_array</remarks>
-		public static void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, ref int first, ref int count, int primcount)
+		public void MultiDrawRangeElementArrayAPPLE(GLPrimitiveType mode, uint start, uint end, ref int first, ref int count, int primcount)
 		{
 			fixed (int* pfirst0 = &first)
 			{

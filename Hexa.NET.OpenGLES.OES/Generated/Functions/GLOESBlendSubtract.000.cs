@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESBlendSubtract
+	public unsafe partial class GLOESBlendSubtract
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationOESNative(GLBlendEquationModeEXT mode)
+		internal void BlendEquationOESNative(GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendEquationModeEXT, void>)funcTable[0])(mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_blend_subtract</remarks>
-		public static void BlendEquationOES(GLBlendEquationModeEXT mode)
+		public void BlendEquationOES(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationOESNative(mode);
 		}

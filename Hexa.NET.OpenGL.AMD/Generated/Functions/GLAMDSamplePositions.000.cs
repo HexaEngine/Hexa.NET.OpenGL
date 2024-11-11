@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDSamplePositions
+	public unsafe partial class GLAMDSamplePositions
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SetMultisamplefvAMDNative(GLEnum pname, uint index, float* val)
+		internal void SetMultisamplefvAMDNative(GLEnum pname, uint index, float* val)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, float*, void>)funcTable[0])(pname, index, val);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_sample_positions</remarks>
-		public static void SetMultisamplefvAMD(GLEnum pname, uint index, float* val)
+		public void SetMultisamplefvAMD(GLEnum pname, uint index, float* val)
 		{
 			SetMultisamplefvAMDNative(pname, index, val);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_sample_positions</remarks>
-		public static void SetMultisamplefvAMD(GLEnum pname, uint index, Span<float> val)
+		public void SetMultisamplefvAMD(GLEnum pname, uint index, Span<float> val)
 		{
 			fixed (float* pval0 = val)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_sample_positions</remarks>
-		public static void SetMultisamplefvAMD(GLEnum pname, uint index, ref float val)
+		public void SetMultisamplefvAMD(GLEnum pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)
 			{

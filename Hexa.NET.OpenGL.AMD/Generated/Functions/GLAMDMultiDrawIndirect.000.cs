@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDMultiDrawIndirect
+	public unsafe partial class GLAMDMultiDrawIndirect
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawArraysIndirectAMDNative(GLPrimitiveType mode, void* indirect, int primcount, int stride)
+		internal void MultiDrawArraysIndirectAMDNative(GLPrimitiveType mode, void* indirect, int primcount, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void*, int, int, void>)funcTable[0])(mode, indirect, primcount, stride);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_multi_draw_indirect</remarks>
-		public static void MultiDrawArraysIndirectAMD(GLPrimitiveType mode, void* indirect, int primcount, int stride)
+		public void MultiDrawArraysIndirectAMD(GLPrimitiveType mode, void* indirect, int primcount, int stride)
 		{
 			MultiDrawArraysIndirectAMDNative(mode, indirect, primcount, stride);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_multi_draw_indirect</remarks>
-		public static void MultiDrawArraysIndirectAMD(GLPrimitiveType mode, nint indirect, int primcount, int stride)
+		public void MultiDrawArraysIndirectAMD(GLPrimitiveType mode, nint indirect, int primcount, int stride)
 		{
 			MultiDrawArraysIndirectAMDNative(mode, (void*)indirect, primcount, stride);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_multi_draw_indirect</remarks>
-		public static void MultiDrawArraysIndirectAMD<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int primcount, int stride) where TIndirect : unmanaged
+		public void MultiDrawArraysIndirectAMD<TIndirect>(GLPrimitiveType mode, Span<TIndirect> indirect, int primcount, int stride) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawElementsIndirectAMDNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int primcount, int stride)
+		internal void MultiDrawElementsIndirectAMDNative(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int primcount, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, GLDrawElementsType, void*, int, int, void>)funcTable[1])(mode, type, indirect, primcount, stride);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_multi_draw_indirect</remarks>
-		public static void MultiDrawElementsIndirectAMD(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int primcount, int stride)
+		public void MultiDrawElementsIndirectAMD(GLPrimitiveType mode, GLDrawElementsType type, void* indirect, int primcount, int stride)
 		{
 			MultiDrawElementsIndirectAMDNative(mode, type, indirect, primcount, stride);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_multi_draw_indirect</remarks>
-		public static void MultiDrawElementsIndirectAMD(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int primcount, int stride)
+		public void MultiDrawElementsIndirectAMD(GLPrimitiveType mode, GLDrawElementsType type, nint indirect, int primcount, int stride)
 		{
 			MultiDrawElementsIndirectAMDNative(mode, type, (void*)indirect, primcount, stride);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_multi_draw_indirect</remarks>
-		public static void MultiDrawElementsIndirectAMD<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int primcount, int stride) where TIndirect : unmanaged
+		public void MultiDrawElementsIndirectAMD<TIndirect>(GLPrimitiveType mode, GLDrawElementsType type, Span<TIndirect> indirect, int primcount, int stride) where TIndirect : unmanaged
 		{
 			fixed (TIndirect* pindirect0 = indirect)
 			{

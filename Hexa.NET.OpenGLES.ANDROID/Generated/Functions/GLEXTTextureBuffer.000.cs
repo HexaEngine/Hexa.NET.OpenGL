@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ANDROID
 {
-	public static unsafe partial class GLEXTTextureBuffer
+	public unsafe partial class GLEXTTextureBuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexBufferEXTNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		internal void TexBufferEXTNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[0])(target, internalformat, buffer);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_buffer_object<br/>GL_EXT_texture_buffer</remarks>
-		public static void TexBufferEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		public void TexBufferEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferEXTNative(target, internalformat, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexBufferRangeEXTNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
+		internal void TexBufferRangeEXTNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, nint, nint, void>)funcTable[1])(target, internalformat, buffer, offset, size);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.ANDROID
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_buffer</remarks>
-		public static void TexBufferRangeEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
+		public void TexBufferRangeEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer, nint offset, nint size)
 		{
 			TexBufferRangeEXTNative(target, internalformat, buffer, offset, size);
 		}

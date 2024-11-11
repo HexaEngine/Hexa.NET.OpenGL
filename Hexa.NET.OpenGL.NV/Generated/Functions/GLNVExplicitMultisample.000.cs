@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVExplicitMultisample
+	public unsafe partial class GLNVExplicitMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultisamplefvNVNative(GLGetMultisamplePNameNV pname, uint index, float* val)
+		internal void GetMultisamplefvNVNative(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetMultisamplePNameNV, uint, float*, void>)funcTable[0])(pname, index, val);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
-		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, float* val)
+		public void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, float* val)
 		{
 			GetMultisamplefvNVNative(pname, index, val);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
-		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
+		public void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, Span<float> val)
 		{
 			fixed (float* pval0 = val)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
-		public static void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, ref float val)
+		public void GetMultisamplefvNV(GLGetMultisamplePNameNV pname, uint index, ref float val)
 		{
 			fixed (float* pval0 = &val)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleMaskIndexedNVNative(uint index, uint mask)
+		internal void SampleMaskIndexedNVNative(uint index, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[1])(index, mask);
@@ -73,13 +73,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
-		public static void SampleMaskIndexedNV(uint index, uint mask)
+		public void SampleMaskIndexedNV(uint index, uint mask)
 		{
 			SampleMaskIndexedNVNative(index, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexRenderbufferNVNative(GLTextureTarget target, uint renderbuffer)
+		internal void TexRenderbufferNVNative(GLTextureTarget target, uint renderbuffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, uint, void>)funcTable[2])(target, renderbuffer);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_explicit_multisample</remarks>
-		public static void TexRenderbufferNV(GLTextureTarget target, uint renderbuffer)
+		public void TexRenderbufferNV(GLTextureTarget target, uint renderbuffer)
 		{
 			TexRenderbufferNVNative(target, renderbuffer);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESDrawBuffersIndexed
+	public unsafe partial class GLOESDrawBuffersIndexed
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationSeparateiOESNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		internal void BlendEquationSeparateiOESNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, GLBlendEquationModeEXT, void>)funcTable[0])(buf, modeRGB, modeAlpha);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
-		public static void BlendEquationSeparateiOES(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		public void BlendEquationSeparateiOES(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateiOESNative(buf, modeRGB, modeAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationiOESNative(uint buf, GLBlendEquationModeEXT mode)
+		internal void BlendEquationiOESNative(uint buf, GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, void>)funcTable[1])(buf, mode);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
-		public static void BlendEquationiOES(uint buf, GLBlendEquationModeEXT mode)
+		public void BlendEquationiOES(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationiOESNative(buf, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncSeparateiOESNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		internal void BlendFuncSeparateiOESNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, void>)funcTable[2])(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
-		public static void BlendFuncSeparateiOES(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		public void BlendFuncSeparateiOES(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateiOESNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFunciOESNative(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
+		internal void BlendFunciOESNative(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, void>)funcTable[3])(buf, src, dst);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
-		public static void BlendFunciOES(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
+		public void BlendFunciOES(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			BlendFunciOESNative(buf, src, dst);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskiOESNative(uint index, bool r, bool g, bool b, bool a)
+		internal void ColorMaskiOESNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
@@ -106,13 +106,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed</remarks>
-		public static void ColorMaskiOES(uint index, bool r, bool g, bool b, bool a)
+		public void ColorMaskiOES(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiOESNative(index, r, g, b, a);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableiOESNative(GLEnableCap target, uint index)
+		internal void DisableiOESNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[5])(target, index);
@@ -125,13 +125,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
-		public static void DisableiOES(GLEnableCap target, uint index)
+		public void DisableiOES(GLEnableCap target, uint index)
 		{
 			DisableiOESNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableiOESNative(GLEnableCap target, uint index)
+		internal void EnableiOESNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[6])(target, index);
@@ -144,13 +144,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
-		public static void EnableiOES(GLEnableCap target, uint index)
+		public void EnableiOES(GLEnableCap target, uint index)
 		{
 			EnableiOESNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsEnablediOESNative(GLEnableCap target, uint index)
+		internal byte IsEnablediOESNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnableCap, uint, byte>)funcTable[7])(target, index);
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
-		public static bool IsEnablediOES(GLEnableCap target, uint index)
+		public bool IsEnablediOES(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediOESNative(target, index);
 			return ret != 0;

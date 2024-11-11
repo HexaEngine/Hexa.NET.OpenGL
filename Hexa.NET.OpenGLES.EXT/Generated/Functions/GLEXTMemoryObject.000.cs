@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTMemoryObject
+	public unsafe partial class GLEXTMemoryObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferStorageMemEXTNative(GLBufferTargetARB target, nint size, uint memory, ulong offset)
+		internal void BufferStorageMemEXTNative(GLBufferTargetARB target, nint size, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, uint, ulong, void>)funcTable[0])(target, size, memory, offset);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void BufferStorageMemEXT(GLBufferTargetARB target, nint size, uint memory, ulong offset)
+		public void BufferStorageMemEXT(GLBufferTargetARB target, nint size, uint memory, ulong offset)
 		{
 			BufferStorageMemEXTNative(target, size, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreateMemoryObjectsEXTNative(int n, uint* memoryObjects)
+		internal void CreateMemoryObjectsEXTNative(int n, uint* memoryObjects)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, memoryObjects);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void CreateMemoryObjectsEXT(int n, uint* memoryObjects)
+		public void CreateMemoryObjectsEXT(int n, uint* memoryObjects)
 		{
 			CreateMemoryObjectsEXTNative(n, memoryObjects);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void CreateMemoryObjectsEXT(int n, Span<uint> memoryObjects)
+		public void CreateMemoryObjectsEXT(int n, Span<uint> memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = memoryObjects)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void CreateMemoryObjectsEXT(int n, ref uint memoryObjects)
+		public void CreateMemoryObjectsEXT(int n, ref uint memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = &memoryObjects)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteMemoryObjectsEXTNative(int n, uint* memoryObjects)
+		internal void DeleteMemoryObjectsEXTNative(int n, uint* memoryObjects)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, memoryObjects);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void DeleteMemoryObjectsEXT(int n, uint* memoryObjects)
+		public void DeleteMemoryObjectsEXT(int n, uint* memoryObjects)
 		{
 			DeleteMemoryObjectsEXTNative(n, memoryObjects);
 		}
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void DeleteMemoryObjectsEX(uint memoryObject)
+		public void DeleteMemoryObjectsEX(uint memoryObject)
 		{
 			DeleteMemoryObjectsEXTNative(1, &memoryObject);
 		}
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void DeleteMemoryObjectsEXT(int n, Span<uint> memoryObjects)
+		public void DeleteMemoryObjectsEXT(int n, Span<uint> memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = memoryObjects)
 			{
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void DeleteMemoryObjectsEXT(int n, ref uint memoryObjects)
+		public void DeleteMemoryObjectsEXT(int n, ref uint memoryObjects)
 		{
 			fixed (uint* pmemoryObjects0 = &memoryObjects)
 			{
@@ -131,7 +131,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMemoryObjectParameterivEXTNative(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
+		internal void GetMemoryObjectParameterivEXTNative(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLMemoryObjectParameterName, int*, void>)funcTable[3])(memoryObject, pname, @params);
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
+		public void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
 		{
 			GetMemoryObjectParameterivEXTNative(memoryObject, pname, @params);
 		}
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
+		public void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
+		public void GetMemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUnsignedBytevEXTNative(GLGetPName pname, byte* data)
+		internal void GetUnsignedBytevEXTNative(GLGetPName pname, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, byte*, void>)funcTable[4])(pname, data);
@@ -187,7 +187,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytevEXT(GLGetPName pname, byte* data)
+		public void GetUnsignedBytevEXT(GLGetPName pname, byte* data)
 		{
 			GetUnsignedBytevEXTNative(pname, data);
 		}
@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytevEXT(GLGetPName pname, string data)
+		public void GetUnsignedBytevEXT(GLGetPName pname, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytevEXT(GLGetPName pname, Span<byte> data)
+		public void GetUnsignedBytevEXT(GLGetPName pname, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytevEXT(GLGetPName pname, ref byte data)
+		public void GetUnsignedBytevEXT(GLGetPName pname, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -247,7 +247,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUnsignedBytei_vEXTNative(GLEnum target, uint index, byte* data)
+		internal void GetUnsignedBytei_vEXTNative(GLEnum target, uint index, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, byte*, void>)funcTable[5])(target, index, data);
@@ -260,7 +260,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, byte* data)
+		public void GetUnsignedBytei_vEXT(GLEnum target, uint index, byte* data)
 		{
 			GetUnsignedBytei_vEXTNative(target, index, data);
 		}
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, string data)
+		public void GetUnsignedBytei_vEXT(GLEnum target, uint index, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -299,7 +299,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, Span<byte> data)
+		public void GetUnsignedBytei_vEXT(GLEnum target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -311,7 +311,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object<br/>GL_EXT_semaphore</remarks>
-		public static void GetUnsignedBytei_vEXT(GLEnum target, uint index, ref byte data)
+		public void GetUnsignedBytei_vEXT(GLEnum target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -320,7 +320,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsMemoryObjectEXTNative(uint memoryObject)
+		internal byte IsMemoryObjectEXTNative(uint memoryObject)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[6])(memoryObject);
@@ -333,14 +333,14 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static bool IsMemoryObjectEXT(uint memoryObject)
+		public bool IsMemoryObjectEXT(uint memoryObject)
 		{
 			byte ret = IsMemoryObjectEXTNative(memoryObject);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MemoryObjectParameterivEXTNative(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
+		internal void MemoryObjectParameterivEXTNative(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLMemoryObjectParameterName, int*, void>)funcTable[7])(memoryObject, pname, @params);
@@ -353,7 +353,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
+		public void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, int* @params)
 		{
 			MemoryObjectParameterivEXTNative(memoryObject, pname, @params);
 		}
@@ -362,7 +362,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
+		public void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -374,7 +374,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
+		public void MemoryObjectParameterivEXT(uint memoryObject, GLMemoryObjectParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferStorageMemEXTNative(uint buffer, nint size, uint memory, ulong offset)
+		internal void NamedBufferStorageMemEXTNative(uint buffer, nint size, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, uint, ulong, void>)funcTable[8])(buffer, size, memory, offset);
@@ -396,13 +396,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void NamedBufferStorageMemEXT(uint buffer, nint size, uint memory, ulong offset)
+		public void NamedBufferStorageMemEXT(uint buffer, nint size, uint memory, ulong offset)
 		{
 			NamedBufferStorageMemEXTNative(buffer, size, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem1DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
+		internal void TexStorageMem1DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, uint, ulong, void>)funcTable[9])(target, levels, internalFormat, width, memory, offset);
@@ -415,13 +415,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TexStorageMem1DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
+		public void TexStorageMem1DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
 		{
 			TexStorageMem1DEXTNative(target, levels, internalFormat, width, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem2DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
+		internal void TexStorageMem2DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, uint, ulong, void>)funcTable[10])(target, levels, internalFormat, width, height, memory, offset);
@@ -434,13 +434,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TexStorageMem2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
+		public void TexStorageMem2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
 		{
 			TexStorageMem2DEXTNative(target, levels, internalFormat, width, height, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem2DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
+		internal void TexStorageMem2DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[11])(target, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)), memory, offset);
@@ -453,13 +453,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TexStorageMem2DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
+		public void TexStorageMem2DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TexStorageMem2DMultisampleEXTNative(target, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem3DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
+		internal void TexStorageMem3DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, uint, ulong, void>)funcTable[12])(target, levels, internalFormat, width, height, depth, memory, offset);
@@ -472,13 +472,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TexStorageMem3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
+		public void TexStorageMem3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
 		{
 			TexStorageMem3DEXTNative(target, levels, internalFormat, width, height, depth, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageMem3DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
+		internal void TexStorageMem3DMultisampleEXTNative(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[13])(target, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)), memory, offset);
@@ -491,13 +491,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TexStorageMem3DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
+		public void TexStorageMem3DMultisampleEXT(GLTextureTarget target, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TexStorageMem3DMultisampleEXTNative(target, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem1DEXTNative(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
+		internal void TextureStorageMem1DEXTNative(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, uint, ulong, void>)funcTable[14])(texture, levels, internalFormat, width, memory, offset);
@@ -510,13 +510,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TextureStorageMem1DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
+		public void TextureStorageMem1DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, uint memory, ulong offset)
 		{
 			TextureStorageMem1DEXTNative(texture, levels, internalFormat, width, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem2DEXTNative(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
+		internal void TextureStorageMem2DEXTNative(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, uint, ulong, void>)funcTable[15])(texture, levels, internalFormat, width, height, memory, offset);
@@ -529,13 +529,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TextureStorageMem2DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
+		public void TextureStorageMem2DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset)
 		{
 			TextureStorageMem2DEXTNative(texture, levels, internalFormat, width, height, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem2DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
+		internal void TextureStorageMem2DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, byte, uint, ulong, void>)funcTable[16])(texture, samples, internalFormat, width, height, *((byte*)(&fixedSampleLocations)), memory, offset);
@@ -548,13 +548,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TextureStorageMem2DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
+		public void TextureStorageMem2DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TextureStorageMem2DMultisampleEXTNative(texture, samples, internalFormat, width, height, fixedSampleLocations, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem3DEXTNative(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
+		internal void TextureStorageMem3DEXTNative(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, uint, ulong, void>)funcTable[17])(texture, levels, internalFormat, width, height, depth, memory, offset);
@@ -567,13 +567,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TextureStorageMem3DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
+		public void TextureStorageMem3DEXT(uint texture, int levels, GLSizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset)
 		{
 			TextureStorageMem3DEXTNative(texture, levels, internalFormat, width, height, depth, memory, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageMem3DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
+		internal void TextureStorageMem3DMultisampleEXTNative(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLSizedInternalFormat, int, int, int, byte, uint, ulong, void>)funcTable[18])(texture, samples, internalFormat, width, height, depth, *((byte*)(&fixedSampleLocations)), memory, offset);
@@ -586,7 +586,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object</remarks>
-		public static void TextureStorageMem3DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
+		public void TextureStorageMem3DMultisampleEXT(uint texture, int samples, GLSizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset)
 		{
 			TextureStorageMem3DMultisampleEXTNative(texture, samples, internalFormat, width, height, depth, fixedSampleLocations, memory, offset);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTBlendFuncSeparate
+	public unsafe partial class GLEXTBlendFuncSeparate
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncSeparateEXTNative(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
+		internal void BlendFuncSeparateEXTNative(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, void>)funcTable[0])(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_func_separate</remarks>
-		public static void BlendFuncSeparateEXT(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
+		public void BlendFuncSeparateEXT(GLBlendingFactor sfactorRGB, GLBlendingFactor dfactorRGB, GLBlendingFactor sfactorAlpha, GLBlendingFactor dfactorAlpha)
 		{
 			BlendFuncSeparateEXTNative(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTDrawBuffersIndexed
+	public unsafe partial class GLEXTDrawBuffersIndexed
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationSeparateiEXTNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		internal void BlendEquationSeparateiEXTNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, GLBlendEquationModeEXT, void>)funcTable[0])(buf, modeRGB, modeAlpha);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void BlendEquationSeparateiEXT(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		public void BlendEquationSeparateiEXT(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateiEXTNative(buf, modeRGB, modeAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationiEXTNative(uint buf, GLBlendEquationModeEXT mode)
+		internal void BlendEquationiEXTNative(uint buf, GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, void>)funcTable[1])(buf, mode);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void BlendEquationiEXT(uint buf, GLBlendEquationModeEXT mode)
+		public void BlendEquationiEXT(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationiEXTNative(buf, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncSeparateiEXTNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		internal void BlendFuncSeparateiEXTNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, void>)funcTable[2])(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void BlendFuncSeparateiEXT(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		public void BlendFuncSeparateiEXT(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateiEXTNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFunciEXTNative(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
+		internal void BlendFunciEXTNative(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, void>)funcTable[3])(buf, src, dst);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void BlendFunciEXT(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
+		public void BlendFunciEXT(uint buf, GLBlendingFactor src, GLBlendingFactor dst)
 		{
 			BlendFunciEXTNative(buf, src, dst);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorMaskiEXTNative(uint index, bool r, bool g, bool b, bool a)
+		internal void ColorMaskiEXTNative(uint index, bool r, bool g, bool b, bool a)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[4])(index, *((byte*)(&r)), *((byte*)(&g)), *((byte*)(&b)), *((byte*)(&a)));
@@ -106,13 +106,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void ColorMaskiEXT(uint index, bool r, bool g, bool b, bool a)
+		public void ColorMaskiEXT(uint index, bool r, bool g, bool b, bool a)
 		{
 			ColorMaskiEXTNative(index, r, g, b, a);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableiEXTNative(GLEnableCap target, uint index)
+		internal void DisableiEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[5])(target, index);
@@ -125,13 +125,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void DisableiEXT(GLEnableCap target, uint index)
+		public void DisableiEXT(GLEnableCap target, uint index)
 		{
 			DisableiEXTNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableiEXTNative(GLEnableCap target, uint index)
+		internal void EnableiEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[6])(target, index);
@@ -144,13 +144,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static void EnableiEXT(GLEnableCap target, uint index)
+		public void EnableiEXT(GLEnableCap target, uint index)
 		{
 			EnableiEXTNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsEnablediEXTNative(GLEnableCap target, uint index)
+		internal byte IsEnablediEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnableCap, uint, byte>)funcTable[7])(target, index);
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_buffers_indexed</remarks>
-		public static bool IsEnablediEXT(GLEnableCap target, uint index)
+		public bool IsEnablediEXT(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediEXTNative(target, index);
 			return ret != 0;

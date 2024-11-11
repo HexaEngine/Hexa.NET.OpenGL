@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBProgramInterfaceQuery
+	public unsafe partial class GLARBProgramInterfaceQuery
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramInterfaceivNative(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
+		internal void GetProgramInterfaceivNative(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, GLProgramInterfacePName, int*, void>)funcTable[0])(program, programInterface, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
+		public void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, int* @params)
 		{
 			GetProgramInterfaceivNative(program, programInterface, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, out int @params)
+		public void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, out int @params)
 		{
 			int pparam;
 			GetProgramInterfaceivNative(program, programInterface, pname, &pparam);
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, Span<int> @params)
+		public void GetProgramInterfaceiv(uint program, GLProgramInterface programInterface, GLProgramInterfacePName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -59,7 +59,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetProgramResourceIndexNative(uint program, GLProgramInterface programInterface, byte* name)
+		internal uint GetProgramResourceIndexNative(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, byte*, uint>)funcTable[1])(program, programInterface, name);
@@ -72,7 +72,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, byte* name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			uint ret = GetProgramResourceIndexNative(program, programInterface, name);
 			return ret;
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, string name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the index of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, ref byte name)
+		public uint GetProgramResourceIndex(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -136,7 +136,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetProgramResourceLocationNative(uint program, GLProgramInterface programInterface, byte* name)
+		internal int GetProgramResourceLocationNative(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, byte*, int>)funcTable[2])(program, programInterface, name);
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, byte* name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			int ret = GetProgramResourceLocationNative(program, programInterface, name);
 			return ret;
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, string name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -190,7 +190,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, Span<byte> name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the location of a named resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, ref byte name)
+		public int GetProgramResourceLocation(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -213,7 +213,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetProgramResourceLocationIndexNative(uint program, GLProgramInterface programInterface, byte* name)
+		internal int GetProgramResourceLocationIndexNative(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, byte*, int>)funcTable[3])(program, programInterface, name);
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, byte* name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, byte* name)
 		{
 			int ret = GetProgramResourceLocationIndexNative(program, programInterface, name);
 			return ret;
@@ -236,7 +236,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, string name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -267,7 +267,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -280,7 +280,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the fragment color index of a named variable within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, ref byte name)
+		public int GetProgramResourceLocationIndex(uint program, GLProgramInterface programInterface, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -290,7 +290,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramResourceNameNative(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
+		internal void GetProgramResourceNameNative(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, uint, int, int*, byte*, void>)funcTable[4])(program, programInterface, index, bufSize, length, name);
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, byte* name)
 		{
 			GetProgramResourceNameNative(program, programInterface, index, bufSize, length, name);
 		}
@@ -312,7 +312,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, byte* name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -324,7 +324,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, byte* name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -336,7 +336,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, string name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -366,7 +366,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, Span<byte> name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -378,7 +378,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, ref byte name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, int* length, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -390,7 +390,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, Span<byte> name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, Span<int> length, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -405,7 +405,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the name of an indexed resource within a program
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, ref byte name)
+		public void GetProgramResourceName(uint program, GLProgramInterface programInterface, uint index, int bufSize, ref int length, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -417,7 +417,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramResourceivNative(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
+		internal void GetProgramResourceivNative(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, uint, int, GLProgramResourceProperty, int, int*, int*, void>)funcTable[5])(program, programInterface, index, propCount, props, count, length, @params);
@@ -430,7 +430,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, int* @params)
 		{
 			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, @params);
 		}
@@ -439,7 +439,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, out int @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, out int @params)
 		{
 			int pparam;
 			GetProgramResourceivNative(program, programInterface, index, propCount, props, count, length, &pparam);
@@ -450,7 +450,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, Span<int> @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, int* length, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -462,7 +462,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, Span<int> length, int* @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, Span<int> length, int* @params)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -474,7 +474,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_program_interface_query</remarks>
-		public static void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, ref int length, int* @params)
+		public void GetProgramResourceiv(uint program, GLProgramInterface programInterface, uint index, int propCount, GLProgramResourceProperty props, int count, ref int length, int* @params)
 		{
 			fixed (int* plength0 = &length)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTransposeMatrix
+	public unsafe partial class GLARBTransposeMatrix
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LoadTransposeMatrixdARBNative(double* m)
+		internal void LoadTransposeMatrixdARBNative(double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[0])(m);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void LoadTransposeMatrixdARB(double* m)
+		public void LoadTransposeMatrixdARB(double* m)
 		{
 			LoadTransposeMatrixdARBNative(m);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void LoadTransposeMatrixdARB(Span<double> m)
+		public void LoadTransposeMatrixdARB(Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void LoadTransposeMatrixdARB(ref double m)
+		public void LoadTransposeMatrixdARB(ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LoadTransposeMatrixfARBNative(float* m)
+		internal void LoadTransposeMatrixfARBNative(float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[1])(m);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void LoadTransposeMatrixfARB(float* m)
+		public void LoadTransposeMatrixfARB(float* m)
 		{
 			LoadTransposeMatrixfARBNative(m);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void LoadTransposeMatrixfARB(Span<float> m)
+		public void LoadTransposeMatrixfARB(Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void LoadTransposeMatrixfARB(ref float m)
+		public void LoadTransposeMatrixfARB(ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultTransposeMatrixdARBNative(double* m)
+		internal void MultTransposeMatrixdARBNative(double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[2])(m);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void MultTransposeMatrixdARB(double* m)
+		public void MultTransposeMatrixdARB(double* m)
 		{
 			MultTransposeMatrixdARBNative(m);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void MultTransposeMatrixdARB(Span<double> m)
+		public void MultTransposeMatrixdARB(Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void MultTransposeMatrixdARB(ref double m)
+		public void MultTransposeMatrixdARB(ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultTransposeMatrixfARBNative(float* m)
+		internal void MultTransposeMatrixfARBNative(float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[3])(m);
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void MultTransposeMatrixfARB(float* m)
+		public void MultTransposeMatrixfARB(float* m)
 		{
 			MultTransposeMatrixfARBNative(m);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void MultTransposeMatrixfARB(Span<float> m)
+		public void MultTransposeMatrixfARB(Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_transpose_matrix</remarks>
-		public static void MultTransposeMatrixfARB(ref float m)
+		public void MultTransposeMatrixfARB(ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{

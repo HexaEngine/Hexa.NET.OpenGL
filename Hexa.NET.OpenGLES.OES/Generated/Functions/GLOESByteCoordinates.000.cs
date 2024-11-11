@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESByteCoordinates
+	public unsafe partial class GLOESByteCoordinates
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1bOESNative(GLTextureUnit texture, sbyte s)
+		internal void MultiTexCoord1bOESNative(GLTextureUnit texture, sbyte s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte, void>)funcTable[0])(texture, s);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord1bOES(GLTextureUnit texture, sbyte s)
+		public void MultiTexCoord1bOES(GLTextureUnit texture, sbyte s)
 		{
 			MultiTexCoord1bOESNative(texture, s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord1bvOESNative(GLTextureUnit texture, sbyte* coords)
+		internal void MultiTexCoord1bvOESNative(GLTextureUnit texture, sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte*, void>)funcTable[1])(texture, coords);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord1bvOES(GLTextureUnit texture, sbyte* coords)
+		public void MultiTexCoord1bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord1bvOESNative(texture, coords);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord1bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		public void MultiTexCoord1bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord1bvOES(GLTextureUnit texture, ref sbyte coords)
+		public void MultiTexCoord1bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2bOESNative(GLTextureUnit texture, sbyte s, sbyte t)
+		internal void MultiTexCoord2bOESNative(GLTextureUnit texture, sbyte s, sbyte t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte, sbyte, void>)funcTable[2])(texture, s, t);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord2bOES(GLTextureUnit texture, sbyte s, sbyte t)
+		public void MultiTexCoord2bOES(GLTextureUnit texture, sbyte s, sbyte t)
 		{
 			MultiTexCoord2bOESNative(texture, s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord2bvOESNative(GLTextureUnit texture, sbyte* coords)
+		internal void MultiTexCoord2bvOESNative(GLTextureUnit texture, sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte*, void>)funcTable[3])(texture, coords);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord2bvOES(GLTextureUnit texture, sbyte* coords)
+		public void MultiTexCoord2bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord2bvOESNative(texture, coords);
 		}
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord2bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		public void MultiTexCoord2bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord2bvOES(GLTextureUnit texture, ref sbyte coords)
+		public void MultiTexCoord2bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3bOESNative(GLTextureUnit texture, sbyte s, sbyte t, sbyte r)
+		internal void MultiTexCoord3bOESNative(GLTextureUnit texture, sbyte s, sbyte t, sbyte r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte, sbyte, sbyte, void>)funcTable[4])(texture, s, t, r);
@@ -154,13 +154,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord3bOES(GLTextureUnit texture, sbyte s, sbyte t, sbyte r)
+		public void MultiTexCoord3bOES(GLTextureUnit texture, sbyte s, sbyte t, sbyte r)
 		{
 			MultiTexCoord3bOESNative(texture, s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord3bvOESNative(GLTextureUnit texture, sbyte* coords)
+		internal void MultiTexCoord3bvOESNative(GLTextureUnit texture, sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte*, void>)funcTable[5])(texture, coords);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord3bvOES(GLTextureUnit texture, sbyte* coords)
+		public void MultiTexCoord3bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord3bvOESNative(texture, coords);
 		}
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord3bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		public void MultiTexCoord3bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -194,7 +194,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord3bvOES(GLTextureUnit texture, ref sbyte coords)
+		public void MultiTexCoord3bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4bOESNative(GLTextureUnit texture, sbyte s, sbyte t, sbyte r, sbyte q)
+		internal void MultiTexCoord4bOESNative(GLTextureUnit texture, sbyte s, sbyte t, sbyte r, sbyte q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte, sbyte, sbyte, sbyte, void>)funcTable[6])(texture, s, t, r, q);
@@ -216,13 +216,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord4bOES(GLTextureUnit texture, sbyte s, sbyte t, sbyte r, sbyte q)
+		public void MultiTexCoord4bOES(GLTextureUnit texture, sbyte s, sbyte t, sbyte r, sbyte q)
 		{
 			MultiTexCoord4bOESNative(texture, s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoord4bvOESNative(GLTextureUnit texture, sbyte* coords)
+		internal void MultiTexCoord4bvOESNative(GLTextureUnit texture, sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, sbyte*, void>)funcTable[7])(texture, coords);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord4bvOES(GLTextureUnit texture, sbyte* coords)
+		public void MultiTexCoord4bvOES(GLTextureUnit texture, sbyte* coords)
 		{
 			MultiTexCoord4bvOESNative(texture, coords);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord4bvOES(GLTextureUnit texture, Span<sbyte> coords)
+		public void MultiTexCoord4bvOES(GLTextureUnit texture, Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void MultiTexCoord4bvOES(GLTextureUnit texture, ref sbyte coords)
+		public void MultiTexCoord4bvOES(GLTextureUnit texture, ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord1bOESNative(sbyte s)
+		internal void TexCoord1bOESNative(sbyte s)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, void>)funcTable[8])(s);
@@ -278,13 +278,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord1bOES(sbyte s)
+		public void TexCoord1bOES(sbyte s)
 		{
 			TexCoord1bOESNative(s);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord1bvOESNative(sbyte* coords)
+		internal void TexCoord1bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[9])(coords);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord1bvOES(sbyte* coords)
+		public void TexCoord1bvOES(sbyte* coords)
 		{
 			TexCoord1bvOESNative(coords);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord1bvOES(Span<sbyte> coords)
+		public void TexCoord1bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord1bvOES(ref sbyte coords)
+		public void TexCoord1bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord2bOESNative(sbyte s, sbyte t)
+		internal void TexCoord2bOESNative(sbyte s, sbyte t)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, void>)funcTable[10])(s, t);
@@ -340,13 +340,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord2bOES(sbyte s, sbyte t)
+		public void TexCoord2bOES(sbyte s, sbyte t)
 		{
 			TexCoord2bOESNative(s, t);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord2bvOESNative(sbyte* coords)
+		internal void TexCoord2bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[11])(coords);
@@ -359,7 +359,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord2bvOES(sbyte* coords)
+		public void TexCoord2bvOES(sbyte* coords)
 		{
 			TexCoord2bvOESNative(coords);
 		}
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord2bvOES(Span<sbyte> coords)
+		public void TexCoord2bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -380,7 +380,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord2bvOES(ref sbyte coords)
+		public void TexCoord2bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -389,7 +389,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord3bOESNative(sbyte s, sbyte t, sbyte r)
+		internal void TexCoord3bOESNative(sbyte s, sbyte t, sbyte r)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, void>)funcTable[12])(s, t, r);
@@ -402,13 +402,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord3bOES(sbyte s, sbyte t, sbyte r)
+		public void TexCoord3bOES(sbyte s, sbyte t, sbyte r)
 		{
 			TexCoord3bOESNative(s, t, r);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord3bvOESNative(sbyte* coords)
+		internal void TexCoord3bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[13])(coords);
@@ -421,7 +421,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord3bvOES(sbyte* coords)
+		public void TexCoord3bvOES(sbyte* coords)
 		{
 			TexCoord3bvOESNative(coords);
 		}
@@ -430,7 +430,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord3bvOES(Span<sbyte> coords)
+		public void TexCoord3bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -442,7 +442,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord3bvOES(ref sbyte coords)
+		public void TexCoord3bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -451,7 +451,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord4bOESNative(sbyte s, sbyte t, sbyte r, sbyte q)
+		internal void TexCoord4bOESNative(sbyte s, sbyte t, sbyte r, sbyte q)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, sbyte, void>)funcTable[14])(s, t, r, q);
@@ -464,13 +464,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord4bOES(sbyte s, sbyte t, sbyte r, sbyte q)
+		public void TexCoord4bOES(sbyte s, sbyte t, sbyte r, sbyte q)
 		{
 			TexCoord4bOESNative(s, t, r, q);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexCoord4bvOESNative(sbyte* coords)
+		internal void TexCoord4bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[15])(coords);
@@ -483,7 +483,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord4bvOES(sbyte* coords)
+		public void TexCoord4bvOES(sbyte* coords)
 		{
 			TexCoord4bvOESNative(coords);
 		}
@@ -492,7 +492,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord4bvOES(Span<sbyte> coords)
+		public void TexCoord4bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -504,7 +504,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void TexCoord4bvOES(ref sbyte coords)
+		public void TexCoord4bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2bOESNative(sbyte x, sbyte y)
+		internal void Vertex2bOESNative(sbyte x, sbyte y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, void>)funcTable[16])(x, y);
@@ -526,13 +526,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex2bOES(sbyte x, sbyte y)
+		public void Vertex2bOES(sbyte x, sbyte y)
 		{
 			Vertex2bOESNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2bvOESNative(sbyte* coords)
+		internal void Vertex2bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[17])(coords);
@@ -545,7 +545,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex2bvOES(sbyte* coords)
+		public void Vertex2bvOES(sbyte* coords)
 		{
 			Vertex2bvOESNative(coords);
 		}
@@ -554,7 +554,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex2bvOES(Span<sbyte> coords)
+		public void Vertex2bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -566,7 +566,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex2bvOES(ref sbyte coords)
+		public void Vertex2bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -575,7 +575,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3bOESNative(sbyte x, sbyte y, sbyte z)
+		internal void Vertex3bOESNative(sbyte x, sbyte y, sbyte z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, void>)funcTable[18])(x, y, z);
@@ -588,13 +588,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex3bOES(sbyte x, sbyte y, sbyte z)
+		public void Vertex3bOES(sbyte x, sbyte y, sbyte z)
 		{
 			Vertex3bOESNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3bvOESNative(sbyte* coords)
+		internal void Vertex3bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[19])(coords);
@@ -607,7 +607,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex3bvOES(sbyte* coords)
+		public void Vertex3bvOES(sbyte* coords)
 		{
 			Vertex3bvOESNative(coords);
 		}
@@ -616,7 +616,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex3bvOES(Span<sbyte> coords)
+		public void Vertex3bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -628,7 +628,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex3bvOES(ref sbyte coords)
+		public void Vertex3bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{
@@ -637,7 +637,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4bOESNative(sbyte x, sbyte y, sbyte z, sbyte w)
+		internal void Vertex4bOESNative(sbyte x, sbyte y, sbyte z, sbyte w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte, sbyte, sbyte, sbyte, void>)funcTable[20])(x, y, z, w);
@@ -650,13 +650,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex4bOES(sbyte x, sbyte y, sbyte z, sbyte w)
+		public void Vertex4bOES(sbyte x, sbyte y, sbyte z, sbyte w)
 		{
 			Vertex4bOESNative(x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4bvOESNative(sbyte* coords)
+		internal void Vertex4bvOESNative(sbyte* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<sbyte*, void>)funcTable[21])(coords);
@@ -669,7 +669,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex4bvOES(sbyte* coords)
+		public void Vertex4bvOES(sbyte* coords)
 		{
 			Vertex4bvOESNative(coords);
 		}
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex4bvOES(Span<sbyte> coords)
+		public void Vertex4bvOES(Span<sbyte> coords)
 		{
 			fixed (sbyte* pcoords0 = coords)
 			{
@@ -690,7 +690,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_byte_coordinates</remarks>
-		public static void Vertex4bvOES(ref sbyte coords)
+		public void Vertex4bvOES(ref sbyte coords)
 		{
 			fixed (sbyte* pcoords0 = &coords)
 			{

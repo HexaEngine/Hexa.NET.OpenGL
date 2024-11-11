@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.INTEL
 {
-	public static unsafe partial class GLINTELPerformanceQuery
+	public unsafe partial class GLINTELPerformanceQuery
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginPerfQueryINTELNative(uint queryHandle)
+		internal void BeginPerfQueryINTELNative(uint queryHandle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(queryHandle);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void BeginPerfQueryINTEL(uint queryHandle)
+		public void BeginPerfQueryINTEL(uint queryHandle)
 		{
 			BeginPerfQueryINTELNative(queryHandle);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CreatePerfQueryINTELNative(uint queryId, uint* queryHandle)
+		internal void CreatePerfQueryINTELNative(uint queryId, uint* queryHandle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[1])(queryId, queryHandle);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void CreatePerfQueryINTEL(uint queryId, uint* queryHandle)
+		public void CreatePerfQueryINTEL(uint queryId, uint* queryHandle)
 		{
 			CreatePerfQueryINTELNative(queryId, queryHandle);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void CreatePerfQueryINTEL(uint queryId, Span<uint> queryHandle)
+		public void CreatePerfQueryINTEL(uint queryId, Span<uint> queryHandle)
 		{
 			fixed (uint* pqueryHandle0 = queryHandle)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void CreatePerfQueryINTEL(uint queryId, ref uint queryHandle)
+		public void CreatePerfQueryINTEL(uint queryId, ref uint queryHandle)
 		{
 			fixed (uint* pqueryHandle0 = &queryHandle)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeletePerfQueryINTELNative(uint queryHandle)
+		internal void DeletePerfQueryINTELNative(uint queryHandle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[2])(queryHandle);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void DeletePerfQueryINTEL(uint queryHandle)
+		public void DeletePerfQueryINTEL(uint queryHandle)
 		{
 			DeletePerfQueryINTELNative(queryHandle);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndPerfQueryINTELNative(uint queryHandle)
+		internal void EndPerfQueryINTELNative(uint queryHandle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[3])(queryHandle);
@@ -111,13 +111,13 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void EndPerfQueryINTEL(uint queryHandle)
+		public void EndPerfQueryINTEL(uint queryHandle)
 		{
 			EndPerfQueryINTELNative(queryHandle);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFirstPerfQueryIdINTELNative(uint* queryId)
+		internal void GetFirstPerfQueryIdINTELNative(uint* queryId)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint*, void>)funcTable[4])(queryId);
@@ -130,7 +130,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetFirstPerfQueryIdINTEL(uint* queryId)
+		public void GetFirstPerfQueryIdINTEL(uint* queryId)
 		{
 			GetFirstPerfQueryIdINTELNative(queryId);
 		}
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetFirstPerfQueryIdINTEL(Span<uint> queryId)
+		public void GetFirstPerfQueryIdINTEL(Span<uint> queryId)
 		{
 			fixed (uint* pqueryId0 = queryId)
 			{
@@ -151,7 +151,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetFirstPerfQueryIdINTEL(ref uint queryId)
+		public void GetFirstPerfQueryIdINTEL(ref uint queryId)
 		{
 			fixed (uint* pqueryId0 = &queryId)
 			{
@@ -160,7 +160,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNextPerfQueryIdINTELNative(uint queryId, uint* nextQueryId)
+		internal void GetNextPerfQueryIdINTELNative(uint queryId, uint* nextQueryId)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[5])(queryId, nextQueryId);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetNextPerfQueryIdINTEL(uint queryId, uint* nextQueryId)
+		public void GetNextPerfQueryIdINTEL(uint queryId, uint* nextQueryId)
 		{
 			GetNextPerfQueryIdINTELNative(queryId, nextQueryId);
 		}
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetNextPerfQueryIdINTEL(uint queryId, Span<uint> nextQueryId)
+		public void GetNextPerfQueryIdINTEL(uint queryId, Span<uint> nextQueryId)
 		{
 			fixed (uint* pnextQueryId0 = nextQueryId)
 			{
@@ -194,7 +194,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetNextPerfQueryIdINTEL(uint queryId, ref uint nextQueryId)
+		public void GetNextPerfQueryIdINTEL(uint queryId, ref uint nextQueryId)
 		{
 			fixed (uint* pnextQueryId0 = &nextQueryId)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfCounterInfoINTELNative(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		internal void GetPerfCounterInfoINTELNative(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, byte*, uint, byte*, uint*, uint*, uint*, uint*, ulong*, void>)funcTable[6])(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
@@ -216,7 +216,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			GetPerfCounterInfoINTELNative(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
 		}
@@ -225,7 +225,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, string counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, string counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -255,7 +255,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -267,7 +267,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -279,7 +279,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, string counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, string counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -309,7 +309,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -321,7 +321,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -333,7 +333,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, string counterName, uint counterDescLength, string counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, string counterName, uint counterDescLength, string counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -384,7 +384,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -399,7 +399,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -414,7 +414,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -426,7 +426,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -438,7 +438,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -453,7 +453,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -468,7 +468,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -483,7 +483,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -498,7 +498,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -516,7 +516,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -534,7 +534,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -546,7 +546,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -558,7 +558,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -573,7 +573,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -588,7 +588,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -603,7 +603,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -618,7 +618,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -636,7 +636,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -654,7 +654,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -669,7 +669,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -684,7 +684,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -702,7 +702,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -720,7 +720,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -738,7 +738,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -756,7 +756,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -777,7 +777,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -798,7 +798,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
 			{
@@ -810,7 +810,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
 			{
@@ -822,7 +822,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -837,7 +837,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -852,7 +852,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -867,7 +867,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -882,7 +882,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -900,7 +900,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -918,7 +918,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -933,7 +933,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -948,7 +948,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -966,7 +966,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -984,7 +984,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1002,7 +1002,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1020,7 +1020,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1041,7 +1041,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1062,7 +1062,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -1077,7 +1077,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -1092,7 +1092,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1110,7 +1110,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1128,7 +1128,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1146,7 +1146,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1164,7 +1164,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1185,7 +1185,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1206,7 +1206,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -1224,7 +1224,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -1242,7 +1242,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1263,7 +1263,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1284,7 +1284,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1305,7 +1305,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1326,7 +1326,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1350,7 +1350,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1374,7 +1374,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataTypeEnum0 = counterDataTypeEnum)
 			{
@@ -1386,7 +1386,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataTypeEnum0 = &counterDataTypeEnum)
 			{
@@ -1398,7 +1398,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1413,7 +1413,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1428,7 +1428,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1443,7 +1443,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1458,7 +1458,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1476,7 +1476,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1494,7 +1494,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -1509,7 +1509,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -1524,7 +1524,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1542,7 +1542,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1560,7 +1560,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1578,7 +1578,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1596,7 +1596,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1617,7 +1617,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1638,7 +1638,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -1653,7 +1653,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -1668,7 +1668,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1686,7 +1686,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1704,7 +1704,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1722,7 +1722,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1740,7 +1740,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1761,7 +1761,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1782,7 +1782,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -1800,7 +1800,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -1818,7 +1818,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1839,7 +1839,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1860,7 +1860,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -1881,7 +1881,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -1902,7 +1902,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1926,7 +1926,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -1950,7 +1950,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
 			{
@@ -1965,7 +1965,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
 			{
@@ -1980,7 +1980,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -1998,7 +1998,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2016,7 +2016,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2034,7 +2034,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2052,7 +2052,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2073,7 +2073,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2094,7 +2094,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -2112,7 +2112,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -2130,7 +2130,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2151,7 +2151,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2172,7 +2172,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2193,7 +2193,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2214,7 +2214,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2238,7 +2238,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2262,7 +2262,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -2280,7 +2280,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -2298,7 +2298,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2319,7 +2319,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2340,7 +2340,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2361,7 +2361,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2382,7 +2382,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2406,7 +2406,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2430,7 +2430,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -2451,7 +2451,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -2472,7 +2472,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2496,7 +2496,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2520,7 +2520,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2544,7 +2544,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2568,7 +2568,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2595,7 +2595,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ulong* rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2622,7 +2622,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (ulong* prawCounterMaxValue0 = rawCounterMaxValue)
 			{
@@ -2634,7 +2634,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (ulong* prawCounterMaxValue0 = &rawCounterMaxValue)
 			{
@@ -2646,7 +2646,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2661,7 +2661,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2676,7 +2676,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2691,7 +2691,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2706,7 +2706,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2724,7 +2724,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2742,7 +2742,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -2757,7 +2757,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -2772,7 +2772,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2790,7 +2790,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2808,7 +2808,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2826,7 +2826,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2844,7 +2844,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2865,7 +2865,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2886,7 +2886,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -2901,7 +2901,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -2916,7 +2916,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -2934,7 +2934,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -2952,7 +2952,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -2970,7 +2970,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -2988,7 +2988,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3009,7 +3009,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3030,7 +3030,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -3048,7 +3048,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -3066,7 +3066,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3087,7 +3087,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3108,7 +3108,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -3129,7 +3129,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -3150,7 +3150,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3174,7 +3174,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3198,7 +3198,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
 			{
@@ -3213,7 +3213,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
 			{
@@ -3228,7 +3228,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3246,7 +3246,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3264,7 +3264,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -3282,7 +3282,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -3300,7 +3300,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3321,7 +3321,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3342,7 +3342,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -3360,7 +3360,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -3378,7 +3378,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3399,7 +3399,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3420,7 +3420,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -3441,7 +3441,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -3462,7 +3462,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3486,7 +3486,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3510,7 +3510,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -3528,7 +3528,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -3546,7 +3546,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3567,7 +3567,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3588,7 +3588,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -3609,7 +3609,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -3630,7 +3630,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3654,7 +3654,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3678,7 +3678,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -3699,7 +3699,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -3720,7 +3720,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3744,7 +3744,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3768,7 +3768,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -3792,7 +3792,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -3816,7 +3816,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, uint* counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3843,7 +3843,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, uint* counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3870,7 +3870,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataTypeEnum0 = counterDataTypeEnum)
 			{
@@ -3885,7 +3885,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataTypeEnum0 = &counterDataTypeEnum)
 			{
@@ -3900,7 +3900,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3918,7 +3918,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -3936,7 +3936,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -3954,7 +3954,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -3972,7 +3972,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -3993,7 +3993,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4014,7 +4014,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -4032,7 +4032,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -4050,7 +4050,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4071,7 +4071,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4092,7 +4092,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -4113,7 +4113,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -4134,7 +4134,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4158,7 +4158,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4182,7 +4182,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -4200,7 +4200,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -4218,7 +4218,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4239,7 +4239,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4260,7 +4260,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -4281,7 +4281,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -4302,7 +4302,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4326,7 +4326,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4350,7 +4350,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -4371,7 +4371,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -4392,7 +4392,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4416,7 +4416,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4440,7 +4440,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -4464,7 +4464,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -4488,7 +4488,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, uint* counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4515,7 +4515,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, uint* counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4542,7 +4542,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = counterTypeEnum)
 			{
@@ -4560,7 +4560,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterTypeEnum0 = &counterTypeEnum)
 			{
@@ -4578,7 +4578,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4599,7 +4599,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4620,7 +4620,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -4641,7 +4641,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -4662,7 +4662,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4686,7 +4686,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4710,7 +4710,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -4731,7 +4731,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -4752,7 +4752,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4776,7 +4776,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4800,7 +4800,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -4824,7 +4824,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -4848,7 +4848,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, uint* counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4875,7 +4875,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, uint* counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4902,7 +4902,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = counterDataSize)
 			{
@@ -4923,7 +4923,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterDataSize0 = &counterDataSize)
 			{
@@ -4944,7 +4944,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -4968,7 +4968,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -4992,7 +4992,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -5016,7 +5016,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{

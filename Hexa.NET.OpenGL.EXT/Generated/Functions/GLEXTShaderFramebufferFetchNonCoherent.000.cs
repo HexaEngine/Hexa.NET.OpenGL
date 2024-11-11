@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTShaderFramebufferFetchNonCoherent
+	public unsafe partial class GLEXTShaderFramebufferFetchNonCoherent
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferFetchBarrierEXTNative()
+		internal void FramebufferFetchBarrierEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_framebuffer_fetch_non_coherent</remarks>
-		public static void FramebufferFetchBarrierEXT()
+		public void FramebufferFetchBarrierEXT()
 		{
 			FramebufferFetchBarrierEXTNative();
 		}

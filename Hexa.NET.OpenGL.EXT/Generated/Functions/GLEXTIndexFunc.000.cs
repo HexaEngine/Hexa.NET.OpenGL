@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTIndexFunc
+	public unsafe partial class GLEXTIndexFunc
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void IndexFuncEXTNative(GLIndexFunctionEXT func, float reference)
+		internal void IndexFuncEXTNative(GLIndexFunctionEXT func, float reference)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLIndexFunctionEXT, float, void>)funcTable[0])(func, reference);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_index_func</remarks>
-		public static void IndexFuncEXT(GLIndexFunctionEXT func, float reference)
+		public void IndexFuncEXT(GLIndexFunctionEXT func, float reference)
 		{
 			IndexFuncEXTNative(func, reference);
 		}

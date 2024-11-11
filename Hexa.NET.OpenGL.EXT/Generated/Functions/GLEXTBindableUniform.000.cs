@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTBindableUniform
+	public unsafe partial class GLEXTBindableUniform
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetUniformBufferSizeEXTNative(uint program, int location)
+		internal int GetUniformBufferSizeEXTNative(uint program, int location)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, int>)funcTable[0])(program, location);
@@ -30,14 +30,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_bindable_uniform</remarks>
-		public static int GetUniformBufferSizeEXT(uint program, int location)
+		public int GetUniformBufferSizeEXT(uint program, int location)
 		{
 			int ret = GetUniformBufferSizeEXTNative(program, location);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static nint GetUniformOffsetEXTNative(uint program, int location)
+		internal nint GetUniformOffsetEXTNative(uint program, int location)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, nint>)funcTable[1])(program, location);
@@ -50,14 +50,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_bindable_uniform</remarks>
-		public static nint GetUniformOffsetEXT(uint program, int location)
+		public nint GetUniformOffsetEXT(uint program, int location)
 		{
 			nint ret = GetUniformOffsetEXTNative(program, location);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformBufferEXTNative(uint program, int location, uint buffer)
+		internal void UniformBufferEXTNative(uint program, int location, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint, void>)funcTable[2])(program, location, buffer);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_bindable_uniform</remarks>
-		public static void UniformBufferEXT(uint program, int location, uint buffer)
+		public void UniformBufferEXT(uint program, int location, uint buffer)
 		{
 			UniformBufferEXTNative(program, location, buffer);
 		}

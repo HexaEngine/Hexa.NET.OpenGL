@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTGeometryShader
+	public unsafe partial class GLEXTGeometryShader
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
+		internal void FramebufferTextureEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, void>)funcTable[0])(target, attachment, texture, level);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
-		public static void FramebufferTextureEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
+		public void FramebufferTextureEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureEXTNative(target, attachment, texture, level);
 		}

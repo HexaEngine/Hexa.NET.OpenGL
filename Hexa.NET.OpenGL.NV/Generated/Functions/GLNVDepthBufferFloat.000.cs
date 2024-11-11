@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVDepthBufferFloat
+	public unsafe partial class GLNVDepthBufferFloat
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearDepthdNVNative(double depth)
+		internal void ClearDepthdNVNative(double depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, void>)funcTable[0])(depth);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
-		public static void ClearDepthdNV(double depth)
+		public void ClearDepthdNV(double depth)
 		{
 			ClearDepthdNVNative(depth);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthBoundsdNVNative(double zmin, double zmax)
+		internal void DepthBoundsdNVNative(double zmin, double zmax)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[1])(zmin, zmax);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
-		public static void DepthBoundsdNV(double zmin, double zmax)
+		public void DepthBoundsdNV(double zmin, double zmax)
 		{
 			DepthBoundsdNVNative(zmin, zmax);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangedNVNative(double zNear, double zFar)
+		internal void DepthRangedNVNative(double zNear, double zFar)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[2])(zNear, zFar);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_depth_buffer_float</remarks>
-		public static void DepthRangedNV(double zNear, double zFar)
+		public void DepthRangedNV(double zNear, double zFar)
 		{
 			DepthRangedNVNative(zNear, zFar);
 		}

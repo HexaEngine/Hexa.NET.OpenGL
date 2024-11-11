@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTVertexShader
+	public unsafe partial class GLEXTVertexShader
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginVertexShaderEXTNative()
+		internal void BeginVertexShaderEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void BeginVertexShaderEXT()
+		public void BeginVertexShaderEXT()
 		{
 			BeginVertexShaderEXTNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint BindLightParameterEXTNative(GLLightName light, GLLightParameter value)
+		internal uint BindLightParameterEXTNative(GLLightName light, GLLightParameter value)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLLightName, GLLightParameter, uint>)funcTable[1])(light, value);
@@ -49,14 +49,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint BindLightParameterEXT(GLLightName light, GLLightParameter value)
+		public uint BindLightParameterEXT(GLLightName light, GLLightParameter value)
 		{
 			uint ret = BindLightParameterEXTNative(light, value);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint BindMaterialParameterEXTNative(GLTriangleFace face, GLMaterialParameter value)
+		internal uint BindMaterialParameterEXTNative(GLTriangleFace face, GLMaterialParameter value)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLTriangleFace, GLMaterialParameter, uint>)funcTable[2])(face, value);
@@ -69,14 +69,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint BindMaterialParameterEXT(GLTriangleFace face, GLMaterialParameter value)
+		public uint BindMaterialParameterEXT(GLTriangleFace face, GLMaterialParameter value)
 		{
 			uint ret = BindMaterialParameterEXTNative(face, value);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint BindParameterEXTNative(GLVertexShaderParameterEXT value)
+		internal uint BindParameterEXTNative(GLVertexShaderParameterEXT value)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLVertexShaderParameterEXT, uint>)funcTable[3])(value);
@@ -89,14 +89,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint BindParameterEXT(GLVertexShaderParameterEXT value)
+		public uint BindParameterEXT(GLVertexShaderParameterEXT value)
 		{
 			uint ret = BindParameterEXTNative(value);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint BindTexGenParameterEXTNative(GLTextureUnit unit, GLTextureCoordName coord, GLTextureGenParameter value)
+		internal uint BindTexGenParameterEXTNative(GLTextureUnit unit, GLTextureCoordName coord, GLTextureGenParameter value)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, uint>)funcTable[4])(unit, coord, value);
@@ -109,14 +109,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint BindTexGenParameterEXT(GLTextureUnit unit, GLTextureCoordName coord, GLTextureGenParameter value)
+		public uint BindTexGenParameterEXT(GLTextureUnit unit, GLTextureCoordName coord, GLTextureGenParameter value)
 		{
 			uint ret = BindTexGenParameterEXTNative(unit, coord, value);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint BindTextureUnitParameterEXTNative(GLTextureUnit unit, GLVertexShaderTextureUnitParameter value)
+		internal uint BindTextureUnitParameterEXTNative(GLTextureUnit unit, GLVertexShaderTextureUnitParameter value)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLTextureUnit, GLVertexShaderTextureUnitParameter, uint>)funcTable[5])(unit, value);
@@ -129,14 +129,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint BindTextureUnitParameterEXT(GLTextureUnit unit, GLVertexShaderTextureUnitParameter value)
+		public uint BindTextureUnitParameterEXT(GLTextureUnit unit, GLVertexShaderTextureUnitParameter value)
 		{
 			uint ret = BindTextureUnitParameterEXTNative(unit, value);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexShaderEXTNative(uint id)
+		internal void BindVertexShaderEXTNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[6])(id);
@@ -149,13 +149,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void BindVertexShaderEXT(uint id)
+		public void BindVertexShaderEXT(uint id)
 		{
 			BindVertexShaderEXTNative(id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteVertexShaderEXTNative(uint id)
+		internal void DeleteVertexShaderEXTNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[7])(id);
@@ -168,13 +168,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void DeleteVertexShaderEXT(uint id)
+		public void DeleteVertexShaderEXT(uint id)
 		{
 			DeleteVertexShaderEXTNative(id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableVariantClientStateEXTNative(uint id)
+		internal void DisableVariantClientStateEXTNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[8])(id);
@@ -187,13 +187,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void DisableVariantClientStateEXT(uint id)
+		public void DisableVariantClientStateEXT(uint id)
 		{
 			DisableVariantClientStateEXTNative(id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableVariantClientStateEXTNative(uint id)
+		internal void EnableVariantClientStateEXTNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[9])(id);
@@ -206,13 +206,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void EnableVariantClientStateEXT(uint id)
+		public void EnableVariantClientStateEXT(uint id)
 		{
 			EnableVariantClientStateEXTNative(id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndVertexShaderEXTNative()
+		internal void EndVertexShaderEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[10])();
@@ -225,13 +225,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void EndVertexShaderEXT()
+		public void EndVertexShaderEXT()
 		{
 			EndVertexShaderEXTNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ExtractComponentEXTNative(uint res, uint src, uint num)
+		internal void ExtractComponentEXTNative(uint res, uint src, uint num)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[11])(res, src, num);
@@ -244,13 +244,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void ExtractComponentEXT(uint res, uint src, uint num)
+		public void ExtractComponentEXT(uint res, uint src, uint num)
 		{
 			ExtractComponentEXTNative(res, src, num);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GenSymbolsEXTNative(GLDataTypeEXT datatype, GLVertexShaderStorageTypeEXT storagetype, GLParameterRangeEXT range, uint components)
+		internal uint GenSymbolsEXTNative(GLDataTypeEXT datatype, GLVertexShaderStorageTypeEXT storagetype, GLParameterRangeEXT range, uint components)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLDataTypeEXT, GLVertexShaderStorageTypeEXT, GLParameterRangeEXT, uint, uint>)funcTable[12])(datatype, storagetype, range, components);
@@ -263,14 +263,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint GenSymbolsEXT(GLDataTypeEXT datatype, GLVertexShaderStorageTypeEXT storagetype, GLParameterRangeEXT range, uint components)
+		public uint GenSymbolsEXT(GLDataTypeEXT datatype, GLVertexShaderStorageTypeEXT storagetype, GLParameterRangeEXT range, uint components)
 		{
 			uint ret = GenSymbolsEXTNative(datatype, storagetype, range, components);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GenVertexShadersEXTNative(uint range)
+		internal uint GenVertexShadersEXTNative(uint range)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, uint>)funcTable[13])(range);
@@ -283,14 +283,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static uint GenVertexShadersEXT(uint range)
+		public uint GenVertexShadersEXT(uint range)
 		{
 			uint ret = GenVertexShadersEXTNative(range);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInvariantBooleanvEXTNative(uint id, GLGetVariantValueEXT value, byte* data)
+		internal void GetInvariantBooleanvEXTNative(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, byte*, void>)funcTable[14])(id, value, data);
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
+		public void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			GetInvariantBooleanvEXTNative(id, value, data);
 		}
@@ -312,7 +312,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
+		public void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
+		public void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
+		public void GetInvariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -363,7 +363,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInvariantFloatvEXTNative(uint id, GLGetVariantValueEXT value, float* data)
+		internal void GetInvariantFloatvEXTNative(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, float*, void>)funcTable[15])(id, value, data);
@@ -376,7 +376,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
+		public void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			GetInvariantFloatvEXTNative(id, value, data);
 		}
@@ -385,7 +385,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
+		public void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
 			{
@@ -397,7 +397,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
+		public void GetInvariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
 			{
@@ -406,7 +406,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInvariantIntegervEXTNative(uint id, GLGetVariantValueEXT value, int* data)
+		internal void GetInvariantIntegervEXTNative(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, int*, void>)funcTable[16])(id, value, data);
@@ -419,7 +419,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
+		public void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetInvariantIntegervEXTNative(id, value, data);
 		}
@@ -428,7 +428,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
+		public void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
 			{
@@ -440,7 +440,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
+		public void GetInvariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
 		{
 			fixed (int* pdata0 = &data)
 			{
@@ -449,7 +449,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLocalConstantBooleanvEXTNative(uint id, GLGetVariantValueEXT value, byte* data)
+		internal void GetLocalConstantBooleanvEXTNative(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, byte*, void>)funcTable[17])(id, value, data);
@@ -462,7 +462,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
+		public void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			GetLocalConstantBooleanvEXTNative(id, value, data);
 		}
@@ -471,7 +471,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
+		public void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -501,7 +501,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
+		public void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -513,7 +513,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
+		public void GetLocalConstantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -522,7 +522,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLocalConstantFloatvEXTNative(uint id, GLGetVariantValueEXT value, float* data)
+		internal void GetLocalConstantFloatvEXTNative(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, float*, void>)funcTable[18])(id, value, data);
@@ -535,7 +535,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
+		public void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			GetLocalConstantFloatvEXTNative(id, value, data);
 		}
@@ -544,7 +544,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
+		public void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
 			{
@@ -556,7 +556,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
+		public void GetLocalConstantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
 			{
@@ -565,7 +565,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetLocalConstantIntegervEXTNative(uint id, GLGetVariantValueEXT value, int* data)
+		internal void GetLocalConstantIntegervEXTNative(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, int*, void>)funcTable[19])(id, value, data);
@@ -578,7 +578,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
+		public void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetLocalConstantIntegervEXTNative(id, value, data);
 		}
@@ -587,7 +587,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
+		public void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
 			{
@@ -599,7 +599,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
+		public void GetLocalConstantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
 		{
 			fixed (int* pdata0 = &data)
 			{
@@ -608,7 +608,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVariantBooleanvEXTNative(uint id, GLGetVariantValueEXT value, byte* data)
+		internal void GetVariantBooleanvEXTNative(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, byte*, void>)funcTable[20])(id, value, data);
@@ -621,7 +621,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
+		public void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, byte* data)
 		{
 			GetVariantBooleanvEXTNative(id, value, data);
 		}
@@ -630,7 +630,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
+		public void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -660,7 +660,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
+		public void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -672,7 +672,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
+		public void GetVariantBooleanvEXT(uint id, GLGetVariantValueEXT value, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -681,7 +681,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVariantFloatvEXTNative(uint id, GLGetVariantValueEXT value, float* data)
+		internal void GetVariantFloatvEXTNative(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, float*, void>)funcTable[21])(id, value, data);
@@ -694,7 +694,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
+		public void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, float* data)
 		{
 			GetVariantFloatvEXTNative(id, value, data);
 		}
@@ -703,7 +703,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
+		public void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
 			{
@@ -715,7 +715,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
+		public void GetVariantFloatvEXT(uint id, GLGetVariantValueEXT value, ref float data)
 		{
 			fixed (float* pdata0 = &data)
 			{
@@ -724,7 +724,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVariantIntegervEXTNative(uint id, GLGetVariantValueEXT value, int* data)
+		internal void GetVariantIntegervEXTNative(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, int*, void>)funcTable[22])(id, value, data);
@@ -737,7 +737,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
+		public void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, int* data)
 		{
 			GetVariantIntegervEXTNative(id, value, data);
 		}
@@ -746,7 +746,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
+		public void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
 			{
@@ -758,7 +758,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
+		public void GetVariantIntegervEXT(uint id, GLGetVariantValueEXT value, ref int data)
 		{
 			fixed (int* pdata0 = &data)
 			{
@@ -767,7 +767,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVariantPointervEXTNative(uint id, GLGetVariantValueEXT value, void** data)
+		internal void GetVariantPointervEXTNative(uint id, GLGetVariantValueEXT value, void** data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetVariantValueEXT, void**, void>)funcTable[23])(id, value, data);
@@ -780,13 +780,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void GetVariantPointervEXT(uint id, GLGetVariantValueEXT value, void** data)
+		public void GetVariantPointervEXT(uint id, GLGetVariantValueEXT value, void** data)
 		{
 			GetVariantPointervEXTNative(id, value, data);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InsertComponentEXTNative(uint res, uint src, uint num)
+		internal void InsertComponentEXTNative(uint res, uint src, uint num)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[24])(res, src, num);
@@ -799,13 +799,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void InsertComponentEXT(uint res, uint src, uint num)
+		public void InsertComponentEXT(uint res, uint src, uint num)
 		{
 			InsertComponentEXTNative(res, src, num);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsVariantEnabledEXTNative(uint id, GLVariantCapEXT cap)
+		internal byte IsVariantEnabledEXTNative(uint id, GLVariantCapEXT cap)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLVariantCapEXT, byte>)funcTable[25])(id, cap);
@@ -818,14 +818,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static bool IsVariantEnabledEXT(uint id, GLVariantCapEXT cap)
+		public bool IsVariantEnabledEXT(uint id, GLVariantCapEXT cap)
 		{
 			byte ret = IsVariantEnabledEXTNative(id, cap);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SetInvariantEXTNative(uint id, GLScalarType type, void* addr)
+		internal void SetInvariantEXTNative(uint id, GLScalarType type, void* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLScalarType, void*, void>)funcTable[26])(id, type, addr);
@@ -838,7 +838,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SetInvariantEXT(uint id, GLScalarType type, void* addr)
+		public void SetInvariantEXT(uint id, GLScalarType type, void* addr)
 		{
 			SetInvariantEXTNative(id, type, addr);
 		}
@@ -847,7 +847,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SetInvariantEXT(uint id, GLScalarType type, nint addr)
+		public void SetInvariantEXT(uint id, GLScalarType type, nint addr)
 		{
 			SetInvariantEXTNative(id, type, (void*)addr);
 		}
@@ -856,7 +856,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SetInvariantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
+		public void SetInvariantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
 		{
 			fixed (TAddr* paddr0 = addr)
 			{
@@ -865,7 +865,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SetLocalConstantEXTNative(uint id, GLScalarType type, void* addr)
+		internal void SetLocalConstantEXTNative(uint id, GLScalarType type, void* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLScalarType, void*, void>)funcTable[27])(id, type, addr);
@@ -878,7 +878,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SetLocalConstantEXT(uint id, GLScalarType type, void* addr)
+		public void SetLocalConstantEXT(uint id, GLScalarType type, void* addr)
 		{
 			SetLocalConstantEXTNative(id, type, addr);
 		}
@@ -887,7 +887,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SetLocalConstantEXT(uint id, GLScalarType type, nint addr)
+		public void SetLocalConstantEXT(uint id, GLScalarType type, nint addr)
 		{
 			SetLocalConstantEXTNative(id, type, (void*)addr);
 		}
@@ -896,7 +896,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SetLocalConstantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
+		public void SetLocalConstantEXT<TAddr>(uint id, GLScalarType type, Span<TAddr> addr) where TAddr : unmanaged
 		{
 			fixed (TAddr* paddr0 = addr)
 			{
@@ -905,7 +905,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderOp1EXTNative(GLVertexShaderOpEXT op, uint res, uint arg1)
+		internal void ShaderOp1EXTNative(GLVertexShaderOpEXT op, uint res, uint arg1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexShaderOpEXT, uint, uint, void>)funcTable[28])(op, res, arg1);
@@ -918,13 +918,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void ShaderOp1EXT(GLVertexShaderOpEXT op, uint res, uint arg1)
+		public void ShaderOp1EXT(GLVertexShaderOpEXT op, uint res, uint arg1)
 		{
 			ShaderOp1EXTNative(op, res, arg1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderOp2EXTNative(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2)
+		internal void ShaderOp2EXTNative(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexShaderOpEXT, uint, uint, uint, void>)funcTable[29])(op, res, arg1, arg2);
@@ -937,13 +937,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void ShaderOp2EXT(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2)
+		public void ShaderOp2EXT(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2)
 		{
 			ShaderOp2EXTNative(op, res, arg1, arg2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderOp3EXTNative(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2, uint arg3)
+		internal void ShaderOp3EXTNative(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2, uint arg3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexShaderOpEXT, uint, uint, uint, uint, void>)funcTable[30])(op, res, arg1, arg2, arg3);
@@ -956,13 +956,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void ShaderOp3EXT(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2, uint arg3)
+		public void ShaderOp3EXT(GLVertexShaderOpEXT op, uint res, uint arg1, uint arg2, uint arg3)
 		{
 			ShaderOp3EXTNative(op, res, arg1, arg2, arg3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SwizzleEXTNative(uint res, uint input, GLVertexShaderCoordOutEXT outX, GLVertexShaderCoordOutEXT outY, GLVertexShaderCoordOutEXT outZ, GLVertexShaderCoordOutEXT outW)
+		internal void SwizzleEXTNative(uint res, uint input, GLVertexShaderCoordOutEXT outX, GLVertexShaderCoordOutEXT outY, GLVertexShaderCoordOutEXT outZ, GLVertexShaderCoordOutEXT outW)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexShaderCoordOutEXT, GLVertexShaderCoordOutEXT, GLVertexShaderCoordOutEXT, GLVertexShaderCoordOutEXT, void>)funcTable[31])(res, input, outX, outY, outZ, outW);
@@ -975,13 +975,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void SwizzleEXT(uint res, uint input, GLVertexShaderCoordOutEXT outX, GLVertexShaderCoordOutEXT outY, GLVertexShaderCoordOutEXT outZ, GLVertexShaderCoordOutEXT outW)
+		public void SwizzleEXT(uint res, uint input, GLVertexShaderCoordOutEXT outX, GLVertexShaderCoordOutEXT outY, GLVertexShaderCoordOutEXT outZ, GLVertexShaderCoordOutEXT outW)
 		{
 			SwizzleEXTNative(res, input, outX, outY, outZ, outW);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantPointerEXTNative(uint id, GLScalarType type, uint stride, void* addr)
+		internal void VariantPointerEXTNative(uint id, GLScalarType type, uint stride, void* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLScalarType, uint, void*, void>)funcTable[32])(id, type, stride, addr);
@@ -994,7 +994,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantPointerEXT(uint id, GLScalarType type, uint stride, void* addr)
+		public void VariantPointerEXT(uint id, GLScalarType type, uint stride, void* addr)
 		{
 			VariantPointerEXTNative(id, type, stride, addr);
 		}
@@ -1003,7 +1003,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantPointerEXT(uint id, GLScalarType type, uint stride, nint addr)
+		public void VariantPointerEXT(uint id, GLScalarType type, uint stride, nint addr)
 		{
 			VariantPointerEXTNative(id, type, stride, (void*)addr);
 		}
@@ -1012,7 +1012,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantPointerEXT<TAddr>(uint id, GLScalarType type, uint stride, Span<TAddr> addr) where TAddr : unmanaged
+		public void VariantPointerEXT<TAddr>(uint id, GLScalarType type, uint stride, Span<TAddr> addr) where TAddr : unmanaged
 		{
 			fixed (TAddr* paddr0 = addr)
 			{
@@ -1021,7 +1021,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantbvEXTNative(uint id, sbyte* addr)
+		internal void VariantbvEXTNative(uint id, sbyte* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[33])(id, addr);
@@ -1034,7 +1034,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantbvEXT(uint id, sbyte* addr)
+		public void VariantbvEXT(uint id, sbyte* addr)
 		{
 			VariantbvEXTNative(id, addr);
 		}
@@ -1043,7 +1043,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantbvEXT(uint id, Span<sbyte> addr)
+		public void VariantbvEXT(uint id, Span<sbyte> addr)
 		{
 			fixed (sbyte* paddr0 = addr)
 			{
@@ -1055,7 +1055,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantbvEXT(uint id, ref sbyte addr)
+		public void VariantbvEXT(uint id, ref sbyte addr)
 		{
 			fixed (sbyte* paddr0 = &addr)
 			{
@@ -1064,7 +1064,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantdvEXTNative(uint id, double* addr)
+		internal void VariantdvEXTNative(uint id, double* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[34])(id, addr);
@@ -1077,7 +1077,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantdvEXT(uint id, double* addr)
+		public void VariantdvEXT(uint id, double* addr)
 		{
 			VariantdvEXTNative(id, addr);
 		}
@@ -1086,7 +1086,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantdvEXT(uint id, Span<double> addr)
+		public void VariantdvEXT(uint id, Span<double> addr)
 		{
 			fixed (double* paddr0 = addr)
 			{
@@ -1098,7 +1098,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantdvEXT(uint id, ref double addr)
+		public void VariantdvEXT(uint id, ref double addr)
 		{
 			fixed (double* paddr0 = &addr)
 			{
@@ -1107,7 +1107,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantfvEXTNative(uint id, float* addr)
+		internal void VariantfvEXTNative(uint id, float* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[35])(id, addr);
@@ -1120,7 +1120,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantfvEXT(uint id, float* addr)
+		public void VariantfvEXT(uint id, float* addr)
 		{
 			VariantfvEXTNative(id, addr);
 		}
@@ -1129,7 +1129,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantfvEXT(uint id, Span<float> addr)
+		public void VariantfvEXT(uint id, Span<float> addr)
 		{
 			fixed (float* paddr0 = addr)
 			{
@@ -1141,7 +1141,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantfvEXT(uint id, ref float addr)
+		public void VariantfvEXT(uint id, ref float addr)
 		{
 			fixed (float* paddr0 = &addr)
 			{
@@ -1150,7 +1150,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantivEXTNative(uint id, int* addr)
+		internal void VariantivEXTNative(uint id, int* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[36])(id, addr);
@@ -1163,7 +1163,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantivEXT(uint id, int* addr)
+		public void VariantivEXT(uint id, int* addr)
 		{
 			VariantivEXTNative(id, addr);
 		}
@@ -1172,7 +1172,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantivEXT(uint id, Span<int> addr)
+		public void VariantivEXT(uint id, Span<int> addr)
 		{
 			fixed (int* paddr0 = addr)
 			{
@@ -1184,7 +1184,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantivEXT(uint id, ref int addr)
+		public void VariantivEXT(uint id, ref int addr)
 		{
 			fixed (int* paddr0 = &addr)
 			{
@@ -1193,7 +1193,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantsvEXTNative(uint id, short* addr)
+		internal void VariantsvEXTNative(uint id, short* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[37])(id, addr);
@@ -1206,7 +1206,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantsvEXT(uint id, short* addr)
+		public void VariantsvEXT(uint id, short* addr)
 		{
 			VariantsvEXTNative(id, addr);
 		}
@@ -1215,7 +1215,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantsvEXT(uint id, Span<short> addr)
+		public void VariantsvEXT(uint id, Span<short> addr)
 		{
 			fixed (short* paddr0 = addr)
 			{
@@ -1227,7 +1227,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantsvEXT(uint id, ref short addr)
+		public void VariantsvEXT(uint id, ref short addr)
 		{
 			fixed (short* paddr0 = &addr)
 			{
@@ -1236,7 +1236,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantubvEXTNative(uint id, byte* addr)
+		internal void VariantubvEXTNative(uint id, byte* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[38])(id, addr);
@@ -1249,7 +1249,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantubvEXT(uint id, byte* addr)
+		public void VariantubvEXT(uint id, byte* addr)
 		{
 			VariantubvEXTNative(id, addr);
 		}
@@ -1258,7 +1258,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantubvEXT(uint id, string addr)
+		public void VariantubvEXT(uint id, string addr)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -1288,7 +1288,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantubvEXT(uint id, Span<byte> addr)
+		public void VariantubvEXT(uint id, Span<byte> addr)
 		{
 			fixed (byte* paddr0 = addr)
 			{
@@ -1300,7 +1300,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantubvEXT(uint id, ref byte addr)
+		public void VariantubvEXT(uint id, ref byte addr)
 		{
 			fixed (byte* paddr0 = &addr)
 			{
@@ -1309,7 +1309,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantuivEXTNative(uint id, uint* addr)
+		internal void VariantuivEXTNative(uint id, uint* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[39])(id, addr);
@@ -1322,7 +1322,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantuivEXT(uint id, uint* addr)
+		public void VariantuivEXT(uint id, uint* addr)
 		{
 			VariantuivEXTNative(id, addr);
 		}
@@ -1331,7 +1331,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantuivEXT(uint id, Span<uint> addr)
+		public void VariantuivEXT(uint id, Span<uint> addr)
 		{
 			fixed (uint* paddr0 = addr)
 			{
@@ -1343,7 +1343,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantuivEXT(uint id, ref uint addr)
+		public void VariantuivEXT(uint id, ref uint addr)
 		{
 			fixed (uint* paddr0 = &addr)
 			{
@@ -1352,7 +1352,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VariantusvEXTNative(uint id, ushort* addr)
+		internal void VariantusvEXTNative(uint id, ushort* addr)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[40])(id, addr);
@@ -1365,7 +1365,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantusvEXT(uint id, ushort* addr)
+		public void VariantusvEXT(uint id, ushort* addr)
 		{
 			VariantusvEXTNative(id, addr);
 		}
@@ -1374,7 +1374,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantusvEXT(uint id, Span<ushort> addr)
+		public void VariantusvEXT(uint id, Span<ushort> addr)
 		{
 			fixed (ushort* paddr0 = addr)
 			{
@@ -1386,7 +1386,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void VariantusvEXT(uint id, ref ushort addr)
+		public void VariantusvEXT(uint id, ref ushort addr)
 		{
 			fixed (ushort* paddr0 = &addr)
 			{
@@ -1395,7 +1395,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WriteMaskEXTNative(uint res, uint input, GLVertexShaderWriteMaskEXT outX, GLVertexShaderWriteMaskEXT outY, GLVertexShaderWriteMaskEXT outZ, GLVertexShaderWriteMaskEXT outW)
+		internal void WriteMaskEXTNative(uint res, uint input, GLVertexShaderWriteMaskEXT outX, GLVertexShaderWriteMaskEXT outY, GLVertexShaderWriteMaskEXT outZ, GLVertexShaderWriteMaskEXT outW)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexShaderWriteMaskEXT, GLVertexShaderWriteMaskEXT, GLVertexShaderWriteMaskEXT, GLVertexShaderWriteMaskEXT, void>)funcTable[41])(res, input, outX, outY, outZ, outW);
@@ -1408,7 +1408,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_shader</remarks>
-		public static void WriteMaskEXT(uint res, uint input, GLVertexShaderWriteMaskEXT outX, GLVertexShaderWriteMaskEXT outY, GLVertexShaderWriteMaskEXT outZ, GLVertexShaderWriteMaskEXT outW)
+		public void WriteMaskEXT(uint res, uint input, GLVertexShaderWriteMaskEXT outX, GLVertexShaderWriteMaskEXT outY, GLVertexShaderWriteMaskEXT outZ, GLVertexShaderWriteMaskEXT outW)
 		{
 			WriteMaskEXTNative(res, input, outX, outY, outZ, outW);
 		}

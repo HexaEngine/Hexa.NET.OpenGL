@@ -17,9 +17,7 @@ if (window.IsNull)
     return;
 }
 
-GLFW.MakeContextCurrent(window);
-
-GL.InitApi(new BindingsContext());
+GL GL = new(new GLFWGLContext(window));
 
 uint vertexArrayObject;
 uint vertexBufferObject;
@@ -151,8 +149,19 @@ void CheckProgramLinking(uint program)
     }
 }
 
-internal unsafe class BindingsContext : INativeContext
+internal unsafe class GLFWGLContext : IGLContext
 {
+    private GLFWwindowPtr window;
+
+    public GLFWGLContext(GLFWwindowPtr window)
+    {
+        this.window = window;
+    }
+
+    public nint Handle { get; }
+
+    public bool IsCurrent { get; }
+
     public void Dispose()
     {
     }
@@ -165,6 +174,21 @@ internal unsafe class BindingsContext : INativeContext
     public bool IsExtensionSupported(string extensionName)
     {
         return GLFW.ExtensionSupported(extensionName) != 0;
+    }
+
+    public void MakeCurrent()
+    {
+        GLFW.MakeContextCurrent(window);
+    }
+
+    public void SwapBuffers()
+    {
+        GLFW.SwapBuffers(window);
+    }
+
+    public void SwapInterval(int interval)
+    {
+        GLFW.SwapInterval(interval);
     }
 
     public bool TryGetProcAddress(string procName, out nint procAddress)

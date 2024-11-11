@@ -13,20 +13,18 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL
 {
-	public unsafe partial class GL
+	public unsafe partial class GL : IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
+		internal readonly FunctionTable funcTable;
+		internal readonly IGLContext context;
 
 		/// <summary>
 		/// Initializes the function table, call before you access any function.
 		/// </summary>
-		public static void InitApi(INativeContext context)
+		public GL(IGLContext context)
 		{
-			if (funcTable != null) return;
-			GLBase.NativeContext = context;
+			this.context = context;
+			MakeCurrent();
 			funcTable = new FunctionTable(context, 657);
 			funcTable.Load(0, "glActiveShaderProgram");
 			funcTable.Load(1, "glActiveTexture");
@@ -687,12 +685,47 @@ namespace Hexa.NET.OpenGL
 			funcTable.Load(656, "glWaitSync");
 		}
 
-		public static void FreeApi()
+		public void MakeCurrent()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
-			GLBase.NativeContext = null;
+			context.MakeCurrent();
+		}
+
+		public void SwapBuffers()
+		{
+			context.SwapBuffers();
+		}
+
+		public void SwapInterval(int interval)
+		{
+			context.SwapInterval(interval);
+		}
+
+		public bool TryGetExtension<T>(out T extension) where T : GLExtension, new()
+		{
+			extension = new T();
+			if (extension.IsSupported(context))
+			{
+				extension.Init(context);
+				return true;
+			}
+			return false;
+		}
+
+		public T GetExtension<T>() where T : GLExtension, new()
+		{
+			T extension = new T();
+			if (extension.IsSupported(context))
+			{
+				extension.Init(context);
+				return extension;
+			}
+			throw new NotSupportedException($"GLExtension {typeof(T)} is not supported.");
+		}
+
+		public void Dispose()
+		{
+			context.Dispose();
+			funcTable.Dispose();
 		}
 	}
 }

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVDrawInstanced
+	public unsafe partial class GLNVDrawInstanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysInstancedNVNative(GLPrimitiveType mode, int first, int count, int primcount)
+		internal void DrawArraysInstancedNVNative(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, int, void>)funcTable[0])(mode, first, count, primcount);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
-		public static void DrawArraysInstancedNV(GLPrimitiveType mode, int first, int count, int primcount)
+		public void DrawArraysInstancedNV(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			DrawArraysInstancedNVNative(mode, first, count, primcount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedNVNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		internal void DrawElementsInstancedNVNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, void>)funcTable[1])(mode, count, type, indices, primcount);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
-		public static void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		public void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedNVNative(mode, count, type, indices, primcount);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
-		public static void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		public void DrawElementsInstancedNV(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedNVNative(mode, count, type, (void*)indices, primcount);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_instanced</remarks>
-		public static void DrawElementsInstancedNV<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		public void DrawElementsInstancedNV<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{

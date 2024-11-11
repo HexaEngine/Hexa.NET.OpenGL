@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVPathRendering
+	public unsafe partial class GLNVPathRendering
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyPathNVNative(uint resultPath, uint srcPath)
+		internal void CopyPathNVNative(uint resultPath, uint srcPath)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(resultPath, srcPath);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CopyPathNV(uint resultPath, uint srcPath)
+		public void CopyPathNV(uint resultPath, uint srcPath)
 		{
 			CopyPathNVNative(resultPath, srcPath);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverFillPathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		internal void CoverFillPathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLPathElementType, void*, uint, GLInstancedPathCoverMode, GLPathTransformType, float*, void>)funcTable[1])(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverFillPathInstancedNVNative(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverFillPathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, coverMode, transformType, transformValues);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
+		public void CoverFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
+		public void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -91,7 +91,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
+		public void CoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -100,7 +100,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverFillPathNVNative(uint path, GLPathCoverMode coverMode)
+		internal void CoverFillPathNVNative(uint path, GLPathCoverMode coverMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathCoverMode, void>)funcTable[2])(path, coverMode);
@@ -113,13 +113,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverFillPathNV(uint path, GLPathCoverMode coverMode)
+		public void CoverFillPathNV(uint path, GLPathCoverMode coverMode)
 		{
 			CoverFillPathNVNative(path, coverMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverStrokePathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		internal void CoverStrokePathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLPathElementType, void*, uint, GLInstancedPathCoverMode, GLPathTransformType, float*, void>)funcTable[3])(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues);
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverStrokePathInstancedNVNative(numPaths, pathNameType, paths, pathBase, coverMode, transformType, transformValues);
 		}
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			CoverStrokePathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, coverMode, transformType, transformValues);
 		}
@@ -150,7 +150,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
+		public void CoverStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -162,7 +162,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
+		public void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
+		public void CoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverStrokePathNVNative(uint path, GLPathCoverMode coverMode)
+		internal void CoverStrokePathNVNative(uint path, GLPathCoverMode coverMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathCoverMode, void>)funcTable[4])(path, coverMode);
@@ -196,13 +196,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void CoverStrokePathNV(uint path, GLPathCoverMode coverMode)
+		public void CoverStrokePathNV(uint path, GLPathCoverMode coverMode)
 		{
 			CoverStrokePathNVNative(path, coverMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeletePathsNVNative(uint path, int range)
+		internal void DeletePathsNVNative(uint path, int range)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[5])(path, range);
@@ -215,13 +215,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void DeletePathsNV(uint path, int range)
+		public void DeletePathsNV(uint path, int range)
 		{
 			DeletePathsNVNative(path, range);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GenPathsNVNative(int range)
+		internal uint GenPathsNVNative(int range)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int, uint>)funcTable[6])(range);
@@ -234,14 +234,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static uint GenPathsNV(int range)
+		public uint GenPathsNV(int range)
 		{
 			uint ret = GenPathsNVNative(range);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathColorGenfvNVNative(GLPathColor color, GLPathGenMode pname, float* value)
+		internal void GetPathColorGenfvNVNative(GLPathColor color, GLPathGenMode pname, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathColor, GLPathGenMode, float*, void>)funcTable[7])(color, pname, value);
@@ -254,7 +254,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, float* value)
+		public void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, float* value)
 		{
 			GetPathColorGenfvNVNative(color, pname, value);
 		}
@@ -263,7 +263,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, Span<float> value)
+		public void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -275,7 +275,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, ref float value)
+		public void GetPathColorGenfvNV(GLPathColor color, GLPathGenMode pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -284,7 +284,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathColorGenivNVNative(GLPathColor color, GLPathGenMode pname, int* value)
+		internal void GetPathColorGenivNVNative(GLPathColor color, GLPathGenMode pname, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathColor, GLPathGenMode, int*, void>)funcTable[8])(color, pname, value);
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, int* value)
+		public void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, int* value)
 		{
 			GetPathColorGenivNVNative(color, pname, value);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, Span<int> value)
+		public void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -318,7 +318,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, ref int value)
+		public void GetPathColorGenivNV(GLPathColor color, GLPathGenMode pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathCommandsNVNative(uint path, GLPathCoordType commands)
+		internal void GetPathCommandsNVNative(uint path, GLPathCoordType commands)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathCoordType, void>)funcTable[9])(path, commands);
@@ -340,13 +340,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathCommandsNV(uint path, GLPathCoordType commands)
+		public void GetPathCommandsNV(uint path, GLPathCoordType commands)
 		{
 			GetPathCommandsNVNative(path, commands);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathCoordsNVNative(uint path, float* coords)
+		internal void GetPathCoordsNVNative(uint path, float* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[10])(path, coords);
@@ -359,7 +359,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathCoordsNV(uint path, float* coords)
+		public void GetPathCoordsNV(uint path, float* coords)
 		{
 			GetPathCoordsNVNative(path, coords);
 		}
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathCoordsNV(uint path, Span<float> coords)
+		public void GetPathCoordsNV(uint path, Span<float> coords)
 		{
 			fixed (float* pcoords0 = coords)
 			{
@@ -380,7 +380,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathCoordsNV(uint path, ref float coords)
+		public void GetPathCoordsNV(uint path, ref float coords)
 		{
 			fixed (float* pcoords0 = &coords)
 			{
@@ -389,7 +389,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathDashArrayNVNative(uint path, float* dashArray)
+		internal void GetPathDashArrayNVNative(uint path, float* dashArray)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[11])(path, dashArray);
@@ -402,7 +402,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathDashArrayNV(uint path, float* dashArray)
+		public void GetPathDashArrayNV(uint path, float* dashArray)
 		{
 			GetPathDashArrayNVNative(path, dashArray);
 		}
@@ -411,7 +411,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathDashArrayNV(uint path, Span<float> dashArray)
+		public void GetPathDashArrayNV(uint path, Span<float> dashArray)
 		{
 			fixed (float* pdashArray0 = dashArray)
 			{
@@ -423,7 +423,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathDashArrayNV(uint path, ref float dashArray)
+		public void GetPathDashArrayNV(uint path, ref float dashArray)
 		{
 			fixed (float* pdashArray0 = &dashArray)
 			{
@@ -432,7 +432,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static float GetPathLengthNVNative(uint path, int startSegment, int numSegments)
+		internal float GetPathLengthNVNative(uint path, int startSegment, int numSegments)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, int, float>)funcTable[12])(path, startSegment, numSegments);
@@ -445,14 +445,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static float GetPathLengthNV(uint path, int startSegment, int numSegments)
+		public float GetPathLengthNV(uint path, int startSegment, int numSegments)
 		{
 			float ret = GetPathLengthNVNative(path, startSegment, numSegments);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathMetricRangeNVNative(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, float* metrics)
+		internal void GetPathMetricRangeNVNative(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, float* metrics)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathMetricMask, uint, int, int, float*, void>)funcTable[13])(metricQueryMask, firstPathName, numPaths, stride, metrics);
@@ -465,7 +465,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, float* metrics)
+		public void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, float* metrics)
 		{
 			GetPathMetricRangeNVNative(metricQueryMask, firstPathName, numPaths, stride, metrics);
 		}
@@ -474,7 +474,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, Span<float> metrics)
+		public void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, Span<float> metrics)
 		{
 			fixed (float* pmetrics0 = metrics)
 			{
@@ -486,7 +486,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, ref float metrics)
+		public void GetPathMetricRangeNV(GLPathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, ref float metrics)
 		{
 			fixed (float* pmetrics0 = &metrics)
 			{
@@ -495,7 +495,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathMetricsNVNative(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, float* metrics)
+		internal void GetPathMetricsNVNative(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, float* metrics)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathMetricMask, int, GLPathElementType, void*, uint, int, float*, void>)funcTable[14])(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics);
@@ -508,7 +508,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, float* metrics)
+		public void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, float* metrics)
 		{
 			GetPathMetricsNVNative(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, metrics);
 		}
@@ -517,7 +517,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int stride, float* metrics)
+		public void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int stride, float* metrics)
 		{
 			GetPathMetricsNVNative(metricQueryMask, numPaths, pathNameType, (void*)paths, pathBase, stride, metrics);
 		}
@@ -526,7 +526,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricsNV<TPaths>(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int stride, float* metrics) where TPaths : unmanaged
+		public void GetPathMetricsNV<TPaths>(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int stride, float* metrics) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -538,7 +538,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, Span<float> metrics)
+		public void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, Span<float> metrics)
 		{
 			fixed (float* pmetrics0 = metrics)
 			{
@@ -550,7 +550,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, ref float metrics)
+		public void GetPathMetricsNV(GLPathMetricMask metricQueryMask, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int stride, ref float metrics)
 		{
 			fixed (float* pmetrics0 = &metrics)
 			{
@@ -559,7 +559,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathParameterfvNVNative(uint path, GLPathParameter pname, float* value)
+		internal void GetPathParameterfvNVNative(uint path, GLPathParameter pname, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathParameter, float*, void>)funcTable[15])(path, pname, value);
@@ -572,7 +572,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathParameterfvNV(uint path, GLPathParameter pname, float* value)
+		public void GetPathParameterfvNV(uint path, GLPathParameter pname, float* value)
 		{
 			GetPathParameterfvNVNative(path, pname, value);
 		}
@@ -581,7 +581,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathParameterfvNV(uint path, GLPathParameter pname, Span<float> value)
+		public void GetPathParameterfvNV(uint path, GLPathParameter pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -593,7 +593,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathParameterfvNV(uint path, GLPathParameter pname, ref float value)
+		public void GetPathParameterfvNV(uint path, GLPathParameter pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -602,7 +602,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathParameterivNVNative(uint path, GLPathParameter pname, int* value)
+		internal void GetPathParameterivNVNative(uint path, GLPathParameter pname, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathParameter, int*, void>)funcTable[16])(path, pname, value);
@@ -615,7 +615,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathParameterivNV(uint path, GLPathParameter pname, int* value)
+		public void GetPathParameterivNV(uint path, GLPathParameter pname, int* value)
 		{
 			GetPathParameterivNVNative(path, pname, value);
 		}
@@ -624,7 +624,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathParameterivNV(uint path, GLPathParameter pname, Span<int> value)
+		public void GetPathParameterivNV(uint path, GLPathParameter pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -636,7 +636,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathParameterivNV(uint path, GLPathParameter pname, ref int value)
+		public void GetPathParameterivNV(uint path, GLPathParameter pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -645,7 +645,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathSpacingNVNative(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
+		internal void GetPathSpacingNVNative(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathListMode, int, GLPathElementType, void*, uint, float, float, GLPathTransformType, float*, void>)funcTable[17])(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
@@ -658,7 +658,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
+		public void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
 		{
 			GetPathSpacingNVNative(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
 		}
@@ -667,7 +667,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
+		public void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing)
 		{
 			GetPathSpacingNVNative(pathListMode, numPaths, pathNameType, (void*)paths, pathBase, advanceScale, kerningScale, transformType, returnedSpacing);
 		}
@@ -676,7 +676,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathSpacingNV<TPaths>(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing) where TPaths : unmanaged
+		public void GetPathSpacingNV<TPaths>(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, float* returnedSpacing) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -688,7 +688,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, Span<float> returnedSpacing)
+		public void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, Span<float> returnedSpacing)
 		{
 			fixed (float* preturnedSpacing0 = returnedSpacing)
 			{
@@ -700,7 +700,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, ref float returnedSpacing)
+		public void GetPathSpacingNV(GLPathListMode pathListMode, int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, GLPathTransformType transformType, ref float returnedSpacing)
 		{
 			fixed (float* preturnedSpacing0 = &returnedSpacing)
 			{
@@ -709,7 +709,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathTexGenfvNVNative(GLTextureUnit texCoordSet, GLPathGenMode pname, float* value)
+		internal void GetPathTexGenfvNVNative(GLTextureUnit texCoordSet, GLPathGenMode pname, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLPathGenMode, float*, void>)funcTable[18])(texCoordSet, pname, value);
@@ -722,7 +722,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, float* value)
+		public void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, float* value)
 		{
 			GetPathTexGenfvNVNative(texCoordSet, pname, value);
 		}
@@ -731,7 +731,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, Span<float> value)
+		public void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -743,7 +743,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, ref float value)
+		public void GetPathTexGenfvNV(GLTextureUnit texCoordSet, GLPathGenMode pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -752,7 +752,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPathTexGenivNVNative(GLTextureUnit texCoordSet, GLPathGenMode pname, int* value)
+		internal void GetPathTexGenivNVNative(GLTextureUnit texCoordSet, GLPathGenMode pname, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLPathGenMode, int*, void>)funcTable[19])(texCoordSet, pname, value);
@@ -765,7 +765,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, int* value)
+		public void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, int* value)
 		{
 			GetPathTexGenivNVNative(texCoordSet, pname, value);
 		}
@@ -774,7 +774,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, Span<int> value)
+		public void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -786,7 +786,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, ref int value)
+		public void GetPathTexGenivNV(GLTextureUnit texCoordSet, GLPathGenMode pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -795,7 +795,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramResourcefvNVNative(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, float* @params)
+		internal void GetProgramResourcefvNVNative(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramInterface, uint, int, GLEnum*, int, int*, float*, void>)funcTable[20])(program, programInterface, index, propCount, props, count, length, @params);
@@ -808,7 +808,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, float* @params)
 		{
 			GetProgramResourcefvNVNative(program, programInterface, index, propCount, props, count, length, @params);
 		}
@@ -817,7 +817,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, int* length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, int* length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = props)
 			{
@@ -829,7 +829,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
 			{
@@ -841,7 +841,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, Span<int> length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, Span<int> length, float* @params)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -853,7 +853,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, ref int length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, ref int length, float* @params)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -865,7 +865,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, Span<int> length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, Span<int> length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = props)
 			{
@@ -880,7 +880,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, ref int length, float* @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, ref int length, float* @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
 			{
@@ -895,7 +895,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, Span<float> @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -907,7 +907,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, ref float @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, int* length, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -919,7 +919,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, int* length, Span<float> @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, int* length, Span<float> @params)
 		{
 			fixed (GLEnum* pprops0 = props)
 			{
@@ -934,7 +934,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, ref float @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, int* length, ref float @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
 			{
@@ -949,7 +949,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, Span<int> length, Span<float> @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, Span<int> length, Span<float> @params)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -964,7 +964,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, ref int length, ref float @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, GLEnum* props, int count, ref int length, ref float @params)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -979,7 +979,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, Span<int> length, Span<float> @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, Span<GLEnum> props, int count, Span<int> length, Span<float> @params)
 		{
 			fixed (GLEnum* pprops0 = props)
 			{
@@ -997,7 +997,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, ref int length, ref float @params)
+		public void GetProgramResourcefvNV(uint program, GLProgramInterface programInterface, uint index, int propCount, ref GLEnum props, int count, ref int length, ref float @params)
 		{
 			fixed (GLEnum* pprops0 = &props)
 			{
@@ -1012,7 +1012,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void InterpolatePathsNVNative(uint resultPath, uint pathA, uint pathB, float weight)
+		internal void InterpolatePathsNVNative(uint resultPath, uint pathA, uint pathB, float weight)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, float, void>)funcTable[21])(resultPath, pathA, pathB, weight);
@@ -1025,13 +1025,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void InterpolatePathsNV(uint resultPath, uint pathA, uint pathB, float weight)
+		public void InterpolatePathsNV(uint resultPath, uint pathA, uint pathB, float weight)
 		{
 			InterpolatePathsNVNative(resultPath, pathA, pathB, weight);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsPathNVNative(uint path)
+		internal byte IsPathNVNative(uint path)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[22])(path);
@@ -1044,14 +1044,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool IsPathNV(uint path)
+		public bool IsPathNV(uint path)
 		{
 			byte ret = IsPathNVNative(path);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsPointInFillPathNVNative(uint path, uint mask, float x, float y)
+		internal byte IsPointInFillPathNVNative(uint path, uint mask, float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, uint, float, float, byte>)funcTable[23])(path, mask, x, y);
@@ -1064,14 +1064,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool IsPointInFillPathNV(uint path, uint mask, float x, float y)
+		public bool IsPointInFillPathNV(uint path, uint mask, float x, float y)
 		{
 			byte ret = IsPointInFillPathNVNative(path, mask, x, y);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsPointInStrokePathNVNative(uint path, float x, float y)
+		internal byte IsPointInStrokePathNVNative(uint path, float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, float, float, byte>)funcTable[24])(path, x, y);
@@ -1084,14 +1084,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool IsPointInStrokePathNV(uint path, float x, float y)
+		public bool IsPointInStrokePathNV(uint path, float x, float y)
 		{
 			byte ret = IsPointInStrokePathNVNative(path, x, y);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixFrustumEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		internal void MatrixFrustumEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, double, double, double, void>)funcTable[25])(mode, left, right, bottom, top, zNear, zFar);
@@ -1104,13 +1104,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixFrustumEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		public void MatrixFrustumEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			MatrixFrustumEXTNative(mode, left, right, bottom, top, zNear, zFar);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoad3x2fNVNative(GLEnum matrixMode, float* m)
+		internal void MatrixLoad3x2fNVNative(GLEnum matrixMode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float*, void>)funcTable[26])(matrixMode, m);
@@ -1123,7 +1123,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoad3x2fNV(GLEnum matrixMode, float* m)
+		public void MatrixLoad3x2fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixLoad3x2fNVNative(matrixMode, m);
 		}
@@ -1132,7 +1132,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoad3x2fNV(GLEnum matrixMode, Span<float> m)
+		public void MatrixLoad3x2fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1144,7 +1144,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoad3x2fNV(GLEnum matrixMode, ref float m)
+		public void MatrixLoad3x2fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1153,7 +1153,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoad3x3fNVNative(GLEnum matrixMode, float* m)
+		internal void MatrixLoad3x3fNVNative(GLEnum matrixMode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float*, void>)funcTable[27])(matrixMode, m);
@@ -1166,7 +1166,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoad3x3fNV(GLEnum matrixMode, float* m)
+		public void MatrixLoad3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixLoad3x3fNVNative(matrixMode, m);
 		}
@@ -1175,7 +1175,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoad3x3fNV(GLEnum matrixMode, Span<float> m)
+		public void MatrixLoad3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1187,7 +1187,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoad3x3fNV(GLEnum matrixMode, ref float m)
+		public void MatrixLoad3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1196,7 +1196,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadIdentityEXTNative(GLMatrixMode mode)
+		internal void MatrixLoadIdentityEXTNative(GLMatrixMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, void>)funcTable[28])(mode);
@@ -1209,13 +1209,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadIdentityEXT(GLMatrixMode mode)
+		public void MatrixLoadIdentityEXT(GLMatrixMode mode)
 		{
 			MatrixLoadIdentityEXTNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadTranspose3x3fNVNative(GLEnum matrixMode, float* m)
+		internal void MatrixLoadTranspose3x3fNVNative(GLEnum matrixMode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float*, void>)funcTable[29])(matrixMode, m);
@@ -1228,7 +1228,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, float* m)
+		public void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixLoadTranspose3x3fNVNative(matrixMode, m);
 		}
@@ -1237,7 +1237,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, Span<float> m)
+		public void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1249,7 +1249,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, ref float m)
+		public void MatrixLoadTranspose3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1258,7 +1258,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadTransposedEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixLoadTransposedEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[30])(mode, m);
@@ -1271,7 +1271,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, double* m)
+		public void MatrixLoadTransposedEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixLoadTransposedEXTNative(mode, m);
 		}
@@ -1280,7 +1280,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixLoadTransposedEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -1292,7 +1292,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, ref double m)
+		public void MatrixLoadTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -1301,7 +1301,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadTransposefEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixLoadTransposefEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[31])(mode, m);
@@ -1314,7 +1314,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, float* m)
+		public void MatrixLoadTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadTransposefEXTNative(mode, m);
 		}
@@ -1323,7 +1323,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixLoadTransposefEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1335,7 +1335,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, ref float m)
+		public void MatrixLoadTransposefEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1344,7 +1344,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoaddEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixLoaddEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[32])(mode, m);
@@ -1357,7 +1357,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoaddEXT(GLMatrixMode mode, double* m)
+		public void MatrixLoaddEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixLoaddEXTNative(mode, m);
 		}
@@ -1366,7 +1366,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoaddEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixLoaddEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -1378,7 +1378,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoaddEXT(GLMatrixMode mode, ref double m)
+		public void MatrixLoaddEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -1387,7 +1387,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadfEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixLoadfEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[33])(mode, m);
@@ -1400,7 +1400,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadfEXT(GLMatrixMode mode, float* m)
+		public void MatrixLoadfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadfEXTNative(mode, m);
 		}
@@ -1409,7 +1409,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadfEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixLoadfEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1421,7 +1421,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadfEXT(GLMatrixMode mode, ref float m)
+		public void MatrixLoadfEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1430,7 +1430,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMult3x2fNVNative(GLEnum matrixMode, float* m)
+		internal void MatrixMult3x2fNVNative(GLEnum matrixMode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float*, void>)funcTable[34])(matrixMode, m);
@@ -1443,7 +1443,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMult3x2fNV(GLEnum matrixMode, float* m)
+		public void MatrixMult3x2fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixMult3x2fNVNative(matrixMode, m);
 		}
@@ -1452,7 +1452,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMult3x2fNV(GLEnum matrixMode, Span<float> m)
+		public void MatrixMult3x2fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1464,7 +1464,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMult3x2fNV(GLEnum matrixMode, ref float m)
+		public void MatrixMult3x2fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1473,7 +1473,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMult3x3fNVNative(GLEnum matrixMode, float* m)
+		internal void MatrixMult3x3fNVNative(GLEnum matrixMode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float*, void>)funcTable[35])(matrixMode, m);
@@ -1486,7 +1486,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMult3x3fNV(GLEnum matrixMode, float* m)
+		public void MatrixMult3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixMult3x3fNVNative(matrixMode, m);
 		}
@@ -1495,7 +1495,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMult3x3fNV(GLEnum matrixMode, Span<float> m)
+		public void MatrixMult3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1507,7 +1507,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMult3x3fNV(GLEnum matrixMode, ref float m)
+		public void MatrixMult3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1516,7 +1516,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultTranspose3x3fNVNative(GLEnum matrixMode, float* m)
+		internal void MatrixMultTranspose3x3fNVNative(GLEnum matrixMode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float*, void>)funcTable[36])(matrixMode, m);
@@ -1529,7 +1529,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTranspose3x3fNV(GLEnum matrixMode, float* m)
+		public void MatrixMultTranspose3x3fNV(GLEnum matrixMode, float* m)
 		{
 			MatrixMultTranspose3x3fNVNative(matrixMode, m);
 		}
@@ -1538,7 +1538,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTranspose3x3fNV(GLEnum matrixMode, Span<float> m)
+		public void MatrixMultTranspose3x3fNV(GLEnum matrixMode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1550,7 +1550,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTranspose3x3fNV(GLEnum matrixMode, ref float m)
+		public void MatrixMultTranspose3x3fNV(GLEnum matrixMode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1559,7 +1559,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultTransposedEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixMultTransposedEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[37])(mode, m);
@@ -1572,7 +1572,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposedEXT(GLMatrixMode mode, double* m)
+		public void MatrixMultTransposedEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixMultTransposedEXTNative(mode, m);
 		}
@@ -1581,7 +1581,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposedEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixMultTransposedEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -1593,7 +1593,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposedEXT(GLMatrixMode mode, ref double m)
+		public void MatrixMultTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -1602,7 +1602,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultTransposefEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixMultTransposefEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[38])(mode, m);
@@ -1615,7 +1615,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposefEXT(GLMatrixMode mode, float* m)
+		public void MatrixMultTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultTransposefEXTNative(mode, m);
 		}
@@ -1624,7 +1624,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposefEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixMultTransposefEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1636,7 +1636,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposefEXT(GLMatrixMode mode, ref float m)
+		public void MatrixMultTransposefEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1645,7 +1645,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultdEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixMultdEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[39])(mode, m);
@@ -1658,7 +1658,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultdEXT(GLMatrixMode mode, double* m)
+		public void MatrixMultdEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixMultdEXTNative(mode, m);
 		}
@@ -1667,7 +1667,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultdEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixMultdEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -1679,7 +1679,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultdEXT(GLMatrixMode mode, ref double m)
+		public void MatrixMultdEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -1688,7 +1688,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultfEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixMultfEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[40])(mode, m);
@@ -1701,7 +1701,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultfEXT(GLMatrixMode mode, float* m)
+		public void MatrixMultfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultfEXTNative(mode, m);
 		}
@@ -1710,7 +1710,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultfEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixMultfEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -1722,7 +1722,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultfEXT(GLMatrixMode mode, ref float m)
+		public void MatrixMultfEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -1731,7 +1731,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixOrthoEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		internal void MatrixOrthoEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, double, double, double, void>)funcTable[41])(mode, left, right, bottom, top, zNear, zFar);
@@ -1744,13 +1744,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixOrthoEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		public void MatrixOrthoEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			MatrixOrthoEXTNative(mode, left, right, bottom, top, zNear, zFar);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixPopEXTNative(GLMatrixMode mode)
+		internal void MatrixPopEXTNative(GLMatrixMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, void>)funcTable[42])(mode);
@@ -1763,13 +1763,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixPopEXT(GLMatrixMode mode)
+		public void MatrixPopEXT(GLMatrixMode mode)
 		{
 			MatrixPopEXTNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixPushEXTNative(GLMatrixMode mode)
+		internal void MatrixPushEXTNative(GLMatrixMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, void>)funcTable[43])(mode);
@@ -1782,13 +1782,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixPushEXT(GLMatrixMode mode)
+		public void MatrixPushEXT(GLMatrixMode mode)
 		{
 			MatrixPushEXTNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixRotatedEXTNative(GLMatrixMode mode, double angle, double x, double y, double z)
+		internal void MatrixRotatedEXTNative(GLMatrixMode mode, double angle, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, double, void>)funcTable[44])(mode, angle, x, y, z);
@@ -1801,13 +1801,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixRotatedEXT(GLMatrixMode mode, double angle, double x, double y, double z)
+		public void MatrixRotatedEXT(GLMatrixMode mode, double angle, double x, double y, double z)
 		{
 			MatrixRotatedEXTNative(mode, angle, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixRotatefEXTNative(GLMatrixMode mode, float angle, float x, float y, float z)
+		internal void MatrixRotatefEXTNative(GLMatrixMode mode, float angle, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float, float, float, float, void>)funcTable[45])(mode, angle, x, y, z);
@@ -1820,13 +1820,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixRotatefEXT(GLMatrixMode mode, float angle, float x, float y, float z)
+		public void MatrixRotatefEXT(GLMatrixMode mode, float angle, float x, float y, float z)
 		{
 			MatrixRotatefEXTNative(mode, angle, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixScaledEXTNative(GLMatrixMode mode, double x, double y, double z)
+		internal void MatrixScaledEXTNative(GLMatrixMode mode, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, void>)funcTable[46])(mode, x, y, z);
@@ -1839,13 +1839,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixScaledEXT(GLMatrixMode mode, double x, double y, double z)
+		public void MatrixScaledEXT(GLMatrixMode mode, double x, double y, double z)
 		{
 			MatrixScaledEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixScalefEXTNative(GLMatrixMode mode, float x, float y, float z)
+		internal void MatrixScalefEXTNative(GLMatrixMode mode, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float, float, float, void>)funcTable[47])(mode, x, y, z);
@@ -1858,13 +1858,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixScalefEXT(GLMatrixMode mode, float x, float y, float z)
+		public void MatrixScalefEXT(GLMatrixMode mode, float x, float y, float z)
 		{
 			MatrixScalefEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixTranslatedEXTNative(GLMatrixMode mode, double x, double y, double z)
+		internal void MatrixTranslatedEXTNative(GLMatrixMode mode, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, void>)funcTable[48])(mode, x, y, z);
@@ -1877,13 +1877,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixTranslatedEXT(GLMatrixMode mode, double x, double y, double z)
+		public void MatrixTranslatedEXT(GLMatrixMode mode, double x, double y, double z)
 		{
 			MatrixTranslatedEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixTranslatefEXTNative(GLMatrixMode mode, float x, float y, float z)
+		internal void MatrixTranslatefEXTNative(GLMatrixMode mode, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float, float, float, void>)funcTable[49])(mode, x, y, z);
@@ -1896,13 +1896,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixTranslatefEXT(GLMatrixMode mode, float x, float y, float z)
+		public void MatrixTranslatefEXT(GLMatrixMode mode, float x, float y, float z)
 		{
 			MatrixTranslatefEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathColorGenNVNative(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, float* coeffs)
+		internal void PathColorGenNVNative(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, float* coeffs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathColor, GLPathGenMode, GLPathColorFormat, float*, void>)funcTable[50])(color, genMode, colorFormat, coeffs);
@@ -1915,7 +1915,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, float* coeffs)
+		public void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, float* coeffs)
 		{
 			PathColorGenNVNative(color, genMode, colorFormat, coeffs);
 		}
@@ -1924,7 +1924,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, Span<float> coeffs)
+		public void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, Span<float> coeffs)
 		{
 			fixed (float* pcoeffs0 = coeffs)
 			{
@@ -1936,7 +1936,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, ref float coeffs)
+		public void PathColorGenNV(GLPathColor color, GLPathGenMode genMode, GLPathColorFormat colorFormat, ref float coeffs)
 		{
 			fixed (float* pcoeffs0 = &coeffs)
 			{
@@ -1945,7 +1945,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathCommandsNVNative(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
+		internal void PathCommandsNVNative(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLPathCoordType, int, GLPathCoordType, void*, void>)funcTable[51])(path, numCommands, commands, numCoords, coordType, coords);
@@ -1958,7 +1958,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCommandsNV(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
+		public void PathCommandsNV(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathCommandsNVNative(path, numCommands, commands, numCoords, coordType, coords);
 		}
@@ -1967,7 +1967,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCommandsNV(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, nint coords)
+		public void PathCommandsNV(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathCommandsNVNative(path, numCommands, commands, numCoords, coordType, (void*)coords);
 		}
@@ -1976,7 +1976,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCommandsNV<TCoords>(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
+		public void PathCommandsNV<TCoords>(uint path, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
 			{
@@ -1985,7 +1985,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathCoordsNVNative(uint path, int numCoords, GLPathCoordType coordType, void* coords)
+		internal void PathCoordsNVNative(uint path, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLPathCoordType, void*, void>)funcTable[52])(path, numCoords, coordType, coords);
@@ -1998,7 +1998,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCoordsNV(uint path, int numCoords, GLPathCoordType coordType, void* coords)
+		public void PathCoordsNV(uint path, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathCoordsNVNative(path, numCoords, coordType, coords);
 		}
@@ -2007,7 +2007,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCoordsNV(uint path, int numCoords, GLPathCoordType coordType, nint coords)
+		public void PathCoordsNV(uint path, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathCoordsNVNative(path, numCoords, coordType, (void*)coords);
 		}
@@ -2016,7 +2016,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCoordsNV<TCoords>(uint path, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
+		public void PathCoordsNV<TCoords>(uint path, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
 			{
@@ -2025,7 +2025,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathCoverDepthFuncNVNative(GLDepthFunction func)
+		internal void PathCoverDepthFuncNVNative(GLDepthFunction func)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLDepthFunction, void>)funcTable[53])(func);
@@ -2038,13 +2038,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathCoverDepthFuncNV(GLDepthFunction func)
+		public void PathCoverDepthFuncNV(GLDepthFunction func)
 		{
 			PathCoverDepthFuncNVNative(func);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathDashArrayNVNative(uint path, int dashCount, float* dashArray)
+		internal void PathDashArrayNVNative(uint path, int dashCount, float* dashArray)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[54])(path, dashCount, dashArray);
@@ -2057,7 +2057,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathDashArrayNV(uint path, int dashCount, float* dashArray)
+		public void PathDashArrayNV(uint path, int dashCount, float* dashArray)
 		{
 			PathDashArrayNVNative(path, dashCount, dashArray);
 		}
@@ -2066,7 +2066,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathDashArrayNV(uint path, int dashCount, Span<float> dashArray)
+		public void PathDashArrayNV(uint path, int dashCount, Span<float> dashArray)
 		{
 			fixed (float* pdashArray0 = dashArray)
 			{
@@ -2078,7 +2078,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathDashArrayNV(uint path, int dashCount, ref float dashArray)
+		public void PathDashArrayNV(uint path, int dashCount, ref float dashArray)
 		{
 			fixed (float* pdashArray0 = &dashArray)
 			{
@@ -2087,7 +2087,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathFogGenNVNative(GLPathGenMode genMode)
+		internal void PathFogGenNVNative(GLPathGenMode genMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathGenMode, void>)funcTable[55])(genMode);
@@ -2100,13 +2100,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathFogGenNV(GLPathGenMode genMode)
+		public void PathFogGenNV(GLPathGenMode genMode)
 		{
 			PathFogGenNVNative(genMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum PathGlyphIndexArrayNVNative(uint firstPathName, GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
+		internal GLEnum PathGlyphIndexArrayNVNative(uint firstPathName, GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLEnum, void*, GLPathFontStyle, uint, int, uint, float, GLEnum>)funcTable[56])(firstPathName, fontTarget, fontName, fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
@@ -2119,7 +2119,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
+		public GLEnum PathGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathGlyphIndexArrayNVNative(firstPathName, fontTarget, fontName, fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
@@ -2129,7 +2129,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
+		public GLEnum PathGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathGlyphIndexArrayNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
@@ -2139,7 +2139,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexArrayNV<TFontName>(uint firstPathName, GLEnum fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
+		public GLEnum PathGlyphIndexArrayNV<TFontName>(uint firstPathName, GLEnum fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
 			{
@@ -2149,7 +2149,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum PathGlyphIndexRangeNVNative(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
+		internal GLEnum PathGlyphIndexRangeNVNative(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, void*, GLPathFontStyle, uint, float, uint*, GLEnum>)funcTable[57])(fontTarget, fontName, fontStyle, pathParameterTemplate, emScale, baseAndCount);
@@ -2162,7 +2162,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
+		public GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
 		{
 			GLEnum ret = PathGlyphIndexRangeNVNative(fontTarget, fontName, fontStyle, pathParameterTemplate, emScale, baseAndCount);
 			return ret;
@@ -2172,7 +2172,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, nint fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
+		public GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, nint fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount)
 		{
 			GLEnum ret = PathGlyphIndexRangeNVNative(fontTarget, (void*)fontName, fontStyle, pathParameterTemplate, emScale, baseAndCount);
 			return ret;
@@ -2182,7 +2182,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexRangeNV<TFontName>(GLEnum fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount) where TFontName : unmanaged
+		public GLEnum PathGlyphIndexRangeNV<TFontName>(GLEnum fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
 			{
@@ -2195,7 +2195,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, Span<uint> baseAndCount)
+		public GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, Span<uint> baseAndCount)
 		{
 			fixed (uint* pbaseAndCount0 = baseAndCount)
 			{
@@ -2208,7 +2208,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, ref uint baseAndCount)
+		public GLEnum PathGlyphIndexRangeNV(GLEnum fontTarget, void* fontName, GLPathFontStyle fontStyle, uint pathParameterTemplate, float emScale, ref uint baseAndCount)
 		{
 			fixed (uint* pbaseAndCount0 = &baseAndCount)
 			{
@@ -2218,7 +2218,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathGlyphRangeNVNative(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		internal void PathGlyphRangeNVNative(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathFontTarget, void*, GLPathFontStyle, uint, int, GLPathHandleMissingGlyphs, uint, float, void>)funcTable[58])(firstPathName, fontTarget, fontName, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
@@ -2231,7 +2231,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphRangeNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		public void PathGlyphRangeNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphRangeNVNative(firstPathName, fontTarget, fontName, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
@@ -2240,7 +2240,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphRangeNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		public void PathGlyphRangeNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphRangeNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
@@ -2249,7 +2249,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphRangeNV<TFontName>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
+		public void PathGlyphRangeNV<TFontName>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, uint firstGlyph, int numGlyphs, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
 			{
@@ -2258,7 +2258,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathGlyphsNVNative(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		internal void PathGlyphsNVNative(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathFontTarget, void*, GLPathFontStyle, int, GLPathElementType, void*, GLPathHandleMissingGlyphs, uint, float, void>)funcTable[59])(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
@@ -2271,7 +2271,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		public void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
@@ -2280,7 +2280,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		public void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
@@ -2289,7 +2289,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV<TFontName>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
+		public void PathGlyphsNV<TFontName>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, void* charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
 			{
@@ -2301,7 +2301,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, nint charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		public void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, nint charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, (void*)charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
@@ -2310,7 +2310,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV<TCharcodes>(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, Span<TCharcodes> charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TCharcodes : unmanaged
+		public void PathGlyphsNV<TCharcodes>(uint firstPathName, GLPathFontTarget fontTarget, void* fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, Span<TCharcodes> charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TCharcodes : unmanaged
 		{
 			fixed (TCharcodes* pcharcodes0 = charcodes)
 			{
@@ -2322,7 +2322,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, nint charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
+		public void PathGlyphsNV(uint firstPathName, GLPathFontTarget fontTarget, nint fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, nint charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			PathGlyphsNVNative(firstPathName, fontTarget, (void*)fontName, fontStyle, numGlyphs, type, (void*)charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
 		}
@@ -2331,7 +2331,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathGlyphsNV<TFontName, TCharcodes>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, Span<TCharcodes> charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged where TCharcodes : unmanaged
+		public void PathGlyphsNV<TFontName, TCharcodes>(uint firstPathName, GLPathFontTarget fontTarget, Span<TFontName> fontName, GLPathFontStyle fontStyle, int numGlyphs, GLPathElementType type, Span<TCharcodes> charcodes, GLPathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) where TFontName : unmanaged where TCharcodes : unmanaged
 		{
 			fixed (TFontName* pfontName0 = fontName)
 			{
@@ -2343,7 +2343,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum PathMemoryGlyphIndexArrayNVNative(uint firstPathName, GLEnum fontTarget, nint fontSize, void* fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
+		internal GLEnum PathMemoryGlyphIndexArrayNVNative(uint firstPathName, GLEnum fontTarget, nint fontSize, void* fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLEnum, nint, void*, int, uint, int, uint, float, GLEnum>)funcTable[60])(firstPathName, fontTarget, fontSize, fontData, faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
@@ -2356,7 +2356,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathMemoryGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontSize, void* fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
+		public GLEnum PathMemoryGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontSize, void* fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathMemoryGlyphIndexArrayNVNative(firstPathName, fontTarget, fontSize, fontData, faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
@@ -2366,7 +2366,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathMemoryGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontSize, nint fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
+		public GLEnum PathMemoryGlyphIndexArrayNV(uint firstPathName, GLEnum fontTarget, nint fontSize, nint fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale)
 		{
 			GLEnum ret = PathMemoryGlyphIndexArrayNVNative(firstPathName, fontTarget, fontSize, (void*)fontData, faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
 			return ret;
@@ -2376,7 +2376,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static GLEnum PathMemoryGlyphIndexArrayNV<TFontData>(uint firstPathName, GLEnum fontTarget, nint fontSize, Span<TFontData> fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) where TFontData : unmanaged
+		public GLEnum PathMemoryGlyphIndexArrayNV<TFontData>(uint firstPathName, GLEnum fontTarget, nint fontSize, Span<TFontData> fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) where TFontData : unmanaged
 		{
 			fixed (TFontData* pfontData0 = fontData)
 			{
@@ -2386,7 +2386,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathParameterfNVNative(uint path, GLPathParameter pname, float value)
+		internal void PathParameterfNVNative(uint path, GLPathParameter pname, float value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathParameter, float, void>)funcTable[61])(path, pname, value);
@@ -2399,13 +2399,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterfNV(uint path, GLPathParameter pname, float value)
+		public void PathParameterfNV(uint path, GLPathParameter pname, float value)
 		{
 			PathParameterfNVNative(path, pname, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathParameterfvNVNative(uint path, GLPathParameter pname, float* value)
+		internal void PathParameterfvNVNative(uint path, GLPathParameter pname, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathParameter, float*, void>)funcTable[62])(path, pname, value);
@@ -2418,7 +2418,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterfvNV(uint path, GLPathParameter pname, float* value)
+		public void PathParameterfvNV(uint path, GLPathParameter pname, float* value)
 		{
 			PathParameterfvNVNative(path, pname, value);
 		}
@@ -2427,7 +2427,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterfvNV(uint path, GLPathParameter pname, Span<float> value)
+		public void PathParameterfvNV(uint path, GLPathParameter pname, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -2439,7 +2439,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterfvNV(uint path, GLPathParameter pname, ref float value)
+		public void PathParameterfvNV(uint path, GLPathParameter pname, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -2448,7 +2448,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathParameteriNVNative(uint path, GLPathParameter pname, int value)
+		internal void PathParameteriNVNative(uint path, GLPathParameter pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathParameter, int, void>)funcTable[63])(path, pname, value);
@@ -2461,13 +2461,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameteriNV(uint path, GLPathParameter pname, int value)
+		public void PathParameteriNV(uint path, GLPathParameter pname, int value)
 		{
 			PathParameteriNVNative(path, pname, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathParameterivNVNative(uint path, GLPathParameter pname, int* value)
+		internal void PathParameterivNVNative(uint path, GLPathParameter pname, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathParameter, int*, void>)funcTable[64])(path, pname, value);
@@ -2480,7 +2480,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterivNV(uint path, GLPathParameter pname, int* value)
+		public void PathParameterivNV(uint path, GLPathParameter pname, int* value)
 		{
 			PathParameterivNVNative(path, pname, value);
 		}
@@ -2489,7 +2489,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterivNV(uint path, GLPathParameter pname, Span<int> value)
+		public void PathParameterivNV(uint path, GLPathParameter pname, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -2501,7 +2501,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathParameterivNV(uint path, GLPathParameter pname, ref int value)
+		public void PathParameterivNV(uint path, GLPathParameter pname, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -2510,7 +2510,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathStencilDepthOffsetNVNative(float factor, float units)
+		internal void PathStencilDepthOffsetNVNative(float factor, float units)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[65])(factor, units);
@@ -2523,13 +2523,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathStencilDepthOffsetNV(float factor, float units)
+		public void PathStencilDepthOffsetNV(float factor, float units)
 		{
 			PathStencilDepthOffsetNVNative(factor, units);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathStencilFuncNVNative(GLStencilFunction func, int reference, uint mask)
+		internal void PathStencilFuncNVNative(GLStencilFunction func, int reference, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLStencilFunction, int, uint, void>)funcTable[66])(func, reference, mask);
@@ -2542,13 +2542,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathStencilFuncNV(GLStencilFunction func, int reference, uint mask)
+		public void PathStencilFuncNV(GLStencilFunction func, int reference, uint mask)
 		{
 			PathStencilFuncNVNative(func, reference, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathStringNVNative(uint path, GLPathStringFormat format, int length, void* pathString)
+		internal void PathStringNVNative(uint path, GLPathStringFormat format, int length, void* pathString)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathStringFormat, int, void*, void>)funcTable[67])(path, format, length, pathString);
@@ -2561,7 +2561,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathStringNV(uint path, GLPathStringFormat format, int length, void* pathString)
+		public void PathStringNV(uint path, GLPathStringFormat format, int length, void* pathString)
 		{
 			PathStringNVNative(path, format, length, pathString);
 		}
@@ -2570,7 +2570,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathStringNV(uint path, GLPathStringFormat format, int length, nint pathString)
+		public void PathStringNV(uint path, GLPathStringFormat format, int length, nint pathString)
 		{
 			PathStringNVNative(path, format, length, (void*)pathString);
 		}
@@ -2579,7 +2579,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathStringNV<TPathString>(uint path, GLPathStringFormat format, int length, Span<TPathString> pathString) where TPathString : unmanaged
+		public void PathStringNV<TPathString>(uint path, GLPathStringFormat format, int length, Span<TPathString> pathString) where TPathString : unmanaged
 		{
 			fixed (TPathString* ppathString0 = pathString)
 			{
@@ -2588,7 +2588,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathSubCommandsNVNative(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
+		internal void PathSubCommandsNVNative(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, GLPathCoordType, int, GLPathCoordType, void*, void>)funcTable[68])(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coords);
@@ -2601,7 +2601,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
+		public void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathSubCommandsNVNative(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, coords);
 		}
@@ -2610,7 +2610,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, nint coords)
+		public void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathSubCommandsNVNative(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, (void*)coords);
 		}
@@ -2619,7 +2619,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathSubCommandsNV<TCoords>(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
+		public void PathSubCommandsNV<TCoords>(uint path, int commandStart, int commandsToDelete, int numCommands, GLPathCoordType commands, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
 			{
@@ -2628,7 +2628,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathSubCoordsNVNative(uint path, int coordStart, int numCoords, GLPathCoordType coordType, void* coords)
+		internal void PathSubCoordsNVNative(uint path, int coordStart, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, GLPathCoordType, void*, void>)funcTable[69])(path, coordStart, numCoords, coordType, coords);
@@ -2641,7 +2641,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, GLPathCoordType coordType, void* coords)
+		public void PathSubCoordsNV(uint path, int coordStart, int numCoords, GLPathCoordType coordType, void* coords)
 		{
 			PathSubCoordsNVNative(path, coordStart, numCoords, coordType, coords);
 		}
@@ -2650,7 +2650,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, GLPathCoordType coordType, nint coords)
+		public void PathSubCoordsNV(uint path, int coordStart, int numCoords, GLPathCoordType coordType, nint coords)
 		{
 			PathSubCoordsNVNative(path, coordStart, numCoords, coordType, (void*)coords);
 		}
@@ -2659,7 +2659,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathSubCoordsNV<TCoords>(uint path, int coordStart, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
+		public void PathSubCoordsNV<TCoords>(uint path, int coordStart, int numCoords, GLPathCoordType coordType, Span<TCoords> coords) where TCoords : unmanaged
 		{
 			fixed (TCoords* pcoords0 = coords)
 			{
@@ -2668,7 +2668,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PathTexGenNVNative(GLPathColor texCoordSet, GLPathGenMode genMode, int components, float* coeffs)
+		internal void PathTexGenNVNative(GLPathColor texCoordSet, GLPathGenMode genMode, int components, float* coeffs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPathColor, GLPathGenMode, int, float*, void>)funcTable[70])(texCoordSet, genMode, components, coeffs);
@@ -2681,7 +2681,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, float* coeffs)
+		public void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, float* coeffs)
 		{
 			PathTexGenNVNative(texCoordSet, genMode, components, coeffs);
 		}
@@ -2690,7 +2690,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, Span<float> coeffs)
+		public void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, Span<float> coeffs)
 		{
 			fixed (float* pcoeffs0 = coeffs)
 			{
@@ -2702,7 +2702,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, ref float coeffs)
+		public void PathTexGenNV(GLPathColor texCoordSet, GLPathGenMode genMode, int components, ref float coeffs)
 		{
 			fixed (float* pcoeffs0 = &coeffs)
 			{
@@ -2711,7 +2711,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte PointAlongPathNVNative(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, float* tangentY)
+		internal byte PointAlongPathNVNative(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, float* tangentY)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, int, float, float*, float*, float*, float*, byte>)funcTable[71])(path, startSegment, numSegments, distance, x, y, tangentX, tangentY);
@@ -2724,7 +2724,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, float* tangentY)
 		{
 			byte ret = PointAlongPathNVNative(path, startSegment, numSegments, distance, x, y, tangentX, tangentY);
 			return ret != 0;
@@ -2734,7 +2734,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -2747,7 +2747,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -2760,7 +2760,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, float* tangentX, float* tangentY)
 		{
 			fixed (float* py0 = y)
 			{
@@ -2773,7 +2773,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, float* tangentX, float* tangentY)
 		{
 			fixed (float* py0 = &y)
 			{
@@ -2786,7 +2786,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -2802,7 +2802,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, float* tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, float* tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -2818,7 +2818,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, Span<float> tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* ptangentX0 = tangentX)
 			{
@@ -2831,7 +2831,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, ref float tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* ptangentX0 = &tangentX)
 			{
@@ -2844,7 +2844,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, Span<float> tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -2860,7 +2860,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, ref float tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -2876,7 +2876,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, Span<float> tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* py0 = y)
 			{
@@ -2892,7 +2892,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, ref float tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* py0 = &y)
 			{
@@ -2908,7 +2908,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, Span<float> tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, Span<float> tangentX, float* tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -2927,7 +2927,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, ref float tangentX, float* tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, ref float tangentX, float* tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -2946,7 +2946,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* ptangentY0 = tangentY)
 			{
@@ -2959,7 +2959,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* ptangentY0 = &tangentY)
 			{
@@ -2972,7 +2972,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, float* tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -2988,7 +2988,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, float* tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -3004,7 +3004,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, float* tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* py0 = y)
 			{
@@ -3020,7 +3020,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, float* tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* py0 = &y)
 			{
@@ -3036,7 +3036,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, float* tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, float* tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -3055,7 +3055,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, float* tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, float* tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -3074,7 +3074,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, Span<float> tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* ptangentX0 = tangentX)
 			{
@@ -3090,7 +3090,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, ref float tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* ptangentX0 = &tangentX)
 			{
@@ -3106,7 +3106,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, Span<float> tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, float* y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -3125,7 +3125,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, ref float tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, float* y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -3144,7 +3144,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, Span<float> tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, Span<float> y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* py0 = y)
 			{
@@ -3163,7 +3163,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, ref float tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, ref float y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* py0 = &y)
 			{
@@ -3182,7 +3182,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, Span<float> tangentX, Span<float> tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, Span<float> x, Span<float> y, Span<float> tangentX, Span<float> tangentY)
 		{
 			fixed (float* px0 = x)
 			{
@@ -3204,7 +3204,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, ref float tangentX, ref float tangentY)
+		public bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, ref float x, ref float y, ref float tangentX, ref float tangentY)
 		{
 			fixed (float* px0 = &x)
 			{
@@ -3223,7 +3223,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramPathFragmentInputGenNVNative(uint program, int location, GLEnum genMode, int components, float* coeffs)
+		internal void ProgramPathFragmentInputGenNVNative(uint program, int location, GLEnum genMode, int components, float* coeffs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLEnum, int, float*, void>)funcTable[72])(program, location, genMode, components, coeffs);
@@ -3236,7 +3236,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, float* coeffs)
+		public void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, float* coeffs)
 		{
 			ProgramPathFragmentInputGenNVNative(program, location, genMode, components, coeffs);
 		}
@@ -3245,7 +3245,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, Span<float> coeffs)
+		public void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, Span<float> coeffs)
 		{
 			fixed (float* pcoeffs0 = coeffs)
 			{
@@ -3257,7 +3257,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, ref float coeffs)
+		public void ProgramPathFragmentInputGenNV(uint program, int location, GLEnum genMode, int components, ref float coeffs)
 		{
 			fixed (float* pcoeffs0 = &coeffs)
 			{
@@ -3266,7 +3266,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilFillPathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
+		internal void StencilFillPathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLPathElementType, void*, uint, GLPathFillMode, uint, GLPathTransformType, float*, void>)funcTable[73])(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, transformValues);
@@ -3279,7 +3279,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
+		public void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilFillPathInstancedNVNative(numPaths, pathNameType, paths, pathBase, fillMode, mask, transformType, transformValues);
 		}
@@ -3288,7 +3288,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
+		public void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilFillPathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, fillMode, mask, transformType, transformValues);
 		}
@@ -3297,7 +3297,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
+		public void StencilFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -3309,7 +3309,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, Span<float> transformValues)
+		public void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -3321,7 +3321,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, ref float transformValues)
+		public void StencilFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -3330,7 +3330,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilFillPathNVNative(uint path, GLPathFillMode fillMode, uint mask)
+		internal void StencilFillPathNVNative(uint path, GLPathFillMode fillMode, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathFillMode, uint, void>)funcTable[74])(path, fillMode, mask);
@@ -3343,13 +3343,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilFillPathNV(uint path, GLPathFillMode fillMode, uint mask)
+		public void StencilFillPathNV(uint path, GLPathFillMode fillMode, uint mask)
 		{
 			StencilFillPathNVNative(path, fillMode, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilStrokePathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
+		internal void StencilStrokePathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLPathElementType, void*, uint, int, uint, GLPathTransformType, float*, void>)funcTable[75])(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, transformValues);
@@ -3362,7 +3362,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
+		public void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilStrokePathInstancedNVNative(numPaths, pathNameType, paths, pathBase, reference, mask, transformType, transformValues);
 		}
@@ -3371,7 +3371,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
+		public void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilStrokePathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, reference, mask, transformType, transformValues);
 		}
@@ -3380,7 +3380,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
+		public void StencilStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -3392,7 +3392,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, Span<float> transformValues)
+		public void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -3404,7 +3404,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, ref float transformValues)
+		public void StencilStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -3413,7 +3413,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilStrokePathNVNative(uint path, int reference, uint mask)
+		internal void StencilStrokePathNVNative(uint path, int reference, uint mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint, void>)funcTable[76])(path, reference, mask);
@@ -3426,13 +3426,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilStrokePathNV(uint path, int reference, uint mask)
+		public void StencilStrokePathNV(uint path, int reference, uint mask)
 		{
 			StencilStrokePathNVNative(path, reference, mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilThenCoverFillPathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		internal void StencilThenCoverFillPathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLPathElementType, void*, uint, GLPathFillMode, uint, GLInstancedPathCoverMode, GLPathTransformType, float*, void>)funcTable[77])(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, transformValues);
@@ -3445,7 +3445,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverFillPathInstancedNVNative(numPaths, pathNameType, paths, pathBase, fillMode, mask, coverMode, transformType, transformValues);
 		}
@@ -3454,7 +3454,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverFillPathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, fillMode, mask, coverMode, transformType, transformValues);
 		}
@@ -3463,7 +3463,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
+		public void StencilThenCoverFillPathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -3475,7 +3475,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
+		public void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -3487,7 +3487,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
+		public void StencilThenCoverFillPathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, GLPathFillMode fillMode, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -3496,7 +3496,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilThenCoverFillPathNVNative(uint path, GLPathFillMode fillMode, uint mask, GLPathCoverMode coverMode)
+		internal void StencilThenCoverFillPathNVNative(uint path, GLPathFillMode fillMode, uint mask, GLPathCoverMode coverMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPathFillMode, uint, GLPathCoverMode, void>)funcTable[78])(path, fillMode, mask, coverMode);
@@ -3509,13 +3509,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverFillPathNV(uint path, GLPathFillMode fillMode, uint mask, GLPathCoverMode coverMode)
+		public void StencilThenCoverFillPathNV(uint path, GLPathFillMode fillMode, uint mask, GLPathCoverMode coverMode)
 		{
 			StencilThenCoverFillPathNVNative(path, fillMode, mask, coverMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilThenCoverStrokePathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		internal void StencilThenCoverStrokePathInstancedNVNative(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLPathElementType, void*, uint, int, uint, GLInstancedPathCoverMode, GLPathTransformType, float*, void>)funcTable[79])(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, transformValues);
@@ -3528,7 +3528,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverStrokePathInstancedNVNative(numPaths, pathNameType, paths, pathBase, reference, mask, coverMode, transformType, transformValues);
 		}
@@ -3537,7 +3537,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
+		public void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, nint paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues)
 		{
 			StencilThenCoverStrokePathInstancedNVNative(numPaths, pathNameType, (void*)paths, pathBase, reference, mask, coverMode, transformType, transformValues);
 		}
@@ -3546,7 +3546,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
+		public void StencilThenCoverStrokePathInstancedNV<TPaths>(int numPaths, GLPathElementType pathNameType, Span<TPaths> paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, float* transformValues) where TPaths : unmanaged
 		{
 			fixed (TPaths* ppaths0 = paths)
 			{
@@ -3558,7 +3558,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
+		public void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -3570,7 +3570,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
+		public void StencilThenCoverStrokePathInstancedNV(int numPaths, GLPathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, GLInstancedPathCoverMode coverMode, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -3579,7 +3579,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilThenCoverStrokePathNVNative(uint path, int reference, uint mask, GLPathCoverMode coverMode)
+		internal void StencilThenCoverStrokePathNVNative(uint path, int reference, uint mask, GLPathCoverMode coverMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint, GLPathCoverMode, void>)funcTable[80])(path, reference, mask, coverMode);
@@ -3592,13 +3592,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void StencilThenCoverStrokePathNV(uint path, int reference, uint mask, GLPathCoverMode coverMode)
+		public void StencilThenCoverStrokePathNV(uint path, int reference, uint mask, GLPathCoverMode coverMode)
 		{
 			StencilThenCoverStrokePathNVNative(path, reference, mask, coverMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformPathNVNative(uint resultPath, uint srcPath, GLPathTransformType transformType, float* transformValues)
+		internal void TransformPathNVNative(uint resultPath, uint srcPath, GLPathTransformType transformType, float* transformValues)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLPathTransformType, float*, void>)funcTable[81])(resultPath, srcPath, transformType, transformValues);
@@ -3611,7 +3611,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, float* transformValues)
+		public void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, float* transformValues)
 		{
 			TransformPathNVNative(resultPath, srcPath, transformType, transformValues);
 		}
@@ -3620,7 +3620,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, Span<float> transformValues)
+		public void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, Span<float> transformValues)
 		{
 			fixed (float* ptransformValues0 = transformValues)
 			{
@@ -3632,7 +3632,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, ref float transformValues)
+		public void TransformPathNV(uint resultPath, uint srcPath, GLPathTransformType transformType, ref float transformValues)
 		{
 			fixed (float* ptransformValues0 = &transformValues)
 			{
@@ -3641,7 +3641,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightPathsNVNative(uint resultPath, int numPaths, uint* paths, float* weights)
+		internal void WeightPathsNVNative(uint resultPath, int numPaths, uint* paths, float* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, uint*, float*, void>)funcTable[82])(resultPath, numPaths, paths, weights);
@@ -3654,7 +3654,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, float* weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, uint* paths, float* weights)
 		{
 			WeightPathsNVNative(resultPath, numPaths, paths, weights);
 		}
@@ -3663,7 +3663,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, Span<uint> paths, float* weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, Span<uint> paths, float* weights)
 		{
 			fixed (uint* ppaths0 = paths)
 			{
@@ -3675,7 +3675,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, ref uint paths, float* weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, ref uint paths, float* weights)
 		{
 			fixed (uint* ppaths0 = &paths)
 			{
@@ -3687,7 +3687,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, Span<float> weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, uint* paths, Span<float> weights)
 		{
 			fixed (float* pweights0 = weights)
 			{
@@ -3699,7 +3699,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, ref float weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, uint* paths, ref float weights)
 		{
 			fixed (float* pweights0 = &weights)
 			{
@@ -3711,7 +3711,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, Span<uint> paths, Span<float> weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, Span<uint> paths, Span<float> weights)
 		{
 			fixed (uint* ppaths0 = paths)
 			{
@@ -3726,7 +3726,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_path_rendering</remarks>
-		public static void WeightPathsNV(uint resultPath, int numPaths, ref uint paths, ref float weights)
+		public void WeightPathsNV(uint resultPath, int numPaths, ref uint paths, ref float weights)
 		{
 			fixed (uint* ppaths0 = &paths)
 			{

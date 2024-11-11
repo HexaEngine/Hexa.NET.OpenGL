@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESPointSizeArray
+	public unsafe partial class GLOESPointSizeArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PointSizePointerOESNative(GLEnum type, int stride, void* pointer)
+		internal void PointSizePointerOESNative(GLEnum type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, void*, void>)funcTable[0])(type, stride, pointer);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_point_size_array</remarks>
-		public static void PointSizePointerOES(GLEnum type, int stride, void* pointer)
+		public void PointSizePointerOES(GLEnum type, int stride, void* pointer)
 		{
 			PointSizePointerOESNative(type, stride, pointer);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_point_size_array</remarks>
-		public static void PointSizePointerOES(GLEnum type, int stride, nint pointer)
+		public void PointSizePointerOES(GLEnum type, int stride, nint pointer)
 		{
 			PointSizePointerOESNative(type, stride, (void*)pointer);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_point_size_array</remarks>
-		public static void PointSizePointerOES<TPointer>(GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void PointSizePointerOES<TPointer>(GLEnum type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

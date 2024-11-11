@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESViewportArray
+	public unsafe partial class GLOESViewportArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeArrayfvOESNative(uint first, int count, float* v)
+		internal void DepthRangeArrayfvOESNative(uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[0])(first, count, v);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void DepthRangeArrayfvOES(uint first, int count, float* v)
+		public void DepthRangeArrayfvOES(uint first, int count, float* v)
 		{
 			DepthRangeArrayfvOESNative(first, count, v);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void DepthRangeArrayfvOES(uint first, int count, Span<float> v)
+		public void DepthRangeArrayfvOES(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void DepthRangeArrayfvOES(uint first, int count, ref float v)
+		public void DepthRangeArrayfvOES(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeIndexedfOESNative(uint index, float n, float f)
+		internal void DepthRangeIndexedfOESNative(uint index, float n, float f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[1])(index, n, f);
@@ -73,13 +73,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void DepthRangeIndexedfOES(uint index, float n, float f)
+		public void DepthRangeIndexedfOES(uint index, float n, float f)
 		{
 			DepthRangeIndexedfOESNative(index, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableiOESNative(GLEnableCap target, uint index)
+		internal void DisableiOESNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[2])(target, index);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
-		public static void DisableiOES(GLEnableCap target, uint index)
+		public void DisableiOES(GLEnableCap target, uint index)
 		{
 			DisableiOESNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableiOESNative(GLEnableCap target, uint index)
+		internal void EnableiOESNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[3])(target, index);
@@ -111,13 +111,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
-		public static void EnableiOES(GLEnableCap target, uint index)
+		public void EnableiOES(GLEnableCap target, uint index)
 		{
 			EnableiOESNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloati_vOESNative(GLGetPName target, uint index, float* data)
+		internal void GetFloati_vOESNative(GLGetPName target, uint index, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, float*, void>)funcTable[4])(target, index, data);
@@ -130,7 +130,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void GetFloati_vOES(GLGetPName target, uint index, float* data)
+		public void GetFloati_vOES(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vOESNative(target, index, data);
 		}
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void GetFloati_vOES(GLGetPName target, uint index, Span<float> data)
+		public void GetFloati_vOES(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
 			{
@@ -151,7 +151,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void GetFloati_vOES(GLGetPName target, uint index, ref float data)
+		public void GetFloati_vOES(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
 			{
@@ -160,7 +160,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsEnablediOESNative(GLEnableCap target, uint index)
+		internal byte IsEnablediOESNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnableCap, uint, byte>)funcTable[5])(target, index);
@@ -173,14 +173,14 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_buffers_indexed<br/>GL_OES_viewport_array</remarks>
-		public static bool IsEnablediOES(GLEnableCap target, uint index)
+		public bool IsEnablediOES(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediOESNative(target, index);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorArrayvOESNative(uint first, int count, int* v)
+		internal void ScissorArrayvOESNative(uint first, int count, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[6])(first, count, v);
@@ -193,7 +193,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorArrayvOES(uint first, int count, int* v)
+		public void ScissorArrayvOES(uint first, int count, int* v)
 		{
 			ScissorArrayvOESNative(first, count, v);
 		}
@@ -202,7 +202,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorArrayvOES(uint first, int count, Span<int> v)
+		public void ScissorArrayvOES(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorArrayvOES(uint first, int count, ref int v)
+		public void ScissorArrayvOES(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -223,7 +223,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorIndexedOESNative(uint index, int left, int bottom, int width, int height)
+		internal void ScissorIndexedOESNative(uint index, int left, int bottom, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[7])(index, left, bottom, width, height);
@@ -236,13 +236,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorIndexedOES(uint index, int left, int bottom, int width, int height)
+		public void ScissorIndexedOES(uint index, int left, int bottom, int width, int height)
 		{
 			ScissorIndexedOESNative(index, left, bottom, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorIndexedvOESNative(uint index, int* v)
+		internal void ScissorIndexedvOESNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[8])(index, v);
@@ -255,7 +255,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorIndexedvOES(uint index, int* v)
+		public void ScissorIndexedvOES(uint index, int* v)
 		{
 			ScissorIndexedvOESNative(index, v);
 		}
@@ -264,7 +264,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorIndexedvOES(uint index, Span<int> v)
+		public void ScissorIndexedvOES(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -276,7 +276,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ScissorIndexedvOES(uint index, ref int v)
+		public void ScissorIndexedvOES(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -285,7 +285,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportArrayvOESNative(uint first, int count, float* v)
+		internal void ViewportArrayvOESNative(uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[9])(first, count, v);
@@ -298,7 +298,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportArrayvOES(uint first, int count, float* v)
+		public void ViewportArrayvOES(uint first, int count, float* v)
 		{
 			ViewportArrayvOESNative(first, count, v);
 		}
@@ -307,7 +307,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportArrayvOES(uint first, int count, Span<float> v)
+		public void ViewportArrayvOES(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -319,7 +319,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportArrayvOES(uint first, int count, ref float v)
+		public void ViewportArrayvOES(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -328,7 +328,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfOESNative(uint index, float x, float y, float w, float h)
+		internal void ViewportIndexedfOESNative(uint index, float x, float y, float w, float h)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[10])(index, x, y, w, h);
@@ -341,13 +341,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportIndexedfOES(uint index, float x, float y, float w, float h)
+		public void ViewportIndexedfOES(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfOESNative(index, x, y, w, h);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfvOESNative(uint index, float* v)
+		internal void ViewportIndexedfvOESNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[11])(index, v);
@@ -360,7 +360,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportIndexedfvOES(uint index, float* v)
+		public void ViewportIndexedfvOES(uint index, float* v)
 		{
 			ViewportIndexedfvOESNative(index, v);
 		}
@@ -369,7 +369,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportIndexedfvOES(uint index, Span<float> v)
+		public void ViewportIndexedfvOES(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -381,7 +381,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_viewport_array</remarks>
-		public static void ViewportIndexedfvOES(uint index, ref float v)
+		public void ViewportIndexedfvOES(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{

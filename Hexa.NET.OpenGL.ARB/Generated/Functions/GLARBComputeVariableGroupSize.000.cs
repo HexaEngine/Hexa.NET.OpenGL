@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBComputeVariableGroupSize
+	public unsafe partial class GLARBComputeVariableGroupSize
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DispatchComputeGroupSizeARBNative(uint numGroupsX, uint numGroupsY, uint numGroupsZ, uint groupSizeX, uint groupSizeY, uint groupSizeZ)
+		internal void DispatchComputeGroupSizeARBNative(uint numGroupsX, uint numGroupsY, uint numGroupsZ, uint groupSizeX, uint groupSizeY, uint groupSizeZ)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, uint, uint, void>)funcTable[0])(numGroupsX, numGroupsY, numGroupsZ, groupSizeX, groupSizeY, groupSizeZ);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_compute_variable_group_size</remarks>
-		public static void DispatchComputeGroupSizeARB(uint numGroupsX, uint numGroupsY, uint numGroupsZ, uint groupSizeX, uint groupSizeY, uint groupSizeZ)
+		public void DispatchComputeGroupSizeARB(uint numGroupsX, uint numGroupsY, uint numGroupsZ, uint groupSizeX, uint groupSizeY, uint groupSizeZ)
 		{
 			DispatchComputeGroupSizeARBNative(numGroupsX, numGroupsY, numGroupsZ, groupSizeX, groupSizeY, groupSizeZ);
 		}

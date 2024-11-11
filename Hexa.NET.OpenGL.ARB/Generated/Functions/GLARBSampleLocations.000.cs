@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBSampleLocations
+	public unsafe partial class GLARBSampleLocations
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EvaluateDepthValuesARBNative()
+		internal void EvaluateDepthValuesARBNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void EvaluateDepthValuesARB()
+		public void EvaluateDepthValuesARB()
 		{
 			EvaluateDepthValuesARBNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferSampleLocationsfvARBNative(GLFramebufferTarget target, uint start, int count, float* v)
+		internal void FramebufferSampleLocationsfvARBNative(GLFramebufferTarget target, uint start, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, uint, int, float*, void>)funcTable[1])(target, start, count, v);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, float* v)
+		public void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, float* v)
 		{
 			FramebufferSampleLocationsfvARBNative(target, start, count, v);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, Span<float> v)
+		public void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, ref float v)
+		public void FramebufferSampleLocationsfvARB(GLFramebufferTarget target, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferSampleLocationsfvARBNative(uint framebuffer, uint start, int count, float* v)
+		internal void NamedFramebufferSampleLocationsfvARBNative(uint framebuffer, uint start, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, float*, void>)funcTable[2])(framebuffer, start, count, v);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, float* v)
+		public void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, float* v)
 		{
 			NamedFramebufferSampleLocationsfvARBNative(framebuffer, start, count, v);
 		}
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, Span<float> v)
+		public void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_locations</remarks>
-		public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, ref float v)
+		public void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{

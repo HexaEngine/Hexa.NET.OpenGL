@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVFramebufferMixedSamples
+	public unsafe partial class GLNVFramebufferMixedSamples
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverageModulationNVNative(GLEnum components)
+		internal void CoverageModulationNVNative(GLEnum components)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[0])(components);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void CoverageModulationNV(GLEnum components)
+		public void CoverageModulationNV(GLEnum components)
 		{
 			CoverageModulationNVNative(components);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CoverageModulationTableNVNative(int n, float* v)
+		internal void CoverageModulationTableNVNative(int n, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[1])(n, v);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void CoverageModulationTableNV(int n, float* v)
+		public void CoverageModulationTableNV(int n, float* v)
 		{
 			CoverageModulationTableNVNative(n, v);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void CoverageModulationTableNV(int n, Span<float> v)
+		public void CoverageModulationTableNV(int n, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void CoverageModulationTableNV(int n, ref float v)
+		public void CoverageModulationTableNV(int n, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCoverageModulationTableNVNative(int bufSize, float* v)
+		internal void GetCoverageModulationTableNVNative(int bufSize, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[2])(bufSize, v);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void GetCoverageModulationTableNV(int bufSize, float* v)
+		public void GetCoverageModulationTableNV(int bufSize, float* v)
 		{
 			GetCoverageModulationTableNVNative(bufSize, v);
 		}
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void GetCoverageModulationTableNV(int bufSize, Span<float> v)
+		public void GetCoverageModulationTableNV(int bufSize, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void GetCoverageModulationTableNV(int bufSize, ref float v)
+		public void GetCoverageModulationTableNV(int bufSize, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RasterSamplesEXTNative(uint samples, bool fixedsamplelocations)
+		internal void RasterSamplesEXTNative(uint samples, bool fixedsamplelocations)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, void>)funcTable[3])(samples, *((byte*)(&fixedsamplelocations)));
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_raster_multisample<br/>GL_NV_framebuffer_mixed_samples</remarks>
-		public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
+		public void RasterSamplesEXT(uint samples, bool fixedsamplelocations)
 		{
 			RasterSamplesEXTNative(samples, fixedsamplelocations);
 		}

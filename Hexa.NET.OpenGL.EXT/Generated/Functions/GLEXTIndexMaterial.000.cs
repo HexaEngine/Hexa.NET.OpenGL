@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTIndexMaterial
+	public unsafe partial class GLEXTIndexMaterial
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void IndexMaterialEXTNative(GLTriangleFace face, GLIndexMaterialParameterEXT mode)
+		internal void IndexMaterialEXTNative(GLTriangleFace face, GLIndexMaterialParameterEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLIndexMaterialParameterEXT, void>)funcTable[0])(face, mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_index_material</remarks>
-		public static void IndexMaterialEXT(GLTriangleFace face, GLIndexMaterialParameterEXT mode)
+		public void IndexMaterialEXT(GLTriangleFace face, GLIndexMaterialParameterEXT mode)
 		{
 			IndexMaterialEXTNative(face, mode);
 		}

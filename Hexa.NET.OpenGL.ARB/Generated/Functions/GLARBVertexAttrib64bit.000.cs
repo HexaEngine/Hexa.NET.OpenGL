@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBVertexAttrib64bit
+	public unsafe partial class GLARBVertexAttrib64bit
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribLdvNative(uint index, GLVertexAttribEnum pname, double* @params)
+		internal void GetVertexAttribLdvNative(uint index, GLVertexAttribEnum pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, double*, void>)funcTable[0])(index, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, double* @params)
+		public void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, double* @params)
 		{
 			GetVertexAttribLdvNative(index, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, out double @params)
+		public void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, out double @params)
 		{
 			double pparam;
 			GetVertexAttribLdvNative(index, pname, &pparam);
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, Span<double> @params)
+		public void GetVertexAttribLdv(uint index, GLVertexAttribEnum pname, Span<double> @params)
 		{
 			fixed (double* pparams = @params)
 			{
@@ -59,7 +59,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dNative(uint index, double x)
+		internal void VertexAttribL1dNative(uint index, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[1])(index, x);
@@ -72,13 +72,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1d(uint index, double x)
+		public void VertexAttribL1d(uint index, double x)
 		{
 			VertexAttribL1dNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dvNative(uint index, double* v)
+		internal void VertexAttribL1dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[2])(index, v);
@@ -91,7 +91,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dv(uint index, double* v)
+		public void VertexAttribL1dv(uint index, double* v)
 		{
 			VertexAttribL1dvNative(index, v);
 		}
@@ -100,7 +100,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dv(uint index, Span<double> v)
+		public void VertexAttribL1dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -112,7 +112,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dv(uint index, ref double v)
+		public void VertexAttribL1dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dNative(uint index, double x, double y)
+		internal void VertexAttribL2dNative(uint index, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[3])(index, x, y);
@@ -134,13 +134,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2d(uint index, double x, double y)
+		public void VertexAttribL2d(uint index, double x, double y)
 		{
 			VertexAttribL2dNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dvNative(uint index, double* v)
+		internal void VertexAttribL2dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[4])(index, v);
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dv(uint index, double* v)
+		public void VertexAttribL2dv(uint index, double* v)
 		{
 			VertexAttribL2dvNative(index, v);
 		}
@@ -162,7 +162,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dv(uint index, Span<double> v)
+		public void VertexAttribL2dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dv(uint index, ref double v)
+		public void VertexAttribL2dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dNative(uint index, double x, double y, double z)
+		internal void VertexAttribL3dNative(uint index, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[5])(index, x, y, z);
@@ -196,13 +196,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3d(uint index, double x, double y, double z)
+		public void VertexAttribL3d(uint index, double x, double y, double z)
 		{
 			VertexAttribL3dNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dvNative(uint index, double* v)
+		internal void VertexAttribL3dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[6])(index, v);
@@ -215,7 +215,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dv(uint index, double* v)
+		public void VertexAttribL3dv(uint index, double* v)
 		{
 			VertexAttribL3dvNative(index, v);
 		}
@@ -224,7 +224,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dv(uint index, Span<double> v)
+		public void VertexAttribL3dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -236,7 +236,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dv(uint index, ref double v)
+		public void VertexAttribL3dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -245,7 +245,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dNative(uint index, double x, double y, double z, double w)
+		internal void VertexAttribL4dNative(uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[7])(index, x, y, z, w);
@@ -258,13 +258,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4d(uint index, double x, double y, double z, double w)
+		public void VertexAttribL4d(uint index, double x, double y, double z, double w)
 		{
 			VertexAttribL4dNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dvNative(uint index, double* v)
+		internal void VertexAttribL4dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[8])(index, v);
@@ -277,7 +277,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dv(uint index, double* v)
+		public void VertexAttribL4dv(uint index, double* v)
 		{
 			VertexAttribL4dvNative(index, v);
 		}
@@ -286,7 +286,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dv(uint index, Span<double> v)
+		public void VertexAttribL4dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -298,7 +298,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dv(uint index, ref double v)
+		public void VertexAttribL4dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -307,7 +307,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLPointerNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
+		internal void VertexAttribLPointerNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, int, void*, void>)funcTable[9])(index, size, type, stride, pointer);
@@ -320,7 +320,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
+		public void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			VertexAttribLPointerNative(index, size, type, stride, pointer);
 		}
@@ -329,7 +329,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
+		public void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
 		{
 			VertexAttribLPointerNative(index, size, type, stride, (void*)pointer);
 		}
@@ -338,7 +338,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointer<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribLPointer<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVQueryResource
+	public unsafe partial class GLNVQueryResource
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int QueryResourceNVNative(GLEnum queryType, int tagId, uint count, int* buffer)
+		internal int QueryResourceNVNative(GLEnum queryType, int tagId, uint count, int* buffer)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, int, uint, int*, int>)funcTable[0])(queryType, tagId, count, buffer);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource</remarks>
-		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, int* buffer)
+		public int QueryResourceNV(GLEnum queryType, int tagId, uint count, int* buffer)
 		{
 			int ret = QueryResourceNVNative(queryType, tagId, count, buffer);
 			return ret;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource</remarks>
-		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, Span<int> buffer)
+		public int QueryResourceNV(GLEnum queryType, int tagId, uint count, Span<int> buffer)
 		{
 			fixed (int* pbuffer0 = buffer)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource</remarks>
-		public static int QueryResourceNV(GLEnum queryType, int tagId, uint count, ref int buffer)
+		public int QueryResourceNV(GLEnum queryType, int tagId, uint count, ref int buffer)
 		{
 			fixed (int* pbuffer0 = &buffer)
 			{

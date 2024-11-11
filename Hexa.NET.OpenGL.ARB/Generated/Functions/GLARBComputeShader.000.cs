@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBComputeShader
+	public unsafe partial class GLARBComputeShader
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DispatchComputeNative(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
+		internal void DispatchComputeNative(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[0])(numGroupsX, numGroupsY, numGroupsZ);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Launch one or more compute work groups
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
-		public static void DispatchCompute(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
+		public void DispatchCompute(uint numGroupsX, uint numGroupsY, uint numGroupsZ)
 		{
 			DispatchComputeNative(numGroupsX, numGroupsY, numGroupsZ);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DispatchComputeIndirectNative(nint indirect)
+		internal void DispatchComputeIndirectNative(nint indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[1])(indirect);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Launch one or more compute work groups using parameters stored in a buffer
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_compute_shader</remarks>
-		public static void DispatchComputeIndirect(nint indirect)
+		public void DispatchComputeIndirect(nint indirect)
 		{
 			DispatchComputeIndirectNative(indirect);
 		}

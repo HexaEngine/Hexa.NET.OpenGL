@@ -107,7 +107,7 @@ internal class Program
         FunctionTableBuilder functionTableBuilder = new();
         using CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, "Functions.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
 
-        writer.BeginBlock($"public static unsafe partial class {config.ApiName}");
+        writer.BeginBlock($"public unsafe partial class {config.ApiName}");
         WriteFunctions(writer, config, outputPath, registry, generateAll, usedCommands, groupToEnumName, functionTableBuilder, es);
         writer.EndBlock();
 
@@ -148,7 +148,7 @@ internal class Program
         FunctionTableBuilder functionTableBuilder = new();
         using CsSplitCodeWriter writer = new(Path.Combine(functionsOutputPath, $"{extensionName}.cs"), config.Namespace, ["System", "HexaGen.Runtime", "System.Runtime.CompilerServices", "System.Numerics"], null);
 
-        writer.BeginBlock($"public static unsafe partial class {config.ApiName}");
+        writer.BeginBlock($"public unsafe partial class {config.ApiName}");
         WriteFunctions(writer, config, outputPath, registry, false, usedCommands, groupToEnumName, functionTableBuilder, es);
         writer.EndBlock();
 
@@ -348,7 +348,7 @@ internal class Program
         string functionSignatureApi = $"{(isBool ? "bool" : returnType)} {name}{genericsString}({sb}){genericsConstrain}";
         logger.LogInfo($"defined {functionSignatureApi}");
 
-        string functionHeader = $"public static {functionSignatureApi}";
+        string functionHeader = $"public {functionSignatureApi}";
 
         writer.WriteLines(variation.Comment);
         writer.BeginBlock(functionHeader);
@@ -836,7 +836,7 @@ internal class Program
             string paramSignature = MakeApiSignature(sbDefault, arrayParams);
 
             writer.WriteLine("[MethodImpl(MethodImplOptions.AggressiveInlining)]");
-            writer.BeginBlock($"internal static {returnType} {name}Native({paramSignature})");
+            writer.BeginBlock($"internal {returnType} {name}Native({paramSignature})");
             writer.WriteLine("#if NET5_0_OR_GREATER");
             writer.WriteLine(MakeDelegateInvokeSignatureFull(sbDefault, config, idx, returnType, arrayParams, false));
             writer.WriteLine("#else");
@@ -874,7 +874,7 @@ internal class Program
                 var newName = name[..^1];
                 var signature = $"uint {newName}()";
                 writer.WriteLines(commandComment);
-                writer.BeginBlock($"public static {signature}");
+                writer.BeginBlock($"public {signature}");
                 writer.WriteLine("uint result;");
                 writer.WriteLine($"{name}Native(1, &result);");
                 writer.WriteLine("return result;");
@@ -891,7 +891,7 @@ internal class Program
                 var signature = $"void {newName}(uint {newParamName})";
 
                 writer.WriteLines(commandComment);
-                writer.BeginBlock($"public static {signature}");
+                writer.BeginBlock($"public {signature}");
                 writer.WriteLine($"{name}Native(1, &{newParamName});");
                 writer.EndBlock();
                 writer.WriteLine();
@@ -913,7 +913,7 @@ internal class Program
                 var caller = MakeInvokeSignatureFull(sbDefault, name, returnType, variationParams);
 
                 writer.WriteLines(commandComment);
-                writer.BeginBlock($"public static {signature}");
+                writer.BeginBlock($"public {signature}");
                 writer.WriteLine($"{baseType} pparam;");
                 writer.WriteLine($"{caller}");
                 writer.WriteLine($"{lastParam.Name} = pparam;");
@@ -928,7 +928,7 @@ internal class Program
                 caller = MakeInvokeSignatureFull(sbDefault, name, returnType, variationParams);
 
                 writer.WriteLines(commandComment);
-                writer.BeginBlock($"public static {signature}");
+                writer.BeginBlock($"public {signature}");
                 writer.BeginBlock($"fixed ({baseType}* pparams = {lastParam.Name})");
                 writer.WriteLine($"{caller}");
                 writer.EndBlock();
@@ -998,7 +998,7 @@ internal class Program
                         string enumItem = $"{enumName}.{postfix}Length";
                         string sig = $"{(isBool ? "bool" : returnType)} {name}({paramSignature})".Replace("void", "string").Replace($", int bufSize, int* length, byte* {parameters[^1].Name}", "");
                         writer.WriteLines(commandComment);
-                        writer.BeginBlock($"public static {sig}");
+                        writer.BeginBlock($"public {sig}");
                         writer.WriteLine("int pStrSize0;");
                         writer.WriteLine($"Get{newName}iv({parameters[0].Name}, {enumItem}, &pStrSize0);");
                         writer.WriteLine();
@@ -1036,7 +1036,7 @@ internal class Program
             {
                 var firstParam = parameters[0];
                 writer.WriteLines(commandComment);
-                writer.BeginBlock($"public static void {name}({firstParam.Type} {firstParam.Name}, string source)");
+                writer.BeginBlock($"public void {name}({firstParam.Type} {firstParam.Name}, string source)");
                 MarshalHelper.WriteStringConvertToUnmanaged(writer, StringType, "source", 0);
                 writer.WriteLine($"{name}Native({firstParam.Name}, 1, &pStr0, &pStrSize0);");
                 MarshalHelper.WriteFreeString(writer, 0);
@@ -1044,7 +1044,7 @@ internal class Program
                 writer.WriteLine();
 
                 writer.WriteLines(commandComment);
-                writer.BeginBlock($"public static void {name}({firstParam.Type} {firstParam.Name}, string[] sources)");
+                writer.BeginBlock($"public void {name}({firstParam.Type} {firstParam.Name}, string[] sources)");
                 WriteStringConvertToUnmanagedWithSizeArray(writer, "sources", 0);
                 writer.WriteLine($"{name}Native({firstParam.Name}, sources.Length, pStrArray0, pStrArraySizes0);");
                 WriteFreeUnmanagedStringArrayWithSizeArray(writer, "sources", 0);
@@ -1411,33 +1411,71 @@ internal class Program
     private static void WriteFunctionTable(CsCodeGeneratorConfig config, string outputPath, FunctionTableBuilder functionTableBuilder)
     {
         var initString = functionTableBuilder.Finish(out var count);
-        using var writerfuncTable = new CsCodeWriter(outputPath, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
-        using (writerfuncTable.PushBlock($"public unsafe partial class {config.ApiName}"))
+        using var writer = new CsCodeWriter(outputPath, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics"], config.HeaderInjector);
+        using (writer.PushBlock($"public unsafe partial class {config.ApiName} : IDisposable"))
         {
-            writerfuncTable.WriteLine("[ThreadStatic]");
-            writerfuncTable.WriteLine("internal static FunctionTable funcTable;");
-            writerfuncTable.WriteLine();
-            writerfuncTable.WriteLine($"public static bool Initialized => funcTable != null;");
-            writerfuncTable.WriteLine();
-            writerfuncTable.WriteLine("/// <summary>");
-            writerfuncTable.WriteLine("/// Initializes the function table, call before you access any function.");
-            writerfuncTable.WriteLine("/// </summary>");
+            writer.WriteLine("internal readonly FunctionTable funcTable;");
+            writer.WriteLine("internal readonly IGLContext context;");
+            writer.WriteLine();
+            writer.WriteLine("/// <summary>");
+            writer.WriteLine("/// Initializes the function table, call before you access any function.");
+            writer.WriteLine("/// </summary>");
 
-            using (writerfuncTable.PushBlock("public static void InitApi(INativeContext context)"))
+            using (writer.PushBlock($"public {config.ApiName}(IGLContext context)"))
             {
-                writerfuncTable.WriteLine("if (funcTable != null) return;");
-                writerfuncTable.WriteLine("GLBase.NativeContext = context;");
-                writerfuncTable.WriteLine($"funcTable = new FunctionTable(context, {count});");
-                writerfuncTable.WriteLines(initString);
+                writer.WriteLine($"this.context = context;");
+                writer.WriteLine("MakeCurrent();");
+                writer.WriteLine($"funcTable = new FunctionTable(context, {count});");
+                writer.WriteLines(initString);
             }
+            writer.WriteLine();
 
-            writerfuncTable.WriteLine();
-            using (writerfuncTable.PushBlock("public static void FreeApi()"))
+            using (writer.PushBlock($"public void MakeCurrent()"))
             {
-                writerfuncTable.WriteLine("if (funcTable == null) return;");
-                writerfuncTable.WriteLine("funcTable.Free();");
-                writerfuncTable.WriteLine("funcTable = null;");
-                writerfuncTable.WriteLine("GLBase.NativeContext = null;");
+                writer.WriteLine("context.MakeCurrent();");
+            }
+            writer.WriteLine();
+
+            using (writer.PushBlock($"public void SwapBuffers()"))
+            {
+                writer.WriteLine("context.SwapBuffers();");
+            }
+            writer.WriteLine();
+
+            using (writer.PushBlock($"public void SwapInterval(int interval)"))
+            {
+                writer.WriteLine("context.SwapInterval(interval);");
+            }
+            writer.WriteLine();
+
+            using (writer.PushBlock($"public bool TryGetExtension<T>(out T extension) where T : GLExtension, new()"))
+            {
+                writer.WriteLine("extension = new T();");
+                using (writer.PushBlock($"if (extension.IsSupported(context))"))
+                {
+                    writer.WriteLine("extension.Init(context);");
+                    writer.WriteLine("return true;");
+                }
+                writer.WriteLine("return false;");
+            }
+            writer.WriteLine();
+
+            using (writer.PushBlock($"public T GetExtension<T>() where T : GLExtension, new()"))
+            {
+                writer.WriteLine("T extension = new T();");
+                using (writer.PushBlock($"if (extension.IsSupported(context))"))
+                {
+                    writer.WriteLine("extension.Init(context);");
+                    writer.WriteLine("return extension;");
+                }
+                writer.WriteLine("throw new NotSupportedException($\"GLExtension {typeof(T)} is not supported.\");");
+            }
+            writer.WriteLine();
+
+            using (writer.PushBlock($"public void Dispose()"))
+            {
+                writer.WriteLine("context.Dispose();");
+                writer.WriteLine("funcTable.Dispose();");
             }
         }
     }
@@ -1447,47 +1485,31 @@ internal class Program
         var initString = functionTableBuilder.Finish(out var count);
         string filePathfuncTable = outputPath;
         using var writer = new CsCodeWriter(filePathfuncTable, config.Namespace, ["System", "HexaGen.Runtime", "System.Numerics", baseNamespace], config.HeaderInjector);
-        using (writer.PushBlock($"public unsafe partial class {config.ApiName}"))
+        using (writer.PushBlock($"public unsafe partial class {config.ApiName} : GLExtension, IDisposable"))
         {
-            writer.WriteLine("[ThreadStatic]");
-            writer.WriteLine("internal static FunctionTable funcTable;");
-            writer.WriteLine();
-            writer.WriteLine($"public static bool Initialized => funcTable != null;");
-            writer.WriteLine();
-            writer.WriteLine($"public static bool IsSupported => {baseApi}.NativeContext.IsExtensionSupported(ExtensionName);");
-            writer.WriteLine();
             writer.WriteLine($"public const string ExtensionName = \"{extensionName}\";");
             writer.WriteLine();
 
-            writer.WriteLine("/// <summary>");
-            writer.WriteLine("/// Tries to initialize the function table of the extension, call before you access any function.");
-            writer.WriteLine("/// </summary>");
-            writer.WriteLine("/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>");
-            using (writer.PushBlock("public static bool TryInitExtension()"))
+            using (writer.PushBlock($"public {config.ApiName}() : base({count})"))
             {
-                writer.WriteLine("if (!IsSupported) return false;");
-                writer.WriteLine("InitExtension();");
-                writer.WriteLine("return true;");
             }
             writer.WriteLine();
 
-            writer.WriteLine("/// <summary>");
-            writer.WriteLine("/// Initializes the function table of the extension, call before you access any function.");
-            writer.WriteLine("/// </summary>");
-            using (writer.PushBlock("public static void InitExtension()"))
+            using (writer.PushBlock($"public override bool IsSupported(IGLContext context)"))
             {
-                writer.WriteLine("if (funcTable != null) return;");
-                writer.WriteLine($"if ({baseApi}.NativeContext == null) throw new InvalidOperationException(\"OpenGL is not initialized, call GL.InitApi.\");");
-                writer.WriteLine($"funcTable = new FunctionTable({baseApi}.NativeContext, {count});");
+                writer.WriteLine("return context.IsExtensionSupported(ExtensionName);");
+            }
+            writer.WriteLine();
+
+            using (writer.PushBlock($"protected override void InitTable(FunctionTable funcTable)"))
+            {
                 writer.WriteLines(initString);
             }
-
             writer.WriteLine();
-            using (writer.PushBlock("public static void FreeExtension()"))
+
+            using (writer.PushBlock($"public void Dispose()"))
             {
-                writer.WriteLine("if (funcTable == null) return;");
-                writer.WriteLine("funcTable.Free();");
-                writer.WriteLine("funcTable = null;");
+                writer.WriteLine("funcTable.Dispose();");
             }
         }
     }

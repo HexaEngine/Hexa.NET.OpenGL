@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVClipSpaceWScaling
+	public unsafe partial class GLNVClipSpaceWScaling
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportPositionWScaleNVNative(uint index, float xcoeff, float ycoeff)
+		internal void ViewportPositionWScaleNVNative(uint index, float xcoeff, float ycoeff)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[0])(index, xcoeff, ycoeff);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_clip_space_w_scaling</remarks>
-		public static void ViewportPositionWScaleNV(uint index, float xcoeff, float ycoeff)
+		public void ViewportPositionWScaleNV(uint index, float xcoeff, float ycoeff)
 		{
 			ViewportPositionWScaleNVNative(index, xcoeff, ycoeff);
 		}

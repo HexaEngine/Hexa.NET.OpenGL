@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBMatrixPalette
+	public unsafe partial class GLARBMatrixPalette
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CurrentPaletteMatrixARBNative(int index)
+		internal void CurrentPaletteMatrixARBNative(int index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[0])(index);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void CurrentPaletteMatrixARB(int index)
+		public void CurrentPaletteMatrixARB(int index)
 		{
 			CurrentPaletteMatrixARBNative(index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixIndexPointerARBNative(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
+		internal void MatrixIndexPointerARBNative(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLMatrixIndexPointerTypeARB, int, void*, void>)funcTable[1])(size, type, stride, pointer);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
+		public void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, void* pointer)
 		{
 			MatrixIndexPointerARBNative(size, type, stride, pointer);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
+		public void MatrixIndexPointerARB(int size, GLMatrixIndexPointerTypeARB type, int stride, nint pointer)
 		{
 			MatrixIndexPointerARBNative(size, type, stride, (void*)pointer);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexPointerARB<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void MatrixIndexPointerARB<TPointer>(int size, GLMatrixIndexPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -76,7 +76,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixIndexubvARBNative(int size, byte* indices)
+		internal void MatrixIndexubvARBNative(int size, byte* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[2])(size, indices);
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexubvARB(int size, byte* indices)
+		public void MatrixIndexubvARB(int size, byte* indices)
 		{
 			MatrixIndexubvARBNative(size, indices);
 		}
@@ -98,7 +98,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexubvARB(int size, string indices)
+		public void MatrixIndexubvARB(int size, string indices)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -128,7 +128,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexubvARB(int size, Span<byte> indices)
+		public void MatrixIndexubvARB(int size, Span<byte> indices)
 		{
 			fixed (byte* pindices0 = indices)
 			{
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexubvARB(int size, ref byte indices)
+		public void MatrixIndexubvARB(int size, ref byte indices)
 		{
 			fixed (byte* pindices0 = &indices)
 			{
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixIndexuivARBNative(int size, uint* indices)
+		internal void MatrixIndexuivARBNative(int size, uint* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(size, indices);
@@ -162,7 +162,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexuivARB(int size, uint* indices)
+		public void MatrixIndexuivARB(int size, uint* indices)
 		{
 			MatrixIndexuivARBNative(size, indices);
 		}
@@ -171,7 +171,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexuivARB(int size, Span<uint> indices)
+		public void MatrixIndexuivARB(int size, Span<uint> indices)
 		{
 			fixed (uint* pindices0 = indices)
 			{
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexuivARB(int size, ref uint indices)
+		public void MatrixIndexuivARB(int size, ref uint indices)
 		{
 			fixed (uint* pindices0 = &indices)
 			{
@@ -192,7 +192,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixIndexusvARBNative(int size, ushort* indices)
+		internal void MatrixIndexusvARBNative(int size, ushort* indices)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ushort*, void>)funcTable[4])(size, indices);
@@ -205,7 +205,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexusvARB(int size, ushort* indices)
+		public void MatrixIndexusvARB(int size, ushort* indices)
 		{
 			MatrixIndexusvARBNative(size, indices);
 		}
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexusvARB(int size, Span<ushort> indices)
+		public void MatrixIndexusvARB(int size, Span<ushort> indices)
 		{
 			fixed (ushort* pindices0 = indices)
 			{
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_matrix_palette</remarks>
-		public static void MatrixIndexusvARB(int size, ref ushort indices)
+		public void MatrixIndexusvARB(int size, ref ushort indices)
 		{
 			fixed (ushort* pindices0 = &indices)
 			{

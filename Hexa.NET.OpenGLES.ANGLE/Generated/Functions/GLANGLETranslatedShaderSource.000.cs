@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ANGLE
 {
-	public static unsafe partial class GLANGLETranslatedShaderSource
+	public unsafe partial class GLANGLETranslatedShaderSource
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTranslatedShaderSourceANGLENative(uint shader, int bufSize, int* length, byte* source)
+		internal void GetTranslatedShaderSourceANGLENative(uint shader, int bufSize, int* length, byte* source)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[0])(shader, bufSize, length, source);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, byte* source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, byte* source)
 		{
 			GetTranslatedShaderSourceANGLENative(shader, bufSize, length, source);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, Span<int> length, byte* source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, Span<int> length, byte* source)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, ref int length, byte* source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, string source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, string source)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -93,7 +93,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, Span<byte> source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, Span<byte> source)
 		{
 			fixed (byte* psource0 = source)
 			{
@@ -105,7 +105,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, ref byte source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, int* length, ref byte source)
 		{
 			fixed (byte* psource0 = &source)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, Span<int> length, Span<byte> source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, Span<int> length, Span<byte> source)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_translated_shader_source</remarks>
-		public static void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, ref int length, ref byte source)
+		public void GetTranslatedShaderSourceANGLE(uint shader, int bufSize, ref int length, ref byte source)
 		{
 			fixed (int* plength0 = &length)
 			{

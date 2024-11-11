@@ -14,14 +14,14 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL
 {
-	public static unsafe partial class GL
+	public unsafe partial class GL
 	{
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform1uiv(int location, int count, ref uint value)
+		public void Uniform1uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2fNative(int location, float v0, float v1)
+		internal void Uniform2fNative(int location, float v0, float v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[577])(location, v0, v1);
@@ -43,13 +43,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2f(int location, float v0, float v1)
+		public void Uniform2f(int location, float v0, float v1)
 		{
 			Uniform2fNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2fvNative(int location, int count, float* value)
+		internal void Uniform2fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[578])(location, count, value);
@@ -62,7 +62,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2fv(int location, int count, float* value)
+		public void Uniform2fv(int location, int count, float* value)
 		{
 			Uniform2fvNative(location, count, value);
 		}
@@ -71,7 +71,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2fv(int location, int count, Span<float> value)
+		public void Uniform2fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -83,7 +83,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2fv(int location, int count, ref float value)
+		public void Uniform2fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2iNative(int location, int v0, int v1)
+		internal void Uniform2iNative(int location, int v0, int v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[579])(location, v0, v1);
@@ -105,13 +105,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2i(int location, int v0, int v1)
+		public void Uniform2i(int location, int v0, int v1)
 		{
 			Uniform2iNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ivNative(int location, int count, int* value)
+		internal void Uniform2ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[580])(location, count, value);
@@ -124,7 +124,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2iv(int location, int count, int* value)
+		public void Uniform2iv(int location, int count, int* value)
 		{
 			Uniform2ivNative(location, count, value);
 		}
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2iv(int location, int count, Span<int> value)
+		public void Uniform2iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -145,7 +145,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2iv(int location, int count, ref int value)
+		public void Uniform2iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -154,7 +154,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2uiNative(int location, uint v0, uint v1)
+		internal void Uniform2uiNative(int location, uint v0, uint v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, uint, void>)funcTable[581])(location, v0, v1);
@@ -167,13 +167,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2ui(int location, uint v0, uint v1)
+		public void Uniform2ui(int location, uint v0, uint v1)
 		{
 			Uniform2uiNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2uivNative(int location, int count, uint* value)
+		internal void Uniform2uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[582])(location, count, value);
@@ -186,7 +186,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2uiv(int location, int count, uint* value)
+		public void Uniform2uiv(int location, int count, uint* value)
 		{
 			Uniform2uivNative(location, count, value);
 		}
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2uiv(int location, int count, Span<uint> value)
+		public void Uniform2uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -207,7 +207,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform2uiv(int location, int count, ref uint value)
+		public void Uniform2uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -216,7 +216,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3fNative(int location, float v0, float v1, float v2)
+		internal void Uniform3fNative(int location, float v0, float v1, float v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[583])(location, v0, v1, v2);
@@ -229,13 +229,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3f(int location, float v0, float v1, float v2)
+		public void Uniform3f(int location, float v0, float v1, float v2)
 		{
 			Uniform3fNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3fvNative(int location, int count, float* value)
+		internal void Uniform3fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[584])(location, count, value);
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3fv(int location, int count, float* value)
+		public void Uniform3fv(int location, int count, float* value)
 		{
 			Uniform3fvNative(location, count, value);
 		}
@@ -257,7 +257,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3fv(int location, int count, Span<float> value)
+		public void Uniform3fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3fv(int location, int count, ref float value)
+		public void Uniform3fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -278,7 +278,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3iNative(int location, int v0, int v1, int v2)
+		internal void Uniform3iNative(int location, int v0, int v1, int v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[585])(location, v0, v1, v2);
@@ -291,13 +291,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3i(int location, int v0, int v1, int v2)
+		public void Uniform3i(int location, int v0, int v1, int v2)
 		{
 			Uniform3iNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ivNative(int location, int count, int* value)
+		internal void Uniform3ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[586])(location, count, value);
@@ -310,7 +310,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3iv(int location, int count, int* value)
+		public void Uniform3iv(int location, int count, int* value)
 		{
 			Uniform3ivNative(location, count, value);
 		}
@@ -319,7 +319,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3iv(int location, int count, Span<int> value)
+		public void Uniform3iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -331,7 +331,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3iv(int location, int count, ref int value)
+		public void Uniform3iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -340,7 +340,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3uiNative(int location, uint v0, uint v1, uint v2)
+		internal void Uniform3uiNative(int location, uint v0, uint v1, uint v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, uint, uint, void>)funcTable[587])(location, v0, v1, v2);
@@ -353,13 +353,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3ui(int location, uint v0, uint v1, uint v2)
+		public void Uniform3ui(int location, uint v0, uint v1, uint v2)
 		{
 			Uniform3uiNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3uivNative(int location, int count, uint* value)
+		internal void Uniform3uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[588])(location, count, value);
@@ -372,7 +372,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3uiv(int location, int count, uint* value)
+		public void Uniform3uiv(int location, int count, uint* value)
 		{
 			Uniform3uivNative(location, count, value);
 		}
@@ -381,7 +381,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3uiv(int location, int count, Span<uint> value)
+		public void Uniform3uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -393,7 +393,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform3uiv(int location, int count, ref uint value)
+		public void Uniform3uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -402,7 +402,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fNative(int location, float v0, float v1, float v2, float v3)
+		internal void Uniform4fNative(int location, float v0, float v1, float v2, float v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, float, float, void>)funcTable[589])(location, v0, v1, v2, v3);
@@ -415,13 +415,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4f(int location, float v0, float v1, float v2, float v3)
+		public void Uniform4f(int location, float v0, float v1, float v2, float v3)
 		{
 			Uniform4fNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fvNative(int location, int count, float* value)
+		internal void Uniform4fvNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[590])(location, count, value);
@@ -434,7 +434,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4fv(int location, int count, float* value)
+		public void Uniform4fv(int location, int count, float* value)
 		{
 			Uniform4fvNative(location, count, value);
 		}
@@ -443,7 +443,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4fv(int location, int count, Span<float> value)
+		public void Uniform4fv(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -455,7 +455,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4fv(int location, int count, ref float value)
+		public void Uniform4fv(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -464,7 +464,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4iNative(int location, int v0, int v1, int v2, int v3)
+		internal void Uniform4iNative(int location, int v0, int v1, int v2, int v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[591])(location, v0, v1, v2, v3);
@@ -477,13 +477,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4i(int location, int v0, int v1, int v2, int v3)
+		public void Uniform4i(int location, int v0, int v1, int v2, int v3)
 		{
 			Uniform4iNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ivNative(int location, int count, int* value)
+		internal void Uniform4ivNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[592])(location, count, value);
@@ -496,7 +496,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4iv(int location, int count, int* value)
+		public void Uniform4iv(int location, int count, int* value)
 		{
 			Uniform4ivNative(location, count, value);
 		}
@@ -505,7 +505,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4iv(int location, int count, Span<int> value)
+		public void Uniform4iv(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -517,7 +517,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4iv(int location, int count, ref int value)
+		public void Uniform4iv(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -526,7 +526,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4uiNative(int location, uint v0, uint v1, uint v2, uint v3)
+		internal void Uniform4uiNative(int location, uint v0, uint v1, uint v2, uint v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, uint, uint, uint, void>)funcTable[593])(location, v0, v1, v2, v3);
@@ -539,13 +539,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4ui(int location, uint v0, uint v1, uint v2, uint v3)
+		public void Uniform4ui(int location, uint v0, uint v1, uint v2, uint v3)
 		{
 			Uniform4uiNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4uivNative(int location, int count, uint* value)
+		internal void Uniform4uivNative(int location, int count, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[594])(location, count, value);
@@ -558,7 +558,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4uiv(int location, int count, uint* value)
+		public void Uniform4uiv(int location, int count, uint* value)
 		{
 			Uniform4uivNative(location, count, value);
 		}
@@ -567,7 +567,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4uiv(int location, int count, Span<uint> value)
+		public void Uniform4uiv(int location, int count, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -579,7 +579,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Uniform4uiv(int location, int count, ref uint value)
+		public void Uniform4uiv(int location, int count, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -588,7 +588,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformBlockBindingNative(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
+		internal void UniformBlockBindingNative(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[595])(program, uniformBlockIndex, uniformBlockBinding);
@@ -601,13 +601,13 @@ namespace Hexa.NET.OpenGL
 		/// Assign a binding point to an active uniform block
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_uniform_buffer_object</remarks>
-		public static void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
+		public void UniformBlockBinding(uint program, uint uniformBlockIndex, uint uniformBlockBinding)
 		{
 			UniformBlockBindingNative(program, uniformBlockIndex, uniformBlockBinding);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[596])(location, count, *((byte*)(&transpose)), value);
@@ -620,7 +620,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix2fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2fvNative(location, count, transpose, value);
 		}
@@ -629,7 +629,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix2fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -641,7 +641,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix2fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -650,7 +650,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x3fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2x3fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[597])(location, count, *((byte*)(&transpose)), value);
@@ -663,7 +663,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2x3fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2x3fvNative(location, count, transpose, value);
 		}
@@ -672,7 +672,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2x3fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -684,7 +684,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix2x3fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2x3fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -693,7 +693,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x4fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2x4fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[598])(location, count, *((byte*)(&transpose)), value);
@@ -706,7 +706,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2x4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2x4fvNative(location, count, transpose, value);
 		}
@@ -715,7 +715,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2x4fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -727,7 +727,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -736,7 +736,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[599])(location, count, *((byte*)(&transpose)), value);
@@ -749,7 +749,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix3fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3fvNative(location, count, transpose, value);
 		}
@@ -758,7 +758,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix3fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -770,7 +770,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix3fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -779,7 +779,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x2fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3x2fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[600])(location, count, *((byte*)(&transpose)), value);
@@ -792,7 +792,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3x2fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x2fvNative(location, count, transpose, value);
 		}
@@ -801,7 +801,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3x2fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -813,7 +813,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -822,7 +822,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x4fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3x4fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[601])(location, count, *((byte*)(&transpose)), value);
@@ -835,7 +835,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3x4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x4fvNative(location, count, transpose, value);
 		}
@@ -844,7 +844,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3x4fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -856,7 +856,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -865,7 +865,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[602])(location, count, *((byte*)(&transpose)), value);
@@ -878,7 +878,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix4fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4fvNative(location, count, transpose, value);
 		}
@@ -887,7 +887,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix4fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -899,7 +899,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UniformMatrix4fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -908,7 +908,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x2fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4x2fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[603])(location, count, *((byte*)(&transpose)), value);
@@ -921,7 +921,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4x2fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4x2fvNative(location, count, transpose, value);
 		}
@@ -930,7 +930,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4x2fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -942,7 +942,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -951,7 +951,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x3fvNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4x3fvNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[604])(location, count, *((byte*)(&transpose)), value);
@@ -964,7 +964,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4x3fv(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4x3fvNative(location, count, transpose, value);
 		}
@@ -973,7 +973,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4x3fv(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -985,7 +985,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 2.1<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -994,7 +994,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapBufferNative(GLBufferTargetARB target)
+		internal byte UnmapBufferNative(GLBufferTargetARB target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, byte>)funcTable[605])(target);
@@ -1007,14 +1007,14 @@ namespace Hexa.NET.OpenGL
 		/// Release the mapping of a buffer object's data store into the client's address space
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X</remarks>
-		public static bool UnmapBuffer(GLBufferTargetARB target)
+		public bool UnmapBuffer(GLBufferTargetARB target)
 		{
 			byte ret = UnmapBufferNative(target);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UseProgramNative(uint program)
+		internal void UseProgramNative(uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[606])(program);
@@ -1027,13 +1027,13 @@ namespace Hexa.NET.OpenGL
 		/// Installs a program object as part of current rendering state
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void UseProgram(uint program)
+		public void UseProgram(uint program)
 		{
 			UseProgramNative(program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ValidateProgramNative(uint program)
+		internal void ValidateProgramNative(uint program)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[607])(program);
@@ -1046,13 +1046,13 @@ namespace Hexa.NET.OpenGL
 		/// Validates a program object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void ValidateProgram(uint program)
+		public void ValidateProgram(uint program)
 		{
 			ValidateProgramNative(program);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2dNative(double x, double y)
+		internal void Vertex2dNative(double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[608])(x, y);
@@ -1065,13 +1065,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2d(double x, double y)
+		public void Vertex2d(double x, double y)
 		{
 			Vertex2dNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2dvNative(double* v)
+		internal void Vertex2dvNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[609])(v);
@@ -1084,7 +1084,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2dv(double* v)
+		public void Vertex2dv(double* v)
 		{
 			Vertex2dvNative(v);
 		}
@@ -1093,7 +1093,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2dv(Span<double> v)
+		public void Vertex2dv(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1105,7 +1105,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2dv(ref double v)
+		public void Vertex2dv(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1114,7 +1114,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2fNative(float x, float y)
+		internal void Vertex2fNative(float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[610])(x, y);
@@ -1127,13 +1127,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2f(float x, float y)
+		public void Vertex2f(float x, float y)
 		{
 			Vertex2fNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2fvNative(float* v)
+		internal void Vertex2fvNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[611])(v);
@@ -1146,7 +1146,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2fv(float* v)
+		public void Vertex2fv(float* v)
 		{
 			Vertex2fvNative(v);
 		}
@@ -1155,7 +1155,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2fv(Span<float> v)
+		public void Vertex2fv(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1167,7 +1167,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2fv(ref float v)
+		public void Vertex2fv(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1176,7 +1176,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2iNative(int x, int y)
+		internal void Vertex2iNative(int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[612])(x, y);
@@ -1189,13 +1189,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2i(int x, int y)
+		public void Vertex2i(int x, int y)
 		{
 			Vertex2iNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2ivNative(int* v)
+		internal void Vertex2ivNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[613])(v);
@@ -1208,7 +1208,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2iv(int* v)
+		public void Vertex2iv(int* v)
 		{
 			Vertex2ivNative(v);
 		}
@@ -1217,7 +1217,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2iv(Span<int> v)
+		public void Vertex2iv(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -1229,7 +1229,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2iv(ref int v)
+		public void Vertex2iv(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -1238,7 +1238,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2sNative(short x, short y)
+		internal void Vertex2sNative(short x, short y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, void>)funcTable[614])(x, y);
@@ -1251,13 +1251,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2s(short x, short y)
+		public void Vertex2s(short x, short y)
 		{
 			Vertex2sNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex2svNative(short* v)
+		internal void Vertex2svNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[615])(v);
@@ -1270,7 +1270,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2sv(short* v)
+		public void Vertex2sv(short* v)
 		{
 			Vertex2svNative(v);
 		}
@@ -1279,7 +1279,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2sv(Span<short> v)
+		public void Vertex2sv(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1291,7 +1291,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex2sv(ref short v)
+		public void Vertex2sv(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1300,7 +1300,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3dNative(double x, double y, double z)
+		internal void Vertex3dNative(double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[616])(x, y, z);
@@ -1313,13 +1313,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3d(double x, double y, double z)
+		public void Vertex3d(double x, double y, double z)
 		{
 			Vertex3dNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3dvNative(double* v)
+		internal void Vertex3dvNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[617])(v);
@@ -1332,7 +1332,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3dv(double* v)
+		public void Vertex3dv(double* v)
 		{
 			Vertex3dvNative(v);
 		}
@@ -1341,7 +1341,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3dv(Span<double> v)
+		public void Vertex3dv(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1353,7 +1353,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3dv(ref double v)
+		public void Vertex3dv(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1362,7 +1362,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3fNative(float x, float y, float z)
+		internal void Vertex3fNative(float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[618])(x, y, z);
@@ -1375,13 +1375,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3f(float x, float y, float z)
+		public void Vertex3f(float x, float y, float z)
 		{
 			Vertex3fNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3fvNative(float* v)
+		internal void Vertex3fvNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[619])(v);
@@ -1394,7 +1394,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3fv(float* v)
+		public void Vertex3fv(float* v)
 		{
 			Vertex3fvNative(v);
 		}
@@ -1403,7 +1403,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3fv(Span<float> v)
+		public void Vertex3fv(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1415,7 +1415,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3fv(ref float v)
+		public void Vertex3fv(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1424,7 +1424,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3iNative(int x, int y, int z)
+		internal void Vertex3iNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[620])(x, y, z);
@@ -1437,13 +1437,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3i(int x, int y, int z)
+		public void Vertex3i(int x, int y, int z)
 		{
 			Vertex3iNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3ivNative(int* v)
+		internal void Vertex3ivNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[621])(v);
@@ -1456,7 +1456,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3iv(int* v)
+		public void Vertex3iv(int* v)
 		{
 			Vertex3ivNative(v);
 		}
@@ -1465,7 +1465,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3iv(Span<int> v)
+		public void Vertex3iv(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -1477,7 +1477,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3iv(ref int v)
+		public void Vertex3iv(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -1486,7 +1486,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3sNative(short x, short y, short z)
+		internal void Vertex3sNative(short x, short y, short z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, void>)funcTable[622])(x, y, z);
@@ -1499,13 +1499,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3s(short x, short y, short z)
+		public void Vertex3s(short x, short y, short z)
 		{
 			Vertex3sNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex3svNative(short* v)
+		internal void Vertex3svNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[623])(v);
@@ -1518,7 +1518,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3sv(short* v)
+		public void Vertex3sv(short* v)
 		{
 			Vertex3svNative(v);
 		}
@@ -1527,7 +1527,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3sv(Span<short> v)
+		public void Vertex3sv(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1539,7 +1539,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex3sv(ref short v)
+		public void Vertex3sv(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1548,7 +1548,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4dNative(double x, double y, double z, double w)
+		internal void Vertex4dNative(double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, double, double, void>)funcTable[624])(x, y, z, w);
@@ -1561,13 +1561,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4d(double x, double y, double z, double w)
+		public void Vertex4d(double x, double y, double z, double w)
 		{
 			Vertex4dNative(x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4dvNative(double* v)
+		internal void Vertex4dvNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[625])(v);
@@ -1580,7 +1580,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4dv(double* v)
+		public void Vertex4dv(double* v)
 		{
 			Vertex4dvNative(v);
 		}
@@ -1589,7 +1589,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4dv(Span<double> v)
+		public void Vertex4dv(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1601,7 +1601,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4dv(ref double v)
+		public void Vertex4dv(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1610,7 +1610,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4fNative(float x, float y, float z, float w)
+		internal void Vertex4fNative(float x, float y, float z, float w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, void>)funcTable[626])(x, y, z, w);
@@ -1623,13 +1623,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4f(float x, float y, float z, float w)
+		public void Vertex4f(float x, float y, float z, float w)
 		{
 			Vertex4fNative(x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4fvNative(float* v)
+		internal void Vertex4fvNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[627])(v);
@@ -1642,7 +1642,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4fv(float* v)
+		public void Vertex4fv(float* v)
 		{
 			Vertex4fvNative(v);
 		}
@@ -1651,7 +1651,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4fv(Span<float> v)
+		public void Vertex4fv(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1663,7 +1663,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4fv(ref float v)
+		public void Vertex4fv(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1672,7 +1672,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4iNative(int x, int y, int z, int w)
+		internal void Vertex4iNative(int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[628])(x, y, z, w);
@@ -1685,13 +1685,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4i(int x, int y, int z, int w)
+		public void Vertex4i(int x, int y, int z, int w)
 		{
 			Vertex4iNative(x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4ivNative(int* v)
+		internal void Vertex4ivNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[629])(v);
@@ -1704,7 +1704,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4iv(int* v)
+		public void Vertex4iv(int* v)
 		{
 			Vertex4ivNative(v);
 		}
@@ -1713,7 +1713,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4iv(Span<int> v)
+		public void Vertex4iv(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -1725,7 +1725,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4iv(ref int v)
+		public void Vertex4iv(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -1734,7 +1734,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4sNative(short x, short y, short z, short w)
+		internal void Vertex4sNative(short x, short y, short z, short w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, short, void>)funcTable[630])(x, y, z, w);
@@ -1747,13 +1747,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4s(short x, short y, short z, short w)
+		public void Vertex4s(short x, short y, short z, short w)
 		{
 			Vertex4sNative(x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Vertex4svNative(short* v)
+		internal void Vertex4svNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[631])(v);
@@ -1766,7 +1766,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4sv(short* v)
+		public void Vertex4sv(short* v)
 		{
 			Vertex4svNative(v);
 		}
@@ -1775,7 +1775,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4sv(Span<short> v)
+		public void Vertex4sv(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1787,7 +1787,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.X<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void Vertex4sv(ref short v)
+		public void Vertex4sv(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1796,7 +1796,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dNative(uint index, double x)
+		internal void VertexAttrib1dNative(uint index, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[632])(index, x);
@@ -1809,13 +1809,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1d(uint index, double x)
+		public void VertexAttrib1d(uint index, double x)
 		{
 			VertexAttrib1dNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1dvNative(uint index, double* v)
+		internal void VertexAttrib1dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[633])(index, v);
@@ -1828,7 +1828,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1dv(uint index, double* v)
+		public void VertexAttrib1dv(uint index, double* v)
 		{
 			VertexAttrib1dvNative(index, v);
 		}
@@ -1837,7 +1837,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1dv(uint index, Span<double> v)
+		public void VertexAttrib1dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1849,7 +1849,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1dv(uint index, ref double v)
+		public void VertexAttrib1dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1858,7 +1858,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fNative(uint index, float x)
+		internal void VertexAttrib1fNative(uint index, float x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, void>)funcTable[634])(index, x);
@@ -1871,13 +1871,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1f(uint index, float x)
+		public void VertexAttrib1f(uint index, float x)
 		{
 			VertexAttrib1fNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1fvNative(uint index, float* v)
+		internal void VertexAttrib1fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[635])(index, v);
@@ -1890,7 +1890,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1fv(uint index, float* v)
+		public void VertexAttrib1fv(uint index, float* v)
 		{
 			VertexAttrib1fvNative(index, v);
 		}
@@ -1899,7 +1899,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1fv(uint index, Span<float> v)
+		public void VertexAttrib1fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1911,7 +1911,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1fv(uint index, ref float v)
+		public void VertexAttrib1fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1920,7 +1920,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1sNative(uint index, short x)
+		internal void VertexAttrib1sNative(uint index, short x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, void>)funcTable[636])(index, x);
@@ -1933,13 +1933,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1s(uint index, short x)
+		public void VertexAttrib1s(uint index, short x)
 		{
 			VertexAttrib1sNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib1svNative(uint index, short* v)
+		internal void VertexAttrib1svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[637])(index, v);
@@ -1952,7 +1952,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1sv(uint index, short* v)
+		public void VertexAttrib1sv(uint index, short* v)
 		{
 			VertexAttrib1svNative(index, v);
 		}
@@ -1961,7 +1961,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1sv(uint index, Span<short> v)
+		public void VertexAttrib1sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1973,7 +1973,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib1sv(uint index, ref short v)
+		public void VertexAttrib1sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1982,7 +1982,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dNative(uint index, double x, double y)
+		internal void VertexAttrib2dNative(uint index, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[638])(index, x, y);
@@ -1995,13 +1995,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2d(uint index, double x, double y)
+		public void VertexAttrib2d(uint index, double x, double y)
 		{
 			VertexAttrib2dNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2dvNative(uint index, double* v)
+		internal void VertexAttrib2dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[639])(index, v);
@@ -2014,7 +2014,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2dv(uint index, double* v)
+		public void VertexAttrib2dv(uint index, double* v)
 		{
 			VertexAttrib2dvNative(index, v);
 		}
@@ -2023,7 +2023,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2dv(uint index, Span<double> v)
+		public void VertexAttrib2dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -2035,7 +2035,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2dv(uint index, ref double v)
+		public void VertexAttrib2dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -2044,7 +2044,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fNative(uint index, float x, float y)
+		internal void VertexAttrib2fNative(uint index, float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[640])(index, x, y);
@@ -2057,13 +2057,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2f(uint index, float x, float y)
+		public void VertexAttrib2f(uint index, float x, float y)
 		{
 			VertexAttrib2fNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2fvNative(uint index, float* v)
+		internal void VertexAttrib2fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[641])(index, v);
@@ -2076,7 +2076,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2fv(uint index, float* v)
+		public void VertexAttrib2fv(uint index, float* v)
 		{
 			VertexAttrib2fvNative(index, v);
 		}
@@ -2085,7 +2085,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2fv(uint index, Span<float> v)
+		public void VertexAttrib2fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2097,7 +2097,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2fv(uint index, ref float v)
+		public void VertexAttrib2fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2106,7 +2106,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2sNative(uint index, short x, short y)
+		internal void VertexAttrib2sNative(uint index, short x, short y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, void>)funcTable[642])(index, x, y);
@@ -2119,13 +2119,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2s(uint index, short x, short y)
+		public void VertexAttrib2s(uint index, short x, short y)
 		{
 			VertexAttrib2sNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib2svNative(uint index, short* v)
+		internal void VertexAttrib2svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[643])(index, v);
@@ -2138,7 +2138,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2sv(uint index, short* v)
+		public void VertexAttrib2sv(uint index, short* v)
 		{
 			VertexAttrib2svNative(index, v);
 		}
@@ -2147,7 +2147,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2sv(uint index, Span<short> v)
+		public void VertexAttrib2sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2159,7 +2159,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib2sv(uint index, ref short v)
+		public void VertexAttrib2sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2168,7 +2168,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dNative(uint index, double x, double y, double z)
+		internal void VertexAttrib3dNative(uint index, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[644])(index, x, y, z);
@@ -2181,13 +2181,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3d(uint index, double x, double y, double z)
+		public void VertexAttrib3d(uint index, double x, double y, double z)
 		{
 			VertexAttrib3dNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3dvNative(uint index, double* v)
+		internal void VertexAttrib3dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[645])(index, v);
@@ -2200,7 +2200,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3dv(uint index, double* v)
+		public void VertexAttrib3dv(uint index, double* v)
 		{
 			VertexAttrib3dvNative(index, v);
 		}
@@ -2209,7 +2209,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3dv(uint index, Span<double> v)
+		public void VertexAttrib3dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -2221,7 +2221,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3dv(uint index, ref double v)
+		public void VertexAttrib3dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -2230,7 +2230,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fNative(uint index, float x, float y, float z)
+		internal void VertexAttrib3fNative(uint index, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, void>)funcTable[646])(index, x, y, z);
@@ -2243,13 +2243,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3f(uint index, float x, float y, float z)
+		public void VertexAttrib3f(uint index, float x, float y, float z)
 		{
 			VertexAttrib3fNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3fvNative(uint index, float* v)
+		internal void VertexAttrib3fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[647])(index, v);
@@ -2262,7 +2262,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3fv(uint index, float* v)
+		public void VertexAttrib3fv(uint index, float* v)
 		{
 			VertexAttrib3fvNative(index, v);
 		}
@@ -2271,7 +2271,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3fv(uint index, Span<float> v)
+		public void VertexAttrib3fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2283,7 +2283,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3fv(uint index, ref float v)
+		public void VertexAttrib3fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2292,7 +2292,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3sNative(uint index, short x, short y, short z)
+		internal void VertexAttrib3sNative(uint index, short x, short y, short z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, short, void>)funcTable[648])(index, x, y, z);
@@ -2305,13 +2305,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3s(uint index, short x, short y, short z)
+		public void VertexAttrib3s(uint index, short x, short y, short z)
 		{
 			VertexAttrib3sNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib3svNative(uint index, short* v)
+		internal void VertexAttrib3svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[649])(index, v);
@@ -2324,7 +2324,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3sv(uint index, short* v)
+		public void VertexAttrib3sv(uint index, short* v)
 		{
 			VertexAttrib3svNative(index, v);
 		}
@@ -2333,7 +2333,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3sv(uint index, Span<short> v)
+		public void VertexAttrib3sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2345,7 +2345,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib3sv(uint index, ref short v)
+		public void VertexAttrib3sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2354,7 +2354,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NbvNative(uint index, sbyte* v)
+		internal void VertexAttrib4NbvNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[650])(index, v);
@@ -2367,7 +2367,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nbv(uint index, sbyte* v)
+		public void VertexAttrib4Nbv(uint index, sbyte* v)
 		{
 			VertexAttrib4NbvNative(index, v);
 		}
@@ -2376,7 +2376,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nbv(uint index, Span<sbyte> v)
+		public void VertexAttrib4Nbv(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -2388,7 +2388,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nbv(uint index, ref sbyte v)
+		public void VertexAttrib4Nbv(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -2397,7 +2397,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NivNative(uint index, int* v)
+		internal void VertexAttrib4NivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[651])(index, v);
@@ -2410,7 +2410,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Niv(uint index, int* v)
+		public void VertexAttrib4Niv(uint index, int* v)
 		{
 			VertexAttrib4NivNative(index, v);
 		}
@@ -2419,7 +2419,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Niv(uint index, Span<int> v)
+		public void VertexAttrib4Niv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -2431,7 +2431,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Niv(uint index, ref int v)
+		public void VertexAttrib4Niv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -2440,7 +2440,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NsvNative(uint index, short* v)
+		internal void VertexAttrib4NsvNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[652])(index, v);
@@ -2453,7 +2453,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nsv(uint index, short* v)
+		public void VertexAttrib4Nsv(uint index, short* v)
 		{
 			VertexAttrib4NsvNative(index, v);
 		}
@@ -2462,7 +2462,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nsv(uint index, Span<short> v)
+		public void VertexAttrib4Nsv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2474,7 +2474,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nsv(uint index, ref short v)
+		public void VertexAttrib4Nsv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2483,7 +2483,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NubNative(uint index, bool x, bool y, bool z, bool w)
+		internal void VertexAttrib4NubNative(uint index, bool x, bool y, bool z, bool w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, byte, byte, byte, void>)funcTable[653])(index, *((byte*)(&x)), *((byte*)(&y)), *((byte*)(&z)), *((byte*)(&w)));
@@ -2496,13 +2496,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nub(uint index, bool x, bool y, bool z, bool w)
+		public void VertexAttrib4Nub(uint index, bool x, bool y, bool z, bool w)
 		{
 			VertexAttrib4NubNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NubvNative(uint index, byte* v)
+		internal void VertexAttrib4NubvNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[654])(index, v);
@@ -2515,7 +2515,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, byte* v)
+		public void VertexAttrib4Nubv(uint index, byte* v)
 		{
 			VertexAttrib4NubvNative(index, v);
 		}
@@ -2524,7 +2524,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, string v)
+		public void VertexAttrib4Nubv(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2554,7 +2554,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, Span<byte> v)
+		public void VertexAttrib4Nubv(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -2566,7 +2566,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nubv(uint index, ref byte v)
+		public void VertexAttrib4Nubv(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -2575,7 +2575,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NuivNative(uint index, uint* v)
+		internal void VertexAttrib4NuivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[655])(index, v);
@@ -2588,7 +2588,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nuiv(uint index, uint* v)
+		public void VertexAttrib4Nuiv(uint index, uint* v)
 		{
 			VertexAttrib4NuivNative(index, v);
 		}
@@ -2597,7 +2597,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nuiv(uint index, Span<uint> v)
+		public void VertexAttrib4Nuiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -2609,7 +2609,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nuiv(uint index, ref uint v)
+		public void VertexAttrib4Nuiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -2618,7 +2618,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4NusvNative(uint index, ushort* v)
+		internal void VertexAttrib4NusvNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[656])(index, v);
@@ -2631,7 +2631,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nusv(uint index, ushort* v)
+		public void VertexAttrib4Nusv(uint index, ushort* v)
 		{
 			VertexAttrib4NusvNative(index, v);
 		}
@@ -2640,7 +2640,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nusv(uint index, Span<ushort> v)
+		public void VertexAttrib4Nusv(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -2652,7 +2652,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4Nusv(uint index, ref ushort v)
+		public void VertexAttrib4Nusv(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -2661,7 +2661,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4bvNative(uint index, sbyte* v)
+		internal void VertexAttrib4bvNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[657])(index, v);
@@ -2674,7 +2674,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4bv(uint index, sbyte* v)
+		public void VertexAttrib4bv(uint index, sbyte* v)
 		{
 			VertexAttrib4bvNative(index, v);
 		}
@@ -2683,7 +2683,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4bv(uint index, Span<sbyte> v)
+		public void VertexAttrib4bv(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -2695,7 +2695,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4bv(uint index, ref sbyte v)
+		public void VertexAttrib4bv(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -2704,7 +2704,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dNative(uint index, double x, double y, double z, double w)
+		internal void VertexAttrib4dNative(uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[658])(index, x, y, z, w);
@@ -2717,13 +2717,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4d(uint index, double x, double y, double z, double w)
+		public void VertexAttrib4d(uint index, double x, double y, double z, double w)
 		{
 			VertexAttrib4dNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dvNative(uint index, double* v)
+		internal void VertexAttrib4dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[659])(index, v);
@@ -2736,7 +2736,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4dv(uint index, double* v)
+		public void VertexAttrib4dv(uint index, double* v)
 		{
 			VertexAttrib4dvNative(index, v);
 		}
@@ -2745,7 +2745,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4dv(uint index, Span<double> v)
+		public void VertexAttrib4dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -2757,7 +2757,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4dv(uint index, ref double v)
+		public void VertexAttrib4dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -2766,7 +2766,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fNative(uint index, float x, float y, float z, float w)
+		internal void VertexAttrib4fNative(uint index, float x, float y, float z, float w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[660])(index, x, y, z, w);
@@ -2779,13 +2779,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4f(uint index, float x, float y, float z, float w)
+		public void VertexAttrib4f(uint index, float x, float y, float z, float w)
 		{
 			VertexAttrib4fNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fvNative(uint index, float* v)
+		internal void VertexAttrib4fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[661])(index, v);
@@ -2798,7 +2798,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4fv(uint index, float* v)
+		public void VertexAttrib4fv(uint index, float* v)
 		{
 			VertexAttrib4fvNative(index, v);
 		}
@@ -2807,7 +2807,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4fv(uint index, Span<float> v)
+		public void VertexAttrib4fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2819,7 +2819,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4fv(uint index, ref float v)
+		public void VertexAttrib4fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2828,7 +2828,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ivNative(uint index, int* v)
+		internal void VertexAttrib4ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[662])(index, v);
@@ -2841,7 +2841,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4iv(uint index, int* v)
+		public void VertexAttrib4iv(uint index, int* v)
 		{
 			VertexAttrib4ivNative(index, v);
 		}
@@ -2850,7 +2850,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4iv(uint index, Span<int> v)
+		public void VertexAttrib4iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -2862,7 +2862,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4iv(uint index, ref int v)
+		public void VertexAttrib4iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -2871,7 +2871,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
+		internal void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[663])(index, x, y, z, w);
@@ -2884,13 +2884,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4s(uint index, short x, short y, short z, short w)
+		public void VertexAttrib4s(uint index, short x, short y, short z, short w)
 		{
 			VertexAttrib4sNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4svNative(uint index, short* v)
+		internal void VertexAttrib4svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[664])(index, v);
@@ -2903,7 +2903,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4sv(uint index, short* v)
+		public void VertexAttrib4sv(uint index, short* v)
 		{
 			VertexAttrib4svNative(index, v);
 		}
@@ -2912,7 +2912,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4sv(uint index, Span<short> v)
+		public void VertexAttrib4sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -2924,7 +2924,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4sv(uint index, ref short v)
+		public void VertexAttrib4sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -2933,7 +2933,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ubvNative(uint index, byte* v)
+		internal void VertexAttrib4ubvNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[665])(index, v);
@@ -2946,7 +2946,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, byte* v)
+		public void VertexAttrib4ubv(uint index, byte* v)
 		{
 			VertexAttrib4ubvNative(index, v);
 		}
@@ -2955,7 +2955,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, string v)
+		public void VertexAttrib4ubv(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -2985,7 +2985,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, Span<byte> v)
+		public void VertexAttrib4ubv(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -2997,7 +2997,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, ref byte v)
+		public void VertexAttrib4ubv(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -3006,7 +3006,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4uivNative(uint index, uint* v)
+		internal void VertexAttrib4uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[666])(index, v);
@@ -3019,7 +3019,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4uiv(uint index, uint* v)
+		public void VertexAttrib4uiv(uint index, uint* v)
 		{
 			VertexAttrib4uivNative(index, v);
 		}
@@ -3028,7 +3028,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4uiv(uint index, Span<uint> v)
+		public void VertexAttrib4uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -3040,7 +3040,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4uiv(uint index, ref uint v)
+		public void VertexAttrib4uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -3049,7 +3049,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4usvNative(uint index, ushort* v)
+		internal void VertexAttrib4usvNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[667])(index, v);
@@ -3062,7 +3062,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4usv(uint index, ushort* v)
+		public void VertexAttrib4usv(uint index, ushort* v)
 		{
 			VertexAttrib4usvNative(index, v);
 		}
@@ -3071,7 +3071,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4usv(uint index, Span<ushort> v)
+		public void VertexAttrib4usv(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -3083,7 +3083,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttrib4usv(uint index, ref ushort v)
+		public void VertexAttrib4usv(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -3092,7 +3092,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribDivisorNative(uint index, uint divisor)
+		internal void VertexAttribDivisorNative(uint index, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[668])(index, divisor);
@@ -3105,13 +3105,13 @@ namespace Hexa.NET.OpenGL
 		/// Modify the rate at which generic vertex attributes advance during instanced rendering
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X</remarks>
-		public static void VertexAttribDivisor(uint index, uint divisor)
+		public void VertexAttribDivisor(uint index, uint divisor)
 		{
 			VertexAttribDivisorNative(index, divisor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1iNative(uint index, int x)
+		internal void VertexAttribI1iNative(uint index, int x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[669])(index, x);
@@ -3124,13 +3124,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1i(uint index, int x)
+		public void VertexAttribI1i(uint index, int x)
 		{
 			VertexAttribI1iNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1ivNative(uint index, int* v)
+		internal void VertexAttribI1ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[670])(index, v);
@@ -3143,7 +3143,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1iv(uint index, int* v)
+		public void VertexAttribI1iv(uint index, int* v)
 		{
 			VertexAttribI1ivNative(index, v);
 		}
@@ -3152,7 +3152,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1iv(uint index, Span<int> v)
+		public void VertexAttribI1iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -3164,7 +3164,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1iv(uint index, ref int v)
+		public void VertexAttribI1iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -3173,7 +3173,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uiNative(uint index, uint x)
+		internal void VertexAttribI1uiNative(uint index, uint x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[671])(index, x);
@@ -3186,13 +3186,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1ui(uint index, uint x)
+		public void VertexAttribI1ui(uint index, uint x)
 		{
 			VertexAttribI1uiNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uivNative(uint index, uint* v)
+		internal void VertexAttribI1uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[672])(index, v);
@@ -3205,7 +3205,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1uiv(uint index, uint* v)
+		public void VertexAttribI1uiv(uint index, uint* v)
 		{
 			VertexAttribI1uivNative(index, v);
 		}
@@ -3214,7 +3214,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1uiv(uint index, Span<uint> v)
+		public void VertexAttribI1uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -3226,7 +3226,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI1uiv(uint index, ref uint v)
+		public void VertexAttribI1uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -3235,7 +3235,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2iNative(uint index, int x, int y)
+		internal void VertexAttribI2iNative(uint index, int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[673])(index, x, y);
@@ -3248,13 +3248,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2i(uint index, int x, int y)
+		public void VertexAttribI2i(uint index, int x, int y)
 		{
 			VertexAttribI2iNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2ivNative(uint index, int* v)
+		internal void VertexAttribI2ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[674])(index, v);
@@ -3267,7 +3267,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2iv(uint index, int* v)
+		public void VertexAttribI2iv(uint index, int* v)
 		{
 			VertexAttribI2ivNative(index, v);
 		}
@@ -3276,7 +3276,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2iv(uint index, Span<int> v)
+		public void VertexAttribI2iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -3288,7 +3288,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2iv(uint index, ref int v)
+		public void VertexAttribI2iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -3297,7 +3297,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uiNative(uint index, uint x, uint y)
+		internal void VertexAttribI2uiNative(uint index, uint x, uint y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[675])(index, x, y);
@@ -3310,13 +3310,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2ui(uint index, uint x, uint y)
+		public void VertexAttribI2ui(uint index, uint x, uint y)
 		{
 			VertexAttribI2uiNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uivNative(uint index, uint* v)
+		internal void VertexAttribI2uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[676])(index, v);
@@ -3329,7 +3329,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2uiv(uint index, uint* v)
+		public void VertexAttribI2uiv(uint index, uint* v)
 		{
 			VertexAttribI2uivNative(index, v);
 		}
@@ -3338,7 +3338,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2uiv(uint index, Span<uint> v)
+		public void VertexAttribI2uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -3350,7 +3350,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI2uiv(uint index, ref uint v)
+		public void VertexAttribI2uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -3359,7 +3359,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3iNative(uint index, int x, int y, int z)
+		internal void VertexAttribI3iNative(uint index, int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[677])(index, x, y, z);
@@ -3372,13 +3372,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3i(uint index, int x, int y, int z)
+		public void VertexAttribI3i(uint index, int x, int y, int z)
 		{
 			VertexAttribI3iNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3ivNative(uint index, int* v)
+		internal void VertexAttribI3ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[678])(index, v);
@@ -3391,7 +3391,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3iv(uint index, int* v)
+		public void VertexAttribI3iv(uint index, int* v)
 		{
 			VertexAttribI3ivNative(index, v);
 		}
@@ -3400,7 +3400,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3iv(uint index, Span<int> v)
+		public void VertexAttribI3iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -3412,7 +3412,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3iv(uint index, ref int v)
+		public void VertexAttribI3iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -3421,7 +3421,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uiNative(uint index, uint x, uint y, uint z)
+		internal void VertexAttribI3uiNative(uint index, uint x, uint y, uint z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, void>)funcTable[679])(index, x, y, z);
@@ -3434,13 +3434,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3ui(uint index, uint x, uint y, uint z)
+		public void VertexAttribI3ui(uint index, uint x, uint y, uint z)
 		{
 			VertexAttribI3uiNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uivNative(uint index, uint* v)
+		internal void VertexAttribI3uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[680])(index, v);
@@ -3453,7 +3453,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3uiv(uint index, uint* v)
+		public void VertexAttribI3uiv(uint index, uint* v)
 		{
 			VertexAttribI3uivNative(index, v);
 		}
@@ -3462,7 +3462,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3uiv(uint index, Span<uint> v)
+		public void VertexAttribI3uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -3474,7 +3474,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI3uiv(uint index, ref uint v)
+		public void VertexAttribI3uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -3483,7 +3483,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4bvNative(uint index, sbyte* v)
+		internal void VertexAttribI4bvNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[681])(index, v);
@@ -3496,7 +3496,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4bv(uint index, sbyte* v)
+		public void VertexAttribI4bv(uint index, sbyte* v)
 		{
 			VertexAttribI4bvNative(index, v);
 		}
@@ -3505,7 +3505,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4bv(uint index, Span<sbyte> v)
+		public void VertexAttribI4bv(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -3517,7 +3517,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4bv(uint index, ref sbyte v)
+		public void VertexAttribI4bv(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -3526,7 +3526,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4iNative(uint index, int x, int y, int z, int w)
+		internal void VertexAttribI4iNative(uint index, int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[682])(index, x, y, z, w);
@@ -3539,13 +3539,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4i(uint index, int x, int y, int z, int w)
+		public void VertexAttribI4i(uint index, int x, int y, int z, int w)
 		{
 			VertexAttribI4iNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ivNative(uint index, int* v)
+		internal void VertexAttribI4ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[683])(index, v);
@@ -3558,7 +3558,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4iv(uint index, int* v)
+		public void VertexAttribI4iv(uint index, int* v)
 		{
 			VertexAttribI4ivNative(index, v);
 		}
@@ -3567,7 +3567,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4iv(uint index, Span<int> v)
+		public void VertexAttribI4iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -3579,7 +3579,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4iv(uint index, ref int v)
+		public void VertexAttribI4iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -3588,7 +3588,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4svNative(uint index, short* v)
+		internal void VertexAttribI4svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[684])(index, v);
@@ -3601,7 +3601,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4sv(uint index, short* v)
+		public void VertexAttribI4sv(uint index, short* v)
 		{
 			VertexAttribI4svNative(index, v);
 		}
@@ -3610,7 +3610,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4sv(uint index, Span<short> v)
+		public void VertexAttribI4sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -3622,7 +3622,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4sv(uint index, ref short v)
+		public void VertexAttribI4sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -3631,7 +3631,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ubvNative(uint index, byte* v)
+		internal void VertexAttribI4ubvNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[685])(index, v);
@@ -3644,7 +3644,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, byte* v)
+		public void VertexAttribI4ubv(uint index, byte* v)
 		{
 			VertexAttribI4ubvNative(index, v);
 		}
@@ -3653,7 +3653,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, string v)
+		public void VertexAttribI4ubv(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -3683,7 +3683,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, Span<byte> v)
+		public void VertexAttribI4ubv(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -3695,7 +3695,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, ref byte v)
+		public void VertexAttribI4ubv(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -3704,7 +3704,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uiNative(uint index, uint x, uint y, uint z, uint w)
+		internal void VertexAttribI4uiNative(uint index, uint x, uint y, uint z, uint w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, uint, void>)funcTable[686])(index, x, y, z, w);
@@ -3717,13 +3717,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4ui(uint index, uint x, uint y, uint z, uint w)
+		public void VertexAttribI4ui(uint index, uint x, uint y, uint z, uint w)
 		{
 			VertexAttribI4uiNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uivNative(uint index, uint* v)
+		internal void VertexAttribI4uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[687])(index, v);
@@ -3736,7 +3736,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4uiv(uint index, uint* v)
+		public void VertexAttribI4uiv(uint index, uint* v)
 		{
 			VertexAttribI4uivNative(index, v);
 		}
@@ -3745,7 +3745,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4uiv(uint index, Span<uint> v)
+		public void VertexAttribI4uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -3757,7 +3757,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4uiv(uint index, ref uint v)
+		public void VertexAttribI4uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -3766,7 +3766,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4usvNative(uint index, ushort* v)
+		internal void VertexAttribI4usvNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[688])(index, v);
@@ -3779,7 +3779,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4usv(uint index, ushort* v)
+		public void VertexAttribI4usv(uint index, ushort* v)
 		{
 			VertexAttribI4usvNative(index, v);
 		}
@@ -3788,7 +3788,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4usv(uint index, Span<ushort> v)
+		public void VertexAttribI4usv(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -3800,7 +3800,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribI4usv(uint index, ref ushort v)
+		public void VertexAttribI4usv(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -3809,7 +3809,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIPointerNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		internal void VertexAttribIPointerNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, int, void*, void>)funcTable[689])(index, size, type, stride, pointer);
@@ -3822,7 +3822,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		public void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			VertexAttribIPointerNative(index, size, type, stride, pointer);
 		}
@@ -3831,7 +3831,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
+		public void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
 		{
 			VertexAttribIPointerNative(index, size, type, stride, (void*)pointer);
 		}
@@ -3840,7 +3840,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribIPointer<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribIPointer<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -3849,7 +3849,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[690])(index, type, *((byte*)(&normalized)), value);
@@ -3862,13 +3862,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP1uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[691])(index, type, *((byte*)(&normalized)), value);
@@ -3881,7 +3881,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP1uivNative(index, type, normalized, value);
 		}
@@ -3890,7 +3890,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -3902,7 +3902,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -3911,7 +3911,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[692])(index, type, *((byte*)(&normalized)), value);
@@ -3924,13 +3924,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP2uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[693])(index, type, *((byte*)(&normalized)), value);
@@ -3943,7 +3943,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP2uivNative(index, type, normalized, value);
 		}
@@ -3952,7 +3952,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -3964,7 +3964,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -3973,7 +3973,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[694])(index, type, *((byte*)(&normalized)), value);
@@ -3986,13 +3986,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP3uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[695])(index, type, *((byte*)(&normalized)), value);
@@ -4005,7 +4005,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP3uivNative(index, type, normalized, value);
 		}
@@ -4014,7 +4014,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -4026,7 +4026,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -4035,7 +4035,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[696])(index, type, *((byte*)(&normalized)), value);
@@ -4048,13 +4048,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP4uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[697])(index, type, *((byte*)(&normalized)), value);
@@ -4067,7 +4067,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP4uivNative(index, type, normalized, value);
 		}
@@ -4076,7 +4076,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -4088,7 +4088,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -4097,7 +4097,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribPointerNative(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
+		internal void VertexAttribPointerNative(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribPointerType, byte, int, void*, void>)funcTable[698])(index, size, type, *((byte*)(&normalized)), stride, pointer);
@@ -4110,7 +4110,7 @@ namespace Hexa.NET.OpenGL
 		/// Define an array of generic vertex attribute data
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
+		public void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
 		{
 			VertexAttribPointerNative(index, size, type, normalized, stride, pointer);
 		}
@@ -4119,7 +4119,7 @@ namespace Hexa.NET.OpenGL
 		/// Define an array of generic vertex attribute data
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint pointer)
+		public void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint pointer)
 		{
 			VertexAttribPointerNative(index, size, type, normalized, stride, (void*)pointer);
 		}
@@ -4128,7 +4128,7 @@ namespace Hexa.NET.OpenGL
 		/// Define an array of generic vertex attribute data
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void VertexAttribPointer<TPointer>(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribPointer<TPointer>(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -4137,7 +4137,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP2uiNative(GLVertexPointerType type, uint value)
+		internal void VertexP2uiNative(GLVertexPointerType type, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint, void>)funcTable[699])(type, value);
@@ -4150,13 +4150,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2ui(GLVertexPointerType type, uint value)
+		public void VertexP2ui(GLVertexPointerType type, uint value)
 		{
 			VertexP2uiNative(type, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP2uivNative(GLVertexPointerType type, uint* value)
+		internal void VertexP2uivNative(GLVertexPointerType type, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint*, void>)funcTable[700])(type, value);
@@ -4169,7 +4169,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2uiv(GLVertexPointerType type, uint* value)
+		public void VertexP2uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP2uivNative(type, value);
 		}
@@ -4178,7 +4178,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2uiv(GLVertexPointerType type, Span<uint> value)
+		public void VertexP2uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -4190,7 +4190,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP2uiv(GLVertexPointerType type, ref uint value)
+		public void VertexP2uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -4199,7 +4199,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP3uiNative(GLVertexPointerType type, uint value)
+		internal void VertexP3uiNative(GLVertexPointerType type, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint, void>)funcTable[701])(type, value);
@@ -4212,13 +4212,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3ui(GLVertexPointerType type, uint value)
+		public void VertexP3ui(GLVertexPointerType type, uint value)
 		{
 			VertexP3uiNative(type, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP3uivNative(GLVertexPointerType type, uint* value)
+		internal void VertexP3uivNative(GLVertexPointerType type, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint*, void>)funcTable[702])(type, value);
@@ -4231,7 +4231,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3uiv(GLVertexPointerType type, uint* value)
+		public void VertexP3uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP3uivNative(type, value);
 		}
@@ -4240,7 +4240,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3uiv(GLVertexPointerType type, Span<uint> value)
+		public void VertexP3uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -4252,7 +4252,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP3uiv(GLVertexPointerType type, ref uint value)
+		public void VertexP3uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -4261,7 +4261,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP4uiNative(GLVertexPointerType type, uint value)
+		internal void VertexP4uiNative(GLVertexPointerType type, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint, void>)funcTable[703])(type, value);
@@ -4274,13 +4274,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4ui(GLVertexPointerType type, uint value)
+		public void VertexP4ui(GLVertexPointerType type, uint value)
 		{
 			VertexP4uiNative(type, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexP4uivNative(GLVertexPointerType type, uint* value)
+		internal void VertexP4uivNative(GLVertexPointerType type, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLVertexPointerType, uint*, void>)funcTable[704])(type, value);
@@ -4293,7 +4293,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4uiv(GLVertexPointerType type, uint* value)
+		public void VertexP4uiv(GLVertexPointerType type, uint* value)
 		{
 			VertexP4uivNative(type, value);
 		}
@@ -4302,7 +4302,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4uiv(GLVertexPointerType type, Span<uint> value)
+		public void VertexP4uiv(GLVertexPointerType type, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -4314,7 +4314,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3 Compat<br/>GL 4.X Compat<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexP4uiv(GLVertexPointerType type, ref uint value)
+		public void VertexP4uiv(GLVertexPointerType type, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -4323,7 +4323,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexPointerNative(int size, GLVertexPointerType type, int stride, void* pointer)
+		internal void VertexPointerNative(int size, GLVertexPointerType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLVertexPointerType, int, void*, void>)funcTable[705])(size, type, stride, pointer);
@@ -4336,7 +4336,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void VertexPointer(int size, GLVertexPointerType type, int stride, void* pointer)
+		public void VertexPointer(int size, GLVertexPointerType type, int stride, void* pointer)
 		{
 			VertexPointerNative(size, type, stride, pointer);
 		}
@@ -4345,7 +4345,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void VertexPointer(int size, GLVertexPointerType type, int stride, nint pointer)
+		public void VertexPointer(int size, GLVertexPointerType type, int stride, nint pointer)
 		{
 			VertexPointerNative(size, type, stride, (void*)pointer);
 		}
@@ -4354,7 +4354,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.1 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void VertexPointer<TPointer>(int size, GLVertexPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexPointer<TPointer>(int size, GLVertexPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -4363,7 +4363,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportNative(int x, int y, int width, int height)
+		internal void ViewportNative(int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[706])(x, y, width, height);
@@ -4376,13 +4376,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.</remarks>
-		public static void Viewport(int x, int y, int width, int height)
+		public void Viewport(int x, int y, int width, int height)
 		{
 			ViewportNative(x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WaitSyncNative(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
+		internal void WaitSyncNative(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSync, GLSyncBehaviorFlags, ulong, void>)funcTable[707])(sync, flags, timeout);
@@ -4395,13 +4395,13 @@ namespace Hexa.NET.OpenGL
 		/// Instruct the GL server to block until the specified sync object becomes signaled
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.2 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void WaitSync(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
+		public void WaitSync(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
 		{
 			WaitSyncNative(sync, flags, timeout);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2dNative(double x, double y)
+		internal void WindowPos2dNative(double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[708])(x, y);
@@ -4414,13 +4414,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2d(double x, double y)
+		public void WindowPos2d(double x, double y)
 		{
 			WindowPos2dNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2dvNative(double* v)
+		internal void WindowPos2dvNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[709])(v);
@@ -4433,7 +4433,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2dv(double* v)
+		public void WindowPos2dv(double* v)
 		{
 			WindowPos2dvNative(v);
 		}
@@ -4442,7 +4442,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2dv(Span<double> v)
+		public void WindowPos2dv(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -4454,7 +4454,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2dv(ref double v)
+		public void WindowPos2dv(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -4463,7 +4463,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2fNative(float x, float y)
+		internal void WindowPos2fNative(float x, float y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, void>)funcTable[710])(x, y);
@@ -4476,13 +4476,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2f(float x, float y)
+		public void WindowPos2f(float x, float y)
 		{
 			WindowPos2fNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2fvNative(float* v)
+		internal void WindowPos2fvNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[711])(v);
@@ -4495,7 +4495,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2fv(float* v)
+		public void WindowPos2fv(float* v)
 		{
 			WindowPos2fvNative(v);
 		}
@@ -4504,7 +4504,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2fv(Span<float> v)
+		public void WindowPos2fv(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -4516,7 +4516,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2fv(ref float v)
+		public void WindowPos2fv(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -4525,7 +4525,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2iNative(int x, int y)
+		internal void WindowPos2iNative(int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[712])(x, y);
@@ -4538,13 +4538,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2i(int x, int y)
+		public void WindowPos2i(int x, int y)
 		{
 			WindowPos2iNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2ivNative(int* v)
+		internal void WindowPos2ivNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[713])(v);
@@ -4557,7 +4557,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2iv(int* v)
+		public void WindowPos2iv(int* v)
 		{
 			WindowPos2ivNative(v);
 		}
@@ -4566,7 +4566,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2iv(Span<int> v)
+		public void WindowPos2iv(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -4578,7 +4578,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2iv(ref int v)
+		public void WindowPos2iv(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -4587,7 +4587,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2sNative(short x, short y)
+		internal void WindowPos2sNative(short x, short y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, void>)funcTable[714])(x, y);
@@ -4600,13 +4600,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2s(short x, short y)
+		public void WindowPos2s(short x, short y)
 		{
 			WindowPos2sNative(x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos2svNative(short* v)
+		internal void WindowPos2svNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[715])(v);
@@ -4619,7 +4619,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2sv(short* v)
+		public void WindowPos2sv(short* v)
 		{
 			WindowPos2svNative(v);
 		}
@@ -4628,7 +4628,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2sv(Span<short> v)
+		public void WindowPos2sv(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -4640,7 +4640,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos2sv(ref short v)
+		public void WindowPos2sv(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -4649,7 +4649,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3dNative(double x, double y, double z)
+		internal void WindowPos3dNative(double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, double, void>)funcTable[716])(x, y, z);
@@ -4662,13 +4662,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3d(double x, double y, double z)
+		public void WindowPos3d(double x, double y, double z)
 		{
 			WindowPos3dNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3dvNative(double* v)
+		internal void WindowPos3dvNative(double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[717])(v);
@@ -4681,7 +4681,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3dv(double* v)
+		public void WindowPos3dv(double* v)
 		{
 			WindowPos3dvNative(v);
 		}
@@ -4690,7 +4690,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3dv(Span<double> v)
+		public void WindowPos3dv(Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -4702,7 +4702,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3dv(ref double v)
+		public void WindowPos3dv(ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -4711,7 +4711,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3fNative(float x, float y, float z)
+		internal void WindowPos3fNative(float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[718])(x, y, z);
@@ -4724,13 +4724,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3f(float x, float y, float z)
+		public void WindowPos3f(float x, float y, float z)
 		{
 			WindowPos3fNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3fvNative(float* v)
+		internal void WindowPos3fvNative(float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[719])(v);
@@ -4743,7 +4743,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3fv(float* v)
+		public void WindowPos3fv(float* v)
 		{
 			WindowPos3fvNative(v);
 		}
@@ -4752,7 +4752,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3fv(Span<float> v)
+		public void WindowPos3fv(Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -4764,7 +4764,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3fv(ref float v)
+		public void WindowPos3fv(ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -4773,7 +4773,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3iNative(int x, int y, int z)
+		internal void WindowPos3iNative(int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[720])(x, y, z);
@@ -4786,13 +4786,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3i(int x, int y, int z)
+		public void WindowPos3i(int x, int y, int z)
 		{
 			WindowPos3iNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3ivNative(int* v)
+		internal void WindowPos3ivNative(int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[721])(v);
@@ -4805,7 +4805,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3iv(int* v)
+		public void WindowPos3iv(int* v)
 		{
 			WindowPos3ivNative(v);
 		}
@@ -4814,7 +4814,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3iv(Span<int> v)
+		public void WindowPos3iv(Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -4826,7 +4826,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3iv(ref int v)
+		public void WindowPos3iv(ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -4835,7 +4835,7 @@ namespace Hexa.NET.OpenGL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3sNative(short x, short y, short z)
+		internal void WindowPos3sNative(short x, short y, short z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, void>)funcTable[722])(x, y, z);
@@ -4848,13 +4848,13 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3s(short x, short y, short z)
+		public void WindowPos3s(short x, short y, short z)
 		{
 			WindowPos3sNative(x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowPos3svNative(short* v)
+		internal void WindowPos3svNative(short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[723])(v);
@@ -4867,7 +4867,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3sv(short* v)
+		public void WindowPos3sv(short* v)
 		{
 			WindowPos3svNative(v);
 		}
@@ -4876,7 +4876,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3sv(Span<short> v)
+		public void WindowPos3sv(Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -4888,7 +4888,7 @@ namespace Hexa.NET.OpenGL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.0 - GL 3.1<br/>GL 3.2 Compat - GL 3.3 Compat<br/>GL 4.X Compat</remarks>
-		public static void WindowPos3sv(ref short v)
+		public void WindowPos3sv(ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{

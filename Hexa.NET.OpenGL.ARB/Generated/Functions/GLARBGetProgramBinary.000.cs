@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBGetProgramBinary
+	public unsafe partial class GLARBGetProgramBinary
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramBinaryNative(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
+		internal void GetProgramBinaryNative(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, GLEnum*, void*, void>)funcTable[0])(program, bufSize, length, binaryFormat, binary);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, void* binary)
 		{
 			GetProgramBinaryNative(program, bufSize, length, binaryFormat, binary);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, Span<int> length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, ref int length, GLEnum* binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, Span<GLEnum> binaryFormat, void* binary)
 		{
 			fixed (GLEnum* pbinaryFormat0 = binaryFormat)
 			{
@@ -75,7 +75,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, ref GLEnum binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (GLEnum* pbinaryFormat0 = &binaryFormat)
 			{
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, Span<int> length, Span<GLEnum> binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
+		public void GetProgramBinary(uint program, int bufSize, ref int length, ref GLEnum binaryFormat, void* binary)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
+		public void GetProgramBinary(uint program, int bufSize, int* length, GLEnum* binaryFormat, nint binary)
 		{
 			GetProgramBinaryNative(program, bufSize, length, binaryFormat, (void*)binary);
 		}
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Return a binary representation of a program object's compiled and linked executable source
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void GetProgramBinary<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
+		public void GetProgramBinary<TBinary>(uint program, int bufSize, int* length, GLEnum* binaryFormat, Span<TBinary> binary) where TBinary : unmanaged
 		{
 			fixed (TBinary* pbinary0 = binary)
 			{
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramBinaryNative(uint program, GLEnum binaryFormat, void* binary, int length)
+		internal void ProgramBinaryNative(uint program, GLEnum binaryFormat, void* binary, int length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, void*, int, void>)funcTable[1])(program, binaryFormat, binary, length);
@@ -148,7 +148,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Load a program object with a program binary
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void ProgramBinary(uint program, GLEnum binaryFormat, void* binary, int length)
+		public void ProgramBinary(uint program, GLEnum binaryFormat, void* binary, int length)
 		{
 			ProgramBinaryNative(program, binaryFormat, binary, length);
 		}
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Load a program object with a program binary
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void ProgramBinary(uint program, GLEnum binaryFormat, nint binary, int length)
+		public void ProgramBinary(uint program, GLEnum binaryFormat, nint binary, int length)
 		{
 			ProgramBinaryNative(program, binaryFormat, (void*)binary, length);
 		}
@@ -166,7 +166,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Load a program object with a program binary
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary</remarks>
-		public static void ProgramBinary<TBinary>(uint program, GLEnum binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
+		public void ProgramBinary<TBinary>(uint program, GLEnum binaryFormat, Span<TBinary> binary, int length) where TBinary : unmanaged
 		{
 			fixed (TBinary* pbinary0 = binary)
 			{
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameteriNative(uint program, GLProgramParameterPName pname, int value)
+		internal void ProgramParameteriNative(uint program, GLProgramParameterPName pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramParameterPName, int, void>)funcTable[2])(program, pname, value);
@@ -188,7 +188,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.1 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_get_program_binary<br/>GL_ARB_separate_shader_objects</remarks>
-		public static void ProgramParameteri(uint program, GLProgramParameterPName pname, int value)
+		public void ProgramParameteri(uint program, GLProgramParameterPName pname, int value)
 		{
 			ProgramParameteriNative(program, pname, value);
 		}

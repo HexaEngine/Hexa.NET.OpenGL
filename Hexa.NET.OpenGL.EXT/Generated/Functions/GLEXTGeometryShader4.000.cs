@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTGeometryShader4
+	public unsafe partial class GLEXTGeometryShader4
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramParameteriEXTNative(uint program, GLProgramParameterPName pname, int value)
+		internal void ProgramParameteriEXTNative(uint program, GLProgramParameterPName pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramParameterPName, int, void>)funcTable[0])(program, pname, value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_geometry_shader4<br/>GL_EXT_separate_shader_objects</remarks>
-		public static void ProgramParameteriEXT(uint program, GLProgramParameterPName pname, int value)
+		public void ProgramParameteriEXT(uint program, GLProgramParameterPName pname, int value)
 		{
 			ProgramParameteriEXTNative(program, pname, value);
 		}

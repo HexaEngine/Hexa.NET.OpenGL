@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVMemoryObjectSparse
+	public unsafe partial class GLNVMemoryObjectSparse
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferPageCommitmentMemNVNative(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
+		internal void BufferPageCommitmentMemNVNative(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, nint, uint, ulong, byte, void>)funcTable[0])(target, offset, size, memory, memOffset, *((byte*)(&commit)));
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
-		public static void BufferPageCommitmentMemNV(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
+		public void BufferPageCommitmentMemNV(GLBufferStorageTarget target, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			BufferPageCommitmentMemNVNative(target, offset, size, memory, memOffset, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferPageCommitmentMemNVNative(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
+		internal void NamedBufferPageCommitmentMemNVNative(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, uint, ulong, byte, void>)funcTable[1])(buffer, offset, size, memory, memOffset, *((byte*)(&commit)));
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
-		public static void NamedBufferPageCommitmentMemNV(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
+		public void NamedBufferPageCommitmentMemNV(uint buffer, nint offset, nint size, uint memory, ulong memOffset, bool commit)
 		{
 			NamedBufferPageCommitmentMemNVNative(buffer, offset, size, memory, memOffset, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexPageCommitmentMemNVNative(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
+		internal void TexPageCommitmentMemNVNative(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[2])(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, *((byte*)(&commit)));
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
-		public static void TexPageCommitmentMemNV(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
+		public void TexPageCommitmentMemNV(GLTextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			TexPageCommitmentMemNVNative(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexturePageCommitmentMemNVNative(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
+		internal void TexturePageCommitmentMemNVNative(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, int, int, int, int, uint, ulong, byte, void>)funcTable[3])(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, *((byte*)(&commit)));
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_memory_object_sparse</remarks>
-		public static void TexturePageCommitmentMemNV(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
+		public void TexturePageCommitmentMemNV(uint texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit)
 		{
 			TexturePageCommitmentMemNVNative(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
 		}

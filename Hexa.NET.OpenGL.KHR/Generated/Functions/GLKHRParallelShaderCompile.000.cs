@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.KHR
 {
-	public static unsafe partial class GLKHRParallelShaderCompile
+	public unsafe partial class GLKHRParallelShaderCompile
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MaxShaderCompilerThreadsKHRNative(uint count)
+		internal void MaxShaderCompilerThreadsKHRNative(uint count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(count);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_parallel_shader_compile</remarks>
-		public static void MaxShaderCompilerThreadsKHR(uint count)
+		public void MaxShaderCompilerThreadsKHR(uint count)
 		{
 			MaxShaderCompilerThreadsKHRNative(count);
 		}

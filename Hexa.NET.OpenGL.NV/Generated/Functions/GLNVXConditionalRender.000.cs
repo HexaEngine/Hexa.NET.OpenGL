@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVXConditionalRender
+	public unsafe partial class GLNVXConditionalRender
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginConditionalRenderNVXNative(uint id)
+		internal void BeginConditionalRenderNVXNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(id);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_conditional_render</remarks>
-		public static void BeginConditionalRenderNVX(uint id)
+		public void BeginConditionalRenderNVX(uint id)
 		{
 			BeginConditionalRenderNVXNative(id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndConditionalRenderNVXNative()
+		internal void EndConditionalRenderNVXNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NVX_conditional_render</remarks>
-		public static void EndConditionalRenderNVX()
+		public void EndConditionalRenderNVX()
 		{
 			EndConditionalRenderNVXNative();
 		}

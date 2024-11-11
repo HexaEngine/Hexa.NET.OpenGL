@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTMemoryObjectWin32
+	public unsafe partial class GLEXTMemoryObjectWin32
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ImportMemoryWin32HandleEXTNative(uint memory, ulong size, GLExternalHandleType handleType, void* handle)
+		internal void ImportMemoryWin32HandleEXTNative(uint memory, ulong size, GLExternalHandleType handleType, void* handle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, GLExternalHandleType, void*, void>)funcTable[0])(memory, size, handleType, handle);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
-		public static void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, void* handle)
+		public void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, void* handle)
 		{
 			ImportMemoryWin32HandleEXTNative(memory, size, handleType, handle);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
-		public static void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, nint handle)
+		public void ImportMemoryWin32HandleEXT(uint memory, ulong size, GLExternalHandleType handleType, nint handle)
 		{
 			ImportMemoryWin32HandleEXTNative(memory, size, handleType, (void*)handle);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
-		public static void ImportMemoryWin32HandleEXT<THandle>(uint memory, ulong size, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
+		public void ImportMemoryWin32HandleEXT<THandle>(uint memory, ulong size, GLExternalHandleType handleType, Span<THandle> handle) where THandle : unmanaged
 		{
 			fixed (THandle* phandle0 = handle)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ImportMemoryWin32NameEXTNative(uint memory, ulong size, GLExternalHandleType handleType, void* name)
+		internal void ImportMemoryWin32NameEXTNative(uint memory, ulong size, GLExternalHandleType handleType, void* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, GLExternalHandleType, void*, void>)funcTable[1])(memory, size, handleType, name);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
-		public static void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, void* name)
+		public void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, void* name)
 		{
 			ImportMemoryWin32NameEXTNative(memory, size, handleType, name);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
-		public static void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, nint name)
+		public void ImportMemoryWin32NameEXT(uint memory, ulong size, GLExternalHandleType handleType, nint name)
 		{
 			ImportMemoryWin32NameEXTNative(memory, size, handleType, (void*)name);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_memory_object_win32</remarks>
-		public static void ImportMemoryWin32NameEXT<TName>(uint memory, ulong size, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
+		public void ImportMemoryWin32NameEXT<TName>(uint memory, ulong size, GLExternalHandleType handleType, Span<TName> name) where TName : unmanaged
 		{
 			fixed (TName* pname0 = name)
 			{

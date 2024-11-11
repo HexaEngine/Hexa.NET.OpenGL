@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVVertexProgram4
+	public unsafe partial class GLNVVertexProgram4
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribIivEXTNative(uint index, GLVertexAttribEnum pname, int* @params)
+		internal void GetVertexAttribIivEXTNative(uint index, GLVertexAttribEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, int*, void>)funcTable[0])(index, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, int* @params)
+		public void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, int* @params)
 		{
 			GetVertexAttribIivEXTNative(index, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, Span<int> @params)
+		public void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, ref int @params)
+		public void GetVertexAttribIivEXT(uint index, GLVertexAttribEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribIuivEXTNative(uint index, GLVertexAttribEnum pname, uint* @params)
+		internal void GetVertexAttribIuivEXTNative(uint index, GLVertexAttribEnum pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, uint*, void>)funcTable[1])(index, pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, uint* @params)
+		public void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, uint* @params)
 		{
 			GetVertexAttribIuivEXTNative(index, pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, Span<uint> @params)
+		public void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, ref uint @params)
+		public void GetVertexAttribIuivEXT(uint index, GLVertexAttribEnum pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1iEXTNative(uint index, int x)
+		internal void VertexAttribI1iEXTNative(uint index, int x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[2])(index, x);
@@ -116,13 +116,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1iEXT(uint index, int x)
+		public void VertexAttribI1iEXT(uint index, int x)
 		{
 			VertexAttribI1iEXTNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1ivEXTNative(uint index, int* v)
+		internal void VertexAttribI1ivEXTNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[3])(index, v);
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1ivEXT(uint index, int* v)
+		public void VertexAttribI1ivEXT(uint index, int* v)
 		{
 			VertexAttribI1ivEXTNative(index, v);
 		}
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1ivEXT(uint index, Span<int> v)
+		public void VertexAttribI1ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -156,7 +156,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1ivEXT(uint index, ref int v)
+		public void VertexAttribI1ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uiEXTNative(uint index, uint x)
+		internal void VertexAttribI1uiEXTNative(uint index, uint x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[4])(index, x);
@@ -178,13 +178,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1uiEXT(uint index, uint x)
+		public void VertexAttribI1uiEXT(uint index, uint x)
 		{
 			VertexAttribI1uiEXTNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uivEXTNative(uint index, uint* v)
+		internal void VertexAttribI1uivEXTNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[5])(index, v);
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1uivEXT(uint index, uint* v)
+		public void VertexAttribI1uivEXT(uint index, uint* v)
 		{
 			VertexAttribI1uivEXTNative(index, v);
 		}
@@ -206,7 +206,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1uivEXT(uint index, Span<uint> v)
+		public void VertexAttribI1uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI1uivEXT(uint index, ref uint v)
+		public void VertexAttribI1uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -227,7 +227,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2iEXTNative(uint index, int x, int y)
+		internal void VertexAttribI2iEXTNative(uint index, int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[6])(index, x, y);
@@ -240,13 +240,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2iEXT(uint index, int x, int y)
+		public void VertexAttribI2iEXT(uint index, int x, int y)
 		{
 			VertexAttribI2iEXTNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2ivEXTNative(uint index, int* v)
+		internal void VertexAttribI2ivEXTNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[7])(index, v);
@@ -259,7 +259,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2ivEXT(uint index, int* v)
+		public void VertexAttribI2ivEXT(uint index, int* v)
 		{
 			VertexAttribI2ivEXTNative(index, v);
 		}
@@ -268,7 +268,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2ivEXT(uint index, Span<int> v)
+		public void VertexAttribI2ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -280,7 +280,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2ivEXT(uint index, ref int v)
+		public void VertexAttribI2ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -289,7 +289,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uiEXTNative(uint index, uint x, uint y)
+		internal void VertexAttribI2uiEXTNative(uint index, uint x, uint y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[8])(index, x, y);
@@ -302,13 +302,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2uiEXT(uint index, uint x, uint y)
+		public void VertexAttribI2uiEXT(uint index, uint x, uint y)
 		{
 			VertexAttribI2uiEXTNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uivEXTNative(uint index, uint* v)
+		internal void VertexAttribI2uivEXTNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[9])(index, v);
@@ -321,7 +321,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2uivEXT(uint index, uint* v)
+		public void VertexAttribI2uivEXT(uint index, uint* v)
 		{
 			VertexAttribI2uivEXTNative(index, v);
 		}
@@ -330,7 +330,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2uivEXT(uint index, Span<uint> v)
+		public void VertexAttribI2uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI2uivEXT(uint index, ref uint v)
+		public void VertexAttribI2uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -351,7 +351,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3iEXTNative(uint index, int x, int y, int z)
+		internal void VertexAttribI3iEXTNative(uint index, int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[10])(index, x, y, z);
@@ -364,13 +364,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3iEXT(uint index, int x, int y, int z)
+		public void VertexAttribI3iEXT(uint index, int x, int y, int z)
 		{
 			VertexAttribI3iEXTNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3ivEXTNative(uint index, int* v)
+		internal void VertexAttribI3ivEXTNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[11])(index, v);
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3ivEXT(uint index, int* v)
+		public void VertexAttribI3ivEXT(uint index, int* v)
 		{
 			VertexAttribI3ivEXTNative(index, v);
 		}
@@ -392,7 +392,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3ivEXT(uint index, Span<int> v)
+		public void VertexAttribI3ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -404,7 +404,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3ivEXT(uint index, ref int v)
+		public void VertexAttribI3ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -413,7 +413,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uiEXTNative(uint index, uint x, uint y, uint z)
+		internal void VertexAttribI3uiEXTNative(uint index, uint x, uint y, uint z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, void>)funcTable[12])(index, x, y, z);
@@ -426,13 +426,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3uiEXT(uint index, uint x, uint y, uint z)
+		public void VertexAttribI3uiEXT(uint index, uint x, uint y, uint z)
 		{
 			VertexAttribI3uiEXTNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uivEXTNative(uint index, uint* v)
+		internal void VertexAttribI3uivEXTNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[13])(index, v);
@@ -445,7 +445,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3uivEXT(uint index, uint* v)
+		public void VertexAttribI3uivEXT(uint index, uint* v)
 		{
 			VertexAttribI3uivEXTNative(index, v);
 		}
@@ -454,7 +454,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3uivEXT(uint index, Span<uint> v)
+		public void VertexAttribI3uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -466,7 +466,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI3uivEXT(uint index, ref uint v)
+		public void VertexAttribI3uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -475,7 +475,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4bvEXTNative(uint index, sbyte* v)
+		internal void VertexAttribI4bvEXTNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[14])(index, v);
@@ -488,7 +488,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4bvEXT(uint index, sbyte* v)
+		public void VertexAttribI4bvEXT(uint index, sbyte* v)
 		{
 			VertexAttribI4bvEXTNative(index, v);
 		}
@@ -497,7 +497,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4bvEXT(uint index, Span<sbyte> v)
+		public void VertexAttribI4bvEXT(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -509,7 +509,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4bvEXT(uint index, ref sbyte v)
+		public void VertexAttribI4bvEXT(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -518,7 +518,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4iEXTNative(uint index, int x, int y, int z, int w)
+		internal void VertexAttribI4iEXTNative(uint index, int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[15])(index, x, y, z, w);
@@ -531,13 +531,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4iEXT(uint index, int x, int y, int z, int w)
+		public void VertexAttribI4iEXT(uint index, int x, int y, int z, int w)
 		{
 			VertexAttribI4iEXTNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ivEXTNative(uint index, int* v)
+		internal void VertexAttribI4ivEXTNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[16])(index, v);
@@ -550,7 +550,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ivEXT(uint index, int* v)
+		public void VertexAttribI4ivEXT(uint index, int* v)
 		{
 			VertexAttribI4ivEXTNative(index, v);
 		}
@@ -559,7 +559,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ivEXT(uint index, Span<int> v)
+		public void VertexAttribI4ivEXT(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -571,7 +571,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ivEXT(uint index, ref int v)
+		public void VertexAttribI4ivEXT(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -580,7 +580,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4svEXTNative(uint index, short* v)
+		internal void VertexAttribI4svEXTNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[17])(index, v);
@@ -593,7 +593,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4svEXT(uint index, short* v)
+		public void VertexAttribI4svEXT(uint index, short* v)
 		{
 			VertexAttribI4svEXTNative(index, v);
 		}
@@ -602,7 +602,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4svEXT(uint index, Span<short> v)
+		public void VertexAttribI4svEXT(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -614,7 +614,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4svEXT(uint index, ref short v)
+		public void VertexAttribI4svEXT(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -623,7 +623,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ubvEXTNative(uint index, byte* v)
+		internal void VertexAttribI4ubvEXTNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[18])(index, v);
@@ -636,7 +636,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ubvEXT(uint index, byte* v)
+		public void VertexAttribI4ubvEXT(uint index, byte* v)
 		{
 			VertexAttribI4ubvEXTNative(index, v);
 		}
@@ -645,7 +645,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ubvEXT(uint index, string v)
+		public void VertexAttribI4ubvEXT(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -675,7 +675,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ubvEXT(uint index, Span<byte> v)
+		public void VertexAttribI4ubvEXT(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -687,7 +687,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4ubvEXT(uint index, ref byte v)
+		public void VertexAttribI4ubvEXT(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -696,7 +696,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uiEXTNative(uint index, uint x, uint y, uint z, uint w)
+		internal void VertexAttribI4uiEXTNative(uint index, uint x, uint y, uint z, uint w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, uint, void>)funcTable[19])(index, x, y, z, w);
@@ -709,13 +709,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4uiEXT(uint index, uint x, uint y, uint z, uint w)
+		public void VertexAttribI4uiEXT(uint index, uint x, uint y, uint z, uint w)
 		{
 			VertexAttribI4uiEXTNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uivEXTNative(uint index, uint* v)
+		internal void VertexAttribI4uivEXTNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[20])(index, v);
@@ -728,7 +728,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4uivEXT(uint index, uint* v)
+		public void VertexAttribI4uivEXT(uint index, uint* v)
 		{
 			VertexAttribI4uivEXTNative(index, v);
 		}
@@ -737,7 +737,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4uivEXT(uint index, Span<uint> v)
+		public void VertexAttribI4uivEXT(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -749,7 +749,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4uivEXT(uint index, ref uint v)
+		public void VertexAttribI4uivEXT(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -758,7 +758,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4usvEXTNative(uint index, ushort* v)
+		internal void VertexAttribI4usvEXTNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[21])(index, v);
@@ -771,7 +771,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4usvEXT(uint index, ushort* v)
+		public void VertexAttribI4usvEXT(uint index, ushort* v)
 		{
 			VertexAttribI4usvEXTNative(index, v);
 		}
@@ -780,7 +780,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4usvEXT(uint index, Span<ushort> v)
+		public void VertexAttribI4usvEXT(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -792,7 +792,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribI4usvEXT(uint index, ref ushort v)
+		public void VertexAttribI4usvEXT(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -801,7 +801,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIPointerEXTNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		internal void VertexAttribIPointerEXTNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, int, void*, void>)funcTable[22])(index, size, type, stride, pointer);
@@ -814,7 +814,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		public void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			VertexAttribIPointerEXTNative(index, size, type, stride, pointer);
 		}
@@ -823,7 +823,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
+		public void VertexAttribIPointerEXT(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
 		{
 			VertexAttribIPointerEXTNative(index, size, type, stride, (void*)pointer);
 		}
@@ -832,7 +832,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_shader4<br/>GL_NV_vertex_program4</remarks>
-		public static void VertexAttribIPointerEXT<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribIPointerEXT<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

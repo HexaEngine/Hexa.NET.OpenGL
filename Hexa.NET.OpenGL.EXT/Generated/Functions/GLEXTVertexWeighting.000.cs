@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTVertexWeighting
+	public unsafe partial class GLEXTVertexWeighting
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexWeightPointerEXTNative(int size, GLVertexWeightPointerTypeEXT type, int stride, void* pointer)
+		internal void VertexWeightPointerEXTNative(int size, GLVertexWeightPointerTypeEXT type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLVertexWeightPointerTypeEXT, int, void*, void>)funcTable[0])(size, type, stride, pointer);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, void* pointer)
+		public void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, void* pointer)
 		{
 			VertexWeightPointerEXTNative(size, type, stride, pointer);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, nint pointer)
+		public void VertexWeightPointerEXT(int size, GLVertexWeightPointerTypeEXT type, int stride, nint pointer)
 		{
 			VertexWeightPointerEXTNative(size, type, stride, (void*)pointer);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightPointerEXT<TPointer>(int size, GLVertexWeightPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexWeightPointerEXT<TPointer>(int size, GLVertexWeightPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexWeightfEXTNative(float weight)
+		internal void VertexWeightfEXTNative(float weight)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[1])(weight);
@@ -70,13 +70,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightfEXT(float weight)
+		public void VertexWeightfEXT(float weight)
 		{
 			VertexWeightfEXTNative(weight);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexWeightfvEXTNative(float* weight)
+		internal void VertexWeightfvEXTNative(float* weight)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[2])(weight);
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightfvEXT(float* weight)
+		public void VertexWeightfvEXT(float* weight)
 		{
 			VertexWeightfvEXTNative(weight);
 		}
@@ -98,7 +98,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightfvEXT(Span<float> weight)
+		public void VertexWeightfvEXT(Span<float> weight)
 		{
 			fixed (float* pweight0 = weight)
 			{
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_weighting</remarks>
-		public static void VertexWeightfvEXT(ref float weight)
+		public void VertexWeightfvEXT(ref float weight)
 		{
 			fixed (float* pweight0 = &weight)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVEvaluators
+	public unsafe partial class GLNVEvaluators
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EvalMapsNVNative(GLEvalTargetNV target, GLEvalMapsModeNV mode)
+		internal void EvalMapsNVNative(GLEvalTargetNV target, GLEvalMapsModeNV mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, GLEvalMapsModeNV, void>)funcTable[0])(target, mode);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void EvalMapsNV(GLEvalTargetNV target, GLEvalMapsModeNV mode)
+		public void EvalMapsNV(GLEvalTargetNV target, GLEvalMapsModeNV mode)
 		{
 			EvalMapsNVNative(target, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapAttribParameterfvNVNative(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, float* @params)
+		internal void GetMapAttribParameterfvNVNative(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapAttribParameterNV, float*, void>)funcTable[1])(target, index, pname, @params);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, float* @params)
+		public void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, float* @params)
 		{
 			GetMapAttribParameterfvNVNative(target, index, pname, @params);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<float> @params)
+		public void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, ref float @params)
+		public void GetMapAttribParameterfvNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapAttribParameterivNVNative(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, int* @params)
+		internal void GetMapAttribParameterivNVNative(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapAttribParameterNV, int*, void>)funcTable[2])(target, index, pname, @params);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, int* @params)
+		public void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, int* @params)
 		{
 			GetMapAttribParameterivNVNative(target, index, pname, @params);
 		}
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<int> @params)
+		public void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, ref int @params)
+		public void GetMapAttribParameterivNV(GLEvalTargetNV target, uint index, GLMapAttribParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
+		internal void GetMapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, byte, void*, void>)funcTable[3])(target, index, type, ustride, vstride, *((byte*)(&packed)), points);
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
+		public void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, void* points)
 		{
 			GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, points);
 		}
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, nint points)
+		public void GetMapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, nint points)
 		{
 			GetMapControlPointsNVNative(target, index, type, ustride, vstride, packed, (void*)points);
 		}
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, Span<TPoints> points) where TPoints : unmanaged
+		public void GetMapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, bool packed, Span<TPoints> points) where TPoints : unmanaged
 		{
 			fixed (TPoints* ppoints0 = points)
 			{
@@ -162,7 +162,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapParameterfvNVNative(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
+		internal void GetMapParameterfvNVNative(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, GLMapParameterNV, float*, void>)funcTable[4])(target, pname, @params);
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
+		public void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
 		{
 			GetMapParameterfvNVNative(target, pname, @params);
 		}
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
+		public void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, ref float @params)
+		public void GetMapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -205,7 +205,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMapParameterivNVNative(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
+		internal void GetMapParameterivNVNative(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, GLMapParameterNV, int*, void>)funcTable[5])(target, pname, @params);
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
+		public void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
 		{
 			GetMapParameterivNVNative(target, pname, @params);
 		}
@@ -227,7 +227,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
+		public void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -239,7 +239,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, ref int @params)
+		public void GetMapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
+		internal void MapControlPointsNVNative(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, uint, GLMapTypeNV, int, int, int, int, byte, void*, void>)funcTable[6])(target, index, type, ustride, vstride, uorder, vorder, *((byte*)(&packed)), points);
@@ -261,7 +261,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
+		public void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, void* points)
 		{
 			MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, points);
 		}
@@ -270,7 +270,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, nint points)
+		public void MapControlPointsNV(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, nint points)
 		{
 			MapControlPointsNVNative(target, index, type, ustride, vstride, uorder, vorder, packed, (void*)points);
 		}
@@ -279,7 +279,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, Span<TPoints> points) where TPoints : unmanaged
+		public void MapControlPointsNV<TPoints>(GLEvalTargetNV target, uint index, GLMapTypeNV type, int ustride, int vstride, int uorder, int vorder, bool packed, Span<TPoints> points) where TPoints : unmanaged
 		{
 			fixed (TPoints* ppoints0 = points)
 			{
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapParameterfvNVNative(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
+		internal void MapParameterfvNVNative(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, GLMapParameterNV, float*, void>)funcTable[7])(target, pname, @params);
@@ -301,7 +301,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
+		public void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, float* @params)
 		{
 			MapParameterfvNVNative(target, pname, @params);
 		}
@@ -310,7 +310,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
+		public void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -322,7 +322,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, ref float @params)
+		public void MapParameterfvNV(GLEvalTargetNV target, GLMapParameterNV pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -331,7 +331,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapParameterivNVNative(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
+		internal void MapParameterivNVNative(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEvalTargetNV, GLMapParameterNV, int*, void>)funcTable[8])(target, pname, @params);
@@ -344,7 +344,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
+		public void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, int* @params)
 		{
 			MapParameterivNVNative(target, pname, @params);
 		}
@@ -353,7 +353,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
+		public void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -365,7 +365,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_evaluators</remarks>
-		public static void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, ref int @params)
+		public void MapParameterivNV(GLEvalTargetNV target, GLMapParameterNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

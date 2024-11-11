@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDSparseTexture
+	public unsafe partial class GLAMDSparseTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageSparseAMDNative(GLTextureTarget target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
+		internal void TexStorageSparseAMDNative(GLTextureTarget target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, int, int, int, int, GLTextureStorageMaskAMD, void>)funcTable[0])(target, internalFormat, width, height, depth, layers, flags);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_sparse_texture</remarks>
-		public static void TexStorageSparseAMD(GLTextureTarget target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
+		public void TexStorageSparseAMD(GLTextureTarget target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
 		{
 			TexStorageSparseAMDNative(target, internalFormat, width, height, depth, layers, flags);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TextureStorageSparseAMDNative(uint texture, GLEnum target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
+		internal void TextureStorageSparseAMDNative(uint texture, GLEnum target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, GLSizedInternalFormat, int, int, int, int, GLTextureStorageMaskAMD, void>)funcTable[1])(texture, target, internalFormat, width, height, depth, layers, flags);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_sparse_texture</remarks>
-		public static void TextureStorageSparseAMD(uint texture, GLEnum target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
+		public void TextureStorageSparseAMD(uint texture, GLEnum target, GLSizedInternalFormat internalFormat, int width, int height, int depth, int layers, GLTextureStorageMaskAMD flags)
 		{
 			TextureStorageSparseAMDNative(texture, target, internalFormat, width, height, depth, layers, flags);
 		}

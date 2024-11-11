@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ANGLE
 {
-	public static unsafe partial class GLANGLEInstancedArrays
+	public unsafe partial class GLANGLEInstancedArrays
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysInstancedANGLENative(GLPrimitiveType mode, int first, int count, int primcount)
+		internal void DrawArraysInstancedANGLENative(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, int, void>)funcTable[0])(mode, first, count, primcount);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
-		public static void DrawArraysInstancedANGLE(GLPrimitiveType mode, int first, int count, int primcount)
+		public void DrawArraysInstancedANGLE(GLPrimitiveType mode, int first, int count, int primcount)
 		{
 			DrawArraysInstancedANGLENative(mode, first, count, primcount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedANGLENative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		internal void DrawElementsInstancedANGLENative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, void>)funcTable[1])(mode, count, type, indices, primcount);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
-		public static void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		public void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedANGLENative(mode, count, type, indices, primcount);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
-		public static void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		public void DrawElementsInstancedANGLE(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedANGLENative(mode, count, type, (void*)indices, primcount);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
-		public static void DrawElementsInstancedANGLE<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		public void DrawElementsInstancedANGLE<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{
@@ -76,7 +76,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribDivisorANGLENative(uint index, uint divisor)
+		internal void VertexAttribDivisorANGLENative(uint index, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[2])(index, divisor);
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_instanced_arrays</remarks>
-		public static void VertexAttribDivisorANGLE(uint index, uint divisor)
+		public void VertexAttribDivisorANGLE(uint index, uint divisor)
 		{
 			VertexAttribDivisorANGLENative(index, divisor);
 		}

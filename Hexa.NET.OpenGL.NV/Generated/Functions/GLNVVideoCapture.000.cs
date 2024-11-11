@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVVideoCapture
+	public unsafe partial class GLNVVideoCapture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginVideoCaptureNVNative(uint videoCaptureSlot)
+		internal void BeginVideoCaptureNVNative(uint videoCaptureSlot)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(videoCaptureSlot);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void BeginVideoCaptureNV(uint videoCaptureSlot)
+		public void BeginVideoCaptureNV(uint videoCaptureSlot)
 		{
 			BeginVideoCaptureNVNative(videoCaptureSlot);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVideoCaptureStreamBufferNVNative(uint videoCaptureSlot, uint stream, GLEnum frameRegion, nint offset)
+		internal void BindVideoCaptureStreamBufferNVNative(uint videoCaptureSlot, uint stream, GLEnum frameRegion, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, nint, void>)funcTable[1])(videoCaptureSlot, stream, frameRegion, offset);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void BindVideoCaptureStreamBufferNV(uint videoCaptureSlot, uint stream, GLEnum frameRegion, nint offset)
+		public void BindVideoCaptureStreamBufferNV(uint videoCaptureSlot, uint stream, GLEnum frameRegion, nint offset)
 		{
 			BindVideoCaptureStreamBufferNVNative(videoCaptureSlot, stream, frameRegion, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVideoCaptureStreamTextureNVNative(uint videoCaptureSlot, uint stream, GLEnum frameRegion, GLEnum target, uint texture)
+		internal void BindVideoCaptureStreamTextureNVNative(uint videoCaptureSlot, uint stream, GLEnum frameRegion, GLEnum target, uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, GLEnum, uint, void>)funcTable[2])(videoCaptureSlot, stream, frameRegion, target, texture);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void BindVideoCaptureStreamTextureNV(uint videoCaptureSlot, uint stream, GLEnum frameRegion, GLEnum target, uint texture)
+		public void BindVideoCaptureStreamTextureNV(uint videoCaptureSlot, uint stream, GLEnum frameRegion, GLEnum target, uint texture)
 		{
 			BindVideoCaptureStreamTextureNVNative(videoCaptureSlot, stream, frameRegion, target, texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndVideoCaptureNVNative(uint videoCaptureSlot)
+		internal void EndVideoCaptureNVNative(uint videoCaptureSlot)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[3])(videoCaptureSlot);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void EndVideoCaptureNV(uint videoCaptureSlot)
+		public void EndVideoCaptureNV(uint videoCaptureSlot)
 		{
 			EndVideoCaptureNVNative(videoCaptureSlot);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVideoCaptureStreamdvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
+		internal void GetVideoCaptureStreamdvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, double*, void>)funcTable[4])(videoCaptureSlot, stream, pname, @params);
@@ -106,7 +106,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
+		public void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
 		{
 			GetVideoCaptureStreamdvNVNative(videoCaptureSlot, stream, pname, @params);
 		}
@@ -115,7 +115,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<double> @params)
+		public void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -127,7 +127,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref double @params)
+		public void GetVideoCaptureStreamdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -136,7 +136,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVideoCaptureStreamfvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
+		internal void GetVideoCaptureStreamfvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, float*, void>)funcTable[5])(videoCaptureSlot, stream, pname, @params);
@@ -149,7 +149,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
+		public void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
 		{
 			GetVideoCaptureStreamfvNVNative(videoCaptureSlot, stream, pname, @params);
 		}
@@ -158,7 +158,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
+		public void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -170,7 +170,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref float @params)
+		public void GetVideoCaptureStreamfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -179,7 +179,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVideoCaptureStreamivNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
+		internal void GetVideoCaptureStreamivNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, int*, void>)funcTable[6])(videoCaptureSlot, stream, pname, @params);
@@ -192,7 +192,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
+		public void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
 		{
 			GetVideoCaptureStreamivNVNative(videoCaptureSlot, stream, pname, @params);
 		}
@@ -201,7 +201,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
+		public void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -213,7 +213,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref int @params)
+		public void GetVideoCaptureStreamivNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -222,7 +222,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVideoCaptureivNVNative(uint videoCaptureSlot, GLEnum pname, int* @params)
+		internal void GetVideoCaptureivNVNative(uint videoCaptureSlot, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, int*, void>)funcTable[7])(videoCaptureSlot, pname, @params);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, int* @params)
+		public void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, int* @params)
 		{
 			GetVideoCaptureivNVNative(videoCaptureSlot, pname, @params);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, Span<int> @params)
+		public void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, ref int @params)
+		public void GetVideoCaptureivNV(uint videoCaptureSlot, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -265,7 +265,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum VideoCaptureNVNative(uint videoCaptureSlot, uint* sequenceNum, ulong* captureTime)
+		internal GLEnum VideoCaptureNVNative(uint videoCaptureSlot, uint* sequenceNum, ulong* captureTime)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, uint*, ulong*, GLEnum>)funcTable[8])(videoCaptureSlot, sequenceNum, captureTime);
@@ -278,7 +278,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, ulong* captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, ulong* captureTime)
 		{
 			GLEnum ret = VideoCaptureNVNative(videoCaptureSlot, sequenceNum, captureTime);
 			return ret;
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, Span<uint> sequenceNum, ulong* captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, Span<uint> sequenceNum, ulong* captureTime)
 		{
 			fixed (uint* psequenceNum0 = sequenceNum)
 			{
@@ -301,7 +301,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, ref uint sequenceNum, ulong* captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, ref uint sequenceNum, ulong* captureTime)
 		{
 			fixed (uint* psequenceNum0 = &sequenceNum)
 			{
@@ -314,7 +314,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, Span<ulong> captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, Span<ulong> captureTime)
 		{
 			fixed (ulong* pcaptureTime0 = captureTime)
 			{
@@ -327,7 +327,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, ref ulong captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, uint* sequenceNum, ref ulong captureTime)
 		{
 			fixed (ulong* pcaptureTime0 = &captureTime)
 			{
@@ -340,7 +340,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, Span<uint> sequenceNum, Span<ulong> captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, Span<uint> sequenceNum, Span<ulong> captureTime)
 		{
 			fixed (uint* psequenceNum0 = sequenceNum)
 			{
@@ -356,7 +356,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static GLEnum VideoCaptureNV(uint videoCaptureSlot, ref uint sequenceNum, ref ulong captureTime)
+		public GLEnum VideoCaptureNV(uint videoCaptureSlot, ref uint sequenceNum, ref ulong captureTime)
 		{
 			fixed (uint* psequenceNum0 = &sequenceNum)
 			{
@@ -369,7 +369,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VideoCaptureStreamParameterdvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
+		internal void VideoCaptureStreamParameterdvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, double*, void>)funcTable[9])(videoCaptureSlot, stream, pname, @params);
@@ -382,7 +382,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
+		public void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, double* @params)
 		{
 			VideoCaptureStreamParameterdvNVNative(videoCaptureSlot, stream, pname, @params);
 		}
@@ -391,7 +391,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<double> @params)
+		public void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -403,7 +403,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref double @params)
+		public void VideoCaptureStreamParameterdvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -412,7 +412,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VideoCaptureStreamParameterfvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
+		internal void VideoCaptureStreamParameterfvNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, float*, void>)funcTable[10])(videoCaptureSlot, stream, pname, @params);
@@ -425,7 +425,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
+		public void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, float* @params)
 		{
 			VideoCaptureStreamParameterfvNVNative(videoCaptureSlot, stream, pname, @params);
 		}
@@ -434,7 +434,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
+		public void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -446,7 +446,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref float @params)
+		public void VideoCaptureStreamParameterfvNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -455,7 +455,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VideoCaptureStreamParameterivNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
+		internal void VideoCaptureStreamParameterivNVNative(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, int*, void>)funcTable[11])(videoCaptureSlot, stream, pname, @params);
@@ -468,7 +468,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
+		public void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, int* @params)
 		{
 			VideoCaptureStreamParameterivNVNative(videoCaptureSlot, stream, pname, @params);
 		}
@@ -477,7 +477,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
+		public void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -489,7 +489,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_video_capture</remarks>
-		public static void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref int @params)
+		public void VideoCaptureStreamParameterivNV(uint videoCaptureSlot, uint stream, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

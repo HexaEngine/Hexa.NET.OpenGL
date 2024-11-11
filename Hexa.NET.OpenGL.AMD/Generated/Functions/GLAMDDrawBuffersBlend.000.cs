@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDDrawBuffersBlend
+	public unsafe partial class GLAMDDrawBuffersBlend
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationIndexedAMDNative(uint buf, GLBlendEquationModeEXT mode)
+		internal void BlendEquationIndexedAMDNative(uint buf, GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, void>)funcTable[0])(buf, mode);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
-		public static void BlendEquationIndexedAMD(uint buf, GLBlendEquationModeEXT mode)
+		public void BlendEquationIndexedAMD(uint buf, GLBlendEquationModeEXT mode)
 		{
 			BlendEquationIndexedAMDNative(buf, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationSeparateIndexedAMDNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		internal void BlendEquationSeparateIndexedAMDNative(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendEquationModeEXT, GLBlendEquationModeEXT, void>)funcTable[1])(buf, modeRGB, modeAlpha);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
-		public static void BlendEquationSeparateIndexedAMD(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
+		public void BlendEquationSeparateIndexedAMD(uint buf, GLBlendEquationModeEXT modeRGB, GLBlendEquationModeEXT modeAlpha)
 		{
 			BlendEquationSeparateIndexedAMDNative(buf, modeRGB, modeAlpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncIndexedAMDNative(uint buf, GLEnum src, GLEnum dst)
+		internal void BlendFuncIndexedAMDNative(uint buf, GLEnum src, GLEnum dst)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, GLEnum, void>)funcTable[2])(buf, src, dst);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
-		public static void BlendFuncIndexedAMD(uint buf, GLEnum src, GLEnum dst)
+		public void BlendFuncIndexedAMD(uint buf, GLEnum src, GLEnum dst)
 		{
 			BlendFuncIndexedAMDNative(buf, src, dst);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendFuncSeparateIndexedAMDNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		internal void BlendFuncSeparateIndexedAMDNative(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, GLBlendingFactor, void>)funcTable[3])(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_draw_buffers_blend</remarks>
-		public static void BlendFuncSeparateIndexedAMD(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
+		public void BlendFuncSeparateIndexedAMD(uint buf, GLBlendingFactor srcRGB, GLBlendingFactor dstRGB, GLBlendingFactor srcAlpha, GLBlendingFactor dstAlpha)
 		{
 			BlendFuncSeparateIndexedAMDNative(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 		}

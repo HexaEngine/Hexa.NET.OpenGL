@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVShaderBufferLoad
+	public unsafe partial class GLNVShaderBufferLoad
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferParameterui64vNVNative(GLBufferTargetARB target, GLEnum pname, ulong* @params)
+		internal void GetBufferParameterui64vNVNative(GLBufferTargetARB target, GLEnum pname, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLEnum, ulong*, void>)funcTable[0])(target, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ulong* @params)
+		public void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ulong* @params)
 		{
 			GetBufferParameterui64vNVNative(target, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, Span<ulong> @params)
+		public void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ref ulong @params)
+		public void GetBufferParameterui64vNV(GLBufferTargetARB target, GLEnum pname, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegerui64vNVNative(GLEnum value, ulong* result)
+		internal void GetIntegerui64vNVNative(GLEnum value, ulong* result)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, ulong*, void>)funcTable[1])(value, result);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetIntegerui64vNV(GLEnum value, ulong* result)
+		public void GetIntegerui64vNV(GLEnum value, ulong* result)
 		{
 			GetIntegerui64vNVNative(value, result);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetIntegerui64vNV(GLEnum value, Span<ulong> result)
+		public void GetIntegerui64vNV(GLEnum value, Span<ulong> result)
 		{
 			fixed (ulong* presult0 = result)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetIntegerui64vNV(GLEnum value, ref ulong result)
+		public void GetIntegerui64vNV(GLEnum value, ref ulong result)
 		{
 			fixed (ulong* presult0 = &result)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferParameterui64vNVNative(uint buffer, GLBufferPNameARB pname, ulong* @params)
+		internal void GetNamedBufferParameterui64vNVNative(uint buffer, GLBufferPNameARB pname, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBufferPNameARB, ulong*, void>)funcTable[2])(buffer, pname, @params);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ulong* @params)
+		public void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ulong* @params)
 		{
 			GetNamedBufferParameterui64vNVNative(buffer, pname, @params);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, Span<ulong> @params)
+		public void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ref ulong @params)
+		public void GetNamedBufferParameterui64vNV(uint buffer, GLBufferPNameARB pname, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformui64vNVNative(uint program, int location, ulong* @params)
+		internal void GetUniformui64vNVNative(uint program, int location, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong*, void>)funcTable[3])(program, location, @params);
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, ulong* @params)
+		public void GetUniformui64vNV(uint program, int location, ulong* @params)
 		{
 			GetUniformui64vNVNative(program, location, @params);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
+		public void GetUniformui64vNV(uint program, int location, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load<br/>GL_AMD_gpu_shader_int64</remarks>
-		public static void GetUniformui64vNV(uint program, int location, ref ulong @params)
+		public void GetUniformui64vNV(uint program, int location, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -189,7 +189,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsBufferResidentNVNative(GLEnum target)
+		internal byte IsBufferResidentNVNative(GLEnum target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, byte>)funcTable[4])(target);
@@ -202,14 +202,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static bool IsBufferResidentNV(GLEnum target)
+		public bool IsBufferResidentNV(GLEnum target)
 		{
 			byte ret = IsBufferResidentNVNative(target);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsNamedBufferResidentNVNative(uint buffer)
+		internal byte IsNamedBufferResidentNVNative(uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[5])(buffer);
@@ -222,14 +222,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static bool IsNamedBufferResidentNV(uint buffer)
+		public bool IsNamedBufferResidentNV(uint buffer)
 		{
 			byte ret = IsNamedBufferResidentNVNative(buffer);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeBufferNonResidentNVNative(GLEnum target)
+		internal void MakeBufferNonResidentNVNative(GLEnum target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[6])(target);
@@ -242,13 +242,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void MakeBufferNonResidentNV(GLEnum target)
+		public void MakeBufferNonResidentNV(GLEnum target)
 		{
 			MakeBufferNonResidentNVNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeBufferResidentNVNative(GLEnum target, GLEnum access)
+		internal void MakeBufferResidentNVNative(GLEnum target, GLEnum access)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, void>)funcTable[7])(target, access);
@@ -261,13 +261,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void MakeBufferResidentNV(GLEnum target, GLEnum access)
+		public void MakeBufferResidentNV(GLEnum target, GLEnum access)
 		{
 			MakeBufferResidentNVNative(target, access);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeNamedBufferNonResidentNVNative(uint buffer)
+		internal void MakeNamedBufferNonResidentNVNative(uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[8])(buffer);
@@ -280,13 +280,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void MakeNamedBufferNonResidentNV(uint buffer)
+		public void MakeNamedBufferNonResidentNV(uint buffer)
 		{
 			MakeNamedBufferNonResidentNVNative(buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeNamedBufferResidentNVNative(uint buffer, GLEnum access)
+		internal void MakeNamedBufferResidentNVNative(uint buffer, GLEnum access)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, void>)funcTable[9])(buffer, access);
@@ -299,13 +299,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void MakeNamedBufferResidentNV(uint buffer, GLEnum access)
+		public void MakeNamedBufferResidentNV(uint buffer, GLEnum access)
 		{
 			MakeNamedBufferResidentNVNative(buffer, access);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformui64NVNative(uint program, int location, ulong value)
+		internal void ProgramUniformui64NVNative(uint program, int location, ulong value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, void>)funcTable[10])(program, location, value);
@@ -318,13 +318,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void ProgramUniformui64NV(uint program, int location, ulong value)
+		public void ProgramUniformui64NV(uint program, int location, ulong value)
 		{
 			ProgramUniformui64NVNative(program, location, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformui64vNVNative(uint program, int location, int count, ulong* value)
+		internal void ProgramUniformui64vNVNative(uint program, int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[11])(program, location, count, value);
@@ -337,7 +337,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void ProgramUniformui64vNV(uint program, int location, int count, ulong* value)
+		public void ProgramUniformui64vNV(uint program, int location, int count, ulong* value)
 		{
 			ProgramUniformui64vNVNative(program, location, count, value);
 		}
@@ -346,7 +346,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void ProgramUniformui64vNV(uint program, int location, int count, Span<ulong> value)
+		public void ProgramUniformui64vNV(uint program, int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -358,7 +358,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void ProgramUniformui64vNV(uint program, int location, int count, ref ulong value)
+		public void ProgramUniformui64vNV(uint program, int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{
@@ -367,7 +367,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniformui64NVNative(int location, ulong value)
+		internal void Uniformui64NVNative(int location, ulong value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, void>)funcTable[12])(location, value);
@@ -380,13 +380,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void Uniformui64NV(int location, ulong value)
+		public void Uniformui64NV(int location, ulong value)
 		{
 			Uniformui64NVNative(location, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniformui64vNVNative(int location, int count, ulong* value)
+		internal void Uniformui64vNVNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[13])(location, count, value);
@@ -399,7 +399,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void Uniformui64vNV(int location, int count, ulong* value)
+		public void Uniformui64vNV(int location, int count, ulong* value)
 		{
 			Uniformui64vNVNative(location, count, value);
 		}
@@ -408,7 +408,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void Uniformui64vNV(int location, int count, Span<ulong> value)
+		public void Uniformui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -420,7 +420,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_shader_buffer_load</remarks>
-		public static void Uniformui64vNV(int location, int count, ref ulong value)
+		public void Uniformui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{

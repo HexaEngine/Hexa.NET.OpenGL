@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESVertexArrayObject
+	public unsafe partial class GLOESVertexArrayObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexArrayOESNative(uint array)
+		internal void BindVertexArrayOESNative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(array);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void BindVertexArrayOES(uint array)
+		public void BindVertexArrayOES(uint array)
 		{
 			BindVertexArrayOESNative(array);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteVertexArraysOESNative(int n, uint* arrays)
+		internal void DeleteVertexArraysOESNative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, arrays);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void DeleteVertexArraysOES(int n, uint* arrays)
+		public void DeleteVertexArraysOES(int n, uint* arrays)
 		{
 			DeleteVertexArraysOESNative(n, arrays);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void DeleteVertexArraysOE(uint array)
+		public void DeleteVertexArraysOE(uint array)
 		{
 			DeleteVertexArraysOESNative(1, &array);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void DeleteVertexArraysOES(int n, Span<uint> arrays)
+		public void DeleteVertexArraysOES(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void DeleteVertexArraysOES(int n, ref uint arrays)
+		public void DeleteVertexArraysOES(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenVertexArraysOESNative(int n, uint* arrays)
+		internal void GenVertexArraysOESNative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, arrays);
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void GenVertexArraysOES(int n, uint* arrays)
+		public void GenVertexArraysOES(int n, uint* arrays)
 		{
 			GenVertexArraysOESNative(n, arrays);
 		}
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static uint GenVertexArraysOE()
+		public uint GenVertexArraysOE()
 		{
 			uint result;
 			GenVertexArraysOESNative(1, &result);
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void GenVertexArraysOES(int n, Span<uint> arrays)
+		public void GenVertexArraysOES(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static void GenVertexArraysOES(int n, ref uint arrays)
+		public void GenVertexArraysOES(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -142,7 +142,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsVertexArrayOESNative(uint array)
+		internal byte IsVertexArrayOESNative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[3])(array);
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_vertex_array_object</remarks>
-		public static bool IsVertexArrayOES(uint array)
+		public bool IsVertexArrayOES(uint array)
 		{
 			byte ret = IsVertexArrayOESNative(array);
 			return ret != 0;

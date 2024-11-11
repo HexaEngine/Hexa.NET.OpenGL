@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBCopyBuffer
+	public unsafe partial class GLARBCopyBuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyBufferSubDataNative(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
+		internal void CopyBufferSubDataNative(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCopyBufferSubDataTarget, GLCopyBufferSubDataTarget, nint, nint, nint, void>)funcTable[0])(readTarget, writeTarget, readOffset, writeOffset, size);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Copy all or part of the data store of a buffer object to the data store of another buffer object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.1 - GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_copy_buffer</remarks>
-		public static void CopyBufferSubData(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
+		public void CopyBufferSubData(GLCopyBufferSubDataTarget readTarget, GLCopyBufferSubDataTarget writeTarget, nint readOffset, nint writeOffset, nint size)
 		{
 			CopyBufferSubDataNative(readTarget, writeTarget, readOffset, writeOffset, size);
 		}

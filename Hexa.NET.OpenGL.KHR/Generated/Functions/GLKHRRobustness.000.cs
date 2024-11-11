@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.KHR
 {
-	public static unsafe partial class GLKHRRobustness
+	public unsafe partial class GLKHRRobustness
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum GetGraphicsResetStatusNative()
+		internal GLEnum GetGraphicsResetStatusNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum>)funcTable[0])();
@@ -30,14 +30,14 @@ namespace Hexa.NET.OpenGL.KHR
 		/// Check if the rendering context has not been lost due to software or hardware issues
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static GLEnum GetGraphicsResetStatus()
+		public GLEnum GetGraphicsResetStatus()
 		{
 			GLEnum ret = GetGraphicsResetStatusNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum GetGraphicsResetStatusKHRNative()
+		internal GLEnum GetGraphicsResetStatusKHRNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum>)funcTable[1])();
@@ -50,14 +50,14 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static GLEnum GetGraphicsResetStatusKHR()
+		public GLEnum GetGraphicsResetStatusKHR()
 		{
 			GLEnum ret = GetGraphicsResetStatusKHRNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformfvNative(uint program, int location, int bufSize, float* @params)
+		internal void GetnUniformfvNative(uint program, int location, int bufSize, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[2])(program, location, bufSize, @params);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfv(uint program, int location, int bufSize, float* @params)
+		public void GetnUniformfv(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvNative(program, location, bufSize, @params);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfv(uint program, int location, int bufSize, out float @params)
+		public void GetnUniformfv(uint program, int location, int bufSize, out float @params)
 		{
 			float pparam;
 			GetnUniformfvNative(program, location, bufSize, &pparam);
@@ -90,7 +90,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfv(uint program, int location, int bufSize, Span<float> @params)
+		public void GetnUniformfv(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -99,7 +99,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformfvKHRNative(uint program, int location, int bufSize, float* @params)
+		internal void GetnUniformfvKHRNative(uint program, int location, int bufSize, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[3])(program, location, bufSize, @params);
@@ -112,7 +112,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfvKHR(uint program, int location, int bufSize, float* @params)
+		public void GetnUniformfvKHR(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvKHRNative(program, location, bufSize, @params);
 		}
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfvKHR(uint program, int location, int bufSize, Span<float> @params)
+		public void GetnUniformfvKHR(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformfvKHR(uint program, int location, int bufSize, ref float @params)
+		public void GetnUniformfvKHR(uint program, int location, int bufSize, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -142,7 +142,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformivNative(uint program, int location, int bufSize, int* @params)
+		internal void GetnUniformivNative(uint program, int location, int bufSize, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[4])(program, location, bufSize, @params);
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformiv(uint program, int location, int bufSize, int* @params)
+		public void GetnUniformiv(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivNative(program, location, bufSize, @params);
 		}
@@ -164,7 +164,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformiv(uint program, int location, int bufSize, out int @params)
+		public void GetnUniformiv(uint program, int location, int bufSize, out int @params)
 		{
 			int pparam;
 			GetnUniformivNative(program, location, bufSize, &pparam);
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformiv(uint program, int location, int bufSize, Span<int> @params)
+		public void GetnUniformiv(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformivKHRNative(uint program, int location, int bufSize, int* @params)
+		internal void GetnUniformivKHRNative(uint program, int location, int bufSize, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[5])(program, location, bufSize, @params);
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformivKHR(uint program, int location, int bufSize, int* @params)
+		public void GetnUniformivKHR(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivKHRNative(program, location, bufSize, @params);
 		}
@@ -206,7 +206,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformivKHR(uint program, int location, int bufSize, Span<int> @params)
+		public void GetnUniformivKHR(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformivKHR(uint program, int location, int bufSize, ref int @params)
+		public void GetnUniformivKHR(uint program, int location, int bufSize, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -227,7 +227,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformuivNative(uint program, int location, int bufSize, uint* @params)
+		internal void GetnUniformuivNative(uint program, int location, int bufSize, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[6])(program, location, bufSize, @params);
@@ -240,7 +240,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuiv(uint program, int location, int bufSize, uint* @params)
+		public void GetnUniformuiv(uint program, int location, int bufSize, uint* @params)
 		{
 			GetnUniformuivNative(program, location, bufSize, @params);
 		}
@@ -249,7 +249,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuiv(uint program, int location, int bufSize, out uint @params)
+		public void GetnUniformuiv(uint program, int location, int bufSize, out uint @params)
 		{
 			uint pparam;
 			GetnUniformuivNative(program, location, bufSize, &pparam);
@@ -260,7 +260,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuiv(uint program, int location, int bufSize, Span<uint> @params)
+		public void GetnUniformuiv(uint program, int location, int bufSize, Span<uint> @params)
 		{
 			fixed (uint* pparams = @params)
 			{
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformuivKHRNative(uint program, int location, int bufSize, uint* @params)
+		internal void GetnUniformuivKHRNative(uint program, int location, int bufSize, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[7])(program, location, bufSize, @params);
@@ -282,7 +282,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuivKHR(uint program, int location, int bufSize, uint* @params)
+		public void GetnUniformuivKHR(uint program, int location, int bufSize, uint* @params)
 		{
 			GetnUniformuivKHRNative(program, location, bufSize, @params);
 		}
@@ -291,7 +291,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuivKHR(uint program, int location, int bufSize, Span<uint> @params)
+		public void GetnUniformuivKHR(uint program, int location, int bufSize, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void GetnUniformuivKHR(uint program, int location, int bufSize, ref uint @params)
+		public void GetnUniformuivKHR(uint program, int location, int bufSize, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -312,7 +312,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadnPixelsNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		internal void ReadnPixelsNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[8])(x, y, width, height, format, type, bufSize, data);
@@ -325,7 +325,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		public void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsNative(x, y, width, height, format, type, bufSize, data);
 		}
@@ -334,7 +334,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		public void ReadnPixels(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
@@ -343,7 +343,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void ReadnPixels<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		public void ReadnPixels<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -352,7 +352,7 @@ namespace Hexa.NET.OpenGL.KHR
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadnPixelsKHRNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		internal void ReadnPixelsKHRNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[9])(x, y, width, height, format, type, bufSize, data);
@@ -365,7 +365,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		public void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, data);
 		}
@@ -374,7 +374,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		public void ReadnPixelsKHR(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsKHRNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_robustness</remarks>
-		public static void ReadnPixelsKHR<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		public void ReadnPixelsKHR<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{

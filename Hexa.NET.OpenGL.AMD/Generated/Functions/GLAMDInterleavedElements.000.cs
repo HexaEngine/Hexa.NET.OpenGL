@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDInterleavedElements
+	public unsafe partial class GLAMDInterleavedElements
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribParameteriAMDNative(uint index, GLEnum pname, int param)
+		internal void VertexAttribParameteriAMDNative(uint index, GLEnum pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, void>)funcTable[0])(index, pname, param);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_interleaved_elements</remarks>
-		public static void VertexAttribParameteriAMD(uint index, GLEnum pname, int param)
+		public void VertexAttribParameteriAMD(uint index, GLEnum pname, int param)
 		{
 			VertexAttribParameteriAMDNative(index, pname, param);
 		}

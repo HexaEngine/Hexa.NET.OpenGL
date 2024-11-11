@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVPixelDataRange
+	public unsafe partial class GLNVPixelDataRange
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FlushPixelDataRangeNVNative(GLPixelDataRangeTargetNV target)
+		internal void FlushPixelDataRangeNVNative(GLPixelDataRangeTargetNV target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelDataRangeTargetNV, void>)funcTable[0])(target);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
-		public static void FlushPixelDataRangeNV(GLPixelDataRangeTargetNV target)
+		public void FlushPixelDataRangeNV(GLPixelDataRangeTargetNV target)
 		{
 			FlushPixelDataRangeNVNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PixelDataRangeNVNative(GLPixelDataRangeTargetNV target, int length, void* pointer)
+		internal void PixelDataRangeNVNative(GLPixelDataRangeTargetNV target, int length, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelDataRangeTargetNV, int, void*, void>)funcTable[1])(target, length, pointer);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
-		public static void PixelDataRangeNV(GLPixelDataRangeTargetNV target, int length, void* pointer)
+		public void PixelDataRangeNV(GLPixelDataRangeTargetNV target, int length, void* pointer)
 		{
 			PixelDataRangeNVNative(target, length, pointer);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
-		public static void PixelDataRangeNV(GLPixelDataRangeTargetNV target, int length, nint pointer)
+		public void PixelDataRangeNV(GLPixelDataRangeTargetNV target, int length, nint pointer)
 		{
 			PixelDataRangeNVNative(target, length, (void*)pointer);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_pixel_data_range</remarks>
-		public static void PixelDataRangeNV<TPointer>(GLPixelDataRangeTargetNV target, int length, Span<TPointer> pointer) where TPointer : unmanaged
+		public void PixelDataRangeNV<TPointer>(GLPixelDataRangeTargetNV target, int length, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

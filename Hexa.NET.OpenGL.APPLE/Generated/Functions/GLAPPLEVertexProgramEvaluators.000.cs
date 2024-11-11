@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLEVertexProgramEvaluators
+	public unsafe partial class GLAPPLEVertexProgramEvaluators
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableVertexAttribAPPLENative(uint index, GLEnum pname)
+		internal void DisableVertexAttribAPPLENative(uint index, GLEnum pname)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, void>)funcTable[0])(index, pname);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void DisableVertexAttribAPPLE(uint index, GLEnum pname)
+		public void DisableVertexAttribAPPLE(uint index, GLEnum pname)
 		{
 			DisableVertexAttribAPPLENative(index, pname);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableVertexAttribAPPLENative(uint index, GLEnum pname)
+		internal void EnableVertexAttribAPPLENative(uint index, GLEnum pname)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, void>)funcTable[1])(index, pname);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void EnableVertexAttribAPPLE(uint index, GLEnum pname)
+		public void EnableVertexAttribAPPLE(uint index, GLEnum pname)
 		{
 			EnableVertexAttribAPPLENative(index, pname);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsVertexAttribEnabledAPPLENative(uint index, GLEnum pname)
+		internal byte IsVertexAttribEnabledAPPLENative(uint index, GLEnum pname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLEnum, byte>)funcTable[2])(index, pname);
@@ -68,14 +68,14 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static bool IsVertexAttribEnabledAPPLE(uint index, GLEnum pname)
+		public bool IsVertexAttribEnabledAPPLE(uint index, GLEnum pname)
 		{
 			byte ret = IsVertexAttribEnabledAPPLENative(index, pname);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapVertexAttrib1dAPPLENative(uint index, uint size, double u1, double u2, int stride, int order, double* points)
+		internal void MapVertexAttrib1dAPPLENative(uint index, uint size, double u1, double u2, int stride, int order, double* points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, double, double, int, int, double*, void>)funcTable[3])(index, size, u1, u2, stride, order, points);
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, double* points)
+		public void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, double* points)
 		{
 			MapVertexAttrib1dAPPLENative(index, size, u1, u2, stride, order, points);
 		}
@@ -97,7 +97,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, Span<double> points)
+		public void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, Span<double> points)
 		{
 			fixed (double* ppoints0 = points)
 			{
@@ -109,7 +109,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, ref double points)
+		public void MapVertexAttrib1dAPPLE(uint index, uint size, double u1, double u2, int stride, int order, ref double points)
 		{
 			fixed (double* ppoints0 = &points)
 			{
@@ -118,7 +118,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapVertexAttrib1fAPPLENative(uint index, uint size, float u1, float u2, int stride, int order, float* points)
+		internal void MapVertexAttrib1fAPPLENative(uint index, uint size, float u1, float u2, int stride, int order, float* points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, float, float, int, int, float*, void>)funcTable[4])(index, size, u1, u2, stride, order, points);
@@ -131,7 +131,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, float* points)
+		public void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, float* points)
 		{
 			MapVertexAttrib1fAPPLENative(index, size, u1, u2, stride, order, points);
 		}
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, Span<float> points)
+		public void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, Span<float> points)
 		{
 			fixed (float* ppoints0 = points)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, ref float points)
+		public void MapVertexAttrib1fAPPLE(uint index, uint size, float u1, float u2, int stride, int order, ref float points)
 		{
 			fixed (float* ppoints0 = &points)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapVertexAttrib2dAPPLENative(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, double* points)
+		internal void MapVertexAttrib2dAPPLENative(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, double* points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, double, double, int, int, double, double, int, int, double*, void>)funcTable[5])(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, double* points)
+		public void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, double* points)
 		{
 			MapVertexAttrib2dAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
 		}
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, Span<double> points)
+		public void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, Span<double> points)
 		{
 			fixed (double* ppoints0 = points)
 			{
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, ref double points)
+		public void MapVertexAttrib2dAPPLE(uint index, uint size, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, ref double points)
 		{
 			fixed (double* ppoints0 = &points)
 			{
@@ -204,7 +204,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MapVertexAttrib2fAPPLENative(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points)
+		internal void MapVertexAttrib2fAPPLENative(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, float, float, int, int, float, float, int, int, float*, void>)funcTable[6])(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points)
+		public void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points)
 		{
 			MapVertexAttrib2fAPPLENative(index, size, u1, u2, ustride, uorder, v1, v2, vstride, vorder, points);
 		}
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, Span<float> points)
+		public void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, Span<float> points)
 		{
 			fixed (float* ppoints0 = points)
 			{
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_program_evaluators</remarks>
-		public static void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, ref float points)
+		public void MapVertexAttrib2fAPPLE(uint index, uint size, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, ref float points)
 		{
 			fixed (float* ppoints0 = &points)
 			{

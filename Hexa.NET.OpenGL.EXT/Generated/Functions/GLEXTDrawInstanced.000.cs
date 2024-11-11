@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTDrawInstanced
+	public unsafe partial class GLEXTDrawInstanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawArraysInstancedEXTNative(GLPrimitiveType mode, int start, int count, int primcount)
+		internal void DrawArraysInstancedEXTNative(GLPrimitiveType mode, int start, int count, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, int, int, void>)funcTable[0])(mode, start, count, primcount);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
-		public static void DrawArraysInstancedEXT(GLPrimitiveType mode, int start, int count, int primcount)
+		public void DrawArraysInstancedEXT(GLPrimitiveType mode, int start, int count, int primcount)
 		{
 			DrawArraysInstancedEXTNative(mode, start, count, primcount);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawElementsInstancedEXTNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		internal void DrawElementsInstancedEXTNative(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, int, GLDrawElementsType, void*, int, void>)funcTable[1])(mode, count, type, indices, primcount);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
-		public static void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
+		public void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, void* indices, int primcount)
 		{
 			DrawElementsInstancedEXTNative(mode, count, type, indices, primcount);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
-		public static void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
+		public void DrawElementsInstancedEXT(GLPrimitiveType mode, int count, GLDrawElementsType type, nint indices, int primcount)
 		{
 			DrawElementsInstancedEXTNative(mode, count, type, (void*)indices, primcount);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_draw_instanced<br/>GL_EXT_instanced_arrays</remarks>
-		public static void DrawElementsInstancedEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
+		public void DrawElementsInstancedEXT<TIndices>(GLPrimitiveType mode, int count, GLDrawElementsType type, Span<TIndices> indices, int primcount) where TIndices : unmanaged
 		{
 			fixed (TIndices* pindices0 = indices)
 			{

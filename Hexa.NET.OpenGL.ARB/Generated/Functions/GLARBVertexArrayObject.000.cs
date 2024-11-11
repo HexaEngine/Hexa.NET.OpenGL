@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBVertexArrayObject
+	public unsafe partial class GLARBVertexArrayObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexArrayNative(uint array)
+		internal void BindVertexArrayNative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(array);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void BindVertexArray(uint array)
+		public void BindVertexArray(uint array)
 		{
 			BindVertexArrayNative(array);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteVertexArraysNative(int n, uint* arrays)
+		internal void DeleteVertexArraysNative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, arrays);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArrays(int n, uint* arrays)
+		public void DeleteVertexArrays(int n, uint* arrays)
 		{
 			DeleteVertexArraysNative(n, arrays);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArray(uint array)
+		public void DeleteVertexArray(uint array)
 		{
 			DeleteVertexArraysNative(1, &array);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArrays(int n, Span<uint> arrays)
+		public void DeleteVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete vertex array objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void DeleteVertexArrays(int n, ref uint arrays)
+		public void DeleteVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenVertexArraysNative(int n, uint* arrays)
+		internal void GenVertexArraysNative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, arrays);
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Generate vertex array object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void GenVertexArrays(int n, uint* arrays)
+		public void GenVertexArrays(int n, uint* arrays)
 		{
 			GenVertexArraysNative(n, arrays);
 		}
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Generate vertex array object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static uint GenVertexArray()
+		public uint GenVertexArray()
 		{
 			uint result;
 			GenVertexArraysNative(1, &result);
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Generate vertex array object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void GenVertexArrays(int n, Span<uint> arrays)
+		public void GenVertexArrays(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Generate vertex array object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static void GenVertexArrays(int n, ref uint arrays)
+		public void GenVertexArrays(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -142,7 +142,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsVertexArrayNative(uint array)
+		internal byte IsVertexArrayNative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[3])(array);
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Determine if a name corresponds to a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_array_object</remarks>
-		public static bool IsVertexArray(uint array)
+		public bool IsVertexArray(uint array)
 		{
 			byte ret = IsVertexArrayNative(array);
 			return ret != 0;

@@ -14,36 +14,21 @@ using Hexa.NET.OpenGL;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public unsafe partial class GLARBMultiBind
+	public unsafe partial class GLARBMultiBind : GLExtension, IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
-
-		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
-
 		public const string ExtensionName = "GL_ARB_multi_bind";
 
-		/// <summary>
-		/// Tries to initialize the function table of the extension, call before you access any function.
-		/// </summary>
-		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
-		public static bool TryInitExtension()
+		public GLARBMultiBind() : base(6)
 		{
-			if (!IsSupported) return false;
-			InitExtension();
-			return true;
 		}
 
-		/// <summary>
-		/// Initializes the function table of the extension, call before you access any function.
-		/// </summary>
-		public static void InitExtension()
+		public override bool IsSupported(IGLContext context)
 		{
-			if (funcTable != null) return;
-			if (GLBase.NativeContext == null) throw new InvalidOperationException("OpenGL is not initialized, call GL.InitApi.");
-			funcTable = new FunctionTable(GLBase.NativeContext, 6);
+			return context.IsExtensionSupported(ExtensionName);
+		}
+
+		protected override void InitTable(FunctionTable funcTable)
+		{
 			funcTable.Load(0, "glBindBuffersBase");
 			funcTable.Load(1, "glBindBuffersRange");
 			funcTable.Load(2, "glBindImageTextures");
@@ -52,11 +37,9 @@ namespace Hexa.NET.OpenGL.ARB
 			funcTable.Load(5, "glBindVertexBuffers");
 		}
 
-		public static void FreeExtension()
+		public void Dispose()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
+			funcTable.Dispose();
 		}
 	}
 }

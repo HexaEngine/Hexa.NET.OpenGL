@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTShaderPixelLocalStorage2
+	public unsafe partial class GLEXTShaderPixelLocalStorage2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearPixelLocalStorageuiEXTNative(int offset, int n, uint* values)
+		internal void ClearPixelLocalStorageuiEXTNative(int offset, int n, uint* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, uint*, void>)funcTable[0])(offset, n, values);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
-		public static void ClearPixelLocalStorageuiEXT(int offset, int n, uint* values)
+		public void ClearPixelLocalStorageuiEXT(int offset, int n, uint* values)
 		{
 			ClearPixelLocalStorageuiEXTNative(offset, n, values);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
-		public static void ClearPixelLocalStorageuiEXT(int offset, int n, Span<uint> values)
+		public void ClearPixelLocalStorageuiEXT(int offset, int n, Span<uint> values)
 		{
 			fixed (uint* pvalues0 = values)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
-		public static void ClearPixelLocalStorageuiEXT(int offset, int n, ref uint values)
+		public void ClearPixelLocalStorageuiEXT(int offset, int n, ref uint values)
 		{
 			fixed (uint* pvalues0 = &values)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferPixelLocalStorageSizeEXTNative(uint target, int size)
+		internal void FramebufferPixelLocalStorageSizeEXTNative(uint target, int size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[1])(target, size);
@@ -73,13 +73,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
-		public static void FramebufferPixelLocalStorageSizeEXT(uint target, int size)
+		public void FramebufferPixelLocalStorageSizeEXT(uint target, int size)
 		{
 			FramebufferPixelLocalStorageSizeEXTNative(target, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetFramebufferPixelLocalStorageSizeEXTNative(GLFramebufferTarget target)
+		internal int GetFramebufferPixelLocalStorageSizeEXTNative(GLFramebufferTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLFramebufferTarget, int>)funcTable[2])(target);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_pixel_local_storage2</remarks>
-		public static int GetFramebufferPixelLocalStorageSizeEXT(GLFramebufferTarget target)
+		public int GetFramebufferPixelLocalStorageSizeEXT(GLFramebufferTarget target)
 		{
 			int ret = GetFramebufferPixelLocalStorageSizeEXTNative(target);
 			return ret;

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.ANGLE
 {
-	public static unsafe partial class GLANGLEFramebufferMultisample
+	public unsafe partial class GLANGLEFramebufferMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RenderbufferStorageMultisampleANGLENative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		internal void RenderbufferStorageMultisampleANGLENative(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, GLInternalFormat, int, int, void>)funcTable[0])(target, samples, internalformat, width, height);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.ANGLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ANGLE_framebuffer_multisample</remarks>
-		public static void RenderbufferStorageMultisampleANGLE(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
+		public void RenderbufferStorageMultisampleANGLE(GLRenderbufferTarget target, int samples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleANGLENative(target, samples, internalformat, width, height);
 		}

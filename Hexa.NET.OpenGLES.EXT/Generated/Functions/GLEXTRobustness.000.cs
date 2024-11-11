@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTRobustness
+	public unsafe partial class GLEXTRobustness
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum GetGraphicsResetStatusEXTNative()
+		internal GLEnum GetGraphicsResetStatusEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum>)funcTable[0])();
@@ -30,14 +30,14 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static GLEnum GetGraphicsResetStatusEXT()
+		public GLEnum GetGraphicsResetStatusEXT()
 		{
 			GLEnum ret = GetGraphicsResetStatusEXTNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformfvEXTNative(uint program, int location, int bufSize, float* @params)
+		internal void GetnUniformfvEXTNative(uint program, int location, int bufSize, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[1])(program, location, bufSize, @params);
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformfvEXT(uint program, int location, int bufSize, float* @params)
+		public void GetnUniformfvEXT(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvEXTNative(program, location, bufSize, @params);
 		}
@@ -59,7 +59,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformfvEXT(uint program, int location, int bufSize, Span<float> @params)
+		public void GetnUniformfvEXT(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -71,7 +71,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformfvEXT(uint program, int location, int bufSize, ref float @params)
+		public void GetnUniformfvEXT(uint program, int location, int bufSize, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -80,7 +80,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformivEXTNative(uint program, int location, int bufSize, int* @params)
+		internal void GetnUniformivEXTNative(uint program, int location, int bufSize, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[2])(program, location, bufSize, @params);
@@ -93,7 +93,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformivEXT(uint program, int location, int bufSize, int* @params)
+		public void GetnUniformivEXT(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivEXTNative(program, location, bufSize, @params);
 		}
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformivEXT(uint program, int location, int bufSize, Span<int> @params)
+		public void GetnUniformivEXT(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -114,7 +114,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void GetnUniformivEXT(uint program, int location, int bufSize, ref int @params)
+		public void GetnUniformivEXT(uint program, int location, int bufSize, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -123,7 +123,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadnPixelsEXTNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		internal void ReadnPixelsEXTNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[3])(x, y, width, height, format, type, bufSize, data);
@@ -136,7 +136,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		public void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, data);
 		}
@@ -145,7 +145,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		public void ReadnPixelsEXT(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsEXTNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
@@ -154,7 +154,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_robustness</remarks>
-		public static void ReadnPixelsEXT<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		public void ReadnPixelsEXT<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{

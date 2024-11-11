@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVTransformFeedback2
+	public unsafe partial class GLNVTransformFeedback2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTransformFeedbackNVNative(GLBufferTargetARB target, uint id)
+		internal void BindTransformFeedbackNVNative(GLBufferTargetARB target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, void>)funcTable[0])(target, id);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void BindTransformFeedbackNV(GLBufferTargetARB target, uint id)
+		public void BindTransformFeedbackNV(GLBufferTargetARB target, uint id)
 		{
 			BindTransformFeedbackNVNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteTransformFeedbacksNVNative(int n, uint* ids)
+		internal void DeleteTransformFeedbacksNVNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, ids);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacksNV(int n, uint* ids)
+		public void DeleteTransformFeedbacksNV(int n, uint* ids)
 		{
 			DeleteTransformFeedbacksNVNative(n, ids);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacksN(uint id)
+		public void DeleteTransformFeedbacksN(uint id)
 		{
 			DeleteTransformFeedbacksNVNative(1, &id);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacksNV(int n, Span<uint> ids)
+		public void DeleteTransformFeedbacksNV(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacksNV(int n, ref uint ids)
+		public void DeleteTransformFeedbacksNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackNVNative(GLPrimitiveType mode, uint id)
+		internal void DrawTransformFeedbackNVNative(GLPrimitiveType mode, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, void>)funcTable[2])(mode, id);
@@ -101,13 +101,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void DrawTransformFeedbackNV(GLPrimitiveType mode, uint id)
+		public void DrawTransformFeedbackNV(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackNVNative(mode, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenTransformFeedbacksNVNative(int n, uint* ids)
+		internal void GenTransformFeedbacksNVNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, ids);
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void GenTransformFeedbacksNV(int n, uint* ids)
+		public void GenTransformFeedbacksNV(int n, uint* ids)
 		{
 			GenTransformFeedbacksNVNative(n, ids);
 		}
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static uint GenTransformFeedbacksN()
+		public uint GenTransformFeedbacksN()
 		{
 			uint result;
 			GenTransformFeedbacksNVNative(1, &result);
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void GenTransformFeedbacksNV(int n, Span<uint> ids)
+		public void GenTransformFeedbacksNV(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void GenTransformFeedbacksNV(int n, ref uint ids)
+		public void GenTransformFeedbacksNV(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsTransformFeedbackNVNative(uint id)
+		internal byte IsTransformFeedbackNVNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[4])(id);
@@ -174,14 +174,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static bool IsTransformFeedbackNV(uint id)
+		public bool IsTransformFeedbackNV(uint id)
 		{
 			byte ret = IsTransformFeedbackNVNative(id);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PauseTransformFeedbackNVNative()
+		internal void PauseTransformFeedbackNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[5])();
@@ -194,13 +194,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void PauseTransformFeedbackNV()
+		public void PauseTransformFeedbackNV()
 		{
 			PauseTransformFeedbackNVNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResumeTransformFeedbackNVNative()
+		internal void ResumeTransformFeedbackNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[6])();
@@ -213,7 +213,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_transform_feedback2</remarks>
-		public static void ResumeTransformFeedbackNV()
+		public void ResumeTransformFeedbackNV()
 		{
 			ResumeTransformFeedbackNVNative();
 		}

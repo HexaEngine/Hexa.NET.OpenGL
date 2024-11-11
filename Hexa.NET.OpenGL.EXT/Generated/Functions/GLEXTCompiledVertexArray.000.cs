@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTCompiledVertexArray
+	public unsafe partial class GLEXTCompiledVertexArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LockArraysEXTNative(int first, int count)
+		internal void LockArraysEXTNative(int first, int count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[0])(first, count);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_compiled_vertex_array</remarks>
-		public static void LockArraysEXT(int first, int count)
+		public void LockArraysEXT(int first, int count)
 		{
 			LockArraysEXTNative(first, count);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UnlockArraysEXTNative()
+		internal void UnlockArraysEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[1])();
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_compiled_vertex_array</remarks>
-		public static void UnlockArraysEXT()
+		public void UnlockArraysEXT()
 		{
 			UnlockArraysEXTNative();
 		}

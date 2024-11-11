@@ -14,36 +14,21 @@ using Hexa.NET.OpenGLES;
 
 namespace Hexa.NET.OpenGLES.INTEL
 {
-	public unsafe partial class GLINTELPerformanceQuery
+	public unsafe partial class GLINTELPerformanceQuery : GLExtension, IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
-
-		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
-
 		public const string ExtensionName = "GL_INTEL_performance_query";
 
-		/// <summary>
-		/// Tries to initialize the function table of the extension, call before you access any function.
-		/// </summary>
-		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
-		public static bool TryInitExtension()
+		public GLINTELPerformanceQuery() : base(10)
 		{
-			if (!IsSupported) return false;
-			InitExtension();
-			return true;
 		}
 
-		/// <summary>
-		/// Initializes the function table of the extension, call before you access any function.
-		/// </summary>
-		public static void InitExtension()
+		public override bool IsSupported(IGLContext context)
 		{
-			if (funcTable != null) return;
-			if (GLBase.NativeContext == null) throw new InvalidOperationException("OpenGL is not initialized, call GL.InitApi.");
-			funcTable = new FunctionTable(GLBase.NativeContext, 10);
+			return context.IsExtensionSupported(ExtensionName);
+		}
+
+		protected override void InitTable(FunctionTable funcTable)
+		{
 			funcTable.Load(0, "glBeginPerfQueryINTEL");
 			funcTable.Load(1, "glCreatePerfQueryINTEL");
 			funcTable.Load(2, "glDeletePerfQueryINTEL");
@@ -56,11 +41,9 @@ namespace Hexa.NET.OpenGLES.INTEL
 			funcTable.Load(9, "glGetPerfQueryInfoINTEL");
 		}
 
-		public static void FreeExtension()
+		public void Dispose()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
+			funcTable.Dispose();
 		}
 	}
 }

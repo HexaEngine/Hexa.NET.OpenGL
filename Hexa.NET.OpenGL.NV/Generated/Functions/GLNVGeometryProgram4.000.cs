@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVGeometryProgram4
+	public unsafe partial class GLNVGeometryProgram4
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
+		internal void FramebufferTextureEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, void>)funcTable[0])(target, attachment, texture, level);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4<br/>GL_EXT_geometry_shader</remarks>
-		public static void FramebufferTextureEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
+		public void FramebufferTextureEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			FramebufferTextureEXTNative(target, attachment, texture, level);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureFaceEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
+		internal void FramebufferTextureFaceEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, GLTextureTarget, void>)funcTable[1])(target, attachment, texture, level, face);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4</remarks>
-		public static void FramebufferTextureFaceEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
+		public void FramebufferTextureFaceEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			FramebufferTextureFaceEXTNative(target, attachment, texture, level, face);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureLayerEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
+		internal void FramebufferTextureLayerEXTNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, int, void>)funcTable[2])(target, attachment, texture, level, layer);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_array<br/>GL_NV_geometry_program4</remarks>
-		public static void FramebufferTextureLayerEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
+		public void FramebufferTextureLayerEXT(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			FramebufferTextureLayerEXTNative(target, attachment, texture, level, layer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramVertexLimitNVNative(GLProgramTarget target, int limit)
+		internal void ProgramVertexLimitNVNative(GLProgramTarget target, int limit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, int, void>)funcTable[3])(target, limit);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_geometry_program4</remarks>
-		public static void ProgramVertexLimitNV(GLProgramTarget target, int limit)
+		public void ProgramVertexLimitNV(GLProgramTarget target, int limit)
 		{
 			ProgramVertexLimitNVNative(target, limit);
 		}

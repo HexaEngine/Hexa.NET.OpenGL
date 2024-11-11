@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTMultisample
+	public unsafe partial class GLEXTMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleMaskEXTNative(float value, bool invert)
+		internal void SampleMaskEXTNative(float value, bool invert)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, *((byte*)(&invert)));
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
-		public static void SampleMaskEXT(float value, bool invert)
+		public void SampleMaskEXT(float value, bool invert)
 		{
 			SampleMaskEXTNative(value, invert);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SamplePatternEXTNative(GLSamplePatternEXT pattern)
+		internal void SamplePatternEXTNative(GLSamplePatternEXT pattern)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSamplePatternEXT, void>)funcTable[1])(pattern);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_multisample</remarks>
-		public static void SamplePatternEXT(GLSamplePatternEXT pattern)
+		public void SamplePatternEXT(GLSamplePatternEXT pattern)
 		{
 			SamplePatternEXTNative(pattern);
 		}

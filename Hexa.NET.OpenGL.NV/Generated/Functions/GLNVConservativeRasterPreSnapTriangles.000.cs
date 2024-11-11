@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVConservativeRasterPreSnapTriangles
+	public unsafe partial class GLNVConservativeRasterPreSnapTriangles
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConservativeRasterParameteriNVNative(GLEnum pname, int param)
+		internal void ConservativeRasterParameteriNVNative(GLEnum pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, void>)funcTable[0])(pname, param);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_conservative_raster_pre_snap_triangles</remarks>
-		public static void ConservativeRasterParameteriNV(GLEnum pname, int param)
+		public void ConservativeRasterParameteriNV(GLEnum pname, int param)
 		{
 			ConservativeRasterParameteriNVNative(pname, param);
 		}

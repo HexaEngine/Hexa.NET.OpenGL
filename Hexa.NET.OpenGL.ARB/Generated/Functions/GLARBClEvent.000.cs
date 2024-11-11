@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBClEvent
+	public unsafe partial class GLARBClEvent
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLSync CreateSyncFromCLeventARBNative(ClContext* context, ClEvent* evnt, uint flags)
+		internal GLSync CreateSyncFromCLeventARBNative(ClContext* context, ClEvent* evnt, uint flags)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ClContext*, ClEvent*, uint, GLSync>)funcTable[0])(context, evnt, flags);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(ClContext* context, ClEvent* evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(ClContext* context, ClEvent* evnt, uint flags)
 		{
 			GLSync ret = CreateSyncFromCLeventARBNative(context, evnt, flags);
 			return ret;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(Span<ClContext> context, ClEvent* evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(Span<ClContext> context, ClEvent* evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = context)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(ref ClContext context, ClEvent* evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(ref ClContext context, ClEvent* evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = &context)
 			{
@@ -66,7 +66,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(ClContext* context, Span<ClEvent> evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(ClContext* context, Span<ClEvent> evnt, uint flags)
 		{
 			fixed (ClEvent* pevnt0 = evnt)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(ClContext* context, ref ClEvent evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(ClContext* context, ref ClEvent evnt, uint flags)
 		{
 			fixed (ClEvent* pevnt0 = &evnt)
 			{
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(Span<ClContext> context, Span<ClEvent> evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(Span<ClContext> context, Span<ClEvent> evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = context)
 			{
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_cl_event</remarks>
-		public static GLSync CreateSyncFromCLeventARB(ref ClContext context, ref ClEvent evnt, uint flags)
+		public GLSync CreateSyncFromCLeventARB(ref ClContext context, ref ClEvent evnt, uint flags)
 		{
 			fixed (ClContext* pcontext0 = &context)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVReadBuffer
+	public unsafe partial class GLNVReadBuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadBufferNVNative(GLEnum mode)
+		internal void ReadBufferNVNative(GLEnum mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, void>)funcTable[0])(mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_read_buffer</remarks>
-		public static void ReadBufferNV(GLEnum mode)
+		public void ReadBufferNV(GLEnum mode)
 		{
 			ReadBufferNVNative(mode);
 		}

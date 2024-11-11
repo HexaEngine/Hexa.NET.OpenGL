@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBImaging
+	public unsafe partial class GLARBImaging
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendColorNative(float red, float green, float blue, float alpha)
+		internal void BlendColorNative(float red, float green, float blue, float alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, void>)funcTable[0])(red, green, blue, alpha);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Set the blend color
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void BlendColor(float red, float green, float blue, float alpha)
+		public void BlendColor(float red, float green, float blue, float alpha)
 		{
 			BlendColorNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendEquationNative(GLBlendEquationModeEXT mode)
+		internal void BlendEquationNative(GLBlendEquationModeEXT mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBlendEquationModeEXT, void>)funcTable[1])(mode);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 1.4 - GL 1.5<br/>GL 2.X<br/>GL 3.X<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void BlendEquation(GLBlendEquationModeEXT mode)
+		public void BlendEquation(GLBlendEquationModeEXT mode)
 		{
 			BlendEquationNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorSubTableNative(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ColorSubTableNative(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[2])(target, start, count, format, type, data);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
+		public void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ColorSubTableNative(target, start, count, format, type, data);
 		}
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
+		public void ColorSubTable(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ColorSubTableNative(target, start, count, format, type, (void*)data);
 		}
@@ -86,7 +86,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorSubTable<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ColorSubTable<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -95,7 +95,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorTableNative(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
+		internal void ColorTableNative(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLInternalFormat, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[3])(target, internalformat, width, format, type, table);
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
+		public void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			ColorTableNative(target, internalformat, width, format, type, table);
 		}
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint table)
+		public void ColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint table)
 		{
 			ColorTableNative(target, internalformat, width, format, type, (void*)table);
 		}
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTable<TTable>(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
+		public void ColorTable<TTable>(GLColorTableTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
 			{
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorTableParameterfvNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
+		internal void ColorTableParameterfvNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLColorTableParameterPName, float*, void>)funcTable[4])(target, pname, @params);
@@ -148,7 +148,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
+		public void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			ColorTableParameterfvNative(target, pname, @params);
 		}
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
+		public void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -169,7 +169,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
+		public void ColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -178,7 +178,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorTableParameterivNative(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
+		internal void ColorTableParameterivNative(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLColorTableParameterPName, int*, void>)funcTable[5])(target, pname, @params);
@@ -191,7 +191,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
+		public void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			ColorTableParameterivNative(target, pname, @params);
 		}
@@ -200,7 +200,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
+		public void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -212,7 +212,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
+		public void ColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -221,7 +221,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionFilter1DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* image)
+		internal void ConvolutionFilter1DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLInternalFormat, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[6])(target, internalformat, width, format, type, image);
@@ -234,7 +234,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* image)
+		public void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter1DNative(target, internalformat, width, format, type, image);
 		}
@@ -243,7 +243,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint image)
+		public void ConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			ConvolutionFilter1DNative(target, internalformat, width, format, type, (void*)image);
 		}
@@ -252,7 +252,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionFilter1D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		public void ConvolutionFilter1D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
 			{
@@ -261,7 +261,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionFilter2DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
+		internal void ConvolutionFilter2DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[7])(target, internalformat, width, height, format, type, image);
@@ -274,7 +274,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
+		public void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			ConvolutionFilter2DNative(target, internalformat, width, height, format, type, image);
 		}
@@ -283,7 +283,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint image)
+		public void ConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			ConvolutionFilter2DNative(target, internalformat, width, height, format, type, (void*)image);
 		}
@@ -292,7 +292,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionFilter2D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		public void ConvolutionFilter2D<TImage>(GLConvolutionTarget target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
 			{
@@ -301,7 +301,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionParameterfNative(GLConvolutionTarget target, GLConvolutionParameter pname, float @params)
+		internal void ConvolutionParameterfNative(GLConvolutionTarget target, GLConvolutionParameter pname, float @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLConvolutionParameter, float, void>)funcTable[8])(target, pname, @params);
@@ -314,13 +314,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameterf(GLConvolutionTarget target, GLConvolutionParameter pname, float @params)
+		public void ConvolutionParameterf(GLConvolutionTarget target, GLConvolutionParameter pname, float @params)
 		{
 			ConvolutionParameterfNative(target, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionParameterfvNative(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
+		internal void ConvolutionParameterfvNative(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLConvolutionParameter, float*, void>)funcTable[9])(target, pname, @params);
@@ -333,7 +333,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
+		public void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
 			ConvolutionParameterfvNative(target, pname, @params);
 		}
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
+		public void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, ref float @params)
+		public void ConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -363,7 +363,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionParameteriNative(GLConvolutionTarget target, GLConvolutionParameter pname, int @params)
+		internal void ConvolutionParameteriNative(GLConvolutionTarget target, GLConvolutionParameter pname, int @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLConvolutionParameter, int, void>)funcTable[10])(target, pname, @params);
@@ -376,13 +376,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameteri(GLConvolutionTarget target, GLConvolutionParameter pname, int @params)
+		public void ConvolutionParameteri(GLConvolutionTarget target, GLConvolutionParameter pname, int @params)
 		{
 			ConvolutionParameteriNative(target, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConvolutionParameterivNative(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
+		internal void ConvolutionParameterivNative(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLConvolutionParameter, int*, void>)funcTable[11])(target, pname, @params);
@@ -395,7 +395,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
+		public void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
 		{
 			ConvolutionParameterivNative(target, pname, @params);
 		}
@@ -404,7 +404,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
+		public void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -416,7 +416,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, ref int @params)
+		public void ConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -425,7 +425,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyColorSubTableNative(GLColorTableTarget target, int start, int x, int y, int width)
+		internal void CopyColorSubTableNative(GLColorTableTarget target, int start, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, int, int, int, int, void>)funcTable[12])(target, start, x, y, width);
@@ -438,13 +438,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void CopyColorSubTable(GLColorTableTarget target, int start, int x, int y, int width)
+		public void CopyColorSubTable(GLColorTableTarget target, int start, int x, int y, int width)
 		{
 			CopyColorSubTableNative(target, start, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyColorTableNative(GLColorTableTarget target, GLInternalFormat internalformat, int x, int y, int width)
+		internal void CopyColorTableNative(GLColorTableTarget target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLInternalFormat, int, int, int, void>)funcTable[13])(target, internalformat, x, y, width);
@@ -457,13 +457,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void CopyColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int x, int y, int width)
+		public void CopyColorTable(GLColorTableTarget target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			CopyColorTableNative(target, internalformat, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyConvolutionFilter1DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width)
+		internal void CopyConvolutionFilter1DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLInternalFormat, int, int, int, void>)funcTable[14])(target, internalformat, x, y, width);
@@ -476,13 +476,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void CopyConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width)
+		public void CopyConvolutionFilter1D(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width)
 		{
 			CopyConvolutionFilter1DNative(target, internalformat, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyConvolutionFilter2DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width, int height)
+		internal void CopyConvolutionFilter2DNative(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLInternalFormat, int, int, int, int, void>)funcTable[15])(target, internalformat, x, y, width, height);
@@ -495,13 +495,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void CopyConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width, int height)
+		public void CopyConvolutionFilter2D(GLConvolutionTarget target, GLInternalFormat internalformat, int x, int y, int width, int height)
 		{
 			CopyConvolutionFilter2DNative(target, internalformat, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetColorTableNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* table)
+		internal void GetColorTableNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLPixelFormat, GLPixelType, void*, void>)funcTable[16])(target, format, type, table);
@@ -514,7 +514,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* table)
+		public void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			GetColorTableNative(target, format, type, table);
 		}
@@ -523,7 +523,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint table)
+		public void GetColorTable(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint table)
 		{
 			GetColorTableNative(target, format, type, (void*)table);
 		}
@@ -532,7 +532,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTable<TTable>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
+		public void GetColorTable<TTable>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
 			{
@@ -541,7 +541,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetColorTableParameterfvNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
+		internal void GetColorTableParameterfvNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLColorTableParameterPName, float*, void>)funcTable[17])(target, pname, @params);
@@ -554,7 +554,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
+		public void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			GetColorTableParameterfvNative(target, pname, @params);
 		}
@@ -563,7 +563,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
+		public void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, out float @params)
 		{
 			float pparam;
 			GetColorTableParameterfvNative(target, pname, &pparam);
@@ -574,7 +574,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
+		public void GetColorTableParameterfv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -583,7 +583,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetColorTableParameterivNative(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
+		internal void GetColorTableParameterivNative(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLColorTableParameterPName, int*, void>)funcTable[18])(target, pname, @params);
@@ -596,7 +596,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
+		public void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			GetColorTableParameterivNative(target, pname, @params);
 		}
@@ -605,7 +605,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
+		public void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, out int @params)
 		{
 			int pparam;
 			GetColorTableParameterivNative(target, pname, &pparam);
@@ -616,7 +616,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
+		public void GetColorTableParameteriv(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -625,7 +625,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetConvolutionFilterNative(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, void* image)
+		internal void GetConvolutionFilterNative(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLPixelFormat, GLPixelType, void*, void>)funcTable[19])(target, format, type, image);
@@ -638,7 +638,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, void* image)
+		public void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, void* image)
 		{
 			GetConvolutionFilterNative(target, format, type, image);
 		}
@@ -647,7 +647,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, nint image)
+		public void GetConvolutionFilter(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, nint image)
 		{
 			GetConvolutionFilterNative(target, format, type, (void*)image);
 		}
@@ -656,7 +656,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionFilter<TImage>(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
+		public void GetConvolutionFilter<TImage>(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
 			{
@@ -665,7 +665,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetConvolutionParameterfvNative(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
+		internal void GetConvolutionParameterfvNative(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLConvolutionParameter, float*, void>)funcTable[20])(target, pname, @params);
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
+		public void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, float* @params)
 		{
 			GetConvolutionParameterfvNative(target, pname, @params);
 		}
@@ -687,7 +687,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, out float @params)
+		public void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, out float @params)
 		{
 			float pparam;
 			GetConvolutionParameterfvNative(target, pname, &pparam);
@@ -698,7 +698,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
+		public void GetConvolutionParameterfv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -707,7 +707,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetConvolutionParameterivNative(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
+		internal void GetConvolutionParameterivNative(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLConvolutionParameter, int*, void>)funcTable[21])(target, pname, @params);
@@ -720,7 +720,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
+		public void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, int* @params)
 		{
 			GetConvolutionParameterivNative(target, pname, @params);
 		}
@@ -729,7 +729,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, out int @params)
+		public void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, out int @params)
 		{
 			int pparam;
 			GetConvolutionParameterivNative(target, pname, &pparam);
@@ -740,7 +740,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
+		public void GetConvolutionParameteriv(GLConvolutionTarget target, GLConvolutionParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -749,7 +749,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal void GetHistogramNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[22])(target, *((byte*)(&reset)), format, type, values);
@@ -762,7 +762,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		public void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetHistogramNative(target, reset, format, type, values);
 		}
@@ -771,7 +771,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		public void GetHistogram(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetHistogramNative(target, reset, format, type, (void*)values);
 		}
@@ -780,7 +780,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogram<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		public void GetHistogram<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
 			{
@@ -789,7 +789,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramParameterfvNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
+		internal void GetHistogramParameterfvNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, GLGetHistogramParameterPNameEXT, float*, void>)funcTable[23])(target, pname, @params);
@@ -802,7 +802,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
+		public void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
 		{
 			GetHistogramParameterfvNative(target, pname, @params);
 		}
@@ -811,7 +811,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
+		public void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out float @params)
 		{
 			float pparam;
 			GetHistogramParameterfvNative(target, pname, &pparam);
@@ -822,7 +822,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
+		public void GetHistogramParameterfv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -831,7 +831,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramParameterivNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
+		internal void GetHistogramParameterivNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, GLGetHistogramParameterPNameEXT, int*, void>)funcTable[24])(target, pname, @params);
@@ -844,7 +844,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
+		public void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			GetHistogramParameterivNative(target, pname, @params);
 		}
@@ -853,7 +853,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
+		public void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, out int @params)
 		{
 			int pparam;
 			GetHistogramParameterivNative(target, pname, &pparam);
@@ -864,7 +864,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
+		public void GetHistogramParameteriv(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -873,7 +873,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal void GetMinmaxNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[25])(target, *((byte*)(&reset)), format, type, values);
@@ -886,7 +886,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		public void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetMinmaxNative(target, reset, format, type, values);
 		}
@@ -895,7 +895,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		public void GetMinmax(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetMinmaxNative(target, reset, format, type, (void*)values);
 		}
@@ -904,7 +904,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmax<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		public void GetMinmax<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
 			{
@@ -913,7 +913,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxParameterfvNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
+		internal void GetMinmaxParameterfvNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLGetMinmaxParameterPNameEXT, float*, void>)funcTable[26])(target, pname, @params);
@@ -926,7 +926,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
+		public void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
 		{
 			GetMinmaxParameterfvNative(target, pname, @params);
 		}
@@ -935,7 +935,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
+		public void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out float @params)
 		{
 			float pparam;
 			GetMinmaxParameterfvNative(target, pname, &pparam);
@@ -946,7 +946,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
+		public void GetMinmaxParameterfv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams = @params)
 			{
@@ -955,7 +955,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxParameterivNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
+		internal void GetMinmaxParameterivNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLGetMinmaxParameterPNameEXT, int*, void>)funcTable[27])(target, pname, @params);
@@ -968,7 +968,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
+		public void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
 		{
 			GetMinmaxParameterivNative(target, pname, @params);
 		}
@@ -977,7 +977,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
+		public void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, out int @params)
 		{
 			int pparam;
 			GetMinmaxParameterivNative(target, pname, &pparam);
@@ -988,7 +988,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
+		public void GetMinmaxParameteriv(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams = @params)
 			{
@@ -997,7 +997,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetSeparableFilterNative(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, void* span)
+		internal void GetSeparableFilterNative(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, void* span)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSeparableTargetEXT, GLPixelFormat, GLPixelType, void*, void*, void*, void>)funcTable[28])(target, format, type, row, column, span);
@@ -1010,7 +1010,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, void* span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, row, column, span);
 		}
@@ -1019,7 +1019,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, void* span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, column, span);
 		}
@@ -1028,7 +1028,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, void* span) where TRow : unmanaged
+		public void GetSeparableFilter<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, void* span) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -1040,7 +1040,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, void* span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, row, (void*)column, span);
 		}
@@ -1049,7 +1049,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, void* span) where TColumn : unmanaged
+		public void GetSeparableFilter<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, void* span) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
 			{
@@ -1061,7 +1061,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, void* span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, void* span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, (void*)column, span);
 		}
@@ -1070,7 +1070,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
+		public void GetSeparableFilter<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -1085,7 +1085,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, nint span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, row, column, (void*)span);
 		}
@@ -1094,7 +1094,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, Span<TSpan> span) where TSpan : unmanaged
+		public void GetSeparableFilter<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, void* column, Span<TSpan> span) where TSpan : unmanaged
 		{
 			fixed (TSpan* pspan0 = span)
 			{
@@ -1106,7 +1106,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, nint span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, void* column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, column, (void*)span);
 		}
@@ -1115,7 +1115,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
+		public void GetSeparableFilter<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -1130,7 +1130,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, nint span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, nint column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, row, (void*)column, (void*)span);
 		}
@@ -1139,7 +1139,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
+		public void GetSeparableFilter<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
 			{
@@ -1154,7 +1154,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, nint span)
+		public void GetSeparableFilter(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, nint row, nint column, nint span)
 		{
 			GetSeparableFilterNative(target, format, type, (void*)row, (void*)column, (void*)span);
 		}
@@ -1163,7 +1163,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void GetSeparableFilter<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
+		public void GetSeparableFilter<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -1178,7 +1178,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void HistogramNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
+		internal void HistogramNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[29])(target, width, internalformat, *((byte*)(&sink)));
@@ -1191,13 +1191,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void Histogram(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
+		public void Histogram(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			HistogramNative(target, width, internalformat, sink);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MinmaxNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
+		internal void MinmaxNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[30])(target, internalformat, *((byte*)(&sink)));
@@ -1210,13 +1210,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void Minmax(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
+		public void Minmax(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			MinmaxNative(target, internalformat, sink);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResetHistogramNative(GLHistogramTargetEXT target)
+		internal void ResetHistogramNative(GLHistogramTargetEXT target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, void>)funcTable[31])(target);
@@ -1229,13 +1229,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ResetHistogram(GLHistogramTargetEXT target)
+		public void ResetHistogram(GLHistogramTargetEXT target)
 		{
 			ResetHistogramNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResetMinmaxNative(GLMinmaxTargetEXT target)
+		internal void ResetMinmaxNative(GLMinmaxTargetEXT target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, void>)funcTable[32])(target);
@@ -1248,13 +1248,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void ResetMinmax(GLMinmaxTargetEXT target)
+		public void ResetMinmax(GLMinmaxTargetEXT target)
 		{
 			ResetMinmaxNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SeparableFilter2DNative(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
+		internal void SeparableFilter2DNative(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSeparableTargetEXT, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, void*, void*, void>)funcTable[33])(target, internalformat, width, height, format, type, row, column);
@@ -1267,7 +1267,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
+		public void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, void* column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, row, column);
 		}
@@ -1276,7 +1276,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, void* column)
+		public void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, void* column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, (void*)row, column);
 		}
@@ -1285,7 +1285,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D<TRow>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column) where TRow : unmanaged
+		public void SeparableFilter2D<TRow>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, void* column) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -1297,7 +1297,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, nint column)
+		public void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, nint column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, row, (void*)column);
 		}
@@ -1306,7 +1306,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D<TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column) where TColumn : unmanaged
+		public void SeparableFilter2D<TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, void* row, Span<TColumn> column) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
 			{
@@ -1318,7 +1318,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, nint column)
+		public void SeparableFilter2D(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, nint row, nint column)
 		{
 			SeparableFilter2DNative(target, internalformat, width, height, format, type, (void*)row, (void*)column);
 		}
@@ -1327,7 +1327,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_imaging</remarks>
-		public static void SeparableFilter2D<TRow, TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column) where TRow : unmanaged where TColumn : unmanaged
+		public void SeparableFilter2D<TRow, TColumn>(GLSeparableTargetEXT target, GLInternalFormat internalformat, int width, int height, GLPixelFormat format, GLPixelType type, Span<TRow> row, Span<TColumn> column) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVSampleLocations
+	public unsafe partial class GLNVSampleLocations
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferSampleLocationsfvNVNative(GLFramebufferTarget target, uint start, int count, float* v)
+		internal void FramebufferSampleLocationsfvNVNative(GLFramebufferTarget target, uint start, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, uint, int, float*, void>)funcTable[0])(target, start, count, v);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, float* v)
+		public void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, float* v)
 		{
 			FramebufferSampleLocationsfvNVNative(target, start, count, v);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, Span<float> v)
+		public void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, ref float v)
+		public void FramebufferSampleLocationsfvNV(GLFramebufferTarget target, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferSampleLocationsfvNVNative(uint framebuffer, uint start, int count, float* v)
+		internal void NamedFramebufferSampleLocationsfvNVNative(uint framebuffer, uint start, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, float*, void>)funcTable[1])(framebuffer, start, count, v);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, float* v)
+		public void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, float* v)
 		{
 			NamedFramebufferSampleLocationsfvNVNative(framebuffer, start, count, v);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, Span<float> v)
+		public void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, ref float v)
+		public void NamedFramebufferSampleLocationsfvNV(uint framebuffer, uint start, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResolveDepthValuesNVNative()
+		internal void ResolveDepthValuesNVNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[2])();
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_sample_locations</remarks>
-		public static void ResolveDepthValuesNV()
+		public void ResolveDepthValuesNV()
 		{
 			ResolveDepthValuesNVNative();
 		}

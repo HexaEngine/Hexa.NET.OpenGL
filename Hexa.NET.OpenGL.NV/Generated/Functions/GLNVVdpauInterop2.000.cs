@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVVdpauInterop2
+	public unsafe partial class GLNVVdpauInterop2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNVNative(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
+		internal GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNVNative(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<void*, GLEnum, int, uint*, byte, GLvdpauSurfaceNV>)funcTable[0])(vdpSurface, target, numTextureNames, textureNames, *((byte*)(&isFrameStructure)));
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
+		public GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative(vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
 			return ret;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(nint vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
+		public GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(nint vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure)
 		{
 			GLvdpauSurfaceNV ret = VDPAURegisterVideoSurfaceWithPictureStructureNVNative((void*)vdpSurface, target, numTextureNames, textureNames, isFrameStructure);
 			return ret;
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV<TVdpSurface>(Span<TVdpSurface> vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure) where TVdpSurface : unmanaged
+		public GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV<TVdpSurface>(Span<TVdpSurface> vdpSurface, GLEnum target, int numTextureNames, uint* textureNames, bool isFrameStructure) where TVdpSurface : unmanaged
 		{
 			fixed (TVdpSurface* pvdpSurface0 = vdpSurface)
 			{
@@ -63,7 +63,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, Span<uint> textureNames, bool isFrameStructure)
+		public GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, Span<uint> textureNames, bool isFrameStructure)
 		{
 			fixed (uint* ptextureNames0 = textureNames)
 			{
@@ -76,7 +76,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vdpau_interop2</remarks>
-		public static GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames, bool isFrameStructure)
+		public GLvdpauSurfaceNV VDPAURegisterVideoSurfaceWithPictureStructureNV(void* vdpSurface, GLEnum target, int numTextureNames, ref uint textureNames, bool isFrameStructure)
 		{
 			fixed (uint* ptextureNames0 = &textureNames)
 			{

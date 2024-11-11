@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESMapbuffer
+	public unsafe partial class GLOESMapbuffer
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBufferPointervOESNative(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
+		internal void GetBufferPointervOESNative(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferPointerNameARB, void**, void>)funcTable[0])(target, pname, @params);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_mapbuffer</remarks>
-		public static void GetBufferPointervOES(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
+		public void GetBufferPointervOES(GLBufferTargetARB target, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetBufferPointervOESNative(target, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* MapBufferOESNative(GLBufferTargetARB target, GLBufferAccessARB access)
+		internal void* MapBufferOESNative(GLBufferTargetARB target, GLBufferAccessARB access)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, GLBufferAccessARB, void*>)funcTable[1])(target, access);
@@ -49,14 +49,14 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_mapbuffer</remarks>
-		public static void* MapBufferOES(GLBufferTargetARB target, GLBufferAccessARB access)
+		public void* MapBufferOES(GLBufferTargetARB target, GLBufferAccessARB access)
 		{
 			void* ret = MapBufferOESNative(target, access);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte UnmapBufferOESNative(GLEnum target)
+		internal byte UnmapBufferOESNative(GLEnum target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, byte>)funcTable[2])(target);
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_mapbuffer</remarks>
-		public static bool UnmapBufferOES(GLEnum target)
+		public bool UnmapBufferOES(GLEnum target)
 		{
 			byte ret = UnmapBufferOESNative(target);
 			return ret != 0;

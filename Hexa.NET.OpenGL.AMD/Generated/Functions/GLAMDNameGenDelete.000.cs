@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDNameGenDelete
+	public unsafe partial class GLAMDNameGenDelete
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteNamesAMDNative(GLEnum identifier, uint num, uint* names)
+		internal void DeleteNamesAMDNative(GLEnum identifier, uint num, uint* names)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, uint*, void>)funcTable[0])(identifier, num, names);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static void DeleteNamesAMD(GLEnum identifier, uint num, uint* names)
+		public void DeleteNamesAMD(GLEnum identifier, uint num, uint* names)
 		{
 			DeleteNamesAMDNative(identifier, num, names);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static void DeleteNamesAMD(GLEnum identifier, uint num, Span<uint> names)
+		public void DeleteNamesAMD(GLEnum identifier, uint num, Span<uint> names)
 		{
 			fixed (uint* pnames0 = names)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static void DeleteNamesAMD(GLEnum identifier, uint num, ref uint names)
+		public void DeleteNamesAMD(GLEnum identifier, uint num, ref uint names)
 		{
 			fixed (uint* pnames0 = &names)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenNamesAMDNative(GLEnum identifier, uint num, uint* names)
+		internal void GenNamesAMDNative(GLEnum identifier, uint num, uint* names)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, uint*, void>)funcTable[1])(identifier, num, names);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static void GenNamesAMD(GLEnum identifier, uint num, uint* names)
+		public void GenNamesAMD(GLEnum identifier, uint num, uint* names)
 		{
 			GenNamesAMDNative(identifier, num, names);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static void GenNamesAMD(GLEnum identifier, uint num, Span<uint> names)
+		public void GenNamesAMD(GLEnum identifier, uint num, Span<uint> names)
 		{
 			fixed (uint* pnames0 = names)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static void GenNamesAMD(GLEnum identifier, uint num, ref uint names)
+		public void GenNamesAMD(GLEnum identifier, uint num, ref uint names)
 		{
 			fixed (uint* pnames0 = &names)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsNameAMDNative(GLEnum identifier, uint name)
+		internal byte IsNameAMDNative(GLEnum identifier, uint name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, uint, byte>)funcTable[2])(identifier, name);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_name_gen_delete</remarks>
-		public static bool IsNameAMD(GLEnum identifier, uint name)
+		public bool IsNameAMD(GLEnum identifier, uint name)
 		{
 			byte ret = IsNameAMDNative(identifier, name);
 			return ret != 0;

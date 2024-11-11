@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTTextureInteger
+	public unsafe partial class GLEXTTextureInteger
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearColorIiEXTNative(int red, int green, int blue, int alpha)
+		internal void ClearColorIiEXTNative(int red, int green, int blue, int alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[0])(red, green, blue, alpha);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
-		public static void ClearColorIiEXT(int red, int green, int blue, int alpha)
+		public void ClearColorIiEXT(int red, int green, int blue, int alpha)
 		{
 			ClearColorIiEXTNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearColorIuiEXTNative(uint red, uint green, uint blue, uint alpha)
+		internal void ClearColorIuiEXTNative(uint red, uint green, uint blue, uint alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, void>)funcTable[1])(red, green, blue, alpha);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer</remarks>
-		public static void ClearColorIuiEXT(uint red, uint green, uint blue, uint alpha)
+		public void ClearColorIuiEXT(uint red, uint green, uint blue, uint alpha)
 		{
 			ClearColorIuiEXTNative(red, green, blue, alpha);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterIivEXTNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetTexParameterIivEXTNative(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[2])(target, pname, @params);
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTexParameterIivEXTNative(target, pname, @params);
 		}
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void GetTexParameterIivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -98,7 +98,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTexParameterIuivEXTNative(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
+		internal void GetTexParameterIuivEXTNative(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLGetTextureParameter, uint*, void>)funcTable[3])(target, pname, @params);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
+		public void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			GetTexParameterIuivEXTNative(target, pname, @params);
 		}
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		public void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public void GetTexParameterIuivEXT(GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterIivEXTNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		internal void TexParameterIivEXTNative(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[4])(target, pname, @params);
@@ -154,7 +154,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		public void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			TexParameterIivEXTNative(target, pname, @params);
 		}
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public void TexParameterIivEXT(GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexParameterIuivEXTNative(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		internal void TexParameterIuivEXTNative(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLTextureParameterName, uint*, void>)funcTable[5])(target, pname, @params);
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		public void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			TexParameterIuivEXTNative(target, pname, @params);
 		}
@@ -206,7 +206,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		public void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_integer<br/>GL_EXT_texture_border_clamp</remarks>
-		public static void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public void TexParameterIuivEXT(GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{

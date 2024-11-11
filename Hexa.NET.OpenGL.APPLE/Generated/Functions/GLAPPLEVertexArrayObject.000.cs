@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public static unsafe partial class GLAPPLEVertexArrayObject
+	public unsafe partial class GLAPPLEVertexArrayObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexArrayAPPLENative(uint array)
+		internal void BindVertexArrayAPPLENative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(array);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void BindVertexArrayAPPLE(uint array)
+		public void BindVertexArrayAPPLE(uint array)
 		{
 			BindVertexArrayAPPLENative(array);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteVertexArraysAPPLENative(int n, uint* arrays)
+		internal void DeleteVertexArraysAPPLENative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, arrays);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void DeleteVertexArraysAPPLE(int n, uint* arrays)
+		public void DeleteVertexArraysAPPLE(int n, uint* arrays)
 		{
 			DeleteVertexArraysAPPLENative(n, arrays);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void DeleteVertexArraysAPPL(uint array)
+		public void DeleteVertexArraysAPPL(uint array)
 		{
 			DeleteVertexArraysAPPLENative(1, &array);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void DeleteVertexArraysAPPLE(int n, Span<uint> arrays)
+		public void DeleteVertexArraysAPPLE(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void DeleteVertexArraysAPPLE(int n, ref uint arrays)
+		public void DeleteVertexArraysAPPLE(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenVertexArraysAPPLENative(int n, uint* arrays)
+		internal void GenVertexArraysAPPLENative(int n, uint* arrays)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, arrays);
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void GenVertexArraysAPPLE(int n, uint* arrays)
+		public void GenVertexArraysAPPLE(int n, uint* arrays)
 		{
 			GenVertexArraysAPPLENative(n, arrays);
 		}
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static uint GenVertexArraysAPPL()
+		public uint GenVertexArraysAPPL()
 		{
 			uint result;
 			GenVertexArraysAPPLENative(1, &result);
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void GenVertexArraysAPPLE(int n, Span<uint> arrays)
+		public void GenVertexArraysAPPLE(int n, Span<uint> arrays)
 		{
 			fixed (uint* parrays0 = arrays)
 			{
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static void GenVertexArraysAPPLE(int n, ref uint arrays)
+		public void GenVertexArraysAPPLE(int n, ref uint arrays)
 		{
 			fixed (uint* parrays0 = &arrays)
 			{
@@ -142,7 +142,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsVertexArrayAPPLENative(uint array)
+		internal byte IsVertexArrayAPPLENative(uint array)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[3])(array);
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGL.APPLE
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_APPLE_vertex_array_object</remarks>
-		public static bool IsVertexArrayAPPLE(uint array)
+		public bool IsVertexArrayAPPLE(uint array)
 		{
 			byte ret = IsVertexArrayAPPLENative(array);
 			return ret != 0;

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTWindowRectangles
+	public unsafe partial class GLEXTWindowRectangles
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WindowRectanglesEXTNative(GLEnum mode, int count, int* box)
+		internal void WindowRectanglesEXTNative(GLEnum mode, int count, int* box)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, int*, void>)funcTable[0])(mode, count, box);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_window_rectangles</remarks>
-		public static void WindowRectanglesEXT(GLEnum mode, int count, int* box)
+		public void WindowRectanglesEXT(GLEnum mode, int count, int* box)
 		{
 			WindowRectanglesEXTNative(mode, count, box);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_window_rectangles</remarks>
-		public static void WindowRectanglesEXT(GLEnum mode, int count, Span<int> box)
+		public void WindowRectanglesEXT(GLEnum mode, int count, Span<int> box)
 		{
 			fixed (int* pbox0 = box)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_window_rectangles</remarks>
-		public static void WindowRectanglesEXT(GLEnum mode, int count, ref int box)
+		public void WindowRectanglesEXT(GLEnum mode, int count, ref int box)
 		{
 			fixed (int* pbox0 = &box)
 			{

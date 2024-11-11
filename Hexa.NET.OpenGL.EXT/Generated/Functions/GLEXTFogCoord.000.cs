@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTFogCoord
+	public unsafe partial class GLEXTFogCoord
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogCoordPointerEXTNative(GLFogPointerTypeEXT type, int stride, void* pointer)
+		internal void FogCoordPointerEXTNative(GLFogPointerTypeEXT type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFogPointerTypeEXT, int, void*, void>)funcTable[0])(type, stride, pointer);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, void* pointer)
+		public void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, void* pointer)
 		{
 			FogCoordPointerEXTNative(type, stride, pointer);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, nint pointer)
+		public void FogCoordPointerEXT(GLFogPointerTypeEXT type, int stride, nint pointer)
 		{
 			FogCoordPointerEXTNative(type, stride, (void*)pointer);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordPointerEXT<TPointer>(GLFogPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void FogCoordPointerEXT<TPointer>(GLFogPointerTypeEXT type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogCoorddEXTNative(double coord)
+		internal void FogCoorddEXTNative(double coord)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, void>)funcTable[1])(coord);
@@ -70,13 +70,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoorddEXT(double coord)
+		public void FogCoorddEXT(double coord)
 		{
 			FogCoorddEXTNative(coord);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogCoorddvEXTNative(double* coord)
+		internal void FogCoorddvEXTNative(double* coord)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double*, void>)funcTable[2])(coord);
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoorddvEXT(double* coord)
+		public void FogCoorddvEXT(double* coord)
 		{
 			FogCoorddvEXTNative(coord);
 		}
@@ -98,7 +98,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoorddvEXT(Span<double> coord)
+		public void FogCoorddvEXT(Span<double> coord)
 		{
 			fixed (double* pcoord0 = coord)
 			{
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoorddvEXT(ref double coord)
+		public void FogCoorddvEXT(ref double coord)
 		{
 			fixed (double* pcoord0 = &coord)
 			{
@@ -119,7 +119,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogCoordfEXTNative(float coord)
+		internal void FogCoordfEXTNative(float coord)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[3])(coord);
@@ -132,13 +132,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordfEXT(float coord)
+		public void FogCoordfEXT(float coord)
 		{
 			FogCoordfEXTNative(coord);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FogCoordfvEXTNative(float* coord)
+		internal void FogCoordfvEXTNative(float* coord)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[4])(coord);
@@ -151,7 +151,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordfvEXT(float* coord)
+		public void FogCoordfvEXT(float* coord)
 		{
 			FogCoordfvEXTNative(coord);
 		}
@@ -160,7 +160,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordfvEXT(Span<float> coord)
+		public void FogCoordfvEXT(Span<float> coord)
 		{
 			fixed (float* pcoord0 = coord)
 			{
@@ -172,7 +172,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_fog_coord</remarks>
-		public static void FogCoordfvEXT(ref float coord)
+		public void FogCoordfvEXT(ref float coord)
 		{
 			fixed (float* pcoord0 = &coord)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVViewportArray
+	public unsafe partial class GLNVViewportArray
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeArrayfvNVNative(uint first, int count, float* v)
+		internal void DepthRangeArrayfvNVNative(uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[0])(first, count, v);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void DepthRangeArrayfvNV(uint first, int count, float* v)
+		public void DepthRangeArrayfvNV(uint first, int count, float* v)
 		{
 			DepthRangeArrayfvNVNative(first, count, v);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void DepthRangeArrayfvNV(uint first, int count, Span<float> v)
+		public void DepthRangeArrayfvNV(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void DepthRangeArrayfvNV(uint first, int count, ref float v)
+		public void DepthRangeArrayfvNV(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthRangeIndexedfNVNative(uint index, float n, float f)
+		internal void DepthRangeIndexedfNVNative(uint index, float n, float f)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, void>)funcTable[1])(index, n, f);
@@ -73,13 +73,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void DepthRangeIndexedfNV(uint index, float n, float f)
+		public void DepthRangeIndexedfNV(uint index, float n, float f)
 		{
 			DepthRangeIndexedfNVNative(index, n, f);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableiNVNative(GLEnableCap target, uint index)
+		internal void DisableiNVNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[2])(target, index);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void DisableiNV(GLEnableCap target, uint index)
+		public void DisableiNV(GLEnableCap target, uint index)
 		{
 			DisableiNVNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableiNVNative(GLEnableCap target, uint index)
+		internal void EnableiNVNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[3])(target, index);
@@ -111,13 +111,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void EnableiNV(GLEnableCap target, uint index)
+		public void EnableiNV(GLEnableCap target, uint index)
 		{
 			EnableiNVNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloati_vNVNative(GLGetPName target, uint index, float* data)
+		internal void GetFloati_vNVNative(GLGetPName target, uint index, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, float*, void>)funcTable[4])(target, index, data);
@@ -130,7 +130,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void GetFloati_vNV(GLGetPName target, uint index, float* data)
+		public void GetFloati_vNV(GLGetPName target, uint index, float* data)
 		{
 			GetFloati_vNVNative(target, index, data);
 		}
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void GetFloati_vNV(GLGetPName target, uint index, Span<float> data)
+		public void GetFloati_vNV(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
 			{
@@ -151,7 +151,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void GetFloati_vNV(GLGetPName target, uint index, ref float data)
+		public void GetFloati_vNV(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
 			{
@@ -160,7 +160,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsEnablediNVNative(GLEnableCap target, uint index)
+		internal byte IsEnablediNVNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnableCap, uint, byte>)funcTable[5])(target, index);
@@ -173,14 +173,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static bool IsEnablediNV(GLEnableCap target, uint index)
+		public bool IsEnablediNV(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnablediNVNative(target, index);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorArrayvNVNative(uint first, int count, int* v)
+		internal void ScissorArrayvNVNative(uint first, int count, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[6])(first, count, v);
@@ -193,7 +193,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorArrayvNV(uint first, int count, int* v)
+		public void ScissorArrayvNV(uint first, int count, int* v)
 		{
 			ScissorArrayvNVNative(first, count, v);
 		}
@@ -202,7 +202,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorArrayvNV(uint first, int count, Span<int> v)
+		public void ScissorArrayvNV(uint first, int count, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorArrayvNV(uint first, int count, ref int v)
+		public void ScissorArrayvNV(uint first, int count, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -223,7 +223,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorIndexedNVNative(uint index, int left, int bottom, int width, int height)
+		internal void ScissorIndexedNVNative(uint index, int left, int bottom, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[7])(index, left, bottom, width, height);
@@ -236,13 +236,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorIndexedNV(uint index, int left, int bottom, int width, int height)
+		public void ScissorIndexedNV(uint index, int left, int bottom, int width, int height)
 		{
 			ScissorIndexedNVNative(index, left, bottom, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ScissorIndexedvNVNative(uint index, int* v)
+		internal void ScissorIndexedvNVNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[8])(index, v);
@@ -255,7 +255,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorIndexedvNV(uint index, int* v)
+		public void ScissorIndexedvNV(uint index, int* v)
 		{
 			ScissorIndexedvNVNative(index, v);
 		}
@@ -264,7 +264,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorIndexedvNV(uint index, Span<int> v)
+		public void ScissorIndexedvNV(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -276,7 +276,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ScissorIndexedvNV(uint index, ref int v)
+		public void ScissorIndexedvNV(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -285,7 +285,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportArrayvNVNative(uint first, int count, float* v)
+		internal void ViewportArrayvNVNative(uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[9])(first, count, v);
@@ -298,7 +298,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportArrayvNV(uint first, int count, float* v)
+		public void ViewportArrayvNV(uint first, int count, float* v)
 		{
 			ViewportArrayvNVNative(first, count, v);
 		}
@@ -307,7 +307,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportArrayvNV(uint first, int count, Span<float> v)
+		public void ViewportArrayvNV(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -319,7 +319,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportArrayvNV(uint first, int count, ref float v)
+		public void ViewportArrayvNV(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -328,7 +328,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfNVNative(uint index, float x, float y, float w, float h)
+		internal void ViewportIndexedfNVNative(uint index, float x, float y, float w, float h)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[10])(index, x, y, w, h);
@@ -341,13 +341,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportIndexedfNV(uint index, float x, float y, float w, float h)
+		public void ViewportIndexedfNV(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfNVNative(index, x, y, w, h);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfvNVNative(uint index, float* v)
+		internal void ViewportIndexedfvNVNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[11])(index, v);
@@ -360,7 +360,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportIndexedfvNV(uint index, float* v)
+		public void ViewportIndexedfvNV(uint index, float* v)
 		{
 			ViewportIndexedfvNVNative(index, v);
 		}
@@ -369,7 +369,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportIndexedfvNV(uint index, Span<float> v)
+		public void ViewportIndexedfvNV(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -381,7 +381,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_array</remarks>
-		public static void ViewportIndexedfvNV(uint index, ref float v)
+		public void ViewportIndexedfvNV(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBInstancedArrays
+	public unsafe partial class GLARBInstancedArrays
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribDivisorARBNative(uint index, uint divisor)
+		internal void VertexAttribDivisorARBNative(uint index, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(index, divisor);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_instanced_arrays</remarks>
-		public static void VertexAttribDivisorARB(uint index, uint divisor)
+		public void VertexAttribDivisorARB(uint index, uint divisor)
 		{
 			VertexAttribDivisorARBNative(index, divisor);
 		}

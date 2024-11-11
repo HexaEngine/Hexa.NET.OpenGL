@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBSampleShading
+	public unsafe partial class GLARBSampleShading
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MinSampleShadingARBNative(float value)
+		internal void MinSampleShadingARBNative(float value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, void>)funcTable[0])(value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_sample_shading</remarks>
-		public static void MinSampleShadingARB(float value)
+		public void MinSampleShadingARB(float value)
 		{
 			MinSampleShadingARBNative(value);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTTextureBufferObject
+	public unsafe partial class GLEXTTextureBufferObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexBufferEXTNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		internal void TexBufferEXTNative(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLSizedInternalFormat, uint, void>)funcTable[0])(target, internalformat, buffer);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_buffer_object<br/>GL_EXT_texture_buffer</remarks>
-		public static void TexBufferEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
+		public void TexBufferEXT(GLTextureTarget target, GLSizedInternalFormat internalformat, uint buffer)
 		{
 			TexBufferEXTNative(target, internalformat, buffer);
 		}

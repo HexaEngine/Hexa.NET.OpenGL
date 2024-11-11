@@ -14,36 +14,21 @@ using Hexa.NET.OpenGL;
 
 namespace Hexa.NET.OpenGL.APPLE
 {
-	public unsafe partial class GLAPPLEVertexProgramEvaluators
+	public unsafe partial class GLAPPLEVertexProgramEvaluators : GLExtension, IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
-
-		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
-
 		public const string ExtensionName = "GL_APPLE_vertex_program_evaluators";
 
-		/// <summary>
-		/// Tries to initialize the function table of the extension, call before you access any function.
-		/// </summary>
-		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
-		public static bool TryInitExtension()
+		public GLAPPLEVertexProgramEvaluators() : base(7)
 		{
-			if (!IsSupported) return false;
-			InitExtension();
-			return true;
 		}
 
-		/// <summary>
-		/// Initializes the function table of the extension, call before you access any function.
-		/// </summary>
-		public static void InitExtension()
+		public override bool IsSupported(IGLContext context)
 		{
-			if (funcTable != null) return;
-			if (GLBase.NativeContext == null) throw new InvalidOperationException("OpenGL is not initialized, call GL.InitApi.");
-			funcTable = new FunctionTable(GLBase.NativeContext, 7);
+			return context.IsExtensionSupported(ExtensionName);
+		}
+
+		protected override void InitTable(FunctionTable funcTable)
+		{
 			funcTable.Load(0, "glDisableVertexAttribAPPLE");
 			funcTable.Load(1, "glEnableVertexAttribAPPLE");
 			funcTable.Load(2, "glIsVertexAttribEnabledAPPLE");
@@ -53,11 +38,9 @@ namespace Hexa.NET.OpenGL.APPLE
 			funcTable.Load(6, "glMapVertexAttrib2fAPPLE");
 		}
 
-		public static void FreeExtension()
+		public void Dispose()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
+			funcTable.Dispose();
 		}
 	}
 }

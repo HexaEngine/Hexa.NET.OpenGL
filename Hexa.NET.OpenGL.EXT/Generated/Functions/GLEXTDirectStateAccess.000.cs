@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTDirectStateAccess
+	public unsafe partial class GLEXTDirectStateAccess
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindMultiTextureEXTNative(GLTextureUnit texunit, GLTextureTarget target, uint texture)
+		internal void BindMultiTextureEXTNative(GLTextureUnit texunit, GLTextureTarget target, uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, uint, void>)funcTable[0])(texunit, target, texture);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void BindMultiTextureEXT(GLTextureUnit texunit, GLTextureTarget target, uint texture)
+		public void BindMultiTextureEXT(GLTextureUnit texunit, GLTextureTarget target, uint texture)
 		{
 			BindMultiTextureEXTNative(texunit, target, texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum CheckNamedFramebufferStatusEXTNative(uint framebuffer, GLFramebufferTarget target)
+		internal GLEnum CheckNamedFramebufferStatusEXTNative(uint framebuffer, GLFramebufferTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLFramebufferTarget, GLEnum>)funcTable[1])(framebuffer, target);
@@ -49,14 +49,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static GLEnum CheckNamedFramebufferStatusEXT(uint framebuffer, GLFramebufferTarget target)
+		public GLEnum CheckNamedFramebufferStatusEXT(uint framebuffer, GLFramebufferTarget target)
 		{
 			GLEnum ret = CheckNamedFramebufferStatusEXTNative(framebuffer, target);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedBufferDataEXTNative(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearNamedBufferDataEXTNative(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, GLPixelFormat, GLPixelType, void*, void>)funcTable[2])(buffer, internalformat, format, type, data);
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClearNamedBufferDataEXT(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearNamedBufferDataEXT(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearNamedBufferDataEXTNative(buffer, internalformat, format, type, data);
 		}
@@ -78,7 +78,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClearNamedBufferDataEXT(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearNamedBufferDataEXT(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearNamedBufferDataEXTNative(buffer, internalformat, format, type, (void*)data);
 		}
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClearNamedBufferDataEXT<TData>(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearNamedBufferDataEXT<TData>(uint buffer, GLSizedInternalFormat internalformat, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -96,7 +96,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClearNamedBufferSubDataEXTNative(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ClearNamedBufferSubDataEXTNative(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLSizedInternalFormat, nint, nint, GLPixelFormat, GLPixelType, void*, void>)funcTable[3])(buffer, internalformat, offset, size, format, type, data);
@@ -109,7 +109,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClearNamedBufferSubDataEXT(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
+		public void ClearNamedBufferSubDataEXT(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ClearNamedBufferSubDataEXTNative(buffer, internalformat, offset, size, format, type, data);
 		}
@@ -118,7 +118,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClearNamedBufferSubDataEXT(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
+		public void ClearNamedBufferSubDataEXT(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ClearNamedBufferSubDataEXTNative(buffer, internalformat, offset, size, format, type, (void*)data);
 		}
@@ -127,7 +127,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClearNamedBufferSubDataEXT<TData>(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ClearNamedBufferSubDataEXT<TData>(uint buffer, GLSizedInternalFormat internalformat, nint offset, nint size, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -136,7 +136,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClientAttribDefaultEXTNative(GLClientAttribMask mask)
+		internal void ClientAttribDefaultEXTNative(GLClientAttribMask mask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClientAttribMask, void>)funcTable[4])(mask);
@@ -149,13 +149,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void ClientAttribDefaultEXT(GLClientAttribMask mask)
+		public void ClientAttribDefaultEXT(GLClientAttribMask mask)
 		{
 			ClientAttribDefaultEXTNative(mask);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedMultiTexImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
+		internal void CompressedMultiTexImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, void*, void>)funcTable[5])(texunit, target, level, internalformat, width, border, imageSize, bits);
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
+		public void CompressedMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
 		{
 			CompressedMultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, imageSize, bits);
 		}
@@ -177,7 +177,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint bits)
+		public void CompressedMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint bits)
 		{
 			CompressedMultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, imageSize, (void*)bits);
 		}
@@ -186,7 +186,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage1DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedMultiTexImage1DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedMultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
+		internal void CompressedMultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, int, void*, void>)funcTable[6])(texunit, target, level, internalformat, width, height, border, imageSize, bits);
@@ -208,7 +208,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
+		public void CompressedMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
 			CompressedMultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, imageSize, bits);
 		}
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint bits)
+		public void CompressedMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint bits)
 		{
 			CompressedMultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, imageSize, (void*)bits);
 		}
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage2DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedMultiTexImage2DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedMultiTexImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
+		internal void CompressedMultiTexImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void*, void>)funcTable[7])(texunit, target, level, internalformat, width, height, depth, border, imageSize, bits);
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
+		public void CompressedMultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
 		{
 			CompressedMultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, imageSize, bits);
 		}
@@ -257,7 +257,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint bits)
+		public void CompressedMultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint bits)
 		{
 			CompressedMultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, imageSize, (void*)bits);
 		}
@@ -266,7 +266,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexImage3DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedMultiTexImage3DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -275,7 +275,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedMultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
+		internal void CompressedMultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, GLInternalFormat, int, void*, void>)funcTable[8])(texunit, target, level, xoffset, width, format, imageSize, bits);
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
+		public void CompressedMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedMultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, imageSize, bits);
 		}
@@ -297,7 +297,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint bits)
+		public void CompressedMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint bits)
 		{
 			CompressedMultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, imageSize, (void*)bits);
 		}
@@ -306,7 +306,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage1DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedMultiTexSubImage1DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -315,7 +315,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedMultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
+		internal void CompressedMultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[9])(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bits);
@@ -328,7 +328,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
+		public void CompressedMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedMultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, bits);
 		}
@@ -337,7 +337,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint bits)
+		public void CompressedMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint bits)
 		{
 			CompressedMultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, imageSize, (void*)bits);
 		}
@@ -346,7 +346,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage2DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedMultiTexSubImage2DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -355,7 +355,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedMultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
+		internal void CompressedMultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[10])(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bits);
@@ -368,7 +368,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
+		public void CompressedMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedMultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bits);
 		}
@@ -377,7 +377,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint bits)
+		public void CompressedMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint bits)
 		{
 			CompressedMultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)bits);
 		}
@@ -386,7 +386,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedMultiTexSubImage3DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedMultiTexSubImage3DEXT<TBits>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -395,7 +395,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureImage1DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
+		internal void CompressedTextureImage1DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, void*, void>)funcTable[11])(texture, target, level, internalformat, width, border, imageSize, bits);
@@ -408,7 +408,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
+		public void CompressedTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* bits)
 		{
 			CompressedTextureImage1DEXTNative(texture, target, level, internalformat, width, border, imageSize, bits);
 		}
@@ -417,7 +417,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint bits)
+		public void CompressedTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint bits)
 		{
 			CompressedTextureImage1DEXTNative(texture, target, level, internalformat, width, border, imageSize, (void*)bits);
 		}
@@ -426,7 +426,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage1DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedTextureImage1DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -435,7 +435,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureImage2DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
+		internal void CompressedTextureImage2DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, int, void*, void>)funcTable[12])(texture, target, level, internalformat, width, height, border, imageSize, bits);
@@ -448,7 +448,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
+		public void CompressedTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* bits)
 		{
 			CompressedTextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, imageSize, bits);
 		}
@@ -457,7 +457,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint bits)
+		public void CompressedTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint bits)
 		{
 			CompressedTextureImage2DEXTNative(texture, target, level, internalformat, width, height, border, imageSize, (void*)bits);
 		}
@@ -466,7 +466,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage2DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedTextureImage2DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -475,7 +475,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureImage3DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
+		internal void CompressedTextureImage3DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void*, void>)funcTable[13])(texture, target, level, internalformat, width, height, depth, border, imageSize, bits);
@@ -488,7 +488,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
+		public void CompressedTextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* bits)
 		{
 			CompressedTextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, imageSize, bits);
 		}
@@ -497,7 +497,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint bits)
+		public void CompressedTextureImage3DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint bits)
 		{
 			CompressedTextureImage3DEXTNative(texture, target, level, internalformat, width, height, depth, border, imageSize, (void*)bits);
 		}
@@ -506,7 +506,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureImage3DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedTextureImage3DEXT<TBits>(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -515,7 +515,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureSubImage1DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
+		internal void CompressedTextureSubImage1DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, GLInternalFormat, int, void*, void>)funcTable[14])(texture, target, level, xoffset, width, format, imageSize, bits);
@@ -528,7 +528,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
+		public void CompressedTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedTextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, imageSize, bits);
 		}
@@ -537,7 +537,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint bits)
+		public void CompressedTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint bits)
 		{
 			CompressedTextureSubImage1DEXTNative(texture, target, level, xoffset, width, format, imageSize, (void*)bits);
 		}
@@ -546,7 +546,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage1DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedTextureSubImage1DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -555,7 +555,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureSubImage2DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
+		internal void CompressedTextureSubImage2DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[15])(texture, target, level, xoffset, yoffset, width, height, format, imageSize, bits);
@@ -568,7 +568,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
+		public void CompressedTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedTextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, imageSize, bits);
 		}
@@ -577,7 +577,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint bits)
+		public void CompressedTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint bits)
 		{
 			CompressedTextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, width, height, format, imageSize, (void*)bits);
 		}
@@ -586,7 +586,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage2DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedTextureSubImage2DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -595,7 +595,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTextureSubImage3DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
+		internal void CompressedTextureSubImage3DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[16])(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bits);
@@ -608,7 +608,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
+		public void CompressedTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* bits)
 		{
 			CompressedTextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, bits);
 		}
@@ -617,7 +617,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint bits)
+		public void CompressedTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint bits)
 		{
 			CompressedTextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)bits);
 		}
@@ -626,7 +626,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CompressedTextureSubImage3DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
+		public void CompressedTextureSubImage3DEXT<TBits>(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TBits> bits) where TBits : unmanaged
 		{
 			fixed (TBits* pbits0 = bits)
 			{
@@ -635,7 +635,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyMultiTexImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
+		internal void CopyMultiTexImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, int, void>)funcTable[17])(texunit, target, level, internalformat, x, y, width, border);
@@ -648,13 +648,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
+		public void CopyMultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			CopyMultiTexImage1DEXTNative(texunit, target, level, internalformat, x, y, width, border);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyMultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
+		internal void CopyMultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void>)funcTable[18])(texunit, target, level, internalformat, x, y, width, height, border);
@@ -667,13 +667,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
+		public void CopyMultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			CopyMultiTexImage2DEXTNative(texunit, target, level, internalformat, x, y, width, height, border);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyMultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
+		internal void CopyMultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, void>)funcTable[19])(texunit, target, level, xoffset, x, y, width);
@@ -686,13 +686,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
+		public void CopyMultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			CopyMultiTexSubImage1DEXTNative(texunit, target, level, xoffset, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyMultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		internal void CopyMultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, int, int, void>)funcTable[20])(texunit, target, level, xoffset, yoffset, x, y, width, height);
@@ -705,13 +705,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		public void CopyMultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			CopyMultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyMultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		internal void CopyMultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, int, int, int, void>)funcTable[21])(texunit, target, level, xoffset, yoffset, zoffset, x, y, width, height);
@@ -724,13 +724,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		public void CopyMultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			CopyMultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureImage1DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
+		internal void CopyTextureImage1DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, int, void>)funcTable[22])(texture, target, level, internalformat, x, y, width, border);
@@ -743,13 +743,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
+		public void CopyTextureImage1DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int border)
 		{
 			CopyTextureImage1DEXTNative(texture, target, level, internalformat, x, y, width, border);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureImage2DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
+		internal void CopyTextureImage2DEXTNative(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void>)funcTable[23])(texture, target, level, internalformat, x, y, width, height, border);
@@ -762,13 +762,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
+		public void CopyTextureImage2DEXT(uint texture, GLTextureTarget target, int level, GLInternalFormat internalformat, int x, int y, int width, int height, int border)
 		{
 			CopyTextureImage2DEXTNative(texture, target, level, internalformat, x, y, width, height, border);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureSubImage1DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
+		internal void CopyTextureSubImage1DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, void>)funcTable[24])(texture, target, level, xoffset, x, y, width);
@@ -781,13 +781,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
+		public void CopyTextureSubImage1DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int x, int y, int width)
 		{
 			CopyTextureSubImage1DEXTNative(texture, target, level, xoffset, x, y, width);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureSubImage2DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		internal void CopyTextureSubImage2DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, int, int, void>)funcTable[25])(texture, target, level, xoffset, yoffset, x, y, width, height);
@@ -800,13 +800,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+		public void CopyTextureSubImage2DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
 		{
 			CopyTextureSubImage2DEXTNative(texture, target, level, xoffset, yoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyTextureSubImage3DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		internal void CopyTextureSubImage3DEXTNative(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, int, int, int, int, int, int, int, void>)funcTable[26])(texture, target, level, xoffset, yoffset, zoffset, x, y, width, height);
@@ -819,13 +819,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void CopyTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
+		public void CopyTextureSubImage3DEXT(uint texture, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
 		{
 			CopyTextureSubImage3DEXTNative(texture, target, level, xoffset, yoffset, zoffset, x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableClientStateIndexedEXTNative(GLEnableCap array, uint index)
+		internal void DisableClientStateIndexedEXTNative(GLEnableCap array, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[27])(array, index);
@@ -838,13 +838,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void DisableClientStateIndexedEXT(GLEnableCap array, uint index)
+		public void DisableClientStateIndexedEXT(GLEnableCap array, uint index)
 		{
 			DisableClientStateIndexedEXTNative(array, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableClientStateiEXTNative(GLEnableCap array, uint index)
+		internal void DisableClientStateiEXTNative(GLEnableCap array, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[28])(array, index);
@@ -857,13 +857,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void DisableClientStateiEXT(GLEnableCap array, uint index)
+		public void DisableClientStateiEXT(GLEnableCap array, uint index)
 		{
 			DisableClientStateiEXTNative(array, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableIndexedEXTNative(GLEnableCap target, uint index)
+		internal void DisableIndexedEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[29])(target, index);
@@ -876,13 +876,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void DisableIndexedEXT(GLEnableCap target, uint index)
+		public void DisableIndexedEXT(GLEnableCap target, uint index)
 		{
 			DisableIndexedEXTNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableVertexArrayAttribEXTNative(uint vaobj, uint index)
+		internal void DisableVertexArrayAttribEXTNative(uint vaobj, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[30])(vaobj, index);
@@ -895,13 +895,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void DisableVertexArrayAttribEXT(uint vaobj, uint index)
+		public void DisableVertexArrayAttribEXT(uint vaobj, uint index)
 		{
 			DisableVertexArrayAttribEXTNative(vaobj, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DisableVertexArrayEXTNative(uint vaobj, GLEnableCap array)
+		internal void DisableVertexArrayEXTNative(uint vaobj, GLEnableCap array)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnableCap, void>)funcTable[31])(vaobj, array);
@@ -914,13 +914,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void DisableVertexArrayEXT(uint vaobj, GLEnableCap array)
+		public void DisableVertexArrayEXT(uint vaobj, GLEnableCap array)
 		{
 			DisableVertexArrayEXTNative(vaobj, array);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableClientStateIndexedEXTNative(GLEnableCap array, uint index)
+		internal void EnableClientStateIndexedEXTNative(GLEnableCap array, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[32])(array, index);
@@ -933,13 +933,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void EnableClientStateIndexedEXT(GLEnableCap array, uint index)
+		public void EnableClientStateIndexedEXT(GLEnableCap array, uint index)
 		{
 			EnableClientStateIndexedEXTNative(array, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableClientStateiEXTNative(GLEnableCap array, uint index)
+		internal void EnableClientStateiEXTNative(GLEnableCap array, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[33])(array, index);
@@ -952,13 +952,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void EnableClientStateiEXT(GLEnableCap array, uint index)
+		public void EnableClientStateiEXT(GLEnableCap array, uint index)
 		{
 			EnableClientStateiEXTNative(array, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableIndexedEXTNative(GLEnableCap target, uint index)
+		internal void EnableIndexedEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnableCap, uint, void>)funcTable[34])(target, index);
@@ -971,13 +971,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void EnableIndexedEXT(GLEnableCap target, uint index)
+		public void EnableIndexedEXT(GLEnableCap target, uint index)
 		{
 			EnableIndexedEXTNative(target, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableVertexArrayAttribEXTNative(uint vaobj, uint index)
+		internal void EnableVertexArrayAttribEXTNative(uint vaobj, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[35])(vaobj, index);
@@ -990,13 +990,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void EnableVertexArrayAttribEXT(uint vaobj, uint index)
+		public void EnableVertexArrayAttribEXT(uint vaobj, uint index)
 		{
 			EnableVertexArrayAttribEXTNative(vaobj, index);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EnableVertexArrayEXTNative(uint vaobj, GLEnableCap array)
+		internal void EnableVertexArrayEXTNative(uint vaobj, GLEnableCap array)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnableCap, void>)funcTable[36])(vaobj, array);
@@ -1009,13 +1009,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void EnableVertexArrayEXT(uint vaobj, GLEnableCap array)
+		public void EnableVertexArrayEXT(uint vaobj, GLEnableCap array)
 		{
 			EnableVertexArrayEXTNative(vaobj, array);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FlushMappedNamedBufferRangeEXTNative(uint buffer, nint offset, nint length)
+		internal void FlushMappedNamedBufferRangeEXTNative(uint buffer, nint offset, nint length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, void>)funcTable[37])(buffer, offset, length);
@@ -1028,13 +1028,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void FlushMappedNamedBufferRangeEXT(uint buffer, nint offset, nint length)
+		public void FlushMappedNamedBufferRangeEXT(uint buffer, nint offset, nint length)
 		{
 			FlushMappedNamedBufferRangeEXTNative(buffer, offset, length);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferDrawBufferEXTNative(uint framebuffer, GLDrawBufferMode mode)
+		internal void FramebufferDrawBufferEXTNative(uint framebuffer, GLDrawBufferMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLDrawBufferMode, void>)funcTable[38])(framebuffer, mode);
@@ -1047,13 +1047,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void FramebufferDrawBufferEXT(uint framebuffer, GLDrawBufferMode mode)
+		public void FramebufferDrawBufferEXT(uint framebuffer, GLDrawBufferMode mode)
 		{
 			FramebufferDrawBufferEXTNative(framebuffer, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferDrawBuffersEXTNative(uint framebuffer, int n, GLDrawBufferMode bufs)
+		internal void FramebufferDrawBuffersEXTNative(uint framebuffer, int n, GLDrawBufferMode bufs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLDrawBufferMode, void>)funcTable[39])(framebuffer, n, bufs);
@@ -1066,13 +1066,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void FramebufferDrawBuffersEXT(uint framebuffer, int n, GLDrawBufferMode bufs)
+		public void FramebufferDrawBuffersEXT(uint framebuffer, int n, GLDrawBufferMode bufs)
 		{
 			FramebufferDrawBuffersEXTNative(framebuffer, n, bufs);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferReadBufferEXTNative(uint framebuffer, GLReadBufferMode mode)
+		internal void FramebufferReadBufferEXTNative(uint framebuffer, GLReadBufferMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLReadBufferMode, void>)funcTable[40])(framebuffer, mode);
@@ -1085,13 +1085,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void FramebufferReadBufferEXT(uint framebuffer, GLReadBufferMode mode)
+		public void FramebufferReadBufferEXT(uint framebuffer, GLReadBufferMode mode)
 		{
 			FramebufferReadBufferEXTNative(framebuffer, mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenerateMultiTexMipmapEXTNative(GLTextureUnit texunit, GLTextureTarget target)
+		internal void GenerateMultiTexMipmapEXTNative(GLTextureUnit texunit, GLTextureTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, void>)funcTable[41])(texunit, target);
@@ -1104,13 +1104,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GenerateMultiTexMipmapEXT(GLTextureUnit texunit, GLTextureTarget target)
+		public void GenerateMultiTexMipmapEXT(GLTextureUnit texunit, GLTextureTarget target)
 		{
 			GenerateMultiTexMipmapEXTNative(texunit, target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenerateTextureMipmapEXTNative(uint texture, GLTextureTarget target)
+		internal void GenerateTextureMipmapEXTNative(uint texture, GLTextureTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, void>)funcTable[42])(texture, target);
@@ -1123,13 +1123,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GenerateTextureMipmapEXT(uint texture, GLTextureTarget target)
+		public void GenerateTextureMipmapEXT(uint texture, GLTextureTarget target)
 		{
 			GenerateTextureMipmapEXTNative(texture, target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetBooleanIndexedvEXTNative(GLBufferTargetARB target, uint index, byte* data)
+		internal void GetBooleanIndexedvEXTNative(GLBufferTargetARB target, uint index, byte* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, byte*, void>)funcTable[43])(target, index, data);
@@ -1142,7 +1142,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, byte* data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, byte* data)
 		{
 			GetBooleanIndexedvEXTNative(target, index, data);
 		}
@@ -1151,7 +1151,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, string data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, string data)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -1181,7 +1181,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, Span<byte> data)
 		{
 			fixed (byte* pdata0 = data)
 			{
@@ -1193,7 +1193,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ref byte data)
+		public void GetBooleanIndexedvEXT(GLBufferTargetARB target, uint index, ref byte data)
 		{
 			fixed (byte* pdata0 = &data)
 			{
@@ -1202,7 +1202,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCompressedMultiTexImageEXTNative(GLTextureUnit texunit, GLTextureTarget target, int lod, void* img)
+		internal void GetCompressedMultiTexImageEXTNative(GLTextureUnit texunit, GLTextureTarget target, int lod, void* img)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, void*, void>)funcTable[44])(texunit, target, lod, img);
@@ -1215,7 +1215,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetCompressedMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int lod, void* img)
+		public void GetCompressedMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int lod, void* img)
 		{
 			GetCompressedMultiTexImageEXTNative(texunit, target, lod, img);
 		}
@@ -1224,7 +1224,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetCompressedMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int lod, nint img)
+		public void GetCompressedMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int lod, nint img)
 		{
 			GetCompressedMultiTexImageEXTNative(texunit, target, lod, (void*)img);
 		}
@@ -1233,7 +1233,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetCompressedMultiTexImageEXT<TImg>(GLTextureUnit texunit, GLTextureTarget target, int lod, Span<TImg> img) where TImg : unmanaged
+		public void GetCompressedMultiTexImageEXT<TImg>(GLTextureUnit texunit, GLTextureTarget target, int lod, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
 			{
@@ -1242,7 +1242,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCompressedTextureImageEXTNative(uint texture, GLTextureTarget target, int lod, void* img)
+		internal void GetCompressedTextureImageEXTNative(uint texture, GLTextureTarget target, int lod, void* img)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, void*, void>)funcTable[45])(texture, target, lod, img);
@@ -1255,7 +1255,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetCompressedTextureImageEXT(uint texture, GLTextureTarget target, int lod, void* img)
+		public void GetCompressedTextureImageEXT(uint texture, GLTextureTarget target, int lod, void* img)
 		{
 			GetCompressedTextureImageEXTNative(texture, target, lod, img);
 		}
@@ -1264,7 +1264,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetCompressedTextureImageEXT(uint texture, GLTextureTarget target, int lod, nint img)
+		public void GetCompressedTextureImageEXT(uint texture, GLTextureTarget target, int lod, nint img)
 		{
 			GetCompressedTextureImageEXTNative(texture, target, lod, (void*)img);
 		}
@@ -1273,7 +1273,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetCompressedTextureImageEXT<TImg>(uint texture, GLTextureTarget target, int lod, Span<TImg> img) where TImg : unmanaged
+		public void GetCompressedTextureImageEXT<TImg>(uint texture, GLTextureTarget target, int lod, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
 			{
@@ -1282,7 +1282,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetDoubleIndexedvEXTNative(GLGetPName target, uint index, double* data)
+		internal void GetDoubleIndexedvEXTNative(GLGetPName target, uint index, double* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, double*, void>)funcTable[46])(target, index, data);
@@ -1295,7 +1295,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetDoubleIndexedvEXT(GLGetPName target, uint index, double* data)
+		public void GetDoubleIndexedvEXT(GLGetPName target, uint index, double* data)
 		{
 			GetDoubleIndexedvEXTNative(target, index, data);
 		}
@@ -1304,7 +1304,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetDoubleIndexedvEXT(GLGetPName target, uint index, Span<double> data)
+		public void GetDoubleIndexedvEXT(GLGetPName target, uint index, Span<double> data)
 		{
 			fixed (double* pdata0 = data)
 			{
@@ -1316,7 +1316,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetDoubleIndexedvEXT(GLGetPName target, uint index, ref double data)
+		public void GetDoubleIndexedvEXT(GLGetPName target, uint index, ref double data)
 		{
 			fixed (double* pdata0 = &data)
 			{
@@ -1325,7 +1325,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetDoublei_vEXTNative(GLGetPName pname, uint index, double* @params)
+		internal void GetDoublei_vEXTNative(GLGetPName pname, uint index, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, double*, void>)funcTable[47])(pname, index, @params);
@@ -1338,7 +1338,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetDoublei_vEXT(GLGetPName pname, uint index, double* @params)
+		public void GetDoublei_vEXT(GLGetPName pname, uint index, double* @params)
 		{
 			GetDoublei_vEXTNative(pname, index, @params);
 		}
@@ -1347,7 +1347,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetDoublei_vEXT(GLGetPName pname, uint index, Span<double> @params)
+		public void GetDoublei_vEXT(GLGetPName pname, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -1359,7 +1359,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetDoublei_vEXT(GLGetPName pname, uint index, ref double @params)
+		public void GetDoublei_vEXT(GLGetPName pname, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -1368,7 +1368,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloatIndexedvEXTNative(GLGetPName target, uint index, float* data)
+		internal void GetFloatIndexedvEXTNative(GLGetPName target, uint index, float* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, float*, void>)funcTable[48])(target, index, data);
@@ -1381,7 +1381,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFloatIndexedvEXT(GLGetPName target, uint index, float* data)
+		public void GetFloatIndexedvEXT(GLGetPName target, uint index, float* data)
 		{
 			GetFloatIndexedvEXTNative(target, index, data);
 		}
@@ -1390,7 +1390,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFloatIndexedvEXT(GLGetPName target, uint index, Span<float> data)
+		public void GetFloatIndexedvEXT(GLGetPName target, uint index, Span<float> data)
 		{
 			fixed (float* pdata0 = data)
 			{
@@ -1402,7 +1402,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFloatIndexedvEXT(GLGetPName target, uint index, ref float data)
+		public void GetFloatIndexedvEXT(GLGetPName target, uint index, ref float data)
 		{
 			fixed (float* pdata0 = &data)
 			{
@@ -1411,7 +1411,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFloati_vEXTNative(GLGetPName pname, uint index, float* @params)
+		internal void GetFloati_vEXTNative(GLGetPName pname, uint index, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, float*, void>)funcTable[49])(pname, index, @params);
@@ -1424,7 +1424,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFloati_vEXT(GLGetPName pname, uint index, float* @params)
+		public void GetFloati_vEXT(GLGetPName pname, uint index, float* @params)
 		{
 			GetFloati_vEXTNative(pname, index, @params);
 		}
@@ -1433,7 +1433,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFloati_vEXT(GLGetPName pname, uint index, Span<float> @params)
+		public void GetFloati_vEXT(GLGetPName pname, uint index, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -1445,7 +1445,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFloati_vEXT(GLGetPName pname, uint index, ref float @params)
+		public void GetFloati_vEXT(GLGetPName pname, uint index, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -1454,7 +1454,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFramebufferParameterivEXTNative(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
+		internal void GetFramebufferParameterivEXTNative(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetFramebufferParameter, int*, void>)funcTable[50])(framebuffer, pname, @params);
@@ -1467,7 +1467,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
+		public void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
 		{
 			GetFramebufferParameterivEXTNative(framebuffer, pname, @params);
 		}
@@ -1476,7 +1476,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, Span<int> @params)
+		public void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1488,7 +1488,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, ref int @params)
+		public void GetFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1497,7 +1497,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetIntegerIndexedvEXTNative(GLGetPName target, uint index, int* data)
+		internal void GetIntegerIndexedvEXTNative(GLGetPName target, uint index, int* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, uint, int*, void>)funcTable[51])(target, index, data);
@@ -1510,7 +1510,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, int* data)
+		public void GetIntegerIndexedvEXT(GLGetPName target, uint index, int* data)
 		{
 			GetIntegerIndexedvEXTNative(target, index, data);
 		}
@@ -1519,7 +1519,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
+		public void GetIntegerIndexedvEXT(GLGetPName target, uint index, Span<int> data)
 		{
 			fixed (int* pdata0 = data)
 			{
@@ -1531,7 +1531,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)
+		public void GetIntegerIndexedvEXT(GLGetPName target, uint index, ref int data)
 		{
 			fixed (int* pdata0 = &data)
 			{
@@ -1540,7 +1540,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexEnvfvEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		internal void GetMultiTexEnvfvEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureEnvTarget, GLTextureEnvParameter, float*, void>)funcTable[52])(texunit, target, pname, @params);
@@ -1553,7 +1553,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		public void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			GetMultiTexEnvfvEXTNative(texunit, target, pname, @params);
 		}
@@ -1562,7 +1562,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		public void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -1574,7 +1574,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
+		public void GetMultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -1583,7 +1583,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexEnvivEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void GetMultiTexEnvivEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[53])(texunit, target, pname, @params);
@@ -1596,7 +1596,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			GetMultiTexEnvivEXTNative(texunit, target, pname, @params);
 		}
@@ -1605,7 +1605,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1617,7 +1617,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public void GetMultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1626,7 +1626,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexGendvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
+		internal void GetMultiTexGendvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, double*, void>)funcTable[54])(texunit, coord, pname, @params);
@@ -1639,7 +1639,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
+		public void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
 		{
 			GetMultiTexGendvEXTNative(texunit, coord, pname, @params);
 		}
@@ -1648,7 +1648,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
+		public void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -1660,7 +1660,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref double @params)
+		public void GetMultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -1669,7 +1669,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexGenfvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
+		internal void GetMultiTexGenfvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, float*, void>)funcTable[55])(texunit, coord, pname, @params);
@@ -1682,7 +1682,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
+		public void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			GetMultiTexGenfvEXTNative(texunit, coord, pname, @params);
 		}
@@ -1691,7 +1691,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		public void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -1703,7 +1703,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
+		public void GetMultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -1712,7 +1712,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexGenivEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		internal void GetMultiTexGenivEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, int*, void>)funcTable[56])(texunit, coord, pname, @params);
@@ -1725,7 +1725,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		public void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			GetMultiTexGenivEXTNative(texunit, coord, pname, @params);
 		}
@@ -1734,7 +1734,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		public void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1746,7 +1746,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public void GetMultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1755,7 +1755,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexImageEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void GetMultiTexImageEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[57])(texunit, target, level, format, type, pixels);
@@ -1768,7 +1768,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void GetMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			GetMultiTexImageEXTNative(texunit, target, level, format, type, pixels);
 		}
@@ -1777,7 +1777,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void GetMultiTexImageEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			GetMultiTexImageEXTNative(texunit, target, level, format, type, (void*)pixels);
 		}
@@ -1786,7 +1786,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexImageEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void GetMultiTexImageEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -1795,7 +1795,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexLevelParameterfvEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
+		internal void GetMultiTexLevelParameterfvEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLGetTextureParameter, float*, void>)funcTable[58])(texunit, target, level, pname, @params);
@@ -1808,7 +1808,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
+		public void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
 		{
 			GetMultiTexLevelParameterfvEXTNative(texunit, target, level, pname, @params);
 		}
@@ -1817,7 +1817,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
+		public void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -1829,7 +1829,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
+		public void GetMultiTexLevelParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -1838,7 +1838,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexLevelParameterivEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		internal void GetMultiTexLevelParameterivEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLGetTextureParameter, int*, void>)funcTable[59])(texunit, target, level, pname, @params);
@@ -1851,7 +1851,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		public void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			GetMultiTexLevelParameterivEXTNative(texunit, target, level, pname, @params);
 		}
@@ -1860,7 +1860,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		public void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1872,7 +1872,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
+		public void GetMultiTexLevelParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1881,7 +1881,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexParameterIivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetMultiTexParameterIivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[60])(texunit, target, pname, @params);
@@ -1894,7 +1894,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetMultiTexParameterIivEXTNative(texunit, target, pname, @params);
 		}
@@ -1903,7 +1903,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -1915,7 +1915,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void GetMultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1924,7 +1924,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexParameterIuivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
+		internal void GetMultiTexParameterIuivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLGetTextureParameter, uint*, void>)funcTable[61])(texunit, target, pname, @params);
@@ -1937,7 +1937,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
+		public void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			GetMultiTexParameterIuivEXTNative(texunit, target, pname, @params);
 		}
@@ -1946,7 +1946,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		public void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -1958,7 +1958,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public void GetMultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -1967,7 +1967,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexParameterfvEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
+		internal void GetMultiTexParameterfvEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLGetTextureParameter, float*, void>)funcTable[62])(texunit, target, pname, @params);
@@ -1980,7 +1980,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
+		public void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
 		{
 			GetMultiTexParameterfvEXTNative(texunit, target, pname, @params);
 		}
@@ -1989,7 +1989,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
+		public void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -2001,7 +2001,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
+		public void GetMultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -2010,7 +2010,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMultiTexParameterivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetMultiTexParameterivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[63])(texunit, target, pname, @params);
@@ -2023,7 +2023,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetMultiTexParameterivEXTNative(texunit, target, pname, @params);
 		}
@@ -2032,7 +2032,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2044,7 +2044,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void GetMultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2053,7 +2053,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferParameterivEXTNative(uint buffer, GLBufferPNameARB pname, int* @params)
+		internal void GetNamedBufferParameterivEXTNative(uint buffer, GLBufferPNameARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBufferPNameARB, int*, void>)funcTable[64])(buffer, pname, @params);
@@ -2066,7 +2066,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, int* @params)
+		public void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, int* @params)
 		{
 			GetNamedBufferParameterivEXTNative(buffer, pname, @params);
 		}
@@ -2075,7 +2075,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, Span<int> @params)
+		public void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2087,7 +2087,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, ref int @params)
+		public void GetNamedBufferParameterivEXT(uint buffer, GLBufferPNameARB pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2096,7 +2096,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferPointervEXTNative(uint buffer, GLBufferPointerNameARB pname, void** @params)
+		internal void GetNamedBufferPointervEXTNative(uint buffer, GLBufferPointerNameARB pname, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLBufferPointerNameARB, void**, void>)funcTable[65])(buffer, pname, @params);
@@ -2109,13 +2109,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferPointervEXT(uint buffer, GLBufferPointerNameARB pname, void** @params)
+		public void GetNamedBufferPointervEXT(uint buffer, GLBufferPointerNameARB pname, void** @params)
 		{
 			GetNamedBufferPointervEXTNative(buffer, pname, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedBufferSubDataEXTNative(uint buffer, nint offset, nint size, void* data)
+		internal void GetNamedBufferSubDataEXTNative(uint buffer, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, void*, void>)funcTable[66])(buffer, offset, size, data);
@@ -2128,7 +2128,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferSubDataEXT(uint buffer, nint offset, nint size, void* data)
+		public void GetNamedBufferSubDataEXT(uint buffer, nint offset, nint size, void* data)
 		{
 			GetNamedBufferSubDataEXTNative(buffer, offset, size, data);
 		}
@@ -2137,7 +2137,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferSubDataEXT(uint buffer, nint offset, nint size, nint data)
+		public void GetNamedBufferSubDataEXT(uint buffer, nint offset, nint size, nint data)
 		{
 			GetNamedBufferSubDataEXTNative(buffer, offset, size, (void*)data);
 		}
@@ -2146,7 +2146,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedBufferSubDataEXT<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void GetNamedBufferSubDataEXT<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -2155,7 +2155,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedFramebufferAttachmentParameterivEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
+		internal void GetNamedFramebufferAttachmentParameterivEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, GLFramebufferAttachmentParameterName, int*, void>)funcTable[67])(framebuffer, attachment, pname, @params);
@@ -2168,7 +2168,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
+		public void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, int* @params)
 		{
 			GetNamedFramebufferAttachmentParameterivEXTNative(framebuffer, attachment, pname, @params);
 		}
@@ -2177,7 +2177,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
+		public void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2189,7 +2189,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
+		public void GetNamedFramebufferAttachmentParameterivEXT(uint framebuffer, GLFramebufferAttachment attachment, GLFramebufferAttachmentParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2198,7 +2198,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedFramebufferParameterivEXTNative(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
+		internal void GetNamedFramebufferParameterivEXTNative(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLGetFramebufferParameter, int*, void>)funcTable[68])(framebuffer, pname, @params);
@@ -2211,7 +2211,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
+		public void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, int* @params)
 		{
 			GetNamedFramebufferParameterivEXTNative(framebuffer, pname, @params);
 		}
@@ -2220,7 +2220,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, Span<int> @params)
+		public void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2232,7 +2232,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, ref int @params)
+		public void GetNamedFramebufferParameterivEXT(uint framebuffer, GLGetFramebufferParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2241,7 +2241,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedProgramLocalParameterIivEXTNative(uint program, GLProgramTarget target, uint index, int* @params)
+		internal void GetNamedProgramLocalParameterIivEXTNative(uint program, GLProgramTarget target, uint index, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int*, void>)funcTable[69])(program, target, index, @params);
@@ -2254,7 +2254,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, int* @params)
+		public void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, int* @params)
 		{
 			GetNamedProgramLocalParameterIivEXTNative(program, target, index, @params);
 		}
@@ -2263,7 +2263,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, Span<int> @params)
+		public void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2275,7 +2275,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, ref int @params)
+		public void GetNamedProgramLocalParameterIivEXT(uint program, GLProgramTarget target, uint index, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2284,7 +2284,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedProgramLocalParameterIuivEXTNative(uint program, GLProgramTarget target, uint index, uint* @params)
+		internal void GetNamedProgramLocalParameterIuivEXTNative(uint program, GLProgramTarget target, uint index, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, uint*, void>)funcTable[70])(program, target, index, @params);
@@ -2297,7 +2297,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, uint* @params)
+		public void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, uint* @params)
 		{
 			GetNamedProgramLocalParameterIuivEXTNative(program, target, index, @params);
 		}
@@ -2306,7 +2306,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, Span<uint> @params)
+		public void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -2318,7 +2318,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, ref uint @params)
+		public void GetNamedProgramLocalParameterIuivEXT(uint program, GLProgramTarget target, uint index, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -2327,7 +2327,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedProgramLocalParameterdvEXTNative(uint program, GLProgramTarget target, uint index, double* @params)
+		internal void GetNamedProgramLocalParameterdvEXTNative(uint program, GLProgramTarget target, uint index, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, double*, void>)funcTable[71])(program, target, index, @params);
@@ -2340,7 +2340,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, double* @params)
+		public void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, double* @params)
 		{
 			GetNamedProgramLocalParameterdvEXTNative(program, target, index, @params);
 		}
@@ -2349,7 +2349,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, Span<double> @params)
+		public void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -2361,7 +2361,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, ref double @params)
+		public void GetNamedProgramLocalParameterdvEXT(uint program, GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -2370,7 +2370,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedProgramLocalParameterfvEXTNative(uint program, GLProgramTarget target, uint index, float* @params)
+		internal void GetNamedProgramLocalParameterfvEXTNative(uint program, GLProgramTarget target, uint index, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, float*, void>)funcTable[72])(program, target, index, @params);
@@ -2383,7 +2383,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, float* @params)
+		public void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, float* @params)
 		{
 			GetNamedProgramLocalParameterfvEXTNative(program, target, index, @params);
 		}
@@ -2392,7 +2392,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, Span<float> @params)
+		public void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -2404,7 +2404,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, ref float @params)
+		public void GetNamedProgramLocalParameterfvEXT(uint program, GLProgramTarget target, uint index, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -2413,7 +2413,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedProgramStringEXTNative(uint program, GLProgramTarget target, GLProgramStringProperty pname, void* str)
+		internal void GetNamedProgramStringEXTNative(uint program, GLProgramTarget target, GLProgramStringProperty pname, void* str)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, GLProgramStringProperty, void*, void>)funcTable[73])(program, target, pname, str);
@@ -2426,7 +2426,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramStringProperty pname, void* str)
+		public void GetNamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramStringProperty pname, void* str)
 		{
 			GetNamedProgramStringEXTNative(program, target, pname, str);
 		}
@@ -2435,7 +2435,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramStringProperty pname, nint str)
+		public void GetNamedProgramStringEXT(uint program, GLProgramTarget target, GLProgramStringProperty pname, nint str)
 		{
 			GetNamedProgramStringEXTNative(program, target, pname, (void*)str);
 		}
@@ -2444,7 +2444,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramStringEXT<TStr>(uint program, GLProgramTarget target, GLProgramStringProperty pname, Span<TStr> str) where TStr : unmanaged
+		public void GetNamedProgramStringEXT<TStr>(uint program, GLProgramTarget target, GLProgramStringProperty pname, Span<TStr> str) where TStr : unmanaged
 		{
 			fixed (TStr* pstr0 = str)
 			{
@@ -2453,7 +2453,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedProgramivEXTNative(uint program, GLProgramTarget target, GLProgramPropertyARB pname, int* @params)
+		internal void GetNamedProgramivEXTNative(uint program, GLProgramTarget target, GLProgramPropertyARB pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, GLProgramPropertyARB, int*, void>)funcTable[74])(program, target, pname, @params);
@@ -2466,7 +2466,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, int* @params)
+		public void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, int* @params)
 		{
 			GetNamedProgramivEXTNative(program, target, pname, @params);
 		}
@@ -2475,7 +2475,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
+		public void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2487,7 +2487,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, ref int @params)
+		public void GetNamedProgramivEXT(uint program, GLProgramTarget target, GLProgramPropertyARB pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2496,7 +2496,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedRenderbufferParameterivEXTNative(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
+		internal void GetNamedRenderbufferParameterivEXTNative(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLRenderbufferParameterName, int*, void>)funcTable[75])(renderbuffer, pname, @params);
@@ -2509,7 +2509,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
+		public void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, int* @params)
 		{
 			GetNamedRenderbufferParameterivEXTNative(renderbuffer, pname, @params);
 		}
@@ -2518,7 +2518,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, Span<int> @params)
+		public void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2530,7 +2530,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, ref int @params)
+		public void GetNamedRenderbufferParameterivEXT(uint renderbuffer, GLRenderbufferParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2539,7 +2539,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPointerIndexedvEXTNative(GLEnum target, uint index, void** data)
+		internal void GetPointerIndexedvEXTNative(GLEnum target, uint index, void** data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, void**, void>)funcTable[76])(target, index, data);
@@ -2552,13 +2552,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetPointerIndexedvEXT(GLEnum target, uint index, void** data)
+		public void GetPointerIndexedvEXT(GLEnum target, uint index, void** data)
 		{
 			GetPointerIndexedvEXTNative(target, index, data);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPointeri_vEXTNative(GLEnum pname, uint index, void** @params)
+		internal void GetPointeri_vEXTNative(GLEnum pname, uint index, void** @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, void**, void>)funcTable[77])(pname, index, @params);
@@ -2571,13 +2571,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetPointeri_vEXT(GLEnum pname, uint index, void** @params)
+		public void GetPointeri_vEXT(GLEnum pname, uint index, void** @params)
 		{
 			GetPointeri_vEXTNative(pname, index, @params);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureImageEXTNative(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void GetTextureImageEXTNative(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[78])(texture, target, level, format, type, pixels);
@@ -2590,7 +2590,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureImageEXT(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void GetTextureImageEXT(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			GetTextureImageEXTNative(texture, target, level, format, type, pixels);
 		}
@@ -2599,7 +2599,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureImageEXT(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void GetTextureImageEXT(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			GetTextureImageEXTNative(texture, target, level, format, type, (void*)pixels);
 		}
@@ -2608,7 +2608,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureImageEXT<TPixels>(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void GetTextureImageEXT<TPixels>(uint texture, GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -2617,7 +2617,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureLevelParameterfvEXTNative(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
+		internal void GetTextureLevelParameterfvEXTNative(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLGetTextureParameter, float*, void>)funcTable[79])(texture, target, level, pname, @params);
@@ -2630,7 +2630,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
+		public void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, float* @params)
 		{
 			GetTextureLevelParameterfvEXTNative(texture, target, level, pname, @params);
 		}
@@ -2639,7 +2639,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
+		public void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -2651,7 +2651,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
+		public void GetTextureLevelParameterfvEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -2660,7 +2660,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureLevelParameterivEXTNative(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		internal void GetTextureLevelParameterivEXTNative(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, int, GLGetTextureParameter, int*, void>)funcTable[80])(texture, target, level, pname, @params);
@@ -2673,7 +2673,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
+		public void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, int* @params)
 		{
 			GetTextureLevelParameterivEXTNative(texture, target, level, pname, @params);
 		}
@@ -2682,7 +2682,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2694,7 +2694,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
+		public void GetTextureLevelParameterivEXT(uint texture, GLTextureTarget target, int level, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2703,7 +2703,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureParameterIivEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetTextureParameterIivEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[81])(texture, target, pname, @params);
@@ -2716,7 +2716,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTextureParameterIivEXTNative(texture, target, pname, @params);
 		}
@@ -2725,7 +2725,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2737,7 +2737,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void GetTextureParameterIivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2746,7 +2746,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureParameterIuivEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
+		internal void GetTextureParameterIuivEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLGetTextureParameter, uint*, void>)funcTable[82])(texture, target, pname, @params);
@@ -2759,7 +2759,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
+		public void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, uint* @params)
 		{
 			GetTextureParameterIuivEXTNative(texture, target, pname, @params);
 		}
@@ -2768,7 +2768,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
+		public void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -2780,7 +2780,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
+		public void GetTextureParameterIuivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -2789,7 +2789,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureParameterfvEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
+		internal void GetTextureParameterfvEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLGetTextureParameter, float*, void>)funcTable[83])(texture, target, pname, @params);
@@ -2802,7 +2802,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
+		public void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, float* @params)
 		{
 			GetTextureParameterfvEXTNative(texture, target, pname, @params);
 		}
@@ -2811,7 +2811,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
+		public void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -2823,7 +2823,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
+		public void GetTextureParameterfvEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -2832,7 +2832,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTextureParameterivEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		internal void GetTextureParameterivEXTNative(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLTextureTarget, GLGetTextureParameter, int*, void>)funcTable[84])(texture, target, pname, @params);
@@ -2845,7 +2845,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
+		public void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, int* @params)
 		{
 			GetTextureParameterivEXTNative(texture, target, pname, @params);
 		}
@@ -2854,7 +2854,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
+		public void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -2866,7 +2866,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
+		public void GetTextureParameterivEXT(uint texture, GLTextureTarget target, GLGetTextureParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -2875,7 +2875,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexArrayIntegeri_vEXTNative(uint vaobj, uint index, GLVertexArrayPName pname, int* param)
+		internal void GetVertexArrayIntegeri_vEXTNative(uint vaobj, uint index, GLVertexArrayPName pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexArrayPName, int*, void>)funcTable[85])(vaobj, index, pname, param);
@@ -2888,7 +2888,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, int* param)
+		public void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, int* param)
 		{
 			GetVertexArrayIntegeri_vEXTNative(vaobj, index, pname, param);
 		}
@@ -2897,7 +2897,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, Span<int> param)
+		public void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, Span<int> param)
 		{
 			fixed (int* pparam0 = param)
 			{
@@ -2909,7 +2909,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, ref int param)
+		public void GetVertexArrayIntegeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, ref int param)
 		{
 			fixed (int* pparam0 = &param)
 			{
@@ -2918,7 +2918,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexArrayIntegervEXTNative(uint vaobj, GLVertexArrayPName pname, int* param)
+		internal void GetVertexArrayIntegervEXTNative(uint vaobj, GLVertexArrayPName pname, int* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexArrayPName, int*, void>)funcTable[86])(vaobj, pname, param);
@@ -2931,7 +2931,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, int* param)
+		public void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, int* param)
 		{
 			GetVertexArrayIntegervEXTNative(vaobj, pname, param);
 		}
@@ -2940,7 +2940,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, Span<int> param)
+		public void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, Span<int> param)
 		{
 			fixed (int* pparam0 = param)
 			{
@@ -2952,7 +2952,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, ref int param)
+		public void GetVertexArrayIntegervEXT(uint vaobj, GLVertexArrayPName pname, ref int param)
 		{
 			fixed (int* pparam0 = &param)
 			{
@@ -2961,7 +2961,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexArrayPointeri_vEXTNative(uint vaobj, uint index, GLVertexArrayPName pname, void** param)
+		internal void GetVertexArrayPointeri_vEXTNative(uint vaobj, uint index, GLVertexArrayPName pname, void** param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLVertexArrayPName, void**, void>)funcTable[87])(vaobj, index, pname, param);
@@ -2974,13 +2974,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayPointeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, void** param)
+		public void GetVertexArrayPointeri_vEXT(uint vaobj, uint index, GLVertexArrayPName pname, void** param)
 		{
 			GetVertexArrayPointeri_vEXTNative(vaobj, index, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexArrayPointervEXTNative(uint vaobj, GLVertexArrayPName pname, void** param)
+		internal void GetVertexArrayPointervEXTNative(uint vaobj, GLVertexArrayPName pname, void** param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexArrayPName, void**, void>)funcTable[88])(vaobj, pname, param);
@@ -2993,13 +2993,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void GetVertexArrayPointervEXT(uint vaobj, GLVertexArrayPName pname, void** param)
+		public void GetVertexArrayPointervEXT(uint vaobj, GLVertexArrayPName pname, void** param)
 		{
 			GetVertexArrayPointervEXTNative(vaobj, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsEnabledIndexedEXTNative(GLEnableCap target, uint index)
+		internal byte IsEnabledIndexedEXTNative(GLEnableCap target, uint index)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnableCap, uint, byte>)funcTable[89])(target, index);
@@ -3012,14 +3012,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_EXT_draw_buffers2</remarks>
-		public static bool IsEnabledIndexedEXT(GLEnableCap target, uint index)
+		public bool IsEnabledIndexedEXT(GLEnableCap target, uint index)
 		{
 			byte ret = IsEnabledIndexedEXTNative(target, index);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* MapNamedBufferEXTNative(uint buffer, GLBufferAccessARB access)
+		internal void* MapNamedBufferEXTNative(uint buffer, GLBufferAccessARB access)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, GLBufferAccessARB, void*>)funcTable[90])(buffer, access);
@@ -3032,14 +3032,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void* MapNamedBufferEXT(uint buffer, GLBufferAccessARB access)
+		public void* MapNamedBufferEXT(uint buffer, GLBufferAccessARB access)
 		{
 			void* ret = MapNamedBufferEXTNative(buffer, access);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* MapNamedBufferRangeEXTNative(uint buffer, nint offset, nint length, GLMapBufferAccessMask access)
+		internal void* MapNamedBufferRangeEXTNative(uint buffer, nint offset, nint length, GLMapBufferAccessMask access)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, nint, nint, GLMapBufferAccessMask, void*>)funcTable[91])(buffer, offset, length, access);
@@ -3052,14 +3052,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void* MapNamedBufferRangeEXT(uint buffer, nint offset, nint length, GLMapBufferAccessMask access)
+		public void* MapNamedBufferRangeEXT(uint buffer, nint offset, nint length, GLMapBufferAccessMask access)
 		{
 			void* ret = MapNamedBufferRangeEXTNative(buffer, offset, length, access);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixFrustumEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		internal void MatrixFrustumEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, double, double, double, void>)funcTable[92])(mode, left, right, bottom, top, zNear, zFar);
@@ -3072,13 +3072,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixFrustumEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		public void MatrixFrustumEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			MatrixFrustumEXTNative(mode, left, right, bottom, top, zNear, zFar);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadIdentityEXTNative(GLMatrixMode mode)
+		internal void MatrixLoadIdentityEXTNative(GLMatrixMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, void>)funcTable[93])(mode);
@@ -3091,13 +3091,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadIdentityEXT(GLMatrixMode mode)
+		public void MatrixLoadIdentityEXT(GLMatrixMode mode)
 		{
 			MatrixLoadIdentityEXTNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadTransposedEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixLoadTransposedEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[94])(mode, m);
@@ -3110,7 +3110,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, double* m)
+		public void MatrixLoadTransposedEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixLoadTransposedEXTNative(mode, m);
 		}
@@ -3119,7 +3119,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixLoadTransposedEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -3131,7 +3131,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposedEXT(GLMatrixMode mode, ref double m)
+		public void MatrixLoadTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -3140,7 +3140,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadTransposefEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixLoadTransposefEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[95])(mode, m);
@@ -3153,7 +3153,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, float* m)
+		public void MatrixLoadTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadTransposefEXTNative(mode, m);
 		}
@@ -3162,7 +3162,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixLoadTransposefEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -3174,7 +3174,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadTransposefEXT(GLMatrixMode mode, ref float m)
+		public void MatrixLoadTransposefEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -3183,7 +3183,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoaddEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixLoaddEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[96])(mode, m);
@@ -3196,7 +3196,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoaddEXT(GLMatrixMode mode, double* m)
+		public void MatrixLoaddEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixLoaddEXTNative(mode, m);
 		}
@@ -3205,7 +3205,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoaddEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixLoaddEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -3217,7 +3217,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoaddEXT(GLMatrixMode mode, ref double m)
+		public void MatrixLoaddEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -3226,7 +3226,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixLoadfEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixLoadfEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[97])(mode, m);
@@ -3239,7 +3239,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadfEXT(GLMatrixMode mode, float* m)
+		public void MatrixLoadfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixLoadfEXTNative(mode, m);
 		}
@@ -3248,7 +3248,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadfEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixLoadfEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -3260,7 +3260,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixLoadfEXT(GLMatrixMode mode, ref float m)
+		public void MatrixLoadfEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -3269,7 +3269,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultTransposedEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixMultTransposedEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[98])(mode, m);
@@ -3282,7 +3282,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposedEXT(GLMatrixMode mode, double* m)
+		public void MatrixMultTransposedEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixMultTransposedEXTNative(mode, m);
 		}
@@ -3291,7 +3291,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposedEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixMultTransposedEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -3303,7 +3303,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposedEXT(GLMatrixMode mode, ref double m)
+		public void MatrixMultTransposedEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -3312,7 +3312,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultTransposefEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixMultTransposefEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[99])(mode, m);
@@ -3325,7 +3325,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposefEXT(GLMatrixMode mode, float* m)
+		public void MatrixMultTransposefEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultTransposefEXTNative(mode, m);
 		}
@@ -3334,7 +3334,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposefEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixMultTransposefEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -3346,7 +3346,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultTransposefEXT(GLMatrixMode mode, ref float m)
+		public void MatrixMultTransposefEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -3355,7 +3355,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultdEXTNative(GLMatrixMode mode, double* m)
+		internal void MatrixMultdEXTNative(GLMatrixMode mode, double* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double*, void>)funcTable[100])(mode, m);
@@ -3368,7 +3368,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultdEXT(GLMatrixMode mode, double* m)
+		public void MatrixMultdEXT(GLMatrixMode mode, double* m)
 		{
 			MatrixMultdEXTNative(mode, m);
 		}
@@ -3377,7 +3377,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultdEXT(GLMatrixMode mode, Span<double> m)
+		public void MatrixMultdEXT(GLMatrixMode mode, Span<double> m)
 		{
 			fixed (double* pm0 = m)
 			{
@@ -3389,7 +3389,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultdEXT(GLMatrixMode mode, ref double m)
+		public void MatrixMultdEXT(GLMatrixMode mode, ref double m)
 		{
 			fixed (double* pm0 = &m)
 			{
@@ -3398,7 +3398,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixMultfEXTNative(GLMatrixMode mode, float* m)
+		internal void MatrixMultfEXTNative(GLMatrixMode mode, float* m)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float*, void>)funcTable[101])(mode, m);
@@ -3411,7 +3411,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultfEXT(GLMatrixMode mode, float* m)
+		public void MatrixMultfEXT(GLMatrixMode mode, float* m)
 		{
 			MatrixMultfEXTNative(mode, m);
 		}
@@ -3420,7 +3420,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultfEXT(GLMatrixMode mode, Span<float> m)
+		public void MatrixMultfEXT(GLMatrixMode mode, Span<float> m)
 		{
 			fixed (float* pm0 = m)
 			{
@@ -3432,7 +3432,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixMultfEXT(GLMatrixMode mode, ref float m)
+		public void MatrixMultfEXT(GLMatrixMode mode, ref float m)
 		{
 			fixed (float* pm0 = &m)
 			{
@@ -3441,7 +3441,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixOrthoEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		internal void MatrixOrthoEXTNative(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, double, double, double, void>)funcTable[102])(mode, left, right, bottom, top, zNear, zFar);
@@ -3454,13 +3454,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixOrthoEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
+		public void MatrixOrthoEXT(GLMatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar)
 		{
 			MatrixOrthoEXTNative(mode, left, right, bottom, top, zNear, zFar);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixPopEXTNative(GLMatrixMode mode)
+		internal void MatrixPopEXTNative(GLMatrixMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, void>)funcTable[103])(mode);
@@ -3473,13 +3473,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixPopEXT(GLMatrixMode mode)
+		public void MatrixPopEXT(GLMatrixMode mode)
 		{
 			MatrixPopEXTNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixPushEXTNative(GLMatrixMode mode)
+		internal void MatrixPushEXTNative(GLMatrixMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, void>)funcTable[104])(mode);
@@ -3492,13 +3492,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixPushEXT(GLMatrixMode mode)
+		public void MatrixPushEXT(GLMatrixMode mode)
 		{
 			MatrixPushEXTNative(mode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixRotatedEXTNative(GLMatrixMode mode, double angle, double x, double y, double z)
+		internal void MatrixRotatedEXTNative(GLMatrixMode mode, double angle, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, double, void>)funcTable[105])(mode, angle, x, y, z);
@@ -3511,13 +3511,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixRotatedEXT(GLMatrixMode mode, double angle, double x, double y, double z)
+		public void MatrixRotatedEXT(GLMatrixMode mode, double angle, double x, double y, double z)
 		{
 			MatrixRotatedEXTNative(mode, angle, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixRotatefEXTNative(GLMatrixMode mode, float angle, float x, float y, float z)
+		internal void MatrixRotatefEXTNative(GLMatrixMode mode, float angle, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float, float, float, float, void>)funcTable[106])(mode, angle, x, y, z);
@@ -3530,13 +3530,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixRotatefEXT(GLMatrixMode mode, float angle, float x, float y, float z)
+		public void MatrixRotatefEXT(GLMatrixMode mode, float angle, float x, float y, float z)
 		{
 			MatrixRotatefEXTNative(mode, angle, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixScaledEXTNative(GLMatrixMode mode, double x, double y, double z)
+		internal void MatrixScaledEXTNative(GLMatrixMode mode, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, void>)funcTable[107])(mode, x, y, z);
@@ -3549,13 +3549,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixScaledEXT(GLMatrixMode mode, double x, double y, double z)
+		public void MatrixScaledEXT(GLMatrixMode mode, double x, double y, double z)
 		{
 			MatrixScaledEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixScalefEXTNative(GLMatrixMode mode, float x, float y, float z)
+		internal void MatrixScalefEXTNative(GLMatrixMode mode, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float, float, float, void>)funcTable[108])(mode, x, y, z);
@@ -3568,13 +3568,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixScalefEXT(GLMatrixMode mode, float x, float y, float z)
+		public void MatrixScalefEXT(GLMatrixMode mode, float x, float y, float z)
 		{
 			MatrixScalefEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixTranslatedEXTNative(GLMatrixMode mode, double x, double y, double z)
+		internal void MatrixTranslatedEXTNative(GLMatrixMode mode, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, double, double, double, void>)funcTable[109])(mode, x, y, z);
@@ -3587,13 +3587,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixTranslatedEXT(GLMatrixMode mode, double x, double y, double z)
+		public void MatrixTranslatedEXT(GLMatrixMode mode, double x, double y, double z)
 		{
 			MatrixTranslatedEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MatrixTranslatefEXTNative(GLMatrixMode mode, float x, float y, float z)
+		internal void MatrixTranslatefEXTNative(GLMatrixMode mode, float x, float y, float z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMatrixMode, float, float, float, void>)funcTable[110])(mode, x, y, z);
@@ -3606,13 +3606,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access<br/>GL_NV_path_rendering</remarks>
-		public static void MatrixTranslatefEXT(GLMatrixMode mode, float x, float y, float z)
+		public void MatrixTranslatefEXT(GLMatrixMode mode, float x, float y, float z)
 		{
 			MatrixTranslatefEXTNative(mode, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexBufferEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLInternalFormat internalformat, uint buffer)
+		internal void MultiTexBufferEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLInternalFormat internalformat, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLInternalFormat, uint, void>)funcTable[111])(texunit, target, internalformat, buffer);
@@ -3625,13 +3625,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexBufferEXT(GLTextureUnit texunit, GLTextureTarget target, GLInternalFormat internalformat, uint buffer)
+		public void MultiTexBufferEXT(GLTextureUnit texunit, GLTextureTarget target, GLInternalFormat internalformat, uint buffer)
 		{
 			MultiTexBufferEXTNative(texunit, target, internalformat, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexCoordPointerEXTNative(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, void* pointer)
+		internal void MultiTexCoordPointerEXTNative(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, int, GLTexCoordPointerType, int, void*, void>)funcTable[112])(texunit, size, type, stride, pointer);
@@ -3644,7 +3644,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexCoordPointerEXT(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, void* pointer)
+		public void MultiTexCoordPointerEXT(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, void* pointer)
 		{
 			MultiTexCoordPointerEXTNative(texunit, size, type, stride, pointer);
 		}
@@ -3653,7 +3653,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexCoordPointerEXT(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, nint pointer)
+		public void MultiTexCoordPointerEXT(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, nint pointer)
 		{
 			MultiTexCoordPointerEXTNative(texunit, size, type, stride, (void*)pointer);
 		}
@@ -3662,7 +3662,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexCoordPointerEXT<TPointer>(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void MultiTexCoordPointerEXT<TPointer>(GLTextureUnit texunit, int size, GLTexCoordPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -3671,7 +3671,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexEnvfEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
+		internal void MultiTexEnvfEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureEnvTarget, GLTextureEnvParameter, float, void>)funcTable[113])(texunit, target, pname, param);
@@ -3684,13 +3684,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvfEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
+		public void MultiTexEnvfEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float param)
 		{
 			MultiTexEnvfEXTNative(texunit, target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexEnvfvEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		internal void MultiTexEnvfvEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureEnvTarget, GLTextureEnvParameter, float*, void>)funcTable[114])(texunit, target, pname, @params);
@@ -3703,7 +3703,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
+		public void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, float* @params)
 		{
 			MultiTexEnvfvEXTNative(texunit, target, pname, @params);
 		}
@@ -3712,7 +3712,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
+		public void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -3724,7 +3724,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
+		public void MultiTexEnvfvEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -3733,7 +3733,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexEnviEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		internal void MultiTexEnviEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureEnvTarget, GLTextureEnvParameter, int, void>)funcTable[115])(texunit, target, pname, param);
@@ -3746,13 +3746,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnviEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
+		public void MultiTexEnviEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int param)
 		{
 			MultiTexEnviEXTNative(texunit, target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexEnvivEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		internal void MultiTexEnvivEXTNative(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureEnvTarget, GLTextureEnvParameter, int*, void>)funcTable[116])(texunit, target, pname, @params);
@@ -3765,7 +3765,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
+		public void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, int* @params)
 		{
 			MultiTexEnvivEXTNative(texunit, target, pname, @params);
 		}
@@ -3774,7 +3774,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
+		public void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -3786,7 +3786,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
+		public void MultiTexEnvivEXT(GLTextureUnit texunit, GLTextureEnvTarget target, GLTextureEnvParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -3795,7 +3795,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexGendEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double param)
+		internal void MultiTexGendEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, double, void>)funcTable[117])(texunit, coord, pname, param);
@@ -3808,13 +3808,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGendEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double param)
+		public void MultiTexGendEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double param)
 		{
 			MultiTexGendEXTNative(texunit, coord, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexGendvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
+		internal void MultiTexGendvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, double*, void>)funcTable[118])(texunit, coord, pname, @params);
@@ -3827,7 +3827,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
+		public void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, double* @params)
 		{
 			MultiTexGendvEXTNative(texunit, coord, pname, @params);
 		}
@@ -3836,7 +3836,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
+		public void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -3848,7 +3848,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref double @params)
+		public void MultiTexGendvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -3857,7 +3857,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexGenfEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float param)
+		internal void MultiTexGenfEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, float, void>)funcTable[119])(texunit, coord, pname, param);
@@ -3870,13 +3870,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenfEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float param)
+		public void MultiTexGenfEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float param)
 		{
 			MultiTexGenfEXTNative(texunit, coord, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexGenfvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
+		internal void MultiTexGenfvEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, float*, void>)funcTable[120])(texunit, coord, pname, @params);
@@ -3889,7 +3889,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
+		public void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, float* @params)
 		{
 			MultiTexGenfvEXTNative(texunit, coord, pname, @params);
 		}
@@ -3898,7 +3898,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
+		public void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -3910,7 +3910,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
+		public void MultiTexGenfvEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -3919,7 +3919,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexGeniEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int param)
+		internal void MultiTexGeniEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, int, void>)funcTable[121])(texunit, coord, pname, param);
@@ -3932,13 +3932,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGeniEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int param)
+		public void MultiTexGeniEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int param)
 		{
 			MultiTexGeniEXTNative(texunit, coord, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexGenivEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		internal void MultiTexGenivEXTNative(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureCoordName, GLTextureGenParameter, int*, void>)funcTable[122])(texunit, coord, pname, @params);
@@ -3951,7 +3951,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
+		public void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, int* @params)
 		{
 			MultiTexGenivEXTNative(texunit, coord, pname, @params);
 		}
@@ -3960,7 +3960,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
+		public void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -3972,7 +3972,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
+		public void MultiTexGenivEXT(GLTextureUnit texunit, GLTextureCoordName coord, GLTextureGenParameter pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -3981,7 +3981,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void MultiTexImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[123])(texunit, target, level, internalformat, width, border, format, type, pixels);
@@ -3994,7 +3994,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void MultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, format, type, pixels);
 		}
@@ -4003,7 +4003,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void MultiTexImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			MultiTexImage1DEXTNative(texunit, target, level, internalformat, width, border, format, type, (void*)pixels);
 		}
@@ -4012,7 +4012,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage1DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void MultiTexImage1DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4021,7 +4021,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void MultiTexImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[124])(texunit, target, level, internalformat, width, height, border, format, type, pixels);
@@ -4034,7 +4034,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void MultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, format, type, pixels);
 		}
@@ -4043,7 +4043,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void MultiTexImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			MultiTexImage2DEXTNative(texunit, target, level, internalformat, width, height, border, format, type, (void*)pixels);
 		}
@@ -4052,7 +4052,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage2DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void MultiTexImage2DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4061,7 +4061,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void MultiTexImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, GLInternalFormat, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[125])(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels);
@@ -4074,7 +4074,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void MultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, format, type, pixels);
 		}
@@ -4083,7 +4083,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void MultiTexImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			MultiTexImage3DEXTNative(texunit, target, level, internalformat, width, height, depth, border, format, type, (void*)pixels);
 		}
@@ -4092,7 +4092,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexImage3DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void MultiTexImage3DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4101,7 +4101,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexParameterIivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		internal void MultiTexParameterIivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[126])(texunit, target, pname, @params);
@@ -4114,7 +4114,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		public void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			MultiTexParameterIivEXTNative(texunit, target, pname, @params);
 		}
@@ -4123,7 +4123,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -4135,7 +4135,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public void MultiTexParameterIivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -4144,7 +4144,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexParameterIuivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		internal void MultiTexParameterIuivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLTextureParameterName, uint*, void>)funcTable[127])(texunit, target, pname, @params);
@@ -4157,7 +4157,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
+		public void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, uint* @params)
 		{
 			MultiTexParameterIuivEXTNative(texunit, target, pname, @params);
 		}
@@ -4166,7 +4166,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
+		public void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -4178,7 +4178,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
+		public void MultiTexParameterIuivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -4187,7 +4187,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexParameterfEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float param)
+		internal void MultiTexParameterfEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLTextureParameterName, float, void>)funcTable[128])(texunit, target, pname, param);
@@ -4200,13 +4200,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterfEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float param)
+		public void MultiTexParameterfEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float param)
 		{
 			MultiTexParameterfEXTNative(texunit, target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexParameterfvEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float* @params)
+		internal void MultiTexParameterfvEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLTextureParameterName, float*, void>)funcTable[129])(texunit, target, pname, @params);
@@ -4219,7 +4219,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float* @params)
+		public void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, float* @params)
 		{
 			MultiTexParameterfvEXTNative(texunit, target, pname, @params);
 		}
@@ -4228,7 +4228,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
+		public void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -4240,7 +4240,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref float @params)
+		public void MultiTexParameterfvEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -4249,7 +4249,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexParameteriEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int param)
+		internal void MultiTexParameteriEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLTextureParameterName, int, void>)funcTable[130])(texunit, target, pname, param);
@@ -4262,13 +4262,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameteriEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int param)
+		public void MultiTexParameteriEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int param)
 		{
 			MultiTexParameteriEXTNative(texunit, target, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexParameterivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		internal void MultiTexParameterivEXTNative(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, GLTextureParameterName, int*, void>)funcTable[131])(texunit, target, pname, @params);
@@ -4281,7 +4281,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
+		public void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, int* @params)
 		{
 			MultiTexParameterivEXTNative(texunit, target, pname, @params);
 		}
@@ -4290,7 +4290,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
+		public void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -4302,7 +4302,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
+		public void MultiTexParameterivEXT(GLTextureUnit texunit, GLTextureTarget target, GLTextureParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -4311,7 +4311,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexRenderbufferEXTNative(GLTextureUnit texunit, GLTextureTarget target, uint renderbuffer)
+		internal void MultiTexRenderbufferEXTNative(GLTextureUnit texunit, GLTextureTarget target, uint renderbuffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, uint, void>)funcTable[132])(texunit, target, renderbuffer);
@@ -4324,13 +4324,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexRenderbufferEXT(GLTextureUnit texunit, GLTextureTarget target, uint renderbuffer)
+		public void MultiTexRenderbufferEXT(GLTextureUnit texunit, GLTextureTarget target, uint renderbuffer)
 		{
 			MultiTexRenderbufferEXTNative(texunit, target, renderbuffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void MultiTexSubImage1DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[133])(texunit, target, level, xoffset, width, format, type, pixels);
@@ -4343,7 +4343,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void MultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, type, pixels);
 		}
@@ -4352,7 +4352,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void MultiTexSubImage1DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			MultiTexSubImage1DEXTNative(texunit, target, level, xoffset, width, format, type, (void*)pixels);
 		}
@@ -4361,7 +4361,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage1DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void MultiTexSubImage1DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int width, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4370,7 +4370,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void MultiTexSubImage2DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[134])(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels);
@@ -4383,7 +4383,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void MultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, type, pixels);
 		}
@@ -4392,7 +4392,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void MultiTexSubImage2DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			MultiTexSubImage2DEXTNative(texunit, target, level, xoffset, yoffset, width, height, format, type, (void*)pixels);
 		}
@@ -4401,7 +4401,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage2DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void MultiTexSubImage2DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4410,7 +4410,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
+		internal void MultiTexSubImage3DEXTNative(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureUnit, GLTextureTarget, int, int, int, int, int, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[135])(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
@@ -4423,7 +4423,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
+		public void MultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, void* pixels)
 		{
 			MultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 		}
@@ -4432,7 +4432,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
+		public void MultiTexSubImage3DEXT(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, nint pixels)
 		{
 			MultiTexSubImage3DEXTNative(texunit, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (void*)pixels);
 		}
@@ -4441,7 +4441,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void MultiTexSubImage3DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
+		public void MultiTexSubImage3DEXT<TPixels>(GLTextureUnit texunit, GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLPixelFormat format, GLPixelType type, Span<TPixels> pixels) where TPixels : unmanaged
 		{
 			fixed (TPixels* ppixels0 = pixels)
 			{
@@ -4450,7 +4450,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferDataEXTNative(uint buffer, nint size, void* data, GLVertexBufferObjectUsage usage)
+		internal void NamedBufferDataEXTNative(uint buffer, nint size, void* data, GLVertexBufferObjectUsage usage)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, void*, GLVertexBufferObjectUsage, void>)funcTable[136])(buffer, size, data, usage);
@@ -4463,7 +4463,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferDataEXT(uint buffer, nint size, void* data, GLVertexBufferObjectUsage usage)
+		public void NamedBufferDataEXT(uint buffer, nint size, void* data, GLVertexBufferObjectUsage usage)
 		{
 			NamedBufferDataEXTNative(buffer, size, data, usage);
 		}
@@ -4472,7 +4472,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferDataEXT(uint buffer, nint size, nint data, GLVertexBufferObjectUsage usage)
+		public void NamedBufferDataEXT(uint buffer, nint size, nint data, GLVertexBufferObjectUsage usage)
 		{
 			NamedBufferDataEXTNative(buffer, size, (void*)data, usage);
 		}
@@ -4481,7 +4481,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferDataEXT<TData>(uint buffer, nint size, Span<TData> data, GLVertexBufferObjectUsage usage) where TData : unmanaged
+		public void NamedBufferDataEXT<TData>(uint buffer, nint size, Span<TData> data, GLVertexBufferObjectUsage usage) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -4490,7 +4490,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferStorageEXTNative(uint buffer, nint size, void* data, GLBufferStorageMask flags)
+		internal void NamedBufferStorageEXTNative(uint buffer, nint size, void* data, GLBufferStorageMask flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, void*, GLBufferStorageMask, void>)funcTable[137])(buffer, size, data, flags);
@@ -4503,7 +4503,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferStorageEXT(uint buffer, nint size, void* data, GLBufferStorageMask flags)
+		public void NamedBufferStorageEXT(uint buffer, nint size, void* data, GLBufferStorageMask flags)
 		{
 			NamedBufferStorageEXTNative(buffer, size, data, flags);
 		}
@@ -4512,7 +4512,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferStorageEXT(uint buffer, nint size, nint data, GLBufferStorageMask flags)
+		public void NamedBufferStorageEXT(uint buffer, nint size, nint data, GLBufferStorageMask flags)
 		{
 			NamedBufferStorageEXTNative(buffer, size, (void*)data, flags);
 		}
@@ -4521,7 +4521,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferStorageEXT<TData>(uint buffer, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		public void NamedBufferStorageEXT<TData>(uint buffer, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -4530,7 +4530,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedBufferSubDataEXTNative(uint buffer, nint offset, nint size, void* data)
+		internal void NamedBufferSubDataEXTNative(uint buffer, nint offset, nint size, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, nint, nint, void*, void>)funcTable[138])(buffer, offset, size, data);
@@ -4543,7 +4543,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferSubDataEXT(uint buffer, nint offset, nint size, void* data)
+		public void NamedBufferSubDataEXT(uint buffer, nint offset, nint size, void* data)
 		{
 			NamedBufferSubDataEXTNative(buffer, offset, size, data);
 		}
@@ -4552,7 +4552,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferSubDataEXT(uint buffer, nint offset, nint size, nint data)
+		public void NamedBufferSubDataEXT(uint buffer, nint offset, nint size, nint data)
 		{
 			NamedBufferSubDataEXTNative(buffer, offset, size, (void*)data);
 		}
@@ -4561,7 +4561,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedBufferSubDataEXT<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
+		public void NamedBufferSubDataEXT<TData>(uint buffer, nint offset, nint size, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -4570,7 +4570,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedCopyBufferSubDataEXTNative(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
+		internal void NamedCopyBufferSubDataEXTNative(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, nint, nint, nint, void>)funcTable[139])(readBuffer, writeBuffer, readOffset, writeOffset, size);
@@ -4583,13 +4583,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedCopyBufferSubDataEXT(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
+		public void NamedCopyBufferSubDataEXT(uint readBuffer, uint writeBuffer, nint readOffset, nint writeOffset, nint size)
 		{
 			NamedCopyBufferSubDataEXTNative(readBuffer, writeBuffer, readOffset, writeOffset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferParameteriEXTNative(uint framebuffer, GLFramebufferParameterName pname, int param)
+		internal void NamedFramebufferParameteriEXTNative(uint framebuffer, GLFramebufferParameterName pname, int param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferParameterName, int, void>)funcTable[140])(framebuffer, pname, param);
@@ -4602,13 +4602,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferParameteriEXT(uint framebuffer, GLFramebufferParameterName pname, int param)
+		public void NamedFramebufferParameteriEXT(uint framebuffer, GLFramebufferParameterName pname, int param)
 		{
 			NamedFramebufferParameteriEXTNative(framebuffer, pname, param);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferRenderbufferEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
+		internal void NamedFramebufferRenderbufferEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, GLRenderbufferTarget, uint, void>)funcTable[141])(framebuffer, attachment, renderbuffertarget, renderbuffer);
@@ -4621,13 +4621,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferRenderbufferEXT(uint framebuffer, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
+		public void NamedFramebufferRenderbufferEXT(uint framebuffer, GLFramebufferAttachment attachment, GLRenderbufferTarget renderbuffertarget, uint renderbuffer)
 		{
 			NamedFramebufferRenderbufferEXTNative(framebuffer, attachment, renderbuffertarget, renderbuffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTexture1DEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
+		internal void NamedFramebufferTexture1DEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, GLTextureTarget, uint, int, void>)funcTable[142])(framebuffer, attachment, textarget, texture, level);
@@ -4640,13 +4640,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferTexture1DEXT(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
+		public void NamedFramebufferTexture1DEXT(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			NamedFramebufferTexture1DEXTNative(framebuffer, attachment, textarget, texture, level);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTexture2DEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
+		internal void NamedFramebufferTexture2DEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, GLTextureTarget, uint, int, void>)funcTable[143])(framebuffer, attachment, textarget, texture, level);
@@ -4659,13 +4659,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferTexture2DEXT(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
+		public void NamedFramebufferTexture2DEXT(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level)
 		{
 			NamedFramebufferTexture2DEXTNative(framebuffer, attachment, textarget, texture, level);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTexture3DEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
+		internal void NamedFramebufferTexture3DEXTNative(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, GLTextureTarget, uint, int, int, void>)funcTable[144])(framebuffer, attachment, textarget, texture, level, zoffset);
@@ -4678,13 +4678,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferTexture3DEXT(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
+		public void NamedFramebufferTexture3DEXT(uint framebuffer, GLFramebufferAttachment attachment, GLTextureTarget textarget, uint texture, int level, int zoffset)
 		{
 			NamedFramebufferTexture3DEXTNative(framebuffer, attachment, textarget, texture, level, zoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTextureEXTNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level)
+		internal void NamedFramebufferTextureEXTNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, uint, int, void>)funcTable[145])(framebuffer, attachment, texture, level);
@@ -4697,13 +4697,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferTextureEXT(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level)
+		public void NamedFramebufferTextureEXT(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level)
 		{
 			NamedFramebufferTextureEXTNative(framebuffer, attachment, texture, level);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTextureFaceEXTNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
+		internal void NamedFramebufferTextureFaceEXTNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, uint, int, GLTextureTarget, void>)funcTable[146])(framebuffer, attachment, texture, level, face);
@@ -4716,13 +4716,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferTextureFaceEXT(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
+		public void NamedFramebufferTextureFaceEXT(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, GLTextureTarget face)
 		{
 			NamedFramebufferTextureFaceEXTNative(framebuffer, attachment, texture, level, face);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTextureLayerEXTNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int layer)
+		internal void NamedFramebufferTextureLayerEXTNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, uint, int, int, void>)funcTable[147])(framebuffer, attachment, texture, level, layer);
@@ -4735,13 +4735,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedFramebufferTextureLayerEXT(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int layer)
+		public void NamedFramebufferTextureLayerEXT(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int layer)
 		{
 			NamedFramebufferTextureLayerEXTNative(framebuffer, attachment, texture, level, layer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameter4dEXTNative(uint program, GLProgramTarget target, uint index, double x, double y, double z, double w)
+		internal void NamedProgramLocalParameter4dEXTNative(uint program, GLProgramTarget target, uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, double, double, double, double, void>)funcTable[148])(program, target, index, x, y, z, w);
@@ -4754,13 +4754,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4dEXT(uint program, GLProgramTarget target, uint index, double x, double y, double z, double w)
+		public void NamedProgramLocalParameter4dEXT(uint program, GLProgramTarget target, uint index, double x, double y, double z, double w)
 		{
 			NamedProgramLocalParameter4dEXTNative(program, target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameter4dvEXTNative(uint program, GLProgramTarget target, uint index, double* @params)
+		internal void NamedProgramLocalParameter4dvEXTNative(uint program, GLProgramTarget target, uint index, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, double*, void>)funcTable[149])(program, target, index, @params);
@@ -4773,7 +4773,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, double* @params)
+		public void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, double* @params)
 		{
 			NamedProgramLocalParameter4dvEXTNative(program, target, index, @params);
 		}
@@ -4782,7 +4782,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, Span<double> @params)
+		public void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -4794,7 +4794,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, ref double @params)
+		public void NamedProgramLocalParameter4dvEXT(uint program, GLProgramTarget target, uint index, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -4803,7 +4803,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameter4fEXTNative(uint program, GLProgramTarget target, uint index, float x, float y, float z, float w)
+		internal void NamedProgramLocalParameter4fEXTNative(uint program, GLProgramTarget target, uint index, float x, float y, float z, float w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, float, float, float, float, void>)funcTable[150])(program, target, index, x, y, z, w);
@@ -4816,13 +4816,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4fEXT(uint program, GLProgramTarget target, uint index, float x, float y, float z, float w)
+		public void NamedProgramLocalParameter4fEXT(uint program, GLProgramTarget target, uint index, float x, float y, float z, float w)
 		{
 			NamedProgramLocalParameter4fEXTNative(program, target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameter4fvEXTNative(uint program, GLProgramTarget target, uint index, float* @params)
+		internal void NamedProgramLocalParameter4fvEXTNative(uint program, GLProgramTarget target, uint index, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, float*, void>)funcTable[151])(program, target, index, @params);
@@ -4835,7 +4835,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, float* @params)
+		public void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, float* @params)
 		{
 			NamedProgramLocalParameter4fvEXTNative(program, target, index, @params);
 		}
@@ -4844,7 +4844,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, Span<float> @params)
+		public void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -4856,7 +4856,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, ref float @params)
+		public void NamedProgramLocalParameter4fvEXT(uint program, GLProgramTarget target, uint index, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -4865,7 +4865,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameterI4iEXTNative(uint program, GLProgramTarget target, uint index, int x, int y, int z, int w)
+		internal void NamedProgramLocalParameterI4iEXTNative(uint program, GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int, int, int, int, void>)funcTable[152])(program, target, index, x, y, z, w);
@@ -4878,13 +4878,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4iEXT(uint program, GLProgramTarget target, uint index, int x, int y, int z, int w)
+		public void NamedProgramLocalParameterI4iEXT(uint program, GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			NamedProgramLocalParameterI4iEXTNative(program, target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameterI4ivEXTNative(uint program, GLProgramTarget target, uint index, int* @params)
+		internal void NamedProgramLocalParameterI4ivEXTNative(uint program, GLProgramTarget target, uint index, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int*, void>)funcTable[153])(program, target, index, @params);
@@ -4897,7 +4897,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, int* @params)
+		public void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, int* @params)
 		{
 			NamedProgramLocalParameterI4ivEXTNative(program, target, index, @params);
 		}
@@ -4906,7 +4906,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, Span<int> @params)
+		public void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -4918,7 +4918,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, ref int @params)
+		public void NamedProgramLocalParameterI4ivEXT(uint program, GLProgramTarget target, uint index, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -4927,7 +4927,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameterI4uiEXTNative(uint program, GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
+		internal void NamedProgramLocalParameterI4uiEXTNative(uint program, GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, uint, uint, uint, uint, void>)funcTable[154])(program, target, index, x, y, z, w);
@@ -4940,13 +4940,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4uiEXT(uint program, GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
+		public void NamedProgramLocalParameterI4uiEXT(uint program, GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			NamedProgramLocalParameterI4uiEXTNative(program, target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameterI4uivEXTNative(uint program, GLProgramTarget target, uint index, uint* @params)
+		internal void NamedProgramLocalParameterI4uivEXTNative(uint program, GLProgramTarget target, uint index, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, uint*, void>)funcTable[155])(program, target, index, @params);
@@ -4959,7 +4959,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, uint* @params)
+		public void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, uint* @params)
 		{
 			NamedProgramLocalParameterI4uivEXTNative(program, target, index, @params);
 		}
@@ -4968,7 +4968,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, Span<uint> @params)
+		public void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -4980,7 +4980,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, ref uint @params)
+		public void NamedProgramLocalParameterI4uivEXT(uint program, GLProgramTarget target, uint index, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -4989,7 +4989,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedProgramLocalParameters4fvEXTNative(uint program, GLProgramTarget target, uint index, int count, float* @params)
+		internal void NamedProgramLocalParameters4fvEXTNative(uint program, GLProgramTarget target, uint index, int count, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLProgramTarget, uint, int, float*, void>)funcTable[156])(program, target, index, count, @params);
@@ -5002,7 +5002,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, float* @params)
+		public void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, float* @params)
 		{
 			NamedProgramLocalParameters4fvEXTNative(program, target, index, count, @params);
 		}
@@ -5011,7 +5011,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_direct_state_access</remarks>
-		public static void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, Span<float> @params)
+		public void NamedProgramLocalParameters4fvEXT(uint program, GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{

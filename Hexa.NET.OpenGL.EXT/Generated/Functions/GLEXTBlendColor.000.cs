@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTBlendColor
+	public unsafe partial class GLEXTBlendColor
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendColorEXTNative(float red, float green, float blue, float alpha)
+		internal void BlendColorEXTNative(float red, float green, float blue, float alpha)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, void>)funcTable[0])(red, green, blue, alpha);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_blend_color</remarks>
-		public static void BlendColorEXT(float red, float green, float blue, float alpha)
+		public void BlendColorEXT(float red, float green, float blue, float alpha)
 		{
 			BlendColorEXTNative(red, green, blue, alpha);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTColorSubtable
+	public unsafe partial class GLEXTColorSubtable
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorSubTableEXTNative(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
+		internal void ColorSubTableEXTNative(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, int, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[0])(target, start, count, format, type, data);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
-		public static void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
+		public void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			ColorSubTableEXTNative(target, start, count, format, type, data);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
-		public static void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
+		public void ColorSubTableEXT(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			ColorSubTableEXTNative(target, start, count, format, type, (void*)data);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
-		public static void ColorSubTableEXT<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void ColorSubTableEXT<TData>(GLColorTableTarget target, int start, int count, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CopyColorSubTableEXTNative(GLColorTableTarget target, int start, int x, int y, int width)
+		internal void CopyColorSubTableEXTNative(GLColorTableTarget target, int start, int x, int y, int width)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, int, int, int, int, void>)funcTable[1])(target, start, x, y, width);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_color_subtable</remarks>
-		public static void CopyColorSubTableEXT(GLColorTableTarget target, int start, int x, int y, int width)
+		public void CopyColorSubTableEXT(GLColorTableTarget target, int start, int x, int y, int width)
 		{
 			CopyColorSubTableEXTNative(target, start, x, y, width);
 		}

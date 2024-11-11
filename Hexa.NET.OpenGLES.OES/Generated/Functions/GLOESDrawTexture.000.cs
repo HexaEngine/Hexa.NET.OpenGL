@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public static unsafe partial class GLOESDrawTexture
+	public unsafe partial class GLOESDrawTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexfOESNative(float x, float y, float z, float width, float height)
+		internal void DrawTexfOESNative(float x, float y, float z, float width, float height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, float, float, void>)funcTable[0])(x, y, z, width, height);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexfOES(float x, float y, float z, float width, float height)
+		public void DrawTexfOES(float x, float y, float z, float width, float height)
 		{
 			DrawTexfOESNative(x, y, z, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexfvOESNative(float* coords)
+		internal void DrawTexfvOESNative(float* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float*, void>)funcTable[1])(coords);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexfvOES(float* coords)
+		public void DrawTexfvOES(float* coords)
 		{
 			DrawTexfvOESNative(coords);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexfvOES(Span<float> coords)
+		public void DrawTexfvOES(Span<float> coords)
 		{
 			fixed (float* pcoords0 = coords)
 			{
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexfvOES(ref float coords)
+		public void DrawTexfvOES(ref float coords)
 		{
 			fixed (float* pcoords0 = &coords)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexiOESNative(int x, int y, int z, int width, int height)
+		internal void DrawTexiOESNative(int x, int y, int z, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[2])(x, y, z, width, height);
@@ -92,13 +92,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexiOES(int x, int y, int z, int width, int height)
+		public void DrawTexiOES(int x, int y, int z, int width, int height)
 		{
 			DrawTexiOESNative(x, y, z, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexivOESNative(int* coords)
+		internal void DrawTexivOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[3])(coords);
@@ -111,7 +111,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexivOES(int* coords)
+		public void DrawTexivOES(int* coords)
 		{
 			DrawTexivOESNative(coords);
 		}
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexivOES(Span<int> coords)
+		public void DrawTexivOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexivOES(ref int coords)
+		public void DrawTexivOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexsOESNative(short x, short y, short z, short width, short height)
+		internal void DrawTexsOESNative(short x, short y, short z, short width, short height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short, short, short, short, short, void>)funcTable[4])(x, y, z, width, height);
@@ -154,13 +154,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexsOES(short x, short y, short z, short width, short height)
+		public void DrawTexsOES(short x, short y, short z, short width, short height)
 		{
 			DrawTexsOESNative(x, y, z, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexsvOESNative(short* coords)
+		internal void DrawTexsvOESNative(short* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<short*, void>)funcTable[5])(coords);
@@ -173,7 +173,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexsvOES(short* coords)
+		public void DrawTexsvOES(short* coords)
 		{
 			DrawTexsvOESNative(coords);
 		}
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexsvOES(Span<short> coords)
+		public void DrawTexsvOES(Span<short> coords)
 		{
 			fixed (short* pcoords0 = coords)
 			{
@@ -194,7 +194,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexsvOES(ref short coords)
+		public void DrawTexsvOES(ref short coords)
 		{
 			fixed (short* pcoords0 = &coords)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGLES.OES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexxOESNative(int x, int y, int z, int width, int height)
+		internal void DrawTexxOESNative(int x, int y, int z, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[6])(x, y, z, width, height);
@@ -216,13 +216,13 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexxOES(int x, int y, int z, int width, int height)
+		public void DrawTexxOES(int x, int y, int z, int width, int height)
 		{
 			DrawTexxOESNative(x, y, z, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTexxvOESNative(int* coords)
+		internal void DrawTexxvOESNative(int* coords)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, void>)funcTable[7])(coords);
@@ -235,7 +235,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexxvOES(int* coords)
+		public void DrawTexxvOES(int* coords)
 		{
 			DrawTexxvOESNative(coords);
 		}
@@ -244,7 +244,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexxvOES(Span<int> coords)
+		public void DrawTexxvOES(Span<int> coords)
 		{
 			fixed (int* pcoords0 = coords)
 			{
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGLES.OES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OES_draw_texture</remarks>
-		public static void DrawTexxvOES(ref int coords)
+		public void DrawTexxvOES(ref int coords)
 		{
 			fixed (int* pcoords0 = &coords)
 			{

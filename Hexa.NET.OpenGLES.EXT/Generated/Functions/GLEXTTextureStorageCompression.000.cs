@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTTextureStorageCompression
+	public unsafe partial class GLEXTTextureStorageCompression
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageAttribs2DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, GLTexStorageAttribs attribList)
+		internal void TexStorageAttribs2DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, GLTexStorageAttribs attribList)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, GLTexStorageAttribs, void>)funcTable[0])(target, levels, internalformat, width, height, attribList);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
-		public static void TexStorageAttribs2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, GLTexStorageAttribs attribList)
+		public void TexStorageAttribs2DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, GLTexStorageAttribs attribList)
 		{
 			TexStorageAttribs2DEXTNative(target, levels, internalformat, width, height, attribList);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexStorageAttribs3DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth, GLTexStorageAttribs attribList)
+		internal void TexStorageAttribs3DEXTNative(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth, GLTexStorageAttribs attribList)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLSizedInternalFormat, int, int, int, GLTexStorageAttribs, void>)funcTable[1])(target, levels, internalformat, width, height, depth, attribList);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_storage_compression</remarks>
-		public static void TexStorageAttribs3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth, GLTexStorageAttribs attribList)
+		public void TexStorageAttribs3DEXT(GLTextureTarget target, int levels, GLSizedInternalFormat internalformat, int width, int height, int depth, GLTexStorageAttribs attribList)
 		{
 			TexStorageAttribs3DEXTNative(target, levels, internalformat, width, height, depth, attribList);
 		}

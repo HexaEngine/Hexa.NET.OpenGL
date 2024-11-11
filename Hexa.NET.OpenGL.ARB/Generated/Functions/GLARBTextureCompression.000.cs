@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTextureCompression
+	public unsafe partial class GLARBTextureCompression
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexImage1DARBNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
+		internal void CompressedTexImage1DARBNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, void*, void>)funcTable[0])(target, level, internalformat, width, border, imageSize, data);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage1DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
+		public void CompressedTexImage1DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, void* data)
 		{
 			CompressedTexImage1DARBNative(target, level, internalformat, width, border, imageSize, data);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage1DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint data)
+		public void CompressedTexImage1DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, nint data)
 		{
 			CompressedTexImage1DARBNative(target, level, internalformat, width, border, imageSize, (void*)data);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage1DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexImage1DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexImage2DARBNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
+		internal void CompressedTexImage2DARBNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, void*, void>)funcTable[1])(target, level, internalformat, width, height, border, imageSize, data);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage2DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
+		public void CompressedTexImage2DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, void* data)
 		{
 			CompressedTexImage2DARBNative(target, level, internalformat, width, height, border, imageSize, data);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage2DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint data)
+		public void CompressedTexImage2DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, nint data)
 		{
 			CompressedTexImage2DARBNative(target, level, internalformat, width, height, border, imageSize, (void*)data);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage2DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexImage2DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -97,7 +97,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexImage3DARBNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
+		internal void CompressedTexImage3DARBNative(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLInternalFormat, int, int, int, int, int, void*, void>)funcTable[2])(target, level, internalformat, width, height, depth, border, imageSize, data);
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage3DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
+		public void CompressedTexImage3DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data)
 		{
 			CompressedTexImage3DARBNative(target, level, internalformat, width, height, depth, border, imageSize, data);
 		}
@@ -119,7 +119,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage3DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
+		public void CompressedTexImage3DARB(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, nint data)
 		{
 			CompressedTexImage3DARBNative(target, level, internalformat, width, height, depth, border, imageSize, (void*)data);
 		}
@@ -128,7 +128,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexImage3DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexImage3DARB<TData>(GLTextureTarget target, int level, GLInternalFormat internalformat, int width, int height, int depth, int border, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexSubImage1DARBNative(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTexSubImage1DARBNative(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, GLInternalFormat, int, void*, void>)funcTable[3])(target, level, xoffset, width, format, imageSize, data);
@@ -150,7 +150,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage1DARB(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTexSubImage1DARB(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage1DARBNative(target, level, xoffset, width, format, imageSize, data);
 		}
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage1DARB(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTexSubImage1DARB(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage1DARBNative(target, level, xoffset, width, format, imageSize, (void*)data);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage1DARB<TData>(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexSubImage1DARB<TData>(GLTextureTarget target, int level, int xoffset, int width, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -177,7 +177,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexSubImage2DARBNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTexSubImage2DARBNative(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[4])(target, level, xoffset, yoffset, width, height, format, imageSize, data);
@@ -190,7 +190,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage2DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTexSubImage2DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage2DARBNative(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 		}
@@ -199,7 +199,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage2DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTexSubImage2DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage2DARBNative(target, level, xoffset, yoffset, width, height, format, imageSize, (void*)data);
 		}
@@ -208,7 +208,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage2DARB<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexSubImage2DARB<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int width, int height, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompressedTexSubImage3DARBNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
+		internal void CompressedTexSubImage3DARBNative(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, int, int, int, int, int, GLInternalFormat, int, void*, void>)funcTable[5])(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
@@ -230,7 +230,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage3DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
+		public void CompressedTexSubImage3DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, void* data)
 		{
 			CompressedTexSubImage3DARBNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 		}
@@ -239,7 +239,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage3DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
+		public void CompressedTexSubImage3DARB(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, nint data)
 		{
 			CompressedTexSubImage3DARBNative(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (void*)data);
 		}
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void CompressedTexSubImage3DARB<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
+		public void CompressedTexSubImage3DARB<TData>(GLTextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, GLInternalFormat format, int imageSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -257,7 +257,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetCompressedTexImageARBNative(GLTextureTarget target, int level, void* img)
+		internal void GetCompressedTexImageARBNative(GLTextureTarget target, int level, void* img)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, void*, void>)funcTable[6])(target, level, img);
@@ -270,7 +270,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void GetCompressedTexImageARB(GLTextureTarget target, int level, void* img)
+		public void GetCompressedTexImageARB(GLTextureTarget target, int level, void* img)
 		{
 			GetCompressedTexImageARBNative(target, level, img);
 		}
@@ -279,7 +279,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void GetCompressedTexImageARB(GLTextureTarget target, int level, nint img)
+		public void GetCompressedTexImageARB(GLTextureTarget target, int level, nint img)
 		{
 			GetCompressedTexImageARBNative(target, level, (void*)img);
 		}
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_texture_compression</remarks>
-		public static void GetCompressedTexImageARB<TImg>(GLTextureTarget target, int level, Span<TImg> img) where TImg : unmanaged
+		public void GetCompressedTexImageARB<TImg>(GLTextureTarget target, int level, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
 			{

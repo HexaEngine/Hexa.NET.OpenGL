@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVMeshShader
+	public unsafe partial class GLNVMeshShader
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawMeshTasksNVNative(uint first, uint count)
+		internal void DrawMeshTasksNVNative(uint first, uint count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(first, count);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
-		public static void DrawMeshTasksNV(uint first, uint count)
+		public void DrawMeshTasksNV(uint first, uint count)
 		{
 			DrawMeshTasksNVNative(first, count);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawMeshTasksIndirectNVNative(nint indirect)
+		internal void DrawMeshTasksIndirectNVNative(nint indirect)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<nint, void>)funcTable[1])(indirect);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
-		public static void DrawMeshTasksIndirectNV(nint indirect)
+		public void DrawMeshTasksIndirectNV(nint indirect)
 		{
 			DrawMeshTasksIndirectNVNative(indirect);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawMeshTasksIndirectNVNative(nint indirect, int drawcount, int stride)
+		internal void MultiDrawMeshTasksIndirectNVNative(nint indirect, int drawcount, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<nint, int, int, void>)funcTable[2])(indirect, drawcount, stride);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
-		public static void MultiDrawMeshTasksIndirectNV(nint indirect, int drawcount, int stride)
+		public void MultiDrawMeshTasksIndirectNV(nint indirect, int drawcount, int stride)
 		{
 			MultiDrawMeshTasksIndirectNVNative(indirect, drawcount, stride);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MultiDrawMeshTasksIndirectCountNVNative(nint indirect, nint drawcount, int maxdrawcount, int stride)
+		internal void MultiDrawMeshTasksIndirectCountNVNative(nint indirect, nint drawcount, int maxdrawcount, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<nint, nint, int, int, void>)funcTable[3])(indirect, drawcount, maxdrawcount, stride);
@@ -87,7 +87,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_mesh_shader</remarks>
-		public static void MultiDrawMeshTasksIndirectCountNV(nint indirect, nint drawcount, int maxdrawcount, int stride)
+		public void MultiDrawMeshTasksIndirectCountNV(nint indirect, nint drawcount, int maxdrawcount, int stride)
 		{
 			MultiDrawMeshTasksIndirectCountNVNative(indirect, drawcount, maxdrawcount, stride);
 		}

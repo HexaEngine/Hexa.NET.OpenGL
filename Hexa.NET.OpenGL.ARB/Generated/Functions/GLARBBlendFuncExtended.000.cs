@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBBlendFuncExtended
+	public unsafe partial class GLARBBlendFuncExtended
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindFragDataLocationIndexedNative(uint program, uint colorNumber, uint index, byte* name)
+		internal void BindFragDataLocationIndexedNative(uint program, uint colorNumber, uint index, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, byte*, void>)funcTable[0])(program, colorNumber, index, name);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, byte* name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, byte* name)
 		{
 			BindFragDataLocationIndexedNative(program, colorNumber, index, name);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, string name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, Span<byte> name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -81,7 +81,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a user-defined varying out variable to a fragment shader color number and index
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, ref byte name)
+		public void BindFragDataLocationIndexed(uint program, uint colorNumber, uint index, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -90,7 +90,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetFragDataIndexNative(uint program, byte* name)
+		internal int GetFragDataIndexNative(uint program, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte*, int>)funcTable[1])(program, name);
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, byte* name)
+		public int GetFragDataIndex(uint program, byte* name)
 		{
 			int ret = GetFragDataIndexNative(program, name);
 			return ret;
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, string name)
+		public int GetFragDataIndex(uint program, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, Span<byte> name)
+		public int GetFragDataIndex(uint program, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Query the bindings of color indices to user-defined varying out variables
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 3.3<br/>GL 4.X<br/><br/>Used by Extensions:<br/>GL_ARB_blend_func_extended</remarks>
-		public static int GetFragDataIndex(uint program, ref byte name)
+		public int GetFragDataIndex(uint program, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{

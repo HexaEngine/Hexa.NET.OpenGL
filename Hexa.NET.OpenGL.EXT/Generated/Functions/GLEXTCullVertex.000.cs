@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTCullVertex
+	public unsafe partial class GLEXTCullVertex
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CullParameterdvEXTNative(GLCullParameterEXT pname, double* @params)
+		internal void CullParameterdvEXTNative(GLCullParameterEXT pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCullParameterEXT, double*, void>)funcTable[0])(pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterdvEXT(GLCullParameterEXT pname, double* @params)
+		public void CullParameterdvEXT(GLCullParameterEXT pname, double* @params)
 		{
 			CullParameterdvEXTNative(pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterdvEXT(GLCullParameterEXT pname, Span<double> @params)
+		public void CullParameterdvEXT(GLCullParameterEXT pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterdvEXT(GLCullParameterEXT pname, ref double @params)
+		public void CullParameterdvEXT(GLCullParameterEXT pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CullParameterfvEXTNative(GLCullParameterEXT pname, float* @params)
+		internal void CullParameterfvEXTNative(GLCullParameterEXT pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLCullParameterEXT, float*, void>)funcTable[1])(pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterfvEXT(GLCullParameterEXT pname, float* @params)
+		public void CullParameterfvEXT(GLCullParameterEXT pname, float* @params)
 		{
 			CullParameterfvEXTNative(pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterfvEXT(GLCullParameterEXT pname, Span<float> @params)
+		public void CullParameterfvEXT(GLCullParameterEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_cull_vertex</remarks>
-		public static void CullParameterfvEXT(GLCullParameterEXT pname, ref float @params)
+		public void CullParameterfvEXT(GLCullParameterEXT pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTMapBufferRange
+	public unsafe partial class GLEXTMapBufferRange
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FlushMappedBufferRangeEXTNative(GLBufferTargetARB target, nint offset, nint length)
+		internal void FlushMappedBufferRangeEXTNative(GLBufferTargetARB target, nint offset, nint length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, void>)funcTable[0])(target, offset, length);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_map_buffer_range</remarks>
-		public static void FlushMappedBufferRangeEXT(GLBufferTargetARB target, nint offset, nint length)
+		public void FlushMappedBufferRangeEXT(GLBufferTargetARB target, nint offset, nint length)
 		{
 			FlushMappedBufferRangeEXTNative(target, offset, length);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void* MapBufferRangeEXTNative(GLBufferTargetARB target, nint offset, nint length, GLMapBufferAccessMask access)
+		internal void* MapBufferRangeEXTNative(GLBufferTargetARB target, nint offset, nint length, GLMapBufferAccessMask access)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLBufferTargetARB, nint, nint, GLMapBufferAccessMask, void*>)funcTable[1])(target, offset, length, access);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_map_buffer_range</remarks>
-		public static void* MapBufferRangeEXT(GLBufferTargetARB target, nint offset, nint length, GLMapBufferAccessMask access)
+		public void* MapBufferRangeEXT(GLBufferTargetARB target, nint offset, nint length, GLMapBufferAccessMask access)
 		{
 			void* ret = MapBufferRangeEXTNative(target, offset, length, access);
 			return ret;

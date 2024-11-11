@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTSparseTexture
+	public unsafe partial class GLEXTSparseTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TexPageCommitmentEXTNative(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
+		internal void TexPageCommitmentEXTNative(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, int, int, int, int, int, int, byte, void>)funcTable[0])(target, level, xoffset, yoffset, zoffset, width, height, depth, *((byte*)(&commit)));
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_sparse_texture</remarks>
-		public static void TexPageCommitmentEXT(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
+		public void TexPageCommitmentEXT(GLEnum target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit)
 		{
 			TexPageCommitmentEXTNative(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
 		}

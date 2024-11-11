@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVVertexAttribInteger64bit
+	public unsafe partial class GLNVVertexAttribInteger64bit
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribLi64vNVNative(uint index, GLVertexAttribEnum pname, long* @params)
+		internal void GetVertexAttribLi64vNVNative(uint index, GLVertexAttribEnum pname, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, long*, void>)funcTable[0])(index, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, long* @params)
+		public void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, long* @params)
 		{
 			GetVertexAttribLi64vNVNative(index, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, Span<long> @params)
+		public void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, Span<long> @params)
 		{
 			fixed (long* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, ref long @params)
+		public void GetVertexAttribLi64vNV(uint index, GLVertexAttribEnum pname, ref long @params)
 		{
 			fixed (long* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribLui64vNVNative(uint index, GLVertexAttribEnum pname, ulong* @params)
+		internal void GetVertexAttribLui64vNVNative(uint index, GLVertexAttribEnum pname, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, ulong*, void>)funcTable[1])(index, pname, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, ulong* @params)
+		public void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, ulong* @params)
 		{
 			GetVertexAttribLui64vNVNative(index, pname, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
+		public void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, ref ulong @params)
+		public void GetVertexAttribLui64vNV(uint index, GLVertexAttribEnum pname, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1i64NVNative(uint index, long x)
+		internal void VertexAttribL1i64NVNative(uint index, long x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long, void>)funcTable[2])(index, x);
@@ -116,13 +116,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1i64NV(uint index, long x)
+		public void VertexAttribL1i64NV(uint index, long x)
 		{
 			VertexAttribL1i64NVNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1i64vNVNative(uint index, long* v)
+		internal void VertexAttribL1i64vNVNative(uint index, long* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long*, void>)funcTable[3])(index, v);
@@ -135,7 +135,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1i64vNV(uint index, long* v)
+		public void VertexAttribL1i64vNV(uint index, long* v)
 		{
 			VertexAttribL1i64vNVNative(index, v);
 		}
@@ -144,7 +144,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1i64vNV(uint index, Span<long> v)
+		public void VertexAttribL1i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
 			{
@@ -156,7 +156,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1i64vNV(uint index, ref long v)
+		public void VertexAttribL1i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
 			{
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1ui64NVNative(uint index, ulong x)
+		internal void VertexAttribL1ui64NVNative(uint index, ulong x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, void>)funcTable[4])(index, x);
@@ -178,13 +178,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1ui64NV(uint index, ulong x)
+		public void VertexAttribL1ui64NV(uint index, ulong x)
 		{
 			VertexAttribL1ui64NVNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1ui64vNVNative(uint index, ulong* v)
+		internal void VertexAttribL1ui64vNVNative(uint index, ulong* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong*, void>)funcTable[5])(index, v);
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1ui64vNV(uint index, ulong* v)
+		public void VertexAttribL1ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL1ui64vNVNative(index, v);
 		}
@@ -206,7 +206,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1ui64vNV(uint index, Span<ulong> v)
+		public void VertexAttribL1ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL1ui64vNV(uint index, ref ulong v)
+		public void VertexAttribL1ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
 			{
@@ -227,7 +227,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2i64NVNative(uint index, long x, long y)
+		internal void VertexAttribL2i64NVNative(uint index, long x, long y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long, long, void>)funcTable[6])(index, x, y);
@@ -240,13 +240,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2i64NV(uint index, long x, long y)
+		public void VertexAttribL2i64NV(uint index, long x, long y)
 		{
 			VertexAttribL2i64NVNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2i64vNVNative(uint index, long* v)
+		internal void VertexAttribL2i64vNVNative(uint index, long* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long*, void>)funcTable[7])(index, v);
@@ -259,7 +259,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2i64vNV(uint index, long* v)
+		public void VertexAttribL2i64vNV(uint index, long* v)
 		{
 			VertexAttribL2i64vNVNative(index, v);
 		}
@@ -268,7 +268,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2i64vNV(uint index, Span<long> v)
+		public void VertexAttribL2i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
 			{
@@ -280,7 +280,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2i64vNV(uint index, ref long v)
+		public void VertexAttribL2i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
 			{
@@ -289,7 +289,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2ui64NVNative(uint index, ulong x, ulong y)
+		internal void VertexAttribL2ui64NVNative(uint index, ulong x, ulong y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, ulong, void>)funcTable[8])(index, x, y);
@@ -302,13 +302,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2ui64NV(uint index, ulong x, ulong y)
+		public void VertexAttribL2ui64NV(uint index, ulong x, ulong y)
 		{
 			VertexAttribL2ui64NVNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2ui64vNVNative(uint index, ulong* v)
+		internal void VertexAttribL2ui64vNVNative(uint index, ulong* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong*, void>)funcTable[9])(index, v);
@@ -321,7 +321,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2ui64vNV(uint index, ulong* v)
+		public void VertexAttribL2ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL2ui64vNVNative(index, v);
 		}
@@ -330,7 +330,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2ui64vNV(uint index, Span<ulong> v)
+		public void VertexAttribL2ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
 			{
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL2ui64vNV(uint index, ref ulong v)
+		public void VertexAttribL2ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
 			{
@@ -351,7 +351,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3i64NVNative(uint index, long x, long y, long z)
+		internal void VertexAttribL3i64NVNative(uint index, long x, long y, long z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long, long, long, void>)funcTable[10])(index, x, y, z);
@@ -364,13 +364,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3i64NV(uint index, long x, long y, long z)
+		public void VertexAttribL3i64NV(uint index, long x, long y, long z)
 		{
 			VertexAttribL3i64NVNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3i64vNVNative(uint index, long* v)
+		internal void VertexAttribL3i64vNVNative(uint index, long* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long*, void>)funcTable[11])(index, v);
@@ -383,7 +383,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3i64vNV(uint index, long* v)
+		public void VertexAttribL3i64vNV(uint index, long* v)
 		{
 			VertexAttribL3i64vNVNative(index, v);
 		}
@@ -392,7 +392,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3i64vNV(uint index, Span<long> v)
+		public void VertexAttribL3i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
 			{
@@ -404,7 +404,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3i64vNV(uint index, ref long v)
+		public void VertexAttribL3i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
 			{
@@ -413,7 +413,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3ui64NVNative(uint index, ulong x, ulong y, ulong z)
+		internal void VertexAttribL3ui64NVNative(uint index, ulong x, ulong y, ulong z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, ulong, ulong, void>)funcTable[12])(index, x, y, z);
@@ -426,13 +426,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3ui64NV(uint index, ulong x, ulong y, ulong z)
+		public void VertexAttribL3ui64NV(uint index, ulong x, ulong y, ulong z)
 		{
 			VertexAttribL3ui64NVNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3ui64vNVNative(uint index, ulong* v)
+		internal void VertexAttribL3ui64vNVNative(uint index, ulong* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong*, void>)funcTable[13])(index, v);
@@ -445,7 +445,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3ui64vNV(uint index, ulong* v)
+		public void VertexAttribL3ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL3ui64vNVNative(index, v);
 		}
@@ -454,7 +454,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3ui64vNV(uint index, Span<ulong> v)
+		public void VertexAttribL3ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
 			{
@@ -466,7 +466,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL3ui64vNV(uint index, ref ulong v)
+		public void VertexAttribL3ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
 			{
@@ -475,7 +475,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4i64NVNative(uint index, long x, long y, long z, long w)
+		internal void VertexAttribL4i64NVNative(uint index, long x, long y, long z, long w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long, long, long, long, void>)funcTable[14])(index, x, y, z, w);
@@ -488,13 +488,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4i64NV(uint index, long x, long y, long z, long w)
+		public void VertexAttribL4i64NV(uint index, long x, long y, long z, long w)
 		{
 			VertexAttribL4i64NVNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4i64vNVNative(uint index, long* v)
+		internal void VertexAttribL4i64vNVNative(uint index, long* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, long*, void>)funcTable[15])(index, v);
@@ -507,7 +507,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4i64vNV(uint index, long* v)
+		public void VertexAttribL4i64vNV(uint index, long* v)
 		{
 			VertexAttribL4i64vNVNative(index, v);
 		}
@@ -516,7 +516,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4i64vNV(uint index, Span<long> v)
+		public void VertexAttribL4i64vNV(uint index, Span<long> v)
 		{
 			fixed (long* pv0 = v)
 			{
@@ -528,7 +528,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4i64vNV(uint index, ref long v)
+		public void VertexAttribL4i64vNV(uint index, ref long v)
 		{
 			fixed (long* pv0 = &v)
 			{
@@ -537,7 +537,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4ui64NVNative(uint index, ulong x, ulong y, ulong z, ulong w)
+		internal void VertexAttribL4ui64NVNative(uint index, ulong x, ulong y, ulong z, ulong w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong, ulong, ulong, ulong, void>)funcTable[16])(index, x, y, z, w);
@@ -550,13 +550,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4ui64NV(uint index, ulong x, ulong y, ulong z, ulong w)
+		public void VertexAttribL4ui64NV(uint index, ulong x, ulong y, ulong z, ulong w)
 		{
 			VertexAttribL4ui64NVNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4ui64vNVNative(uint index, ulong* v)
+		internal void VertexAttribL4ui64vNVNative(uint index, ulong* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ulong*, void>)funcTable[17])(index, v);
@@ -569,7 +569,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4ui64vNV(uint index, ulong* v)
+		public void VertexAttribL4ui64vNV(uint index, ulong* v)
 		{
 			VertexAttribL4ui64vNVNative(index, v);
 		}
@@ -578,7 +578,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4ui64vNV(uint index, Span<ulong> v)
+		public void VertexAttribL4ui64vNV(uint index, Span<ulong> v)
 		{
 			fixed (ulong* pv0 = v)
 			{
@@ -590,7 +590,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribL4ui64vNV(uint index, ref ulong v)
+		public void VertexAttribL4ui64vNV(uint index, ref ulong v)
 		{
 			fixed (ulong* pv0 = &v)
 			{
@@ -599,7 +599,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLFormatNVNative(uint index, int size, GLVertexAttribLType type, int stride)
+		internal void VertexAttribLFormatNVNative(uint index, int size, GLVertexAttribLType type, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, int, void>)funcTable[18])(index, size, type, stride);
@@ -612,7 +612,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_vertex_attrib_integer_64bit</remarks>
-		public static void VertexAttribLFormatNV(uint index, int size, GLVertexAttribLType type, int stride)
+		public void VertexAttribLFormatNV(uint index, int size, GLVertexAttribLType type, int stride)
 		{
 			VertexAttribLFormatNVNative(index, size, type, stride);
 		}

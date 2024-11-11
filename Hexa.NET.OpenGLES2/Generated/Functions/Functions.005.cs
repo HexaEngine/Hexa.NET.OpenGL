@@ -14,11 +14,11 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES
 {
-	public static unsafe partial class GL
+	public unsafe partial class GL
 	{
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4bvNative(uint index, sbyte* v)
+		internal void VertexAttrib4bvNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[676])(index, v);
@@ -31,7 +31,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4bv(uint index, sbyte* v)
+		public void VertexAttrib4bv(uint index, sbyte* v)
 		{
 			VertexAttrib4bvNative(index, v);
 		}
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4bv(uint index, Span<sbyte> v)
+		public void VertexAttrib4bv(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -52,7 +52,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4bv(uint index, ref sbyte v)
+		public void VertexAttrib4bv(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -61,7 +61,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dNative(uint index, double x, double y, double z, double w)
+		internal void VertexAttrib4dNative(uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[677])(index, x, y, z, w);
@@ -74,13 +74,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4d(uint index, double x, double y, double z, double w)
+		public void VertexAttrib4d(uint index, double x, double y, double z, double w)
 		{
 			VertexAttrib4dNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4dvNative(uint index, double* v)
+		internal void VertexAttrib4dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[678])(index, v);
@@ -93,7 +93,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4dv(uint index, double* v)
+		public void VertexAttrib4dv(uint index, double* v)
 		{
 			VertexAttrib4dvNative(index, v);
 		}
@@ -102,7 +102,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4dv(uint index, Span<double> v)
+		public void VertexAttrib4dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -114,7 +114,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4dv(uint index, ref double v)
+		public void VertexAttrib4dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -123,7 +123,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fNative(uint index, float x, float y, float z, float w)
+		internal void VertexAttrib4fNative(uint index, float x, float y, float z, float w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[679])(index, x, y, z, w);
@@ -136,13 +136,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4f(uint index, float x, float y, float z, float w)
+		public void VertexAttrib4f(uint index, float x, float y, float z, float w)
 		{
 			VertexAttrib4fNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4fvNative(uint index, float* v)
+		internal void VertexAttrib4fvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[680])(index, v);
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4fv(uint index, float* v)
+		public void VertexAttrib4fv(uint index, float* v)
 		{
 			VertexAttrib4fvNative(index, v);
 		}
@@ -164,7 +164,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4fv(uint index, Span<float> v)
+		public void VertexAttrib4fv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -176,7 +176,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4fv(uint index, ref float v)
+		public void VertexAttrib4fv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -185,7 +185,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ivNative(uint index, int* v)
+		internal void VertexAttrib4ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[681])(index, v);
@@ -198,7 +198,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4iv(uint index, int* v)
+		public void VertexAttrib4iv(uint index, int* v)
 		{
 			VertexAttrib4ivNative(index, v);
 		}
@@ -207,7 +207,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4iv(uint index, Span<int> v)
+		public void VertexAttrib4iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -219,7 +219,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4iv(uint index, ref int v)
+		public void VertexAttrib4iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -228,7 +228,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
+		internal void VertexAttrib4sNative(uint index, short x, short y, short z, short w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short, short, short, short, void>)funcTable[682])(index, x, y, z, w);
@@ -241,13 +241,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4s(uint index, short x, short y, short z, short w)
+		public void VertexAttrib4s(uint index, short x, short y, short z, short w)
 		{
 			VertexAttrib4sNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4svNative(uint index, short* v)
+		internal void VertexAttrib4svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[683])(index, v);
@@ -260,7 +260,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4sv(uint index, short* v)
+		public void VertexAttrib4sv(uint index, short* v)
 		{
 			VertexAttrib4svNative(index, v);
 		}
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4sv(uint index, Span<short> v)
+		public void VertexAttrib4sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -281,7 +281,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4sv(uint index, ref short v)
+		public void VertexAttrib4sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -290,7 +290,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4ubvNative(uint index, byte* v)
+		internal void VertexAttrib4ubvNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[684])(index, v);
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, byte* v)
+		public void VertexAttrib4ubv(uint index, byte* v)
 		{
 			VertexAttrib4ubvNative(index, v);
 		}
@@ -312,7 +312,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, string v)
+		public void VertexAttrib4ubv(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -342,7 +342,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, Span<byte> v)
+		public void VertexAttrib4ubv(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -354,7 +354,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4ubv(uint index, ref byte v)
+		public void VertexAttrib4ubv(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -363,7 +363,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4uivNative(uint index, uint* v)
+		internal void VertexAttrib4uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[685])(index, v);
@@ -376,7 +376,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4uiv(uint index, uint* v)
+		public void VertexAttrib4uiv(uint index, uint* v)
 		{
 			VertexAttrib4uivNative(index, v);
 		}
@@ -385,7 +385,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4uiv(uint index, Span<uint> v)
+		public void VertexAttrib4uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -397,7 +397,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4uiv(uint index, ref uint v)
+		public void VertexAttrib4uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -406,7 +406,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttrib4usvNative(uint index, ushort* v)
+		internal void VertexAttrib4usvNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[686])(index, v);
@@ -419,7 +419,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4usv(uint index, ushort* v)
+		public void VertexAttrib4usv(uint index, ushort* v)
 		{
 			VertexAttrib4usvNative(index, v);
 		}
@@ -428,7 +428,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4usv(uint index, Span<ushort> v)
+		public void VertexAttrib4usv(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -440,7 +440,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttrib4usv(uint index, ref ushort v)
+		public void VertexAttrib4usv(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -449,7 +449,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribBindingNative(uint attribindex, uint bindingindex)
+		internal void VertexAttribBindingNative(uint attribindex, uint bindingindex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[687])(attribindex, bindingindex);
@@ -462,13 +462,13 @@ namespace Hexa.NET.OpenGLES
 		/// Associate a vertex attribute and a vertex buffer binding for a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribBinding(uint attribindex, uint bindingindex)
+		public void VertexAttribBinding(uint attribindex, uint bindingindex)
 		{
 			VertexAttribBindingNative(attribindex, bindingindex);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribDivisorNative(uint index, uint divisor)
+		internal void VertexAttribDivisorNative(uint index, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[688])(index, divisor);
@@ -481,13 +481,13 @@ namespace Hexa.NET.OpenGLES
 		/// Modify the rate at which generic vertex attributes advance during instanced rendering
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribDivisor(uint index, uint divisor)
+		public void VertexAttribDivisor(uint index, uint divisor)
 		{
 			VertexAttribDivisorNative(index, divisor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
+		internal void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[689])(attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
@@ -500,13 +500,13 @@ namespace Hexa.NET.OpenGLES
 		/// Specify the organization of vertex arrays
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
+		public void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexAttribFormatNative(attribindex, size, type, normalized, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1iNative(uint index, int x)
+		internal void VertexAttribI1iNative(uint index, int x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, void>)funcTable[690])(index, x);
@@ -519,13 +519,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1i(uint index, int x)
+		public void VertexAttribI1i(uint index, int x)
 		{
 			VertexAttribI1iNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1ivNative(uint index, int* v)
+		internal void VertexAttribI1ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[691])(index, v);
@@ -538,7 +538,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1iv(uint index, int* v)
+		public void VertexAttribI1iv(uint index, int* v)
 		{
 			VertexAttribI1ivNative(index, v);
 		}
@@ -547,7 +547,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1iv(uint index, Span<int> v)
+		public void VertexAttribI1iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -559,7 +559,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1iv(uint index, ref int v)
+		public void VertexAttribI1iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -568,7 +568,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uiNative(uint index, uint x)
+		internal void VertexAttribI1uiNative(uint index, uint x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[692])(index, x);
@@ -581,13 +581,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1ui(uint index, uint x)
+		public void VertexAttribI1ui(uint index, uint x)
 		{
 			VertexAttribI1uiNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI1uivNative(uint index, uint* v)
+		internal void VertexAttribI1uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[693])(index, v);
@@ -600,7 +600,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1uiv(uint index, uint* v)
+		public void VertexAttribI1uiv(uint index, uint* v)
 		{
 			VertexAttribI1uivNative(index, v);
 		}
@@ -609,7 +609,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1uiv(uint index, Span<uint> v)
+		public void VertexAttribI1uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -621,7 +621,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI1uiv(uint index, ref uint v)
+		public void VertexAttribI1uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -630,7 +630,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2iNative(uint index, int x, int y)
+		internal void VertexAttribI2iNative(uint index, int x, int y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, void>)funcTable[694])(index, x, y);
@@ -643,13 +643,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2i(uint index, int x, int y)
+		public void VertexAttribI2i(uint index, int x, int y)
 		{
 			VertexAttribI2iNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2ivNative(uint index, int* v)
+		internal void VertexAttribI2ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[695])(index, v);
@@ -662,7 +662,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2iv(uint index, int* v)
+		public void VertexAttribI2iv(uint index, int* v)
 		{
 			VertexAttribI2ivNative(index, v);
 		}
@@ -671,7 +671,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2iv(uint index, Span<int> v)
+		public void VertexAttribI2iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -683,7 +683,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2iv(uint index, ref int v)
+		public void VertexAttribI2iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -692,7 +692,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uiNative(uint index, uint x, uint y)
+		internal void VertexAttribI2uiNative(uint index, uint x, uint y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, void>)funcTable[696])(index, x, y);
@@ -705,13 +705,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2ui(uint index, uint x, uint y)
+		public void VertexAttribI2ui(uint index, uint x, uint y)
 		{
 			VertexAttribI2uiNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI2uivNative(uint index, uint* v)
+		internal void VertexAttribI2uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[697])(index, v);
@@ -724,7 +724,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2uiv(uint index, uint* v)
+		public void VertexAttribI2uiv(uint index, uint* v)
 		{
 			VertexAttribI2uivNative(index, v);
 		}
@@ -733,7 +733,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2uiv(uint index, Span<uint> v)
+		public void VertexAttribI2uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -745,7 +745,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI2uiv(uint index, ref uint v)
+		public void VertexAttribI2uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -754,7 +754,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3iNative(uint index, int x, int y, int z)
+		internal void VertexAttribI3iNative(uint index, int x, int y, int z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, void>)funcTable[698])(index, x, y, z);
@@ -767,13 +767,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3i(uint index, int x, int y, int z)
+		public void VertexAttribI3i(uint index, int x, int y, int z)
 		{
 			VertexAttribI3iNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3ivNative(uint index, int* v)
+		internal void VertexAttribI3ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[699])(index, v);
@@ -786,7 +786,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3iv(uint index, int* v)
+		public void VertexAttribI3iv(uint index, int* v)
 		{
 			VertexAttribI3ivNative(index, v);
 		}
@@ -795,7 +795,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3iv(uint index, Span<int> v)
+		public void VertexAttribI3iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -807,7 +807,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3iv(uint index, ref int v)
+		public void VertexAttribI3iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -816,7 +816,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uiNative(uint index, uint x, uint y, uint z)
+		internal void VertexAttribI3uiNative(uint index, uint x, uint y, uint z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, void>)funcTable[700])(index, x, y, z);
@@ -829,13 +829,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3ui(uint index, uint x, uint y, uint z)
+		public void VertexAttribI3ui(uint index, uint x, uint y, uint z)
 		{
 			VertexAttribI3uiNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI3uivNative(uint index, uint* v)
+		internal void VertexAttribI3uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[701])(index, v);
@@ -848,7 +848,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3uiv(uint index, uint* v)
+		public void VertexAttribI3uiv(uint index, uint* v)
 		{
 			VertexAttribI3uivNative(index, v);
 		}
@@ -857,7 +857,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3uiv(uint index, Span<uint> v)
+		public void VertexAttribI3uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -869,7 +869,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI3uiv(uint index, ref uint v)
+		public void VertexAttribI3uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -878,7 +878,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4bvNative(uint index, sbyte* v)
+		internal void VertexAttribI4bvNative(uint index, sbyte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, sbyte*, void>)funcTable[702])(index, v);
@@ -891,7 +891,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4bv(uint index, sbyte* v)
+		public void VertexAttribI4bv(uint index, sbyte* v)
 		{
 			VertexAttribI4bvNative(index, v);
 		}
@@ -900,7 +900,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4bv(uint index, Span<sbyte> v)
+		public void VertexAttribI4bv(uint index, Span<sbyte> v)
 		{
 			fixed (sbyte* pv0 = v)
 			{
@@ -912,7 +912,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4bv(uint index, ref sbyte v)
+		public void VertexAttribI4bv(uint index, ref sbyte v)
 		{
 			fixed (sbyte* pv0 = &v)
 			{
@@ -921,7 +921,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4iNative(uint index, int x, int y, int z, int w)
+		internal void VertexAttribI4iNative(uint index, int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int, int, void>)funcTable[703])(index, x, y, z, w);
@@ -934,13 +934,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4i(uint index, int x, int y, int z, int w)
+		public void VertexAttribI4i(uint index, int x, int y, int z, int w)
 		{
 			VertexAttribI4iNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ivNative(uint index, int* v)
+		internal void VertexAttribI4ivNative(uint index, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, void>)funcTable[704])(index, v);
@@ -953,7 +953,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4iv(uint index, int* v)
+		public void VertexAttribI4iv(uint index, int* v)
 		{
 			VertexAttribI4ivNative(index, v);
 		}
@@ -962,7 +962,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4iv(uint index, Span<int> v)
+		public void VertexAttribI4iv(uint index, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -974,7 +974,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4iv(uint index, ref int v)
+		public void VertexAttribI4iv(uint index, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -983,7 +983,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4svNative(uint index, short* v)
+		internal void VertexAttribI4svNative(uint index, short* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, short*, void>)funcTable[705])(index, v);
@@ -996,7 +996,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4sv(uint index, short* v)
+		public void VertexAttribI4sv(uint index, short* v)
 		{
 			VertexAttribI4svNative(index, v);
 		}
@@ -1005,7 +1005,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4sv(uint index, Span<short> v)
+		public void VertexAttribI4sv(uint index, Span<short> v)
 		{
 			fixed (short* pv0 = v)
 			{
@@ -1017,7 +1017,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4sv(uint index, ref short v)
+		public void VertexAttribI4sv(uint index, ref short v)
 		{
 			fixed (short* pv0 = &v)
 			{
@@ -1026,7 +1026,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4ubvNative(uint index, byte* v)
+		internal void VertexAttribI4ubvNative(uint index, byte* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte*, void>)funcTable[706])(index, v);
@@ -1039,7 +1039,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, byte* v)
+		public void VertexAttribI4ubv(uint index, byte* v)
 		{
 			VertexAttribI4ubvNative(index, v);
 		}
@@ -1048,7 +1048,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, string v)
+		public void VertexAttribI4ubv(uint index, string v)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -1078,7 +1078,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, Span<byte> v)
+		public void VertexAttribI4ubv(uint index, Span<byte> v)
 		{
 			fixed (byte* pv0 = v)
 			{
@@ -1090,7 +1090,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4ubv(uint index, ref byte v)
+		public void VertexAttribI4ubv(uint index, ref byte v)
 		{
 			fixed (byte* pv0 = &v)
 			{
@@ -1099,7 +1099,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uiNative(uint index, uint x, uint y, uint z, uint w)
+		internal void VertexAttribI4uiNative(uint index, uint x, uint y, uint z, uint w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, uint, uint, void>)funcTable[707])(index, x, y, z, w);
@@ -1112,13 +1112,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4ui(uint index, uint x, uint y, uint z, uint w)
+		public void VertexAttribI4ui(uint index, uint x, uint y, uint z, uint w)
 		{
 			VertexAttribI4uiNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4uivNative(uint index, uint* v)
+		internal void VertexAttribI4uivNative(uint index, uint* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint*, void>)funcTable[708])(index, v);
@@ -1131,7 +1131,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4uiv(uint index, uint* v)
+		public void VertexAttribI4uiv(uint index, uint* v)
 		{
 			VertexAttribI4uivNative(index, v);
 		}
@@ -1140,7 +1140,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4uiv(uint index, Span<uint> v)
+		public void VertexAttribI4uiv(uint index, Span<uint> v)
 		{
 			fixed (uint* pv0 = v)
 			{
@@ -1152,7 +1152,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4uiv(uint index, ref uint v)
+		public void VertexAttribI4uiv(uint index, ref uint v)
 		{
 			fixed (uint* pv0 = &v)
 			{
@@ -1161,7 +1161,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribI4usvNative(uint index, ushort* v)
+		internal void VertexAttribI4usvNative(uint index, ushort* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, ushort*, void>)funcTable[709])(index, v);
@@ -1174,7 +1174,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4usv(uint index, ushort* v)
+		public void VertexAttribI4usv(uint index, ushort* v)
 		{
 			VertexAttribI4usvNative(index, v);
 		}
@@ -1183,7 +1183,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4usv(uint index, Span<ushort> v)
+		public void VertexAttribI4usv(uint index, Span<ushort> v)
 		{
 			fixed (ushort* pv0 = v)
 			{
@@ -1195,7 +1195,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribI4usv(uint index, ref ushort v)
+		public void VertexAttribI4usv(uint index, ref ushort v)
 		{
 			fixed (ushort* pv0 = &v)
 			{
@@ -1204,7 +1204,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIFormatNative(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		internal void VertexAttribIFormatNative(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, uint, void>)funcTable[710])(attribindex, size, type, relativeoffset);
@@ -1217,13 +1217,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribIFormat(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		public void VertexAttribIFormat(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			VertexAttribIFormatNative(attribindex, size, type, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIPointerNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		internal void VertexAttribIPointerNative(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, int, void*, void>)funcTable[711])(index, size, type, stride, pointer);
@@ -1236,7 +1236,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
+		public void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, void* pointer)
 		{
 			VertexAttribIPointerNative(index, size, type, stride, pointer);
 		}
@@ -1245,7 +1245,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
+		public void VertexAttribIPointer(uint index, int size, GLVertexAttribIType type, int stride, nint pointer)
 		{
 			VertexAttribIPointerNative(index, size, type, stride, (void*)pointer);
 		}
@@ -1254,7 +1254,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribIPointer<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribIPointer<TPointer>(uint index, int size, GLVertexAttribIType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -1263,7 +1263,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dNative(uint index, double x)
+		internal void VertexAttribL1dNative(uint index, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[712])(index, x);
@@ -1276,13 +1276,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1d(uint index, double x)
+		public void VertexAttribL1d(uint index, double x)
 		{
 			VertexAttribL1dNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dvNative(uint index, double* v)
+		internal void VertexAttribL1dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[713])(index, v);
@@ -1295,7 +1295,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dv(uint index, double* v)
+		public void VertexAttribL1dv(uint index, double* v)
 		{
 			VertexAttribL1dvNative(index, v);
 		}
@@ -1304,7 +1304,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dv(uint index, Span<double> v)
+		public void VertexAttribL1dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1316,7 +1316,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dv(uint index, ref double v)
+		public void VertexAttribL1dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1325,7 +1325,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dNative(uint index, double x, double y)
+		internal void VertexAttribL2dNative(uint index, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[714])(index, x, y);
@@ -1338,13 +1338,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2d(uint index, double x, double y)
+		public void VertexAttribL2d(uint index, double x, double y)
 		{
 			VertexAttribL2dNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dvNative(uint index, double* v)
+		internal void VertexAttribL2dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[715])(index, v);
@@ -1357,7 +1357,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dv(uint index, double* v)
+		public void VertexAttribL2dv(uint index, double* v)
 		{
 			VertexAttribL2dvNative(index, v);
 		}
@@ -1366,7 +1366,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dv(uint index, Span<double> v)
+		public void VertexAttribL2dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1378,7 +1378,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dv(uint index, ref double v)
+		public void VertexAttribL2dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1387,7 +1387,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dNative(uint index, double x, double y, double z)
+		internal void VertexAttribL3dNative(uint index, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[716])(index, x, y, z);
@@ -1400,13 +1400,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3d(uint index, double x, double y, double z)
+		public void VertexAttribL3d(uint index, double x, double y, double z)
 		{
 			VertexAttribL3dNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dvNative(uint index, double* v)
+		internal void VertexAttribL3dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[717])(index, v);
@@ -1419,7 +1419,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dv(uint index, double* v)
+		public void VertexAttribL3dv(uint index, double* v)
 		{
 			VertexAttribL3dvNative(index, v);
 		}
@@ -1428,7 +1428,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dv(uint index, Span<double> v)
+		public void VertexAttribL3dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1440,7 +1440,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dv(uint index, ref double v)
+		public void VertexAttribL3dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1449,7 +1449,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dNative(uint index, double x, double y, double z, double w)
+		internal void VertexAttribL4dNative(uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[718])(index, x, y, z, w);
@@ -1462,13 +1462,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4d(uint index, double x, double y, double z, double w)
+		public void VertexAttribL4d(uint index, double x, double y, double z, double w)
 		{
 			VertexAttribL4dNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dvNative(uint index, double* v)
+		internal void VertexAttribL4dvNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[719])(index, v);
@@ -1481,7 +1481,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dv(uint index, double* v)
+		public void VertexAttribL4dv(uint index, double* v)
 		{
 			VertexAttribL4dvNative(index, v);
 		}
@@ -1490,7 +1490,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dv(uint index, Span<double> v)
+		public void VertexAttribL4dv(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -1502,7 +1502,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dv(uint index, ref double v)
+		public void VertexAttribL4dv(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -1511,7 +1511,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLFormatNative(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
+		internal void VertexAttribLFormatNative(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, uint, void>)funcTable[720])(attribindex, size, type, relativeoffset);
@@ -1524,13 +1524,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribLFormat(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
+		public void VertexAttribLFormat(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			VertexAttribLFormatNative(attribindex, size, type, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLPointerNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
+		internal void VertexAttribLPointerNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, int, void*, void>)funcTable[721])(index, size, type, stride, pointer);
@@ -1543,7 +1543,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
+		public void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			VertexAttribLPointerNative(index, size, type, stride, pointer);
 		}
@@ -1552,7 +1552,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
+		public void VertexAttribLPointer(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
 		{
 			VertexAttribLPointerNative(index, size, type, stride, (void*)pointer);
 		}
@@ -1561,7 +1561,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointer<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribLPointer<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -1570,7 +1570,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP1uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[722])(index, type, *((byte*)(&normalized)), value);
@@ -1583,13 +1583,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP1ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP1uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP1uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[723])(index, type, *((byte*)(&normalized)), value);
@@ -1602,7 +1602,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP1uivNative(index, type, normalized, value);
 		}
@@ -1611,7 +1611,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1623,7 +1623,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP1uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1632,7 +1632,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP2uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[724])(index, type, *((byte*)(&normalized)), value);
@@ -1645,13 +1645,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP2ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP2uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP2uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[725])(index, type, *((byte*)(&normalized)), value);
@@ -1664,7 +1664,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP2uivNative(index, type, normalized, value);
 		}
@@ -1673,7 +1673,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1685,7 +1685,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP2uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1694,7 +1694,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP3uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[726])(index, type, *((byte*)(&normalized)), value);
@@ -1707,13 +1707,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP3ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP3uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP3uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[727])(index, type, *((byte*)(&normalized)), value);
@@ -1726,7 +1726,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP3uivNative(index, type, normalized, value);
 		}
@@ -1735,7 +1735,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1747,7 +1747,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP3uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1756,7 +1756,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		internal void VertexAttribP4uiNative(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint, void>)funcTable[728])(index, type, *((byte*)(&normalized)), value);
@@ -1769,13 +1769,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
+		public void VertexAttribP4ui(uint index, GLVertexAttribPointerType type, bool normalized, uint value)
 		{
 			VertexAttribP4uiNative(index, type, normalized, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		internal void VertexAttribP4uivNative(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribPointerType, byte, uint*, void>)funcTable[729])(index, type, *((byte*)(&normalized)), value);
@@ -1788,7 +1788,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, uint* value)
 		{
 			VertexAttribP4uivNative(index, type, normalized, value);
 		}
@@ -1797,7 +1797,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, Span<uint> value)
 		{
 			fixed (uint* pvalue0 = value)
 			{
@@ -1809,7 +1809,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_type_2_10_10_10_rev</remarks>
-		public static void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
+		public void VertexAttribP4uiv(uint index, GLVertexAttribPointerType type, bool normalized, ref uint value)
 		{
 			fixed (uint* pvalue0 = &value)
 			{
@@ -1818,7 +1818,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribPointerNative(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
+		internal void VertexAttribPointerNative(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribPointerType, byte, int, void*, void>)funcTable[730])(index, size, type, *((byte*)(&normalized)), stride, pointer);
@@ -1831,7 +1831,7 @@ namespace Hexa.NET.OpenGLES
 		/// Define an array of generic vertex attribute data
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
+		public void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, void* pointer)
 		{
 			VertexAttribPointerNative(index, size, type, normalized, stride, pointer);
 		}
@@ -1840,7 +1840,7 @@ namespace Hexa.NET.OpenGLES
 		/// Define an array of generic vertex attribute data
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint pointer)
+		public void VertexAttribPointer(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, nint pointer)
 		{
 			VertexAttribPointerNative(index, size, type, normalized, stride, (void*)pointer);
 		}
@@ -1849,7 +1849,7 @@ namespace Hexa.NET.OpenGLES
 		/// Define an array of generic vertex attribute data
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexAttribPointer<TPointer>(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribPointer<TPointer>(uint index, int size, GLVertexAttribPointerType type, bool normalized, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -1858,7 +1858,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexBindingDivisorNative(uint bindingindex, uint divisor)
+		internal void VertexBindingDivisorNative(uint bindingindex, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[731])(bindingindex, divisor);
@@ -1872,13 +1872,13 @@ namespace Hexa.NET.OpenGLES
 		///     advance
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexBindingDivisor(uint bindingindex, uint divisor)
+		public void VertexBindingDivisor(uint bindingindex, uint divisor)
 		{
 			VertexBindingDivisorNative(bindingindex, divisor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexPointerNative(int size, GLVertexPointerType type, int stride, void* pointer)
+		internal void VertexPointerNative(int size, GLVertexPointerType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLVertexPointerType, int, void*, void>)funcTable[732])(size, type, stride, pointer);
@@ -1891,7 +1891,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexPointer(int size, GLVertexPointerType type, int stride, void* pointer)
+		public void VertexPointer(int size, GLVertexPointerType type, int stride, void* pointer)
 		{
 			VertexPointerNative(size, type, stride, pointer);
 		}
@@ -1900,7 +1900,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexPointer(int size, GLVertexPointerType type, int stride, nint pointer)
+		public void VertexPointer(int size, GLVertexPointerType type, int stride, nint pointer)
 		{
 			VertexPointerNative(size, type, stride, (void*)pointer);
 		}
@@ -1909,7 +1909,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void VertexPointer<TPointer>(int size, GLVertexPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexPointer<TPointer>(int size, GLVertexPointerType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -1918,7 +1918,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportNative(int x, int y, int width, int height)
+		internal void ViewportNative(int x, int y, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[733])(x, y, width, height);
@@ -1931,13 +1931,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.</remarks>
-		public static void Viewport(int x, int y, int width, int height)
+		public void Viewport(int x, int y, int width, int height)
 		{
 			ViewportNative(x, y, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportArrayvNative(uint first, int count, float* v)
+		internal void ViewportArrayvNative(uint first, int count, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[734])(first, count, v);
@@ -1950,7 +1950,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportArrayv(uint first, int count, float* v)
+		public void ViewportArrayv(uint first, int count, float* v)
 		{
 			ViewportArrayvNative(first, count, v);
 		}
@@ -1959,7 +1959,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportArrayv(uint first, int count, Span<float> v)
+		public void ViewportArrayv(uint first, int count, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -1971,7 +1971,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportArrayv(uint first, int count, ref float v)
+		public void ViewportArrayv(uint first, int count, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -1980,7 +1980,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfNative(uint index, float x, float y, float w, float h)
+		internal void ViewportIndexedfNative(uint index, float x, float y, float w, float h)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float, float, float, float, void>)funcTable[735])(index, x, y, w, h);
@@ -1993,13 +1993,13 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedf(uint index, float x, float y, float w, float h)
+		public void ViewportIndexedf(uint index, float x, float y, float w, float h)
 		{
 			ViewportIndexedfNative(index, x, y, w, h);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportIndexedfvNative(uint index, float* v)
+		internal void ViewportIndexedfvNative(uint index, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, float*, void>)funcTable[736])(index, v);
@@ -2012,7 +2012,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedfv(uint index, float* v)
+		public void ViewportIndexedfv(uint index, float* v)
 		{
 			ViewportIndexedfvNative(index, v);
 		}
@@ -2021,7 +2021,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedfv(uint index, Span<float> v)
+		public void ViewportIndexedfv(uint index, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -2033,7 +2033,7 @@ namespace Hexa.NET.OpenGLES
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_viewport_array</remarks>
-		public static void ViewportIndexedfv(uint index, ref float v)
+		public void ViewportIndexedfv(uint index, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -2042,7 +2042,7 @@ namespace Hexa.NET.OpenGLES
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WaitSyncNative(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
+		internal void WaitSyncNative(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSync, GLSyncBehaviorFlags, ulong, void>)funcTable[737])(sync, flags, timeout);
@@ -2055,7 +2055,7 @@ namespace Hexa.NET.OpenGLES
 		/// Instruct the GL server to block until the specified sync object becomes signaled
 		/// </summary>
 		/// <remarks>Supported Versions: All GL ES versions.<br/><br/>Used by Extensions:<br/>GL_ARB_sync</remarks>
-		public static void WaitSync(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
+		public void WaitSync(GLSync sync, GLSyncBehaviorFlags flags, ulong timeout)
 		{
 			WaitSyncNative(sync, flags, timeout);
 		}

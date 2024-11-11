@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTTessellationShader
+	public unsafe partial class GLEXTTessellationShader
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PatchParameteriEXTNative(GLPatchParameterName pname, int value)
+		internal void PatchParameteriEXTNative(GLPatchParameterName pname, int value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPatchParameterName, int, void>)funcTable[0])(pname, value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_tessellation_shader</remarks>
-		public static void PatchParameteriEXT(GLPatchParameterName pname, int value)
+		public void PatchParameteriEXT(GLPatchParameterName pname, int value)
 		{
 			PatchParameteriEXTNative(pname, value);
 		}

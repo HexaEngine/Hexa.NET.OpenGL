@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTShaderImageLoadStore
+	public unsafe partial class GLEXTShaderImageLoadStore
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindImageTextureEXTNative(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
+		internal void BindImageTextureEXTNative(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, byte, int, GLBufferAccessARB, int, void>)funcTable[0])(index, texture, level, *((byte*)(&layered)), layer, access, format);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
-		public static void BindImageTextureEXT(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
+		public void BindImageTextureEXT(uint index, uint texture, int level, bool layered, int layer, GLBufferAccessARB access, int format)
 		{
 			BindImageTextureEXTNative(index, texture, level, layered, layer, access, format);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MemoryBarrierEXTNative(GLMemoryBarrierMask barriers)
+		internal void MemoryBarrierEXTNative(GLMemoryBarrierMask barriers)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMemoryBarrierMask, void>)funcTable[1])(barriers);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_shader_image_load_store</remarks>
-		public static void MemoryBarrierEXT(GLMemoryBarrierMask barriers)
+		public void MemoryBarrierEXT(GLMemoryBarrierMask barriers)
 		{
 			MemoryBarrierEXTNative(barriers);
 		}

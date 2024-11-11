@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTClipControl
+	public unsafe partial class GLEXTClipControl
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClipControlEXTNative(GLEnum origin, GLEnum depth)
+		internal void ClipControlEXTNative(GLEnum origin, GLEnum depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, GLEnum, void>)funcTable[0])(origin, depth);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_clip_control</remarks>
-		public static void ClipControlEXT(GLEnum origin, GLEnum depth)
+		public void ClipControlEXT(GLEnum origin, GLEnum depth)
 		{
 			ClipControlEXTNative(origin, depth);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVNonSquareMatrices
+	public unsafe partial class GLNVNonSquareMatrices
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x3fvNVNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2x3fvNVNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[0])(location, count, *((byte*)(&transpose)), value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix2x3fvNV(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2x3fvNV(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2x3fvNVNative(location, count, transpose, value);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix2x3fvNV(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2x3fvNV(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix2x3fvNV(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2x3fvNV(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2x4fvNVNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2x4fvNVNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[1])(location, count, *((byte*)(&transpose)), value);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix2x4fvNV(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2x4fvNV(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2x4fvNVNative(location, count, transpose, value);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix2x4fvNV(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2x4fvNV(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix2x4fvNV(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2x4fvNV(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x2fvNVNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3x2fvNVNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[2])(location, count, *((byte*)(&transpose)), value);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix3x2fvNV(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3x2fvNV(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x2fvNVNative(location, count, transpose, value);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix3x2fvNV(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3x2fvNV(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix3x2fvNV(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3x2fvNV(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3x4fvNVNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3x4fvNVNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[3])(location, count, *((byte*)(&transpose)), value);
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix3x4fvNV(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3x4fvNV(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3x4fvNVNative(location, count, transpose, value);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix3x4fvNV(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3x4fvNV(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix3x4fvNV(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3x4fvNV(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -189,7 +189,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x2fvNVNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4x2fvNVNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[4])(location, count, *((byte*)(&transpose)), value);
@@ -202,7 +202,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix4x2fvNV(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4x2fvNV(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4x2fvNVNative(location, count, transpose, value);
 		}
@@ -211,7 +211,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix4x2fvNV(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4x2fvNV(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -223,7 +223,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix4x2fvNV(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4x2fvNV(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -232,7 +232,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4x3fvNVNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4x3fvNVNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[5])(location, count, *((byte*)(&transpose)), value);
@@ -245,7 +245,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix4x3fvNV(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4x3fvNV(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4x3fvNVNative(location, count, transpose, value);
 		}
@@ -254,7 +254,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix4x3fvNV(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4x3fvNV(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -266,7 +266,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_non_square_matrices</remarks>
-		public static void UniformMatrix4x3fvNV(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4x3fvNV(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{

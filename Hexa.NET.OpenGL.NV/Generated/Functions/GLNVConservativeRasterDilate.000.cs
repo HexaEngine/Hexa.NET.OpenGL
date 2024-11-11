@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVConservativeRasterDilate
+	public unsafe partial class GLNVConservativeRasterDilate
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ConservativeRasterParameterfNVNative(GLEnum pname, float value)
+		internal void ConservativeRasterParameterfNVNative(GLEnum pname, float value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, float, void>)funcTable[0])(pname, value);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_conservative_raster_dilate</remarks>
-		public static void ConservativeRasterParameterfNV(GLEnum pname, float value)
+		public void ConservativeRasterParameterfNV(GLEnum pname, float value)
 		{
 			ConservativeRasterParameterfNVNative(pname, value);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBBufferStorage
+	public unsafe partial class GLARBBufferStorage
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferStorageNative(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
+		internal void BufferStorageNative(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, void*, GLBufferStorageMask, void>)funcTable[0])(target, size, data, flags);
@@ -31,7 +31,7 @@ namespace Hexa.NET.OpenGL.ARB
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
-		public static void BufferStorage(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
+		public void BufferStorage(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			BufferStorageNative(target, size, data, flags);
 		}
@@ -41,7 +41,7 @@ namespace Hexa.NET.OpenGL.ARB
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
-		public static void BufferStorage(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
+		public void BufferStorage(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
 		{
 			BufferStorageNative(target, size, (void*)data, flags);
 		}
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.ARB
 		///     store
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.4 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_buffer_storage</remarks>
-		public static void BufferStorage<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		public void BufferStorage<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{

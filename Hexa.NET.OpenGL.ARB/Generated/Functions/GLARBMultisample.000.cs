@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBMultisample
+	public unsafe partial class GLARBMultisample
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SampleCoverageARBNative(float value, bool invert)
+		internal void SampleCoverageARBNative(float value, bool invert)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, byte, void>)funcTable[0])(value, *((byte*)(&invert)));
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_multisample</remarks>
-		public static void SampleCoverageARB(float value, bool invert)
+		public void SampleCoverageARB(float value, bool invert)
 		{
 			SampleCoverageARBNative(value, invert);
 		}

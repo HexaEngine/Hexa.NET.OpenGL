@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBVertexAttribBinding
+	public unsafe partial class GLARBVertexAttribBinding
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindVertexBufferNative(uint bindingindex, uint buffer, nint offset, int stride)
+		internal void BindVertexBufferNative(uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, nint, int, void>)funcTable[0])(bindingindex, buffer, offset, stride);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a buffer to a vertex buffer bind point
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void BindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride)
+		public void BindVertexBuffer(uint bindingindex, uint buffer, nint offset, int stride)
 		{
 			BindVertexBufferNative(bindingindex, buffer, offset, stride);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribBindingNative(uint attribindex, uint bindingindex)
+		internal void VertexAttribBindingNative(uint attribindex, uint bindingindex)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[1])(attribindex, bindingindex);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Associate a vertex attribute and a vertex buffer binding for a vertex array object
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribBinding(uint attribindex, uint bindingindex)
+		public void VertexAttribBinding(uint attribindex, uint bindingindex)
 		{
 			VertexAttribBindingNative(attribindex, bindingindex);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
+		internal void VertexAttribFormatNative(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribType, byte, uint, void>)funcTable[2])(attribindex, size, type, *((byte*)(&normalized)), relativeoffset);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Specify the organization of vertex arrays
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
+		public void VertexAttribFormat(uint attribindex, int size, GLVertexAttribType type, bool normalized, uint relativeoffset)
 		{
 			VertexAttribFormatNative(attribindex, size, type, normalized, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribIFormatNative(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		internal void VertexAttribIFormatNative(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribIType, uint, void>)funcTable[3])(attribindex, size, type, relativeoffset);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribIFormat(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
+		public void VertexAttribIFormat(uint attribindex, int size, GLVertexAttribIType type, uint relativeoffset)
 		{
 			VertexAttribIFormatNative(attribindex, size, type, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLFormatNative(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
+		internal void VertexAttribLFormatNative(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, uint, void>)funcTable[4])(attribindex, size, type, relativeoffset);
@@ -106,13 +106,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexAttribLFormat(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
+		public void VertexAttribLFormat(uint attribindex, int size, GLVertexAttribLType type, uint relativeoffset)
 		{
 			VertexAttribLFormatNative(attribindex, size, type, relativeoffset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexBindingDivisorNative(uint bindingindex, uint divisor)
+		internal void VertexBindingDivisorNative(uint bindingindex, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[5])(bindingindex, divisor);
@@ -126,7 +126,7 @@ namespace Hexa.NET.OpenGL.ARB
 		///     advance
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.3 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_vertex_attrib_binding</remarks>
-		public static void VertexBindingDivisor(uint bindingindex, uint divisor)
+		public void VertexBindingDivisor(uint bindingindex, uint divisor)
 		{
 			VertexBindingDivisorNative(bindingindex, divisor);
 		}

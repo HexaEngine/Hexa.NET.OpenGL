@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVInternalformatSampleQuery
+	public unsafe partial class GLNVInternalformatSampleQuery
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInternalformatSampleivNVNative(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, int* @params)
+		internal void GetInternalformatSampleivNVNative(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, GLInternalFormat, int, GLInternalFormatPName, int, int*, void>)funcTable[0])(target, internalformat, samples, pname, count, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
-		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, int* @params)
+		public void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, int* @params)
 		{
 			GetInternalformatSampleivNVNative(target, internalformat, samples, pname, count, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
-		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, Span<int> @params)
+		public void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_internalformat_sample_query</remarks>
-		public static void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, ref int @params)
+		public void GetInternalformatSampleivNV(GLTextureTarget target, GLInternalFormat internalformat, int samples, GLInternalFormatPName pname, int count, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBRobustness
+	public unsafe partial class GLARBRobustness
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLEnum GetGraphicsResetStatusARBNative()
+		internal GLEnum GetGraphicsResetStatusARBNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum>)funcTable[0])();
@@ -30,14 +30,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static GLEnum GetGraphicsResetStatusARB()
+		public GLEnum GetGraphicsResetStatusARB()
 		{
 			GLEnum ret = GetGraphicsResetStatusARBNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnColorTableARBNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* table)
+		internal void GetnColorTableARBNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* table)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[1])(target, format, type, bufSize, table);
@@ -50,7 +50,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnColorTableARB(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* table)
+		public void GetnColorTableARB(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* table)
 		{
 			GetnColorTableARBNative(target, format, type, bufSize, table);
 		}
@@ -59,7 +59,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnColorTableARB(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, nint table)
+		public void GetnColorTableARB(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, nint table)
 		{
 			GetnColorTableARBNative(target, format, type, bufSize, (void*)table);
 		}
@@ -68,7 +68,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnColorTableARB<TTable>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, Span<TTable> table) where TTable : unmanaged
+		public void GetnColorTableARB<TTable>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, int bufSize, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
 			{
@@ -77,7 +77,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnCompressedTexImageARBNative(GLTextureTarget target, int lod, int bufSize, void* img)
+		internal void GetnCompressedTexImageARBNative(GLTextureTarget target, int lod, int bufSize, void* img)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, int, void*, void>)funcTable[2])(target, lod, bufSize, img);
@@ -90,7 +90,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnCompressedTexImageARB(GLTextureTarget target, int lod, int bufSize, void* img)
+		public void GetnCompressedTexImageARB(GLTextureTarget target, int lod, int bufSize, void* img)
 		{
 			GetnCompressedTexImageARBNative(target, lod, bufSize, img);
 		}
@@ -99,7 +99,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnCompressedTexImageARB(GLTextureTarget target, int lod, int bufSize, nint img)
+		public void GetnCompressedTexImageARB(GLTextureTarget target, int lod, int bufSize, nint img)
 		{
 			GetnCompressedTexImageARBNative(target, lod, bufSize, (void*)img);
 		}
@@ -108,7 +108,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnCompressedTexImageARB<TImg>(GLTextureTarget target, int lod, int bufSize, Span<TImg> img) where TImg : unmanaged
+		public void GetnCompressedTexImageARB<TImg>(GLTextureTarget target, int lod, int bufSize, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
 			{
@@ -117,7 +117,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnConvolutionFilterARBNative(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* image)
+		internal void GetnConvolutionFilterARBNative(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* image)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLConvolutionTarget, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[3])(target, format, type, bufSize, image);
@@ -130,7 +130,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnConvolutionFilterARB(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* image)
+		public void GetnConvolutionFilterARB(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, void* image)
 		{
 			GetnConvolutionFilterARBNative(target, format, type, bufSize, image);
 		}
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnConvolutionFilterARB(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, nint image)
+		public void GetnConvolutionFilterARB(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, nint image)
 		{
 			GetnConvolutionFilterARBNative(target, format, type, bufSize, (void*)image);
 		}
@@ -148,7 +148,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnConvolutionFilterARB<TImage>(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, Span<TImage> image) where TImage : unmanaged
+		public void GetnConvolutionFilterARB<TImage>(GLConvolutionTarget target, GLPixelFormat format, GLPixelType type, int bufSize, Span<TImage> image) where TImage : unmanaged
 		{
 			fixed (TImage* pimage0 = image)
 			{
@@ -157,7 +157,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnHistogramARBNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		internal void GetnHistogramARBNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[4])(target, *((byte*)(&reset)), format, type, bufSize, values);
@@ -170,7 +170,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnHistogramARB(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		public void GetnHistogramARB(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
 		{
 			GetnHistogramARBNative(target, reset, format, type, bufSize, values);
 		}
@@ -179,7 +179,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnHistogramARB(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, nint values)
+		public void GetnHistogramARB(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, nint values)
 		{
 			GetnHistogramARBNative(target, reset, format, type, bufSize, (void*)values);
 		}
@@ -188,7 +188,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnHistogramARB<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, Span<TValues> values) where TValues : unmanaged
+		public void GetnHistogramARB<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
 			{
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnMapdvARBNative(GLMapTarget target, GLMapQuery query, int bufSize, double* v)
+		internal void GetnMapdvARBNative(GLMapTarget target, GLMapQuery query, int bufSize, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, double*, void>)funcTable[5])(target, query, bufSize, v);
@@ -210,7 +210,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapdvARB(GLMapTarget target, GLMapQuery query, int bufSize, double* v)
+		public void GetnMapdvARB(GLMapTarget target, GLMapQuery query, int bufSize, double* v)
 		{
 			GetnMapdvARBNative(target, query, bufSize, v);
 		}
@@ -219,7 +219,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapdvARB(GLMapTarget target, GLMapQuery query, int bufSize, Span<double> v)
+		public void GetnMapdvARB(GLMapTarget target, GLMapQuery query, int bufSize, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -231,7 +231,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapdvARB(GLMapTarget target, GLMapQuery query, int bufSize, ref double v)
+		public void GetnMapdvARB(GLMapTarget target, GLMapQuery query, int bufSize, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -240,7 +240,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnMapfvARBNative(GLMapTarget target, GLMapQuery query, int bufSize, float* v)
+		internal void GetnMapfvARBNative(GLMapTarget target, GLMapQuery query, int bufSize, float* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, float*, void>)funcTable[6])(target, query, bufSize, v);
@@ -253,7 +253,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapfvARB(GLMapTarget target, GLMapQuery query, int bufSize, float* v)
+		public void GetnMapfvARB(GLMapTarget target, GLMapQuery query, int bufSize, float* v)
 		{
 			GetnMapfvARBNative(target, query, bufSize, v);
 		}
@@ -262,7 +262,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapfvARB(GLMapTarget target, GLMapQuery query, int bufSize, Span<float> v)
+		public void GetnMapfvARB(GLMapTarget target, GLMapQuery query, int bufSize, Span<float> v)
 		{
 			fixed (float* pv0 = v)
 			{
@@ -274,7 +274,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapfvARB(GLMapTarget target, GLMapQuery query, int bufSize, ref float v)
+		public void GetnMapfvARB(GLMapTarget target, GLMapQuery query, int bufSize, ref float v)
 		{
 			fixed (float* pv0 = &v)
 			{
@@ -283,7 +283,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnMapivARBNative(GLMapTarget target, GLMapQuery query, int bufSize, int* v)
+		internal void GetnMapivARBNative(GLMapTarget target, GLMapQuery query, int bufSize, int* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMapTarget, GLMapQuery, int, int*, void>)funcTable[7])(target, query, bufSize, v);
@@ -296,7 +296,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapivARB(GLMapTarget target, GLMapQuery query, int bufSize, int* v)
+		public void GetnMapivARB(GLMapTarget target, GLMapQuery query, int bufSize, int* v)
 		{
 			GetnMapivARBNative(target, query, bufSize, v);
 		}
@@ -305,7 +305,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapivARB(GLMapTarget target, GLMapQuery query, int bufSize, Span<int> v)
+		public void GetnMapivARB(GLMapTarget target, GLMapQuery query, int bufSize, Span<int> v)
 		{
 			fixed (int* pv0 = v)
 			{
@@ -317,7 +317,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMapivARB(GLMapTarget target, GLMapQuery query, int bufSize, ref int v)
+		public void GetnMapivARB(GLMapTarget target, GLMapQuery query, int bufSize, ref int v)
 		{
 			fixed (int* pv0 = &v)
 			{
@@ -326,7 +326,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnMinmaxARBNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		internal void GetnMinmaxARBNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[8])(target, *((byte*)(&reset)), format, type, bufSize, values);
@@ -339,7 +339,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMinmaxARB(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
+		public void GetnMinmaxARB(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, void* values)
 		{
 			GetnMinmaxARBNative(target, reset, format, type, bufSize, values);
 		}
@@ -348,7 +348,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMinmaxARB(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, nint values)
+		public void GetnMinmaxARB(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, nint values)
 		{
 			GetnMinmaxARBNative(target, reset, format, type, bufSize, (void*)values);
 		}
@@ -357,7 +357,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnMinmaxARB<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, Span<TValues> values) where TValues : unmanaged
+		public void GetnMinmaxARB<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, int bufSize, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
 			{
@@ -366,7 +366,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnPixelMapfvARBNative(GLPixelMap map, int bufSize, float* values)
+		internal void GetnPixelMapfvARBNative(GLPixelMap map, int bufSize, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, int, float*, void>)funcTable[9])(map, bufSize, values);
@@ -379,7 +379,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapfvARB(GLPixelMap map, int bufSize, float* values)
+		public void GetnPixelMapfvARB(GLPixelMap map, int bufSize, float* values)
 		{
 			GetnPixelMapfvARBNative(map, bufSize, values);
 		}
@@ -388,7 +388,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapfvARB(GLPixelMap map, int bufSize, Span<float> values)
+		public void GetnPixelMapfvARB(GLPixelMap map, int bufSize, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
 			{
@@ -400,7 +400,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapfvARB(GLPixelMap map, int bufSize, ref float values)
+		public void GetnPixelMapfvARB(GLPixelMap map, int bufSize, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
 			{
@@ -409,7 +409,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnPixelMapuivARBNative(GLPixelMap map, int bufSize, uint* values)
+		internal void GetnPixelMapuivARBNative(GLPixelMap map, int bufSize, uint* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, int, uint*, void>)funcTable[10])(map, bufSize, values);
@@ -422,7 +422,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapuivARB(GLPixelMap map, int bufSize, uint* values)
+		public void GetnPixelMapuivARB(GLPixelMap map, int bufSize, uint* values)
 		{
 			GetnPixelMapuivARBNative(map, bufSize, values);
 		}
@@ -431,7 +431,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapuivARB(GLPixelMap map, int bufSize, Span<uint> values)
+		public void GetnPixelMapuivARB(GLPixelMap map, int bufSize, Span<uint> values)
 		{
 			fixed (uint* pvalues0 = values)
 			{
@@ -443,7 +443,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapuivARB(GLPixelMap map, int bufSize, ref uint values)
+		public void GetnPixelMapuivARB(GLPixelMap map, int bufSize, ref uint values)
 		{
 			fixed (uint* pvalues0 = &values)
 			{
@@ -452,7 +452,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnPixelMapusvARBNative(GLPixelMap map, int bufSize, ushort* values)
+		internal void GetnPixelMapusvARBNative(GLPixelMap map, int bufSize, ushort* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPixelMap, int, ushort*, void>)funcTable[11])(map, bufSize, values);
@@ -465,7 +465,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapusvARB(GLPixelMap map, int bufSize, ushort* values)
+		public void GetnPixelMapusvARB(GLPixelMap map, int bufSize, ushort* values)
 		{
 			GetnPixelMapusvARBNative(map, bufSize, values);
 		}
@@ -474,7 +474,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapusvARB(GLPixelMap map, int bufSize, Span<ushort> values)
+		public void GetnPixelMapusvARB(GLPixelMap map, int bufSize, Span<ushort> values)
 		{
 			fixed (ushort* pvalues0 = values)
 			{
@@ -486,7 +486,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPixelMapusvARB(GLPixelMap map, int bufSize, ref ushort values)
+		public void GetnPixelMapusvARB(GLPixelMap map, int bufSize, ref ushort values)
 		{
 			fixed (ushort* pvalues0 = &values)
 			{
@@ -495,7 +495,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnPolygonStippleARBNative(int bufSize, byte* pattern)
+		internal void GetnPolygonStippleARBNative(int bufSize, byte* pattern)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[12])(bufSize, pattern);
@@ -508,7 +508,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPolygonStippleARB(int bufSize, byte* pattern)
+		public void GetnPolygonStippleARB(int bufSize, byte* pattern)
 		{
 			GetnPolygonStippleARBNative(bufSize, pattern);
 		}
@@ -517,7 +517,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPolygonStippleARB(int bufSize, string pattern)
+		public void GetnPolygonStippleARB(int bufSize, string pattern)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -547,7 +547,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPolygonStippleARB(int bufSize, Span<byte> pattern)
+		public void GetnPolygonStippleARB(int bufSize, Span<byte> pattern)
 		{
 			fixed (byte* ppattern0 = pattern)
 			{
@@ -559,7 +559,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnPolygonStippleARB(int bufSize, ref byte pattern)
+		public void GetnPolygonStippleARB(int bufSize, ref byte pattern)
 		{
 			fixed (byte* ppattern0 = &pattern)
 			{
@@ -568,7 +568,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnSeparableFilterARBNative(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span)
+		internal void GetnSeparableFilterARBNative(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLSeparableTargetEXT, GLPixelFormat, GLPixelType, int, void*, int, void*, void*, void>)funcTable[13])(target, format, type, rowBufSize, row, columnBufSize, column, span);
@@ -581,7 +581,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, row, columnBufSize, column, span);
 		}
@@ -590,7 +590,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, void* column, void* span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, void* column, void* span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, (void*)row, columnBufSize, column, span);
 		}
@@ -599,7 +599,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, void* column, void* span) where TRow : unmanaged
+		public void GetnSeparableFilterARB<TRow>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, void* column, void* span) where TRow : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -611,7 +611,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, nint column, void* span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, nint column, void* span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, row, columnBufSize, (void*)column, span);
 		}
@@ -620,7 +620,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, Span<TColumn> column, void* span) where TColumn : unmanaged
+		public void GetnSeparableFilterARB<TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, Span<TColumn> column, void* span) where TColumn : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
 			{
@@ -632,7 +632,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, nint column, void* span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, nint column, void* span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, (void*)row, columnBufSize, (void*)column, span);
 		}
@@ -641,7 +641,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
+		public void GetnSeparableFilterARB<TRow, TColumn>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, Span<TColumn> column, void* span) where TRow : unmanaged where TColumn : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -656,7 +656,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, nint span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, nint span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, row, columnBufSize, column, (void*)span);
 		}
@@ -665,7 +665,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, Span<TSpan> span) where TSpan : unmanaged
+		public void GetnSeparableFilterARB<TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, void* column, Span<TSpan> span) where TSpan : unmanaged
 		{
 			fixed (TSpan* pspan0 = span)
 			{
@@ -677,7 +677,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, void* column, nint span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, void* column, nint span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, (void*)row, columnBufSize, column, (void*)span);
 		}
@@ -686,7 +686,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
+		public void GetnSeparableFilterARB<TRow, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, void* column, Span<TSpan> span) where TRow : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -701,7 +701,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, nint column, nint span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, nint column, nint span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, row, columnBufSize, (void*)column, (void*)span);
 		}
@@ -710,7 +710,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
+		public void GetnSeparableFilterARB<TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, void* row, int columnBufSize, Span<TColumn> column, Span<TSpan> span) where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TColumn* pcolumn0 = column)
 			{
@@ -725,7 +725,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, nint column, nint span)
+		public void GetnSeparableFilterARB(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, nint row, int columnBufSize, nint column, nint span)
 		{
 			GetnSeparableFilterARBNative(target, format, type, rowBufSize, (void*)row, columnBufSize, (void*)column, (void*)span);
 		}
@@ -734,7 +734,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnSeparableFilterARB<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
+		public void GetnSeparableFilterARB<TRow, TColumn, TSpan>(GLSeparableTargetEXT target, GLPixelFormat format, GLPixelType type, int rowBufSize, Span<TRow> row, int columnBufSize, Span<TColumn> column, Span<TSpan> span) where TRow : unmanaged where TColumn : unmanaged where TSpan : unmanaged
 		{
 			fixed (TRow* prow0 = row)
 			{
@@ -749,7 +749,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnTexImageARBNative(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* img)
+		internal void GetnTexImageARBNative(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* img)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[14])(target, level, format, type, bufSize, img);
@@ -762,7 +762,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnTexImageARB(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* img)
+		public void GetnTexImageARB(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, void* img)
 		{
 			GetnTexImageARBNative(target, level, format, type, bufSize, img);
 		}
@@ -771,7 +771,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnTexImageARB(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, nint img)
+		public void GetnTexImageARB(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, nint img)
 		{
 			GetnTexImageARBNative(target, level, format, type, bufSize, (void*)img);
 		}
@@ -780,7 +780,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnTexImageARB<TImg>(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, Span<TImg> img) where TImg : unmanaged
+		public void GetnTexImageARB<TImg>(GLTextureTarget target, int level, GLPixelFormat format, GLPixelType type, int bufSize, Span<TImg> img) where TImg : unmanaged
 		{
 			fixed (TImg* pimg0 = img)
 			{
@@ -789,7 +789,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformdvARBNative(uint program, int location, int bufSize, double* @params)
+		internal void GetnUniformdvARBNative(uint program, int location, int bufSize, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, double*, void>)funcTable[15])(program, location, bufSize, @params);
@@ -802,7 +802,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformdvARB(uint program, int location, int bufSize, double* @params)
+		public void GetnUniformdvARB(uint program, int location, int bufSize, double* @params)
 		{
 			GetnUniformdvARBNative(program, location, bufSize, @params);
 		}
@@ -811,7 +811,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformdvARB(uint program, int location, int bufSize, Span<double> @params)
+		public void GetnUniformdvARB(uint program, int location, int bufSize, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -823,7 +823,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformdvARB(uint program, int location, int bufSize, ref double @params)
+		public void GetnUniformdvARB(uint program, int location, int bufSize, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -832,7 +832,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformfvARBNative(uint program, int location, int bufSize, float* @params)
+		internal void GetnUniformfvARBNative(uint program, int location, int bufSize, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, float*, void>)funcTable[16])(program, location, bufSize, @params);
@@ -845,7 +845,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformfvARB(uint program, int location, int bufSize, float* @params)
+		public void GetnUniformfvARB(uint program, int location, int bufSize, float* @params)
 		{
 			GetnUniformfvARBNative(program, location, bufSize, @params);
 		}
@@ -854,7 +854,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformfvARB(uint program, int location, int bufSize, Span<float> @params)
+		public void GetnUniformfvARB(uint program, int location, int bufSize, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -866,7 +866,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformfvARB(uint program, int location, int bufSize, ref float @params)
+		public void GetnUniformfvARB(uint program, int location, int bufSize, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -875,7 +875,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformivARBNative(uint program, int location, int bufSize, int* @params)
+		internal void GetnUniformivARBNative(uint program, int location, int bufSize, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, int*, void>)funcTable[17])(program, location, bufSize, @params);
@@ -888,7 +888,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformivARB(uint program, int location, int bufSize, int* @params)
+		public void GetnUniformivARB(uint program, int location, int bufSize, int* @params)
 		{
 			GetnUniformivARBNative(program, location, bufSize, @params);
 		}
@@ -897,7 +897,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformivARB(uint program, int location, int bufSize, Span<int> @params)
+		public void GetnUniformivARB(uint program, int location, int bufSize, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -909,7 +909,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformivARB(uint program, int location, int bufSize, ref int @params)
+		public void GetnUniformivARB(uint program, int location, int bufSize, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -918,7 +918,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetnUniformuivARBNative(uint program, int location, int bufSize, uint* @params)
+		internal void GetnUniformuivARBNative(uint program, int location, int bufSize, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, uint*, void>)funcTable[18])(program, location, bufSize, @params);
@@ -931,7 +931,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformuivARB(uint program, int location, int bufSize, uint* @params)
+		public void GetnUniformuivARB(uint program, int location, int bufSize, uint* @params)
 		{
 			GetnUniformuivARBNative(program, location, bufSize, @params);
 		}
@@ -940,7 +940,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformuivARB(uint program, int location, int bufSize, Span<uint> @params)
+		public void GetnUniformuivARB(uint program, int location, int bufSize, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -952,7 +952,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void GetnUniformuivARB(uint program, int location, int bufSize, ref uint @params)
+		public void GetnUniformuivARB(uint program, int location, int bufSize, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -961,7 +961,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ReadnPixelsARBNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		internal void ReadnPixelsARBNative(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, GLPixelFormat, GLPixelType, int, void*, void>)funcTable[19])(x, y, width, height, format, type, bufSize, data);
@@ -974,7 +974,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void ReadnPixelsARB(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
+		public void ReadnPixelsARB(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, void* data)
 		{
 			ReadnPixelsARBNative(x, y, width, height, format, type, bufSize, data);
 		}
@@ -983,7 +983,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void ReadnPixelsARB(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
+		public void ReadnPixelsARB(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, nint data)
 		{
 			ReadnPixelsARBNative(x, y, width, height, format, type, bufSize, (void*)data);
 		}
@@ -992,7 +992,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_robustness</remarks>
-		public static void ReadnPixelsARB<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
+		public void ReadnPixelsARB<TData>(int x, int y, int width, int height, GLPixelFormat format, GLPixelType type, int bufSize, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{

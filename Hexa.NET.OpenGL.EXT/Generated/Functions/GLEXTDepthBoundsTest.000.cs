@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTDepthBoundsTest
+	public unsafe partial class GLEXTDepthBoundsTest
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DepthBoundsEXTNative(double zmin, double zmax)
+		internal void DepthBoundsEXTNative(double zmin, double zmax)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<double, double, void>)funcTable[0])(zmin, zmax);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_depth_bounds_test</remarks>
-		public static void DepthBoundsEXT(double zmin, double zmax)
+		public void DepthBoundsEXT(double zmin, double zmax)
 		{
 			DepthBoundsEXTNative(zmin, zmax);
 		}

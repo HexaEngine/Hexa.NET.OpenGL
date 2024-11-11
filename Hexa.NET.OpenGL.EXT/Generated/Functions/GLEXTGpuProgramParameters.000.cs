@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTGpuProgramParameters
+	public unsafe partial class GLEXTGpuProgramParameters
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParameters4fvEXTNative(GLProgramTarget target, uint index, int count, float* @params)
+		internal void ProgramEnvParameters4fvEXTNative(GLProgramTarget target, uint index, int count, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, float*, void>)funcTable[0])(target, index, count, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, float* @params)
+		public void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, float* @params)
 		{
 			ProgramEnvParameters4fvEXTNative(target, index, count, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
+		public void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
+		public void ProgramEnvParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParameters4fvEXTNative(GLProgramTarget target, uint index, int count, float* @params)
+		internal void ProgramLocalParameters4fvEXTNative(GLProgramTarget target, uint index, int count, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, float*, void>)funcTable[1])(target, index, count, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, float* @params)
+		public void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, float* @params)
 		{
 			ProgramLocalParameters4fvEXTNative(target, index, count, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
+		public void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_gpu_program_parameters</remarks>
-		public static void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
+		public void ProgramLocalParameters4fvEXT(GLProgramTarget target, uint index, int count, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{

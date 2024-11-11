@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTDisjointTimerQuery
+	public unsafe partial class GLEXTDisjointTimerQuery
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginQueryEXTNative(GLQueryTarget target, uint id)
+		internal void BeginQueryEXTNative(GLQueryTarget target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, uint, void>)funcTable[0])(target, id);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void BeginQueryEXT(GLQueryTarget target, uint id)
+		public void BeginQueryEXT(GLQueryTarget target, uint id)
 		{
 			BeginQueryEXTNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteQueriesEXTNative(int n, uint* ids)
+		internal void DeleteQueriesEXTNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, ids);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void DeleteQueriesEXT(int n, uint* ids)
+		public void DeleteQueriesEXT(int n, uint* ids)
 		{
 			DeleteQueriesEXTNative(n, ids);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void DeleteQueriesEX(uint id)
+		public void DeleteQueriesEX(uint id)
 		{
 			DeleteQueriesEXTNative(1, &id);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void DeleteQueriesEXT(int n, Span<uint> ids)
+		public void DeleteQueriesEXT(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void DeleteQueriesEXT(int n, ref uint ids)
+		public void DeleteQueriesEXT(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndQueryEXTNative(GLQueryTarget target)
+		internal void EndQueryEXTNative(GLQueryTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, void>)funcTable[2])(target);
@@ -101,13 +101,13 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void EndQueryEXT(GLQueryTarget target)
+		public void EndQueryEXT(GLQueryTarget target)
 		{
 			EndQueryEXTNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenQueriesEXTNative(int n, uint* ids)
+		internal void GenQueriesEXTNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, ids);
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GenQueriesEXT(int n, uint* ids)
+		public void GenQueriesEXT(int n, uint* ids)
 		{
 			GenQueriesEXTNative(n, ids);
 		}
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static uint GenQueriesEX()
+		public uint GenQueriesEX()
 		{
 			uint result;
 			GenQueriesEXTNative(1, &result);
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GenQueriesEXT(int n, Span<uint> ids)
+		public void GenQueriesEXT(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GenQueriesEXT(int n, ref uint ids)
+		public void GenQueriesEXT(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInteger64vEXTNative(GLGetPName pname, long* data)
+		internal void GetInteger64vEXTNative(GLGetPName pname, long* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLGetPName, long*, void>)funcTable[4])(pname, data);
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetInteger64vEXT(GLGetPName pname, long* data)
+		public void GetInteger64vEXT(GLGetPName pname, long* data)
 		{
 			GetInteger64vEXTNative(pname, data);
 		}
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetInteger64vEXT(GLGetPName pname, Span<long> data)
+		public void GetInteger64vEXT(GLGetPName pname, Span<long> data)
 		{
 			fixed (long* pdata0 = data)
 			{
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetInteger64vEXT(GLGetPName pname, ref long data)
+		public void GetInteger64vEXT(GLGetPName pname, ref long data)
 		{
 			fixed (long* pdata0 = &data)
 			{
@@ -204,7 +204,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjecti64vEXTNative(uint id, GLQueryObjectParameterName pname, long* @params)
+		internal void GetQueryObjecti64vEXTNative(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, long*, void>)funcTable[5])(id, pname, @params);
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, long* @params)
+		public void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, long* @params)
 		{
 			GetQueryObjecti64vEXTNative(id, pname, @params);
 		}
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
+		public void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, Span<long> @params)
 		{
 			fixed (long* pparams0 = @params)
 			{
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
+		public void GetQueryObjecti64vEXT(uint id, GLQueryObjectParameterName pname, ref long @params)
 		{
 			fixed (long* pparams0 = &@params)
 			{
@@ -247,7 +247,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectivEXTNative(uint id, GLQueryObjectParameterName pname, int* @params)
+		internal void GetQueryObjectivEXTNative(uint id, GLQueryObjectParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, int*, void>)funcTable[6])(id, pname, @params);
@@ -260,7 +260,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, int* @params)
+		public void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, int* @params)
 		{
 			GetQueryObjectivEXTNative(id, pname, @params);
 		}
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		public void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -281,7 +281,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, ref int @params)
+		public void GetQueryObjectivEXT(uint id, GLQueryObjectParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -290,7 +290,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectui64vEXTNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
+		internal void GetQueryObjectui64vEXTNative(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, ulong*, void>)funcTable[7])(id, pname, @params);
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ulong* @params)
+		public void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ulong* @params)
 		{
 			GetQueryObjectui64vEXTNative(id, pname, @params);
 		}
@@ -312,7 +312,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
+		public void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, Span<ulong> @params)
 		{
 			fixed (ulong* pparams0 = @params)
 			{
@@ -324,7 +324,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_timer_query<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
+		public void GetQueryObjectui64vEXT(uint id, GLQueryObjectParameterName pname, ref ulong @params)
 		{
 			fixed (ulong* pparams0 = &@params)
 			{
@@ -333,7 +333,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectuivEXTNative(uint id, GLQueryObjectParameterName pname, uint* @params)
+		internal void GetQueryObjectuivEXTNative(uint id, GLQueryObjectParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, uint*, void>)funcTable[8])(id, pname, @params);
@@ -346,7 +346,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, uint* @params)
+		public void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, uint* @params)
 		{
 			GetQueryObjectuivEXTNative(id, pname, @params);
 		}
@@ -355,7 +355,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		public void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -367,7 +367,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, ref uint @params)
+		public void GetQueryObjectuivEXT(uint id, GLQueryObjectParameterName pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -376,7 +376,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryivEXTNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
+		internal void GetQueryivEXTNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, GLQueryParameterName, int*, void>)funcTable[9])(target, pname, @params);
@@ -389,7 +389,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, int* @params)
+		public void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, int* @params)
 		{
 			GetQueryivEXTNative(target, pname, @params);
 		}
@@ -398,7 +398,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		public void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -410,7 +410,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
+		public void GetQueryivEXT(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -419,7 +419,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsQueryEXTNative(uint id)
+		internal byte IsQueryEXTNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[10])(id);
@@ -432,14 +432,14 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query<br/>GL_EXT_occlusion_query_boolean</remarks>
-		public static bool IsQueryEXT(uint id)
+		public bool IsQueryEXT(uint id)
 		{
 			byte ret = IsQueryEXTNative(id);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void QueryCounterEXTNative(uint id, GLQueryCounterTarget target)
+		internal void QueryCounterEXTNative(uint id, GLQueryCounterTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryCounterTarget, void>)funcTable[11])(id, target);
@@ -452,7 +452,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_disjoint_timer_query</remarks>
-		public static void QueryCounterEXT(uint id, GLQueryCounterTarget target)
+		public void QueryCounterEXT(uint id, GLQueryCounterTarget target)
 		{
 			QueryCounterEXTNative(id, target);
 		}

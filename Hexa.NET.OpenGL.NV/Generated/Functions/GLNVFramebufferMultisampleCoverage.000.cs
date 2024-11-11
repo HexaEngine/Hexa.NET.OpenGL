@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVFramebufferMultisampleCoverage
+	public unsafe partial class GLNVFramebufferMultisampleCoverage
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RenderbufferStorageMultisampleCoverageNVNative(GLRenderbufferTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
+		internal void RenderbufferStorageMultisampleCoverageNVNative(GLRenderbufferTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, int, GLInternalFormat, int, int, void>)funcTable[0])(target, coverageSamples, colorSamples, internalformat, width, height);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_framebuffer_multisample_coverage</remarks>
-		public static void RenderbufferStorageMultisampleCoverageNV(GLRenderbufferTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
+		public void RenderbufferStorageMultisampleCoverageNV(GLRenderbufferTarget target, int coverageSamples, int colorSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleCoverageNVNative(target, coverageSamples, colorSamples, internalformat, width, height);
 		}

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBOcclusionQuery
+	public unsafe partial class GLARBOcclusionQuery
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginQueryARBNative(GLQueryTarget target, uint id)
+		internal void BeginQueryARBNative(GLQueryTarget target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, uint, void>)funcTable[0])(target, id);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void BeginQueryARB(GLQueryTarget target, uint id)
+		public void BeginQueryARB(GLQueryTarget target, uint id)
 		{
 			BeginQueryARBNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteQueriesARBNative(int n, uint* ids)
+		internal void DeleteQueriesARBNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, ids);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void DeleteQueriesARB(int n, uint* ids)
+		public void DeleteQueriesARB(int n, uint* ids)
 		{
 			DeleteQueriesARBNative(n, ids);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void DeleteQueriesAR(uint id)
+		public void DeleteQueriesAR(uint id)
 		{
 			DeleteQueriesARBNative(1, &id);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void DeleteQueriesARB(int n, Span<uint> ids)
+		public void DeleteQueriesARB(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void DeleteQueriesARB(int n, ref uint ids)
+		public void DeleteQueriesARB(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndQueryARBNative(GLQueryTarget target)
+		internal void EndQueryARBNative(GLQueryTarget target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, void>)funcTable[2])(target);
@@ -101,13 +101,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void EndQueryARB(GLQueryTarget target)
+		public void EndQueryARB(GLQueryTarget target)
 		{
 			EndQueryARBNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenQueriesARBNative(int n, uint* ids)
+		internal void GenQueriesARBNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, ids);
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GenQueriesARB(int n, uint* ids)
+		public void GenQueriesARB(int n, uint* ids)
 		{
 			GenQueriesARBNative(n, ids);
 		}
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static uint GenQueriesAR()
+		public uint GenQueriesAR()
 		{
 			uint result;
 			GenQueriesARBNative(1, &result);
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GenQueriesARB(int n, Span<uint> ids)
+		public void GenQueriesARB(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GenQueriesARB(int n, ref uint ids)
+		public void GenQueriesARB(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectivARBNative(uint id, GLQueryObjectParameterName pname, int* @params)
+		internal void GetQueryObjectivARBNative(uint id, GLQueryObjectParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, int*, void>)funcTable[4])(id, pname, @params);
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, int* @params)
+		public void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, int* @params)
 		{
 			GetQueryObjectivARBNative(id, pname, @params);
 		}
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, Span<int> @params)
+		public void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, ref int @params)
+		public void GetQueryObjectivARB(uint id, GLQueryObjectParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -204,7 +204,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryObjectuivARBNative(uint id, GLQueryObjectParameterName pname, uint* @params)
+		internal void GetQueryObjectuivARBNative(uint id, GLQueryObjectParameterName pname, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLQueryObjectParameterName, uint*, void>)funcTable[5])(id, pname, @params);
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, uint* @params)
+		public void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, uint* @params)
 		{
 			GetQueryObjectuivARBNative(id, pname, @params);
 		}
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
+		public void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -238,7 +238,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, ref uint @params)
+		public void GetQueryObjectuivARB(uint id, GLQueryObjectParameterName pname, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -247,7 +247,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetQueryivARBNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
+		internal void GetQueryivARBNative(GLQueryTarget target, GLQueryParameterName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLQueryTarget, GLQueryParameterName, int*, void>)funcTable[6])(target, pname, @params);
@@ -260,7 +260,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, int* @params)
+		public void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, int* @params)
 		{
 			GetQueryivARBNative(target, pname, @params);
 		}
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
+		public void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -281,7 +281,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
+		public void GetQueryivARB(GLQueryTarget target, GLQueryParameterName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -290,7 +290,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsQueryARBNative(uint id)
+		internal byte IsQueryARBNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[7])(id);
@@ -303,7 +303,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_occlusion_query</remarks>
-		public static bool IsQueryARB(uint id)
+		public bool IsQueryARB(uint id)
 		{
 			byte ret = IsQueryARBNative(id);
 			return ret != 0;

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVDrawBuffers
+	public unsafe partial class GLNVDrawBuffers
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawBuffersNVNative(int n, GLEnum* bufs)
+		internal void DrawBuffersNVNative(int n, GLEnum* bufs)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLEnum*, void>)funcTable[0])(n, bufs);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_buffers</remarks>
-		public static void DrawBuffersNV(int n, GLEnum* bufs)
+		public void DrawBuffersNV(int n, GLEnum* bufs)
 		{
 			DrawBuffersNVNative(n, bufs);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_buffers</remarks>
-		public static void DrawBuffersNV(int n, Span<GLEnum> bufs)
+		public void DrawBuffersNV(int n, Span<GLEnum> bufs)
 		{
 			fixed (GLEnum* pbufs0 = bufs)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_draw_buffers</remarks>
-		public static void DrawBuffersNV(int n, ref GLEnum bufs)
+		public void DrawBuffersNV(int n, ref GLEnum bufs)
 		{
 			fixed (GLEnum* pbufs0 = &bufs)
 			{

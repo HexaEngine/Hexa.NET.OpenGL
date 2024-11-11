@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTHistogram
+	public unsafe partial class GLEXTHistogram
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramEXTNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal void GetHistogramEXTNative(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[0])(target, *((byte*)(&reset)), format, type, values);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		public void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetHistogramEXTNative(target, reset, format, type, values);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		public void GetHistogramEXT(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetHistogramEXTNative(target, reset, format, type, (void*)values);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramEXT<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		public void GetHistogramEXT<TValues>(GLHistogramTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramParameterfvEXTNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
+		internal void GetHistogramParameterfvEXTNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, GLGetHistogramParameterPNameEXT, float*, void>)funcTable[1])(target, pname, @params);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
+		public void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, float* @params)
 		{
 			GetHistogramParameterfvEXTNative(target, pname, @params);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
+		public void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -91,7 +91,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref float @params)
+		public void GetHistogramParameterfvEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -100,7 +100,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetHistogramParameterivEXTNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
+		internal void GetHistogramParameterivEXTNative(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, GLGetHistogramParameterPNameEXT, int*, void>)funcTable[2])(target, pname, @params);
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
+		public void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, int* @params)
 		{
 			GetHistogramParameterivEXTNative(target, pname, @params);
 		}
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
+		public void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -134,7 +134,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref int @params)
+		public void GetHistogramParameterivEXT(GLHistogramTargetEXT target, GLGetHistogramParameterPNameEXT pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -143,7 +143,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxEXTNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		internal void GetMinmaxEXTNative(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, byte, GLPixelFormat, GLPixelType, void*, void>)funcTable[3])(target, *((byte*)(&reset)), format, type, values);
@@ -156,7 +156,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
+		public void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, void* values)
 		{
 			GetMinmaxEXTNative(target, reset, format, type, values);
 		}
@@ -165,7 +165,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
+		public void GetMinmaxEXT(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, nint values)
 		{
 			GetMinmaxEXTNative(target, reset, format, type, (void*)values);
 		}
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxEXT<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
+		public void GetMinmaxEXT<TValues>(GLMinmaxTargetEXT target, bool reset, GLPixelFormat format, GLPixelType type, Span<TValues> values) where TValues : unmanaged
 		{
 			fixed (TValues* pvalues0 = values)
 			{
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxParameterfvEXTNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
+		internal void GetMinmaxParameterfvEXTNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLGetMinmaxParameterPNameEXT, float*, void>)funcTable[4])(target, pname, @params);
@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
+		public void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, float* @params)
 		{
 			GetMinmaxParameterfvEXTNative(target, pname, @params);
 		}
@@ -205,7 +205,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
+		public void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -217,7 +217,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref float @params)
+		public void GetMinmaxParameterfvEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -226,7 +226,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetMinmaxParameterivEXTNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
+		internal void GetMinmaxParameterivEXTNative(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLGetMinmaxParameterPNameEXT, int*, void>)funcTable[5])(target, pname, @params);
@@ -239,7 +239,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
+		public void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, int* @params)
 		{
 			GetMinmaxParameterivEXTNative(target, pname, @params);
 		}
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
+		public void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -260,7 +260,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref int @params)
+		public void GetMinmaxParameterivEXT(GLMinmaxTargetEXT target, GLGetMinmaxParameterPNameEXT pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -269,7 +269,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void HistogramEXTNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
+		internal void HistogramEXTNative(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, int, GLInternalFormat, byte, void>)funcTable[6])(target, width, internalformat, *((byte*)(&sink)));
@@ -282,13 +282,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void HistogramEXT(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
+		public void HistogramEXT(GLHistogramTargetEXT target, int width, GLInternalFormat internalformat, bool sink)
 		{
 			HistogramEXTNative(target, width, internalformat, sink);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MinmaxEXTNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
+		internal void MinmaxEXTNative(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, GLInternalFormat, byte, void>)funcTable[7])(target, internalformat, *((byte*)(&sink)));
@@ -301,13 +301,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void MinmaxEXT(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
+		public void MinmaxEXT(GLMinmaxTargetEXT target, GLInternalFormat internalformat, bool sink)
 		{
 			MinmaxEXTNative(target, internalformat, sink);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResetHistogramEXTNative(GLHistogramTargetEXT target)
+		internal void ResetHistogramEXTNative(GLHistogramTargetEXT target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLHistogramTargetEXT, void>)funcTable[8])(target);
@@ -320,13 +320,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void ResetHistogramEXT(GLHistogramTargetEXT target)
+		public void ResetHistogramEXT(GLHistogramTargetEXT target)
 		{
 			ResetHistogramEXTNative(target);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResetMinmaxEXTNative(GLMinmaxTargetEXT target)
+		internal void ResetMinmaxEXTNative(GLMinmaxTargetEXT target)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLMinmaxTargetEXT, void>)funcTable[9])(target);
@@ -339,7 +339,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_histogram</remarks>
-		public static void ResetMinmaxEXT(GLMinmaxTargetEXT target)
+		public void ResetMinmaxEXT(GLMinmaxTargetEXT target)
 		{
 			ResetMinmaxEXTNative(target);
 		}

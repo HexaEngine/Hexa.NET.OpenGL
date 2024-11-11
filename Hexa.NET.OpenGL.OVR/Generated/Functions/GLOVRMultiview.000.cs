@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.OVR
 {
-	public static unsafe partial class GLOVRMultiview
+	public unsafe partial class GLOVRMultiview
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferTextureMultiviewOVRNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
+		internal void FramebufferTextureMultiviewOVRNative(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachment, uint, int, int, int, void>)funcTable[0])(target, attachment, texture, level, baseViewIndex, numViews);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.OVR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OVR_multiview</remarks>
-		public static void FramebufferTextureMultiviewOVR(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
+		public void FramebufferTextureMultiviewOVR(GLFramebufferTarget target, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
 		{
 			FramebufferTextureMultiviewOVRNative(target, attachment, texture, level, baseViewIndex, numViews);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferTextureMultiviewOVRNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
+		internal void NamedFramebufferTextureMultiviewOVRNative(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFramebufferAttachment, uint, int, int, int, void>)funcTable[1])(framebuffer, attachment, texture, level, baseViewIndex, numViews);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.OVR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_OVR_multiview</remarks>
-		public static void NamedFramebufferTextureMultiviewOVR(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
+		public void NamedFramebufferTextureMultiviewOVR(uint framebuffer, GLFramebufferAttachment attachment, uint texture, int level, int baseViewIndex, int numViews)
 		{
 			NamedFramebufferTextureMultiviewOVRNative(framebuffer, attachment, texture, level, baseViewIndex, numViews);
 		}

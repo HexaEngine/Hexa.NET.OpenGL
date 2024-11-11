@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTStencilClearTag
+	public unsafe partial class GLEXTStencilClearTag
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void StencilClearTagEXTNative(int stencilTagBits, uint stencilClearTag)
+		internal void StencilClearTagEXTNative(int stencilTagBits, uint stencilClearTag)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint, void>)funcTable[0])(stencilTagBits, stencilClearTag);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_stencil_clear_tag</remarks>
-		public static void StencilClearTagEXT(int stencilTagBits, uint stencilClearTag)
+		public void StencilClearTagEXT(int stencilTagBits, uint stencilClearTag)
 		{
 			StencilClearTagEXTNative(stencilTagBits, stencilClearTag);
 		}

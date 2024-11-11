@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBVertexBlend
+	public unsafe partial class GLARBVertexBlend
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexBlendARBNative(int count)
+		internal void VertexBlendARBNative(int count)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, void>)funcTable[0])(count);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void VertexBlendARB(int count)
+		public void VertexBlendARB(int count)
 		{
 			VertexBlendARBNative(count);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightPointerARBNative(int size, GLWeightPointerTypeARB type, int stride, void* pointer)
+		internal void WeightPointerARBNative(int size, GLWeightPointerTypeARB type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, GLWeightPointerTypeARB, int, void*, void>)funcTable[1])(size, type, stride, pointer);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, void* pointer)
+		public void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, void* pointer)
 		{
 			WeightPointerARBNative(size, type, stride, pointer);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, nint pointer)
+		public void WeightPointerARB(int size, GLWeightPointerTypeARB type, int stride, nint pointer)
 		{
 			WeightPointerARBNative(size, type, stride, (void*)pointer);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightPointerARB<TPointer>(int size, GLWeightPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void WeightPointerARB<TPointer>(int size, GLWeightPointerTypeARB type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{
@@ -76,7 +76,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightbvARBNative(int size, sbyte* weights)
+		internal void WeightbvARBNative(int size, sbyte* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, sbyte*, void>)funcTable[2])(size, weights);
@@ -89,7 +89,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightbvARB(int size, sbyte* weights)
+		public void WeightbvARB(int size, sbyte* weights)
 		{
 			WeightbvARBNative(size, weights);
 		}
@@ -98,7 +98,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightbvARB(int size, Span<sbyte> weights)
+		public void WeightbvARB(int size, Span<sbyte> weights)
 		{
 			fixed (sbyte* pweights0 = weights)
 			{
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightbvARB(int size, ref sbyte weights)
+		public void WeightbvARB(int size, ref sbyte weights)
 		{
 			fixed (sbyte* pweights0 = &weights)
 			{
@@ -119,7 +119,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightdvARBNative(int size, double* weights)
+		internal void WeightdvARBNative(int size, double* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, double*, void>)funcTable[3])(size, weights);
@@ -132,7 +132,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightdvARB(int size, double* weights)
+		public void WeightdvARB(int size, double* weights)
 		{
 			WeightdvARBNative(size, weights);
 		}
@@ -141,7 +141,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightdvARB(int size, Span<double> weights)
+		public void WeightdvARB(int size, Span<double> weights)
 		{
 			fixed (double* pweights0 = weights)
 			{
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightdvARB(int size, ref double weights)
+		public void WeightdvARB(int size, ref double weights)
 		{
 			fixed (double* pweights0 = &weights)
 			{
@@ -162,7 +162,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightfvARBNative(int size, float* weights)
+		internal void WeightfvARBNative(int size, float* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float*, void>)funcTable[4])(size, weights);
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightfvARB(int size, float* weights)
+		public void WeightfvARB(int size, float* weights)
 		{
 			WeightfvARBNative(size, weights);
 		}
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightfvARB(int size, Span<float> weights)
+		public void WeightfvARB(int size, Span<float> weights)
 		{
 			fixed (float* pweights0 = weights)
 			{
@@ -196,7 +196,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightfvARB(int size, ref float weights)
+		public void WeightfvARB(int size, ref float weights)
 		{
 			fixed (float* pweights0 = &weights)
 			{
@@ -205,7 +205,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightivARBNative(int size, int* weights)
+		internal void WeightivARBNative(int size, int* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[5])(size, weights);
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightivARB(int size, int* weights)
+		public void WeightivARB(int size, int* weights)
 		{
 			WeightivARBNative(size, weights);
 		}
@@ -227,7 +227,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightivARB(int size, Span<int> weights)
+		public void WeightivARB(int size, Span<int> weights)
 		{
 			fixed (int* pweights0 = weights)
 			{
@@ -239,7 +239,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightivARB(int size, ref int weights)
+		public void WeightivARB(int size, ref int weights)
 		{
 			fixed (int* pweights0 = &weights)
 			{
@@ -248,7 +248,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightsvARBNative(int size, short* weights)
+		internal void WeightsvARBNative(int size, short* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, short*, void>)funcTable[6])(size, weights);
@@ -261,7 +261,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightsvARB(int size, short* weights)
+		public void WeightsvARB(int size, short* weights)
 		{
 			WeightsvARBNative(size, weights);
 		}
@@ -270,7 +270,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightsvARB(int size, Span<short> weights)
+		public void WeightsvARB(int size, Span<short> weights)
 		{
 			fixed (short* pweights0 = weights)
 			{
@@ -282,7 +282,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightsvARB(int size, ref short weights)
+		public void WeightsvARB(int size, ref short weights)
 		{
 			fixed (short* pweights0 = &weights)
 			{
@@ -291,7 +291,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightubvARBNative(int size, byte* weights)
+		internal void WeightubvARBNative(int size, byte* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[7])(size, weights);
@@ -304,7 +304,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightubvARB(int size, byte* weights)
+		public void WeightubvARB(int size, byte* weights)
 		{
 			WeightubvARBNative(size, weights);
 		}
@@ -313,7 +313,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightubvARB(int size, string weights)
+		public void WeightubvARB(int size, string weights)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -343,7 +343,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightubvARB(int size, Span<byte> weights)
+		public void WeightubvARB(int size, Span<byte> weights)
 		{
 			fixed (byte* pweights0 = weights)
 			{
@@ -355,7 +355,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightubvARB(int size, ref byte weights)
+		public void WeightubvARB(int size, ref byte weights)
 		{
 			fixed (byte* pweights0 = &weights)
 			{
@@ -364,7 +364,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightuivARBNative(int size, uint* weights)
+		internal void WeightuivARBNative(int size, uint* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[8])(size, weights);
@@ -377,7 +377,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightuivARB(int size, uint* weights)
+		public void WeightuivARB(int size, uint* weights)
 		{
 			WeightuivARBNative(size, weights);
 		}
@@ -386,7 +386,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightuivARB(int size, Span<uint> weights)
+		public void WeightuivARB(int size, Span<uint> weights)
 		{
 			fixed (uint* pweights0 = weights)
 			{
@@ -398,7 +398,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightuivARB(int size, ref uint weights)
+		public void WeightuivARB(int size, ref uint weights)
 		{
 			fixed (uint* pweights0 = &weights)
 			{
@@ -407,7 +407,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void WeightusvARBNative(int size, ushort* weights)
+		internal void WeightusvARBNative(int size, ushort* weights)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ushort*, void>)funcTable[9])(size, weights);
@@ -420,7 +420,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightusvARB(int size, ushort* weights)
+		public void WeightusvARB(int size, ushort* weights)
 		{
 			WeightusvARBNative(size, weights);
 		}
@@ -429,7 +429,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightusvARB(int size, Span<ushort> weights)
+		public void WeightusvARB(int size, Span<ushort> weights)
 		{
 			fixed (ushort* pweights0 = weights)
 			{
@@ -441,7 +441,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_vertex_blend</remarks>
-		public static void WeightusvARB(int size, ref ushort weights)
+		public void WeightusvARB(int size, ref ushort weights)
 		{
 			fixed (ushort* pweights0 = &weights)
 			{

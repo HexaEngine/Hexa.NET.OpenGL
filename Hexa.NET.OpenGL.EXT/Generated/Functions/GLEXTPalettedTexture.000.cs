@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTPalettedTexture
+	public unsafe partial class GLEXTPalettedTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ColorTableEXTNative(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, void* table)
+		internal void ColorTableEXTNative(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLInternalFormat, int, GLPixelFormat, GLPixelType, void*, void>)funcTable[0])(target, internalFormat, width, format, type, table);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, void* table)
+		public void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, void* table)
 		{
 			ColorTableEXTNative(target, internalFormat, width, format, type, table);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, nint table)
+		public void ColorTableEXT(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, nint table)
 		{
 			ColorTableEXTNative(target, internalFormat, width, format, type, (void*)table);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void ColorTableEXT<TTable>(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
+		public void ColorTableEXT<TTable>(GLColorTableTarget target, GLInternalFormat internalFormat, int width, GLPixelFormat format, GLPixelType type, Span<TTable> table) where TTable : unmanaged
 		{
 			fixed (TTable* ptable0 = table)
 			{
@@ -57,7 +57,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetColorTableEXTNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
+		internal void GetColorTableEXTNative(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLPixelFormat, GLPixelType, void*, void>)funcTable[1])(target, format, type, data);
@@ -70,7 +70,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
+		public void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, void* data)
 		{
 			GetColorTableEXTNative(target, format, type, data);
 		}
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint data)
+		public void GetColorTableEXT(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, nint data)
 		{
 			GetColorTableEXTNative(target, format, type, (void*)data);
 		}
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableEXT<TData>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
+		public void GetColorTableEXT<TData>(GLColorTableTarget target, GLPixelFormat format, GLPixelType type, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -97,7 +97,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetColorTableParameterfvEXTNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
+		internal void GetColorTableParameterfvEXTNative(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLColorTableParameterPName, float*, void>)funcTable[2])(target, pname, @params);
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
+		public void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, float* @params)
 		{
 			GetColorTableParameterfvEXTNative(target, pname, @params);
 		}
@@ -119,7 +119,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
+		public void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -131,7 +131,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
+		public void GetColorTableParameterfvEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetColorTableParameterivEXTNative(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
+		internal void GetColorTableParameterivEXTNative(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLColorTableTarget, GLColorTableParameterPName, int*, void>)funcTable[3])(target, pname, @params);
@@ -153,7 +153,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
+		public void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, int* @params)
 		{
 			GetColorTableParameterivEXTNative(target, pname, @params);
 		}
@@ -162,7 +162,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
+		public void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_paletted_texture</remarks>
-		public static void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
+		public void GetColorTableParameterivEXT(GLColorTableTarget target, GLColorTableParameterPName pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{

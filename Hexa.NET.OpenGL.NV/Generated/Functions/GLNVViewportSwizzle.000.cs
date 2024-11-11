@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVViewportSwizzle
+	public unsafe partial class GLNVViewportSwizzle
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ViewportSwizzleNVNative(uint index, GLEnum swizzlex, GLEnum swizzley, GLEnum swizzlez, GLEnum swizzlew)
+		internal void ViewportSwizzleNVNative(uint index, GLEnum swizzlex, GLEnum swizzley, GLEnum swizzlez, GLEnum swizzlew)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, GLEnum, GLEnum, GLEnum, void>)funcTable[0])(index, swizzlex, swizzley, swizzlez, swizzlew);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_viewport_swizzle</remarks>
-		public static void ViewportSwizzleNV(uint index, GLEnum swizzlex, GLEnum swizzley, GLEnum swizzlez, GLEnum swizzlew)
+		public void ViewportSwizzleNV(uint index, GLEnum swizzlex, GLEnum swizzley, GLEnum swizzlez, GLEnum swizzlew)
 		{
 			ViewportSwizzleNVNative(index, swizzlex, swizzley, swizzlez, swizzlew);
 		}

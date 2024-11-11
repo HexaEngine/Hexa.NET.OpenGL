@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.KHR
 {
-	public static unsafe partial class GLKHRBlendEquationAdvanced
+	public unsafe partial class GLKHRBlendEquationAdvanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BlendBarrierKHRNative()
+		internal void BlendBarrierKHRNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.KHR
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_KHR_blend_equation_advanced</remarks>
-		public static void BlendBarrierKHR()
+		public void BlendBarrierKHR()
 		{
 			BlendBarrierKHRNative();
 		}

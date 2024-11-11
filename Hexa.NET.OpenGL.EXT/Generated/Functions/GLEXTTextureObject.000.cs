@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTTextureObject
+	public unsafe partial class GLEXTTextureObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte AreTexturesResidentEXTNative(int n, uint* textures, byte* residences)
+		internal byte AreTexturesResidentEXTNative(int n, uint* textures, byte* residences)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<int, uint*, byte*, byte>)funcTable[0])(n, textures, residences);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, uint* textures, byte* residences)
+		public bool AreTexturesResidentEXT(int n, uint* textures, byte* residences)
 		{
 			byte ret = AreTexturesResidentEXTNative(n, textures, residences);
 			return ret != 0;
@@ -40,7 +40,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, Span<uint> textures, byte* residences)
+		public bool AreTexturesResidentEXT(int n, Span<uint> textures, byte* residences)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -53,7 +53,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, ref uint textures, byte* residences)
+		public bool AreTexturesResidentEXT(int n, ref uint textures, byte* residences)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -66,7 +66,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, uint* textures, string residences)
+		public bool AreTexturesResidentEXT(int n, uint* textures, string residences)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -97,7 +97,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, uint* textures, Span<byte> residences)
+		public bool AreTexturesResidentEXT(int n, uint* textures, Span<byte> residences)
 		{
 			fixed (byte* presidences0 = residences)
 			{
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, uint* textures, ref byte residences)
+		public bool AreTexturesResidentEXT(int n, uint* textures, ref byte residences)
 		{
 			fixed (byte* presidences0 = &residences)
 			{
@@ -123,7 +123,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, Span<uint> textures, Span<byte> residences)
+		public bool AreTexturesResidentEXT(int n, Span<uint> textures, Span<byte> residences)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -139,7 +139,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool AreTexturesResidentEXT(int n, ref uint textures, ref byte residences)
+		public bool AreTexturesResidentEXT(int n, ref uint textures, ref byte residences)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTextureEXTNative(GLTextureTarget target, uint texture)
+		internal void BindTextureEXTNative(GLTextureTarget target, uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTextureTarget, uint, void>)funcTable[1])(target, texture);
@@ -165,13 +165,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void BindTextureEXT(GLTextureTarget target, uint texture)
+		public void BindTextureEXT(GLTextureTarget target, uint texture)
 		{
 			BindTextureEXTNative(target, texture);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteTexturesEXTNative(int n, uint* textures)
+		internal void DeleteTexturesEXTNative(int n, uint* textures)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, textures);
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void DeleteTexturesEXT(int n, uint* textures)
+		public void DeleteTexturesEXT(int n, uint* textures)
 		{
 			DeleteTexturesEXTNative(n, textures);
 		}
@@ -193,7 +193,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void DeleteTexturesEX(uint texture)
+		public void DeleteTexturesEX(uint texture)
 		{
 			DeleteTexturesEXTNative(1, &texture);
 		}
@@ -202,7 +202,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void DeleteTexturesEXT(int n, Span<uint> textures)
+		public void DeleteTexturesEXT(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -214,7 +214,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void DeleteTexturesEXT(int n, ref uint textures)
+		public void DeleteTexturesEXT(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -223,7 +223,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenTexturesEXTNative(int n, uint* textures)
+		internal void GenTexturesEXTNative(int n, uint* textures)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, textures);
@@ -236,7 +236,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void GenTexturesEXT(int n, uint* textures)
+		public void GenTexturesEXT(int n, uint* textures)
 		{
 			GenTexturesEXTNative(n, textures);
 		}
@@ -245,7 +245,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static uint GenTexturesEX()
+		public uint GenTexturesEX()
 		{
 			uint result;
 			GenTexturesEXTNative(1, &result);
@@ -256,7 +256,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void GenTexturesEXT(int n, Span<uint> textures)
+		public void GenTexturesEXT(int n, Span<uint> textures)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -268,7 +268,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void GenTexturesEXT(int n, ref uint textures)
+		public void GenTexturesEXT(int n, ref uint textures)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -277,7 +277,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsTextureEXTNative(uint texture)
+		internal byte IsTextureEXTNative(uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[4])(texture);
@@ -290,14 +290,14 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static bool IsTextureEXT(uint texture)
+		public bool IsTextureEXT(uint texture)
 		{
 			byte ret = IsTextureEXTNative(texture);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PrioritizeTexturesEXTNative(int n, uint* textures, float* priorities)
+		internal void PrioritizeTexturesEXTNative(int n, uint* textures, float* priorities)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, float*, void>)funcTable[5])(n, textures, priorities);
@@ -310,7 +310,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, uint* textures, float* priorities)
+		public void PrioritizeTexturesEXT(int n, uint* textures, float* priorities)
 		{
 			PrioritizeTexturesEXTNative(n, textures, priorities);
 		}
@@ -319,7 +319,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, Span<uint> textures, float* priorities)
+		public void PrioritizeTexturesEXT(int n, Span<uint> textures, float* priorities)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -331,7 +331,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, ref uint textures, float* priorities)
+		public void PrioritizeTexturesEXT(int n, ref uint textures, float* priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{
@@ -343,7 +343,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, uint* textures, Span<float> priorities)
+		public void PrioritizeTexturesEXT(int n, uint* textures, Span<float> priorities)
 		{
 			fixed (float* ppriorities0 = priorities)
 			{
@@ -355,7 +355,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, uint* textures, ref float priorities)
+		public void PrioritizeTexturesEXT(int n, uint* textures, ref float priorities)
 		{
 			fixed (float* ppriorities0 = &priorities)
 			{
@@ -367,7 +367,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, Span<uint> textures, Span<float> priorities)
+		public void PrioritizeTexturesEXT(int n, Span<uint> textures, Span<float> priorities)
 		{
 			fixed (uint* ptextures0 = textures)
 			{
@@ -382,7 +382,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_texture_object</remarks>
-		public static void PrioritizeTexturesEXT(int n, ref uint textures, ref float priorities)
+		public void PrioritizeTexturesEXT(int n, ref uint textures, ref float priorities)
 		{
 			fixed (uint* ptextures0 = &textures)
 			{

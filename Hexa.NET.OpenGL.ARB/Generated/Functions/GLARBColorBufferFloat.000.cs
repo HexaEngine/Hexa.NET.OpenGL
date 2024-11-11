@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBColorBufferFloat
+	public unsafe partial class GLARBColorBufferFloat
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClampColorARBNative(GLClampColorTargetARB target, GLClampColorModeARB clamp)
+		internal void ClampColorARBNative(GLClampColorTargetARB target, GLClampColorModeARB clamp)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClampColorTargetARB, GLClampColorModeARB, void>)funcTable[0])(target, clamp);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_color_buffer_float</remarks>
-		public static void ClampColorARB(GLClampColorTargetARB target, GLClampColorModeARB clamp)
+		public void ClampColorARB(GLClampColorTargetARB target, GLClampColorModeARB clamp)
 		{
 			ClampColorARBNative(target, clamp);
 		}

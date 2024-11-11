@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTX11SyncObject
+	public unsafe partial class GLEXTX11SyncObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static GLSync ImportSyncEXTNative(GLEnum externalSyncType, nint externalSync, uint flags)
+		internal GLSync ImportSyncEXTNative(GLEnum externalSyncType, nint externalSync, uint flags)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLEnum, nint, uint, GLSync>)funcTable[0])(externalSyncType, externalSync, flags);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_x11_sync_object</remarks>
-		public static GLSync ImportSyncEXT(GLEnum externalSyncType, nint externalSync, uint flags)
+		public GLSync ImportSyncEXT(GLEnum externalSyncType, nint externalSync, uint flags)
 		{
 			GLSync ret = ImportSyncEXTNative(externalSyncType, externalSync, flags);
 			return ret;

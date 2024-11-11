@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.AMD
 {
-	public static unsafe partial class GLAMDFramebufferMultisampleAdvanced
+	public unsafe partial class GLAMDFramebufferMultisampleAdvanced
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedRenderbufferStorageMultisampleAdvancedAMDNative(uint renderbuffer, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
+		internal void NamedRenderbufferStorageMultisampleAdvancedAMDNative(uint renderbuffer, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, GLInternalFormat, int, int, void>)funcTable[0])(renderbuffer, samples, storageSamples, internalformat, width, height);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_multisample_advanced</remarks>
-		public static void NamedRenderbufferStorageMultisampleAdvancedAMD(uint renderbuffer, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
+		public void NamedRenderbufferStorageMultisampleAdvancedAMD(uint renderbuffer, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			NamedRenderbufferStorageMultisampleAdvancedAMDNative(renderbuffer, samples, storageSamples, internalformat, width, height);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void RenderbufferStorageMultisampleAdvancedAMDNative(GLRenderbufferTarget target, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
+		internal void RenderbufferStorageMultisampleAdvancedAMDNative(GLRenderbufferTarget target, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLRenderbufferTarget, int, int, GLInternalFormat, int, int, void>)funcTable[1])(target, samples, storageSamples, internalformat, width, height);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_multisample_advanced</remarks>
-		public static void RenderbufferStorageMultisampleAdvancedAMD(GLRenderbufferTarget target, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
+		public void RenderbufferStorageMultisampleAdvancedAMD(GLRenderbufferTarget target, int samples, int storageSamples, GLInternalFormat internalformat, int width, int height)
 		{
 			RenderbufferStorageMultisampleAdvancedAMDNative(target, samples, storageSamples, internalformat, width, height);
 		}

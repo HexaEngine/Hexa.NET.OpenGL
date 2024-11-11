@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVParameterBufferObject
+	public unsafe partial class GLNVParameterBufferObject
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramBufferParametersIivNVNative(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* @params)
+		internal void ProgramBufferParametersIivNVNative(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint, int, int*, void>)funcTable[0])(target, bindingIndex, wordIndex, count, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* @params)
+		public void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* @params)
 		{
 			ProgramBufferParametersIivNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<int> @params)
+		public void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref int @params)
+		public void ProgramBufferParametersIivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramBufferParametersIuivNVNative(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* @params)
+		internal void ProgramBufferParametersIuivNVNative(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint, int, uint*, void>)funcTable[1])(target, bindingIndex, wordIndex, count, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* @params)
+		public void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* @params)
 		{
 			ProgramBufferParametersIuivNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<uint> @params)
+		public void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref uint @params)
+		public void ProgramBufferParametersIuivNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramBufferParametersfvNVNative(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* @params)
+		internal void ProgramBufferParametersfvNVNative(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint, int, float*, void>)funcTable[2])(target, bindingIndex, wordIndex, count, @params);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* @params)
+		public void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* @params)
 		{
 			ProgramBufferParametersfvNVNative(target, bindingIndex, wordIndex, count, @params);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<float> @params)
+		public void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_parameter_buffer_object</remarks>
-		public static void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref float @params)
+		public void ProgramBufferParametersfvNV(GLProgramTarget target, uint bindingIndex, uint wordIndex, int count, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{

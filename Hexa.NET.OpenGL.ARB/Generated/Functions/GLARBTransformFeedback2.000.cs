@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBTransformFeedback2
+	public unsafe partial class GLARBTransformFeedback2
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindTransformFeedbackNative(GLBindTransformFeedbackTarget target, uint id)
+		internal void BindTransformFeedbackNative(GLBindTransformFeedbackTarget target, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBindTransformFeedbackTarget, uint, void>)funcTable[0])(target, id);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Bind a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void BindTransformFeedback(GLBindTransformFeedbackTarget target, uint id)
+		public void BindTransformFeedback(GLBindTransformFeedbackTarget target, uint id)
 		{
 			BindTransformFeedbackNative(target, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteTransformFeedbacksNative(int n, uint* ids)
+		internal void DeleteTransformFeedbacksNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, ids);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacks(int n, uint* ids)
+		public void DeleteTransformFeedbacks(int n, uint* ids)
 		{
 			DeleteTransformFeedbacksNative(n, ids);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedback(uint id)
+		public void DeleteTransformFeedback(uint id)
 		{
 			DeleteTransformFeedbacksNative(1, &id);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacks(int n, Span<uint> ids)
+		public void DeleteTransformFeedbacks(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Delete transform feedback objects
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DeleteTransformFeedbacks(int n, ref uint ids)
+		public void DeleteTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DrawTransformFeedbackNative(GLPrimitiveType mode, uint id)
+		internal void DrawTransformFeedbackNative(GLPrimitiveType mode, uint id)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, uint, void>)funcTable[2])(mode, id);
@@ -101,13 +101,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Render primitives using a count derived from a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void DrawTransformFeedback(GLPrimitiveType mode, uint id)
+		public void DrawTransformFeedback(GLPrimitiveType mode, uint id)
 		{
 			DrawTransformFeedbackNative(mode, id);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenTransformFeedbacksNative(int n, uint* ids)
+		internal void GenTransformFeedbacksNative(int n, uint* ids)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, ids);
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Reserve transform feedback object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void GenTransformFeedbacks(int n, uint* ids)
+		public void GenTransformFeedbacks(int n, uint* ids)
 		{
 			GenTransformFeedbacksNative(n, ids);
 		}
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Reserve transform feedback object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static uint GenTransformFeedback()
+		public uint GenTransformFeedback()
 		{
 			uint result;
 			GenTransformFeedbacksNative(1, &result);
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Reserve transform feedback object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void GenTransformFeedbacks(int n, Span<uint> ids)
+		public void GenTransformFeedbacks(int n, Span<uint> ids)
 		{
 			fixed (uint* pids0 = ids)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Reserve transform feedback object names
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void GenTransformFeedbacks(int n, ref uint ids)
+		public void GenTransformFeedbacks(int n, ref uint ids)
 		{
 			fixed (uint* pids0 = &ids)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsTransformFeedbackNative(uint id)
+		internal byte IsTransformFeedbackNative(uint id)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[4])(id);
@@ -174,14 +174,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Determine if a name corresponds to a transform feedback object
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static bool IsTransformFeedback(uint id)
+		public bool IsTransformFeedback(uint id)
 		{
 			byte ret = IsTransformFeedbackNative(id);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PauseTransformFeedbackNative()
+		internal void PauseTransformFeedbackNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[5])();
@@ -194,13 +194,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Pause transform feedback operations
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void PauseTransformFeedback()
+		public void PauseTransformFeedback()
 		{
 			PauseTransformFeedbackNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ResumeTransformFeedbackNative()
+		internal void ResumeTransformFeedbackNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[6])();
@@ -213,7 +213,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Resume transform feedback operations
 		/// </summary>
 		/// <remarks>Supported Versions: All GL versions.<br/><br/>Used by Extensions:<br/>GL_ARB_transform_feedback2</remarks>
-		public static void ResumeTransformFeedback()
+		public void ResumeTransformFeedback()
 		{
 			ResumeTransformFeedbackNative();
 		}

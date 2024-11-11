@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVFence
+	public unsafe partial class GLNVFence
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteFencesNVNative(int n, uint* fences)
+		internal void DeleteFencesNVNative(int n, uint* fences)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[0])(n, fences);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void DeleteFencesNV(int n, uint* fences)
+		public void DeleteFencesNV(int n, uint* fences)
 		{
 			DeleteFencesNVNative(n, fences);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void DeleteFencesN(uint fence)
+		public void DeleteFencesN(uint fence)
 		{
 			DeleteFencesNVNative(1, &fence);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void DeleteFencesNV(int n, Span<uint> fences)
+		public void DeleteFencesNV(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void DeleteFencesNV(int n, ref uint fences)
+		public void DeleteFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
 			{
@@ -69,7 +69,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FinishFenceNVNative(uint fence)
+		internal void FinishFenceNVNative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[1])(fence);
@@ -82,13 +82,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void FinishFenceNV(uint fence)
+		public void FinishFenceNV(uint fence)
 		{
 			FinishFenceNVNative(fence);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenFencesNVNative(int n, uint* fences)
+		internal void GenFencesNVNative(int n, uint* fences)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[2])(n, fences);
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GenFencesNV(int n, uint* fences)
+		public void GenFencesNV(int n, uint* fences)
 		{
 			GenFencesNVNative(n, fences);
 		}
@@ -110,7 +110,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static uint GenFencesN()
+		public uint GenFencesN()
 		{
 			uint result;
 			GenFencesNVNative(1, &result);
@@ -121,7 +121,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GenFencesNV(int n, Span<uint> fences)
+		public void GenFencesNV(int n, Span<uint> fences)
 		{
 			fixed (uint* pfences0 = fences)
 			{
@@ -133,7 +133,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GenFencesNV(int n, ref uint fences)
+		public void GenFencesNV(int n, ref uint fences)
 		{
 			fixed (uint* pfences0 = &fences)
 			{
@@ -142,7 +142,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFenceivNVNative(uint fence, GLFenceParameterNameNV pname, int* @params)
+		internal void GetFenceivNVNative(uint fence, GLFenceParameterNameNV pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFenceParameterNameNV, int*, void>)funcTable[3])(fence, pname, @params);
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, int* @params)
+		public void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, int* @params)
 		{
 			GetFenceivNVNative(fence, pname, @params);
 		}
@@ -164,7 +164,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, Span<int> @params)
+		public void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -176,7 +176,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, ref int @params)
+		public void GetFenceivNV(uint fence, GLFenceParameterNameNV pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -185,7 +185,7 @@ namespace Hexa.NET.OpenGLES.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsFenceNVNative(uint fence)
+		internal byte IsFenceNVNative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[4])(fence);
@@ -198,14 +198,14 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static bool IsFenceNV(uint fence)
+		public bool IsFenceNV(uint fence)
 		{
 			byte ret = IsFenceNVNative(fence);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SetFenceNVNative(uint fence, GLFenceConditionNV condition)
+		internal void SetFenceNVNative(uint fence, GLFenceConditionNV condition)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLFenceConditionNV, void>)funcTable[5])(fence, condition);
@@ -218,13 +218,13 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static void SetFenceNV(uint fence, GLFenceConditionNV condition)
+		public void SetFenceNV(uint fence, GLFenceConditionNV condition)
 		{
 			SetFenceNVNative(fence, condition);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte TestFenceNVNative(uint fence)
+		internal byte TestFenceNVNative(uint fence)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte>)funcTable[6])(fence);
@@ -237,7 +237,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_fence</remarks>
-		public static bool TestFenceNV(uint fence)
+		public bool TestFenceNV(uint fence)
 		{
 			byte ret = TestFenceNVNative(fence);
 			return ret != 0;

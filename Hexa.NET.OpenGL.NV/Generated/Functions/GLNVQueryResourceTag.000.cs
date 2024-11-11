@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVQueryResourceTag
+	public unsafe partial class GLNVQueryResourceTag
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteQueryResourceTagNVNative(int n, int* tagIds)
+		internal void DeleteQueryResourceTagNVNative(int n, int* tagIds)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[0])(n, tagIds);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void DeleteQueryResourceTagNV(int n, int* tagIds)
+		public void DeleteQueryResourceTagNV(int n, int* tagIds)
 		{
 			DeleteQueryResourceTagNVNative(n, tagIds);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void DeleteQueryResourceTagNV(int n, Span<int> tagIds)
+		public void DeleteQueryResourceTagNV(int n, Span<int> tagIds)
 		{
 			fixed (int* ptagIds0 = tagIds)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void DeleteQueryResourceTagNV(int n, ref int tagIds)
+		public void DeleteQueryResourceTagNV(int n, ref int tagIds)
 		{
 			fixed (int* ptagIds0 = &tagIds)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenQueryResourceTagNVNative(int n, int* tagIds)
+		internal void GenQueryResourceTagNVNative(int n, int* tagIds)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int*, void>)funcTable[1])(n, tagIds);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void GenQueryResourceTagNV(int n, int* tagIds)
+		public void GenQueryResourceTagNV(int n, int* tagIds)
 		{
 			GenQueryResourceTagNVNative(n, tagIds);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void GenQueryResourceTagNV(int n, Span<int> tagIds)
+		public void GenQueryResourceTagNV(int n, Span<int> tagIds)
 		{
 			fixed (int* ptagIds0 = tagIds)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void GenQueryResourceTagNV(int n, ref int tagIds)
+		public void GenQueryResourceTagNV(int n, ref int tagIds)
 		{
 			fixed (int* ptagIds0 = &tagIds)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void QueryResourceTagNVNative(int tagId, byte* tagString)
+		internal void QueryResourceTagNVNative(int tagId, byte* tagString)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, byte*, void>)funcTable[2])(tagId, tagString);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void QueryResourceTagNV(int tagId, byte* tagString)
+		public void QueryResourceTagNV(int tagId, byte* tagString)
 		{
 			QueryResourceTagNVNative(tagId, tagString);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void QueryResourceTagNV(int tagId, string tagString)
+		public void QueryResourceTagNV(int tagId, string tagString)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void QueryResourceTagNV(int tagId, Span<byte> tagString)
+		public void QueryResourceTagNV(int tagId, Span<byte> tagString)
 		{
 			fixed (byte* ptagString0 = tagString)
 			{
@@ -167,7 +167,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_query_resource_tag</remarks>
-		public static void QueryResourceTagNV(int tagId, ref byte tagString)
+		public void QueryResourceTagNV(int tagId, ref byte tagString)
 		{
 			fixed (byte* ptagString0 = &tagString)
 			{

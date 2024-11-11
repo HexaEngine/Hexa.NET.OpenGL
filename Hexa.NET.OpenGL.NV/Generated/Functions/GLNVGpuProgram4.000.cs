@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVGpuProgram4
+	public unsafe partial class GLNVGpuProgram4
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramEnvParameterIivNVNative(GLProgramTarget target, uint index, int* @params)
+		internal void GetProgramEnvParameterIivNVNative(GLProgramTarget target, uint index, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int*, void>)funcTable[0])(target, index, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, int* @params)
+		public void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			GetProgramEnvParameterIivNVNative(target, index, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
+		public void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, ref int @params)
+		public void GetProgramEnvParameterIivNV(GLProgramTarget target, uint index, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramEnvParameterIuivNVNative(GLProgramTarget target, uint index, uint* @params)
+		internal void GetProgramEnvParameterIuivNVNative(GLProgramTarget target, uint index, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint*, void>)funcTable[1])(target, index, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, uint* @params)
+		public void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			GetProgramEnvParameterIuivNVNative(target, index, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		public void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, ref uint @params)
+		public void GetProgramEnvParameterIuivNV(GLProgramTarget target, uint index, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramLocalParameterIivNVNative(GLProgramTarget target, uint index, int* @params)
+		internal void GetProgramLocalParameterIivNVNative(GLProgramTarget target, uint index, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int*, void>)funcTable[2])(target, index, @params);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, int* @params)
+		public void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			GetProgramLocalParameterIivNVNative(target, index, @params);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
+		public void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, ref int @params)
+		public void GetProgramLocalParameterIivNV(GLProgramTarget target, uint index, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramLocalParameterIuivNVNative(GLProgramTarget target, uint index, uint* @params)
+		internal void GetProgramLocalParameterIuivNVNative(GLProgramTarget target, uint index, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint*, void>)funcTable[3])(target, index, @params);
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, uint* @params)
+		public void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			GetProgramLocalParameterIuivNVNative(target, index, @params);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		public void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, ref uint @params)
+		public void GetProgramLocalParameterIuivNV(GLProgramTarget target, uint index, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -189,7 +189,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParameterI4iNVNative(GLProgramTarget target, uint index, int x, int y, int z, int w)
+		internal void ProgramEnvParameterI4iNVNative(GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, int, int, int, void>)funcTable[4])(target, index, x, y, z, w);
@@ -202,13 +202,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4iNV(GLProgramTarget target, uint index, int x, int y, int z, int w)
+		public void ProgramEnvParameterI4iNV(GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			ProgramEnvParameterI4iNVNative(target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParameterI4ivNVNative(GLProgramTarget target, uint index, int* @params)
+		internal void ProgramEnvParameterI4ivNVNative(GLProgramTarget target, uint index, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int*, void>)funcTable[5])(target, index, @params);
@@ -221,7 +221,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, int* @params)
+		public void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			ProgramEnvParameterI4ivNVNative(target, index, @params);
 		}
@@ -230,7 +230,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
+		public void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -242,7 +242,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, ref int @params)
+		public void ProgramEnvParameterI4ivNV(GLProgramTarget target, uint index, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -251,7 +251,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParameterI4uiNVNative(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
+		internal void ProgramEnvParameterI4uiNVNative(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint, uint, uint, uint, void>)funcTable[6])(target, index, x, y, z, w);
@@ -264,13 +264,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4uiNV(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
+		public void ProgramEnvParameterI4uiNV(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			ProgramEnvParameterI4uiNVNative(target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParameterI4uivNVNative(GLProgramTarget target, uint index, uint* @params)
+		internal void ProgramEnvParameterI4uivNVNative(GLProgramTarget target, uint index, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint*, void>)funcTable[7])(target, index, @params);
@@ -283,7 +283,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, uint* @params)
+		public void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			ProgramEnvParameterI4uivNVNative(target, index, @params);
 		}
@@ -292,7 +292,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		public void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -304,7 +304,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, ref uint @params)
+		public void ProgramEnvParameterI4uivNV(GLProgramTarget target, uint index, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -313,7 +313,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParametersI4ivNVNative(GLProgramTarget target, uint index, int count, int* @params)
+		internal void ProgramEnvParametersI4ivNVNative(GLProgramTarget target, uint index, int count, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, int*, void>)funcTable[8])(target, index, count, @params);
@@ -326,7 +326,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, int* @params)
+		public void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, int* @params)
 		{
 			ProgramEnvParametersI4ivNVNative(target, index, count, @params);
 		}
@@ -335,7 +335,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
+		public void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -347,7 +347,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, ref int @params)
+		public void ProgramEnvParametersI4ivNV(GLProgramTarget target, uint index, int count, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -356,7 +356,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramEnvParametersI4uivNVNative(GLProgramTarget target, uint index, int count, uint* @params)
+		internal void ProgramEnvParametersI4uivNVNative(GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, uint*, void>)funcTable[9])(target, index, count, @params);
@@ -369,7 +369,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, uint* @params)
+		public void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			ProgramEnvParametersI4uivNVNative(target, index, count, @params);
 		}
@@ -378,7 +378,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
+		public void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -390,7 +390,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, ref uint @params)
+		public void ProgramEnvParametersI4uivNV(GLProgramTarget target, uint index, int count, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -399,7 +399,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParameterI4iNVNative(GLProgramTarget target, uint index, int x, int y, int z, int w)
+		internal void ProgramLocalParameterI4iNVNative(GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, int, int, int, void>)funcTable[10])(target, index, x, y, z, w);
@@ -412,13 +412,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4iNV(GLProgramTarget target, uint index, int x, int y, int z, int w)
+		public void ProgramLocalParameterI4iNV(GLProgramTarget target, uint index, int x, int y, int z, int w)
 		{
 			ProgramLocalParameterI4iNVNative(target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParameterI4ivNVNative(GLProgramTarget target, uint index, int* @params)
+		internal void ProgramLocalParameterI4ivNVNative(GLProgramTarget target, uint index, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int*, void>)funcTable[11])(target, index, @params);
@@ -431,7 +431,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, int* @params)
+		public void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, int* @params)
 		{
 			ProgramLocalParameterI4ivNVNative(target, index, @params);
 		}
@@ -440,7 +440,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
+		public void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -452,7 +452,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, ref int @params)
+		public void ProgramLocalParameterI4ivNV(GLProgramTarget target, uint index, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -461,7 +461,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParameterI4uiNVNative(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
+		internal void ProgramLocalParameterI4uiNVNative(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint, uint, uint, uint, void>)funcTable[12])(target, index, x, y, z, w);
@@ -474,13 +474,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4uiNV(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
+		public void ProgramLocalParameterI4uiNV(GLProgramTarget target, uint index, uint x, uint y, uint z, uint w)
 		{
 			ProgramLocalParameterI4uiNVNative(target, index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParameterI4uivNVNative(GLProgramTarget target, uint index, uint* @params)
+		internal void ProgramLocalParameterI4uivNVNative(GLProgramTarget target, uint index, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, uint*, void>)funcTable[13])(target, index, @params);
@@ -493,7 +493,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, uint* @params)
+		public void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, uint* @params)
 		{
 			ProgramLocalParameterI4uivNVNative(target, index, @params);
 		}
@@ -502,7 +502,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
+		public void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -514,7 +514,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, ref uint @params)
+		public void ProgramLocalParameterI4uivNV(GLProgramTarget target, uint index, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{
@@ -523,7 +523,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParametersI4ivNVNative(GLProgramTarget target, uint index, int count, int* @params)
+		internal void ProgramLocalParametersI4ivNVNative(GLProgramTarget target, uint index, int count, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, int*, void>)funcTable[14])(target, index, count, @params);
@@ -536,7 +536,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, int* @params)
+		public void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, int* @params)
 		{
 			ProgramLocalParametersI4ivNVNative(target, index, count, @params);
 		}
@@ -545,7 +545,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
+		public void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -557,7 +557,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, ref int @params)
+		public void ProgramLocalParametersI4ivNV(GLProgramTarget target, uint index, int count, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -566,7 +566,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramLocalParametersI4uivNVNative(GLProgramTarget target, uint index, int count, uint* @params)
+		internal void ProgramLocalParametersI4uivNVNative(GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLProgramTarget, uint, int, uint*, void>)funcTable[15])(target, index, count, @params);
@@ -579,7 +579,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, uint* @params)
+		public void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, uint* @params)
 		{
 			ProgramLocalParametersI4uivNVNative(target, index, count, @params);
 		}
@@ -588,7 +588,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
+		public void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -600,7 +600,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program4</remarks>
-		public static void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, ref uint @params)
+		public void ProgramLocalParametersI4uivNV(GLProgramTarget target, uint index, int count, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVPolygonMode
+	public unsafe partial class GLNVPolygonMode
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonModeNVNative(GLTriangleFace face, GLPolygonMode mode)
+		internal void PolygonModeNVNative(GLTriangleFace face, GLPolygonMode mode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLTriangleFace, GLPolygonMode, void>)funcTable[0])(face, mode);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_polygon_mode</remarks>
-		public static void PolygonModeNV(GLTriangleFace face, GLPolygonMode mode)
+		public void PolygonModeNV(GLTriangleFace face, GLPolygonMode mode)
 		{
 			PolygonModeNVNative(face, mode);
 		}

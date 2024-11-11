@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTTransformFeedback
+	public unsafe partial class GLEXTTransformFeedback
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginTransformFeedbackEXTNative(GLPrimitiveType primitiveMode)
+		internal void BeginTransformFeedbackEXTNative(GLPrimitiveType primitiveMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLPrimitiveType, void>)funcTable[0])(primitiveMode);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void BeginTransformFeedbackEXT(GLPrimitiveType primitiveMode)
+		public void BeginTransformFeedbackEXT(GLPrimitiveType primitiveMode)
 		{
 			BeginTransformFeedbackEXTNative(primitiveMode);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferBaseEXTNative(GLBufferTargetARB target, uint index, uint buffer)
+		internal void BindBufferBaseEXTNative(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, void>)funcTable[1])(target, index, buffer);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void BindBufferBaseEXT(GLBufferTargetARB target, uint index, uint buffer)
+		public void BindBufferBaseEXT(GLBufferTargetARB target, uint index, uint buffer)
 		{
 			BindBufferBaseEXTNative(target, index, buffer);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferOffsetEXTNative(GLBufferTargetARB target, uint index, uint buffer, nint offset)
+		internal void BindBufferOffsetEXTNative(GLBufferTargetARB target, uint index, uint buffer, nint offset)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, nint, void>)funcTable[2])(target, index, buffer, offset);
@@ -68,13 +68,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void BindBufferOffsetEXT(GLBufferTargetARB target, uint index, uint buffer, nint offset)
+		public void BindBufferOffsetEXT(GLBufferTargetARB target, uint index, uint buffer, nint offset)
 		{
 			BindBufferOffsetEXTNative(target, index, buffer, offset);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BindBufferRangeEXTNative(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
+		internal void BindBufferRangeEXTNative(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferTargetARB, uint, uint, nint, nint, void>)funcTable[3])(target, index, buffer, offset, size);
@@ -87,13 +87,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void BindBufferRangeEXT(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
+		public void BindBufferRangeEXT(GLBufferTargetARB target, uint index, uint buffer, nint offset, nint size)
 		{
 			BindBufferRangeEXTNative(target, index, buffer, offset, size);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndTransformFeedbackEXTNative()
+		internal void EndTransformFeedbackEXTNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[4])();
@@ -106,13 +106,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void EndTransformFeedbackEXT()
+		public void EndTransformFeedbackEXT()
 		{
 			EndTransformFeedbackEXTNative();
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetTransformFeedbackVaryingEXTNative(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
+		internal void GetTransformFeedbackVaryingEXTNative(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, int*, int*, GLAttributeType, byte*, void>)funcTable[5])(program, index, bufSize, length, size, type, name);
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, byte* name)
 		{
 			GetTransformFeedbackVaryingEXTNative(program, index, bufSize, length, size, type, name);
 		}
@@ -134,7 +134,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -158,7 +158,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -170,7 +170,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -182,7 +182,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -197,7 +197,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, byte* name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -212,7 +212,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, string name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -242,7 +242,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, Span<byte> name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -254,7 +254,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, ref byte name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -266,7 +266,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, Span<byte> name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, int* size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -281,7 +281,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, ref byte name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, int* size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -296,7 +296,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, Span<byte> name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, Span<int> size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -311,7 +311,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, ref byte name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, int* length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -326,7 +326,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, Span<byte> name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, Span<int> length, Span<int> size, GLAttributeType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -344,7 +344,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, ref byte name)
+		public void GetTransformFeedbackVaryingEXT(uint program, uint index, int bufSize, ref int length, ref int size, GLAttributeType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -359,7 +359,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void TransformFeedbackVaryingsEXTNative(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
+		internal void TransformFeedbackVaryingsEXTNative(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, byte**, GLTransformFeedbackBufferMode, void>)funcTable[6])(program, count, varyings, bufferMode);
@@ -372,7 +372,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_transform_feedback</remarks>
-		public static void TransformFeedbackVaryingsEXT(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
+		public void TransformFeedbackVaryingsEXT(uint program, int count, byte** varyings, GLTransformFeedbackBufferMode bufferMode)
 		{
 			TransformFeedbackVaryingsEXTNative(program, count, varyings, bufferMode);
 		}

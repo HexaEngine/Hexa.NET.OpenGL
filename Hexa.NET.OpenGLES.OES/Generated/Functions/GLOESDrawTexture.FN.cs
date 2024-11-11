@@ -14,36 +14,21 @@ using Hexa.NET.OpenGLES;
 
 namespace Hexa.NET.OpenGLES.OES
 {
-	public unsafe partial class GLOESDrawTexture
+	public unsafe partial class GLOESDrawTexture : GLExtension, IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
-
-		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
-
 		public const string ExtensionName = "GL_OES_draw_texture";
 
-		/// <summary>
-		/// Tries to initialize the function table of the extension, call before you access any function.
-		/// </summary>
-		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
-		public static bool TryInitExtension()
+		public GLOESDrawTexture() : base(8)
 		{
-			if (!IsSupported) return false;
-			InitExtension();
-			return true;
 		}
 
-		/// <summary>
-		/// Initializes the function table of the extension, call before you access any function.
-		/// </summary>
-		public static void InitExtension()
+		public override bool IsSupported(IGLContext context)
 		{
-			if (funcTable != null) return;
-			if (GLBase.NativeContext == null) throw new InvalidOperationException("OpenGL is not initialized, call GL.InitApi.");
-			funcTable = new FunctionTable(GLBase.NativeContext, 8);
+			return context.IsExtensionSupported(ExtensionName);
+		}
+
+		protected override void InitTable(FunctionTable funcTable)
+		{
 			funcTable.Load(0, "glDrawTexfOES");
 			funcTable.Load(1, "glDrawTexfvOES");
 			funcTable.Load(2, "glDrawTexiOES");
@@ -54,11 +39,9 @@ namespace Hexa.NET.OpenGLES.OES
 			funcTable.Load(7, "glDrawTexxvOES");
 		}
 
-		public static void FreeExtension()
+		public void Dispose()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
+			funcTable.Dispose();
 		}
 	}
 }

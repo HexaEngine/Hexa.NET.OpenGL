@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.AMD
 {
-	public static unsafe partial class GLAMDFramebufferSamplePositions
+	public unsafe partial class GLAMDFramebufferSamplePositions
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void FramebufferSamplePositionsfvAMDNative(GLFramebufferTarget target, uint numsamples, uint pixelindex, float* values)
+		internal void FramebufferSamplePositionsfvAMDNative(GLFramebufferTarget target, uint numsamples, uint pixelindex, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, uint, uint, float*, void>)funcTable[0])(target, numsamples, pixelindex, values);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, float* values)
+		public void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, float* values)
 		{
 			FramebufferSamplePositionsfvAMDNative(target, numsamples, pixelindex, values);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, Span<float> values)
+		public void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, ref float values)
+		public void FramebufferSamplePositionsfvAMD(GLFramebufferTarget target, uint numsamples, uint pixelindex, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetFramebufferParameterfvAMDNative(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, float* values)
+		internal void GetFramebufferParameterfvAMDNative(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLFramebufferTarget, GLFramebufferAttachmentParameterName, uint, uint, int, float*, void>)funcTable[1])(target, pname, numsamples, pixelindex, size, values);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, float* values)
+		public void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, float* values)
 		{
 			GetFramebufferParameterfvAMDNative(target, pname, numsamples, pixelindex, size, values);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, Span<float> values)
+		public void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, ref float values)
+		public void GetFramebufferParameterfvAMD(GLFramebufferTarget target, GLFramebufferAttachmentParameterName pname, uint numsamples, uint pixelindex, int size, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
 			{
@@ -103,7 +103,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetNamedFramebufferParameterfvAMDNative(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, float* values)
+		internal void GetNamedFramebufferParameterfvAMDNative(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, uint, uint, int, float*, void>)funcTable[2])(framebuffer, pname, numsamples, pixelindex, size, values);
@@ -116,7 +116,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, float* values)
+		public void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, float* values)
 		{
 			GetNamedFramebufferParameterfvAMDNative(framebuffer, pname, numsamples, pixelindex, size, values);
 		}
@@ -125,7 +125,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, Span<float> values)
+		public void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
 			{
@@ -137,7 +137,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, ref float values)
+		public void GetNamedFramebufferParameterfvAMD(uint framebuffer, GLEnum pname, uint numsamples, uint pixelindex, int size, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
 			{
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void NamedFramebufferSamplePositionsfvAMDNative(uint framebuffer, uint numsamples, uint pixelindex, float* values)
+		internal void NamedFramebufferSamplePositionsfvAMDNative(uint framebuffer, uint numsamples, uint pixelindex, float* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, uint, float*, void>)funcTable[3])(framebuffer, numsamples, pixelindex, values);
@@ -159,7 +159,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, float* values)
+		public void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, float* values)
 		{
 			NamedFramebufferSamplePositionsfvAMDNative(framebuffer, numsamples, pixelindex, values);
 		}
@@ -168,7 +168,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, Span<float> values)
+		public void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, Span<float> values)
 		{
 			fixed (float* pvalues0 = values)
 			{
@@ -180,7 +180,7 @@ namespace Hexa.NET.OpenGL.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_framebuffer_sample_positions</remarks>
-		public static void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, ref float values)
+		public void NamedFramebufferSamplePositionsfvAMD(uint framebuffer, uint numsamples, uint pixelindex, ref float values)
 		{
 			fixed (float* pvalues0 = &values)
 			{

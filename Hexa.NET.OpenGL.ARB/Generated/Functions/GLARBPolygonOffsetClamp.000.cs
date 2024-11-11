@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBPolygonOffsetClamp
+	public unsafe partial class GLARBPolygonOffsetClamp
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void PolygonOffsetClampNative(float factor, float units, float clamp)
+		internal void PolygonOffsetClampNative(float factor, float units, float clamp)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<float, float, float, void>)funcTable[0])(factor, units, clamp);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_polygon_offset_clamp</remarks>
-		public static void PolygonOffsetClamp(float factor, float units, float clamp)
+		public void PolygonOffsetClamp(float factor, float units, float clamp)
 		{
 			PolygonOffsetClampNative(factor, units, clamp);
 		}

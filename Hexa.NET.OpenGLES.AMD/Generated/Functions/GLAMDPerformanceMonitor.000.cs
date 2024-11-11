@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.AMD
 {
-	public static unsafe partial class GLAMDPerformanceMonitor
+	public unsafe partial class GLAMDPerformanceMonitor
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BeginPerfMonitorAMDNative(uint monitor)
+		internal void BeginPerfMonitorAMDNative(uint monitor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[0])(monitor);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void BeginPerfMonitorAMD(uint monitor)
+		public void BeginPerfMonitorAMD(uint monitor)
 		{
 			BeginPerfMonitorAMDNative(monitor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeletePerfMonitorsAMDNative(int n, uint* monitors)
+		internal void DeletePerfMonitorsAMDNative(int n, uint* monitors)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[1])(n, monitors);
@@ -49,7 +49,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void DeletePerfMonitorsAMD(int n, uint* monitors)
+		public void DeletePerfMonitorsAMD(int n, uint* monitors)
 		{
 			DeletePerfMonitorsAMDNative(n, monitors);
 		}
@@ -58,7 +58,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void DeletePerfMonitorsAM(uint monitor)
+		public void DeletePerfMonitorsAM(uint monitor)
 		{
 			DeletePerfMonitorsAMDNative(1, &monitor);
 		}
@@ -67,7 +67,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void DeletePerfMonitorsAMD(int n, Span<uint> monitors)
+		public void DeletePerfMonitorsAMD(int n, Span<uint> monitors)
 		{
 			fixed (uint* pmonitors0 = monitors)
 			{
@@ -79,7 +79,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void DeletePerfMonitorsAMD(int n, ref uint monitors)
+		public void DeletePerfMonitorsAMD(int n, ref uint monitors)
 		{
 			fixed (uint* pmonitors0 = &monitors)
 			{
@@ -88,7 +88,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void EndPerfMonitorAMDNative(uint monitor)
+		internal void EndPerfMonitorAMDNative(uint monitor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[2])(monitor);
@@ -101,13 +101,13 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void EndPerfMonitorAMD(uint monitor)
+		public void EndPerfMonitorAMD(uint monitor)
 		{
 			EndPerfMonitorAMDNative(monitor);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GenPerfMonitorsAMDNative(int n, uint* monitors)
+		internal void GenPerfMonitorsAMDNative(int n, uint* monitors)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, uint*, void>)funcTable[3])(n, monitors);
@@ -120,7 +120,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GenPerfMonitorsAMD(int n, uint* monitors)
+		public void GenPerfMonitorsAMD(int n, uint* monitors)
 		{
 			GenPerfMonitorsAMDNative(n, monitors);
 		}
@@ -129,7 +129,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static uint GenPerfMonitorsAM()
+		public uint GenPerfMonitorsAM()
 		{
 			uint result;
 			GenPerfMonitorsAMDNative(1, &result);
@@ -140,7 +140,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GenPerfMonitorsAMD(int n, Span<uint> monitors)
+		public void GenPerfMonitorsAMD(int n, Span<uint> monitors)
 		{
 			fixed (uint* pmonitors0 = monitors)
 			{
@@ -152,7 +152,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GenPerfMonitorsAMD(int n, ref uint monitors)
+		public void GenPerfMonitorsAMD(int n, ref uint monitors)
 		{
 			fixed (uint* pmonitors0 = &monitors)
 			{
@@ -161,7 +161,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfMonitorCounterDataAMDNative(uint monitor, GLEnum pname, int dataSize, uint* data, int* bytesWritten)
+		internal void GetPerfMonitorCounterDataAMDNative(uint monitor, GLEnum pname, int dataSize, uint* data, int* bytesWritten)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, int, uint*, int*, void>)funcTable[4])(monitor, pname, dataSize, data, bytesWritten);
@@ -174,7 +174,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, int* bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, int* bytesWritten)
 		{
 			GetPerfMonitorCounterDataAMDNative(monitor, pname, dataSize, data, bytesWritten);
 		}
@@ -183,7 +183,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, Span<uint> data, int* bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, Span<uint> data, int* bytesWritten)
 		{
 			fixed (uint* pdata0 = data)
 			{
@@ -195,7 +195,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, ref uint data, int* bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, ref uint data, int* bytesWritten)
 		{
 			fixed (uint* pdata0 = &data)
 			{
@@ -207,7 +207,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, Span<int> bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, Span<int> bytesWritten)
 		{
 			fixed (int* pbytesWritten0 = bytesWritten)
 			{
@@ -219,7 +219,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, ref int bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, uint* data, ref int bytesWritten)
 		{
 			fixed (int* pbytesWritten0 = &bytesWritten)
 			{
@@ -231,7 +231,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, Span<uint> data, Span<int> bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, Span<uint> data, Span<int> bytesWritten)
 		{
 			fixed (uint* pdata0 = data)
 			{
@@ -246,7 +246,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, ref uint data, ref int bytesWritten)
+		public void GetPerfMonitorCounterDataAMD(uint monitor, GLEnum pname, int dataSize, ref uint data, ref int bytesWritten)
 		{
 			fixed (uint* pdata0 = &data)
 			{
@@ -258,7 +258,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfMonitorCounterInfoAMDNative(uint group, uint counter, GLEnum pname, void* data)
+		internal void GetPerfMonitorCounterInfoAMDNative(uint group, uint counter, GLEnum pname, void* data)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, GLEnum, void*, void>)funcTable[5])(group, counter, pname, data);
@@ -271,7 +271,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterInfoAMD(uint group, uint counter, GLEnum pname, void* data)
+		public void GetPerfMonitorCounterInfoAMD(uint group, uint counter, GLEnum pname, void* data)
 		{
 			GetPerfMonitorCounterInfoAMDNative(group, counter, pname, data);
 		}
@@ -280,7 +280,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterInfoAMD(uint group, uint counter, GLEnum pname, nint data)
+		public void GetPerfMonitorCounterInfoAMD(uint group, uint counter, GLEnum pname, nint data)
 		{
 			GetPerfMonitorCounterInfoAMDNative(group, counter, pname, (void*)data);
 		}
@@ -289,7 +289,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterInfoAMD<TData>(uint group, uint counter, GLEnum pname, Span<TData> data) where TData : unmanaged
+		public void GetPerfMonitorCounterInfoAMD<TData>(uint group, uint counter, GLEnum pname, Span<TData> data) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -298,7 +298,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfMonitorCounterStringAMDNative(uint group, uint counter, int bufSize, int* length, byte* counterString)
+		internal void GetPerfMonitorCounterStringAMDNative(uint group, uint counter, int bufSize, int* length, byte* counterString)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, int*, byte*, void>)funcTable[6])(group, counter, bufSize, length, counterString);
@@ -311,7 +311,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, byte* counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, byte* counterString)
 		{
 			GetPerfMonitorCounterStringAMDNative(group, counter, bufSize, length, counterString);
 		}
@@ -320,7 +320,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, Span<int> length, byte* counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, Span<int> length, byte* counterString)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -332,7 +332,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, ref int length, byte* counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, ref int length, byte* counterString)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -344,7 +344,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, string counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, string counterString)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -374,7 +374,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, Span<byte> counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, Span<byte> counterString)
 		{
 			fixed (byte* pcounterString0 = counterString)
 			{
@@ -386,7 +386,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, ref byte counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, ref byte counterString)
 		{
 			fixed (byte* pcounterString0 = &counterString)
 			{
@@ -398,7 +398,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, Span<int> length, Span<byte> counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, Span<int> length, Span<byte> counterString)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -413,7 +413,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, ref int length, ref byte counterString)
+		public void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, ref int length, ref byte counterString)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -425,7 +425,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfMonitorCountersAMDNative(uint group, int* numCounters, int* maxActiveCounters, int counterSize, uint* counters)
+		internal void GetPerfMonitorCountersAMDNative(uint group, int* numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int*, int*, int, uint*, void>)funcTable[7])(group, numCounters, maxActiveCounters, counterSize, counters);
@@ -438,7 +438,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			GetPerfMonitorCountersAMDNative(group, numCounters, maxActiveCounters, counterSize, counters);
 		}
@@ -447,7 +447,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, int* maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
 			{
@@ -459,7 +459,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, int* maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, ref int numCounters, int* maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
 			{
@@ -471,7 +471,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, Span<int> maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, Span<int> maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pmaxActiveCounters0 = maxActiveCounters)
 			{
@@ -483,7 +483,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, ref int maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, ref int maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pmaxActiveCounters0 = &maxActiveCounters)
 			{
@@ -495,7 +495,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, Span<int> maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, Span<int> maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
 			{
@@ -510,7 +510,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, ref int maxActiveCounters, int counterSize, uint* counters)
+		public void GetPerfMonitorCountersAMD(uint group, ref int numCounters, ref int maxActiveCounters, int counterSize, uint* counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
 			{
@@ -525,7 +525,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, Span<uint> counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (uint* pcounters0 = counters)
 			{
@@ -537,7 +537,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, ref uint counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (uint* pcounters0 = &counters)
 			{
@@ -549,7 +549,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, int* maxActiveCounters, int counterSize, Span<uint> counters)
+		public void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, int* maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
 			{
@@ -564,7 +564,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, int* maxActiveCounters, int counterSize, ref uint counters)
+		public void GetPerfMonitorCountersAMD(uint group, ref int numCounters, int* maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
 			{
@@ -579,7 +579,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, Span<int> maxActiveCounters, int counterSize, Span<uint> counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, Span<int> maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (int* pmaxActiveCounters0 = maxActiveCounters)
 			{
@@ -594,7 +594,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, ref int maxActiveCounters, int counterSize, ref uint counters)
+		public void GetPerfMonitorCountersAMD(uint group, int* numCounters, ref int maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (int* pmaxActiveCounters0 = &maxActiveCounters)
 			{
@@ -609,7 +609,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, Span<int> maxActiveCounters, int counterSize, Span<uint> counters)
+		public void GetPerfMonitorCountersAMD(uint group, Span<int> numCounters, Span<int> maxActiveCounters, int counterSize, Span<uint> counters)
 		{
 			fixed (int* pnumCounters0 = numCounters)
 			{
@@ -627,7 +627,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorCountersAMD(uint group, ref int numCounters, ref int maxActiveCounters, int counterSize, ref uint counters)
+		public void GetPerfMonitorCountersAMD(uint group, ref int numCounters, ref int maxActiveCounters, int counterSize, ref uint counters)
 		{
 			fixed (int* pnumCounters0 = &numCounters)
 			{
@@ -642,7 +642,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfMonitorGroupStringAMDNative(uint group, int bufSize, int* length, byte* groupString)
+		internal void GetPerfMonitorGroupStringAMDNative(uint group, int bufSize, int* length, byte* groupString)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[8])(group, bufSize, length, groupString);
@@ -655,7 +655,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, byte* groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, byte* groupString)
 		{
 			GetPerfMonitorGroupStringAMDNative(group, bufSize, length, groupString);
 		}
@@ -664,7 +664,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, Span<int> length, byte* groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, Span<int> length, byte* groupString)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -676,7 +676,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, ref int length, byte* groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, ref int length, byte* groupString)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -688,7 +688,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, string groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, string groupString)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -718,7 +718,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, Span<byte> groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, Span<byte> groupString)
 		{
 			fixed (byte* pgroupString0 = groupString)
 			{
@@ -730,7 +730,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, ref byte groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, ref byte groupString)
 		{
 			fixed (byte* pgroupString0 = &groupString)
 			{
@@ -742,7 +742,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, Span<int> length, Span<byte> groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, Span<int> length, Span<byte> groupString)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -757,7 +757,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, ref int length, ref byte groupString)
+		public void GetPerfMonitorGroupStringAMD(uint group, int bufSize, ref int length, ref byte groupString)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -769,7 +769,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfMonitorGroupsAMDNative(int* numGroups, int groupsSize, uint* groups)
+		internal void GetPerfMonitorGroupsAMDNative(int* numGroups, int groupsSize, uint* groups)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int*, int, uint*, void>)funcTable[9])(numGroups, groupsSize, groups);
@@ -782,7 +782,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, uint* groups)
+		public void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, uint* groups)
 		{
 			GetPerfMonitorGroupsAMDNative(numGroups, groupsSize, groups);
 		}
@@ -791,7 +791,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(Span<int> numGroups, int groupsSize, uint* groups)
+		public void GetPerfMonitorGroupsAMD(Span<int> numGroups, int groupsSize, uint* groups)
 		{
 			fixed (int* pnumGroups0 = numGroups)
 			{
@@ -803,7 +803,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(ref int numGroups, int groupsSize, uint* groups)
+		public void GetPerfMonitorGroupsAMD(ref int numGroups, int groupsSize, uint* groups)
 		{
 			fixed (int* pnumGroups0 = &numGroups)
 			{
@@ -815,7 +815,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, Span<uint> groups)
+		public void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, Span<uint> groups)
 		{
 			fixed (uint* pgroups0 = groups)
 			{
@@ -827,7 +827,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, ref uint groups)
+		public void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, ref uint groups)
 		{
 			fixed (uint* pgroups0 = &groups)
 			{
@@ -839,7 +839,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(Span<int> numGroups, int groupsSize, Span<uint> groups)
+		public void GetPerfMonitorGroupsAMD(Span<int> numGroups, int groupsSize, Span<uint> groups)
 		{
 			fixed (int* pnumGroups0 = numGroups)
 			{
@@ -854,7 +854,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void GetPerfMonitorGroupsAMD(ref int numGroups, int groupsSize, ref uint groups)
+		public void GetPerfMonitorGroupsAMD(ref int numGroups, int groupsSize, ref uint groups)
 		{
 			fixed (int* pnumGroups0 = &numGroups)
 			{
@@ -866,7 +866,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void SelectPerfMonitorCountersAMDNative(uint monitor, bool enable, uint group, int numCounters, uint* counterList)
+		internal void SelectPerfMonitorCountersAMDNative(uint monitor, bool enable, uint group, int numCounters, uint* counterList)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, byte, uint, int, uint*, void>)funcTable[10])(monitor, *((byte*)(&enable)), group, numCounters, counterList);
@@ -879,7 +879,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, uint* counterList)
+		public void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, uint* counterList)
 		{
 			SelectPerfMonitorCountersAMDNative(monitor, enable, group, numCounters, counterList);
 		}
@@ -888,7 +888,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, Span<uint> counterList)
+		public void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, Span<uint> counterList)
 		{
 			fixed (uint* pcounterList0 = counterList)
 			{
@@ -900,7 +900,7 @@ namespace Hexa.NET.OpenGLES.AMD
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_AMD_performance_monitor</remarks>
-		public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, ref uint counterList)
+		public void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, ref uint counterList)
 		{
 			fixed (uint* pcounterList0 = &counterList)
 			{

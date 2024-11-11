@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.EXT
 {
-	public static unsafe partial class GLEXTBufferStorage
+	public unsafe partial class GLEXTBufferStorage
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void BufferStorageEXTNative(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
+		internal void BufferStorageEXTNative(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLBufferStorageTarget, nint, void*, GLBufferStorageMask, void>)funcTable[0])(target, size, data, flags);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_buffer_storage</remarks>
-		public static void BufferStorageEXT(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
+		public void BufferStorageEXT(GLBufferStorageTarget target, nint size, void* data, GLBufferStorageMask flags)
 		{
 			BufferStorageEXTNative(target, size, data, flags);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_buffer_storage</remarks>
-		public static void BufferStorageEXT(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
+		public void BufferStorageEXT(GLBufferStorageTarget target, nint size, nint data, GLBufferStorageMask flags)
 		{
 			BufferStorageEXTNative(target, size, (void*)data, flags);
 		}
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGLES.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_buffer_storage</remarks>
-		public static void BufferStorageEXT<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
+		public void BufferStorageEXT<TData>(GLBufferStorageTarget target, nint size, Span<TData> data, GLBufferStorageMask flags) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{

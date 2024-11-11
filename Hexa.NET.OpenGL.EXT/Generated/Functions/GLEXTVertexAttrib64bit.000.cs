@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.EXT
 {
-	public static unsafe partial class GLEXTVertexAttrib64bit
+	public unsafe partial class GLEXTVertexAttrib64bit
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetVertexAttribLdvEXTNative(uint index, GLVertexAttribEnum pname, double* @params)
+		internal void GetVertexAttribLdvEXTNative(uint index, GLVertexAttribEnum pname, double* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLVertexAttribEnum, double*, void>)funcTable[0])(index, pname, @params);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, double* @params)
+		public void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, double* @params)
 		{
 			GetVertexAttribLdvEXTNative(index, pname, @params);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, Span<double> @params)
+		public void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, Span<double> @params)
 		{
 			fixed (double* pparams0 = @params)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, ref double @params)
+		public void GetVertexAttribLdvEXT(uint index, GLVertexAttribEnum pname, ref double @params)
 		{
 			fixed (double* pparams0 = &@params)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dEXTNative(uint index, double x)
+		internal void VertexAttribL1dEXTNative(uint index, double x)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, void>)funcTable[1])(index, x);
@@ -73,13 +73,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dEXT(uint index, double x)
+		public void VertexAttribL1dEXT(uint index, double x)
 		{
 			VertexAttribL1dEXTNative(index, x);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL1dvEXTNative(uint index, double* v)
+		internal void VertexAttribL1dvEXTNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[2])(index, v);
@@ -92,7 +92,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dvEXT(uint index, double* v)
+		public void VertexAttribL1dvEXT(uint index, double* v)
 		{
 			VertexAttribL1dvEXTNative(index, v);
 		}
@@ -101,7 +101,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dvEXT(uint index, Span<double> v)
+		public void VertexAttribL1dvEXT(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -113,7 +113,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL1dvEXT(uint index, ref double v)
+		public void VertexAttribL1dvEXT(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -122,7 +122,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dEXTNative(uint index, double x, double y)
+		internal void VertexAttribL2dEXTNative(uint index, double x, double y)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, void>)funcTable[3])(index, x, y);
@@ -135,13 +135,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dEXT(uint index, double x, double y)
+		public void VertexAttribL2dEXT(uint index, double x, double y)
 		{
 			VertexAttribL2dEXTNative(index, x, y);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL2dvEXTNative(uint index, double* v)
+		internal void VertexAttribL2dvEXTNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[4])(index, v);
@@ -154,7 +154,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dvEXT(uint index, double* v)
+		public void VertexAttribL2dvEXT(uint index, double* v)
 		{
 			VertexAttribL2dvEXTNative(index, v);
 		}
@@ -163,7 +163,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dvEXT(uint index, Span<double> v)
+		public void VertexAttribL2dvEXT(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -175,7 +175,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL2dvEXT(uint index, ref double v)
+		public void VertexAttribL2dvEXT(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -184,7 +184,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dEXTNative(uint index, double x, double y, double z)
+		internal void VertexAttribL3dEXTNative(uint index, double x, double y, double z)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, void>)funcTable[5])(index, x, y, z);
@@ -197,13 +197,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dEXT(uint index, double x, double y, double z)
+		public void VertexAttribL3dEXT(uint index, double x, double y, double z)
 		{
 			VertexAttribL3dEXTNative(index, x, y, z);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL3dvEXTNative(uint index, double* v)
+		internal void VertexAttribL3dvEXTNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[6])(index, v);
@@ -216,7 +216,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dvEXT(uint index, double* v)
+		public void VertexAttribL3dvEXT(uint index, double* v)
 		{
 			VertexAttribL3dvEXTNative(index, v);
 		}
@@ -225,7 +225,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dvEXT(uint index, Span<double> v)
+		public void VertexAttribL3dvEXT(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -237,7 +237,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL3dvEXT(uint index, ref double v)
+		public void VertexAttribL3dvEXT(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -246,7 +246,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dEXTNative(uint index, double x, double y, double z, double w)
+		internal void VertexAttribL4dEXTNative(uint index, double x, double y, double z, double w)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double, double, double, double, void>)funcTable[7])(index, x, y, z, w);
@@ -259,13 +259,13 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dEXT(uint index, double x, double y, double z, double w)
+		public void VertexAttribL4dEXT(uint index, double x, double y, double z, double w)
 		{
 			VertexAttribL4dEXTNative(index, x, y, z, w);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribL4dvEXTNative(uint index, double* v)
+		internal void VertexAttribL4dvEXTNative(uint index, double* v)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, double*, void>)funcTable[8])(index, v);
@@ -278,7 +278,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dvEXT(uint index, double* v)
+		public void VertexAttribL4dvEXT(uint index, double* v)
 		{
 			VertexAttribL4dvEXTNative(index, v);
 		}
@@ -287,7 +287,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dvEXT(uint index, Span<double> v)
+		public void VertexAttribL4dvEXT(uint index, Span<double> v)
 		{
 			fixed (double* pv0 = v)
 			{
@@ -299,7 +299,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribL4dvEXT(uint index, ref double v)
+		public void VertexAttribL4dvEXT(uint index, ref double v)
 		{
 			fixed (double* pv0 = &v)
 			{
@@ -308,7 +308,7 @@ namespace Hexa.NET.OpenGL.EXT
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribLPointerEXTNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
+		internal void VertexAttribLPointerEXTNative(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, GLVertexAttribLType, int, void*, void>)funcTable[9])(index, size, type, stride, pointer);
@@ -321,7 +321,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointerEXT(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
+		public void VertexAttribLPointerEXT(uint index, int size, GLVertexAttribLType type, int stride, void* pointer)
 		{
 			VertexAttribLPointerEXTNative(index, size, type, stride, pointer);
 		}
@@ -330,7 +330,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointerEXT(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
+		public void VertexAttribLPointerEXT(uint index, int size, GLVertexAttribLType type, int stride, nint pointer)
 		{
 			VertexAttribLPointerEXTNative(index, size, type, stride, (void*)pointer);
 		}
@@ -339,7 +339,7 @@ namespace Hexa.NET.OpenGL.EXT
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_EXT_vertex_attrib_64bit</remarks>
-		public static void VertexAttribLPointerEXT<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
+		public void VertexAttribLPointerEXT<TPointer>(uint index, int size, GLVertexAttribLType type, int stride, Span<TPointer> pointer) where TPointer : unmanaged
 		{
 			fixed (TPointer* ppointer0 = pointer)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.INTEL
 {
-	public static unsafe partial class GLINTELFramebufferCMAA
+	public unsafe partial class GLINTELFramebufferCMAA
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ApplyFramebufferAttachmentCMAAINTELNative()
+		internal void ApplyFramebufferAttachmentCMAAINTELNative()
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<void>)funcTable[0])();
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_framebuffer_CMAA</remarks>
-		public static void ApplyFramebufferAttachmentCMAAINTEL()
+		public void ApplyFramebufferAttachmentCMAAINTEL()
 		{
 			ApplyFramebufferAttachmentCMAAINTELNative();
 		}

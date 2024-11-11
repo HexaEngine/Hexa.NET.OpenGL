@@ -14,36 +14,21 @@ using Hexa.NET.OpenGL;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public unsafe partial class GLARBVertexAttrib64bit
+	public unsafe partial class GLARBVertexAttrib64bit : GLExtension, IDisposable
 	{
-		[ThreadStatic]
-		internal static FunctionTable funcTable;
-
-		public static bool Initialized => funcTable != null;
-
-		public static bool IsSupported => GLBase.NativeContext.IsExtensionSupported(ExtensionName);
-
 		public const string ExtensionName = "GL_ARB_vertex_attrib_64bit";
 
-		/// <summary>
-		/// Tries to initialize the function table of the extension, call before you access any function.
-		/// </summary>
-		/// <returns>Returns <c>true</c> if successful, <c>false</c> if extension is not supported.</returns>
-		public static bool TryInitExtension()
+		public GLARBVertexAttrib64bit() : base(10)
 		{
-			if (!IsSupported) return false;
-			InitExtension();
-			return true;
 		}
 
-		/// <summary>
-		/// Initializes the function table of the extension, call before you access any function.
-		/// </summary>
-		public static void InitExtension()
+		public override bool IsSupported(IGLContext context)
 		{
-			if (funcTable != null) return;
-			if (GLBase.NativeContext == null) throw new InvalidOperationException("OpenGL is not initialized, call GL.InitApi.");
-			funcTable = new FunctionTable(GLBase.NativeContext, 10);
+			return context.IsExtensionSupported(ExtensionName);
+		}
+
+		protected override void InitTable(FunctionTable funcTable)
+		{
 			funcTable.Load(0, "glGetVertexAttribLdv");
 			funcTable.Load(1, "glVertexAttribL1d");
 			funcTable.Load(2, "glVertexAttribL1dv");
@@ -56,11 +41,9 @@ namespace Hexa.NET.OpenGL.ARB
 			funcTable.Load(9, "glVertexAttribLPointer");
 		}
 
-		public static void FreeExtension()
+		public void Dispose()
 		{
-			if (funcTable == null) return;
-			funcTable.Free();
-			funcTable = null;
+			funcTable.Dispose();
 		}
 	}
 }

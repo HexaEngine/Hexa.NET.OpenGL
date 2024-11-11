@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBShaderObjects
+	public unsafe partial class GLARBShaderObjects
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void AttachObjectARBNative(uint containerObj, uint obj)
+		internal void AttachObjectARBNative(uint containerObj, uint obj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(containerObj, obj);
@@ -30,13 +30,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void AttachObjectARB(uint containerObj, uint obj)
+		public void AttachObjectARB(uint containerObj, uint obj)
 		{
 			AttachObjectARBNative(containerObj, obj);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void CompileShaderARBNative(uint shaderObj)
+		internal void CompileShaderARBNative(uint shaderObj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[1])(shaderObj);
@@ -49,13 +49,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void CompileShaderARB(uint shaderObj)
+		public void CompileShaderARB(uint shaderObj)
 		{
 			CompileShaderARBNative(shaderObj);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint CreateProgramObjectARBNative()
+		internal uint CreateProgramObjectARBNative()
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint>)funcTable[2])();
@@ -68,14 +68,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static uint CreateProgramObjectARB()
+		public uint CreateProgramObjectARB()
 		{
 			uint ret = CreateProgramObjectARBNative();
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint CreateShaderObjectARBNative(GLShaderType shaderType)
+		internal uint CreateShaderObjectARBNative(GLShaderType shaderType)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLShaderType, uint>)funcTable[3])(shaderType);
@@ -88,14 +88,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static uint CreateShaderObjectARB(GLShaderType shaderType)
+		public uint CreateShaderObjectARB(GLShaderType shaderType)
 		{
 			uint ret = CreateShaderObjectARBNative(shaderType);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DeleteObjectARBNative(uint obj)
+		internal void DeleteObjectARBNative(uint obj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[4])(obj);
@@ -108,13 +108,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void DeleteObjectARB(uint obj)
+		public void DeleteObjectARB(uint obj)
 		{
 			DeleteObjectARBNative(obj);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void DetachObjectARBNative(uint containerObj, uint attachedObj)
+		internal void DetachObjectARBNative(uint containerObj, uint attachedObj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[5])(containerObj, attachedObj);
@@ -127,13 +127,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void DetachObjectARB(uint containerObj, uint attachedObj)
+		public void DetachObjectARB(uint containerObj, uint attachedObj)
 		{
 			DetachObjectARBNative(containerObj, attachedObj);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetActiveUniformARBNative(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, byte* name)
+		internal void GetActiveUniformARBNative(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, int, int*, int*, GLUniformType, byte*, void>)funcTable[6])(programObj, index, maxLength, length, size, type, name);
@@ -146,7 +146,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, byte* name)
 		{
 			GetActiveUniformARBNative(programObj, index, maxLength, length, size, type, name);
 		}
@@ -155,7 +155,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -167,7 +167,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -179,7 +179,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -191,7 +191,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -203,7 +203,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -218,7 +218,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLUniformType type, byte* name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLUniformType type, byte* name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -233,7 +233,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, string name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -263,7 +263,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, Span<byte> name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -275,7 +275,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, ref byte name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -287,7 +287,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, Span<byte> name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, int* size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -302,7 +302,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, ref byte name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, int* size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -317,7 +317,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, Span<byte> name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, Span<int> size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* psize0 = size)
 			{
@@ -332,7 +332,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, ref byte name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, int* length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* psize0 = &size)
 			{
@@ -347,7 +347,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, Span<byte> name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, Span<int> length, Span<int> size, GLUniformType type, Span<byte> name)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -365,7 +365,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLUniformType type, ref byte name)
+		public void GetActiveUniformARB(uint programObj, uint index, int maxLength, ref int length, ref int size, GLUniformType type, ref byte name)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -380,7 +380,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetAttachedObjectsARBNative(uint containerObj, int maxCount, int* count, uint* obj)
+		internal void GetAttachedObjectsARBNative(uint containerObj, int maxCount, int* count, uint* obj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, uint*, void>)funcTable[7])(containerObj, maxCount, count, obj);
@@ -393,7 +393,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, uint* obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, uint* obj)
 		{
 			GetAttachedObjectsARBNative(containerObj, maxCount, count, obj);
 		}
@@ -402,7 +402,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, uint* obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, uint* obj)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -414,7 +414,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, uint* obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, uint* obj)
 		{
 			fixed (int* pcount0 = &count)
 			{
@@ -426,7 +426,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, Span<uint> obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, Span<uint> obj)
 		{
 			fixed (uint* pobj0 = obj)
 			{
@@ -438,7 +438,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, ref uint obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, int* count, ref uint obj)
 		{
 			fixed (uint* pobj0 = &obj)
 			{
@@ -450,7 +450,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, Span<uint> obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, Span<int> count, Span<uint> obj)
 		{
 			fixed (int* pcount0 = count)
 			{
@@ -465,7 +465,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, ref uint obj)
+		public void GetAttachedObjectsARB(uint containerObj, int maxCount, ref int count, ref uint obj)
 		{
 			fixed (int* pcount0 = &count)
 			{
@@ -477,7 +477,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static uint GetHandleARBNative(GLContainerType pname)
+		internal uint GetHandleARBNative(GLContainerType pname)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<GLContainerType, uint>)funcTable[8])(pname);
@@ -490,14 +490,14 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static uint GetHandleARB(GLContainerType pname)
+		public uint GetHandleARB(GLContainerType pname)
 		{
 			uint ret = GetHandleARBNative(pname);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetInfoLogARBNative(uint obj, int maxLength, int* length, byte* infoLog)
+		internal void GetInfoLogARBNative(uint obj, int maxLength, int* length, byte* infoLog)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[9])(obj, maxLength, length, infoLog);
@@ -510,7 +510,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, int* length, byte* infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, int* length, byte* infoLog)
 		{
 			GetInfoLogARBNative(obj, maxLength, length, infoLog);
 		}
@@ -519,7 +519,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, Span<int> length, byte* infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, Span<int> length, byte* infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -531,7 +531,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, ref int length, byte* infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, ref int length, byte* infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -543,7 +543,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, int* length, string infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, int* length, string infoLog)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -573,7 +573,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, int* length, Span<byte> infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, int* length, Span<byte> infoLog)
 		{
 			fixed (byte* pinfoLog0 = infoLog)
 			{
@@ -585,7 +585,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, int* length, ref byte infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, int* length, ref byte infoLog)
 		{
 			fixed (byte* pinfoLog0 = &infoLog)
 			{
@@ -597,7 +597,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, Span<int> length, Span<byte> infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, Span<int> length, Span<byte> infoLog)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -612,7 +612,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetInfoLogARB(uint obj, int maxLength, ref int length, ref byte infoLog)
+		public void GetInfoLogARB(uint obj, int maxLength, ref int length, ref byte infoLog)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -624,7 +624,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetObjectParameterfvARBNative(uint obj, GLEnum pname, float* @params)
+		internal void GetObjectParameterfvARBNative(uint obj, GLEnum pname, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, float*, void>)funcTable[10])(obj, pname, @params);
@@ -637,7 +637,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, float* @params)
+		public void GetObjectParameterfvARB(uint obj, GLEnum pname, float* @params)
 		{
 			GetObjectParameterfvARBNative(obj, pname, @params);
 		}
@@ -646,7 +646,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, Span<float> @params)
+		public void GetObjectParameterfvARB(uint obj, GLEnum pname, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -658,7 +658,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterfvARB(uint obj, GLEnum pname, ref float @params)
+		public void GetObjectParameterfvARB(uint obj, GLEnum pname, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -667,7 +667,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetObjectParameterivARBNative(uint obj, GLEnum pname, int* @params)
+		internal void GetObjectParameterivARBNative(uint obj, GLEnum pname, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLEnum, int*, void>)funcTable[11])(obj, pname, @params);
@@ -680,7 +680,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterivARB(uint obj, GLEnum pname, int* @params)
+		public void GetObjectParameterivARB(uint obj, GLEnum pname, int* @params)
 		{
 			GetObjectParameterivARBNative(obj, pname, @params);
 		}
@@ -689,7 +689,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterivARB(uint obj, GLEnum pname, Span<int> @params)
+		public void GetObjectParameterivARB(uint obj, GLEnum pname, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -701,7 +701,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetObjectParameterivARB(uint obj, GLEnum pname, ref int @params)
+		public void GetObjectParameterivARB(uint obj, GLEnum pname, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -710,7 +710,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetShaderSourceARBNative(uint obj, int maxLength, int* length, byte* source)
+		internal void GetShaderSourceARBNative(uint obj, int maxLength, int* length, byte* source)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, byte*, void>)funcTable[12])(obj, maxLength, length, source);
@@ -723,7 +723,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, byte* source)
+		public void GetShaderSourceARB(uint obj, int maxLength, int* length, byte* source)
 		{
 			GetShaderSourceARBNative(obj, maxLength, length, source);
 		}
@@ -732,7 +732,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, byte* source)
+		public void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, byte* source)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -744,7 +744,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, ref int length, byte* source)
+		public void GetShaderSourceARB(uint obj, int maxLength, ref int length, byte* source)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -756,7 +756,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, string source)
+		public void GetShaderSourceARB(uint obj, int maxLength, int* length, string source)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -786,7 +786,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, Span<byte> source)
+		public void GetShaderSourceARB(uint obj, int maxLength, int* length, Span<byte> source)
 		{
 			fixed (byte* psource0 = source)
 			{
@@ -798,7 +798,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, int* length, ref byte source)
+		public void GetShaderSourceARB(uint obj, int maxLength, int* length, ref byte source)
 		{
 			fixed (byte* psource0 = &source)
 			{
@@ -810,7 +810,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, Span<byte> source)
+		public void GetShaderSourceARB(uint obj, int maxLength, Span<int> length, Span<byte> source)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -825,7 +825,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetShaderSourceARB(uint obj, int maxLength, ref int length, ref byte source)
+		public void GetShaderSourceARB(uint obj, int maxLength, ref int length, ref byte source)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -837,7 +837,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static int GetUniformLocationARBNative(uint programObj, byte* name)
+		internal int GetUniformLocationARBNative(uint programObj, byte* name)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, byte*, int>)funcTable[13])(programObj, name);
@@ -850,7 +850,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static int GetUniformLocationARB(uint programObj, byte* name)
+		public int GetUniformLocationARB(uint programObj, byte* name)
 		{
 			int ret = GetUniformLocationARBNative(programObj, name);
 			return ret;
@@ -860,7 +860,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static int GetUniformLocationARB(uint programObj, string name)
+		public int GetUniformLocationARB(uint programObj, string name)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -891,7 +891,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static int GetUniformLocationARB(uint programObj, Span<byte> name)
+		public int GetUniformLocationARB(uint programObj, Span<byte> name)
 		{
 			fixed (byte* pname0 = name)
 			{
@@ -904,7 +904,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static int GetUniformLocationARB(uint programObj, ref byte name)
+		public int GetUniformLocationARB(uint programObj, ref byte name)
 		{
 			fixed (byte* pname0 = &name)
 			{
@@ -914,7 +914,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformfvARBNative(uint programObj, int location, float* @params)
+		internal void GetUniformfvARBNative(uint programObj, int location, float* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, float*, void>)funcTable[14])(programObj, location, @params);
@@ -927,7 +927,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformfvARB(uint programObj, int location, float* @params)
+		public void GetUniformfvARB(uint programObj, int location, float* @params)
 		{
 			GetUniformfvARBNative(programObj, location, @params);
 		}
@@ -936,7 +936,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformfvARB(uint programObj, int location, Span<float> @params)
+		public void GetUniformfvARB(uint programObj, int location, Span<float> @params)
 		{
 			fixed (float* pparams0 = @params)
 			{
@@ -948,7 +948,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformfvARB(uint programObj, int location, ref float @params)
+		public void GetUniformfvARB(uint programObj, int location, ref float @params)
 		{
 			fixed (float* pparams0 = &@params)
 			{
@@ -957,7 +957,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetUniformivARBNative(uint programObj, int location, int* @params)
+		internal void GetUniformivARBNative(uint programObj, int location, int* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int*, void>)funcTable[15])(programObj, location, @params);
@@ -970,7 +970,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformivARB(uint programObj, int location, int* @params)
+		public void GetUniformivARB(uint programObj, int location, int* @params)
 		{
 			GetUniformivARBNative(programObj, location, @params);
 		}
@@ -979,7 +979,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformivARB(uint programObj, int location, Span<int> @params)
+		public void GetUniformivARB(uint programObj, int location, Span<int> @params)
 		{
 			fixed (int* pparams0 = @params)
 			{
@@ -991,7 +991,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void GetUniformivARB(uint programObj, int location, ref int @params)
+		public void GetUniformivARB(uint programObj, int location, ref int @params)
 		{
 			fixed (int* pparams0 = &@params)
 			{
@@ -1000,7 +1000,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void LinkProgramARBNative(uint programObj)
+		internal void LinkProgramARBNative(uint programObj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[16])(programObj);
@@ -1013,13 +1013,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void LinkProgramARB(uint programObj)
+		public void LinkProgramARB(uint programObj)
 		{
 			LinkProgramARBNative(programObj);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ShaderSourceARBNative(uint shaderObj, int count, byte** str, int* length)
+		internal void ShaderSourceARBNative(uint shaderObj, int count, byte** str, int* length)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, byte**, int*, void>)funcTable[17])(shaderObj, count, str, length);
@@ -1032,7 +1032,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, int* length)
+		public void ShaderSourceARB(uint shaderObj, int count, byte** str, int* length)
 		{
 			ShaderSourceARBNative(shaderObj, count, str, length);
 		}
@@ -1041,7 +1041,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void ShaderSourceARB(uint shaderObj, string source)
+		public void ShaderSourceARB(uint shaderObj, string source)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -1071,7 +1071,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void ShaderSourceARB(uint shaderObj, string[] sources)
+		public void ShaderSourceARB(uint shaderObj, string[] sources)
 		{
 			byte** pStrArray0 = null;
 			int* pStrArraySizes0 = null;
@@ -1112,7 +1112,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, Span<int> length)
+		public void ShaderSourceARB(uint shaderObj, int count, byte** str, Span<int> length)
 		{
 			fixed (int* plength0 = length)
 			{
@@ -1124,7 +1124,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void ShaderSourceARB(uint shaderObj, int count, byte** str, ref int length)
+		public void ShaderSourceARB(uint shaderObj, int count, byte** str, ref int length)
 		{
 			fixed (int* plength0 = &length)
 			{
@@ -1133,7 +1133,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1fARBNative(int location, float v0)
+		internal void Uniform1fARBNative(int location, float v0)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, void>)funcTable[18])(location, v0);
@@ -1146,13 +1146,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1fARB(int location, float v0)
+		public void Uniform1fARB(int location, float v0)
 		{
 			Uniform1fARBNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1fvARBNative(int location, int count, float* value)
+		internal void Uniform1fvARBNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[19])(location, count, value);
@@ -1165,7 +1165,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1fvARB(int location, int count, float* value)
+		public void Uniform1fvARB(int location, int count, float* value)
 		{
 			Uniform1fvARBNative(location, count, value);
 		}
@@ -1174,7 +1174,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1fvARB(int location, int count, Span<float> value)
+		public void Uniform1fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1186,7 +1186,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1fvARB(int location, int count, ref float value)
+		public void Uniform1fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1195,7 +1195,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1iARBNative(int location, int v0)
+		internal void Uniform1iARBNative(int location, int v0)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, void>)funcTable[20])(location, v0);
@@ -1208,13 +1208,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1iARB(int location, int v0)
+		public void Uniform1iARB(int location, int v0)
 		{
 			Uniform1iARBNative(location, v0);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform1ivARBNative(int location, int count, int* value)
+		internal void Uniform1ivARBNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[21])(location, count, value);
@@ -1227,7 +1227,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1ivARB(int location, int count, int* value)
+		public void Uniform1ivARB(int location, int count, int* value)
 		{
 			Uniform1ivARBNative(location, count, value);
 		}
@@ -1236,7 +1236,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1ivARB(int location, int count, Span<int> value)
+		public void Uniform1ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -1248,7 +1248,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform1ivARB(int location, int count, ref int value)
+		public void Uniform1ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -1257,7 +1257,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2fARBNative(int location, float v0, float v1)
+		internal void Uniform2fARBNative(int location, float v0, float v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, void>)funcTable[22])(location, v0, v1);
@@ -1270,13 +1270,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2fARB(int location, float v0, float v1)
+		public void Uniform2fARB(int location, float v0, float v1)
 		{
 			Uniform2fARBNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2fvARBNative(int location, int count, float* value)
+		internal void Uniform2fvARBNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[23])(location, count, value);
@@ -1289,7 +1289,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2fvARB(int location, int count, float* value)
+		public void Uniform2fvARB(int location, int count, float* value)
 		{
 			Uniform2fvARBNative(location, count, value);
 		}
@@ -1298,7 +1298,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2fvARB(int location, int count, Span<float> value)
+		public void Uniform2fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1310,7 +1310,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2fvARB(int location, int count, ref float value)
+		public void Uniform2fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1319,7 +1319,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2iARBNative(int location, int v0, int v1)
+		internal void Uniform2iARBNative(int location, int v0, int v1)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, void>)funcTable[24])(location, v0, v1);
@@ -1332,13 +1332,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2iARB(int location, int v0, int v1)
+		public void Uniform2iARB(int location, int v0, int v1)
 		{
 			Uniform2iARBNative(location, v0, v1);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform2ivARBNative(int location, int count, int* value)
+		internal void Uniform2ivARBNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[25])(location, count, value);
@@ -1351,7 +1351,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2ivARB(int location, int count, int* value)
+		public void Uniform2ivARB(int location, int count, int* value)
 		{
 			Uniform2ivARBNative(location, count, value);
 		}
@@ -1360,7 +1360,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2ivARB(int location, int count, Span<int> value)
+		public void Uniform2ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -1372,7 +1372,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform2ivARB(int location, int count, ref int value)
+		public void Uniform2ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -1381,7 +1381,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3fARBNative(int location, float v0, float v1, float v2)
+		internal void Uniform3fARBNative(int location, float v0, float v1, float v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, float, void>)funcTable[26])(location, v0, v1, v2);
@@ -1394,13 +1394,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3fARB(int location, float v0, float v1, float v2)
+		public void Uniform3fARB(int location, float v0, float v1, float v2)
 		{
 			Uniform3fARBNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3fvARBNative(int location, int count, float* value)
+		internal void Uniform3fvARBNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[27])(location, count, value);
@@ -1413,7 +1413,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3fvARB(int location, int count, float* value)
+		public void Uniform3fvARB(int location, int count, float* value)
 		{
 			Uniform3fvARBNative(location, count, value);
 		}
@@ -1422,7 +1422,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3fvARB(int location, int count, Span<float> value)
+		public void Uniform3fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1434,7 +1434,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3fvARB(int location, int count, ref float value)
+		public void Uniform3fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1443,7 +1443,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3iARBNative(int location, int v0, int v1, int v2)
+		internal void Uniform3iARBNative(int location, int v0, int v1, int v2)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, void>)funcTable[28])(location, v0, v1, v2);
@@ -1456,13 +1456,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3iARB(int location, int v0, int v1, int v2)
+		public void Uniform3iARB(int location, int v0, int v1, int v2)
 		{
 			Uniform3iARBNative(location, v0, v1, v2);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform3ivARBNative(int location, int count, int* value)
+		internal void Uniform3ivARBNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[29])(location, count, value);
@@ -1475,7 +1475,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3ivARB(int location, int count, int* value)
+		public void Uniform3ivARB(int location, int count, int* value)
 		{
 			Uniform3ivARBNative(location, count, value);
 		}
@@ -1484,7 +1484,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3ivARB(int location, int count, Span<int> value)
+		public void Uniform3ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -1496,7 +1496,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform3ivARB(int location, int count, ref int value)
+		public void Uniform3ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -1505,7 +1505,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fARBNative(int location, float v0, float v1, float v2, float v3)
+		internal void Uniform4fARBNative(int location, float v0, float v1, float v2, float v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, float, float, float, float, void>)funcTable[30])(location, v0, v1, v2, v3);
@@ -1518,13 +1518,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4fARB(int location, float v0, float v1, float v2, float v3)
+		public void Uniform4fARB(int location, float v0, float v1, float v2, float v3)
 		{
 			Uniform4fARBNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4fvARBNative(int location, int count, float* value)
+		internal void Uniform4fvARBNative(int location, int count, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, float*, void>)funcTable[31])(location, count, value);
@@ -1537,7 +1537,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4fvARB(int location, int count, float* value)
+		public void Uniform4fvARB(int location, int count, float* value)
 		{
 			Uniform4fvARBNative(location, count, value);
 		}
@@ -1546,7 +1546,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4fvARB(int location, int count, Span<float> value)
+		public void Uniform4fvARB(int location, int count, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1558,7 +1558,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4fvARB(int location, int count, ref float value)
+		public void Uniform4fvARB(int location, int count, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1567,7 +1567,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4iARBNative(int location, int v0, int v1, int v2, int v3)
+		internal void Uniform4iARBNative(int location, int v0, int v1, int v2, int v3)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int, int, int, void>)funcTable[32])(location, v0, v1, v2, v3);
@@ -1580,13 +1580,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4iARB(int location, int v0, int v1, int v2, int v3)
+		public void Uniform4iARB(int location, int v0, int v1, int v2, int v3)
 		{
 			Uniform4iARBNative(location, v0, v1, v2, v3);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void Uniform4ivARBNative(int location, int count, int* value)
+		internal void Uniform4ivARBNative(int location, int count, int* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, int*, void>)funcTable[33])(location, count, value);
@@ -1599,7 +1599,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4ivARB(int location, int count, int* value)
+		public void Uniform4ivARB(int location, int count, int* value)
 		{
 			Uniform4ivARBNative(location, count, value);
 		}
@@ -1608,7 +1608,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4ivARB(int location, int count, Span<int> value)
+		public void Uniform4ivARB(int location, int count, Span<int> value)
 		{
 			fixed (int* pvalue0 = value)
 			{
@@ -1620,7 +1620,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void Uniform4ivARB(int location, int count, ref int value)
+		public void Uniform4ivARB(int location, int count, ref int value)
 		{
 			fixed (int* pvalue0 = &value)
 			{
@@ -1629,7 +1629,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix2fvARBNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix2fvARBNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[34])(location, count, *((byte*)(&transpose)), value);
@@ -1642,7 +1642,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix2fvARB(int location, int count, bool transpose, float* value)
+		public void UniformMatrix2fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix2fvARBNative(location, count, transpose, value);
 		}
@@ -1651,7 +1651,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix2fvARB(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix2fvARB(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1663,7 +1663,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix2fvARB(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix2fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1672,7 +1672,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix3fvARBNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix3fvARBNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[35])(location, count, *((byte*)(&transpose)), value);
@@ -1685,7 +1685,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix3fvARB(int location, int count, bool transpose, float* value)
+		public void UniformMatrix3fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix3fvARBNative(location, count, transpose, value);
 		}
@@ -1694,7 +1694,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix3fvARB(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix3fvARB(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1706,7 +1706,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix3fvARB(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix3fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1715,7 +1715,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformMatrix4fvARBNative(int location, int count, bool transpose, float* value)
+		internal void UniformMatrix4fvARBNative(int location, int count, bool transpose, float* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, byte, float*, void>)funcTable[36])(location, count, *((byte*)(&transpose)), value);
@@ -1728,7 +1728,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix4fvARB(int location, int count, bool transpose, float* value)
+		public void UniformMatrix4fvARB(int location, int count, bool transpose, float* value)
 		{
 			UniformMatrix4fvARBNative(location, count, transpose, value);
 		}
@@ -1737,7 +1737,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix4fvARB(int location, int count, bool transpose, Span<float> value)
+		public void UniformMatrix4fvARB(int location, int count, bool transpose, Span<float> value)
 		{
 			fixed (float* pvalue0 = value)
 			{
@@ -1749,7 +1749,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UniformMatrix4fvARB(int location, int count, bool transpose, ref float value)
+		public void UniformMatrix4fvARB(int location, int count, bool transpose, ref float value)
 		{
 			fixed (float* pvalue0 = &value)
 			{
@@ -1758,7 +1758,7 @@ namespace Hexa.NET.OpenGL.ARB
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UseProgramObjectARBNative(uint programObj)
+		internal void UseProgramObjectARBNative(uint programObj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[37])(programObj);
@@ -1771,13 +1771,13 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void UseProgramObjectARB(uint programObj)
+		public void UseProgramObjectARB(uint programObj)
 		{
 			UseProgramObjectARBNative(programObj);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ValidateProgramARBNative(uint programObj)
+		internal void ValidateProgramARBNative(uint programObj)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, void>)funcTable[38])(programObj);
@@ -1790,7 +1790,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_ARB_shader_objects</remarks>
-		public static void ValidateProgramARB(uint programObj)
+		public void ValidateProgramARB(uint programObj)
 		{
 			ValidateProgramARBNative(programObj);
 		}

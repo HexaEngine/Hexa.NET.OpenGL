@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVGpuProgram5
+	public unsafe partial class GLNVGpuProgram5
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetProgramSubroutineParameteruivNVNative(GLEnum target, uint index, uint* param)
+		internal void GetProgramSubroutineParameteruivNVNative(GLEnum target, uint index, uint* param)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, uint, uint*, void>)funcTable[0])(target, index, param);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, uint* param)
+		public void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, uint* param)
 		{
 			GetProgramSubroutineParameteruivNVNative(target, index, param);
 		}
@@ -39,7 +39,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, Span<uint> param)
+		public void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, Span<uint> param)
 		{
 			fixed (uint* pparam0 = param)
 			{
@@ -51,7 +51,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, ref uint param)
+		public void GetProgramSubroutineParameteruivNV(GLEnum target, uint index, ref uint param)
 		{
 			fixed (uint* pparam0 = &param)
 			{
@@ -60,7 +60,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramSubroutineParametersuivNVNative(GLEnum target, int count, uint* @params)
+		internal void ProgramSubroutineParametersuivNVNative(GLEnum target, int count, uint* @params)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLEnum, int, uint*, void>)funcTable[1])(target, count, @params);
@@ -73,7 +73,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, uint* @params)
+		public void ProgramSubroutineParametersuivNV(GLEnum target, int count, uint* @params)
 		{
 			ProgramSubroutineParametersuivNVNative(target, count, @params);
 		}
@@ -82,7 +82,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, Span<uint> @params)
+		public void ProgramSubroutineParametersuivNV(GLEnum target, int count, Span<uint> @params)
 		{
 			fixed (uint* pparams0 = @params)
 			{
@@ -94,7 +94,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_gpu_program5</remarks>
-		public static void ProgramSubroutineParametersuivNV(GLEnum target, int count, ref uint @params)
+		public void ProgramSubroutineParametersuivNV(GLEnum target, int count, ref uint @params)
 		{
 			fixed (uint* pparams0 = &@params)
 			{

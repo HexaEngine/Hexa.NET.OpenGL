@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.ARB
 {
-	public static unsafe partial class GLARBClipControl
+	public unsafe partial class GLARBClipControl
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ClipControlNative(GLClipControlOrigin origin, GLClipControlDepth depth)
+		internal void ClipControlNative(GLClipControlOrigin origin, GLClipControlDepth depth)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<GLClipControlOrigin, GLClipControlDepth, void>)funcTable[0])(origin, depth);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGL.ARB
 		/// Control clip coordinate to window coordinate behavior
 		/// </summary>
 		/// <remarks>Supported Versions:<br/>GL 4.5 - GL 4.6<br/><br/>Used by Extensions:<br/>GL_ARB_clip_control</remarks>
-		public static void ClipControl(GLClipControlOrigin origin, GLClipControlDepth depth)
+		public void ClipControl(GLClipControlOrigin origin, GLClipControlDepth depth)
 		{
 			ClipControlNative(origin, depth);
 		}

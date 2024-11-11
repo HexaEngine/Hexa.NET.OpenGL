@@ -14,14 +14,14 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.INTEL
 {
-	public static unsafe partial class GLINTELPerformanceQuery
+	public unsafe partial class GLINTELPerformanceQuery
 	{
 
 		/// <summary>
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, uint* counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -48,7 +48,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, uint* counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -75,7 +75,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = counterOffset)
 			{
@@ -99,7 +99,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (uint* pcounterOffset0 = &counterOffset)
 			{
@@ -123,7 +123,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, byte* counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -150,7 +150,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, byte* counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -177,7 +177,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = counterDesc)
 			{
@@ -204,7 +204,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterDesc0 = &counterDesc)
 			{
@@ -231,7 +231,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, Span<byte> counterName, uint counterDescLength, Span<byte> counterDesc, Span<uint> counterOffset, Span<uint> counterDataSize, Span<uint> counterTypeEnum, Span<uint> counterDataTypeEnum, Span<ulong> rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = counterName)
 			{
@@ -261,7 +261,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
+		public void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, ref byte counterName, uint counterDescLength, ref byte counterDesc, ref uint counterOffset, ref uint counterDataSize, ref uint counterTypeEnum, ref uint counterDataTypeEnum, ref ulong rawCounterMaxValue)
 		{
 			fixed (byte* pcounterName0 = &counterName)
 			{
@@ -288,7 +288,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfQueryDataINTELNative(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, uint* bytesWritten)
+		internal void GetPerfQueryDataINTELNative(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, uint* bytesWritten)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, GLPerfQueryDataFlags, int, void*, uint*, void>)funcTable[7])(queryHandle, flags, dataSize, data, bytesWritten);
@@ -301,7 +301,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, uint* bytesWritten)
+		public void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, uint* bytesWritten)
 		{
 			GetPerfQueryDataINTELNative(queryHandle, flags, dataSize, data, bytesWritten);
 		}
@@ -310,7 +310,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, nint data, uint* bytesWritten)
+		public void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, nint data, uint* bytesWritten)
 		{
 			GetPerfQueryDataINTELNative(queryHandle, flags, dataSize, (void*)data, bytesWritten);
 		}
@@ -319,7 +319,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryDataINTEL<TData>(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, Span<TData> data, uint* bytesWritten) where TData : unmanaged
+		public void GetPerfQueryDataINTEL<TData>(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, Span<TData> data, uint* bytesWritten) where TData : unmanaged
 		{
 			fixed (TData* pdata0 = data)
 			{
@@ -331,7 +331,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, Span<uint> bytesWritten)
+		public void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, Span<uint> bytesWritten)
 		{
 			fixed (uint* pbytesWritten0 = bytesWritten)
 			{
@@ -343,7 +343,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, ref uint bytesWritten)
+		public void GetPerfQueryDataINTEL(uint queryHandle, GLPerfQueryDataFlags flags, int dataSize, void* data, ref uint bytesWritten)
 		{
 			fixed (uint* pbytesWritten0 = &bytesWritten)
 			{
@@ -352,7 +352,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfQueryIdByNameINTELNative(byte* queryName, uint* queryId)
+		internal void GetPerfQueryIdByNameINTELNative(byte* queryName, uint* queryId)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<byte*, uint*, void>)funcTable[8])(queryName, queryId);
@@ -365,7 +365,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(byte* queryName, uint* queryId)
+		public void GetPerfQueryIdByNameINTEL(byte* queryName, uint* queryId)
 		{
 			GetPerfQueryIdByNameINTELNative(queryName, queryId);
 		}
@@ -374,7 +374,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(string queryName, uint* queryId)
+		public void GetPerfQueryIdByNameINTEL(string queryName, uint* queryId)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -404,7 +404,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(Span<byte> queryName, uint* queryId)
+		public void GetPerfQueryIdByNameINTEL(Span<byte> queryName, uint* queryId)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -416,7 +416,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(ref byte queryName, uint* queryId)
+		public void GetPerfQueryIdByNameINTEL(ref byte queryName, uint* queryId)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -428,7 +428,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(byte* queryName, Span<uint> queryId)
+		public void GetPerfQueryIdByNameINTEL(byte* queryName, Span<uint> queryId)
 		{
 			fixed (uint* pqueryId0 = queryId)
 			{
@@ -440,7 +440,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(byte* queryName, ref uint queryId)
+		public void GetPerfQueryIdByNameINTEL(byte* queryName, ref uint queryId)
 		{
 			fixed (uint* pqueryId0 = &queryId)
 			{
@@ -452,7 +452,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(Span<byte> queryName, Span<uint> queryId)
+		public void GetPerfQueryIdByNameINTEL(Span<byte> queryName, Span<uint> queryId)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -467,7 +467,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryIdByNameINTEL(ref byte queryName, ref uint queryId)
+		public void GetPerfQueryIdByNameINTEL(ref byte queryName, ref uint queryId)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -479,7 +479,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void GetPerfQueryInfoINTELNative(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		internal void GetPerfQueryInfoINTELNative(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, byte*, uint*, uint*, uint*, GLPerformanceQueryCapsMaskINTEL, void>)funcTable[9])(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
@@ -492,7 +492,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			GetPerfQueryInfoINTELNative(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
 		}
@@ -501,7 +501,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, string queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, string queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			byte* pStr0 = null;
 			int pStrSize0 = 0;
@@ -531,7 +531,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -543,7 +543,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -555,7 +555,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = dataSize)
 			{
@@ -567,7 +567,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
 			{
@@ -579,7 +579,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -594,7 +594,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, uint* noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -609,7 +609,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoCounters0 = noCounters)
 			{
@@ -621,7 +621,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoCounters0 = &noCounters)
 			{
@@ -633,7 +633,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -648,7 +648,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -663,7 +663,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = dataSize)
 			{
@@ -678,7 +678,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
 			{
@@ -693,7 +693,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, Span<uint> noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -711,7 +711,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, ref uint noCounters, uint* noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -729,7 +729,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoInstances0 = noInstances)
 			{
@@ -741,7 +741,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoInstances0 = &noInstances)
 			{
@@ -753,7 +753,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -768,7 +768,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -783,7 +783,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = dataSize)
 			{
@@ -798,7 +798,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
 			{
@@ -813,7 +813,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, uint* noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -831,7 +831,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, uint* noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -849,7 +849,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoCounters0 = noCounters)
 			{
@@ -864,7 +864,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pnoCounters0 = &noCounters)
 			{
@@ -879,7 +879,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, uint* dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -897,7 +897,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, uint* dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{
@@ -915,7 +915,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, Span<uint> dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = dataSize)
 			{
@@ -933,7 +933,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, ref uint dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (uint* pdataSize0 = &dataSize)
 			{
@@ -951,7 +951,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, Span<byte> queryName, Span<uint> dataSize, Span<uint> noCounters, Span<uint> noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = queryName)
 			{
@@ -972,7 +972,7 @@ namespace Hexa.NET.OpenGL.INTEL
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_INTEL_performance_query</remarks>
-		public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
+		public void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, ref byte queryName, ref uint dataSize, ref uint noCounters, ref uint noInstances, GLPerformanceQueryCapsMaskINTEL capsMask)
 		{
 			fixed (byte* pqueryName0 = &queryName)
 			{

@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGL.NV
 {
-	public static unsafe partial class GLNVBindlessTexture
+	public unsafe partial class GLNVBindlessTexture
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ulong GetImageHandleNVNative(uint texture, int level, bool layered, int layer, GLPixelFormat format)
+		internal ulong GetImageHandleNVNative(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, int, byte, int, GLPixelFormat, ulong>)funcTable[0])(texture, level, *((byte*)(&layered)), layer, format);
@@ -30,14 +30,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static ulong GetImageHandleNV(uint texture, int level, bool layered, int layer, GLPixelFormat format)
+		public ulong GetImageHandleNV(uint texture, int level, bool layered, int layer, GLPixelFormat format)
 		{
 			ulong ret = GetImageHandleNVNative(texture, level, layered, layer, format);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ulong GetTextureHandleNVNative(uint texture)
+		internal ulong GetTextureHandleNVNative(uint texture)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, ulong>)funcTable[1])(texture);
@@ -50,14 +50,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static ulong GetTextureHandleNV(uint texture)
+		public ulong GetTextureHandleNV(uint texture)
 		{
 			ulong ret = GetTextureHandleNVNative(texture);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static ulong GetTextureSamplerHandleNVNative(uint texture, uint sampler)
+		internal ulong GetTextureSamplerHandleNVNative(uint texture, uint sampler)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<uint, uint, ulong>)funcTable[2])(texture, sampler);
@@ -70,14 +70,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static ulong GetTextureSamplerHandleNV(uint texture, uint sampler)
+		public ulong GetTextureSamplerHandleNV(uint texture, uint sampler)
 		{
 			ulong ret = GetTextureSamplerHandleNVNative(texture, sampler);
 			return ret;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsImageHandleResidentNVNative(ulong handle)
+		internal byte IsImageHandleResidentNVNative(ulong handle)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ulong, byte>)funcTable[3])(handle);
@@ -90,14 +90,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static bool IsImageHandleResidentNV(ulong handle)
+		public bool IsImageHandleResidentNV(ulong handle)
 		{
 			byte ret = IsImageHandleResidentNVNative(handle);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static byte IsTextureHandleResidentNVNative(ulong handle)
+		internal byte IsTextureHandleResidentNVNative(ulong handle)
 		{
 			#if NET5_0_OR_GREATER
 			return ((delegate* unmanaged[Cdecl]<ulong, byte>)funcTable[4])(handle);
@@ -110,14 +110,14 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static bool IsTextureHandleResidentNV(ulong handle)
+		public bool IsTextureHandleResidentNV(ulong handle)
 		{
 			byte ret = IsTextureHandleResidentNVNative(handle);
 			return ret != 0;
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeImageHandleNonResidentNVNative(ulong handle)
+		internal void MakeImageHandleNonResidentNVNative(ulong handle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, void>)funcTable[5])(handle);
@@ -130,13 +130,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void MakeImageHandleNonResidentNV(ulong handle)
+		public void MakeImageHandleNonResidentNV(ulong handle)
 		{
 			MakeImageHandleNonResidentNVNative(handle);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeImageHandleResidentNVNative(ulong handle, GLEnum access)
+		internal void MakeImageHandleResidentNVNative(ulong handle, GLEnum access)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, GLEnum, void>)funcTable[6])(handle, access);
@@ -149,13 +149,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void MakeImageHandleResidentNV(ulong handle, GLEnum access)
+		public void MakeImageHandleResidentNV(ulong handle, GLEnum access)
 		{
 			MakeImageHandleResidentNVNative(handle, access);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeTextureHandleNonResidentNVNative(ulong handle)
+		internal void MakeTextureHandleNonResidentNVNative(ulong handle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, void>)funcTable[7])(handle);
@@ -168,13 +168,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void MakeTextureHandleNonResidentNV(ulong handle)
+		public void MakeTextureHandleNonResidentNV(ulong handle)
 		{
 			MakeTextureHandleNonResidentNVNative(handle);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void MakeTextureHandleResidentNVNative(ulong handle)
+		internal void MakeTextureHandleResidentNVNative(ulong handle)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<ulong, void>)funcTable[8])(handle);
@@ -187,13 +187,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void MakeTextureHandleResidentNV(ulong handle)
+		public void MakeTextureHandleResidentNV(ulong handle)
 		{
 			MakeTextureHandleResidentNVNative(handle);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformHandleui64NVNative(uint program, int location, ulong value)
+		internal void ProgramUniformHandleui64NVNative(uint program, int location, ulong value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, ulong, void>)funcTable[9])(program, location, value);
@@ -206,13 +206,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void ProgramUniformHandleui64NV(uint program, int location, ulong value)
+		public void ProgramUniformHandleui64NV(uint program, int location, ulong value)
 		{
 			ProgramUniformHandleui64NVNative(program, location, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void ProgramUniformHandleui64vNVNative(uint program, int location, int count, ulong* values)
+		internal void ProgramUniformHandleui64vNVNative(uint program, int location, int count, ulong* values)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, int, int, ulong*, void>)funcTable[10])(program, location, count, values);
@@ -225,7 +225,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, ulong* values)
+		public void ProgramUniformHandleui64vNV(uint program, int location, int count, ulong* values)
 		{
 			ProgramUniformHandleui64vNVNative(program, location, count, values);
 		}
@@ -234,7 +234,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, Span<ulong> values)
+		public void ProgramUniformHandleui64vNV(uint program, int location, int count, Span<ulong> values)
 		{
 			fixed (ulong* pvalues0 = values)
 			{
@@ -246,7 +246,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void ProgramUniformHandleui64vNV(uint program, int location, int count, ref ulong values)
+		public void ProgramUniformHandleui64vNV(uint program, int location, int count, ref ulong values)
 		{
 			fixed (ulong* pvalues0 = &values)
 			{
@@ -255,7 +255,7 @@ namespace Hexa.NET.OpenGL.NV
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformHandleui64NVNative(int location, ulong value)
+		internal void UniformHandleui64NVNative(int location, ulong value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, ulong, void>)funcTable[11])(location, value);
@@ -268,13 +268,13 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void UniformHandleui64NV(int location, ulong value)
+		public void UniformHandleui64NV(int location, ulong value)
 		{
 			UniformHandleui64NVNative(location, value);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void UniformHandleui64vNVNative(int location, int count, ulong* value)
+		internal void UniformHandleui64vNVNative(int location, int count, ulong* value)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<int, int, ulong*, void>)funcTable[12])(location, count, value);
@@ -287,7 +287,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void UniformHandleui64vNV(int location, int count, ulong* value)
+		public void UniformHandleui64vNV(int location, int count, ulong* value)
 		{
 			UniformHandleui64vNVNative(location, count, value);
 		}
@@ -296,7 +296,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void UniformHandleui64vNV(int location, int count, Span<ulong> value)
+		public void UniformHandleui64vNV(int location, int count, Span<ulong> value)
 		{
 			fixed (ulong* pvalue0 = value)
 			{
@@ -308,7 +308,7 @@ namespace Hexa.NET.OpenGL.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_bindless_texture</remarks>
-		public static void UniformHandleui64vNV(int location, int count, ref ulong value)
+		public void UniformHandleui64vNV(int location, int count, ref ulong value)
 		{
 			fixed (ulong* pvalue0 = &value)
 			{

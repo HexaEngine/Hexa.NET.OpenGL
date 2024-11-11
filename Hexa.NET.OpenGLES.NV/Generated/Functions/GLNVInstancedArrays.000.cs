@@ -14,10 +14,10 @@ using System.Numerics;
 
 namespace Hexa.NET.OpenGLES.NV
 {
-	public static unsafe partial class GLNVInstancedArrays
+	public unsafe partial class GLNVInstancedArrays
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		internal static void VertexAttribDivisorNVNative(uint index, uint divisor)
+		internal void VertexAttribDivisorNVNative(uint index, uint divisor)
 		{
 			#if NET5_0_OR_GREATER
 			((delegate* unmanaged[Cdecl]<uint, uint, void>)funcTable[0])(index, divisor);
@@ -30,7 +30,7 @@ namespace Hexa.NET.OpenGLES.NV
 		/// To be documented.
 		/// </summary>
 		/// <remarks>Used by Extensions:<br/>GL_NV_instanced_arrays</remarks>
-		public static void VertexAttribDivisorNV(uint index, uint divisor)
+		public void VertexAttribDivisorNV(uint index, uint divisor)
 		{
 			VertexAttribDivisorNVNative(index, divisor);
 		}
