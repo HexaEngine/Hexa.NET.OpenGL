@@ -17,10 +17,8 @@ namespace Hexa.NET.OpenGL
 	{
 		internal readonly FunctionTable funcTable;
 		internal readonly IGLContext context;
+		internal readonly Dictionary<Type, GLExtension> extensionCache = new();
 
-		/// <summary>
-		/// Initializes the function table, call before you access any function.
-		/// </summary>
 		public GL(IGLContext context)
 		{
 			this.context = context;
@@ -596,10 +594,17 @@ namespace Hexa.NET.OpenGL
 
 		public bool TryGetExtension<T>(out T extension) where T : GLExtension, new()
 		{
+			if (extensionCache.TryGetValue(typeof(T), out GLExtension cachedExtension))
+			{
+				extension = (T)cachedExtension;
+				return true;
+			}
+
 			extension = new T();
 			if (extension.IsSupported(context))
 			{
 				extension.Init(context);
+				extensionCache.Add(typeof(T), extension);
 				return true;
 			}
 			return false;
@@ -607,10 +612,16 @@ namespace Hexa.NET.OpenGL
 
 		public T GetExtension<T>() where T : GLExtension, new()
 		{
+			if (extensionCache.TryGetValue(typeof(T), out GLExtension cachedExtension))
+			{
+				return (T)cachedExtension;
+			}
+
 			T extension = new T();
 			if (extension.IsSupported(context))
 			{
 				extension.Init(context);
+				extensionCache.Add(typeof(T), extension);
 				return extension;
 			}
 			throw new NotSupportedException($"GLExtension {typeof(T)} is not supported.");
@@ -620,6 +631,10 @@ namespace Hexa.NET.OpenGL
 		{
 			context.Dispose();
 			funcTable.Dispose();
+			foreach (var ext in extensionCache)
+			{
+				ext.Value.Dispose();
+			}
 		}
 	}
 }

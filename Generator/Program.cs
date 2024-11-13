@@ -1416,10 +1416,8 @@ internal class Program
         {
             writer.WriteLine("internal readonly FunctionTable funcTable;");
             writer.WriteLine("internal readonly IGLContext context;");
+            writer.WriteLine("internal readonly Dictionary<Type, GLExtension> extensionCache = new();");
             writer.WriteLine();
-            writer.WriteLine("/// <summary>");
-            writer.WriteLine("/// Initializes the function table, call before you access any function.");
-            writer.WriteLine("/// </summary>");
 
             using (writer.PushBlock($"public {config.ApiName}(IGLContext context)"))
             {
@@ -1450,10 +1448,18 @@ internal class Program
 
             using (writer.PushBlock($"public bool TryGetExtension<T>(out T extension) where T : GLExtension, new()"))
             {
+                using (writer.PushBlock("if (extensionCache.TryGetValue(typeof(T), out GLExtension cachedExtension))"))
+                {
+                    writer.WriteLine("extension = (T)cachedExtension;");
+                    writer.WriteLine("return true;");
+                }
+                writer.WriteLine();
+
                 writer.WriteLine("extension = new T();");
                 using (writer.PushBlock($"if (extension.IsSupported(context))"))
                 {
                     writer.WriteLine("extension.Init(context);");
+                    writer.WriteLine("extensionCache.Add(typeof(T), extension);");
                     writer.WriteLine("return true;");
                 }
                 writer.WriteLine("return false;");
@@ -1462,10 +1468,17 @@ internal class Program
 
             using (writer.PushBlock($"public T GetExtension<T>() where T : GLExtension, new()"))
             {
+                using (writer.PushBlock("if (extensionCache.TryGetValue(typeof(T), out GLExtension cachedExtension))"))
+                {
+                    writer.WriteLine("return (T)cachedExtension;");
+                }
+                writer.WriteLine();
+
                 writer.WriteLine("T extension = new T();");
                 using (writer.PushBlock($"if (extension.IsSupported(context))"))
                 {
                     writer.WriteLine("extension.Init(context);");
+                    writer.WriteLine("extensionCache.Add(typeof(T), extension);");
                     writer.WriteLine("return extension;");
                 }
                 writer.WriteLine("throw new NotSupportedException($\"GLExtension {typeof(T)} is not supported.\");");
@@ -1476,6 +1489,10 @@ internal class Program
             {
                 writer.WriteLine("context.Dispose();");
                 writer.WriteLine("funcTable.Dispose();");
+                using (writer.PushBlock($"foreach (var ext in extensionCache)"))
+                {
+                    writer.WriteLine("ext.Value.Dispose();");
+                }
             }
         }
     }
